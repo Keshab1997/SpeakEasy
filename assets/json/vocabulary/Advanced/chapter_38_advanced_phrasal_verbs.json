@@ -1,1 +1,833 @@
-{"chapter": 38, "level": "Advanced", "title": "Advanced Phrasal Verbs", "words": []}
+{
+  "chapter": 38,
+  "level": "Advanced",
+  "title": "Advanced Phrasal Verbs",
+  "words": [
+    {
+      "word": "Carry out",
+      "pronunciation": "/ˈkæri aʊt/",
+      "meaning": "To perform or complete a task",
+      "banglaMeaning": "সম্পাদন করা",
+      "exampleSentence": "The team will carry out the experiment tomorrow."
+    },
+    {
+      "word": "Come across",
+      "pronunciation": "/kʌm əˈkrɒs/",
+      "meaning": "To find or meet by chance",
+      "banglaMeaning": "দেখা পাওয়া / হঠাৎ পাওয়া",
+      "exampleSentence": "I came across an old photograph while cleaning the attic."
+    },
+    {
+      "word": "Break down",
+      "pronunciation": "/breɪk daʊn/",
+      "meaning": "To stop functioning or to analyze in detail",
+      "banglaMeaning": "ভেঙে পড়া / বিশ্লেষণ করা",
+      "exampleSentence": "Let me break down the problem into smaller parts."
+    },
+    {
+      "word": "Bring up",
+      "pronunciation": "/brɪŋ ʌp/",
+      "meaning": "To mention a topic or raise a child",
+      "banglaMeaning": "উত্থাপন করা / লালনপালন করা",
+      "exampleSentence": "She brought up an important point during the meeting."
+    },
+    {
+      "word": "Call off",
+      "pronunciation": "/kɔːl ɒf/",
+      "meaning": "To cancel something",
+      "banglaMeaning": "বাতিল করা",
+      "exampleSentence": "They had to call off the event due to bad weather."
+    },
+    {
+      "word": "Come up with",
+      "pronunciation": "/kʌm ʌp wɪð/",
+      "meaning": "To think of or produce an idea",
+      "banglaMeaning": "প্রস্তাব করা / চিন্তা করা",
+      "exampleSentence": "We need to come up with a creative solution."
+    },
+    {
+      "word": "Cut down on",
+      "pronunciation": "/kʌt daʊn ɒn/",
+      "meaning": "To reduce the amount of something",
+      "banglaMeaning": "কমানো / হ্রাস করা",
+      "exampleSentence": "The doctor advised me to cut down on sugar."
+    },
+    {
+      "word": "Deal with",
+      "pronunciation": "/diːl wɪð/",
+      "meaning": "To handle or manage a situation",
+      "banglaMeaning": "মোকাবিলা করা",
+      "exampleSentence": "We must deal with this issue immediately."
+    },
+    {
+      "word": "End up",
+      "pronunciation": "/ɛnd ʌp/",
+      "meaning": "To finally be in a particular situation",
+      "banglaMeaning": "শেষ হওয়া / পরিণত হওয়া",
+      "exampleSentence": "If you keep spending like this, you'll end up in debt."
+    },
+    {
+      "word": "Figure out",
+      "pronunciation": "/ˈfɪɡər aʊt/",
+      "meaning": "To understand or solve something",
+      "banglaMeaning": "বুঝতে পারা / সমাধান করা",
+      "exampleSentence": "I can't figure out how to fix this machine."
+    },
+    {
+      "word": "Get along with",
+      "pronunciation": "/ɡɛt əˈlɒŋ wɪð/",
+      "meaning": "To have a good relationship with someone",
+      "banglaMeaning": "সুসম্পর্ক রাখা",
+      "exampleSentence": "She gets along with all her colleagues."
+    },
+    {
+      "word": "Give up",
+      "pronunciation": "/ɡɪv ʌp/",
+      "meaning": "To stop trying or quit",
+      "banglaMeaning": "ছেড়ে দেওয়া / হাল ছেড়ে দেওয়া",
+      "exampleSentence": "Never give up on your dreams."
+    },
+    {
+      "word": "Go through",
+      "pronunciation": "/ɡoʊ θruː/",
+      "meaning": "To experience or examine carefully",
+      "banglaMeaning": "অভিজ্ঞতা অর্জন করা / পরীক্ষা করা",
+      "exampleSentence": "We went through a difficult period last year."
+    },
+    {
+      "word": "Hold back",
+      "pronunciation": "/hoʊld bæk/",
+      "meaning": "To restrain or prevent from advancing",
+      "banglaMeaning": "সংযত করা / আটকে রাখা",
+      "exampleSentence": "She held back her tears during the speech."
+    },
+    {
+      "word": "Keep up with",
+      "pronunciation": "/kiːp ʌp wɪð/",
+      "meaning": "To stay at the same level or pace",
+      "banglaMeaning": "তাল মিলিয়ে চলা / সমান গতি বজায় রাখা",
+      "exampleSentence": "It's hard to keep up with the latest technology."
+    },
+    {
+      "word": "Look after",
+      "pronunciation": "/lʊk ˈæftər/",
+      "meaning": "To take care of someone or something",
+      "banglaMeaning": "দেখাশোনা করা",
+      "exampleSentence": "Can you look after my cat while I'm away?"
+    },
+    {
+      "word": "Look down on",
+      "pronunciation": "/lʊk daʊn ɒn/",
+      "meaning": "To consider someone as inferior",
+      "banglaMeaning": "ঘৃণা করা / ছোট করে দেখা",
+      "exampleSentence": "No one should look down on others because of their background."
+    },
+    {
+      "word": "Make up for",
+      "pronunciation": "/meɪk ʌp fɔːr/",
+      "meaning": "To compensate for something",
+      "banglaMeaning": "ক্ষতিপূরণ করা / পূরণ করা",
+      "exampleSentence": "Hard work can make up for lack of talent."
+    },
+    {
+      "word": "Pass out",
+      "pronunciation": "/pæs aʊt/",
+      "meaning": "To lose consciousness or distribute",
+      "banglaMeaning": "জ্ঞান হারানো / বিতরণ করা",
+      "exampleSentence": "The heat was so intense that he passed out."
+    },
+    {
+      "word": "Pick out",
+      "pronunciation": "/pɪk aʊt/",
+      "meaning": "To choose or identify",
+      "banglaMeaning": "বেছে নেওয়া / চিহ্নিত করা",
+      "exampleSentence": "Can you pick out the main idea from this paragraph?"
+    },
+    {
+      "word": "Point out",
+      "pronunciation": "/pɔɪnt aʊt/",
+      "meaning": "To draw attention to something",
+      "banglaMeaning": "ইঙ্গিত করা / নির্দেশ করা",
+      "exampleSentence": "The teacher pointed out the mistakes in my essay."
+    },
+    {
+      "word": "Put off",
+      "pronunciation": "/pʊt ɒf/",
+      "meaning": "To postpone or discourage",
+      "banglaMeaning": "স্থগিত রাখা / বিরত করা",
+      "exampleSentence": "Don't put off your homework until tomorrow."
+    },
+    {
+      "word": "Put up with",
+      "pronunciation": "/pʊt ʌp wɪð/",
+      "meaning": "To tolerate or endure",
+      "banglaMeaning": "সহ্য করা / বরদাস্ত করা",
+      "exampleSentence": "I cannot put up with this noise any longer."
+    },
+    {
+      "word": "Run out of",
+      "pronunciation": "/rʌn aʊt ɒv/",
+      "meaning": "To exhaust the supply of something",
+      "banglaMeaning": "ফুরিয়ে যাওয়া / শেষ হওয়া",
+      "exampleSentence": "We have run out of time for this discussion."
+    },
+    {
+      "word": "Set up",
+      "pronunciation": "/sɛt ʌp/",
+      "meaning": "To establish or arrange",
+      "banglaMeaning": "প্রতিষ্ঠা করা / সাজানো",
+      "exampleSentence": "They set up a new branch in Singapore."
+    },
+    {
+      "word": "Show off",
+      "pronunciation": "/ʃoʊ ɒf/",
+      "meaning": "To display proudly or boastfully",
+      "banglaMeaning": "দেখানো / বড়াই করা",
+      "exampleSentence": "He always shows off his new gadgets."
+    },
+    {
+      "word": "Stand out",
+      "pronunciation": "/stænd aʊt/",
+      "meaning": "To be noticeable or exceptional",
+      "banglaMeaning": "উল্লেখযোগ্য হওয়া / আলাদা হওয়া",
+      "exampleSentence": "Her talent makes her stand out from the crowd."
+    },
+    {
+      "word": "Take after",
+      "pronunciation": "/teɪk ˈæftər/",
+      "meaning": "To resemble a family member",
+      "banglaMeaning": "সাদৃশ্য থাকা / মতো হওয়া",
+      "exampleSentence": "She takes after her mother in both looks and personality."
+    },
+    {
+      "word": "Take over",
+      "pronunciation": "/teɪk ˈoʊvər/",
+      "meaning": "To assume control or responsibility",
+      "banglaMeaning": "দখল নেওয়া / দায়িত্ব নেওয়া",
+      "exampleSentence": "The new manager will take over next week."
+    },
+    {
+      "word": "Turn down",
+      "pronunciation": "/tɜːrn daʊn/",
+      "meaning": "To reject or refuse an offer",
+      "banglaMeaning": "প্রত্যাখ্যান করা",
+      "exampleSentence": "She turned down the job offer because of the low salary."
+    },
+    {
+      "word": "Turn up",
+      "pronunciation": "/tɜːrn ʌp/",
+      "meaning": "To arrive or appear unexpectedly",
+      "banglaMeaning": "হাজির হওয়া / উপস্থিত হওয়া",
+      "exampleSentence": "He turned up late for the interview."
+    },
+    {
+      "word": "Watch out for",
+      "pronunciation": "/wɒtʃ aʊt fɔːr/",
+      "meaning": "To be careful or alert about",
+      "banglaMeaning": "সতর্ক থাকা",
+      "exampleSentence": "Watch out for hidden costs in the contract."
+    },
+    {
+      "word": "Break into",
+      "pronunciation": "/breɪk ˈɪntuː/",
+      "meaning": "To enter forcibly or start suddenly",
+      "banglaMeaning": "ভেঙে ঢোকা / শুরু করা",
+      "exampleSentence": "She is trying to break into the film industry."
+    },
+    {
+      "word": "Catch up on",
+      "pronunciation": "/kætʃ ʌp ɒn/",
+      "meaning": "To do something that has been delayed",
+      "banglaMeaning": "পিছিয়ে পড়া কাজ করা",
+      "exampleSentence": "I need to catch up on my reading this weekend."
+    },
+    {
+      "word": "Drop out of",
+      "pronunciation": "/drɒp aʊt ɒv/",
+      "meaning": "To leave school or a course before completion",
+      "banglaMeaning": "ঝরে পড়া / ছেড়ে দেওয়া",
+      "exampleSentence": "He dropped out of college to start a business."
+    },
+    {
+      "word": "Fall behind",
+      "pronunciation": "/fɔːl bɪˈhaɪnd/",
+      "meaning": "To lag behind others in progress",
+      "banglaMeaning": "পিছিয়ে পড়া",
+      "exampleSentence": "If you miss classes, you'll fall behind in your studies."
+    },
+    {
+      "word": "Get over",
+      "pronunciation": "/ɡɛt ˈoʊvər/",
+      "meaning": "To recover from an illness or shock",
+      "banglaMeaning": "মুক্ত হওয়া / কাটিয়ে ওঠা",
+      "exampleSentence": "It took her months to get over the accident."
+    },
+    {
+      "word": "Go ahead with",
+      "pronunciation": "/ɡoʊ əˈhɛd wɪð/",
+      "meaning": "To proceed with a plan",
+      "banglaMeaning": "এগিয়ে যাওয়া / সম্পন্ন করা",
+      "exampleSentence": "The board decided to go ahead with the project."
+    },
+    {
+      "word": "Hold on to",
+      "pronunciation": "/hoʊld ɒn tuː/",
+      "meaning": "To keep or maintain possession",
+      "banglaMeaning": "আঁকড়ে থাকা / ধরে রাখা",
+      "exampleSentence": "Hold on to your dreams no matter what."
+    },
+    {
+      "word": "Live up to",
+      "pronunciation": "/lɪv ʌp tuː/",
+      "meaning": "To meet expectations or standards",
+      "banglaMeaning": "প্রত্যাশা পূরণ করা",
+      "exampleSentence": "The product did not live up to its promises."
+    },
+    {
+      "word": "Look forward to",
+      "pronunciation": "/lʊk ˈfɔːrwərd tuː/",
+      "meaning": "To anticipate with pleasure",
+      "banglaMeaning": "উৎসুক হওয়া / প্রতীক্ষা করা",
+      "exampleSentence": "I look forward to meeting you next week."
+    },
+    {
+      "word": "Make out",
+      "pronunciation": "/meɪk aʊt/",
+      "meaning": "To understand or see with difficulty",
+      "banglaMeaning": "বুঝতে পারা / দেখা",
+      "exampleSentence": "I couldn't make out what he was saying in the noisy room."
+    },
+    {
+      "word": "Mess up",
+      "pronunciation": "/mɛs ʌp/",
+      "meaning": "To make a mistake or spoil something",
+      "banglaMeaning": "ভুল করা / নষ্ট করা",
+      "exampleSentence": "I messed up the presentation and felt embarrassed."
+    },
+    {
+      "word": "Narrow down",
+      "pronunciation": "/ˈnæroʊ daʊn/",
+      "meaning": "To reduce the number of options",
+      "banglaMeaning": "সংকুচিত করা / সীমিত করা",
+      "exampleSentence": "We need to narrow down the list of candidates."
+    },
+    {
+      "word": "Pass away",
+      "pronunciation": "/pæs əˈweɪ/",
+      "meaning": "To die (polite expression)",
+      "banglaMeaning": "মৃত্যু হওয়া / ইহলোক ত্যাগ করা",
+      "exampleSentence": "Her grandfather passed away peacefully last night."
+    },
+    {
+      "word": "Pull off",
+      "pronunciation": "/pʊl ɒf/",
+      "meaning": "To succeed in doing something difficult",
+      "banglaMeaning": "সফলভাবে করা",
+      "exampleSentence": "He pulled off an amazing comeback victory."
+    },
+    {
+      "word": "Put forward",
+      "pronunciation": "/pʊt ˈfɔːrwərd/",
+      "meaning": "To propose or suggest an idea",
+      "banglaMeaning": "প্রস্তাব করা / উত্থাপন করা",
+      "exampleSentence": "She put forward a brilliant proposal."
+    },
+    {
+      "word": "Rely on",
+      "pronunciation": "/rɪˈlaɪ ɒn/",
+      "meaning": "To depend on someone or something",
+      "banglaMeaning": "নির্ভর করা",
+      "exampleSentence": "You can always rely on her for honest advice."
+    },
+    {
+      "word": "Rule out",
+      "pronunciation": "/ruːl aʊt/",
+      "meaning": "To eliminate or exclude a possibility",
+      "banglaMeaning": "বাদ দেওয়া / অসম্ভব বলে ধরা",
+      "exampleSentence": "The police cannot rule out foul play."
+    },
+    {
+      "word": "Settle down",
+      "pronunciation": "/ˈsɛtəl daʊn/",
+      "meaning": "To start living a stable life",
+      "banglaMeaning": "স্থির হওয়া / সংসারী হওয়া",
+      "exampleSentence": "After traveling for years, he decided to settle down."
+    },
+    {
+      "word": "Show up",
+      "pronunciation": "/ʃoʊ ʌp/",
+      "meaning": "To arrive or appear",
+      "banglaMeaning": "উপস্থিত হওয়া / হাজির হওয়া",
+      "exampleSentence": "Only a few people showed up at the event."
+    },
+    {
+      "word": "Sort out",
+      "pronunciation": "/sɔːrt aʊt/",
+      "meaning": "To resolve or organize",
+      "banglaMeaning": "সমাধান করা / সাজানো",
+      "exampleSentence": "We need to sort out the budget issues first."
+    },
+    {
+      "word": "Speak up",
+      "pronunciation": "/spiːk ʌp/",
+      "meaning": "To express opinions boldly or louder",
+      "banglaMeaning": "স্পষ্টভাবে বলা / জোরে বলা",
+      "exampleSentence": "If you disagree, you should speak up."
+    },
+    {
+      "word": "Sum up",
+      "pronunciation": "/sʌm ʌp/",
+      "meaning": "To summarize briefly",
+      "banglaMeaning": "সংক্ষেপে বলা / সারসংক্ষেপ করা",
+      "exampleSentence": "To sum up, the project was a great success."
+    },
+    {
+      "word": "Take off",
+      "pronunciation": "/teɪk ɒf/",
+      "meaning": "To leave the ground or become successful",
+      "banglaMeaning": "উড়াল দেওয়া / সফল হওয়া",
+      "exampleSentence": "His career really took off after the award."
+    },
+    {
+      "word": "Tear down",
+      "pronunciation": "/tɛər daʊn/",
+      "meaning": "To demolish or destroy",
+      "banglaMeaning": "ভেঙে ফেলা / ধ্বংস করা",
+      "exampleSentence": "They plan to tear down the old building."
+    },
+    {
+      "word": "Think over",
+      "pronunciation": "/θɪŋk ˈoʊvər/",
+      "meaning": "To consider carefully",
+      "banglaMeaning": "ভেবে দেখা / বিবেচনা করা",
+      "exampleSentence": "Let me think over your offer before I decide."
+    },
+    {
+      "word": "Try on",
+      "pronunciation": "/traɪ ɒn/",
+      "meaning": "To test clothing for fit",
+      "banglaMeaning": "পরীক্ষা করে দেখা / পরে দেখা",
+      "exampleSentence": "You should try on the dress before buying it."
+    },
+    {
+      "word": "Use up",
+      "pronunciation": "/juːz ʌp/",
+      "meaning": "To consume entirely",
+      "banglaMeaning": "শেষ করে ফেলা / ফুরিয়ে যাওয়া",
+      "exampleSentence": "We used up all the paint on this project."
+    },
+    {
+      "word": "Work out",
+      "pronunciation": "/wɜːrk aʊt/",
+      "meaning": "To solve, exercise, or succeed",
+      "banglaMeaning": "সমাধান করা / ব্যায়াম করা / সফল হওয়া",
+      "exampleSentence": "Everything will work out in the end."
+    },
+    {
+      "word": "Back up",
+      "pronunciation": "/bæk ʌp/",
+      "meaning": "To support or make a copy",
+      "banglaMeaning": "সমর্থন করা / ব্যাকআপ নেওয়া",
+      "exampleSentence": "You should back up your files regularly."
+    },
+    {
+      "word": "Blow up",
+      "pronunciation": "/bloʊ ʌp/",
+      "meaning": "To explode or become very angry",
+      "banglaMeaning": "বিস্ফোরিত হওয়া / রেগে যাওয়া",
+      "exampleSentence": "He blew up when he heard the news."
+    },
+    {
+      "word": "Break out",
+      "pronunciation": "/breɪk aʊt/",
+      "meaning": "To start suddenly or escape",
+      "banglaMeaning": "ছড়িয়ে পড়া / পালানো",
+      "exampleSentence": "A fire broke out in the factory last night."
+    },
+    {
+      "word": "Bring about",
+      "pronunciation": "/brɪŋ əˈbaʊt/",
+      "meaning": "To cause something to happen",
+      "banglaMeaning": "ঘটানো / সূচনা করা",
+      "exampleSentence": "The new policy brought about significant changes."
+    },
+    {
+      "word": "Call for",
+      "pronunciation": "/kɔːl fɔːr/",
+      "meaning": "To demand or require",
+      "banglaMeaning": "দাবি করা / প্রয়োজন হওয়া",
+      "exampleSentence": "The crisis calls for immediate action."
+    },
+    {
+      "word": "Carry on",
+      "pronunciation": "/ˈkæri ɒn/",
+      "meaning": "To continue doing something",
+      "banglaMeaning": "চালিয়ে যাওয়া",
+      "exampleSentence": "Carry on with your work while I am away."
+    },
+    {
+      "word": "Come about",
+      "pronunciation": "/kʌm əˈbaʊt/",
+      "meaning": "To happen or occur",
+      "banglaMeaning": "ঘটে যাওয়া",
+      "exampleSentence": "How did this situation come about?"
+    },
+    {
+      "word": "Cut off",
+      "pronunciation": "/kʌt ɒf/",
+      "meaning": "To disconnect or isolate",
+      "banglaMeaning": "বিচ্ছিন্ন করা / কেটে দেওয়া",
+      "exampleSentence": "The village was cut off by the flood."
+    },
+    {
+      "word": "Do away with",
+      "pronunciation": "/duː əˈweɪ wɪð/",
+      "meaning": "To abolish or eliminate",
+      "banglaMeaning": "বাতিল করা / দূর করা",
+      "exampleSentence": "The company did away with the old policy."
+    },
+    {
+      "word": "Fill in for",
+      "pronunciation": "/fɪl ɪn fɔːr/",
+      "meaning": "To temporarily replace someone",
+      "banglaMeaning": "স্থলাভিষিক্ত হওয়া",
+      "exampleSentence": "Can you fill in for me at the meeting?"
+    },
+    {
+      "word": "Get through",
+      "pronunciation": "/ɡɛt θruː/",
+      "meaning": "To survive or complete something",
+      "banglaMeaning": "পার হয়ে যাওয়া / সম্পন্ন করা",
+      "exampleSentence": "I don't know how I'll get through this week."
+    },
+    {
+      "word": "Go over",
+      "pronunciation": "/ɡoʊ ˈoʊvər/",
+      "meaning": "To review or examine",
+      "banglaMeaning": "পর্যালোচনা করা",
+      "exampleSentence": "Let's go over the main points again."
+    },
+    {
+      "word": "Hand in",
+      "pronunciation": "/hænd ɪn/",
+      "meaning": "To submit something",
+      "banglaMeaning": "জমা দেওয়া",
+      "exampleSentence": "Please hand in your assignments by Friday."
+    },
+    {
+      "word": "Keep on",
+      "pronunciation": "/kiːp ɒn/",
+      "meaning": "To continue doing something",
+      "banglaMeaning": "চালিয়ে যাওয়া",
+      "exampleSentence": "Keep on trying until you succeed."
+    },
+    {
+      "word": "Lay off",
+      "pronunciation": "/leɪ ɒf/",
+      "meaning": "To dismiss employees temporarily",
+      "banglaMeaning": "ছাঁটাই করা / বরখাস্ত করা",
+      "exampleSentence": "The company had to lay off 200 workers."
+    },
+    {
+      "word": "Leave out",
+      "pronunciation": "/liːv aʊt/",
+      "meaning": "To omit or exclude",
+      "banglaMeaning": "বাদ দেওয়া / বর্জন করা",
+      "exampleSentence": "Make sure you don't leave out any important details."
+    },
+    {
+      "word": "Let down",
+      "pronunciation": "/lɛt daʊn/",
+      "meaning": "To disappoint someone",
+      "banglaMeaning": "হতাশ করা / নিরাশ করা",
+      "exampleSentence": "I promised to help, and I won't let you down."
+    },
+    {
+      "word": "Make up",
+      "pronunciation": "/meɪk ʌp/",
+      "meaning": "To invent or reconcile",
+      "banglaMeaning": "বানানো / মিটমাট করা",
+      "exampleSentence": "They had a fight but later made up."
+    },
+    {
+      "word": "Open up",
+      "pronunciation": "/ˈoʊpən ʌp/",
+      "meaning": "To reveal feelings or become available",
+      "banglaMeaning": "খোলা / মন খোলা",
+      "exampleSentence": "It took her a long time to open up to me."
+    },
+    {
+      "word": "Pick up",
+      "pronunciation": "/pɪk ʌp/",
+      "meaning": "To collect or learn easily",
+      "banglaMeaning": "তুলে নেওয়া / শেখা",
+      "exampleSentence": "She picked up Spanish quickly during her trip."
+    },
+    {
+      "word": "Plug in",
+      "pronunciation": "/plʌɡ ɪn/",
+      "meaning": "To connect to an electrical outlet",
+      "banglaMeaning": "সংযোগ দেওয়া / প্লাগ করা",
+      "exampleSentence": "Plug in the charger to power up your laptop."
+    },
+    {
+      "word": "Put out",
+      "pronunciation": "/pʊt aʊt/",
+      "meaning": "To extinguish or publish",
+      "banglaMeaning": "নেভানো / প্রকাশ করা",
+      "exampleSentence": "The fire department quickly put out the fire."
+    },
+    {
+      "word": "Run into",
+      "pronunciation": "/rʌn ˈɪntuː/",
+      "meaning": "To meet by chance or encounter",
+      "banglaMeaning": "দেখা হওয়া / সম্মুখীন হওয়া",
+      "exampleSentence": "I ran into an old friend at the mall."
+    },
+    {
+      "word": "Set off",
+      "pronunciation": "/sɛt ɒf/",
+      "meaning": "To start a journey or cause explosion",
+      "banglaMeaning": "যাত্রা শুরু করা / বিস্ফোরণ ঘটানো",
+      "exampleSentence": "We set off for the airport at dawn."
+    },
+    {
+      "word": "Settle for",
+      "pronunciation": "/ˈsɛtəl fɔːr/",
+      "meaning": "To accept something less than ideal",
+      "banglaMeaning": "সন্তুষ্ট থাকা / মেনে নেওয়া",
+      "exampleSentence": "Don't settle for less than you deserve."
+    },
+    {
+      "word": "Stand for",
+      "pronunciation": "/stænd fɔːr/",
+      "meaning": "To represent or tolerate",
+      "banglaMeaning": "প্রতিনিধিত্ব করা / সহ্য করা",
+      "exampleSentence": "What does the acronym NGO stand for?"
+    },
+    {
+      "word": "Stick to",
+      "pronunciation": "/stɪk tuː/",
+      "meaning": "To adhere or remain committed",
+      "banglaMeaning": "অনুসরণ করা / লেগে থাকা",
+      "exampleSentence": "Stick to your principles, no matter what."
+    },
+    {
+      "word": "Take on",
+      "pronunciation": "/teɪk ɒn/",
+      "meaning": "To accept a challenge or responsibility",
+      "banglaMeaning": "দায়িত্ব নেওয়া / মোকাবিলা করা",
+      "exampleSentence": "She decided to take on the leadership role."
+    },
+    {
+      "word": "Tell apart",
+      "pronunciation": "/tɛl əˈpɑːrt/",
+      "meaning": "To distinguish between two things",
+      "banglaMeaning": "পার্থক্য করা / আলাদা করা",
+      "exampleSentence": "The twins are so similar that I can't tell them apart."
+    },
+    {
+      "word": "Think through",
+      "pronunciation": "/θɪŋk θruː/",
+      "meaning": "To consider all aspects carefully",
+      "banglaMeaning": "ভেবে দেখা / বিবেচনা করা",
+      "exampleSentence": "Think through the consequences before you act."
+    },
+    {
+      "word": "Throw away",
+      "pronunciation": "/θroʊ əˈweɪ/",
+      "meaning": "To discard or get rid of",
+      "banglaMeaning": "ফেলে দেওয়া / বর্জন করা",
+      "exampleSentence": "Don't throw away the receipt."
+    },
+    {
+      "word": "Warm up",
+      "pronunciation": "/wɔːrm ʌp/",
+      "meaning": "To prepare for physical activity",
+      "banglaMeaning": "ওয়ার্ম আপ করা / গা গরম করা",
+      "exampleSentence": "Always warm up before exercising."
+    },
+    {
+      "word": "Wind up",
+      "pronunciation": "/waɪnd ʌp/",
+      "meaning": "To end up or conclude",
+      "banglaMeaning": "শেষ হওয়া / সমাপ্ত করা",
+      "exampleSentence": "He wound up moving to a different city."
+    },
+    {
+      "word": "Account for",
+      "pronunciation": "/əˈkaʊnt fɔːr/",
+      "meaning": "To explain or be the reason for",
+      "banglaMeaning": "ব্যাখ্যা করা / কারণ হওয়া",
+      "exampleSentence": "Bad weather accounted for the delay."
+    },
+    {
+      "word": "Bail out",
+      "pronunciation": "/beɪl aʊt/",
+      "meaning": "To rescue from financial trouble",
+      "banglaMeaning": "উদ্ধার করা / বেইল আউট করা",
+      "exampleSentence": "The government bailed out the struggling bank."
+    },
+    {
+      "word": "Brush up on",
+      "pronunciation": "/brʌʃ ʌp ɒn/",
+      "meaning": "To refresh one's knowledge or skill",
+      "banglaMeaning": "ঝালাই করা / পুনরায় শেখা",
+      "exampleSentence": "I need to brush up on my French before the trip."
+    },
+    {
+      "word": "Clamp down on",
+      "pronunciation": "/klæmp daʊn ɒn/",
+      "meaning": "To take strict action against",
+      "banglaMeaning": "কঠোর ব্যবস্থা নেওয়া",
+      "exampleSentence": "The government is clamping down on corruption."
+    },
+    {
+      "word": "Dwell on",
+      "pronunciation": "/dwɛl ɒn/",
+      "meaning": "To think or talk about something at length",
+      "banglaMeaning": "বিস্তারিত বলা / চিন্তা করা",
+      "exampleSentence": "Don't dwell on past mistakes."
+    },
+    {
+      "word": "Edge out",
+      "pronunciation": "/ɛdʒ aʊt/",
+      "meaning": "To defeat narrowly",
+      "banglaMeaning": "সামান্য ব্যবধানে হারানো",
+      "exampleSentence": "The team edged out their rivals in the final match."
+    },
+    {
+      "word": "Fathom out",
+      "pronunciation": "/ˈfæðəm aʊt/",
+      "meaning": "To understand something difficult",
+      "banglaMeaning": "বুঝতে পারা / উপলব্ধি করা",
+      "exampleSentence": "I can't fathom out why she left so suddenly."
+    },
+    {
+      "word": "Gear up for",
+      "pronunciation": "/ɡɪər ʌp fɔːr/",
+      "meaning": "To prepare for something",
+      "banglaMeaning": "প্রস্তুতি নেওয়া",
+      "exampleSentence": "The company is gearing up for the product launch."
+    },
+    {
+      "word": "Hinge on",
+      "pronunciation": "/hɪndʒ ɒn/",
+      "meaning": "To depend entirely on",
+      "banglaMeaning": "নির্ভর করা / ঝুলে থাকা",
+      "exampleSentence": "The success of the project hinges on your leadership."
+    },
+    {
+      "word": "Iron out",
+      "pronunciation": "/ˈaɪərn aʊt/",
+      "meaning": "To resolve problems or difficulties",
+      "banglaMeaning": "সমাধান করা / মিটিয়ে ফেলা",
+      "exampleSentence": "We need to iron out the details of the agreement."
+    },
+    {
+      "word": "Jot down",
+      "pronunciation": "/dʒɒt daʊn/",
+      "meaning": "To write quickly",
+      "banglaMeaning": "তাড়াতাড়ি লেখা / টুকে নেওয়া",
+      "exampleSentence": "Let me jot down your phone number."
+    },
+    {
+      "word": "Key in",
+      "pronunciation": "/kiː ɪn/",
+      "meaning": "To enter data using a keyboard",
+      "banglaMeaning": "টাইপ করা / কী-ইন করা",
+      "exampleSentence": "Please key in your password to log in."
+    },
+    {
+      "word": "Lash out at",
+      "pronunciation": "/læʃ aʊt æt/",
+      "meaning": "To attack verbally or physically",
+      "banglaMeaning": "আক্রমণ করা / গালাগালি করা",
+      "exampleSentence": "He lashed out at his critics during the speech."
+    },
+    {
+      "word": "Mull over",
+      "pronunciation": "/mʌl ˈoʊvər/",
+      "meaning": "To think about carefully",
+      "banglaMeaning": "গভীরভাবে ভেবে দেখা",
+      "exampleSentence": "I need some time to mull over your proposal."
+    },
+    {
+      "word": "Pore over",
+      "pronunciation": "/pɔːr ˈoʊvər/",
+      "meaning": "To study or read very carefully",
+      "banglaMeaning": "মনোযোগ দিয়ে পড়া / গভীরভাবে দেখা",
+      "exampleSentence": "She pored over the documents all night."
+    },
+    {
+      "word": "Phase out",
+      "pronunciation": "/feɪz aʊt/",
+      "meaning": "To gradually discontinue",
+      "banglaMeaning": "ধীরে ধীরে বন্ধ করা",
+      "exampleSentence": "The company is phasing out plastic packaging."
+    },
+    {
+      "word": "Reel off",
+      "pronunciation": "/riːl ɒf/",
+      "meaning": "To recite quickly without effort",
+      "banglaMeaning": "দ্রুত বলে যাওয়া / গড়গড় করে বলা",
+      "exampleSentence": "He reeled off a list of all the capital cities."
+    },
+    {
+      "word": "Scale up",
+      "pronunciation": "/skeɪl ʌp/",
+      "meaning": "To increase in size or volume",
+      "banglaMeaning": "বাড়ানো / সম্প্রসারণ করা",
+      "exampleSentence": "We plan to scale up production next year."
+    },
+    {
+      "word": "Smooth over",
+      "pronunciation": "/smuːð ˈoʊvər/",
+      "meaning": "To make a problem seem less serious",
+      "banglaMeaning": "মসৃণ করা / সমাধান করা",
+      "exampleSentence": "She tried to smooth over the conflict between them."
+    },
+    {
+      "word": "Taper off",
+      "pronunciation": "/ˈteɪpər ɒf/",
+      "meaning": "To gradually decrease",
+      "banglaMeaning": "ধীরে ধীরে কমানো / হ্রাস পাওয়া",
+      "exampleSentence": "The rain began to taper off in the evening."
+    },
+    {
+      "word": "Team up with",
+      "pronunciation": "/tiːm ʌp wɪð/",
+      "meaning": "To collaborate or join forces",
+      "banglaMeaning": "দলবদ্ধ হওয়া / সহযোগিতা করা",
+      "exampleSentence": "We teamed up with a local NGO for the project."
+    },
+    {
+      "word": "Veer off",
+      "pronunciation": "/vɪər ɒf/",
+      "meaning": "To change direction suddenly",
+      "banglaMeaning": "পথ পরিবর্তন করা / দিক বদলানো",
+      "exampleSentence": "The conversation veered off into a different topic."
+    },
+    {
+      "word": "Weed out",
+      "pronunciation": "/wiːd aʊt/",
+      "meaning": "To remove unwanted elements",
+      "banglaMeaning": "বাছাই করে বের করা / অপসারণ করা",
+      "exampleSentence": "The interview process helps weed out unsuitable candidates."
+    },
+    {
+      "word": "Zero in on",
+      "pronunciation": "/ˈzɪroʊ ɪn ɒn/",
+      "meaning": "To focus closely on something",
+      "banglaMeaning": "লক্ষ্য করা / মনোনিবেশ করা",
+      "exampleSentence": "The detective zeroed in on the main suspect."
+    },
+    {
+      "word": "Zip through",
+      "pronunciation": "/zɪp θruː/",
+      "meaning": "To move or do something very quickly",
+      "banglaMeaning": "দ্রুত শেষ করা / ঝটপট করা",
+      "exampleSentence": "He zipped through the entire book in one day."
+    }
+  ]
+}

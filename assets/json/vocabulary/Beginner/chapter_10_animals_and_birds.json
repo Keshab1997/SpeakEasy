@@ -1,12 +1,182 @@
-{"chapter": 10, "level": "Beginner", "title": "Animals and Birds", "words": [
-  {"word": "Dog", "pronunciation": "/dɒɡ/", "meaning": "A common pet animal", "banglaMeaning": "কুকুর", "exampleSentence": "The dog is barking."},
-  {"word": "Cat", "pronunciation": "/kæt/", "meaning": "A small furry pet", "banglaMeaning": "বিড়াল", "exampleSentence": "The cat is sleeping."},
-  {"word": "Cow", "pronunciation": "/kaʊ/", "meaning": "A farm animal that gives milk", "banglaMeaning": "গরু", "exampleSentence": "The cow gives us milk."},
-  {"word": "Tiger", "pronunciation": "/ˈtaɪɡər/", "meaning": "A large wild striped cat", "banglaMeaning": "বাঘ", "exampleSentence": "The Royal Bengal Tiger is our national animal."},
-  {"word": "Lion", "pronunciation": "/ˈlaɪən/", "meaning": "King of the jungle", "banglaMeaning": "সিংহ", "exampleSentence": "The lion roared loudly."},
-  {"word": "Eagle", "pronunciation": "/ˈiːɡəl/", "meaning": "A large bird of prey", "banglaMeaning": "ঈগল", "exampleSentence": "The eagle flew high in the sky."},
-  {"word": "Crow", "pronunciation": "/kroʊ/", "meaning": "A common black bird", "banglaMeaning": "কাক", "exampleSentence": "The crow is sitting on the tree."},
-  {"word": "Fish", "pronunciation": "/fɪʃ/", "meaning": "An aquatic animal", "banglaMeaning": "মাছ", "exampleSentence": "Fish swim in water."},
-  {"word": "Snake", "pronunciation": "/sneɪk/", "meaning": "A reptile without legs", "banglaMeaning": "সাপ", "exampleSentence": "Be careful of snakes in the forest."},
-  {"word": "Butterfly", "pronunciation": "/ˈbʌtərflaɪ/", "meaning": "A colorful flying insect", "banglaMeaning": "প্রজাপতি", "exampleSentence": "A butterfly sat on the flower."}
-]}
+{
+  "chapter": 10,
+  "level": "Beginner",
+  "title": "Animals and Birds",
+  "words": [
+    {
+      "word": "Dog",
+      "pronunciation": "/dɒɡ/",
+      "meaning": "A common pet animal",
+      "banglaMeaning": "কুকুর",
+      "exampleSentence": "The dog is barking."
+    },
+    {
+      "word": "Cat",
+      "pronunciation": "/kæt/",
+      "meaning": "A small furry pet",
+      "banglaMeaning": "বিড়াল",
+      "exampleSentence": "The cat is sleeping."
+    },
+    {
+      "word": "Cow",
+      "pronunciation": "/kaʊ/",
+      "meaning": "A farm animal that gives milk",
+      "banglaMeaning": "গরু",
+      "exampleSentence": "The cow gives us milk."
+    },
+    {
+      "word": "Tiger",
+      "pronunciation": "/ˈtaɪɡər/",
+      "meaning": "A large wild striped cat",
+      "banglaMeaning": "বাঘ",
+      "exampleSentence": "The Royal Bengal Tiger is our national animal."
+    },
+    {
+      "word": "Lion",
+      "pronunciation": "/ˈlaɪən/",
+      "meaning": "King of the jungle",
+      "banglaMeaning": "সিংহ",
+      "exampleSentence": "The lion roared loudly."
+    },
+    {
+      "word": "Eagle",
+      "pronunciation": "/ˈiːɡəl/",
+      "meaning": "A large bird of prey",
+      "banglaMeaning": "ঈগল",
+      "exampleSentence": "The eagle flew high in the sky."
+    },
+    {
+      "word": "Crow",
+      "pronunciation": "/kroʊ/",
+      "meaning": "A common black bird",
+      "banglaMeaning": "কাক",
+      "exampleSentence": "The crow is sitting on the tree."
+    },
+    {
+      "word": "Fish",
+      "pronunciation": "/fɪʃ/",
+      "meaning": "An aquatic animal",
+      "banglaMeaning": "মাছ",
+      "exampleSentence": "Fish swim in water."
+    },
+    {
+      "word": "Snake",
+      "pronunciation": "/sneɪk/",
+      "meaning": "A reptile without legs",
+      "banglaMeaning": "সাপ",
+      "exampleSentence": "Be careful of snakes in the forest."
+    },
+    {
+      "word": "Butterfly",
+      "pronunciation": "/ˈbʌtərflaɪ/",
+      "meaning": "A colorful flying insect",
+      "banglaMeaning": "প্রজাপতি",
+      "exampleSentence": "A butterfly sat on the flower."
+    },
+    {
+      "word": "Hen",
+      "pronunciation": "/hɛn/",
+      "meaning": "A female chicken",
+      "banglaMeaning": "মুরগি",
+      "exampleSentence": "The hen laid an egg."
+    },
+    {
+      "word": "Goat",
+      "pronunciation": "/ɡoʊt/",
+      "meaning": "A farm animal with horns",
+      "banglaMeaning": "ছাগল",
+      "exampleSentence": "The goat is eating grass."
+    },
+    {
+      "word": "Duck",
+      "pronunciation": "/dʌk/",
+      "meaning": "A water bird",
+      "banglaMeaning": "হাঁস",
+      "exampleSentence": "The duck is swimming in the pond."
+    },
+    {
+      "word": "Horse",
+      "pronunciation": "/hɔːrs/",
+      "meaning": "A large animal used for riding",
+      "banglaMeaning": "ঘোড়া",
+      "exampleSentence": "The horse runs very fast."
+    },
+    {
+      "word": "Elephant",
+      "pronunciation": "/ˈɛlɪfənt/",
+      "meaning": "The largest land animal",
+      "banglaMeaning": "হাতি",
+      "exampleSentence": "The elephant has a long trunk."
+    },
+    {
+      "word": "Monkey",
+      "pronunciation": "/ˈmʌŋki/",
+      "meaning": "A clever animal that climbs trees",
+      "banglaMeaning": "বানর",
+      "exampleSentence": "The monkey is eating a banana."
+    },
+    {
+      "word": "Bear",
+      "pronunciation": "/bɛər/",
+      "meaning": "A large strong animal",
+      "banglaMeaning": "ভালুক",
+      "exampleSentence": "The bear lives in the forest."
+    },
+    {
+      "word": "Deer",
+      "pronunciation": "/dɪər/",
+      "meaning": "A graceful animal with antlers",
+      "banglaMeaning": "হরিণ",
+      "exampleSentence": "The deer ran through the forest."
+    },
+    {
+      "word": "Ox",
+      "pronunciation": "/ɒks/",
+      "meaning": "A male cow used for work",
+      "banglaMeaning": "ষাঁড় / বলদ",
+      "exampleSentence": "The ox plows the field."
+    },
+    {
+      "word": "Parrot",
+      "pronunciation": "/ˈpærət/",
+      "meaning": "A colorful bird that can talk",
+      "banglaMeaning": "তোতা পাখি",
+      "exampleSentence": "The parrot can say hello."
+    },
+    {
+      "word": "Owl",
+      "pronunciation": "/aʊl/",
+      "meaning": "A bird that stays awake at night",
+      "banglaMeaning": "পেঁচা",
+      "exampleSentence": "The owl hunts at night."
+    },
+    {
+      "word": "Sparrow",
+      "pronunciation": "/ˈspæroʊ/",
+      "meaning": "A small common bird",
+      "banglaMeaning": "চড়ুই",
+      "exampleSentence": "Sparrows are found everywhere."
+    },
+    {
+      "word": "Pigeon",
+      "pronunciation": "/ˈpɪdʒɪn/",
+      "meaning": "A medium-sized bird common in cities",
+      "banglaMeaning": "পায়রা / কবুতর",
+      "exampleSentence": "People feed pigeons in the park."
+    },
+    {
+      "word": "Cuckoo",
+      "pronunciation": "/ˈkʊkuː/",
+      "meaning": "A bird known for its song",
+      "banglaMeaning": "কোকিল",
+      "exampleSentence": "I hear the cuckoo singing."
+    },
+    {
+      "word": "Peacock",
+      "pronunciation": "/ˈpiːkɒk/",
+      "meaning": "A large colorful bird",
+      "banglaMeaning": "ময়ূর",
+      "exampleSentence": "The peacock is the national bird of India."
+    }
+  ]
+}

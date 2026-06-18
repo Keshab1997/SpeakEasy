@@ -1,12 +1,182 @@
-{"chapter": 9, "level": "Beginner", "title": "Fruits and Vegetables", "words": [
-  {"word": "Apple", "pronunciation": "/ˈæpəl/", "meaning": "A round red or green fruit", "banglaMeaning": "আপেল", "exampleSentence": "An apple a day keeps the doctor away."},
-  {"word": "Mango", "pronunciation": "/ˈmæŋɡoʊ/", "meaning": "A sweet tropical fruit", "banglaMeaning": "আম", "exampleSentence": "Mango is the national fruit of Bangladesh."},
-  {"word": "Banana", "pronunciation": "/bəˈnɑːnə/", "meaning": "A long yellow fruit", "banglaMeaning": "কলা", "exampleSentence": "Monkeys love to eat bananas."},
-  {"word": "Orange", "pronunciation": "/ˈɔːrɪndʒ/", "meaning": "A citrus fruit", "banglaMeaning": "কমলা", "exampleSentence": "Oranges are rich in vitamin C."},
-  {"word": "Potato", "pronunciation": "/pəˈteɪtoʊ/", "meaning": "A common root vegetable", "banglaMeaning": "আলু", "exampleSentence": "We cook potato curry every day."},
-  {"word": "Tomato", "pronunciation": "/təˈmɑːtoʊ/", "meaning": "A red juicy vegetable/fruit", "banglaMeaning": "টমেটো", "exampleSentence": "Tomatoes are used in salad."},
-  {"word": "Onion", "pronunciation": "/ˈʌnjən/", "meaning": "A vegetable with a strong smell", "banglaMeaning": "পেঁয়াজ", "exampleSentence": "Onion is used in most curries."},
-  {"word": "Lemon", "pronunciation": "/ˈlemən/", "meaning": "A sour yellow citrus fruit", "banglaMeaning": "লেবু", "exampleSentence": "Squeeze a lemon into the water."},
-  {"word": "Guava", "pronunciation": "/ˈɡwɑːvə/", "meaning": "A tropical fruit", "banglaMeaning": "পেয়ারা", "exampleSentence": "I love eating guava."},
-  {"word": "Pumpkin", "pronunciation": "/ˈpʌmpkɪn/", "meaning": "A large orange vegetable", "banglaMeaning": "কুমড়া", "exampleSentence": "Pumpkin soup is delicious."}
-]}
+{
+  "chapter": 9,
+  "level": "Beginner",
+  "title": "Fruits and Vegetables",
+  "words": [
+    {
+      "word": "Apple",
+      "pronunciation": "/ˈæpəl/",
+      "meaning": "A round red or green fruit",
+      "banglaMeaning": "আপেল",
+      "exampleSentence": "An apple a day keeps the doctor away."
+    },
+    {
+      "word": "Mango",
+      "pronunciation": "/ˈmæŋɡoʊ/",
+      "meaning": "A sweet tropical fruit",
+      "banglaMeaning": "আম",
+      "exampleSentence": "Mango is the national fruit of Bangladesh."
+    },
+    {
+      "word": "Banana",
+      "pronunciation": "/bəˈnɑːnə/",
+      "meaning": "A long yellow fruit",
+      "banglaMeaning": "কলা",
+      "exampleSentence": "Monkeys love to eat bananas."
+    },
+    {
+      "word": "Orange",
+      "pronunciation": "/ˈɔːrɪndʒ/",
+      "meaning": "A citrus fruit",
+      "banglaMeaning": "কমলা",
+      "exampleSentence": "Oranges are rich in vitamin C."
+    },
+    {
+      "word": "Potato",
+      "pronunciation": "/pəˈteɪtoʊ/",
+      "meaning": "A common root vegetable",
+      "banglaMeaning": "আলু",
+      "exampleSentence": "We cook potato curry every day."
+    },
+    {
+      "word": "Tomato",
+      "pronunciation": "/təˈmɑːtoʊ/",
+      "meaning": "A red juicy vegetable/fruit",
+      "banglaMeaning": "টমেটো",
+      "exampleSentence": "Tomatoes are used in salad."
+    },
+    {
+      "word": "Onion",
+      "pronunciation": "/ˈʌnjən/",
+      "meaning": "A vegetable with a strong smell",
+      "banglaMeaning": "পেঁয়াজ",
+      "exampleSentence": "Onion is used in most curries."
+    },
+    {
+      "word": "Lemon",
+      "pronunciation": "/ˈlemən/",
+      "meaning": "A sour yellow citrus fruit",
+      "banglaMeaning": "লেবু",
+      "exampleSentence": "Squeeze a lemon into the water."
+    },
+    {
+      "word": "Guava",
+      "pronunciation": "/ˈɡwɑːvə/",
+      "meaning": "A tropical fruit",
+      "banglaMeaning": "পেয়ারা",
+      "exampleSentence": "I love eating guava."
+    },
+    {
+      "word": "Pumpkin",
+      "pronunciation": "/ˈpʌmpkɪn/",
+      "meaning": "A large orange vegetable",
+      "banglaMeaning": "কুমড়া",
+      "exampleSentence": "Pumpkin soup is delicious."
+    },
+    {
+      "word": "Strawberry",
+      "pronunciation": "/ˈstrɔːbəri/",
+      "meaning": "A small red sweet fruit",
+      "banglaMeaning": "স্ট্রবেরি",
+      "exampleSentence": "I love strawberry ice cream."
+    },
+    {
+      "word": "Watermelon",
+      "pronunciation": "/ˈwɔːtərˌmɛlən/",
+      "meaning": "A large green fruit with red flesh",
+      "banglaMeaning": "তরমুজ",
+      "exampleSentence": "Watermelon is very refreshing in summer."
+    },
+    {
+      "word": "Pineapple",
+      "pronunciation": "/ˈpaɪnˌæpəl/",
+      "meaning": "A sweet yellow tropical fruit",
+      "banglaMeaning": "আনারস",
+      "exampleSentence": "Pineapple is sweet and sour."
+    },
+    {
+      "word": "Grapes",
+      "pronunciation": "/ɡreɪps/",
+      "meaning": "Small round green or purple fruit",
+      "banglaMeaning": "আঙ্গুর",
+      "exampleSentence": "Grapes are used to make wine."
+    },
+    {
+      "word": "Jackfruit",
+      "pronunciation": "/ˈdʒækfruːt/",
+      "meaning": "The national fruit of Bangladesh",
+      "banglaMeaning": "কাঁঠাল",
+      "exampleSentence": "Jackfruit is the largest fruit."
+    },
+    {
+      "word": "Coconut",
+      "pronunciation": "/ˈkoʊkənʌt/",
+      "meaning": "A fruit with hard shell and water inside",
+      "banglaMeaning": "নারকেল",
+      "exampleSentence": "Coconut water is very healthy."
+    },
+    {
+      "word": "Cabbage",
+      "pronunciation": "/ˈkæbɪdʒ/",
+      "meaning": "A round green leafy vegetable",
+      "banglaMeaning": "বাঁধাকপি",
+      "exampleSentence": "Cabbage is used in salad."
+    },
+    {
+      "word": "Cauliflower",
+      "pronunciation": "/ˈkɒlɪflaʊər/",
+      "meaning": "A white round vegetable",
+      "banglaMeaning": "ফুলকপি",
+      "exampleSentence": "I like cauliflower curry."
+    },
+    {
+      "word": "Carrot",
+      "pronunciation": "/ˈkærət/",
+      "meaning": "An orange root vegetable",
+      "banglaMeaning": "গাজর",
+      "exampleSentence": "Carrots are good for eyes."
+    },
+    {
+      "word": "Cucumber",
+      "pronunciation": "/ˈkjuːkʌmbər/",
+      "meaning": "A long green vegetable",
+      "banglaMeaning": "শসা",
+      "exampleSentence": "Cucumber is very cooling."
+    },
+    {
+      "word": "Chili",
+      "pronunciation": "/ˈtʃɪli/",
+      "meaning": "A small hot green or red vegetable",
+      "banglaMeaning": "মরিচ",
+      "exampleSentence": "Green chili makes the curry spicy."
+    },
+    {
+      "word": "Garlic",
+      "pronunciation": "/ˈɡɑːrlɪk/",
+      "meaning": "A strong-smelling bulb used in cooking",
+      "banglaMeaning": "রসুন",
+      "exampleSentence": "Garlic adds great flavor to food."
+    },
+    {
+      "word": "Ginger",
+      "pronunciation": "/ˈdʒɪndʒər/",
+      "meaning": "A spicy root used in cooking",
+      "banglaMeaning": "আদা",
+      "exampleSentence": "Ginger tea is good for colds."
+    },
+    {
+      "word": "Spinach",
+      "pronunciation": "/ˈspɪnɪtʃ/",
+      "meaning": "A dark green leafy vegetable",
+      "banglaMeaning": "পালং শাক",
+      "exampleSentence": "Spinach is rich in iron."
+    },
+    {
+      "word": "Papaya",
+      "pronunciation": "/pəˈpaɪə/",
+      "meaning": "A large yellow-orange tropical fruit",
+      "banglaMeaning": "পেঁপে",
+      "exampleSentence": "Papaya is good for digestion."
+    }
+  ]
+}

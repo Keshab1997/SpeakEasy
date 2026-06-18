@@ -1,12 +1,182 @@
-{"chapter": 8, "level": "Beginner", "title": "Food and Drinks", "words": [
-  {"word": "Rice", "pronunciation": "/raɪs/", "meaning": "A common grain food", "banglaMeaning": "ভাত / চাল", "exampleSentence": "We eat rice every day."},
-  {"word": "Water", "pronunciation": "/ˈwɔːtər/", "meaning": "A clear liquid essential for life", "banglaMeaning": "পানি / জল", "exampleSentence": "Drink water regularly."},
-  {"word": "Milk", "pronunciation": "/mɪlk/", "meaning": "White liquid from cows", "banglaMeaning": "দুধ", "exampleSentence": "Children drink milk daily."},
-  {"word": "Tea", "pronunciation": "/tiː/", "meaning": "A popular hot drink", "banglaMeaning": "চা", "exampleSentence": "I drink tea in the morning."},
-  {"word": "Coffee", "pronunciation": "/ˈkɒfi/", "meaning": "A dark hot drink", "banglaMeaning": "কফি", "exampleSentence": "He drinks coffee every morning."},
-  {"word": "Bread", "pronunciation": "/bred/", "meaning": "A baked food made from flour", "banglaMeaning": "রুটি / পাউরুটি", "exampleSentence": "I eat bread for breakfast."},
-  {"word": "Fish", "pronunciation": "/fɪʃ/", "meaning": "An aquatic animal used as food", "banglaMeaning": "মাছ", "exampleSentence": "Bengali people love fish."},
-  {"word": "Meat", "pronunciation": "/miːt/", "meaning": "Animal flesh used as food", "banglaMeaning": "মাংস", "exampleSentence": "We cook meat on Eid."},
-  {"word": "Egg", "pronunciation": "/eɡ/", "meaning": "Food laid by hens", "banglaMeaning": "ডিম", "exampleSentence": "I eat one egg daily."},
-  {"word": "Sugar", "pronunciation": "/ˈʃʊɡər/", "meaning": "Sweet substance added to food", "banglaMeaning": "চিনি", "exampleSentence": "Add sugar to your tea."}
-]}
+{
+  "chapter": 8,
+  "level": "Beginner",
+  "title": "Food and Drinks",
+  "words": [
+    {
+      "word": "Rice",
+      "pronunciation": "/raɪs/",
+      "meaning": "A common grain food",
+      "banglaMeaning": "ভাত / চাল",
+      "exampleSentence": "We eat rice every day."
+    },
+    {
+      "word": "Water",
+      "pronunciation": "/ˈwɔːtər/",
+      "meaning": "A clear liquid essential for life",
+      "banglaMeaning": "পানি / জল",
+      "exampleSentence": "Drink water regularly."
+    },
+    {
+      "word": "Milk",
+      "pronunciation": "/mɪlk/",
+      "meaning": "White liquid from cows",
+      "banglaMeaning": "দুধ",
+      "exampleSentence": "Children drink milk daily."
+    },
+    {
+      "word": "Tea",
+      "pronunciation": "/tiː/",
+      "meaning": "A popular hot drink",
+      "banglaMeaning": "চা",
+      "exampleSentence": "I drink tea in the morning."
+    },
+    {
+      "word": "Coffee",
+      "pronunciation": "/ˈkɒfi/",
+      "meaning": "A dark hot drink",
+      "banglaMeaning": "কফি",
+      "exampleSentence": "He drinks coffee every morning."
+    },
+    {
+      "word": "Bread",
+      "pronunciation": "/bred/",
+      "meaning": "A baked food made from flour",
+      "banglaMeaning": "রুটি / পাউরুটি",
+      "exampleSentence": "I eat bread for breakfast."
+    },
+    {
+      "word": "Fish",
+      "pronunciation": "/fɪʃ/",
+      "meaning": "An aquatic animal used as food",
+      "banglaMeaning": "মাছ",
+      "exampleSentence": "Bengali people love fish."
+    },
+    {
+      "word": "Meat",
+      "pronunciation": "/miːt/",
+      "meaning": "Animal flesh used as food",
+      "banglaMeaning": "মাংস",
+      "exampleSentence": "We cook meat on Eid."
+    },
+    {
+      "word": "Egg",
+      "pronunciation": "/eɡ/",
+      "meaning": "Food laid by hens",
+      "banglaMeaning": "ডিম",
+      "exampleSentence": "I eat one egg daily."
+    },
+    {
+      "word": "Sugar",
+      "pronunciation": "/ˈʃʊɡər/",
+      "meaning": "Sweet substance added to food",
+      "banglaMeaning": "চিনি",
+      "exampleSentence": "Add sugar to your tea."
+    },
+    {
+      "word": "Apple",
+      "pronunciation": "/ˈæpəl/",
+      "meaning": "A round red or green fruit",
+      "banglaMeaning": "আপেল",
+      "exampleSentence": "An apple a day keeps the doctor away."
+    },
+    {
+      "word": "Banana",
+      "pronunciation": "/bəˈnɑːnə/",
+      "meaning": "A long yellow fruit",
+      "banglaMeaning": "কলা",
+      "exampleSentence": "Monkeys love bananas."
+    },
+    {
+      "word": "Orange",
+      "pronunciation": "/ˈɔːrɪndʒ/",
+      "meaning": "A round citrus fruit",
+      "banglaMeaning": "কমলা",
+      "exampleSentence": "Oranges are rich in vitamin C."
+    },
+    {
+      "word": "Mango",
+      "pronunciation": "/ˈmæŋɡoʊ/",
+      "meaning": "A sweet tropical fruit",
+      "banglaMeaning": "আম",
+      "exampleSentence": "Mango is the king of fruits."
+    },
+    {
+      "word": "Chicken",
+      "pronunciation": "/ˈtʃɪkɪn/",
+      "meaning": "Meat of a chicken",
+      "banglaMeaning": "মুরগির মাংস",
+      "exampleSentence": "We eat chicken curry for dinner."
+    },
+    {
+      "word": "Beef",
+      "pronunciation": "/biːf/",
+      "meaning": "Meat of a cow",
+      "banglaMeaning": "গরুর মাংস",
+      "exampleSentence": "Beef is popular in many countries."
+    },
+    {
+      "word": "Butter",
+      "pronunciation": "/ˈbʌtər/",
+      "meaning": "A creamy dairy product",
+      "banglaMeaning": "মাখন",
+      "exampleSentence": "Spread butter on the bread."
+    },
+    {
+      "word": "Cheese",
+      "pronunciation": "/tʃiːz/",
+      "meaning": "A food made from milk",
+      "banglaMeaning": "পনির / চিজ",
+      "exampleSentence": "I like cheese on my pizza."
+    },
+    {
+      "word": "Juice",
+      "pronunciation": "/dʒuːs/",
+      "meaning": "Liquid from fruits",
+      "banglaMeaning": "রস / জুস",
+      "exampleSentence": "I drink orange juice in the morning."
+    },
+    {
+      "word": "Soup",
+      "pronunciation": "/suːp/",
+      "meaning": "A liquid food",
+      "banglaMeaning": "স্যুপ / ঝোল",
+      "exampleSentence": "The chicken soup is very tasty."
+    },
+    {
+      "word": "Salt",
+      "pronunciation": "/sɔːlt/",
+      "meaning": "White substance used for taste",
+      "banglaMeaning": "লবণ",
+      "exampleSentence": "Add salt to the curry."
+    },
+    {
+      "word": "Pepper",
+      "pronunciation": "/ˈpɛpər/",
+      "meaning": "A spice with a strong taste",
+      "banglaMeaning": "গোলমরিচ",
+      "exampleSentence": "Sprinkle some pepper on the salad."
+    },
+    {
+      "word": "Oil",
+      "pronunciation": "/ɔɪl/",
+      "meaning": "Fat used for cooking",
+      "banglaMeaning": "তেল",
+      "exampleSentence": "Cook the vegetables in oil."
+    },
+    {
+      "word": "Rice",
+      "pronunciation": "/raɪs/",
+      "meaning": "A common grain",
+      "banglaMeaning": "ভাত / চাল",
+      "exampleSentence": "We eat rice with curry."
+    },
+    {
+      "word": "Biscuit",
+      "pronunciation": "/ˈbɪskɪt/",
+      "meaning": "A small baked snack",
+      "banglaMeaning": "বিস্কুট",
+      "exampleSentence": "I eat biscuits with my tea."
+    }
+  ]
+}

@@ -1,12 +1,182 @@
-{"chapter": 7, "level": "Beginner", "title": "Body Parts", "words": [
-  {"word": "Head", "pronunciation": "/hed/", "meaning": "Top part of the body", "banglaMeaning": "মাথা", "exampleSentence": "My head is aching."},
-  {"word": "Eye", "pronunciation": "/aɪ/", "meaning": "Organ for seeing", "banglaMeaning": "চোখ", "exampleSentence": "She has beautiful eyes."},
-  {"word": "Ear", "pronunciation": "/ɪər/", "meaning": "Organ for hearing", "banglaMeaning": "কান", "exampleSentence": "He can hear well with his ears."},
-  {"word": "Nose", "pronunciation": "/noʊz/", "meaning": "Organ for smelling", "banglaMeaning": "নাক", "exampleSentence": "She has a small nose."},
-  {"word": "Mouth", "pronunciation": "/maʊθ/", "meaning": "Opening used for eating and speaking", "banglaMeaning": "মুখ", "exampleSentence": "Open your mouth wide."},
-  {"word": "Hand", "pronunciation": "/hænd/", "meaning": "Body part at end of arm", "banglaMeaning": "হাত", "exampleSentence": "Wash your hands before eating."},
-  {"word": "Leg", "pronunciation": "/leɡ/", "meaning": "Body part used for walking", "banglaMeaning": "পা", "exampleSentence": "He broke his leg."},
-  {"word": "Heart", "pronunciation": "/hɑːrt/", "meaning": "Organ that pumps blood", "banglaMeaning": "হৃদয় / হার্ট", "exampleSentence": "The heart beats 72 times a minute."},
-  {"word": "Back", "pronunciation": "/bæk/", "meaning": "Rear part of the body", "banglaMeaning": "পিঠ", "exampleSentence": "My back hurts today."},
-  {"word": "Finger", "pronunciation": "/ˈfɪŋɡər/", "meaning": "One of five digits on the hand", "banglaMeaning": "আঙুল", "exampleSentence": "She cut her finger."}
-]}
+{
+  "chapter": 7,
+  "level": "Beginner",
+  "title": "Body Parts",
+  "words": [
+    {
+      "word": "Head",
+      "pronunciation": "/hed/",
+      "meaning": "Top part of the body",
+      "banglaMeaning": "মাথা",
+      "exampleSentence": "My head is aching."
+    },
+    {
+      "word": "Eye",
+      "pronunciation": "/aɪ/",
+      "meaning": "Organ for seeing",
+      "banglaMeaning": "চোখ",
+      "exampleSentence": "She has beautiful eyes."
+    },
+    {
+      "word": "Ear",
+      "pronunciation": "/ɪər/",
+      "meaning": "Organ for hearing",
+      "banglaMeaning": "কান",
+      "exampleSentence": "He can hear well with his ears."
+    },
+    {
+      "word": "Nose",
+      "pronunciation": "/noʊz/",
+      "meaning": "Organ for smelling",
+      "banglaMeaning": "নাক",
+      "exampleSentence": "She has a small nose."
+    },
+    {
+      "word": "Mouth",
+      "pronunciation": "/maʊθ/",
+      "meaning": "Opening used for eating and speaking",
+      "banglaMeaning": "মুখ",
+      "exampleSentence": "Open your mouth wide."
+    },
+    {
+      "word": "Hand",
+      "pronunciation": "/hænd/",
+      "meaning": "Body part at end of arm",
+      "banglaMeaning": "হাত",
+      "exampleSentence": "Wash your hands before eating."
+    },
+    {
+      "word": "Leg",
+      "pronunciation": "/leɡ/",
+      "meaning": "Body part used for walking",
+      "banglaMeaning": "পা",
+      "exampleSentence": "He broke his leg."
+    },
+    {
+      "word": "Heart",
+      "pronunciation": "/hɑːrt/",
+      "meaning": "Organ that pumps blood",
+      "banglaMeaning": "হৃদয় / হার্ট",
+      "exampleSentence": "The heart beats 72 times a minute."
+    },
+    {
+      "word": "Back",
+      "pronunciation": "/bæk/",
+      "meaning": "Rear part of the body",
+      "banglaMeaning": "পিঠ",
+      "exampleSentence": "My back hurts today."
+    },
+    {
+      "word": "Finger",
+      "pronunciation": "/ˈfɪŋɡər/",
+      "meaning": "One of five digits on the hand",
+      "banglaMeaning": "আঙুল",
+      "exampleSentence": "She cut her finger."
+    },
+    {
+      "word": "Arm",
+      "pronunciation": "/ɑːrm/",
+      "meaning": "Upper limb from shoulder to hand",
+      "banglaMeaning": "বাহু",
+      "exampleSentence": "He broke his arm."
+    },
+    {
+      "word": "Shoulder",
+      "pronunciation": "/ˈʃoʊldər/",
+      "meaning": "Joint connecting arm to body",
+      "banglaMeaning": "কাঁধ",
+      "exampleSentence": "She carried a bag on her shoulder."
+    },
+    {
+      "word": "Knee",
+      "pronunciation": "/niː/",
+      "meaning": "Joint between thigh and lower leg",
+      "banglaMeaning": "হাঁটু",
+      "exampleSentence": "My knee hurts after running."
+    },
+    {
+      "word": "Elbow",
+      "pronunciation": "/ˈɛlboʊ/",
+      "meaning": "Joint between upper and lower arm",
+      "banglaMeaning": "কনুই",
+      "exampleSentence": "He rested his elbow on the table."
+    },
+    {
+      "word": "Neck",
+      "pronunciation": "/nɛk/",
+      "meaning": "Part connecting head to body",
+      "banglaMeaning": "ঘাড়",
+      "exampleSentence": "She wore a scarf around her neck."
+    },
+    {
+      "word": "Stomach",
+      "pronunciation": "/ˈstʌmək/",
+      "meaning": "Front part of the body below chest",
+      "banglaMeaning": "পেট",
+      "exampleSentence": "My stomach is full."
+    },
+    {
+      "word": "Tooth",
+      "pronunciation": "/tuːθ/",
+      "meaning": "White bone-like part in the mouth",
+      "banglaMeaning": "দাঁত",
+      "exampleSentence": "Brush your teeth every morning."
+    },
+    {
+      "word": "Tongue",
+      "pronunciation": "/tʌŋ/",
+      "meaning": "Muscle in mouth used for tasting and speaking",
+      "banglaMeaning": "জিহ্বা",
+      "exampleSentence": "The tongue helps us taste food."
+    },
+    {
+      "word": "Lip",
+      "pronunciation": "/lɪp/",
+      "meaning": "Soft part around the mouth",
+      "banglaMeaning": "ঠোঁট",
+      "exampleSentence": "She put lipstick on her lips."
+    },
+    {
+      "word": "Cheek",
+      "pronunciation": "/tʃiːk/",
+      "meaning": "Side of the face",
+      "banglaMeaning": "গাল",
+      "exampleSentence": "Tears rolled down her cheek."
+    },
+    {
+      "word": "Chin",
+      "pronunciation": "/tʃɪn/",
+      "meaning": "Lower part of the face",
+      "banglaMeaning": "থুতনি",
+      "exampleSentence": "He has a strong chin."
+    },
+    {
+      "word": "Forehead",
+      "pronunciation": "/ˈfɔːrɪd/",
+      "meaning": "Upper part of the face above eyes",
+      "banglaMeaning": "কপাল",
+      "exampleSentence": "She touched her forehead."
+    },
+    {
+      "word": "Thumb",
+      "pronunciation": "/θʌm/",
+      "meaning": "Short thick finger",
+      "banglaMeaning": "বৃদ্ধাঙ্গুলি",
+      "exampleSentence": "He gave a thumbs up."
+    },
+    {
+      "word": "Palm",
+      "pronunciation": "/pɑːm/",
+      "meaning": "Inner part of the hand",
+      "banglaMeaning": "হাতের তালু",
+      "exampleSentence": "She read my palm."
+    },
+    {
+      "word": "Wrist",
+      "pronunciation": "/rɪst/",
+      "meaning": "Joint connecting hand to arm",
+      "banglaMeaning": "কব্জি",
+      "exampleSentence": "She wears a bracelet on her wrist."
+    }
+  ]
+}

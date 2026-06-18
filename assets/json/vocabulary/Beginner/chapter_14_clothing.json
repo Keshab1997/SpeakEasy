@@ -1,12 +1,182 @@
-{"chapter": 14, "level": "Beginner", "title": "Clothing", "words": [
-  {"word": "Shirt", "pronunciation": "/ʃɜːrt/", "meaning": "A garment for the upper body", "banglaMeaning": "শার্ট", "exampleSentence": "He is wearing a blue shirt."},
-  {"word": "Pants", "pronunciation": "/pænts/", "meaning": "A garment covering the legs", "banglaMeaning": "প্যান্ট", "exampleSentence": "She bought new pants."},
-  {"word": "Saree", "pronunciation": "/ˈsɑːri/", "meaning": "Traditional South Asian dress for women", "banglaMeaning": "শাড়ি", "exampleSentence": "My mother wears a saree."},
-  {"word": "Shoe", "pronunciation": "/ʃuː/", "meaning": "Footwear", "banglaMeaning": "জুতা", "exampleSentence": "Polish your shoes before going out."},
-  {"word": "Cap", "pronunciation": "/kæp/", "meaning": "A head covering", "banglaMeaning": "টুপি", "exampleSentence": "He wears a cap in summer."},
-  {"word": "Jacket", "pronunciation": "/ˈdʒækɪt/", "meaning": "A short coat", "banglaMeaning": "জ্যাকেট", "exampleSentence": "Wear a jacket in winter."},
-  {"word": "Dress", "pronunciation": "/dres/", "meaning": "A one-piece garment for women", "banglaMeaning": "পোশাক / ড্রেস", "exampleSentence": "She wore a beautiful dress."},
-  {"word": "Socks", "pronunciation": "/sɒks/", "meaning": "Garment worn on the feet", "banglaMeaning": "মোজা", "exampleSentence": "Wear warm socks in winter."},
-  {"word": "Scarf", "pronunciation": "/skɑːrf/", "meaning": "A piece of cloth worn around the neck", "banglaMeaning": "স্কার্ফ / মাফলার", "exampleSentence": "She wrapped a scarf around her neck."},
-  {"word": "Gloves", "pronunciation": "/ɡlʌvz/", "meaning": "Hand coverings", "banglaMeaning": "দস্তানা / গ্লাভস", "exampleSentence": "She wore gloves in the cold."}
-]}
+{
+  "chapter": 14,
+  "level": "Beginner",
+  "title": "Clothing",
+  "words": [
+    {
+      "word": "Shirt",
+      "pronunciation": "/ʃɜːrt/",
+      "meaning": "A garment for the upper body",
+      "banglaMeaning": "শার্ট",
+      "exampleSentence": "He is wearing a blue shirt."
+    },
+    {
+      "word": "Pants",
+      "pronunciation": "/pænts/",
+      "meaning": "A garment covering the legs",
+      "banglaMeaning": "প্যান্ট",
+      "exampleSentence": "She bought new pants."
+    },
+    {
+      "word": "Saree",
+      "pronunciation": "/ˈsɑːri/",
+      "meaning": "Traditional South Asian dress for women",
+      "banglaMeaning": "শাড়ি",
+      "exampleSentence": "My mother wears a saree."
+    },
+    {
+      "word": "Shoe",
+      "pronunciation": "/ʃuː/",
+      "meaning": "Footwear",
+      "banglaMeaning": "জুতা",
+      "exampleSentence": "Polish your shoes before going out."
+    },
+    {
+      "word": "Cap",
+      "pronunciation": "/kæp/",
+      "meaning": "A head covering",
+      "banglaMeaning": "টুপি",
+      "exampleSentence": "He wears a cap in summer."
+    },
+    {
+      "word": "Jacket",
+      "pronunciation": "/ˈdʒækɪt/",
+      "meaning": "A short coat",
+      "banglaMeaning": "জ্যাকেট",
+      "exampleSentence": "Wear a jacket in winter."
+    },
+    {
+      "word": "Dress",
+      "pronunciation": "/dres/",
+      "meaning": "A one-piece garment for women",
+      "banglaMeaning": "পোশাক / ড্রেস",
+      "exampleSentence": "She wore a beautiful dress."
+    },
+    {
+      "word": "Socks",
+      "pronunciation": "/sɒks/",
+      "meaning": "Garment worn on the feet",
+      "banglaMeaning": "মোজা",
+      "exampleSentence": "Wear warm socks in winter."
+    },
+    {
+      "word": "Scarf",
+      "pronunciation": "/skɑːrf/",
+      "meaning": "A piece of cloth worn around the neck",
+      "banglaMeaning": "স্কার্ফ / মাফলার",
+      "exampleSentence": "She wrapped a scarf around her neck."
+    },
+    {
+      "word": "Gloves",
+      "pronunciation": "/ɡlʌvz/",
+      "meaning": "Hand coverings",
+      "banglaMeaning": "দস্তানা / গ্লাভস",
+      "exampleSentence": "She wore gloves in the cold."
+    },
+    {
+      "word": "T-shirt",
+      "pronunciation": "/ˈtiːʃɜːrt/",
+      "meaning": "A casual short-sleeved shirt",
+      "banglaMeaning": "টি-শার্ট",
+      "exampleSentence": "He wears a white T-shirt."
+    },
+    {
+      "word": "Jeans",
+      "pronunciation": "/dʒiːnz/",
+      "meaning": "Casual pants made of denim",
+      "banglaMeaning": "জিন্স",
+      "exampleSentence": "She wore blue jeans today."
+    },
+    {
+      "word": "Skirt",
+      "pronunciation": "/skɜːrt/",
+      "meaning": "A woman's garment worn from the waist",
+      "banglaMeaning": "স্কার্ট",
+      "exampleSentence": "The girl wore a pink skirt."
+    },
+    {
+      "word": "Sweater",
+      "pronunciation": "/ˈswɛtər/",
+      "meaning": "A warm knitted garment for the upper body",
+      "banglaMeaning": "সোয়েটার",
+      "exampleSentence": "Wear a sweater in winter."
+    },
+    {
+      "word": "Coat",
+      "pronunciation": "/koʊt/",
+      "meaning": "A long outer garment for cold weather",
+      "banglaMeaning": "কোট",
+      "exampleSentence": "He put on his coat before going out."
+    },
+    {
+      "word": "Belt",
+      "pronunciation": "/bɛlt/",
+      "meaning": "A strip worn around the waist",
+      "banglaMeaning": "বেল্ট",
+      "exampleSentence": "Fasten your belt tightly."
+    },
+    {
+      "word": "Hat",
+      "pronunciation": "/hæt/",
+      "meaning": "A covering for the head",
+      "banglaMeaning": "টুপি",
+      "exampleSentence": "She wore a straw hat to the beach."
+    },
+    {
+      "word": "Sandal",
+      "pronunciation": "/ˈsændəl/",
+      "meaning": "An open type of footwear",
+      "banglaMeaning": "স্যান্ডেল",
+      "exampleSentence": "I wear sandals in summer."
+    },
+    {
+      "word": "Boots",
+      "pronunciation": "/buːts/",
+      "meaning": "Heavy shoes covering the ankle",
+      "banglaMeaning": "বুট",
+      "exampleSentence": "He wore boots in the rain."
+    },
+    {
+      "word": "Slippers",
+      "pronunciation": "/ˈslɪpərz/",
+      "meaning": "Light comfortable shoes worn indoors",
+      "banglaMeaning": "স্লিপার",
+      "exampleSentence": "Wear slippers inside the house."
+    },
+    {
+      "word": "Tie",
+      "pronunciation": "/taɪ/",
+      "meaning": "A strip of cloth worn around the neck",
+      "banglaMeaning": "টাই",
+      "exampleSentence": "He wore a red tie with his suit."
+    },
+    {
+      "word": "Vest",
+      "pronunciation": "/vɛst/",
+      "meaning": "A sleeveless garment worn on the upper body",
+      "banglaMeaning": "ভেস্ট / গেঞ্জি",
+      "exampleSentence": "He wore a vest under his shirt."
+    },
+    {
+      "word": "Pajama",
+      "pronunciation": "/pəˈdʒɑːmə/",
+      "meaning": "Loose clothing worn for sleeping",
+      "banglaMeaning": "পায়জামা",
+      "exampleSentence": "I wear pajamas to bed."
+    },
+    {
+      "word": "Uniform",
+      "pronunciation": "/ˈjuːnɪfɔːrm/",
+      "meaning": "Special clothes worn by a group",
+      "banglaMeaning": "ইউনিফর্ম",
+      "exampleSentence": "We wear a uniform to school."
+    },
+    {
+      "word": "Pocket",
+      "pronunciation": "/ˈpɒkɪt/",
+      "meaning": "A small bag sewn into clothing",
+      "banglaMeaning": "পকেট",
+      "exampleSentence": "Keep your money in your pocket."
+    }
+  ]
+}

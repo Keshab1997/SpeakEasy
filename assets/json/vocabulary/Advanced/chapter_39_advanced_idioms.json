@@ -1,1 +1,742 @@
-{"chapter": 39, "level": "Advanced", "title": "Advanced Idioms", "words": []}
+{
+  "chapter": 39,
+  "level": "Advanced",
+  "title": "Advanced Idioms",
+  "words": [
+    {
+      "word": "Piece of cake",
+      "pronunciation": "/piːs əv keɪk/",
+      "meaning": "Something very easy to do",
+      "banglaMeaning": "খুব সহজ কাজ",
+      "exampleSentence": "The exam was a piece of cake for her."
+    },
+    {
+      "word": "Break the ice",
+      "pronunciation": "/breɪk ði aɪs/",
+      "meaning": "To start a conversation in a social setting",
+      "banglaMeaning": "আলাপ শুরু করা / বরফ ভাঙা",
+      "exampleSentence": "He told a joke to break the ice at the party."
+    },
+    {
+      "word": "Hit the nail on the head",
+      "pronunciation": "/hɪt ðə neɪl ɒn ðə hɛd/",
+      "meaning": "To describe exactly what is causing a situation",
+      "banglaMeaning": "একদম সঠিক বলা",
+      "exampleSentence": "You hit the nail on the head with your analysis."
+    },
+    {
+      "word": "Once in a blue moon",
+      "pronunciation": "/wʌns ɪn ə bluː muːn/",
+      "meaning": "Very rarely",
+      "banglaMeaning": "কদাচিৎ / খুব কমই",
+      "exampleSentence": "She visits her hometown once in a blue moon."
+    },
+    {
+      "word": "Spill the beans",
+      "pronunciation": "/spɪl ðə biːnz/",
+      "meaning": "To reveal a secret",
+      "banglaMeaning": "গোপন তথ্য ফাঁস করা",
+      "exampleSentence": "Someone spilled the beans about the surprise party."
+    },
+    {
+      "word": "Cost an arm and a leg",
+      "pronunciation": "/kɒst æn ɑːrm ænd ə lɛɡ/",
+      "meaning": "To be very expensive",
+      "banglaMeaning": "অত্যন্ত দামি হওয়া",
+      "exampleSentence": "The new car cost him an arm and a leg."
+    },
+    {
+      "word": "Bite the bullet",
+      "pronunciation": "/baɪt ðə ˈbʊlɪt/",
+      "meaning": "To face a difficult situation bravely",
+      "banglaMeaning": "সাহস করে মোকাবিলা করা",
+      "exampleSentence": "I decided to bite the bullet and tell him the truth."
+    },
+    {
+      "word": "Let the cat out of the bag",
+      "pronunciation": "/lɛt ðə kæt aʊt əv ðə bæɡ/",
+      "meaning": "To reveal a secret unintentionally",
+      "banglaMeaning": "অজান্তে গোপন কথা বলে ফেলা",
+      "exampleSentence": "She let the cat out of the bag about the promotion."
+    },
+    {
+      "word": "The ball is in your court",
+      "pronunciation": "/ðə bɔːl ɪz ɪn jɔːr kɔːrt/",
+      "meaning": "It's your turn to take action or decide",
+      "banglaMeaning": "এখন আপনার সিদ্ধান্ত নেওয়ার পালা",
+      "exampleSentence": "I've done my part, now the ball is in your court."
+    },
+    {
+      "word": "Steal someone's thunder",
+      "pronunciation": "/stiːl ˈsʌmwʌnz ˈθʌndər/",
+      "meaning": "To take attention away from someone",
+      "banglaMeaning": "কারও সাফল্যকে ছাপিয়ে যাওয়া",
+      "exampleSentence": "She stole my thunder by announcing her news first."
+    },
+    {
+      "word": "When pigs fly",
+      "pronunciation": "/wɛn pɪɡz flaɪ/",
+      "meaning": "Something that will never happen",
+      "banglaMeaning": "যা কখনও সম্ভব নয়",
+      "exampleSentence": "He'll apologize when pigs fly."
+    },
+    {
+      "word": "Burning the midnight oil",
+      "pronunciation": "/ˈbɜːrnɪŋ ðə ˈmɪdnaɪt ɔɪl/",
+      "meaning": "Working late into the night",
+      "banglaMeaning": "রাত জেগে কাজ করা",
+      "exampleSentence": "She has been burning the midnight oil to finish the project."
+    },
+    {
+      "word": "On cloud nine",
+      "pronunciation": "/ɒn klaʊd naɪn/",
+      "meaning": "Extremely happy",
+      "banglaMeaning": "খুব খুশি / সপ্তম স্বর্গে",
+      "exampleSentence": "He was on cloud nine after getting the job."
+    },
+    {
+      "word": "Out of the blue",
+      "pronunciation": "/aʊt əv ðə bluː/",
+      "meaning": "Unexpectedly",
+      "banglaMeaning": "হঠাৎ করে / অপ্রত্যাশিতভাবে",
+      "exampleSentence": "The news came out of the blue."
+    },
+    {
+      "word": "Get cold feet",
+      "pronunciation": "/ɡɛt koʊld fiːt/",
+      "meaning": "To become nervous or hesitant",
+      "banglaMeaning": "ভয় পাওয়া / পিছিয়ে আসা",
+      "exampleSentence": "He got cold feet right before the wedding."
+    },
+    {
+      "word": "Hit the sack",
+      "pronunciation": "/hɪt ðə sæk/",
+      "meaning": "To go to bed",
+      "banglaMeaning": "ঘুমাতে যাওয়া",
+      "exampleSentence": "I'm exhausted, I'm going to hit the sack."
+    },
+    {
+      "word": "Jump on the bandwagon",
+      "pronunciation": "/dʒʌmp ɒn ðə ˈbændwæɡən/",
+      "meaning": "To join a popular trend",
+      "banglaMeaning": "প্রচলিত ধারায় যোগ দেওয়া",
+      "exampleSentence": "Everyone is jumping on the bandwagon of cryptocurrency."
+    },
+    {
+      "word": "Kill two birds with one stone",
+      "pronunciation": "/kɪl tuː bɜːrdz wɪð wʌn stoʊn/",
+      "meaning": "To achieve two things with one action",
+      "banglaMeaning": "এক ঢিলে দুই পাখি মারা",
+      "exampleSentence": "I killed two birds with one stone by shopping while visiting my friend."
+    },
+    {
+      "word": "Under the weather",
+      "pronunciation": "/ˈʌndər ðə ˈwɛðər/",
+      "meaning": "Feeling ill or unwell",
+      "banglaMeaning": "অসুস্থ / ভালো না লাগা",
+      "exampleSentence": "She's feeling under the weather today."
+    },
+    {
+      "word": "Up in the air",
+      "pronunciation": "/ʌp ɪn ði ɛər/",
+      "meaning": "Uncertain or undecided",
+      "banglaMeaning": "অনিশ্চিত / স্থগিত",
+      "exampleSentence": "Our travel plans are still up in the air."
+    },
+    {
+      "word": "Add insult to injury",
+      "pronunciation": "/æd ɪnˈsʌlt tuː ˈɪndʒəri/",
+      "meaning": "To make a bad situation worse",
+      "banglaMeaning": "ক্ষতির ওপর ঘা দেওয়া",
+      "exampleSentence": "He was late, and to add insult to injury, he forgot the documents."
+    },
+    {
+      "word": "At the drop of a hat",
+      "pronunciation": "/æt ðə drɒp əv ə hæt/",
+      "meaning": "Immediately, without hesitation",
+      "banglaMeaning": "একদম সাথে সাথে",
+      "exampleSentence": "She would help anyone at the drop of a hat."
+    },
+    {
+      "word": "Back to the drawing board",
+      "pronunciation": "/bæk tuː ðə ˈdrɔːɪŋ bɔːrd/",
+      "meaning": "To start over after a failure",
+      "banglaMeaning": "পুনরায় শুরু করা",
+      "exampleSentence": "The plan failed, so it's back to the drawing board."
+    },
+    {
+      "word": "Beat around the bush",
+      "pronunciation": "/biːt əˈraʊnd ðə bʊʃ/",
+      "meaning": "To avoid saying something directly",
+      "banglaMeaning": "ঘুরিয়ে বলা / ইতস্তত করা",
+      "exampleSentence": "Stop beating around the bush and tell me what happened."
+    },
+    {
+      "word": "Best of both worlds",
+      "pronunciation": "/bɛst əv boʊθ wɜːrldz/",
+      "meaning": "Two positive aspects combined",
+      "banglaMeaning": "উভয়ের সেরা দিক",
+      "exampleSentence": "Working from home gives me the best of both worlds."
+    },
+    {
+      "word": "Bite off more than you can chew",
+      "pronunciation": "/baɪt ɒf mɔːr ðæn juː kæn tʃuː/",
+      "meaning": "To take on more than you can handle",
+      "banglaMeaning": "সামর্থ্যের বেশি দায়িত্ব নেওয়া",
+      "exampleSentence": "I bit off more than I could chew by taking three projects."
+    },
+    {
+      "word": "Cut corners",
+      "pronunciation": "/kʌt ˈkɔːrnərz/",
+      "meaning": "To do something poorly to save time or money",
+      "banglaMeaning": "খরচ বাঁচাতে নিম্নমানের কাজ করা",
+      "exampleSentence": "Don't cut corners when it comes to safety."
+    },
+    {
+      "word": "Devil's advocate",
+      "pronunciation": "/ˈdɛvəlz ˈædvəkɪt/",
+      "meaning": "To argue an opposing view for discussion",
+      "banglaMeaning": "বিরোধী মত নেওয়া",
+      "exampleSentence": "Let me play devil's advocate for a moment."
+    },
+    {
+      "word": "Every cloud has a silver lining",
+      "pronunciation": "/ˈɛvri klaʊd hæz ə ˈsɪlvər ˈlaɪnɪŋ/",
+      "meaning": "Every bad situation has a positive side",
+      "banglaMeaning": "মন্দের মধ্যেও ভালো দিক থাকে",
+      "exampleSentence": "Don't worry, every cloud has a silver lining."
+    },
+    {
+      "word": "Face the music",
+      "pronunciation": "/feɪs ðə ˈmjuːzɪk/",
+      "meaning": "To face the consequences of your actions",
+      "banglaMeaning": "শাস্তি বা পরিণতি মেনে নেওয়া",
+      "exampleSentence": "He had to face the music after his mistake."
+    },
+    {
+      "word": "Go the extra mile",
+      "pronunciation": "/ɡoʊ ði ˈɛkstrə maɪl/",
+      "meaning": "To make more effort than expected",
+      "banglaMeaning": "প্রত্যাশার চেয়ে বেশি করা",
+      "exampleSentence": "She always goes the extra mile for her clients."
+    },
+    {
+      "word": "Hit the road",
+      "pronunciation": "/hɪt ðə roʊd/",
+      "meaning": "To leave or start a journey",
+      "banglaMeaning": "যাত্রা শুরু করা / বের হওয়া",
+      "exampleSentence": "We should hit the road early to avoid traffic."
+    },
+    {
+      "word": "In the same boat",
+      "pronunciation": "/ɪn ðə seɪm boʊt/",
+      "meaning": "In the same difficult situation",
+      "banglaMeaning": "একই অবস্থায় থাকা",
+      "exampleSentence": "We're all in the same boat during this crisis."
+    },
+    {
+      "word": "Keep your chin up",
+      "pronunciation": "/kiːp jɔːr tʃɪn ʌp/",
+      "meaning": "To stay positive in a tough situation",
+      "banglaMeaning": "উদ্যম রাখা / হাল ছেড়ো না",
+      "exampleSentence": "Keep your chin up, things will get better."
+    },
+    {
+      "word": "Miss the boat",
+      "pronunciation": "/mɪs ðə boʊt/",
+      "meaning": "To miss an opportunity",
+      "banglaMeaning": "সুযোগ হারানো",
+      "exampleSentence": "I missed the boat on investing in that stock."
+    },
+    {
+      "word": "Not my cup of tea",
+      "pronunciation": "/nɒt maɪ kʌp əv tiː/",
+      "meaning": "Something you don't like",
+      "banglaMeaning": "পছন্দ নয়",
+      "exampleSentence": "Horror movies are not my cup of tea."
+    },
+    {
+      "word": "Play it by ear",
+      "pronunciation": "/pleɪ ɪt baɪ ɪər/",
+      "meaning": "To improvise or decide as you go",
+      "banglaMeaning": "পরিস্থিতি বুঝে কাজ করা",
+      "exampleSentence": "We don't have a plan, so let's play it by ear."
+    },
+    {
+      "word": "Pull someone's leg",
+      "pronunciation": "/pʊl ˈsʌmwʌnz lɛɡ/",
+      "meaning": "To tease or joke with someone",
+      "banglaMeaning": "মজা করা / ঠাট্টা করা",
+      "exampleSentence": "I'm just pulling your leg, don't take it seriously."
+    },
+    {
+      "word": "Ring a bell",
+      "pronunciation": "/rɪŋ ə bɛl/",
+      "meaning": "To sound familiar",
+      "banglaMeaning": "চেনা মনে হওয়া",
+      "exampleSentence": "That name rings a bell, but I can't place it."
+    },
+    {
+      "word": "Rule of thumb",
+      "pronunciation": "/ruːl əv θʌm/",
+      "meaning": "A general guideline",
+      "banglaMeaning": "মোটামুটি নীতি",
+      "exampleSentence": "As a rule of thumb, save 20% of your income."
+    },
+    {
+      "word": "Sit on the fence",
+      "pronunciation": "/sɪt ɒn ðə fɛns/",
+      "meaning": "To avoid making a decision",
+      "banglaMeaning": "সিদ্ধান্ত নিতে দ্বিধা করা",
+      "exampleSentence": "Stop sitting on the fence and choose a side."
+    },
+    {
+      "word": "Take it easy",
+      "pronunciation": "/teɪk ɪt ˈiːzi/",
+      "meaning": "To relax or not worry",
+      "banglaMeaning": "আরাম করা / চিন্তা না করা",
+      "exampleSentence": "Take it easy, everything will work out."
+    },
+    {
+      "word": "The last straw",
+      "pronunciation": "/ðə læst strɔː/",
+      "meaning": "The final problem that causes a breakdown",
+      "banglaMeaning": "শেষ ধৈর্যের বাঁধ ভাঙা",
+      "exampleSentence": "When he arrived late again, it was the last straw."
+    },
+    {
+      "word": "Throw in the towel",
+      "pronunciation": "/θroʊ ɪn ðə ˈtaʊəl/",
+      "meaning": "To give up or quit",
+      "banglaMeaning": "হাল ছেড়ে দেওয়া",
+      "exampleSentence": "After many failures, he threw in the towel."
+    },
+    {
+      "word": "Walk on eggshells",
+      "pronunciation": "/wɔːk ɒn ˈɛɡʃɛlz/",
+      "meaning": "To be very careful around someone",
+      "banglaMeaning": "সাবধানে চলা",
+      "exampleSentence": "I have to walk on eggshells around my boss."
+    },
+    {
+      "word": "A blessing in disguise",
+      "pronunciation": "/ə ˈblɛsɪŋ ɪn dɪsˈɡaɪz/",
+      "meaning": "A bad event that turns out to be good",
+      "banglaMeaning": "ছদ্মবেশে আশীর্বাদ",
+      "exampleSentence": "Losing that job was a blessing in disguise."
+    },
+    {
+      "word": "Actions speak louder than words",
+      "pronunciation": "/ˈækʃənz spiːk ˈlaʊdər ðæn wɜːrdz/",
+      "meaning": "What you do is more important than what you say",
+      "banglaMeaning": "কাজে প্রমাণ দেওয়া",
+      "exampleSentence": "Don't promise, show me — actions speak louder than words."
+    },
+    {
+      "word": "A dime a dozen",
+      "pronunciation": "/ə daɪm ə ˈdʌzən/",
+      "meaning": "Very common and not special",
+      "banglaMeaning": "সহজলভ্য / অমূল্যবান",
+      "exampleSentence": "In this city, coffee shops are a dime a dozen."
+    },
+    {
+      "word": "Bark up the wrong tree",
+      "pronunciation": "/bɑːrk ʌp ðə rɒŋ triː/",
+      "meaning": "To make a wrong assumption",
+      "banglaMeaning": "ভুল ধারণা করা",
+      "exampleSentence": "If you think I stole it, you're barking up the wrong tree."
+    },
+    {
+      "word": "Cry over spilt milk",
+      "pronunciation": "/kraɪ ˈoʊvər spɪlt mɪlk/",
+      "meaning": "To be upset about something that cannot be fixed",
+      "banglaMeaning": "যা হয়েছে তার জন্য আফসোস করা",
+      "exampleSentence": "There's no use crying over spilt milk."
+    },
+    {
+      "word": "Don't put all your eggs in one basket",
+      "pronunciation": "/doʊnt pʊt ɔːl jɔːr ɛɡz ɪn wʌn ˈbæskɪt/",
+      "meaning": "Don't risk everything on a single venture",
+      "banglaMeaning": "সব কিছু এক জায়গায় বিনিয়োগ না করা",
+      "exampleSentence": "Invest in different stocks — don't put all your eggs in one basket."
+    },
+    {
+      "word": "Get your act together",
+      "pronunciation": "/ɡɛt jɔːr ækt təˈɡɛðər/",
+      "meaning": "To organize yourself properly",
+      "banglaMeaning": "শৃঙ্খলিত হওয়া / ঠিক মতো কাজ করা",
+      "exampleSentence": "You need to get your act together before the deadline."
+    },
+    {
+      "word": "Give someone the benefit of the doubt",
+      "pronunciation": "/ɡɪv ˈsʌmwʌn ðə ˈbɛnɪfɪt əv ðə daʊt/",
+      "meaning": "To trust someone despite doubts",
+      "banglaMeaning": "সন্দেহের সুযোগ দেওয়া",
+      "exampleSentence": "I'll give him the benefit of the doubt this time."
+    },
+    {
+      "word": "Go down in flames",
+      "pronunciation": "/ɡoʊ daʊn ɪn fleɪmz/",
+      "meaning": "To fail spectacularly",
+      "banglaMeaning": "বড় ধরণের ব্যর্থ হওয়া",
+      "exampleSentence": "His political career went down in flames."
+    },
+    {
+      "word": "Have a change of heart",
+      "pronunciation": "/hæv ə tʃeɪndʒ əv hɑːrt/",
+      "meaning": "To change your opinion or decision",
+      "banglaMeaning": "মত পরিবর্তন করা",
+      "exampleSentence": "She had a change of heart and decided to join us."
+    },
+    {
+      "word": "In hot water",
+      "pronunciation": "/ɪn hɒt ˈwɔːtər/",
+      "meaning": "In trouble or difficulty",
+      "banglaMeaning": "সমস্যায় পড়া",
+      "exampleSentence": "He found himself in hot water with the authorities."
+    },
+    {
+      "word": "Keep your fingers crossed",
+      "pronunciation": "/kiːp jɔːr ˈfɪŋɡərz krɒst/",
+      "meaning": "To hope for good luck",
+      "banglaMeaning": "ভাগ্যের ওপর ভরসা রাখা",
+      "exampleSentence": "I'm keeping my fingers crossed for the exam results."
+    },
+    {
+      "word": "Know the ropes",
+      "pronunciation": "/noʊ ðə roʊps/",
+      "meaning": "To understand how something works",
+      "banglaMeaning": "কাজের পদ্ধতি জানা",
+      "exampleSentence": "It takes a few weeks to learn the ropes."
+    },
+    {
+      "word": "Let sleeping dogs lie",
+      "pronunciation": "/lɛt ˈsliːpɪŋ dɒɡz laɪ/",
+      "meaning": "To avoid reviving an old problem",
+      "banglaMeaning": "পুরনো সমস্যা না তোলা",
+      "exampleSentence": "I decided to let sleeping dogs lie and not mention the issue."
+    },
+    {
+      "word": "Make a long story short",
+      "pronunciation": "/meɪk ə lɒŋ ˈstɔːri ʃɔːrt/",
+      "meaning": "To summarize briefly",
+      "banglaMeaning": "সংক্ষেপে বলা",
+      "exampleSentence": "To make a long story short, we missed the flight."
+    },
+    {
+      "word": "No pain, no gain",
+      "pronunciation": "/noʊ peɪn, noʊ ɡeɪn/",
+      "meaning": "Success requires hard work",
+      "banglaMeaning": "পরিশ্রম ছাড়া ফল নেই",
+      "exampleSentence": "Keep working hard — no pain, no gain."
+    },
+    {
+      "word": "On the ball",
+      "pronunciation": "/ɒn ðə bɔːl/",
+      "meaning": "Alert and efficient",
+      "banglaMeaning": "সতর্ক ও দক্ষ",
+      "exampleSentence": "The new assistant is really on the ball."
+    },
+    {
+      "word": "Out of the woods",
+      "pronunciation": "/aʊt əv ðə wʊdz/",
+      "meaning": "Out of danger or difficulty",
+      "banglaMeaning": "বিপদমুক্ত",
+      "exampleSentence": "The patient is recovering but not out of the woods yet."
+    },
+    {
+      "word": "Put your foot in your mouth",
+      "pronunciation": "/pʊt jɔːr fʊt ɪn jɔːr maʊθ/",
+      "meaning": "To say something embarrassing or offensive",
+      "banglaMeaning": "অপ্রাসঙ্গিক বা অস্বস্তিকর কথা বলা",
+      "exampleSentence": "I really put my foot in my mouth when I mentioned her ex."
+    },
+    {
+      "word": "Read between the lines",
+      "pronunciation": "/riːd bɪˈtwiːn ðə laɪnz/",
+      "meaning": "To understand hidden meaning",
+      "banglaMeaning": "মধ্যের অর্থ বোঝা",
+      "exampleSentence": "Reading between the lines, she was clearly unhappy."
+    },
+    {
+      "word": "Steer clear of",
+      "pronunciation": "/stɪər klɪər ɒv/",
+      "meaning": "To avoid someone or something",
+      "banglaMeaning": "এড়িয়ে চলা",
+      "exampleSentence": "I'd steer clear of that neighborhood after dark."
+    },
+    {
+      "word": "Take a rain check",
+      "pronunciation": "/teɪk ə reɪn tʃɛk/",
+      "meaning": "To postpone an invitation",
+      "banglaMeaning": "পরে স্থগিত রাখা",
+      "exampleSentence": "Can I take a rain check on dinner tonight?"
+    },
+    {
+      "word": "The tip of the iceberg",
+      "pronunciation": "/ðə tɪp əv ði ˈaɪsbɜːrɡ/",
+      "meaning": "A small visible part of a larger problem",
+      "banglaMeaning": "বড় সমস্যার সামান্য অংশ",
+      "exampleSentence": "These errors are just the tip of the iceberg."
+    },
+    {
+      "word": "Tie the knot",
+      "pronunciation": "/taɪ ðə nɒt/",
+      "meaning": "To get married",
+      "banglaMeaning": "বিয়ে করা",
+      "exampleSentence": "They finally tied the knot after five years together."
+    },
+    {
+      "word": "Turn a blind eye",
+      "pronunciation": "/tɜːrn ə blaɪnd aɪ/",
+      "meaning": "To ignore something intentionally",
+      "banglaMeaning": "ইচ্ছাকৃতভাবে না দেখা",
+      "exampleSentence": "The manager turned a blind eye to the rule-breaking."
+    },
+    {
+      "word": "Up to scratch",
+      "pronunciation": "/ʌp tuː skrætʃ/",
+      "meaning": "Meeting the required standard",
+      "banglaMeaning": "মানসম্মত",
+      "exampleSentence": "Her performance was not up to scratch."
+    },
+    {
+      "word": "Wear your heart on your sleeve",
+      "pronunciation": "/wɛər jɔːr hɑːrt ɒn jɔːr sliːv/",
+      "meaning": "To show emotions openly",
+      "banglaMeaning": "আবেগ প্রকাশ করা",
+      "exampleSentence": "She wears her heart on her sleeve."
+    },
+    {
+      "word": "You can't judge a book by its cover",
+      "pronunciation": "/juː kænt dʒʌdʒ ə bʊk baɪ ɪts ˈkʌvər/",
+      "meaning": "Don't judge by appearances",
+      "banglaMeaning": "বাহ্যিক দর্শনে বিচার না করা",
+      "exampleSentence": "He looked shabby but he's a genius — you can't judge a book by its cover."
+    },
+    {
+      "word": "A picture is worth a thousand words",
+      "pronunciation": "/ə ˈpɪktʃər ɪz wɜːrθ ə ˈθaʊzənd wɜːrdz/",
+      "meaning": "Images convey more than words",
+      "banglaMeaning": "ছবি হাজার শব্দের চেয়ে বেশি বলে",
+      "exampleSentence": "The photograph captured the emotion perfectly — a picture is worth a thousand words."
+    },
+    {
+      "word": "All ears",
+      "pronunciation": "/ɔːl ɪərz/",
+      "meaning": "Listening attentively",
+      "banglaMeaning": "মনোযোগ দিয়ে শোনা",
+      "exampleSentence": "Tell me your story, I'm all ears."
+    },
+    {
+      "word": "Bite your tongue",
+      "pronunciation": "/baɪt jɔːr tʌŋ/",
+      "meaning": "To stop yourself from speaking",
+      "banglaMeaning": "চুপ থাকা / কথা না বলা",
+      "exampleSentence": "I wanted to argue, but I bit my tongue."
+    },
+    {
+      "word": "Call it a day",
+      "pronunciation": "/kɔːl ɪt ə deɪ/",
+      "meaning": "To stop working for the day",
+      "banglaMeaning": "আজকের মতো কাজ শেষ করা",
+      "exampleSentence": "We've done enough, let's call it a day."
+    },
+    {
+      "word": "Curiosity killed the cat",
+      "pronunciation": "/ˌkjʊriˈɒsɪti kɪld ðə kæt/",
+      "meaning": "Being too curious can get you into trouble",
+      "banglaMeaning": "অতিরিক্ত কৌতূহল বিপদ ডেকে আনে",
+      "exampleSentence": "Don't ask too many questions — curiosity killed the cat."
+    },
+    {
+      "word": "Easy does it",
+      "pronunciation": "/ˈiːzi ˈdʌz ɪt/",
+      "meaning": "Proceed slowly and carefully",
+      "banglaMeaning": "আস্তে আস্তে / সাবধানে করা",
+      "exampleSentence": "Easy does it, the glass is fragile."
+    },
+    {
+      "word": "Fight fire with fire",
+      "pronunciation": "/faɪt ˈfaɪər wɪð ˈfaɪər/",
+      "meaning": "To use the same tactics as your opponent",
+      "banglaMeaning": "একই পদ্ধতিতে জবাব দেওয়া",
+      "exampleSentence": "Sometimes you have to fight fire with fire."
+    },
+    {
+      "word": "Give the cold shoulder",
+      "pronunciation": "/ɡɪv ðə koʊld ˈʃoʊldər/",
+      "meaning": "To ignore someone deliberately",
+      "banglaMeaning": "উপেক্ষা করা",
+      "exampleSentence": "She gave me the cold shoulder after our argument."
+    },
+    {
+      "word": "Have second thoughts",
+      "pronunciation": "/hæv ˈsɛkənd θɔːts/",
+      "meaning": "To reconsider a decision",
+      "banglaMeaning": "পুনর্বিবেচনা করা",
+      "exampleSentence": "I'm having second thoughts about moving abroad."
+    },
+    {
+      "word": "In the nick of time",
+      "pronunciation": "/ɪn ðə nɪk əv taɪm/",
+      "meaning": "Just before it's too late",
+      "banglaMeaning": "শেষ মুহূর্তে",
+      "exampleSentence": "We reached the station in the nick of time."
+    },
+    {
+      "word": "Keep your cool",
+      "pronunciation": "/kiːp jɔːr kuːl/",
+      "meaning": "To stay calm under pressure",
+      "banglaMeaning": "শান্ত থাকা / ধৈর্য রাখা",
+      "exampleSentence": "Keep your cool during the interview."
+    },
+    {
+      "word": "Leave no stone unturned",
+      "pronunciation": "/liːv noʊ stoʊn ʌnˈtɜːrnd/",
+      "meaning": "To try every possible approach",
+      "banglaMeaning": "সম্ভাব্য সব উপায় চেষ্টা করা",
+      "exampleSentence": "The police left no stone unturned in the investigation."
+    },
+    {
+      "word": "Make up your mind",
+      "pronunciation": "/meɪk ʌp jɔːr maɪnd/",
+      "meaning": "To decide",
+      "banglaMeaning": "সিদ্ধান্ত নেওয়া",
+      "exampleSentence": "Make up your mind quickly, we're running out of time."
+    },
+    {
+      "word": "Not the sharpest tool in the shed",
+      "pronunciation": "/nɒt ðə ˈʃɑːrpɪst tuːl ɪn ðə ʃɛd/",
+      "meaning": "Not very intelligent",
+      "banglaMeaning": "বুদ্ধি কম হওয়া",
+      "exampleSentence": "He means well, but he's not the sharpest tool in the shed."
+    },
+    {
+      "word": "On pins and needles",
+      "pronunciation": "/ɒn pɪnz ænd ˈniːdəlz/",
+      "meaning": "Nervous and anxious",
+      "banglaMeaning": "উদ্বিগ্ন / অস্বস্তিতে",
+      "exampleSentence": "I was on pins and needles waiting for the results."
+    },
+    {
+      "word": "Out of sight, out of mind",
+      "pronunciation": "/aʊt əv saɪt, aʊt əv maɪnd/",
+      "meaning": "Forget about what isn't visible",
+      "banglaMeaning": "চোখের আড়াল হলেই মনের আড়াল",
+      "exampleSentence": "I need to keep reminders visible — out of sight, out of mind."
+    },
+    {
+      "word": "Practice makes perfect",
+      "pronunciation": "/ˈpræktɪs meɪks pərˈfɛkt/",
+      "meaning": "Repeated practice leads to mastery",
+      "banglaMeaning": "অনুশীলন সিদ্ধি আনে",
+      "exampleSentence": "Don't give up — practice makes perfect."
+    },
+    {
+      "word": "Put yourself in someone's shoes",
+      "pronunciation": "/pʊt jɔːrˈsɛlf ɪn ˈsʌmwʌnz ʃuːz/",
+      "meaning": "To empathize with someone",
+      "banglaMeaning": "কারও জায়গায় নিজেকে রাখা",
+      "exampleSentence": "Put yourself in her shoes and think how she feels."
+    },
+    {
+      "word": "Rome wasn't built in a day",
+      "pronunciation": "/roʊm ˈwʌzənt bɪlt ɪn ə deɪ/",
+      "meaning": "Great things take time",
+      "banglaMeaning": "বড় কাজ সময়সাপেক্ষ",
+      "exampleSentence": "Be patient — Rome wasn't built in a day."
+    },
+    {
+      "word": "Saving for a rainy day",
+      "pronunciation": "/ˈseɪvɪŋ fɔːr ə ˈreɪni deɪ/",
+      "meaning": "Saving money for future emergencies",
+      "banglaMeaning": "খারাপ দিনের জন্য সঞ্চয়",
+      "exampleSentence": "I always save a part of my salary for a rainy day."
+    },
+    {
+      "word": "Speak of the devil",
+      "pronunciation": "/spiːk əv ðə ˈdɛvəl/",
+      "meaning": "The person just mentioned appears",
+      "banglaMeaning": "যার কথা বলছি সে এসে গেল",
+      "exampleSentence": "Speak of the devil, here comes John!"
+    },
+    {
+      "word": "The early bird catches the worm",
+      "pronunciation": "/ði ˈɜːrli bɜːrd ˈkætʃɪz ðə wɜːrm/",
+      "meaning": "Success comes to those who act early",
+      "banglaMeaning": "সকাল বেলার পাখিই পোকা ধরে",
+      "exampleSentence": "I wake up at 5 AM — the early bird catches the worm."
+    },
+    {
+      "word": "There's no such thing as a free lunch",
+      "pronunciation": "/ðɛrz noʊ sʌtʃ θɪŋ æz ə friː lʌntʃ/",
+      "meaning": "Nothing is truly free",
+      "banglaMeaning": "বিনামূল্যে কিছু পাওয়া যায় না",
+      "exampleSentence": "Be careful of offers that seem too good — there's no such thing as a free lunch."
+    },
+    {
+      "word": "Time flies when you're having fun",
+      "pronunciation": "/taɪm flaɪz wɛn jɔːr ˈhævɪŋ fʌn/",
+      "meaning": "Time passes quickly when you enjoy yourself",
+      "banglaMeaning": "মজা করলে সময় দ্রুত কাটে",
+      "exampleSentence": "I can't believe it's midnight already — time flies when you're having fun."
+    },
+    {
+      "word": "Too many cooks spoil the broth",
+      "pronunciation": "/tuː ˈmɛni kʊks spɔɪl ðə brɒθ/",
+      "meaning": "Too many people ruin a task",
+      "banglaMeaning": "বেশি রাঁধুনি নুন বেশি",
+      "exampleSentence": "Let one person lead — too many cooks spoil the broth."
+    },
+    {
+      "word": "When in Rome, do as the Romans do",
+      "pronunciation": "/wɛn ɪn roʊm, duː æz ðə ˈroʊmənz duː/",
+      "meaning": "Follow local customs when in a new place",
+      "banglaMeaning": "যেখানে যেমন সেখানে তেমন",
+      "exampleSentence": "I eat with chopsticks in Japan — when in Rome, do as the Romans do."
+    },
+    {
+      "word": "You can't have your cake and eat it too",
+      "pronunciation": "/juː kænt hæv jɔːr keɪk ænd iːt ɪt tuː/",
+      "meaning": "You can't have two incompatible things",
+      "banglaMeaning": "একসাথে সব পাওয়া সম্ভব নয়",
+      "exampleSentence": "You can't work less and earn more — you can't have your cake and eat it too."
+    },
+    {
+      "word": "Burn bridges",
+      "pronunciation": "/bɜːrn ˈbrɪdʒɪz/",
+      "meaning": "To destroy relationships or options",
+      "banglaMeaning": "সম্পর্ক নষ্ট করা",
+      "exampleSentence": "Don't burn bridges with your former employer."
+    },
+    {
+      "word": "Fish out of water",
+      "pronunciation": "/fɪʃ aʊt əv ˈwɔːtər/",
+      "meaning": "Feeling out of place",
+      "banglaMeaning": "অস্বস্তিকর পরিবেশে থাকা",
+      "exampleSentence": "I felt like a fish out of water at the formal dinner."
+    },
+    {
+      "word": "Get a taste of your own medicine",
+      "pronunciation": "/ɡɛt ə teɪst əv jɔːr oʊn ˈmɛdɪsɪn/",
+      "meaning": "To be treated the way you treat others",
+      "banglaMeaning": "একই আচরণের শিকার হওয়া",
+      "exampleSentence": "He was rude to everyone, and now he's getting a taste of his own medicine."
+    },
+    {
+      "word": "Grasping at straws",
+      "pronunciation": "/ˈɡræspɪŋ æt strɔːz/",
+      "meaning": "Trying hopeless options",
+      "banglaMeaning": "শেষ আশা ধরে রাখা",
+      "exampleSentence": "His argument was weak, he was grasping at straws."
+    },
+    {
+      "word": "Have your head in the clouds",
+      "pronunciation": "/hæv jɔːr hɛd ɪn ðə klaʊdz/",
+      "meaning": "To be unrealistic or distracted",
+      "banglaMeaning": "কল্পনায় মগ্ন থাকা",
+      "exampleSentence": "He has his head in the clouds if he thinks that plan will work."
+    }
+  ]
+}

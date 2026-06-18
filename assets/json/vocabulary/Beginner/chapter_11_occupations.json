@@ -1,12 +1,182 @@
-{"chapter": 11, "level": "Beginner", "title": "Occupations", "words": [
-  {"word": "Teacher", "pronunciation": "/ˈtiːtʃər/", "meaning": "Person who teaches", "banglaMeaning": "শিক্ষক", "exampleSentence": "My teacher is very kind."},
-  {"word": "Doctor", "pronunciation": "/ˈdɒktər/", "meaning": "Person who treats illness", "banglaMeaning": "ডাক্তার", "exampleSentence": "The doctor gave me medicine."},
-  {"word": "Engineer", "pronunciation": "/ˌendʒɪˈnɪər/", "meaning": "Person who designs machines or buildings", "banglaMeaning": "প্রকৌশলী", "exampleSentence": "He is a software engineer."},
-  {"word": "Farmer", "pronunciation": "/ˈfɑːrmər/", "meaning": "Person who grows crops", "banglaMeaning": "কৃষক", "exampleSentence": "The farmer works in the field."},
-  {"word": "Driver", "pronunciation": "/ˈdraɪvər/", "meaning": "Person who drives a vehicle", "banglaMeaning": "চালক / ড্রাইভার", "exampleSentence": "The bus driver is experienced."},
-  {"word": "Police Officer", "pronunciation": "/pəˈliːs ˈɒfɪsər/", "meaning": "Person who maintains law and order", "banglaMeaning": "পুলিশ অফিসার", "exampleSentence": "The police officer helped us."},
-  {"word": "Nurse", "pronunciation": "/nɜːrs/", "meaning": "Person who cares for the sick", "banglaMeaning": "নার্স", "exampleSentence": "The nurse gave me an injection."},
-  {"word": "Shopkeeper", "pronunciation": "/ˈʃɒpkiːpər/", "meaning": "Person who runs a shop", "banglaMeaning": "দোকানদার", "exampleSentence": "The shopkeeper is very friendly."},
-  {"word": "Chef", "pronunciation": "/ʃef/", "meaning": "Person who cooks professionally", "banglaMeaning": "পাচক / রাঁধুনি", "exampleSentence": "The chef cooked a delicious meal."},
-  {"word": "Pilot", "pronunciation": "/ˈpaɪlət/", "meaning": "Person who flies an aircraft", "banglaMeaning": "পাইলট", "exampleSentence": "The pilot landed the plane safely."}
-]}
+{
+  "chapter": 11,
+  "level": "Beginner",
+  "title": "Occupations",
+  "words": [
+    {
+      "word": "Teacher",
+      "pronunciation": "/ˈtiːtʃər/",
+      "meaning": "Person who teaches",
+      "banglaMeaning": "শিক্ষক",
+      "exampleSentence": "My teacher is very kind."
+    },
+    {
+      "word": "Doctor",
+      "pronunciation": "/ˈdɒktər/",
+      "meaning": "Person who treats illness",
+      "banglaMeaning": "ডাক্তার",
+      "exampleSentence": "The doctor gave me medicine."
+    },
+    {
+      "word": "Engineer",
+      "pronunciation": "/ˌendʒɪˈnɪər/",
+      "meaning": "Person who designs machines or buildings",
+      "banglaMeaning": "প্রকৌশলী",
+      "exampleSentence": "He is a software engineer."
+    },
+    {
+      "word": "Farmer",
+      "pronunciation": "/ˈfɑːrmər/",
+      "meaning": "Person who grows crops",
+      "banglaMeaning": "কৃষক",
+      "exampleSentence": "The farmer works in the field."
+    },
+    {
+      "word": "Driver",
+      "pronunciation": "/ˈdraɪvər/",
+      "meaning": "Person who drives a vehicle",
+      "banglaMeaning": "চালক / ড্রাইভার",
+      "exampleSentence": "The bus driver is experienced."
+    },
+    {
+      "word": "Police Officer",
+      "pronunciation": "/pəˈliːs ˈɒfɪsər/",
+      "meaning": "Person who maintains law and order",
+      "banglaMeaning": "পুলিশ অফিসার",
+      "exampleSentence": "The police officer helped us."
+    },
+    {
+      "word": "Nurse",
+      "pronunciation": "/nɜːrs/",
+      "meaning": "Person who cares for the sick",
+      "banglaMeaning": "নার্স",
+      "exampleSentence": "The nurse gave me an injection."
+    },
+    {
+      "word": "Shopkeeper",
+      "pronunciation": "/ˈʃɒpkiːpər/",
+      "meaning": "Person who runs a shop",
+      "banglaMeaning": "দোকানদার",
+      "exampleSentence": "The shopkeeper is very friendly."
+    },
+    {
+      "word": "Chef",
+      "pronunciation": "/ʃef/",
+      "meaning": "Person who cooks professionally",
+      "banglaMeaning": "পাচক / রাঁধুনি",
+      "exampleSentence": "The chef cooked a delicious meal."
+    },
+    {
+      "word": "Pilot",
+      "pronunciation": "/ˈpaɪlət/",
+      "meaning": "Person who flies an aircraft",
+      "banglaMeaning": "পাইলট",
+      "exampleSentence": "The pilot landed the plane safely."
+    },
+    {
+      "word": "Lawyer",
+      "pronunciation": "/ˈlɔːjər/",
+      "meaning": "Person who practices law",
+      "banglaMeaning": "আইনজীবী / উকিল",
+      "exampleSentence": "The lawyer argued the case."
+    },
+    {
+      "word": "Scientist",
+      "pronunciation": "/ˈsaɪəntɪst/",
+      "meaning": "Person who studies science",
+      "banglaMeaning": "বিজ্ঞানী",
+      "exampleSentence": "The scientist discovered a new planet."
+    },
+    {
+      "word": "Artist",
+      "pronunciation": "/ˈɑːrtɪst/",
+      "meaning": "Person who creates art",
+      "banglaMeaning": "শিল্পী",
+      "exampleSentence": "The artist painted a beautiful picture."
+    },
+    {
+      "word": "Writer",
+      "pronunciation": "/ˈraɪtər/",
+      "meaning": "Person who writes books or articles",
+      "banglaMeaning": "লেখক",
+      "exampleSentence": "The writer published a new novel."
+    },
+    {
+      "word": "Journalist",
+      "pronunciation": "/ˈdʒɜːrnəlɪst/",
+      "meaning": "Person who reports news",
+      "banglaMeaning": "সাংবাদিক",
+      "exampleSentence": "The journalist interviewed the minister."
+    },
+    {
+      "word": "Musician",
+      "pronunciation": "/mjuˈzɪʃən/",
+      "meaning": "Person who plays music",
+      "banglaMeaning": "সংগীতশিল্পী",
+      "exampleSentence": "The musician played the guitar."
+    },
+    {
+      "word": "Dancer",
+      "pronunciation": "/ˈdænsər/",
+      "meaning": "Person who dances",
+      "banglaMeaning": "নৃত্যশিল্পী",
+      "exampleSentence": "The dancer performed gracefully."
+    },
+    {
+      "word": "Actor",
+      "pronunciation": "/ˈæktər/",
+      "meaning": "Person who performs in plays or films",
+      "banglaMeaning": "অভিনেতা",
+      "exampleSentence": "The actor won an award."
+    },
+    {
+      "word": "Barber",
+      "pronunciation": "/ˈbɑːrbər/",
+      "meaning": "Person who cuts hair",
+      "banglaMeaning": "নাপিত / বার্বার",
+      "exampleSentence": "The barber cut my hair."
+    },
+    {
+      "word": "Postman",
+      "pronunciation": "/ˈpoʊstmən/",
+      "meaning": "Person who delivers mail",
+      "banglaMeaning": "ডাকপিয়ন",
+      "exampleSentence": "The postman brought a letter."
+    },
+    {
+      "word": "Firefighter",
+      "pronunciation": "/ˈfaɪərˌfaɪtər/",
+      "meaning": "Person who puts out fires",
+      "banglaMeaning": "দমকলকর্মী",
+      "exampleSentence": "The firefighter saved the family."
+    },
+    {
+      "word": "Judge",
+      "pronunciation": "/dʒʌdʒ/",
+      "meaning": "Person who decides in court",
+      "banglaMeaning": "বিচারক",
+      "exampleSentence": "The judge announced the verdict."
+    },
+    {
+      "word": "Sailor",
+      "pronunciation": "/ˈseɪlər/",
+      "meaning": "Person who works on a ship",
+      "banglaMeaning": "নাবিক",
+      "exampleSentence": "The sailor traveled across the ocean."
+    },
+    {
+      "word": "Tailor",
+      "pronunciation": "/ˈteɪlər/",
+      "meaning": "Person who makes clothes",
+      "banglaMeaning": "দর্জি",
+      "exampleSentence": "The tailor stitched my shirt."
+    },
+    {
+      "word": "Photographer",
+      "pronunciation": "/fəˈtɒɡrəfər/",
+      "meaning": "Person who takes photos",
+      "banglaMeaning": "ফটোগ্রাফার",
+      "exampleSentence": "The photographer clicked a wonderful picture."
+    }
+  ]
+}

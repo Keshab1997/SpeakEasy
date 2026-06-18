@@ -1,12 +1,182 @@
-{"chapter": 6, "level": "Beginner", "title": "Time and Date", "words": [
-  {"word": "Morning", "pronunciation": "/ˈmɔːrnɪŋ/", "meaning": "Early part of the day", "banglaMeaning": "সকাল", "exampleSentence": "I wake up in the morning."},
-  {"word": "Afternoon", "pronunciation": "/ˌæftərˈnuːn/", "meaning": "Middle part of the day", "banglaMeaning": "দুপুর / বিকাল", "exampleSentence": "We eat lunch in the afternoon."},
-  {"word": "Evening", "pronunciation": "/ˈiːvnɪŋ/", "meaning": "Late part of the day", "banglaMeaning": "সন্ধ্যা", "exampleSentence": "We go for a walk in the evening."},
-  {"word": "Night", "pronunciation": "/naɪt/", "meaning": "Time after sunset", "banglaMeaning": "রাত", "exampleSentence": "I sleep at night."},
-  {"word": "Today", "pronunciation": "/təˈdeɪ/", "meaning": "This current day", "banglaMeaning": "আজ", "exampleSentence": "Today is Monday."},
-  {"word": "Yesterday", "pronunciation": "/ˈjestərdeɪ/", "meaning": "The day before today", "banglaMeaning": "গতকাল", "exampleSentence": "I went to school yesterday."},
-  {"word": "Tomorrow", "pronunciation": "/təˈmɒroʊ/", "meaning": "The day after today", "banglaMeaning": "আগামীকাল", "exampleSentence": "I will go tomorrow."},
-  {"word": "Clock", "pronunciation": "/klɒk/", "meaning": "A device that shows time", "banglaMeaning": "ঘড়ি", "exampleSentence": "The clock shows 5 o'clock."},
-  {"word": "Hour", "pronunciation": "/aʊər/", "meaning": "60 minutes", "banglaMeaning": "ঘণ্টা", "exampleSentence": "I study for one hour."},
-  {"word": "Minute", "pronunciation": "/ˈmɪnɪt/", "meaning": "60 seconds", "banglaMeaning": "মিনিট", "exampleSentence": "Wait for five minutes."}
-]}
+{
+  "chapter": 6,
+  "level": "Beginner",
+  "title": "Time and Date",
+  "words": [
+    {
+      "word": "Morning",
+      "pronunciation": "/ˈmɔːrnɪŋ/",
+      "meaning": "Early part of the day",
+      "banglaMeaning": "সকাল",
+      "exampleSentence": "I wake up in the morning."
+    },
+    {
+      "word": "Afternoon",
+      "pronunciation": "/ˌæftərˈnuːn/",
+      "meaning": "Middle part of the day",
+      "banglaMeaning": "দুপুর / বিকাল",
+      "exampleSentence": "We eat lunch in the afternoon."
+    },
+    {
+      "word": "Evening",
+      "pronunciation": "/ˈiːvnɪŋ/",
+      "meaning": "Late part of the day",
+      "banglaMeaning": "সন্ধ্যা",
+      "exampleSentence": "We go for a walk in the evening."
+    },
+    {
+      "word": "Night",
+      "pronunciation": "/naɪt/",
+      "meaning": "Time after sunset",
+      "banglaMeaning": "রাত",
+      "exampleSentence": "I sleep at night."
+    },
+    {
+      "word": "Today",
+      "pronunciation": "/təˈdeɪ/",
+      "meaning": "This current day",
+      "banglaMeaning": "আজ",
+      "exampleSentence": "Today is Monday."
+    },
+    {
+      "word": "Yesterday",
+      "pronunciation": "/ˈjestərdeɪ/",
+      "meaning": "The day before today",
+      "banglaMeaning": "গতকাল",
+      "exampleSentence": "I went to school yesterday."
+    },
+    {
+      "word": "Tomorrow",
+      "pronunciation": "/təˈmɒroʊ/",
+      "meaning": "The day after today",
+      "banglaMeaning": "আগামীকাল",
+      "exampleSentence": "I will go tomorrow."
+    },
+    {
+      "word": "Clock",
+      "pronunciation": "/klɒk/",
+      "meaning": "A device that shows time",
+      "banglaMeaning": "ঘড়ি",
+      "exampleSentence": "The clock shows 5 o'clock."
+    },
+    {
+      "word": "Hour",
+      "pronunciation": "/aʊər/",
+      "meaning": "60 minutes",
+      "banglaMeaning": "ঘণ্টা",
+      "exampleSentence": "I study for one hour."
+    },
+    {
+      "word": "Minute",
+      "pronunciation": "/ˈmɪnɪt/",
+      "meaning": "60 seconds",
+      "banglaMeaning": "মিনিট",
+      "exampleSentence": "Wait for five minutes."
+    },
+    {
+      "word": "Second",
+      "pronunciation": "/ˈsɛkənd/",
+      "meaning": "A very short unit of time",
+      "banglaMeaning": "সেকেন্ড",
+      "exampleSentence": "Wait for one second."
+    },
+    {
+      "word": "O'clock",
+      "pronunciation": "/əˈklɒk/",
+      "meaning": "Used to tell exact hour",
+      "banglaMeaning": "টায়",
+      "exampleSentence": "It is five o'clock."
+    },
+    {
+      "word": "Noon",
+      "pronunciation": "/nuːn/",
+      "meaning": "12 o'clock in the daytime",
+      "banglaMeaning": "দুপুর ১২টা",
+      "exampleSentence": "We eat lunch at noon."
+    },
+    {
+      "word": "Midnight",
+      "pronunciation": "/ˈmɪdnaɪt/",
+      "meaning": "12 o'clock at night",
+      "banglaMeaning": "মধ্যরাত",
+      "exampleSentence": "The party ended at midnight."
+    },
+    {
+      "word": "Sunrise",
+      "pronunciation": "/ˈsʌnraɪz/",
+      "meaning": "When the sun appears in the morning",
+      "banglaMeaning": "সূর্যোদয়",
+      "exampleSentence": "We wake up before sunrise."
+    },
+    {
+      "word": "Sunset",
+      "pronunciation": "/ˈsʌnsɛt/",
+      "meaning": "When the sun goes down",
+      "banglaMeaning": "সূর্যাস্ত",
+      "exampleSentence": "The sunset is very beautiful."
+    },
+    {
+      "word": "Day",
+      "pronunciation": "/deɪ/",
+      "meaning": "24 hours or the time when it is light",
+      "banglaMeaning": "দিন",
+      "exampleSentence": "The day is very sunny."
+    },
+    {
+      "word": "Week",
+      "pronunciation": "/wiːk/",
+      "meaning": "Seven days",
+      "banglaMeaning": "সপ্তাহ",
+      "exampleSentence": "There are seven days in a week."
+    },
+    {
+      "word": "Month",
+      "pronunciation": "/mʌnθ/",
+      "meaning": "30 or 31 days",
+      "banglaMeaning": "মাস",
+      "exampleSentence": "The month of June is hot."
+    },
+    {
+      "word": "Year",
+      "pronunciation": "/jɪər/",
+      "meaning": "365 days",
+      "banglaMeaning": "বছর",
+      "exampleSentence": "This year I will study hard."
+    },
+    {
+      "word": "Calendar",
+      "pronunciation": "/ˈkælɪndər/",
+      "meaning": "A chart showing days and months",
+      "banglaMeaning": "ক্যালেন্ডার / দিনপঞ্জি",
+      "exampleSentence": "Check the calendar for the date."
+    },
+    {
+      "word": "Date",
+      "pronunciation": "/deɪt/",
+      "meaning": "A specific day in a month",
+      "banglaMeaning": "তারিখ",
+      "exampleSentence": "What is today's date?"
+    },
+    {
+      "word": "Watch",
+      "pronunciation": "/wɒtʃ/",
+      "meaning": "A small clock worn on wrist",
+      "banglaMeaning": "ঘড়ি",
+      "exampleSentence": "My watch shows 3 o'clock."
+    },
+    {
+      "word": "Alarm",
+      "pronunciation": "/əˈlɑːrm/",
+      "meaning": "A sound that wakes you up",
+      "banglaMeaning": "এলার্ম / সতর্ক ঘণ্টা",
+      "exampleSentence": "I set the alarm for 6 am."
+    },
+    {
+      "word": "Late",
+      "pronunciation": "/leɪt/",
+      "meaning": "After the expected time",
+      "banglaMeaning": "দেরি",
+      "exampleSentence": "He is late for school today."
+    }
+  ]
+}

@@ -72,6 +72,237 @@
       "meaning": "Greeting someone who has arrived",
       "banglaMeaning": "স্বাগতম",
       "exampleSentence": "Welcome to our school!"
+    },
+    {
+      "word": "Nice to meet you",
+      "pronunciation": "/naɪs tuː miːt juː/",
+      "meaning": "A polite phrase when meeting someone for the first time",
+      "banglaMeaning": "আপনার সাথে দেখা হয়ে ভালো লাগলো",
+      "exampleSentence": "Nice to meet you, I'm Rahim."
+    },
+    {
+      "word": "How are you?",
+      "pronunciation": "/haʊ ɑːr juː/",
+      "meaning": "A greeting asking about someone's well-being",
+      "banglaMeaning": "আপনি কেমন আছেন?",
+      "exampleSentence": "Hello! How are you today?"
+    },
+    {
+      "word": "I'm fine",
+      "pronunciation": "/aɪm faɪn/",
+      "meaning": "A response to say you are doing well",
+      "banglaMeaning": "আমি ভালো আছি",
+      "exampleSentence": "I'm fine, thank you!"
+    },
+    {
+      "word": "What is your name?",
+      "pronunciation": "/wɒt ɪz jɔːr neɪm/",
+      "meaning": "Asking someone for their name",
+      "banglaMeaning": "আপনার নাম কী?",
+      "exampleSentence": "What is your name? My name is Sana."
+    },
+    {
+      "word": "My name is",
+      "pronunciation": "/maɪ neɪm ɪz/",
+      "meaning": "Introducing yourself",
+      "banglaMeaning": "আমার নাম ...",
+      "exampleSentence": "Hello! My name is Priya."
+    },
+    {
+      "word": "See you later",
+      "pronunciation": "/siː juː ˈleɪtər/",
+      "meaning": "Said when parting, expecting to meet again",
+      "banglaMeaning": "পরে দেখা হবে",
+      "exampleSentence": "I have to go now. See you later!"
+    },
+    {
+      "word": "Good night",
+      "pronunciation": "/ɡʊd naɪt/",
+      "meaning": "Said when parting at night or before sleep",
+      "banglaMeaning": "শুভ রাত্রি",
+      "exampleSentence": "Good night, sleep well!"
+    },
+    {
+      "word": "How do you do?",
+      "pronunciation": "/haʊ duː juː duː/",
+      "meaning": "A formal greeting when meeting someone",
+      "banglaMeaning": "আপনি কেমন আছেন? (আনুষ্ঠানিক)",
+      "exampleSentence": "How do you do? I'm Mr. Hasan."
+    },
+    {
+      "word": "Pleased to meet you",
+      "pronunciation": "/pliːzd tuː miːt juː/",
+      "meaning": "A polite expression when introduced to someone",
+      "banglaMeaning": "আপনার সাথে দেখা হয়ে খুশি হলাম",
+      "exampleSentence": "Pleased to meet you, Professor."
+    },
+    {
+      "word": "Where are you from?",
+      "pronunciation": "/wɛər ɑːr juː frɒm/",
+      "meaning": "Asking about someone's origin",
+      "banglaMeaning": "আপনি কোথা থেকে এসেছেন?",
+      "exampleSentence": "Where are you from? I am from Bangladesh."
+    },
+    {
+      "word": "I am from",
+      "pronunciation": "/aɪ æm frɒm/",
+      "meaning": "Saying where you come from",
+      "banglaMeaning": "আমি ... থেকে এসেছি",
+      "exampleSentence": "I am from Dhaka."
+    },
+    {
+      "word": "Excuse me",
+      "pronunciation": "/ɪkˈskjuːz miː/",
+      "meaning": "Used to get attention or apologize politely",
+      "banglaMeaning": "দুঃখিত / ক্ষমা করবেন",
+      "exampleSentence": "Excuse me, can you tell me the time?"
+    },
+    {
+      "word": "You're welcome",
+      "pronunciation": "/jɔːr ˈwelkəm/",
+      "meaning": "A polite response to thank you",
+      "banglaMeaning": "আপনাকে স্বাগতম",
+      "exampleSentence": "Thank you! You're welcome."
+    },
+    {
+      "word": "Take care",
+      "pronunciation": "/teɪk kɛər/",
+      "meaning": "A farewell expressing concern",
+      "banglaMeaning": "নিজের যত্ন নিন",
+      "exampleSentence": "Goodbye! Take care of yourself."
+    },
+    {
+      "word": "Have a nice day",
+      "pronunciation": "/hæv ə naɪs deɪ/",
+      "meaning": "A polite farewell wishing someone well",
+      "banglaMeaning": "আপনার দিন শুভ হোক",
+      "exampleSentence": "Thank you for coming. Have a nice day!"
+    },
+    {
+      "word": "Nice to see you",
+      "pronunciation": "/naɪs tuː siː juː/",
+      "meaning": "Expressing happiness at meeting someone known",
+      "banglaMeaning": "আপনাকে দেখে ভালো লাগলো",
+      "exampleSentence": "Nice to see you again!"
+    },
+    {
+      "word": "How's everything?",
+      "pronunciation": "/haʊz ˈɛvriθɪŋ/",
+      "meaning": "An informal way to ask how someone is",
+      "banglaMeaning": "সব কেমন চলছে?",
+      "exampleSentence": "How's everything with you?"
+    },
+    {
+      "word": "I'm fine, and you?",
+      "pronunciation": "/aɪm faɪn, ænd juː/",
+      "meaning": "A polite response returning the question",
+      "banglaMeaning": "আমি ভালো, আর আপনি?",
+      "exampleSentence": "I'm fine, and you?"
+    },
+    {
+      "word": "May I introduce myself?",
+      "pronunciation": "/meɪ aɪ ˌɪntrəˈdjuːs maɪˈsɛlf/",
+      "meaning": "A formal way to start introducing yourself",
+      "banglaMeaning": "আমি কি নিজের পরিচয় দিতে পারি?",
+      "exampleSentence": "May I introduce myself? I am Dr. Rahman."
+    },
+    {
+      "word": "This is my friend",
+      "pronunciation": "/ðɪs ɪz maɪ frɛnd/",
+      "meaning": "Introducing someone else",
+      "banglaMeaning": "এটি আমার বন্ধু",
+      "exampleSentence": "This is my friend, Ayesha."
+    },
+    {
+      "word": "See you tomorrow",
+      "pronunciation": "/siː juː təˈmɒroʊ/",
+      "meaning": "Saying goodbye until the next day",
+      "banglaMeaning": "আগামীকাল দেখা হবে",
+      "exampleSentence": "The class is over. See you tomorrow!"
+    },
+    {
+      "word": "Long time no see",
+      "pronunciation": "/lɒŋ taɪm noʊ siː/",
+      "meaning": "Said when meeting someone after a long time",
+      "banglaMeaning": "অনেক দিন পরে দেখা",
+      "exampleSentence": "Long time no see! How have you been?"
+    },
+    {
+      "word": "What's up?",
+      "pronunciation": "/wɒts ʌp/",
+      "meaning": "An informal greeting asking how someone is",
+      "banglaMeaning": "কী খবর?",
+      "exampleSentence": "Hey! What's up?"
+    },
+    {
+      "word": "Not much",
+      "pronunciation": "/nɒt mʌtʃ/",
+      "meaning": "A common reply to 'What's up?'",
+      "banglaMeaning": "বিশেষ কিছু না",
+      "exampleSentence": "Not much, just relaxing."
+    },
+    {
+      "word": "Farewell",
+      "pronunciation": "/ˌfɛərˈwɛl/",
+      "meaning": "A formal goodbye",
+      "banglaMeaning": "বিদায়",
+      "exampleSentence": "Farewell, my friends. I will miss you."
+    },
+    {
+      "word": "Good luck",
+      "pronunciation": "/ɡʊd lʌk/",
+      "meaning": "Wishing someone success",
+      "banglaMeaning": "শুভ কামনা",
+      "exampleSentence": "Good luck with your exam!"
+    },
+    {
+      "word": "How are you doing?",
+      "pronunciation": "/haʊ ɑːr juː ˈduːɪŋ/",
+      "meaning": "An informal way to ask about someone's well-being",
+      "banglaMeaning": "কেমন চলছে?",
+      "exampleSentence": "How are you doing these days?"
+    },
+    {
+      "word": "I'm doing well",
+      "pronunciation": "/aɪm ˈduːɪŋ wɛl/",
+      "meaning": "A reply saying you are doing fine",
+      "banglaMeaning": "আমি ভালো চলছি",
+      "exampleSentence": "I'm doing well, thanks!"
+    },
+    {
+      "word": "May I help you?",
+      "pronunciation": "/meɪ aɪ hɛlp juː/",
+      "meaning": "Offering assistance politely",
+      "banglaMeaning": "আমি কি আপনাকে সাহায্য করতে পারি?",
+      "exampleSentence": "May I help you find something?"
+    },
+    {
+      "word": "Yes, please",
+      "pronunciation": "/jɛs pliːz/",
+      "meaning": "A polite acceptance of an offer",
+      "banglaMeaning": "হ্যাঁ, দয়া করে",
+      "exampleSentence": "Would you like some tea? Yes, please."
+    },
+    {
+      "word": "No, thank you",
+      "pronunciation": "/noʊ θæŋk juː/",
+      "meaning": "A polite refusal",
+      "banglaMeaning": "না, ধন্যবাদ",
+      "exampleSentence": "Do you need help? No, thank you."
+    },
+    {
+      "word": "I'm sorry",
+      "pronunciation": "/aɪm ˈsɒri/",
+      "meaning": "Apologizing for something",
+      "banglaMeaning": "আমি দুঃখিত",
+      "exampleSentence": "I'm sorry for the mistake."
+    },
+    {
+      "word": "It's okay",
+      "pronunciation": "/ɪts oʊˈkeɪ/",
+      "meaning": "Forgiving or reassuring someone",
+      "banglaMeaning": "ঠিক আছে / কিছু হয়নি",
+      "exampleSentence": "I'm sorry. It's okay, don't worry."
     }
   ]
 }

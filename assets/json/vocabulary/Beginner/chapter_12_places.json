@@ -1,12 +1,182 @@
-{"chapter": 12, "level": "Beginner", "title": "Places", "words": [
-  {"word": "School", "pronunciation": "/skuːl/", "meaning": "A place for learning", "banglaMeaning": "বিদ্যালয় / স্কুল", "exampleSentence": "I go to school every day."},
-  {"word": "Hospital", "pronunciation": "/ˈhɒspɪtl/", "meaning": "A place for treating patients", "banglaMeaning": "হাসপাতাল", "exampleSentence": "The hospital is near our house."},
-  {"word": "Market", "pronunciation": "/ˈmɑːrkɪt/", "meaning": "A place for buying and selling", "banglaMeaning": "বাজার", "exampleSentence": "Mother goes to the market daily."},
-  {"word": "Station", "pronunciation": "/ˈsteɪʃən/", "meaning": "A place where trains stop", "banglaMeaning": "স্টেশন", "exampleSentence": "The train arrives at the station at 6 pm."},
-  {"word": "Airport", "pronunciation": "/ˈeərpɔːrt/", "meaning": "A place where planes take off and land", "banglaMeaning": "বিমানবন্দর", "exampleSentence": "We went to the airport to receive him."},
-  {"word": "Restaurant", "pronunciation": "/ˈrestrɒnt/", "meaning": "A place to eat food", "banglaMeaning": "রেস্তোরাঁ", "exampleSentence": "We had dinner at a restaurant."},
-  {"word": "Park", "pronunciation": "/pɑːrk/", "meaning": "An outdoor area for recreation", "banglaMeaning": "পার্ক", "exampleSentence": "Children play in the park."},
-  {"word": "Library", "pronunciation": "/ˈlaɪbrəri/", "meaning": "A place with books to read or borrow", "banglaMeaning": "গ্রন্থাগার / লাইব্রেরি", "exampleSentence": "I study at the library."},
-  {"word": "Bank", "pronunciation": "/bæŋk/", "meaning": "A place to keep money", "banglaMeaning": "ব্যাংক", "exampleSentence": "Father went to the bank today."},
-  {"word": "Mosque", "pronunciation": "/mɒsk/", "meaning": "A place of worship for Muslims", "banglaMeaning": "মসজিদ", "exampleSentence": "We pray at the mosque."}
-]}
+{
+  "chapter": 12,
+  "level": "Beginner",
+  "title": "Places",
+  "words": [
+    {
+      "word": "School",
+      "pronunciation": "/skuːl/",
+      "meaning": "A place for learning",
+      "banglaMeaning": "বিদ্যালয় / স্কুল",
+      "exampleSentence": "I go to school every day."
+    },
+    {
+      "word": "Hospital",
+      "pronunciation": "/ˈhɒspɪtl/",
+      "meaning": "A place for treating patients",
+      "banglaMeaning": "হাসপাতাল",
+      "exampleSentence": "The hospital is near our house."
+    },
+    {
+      "word": "Market",
+      "pronunciation": "/ˈmɑːrkɪt/",
+      "meaning": "A place for buying and selling",
+      "banglaMeaning": "বাজার",
+      "exampleSentence": "Mother goes to the market daily."
+    },
+    {
+      "word": "Station",
+      "pronunciation": "/ˈsteɪʃən/",
+      "meaning": "A place where trains stop",
+      "banglaMeaning": "স্টেশন",
+      "exampleSentence": "The train arrives at the station at 6 pm."
+    },
+    {
+      "word": "Airport",
+      "pronunciation": "/ˈeərpɔːrt/",
+      "meaning": "A place where planes take off and land",
+      "banglaMeaning": "বিমানবন্দর",
+      "exampleSentence": "We went to the airport to receive him."
+    },
+    {
+      "word": "Restaurant",
+      "pronunciation": "/ˈrestrɒnt/",
+      "meaning": "A place to eat food",
+      "banglaMeaning": "রেস্তোরাঁ",
+      "exampleSentence": "We had dinner at a restaurant."
+    },
+    {
+      "word": "Park",
+      "pronunciation": "/pɑːrk/",
+      "meaning": "An outdoor area for recreation",
+      "banglaMeaning": "পার্ক",
+      "exampleSentence": "Children play in the park."
+    },
+    {
+      "word": "Library",
+      "pronunciation": "/ˈlaɪbrəri/",
+      "meaning": "A place with books to read or borrow",
+      "banglaMeaning": "গ্রন্থাগার / লাইব্রেরি",
+      "exampleSentence": "I study at the library."
+    },
+    {
+      "word": "Bank",
+      "pronunciation": "/bæŋk/",
+      "meaning": "A place to keep money",
+      "banglaMeaning": "ব্যাংক",
+      "exampleSentence": "Father went to the bank today."
+    },
+    {
+      "word": "Mosque",
+      "pronunciation": "/mɒsk/",
+      "meaning": "A place of worship for Muslims",
+      "banglaMeaning": "মসজিদ",
+      "exampleSentence": "We pray at the mosque."
+    },
+    {
+      "word": "Temple",
+      "pronunciation": "/ˈtɛmpəl/",
+      "meaning": "A place of worship for Hindus",
+      "banglaMeaning": "মন্দির",
+      "exampleSentence": "We visited the temple yesterday."
+    },
+    {
+      "word": "Church",
+      "pronunciation": "/tʃɜːrtʃ/",
+      "meaning": "A place of worship for Christians",
+      "banglaMeaning": "গির্জা",
+      "exampleSentence": "People pray at the church."
+    },
+    {
+      "word": "Shop",
+      "pronunciation": "/ʃɒp/",
+      "meaning": "A place where goods are sold",
+      "banglaMeaning": "দোকান",
+      "exampleSentence": "The shop sells fresh vegetables."
+    },
+    {
+      "word": "Office",
+      "pronunciation": "/ˈɒfɪs/",
+      "meaning": "A place for work",
+      "banglaMeaning": "অফিস",
+      "exampleSentence": "My father goes to the office at 9 am."
+    },
+    {
+      "word": "Factory",
+      "pronunciation": "/ˈfæktəri/",
+      "meaning": "A place where goods are made",
+      "banglaMeaning": "কারখানা",
+      "exampleSentence": "The factory produces clothes."
+    },
+    {
+      "word": "Bridge",
+      "pronunciation": "/brɪdʒ/",
+      "meaning": "A structure built over a river or road",
+      "banglaMeaning": "সেতু",
+      "exampleSentence": "We crossed the bridge by car."
+    },
+    {
+      "word": "Village",
+      "pronunciation": "/ˈvɪlɪdʒ/",
+      "meaning": "A small settlement in the countryside",
+      "banglaMeaning": "গ্রাম",
+      "exampleSentence": "My grandparents live in a village."
+    },
+    {
+      "word": "City",
+      "pronunciation": "/ˈsɪti/",
+      "meaning": "A large town",
+      "banglaMeaning": "শহর",
+      "exampleSentence": "Dhaka is a busy city."
+    },
+    {
+      "word": "Sea",
+      "pronunciation": "/siː/",
+      "meaning": "A large area of salt water",
+      "banglaMeaning": "সমুদ্র",
+      "exampleSentence": "We went swimming in the sea."
+    },
+    {
+      "word": "River",
+      "pronunciation": "/ˈrɪvər/",
+      "meaning": "A flow of fresh water",
+      "banglaMeaning": "নদী",
+      "exampleSentence": "The river flows through the village."
+    },
+    {
+      "word": "Hill",
+      "pronunciation": "/hɪl/",
+      "meaning": "A raised area of land",
+      "banglaMeaning": "পাহাড়",
+      "exampleSentence": "We climbed the hill to see the view."
+    },
+    {
+      "word": "Forest",
+      "pronunciation": "/ˈfɒrɪst/",
+      "meaning": "A large area full of trees",
+      "banglaMeaning": "বন",
+      "exampleSentence": "We saw deer in the forest."
+    },
+    {
+      "word": "Playground",
+      "pronunciation": "/ˈpleɪɡraʊnd/",
+      "meaning": "An outdoor area for children to play",
+      "banglaMeaning": "খেলার মাঠ",
+      "exampleSentence": "Children play in the playground."
+    },
+    {
+      "word": "Market",
+      "pronunciation": "/ˈmɑːrkɪt/",
+      "meaning": "A place where people buy and sell",
+      "banglaMeaning": "বাজার",
+      "exampleSentence": "The market is busy on Fridays."
+    },
+    {
+      "word": "Zoo",
+      "pronunciation": "/zuː/",
+      "meaning": "A place for keeping animals",
+      "banglaMeaning": "চিড়িয়াখানা",
+      "exampleSentence": "We saw lions at the zoo."
+    }
+  ]
+}

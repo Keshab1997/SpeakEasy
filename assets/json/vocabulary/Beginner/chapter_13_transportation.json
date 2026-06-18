@@ -1,12 +1,182 @@
-{"chapter": 13, "level": "Beginner", "title": "Transportation", "words": [
-  {"word": "Car", "pronunciation": "/kɑːr/", "meaning": "A four-wheeled vehicle", "banglaMeaning": "গাড়ি / কার", "exampleSentence": "Father drives a car."},
-  {"word": "Bus", "pronunciation": "/bʌs/", "meaning": "A large passenger vehicle", "banglaMeaning": "বাস", "exampleSentence": "I go to school by bus."},
-  {"word": "Train", "pronunciation": "/treɪn/", "meaning": "A vehicle that runs on rails", "banglaMeaning": "ট্রেন / রেলগাড়ি", "exampleSentence": "The train is very fast."},
-  {"word": "Bicycle", "pronunciation": "/ˈbaɪsɪkəl/", "meaning": "A two-wheeled vehicle", "banglaMeaning": "সাইকেল", "exampleSentence": "He rides a bicycle to school."},
-  {"word": "Airplane", "pronunciation": "/ˈeərpleɪn/", "meaning": "A vehicle that flies", "banglaMeaning": "বিমান", "exampleSentence": "The airplane landed safely."},
-  {"word": "Ship", "pronunciation": "/ʃɪp/", "meaning": "A large water vehicle", "banglaMeaning": "জাহাজ", "exampleSentence": "The ship sailed across the ocean."},
-  {"word": "Rickshaw", "pronunciation": "/ˈrɪkʃɔː/", "meaning": "A three-wheeled vehicle", "banglaMeaning": "রিকশা", "exampleSentence": "We took a rickshaw to the market."},
-  {"word": "Motorcycle", "pronunciation": "/ˈmoʊtərsaɪkəl/", "meaning": "A two-wheeled motorized vehicle", "banglaMeaning": "মোটরসাইকেল", "exampleSentence": "He came by motorcycle."},
-  {"word": "Boat", "pronunciation": "/boʊt/", "meaning": "A small water vehicle", "banglaMeaning": "নৌকা", "exampleSentence": "We crossed the river by boat."},
-  {"word": "Truck", "pronunciation": "/trʌk/", "meaning": "A large vehicle for carrying goods", "banglaMeaning": "ট্রাক", "exampleSentence": "The truck carried heavy loads."}
-]}
+{
+  "chapter": 13,
+  "level": "Beginner",
+  "title": "Transportation",
+  "words": [
+    {
+      "word": "Car",
+      "pronunciation": "/kɑːr/",
+      "meaning": "A four-wheeled vehicle",
+      "banglaMeaning": "গাড়ি / কার",
+      "exampleSentence": "Father drives a car."
+    },
+    {
+      "word": "Bus",
+      "pronunciation": "/bʌs/",
+      "meaning": "A large passenger vehicle",
+      "banglaMeaning": "বাস",
+      "exampleSentence": "I go to school by bus."
+    },
+    {
+      "word": "Train",
+      "pronunciation": "/treɪn/",
+      "meaning": "A vehicle that runs on rails",
+      "banglaMeaning": "ট্রেন / রেলগাড়ি",
+      "exampleSentence": "The train is very fast."
+    },
+    {
+      "word": "Bicycle",
+      "pronunciation": "/ˈbaɪsɪkəl/",
+      "meaning": "A two-wheeled vehicle",
+      "banglaMeaning": "সাইকেল",
+      "exampleSentence": "He rides a bicycle to school."
+    },
+    {
+      "word": "Airplane",
+      "pronunciation": "/ˈeərpleɪn/",
+      "meaning": "A vehicle that flies",
+      "banglaMeaning": "বিমান",
+      "exampleSentence": "The airplane landed safely."
+    },
+    {
+      "word": "Ship",
+      "pronunciation": "/ʃɪp/",
+      "meaning": "A large water vehicle",
+      "banglaMeaning": "জাহাজ",
+      "exampleSentence": "The ship sailed across the ocean."
+    },
+    {
+      "word": "Rickshaw",
+      "pronunciation": "/ˈrɪkʃɔː/",
+      "meaning": "A three-wheeled vehicle",
+      "banglaMeaning": "রিকশা",
+      "exampleSentence": "We took a rickshaw to the market."
+    },
+    {
+      "word": "Motorcycle",
+      "pronunciation": "/ˈmoʊtərsaɪkəl/",
+      "meaning": "A two-wheeled motorized vehicle",
+      "banglaMeaning": "মোটরসাইকেল",
+      "exampleSentence": "He came by motorcycle."
+    },
+    {
+      "word": "Boat",
+      "pronunciation": "/boʊt/",
+      "meaning": "A small water vehicle",
+      "banglaMeaning": "নৌকা",
+      "exampleSentence": "We crossed the river by boat."
+    },
+    {
+      "word": "Truck",
+      "pronunciation": "/trʌk/",
+      "meaning": "A large vehicle for carrying goods",
+      "banglaMeaning": "ট্রাক",
+      "exampleSentence": "The truck carried heavy loads."
+    },
+    {
+      "word": "Auto-rickshaw",
+      "pronunciation": "/ˈɔːtoʊ ˈrɪkʃɔː/",
+      "meaning": "A three-wheeled motorized vehicle",
+      "banglaMeaning": "অটোরিকশা",
+      "exampleSentence": "We took an auto-rickshaw to the station."
+    },
+    {
+      "word": "Taxi",
+      "pronunciation": "/ˈtæksi/",
+      "meaning": "A car that carries passengers for money",
+      "banglaMeaning": "ট্যাক্সি",
+      "exampleSentence": "Call a taxi to go to the airport."
+    },
+    {
+      "word": "Van",
+      "pronunciation": "/væn/",
+      "meaning": "A medium-sized vehicle for goods or people",
+      "banglaMeaning": "ভ্যান",
+      "exampleSentence": "The van delivered the furniture."
+    },
+    {
+      "word": "Subway",
+      "pronunciation": "/ˈsʌbweɪ/",
+      "meaning": "An underground railway",
+      "banglaMeaning": "সাবওয়ে / মেট্রোরেল",
+      "exampleSentence": "I take the subway to work."
+    },
+    {
+      "word": "Helicopter",
+      "pronunciation": "/ˈhɛlɪkɒptər/",
+      "meaning": "An aircraft with spinning blades",
+      "banglaMeaning": "হেলিকপ্টার",
+      "exampleSentence": "The helicopter landed on the roof."
+    },
+    {
+      "word": "Tractor",
+      "pronunciation": "/ˈtræktər/",
+      "meaning": "A vehicle used for farming",
+      "banglaMeaning": "ট্রাক্টর",
+      "exampleSentence": "The farmer drives a tractor in the field."
+    },
+    {
+      "word": "Scooter",
+      "pronunciation": "/ˈskuːtər/",
+      "meaning": "A two-wheeled light vehicle",
+      "banglaMeaning": "স্কুটার",
+      "exampleSentence": "She rides a scooter to college."
+    },
+    {
+      "word": "Tram",
+      "pronunciation": "/træm/",
+      "meaning": "A vehicle that runs on tracks in the city",
+      "banglaMeaning": "ট্রাম",
+      "exampleSentence": "Trams are common in some cities."
+    },
+    {
+      "word": "Canoe",
+      "pronunciation": "/kəˈnuː/",
+      "meaning": "A narrow light boat",
+      "banglaMeaning": "ক্যানো / ছোট নৌকা",
+      "exampleSentence": "We paddled the canoe on the lake."
+    },
+    {
+      "word": "Yacht",
+      "pronunciation": "/jɒt/",
+      "meaning": "A large luxurious boat",
+      "banglaMeaning": "ইয়ট",
+      "exampleSentence": "The rich man owns a yacht."
+    },
+    {
+      "word": "Tire",
+      "pronunciation": "/ˈtaɪər/",
+      "meaning": "Rubber covering around a wheel",
+      "banglaMeaning": "চাকার টায়ার",
+      "exampleSentence": "The car has a flat tire."
+    },
+    {
+      "word": "Helmet",
+      "pronunciation": "/ˈhɛlmɪt/",
+      "meaning": "Protective headgear for riding",
+      "banglaMeaning": "হেলমেট",
+      "exampleSentence": "Always wear a helmet on a motorcycle."
+    },
+    {
+      "word": "Seatbelt",
+      "pronunciation": "/ˈsiːtbɛlt/",
+      "meaning": "A belt for safety in a vehicle",
+      "banglaMeaning": "সিটবেল্ট",
+      "exampleSentence": "Fasten your seatbelt before driving."
+    },
+    {
+      "word": "Ticket",
+      "pronunciation": "/ˈtɪkɪt/",
+      "meaning": "A paper allowing travel",
+      "banglaMeaning": "টিকিট",
+      "exampleSentence": "I bought a train ticket."
+    },
+    {
+      "word": "Passenger",
+      "pronunciation": "/ˈpæsɪndʒər/",
+      "meaning": "A person traveling in a vehicle",
+      "banglaMeaning": "যাত্রী",
+      "exampleSentence": "The bus has forty passengers."
+    }
+  ]
+}

@@ -1,1 +1,686 @@
-{"chapter": 40, "level": "Advanced", "title": "Powerful English Words", "words": []}
+{
+  "chapter": 40,
+  "level": "Advanced",
+  "title": "Powerful English Words",
+  "words": [
+    {
+      "word": "Ubiquitous",
+      "pronunciation": "/juːˈbɪkwɪtəs/",
+      "meaning": "Present everywhere at once",
+      "banglaMeaning": "সর্বব্যাপী",
+      "exampleSentence": "Smartphones have become ubiquitous in modern society."
+    },
+    {
+      "word": "Ephemeral",
+      "pronunciation": "/ɪˈfɛmərəl/",
+      "meaning": "Lasting for a very short time",
+      "banglaMeaning": "ক্ষণস্থায়ী",
+      "exampleSentence": "The beauty of cherry blossoms is ephemeral."
+    },
+    {
+      "word": "Resilient",
+      "pronunciation": "/rɪˈzɪliənt/",
+      "meaning": "Able to recover quickly from difficulties",
+      "banglaMeaning": "স্থিতিস্থাপক",
+      "exampleSentence": "Children are remarkably resilient in the face of adversity."
+    },
+    {
+      "word": "Pragmatic",
+      "pronunciation": "/præɡˈmætɪk/",
+      "meaning": "Dealing with things practically",
+      "banglaMeaning": "বাস্তবসম্মত",
+      "exampleSentence": "We need a pragmatic approach to solve this crisis."
+    },
+    {
+      "word": "Ambiguous",
+      "pronunciation": "/æmˈbɪɡjuəs/",
+      "meaning": "Open to more than one interpretation",
+      "banglaMeaning": "অস্পষ্ট / দ্ব্যর্থক",
+      "exampleSentence": "The contract contains ambiguous language."
+    },
+    {
+      "word": "Paradigm",
+      "pronunciation": "/ˈpærədaɪm/",
+      "meaning": "A typical example or model",
+      "banglaMeaning": "দৃষ্টান্ত / আদর্শ",
+      "exampleSentence": "This discovery represents a paradigm shift in science."
+    },
+    {
+      "word": "Eloquent",
+      "pronunciation": "/ˈɛləkwənt/",
+      "meaning": "Fluent and persuasive in speaking",
+      "banglaMeaning": "বাগ্মী / স্পষ্টভাষী",
+      "exampleSentence": "She delivered an eloquent speech at the ceremony."
+    },
+    {
+      "word": "Innovative",
+      "pronunciation": "/ˈɪnəveɪtɪv/",
+      "meaning": "Introducing new ideas or methods",
+      "banglaMeaning": "উদ্ভাবনী",
+      "exampleSentence": "The company is known for its innovative products."
+    },
+    {
+      "word": "Inevitable",
+      "pronunciation": "/ɪnˈɛvɪtəbəl/",
+      "meaning": "Certain to happen",
+      "banglaMeaning": "অনিবার্য",
+      "exampleSentence": "Change is inevitable in life."
+    },
+    {
+      "word": "Phenomenal",
+      "pronunciation": "/fɪˈnɒmɪnəl/",
+      "meaning": "Extraordinary or remarkable",
+      "banglaMeaning": "অভূতপূর্ব",
+      "exampleSentence": "Her performance was absolutely phenomenal."
+    },
+    {
+      "word": "Meticulous",
+      "pronunciation": "/mɪˈtɪkjʊləs/",
+      "meaning": "Very careful and precise",
+      "banglaMeaning": "অতি সতর্ক / সূক্ষ্মদর্শী",
+      "exampleSentence": "The surgeon was meticulous in every detail."
+    },
+    {
+      "word": "Perseverance",
+      "pronunciation": "/ˌpɜːrsɪˈvɪrəns/",
+      "meaning": "Persistence in doing something despite difficulty",
+      "banglaMeaning": "অধ্যবসায়",
+      "exampleSentence": "Perseverance is the key to success."
+    },
+    {
+      "word": "Compassionate",
+      "pronunciation": "/kəmˈpæʃənɪt/",
+      "meaning": "Feeling or showing sympathy for others",
+      "banglaMeaning": "দয়ালু / সহানুভূতিশীল",
+      "exampleSentence": "A compassionate leader cares about people."
+    },
+    {
+      "word": "Sophisticated",
+      "pronunciation": "/səˈfɪstɪkeɪtɪd/",
+      "meaning": "Having refined or complex qualities",
+      "banglaMeaning": "পরিশীলিত",
+      "exampleSentence": "The software uses sophisticated algorithms."
+    },
+    {
+      "word": "Ambition",
+      "pronunciation": "/æmˈbɪʃən/",
+      "meaning": "A strong desire to achieve something",
+      "banglaMeaning": "উচ্চাকাঙ্ক্ষা",
+      "exampleSentence": "Her ambition drove her to become CEO."
+    },
+    {
+      "word": "Authentic",
+      "pronunciation": "/ɔːˈθɛntɪk/",
+      "meaning": "Genuine and original",
+      "banglaMeaning": "প্রকৃত / খাঁটি",
+      "exampleSentence": "This restaurant serves authentic Italian cuisine."
+    },
+    {
+      "word": "Charismatic",
+      "pronunciation": "/ˌkærɪzˈmætɪk/",
+      "meaning": "Having a compelling charm that attracts others",
+      "banglaMeaning": "ক্যারিশম্যাটিক / আকর্ষণীয়",
+      "exampleSentence": "The charismatic leader inspired millions."
+    },
+    {
+      "word": "Diligent",
+      "pronunciation": "/ˈdɪlɪdʒənt/",
+      "meaning": "Showing careful and persistent effort",
+      "banglaMeaning": "পরিশ্রমী",
+      "exampleSentence": "She is a diligent student who never misses a deadline."
+    },
+    {
+      "word": "Empower",
+      "pronunciation": "/ɪmˈpaʊər/",
+      "meaning": "To give someone the power to do something",
+      "banglaMeaning": "ক্ষমতায়িত করা",
+      "exampleSentence": "Education empowers people to improve their lives."
+    },
+    {
+      "word": "Fascinating",
+      "pronunciation": "/ˈfæsɪneɪtɪŋ/",
+      "meaning": "Extremely interesting or captivating",
+      "banglaMeaning": "মোহনীয় / আকর্ষণীয়",
+      "exampleSentence": "The documentary about space was absolutely fascinating."
+    },
+    {
+      "word": "Gratitude",
+      "pronunciation": "/ˈɡrætɪtjuːd/",
+      "meaning": "The quality of being thankful",
+      "banglaMeaning": "কৃতজ্ঞতা",
+      "exampleSentence": "I express my gratitude to everyone who helped me."
+    },
+    {
+      "word": "Resilience",
+      "pronunciation": "/rɪˈzɪliəns/",
+      "meaning": "The ability to recover quickly from setbacks",
+      "banglaMeaning": "স্থিতিস্থাপকতা",
+      "exampleSentence": "Resilience is an essential life skill."
+    },
+    {
+      "word": "Tenacious",
+      "pronunciation": "/tɪˈneɪʃəs/",
+      "meaning": "Holding firmly to something",
+      "banglaMeaning": "দৃঢ় / জেদী",
+      "exampleSentence": "He was a tenacious negotiator who never gave up."
+    },
+    {
+      "word": "Plausible",
+      "pronunciation": "/ˈplɔːzɪbəl/",
+      "meaning": "Seeming reasonable or probable",
+      "banglaMeaning": "যুক্তিসঙ্গত / সম্ভাবনীয়",
+      "exampleSentence": "Your explanation sounds plausible."
+    },
+    {
+      "word": "Intricate",
+      "pronunciation": "/ˈɪntrɪkɪt/",
+      "meaning": "Very detailed and complicated",
+      "banglaMeaning": "জটিল / সূক্ষ্ম",
+      "exampleSentence": "The design features intricate patterns."
+    },
+    {
+      "word": "Versatile",
+      "pronunciation": "/ˈvɜːrsətaɪl/",
+      "meaning": "Able to adapt to many functions",
+      "banglaMeaning": "বহুমুখী",
+      "exampleSentence": "She is a versatile actress who excels in any role."
+    },
+    {
+      "word": "Unprecedented",
+      "pronunciation": "/ʌnˈprɛsɪdɛntɪd/",
+      "meaning": "Never done or known before",
+      "banglaMeaning": "অভূতপূর্ব / নজিরবিহীন",
+      "exampleSentence": "The pandemic caused unprecedented global disruption."
+    },
+    {
+      "word": "Integrity",
+      "pronunciation": "/ɪnˈtɛɡrɪti/",
+      "meaning": "The quality of being honest and ethical",
+      "banglaMeaning": "সততা / নৈতিকতা",
+      "exampleSentence": "A person of integrity always keeps their word."
+    },
+    {
+      "word": "Persuasive",
+      "pronunciation": "/pərˈsweɪsɪv/",
+      "meaning": "Able to convince others",
+      "banglaMeaning": "প্ররোচনামূলক",
+      "exampleSentence": "His persuasive arguments won the debate."
+    },
+    {
+      "word": "Prosperity",
+      "pronunciation": "/prɒˈspɛrɪti/",
+      "meaning": "The state of being wealthy and successful",
+      "banglaMeaning": "সৌভাগ্য / সমৃদ্ধি",
+      "exampleSentence": "The country enjoyed years of prosperity."
+    },
+    {
+      "word": "Nostalgia",
+      "pronunciation": "/nɒˈstældʒə/",
+      "meaning": "Sentimental longing for the past",
+      "banglaMeaning": "নস্টালজিয়া / পুরনো দিনের স্মৃতি",
+      "exampleSentence": "Looking at old photos filled me with nostalgia."
+    },
+    {
+      "word": "Enigma",
+      "pronunciation": "/ɪˈnɪɡmə/",
+      "meaning": "A mysterious or puzzling person or thing",
+      "banglaMeaning": "রহস্য / ধাঁধা",
+      "exampleSentence": "The ancient script remains an enigma to scholars."
+    },
+    {
+      "word": "Abundant",
+      "pronunciation": "/əˈbʌndənt/",
+      "meaning": "Existing in large quantities",
+      "banglaMeaning": "প্রচুর / প্রাচুর্যপূর্ণ",
+      "exampleSentence": "The region has abundant natural resources."
+    },
+    {
+      "word": "Benevolent",
+      "pronunciation": "/bɪˈnɛvələnt/",
+      "meaning": "Well-meaning and kindly",
+      "banglaMeaning": "দয়ালু / কল্যাণকামী",
+      "exampleSentence": "The benevolent donor funded the hospital."
+    },
+    {
+      "word": "Contemplate",
+      "pronunciation": "/ˈkɒntəmpleɪt/",
+      "meaning": "To think about something deeply",
+      "banglaMeaning": "গভীরভাবে চিন্তা করা",
+      "exampleSentence": "She sat by the lake to contemplate her future."
+    },
+    {
+      "word": "Diversity",
+      "pronunciation": "/daɪˈvɜːrsɪti/",
+      "meaning": "The state of being varied or different",
+      "banglaMeaning": "বৈচিত্র্য",
+      "exampleSentence": "Diversity brings different perspectives to the table."
+    },
+    {
+      "word": "Endeavor",
+      "pronunciation": "/ɪnˈdɛvər/",
+      "meaning": "An attempt to achieve something",
+      "banglaMeaning": "প্রচেষ্টা / প্রয়াস",
+      "exampleSentence": "Space exploration is a remarkable human endeavor."
+    },
+    {
+      "word": "Flourish",
+      "pronunciation": "/ˈflʌrɪʃ/",
+      "meaning": "To grow or develop successfully",
+      "banglaMeaning": "সমৃদ্ধ হওয়া / বিকাশ লাভ করা",
+      "exampleSentence": "The business began to flourish under new management."
+    },
+    {
+      "word": "Harmony",
+      "pronunciation": "/ˈhɑːrməni/",
+      "meaning": "A state of peaceful agreement",
+      "banglaMeaning": "সামঞ্জস্য / সম্প্রীতি",
+      "exampleSentence": "The community lived in perfect harmony."
+    },
+    {
+      "word": "Indispensable",
+      "pronunciation": "/ˌɪndɪˈspɛnsəbəl/",
+      "meaning": "Absolutely necessary",
+      "banglaMeaning": "অপরিহার্য",
+      "exampleSentence": "A good dictionary is indispensable for learning a language."
+    },
+    {
+      "word": "Juxtapose",
+      "pronunciation": "/ˈdʒʌkstəpoʊz/",
+      "meaning": "To place side by side for comparison",
+      "banglaMeaning": "পাশাপাশি রাখা / তুলনা করা",
+      "exampleSentence": "The artist juxtaposed light and dark in the painting."
+    },
+    {
+      "word": "Legitimate",
+      "pronunciation": "/lɪˈdʒɪtɪmɪt/",
+      "meaning": "Conforming to rules or standards",
+      "banglaMeaning": "বৈধ / আইনসম্মত",
+      "exampleSentence": "Is that a legitimate business offer?"
+    },
+    {
+      "word": "Magnificent",
+      "pronunciation": "/mæɡˈnɪfɪsənt/",
+      "meaning": "Extremely beautiful or impressive",
+      "banglaMeaning": "চমৎকার / জমকালো",
+      "exampleSentence": "The sunset over the ocean was magnificent."
+    },
+    {
+      "word": "Negotiate",
+      "pronunciation": "/nɪˈɡoʊʃieɪt/",
+      "meaning": "To discuss to reach an agreement",
+      "banglaMeaning": "আলোচনা করা",
+      "exampleSentence": "We need to negotiate a better deal."
+    },
+    {
+      "word": "Optimistic",
+      "pronunciation": "/ˌɒptɪˈmɪstɪk/",
+      "meaning": "Hopeful and confident about the future",
+      "banglaMeaning": "আশাবাদী",
+      "exampleSentence": "She remains optimistic despite the challenges."
+    },
+    {
+      "word": "Prudent",
+      "pronunciation": "/ˈpruːdənt/",
+      "meaning": "Acting with careful thought",
+      "banglaMeaning": "বিচক্ষণ / সতর্ক",
+      "exampleSentence": "It's prudent to save money for emergencies."
+    },
+    {
+      "word": "Resolute",
+      "pronunciation": "/ˈrɛzəluːt/",
+      "meaning": "Determined and unwavering",
+      "banglaMeaning": "দৃঢ়প্রতিজ্ঞ",
+      "exampleSentence": "She remained resolute in her decision."
+    },
+    {
+      "word": "Scrutinize",
+      "pronunciation": "/ˈskruːtɪnaɪz/",
+      "meaning": "To examine very closely",
+      "banglaMeaning": "গভীরভাবে পরীক্ষা করা",
+      "exampleSentence": "The auditor scrutinized every financial record."
+    },
+    {
+      "word": "Transparent",
+      "pronunciation": "/trænsˈpærənt/",
+      "meaning": "Easy to see through or understand",
+      "banglaMeaning": "স্বচ্ছ / পরিষ্কার",
+      "exampleSentence": "The company must be transparent about its policies."
+    },
+    {
+      "word": "Unanimous",
+      "pronunciation": "/juːˈnænɪməs/",
+      "meaning": "Fully agreed by everyone",
+      "banglaMeaning": "সর্বসম্মত",
+      "exampleSentence": "The jury reached a unanimous verdict."
+    },
+    {
+      "word": "Vulnerable",
+      "pronunciation": "/ˈvʌlnərəbəl/",
+      "meaning": "Open to physical or emotional harm",
+      "banglaMeaning": "দুর্বল / ঝুঁকিপূর্ণ",
+      "exampleSentence": "Children are the most vulnerable in society."
+    },
+    {
+      "word": "Zealous",
+      "pronunciation": "/ˈzɛləs/",
+      "meaning": "Having great energy or enthusiasm",
+      "banglaMeaning": "উৎসাহী / আগ্রহী",
+      "exampleSentence": "She is a zealous advocate for human rights."
+    },
+    {
+      "word": "Articulate",
+      "pronunciation": "/ɑːrˈtɪkjʊlɪt/",
+      "meaning": "Able to express ideas clearly",
+      "banglaMeaning": "স্পষ্টভাষী",
+      "exampleSentence": "He is an articulate and confident speaker."
+    },
+    {
+      "word": "Candid",
+      "pronunciation": "/ˈkændɪd/",
+      "meaning": "Truthful and straightforward",
+      "banglaMeaning": "সৎ / খোলামেলা",
+      "exampleSentence": "I appreciate your candid feedback."
+    },
+    {
+      "word": "Demeanor",
+      "pronunciation": "/dɪˈmiːnər/",
+      "meaning": "Outward behavior or manner",
+      "banglaMeaning": "আচরণ / ব্যবহার",
+      "exampleSentence": "Her calm demeanor reassured everyone."
+    },
+    {
+      "word": "Empathy",
+      "pronunciation": "/ˈɛmpəθi/",
+      "meaning": "The ability to understand others' feelings",
+      "banglaMeaning": "সহমর্মিতা",
+      "exampleSentence": "A good leader shows empathy towards their team."
+    },
+    {
+      "word": "Fortitude",
+      "pronunciation": "/ˈfɔːrtɪtjuːd/",
+      "meaning": "Courage in pain or adversity",
+      "banglaMeaning": "সাহস / ধৈর্য",
+      "exampleSentence": "She faced her illness with remarkable fortitude."
+    },
+    {
+      "word": "Gregarious",
+      "pronunciation": "/ɡrɪˈɡɛəriəs/",
+      "meaning": "Outgoing and sociable",
+      "banglaMeaning": "মেলামেশা পছন্দ করে এমন",
+      "exampleSentence": "He is a gregarious person who loves parties."
+    },
+    {
+      "word": "Hypothetical",
+      "pronunciation": "/ˌhaɪpəˈθɛtɪkəl/",
+      "meaning": "Based on assumed conditions",
+      "banglaMeaning": "কাল্পনিক / অনুমানভিত্তিক",
+      "exampleSentence": "Let's consider a hypothetical scenario."
+    },
+    {
+      "word": "Impeccable",
+      "pronunciation": "/ɪmˈpɛkəbəl/",
+      "meaning": "Without any flaws or errors",
+      "banglaMeaning": "নিখুঁত / ত্রুটিহীন",
+      "exampleSentence": "Her English pronunciation is impeccable."
+    },
+    {
+      "word": "Jubilant",
+      "pronunciation": "/ˈdʒuːbɪlənt/",
+      "meaning": "Feeling or expressing great joy",
+      "banglaMeaning": "আনন্দিত / উল্লসিত",
+      "exampleSentence": "The fans were jubilant after the win."
+    },
+    {
+      "word": "Keen",
+      "pronunciation": "/kiːn/",
+      "meaning": "Eager or enthusiastic",
+      "banglaMeaning": "আগ্রহী / উৎসুক",
+      "exampleSentence": "She is keen to learn new languages."
+    },
+    {
+      "word": "Lucid",
+      "pronunciation": "/ˈluːsɪd/",
+      "meaning": "Clear and easy to understand",
+      "banglaMeaning": "স্পষ্ট / স্বচ্ছ",
+      "exampleSentence": "The professor gave a lucid explanation."
+    },
+    {
+      "word": "Mundane",
+      "pronunciation": "/mʌnˈdeɪn/",
+      "meaning": "Lacking interest or excitement",
+      "banglaMeaning": "সাধারণ / একঘেয়ে",
+      "exampleSentence": "I need a break from my mundane routine."
+    },
+    {
+      "word": "Notorious",
+      "pronunciation": "/noʊˈtɔːriəs/",
+      "meaning": "Famous for something bad",
+      "banglaMeaning": "কুখ্যাত",
+      "exampleSentence": "The city is notorious for its traffic jams."
+    },
+    {
+      "word": "Obsolete",
+      "pronunciation": "/ˈɒbsəliːt/",
+      "meaning": "No longer in use",
+      "banglaMeaning": "অপ্রচলিত",
+      "exampleSentence": "Floppy disks are now obsolete."
+    },
+    {
+      "word": "Prolific",
+      "pronunciation": "/prəˈlɪfɪk/",
+      "meaning": "Producing many works or results",
+      "banglaMeaning": "প্রচুর উৎপাদনশীল",
+      "exampleSentence": "Shakespeare was a prolific writer."
+    },
+    {
+      "word": "Querulous",
+      "pronunciation": "/ˈkwɛrʊləs/",
+      "meaning": "Complaining in a whiny manner",
+      "banglaMeaning": "অভিযোগকারী / বিড়বিড়ে",
+      "exampleSentence": "The querulous customer demanded a refund."
+    },
+    {
+      "word": "Relevant",
+      "pronunciation": "/ˈrɛlɪvənt/",
+      "meaning": "Closely connected to the subject",
+      "banglaMeaning": "প্রাসঙ্গিক",
+      "exampleSentence": "Your question is not relevant to the discussion."
+    },
+    {
+      "word": "Spontaneous",
+      "pronunciation": "/spɒnˈteɪniəs/",
+      "meaning": "Done without planning",
+      "banglaMeaning": "স্বতঃস্ফূর্ত",
+      "exampleSentence": "We made a spontaneous decision to go on a road trip."
+    },
+    {
+      "word": "Tedious",
+      "pronunciation": "/ˈtiːdiəs/",
+      "meaning": "Too long and boring",
+      "banglaMeaning": "ক্লান্তিকর / একঘেয়ে",
+      "exampleSentence": "The data entry work was tedious but necessary."
+    },
+    {
+      "word": "Unique",
+      "pronunciation": "/juːˈniːk/",
+      "meaning": "Being the only one of its kind",
+      "banglaMeaning": "অনন্য",
+      "exampleSentence": "Each person has a unique fingerprint."
+    },
+    {
+      "word": "Vivid",
+      "pronunciation": "/ˈvɪvɪd/",
+      "meaning": "Producing strong, clear images",
+      "banglaMeaning": "জীবন্ত / স্পষ্ট",
+      "exampleSentence": "She has a vivid imagination."
+    },
+    {
+      "word": "Whimsical",
+      "pronunciation": "/ˈwɪmzɪkəl/",
+      "meaning": "Playfully unusual or fanciful",
+      "banglaMeaning": "খেয়ালি / অদ্ভুত",
+      "exampleSentence": "The garden had a whimsical design."
+    },
+    {
+      "word": "Xenophobia",
+      "pronunciation": "/ˌzɛnəˈfoʊbiə/",
+      "meaning": "Dislike of people from other countries",
+      "banglaMeaning": "বিদেশী বিদ্বেষ",
+      "exampleSentence": "Xenophobia has no place in a modern society."
+    },
+    {
+      "word": "Yearning",
+      "pronunciation": "/ˈjɜːrnɪŋ/",
+      "meaning": "A strong feeling of longing",
+      "banglaMeaning": "তীব্র আকাঙ্ক্ষা",
+      "exampleSentence": "She felt a yearning to travel the world."
+    },
+    {
+      "word": "Allegiance",
+      "pronunciation": "/əˈliːdʒəns/",
+      "meaning": "Loyalty or commitment to a group",
+      "banglaMeaning": "আনুগত্য",
+      "exampleSentence": "He pledged allegiance to his country."
+    },
+    {
+      "word": "Brilliant",
+      "pronunciation": "/ˈbrɪliənt/",
+      "meaning": "Exceptionally clever or bright",
+      "banglaMeaning": "অসাধারণ / উজ্জ্বল",
+      "exampleSentence": "That was a brilliant idea!"
+    },
+    {
+      "word": "Credible",
+      "pronunciation": "/ˈkrɛdɪbəl/",
+      "meaning": "Able to be believed",
+      "banglaMeaning": "বিশ্বাসযোগ্য",
+      "exampleSentence": "The witness gave a credible account."
+    },
+    {
+      "word": "Determined",
+      "pronunciation": "/dɪˈtɜːrmɪnd/",
+      "meaning": "Having a strong desire to succeed",
+      "banglaMeaning": "দৃঢ়প্রতিজ্ঞ",
+      "exampleSentence": "She is determined to finish the marathon."
+    },
+    {
+      "word": "Exquisite",
+      "pronunciation": "/ɪkˈskwɪzɪt/",
+      "meaning": "Extremely beautiful and delicate",
+      "banglaMeaning": "অত্যন্ত সুন্দর / সূক্ষ্ম",
+      "exampleSentence": "The handmade necklace was exquisite."
+    },
+    {
+      "word": "Formidable",
+      "pronunciation": "/ˈfɔːrmɪdəbəl/",
+      "meaning": "Inspiring fear or respect through strength",
+      "banglaMeaning": "ভয়ঙ্কর / দুর্দমনীয়",
+      "exampleSentence": "She is a formidable opponent in chess."
+    },
+    {
+      "word": "Genial",
+      "pronunciation": "/ˈdʒiːniəl/",
+      "meaning": "Friendly and cheerful",
+      "banglaMeaning": "সৌম্য / বন্ধুসুলভ",
+      "exampleSentence": "The genial host made us feel welcome."
+    },
+    {
+      "word": "Humble",
+      "pronunciation": "/ˈhʌmbəl/",
+      "meaning": "Not proud or arrogant",
+      "banglaMeaning": "নম্র / বিনয়ী",
+      "exampleSentence": "Despite his success, he remained humble."
+    },
+    {
+      "word": "Illuminate",
+      "pronunciation": "/ɪˈluːmɪneɪt/",
+      "meaning": "To light up or clarify",
+      "banglaMeaning": "আলোকিত করা / ব্যাখ্যা করা",
+      "exampleSentence": "The teacher's explanation illuminated the concept."
+    },
+    {
+      "word": "Jovial",
+      "pronunciation": "/ˈdʒoʊviəl/",
+      "meaning": "Cheerful and friendly",
+      "banglaMeaning": "প্রফুল্ল",
+      "exampleSentence": "The jovial old man always told funny stories."
+    },
+    {
+      "word": "Kinship",
+      "pronunciation": "/ˈkɪnʃɪp/",
+      "meaning": "A feeling of close connection",
+      "banglaMeaning": "আত্মীয়তা / সম্পর্ক",
+      "exampleSentence": "We felt an immediate kinship with each other."
+    },
+    {
+      "word": "Lavish",
+      "pronunciation": "/ˈlævɪʃ/",
+      "meaning": "Sumptuously rich or generous",
+      "banglaMeaning": "আড়ম্বরপূর্ণ / উদার",
+      "exampleSentence": "They threw a lavish wedding reception."
+    },
+    {
+      "word": "Majestic",
+      "pronunciation": "/məˈdʒɛstɪk/",
+      "meaning": "Having grandeur or beauty",
+      "banglaMeaning": "মহিমান্বিত / গৌরবময়",
+      "exampleSentence": "The majestic mountains took our breath away."
+    },
+    {
+      "word": "Noble",
+      "pronunciation": "/ˈnoʊbəl/",
+      "meaning": "Having high moral qualities",
+      "banglaMeaning": "উন্নত / মহৎ",
+      "exampleSentence": "It was a noble cause to fight for."
+    },
+    {
+      "word": "Opulent",
+      "pronunciation": "/ˈɒpjʊlənt/",
+      "meaning": "Rich and luxurious",
+      "banglaMeaning": "বিলাসবহুল / সমৃদ্ধ",
+      "exampleSentence": "The palace was decorated in opulent style."
+    },
+    {
+      "word": "Passionate",
+      "pronunciation": "/ˈpæʃənɪt/",
+      "meaning": "Showing strong feelings or beliefs",
+      "banglaMeaning": "আবেগী / উত্সাহী",
+      "exampleSentence": "She is passionate about environmental issues."
+    },
+    {
+      "word": "Quintessential",
+      "pronunciation": "/ˌkwɪntɪˈsɛnʃəl/",
+      "meaning": "Representing the perfect example",
+      "banglaMeaning": "আদর্শ / সর্বোৎকৃষ্ট",
+      "exampleSentence": "Paris is the quintessential romantic city."
+    },
+    {
+      "word": "Radiance",
+      "pronunciation": "/ˈreɪdiəns/",
+      "meaning": "Light or warmth emitted",
+      "banglaMeaning": "দীপ্তি / উজ্জ্বলতা",
+      "exampleSentence": "The radiance of the sun brightened the room."
+    },
+    {
+      "word": "Sublime",
+      "pronunciation": "/səˈblaɪm/",
+      "meaning": "Of outstanding spiritual or artistic worth",
+      "banglaMeaning": "মহান / অপরূপ",
+      "exampleSentence": "The view from the peak was sublime."
+    },
+    {
+      "word": "Tranquil",
+      "pronunciation": "/ˈtræŋkwɪl/",
+      "meaning": "Free from disturbance",
+      "banglaMeaning": "শান্ত / নিস্তব্ধ",
+      "exampleSentence": "The lake was calm and tranquil."
+    },
+    {
+      "word": "Vibrant",
+      "pronunciation": "/ˈvaɪbrənt/",
+      "meaning": "Full of energy and life",
+      "banglaMeaning": "প্রাণবন্ত / উজ্জ্বল",
+      "exampleSentence": "The city has a vibrant nightlife."
+    }
+  ]
+}

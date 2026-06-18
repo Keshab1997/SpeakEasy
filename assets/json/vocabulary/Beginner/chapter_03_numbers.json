@@ -1,12 +1,182 @@
-{"chapter": 3, "level": "Beginner", "title": "Numbers", "words": [
-  {"word": "One", "pronunciation": "/wʌn/", "meaning": "The number 1", "banglaMeaning": "এক", "exampleSentence": "I have one pen."},
-  {"word": "Two", "pronunciation": "/tuː/", "meaning": "The number 2", "banglaMeaning": "দুই", "exampleSentence": "She has two cats."},
-  {"word": "Three", "pronunciation": "/θriː/", "meaning": "The number 3", "banglaMeaning": "তিন", "exampleSentence": "There are three books."},
-  {"word": "Ten", "pronunciation": "/ten/", "meaning": "The number 10", "banglaMeaning": "দশ", "exampleSentence": "I have ten fingers."},
-  {"word": "Hundred", "pronunciation": "/ˈhʌndrəd/", "meaning": "The number 100", "banglaMeaning": "একশো", "exampleSentence": "There are a hundred students."},
-  {"word": "First", "pronunciation": "/fɜːrst/", "meaning": "Ordinal number 1", "banglaMeaning": "প্রথম", "exampleSentence": "He came first in the race."},
-  {"word": "Second", "pronunciation": "/ˈsekənd/", "meaning": "Ordinal number 2", "banglaMeaning": "দ্বিতীয়", "exampleSentence": "She finished second."},
-  {"word": "Half", "pronunciation": "/hæf/", "meaning": "One of two equal parts", "banglaMeaning": "অর্ধেক", "exampleSentence": "Give me half of the apple."},
-  {"word": "Double", "pronunciation": "/ˈdʌbəl/", "meaning": "Twice the amount", "banglaMeaning": "দ্বিগুণ", "exampleSentence": "The price is double now."},
-  {"word": "Zero", "pronunciation": "/ˈzɪroʊ/", "meaning": "The number 0", "banglaMeaning": "শূন্য", "exampleSentence": "The temperature is zero today."}
-]}
+{
+  "chapter": 3,
+  "level": "Beginner",
+  "title": "Numbers",
+  "words": [
+    {
+      "word": "One",
+      "pronunciation": "/wʌn/",
+      "meaning": "The number 1",
+      "banglaMeaning": "এক",
+      "exampleSentence": "I have one pen."
+    },
+    {
+      "word": "Two",
+      "pronunciation": "/tuː/",
+      "meaning": "The number 2",
+      "banglaMeaning": "দুই",
+      "exampleSentence": "She has two cats."
+    },
+    {
+      "word": "Three",
+      "pronunciation": "/θriː/",
+      "meaning": "The number 3",
+      "banglaMeaning": "তিন",
+      "exampleSentence": "There are three books."
+    },
+    {
+      "word": "Ten",
+      "pronunciation": "/ten/",
+      "meaning": "The number 10",
+      "banglaMeaning": "দশ",
+      "exampleSentence": "I have ten fingers."
+    },
+    {
+      "word": "Hundred",
+      "pronunciation": "/ˈhʌndrəd/",
+      "meaning": "The number 100",
+      "banglaMeaning": "একশো",
+      "exampleSentence": "There are a hundred students."
+    },
+    {
+      "word": "First",
+      "pronunciation": "/fɜːrst/",
+      "meaning": "Ordinal number 1",
+      "banglaMeaning": "প্রথম",
+      "exampleSentence": "He came first in the race."
+    },
+    {
+      "word": "Second",
+      "pronunciation": "/ˈsekənd/",
+      "meaning": "Ordinal number 2",
+      "banglaMeaning": "দ্বিতীয়",
+      "exampleSentence": "She finished second."
+    },
+    {
+      "word": "Half",
+      "pronunciation": "/hæf/",
+      "meaning": "One of two equal parts",
+      "banglaMeaning": "অর্ধেক",
+      "exampleSentence": "Give me half of the apple."
+    },
+    {
+      "word": "Double",
+      "pronunciation": "/ˈdʌbəl/",
+      "meaning": "Twice the amount",
+      "banglaMeaning": "দ্বিগুণ",
+      "exampleSentence": "The price is double now."
+    },
+    {
+      "word": "Zero",
+      "pronunciation": "/ˈzɪroʊ/",
+      "meaning": "The number 0",
+      "banglaMeaning": "শূন্য",
+      "exampleSentence": "The temperature is zero today."
+    },
+    {
+      "word": "Four",
+      "pronunciation": "/fɔːr/",
+      "meaning": "The number 4",
+      "banglaMeaning": "চার",
+      "exampleSentence": "There are four seasons."
+    },
+    {
+      "word": "Five",
+      "pronunciation": "/faɪv/",
+      "meaning": "The number 5",
+      "banglaMeaning": "পাঁচ",
+      "exampleSentence": "I have five fingers on each hand."
+    },
+    {
+      "word": "Six",
+      "pronunciation": "/sɪks/",
+      "meaning": "The number 6",
+      "banglaMeaning": "ছয়",
+      "exampleSentence": "The class starts at six o'clock."
+    },
+    {
+      "word": "Seven",
+      "pronunciation": "/ˈsɛvən/",
+      "meaning": "The number 7",
+      "banglaMeaning": "সাত",
+      "exampleSentence": "There are seven days in a week."
+    },
+    {
+      "word": "Eight",
+      "pronunciation": "/eɪt/",
+      "meaning": "The number 8",
+      "banglaMeaning": "আট",
+      "exampleSentence": "He has eight books."
+    },
+    {
+      "word": "Nine",
+      "pronunciation": "/naɪn/",
+      "meaning": "The number 9",
+      "banglaMeaning": "নয়",
+      "exampleSentence": "A cat has nine lives."
+    },
+    {
+      "word": "Twenty",
+      "pronunciation": "/ˈtwɛnti/",
+      "meaning": "The number 20",
+      "banglaMeaning": "বিশ",
+      "exampleSentence": "There are twenty students in the class."
+    },
+    {
+      "word": "Fifty",
+      "pronunciation": "/ˈfɪfti/",
+      "meaning": "The number 50",
+      "banglaMeaning": "পঞ্চাশ",
+      "exampleSentence": "I have fifty taka."
+    },
+    {
+      "word": "Thousand",
+      "pronunciation": "/ˈθaʊzənd/",
+      "meaning": "The number 1000",
+      "banglaMeaning": "এক হাজার",
+      "exampleSentence": "The book costs a thousand taka."
+    },
+    {
+      "word": "Million",
+      "pronunciation": "/ˈmɪliən/",
+      "meaning": "The number 1,000,000",
+      "banglaMeaning": "দশ লক্ষ / মিলিয়ন",
+      "exampleSentence": "The city has a million people."
+    },
+    {
+      "word": "Third",
+      "pronunciation": "/θɜːrd/",
+      "meaning": "Ordinal number 3",
+      "banglaMeaning": "তৃতীয়",
+      "exampleSentence": "He came third in the exam."
+    },
+    {
+      "word": "Fourth",
+      "pronunciation": "/fɔːrθ/",
+      "meaning": "Ordinal number 4",
+      "banglaMeaning": "চতুর্থ",
+      "exampleSentence": "She finished fourth in the race."
+    },
+    {
+      "word": "Pair",
+      "pronunciation": "/pɛər/",
+      "meaning": "Two things of the same kind",
+      "banglaMeaning": "জোড়া",
+      "exampleSentence": "I need a pair of shoes."
+    },
+    {
+      "word": "Dozen",
+      "pronunciation": "/ˈdʌzən/",
+      "meaning": "Twelve items",
+      "banglaMeaning": "ডজন / বারোটি",
+      "exampleSentence": "Buy a dozen eggs from the shop."
+    },
+    {
+      "word": "Score",
+      "pronunciation": "/skɔːr/",
+      "meaning": "Twenty items",
+      "banglaMeaning": "বিশ / স্কোর",
+      "exampleSentence": "A score of people attended the meeting."
+    }
+  ]
+}

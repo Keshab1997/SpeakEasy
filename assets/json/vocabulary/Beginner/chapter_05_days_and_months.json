@@ -1,12 +1,189 @@
-{"chapter": 5, "level": "Beginner", "title": "Days and Months", "words": [
-  {"word": "Monday", "pronunciation": "/ˈmʌndeɪ/", "meaning": "First day of the week", "banglaMeaning": "সোমবার", "exampleSentence": "School starts on Monday."},
-  {"word": "Friday", "pronunciation": "/ˈfraɪdeɪ/", "meaning": "Fifth day of the week", "banglaMeaning": "শুক্রবার", "exampleSentence": "Friday is a holiday."},
-  {"word": "Sunday", "pronunciation": "/ˈsʌndeɪ/", "meaning": "Seventh day of the week", "banglaMeaning": "রবিবার", "exampleSentence": "We rest on Sunday."},
-  {"word": "January", "pronunciation": "/ˈdʒænjueri/", "meaning": "First month of the year", "banglaMeaning": "জানুয়ারি", "exampleSentence": "January is very cold."},
-  {"word": "June", "pronunciation": "/dʒuːn/", "meaning": "Sixth month of the year", "banglaMeaning": "জুন", "exampleSentence": "It rains a lot in June."},
-  {"word": "December", "pronunciation": "/dɪˈsembər/", "meaning": "Last month of the year", "banglaMeaning": "ডিসেম্বর", "exampleSentence": "December is winter month."},
-  {"word": "Spring", "pronunciation": "/sprɪŋ/", "meaning": "Season after winter", "banglaMeaning": "বসন্ত", "exampleSentence": "Flowers bloom in spring."},
-  {"word": "Summer", "pronunciation": "/ˈsʌmər/", "meaning": "Hottest season", "banglaMeaning": "গ্রীষ্মকাল", "exampleSentence": "Summer is very hot."},
-  {"word": "Autumn", "pronunciation": "/ˈɔːtəm/", "meaning": "Season before winter", "banglaMeaning": "শরৎকাল", "exampleSentence": "Leaves fall in autumn."},
-  {"word": "Winter", "pronunciation": "/ˈwɪntər/", "meaning": "Coldest season", "banglaMeaning": "শীতকাল", "exampleSentence": "Winter is cold and foggy."}
-]}
+{
+  "chapter": 5,
+  "level": "Beginner",
+  "title": "Days and Months",
+  "words": [
+    {
+      "word": "Monday",
+      "pronunciation": "/ˈmʌndeɪ/",
+      "meaning": "First day of the week",
+      "banglaMeaning": "সোমবার",
+      "exampleSentence": "School starts on Monday."
+    },
+    {
+      "word": "Friday",
+      "pronunciation": "/ˈfraɪdeɪ/",
+      "meaning": "Fifth day of the week",
+      "banglaMeaning": "শুক্রবার",
+      "exampleSentence": "Friday is a holiday."
+    },
+    {
+      "word": "Sunday",
+      "pronunciation": "/ˈsʌndeɪ/",
+      "meaning": "Seventh day of the week",
+      "banglaMeaning": "রবিবার",
+      "exampleSentence": "We rest on Sunday."
+    },
+    {
+      "word": "January",
+      "pronunciation": "/ˈdʒænjueri/",
+      "meaning": "First month of the year",
+      "banglaMeaning": "জানুয়ারি",
+      "exampleSentence": "January is very cold."
+    },
+    {
+      "word": "June",
+      "pronunciation": "/dʒuːn/",
+      "meaning": "Sixth month of the year",
+      "banglaMeaning": "জুন",
+      "exampleSentence": "It rains a lot in June."
+    },
+    {
+      "word": "December",
+      "pronunciation": "/dɪˈsembər/",
+      "meaning": "Last month of the year",
+      "banglaMeaning": "ডিসেম্বর",
+      "exampleSentence": "December is winter month."
+    },
+    {
+      "word": "Spring",
+      "pronunciation": "/sprɪŋ/",
+      "meaning": "Season after winter",
+      "banglaMeaning": "বসন্ত",
+      "exampleSentence": "Flowers bloom in spring."
+    },
+    {
+      "word": "Summer",
+      "pronunciation": "/ˈsʌmər/",
+      "meaning": "Hottest season",
+      "banglaMeaning": "গ্রীষ্মকাল",
+      "exampleSentence": "Summer is very hot."
+    },
+    {
+      "word": "Autumn",
+      "pronunciation": "/ˈɔːtəm/",
+      "meaning": "Season before winter",
+      "banglaMeaning": "শরৎকাল",
+      "exampleSentence": "Leaves fall in autumn."
+    },
+    {
+      "word": "Winter",
+      "pronunciation": "/ˈwɪntər/",
+      "meaning": "Coldest season",
+      "banglaMeaning": "শীতকাল",
+      "exampleSentence": "Winter is cold and foggy."
+    },
+    {
+      "word": "Tuesday",
+      "pronunciation": "/ˈtjuːzdeɪ/",
+      "meaning": "Second day of the week",
+      "banglaMeaning": "মঙ্গলবার",
+      "exampleSentence": "I have a test on Tuesday."
+    },
+    {
+      "word": "Wednesday",
+      "pronunciation": "/ˈwɛnzdeɪ/",
+      "meaning": "Third day of the week",
+      "banglaMeaning": "বুধবার",
+      "exampleSentence": "We play football on Wednesday."
+    },
+    {
+      "word": "Thursday",
+      "pronunciation": "/ˈθɜːrzdeɪ/",
+      "meaning": "Fourth day of the week",
+      "banglaMeaning": "বৃহস্পতিবার",
+      "exampleSentence": "Thursday is the fifth day here."
+    },
+    {
+      "word": "Saturday",
+      "pronunciation": "/ˈsætərdeɪ/",
+      "meaning": "Sixth day of the week",
+      "banglaMeaning": "শনিবার",
+      "exampleSentence": "We go shopping on Saturday."
+    },
+    {
+      "word": "February",
+      "pronunciation": "/ˈfɛbruəri/",
+      "meaning": "Second month of the year",
+      "banglaMeaning": "ফেব্রুয়ারি",
+      "exampleSentence": "February has 28 or 29 days."
+    },
+    {
+      "word": "March",
+      "pronunciation": "/mɑːrtʃ/",
+      "meaning": "Third month of the year",
+      "banglaMeaning": "মার্চ",
+      "exampleSentence": "Spring starts in March."
+    },
+    {
+      "word": "April",
+      "pronunciation": "/ˈeɪprəl/",
+      "meaning": "Fourth month of the year",
+      "banglaMeaning": "এপ্রিল",
+      "exampleSentence": "April is a rainy month."
+    },
+    {
+      "word": "May",
+      "pronunciation": "/meɪ/",
+      "meaning": "Fifth month of the year",
+      "banglaMeaning": "মে",
+      "exampleSentence": "May is the hottest month here."
+    },
+    {
+      "word": "July",
+      "pronunciation": "/dʒʊˈlaɪ/",
+      "meaning": "Seventh month of the year",
+      "banglaMeaning": "জুলাই",
+      "exampleSentence": "The school closes in July."
+    },
+    {
+      "word": "August",
+      "pronunciation": "/ɔːˈɡʌst/",
+      "meaning": "Eighth month of the year",
+      "banglaMeaning": "আগস্ট",
+      "exampleSentence": "We have holidays in August."
+    },
+    {
+      "word": "September",
+      "pronunciation": "/sɛpˈtɛmbər/",
+      "meaning": "Ninth month of the year",
+      "banglaMeaning": "সেপ্টেম্বর",
+      "exampleSentence": "Classes start in September."
+    },
+    {
+      "word": "October",
+      "pronunciation": "/ɒkˈtoʊbər/",
+      "meaning": "Tenth month of the year",
+      "banglaMeaning": "অক্টোবর",
+      "exampleSentence": "October is autumn here."
+    },
+    {
+      "word": "November",
+      "pronunciation": "/noʊˈvɛmbər/",
+      "meaning": "Eleventh month of the year",
+      "banglaMeaning": "নভেম্বর",
+      "exampleSentence": "November is cold and foggy."
+    },
+    {
+      "word": "Year",
+      "pronunciation": "/jɪər/",
+      "meaning": "365 days or 12 months",
+      "banglaMeaning": "বছর",
+      "exampleSentence": "A year has twelve months."
+    },
+    {
+      "word": "Month",
+      "pronunciation": "/mʌnθ/",
+      "meaning": "One of 12 parts of a year",
+      "banglaMeaning": "মাস",
+      "exampleSentence": "Each month has 30 or 31 days."
+    },
+    {
+      "word": "Week",
+      "pronunciation": "/wiːk/",
+      "meaning": "7 days",
+      "banglaMeaning": "সপ্তাহ",
+      "exampleSentence": "I go to school six days a week."
+    }
+  ]
+}

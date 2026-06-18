@@ -1,12 +1,182 @@
-{"chapter": 4, "level": "Beginner", "title": "Colors", "words": [
-  {"word": "Red", "pronunciation": "/red/", "meaning": "The color of blood", "banglaMeaning": "লাল", "exampleSentence": "She is wearing a red dress."},
-  {"word": "Blue", "pronunciation": "/bluː/", "meaning": "The color of the sky", "banglaMeaning": "নীল", "exampleSentence": "The sky is blue."},
-  {"word": "Green", "pronunciation": "/ɡriːn/", "meaning": "The color of grass", "banglaMeaning": "সবুজ", "exampleSentence": "The leaves are green."},
-  {"word": "Yellow", "pronunciation": "/ˈjeloʊ/", "meaning": "The color of sunlight", "banglaMeaning": "হলুদ", "exampleSentence": "The sun looks yellow."},
-  {"word": "Black", "pronunciation": "/blæk/", "meaning": "The darkest color", "banglaMeaning": "কালো", "exampleSentence": "He has black hair."},
-  {"word": "White", "pronunciation": "/waɪt/", "meaning": "The lightest color", "banglaMeaning": "সাদা", "exampleSentence": "She has a white shirt."},
-  {"word": "Orange", "pronunciation": "/ˈɔːrɪndʒ/", "meaning": "A mix of red and yellow", "banglaMeaning": "কমলা", "exampleSentence": "The sunset is orange."},
-  {"word": "Pink", "pronunciation": "/pɪŋk/", "meaning": "Light red color", "banglaMeaning": "গোলাপি", "exampleSentence": "She loves pink flowers."},
-  {"word": "Brown", "pronunciation": "/braʊn/", "meaning": "The color of wood", "banglaMeaning": "বাদামি", "exampleSentence": "The table is brown."},
-  {"word": "Purple", "pronunciation": "/ˈpɜːrpəl/", "meaning": "A mix of red and blue", "banglaMeaning": "বেগুনি", "exampleSentence": "The grapes are purple."}
-]}
+{
+  "chapter": 4,
+  "level": "Beginner",
+  "title": "Colors",
+  "words": [
+    {
+      "word": "Red",
+      "pronunciation": "/red/",
+      "meaning": "The color of blood",
+      "banglaMeaning": "লাল",
+      "exampleSentence": "She is wearing a red dress."
+    },
+    {
+      "word": "Blue",
+      "pronunciation": "/bluː/",
+      "meaning": "The color of the sky",
+      "banglaMeaning": "নীল",
+      "exampleSentence": "The sky is blue."
+    },
+    {
+      "word": "Green",
+      "pronunciation": "/ɡriːn/",
+      "meaning": "The color of grass",
+      "banglaMeaning": "সবুজ",
+      "exampleSentence": "The leaves are green."
+    },
+    {
+      "word": "Yellow",
+      "pronunciation": "/ˈjeloʊ/",
+      "meaning": "The color of sunlight",
+      "banglaMeaning": "হলুদ",
+      "exampleSentence": "The sun looks yellow."
+    },
+    {
+      "word": "Black",
+      "pronunciation": "/blæk/",
+      "meaning": "The darkest color",
+      "banglaMeaning": "কালো",
+      "exampleSentence": "He has black hair."
+    },
+    {
+      "word": "White",
+      "pronunciation": "/waɪt/",
+      "meaning": "The lightest color",
+      "banglaMeaning": "সাদা",
+      "exampleSentence": "She has a white shirt."
+    },
+    {
+      "word": "Orange",
+      "pronunciation": "/ˈɔːrɪndʒ/",
+      "meaning": "A mix of red and yellow",
+      "banglaMeaning": "কমলা",
+      "exampleSentence": "The sunset is orange."
+    },
+    {
+      "word": "Pink",
+      "pronunciation": "/pɪŋk/",
+      "meaning": "Light red color",
+      "banglaMeaning": "গোলাপি",
+      "exampleSentence": "She loves pink flowers."
+    },
+    {
+      "word": "Brown",
+      "pronunciation": "/braʊn/",
+      "meaning": "The color of wood",
+      "banglaMeaning": "বাদামি",
+      "exampleSentence": "The table is brown."
+    },
+    {
+      "word": "Purple",
+      "pronunciation": "/ˈpɜːrpəl/",
+      "meaning": "A mix of red and blue",
+      "banglaMeaning": "বেগুনি",
+      "exampleSentence": "The grapes are purple."
+    },
+    {
+      "word": "Gray",
+      "pronunciation": "/ɡreɪ/",
+      "meaning": "Color between black and white",
+      "banglaMeaning": "ধূসর",
+      "exampleSentence": "The sky is gray today."
+    },
+    {
+      "word": "Gold",
+      "pronunciation": "/ɡoʊld/",
+      "meaning": "Shiny yellow color",
+      "banglaMeaning": "সোনালি",
+      "exampleSentence": "She has a gold necklace."
+    },
+    {
+      "word": "Silver",
+      "pronunciation": "/ˈsɪlvər/",
+      "meaning": "Shiny light gray color",
+      "banglaMeaning": "রূপালি",
+      "exampleSentence": "The silver ring is beautiful."
+    },
+    {
+      "word": "Maroon",
+      "pronunciation": "/məˈruːn/",
+      "meaning": "Dark red color",
+      "banglaMeaning": "মেরুন / গাঢ় লাল",
+      "exampleSentence": "She wore a maroon dress."
+    },
+    {
+      "word": "Navy Blue",
+      "pronunciation": "/ˈneɪvi bluː/",
+      "meaning": "Dark blue color",
+      "banglaMeaning": "গাঢ় নীল",
+      "exampleSentence": "He likes navy blue shirts."
+    },
+    {
+      "word": "Sky Blue",
+      "pronunciation": "/skaɪ bluː/",
+      "meaning": "Light blue like the sky",
+      "banglaMeaning": "আকাশী নীল",
+      "exampleSentence": "The house is painted sky blue."
+    },
+    {
+      "word": "Beige",
+      "pronunciation": "/beɪʒ/",
+      "meaning": "A pale cream color",
+      "banglaMeaning": "বেইজ / ফিকে হলুদ",
+      "exampleSentence": "The sofa is beige."
+    },
+    {
+      "word": "Crimson",
+      "pronunciation": "/ˈkrɪmzən/",
+      "meaning": "Deep red color",
+      "banglaMeaning": "গাঢ় লাল / ক্রিমসন",
+      "exampleSentence": "The sunset was crimson."
+    },
+    {
+      "word": "Turquoise",
+      "pronunciation": "/ˈtɜːrkwɔɪz/",
+      "meaning": "A blue-green color",
+      "banglaMeaning": "ফিরোজা",
+      "exampleSentence": "The sea is turquoise here."
+    },
+    {
+      "word": "Charcoal",
+      "pronunciation": "/ˈtʃɑːrkoʊl/",
+      "meaning": "Dark gray color",
+      "banglaMeaning": "গাঢ় ধূসর",
+      "exampleSentence": "He wore a charcoal suit."
+    },
+    {
+      "word": "Lavender",
+      "pronunciation": "/ˈlævɪndər/",
+      "meaning": "A light purple color",
+      "banglaMeaning": "হালকা বেগুনি",
+      "exampleSentence": "She loves lavender flowers."
+    },
+    {
+      "word": "Coral",
+      "pronunciation": "/ˈkɔːrəl/",
+      "meaning": "A pinkish-orange color",
+      "banglaMeaning": "কোরাল / গোলাপি-কমলা",
+      "exampleSentence": "The dress is coral pink."
+    },
+    {
+      "word": "Ivory",
+      "pronunciation": "/ˈaɪvəri/",
+      "meaning": "A creamy white color",
+      "banglaMeaning": "হাতির দাঁতের রং",
+      "exampleSentence": "The wedding dress was ivory."
+    },
+    {
+      "word": "Olive",
+      "pronunciation": "/ˈɒlɪv/",
+      "meaning": "A yellowish-green color",
+      "banglaMeaning": "জলপাই রং",
+      "exampleSentence": "He wore an olive green jacket."
+    },
+    {
+      "word": "Mint",
+      "pronunciation": "/mɪnt/",
+      "meaning": "A pale green color",
+      "banglaMeaning": "পুদিনা সবুজ",
+      "exampleSentence": "The walls are painted mint green."
+    }
+  ]
+}

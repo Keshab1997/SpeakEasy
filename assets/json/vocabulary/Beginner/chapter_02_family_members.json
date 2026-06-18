@@ -3,15 +3,180 @@
   "level": "Beginner",
   "title": "Family Members",
   "words": [
-    {"word": "Father", "pronunciation": "/ˈfɑːðər/", "meaning": "Male parent", "banglaMeaning": "বাবা / পিতা", "exampleSentence": "My father is a doctor."},
-    {"word": "Mother", "pronunciation": "/ˈmʌðər/", "meaning": "Female parent", "banglaMeaning": "মা / মাতা", "exampleSentence": "My mother cooks delicious food."},
-    {"word": "Brother", "pronunciation": "/ˈbrʌðər/", "meaning": "Male sibling", "banglaMeaning": "ভাই", "exampleSentence": "I have two brothers."},
-    {"word": "Sister", "pronunciation": "/ˈsɪstər/", "meaning": "Female sibling", "banglaMeaning": "বোন", "exampleSentence": "My sister is very kind."},
-    {"word": "Uncle", "pronunciation": "/ˈʌŋkəl/", "meaning": "Parent's brother", "banglaMeaning": "চাচা / মামা", "exampleSentence": "My uncle lives in Dhaka."},
-    {"word": "Aunt", "pronunciation": "/ænt/", "meaning": "Parent's sister", "banglaMeaning": "চাচি / মামি / খালা", "exampleSentence": "My aunt makes great sweets."},
-    {"word": "Son", "pronunciation": "/sʌn/", "meaning": "Male child", "banglaMeaning": "ছেলে / পুত্র", "exampleSentence": "He is a good son."},
-    {"word": "Daughter", "pronunciation": "/ˈdɔːtər/", "meaning": "Female child", "banglaMeaning": "মেয়ে / কন্যা", "exampleSentence": "She is his daughter."},
-    {"word": "Husband", "pronunciation": "/ˈhʌzbənd/", "meaning": "Male spouse", "banglaMeaning": "স্বামী", "exampleSentence": "Her husband is a teacher."},
-    {"word": "Wife", "pronunciation": "/waɪf/", "meaning": "Female spouse", "banglaMeaning": "স্ত্রী", "exampleSentence": "His wife is very helpful."}
+    {
+      "word": "Father",
+      "pronunciation": "/ˈfɑːðər/",
+      "meaning": "Male parent",
+      "banglaMeaning": "বাবা / পিতা",
+      "exampleSentence": "My father is a doctor."
+    },
+    {
+      "word": "Mother",
+      "pronunciation": "/ˈmʌðər/",
+      "meaning": "Female parent",
+      "banglaMeaning": "মা / মাতা",
+      "exampleSentence": "My mother cooks delicious food."
+    },
+    {
+      "word": "Brother",
+      "pronunciation": "/ˈbrʌðər/",
+      "meaning": "Male sibling",
+      "banglaMeaning": "ভাই",
+      "exampleSentence": "I have two brothers."
+    },
+    {
+      "word": "Sister",
+      "pronunciation": "/ˈsɪstər/",
+      "meaning": "Female sibling",
+      "banglaMeaning": "বোন",
+      "exampleSentence": "My sister is very kind."
+    },
+    {
+      "word": "Uncle",
+      "pronunciation": "/ˈʌŋkəl/",
+      "meaning": "Parent's brother",
+      "banglaMeaning": "চাচা / মামা",
+      "exampleSentence": "My uncle lives in Dhaka."
+    },
+    {
+      "word": "Aunt",
+      "pronunciation": "/ænt/",
+      "meaning": "Parent's sister",
+      "banglaMeaning": "চাচি / মামি / খালা",
+      "exampleSentence": "My aunt makes great sweets."
+    },
+    {
+      "word": "Son",
+      "pronunciation": "/sʌn/",
+      "meaning": "Male child",
+      "banglaMeaning": "ছেলে / পুত্র",
+      "exampleSentence": "He is a good son."
+    },
+    {
+      "word": "Daughter",
+      "pronunciation": "/ˈdɔːtər/",
+      "meaning": "Female child",
+      "banglaMeaning": "মেয়ে / কন্যা",
+      "exampleSentence": "She is his daughter."
+    },
+    {
+      "word": "Husband",
+      "pronunciation": "/ˈhʌzbənd/",
+      "meaning": "Male spouse",
+      "banglaMeaning": "স্বামী",
+      "exampleSentence": "Her husband is a teacher."
+    },
+    {
+      "word": "Wife",
+      "pronunciation": "/waɪf/",
+      "meaning": "Female spouse",
+      "banglaMeaning": "স্ত্রী",
+      "exampleSentence": "His wife is very helpful."
+    },
+    {
+      "word": "Grandfather",
+      "pronunciation": "/ˈɡrænˌfɑːðər/",
+      "meaning": "Father's or mother's father",
+      "banglaMeaning": "দাদা / নানা",
+      "exampleSentence": "My grandfather tells me stories."
+    },
+    {
+      "word": "Grandmother",
+      "pronunciation": "/ˈɡrænˌmʌðər/",
+      "meaning": "Father's or mother's mother",
+      "banglaMeaning": "দাদি / নানি",
+      "exampleSentence": "My grandmother makes sweets."
+    },
+    {
+      "word": "Grandson",
+      "pronunciation": "/ˈɡrænsʌn/",
+      "meaning": "Son's or daughter's son",
+      "banglaMeaning": "নাতি",
+      "exampleSentence": "She loves her grandson very much."
+    },
+    {
+      "word": "Granddaughter",
+      "pronunciation": "/ˈɡrænˌdɔːtər/",
+      "meaning": "Son's or daughter's daughter",
+      "banglaMeaning": "নাতনি",
+      "exampleSentence": "His granddaughter is very smart."
+    },
+    {
+      "word": "Cousin",
+      "pronunciation": "/ˈkʌzən/",
+      "meaning": "Child of an aunt or uncle",
+      "banglaMeaning": "চাচাতো / মামাতো ভাই-বোন",
+      "exampleSentence": "My cousin visits us every summer."
+    },
+    {
+      "word": "Nephew",
+      "pronunciation": "/ˈnɛfjuː/",
+      "meaning": "Sibling's son",
+      "banglaMeaning": "ভাগ্নে / ভাইপো",
+      "exampleSentence": "My nephew is five years old."
+    },
+    {
+      "word": "Niece",
+      "pronunciation": "/niːs/",
+      "meaning": "Sibling's daughter",
+      "banglaMeaning": "ভাগ্নি / ভাইঝি",
+      "exampleSentence": "She is my niece from my elder sister."
+    },
+    {
+      "word": "Father-in-law",
+      "pronunciation": "/ˈfɑːðər ɪn lɔː/",
+      "meaning": "Spouse's father",
+      "banglaMeaning": "শ্বশুর",
+      "exampleSentence": "My father-in-law is a retired teacher."
+    },
+    {
+      "word": "Mother-in-law",
+      "pronunciation": "/ˈmʌðər ɪn lɔː/",
+      "meaning": "Spouse's mother",
+      "banglaMeaning": "শাশুড়ি",
+      "exampleSentence": "My mother-in-law is very caring."
+    },
+    {
+      "word": "Brother-in-law",
+      "pronunciation": "/ˈbrʌðər ɪn lɔː/",
+      "meaning": "Sister's husband or spouse's brother",
+      "banglaMeaning": "দুলাভাই / শ্যালক",
+      "exampleSentence": "My brother-in-law helped me move."
+    },
+    {
+      "word": "Sister-in-law",
+      "pronunciation": "/ˈsɪstər ɪn lɔː/",
+      "meaning": "Brother's wife or spouse's sister",
+      "banglaMeaning": "ভাবি / শ্যালিকা",
+      "exampleSentence": "My sister-in-law cooks very well."
+    },
+    {
+      "word": "Stepfather",
+      "pronunciation": "/ˈstɛpˌfɑːðər/",
+      "meaning": "Mother's husband after divorce",
+      "banglaMeaning": "সৎ বাবা",
+      "exampleSentence": "He has a kind stepfather."
+    },
+    {
+      "word": "Stepmother",
+      "pronunciation": "/ˈstɛpˌmʌðər/",
+      "meaning": "Father's wife after divorce",
+      "banglaMeaning": "সৎ মা",
+      "exampleSentence": "Her stepmother treats her well."
+    },
+    {
+      "word": "Twin",
+      "pronunciation": "/twɪn/",
+      "meaning": "One of two born together",
+      "banglaMeaning": "যমজ",
+      "exampleSentence": "They are twin sisters."
+    },
+    {
+      "word": "Relative",
+      "pronunciation": "/ˈrɛlətɪv/",
+      "meaning": "A person connected by family",
+      "banglaMeaning": "আত্মীয়",
+      "exampleSentence": "We visited our relatives during Eid."
+    }
   ]
 }
