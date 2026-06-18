@@ -63,6 +63,20 @@ class HiveService {
     return raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
   }
 
+  static Future<void> deleteTestSession(int index) async {
+    if (!Hive.isBoxOpen(_vocabTestHistoryBox)) return;
+    final box = Hive.box(_vocabTestHistoryBox);
+    final sessions = getTestHistory();
+    if (index < 0 || index >= sessions.length) return;
+    sessions.removeAt(index);
+    await box.put('sessions', sessions);
+  }
+
+  static Future<void> clearAllTestSessions() async {
+    if (!Hive.isBoxOpen(_vocabTestHistoryBox)) return;
+    await Hive.box(_vocabTestHistoryBox).put('sessions', <Map<String, dynamic>>[]);
+  }
+
   static Box get _favorites => Hive.box(_favoritesBox);
   static Box get _settings => Hive.box(_settingsBox);
   static Box get _history => Hive.box(_historyBox);

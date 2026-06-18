@@ -1,1 +1,2128 @@
-{"chapter": 35, "level": "Advanced", "title": "Academic Vocabulary", "words": []}
+{
+  "chapter": 35,
+  "level": "Advanced",
+  "title": "Academic Vocabulary",
+  "words": [
+    {
+      "word": "Hypothesis",
+      "pronunciation": "/haɪˈpɒθɪsɪs/",
+      "meaning": "A proposed explanation to be tested",
+      "banglaMeaning": "অনুমান / অভিকল্প",
+      "exampleSentence": "The hypothesis was tested through experiments."
+    },
+    {
+      "word": "Theory",
+      "pronunciation": "/ˈθɪəri/",
+      "meaning": "A system of ideas explaining something",
+      "banglaMeaning": "তত্ত্ব",
+      "exampleSentence": "Einstein's theory of relativity changed physics."
+    },
+    {
+      "word": "Thesis",
+      "pronunciation": "/ˈθiːsɪs/",
+      "meaning": "A long essay for a university degree",
+      "banglaMeaning": "গবেষণাপত্র / থিসিস",
+      "exampleSentence": "She submitted her PhD thesis."
+    },
+    {
+      "word": "Dissertation",
+      "pronunciation": "/ˌdɪsərˈteɪʃən/",
+      "meaning": "A lengthy research paper for a degree",
+      "banglaMeaning": "ডিসার্টেশন",
+      "exampleSentence": "His dissertation was on climate change."
+    },
+    {
+      "word": "Abstract",
+      "pronunciation": "/ˈæbstrækt/",
+      "meaning": "A summary of a research paper",
+      "banglaMeaning": "সারসংক্ষেপ",
+      "exampleSentence": "Read the abstract before the full article."
+    },
+    {
+      "word": "Introduction",
+      "pronunciation": "/ˌɪntrəˈdʌkʃən/",
+      "meaning": "The opening section of a paper",
+      "banglaMeaning": "ভূমিকা",
+      "exampleSentence": "The introduction outlines the research problem."
+    },
+    {
+      "word": "Literature Review",
+      "pronunciation": "/ˈlɪtərətʃər rɪˈvjuː/",
+      "meaning": "A survey of existing research on a topic",
+      "banglaMeaning": "সাহিত্য পর্যালোচনা",
+      "exampleSentence": "The literature review covers 50 studies."
+    },
+    {
+      "word": "Methodology",
+      "pronunciation": "/ˌmɛθəˈdɒlədʒi/",
+      "meaning": "The system of methods used in research",
+      "banglaMeaning": "গবেষণা পদ্ধতি",
+      "exampleSentence": "The methodology section explains data collection."
+    },
+    {
+      "word": "Qualitative",
+      "pronunciation": "/ˈkwɒlɪtətɪv/",
+      "meaning": "Based on qualities rather than quantities",
+      "banglaMeaning": "গুণগত",
+      "exampleSentence": "Qualitative research uses interviews and observations."
+    },
+    {
+      "word": "Quantitative",
+      "pronunciation": "/ˈkwɒntɪtətɪv/",
+      "meaning": "Based on measurable data and statistics",
+      "banglaMeaning": "পরিমাণগত",
+      "exampleSentence": "Quantitative analysis uses numerical data."
+    },
+    {
+      "word": "Empirical",
+      "pronunciation": "/ɪmˈpɪrɪkəl/",
+      "meaning": "Based on observation or experience",
+      "banglaMeaning": "অভিজ্ঞতাভিত্তিক",
+      "exampleSentence": "Empirical evidence supports the theory."
+    },
+    {
+      "word": "Theoretical",
+      "pronunciation": "/ˌθɪəˈrɛtɪkəl/",
+      "meaning": "Based on theory rather than practice",
+      "banglaMeaning": "তাত্ত্বিক",
+      "exampleSentence": "The paper provides a theoretical framework."
+    },
+    {
+      "word": "Conceptual",
+      "pronunciation": "/kənˈsɛptʃuəl/",
+      "meaning": "Related to abstract ideas",
+      "banglaMeaning": "ধারণাগত",
+      "exampleSentence": "The conceptual model explains the process."
+    },
+    {
+      "word": "Framework",
+      "pronunciation": "/ˈfreɪmwɜːrk/",
+      "meaning": "A basic structure supporting ideas",
+      "banglaMeaning": "কাঠামো",
+      "exampleSentence": "We need a theoretical framework for this study."
+    },
+    {
+      "word": "Paradigm",
+      "pronunciation": "/ˈpærədaɪm/",
+      "meaning": "A typical example or model",
+      "banglaMeaning": "দৃষ্টান্ত / প্যারাডাইম",
+      "exampleSentence": "Kuhn introduced the concept of scientific paradigms."
+    },
+    {
+      "word": "Variable",
+      "pronunciation": "/ˈvɛriəbəl/",
+      "meaning": "An element that can change in a study",
+      "banglaMeaning": "পরিবর্তনশীল",
+      "exampleSentence": "Temperature is a key variable in the experiment."
+    },
+    {
+      "word": "Dependent Variable",
+      "pronunciation": "/dɪˈpɛndənt ˈvɛriəbəl/",
+      "meaning": "The outcome being measured in an experiment",
+      "banglaMeaning": "নির্ভরশীল চলক",
+      "exampleSentence": "Test scores are the dependent variable."
+    },
+    {
+      "word": "Independent Variable",
+      "pronunciation": "/ˌɪndɪˈpɛndənt ˈvɛriəbəl/",
+      "meaning": "The factor manipulated in an experiment",
+      "banglaMeaning": "স্বাধীন চলক",
+      "exampleSentence": "Study time is the independent variable."
+    },
+    {
+      "word": "Correlation",
+      "pronunciation": "/ˌkɒrɪˈleɪʃən/",
+      "meaning": "A relationship between two variables",
+      "banglaMeaning": "সম্পর্ক / সহসম্বন্ধ",
+      "exampleSentence": "There is a strong correlation between exercise and health."
+    },
+    {
+      "word": "Causation",
+      "pronunciation": "/kɔːˈzeɪʃən/",
+      "meaning": "One thing causing another",
+      "banglaMeaning": "কার্যকারণ",
+      "exampleSentence": "Correlation does not imply causation."
+    },
+    {
+      "word": "Sample",
+      "pronunciation": "/ˈsæmpəl/",
+      "meaning": "A subset of a population studied",
+      "banglaMeaning": "নমুনা",
+      "exampleSentence": "The sample consisted of 200 participants."
+    },
+    {
+      "word": "Population",
+      "pronunciation": "/ˌpɒpjʊˈleɪʃən/",
+      "meaning": "The entire group being studied",
+      "banglaMeaning": "জনসংখ্যা / সমগ্রক",
+      "exampleSentence": "The study population included all adults in the city."
+    },
+    {
+      "word": "Data",
+      "pronunciation": "/ˈdeɪtə/",
+      "meaning": "Information collected for analysis",
+      "banglaMeaning": "তথ্য / ডেটা",
+      "exampleSentence": "The data was analyzed using statistical methods."
+    },
+    {
+      "word": "Data Set",
+      "pronunciation": "/ˈdeɪtə sɛt/",
+      "meaning": "A collection of related data",
+      "banglaMeaning": "ডেটা সেট",
+      "exampleSentence": "The data set contains 10,000 entries."
+    },
+    {
+      "word": "Statistics",
+      "pronunciation": "/stəˈtɪstɪks/",
+      "meaning": "The science of collecting and analyzing data",
+      "banglaMeaning": "পরিসংখ্যান",
+      "exampleSentence": "Statistics is essential for research."
+    },
+    {
+      "word": "Mean",
+      "pronunciation": "/miːn/",
+      "meaning": "The average value",
+      "banglaMeaning": "গড়",
+      "exampleSentence": "The mean score was 75."
+    },
+    {
+      "word": "Median",
+      "pronunciation": "/ˈmiːdiən/",
+      "meaning": "The middle value in a sorted list",
+      "banglaMeaning": "মাঝামাঝি মান",
+      "exampleSentence": "The median income is $50,000."
+    },
+    {
+      "word": "Mode",
+      "pronunciation": "/moʊd/",
+      "meaning": "The most frequent value",
+      "banglaMeaning": "প্রচুরক",
+      "exampleSentence": "The mode of the data is 7."
+    },
+    {
+      "word": "Standard Deviation",
+      "pronunciation": "/ˈstændərd ˌdiːviˈeɪʃən/",
+      "meaning": "A measure of data spread",
+      "banglaMeaning": "প্রমিত বিচ্যুতি",
+      "exampleSentence": "The standard deviation shows how spread out the data is."
+    },
+    {
+      "word": "Variance",
+      "pronunciation": "/ˈvɛriəns/",
+      "meaning": "How much data differs from the mean",
+      "banglaMeaning": "প্রকরণ",
+      "exampleSentence": "The variance indicates data dispersion."
+    },
+    {
+      "word": "Probability",
+      "pronunciation": "/ˌprɒbəˈbɪlɪti/",
+      "meaning": "The likelihood of something happening",
+      "banglaMeaning": "সম্ভাবনা",
+      "exampleSentence": "The probability of success is 90%."
+    },
+    {
+      "word": "Significance",
+      "pronunciation": "/sɪɡˈnɪfɪkəns/",
+      "meaning": "Statistical importance of a result",
+      "banglaMeaning": "পরিসংখ্যানিক তাৎপর্য",
+      "exampleSentence": "The results are statistically significant."
+    },
+    {
+      "word": "Validity",
+      "pronunciation": "/vəˈlɪdɪti/",
+      "meaning": "How well a test measures what it claims",
+      "banglaMeaning": "বৈধতা",
+      "exampleSentence": "The validity of the experiment was questioned."
+    },
+    {
+      "word": "Reliability",
+      "pronunciation": "/rɪˌlaɪəˈbɪlɪti/",
+      "meaning": "Consistency of measurement",
+      "banglaMeaning": "নির্ভরযোগ্যতা",
+      "exampleSentence": "The reliability of the data is high."
+    },
+    {
+      "word": "Bias",
+      "pronunciation": "/ˈbaɪəs/",
+      "meaning": "A systematic error in research",
+      "banglaMeaning": "পক্ষপাত",
+      "exampleSentence": "The study must avoid selection bias."
+    },
+    {
+      "word": "Hypothesis Testing",
+      "pronunciation": "/haɪˈpɒθɪsɪs ˈtɛstɪŋ/",
+      "meaning": "Statistical method to test assumptions",
+      "banglaMeaning": "অনুমান পরীক্ষণ",
+      "exampleSentence": "Hypothesis testing determines if results are significant."
+    },
+    {
+      "word": "Null Hypothesis",
+      "pronunciation": "/nʌl haɪˈpɒθɪsɪs/",
+      "meaning": "The assumption that there is no effect",
+      "banglaMeaning": "শূন্য অনুমান",
+      "exampleSentence": "We rejected the null hypothesis."
+    },
+    {
+      "word": "Alternative Hypothesis",
+      "pronunciation": "/ɔːlˈtɜːrnətɪv haɪˈpɒθɪsɪs/",
+      "meaning": "The assumption that there is an effect",
+      "banglaMeaning": "বিকল্প অনুমান",
+      "exampleSentence": "The alternative hypothesis was supported."
+    },
+    {
+      "word": "P-value",
+      "pronunciation": "/piː ˈvæljuː/",
+      "meaning": "Probability of obtaining results by chance",
+      "banglaMeaning": "পি-মান",
+      "exampleSentence": "A p-value less than 0.05 is significant."
+    },
+    {
+      "word": "Confidence Interval",
+      "pronunciation": "/ˈkɒnfɪdəns ˈɪntərvəl/",
+      "meaning": "A range of values likely to contain the true value",
+      "banglaMeaning": "আস্থা ব্যবধান",
+      "exampleSentence": "The 95% confidence interval is between 45 and 55."
+    },
+    {
+      "word": "Regression",
+      "pronunciation": "/rɪˈɡrɛʃən/",
+      "meaning": "Statistical method to model relationships",
+      "banglaMeaning": "রিগ্রেশন",
+      "exampleSentence": "Regression analysis shows the trend."
+    },
+    {
+      "word": "Extrapolation",
+      "pronunciation": "/ɪkˌstræpəˈleɪʃən/",
+      "meaning": "Estimating beyond known data",
+      "banglaMeaning": "এক্সট্রাপোলেশন",
+      "exampleSentence": "Extrapolation predicts future trends."
+    },
+    {
+      "word": "Interpolation",
+      "pronunciation": "/ɪnˌtɜːrpəˈleɪʃən/",
+      "meaning": "Estimating within known data",
+      "banglaMeaning": "ইন্টারপোলেশন",
+      "exampleSentence": "Interpolation estimates missing values."
+    },
+    {
+      "word": "Frequency",
+      "pronunciation": "/ˈfriːkwənsi/",
+      "meaning": "How often something occurs",
+      "banglaMeaning": "ঘনত্ব / কম্পাঙ্ক",
+      "exampleSentence": "The frequency of earthquakes has increased."
+    },
+    {
+      "word": "Distribution",
+      "pronunciation": "/ˌdɪstrɪˈbjuːʃən/",
+      "meaning": "How data is spread out",
+      "banglaMeaning": "বিন্যাস",
+      "exampleSentence": "The normal distribution is bell-shaped."
+    },
+    {
+      "word": "Normal Distribution",
+      "pronunciation": "/ˈnɔːrməl ˌdɪstrɪˈbjuːʃən/",
+      "meaning": "A symmetric bell-shaped data distribution",
+      "banglaMeaning": "স্বাভাবিক বিন্যাস",
+      "exampleSentence": "Heights follow a normal distribution."
+    },
+    {
+      "word": "Outlier",
+      "pronunciation": "/ˈaʊtlaɪər/",
+      "meaning": "A data point far from others",
+      "banglaMeaning": "বহির্মুখ তথ্য",
+      "exampleSentence": "The outlier was removed from the analysis."
+    },
+    {
+      "word": "Survey",
+      "pronunciation": "/ˈsɜːrveɪ/",
+      "meaning": "A method of gathering data from people",
+      "banglaMeaning": "জরিপ",
+      "exampleSentence": "The survey collected responses from 1,000 people."
+    },
+    {
+      "word": "Questionnaire",
+      "pronunciation": "/ˌkwɛstʃəˈnɛər/",
+      "meaning": "A set of questions for a survey",
+      "banglaMeaning": "প্রশ্নমালা",
+      "exampleSentence": "Participants completed a questionnaire."
+    },
+    {
+      "word": "Interview",
+      "pronunciation": "/ˈɪntərvjuː/",
+      "meaning": "A conversation to collect data",
+      "banglaMeaning": "সাক্ষাৎকার",
+      "exampleSentence": "In-depth interviews were conducted."
+    },
+    {
+      "word": "Observation",
+      "pronunciation": "/ˌɒbzərˈveɪʃən/",
+      "meaning": "Watching subjects in research",
+      "banglaMeaning": "পর্যবেক্ষণ",
+      "exampleSentence": "Observation was used to study behavior."
+    },
+    {
+      "word": "Case Study",
+      "pronunciation": "/keɪs ˈstʌdi/",
+      "meaning": "An in-depth study of a single subject",
+      "banglaMeaning": "কেস স্টাডি",
+      "exampleSentence": "The case study examined one school."
+    },
+    {
+      "word": "Longitudinal Study",
+      "pronunciation": "/ˌlɒndʒɪˈtjuːdɪnəl ˈstʌdi/",
+      "meaning": "A study over a long period",
+      "banglaMeaning": "দীর্ঘমেয়াদী গবেষণা",
+      "exampleSentence": "The longitudinal study followed participants for 20 years."
+    },
+    {
+      "word": "Cross-sectional Study",
+      "pronunciation": "/krɒs ˈsɛkʃənəl ˈstʌdi/",
+      "meaning": "A study at one point in time",
+      "banglaMeaning": "ক্রস-সেকশনাল গবেষণা",
+      "exampleSentence": "A cross-sectional study compares different age groups."
+    },
+    {
+      "word": "Experiment",
+      "pronunciation": "/ɪkˈspɛrɪmənt/",
+      "meaning": "A controlled test to discover something",
+      "banglaMeaning": "পরীক্ষা",
+      "exampleSentence": "The experiment was conducted in a lab."
+    },
+    {
+      "word": "Control Group",
+      "pronunciation": "/kənˈtroʊl ɡruːp/",
+      "meaning": "The group not receiving the treatment",
+      "banglaMeaning": "নিয়ন্ত্রণ গোষ্ঠী",
+      "exampleSentence": "The control group received a placebo."
+    },
+    {
+      "word": "Experimental Group",
+      "pronunciation": "/ɪkˌspɛrɪˈmɛntəl ɡruːp/",
+      "meaning": "The group receiving the treatment",
+      "banglaMeaning": "পরীক্ষামূলক গোষ্ঠী",
+      "exampleSentence": "The experimental group took the new drug."
+    },
+    {
+      "word": "Placebo",
+      "pronunciation": "/pləˈsiːboʊ/",
+      "meaning": "A harmless fake treatment",
+      "banglaMeaning": "প্লাসিবো",
+      "exampleSentence": "The placebo effect can influence results."
+    },
+    {
+      "word": "Double-blind",
+      "pronunciation": "/ˈdʌbəl blaɪnd/",
+      "meaning": "Neither participants nor researchers know the groups",
+      "banglaMeaning": "ডাবল-ব্লাইন্ড",
+      "exampleSentence": "A double-blind trial eliminates bias."
+    },
+    {
+      "word": "Randomized",
+      "pronunciation": "/ˈrændəmaɪzd/",
+      "meaning": "Assigned by chance",
+      "banglaMeaning": "এলোমেলোভাবে নির্বাচিত",
+      "exampleSentence": "Participants were randomly assigned to groups."
+    },
+    {
+      "word": "Peer Review",
+      "pronunciation": "/pɪər rɪˈvjuː/",
+      "meaning": "Evaluation by other experts",
+      "banglaMeaning": "পিয়ার রিভিউ",
+      "exampleSentence": "The paper passed peer review."
+    },
+    {
+      "word": "Citation",
+      "pronunciation": "/saɪˈteɪʃən/",
+      "meaning": "A reference to a source",
+      "banglaMeaning": "উদ্ধৃতি",
+      "exampleSentence": "All sources must include proper citations."
+    },
+    {
+      "word": "Reference",
+      "pronunciation": "/ˈrɛfərəns/",
+      "meaning": "A source cited in academic work",
+      "banglaMeaning": "তথ্যসূত্র",
+      "exampleSentence": "The reference list is at the end."
+    },
+    {
+      "word": "Bibliography",
+      "pronunciation": "/ˌbɪbliˈɒɡrəfi/",
+      "meaning": "A list of sources used",
+      "banglaMeaning": "গ্রন্থপঞ্জি",
+      "exampleSentence": "The bibliography includes 30 sources."
+    },
+    {
+      "word": "Footnote",
+      "pronunciation": "/ˈfʊtnoʊt/",
+      "meaning": "A note at the bottom of a page",
+      "banglaMeaning": "পাদটীকা",
+      "exampleSentence": "The footnote explains the term."
+    },
+    {
+      "word": "Endnote",
+      "pronunciation": "/ˈɛndnoʊt/",
+      "meaning": "A note at the end of a document",
+      "banglaMeaning": "শেষটীকা",
+      "exampleSentence": "Endnotes are used for references."
+    },
+    {
+      "word": "Plagiarism",
+      "pronunciation": "/ˈpleɪdʒərɪzəm/",
+      "meaning": "Using others' work without credit",
+      "banglaMeaning": "চুরি / প্লেজিয়ারিজম",
+      "exampleSentence": "Plagiarism is a serious academic offense."
+    },
+    {
+      "word": "Paraphrase",
+      "pronunciation": "/ˈpærəfreɪz/",
+      "meaning": "To restate in your own words",
+      "banglaMeaning": "ভাষান্তর করা",
+      "exampleSentence": "Paraphrase the text to avoid plagiarism."
+    },
+    {
+      "word": "Summarize",
+      "pronunciation": "/ˈsʌməraɪz/",
+      "meaning": "To give a brief statement of main points",
+      "banglaMeaning": "সংক্ষেপ করা",
+      "exampleSentence": "Summarize the findings in one paragraph."
+    },
+    {
+      "word": "Synthesize",
+      "pronunciation": "/ˈsɪnθɪsaɪz/",
+      "meaning": "To combine ideas to form a new whole",
+      "banglaMeaning": "সমন্বিত করা",
+      "exampleSentence": "Synthesize the information from multiple sources."
+    },
+    {
+      "word": "Analyze",
+      "pronunciation": "/ˈænəlaɪz/",
+      "meaning": "To examine in detail",
+      "banglaMeaning": "বিশ্লেষণ করা",
+      "exampleSentence": "Analyze the data carefully."
+    },
+    {
+      "word": "Critique",
+      "pronunciation": "/krɪˈtiːk/",
+      "meaning": "A detailed evaluation",
+      "banglaMeaning": "সমালোচনা",
+      "exampleSentence": "Write a critique of the article."
+    },
+    {
+      "word": "Evaluate",
+      "pronunciation": "/ɪˈvæljueɪt/",
+      "meaning": "To judge the value or quality",
+      "banglaMeaning": "মূল্যায়ন করা",
+      "exampleSentence": "Evaluate the strengths and weaknesses."
+    },
+    {
+      "word": "Interpret",
+      "pronunciation": "/ɪnˈtɜːrprɪt/",
+      "meaning": "To explain the meaning of",
+      "banglaMeaning": "ব্যাখ্যা করা",
+      "exampleSentence": "Interpret the results of the experiment."
+    },
+    {
+      "word": "Compare",
+      "pronunciation": "/kəmˈpɛər/",
+      "meaning": "To examine similarities and differences",
+      "banglaMeaning": "তুলনা করা",
+      "exampleSentence": "Compare the two theories."
+    },
+    {
+      "word": "Contrast",
+      "pronunciation": "/kənˈtræst/",
+      "meaning": "To show differences",
+      "banglaMeaning": "পার্থক্য দেখানো",
+      "exampleSentence": "Contrast the findings of both studies."
+    },
+    {
+      "word": "Differentiate",
+      "pronunciation": "/ˌdɪfəˈrɛnʃieɪt/",
+      "meaning": "To recognize or show differences",
+      "banglaMeaning": "পার্থক্য করা",
+      "exampleSentence": "Differentiate between correlation and causation."
+    },
+    {
+      "word": "Classify",
+      "pronunciation": "/ˈklæsɪfaɪ/",
+      "meaning": "To arrange in categories",
+      "banglaMeaning": "শ্রেণীবদ্ধ করা",
+      "exampleSentence": "Classify the data by age group."
+    },
+    {
+      "word": "Categorize",
+      "pronunciation": "/ˈkætəɡəraɪz/",
+      "meaning": "To put into groups",
+      "banglaMeaning": "শ্রেণিবদ্ধ করা",
+      "exampleSentence": "Categorize the responses by theme."
+    },
+    {
+      "word": "Identify",
+      "pronunciation": "/aɪˈdɛntɪfaɪ/",
+      "meaning": "To recognize and name",
+      "banglaMeaning": "শনাক্ত করা",
+      "exampleSentence": "Identify the key variables."
+    },
+    {
+      "word": "Define",
+      "pronunciation": "/dɪˈfaɪn/",
+      "meaning": "To state the exact meaning",
+      "banglaMeaning": "সংজ্ঞায়িত করা",
+      "exampleSentence": "Define the term in your own words."
+    },
+    {
+      "word": "Describe",
+      "pronunciation": "/dɪˈskraɪb/",
+      "meaning": "To give a detailed account",
+      "banglaMeaning": "বর্ণনা করা",
+      "exampleSentence": "Describe the methodology used."
+    },
+    {
+      "word": "Explain",
+      "pronunciation": "/ɪkˈspleɪn/",
+      "meaning": "To make clear and understandable",
+      "banglaMeaning": "ব্যাখ্যা করা",
+      "exampleSentence": "Explain the significance of the findings."
+    },
+    {
+      "word": "Illustrate",
+      "pronunciation": "/ˈɪləstreɪt/",
+      "meaning": "To explain with examples",
+      "banglaMeaning": "দৃষ্টান্ত দিয়ে বোঝানো",
+      "exampleSentence": "Illustrate your argument with evidence."
+    },
+    {
+      "word": "Demonstrate",
+      "pronunciation": "/ˈdɛmənstreɪt/",
+      "meaning": "To show clearly",
+      "banglaMeaning": "প্রদর্শন করা",
+      "exampleSentence": "The data demonstrates a clear trend."
+    },
+    {
+      "word": "Argue",
+      "pronunciation": "/ˈɑːrɡjuː/",
+      "meaning": "To present reasons for or against",
+      "banglaMeaning": "যুক্তি দেওয়া",
+      "exampleSentence": "The author argues that climate change is urgent."
+    },
+    {
+      "word": "Claim",
+      "pronunciation": "/kleɪm/",
+      "meaning": "To state something as true",
+      "banglaMeaning": "দাবি করা",
+      "exampleSentence": "The paper claims a breakthrough discovery."
+    },
+    {
+      "word": "Assert",
+      "pronunciation": "/əˈsɜːrt/",
+      "meaning": "To state confidently",
+      "banglaMeaning": "জোর দিয়ে বলা",
+      "exampleSentence": "The researcher asserts that the data is reliable."
+    },
+    {
+      "word": "Contend",
+      "pronunciation": "/kənˈtɛnd/",
+      "meaning": "To argue or claim",
+      "banglaMeaning": "প্রতিদ্বন্দ্বিতা করা",
+      "exampleSentence": "Some scholars contend that the theory is flawed."
+    },
+    {
+      "word": "Postulate",
+      "pronunciation": "/ˈpɒstjʊleɪt/",
+      "meaning": "To suggest as a basic truth",
+      "banglaMeaning": "অভিধারণ করা",
+      "exampleSentence": "The theory postulates that all matter is made of atoms."
+    },
+    {
+      "word": "Propose",
+      "pronunciation": "/prəˈpoʊz/",
+      "meaning": "To put forward an idea",
+      "banglaMeaning": "প্রস্তাব করা",
+      "exampleSentence": "The study proposes a new model."
+    },
+    {
+      "word": "Assume",
+      "pronunciation": "/əˈsjuːm/",
+      "meaning": "To accept as true without proof",
+      "banglaMeaning": "ধরে নেওয়া",
+      "exampleSentence": "We assume the data is normally distributed."
+    },
+    {
+      "word": "Presume",
+      "pronunciation": "/prɪˈzjuːm/",
+      "meaning": "To suppose based on probability",
+      "banglaMeaning": "অনুমান করা",
+      "exampleSentence": "I presume the results are valid."
+    },
+    {
+      "word": "Hypothesize",
+      "pronunciation": "/haɪˈpɒθɪsaɪz/",
+      "meaning": "To form a hypothesis",
+      "banglaMeaning": "অনুমান করা",
+      "exampleSentence": "We hypothesize that the drug reduces symptoms."
+    },
+    {
+      "word": "Conclude",
+      "pronunciation": "/kənˈkluːd/",
+      "meaning": "To reach a logical end",
+      "banglaMeaning": "উপসংহারে আসা",
+      "exampleSentence": "The study concludes that exercise improves health."
+    },
+    {
+      "word": "Infer",
+      "pronunciation": "/ɪnˈfɜːr/",
+      "meaning": "To derive from evidence",
+      "banglaMeaning": "অনুমান করা",
+      "exampleSentence": "What can we infer from the data?"
+    },
+    {
+      "word": "Deduce",
+      "pronunciation": "/dɪˈdjuːs/",
+      "meaning": "To reach a conclusion by reasoning",
+      "banglaMeaning": "যুক্তি দিয়ে বের করা",
+      "exampleSentence": "We can deduce that the theory is correct."
+    },
+    {
+      "word": "Induce",
+      "pronunciation": "/ɪnˈdjuːs/",
+      "meaning": "To derive a general principle from facts",
+      "banglaMeaning": "আবেশিত করা",
+      "exampleSentence": "The researcher induced a pattern from the data."
+    },
+    {
+      "word": "Generalize",
+      "pronunciation": "/ˈdʒɛnərəlaɪz/",
+      "meaning": "To make a general statement from specific cases",
+      "banglaMeaning": "সাধারণীকরণ করা",
+      "exampleSentence": "We cannot generalize from such a small sample."
+    },
+    {
+      "word": "Specify",
+      "pronunciation": "/ˈspɛsɪfaɪ/",
+      "meaning": "To state precisely",
+      "banglaMeaning": "সুনির্দিষ্ট করা",
+      "exampleSentence": "Specify the conditions of the experiment."
+    },
+    {
+      "word": "Elaborate",
+      "pronunciation": "/ɪˈlæbəreɪt/",
+      "meaning": "To give more details",
+      "banglaMeaning": "বিস্তারিত বলা",
+      "exampleSentence": "Elaborate on your findings."
+    },
+    {
+      "word": "Exemplify",
+      "pronunciation": "/ɪɡˈzɛmplɪfaɪ/",
+      "meaning": "To give an example of",
+      "banglaMeaning": "উদাহরণ দেওয়া",
+      "exampleSentence": "The chart exemplifies the trend."
+    },
+    {
+      "word": "Clarify",
+      "pronunciation": "/ˈklærɪfaɪ/",
+      "meaning": "To make clearer",
+      "banglaMeaning": "পরিষ্কার করা",
+      "exampleSentence": "Clarify your main argument."
+    },
+    {
+      "word": "Justify",
+      "pronunciation": "/ˈdʒʌstɪfaɪ/",
+      "meaning": "To provide good reasons",
+      "banglaMeaning": "ন্যায্যতা দেওয়া",
+      "exampleSentence": "Justify your choice of methodology."
+    },
+    {
+      "word": "Validate",
+      "pronunciation": "/ˈvælɪdeɪt/",
+      "meaning": "To confirm or support",
+      "banglaMeaning": "প্রমাণ করা",
+      "exampleSentence": "The results validate the hypothesis."
+    },
+    {
+      "word": "Verify",
+      "pronunciation": "/ˈvɛrɪfaɪ/",
+      "meaning": "To check the accuracy",
+      "banglaMeaning": "যাচাই করা",
+      "exampleSentence": "Verify the data before analysis."
+    },
+    {
+      "word": "Refute",
+      "pronunciation": "/rɪˈfjuːt/",
+      "meaning": "To prove wrong",
+      "banglaMeaning": "খণ্ডন করা",
+      "exampleSentence": "The evidence refutes the claim."
+    },
+    {
+      "word": "Disprove",
+      "pronunciation": "/dɪsˈpruːv/",
+      "meaning": "To show to be false",
+      "banglaMeaning": "মিথ্যা প্রমাণ করা",
+      "exampleSentence": "The experiment disproved the theory."
+    },
+    {
+      "word": "Support",
+      "pronunciation": "/səˈpɔːrt/",
+      "meaning": "To provide evidence for",
+      "banglaMeaning": "সমর্থন করা",
+      "exampleSentence": "The data supports the hypothesis."
+    },
+    {
+      "word": "Undermine",
+      "pronunciation": "/ˌʌndərˈmaɪn/",
+      "meaning": "To weaken or damage",
+      "banglaMeaning": "দুর্বল করা",
+      "exampleSentence": "New evidence undermines the theory."
+    },
+    {
+      "word": "Contradict",
+      "pronunciation": "/ˌkɒntrəˈdɪkt/",
+      "meaning": "To be in opposition to",
+      "banglaMeaning": "বিরোধিতা করা",
+      "exampleSentence": "The findings contradict previous research."
+    },
+    {
+      "word": "Corroborate",
+      "pronunciation": "/kəˈrɒbəreɪt/",
+      "meaning": "To confirm with evidence",
+      "banglaMeaning": "সমর্থন করা",
+      "exampleSentence": "Other studies corroborate these results."
+    },
+    {
+      "word": "Substantiate",
+      "pronunciation": "/səbˈstænʃieɪt/",
+      "meaning": "To provide evidence for",
+      "banglaMeaning": "প্রমাণিত করা",
+      "exampleSentence": "Substantiate your claims with data."
+    },
+    {
+      "word": "Contextualize",
+      "pronunciation": "/kənˈtɛkstʃuəlaɪz/",
+      "meaning": "To place in context",
+      "banglaMeaning": "প্রসঙ্গে স্থাপন করা",
+      "exampleSentence": "Contextualize the findings within existing research."
+    },
+    {
+      "word": "Conceptualize",
+      "pronunciation": "/kənˈsɛptʃuəlaɪz/",
+      "meaning": "To form a concept or idea",
+      "banglaMeaning": "ধারণা করা",
+      "exampleSentence": "How do you conceptualize intelligence?"
+    },
+    {
+      "word": "Operationalize",
+      "pronunciation": "/ˌɒpəˈreɪʃənəlaɪz/",
+      "meaning": "To define a concept for measurement",
+      "banglaMeaning": "পরিচালনযোগ্য করা",
+      "exampleSentence": "We need to operationalize the variable."
+    },
+    {
+      "word": "Quantify",
+      "pronunciation": "/ˈkwɒntɪfaɪ/",
+      "meaning": "To measure as a number",
+      "banglaMeaning": "পরিমাপ করা",
+      "exampleSentence": "Quantify the results using statistics."
+    },
+    {
+      "word": "Measure",
+      "pronunciation": "/ˈmɛʒər/",
+      "meaning": "To assess the size or amount",
+      "banglaMeaning": "মাপা",
+      "exampleSentence": "Measure the temperature accurately."
+    },
+    {
+      "word": "Assess",
+      "pronunciation": "/əˈsɛs/",
+      "meaning": "To evaluate or estimate",
+      "banglaMeaning": "মূল্যায়ন করা",
+      "exampleSentence": "Assess the impact of the policy."
+    },
+    {
+      "word": "Monitor",
+      "pronunciation": "/ˈmɒnɪtər/",
+      "meaning": "To observe over time",
+      "banglaMeaning": "নজরদারি করা",
+      "exampleSentence": "Monitor the participants for side effects."
+    },
+    {
+      "word": "Document",
+      "pronunciation": "/ˈdɒkjʊmənt/",
+      "meaning": "To record in detail",
+      "banglaMeaning": "নথিভুক্ত করা",
+      "exampleSentence": "Document all procedures carefully."
+    },
+    {
+      "word": "Record",
+      "pronunciation": "/rɪˈkɔːrd/",
+      "meaning": "To write down or store",
+      "banglaMeaning": "রেকর্ড করা",
+      "exampleSentence": "Record the data in a spreadsheet."
+    },
+    {
+      "word": "Tabulate",
+      "pronunciation": "/ˈtæbjʊleɪt/",
+      "meaning": "To arrange data in a table",
+      "banglaMeaning": "সারণিবদ্ধ করা",
+      "exampleSentence": "Tabulate the survey responses."
+    },
+    {
+      "word": "Chart",
+      "pronunciation": "/tʃɑːrt/",
+      "meaning": "To display data visually",
+      "banglaMeaning": "চার্টে দেখানো",
+      "exampleSentence": "Chart the results on a graph."
+    },
+    {
+      "word": "Graph",
+      "pronunciation": "/ɡræf/",
+      "meaning": "A visual data display",
+      "banglaMeaning": "গ্রাফ",
+      "exampleSentence": "The graph shows a steady increase."
+    },
+    {
+      "word": "Diagram",
+      "pronunciation": "/ˈdaɪəɡræm/",
+      "meaning": "A simplified drawing showing structure",
+      "banglaMeaning": "ডায়াগ্রাম",
+      "exampleSentence": "The diagram illustrates the process."
+    },
+    {
+      "word": "Figure",
+      "pronunciation": "/ˈfɪɡər/",
+      "meaning": "An illustration or data display",
+      "banglaMeaning": "চিত্র",
+      "exampleSentence": "Figure 1 shows the experimental setup."
+    },
+    {
+      "word": "Table",
+      "pronunciation": "/ˈteɪbəl/",
+      "meaning": "Data arranged in rows and columns",
+      "banglaMeaning": "সারণি",
+      "exampleSentence": "Table 2 summarizes the findings."
+    },
+    {
+      "word": "Appendix",
+      "pronunciation": "/əˈpɛndɪks/",
+      "meaning": "Supplementary material at the end",
+      "banglaMeaning": "পরিশিষ্ট",
+      "exampleSentence": "The raw data is in the appendix."
+    },
+    {
+      "word": "Index",
+      "pronunciation": "/ˈɪndɛks/",
+      "meaning": "An alphabetical list of topics",
+      "banglaMeaning": "সূচি",
+      "exampleSentence": "Look up the topic in the index."
+    },
+    {
+      "word": "Glossary",
+      "pronunciation": "/ˈɡlɒsəri/",
+      "meaning": "A list of defined terms",
+      "banglaMeaning": "শব্দকোষ",
+      "exampleSentence": "The glossary defines technical terms."
+    },
+    {
+      "word": "Curriculum",
+      "pronunciation": "/kəˈrɪkjʊləm/",
+      "meaning": "A course of study",
+      "banglaMeaning": "পাঠ্যসূচি",
+      "exampleSentence": "The curriculum includes advanced mathematics."
+    },
+    {
+      "word": "Syllabus",
+      "pronunciation": "/ˈsɪləbəs/",
+      "meaning": "An outline of a course",
+      "banglaMeaning": "সিলেবাস",
+      "exampleSentence": "The syllabus is on the first page."
+    },
+    {
+      "word": "Lecture",
+      "pronunciation": "/ˈlɛktʃər/",
+      "meaning": "A formal academic talk",
+      "banglaMeaning": "বক্তৃতা",
+      "exampleSentence": "The lecture was on quantum mechanics."
+    },
+    {
+      "word": "Seminar",
+      "pronunciation": "/ˈsɛmɪnɑːr/",
+      "meaning": "A small group discussion class",
+      "banglaMeaning": "সেমিনার",
+      "exampleSentence": "The seminar allows for interactive discussion."
+    },
+    {
+      "word": "Tutorial",
+      "pronunciation": "/tjuːˈtɔːriəl/",
+      "meaning": "A small teaching session",
+      "banglaMeaning": "টিউটোরিয়াল",
+      "exampleSentence": "The tutorial helps with problem sets."
+    },
+    {
+      "word": "Workshop",
+      "pronunciation": "/ˈwɜːrkʃɒp/",
+      "meaning": "A practical training session",
+      "banglaMeaning": "কর্মশালা",
+      "exampleSentence": "The workshop focused on research methods."
+    },
+    {
+      "word": "Plagiarism",
+      "pronunciation": "/ˈpleɪdʒərɪzəm/",
+      "meaning": "Using someone else's work as your own",
+      "banglaMeaning": "চুরি",
+      "exampleSentence": "Universities strictly prohibit plagiarism."
+    },
+    {
+      "word": "Academic Integrity",
+      "pronunciation": "/ˌækəˈdɛmɪk ɪnˈtɛɡrɪti/",
+      "meaning": "Honesty in academic work",
+      "banglaMeaning": "শিক্ষাগত সততা",
+      "exampleSentence": "Academic integrity is taken seriously."
+    },
+    {
+      "word": "Scholarship",
+      "pronunciation": "/ˈskɒlərʃɪp/",
+      "meaning": "Academic study or achievement",
+      "banglaMeaning": "পাণ্ডিত্য",
+      "exampleSentence": "Her scholarship in history is widely recognized."
+    },
+    {
+      "word": "Research",
+      "pronunciation": "/rɪˈsɜːrtʃ/",
+      "meaning": "Systematic investigation to find facts",
+      "banglaMeaning": "গবেষণা",
+      "exampleSentence": "The research was published in a journal."
+    },
+    {
+      "word": "Study",
+      "pronunciation": "/ˈstʌdi/",
+      "meaning": "A detailed investigation",
+      "banglaMeaning": "অধ্যয়ন",
+      "exampleSentence": "The study examined 500 patients."
+    },
+    {
+      "word": "Investigation",
+      "pronunciation": "/ɪnˌvɛstɪˈɡeɪʃən/",
+      "meaning": "A systematic examination",
+      "banglaMeaning": "তদন্ত",
+      "exampleSentence": "The investigation revealed new evidence."
+    },
+    {
+      "word": "Examination",
+      "pronunciation": "/ɪɡˌzæmɪˈneɪʃən/",
+      "meaning": "A formal test of knowledge",
+      "banglaMeaning": "পরীক্ষা",
+      "exampleSentence": "The final examination is in December."
+    },
+    {
+      "word": "Assessment",
+      "pronunciation": "/əˈsɛsmənt/",
+      "meaning": "An evaluation of learning",
+      "banglaMeaning": "মূল্যায়ন",
+      "exampleSentence": "Continuous assessment includes assignments."
+    },
+    {
+      "word": "Assignment",
+      "pronunciation": "/əˈsaɪnmənt/",
+      "meaning": "A task given to students",
+      "banglaMeaning": "নির্ধারিত কাজ",
+      "exampleSentence": "The assignment is due next week."
+    },
+    {
+      "word": "Coursework",
+      "pronunciation": "/ˈkɔːrswɜːrk/",
+      "meaning": "Work done during a course",
+      "banglaMeaning": "কোর্সওয়ার্ক",
+      "exampleSentence": "Coursework counts for 40% of the grade."
+    },
+    {
+      "word": "Grade",
+      "pronunciation": "/ɡreɪd/",
+      "meaning": "A score or mark",
+      "banglaMeaning": "গ্রেড",
+      "exampleSentence": "She received an A grade."
+    },
+    {
+      "word": "Score",
+      "pronunciation": "/skɔːr/",
+      "meaning": "A numerical result",
+      "banglaMeaning": "স্কোর",
+      "exampleSentence": "The average score was 85."
+    },
+    {
+      "word": "Mark",
+      "pronunciation": "/mɑːrk/",
+      "meaning": "A point awarded for work",
+      "banglaMeaning": "নম্বর",
+      "exampleSentence": "She got full marks on the test."
+    },
+    {
+      "word": "Percentage",
+      "pronunciation": "/pərˈsɛntɪdʒ/",
+      "meaning": "A proportion out of 100",
+      "banglaMeaning": "শতকরা হার",
+      "exampleSentence": "The pass percentage was 90%."
+    },
+    {
+      "word": "Cumulative",
+      "pronunciation": "/ˈkjuːmjʊlətɪv/",
+      "meaning": "Increasing by adding",
+      "banglaMeaning": "ক্রমবর্ধমান",
+      "exampleSentence": "The cumulative score includes all tests."
+    },
+    {
+      "word": "Transcript",
+      "pronunciation": "/ˈtrænskrɪpt/",
+      "meaning": "An official record of grades",
+      "banglaMeaning": "ট্রান্সক্রিপ্ট",
+      "exampleSentence": "Request your transcript from the registrar."
+    },
+    {
+      "word": "Diploma",
+      "pronunciation": "/dɪˈploʊmə/",
+      "meaning": "A certificate of completion",
+      "banglaMeaning": "ডিপ্লোমা",
+      "exampleSentence": "She received her diploma at graduation."
+    },
+    {
+      "word": "Certificate",
+      "pronunciation": "/sərˈtɪfɪkɪt/",
+      "meaning": "An official document of achievement",
+      "banglaMeaning": "সার্টিফিকেট",
+      "exampleSentence": "The certificate confirms course completion."
+    },
+    {
+      "word": "Degree",
+      "pronunciation": "/dɪˈɡriː/",
+      "meaning": "An academic qualification",
+      "banglaMeaning": "ডিগ্রি",
+      "exampleSentence": "She earned a degree in economics."
+    },
+    {
+      "word": "Bachelor",
+      "pronunciation": "/ˈbætʃələr/",
+      "meaning": "First university degree",
+      "banglaMeaning": "ব্যাচেলর",
+      "exampleSentence": "He has a Bachelor of Arts."
+    },
+    {
+      "word": "Master",
+      "pronunciation": "/ˈmæstər/",
+      "meaning": "Advanced university degree",
+      "banglaMeaning": "মাস্টার্স",
+      "exampleSentence": "She is studying for a Master's degree."
+    },
+    {
+      "word": "Doctorate",
+      "pronunciation": "/ˈdɒktərɪt/",
+      "meaning": "The highest academic degree",
+      "banglaMeaning": "ডক্টরেট",
+      "exampleSentence": "He earned his doctorate in physics."
+    },
+    {
+      "word": "Professor",
+      "pronunciation": "/prəˈfɛsər/",
+      "meaning": "A senior university teacher",
+      "banglaMeaning": "অধ্যাপক",
+      "exampleSentence": "The professor lectured on ancient history."
+    },
+    {
+      "word": "Lecturer",
+      "pronunciation": "/ˈlɛktʃərər/",
+      "meaning": "A university teacher",
+      "banglaMeaning": "বক্তা / লেকচারার",
+      "exampleSentence": "The lecturer explained the theory clearly."
+    },
+    {
+      "word": "Assistant Professor",
+      "pronunciation": "/əˈsɪstənt prəˈfɛsər/",
+      "meaning": "A junior-level professor",
+      "banglaMeaning": "সহকারী অধ্যাপক",
+      "exampleSentence": "She was hired as an assistant professor."
+    },
+    {
+      "word": "Associate Professor",
+      "pronunciation": "/əˈsoʊʃiɪt prəˈfɛsər/",
+      "meaning": "A mid-level professor",
+      "banglaMeaning": "সহযোগী অধ্যাপক",
+      "exampleSentence": "He was promoted to associate professor."
+    },
+    {
+      "word": "Dean",
+      "pronunciation": "/diːn/",
+      "meaning": "Head of a faculty or department",
+      "banglaMeaning": "ডিন",
+      "exampleSentence": "The dean approved the new curriculum."
+    },
+    {
+      "word": "Faculty",
+      "pronunciation": "/ˈfækəlti/",
+      "meaning": "The teaching staff of a university",
+      "banglaMeaning": "অনুষদ",
+      "exampleSentence": "The faculty meeting is on Friday."
+    },
+    {
+      "word": "Department",
+      "pronunciation": "/dɪˈpɑːrtmənt/",
+      "meaning": "A division of a university",
+      "banglaMeaning": "বিভাগ",
+      "exampleSentence": "The department of physics is well-funded."
+    },
+    {
+      "word": "Discipline",
+      "pronunciation": "/ˈdɪsɪplɪn/",
+      "meaning": "A branch of knowledge",
+      "banglaMeaning": "শাস্ত্র",
+      "exampleSentence": "Psychology is a broad discipline."
+    },
+    {
+      "word": "Field",
+      "pronunciation": "/fiːld/",
+      "meaning": "An area of study",
+      "banglaMeaning": "ক্ষেত্র",
+      "exampleSentence": "She is an expert in the field of genetics."
+    },
+    {
+      "word": "Domain",
+      "pronunciation": "/doʊˈmeɪn/",
+      "meaning": "A specific area of knowledge",
+      "banglaMeaning": "ডোমেইন",
+      "exampleSentence": "This is outside my domain of expertise."
+    },
+    {
+      "word": "Interdisciplinary",
+      "pronunciation": "/ˌɪntərˌdɪsɪˈplɪnəri/",
+      "meaning": "Involving multiple academic fields",
+      "banglaMeaning": "আন্তঃশাস্ত্রীয়",
+      "exampleSentence": "The program is interdisciplinary."
+    },
+    {
+      "word": "Multidisciplinary",
+      "pronunciation": "/ˌmʌltiˌdɪsɪˈplɪnəri/",
+      "meaning": "Involving many disciplines",
+      "banglaMeaning": "বহুশাস্ত্রীয়",
+      "exampleSentence": "A multidisciplinary approach is needed."
+    },
+    {
+      "word": "Pedagogy",
+      "pronunciation": "/ˈpɛdəɡɒdʒi/",
+      "meaning": "The method of teaching",
+      "banglaMeaning": "শিক্ষণ পদ্ধতি",
+      "exampleSentence": "The pedagogy focuses on active learning."
+    },
+    {
+      "word": "Curriculum",
+      "pronunciation": "/kəˈrɪkjʊləm/",
+      "meaning": "The subjects in a course of study",
+      "banglaMeaning": "পাঠক্রম",
+      "exampleSentence": "The curriculum was updated last year."
+    },
+    {
+      "word": "Syllabus",
+      "pronunciation": "/ˈsɪləbəs/",
+      "meaning": "A course outline and requirements",
+      "banglaMeaning": "পাঠ্যসূচি",
+      "exampleSentence": "Check the syllabus for due dates."
+    },
+    {
+      "word": "Lecture Hall",
+      "pronunciation": "/ˈlɛktʃər hɔːl/",
+      "meaning": "A large room for lectures",
+      "banglaMeaning": "বক্তৃতা কক্ষ",
+      "exampleSentence": "The lecture hall seats 300 students."
+    },
+    {
+      "word": "Laboratory",
+      "pronunciation": "/ləˈbɒrətɔːri/",
+      "meaning": "A room for scientific experiments",
+      "banglaMeaning": "পরীক্ষাগার",
+      "exampleSentence": "The chemistry lab is well-equipped."
+    },
+    {
+      "word": "Library",
+      "pronunciation": "/ˈlaɪbrəri/",
+      "meaning": "A collection of books and resources",
+      "banglaMeaning": "গ্রন্থাগার",
+      "exampleSentence": "The library has extensive research materials."
+    },
+    {
+      "word": "Archive",
+      "pronunciation": "/ˈɑːrkaɪv/",
+      "meaning": "A collection of historical records",
+      "banglaMeaning": "আর্কাইভ",
+      "exampleSentence": "The archive contains rare manuscripts."
+    },
+    {
+      "word": "Database",
+      "pronunciation": "/ˈdeɪtəbeɪs/",
+      "meaning": "An organized collection of data",
+      "banglaMeaning": "ডেটাবেস",
+      "exampleSentence": "Search the database for relevant articles."
+    },
+    {
+      "word": "Journal",
+      "pronunciation": "/ˈdʒɜːrnəl/",
+      "meaning": "An academic publication",
+      "banglaMeaning": "জার্নাল",
+      "exampleSentence": "The article was published in a peer-reviewed journal."
+    },
+    {
+      "word": "Article",
+      "pronunciation": "/ˈɑːrtɪkəl/",
+      "meaning": "A piece of writing in a publication",
+      "banglaMeaning": "প্রবন্ধ",
+      "exampleSentence": "The article presents new findings."
+    },
+    {
+      "word": "Paper",
+      "pronunciation": "/ˈpeɪpər/",
+      "meaning": "An academic essay or article",
+      "banglaMeaning": "গবেষণাপত্র",
+      "exampleSentence": "She presented a paper at the conference."
+    },
+    {
+      "word": "Publication",
+      "pronunciation": "/ˌpʌblɪˈkeɪʃən/",
+      "meaning": "A published work",
+      "banglaMeaning": "প্রকাশনা",
+      "exampleSentence": "His publication list includes 20 papers."
+    },
+    {
+      "word": "Publisher",
+      "pronunciation": "/ˈpʌblɪʃər/",
+      "meaning": "A company that produces publications",
+      "banglaMeaning": "প্রকাশক",
+      "exampleSentence": "The publisher accepted the manuscript."
+    },
+    {
+      "word": "Volume",
+      "pronunciation": "/ˈvɒljuːm/",
+      "meaning": "A book or one of a series",
+      "banglaMeaning": "ভলিউম",
+      "exampleSentence": "Volume 3 covers modern history."
+    },
+    {
+      "word": "Edition",
+      "pronunciation": "/ɪˈdɪʃən/",
+      "meaning": "A particular version of a publication",
+      "banglaMeaning": "সংস্করণ",
+      "exampleSentence": "The second edition includes updated data."
+    },
+    {
+      "word": "Issue",
+      "pronunciation": "/ˈɪʃuː/",
+      "meaning": "A particular number of a journal",
+      "banglaMeaning": "সংখ্যা",
+      "exampleSentence": "Read the latest issue of the journal."
+    },
+    {
+      "word": "Manuscript",
+      "pronunciation": "/ˈmænjʊskrɪpt/",
+      "meaning": "An unpublished written work",
+      "banglaMeaning": "পাণ্ডুলিপি",
+      "exampleSentence": "The manuscript was submitted for review."
+    },
+    {
+      "word": "Draft",
+      "pronunciation": "/dræft/",
+      "meaning": "A preliminary version of writing",
+      "banglaMeaning": "খসড়া",
+      "exampleSentence": "The first draft needs revision."
+    },
+    {
+      "word": "Proofread",
+      "pronunciation": "/ˈpruːfriːd/",
+      "meaning": "To check for errors in text",
+      "banglaMeaning": "প্রুফ পড়া",
+      "exampleSentence": "Proofread your essay before submission."
+    },
+    {
+      "word": "Revise",
+      "pronunciation": "/rɪˈvaɪz/",
+      "meaning": "To review and improve",
+      "banglaMeaning": "পুনর্বিবেচনা করা",
+      "exampleSentence": "Revise the paper based on feedback."
+    },
+    {
+      "word": "Edit",
+      "pronunciation": "/ˈɛdɪt/",
+      "meaning": "To prepare text for publication",
+      "banglaMeaning": "সম্পাদনা করা",
+      "exampleSentence": "The editor will review your article."
+    },
+    {
+      "word": "Format",
+      "pronunciation": "/ˈfɔːrmæt/",
+      "meaning": "The style and layout of a document",
+      "banglaMeaning": "বিন্যাস",
+      "exampleSentence": "Follow the APA format for citations."
+    },
+    {
+      "word": "Style Guide",
+      "pronunciation": "/staɪl ɡaɪd/",
+      "meaning": "A set of writing standards",
+      "banglaMeaning": "শৈলী নির্দেশিকা",
+      "exampleSentence": "The Chicago Manual of Style is a popular style guide."
+    },
+    {
+      "word": "APA",
+      "pronunciation": "/ˌeɪ piː ˈeɪ/",
+      "meaning": "American Psychological Association citation style",
+      "banglaMeaning": "এপিএ স্টাইল",
+      "exampleSentence": "This paper should use APA format."
+    },
+    {
+      "word": "MLA",
+      "pronunciation": "/ˌɛm ɛl ˈeɪ/",
+      "meaning": "Modern Language Association citation style",
+      "banglaMeaning": "এমএলএ স্টাইল",
+      "exampleSentence": "MLA style is common in humanities."
+    },
+    {
+      "word": "Chicago Style",
+      "pronunciation": "/ʃɪˈkɑːɡoʊ staɪl/",
+      "meaning": "A citation style from the University of Chicago",
+      "banglaMeaning": "শিকাগো স্টাইল",
+      "exampleSentence": "History papers often use Chicago style."
+    },
+    {
+      "word": "Harvard Style",
+      "pronunciation": "/ˈhɑːrvərd staɪl/",
+      "meaning": "A parenthetical citation style",
+      "banglaMeaning": "হার্ভার্ড স্টাইল",
+      "exampleSentence": "Harvard referencing uses author and date."
+    },
+    {
+      "word": "In-text Citation",
+      "pronunciation": "/ɪn tɛkst saɪˈteɪʃən/",
+      "meaning": "A reference within the text",
+      "banglaMeaning": "টেক্সট-মধ্যে উদ্ধৃতি",
+      "exampleSentence": "Use in-text citations for direct quotes."
+    },
+    {
+      "word": "Quotation",
+      "pronunciation": "/kwoʊˈteɪʃən/",
+      "meaning": "Exact words from a source",
+      "banglaMeaning": "উদ্ধৃতি",
+      "exampleSentence": "Direct quotations need quotation marks."
+    },
+    {
+      "word": "Quote",
+      "pronunciation": "/kwoʊt/",
+      "meaning": "To repeat someone's exact words",
+      "banglaMeaning": "উদ্ধৃতি দেওয়া",
+      "exampleSentence": "Quote the author's exact words."
+    },
+    {
+      "word": "Cite",
+      "pronunciation": "/saɪt/",
+      "meaning": "To refer to a source",
+      "banglaMeaning": "উদ্ধৃত করা",
+      "exampleSentence": "Cite all sources in the bibliography."
+    },
+    {
+      "word": "Acknowledge",
+      "pronunciation": "/əkˈnɒlɪdʒ/",
+      "meaning": "To recognize someone's contribution",
+      "banglaMeaning": "স্বীকার করা",
+      "exampleSentence": "Acknowledge the funding source."
+    },
+    {
+      "word": "Attribute",
+      "pronunciation": "/əˈtrɪbjuːt/",
+      "meaning": "To credit a source",
+      "banglaMeaning": "উদ্ধৃত করা",
+      "exampleSentence": "Attribute the idea to its original author."
+    },
+    {
+      "word": "Premise",
+      "pronunciation": "/ˈprɛmɪs/",
+      "meaning": "A foundational assumption",
+      "banglaMeaning": "ভিত্তি",
+      "exampleSentence": "The premise of the argument is flawed."
+    },
+    {
+      "word": "Proposition",
+      "pronunciation": "/ˌprɒpəˈzɪʃən/",
+      "meaning": "A statement put forward for consideration",
+      "banglaMeaning": "প্রস্তাব",
+      "exampleSentence": "The proposition needs further testing."
+    },
+    {
+      "word": "Assumption",
+      "pronunciation": "/əˈsʌmpʃən/",
+      "meaning": "Something accepted as true",
+      "banglaMeaning": "অনুমান",
+      "exampleSentence": "Check your assumptions before proceeding."
+    },
+    {
+      "word": "Implication",
+      "pronunciation": "/ˌɪmplɪˈkeɪʃən/",
+      "meaning": "A possible result or consequence",
+      "banglaMeaning": "প্রভাব",
+      "exampleSentence": "The implications of the study are significant."
+    },
+    {
+      "word": "Inference",
+      "pronunciation": "/ˈɪnfərəns/",
+      "meaning": "A conclusion from evidence",
+      "banglaMeaning": "অনুমান",
+      "exampleSentence": "Draw your own inferences from the data."
+    },
+    {
+      "word": "Conclusion",
+      "pronunciation": "/kənˈkluːʒən/",
+      "meaning": "A final judgment or decision",
+      "banglaMeaning": "উপসংহার",
+      "exampleSentence": "The conclusion summarizes the findings."
+    },
+    {
+      "word": "Recommendation",
+      "pronunciation": "/ˌrɛkəmɛnˈdeɪʃən/",
+      "meaning": "A suggested course of action",
+      "banglaMeaning": "সুপারিশ",
+      "exampleSentence": "The report includes policy recommendations."
+    },
+    {
+      "word": "Limitation",
+      "pronunciation": "/ˌlɪmɪˈteɪʃən/",
+      "meaning": "A weakness or restriction",
+      "banglaMeaning": "সীমাবদ্ধতা",
+      "exampleSentence": "Every study has limitations."
+    },
+    {
+      "word": "Scope",
+      "pronunciation": "/skoʊp/",
+      "meaning": "The extent of a study",
+      "banglaMeaning": "পরিধি",
+      "exampleSentence": "The scope of this research is limited."
+    },
+    {
+      "word": "Parameter",
+      "pronunciation": "/pəˈræmɪtər/",
+      "meaning": "A boundary or limit",
+      "banglaMeaning": "প্রাচল",
+      "exampleSentence": "Define the parameters of the experiment."
+    },
+    {
+      "word": "Criterion",
+      "pronunciation": "/kraɪˈtɪriən/",
+      "meaning": "A standard for judging",
+      "banglaMeaning": "মানদণ্ড",
+      "exampleSentence": "The main criterion is accuracy."
+    },
+    {
+      "word": "Criteria",
+      "pronunciation": "/kraɪˈtɪriə/",
+      "meaning": "Plural of criterion",
+      "banglaMeaning": "মানদণ্ডসমূহ",
+      "exampleSentence": "What are the selection criteria?"
+    },
+    {
+      "word": "Standard",
+      "pronunciation": "/ˈstændərd/",
+      "meaning": "A level of quality",
+      "banglaMeaning": "মান",
+      "exampleSentence": "The work meets academic standards."
+    },
+    {
+      "word": "Norm",
+      "pronunciation": "/nɔːrm/",
+      "meaning": "A typical standard",
+      "banglaMeaning": "আদর্শ",
+      "exampleSentence": "This deviation is outside the norm."
+    },
+    {
+      "word": "Baseline",
+      "pronunciation": "/ˈbeɪslaɪn/",
+      "meaning": "A starting point for comparison",
+      "banglaMeaning": "ভিত্তি রেখা",
+      "exampleSentence": "Establish a baseline before the experiment."
+    },
+    {
+      "word": "Benchmark",
+      "pronunciation": "/ˈbɛntʃmɑːrk/",
+      "meaning": "A standard for comparison",
+      "banglaMeaning": "মানদণ্ড",
+      "exampleSentence": "Set benchmarks for performance."
+    },
+    {
+      "word": "Indicator",
+      "pronunciation": "/ˈɪndɪkeɪtər/",
+      "meaning": "Something that shows a condition",
+      "banglaMeaning": "সূচক",
+      "exampleSentence": "GDP is an indicator of economic health."
+    },
+    {
+      "word": "Index",
+      "pronunciation": "/ˈɪndɛks/",
+      "meaning": "A numerical scale for measurement",
+      "banglaMeaning": "সূচক",
+      "exampleSentence": "The price index increased by 2%."
+    },
+    {
+      "word": "Ratio",
+      "pronunciation": "/ˈreɪʃioʊ/",
+      "meaning": "A relationship between two numbers",
+      "banglaMeaning": "অনুপাত",
+      "exampleSentence": "The ratio of boys to girls is 3:2."
+    },
+    {
+      "word": "Proportion",
+      "pronunciation": "/prəˈpɔːrʃən/",
+      "meaning": "A part compared to the whole",
+      "banglaMeaning": "আনুপাতিক হার",
+      "exampleSentence": "A large proportion of the sample was female."
+    },
+    {
+      "word": "Rate",
+      "pronunciation": "/reɪt/",
+      "meaning": "A measure of frequency or speed",
+      "banglaMeaning": "হার",
+      "exampleSentence": "The response rate was 60%."
+    },
+    {
+      "word": "Trend",
+      "pronunciation": "/trɛnd/",
+      "meaning": "A general direction of change",
+      "banglaMeaning": "প্রবণতা",
+      "exampleSentence": "The trend shows increasing temperatures."
+    },
+    {
+      "word": "Pattern",
+      "pronunciation": "/ˈpætərn/",
+      "meaning": "A repeated or regular arrangement",
+      "banglaMeaning": "ধারা",
+      "exampleSentence": "A pattern emerged from the data."
+    },
+    {
+      "word": "Anomaly",
+      "pronunciation": "/əˈnɒməli/",
+      "meaning": "Something that deviates from the norm",
+      "banglaMeaning": "ব্যতিক্রম",
+      "exampleSentence": "The anomaly was investigated further."
+    },
+    {
+      "word": "Variance",
+      "pronunciation": "/ˈvɛriəns/",
+      "meaning": "The degree of difference",
+      "banglaMeaning": "প্রকরণ",
+      "exampleSentence": "There is considerable variance in the data."
+    },
+    {
+      "word": "Discrepancy",
+      "pronunciation": "/dɪsˈkrɛpənsi/",
+      "meaning": "A difference between expected and actual",
+      "banglaMeaning": "গরমিল",
+      "exampleSentence": "A discrepancy was found in the results."
+    },
+    {
+      "word": "Consistency",
+      "pronunciation": "/kənˈsɪstənsi/",
+      "meaning": "Being uniform or regular",
+      "banglaMeaning": "সামঞ্জস্য",
+      "exampleSentence": "The results show consistency across trials."
+    },
+    {
+      "word": "Accuracy",
+      "pronunciation": "/ˈækjʊrəsi/",
+      "meaning": "The degree of correctness",
+      "banglaMeaning": "সঠিকতা",
+      "exampleSentence": "The accuracy of the measurement is critical."
+    },
+    {
+      "word": "Precision",
+      "pronunciation": "/prɪˈsɪʒən/",
+      "meaning": "The exactness of measurement",
+      "banglaMeaning": "নির্ভুলতা",
+      "exampleSentence": "Precision is important in scientific instruments."
+    },
+    {
+      "word": "Error",
+      "pronunciation": "/ˈɛrər/",
+      "meaning": "A mistake or inaccuracy",
+      "banglaMeaning": "ভুল",
+      "exampleSentence": "The margin of error is 3%."
+    },
+    {
+      "word": "Margin of Error",
+      "pronunciation": "/ˈmɑːrdʒɪn əv ˈɛrər/",
+      "meaning": "The range of possible error in results",
+      "banglaMeaning": "ত্রুটির সীমা",
+      "exampleSentence": "The margin of error is plus or minus 2%."
+    },
+    {
+      "word": "Confound",
+      "pronunciation": "/kənˈfaʊnd/",
+      "meaning": "A variable that causes confusion",
+      "banglaMeaning": "বিভ্রান্তিকর চলক",
+      "exampleSentence": "Age is a confounding variable in the study."
+    },
+    {
+      "word": "Controlled Variable",
+      "pronunciation": "/kənˈtroʊld ˈvɛriəbəl/",
+      "meaning": "A variable kept constant",
+      "banglaMeaning": "নিয়ন্ত্রিত চলক",
+      "exampleSentence": "Temperature is a controlled variable."
+    },
+    {
+      "word": "Extraneous Variable",
+      "pronunciation": "/ɪkˈstreɪniəs ˈvɛriəbəl/",
+      "meaning": "An unwanted variable affecting results",
+      "banglaMeaning": "বহিরাগত চলক",
+      "exampleSentence": "Extraneous variables can bias the results."
+    },
+    {
+      "word": "Random Error",
+      "pronunciation": "/ˈrændəm ˈɛrər/",
+      "meaning": "Unpredictable variation in measurement",
+      "banglaMeaning": "এলোমেলো ত্রুটি",
+      "exampleSentence": "Random error can be reduced by larger samples."
+    },
+    {
+      "word": "Systematic Error",
+      "pronunciation": "/ˌsɪstəˈmætɪk ˈɛrər/",
+      "meaning": "Consistent, predictable error",
+      "banglaMeaning": "পদ্ধতিগত ত্রুটি",
+      "exampleSentence": "Systematic error biases all measurements."
+    },
+    {
+      "word": "Replication",
+      "pronunciation": "/ˌrɛplɪˈkeɪʃən/",
+      "meaning": "Repeating a study to confirm results",
+      "banglaMeaning": "পুনরাবৃত্তি",
+      "exampleSentence": "Replication is essential for scientific validity."
+    },
+    {
+      "word": "Reproducibility",
+      "pronunciation": "/ˌriːprəˌdjuːsɪˈbɪlɪti/",
+      "meaning": "The ability to reproduce results",
+      "banglaMeaning": "পুনরুৎপাদনযোগ্যতা",
+      "exampleSentence": "Reproducibility is a hallmark of good science."
+    },
+    {
+      "word": "Generalizability",
+      "pronunciation": "/ˌdʒɛnərəlaɪzəˈbɪlɪti/",
+      "meaning": "The ability to apply findings to other groups",
+      "banglaMeaning": "সাধারণীকরণযোগ্যতা",
+      "exampleSentence": "The small sample limits generalizability."
+    },
+    {
+      "word": "External Validity",
+      "pronunciation": "/ɪkˈstɜːrnəl vəˈlɪdɪti/",
+      "meaning": "How well findings apply to other settings",
+      "banglaMeaning": "বহিঃস্থ বৈধতা",
+      "exampleSentence": "External validity depends on the sample."
+    },
+    {
+      "word": "Internal Validity",
+      "pronunciation": "/ɪnˈtɜːrnəl vəˈlɪdɪti/",
+      "meaning": "How well the study measures what it intends",
+      "banglaMeaning": "অভ্যন্তরীণ বৈধতা",
+      "exampleSentence": "Good experimental design ensures internal validity."
+    },
+    {
+      "word": "Construct Validity",
+      "pronunciation": "/ˈkɒnstrʌkt vəˈlɪdɪti/",
+      "meaning": "How well a test measures a theoretical concept",
+      "banglaMeaning": "গঠন বৈধতা",
+      "exampleSentence": "The test has strong construct validity."
+    },
+    {
+      "word": "Face Validity",
+      "pronunciation": "/feɪs vəˈlɪdɪti/",
+      "meaning": "How valid a test appears superficially",
+      "banglaMeaning": "মুখ্য বৈধতা",
+      "exampleSentence": "The questionnaire has good face validity."
+    },
+    {
+      "word": "Content Validity",
+      "pronunciation": "/ˈkɒntɛnt vəˈlɪdɪti/",
+      "meaning": "How well a test covers the subject",
+      "banglaMeaning": "বিষয়বস্তুর বৈধতা",
+      "exampleSentence": "Content validity ensures full coverage."
+    },
+    {
+      "word": "Test-retest Reliability",
+      "pronunciation": "/tɛst riːtɛst rɪˌlaɪəˈbɪlɪti/",
+      "meaning": "Consistency of results over time",
+      "banglaMeaning": "পরীক্ষা-পুনরীক্ষা নির্ভরযোগ্যতা",
+      "exampleSentence": "Test-retest reliability was measured after one month."
+    },
+    {
+      "word": "Inter-rater Reliability",
+      "pronunciation": "/ˈɪntər ˈreɪtər rɪˌlaɪəˈbɪlɪti/",
+      "meaning": "Agreement between different observers",
+      "banglaMeaning": "মূল্যায়নকারীদের মধ্যে নির্ভরযোগ্যতা",
+      "exampleSentence": "Inter-rater reliability was high."
+    },
+    {
+      "word": "Internal Consistency",
+      "pronunciation": "/ɪnˈtɜːrnəl kənˈsɪstənsi/",
+      "meaning": "How well items on a test measure the same thing",
+      "banglaMeaning": "অভ্যন্তরীণ সামঞ্জস্য",
+      "exampleSentence": "Cronbach's alpha measures internal consistency."
+    },
+    {
+      "word": "Ethnography",
+      "pronunciation": "/ɛθˈnɒɡrəfi/",
+      "meaning": "Study of people and cultures",
+      "banglaMeaning": "নৃবিজ্ঞান",
+      "exampleSentence": "Ethnography involves fieldwork."
+    },
+    {
+      "word": "Phenomenology",
+      "pronunciation": "/fɪˌnɒmɪˈnɒlədʒi/",
+      "meaning": "Study of subjective experiences",
+      "banglaMeaning": "ঘটনাবিদ্যা",
+      "exampleSentence": "Phenomenology explores lived experiences."
+    },
+    {
+      "word": "Grounded Theory",
+      "pronunciation": "/ˈɡraʊndɪd ˈθɪəri/",
+      "meaning": "Theory developed from data",
+      "banglaMeaning": "গ্রাউন্ডেড থিওরি",
+      "exampleSentence": "Grounded theory emerges from systematic data analysis."
+    },
+    {
+      "word": "Discourse Analysis",
+      "pronunciation": "/ˈdɪskɔːrs əˈnælɪsɪs/",
+      "meaning": "Study of language in communication",
+      "banglaMeaning": "ডিসকোর্স বিশ্লেষণ",
+      "exampleSentence": "Discourse analysis examines how language shapes meaning."
+    },
+    {
+      "word": "Content Analysis",
+      "pronunciation": "/ˈkɒntɛnt əˈnælɪsɪs/",
+      "meaning": "Systematic coding of text content",
+      "banglaMeaning": "বিষয়বস্তু বিশ্লেষণ",
+      "exampleSentence": "Content analysis was used to categorize themes."
+    },
+    {
+      "word": "Meta-analysis",
+      "pronunciation": "/ˈmɛtə əˈnælɪsɪs/",
+      "meaning": "Statistical analysis combining multiple studies",
+      "banglaMeaning": "মেটা-বিশ্লেষণ",
+      "exampleSentence": "A meta-analysis of 50 studies was conducted."
+    },
+    {
+      "word": "Systematic Review",
+      "pronunciation": "/ˌsɪstəˈmætɪk rɪˈvjuː/",
+      "meaning": "A comprehensive review of all relevant studies",
+      "banglaMeaning": "পদ্ধতিগত পর্যালোচনা",
+      "exampleSentence": "The systematic review included 100 articles."
+    },
+    {
+      "word": "Triangulation",
+      "pronunciation": "/traɪˌæŋɡjʊˈleɪʃən/",
+      "meaning": "Using multiple methods to confirm findings",
+      "banglaMeaning": "ত্রিভুজকরণ",
+      "exampleSentence": "Triangulation increases research credibility."
+    },
+    {
+      "word": "Reliability",
+      "pronunciation": "/rɪˌlaɪəˈbɪlɪti/",
+      "meaning": "Consistency of measurement",
+      "banglaMeaning": "নির্ভরযোগ্যতা",
+      "exampleSentence": "The reliability coefficient was 0.9."
+    },
+    {
+      "word": "Validity",
+      "pronunciation": "/vəˈlɪdɪti/",
+      "meaning": "The degree of truthfulness",
+      "banglaMeaning": "বৈধতা",
+      "exampleSentence": "Validity is essential in research."
+    },
+    {
+      "word": "Objectivity",
+      "pronunciation": "/ˌɒbdʒɛkˈtɪvɪti/",
+      "meaning": "Lack of bias",
+      "banglaMeaning": "নিরপেক্ষতা",
+      "exampleSentence": "Objectivity is important in scientific research."
+    },
+    {
+      "word": "Subjectivity",
+      "pronunciation": "/ˌsʌbdʒɛkˈtɪvɪti/",
+      "meaning": "Personal perspective or bias",
+      "banglaMeaning": "ব্যক্তিগত দৃষ্টিভঙ্গি",
+      "exampleSentence": "Subjectivity cannot be completely avoided."
+    },
+    {
+      "word": "Transparency",
+      "pronunciation": "/trænsˈpærənsi/",
+      "meaning": "Openness about methods and results",
+      "banglaMeaning": "স্বচ্ছতা",
+      "exampleSentence": "Transparency in research builds trust."
+    },
+    {
+      "word": "Ethics",
+      "pronunciation": "/ˈɛθɪks/",
+      "meaning": "Moral principles in research",
+      "banglaMeaning": "নৈতিকতা",
+      "exampleSentence": "Research ethics require informed consent."
+    },
+    {
+      "word": "Informed Consent",
+      "pronunciation": "/ɪnˈfɔːrmd kənˈsɛnt/",
+      "meaning": "Permission given with full knowledge",
+      "banglaMeaning": "অবগত সম্মতি",
+      "exampleSentence": "Participants signed an informed consent form."
+    },
+    {
+      "word": "Confidentiality",
+      "pronunciation": "/ˌkɒnfɪdɛnʃiˈælɪti/",
+      "meaning": "Keeping information private",
+      "banglaMeaning": "গোপনীয়তা",
+      "exampleSentence": "Confidentiality of participants is protected."
+    },
+    {
+      "word": "Anonymity",
+      "pronunciation": "/ˌænəˈnɪmɪti/",
+      "meaning": "Keeping identities unknown",
+      "banglaMeaning": "বেনামী",
+      "exampleSentence": "Anonymity ensures participants cannot be identified."
+    },
+    {
+      "word": "Debriefing",
+      "pronunciation": "/diːˈbriːfɪŋ/",
+      "meaning": "Explaining the purpose after a study",
+      "banglaMeaning": "ডিব্রিফিং",
+      "exampleSentence": "Debriefing was conducted after the experiment."
+    },
+    {
+      "word": "IRB",
+      "pronunciation": "/ˌaɪ ɑːr ˈbiː/",
+      "meaning": "Institutional Review Board for ethics",
+      "banglaMeaning": "আইআরবি",
+      "exampleSentence": "The study was approved by the IRB."
+    },
+    {
+      "word": "Grant",
+      "pronunciation": "/ɡrænt/",
+      "meaning": "Funding for research",
+      "banglaMeaning": "অনুদান",
+      "exampleSentence": "The research was funded by a government grant."
+    },
+    {
+      "word": "Funding",
+      "pronunciation": "/ˈfʌndɪŋ/",
+      "meaning": "Money provided for research",
+      "banglaMeaning": "অর্থায়ন",
+      "exampleSentence": "The project received generous funding."
+    },
+    {
+      "word": "Proposal",
+      "pronunciation": "/prəˈpoʊzəl/",
+      "meaning": "A research plan seeking approval or funding",
+      "banglaMeaning": "প্রস্তাব",
+      "exampleSentence": "The research proposal was submitted."
+    },
+    {
+      "word": "Budget",
+      "pronunciation": "/ˈbʌdʒɪt/",
+      "meaning": "A financial plan for research",
+      "banglaMeaning": "বাজেট",
+      "exampleSentence": "The budget covers equipment and salaries."
+    },
+    {
+      "word": "Timeline",
+      "pronunciation": "/ˈtaɪmlaɪn/",
+      "meaning": "A schedule for research activities",
+      "banglaMeaning": "সময়রেখা",
+      "exampleSentence": "The project timeline spans two years."
+    },
+    {
+      "word": "Milestone",
+      "pronunciation": "/ˈmaɪlstoʊn/",
+      "meaning": "An important achievement in research",
+      "banglaMeaning": "মাইলফলক",
+      "exampleSentence": "Data collection was a major milestone."
+    },
+    {
+      "word": "Deliverable",
+      "pronunciation": "/dɪˈlɪvərəbəl/",
+      "meaning": "A tangible output of research",
+      "banglaMeaning": "প্রদেয়",
+      "exampleSentence": "The final report is a key deliverable."
+    },
+    {
+      "word": "Output",
+      "pronunciation": "/ˈaʊtpʊt/",
+      "meaning": "The results produced by research",
+      "banglaMeaning": "আউটপুট",
+      "exampleSentence": "Publications are a major research output."
+    },
+    {
+      "word": "Outcome",
+      "pronunciation": "/ˈaʊtkʌm/",
+      "meaning": "The final result of research",
+      "banglaMeaning": "ফলাফল",
+      "exampleSentence": "The outcome of the study was unexpected."
+    },
+    {
+      "word": "Impact",
+      "pronunciation": "/ˈɪmpækt/",
+      "meaning": "The effect of research",
+      "banglaMeaning": "প্রভাব",
+      "exampleSentence": "The research had a significant impact on policy."
+    },
+    {
+      "word": "Dissemination",
+      "pronunciation": "/dɪˌsɛmɪˈneɪʃən/",
+      "meaning": "Spreading research findings",
+      "banglaMeaning": "প্রচার",
+      "exampleSentence": "Dissemination includes conferences and publications."
+    },
+    {
+      "word": "Publication",
+      "pronunciation": "/ˌpʌblɪˈkeɪʃən/",
+      "meaning": "Making research publicly available",
+      "banglaMeaning": "প্রকাশনা",
+      "exampleSentence": "The findings are ready for publication."
+    },
+    {
+      "word": "Presentation",
+      "pronunciation": "/ˌprɛzənˈteɪʃən/",
+      "meaning": "Showing research to an audience",
+      "banglaMeaning": "উপস্থাপনা",
+      "exampleSentence": "She gave a presentation at the conference."
+    },
+    {
+      "word": "Conference",
+      "pronunciation": "/ˈkɒnfərəns/",
+      "meaning": "A formal meeting of researchers",
+      "banglaMeaning": "সম্মেলন",
+      "exampleSentence": "The conference attracted scholars from around the world."
+    },
+    {
+      "word": "Symposium",
+      "pronunciation": "/sɪmˈpoʊziəm/",
+      "meaning": "A meeting for discussing a particular topic",
+      "banglaMeaning": "সিম্পোজিয়াম",
+      "exampleSentence": "The symposium focused on climate science."
+    },
+    {
+      "word": "Colloquium",
+      "pronunciation": "/kəˈloʊkwiəm/",
+      "meaning": "An academic seminar",
+      "banglaMeaning": "কোলোকিয়াম",
+      "exampleSentence": "The department holds a weekly colloquium."
+    },
+    {
+      "word": "Keynote",
+      "pronunciation": "/ˈkiːnoʊt/",
+      "meaning": "The main speech at a conference",
+      "banglaMeaning": "কীনোট",
+      "exampleSentence": "The keynote address was inspiring."
+    },
+    {
+      "word": "Panel",
+      "pronunciation": "/ˈpænəl/",
+      "meaning": "A group of experts discussing a topic",
+      "banglaMeaning": "প্যানেল",
+      "exampleSentence": "The panel discussed research ethics."
+    },
+    {
+      "word": "Poster Session",
+      "pronunciation": "/ˈpoʊstər ˈsɛʃən/",
+      "meaning": "A visual presentation of research",
+      "banglaMeaning": "পোস্টার সেশন",
+      "exampleSentence": "I presented my work at the poster session."
+    },
+    {
+      "word": "Abstract Submission",
+      "pronunciation": "/ˈæbstrækt səbˈmɪʃən/",
+      "meaning": "Submitting a summary for a conference",
+      "banglaMeaning": "এবস্ট্রাক্ট জমা",
+      "exampleSentence": "The deadline for abstract submission is Friday."
+    },
+    {
+      "word": "Call for Papers",
+      "pronunciation": "/kɔːl fɔːr ˈpeɪpərz/",
+      "meaning": "An invitation to submit research papers",
+      "banglaMeaning": "পেপার আহ্বান",
+      "exampleSentence": "The journal issued a call for papers."
+    },
+    {
+      "word": "Peer Review",
+      "pronunciation": "/pɪər rɪˈvjuː/",
+      "meaning": "Evaluation by fellow experts",
+      "banglaMeaning": "পিয়ার রিভিউ",
+      "exampleSentence": "The manuscript underwent peer review."
+    },
+    {
+      "word": "Blind Review",
+      "pronunciation": "/blaɪnd rɪˈvjuː/",
+      "meaning": "Review without knowing the author",
+      "banglaMeaning": "অন্ধ পর্যালোচনা",
+      "exampleSentence": "Double-blind review ensures fairness."
+    },
+    {
+      "word": "Editorial Board",
+      "pronunciation": "/ˌɛdɪˈtɔːriəl bɔːrd/",
+      "meaning": "A group overseeing a journal's content",
+      "banglaMeaning": "সম্পাদকীয় বোর্ড",
+      "exampleSentence": "She serves on the editorial board."
+    },
+    {
+      "word": "Impact Factor",
+      "pronunciation": "/ˈɪmpækt ˈfæktər/",
+      "meaning": "A measure of a journal's importance",
+      "banglaMeaning": "ইমপ্যাক্ট ফ্যাক্টর",
+      "exampleSentence": "The journal has a high impact factor."
+    },
+    {
+      "word": "H-index",
+      "pronunciation": "/eɪtʃ ˈɪndɛks/",
+      "meaning": "A measure of a researcher's productivity",
+      "banglaMeaning": "এইচ-ইনডেক্স",
+      "exampleSentence": "Her h-index is 25."
+    },
+    {
+      "word": "Citation Index",
+      "pronunciation": "/saɪˈteɪʃən ˈɪndɛks/",
+      "meaning": "A database of citations",
+      "banglaMeaning": "উদ্ধৃতি সূচক",
+      "exampleSentence": "Check the citation index for the paper."
+    },
+    {
+      "word": "DOI",
+      "pronunciation": "/ˌdiː oʊ ˈaɪ/",
+      "meaning": "Digital Object Identifier for publications",
+      "banglaMeaning": "ডিওআই",
+      "exampleSentence": "Every article has a unique DOI."
+    },
+    {
+      "word": "ISSN",
+      "pronunciation": "/ˌaɪ ɛs ɛs ˈɛn/",
+      "meaning": "International Standard Serial Number",
+      "banglaMeaning": "আইএসএসএন",
+      "exampleSentence": "The ISSN identifies the journal."
+    },
+    {
+      "word": "ISBN",
+      "pronunciation": "/ˌaɪ ɛs biː ˈɛn/",
+      "meaning": "International Standard Book Number",
+      "banglaMeaning": "আইএসবিএন",
+      "exampleSentence": "The book's ISBN is on the back cover."
+    },
+    {
+      "word": "Open Access",
+      "pronunciation": "/ˈoʊpən ˈæksɛs/",
+      "meaning": "Freely available to all readers",
+      "banglaMeaning": "ওপেন অ্যাক্সেস",
+      "exampleSentence": "The article is published open access."
+    },
+    {
+      "word": "Subscription",
+      "pronunciation": "/səbˈskrɪpʃən/",
+      "meaning": "Payment for ongoing access",
+      "banglaMeaning": "সাবস্ক্রিপশন",
+      "exampleSentence": "The library has a journal subscription."
+    },
+    {
+      "word": "Paywall",
+      "pronunciation": "/ˈpeɪwɔːl/",
+      "meaning": "A system restricting access to paying users",
+      "banglaMeaning": "পেওয়াল",
+      "exampleSentence": "The article is behind a paywall."
+    }
+  ]
+}

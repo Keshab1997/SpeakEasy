@@ -1,1 +1,2674 @@
-{"chapter": 36, "level": "Advanced", "title": "News Vocabulary", "words": []}
+{
+  "chapter": 36,
+  "level": "Advanced",
+  "title": "News Vocabulary",
+  "words": [
+    {
+      "word": "Headline",
+      "pronunciation": "/ˈhɛdlaɪn/",
+      "meaning": "The title of a news article",
+      "banglaMeaning": "শিরোনাম",
+      "exampleSentence": "The headline caught everyone's attention."
+    },
+    {
+      "word": "Breaking News",
+      "pronunciation": "/ˈbreɪkɪŋ njuːz/",
+      "meaning": "Urgent news just happening now",
+      "banglaMeaning": "ব্রেকিং নিউজ",
+      "exampleSentence": "Breaking news: earthquake hits the region."
+    },
+    {
+      "word": "Exclusive",
+      "pronunciation": "/ɪkˈskluːsɪv/",
+      "meaning": "A story only one outlet has",
+      "banglaMeaning": "এক্সক্লুসিভ",
+      "exampleSentence": "The newspaper published an exclusive interview."
+    },
+    {
+      "word": "Correspondent",
+      "pronunciation": "/ˌkɒrɪˈspɒndənt/",
+      "meaning": "A journalist reporting from a location",
+      "banglaMeaning": "সংবাদদাতা",
+      "exampleSentence": "Our correspondent in Dhaka filed this report."
+    },
+    {
+      "word": "Reporter",
+      "pronunciation": "/rɪˈpɔːrtər/",
+      "meaning": "A person who gathers and reports news",
+      "banglaMeaning": "প্রতিবেদক",
+      "exampleSentence": "The reporter covered the election."
+    },
+    {
+      "word": "Journalist",
+      "pronunciation": "/ˈdʒɜːrnəlɪst/",
+      "meaning": "A professional news writer",
+      "banglaMeaning": "সাংবাদিক",
+      "exampleSentence": "Journalists must verify their sources."
+    },
+    {
+      "word": "Anchor",
+      "pronunciation": "/ˈæŋkər/",
+      "meaning": "A news program host",
+      "banglaMeaning": "অ্যাঙ্কর",
+      "exampleSentence": "The news anchor presented the evening bulletin."
+    },
+    {
+      "word": "Editor",
+      "pronunciation": "/ˈɛdɪtər/",
+      "meaning": "A person who oversees news content",
+      "banglaMeaning": "সম্পাদক",
+      "exampleSentence": "The editor approved the final copy."
+    },
+    {
+      "word": "Byline",
+      "pronunciation": "/ˈbaɪlaɪn/",
+      "meaning": "The author's name printed with an article",
+      "banglaMeaning": "বাই লাইন",
+      "exampleSentence": "The byline showed it was written by a senior journalist."
+    },
+    {
+      "word": "Dateline",
+      "pronunciation": "/ˈdeɪtlaɪn/",
+      "meaning": "The location and date at the start of an article",
+      "banglaMeaning": "ডেটলাইন",
+      "exampleSentence": "The dateline says London, June 10."
+    },
+    {
+      "word": "Source",
+      "pronunciation": "/sɔːrs/",
+      "meaning": "A person or document providing information",
+      "banglaMeaning": "সূত্র",
+      "exampleSentence": "The source requested anonymity."
+    },
+    {
+      "word": "Anonymous",
+      "pronunciation": "/əˈnɒnɪməs/",
+      "meaning": "Not named or identified",
+      "banglaMeaning": "বেনামী",
+      "exampleSentence": "The information came from an anonymous source."
+    },
+    {
+      "word": "Leak",
+      "pronunciation": "/liːk/",
+      "meaning": "Unauthorized release of information",
+      "banglaMeaning": "ফাঁস",
+      "exampleSentence": "A leak revealed the government's plans."
+    },
+    {
+      "word": "Whistleblower",
+      "pronunciation": "/ˈwɪsəlˌbloʊər/",
+      "meaning": "Someone who exposes wrongdoing",
+      "banglaMeaning": "হুইসেলব্লোয়ার",
+      "exampleSentence": "The whistleblower revealed corporate fraud."
+    },
+    {
+      "word": "Investigation",
+      "pronunciation": "/ɪnˌvɛstɪˈɡeɪʃən/",
+      "meaning": "A formal inquiry into an event",
+      "banglaMeaning": "তদন্ত",
+      "exampleSentence": "The investigation is ongoing."
+    },
+    {
+      "word": "Allegation",
+      "pronunciation": "/ˌælɪˈɡeɪʃən/",
+      "meaning": "A claim without proof yet",
+      "banglaMeaning": "অভিযোগ",
+      "exampleSentence": "The allegations were denied by the minister."
+    },
+    {
+      "word": "Accusation",
+      "pronunciation": "/ˌækjuːˈzeɪʃən/",
+      "meaning": "A formal charge of wrongdoing",
+      "banglaMeaning": "অভিযোগ",
+      "exampleSentence": "The accusation led to a police inquiry."
+    },
+    {
+      "word": "Scandal",
+      "pronunciation": "/ˈskændəl/",
+      "meaning": "An event causing public outrage",
+      "banglaMeaning": "কেলেঙ্কারি",
+      "exampleSentence": "The scandal rocked the government."
+    },
+    {
+      "word": "Controversy",
+      "pronunciation": "/ˈkɒntrəvɜːrsi/",
+      "meaning": "A public disagreement",
+      "banglaMeaning": "বিতর্ক",
+      "exampleSentence": "The policy sparked controversy."
+    },
+    {
+      "word": "Debate",
+      "pronunciation": "/dɪˈbeɪt/",
+      "meaning": "A formal discussion on a topic",
+      "banglaMeaning": "বিতর্ক",
+      "exampleSentence": "The debate on climate change continues."
+    },
+    {
+      "word": "Dispute",
+      "pronunciation": "/dɪˈspjuːt/",
+      "meaning": "A serious disagreement",
+      "banglaMeaning": "বিবাদ",
+      "exampleSentence": "The border dispute remains unresolved."
+    },
+    {
+      "word": "Conflict",
+      "pronunciation": "/ˈkɒnflɪkt/",
+      "meaning": "A serious disagreement or fight",
+      "banglaMeaning": "দ্বন্দ্ব",
+      "exampleSentence": "The conflict lasted for years."
+    },
+    {
+      "word": "Crisis",
+      "pronunciation": "/ˈkraɪsɪs/",
+      "meaning": "A time of intense difficulty",
+      "banglaMeaning": "সংকট",
+      "exampleSentence": "The country faces an economic crisis."
+    },
+    {
+      "word": "Emergency",
+      "pronunciation": "/ɪˈmɜːrdʒənsi/",
+      "meaning": "A serious unexpected situation",
+      "banglaMeaning": "জরুরি অবস্থা",
+      "exampleSentence": "The government declared a state of emergency."
+    },
+    {
+      "word": "Disaster",
+      "pronunciation": "/dɪˈzæstər/",
+      "meaning": "A sudden catastrophic event",
+      "banglaMeaning": "দুর্যোগ",
+      "exampleSentence": "The flood was a natural disaster."
+    },
+    {
+      "word": "Catastrophe",
+      "pronunciation": "/kəˈtæstrəfi/",
+      "meaning": "A great and sudden disaster",
+      "banglaMeaning": "বিপর্যয়",
+      "exampleSentence": "The earthquake was a catastrophe."
+    },
+    {
+      "word": "Tragedy",
+      "pronunciation": "/ˈtrædʒɪdi/",
+      "meaning": "A very sad event",
+      "banglaMeaning": "বিয়োগান্তক ঘটনা",
+      "exampleSentence": "The fire was a terrible tragedy."
+    },
+    {
+      "word": "Casualty",
+      "pronunciation": "/ˈkæʒuəlti/",
+      "meaning": "A person killed or injured",
+      "banglaMeaning": "হতাহত",
+      "exampleSentence": "There were many casualties in the accident."
+    },
+    {
+      "word": "Victim",
+      "pronunciation": "/ˈvɪktɪm/",
+      "meaning": "Someone harmed by an event",
+      "banglaMeaning": "শিকার",
+      "exampleSentence": "The victims were taken to the hospital."
+    },
+    {
+      "word": "Survivor",
+      "pronunciation": "/sərˈvaɪvər/",
+      "meaning": "Someone who lived through a disaster",
+      "banglaMeaning": "উদ্ধারকৃত",
+      "exampleSentence": "The survivors were rescued from the rubble."
+    },
+    {
+      "word": "Rescue",
+      "pronunciation": "/ˈrɛskjuː/",
+      "meaning": "Saving someone from danger",
+      "banglaMeaning": "উদ্ধার",
+      "exampleSentence": "Rescue teams arrived at the scene."
+    },
+    {
+      "word": "Relief",
+      "pronunciation": "/rɪˈliːf/",
+      "meaning": "Help provided to those in need",
+      "banglaMeaning": "ত্রাণ",
+      "exampleSentence": "Relief supplies were distributed."
+    },
+    {
+      "word": "Aid",
+      "pronunciation": "/eɪd/",
+      "meaning": "Help or assistance",
+      "banglaMeaning": "সহায়তা",
+      "exampleSentence": "International aid arrived after the earthquake."
+    },
+    {
+      "word": "Donation",
+      "pronunciation": "/doʊˈneɪʃən/",
+      "meaning": "Something given to help",
+      "banglaMeaning": "দান",
+      "exampleSentence": "Donations poured in from around the world."
+    },
+    {
+      "word": "Fundraiser",
+      "pronunciation": "/ˈfʌndreɪzər/",
+      "meaning": "An event to raise money for a cause",
+      "banglaMeaning": "ফান্ডরাইজার",
+      "exampleSentence": "A fundraiser was organized for flood victims."
+    },
+    {
+      "word": "Summit",
+      "pronunciation": "/ˈsʌmɪt/",
+      "meaning": "A high-level meeting between leaders",
+      "banglaMeaning": "শীর্ষ সম্মেলন",
+      "exampleSentence": "World leaders attended the climate summit."
+    },
+    {
+      "word": "Conference",
+      "pronunciation": "/ˈkɒnfərəns/",
+      "meaning": "A formal meeting of people",
+      "banglaMeaning": "সম্মেলন",
+      "exampleSentence": "The peace conference was held in Geneva."
+    },
+    {
+      "word": "Negotiation",
+      "pronunciation": "/nɪˌɡoʊʃiˈeɪʃən/",
+      "meaning": "Discussion to reach an agreement",
+      "banglaMeaning": "আলোচনা",
+      "exampleSentence": "The negotiations lasted for weeks."
+    },
+    {
+      "word": "Talks",
+      "pronunciation": "/tɔːks/",
+      "meaning": "Formal discussions between parties",
+      "banglaMeaning": "আলোচনা",
+      "exampleSentence": "The peace talks resumed today."
+    },
+    {
+      "word": "Ceasefire",
+      "pronunciation": "/ˈsiːsfaɪər/",
+      "meaning": "An agreement to stop fighting",
+      "banglaMeaning": "যুদ্ধবিরতি",
+      "exampleSentence": "Both sides agreed to a ceasefire."
+    },
+    {
+      "word": "Truce",
+      "pronunciation": "/truːs/",
+      "meaning": "A temporary halt to fighting",
+      "banglaMeaning": "অস্থায়ী যুদ্ধবিরতি",
+      "exampleSentence": "A truce was declared for humanitarian aid."
+    },
+    {
+      "word": "Treaty",
+      "pronunciation": "/ˈtriːti/",
+      "meaning": "A formal agreement between countries",
+      "banglaMeaning": "চুক্তি",
+      "exampleSentence": "The treaty was signed by both nations."
+    },
+    {
+      "word": "Pact",
+      "pronunciation": "/pækt/",
+      "meaning": "A formal agreement",
+      "banglaMeaning": "চুক্তি",
+      "exampleSentence": "The two countries signed a trade pact."
+    },
+    {
+      "word": "Alliance",
+      "pronunciation": "/əˈlaɪəns/",
+      "meaning": "A union formed for mutual benefit",
+      "banglaMeaning": "জোট",
+      "exampleSentence": "NATO is a military alliance."
+    },
+    {
+      "word": "Coalition",
+      "pronunciation": "/ˌkoʊəˈlɪʃən/",
+      "meaning": "An alliance of groups or parties",
+      "banglaMeaning": "জোট",
+      "exampleSentence": "A coalition government was formed."
+    },
+    {
+      "word": "Sanctions",
+      "pronunciation": "/ˈsæŋkʃənz/",
+      "meaning": "Penalties imposed on a country",
+      "banglaMeaning": "নিষেধাজ্ঞা",
+      "exampleSentence": "Economic sanctions were imposed."
+    },
+    {
+      "word": "Embargo",
+      "pronunciation": "/ɪmˈbɑːrɡoʊ/",
+      "meaning": "A ban on trade with a country",
+      "banglaMeaning": "নিষেধাজ্ঞা",
+      "exampleSentence": "The trade embargo was lifted."
+    },
+    {
+      "word": "Boycott",
+      "pronunciation": "/ˈbɔɪkɒt/",
+      "meaning": "Refusing to buy or use something",
+      "banglaMeaning": "বর্জন",
+      "exampleSentence": "Activists called for a boycott of the product."
+    },
+    {
+      "word": "Protest",
+      "pronunciation": "/ˈproʊtɛst/",
+      "meaning": "A public demonstration against something",
+      "banglaMeaning": "প্রতিবাদ",
+      "exampleSentence": "Thousands joined the protest."
+    },
+    {
+      "word": "Demonstration",
+      "pronunciation": "/ˌdɛmənˈstreɪʃən/",
+      "meaning": "A public rally or march",
+      "banglaMeaning": "বিক্ষোভ",
+      "exampleSentence": "Peaceful demonstrations were held across the country."
+    },
+    {
+      "word": "Rally",
+      "pronunciation": "/ˈræli/",
+      "meaning": "A large public meeting",
+      "banglaMeaning": "সমাবেশ",
+      "exampleSentence": "The opposition held a rally in the capital."
+    },
+    {
+      "word": "Strike",
+      "pronunciation": "/straɪk/",
+      "meaning": "A work stoppage by employees",
+      "banglaMeaning": "ধর্মঘট",
+      "exampleSentence": "Workers went on strike for better wages."
+    },
+    {
+      "word": "Petition",
+      "pronunciation": "/pəˈtɪʃən/",
+      "meaning": "A formal request signed by many people",
+      "banglaMeaning": "আবেদন",
+      "exampleSentence": "Over 10,000 people signed the petition."
+    },
+    {
+      "word": "Campaign",
+      "pronunciation": "/kæmˈpeɪn/",
+      "meaning": "An organized effort to achieve a goal",
+      "banglaMeaning": "প্রচারণা",
+      "exampleSentence": "The election campaign started last month."
+    },
+    {
+      "word": "Election",
+      "pronunciation": "/ɪˈlɛkʃən/",
+      "meaning": "A vote to choose leaders",
+      "banglaMeaning": "নির্বাচন",
+      "exampleSentence": "The election will be held in November."
+    },
+    {
+      "word": "Poll",
+      "pronunciation": "/poʊl/",
+      "meaning": "A survey of public opinion",
+      "banglaMeaning": "জরিপ",
+      "exampleSentence": "The poll shows a close race."
+    },
+    {
+      "word": "Ballot",
+      "pronunciation": "/ˈbælət/",
+      "meaning": "A vote or voting paper",
+      "banglaMeaning": "ভোটপত্র",
+      "exampleSentence": "Millions cast their ballots."
+    },
+    {
+      "word": "Voter Turnout",
+      "pronunciation": "/ˈvoʊtər ˈtɜːrnaʊt/",
+      "meaning": "The percentage of eligible voters who voted",
+      "banglaMeaning": "ভোটারের উপস্থিতি",
+      "exampleSentence": "Voter turnout was 70%."
+    },
+    {
+      "word": "Landslide",
+      "pronunciation": "/ˈlændslaɪd/",
+      "meaning": "An overwhelming victory in an election",
+      "banglaMeaning": "বিজয়ের বন্যা",
+      "exampleSentence": "The party won by a landslide."
+    },
+    {
+      "word": "Incumbent",
+      "pronunciation": "/ɪnˈkʌmbənt/",
+      "meaning": "The current office holder",
+      "banglaMeaning": "বিদায়ী",
+      "exampleSentence": "The incumbent lost the election."
+    },
+    {
+      "word": "Opposition",
+      "pronunciation": "/ˌɒpəˈzɪʃən/",
+      "meaning": "The party not in power",
+      "banglaMeaning": "বিরোধী দল",
+      "exampleSentence": "The opposition criticized the budget."
+    },
+    {
+      "word": "Coalition",
+      "pronunciation": "/ˌkoʊəˈlɪʃən/",
+      "meaning": "A temporary alliance of parties",
+      "banglaMeaning": "জোট সরকার",
+      "exampleSentence": "A coalition government was formed."
+    },
+    {
+      "word": "Cabinet",
+      "pronunciation": "/ˈkæbɪnɪt/",
+      "meaning": "Senior government ministers",
+      "banglaMeaning": "মন্ত্রিসভা",
+      "exampleSentence": "The cabinet met to discuss the crisis."
+    },
+    {
+      "word": "Minister",
+      "pronunciation": "/ˈmɪnɪstər/",
+      "meaning": "A government department head",
+      "banglaMeaning": "মন্ত্রী",
+      "exampleSentence": "The finance minister presented the budget."
+    },
+    {
+      "word": "Spokesperson",
+      "pronunciation": "/ˈspoʊkspɜːrsən/",
+      "meaning": "Someone who speaks for an organization",
+      "banglaMeaning": "মুখপাত্র",
+      "exampleSentence": "The spokesperson denied the allegations."
+    },
+    {
+      "word": "Press Conference",
+      "pronunciation": "/prɛs ˈkɒnfərəns/",
+      "meaning": "A meeting with journalists",
+      "banglaMeaning": "সংবাদ সম্মেলন",
+      "exampleSentence": "The CEO held a press conference."
+    },
+    {
+      "word": "Briefing",
+      "pronunciation": "/ˈbriːfɪŋ/",
+      "meaning": "A meeting to give information",
+      "banglaMeaning": "ব্রিফিং",
+      "exampleSentence": "The daily press briefing was at 2 PM."
+    },
+    {
+      "word": "Statement",
+      "pronunciation": "/ˈsteɪtmənt/",
+      "meaning": "An official announcement",
+      "banglaMeaning": "বিবৃতি",
+      "exampleSentence": "The government issued a statement."
+    },
+    {
+      "word": "Communique",
+      "pronunciation": "/kəˈmjuːnɪkeɪ/",
+      "meaning": "An official announcement",
+      "banglaMeaning": "বিজ্ঞপ্তি",
+      "exampleSentence": "The leaders issued a joint communique."
+    },
+    {
+      "word": "Declaration",
+      "pronunciation": "/ˌdɛkləˈreɪʃən/",
+      "meaning": "A formal announcement",
+      "banglaMeaning": "ঘোষণা",
+      "exampleSentence": "The declaration of independence was read."
+    },
+    {
+      "word": "Resolution",
+      "pronunciation": "/ˌrɛzəˈluːʃən/",
+      "meaning": "A formal decision voted on",
+      "banglaMeaning": "প্রস্তাব",
+      "exampleSentence": "The UN passed a resolution."
+    },
+    {
+      "word": "Veto",
+      "pronunciation": "/ˈviːtoʊ/",
+      "meaning": "The power to reject a decision",
+      "banglaMeaning": "ভেটো",
+      "exampleSentence": "The president used his veto power."
+    },
+    {
+      "word": "Ratify",
+      "pronunciation": "/ˈrætɪfaɪ/",
+      "meaning": "To formally approve",
+      "banglaMeaning": "অনুমোদন করা",
+      "exampleSentence": "The parliament ratified the treaty."
+    },
+    {
+      "word": "Legislation",
+      "pronunciation": "/ˌlɛdʒɪsˈleɪʃən/",
+      "meaning": "Laws passed by a government",
+      "banglaMeaning": "আইন",
+      "exampleSentence": "New legislation was introduced."
+    },
+    {
+      "word": "Bill",
+      "pronunciation": "/bɪl/",
+      "meaning": "A proposed law",
+      "banglaMeaning": "বিল",
+      "exampleSentence": "The bill was passed by parliament."
+    },
+    {
+      "word": "Act",
+      "pronunciation": "/ækt/",
+      "meaning": "A law passed by the legislature",
+      "banglaMeaning": "আইন",
+      "exampleSentence": "The Act came into effect in January."
+    },
+    {
+      "word": "Amendment",
+      "pronunciation": "/əˈmɛndmənt/",
+      "meaning": "A change to a law",
+      "banglaMeaning": "সংশোধনী",
+      "exampleSentence": "The amendment was approved."
+    },
+    {
+      "word": "Constitution",
+      "pronunciation": "/ˌkɒnstɪˈtjuːʃən/",
+      "meaning": "The fundamental laws of a country",
+      "banglaMeaning": "সংবিধান",
+      "exampleSentence": "The constitution guarantees basic rights."
+    },
+    {
+      "word": "Democracy",
+      "pronunciation": "/dɪˈmɒkrəsi/",
+      "meaning": "Government elected by the people",
+      "banglaMeaning": "গণতন্ত্র",
+      "exampleSentence": "Democracy depends on free and fair elections."
+    },
+    {
+      "word": "Dictatorship",
+      "pronunciation": "/dɪkˈteɪtərʃɪp/",
+      "meaning": "Government by a single ruler",
+      "banglaMeaning": "স্বৈরাচার",
+      "exampleSentence": "The dictatorship lasted for decades."
+    },
+    {
+      "word": "Regime",
+      "pronunciation": "/reɪˈʒiːm/",
+      "meaning": "A government in power",
+      "banglaMeaning": "শাসন ব্যবস্থা",
+      "exampleSentence": "The regime was overthrown."
+    },
+    {
+      "word": "Authority",
+      "pronunciation": "/ɔːˈθɒrɪti/",
+      "meaning": "The power to govern",
+      "banglaMeaning": "কর্তৃপক্ষ",
+      "exampleSentence": "The local authorities issued a warning."
+    },
+    {
+      "word": "Coup",
+      "pronunciation": "/kuː/",
+      "meaning": "A sudden overthrow of government",
+      "banglaMeaning": "অভ্যুত্থান",
+      "exampleSentence": "The military staged a coup."
+    },
+    {
+      "word": "Rebellion",
+      "pronunciation": "/rɪˈbɛljən/",
+      "meaning": "An uprising against authority",
+      "banglaMeaning": "বিদ্রোহ",
+      "exampleSentence": "The rebellion was quickly suppressed."
+    },
+    {
+      "word": "Revolution",
+      "pronunciation": "/ˌrɛvəˈluːʃən/",
+      "meaning": "A complete change of government",
+      "banglaMeaning": "বিপ্লব",
+      "exampleSentence": "The revolution brought democracy."
+    },
+    {
+      "word": "Uprising",
+      "pronunciation": "/ˈʌpraɪzɪŋ/",
+      "meaning": "A revolt against authority",
+      "banglaMeaning": "বিদ্রোহ",
+      "exampleSentence": "The uprising began in the capital."
+    },
+    {
+      "word": "Insurgency",
+      "pronunciation": "/ɪnˈsɜːrdʒənsi/",
+      "meaning": "An armed rebellion",
+      "banglaMeaning": "বিদ্রোহ",
+      "exampleSentence": "The insurgency lasted for years."
+    },
+    {
+      "word": "Terrorism",
+      "pronunciation": "/ˈtɛrərɪzəm/",
+      "meaning": "Violence for political aims",
+      "banglaMeaning": "সন্ত্রাসবাদ",
+      "exampleSentence": "The government condemned terrorism."
+    },
+    {
+      "word": "Attack",
+      "pronunciation": "/əˈtæk/",
+      "meaning": "A violent act against someone",
+      "banglaMeaning": "আক্রমণ",
+      "exampleSentence": "The attack killed 20 people."
+    },
+    {
+      "word": "Bombing",
+      "pronunciation": "/ˈbɒmɪŋ/",
+      "meaning": "An attack using bombs",
+      "banglaMeaning": "বোমা হামলা",
+      "exampleSentence": "The bombing destroyed the building."
+    },
+    {
+      "word": "Blast",
+      "pronunciation": "/blæst/",
+      "meaning": "An explosion",
+      "banglaMeaning": "বিস্ফোরণ",
+      "exampleSentence": "A powerful blast was heard across the city."
+    },
+    {
+      "word": "Explosion",
+      "pronunciation": "/ɪkˈsploʊʒən/",
+      "meaning": "A sudden violent burst",
+      "banglaMeaning": "বিস্ফোরণ",
+      "exampleSentence": "The explosion caused widespread damage."
+    },
+    {
+      "word": "Collision",
+      "pronunciation": "/kəˈlɪʒən/",
+      "meaning": "A crash between vehicles",
+      "banglaMeaning": "সংঘর্ষ",
+      "exampleSentence": "The collision involved three cars."
+    },
+    {
+      "word": "Derailment",
+      "pronunciation": "/dɪˈreɪlmənt/",
+      "meaning": "A train leaving its tracks",
+      "banglaMeaning": "লাইনচ্যুত",
+      "exampleSentence": "The train derailment injured dozens."
+    },
+    {
+      "word": "Accident",
+      "pronunciation": "/ˈæksɪdənt/",
+      "meaning": "An unexpected harmful event",
+      "banglaMeaning": "দুর্ঘটনা",
+      "exampleSentence": "The accident happened on the highway."
+    },
+    {
+      "word": "Fatal",
+      "pronunciation": "/ˈfeɪtəl/",
+      "meaning": "Causing death",
+      "banglaMeaning": "প্রাণঘাতী",
+      "exampleSentence": "The accident was fatal."
+    },
+    {
+      "word": "Injured",
+      "pronunciation": "/ˈɪndʒərd/",
+      "meaning": "Hurt in an accident or attack",
+      "banglaMeaning": "আহত",
+      "exampleSentence": "Ten people were injured in the crash."
+    },
+    {
+      "word": "Wounded",
+      "pronunciation": "/ˈwuːndɪd/",
+      "meaning": "Injured, especially in war",
+      "banglaMeaning": "ক্ষতিগ্রস্ত",
+      "exampleSentence": "The wounded were taken to field hospitals."
+    },
+    {
+      "word": "Fatality",
+      "pronunciation": "/fəˈtælɪti/",
+      "meaning": "A death caused by an accident or disaster",
+      "banglaMeaning": "মৃত্যু",
+      "exampleSentence": "There were no fatalities in the fire."
+    },
+    {
+      "word": "Death Toll",
+      "pronunciation": "/dɛθ toʊl/",
+      "meaning": "The number of people killed",
+      "banglaMeaning": "মৃত্যুর সংখ্যা",
+      "exampleSentence": "The death toll rose to 50."
+    },
+    {
+      "word": "Aftermath",
+      "pronunciation": "/ˈæftərmæθ/",
+      "meaning": "The consequences after a disaster",
+      "banglaMeaning": "পরিণাম",
+      "exampleSentence": "The aftermath of the earthquake was devastating."
+    },
+    {
+      "word": "Devastation",
+      "pronunciation": "/ˌdɛvəˈsteɪʃən/",
+      "meaning": "Severe destruction",
+      "banglaMeaning": "ধ্বংসযজ্ঞ",
+      "exampleSentence": "The typhoon left a trail of devastation."
+    },
+    {
+      "word": "Destruction",
+      "pronunciation": "/dɪˈstrʌkʃən/",
+      "meaning": "Severe damage",
+      "banglaMeaning": "ধ্বংস",
+      "exampleSentence": "The destruction was widespread."
+    },
+    {
+      "word": "Damage",
+      "pronunciation": "/ˈdæmɪdʒ/",
+      "meaning": "Harm causing loss of value",
+      "banglaMeaning": "ক্ষতি",
+      "exampleSentence": "The storm caused extensive damage."
+    },
+    {
+      "word": "Loss",
+      "pronunciation": "/lɒs/",
+      "meaning": "The fact of losing something",
+      "banglaMeaning": "ক্ষতি",
+      "exampleSentence": "The company reported a loss."
+    },
+    {
+      "word": "Recovery",
+      "pronunciation": "/rɪˈkʌvəri/",
+      "meaning": "The process of returning to normal",
+      "banglaMeaning": "পুনরুদ্ধার",
+      "exampleSentence": "The economy is in recovery."
+    },
+    {
+      "word": "Reconstruction",
+      "pronunciation": "/ˌriːkənˈstrʌkʃən/",
+      "meaning": "Rebuilding after destruction",
+      "banglaMeaning": "পুনর্নির্মাণ",
+      "exampleSentence": "Reconstruction of the city will take years."
+    },
+    {
+      "word": "Rehabilitation",
+      "pronunciation": "/ˌriːhəˌbɪlɪˈteɪʃən/",
+      "meaning": "Restoring to normal life",
+      "banglaMeaning": "পুনর্বাসন",
+      "exampleSentence": "Rehabilitation programs help victims."
+    },
+    {
+      "word": "Compensation",
+      "pronunciation": "/ˌkɒmpɛnˈseɪʃən/",
+      "meaning": "Payment for loss or injury",
+      "banglaMeaning": "ক্ষতিপূরণ",
+      "exampleSentence": "Victims received compensation."
+    },
+    {
+      "word": "Verdict",
+      "pronunciation": "/ˈvɜːrdɪkt/",
+      "meaning": "A decision in a court case",
+      "banglaMeaning": "রায়",
+      "exampleSentence": "The jury reached a verdict."
+    },
+    {
+      "word": "Sentence",
+      "pronunciation": "/ˈsɛntəns/",
+      "meaning": "A punishment given by a court",
+      "banglaMeaning": "সাজা",
+      "exampleSentence": "He received a five-year sentence."
+    },
+    {
+      "word": "Conviction",
+      "pronunciation": "/kənˈvɪkʃən/",
+      "meaning": "A formal declaration of guilt",
+      "banglaMeaning": "দোষী সাব্যস্ত",
+      "exampleSentence": "The conviction was appealed."
+    },
+    {
+      "word": "Acquittal",
+      "pronunciation": "/əˈkwɪtəl/",
+      "meaning": "A declaration of not guilty",
+      "banglaMeaning": "খালাস",
+      "exampleSentence": "The acquittal shocked the public."
+    },
+    {
+      "word": "Appeal",
+      "pronunciation": "/əˈpiːl/",
+      "meaning": "A request to review a court decision",
+      "banglaMeaning": "আপিল",
+      "exampleSentence": "The defense filed an appeal."
+    },
+    {
+      "word": "Testimony",
+      "pronunciation": "/ˈtɛstɪmoʊni/",
+      "meaning": "Evidence given in court",
+      "banglaMeaning": "সাক্ষ্য",
+      "exampleSentence": "The witness gave testimony."
+    },
+    {
+      "word": "Evidence",
+      "pronunciation": "/ˈɛvɪdəns/",
+      "meaning": "Facts proving something",
+      "banglaMeaning": "প্রমাণ",
+      "exampleSentence": "The evidence was presented in court."
+    },
+    {
+      "word": "Witness",
+      "pronunciation": "/ˈwɪtnɪs/",
+      "meaning": "Someone who saw an event",
+      "banglaMeaning": "সাক্ষী",
+      "exampleSentence": "There were no witnesses to the crime."
+    },
+    {
+      "word": "Suspect",
+      "pronunciation": "/ˈsʌspɛkt/",
+      "meaning": "A person believed to be guilty",
+      "banglaMeaning": "সন্দেহভাজন",
+      "exampleSentence": "The suspect was arrested."
+    },
+    {
+      "word": "Accused",
+      "pronunciation": "/əˈkjuːzd/",
+      "meaning": "A person charged with a crime",
+      "banglaMeaning": "অভিযুক্ত",
+      "exampleSentence": "The accused appeared in court."
+    },
+    {
+      "word": "Defendant",
+      "pronunciation": "/dɪˈfɛndənt/",
+      "meaning": "A person on trial",
+      "banglaMeaning": "আসামি",
+      "exampleSentence": "The defendant pleaded not guilty."
+    },
+    {
+      "word": "Plaintiff",
+      "pronunciation": "/ˈpleɪntɪf/",
+      "meaning": "A person who brings a lawsuit",
+      "banglaMeaning": "বাদী",
+      "exampleSentence": "The plaintiff sued for damages."
+    },
+    {
+      "word": "Judge",
+      "pronunciation": "/dʒʌdʒ/",
+      "meaning": "The person presiding over a court",
+      "banglaMeaning": "বিচারক",
+      "exampleSentence": "The judge delivered the verdict."
+    },
+    {
+      "word": "Jury",
+      "pronunciation": "/ˈdʒʊri/",
+      "meaning": "A group deciding guilt in court",
+      "banglaMeaning": "জুরি",
+      "exampleSentence": "The jury found him guilty."
+    },
+    {
+      "word": "Prosecution",
+      "pronunciation": "/ˌprɒsɪˈkjuːʃən/",
+      "meaning": "The side bringing charges in court",
+      "banglaMeaning": "প্রসিকিউশন",
+      "exampleSentence": "The prosecution presented its case."
+    },
+    {
+      "word": "Defense",
+      "pronunciation": "/dɪˈfɛns/",
+      "meaning": "The side arguing for the defendant",
+      "banglaMeaning": "প্রতিরক্ষা",
+      "exampleSentence": "The defense called its first witness."
+    },
+    {
+      "word": "Corruption",
+      "pronunciation": "/kəˈrʌpʃən/",
+      "meaning": "Dishonest or illegal behavior",
+      "banglaMeaning": "দুর্নীতি",
+      "exampleSentence": "Corruption is a major issue in politics."
+    },
+    {
+      "word": "Bribery",
+      "pronunciation": "/ˈbraɪbəri/",
+      "meaning": "Giving money to influence someone",
+      "banglaMeaning": "ঘুষ",
+      "exampleSentence": "He was arrested for bribery."
+    },
+    {
+      "word": "Fraud",
+      "pronunciation": "/frɔːd/",
+      "meaning": "Deception for personal gain",
+      "banglaMeaning": "জালিয়াতি",
+      "exampleSentence": "The company was involved in fraud."
+    },
+    {
+      "word": "Embezzlement",
+      "pronunciation": "/ɪmˈbɛzəlmənt/",
+      "meaning": "Stealing money from an employer",
+      "banglaMeaning": "আত্মসাৎ",
+      "exampleSentence": "The accountant was guilty of embezzlement."
+    },
+    {
+      "word": "Misappropriation",
+      "pronunciation": "/ˌmɪsəˌproʊpriˈeɪʃən/",
+      "meaning": "Using funds improperly",
+      "banglaMeaning": "অপব্যবহার",
+      "exampleSentence": "Misappropriation of public funds was uncovered."
+    },
+    {
+      "word": "Money Laundering",
+      "pronunciation": "/ˈmʌni ˈlɔːndərɪŋ/",
+      "meaning": "Making illegal money appear legal",
+      "banglaMeaning": "মানি লন্ডারিং",
+      "exampleSentence": "The bank was fined for money laundering."
+    },
+    {
+      "word": "Tax Evasion",
+      "pronunciation": "/tæks ɪˈveɪʒən/",
+      "meaning": "Illegally avoiding paying taxes",
+      "banglaMeaning": "কর ফাঁকি",
+      "exampleSentence": "He was charged with tax evasion."
+    },
+    {
+      "word": "Smuggling",
+      "pronunciation": "/ˈsmʌɡlɪŋ/",
+      "meaning": "Illegally moving goods across borders",
+      "banglaMeaning": "চোরাচালান",
+      "exampleSentence": "Drug smuggling is a serious crime."
+    },
+    {
+      "word": "Trafficking",
+      "pronunciation": "/ˈtræfɪkɪŋ/",
+      "meaning": "Illegal trade of goods or people",
+      "banglaMeaning": "পাচার",
+      "exampleSentence": "Human trafficking is a global problem."
+    },
+    {
+      "word": "Inflation",
+      "pronunciation": "/ɪnˈfleɪʃən/",
+      "meaning": "A general increase in prices",
+      "banglaMeaning": "মুদ্রাস্ফীতি",
+      "exampleSentence": "Inflation rose to 8% this year."
+    },
+    {
+      "word": "Deflation",
+      "pronunciation": "/dɪˈfleɪʃən/",
+      "meaning": "A general decrease in prices",
+      "banglaMeaning": "মুদ্রাসংকোচন",
+      "exampleSentence": "Deflation can hurt the economy."
+    },
+    {
+      "word": "Recession",
+      "pronunciation": "/rɪˈsɛʃən/",
+      "meaning": "A period of economic decline",
+      "banglaMeaning": "মন্দা",
+      "exampleSentence": "The economy entered a recession."
+    },
+    {
+      "word": "Depression",
+      "pronunciation": "/dɪˈprɛʃən/",
+      "meaning": "A severe economic downturn",
+      "banglaMeaning": "মহামন্দা",
+      "exampleSentence": "The Great Depression lasted for years."
+    },
+    {
+      "word": "GDP",
+      "pronunciation": "/ˌdʒiː diː ˈpiː/",
+      "meaning": "Gross Domestic Product — total economic output",
+      "banglaMeaning": "জিডিপি",
+      "exampleSentence": "GDP grew by 3% this quarter."
+    },
+    {
+      "word": "Unemployment",
+      "pronunciation": "/ˌʌnɪmˈplɔɪmənt/",
+      "meaning": "The number of people without jobs",
+      "banglaMeaning": "বেকারত্ব",
+      "exampleSentence": "Unemployment fell to 4%."
+    },
+    {
+      "word": "Budget Deficit",
+      "pronunciation": "/ˈbʌdʒɪt ˈdɛfɪsɪt/",
+      "meaning": "When spending exceeds revenue",
+      "banglaMeaning": "বাজেট ঘাটতি",
+      "exampleSentence": "The budget deficit is $50 billion."
+    },
+    {
+      "word": "Surplus",
+      "pronunciation": "/ˈsɜːrplʌs/",
+      "meaning": "When revenue exceeds spending",
+      "banglaMeaning": "উদ্বৃত্ত",
+      "exampleSentence": "The government announced a budget surplus."
+    },
+    {
+      "word": "Subsidy",
+      "pronunciation": "/ˈsʌbsɪdi/",
+      "meaning": "Government financial aid",
+      "banglaMeaning": "ভর্তুকি",
+      "exampleSentence": "Fuel subsidies were reduced."
+    },
+    {
+      "word": "Tariff",
+      "pronunciation": "/ˈtærɪf/",
+      "meaning": "A tax on imported goods",
+      "banglaMeaning": "শুল্ক",
+      "exampleSentence": "New tariffs were imposed on steel imports."
+    },
+    {
+      "word": "Trade War",
+      "pronunciation": "/treɪd wɔːr/",
+      "meaning": "A conflict of tariffs between countries",
+      "banglaMeaning": "বাণিজ্য যুদ্ধ",
+      "exampleSentence": "The trade war affected global markets."
+    },
+    {
+      "word": "Stock Market",
+      "pronunciation": "/stɒk ˈmɑːrkɪt/",
+      "meaning": "A market for buying and selling shares",
+      "banglaMeaning": "শেয়ার বাজার",
+      "exampleSentence": "The stock market crashed today."
+    },
+    {
+      "word": "Index",
+      "pronunciation": "/ˈɪndɛks/",
+      "meaning": "A measure of stock market performance",
+      "banglaMeaning": "সূচক",
+      "exampleSentence": "The Dow Jones index fell 500 points."
+    },
+    {
+      "word": "Shares",
+      "pronunciation": "/ʃɛərz/",
+      "meaning": "Units of ownership in a company",
+      "banglaMeaning": "শেয়ার",
+      "exampleSentence": "Share prices rallied today."
+    },
+    {
+      "word": "Investor",
+      "pronunciation": "/ɪnˈvɛstər/",
+      "meaning": "Someone who invests money",
+      "banglaMeaning": "বিনিয়োগকারী",
+      "exampleSentence": "Investors are worried about the economy."
+    },
+    {
+      "word": "Billionaire",
+      "pronunciation": "/ˌbɪljəˈnɛər/",
+      "meaning": "A person worth a billion dollars or more",
+      "banglaMeaning": "বিলিয়নিয়ার",
+      "exampleSentence": "The billionaire donated his fortune to charity."
+    },
+    {
+      "word": "Currency",
+      "pronunciation": "/ˈkʌrənsi/",
+      "meaning": "The money used in a country",
+      "banglaMeaning": "মুদ্রা",
+      "exampleSentence": "The currency depreciated against the dollar."
+    },
+    {
+      "word": "Exchange Rate",
+      "pronunciation": "/ɪksˈtʃeɪndʒ reɪt/",
+      "meaning": "The value of one currency for another",
+      "banglaMeaning": "বিনিময় হার",
+      "exampleSentence": "The exchange rate is favorable for tourists."
+    },
+    {
+      "word": "Devaluation",
+      "pronunciation": "/diːˌvæljuˈeɪʃən/",
+      "meaning": "Reducing the value of a currency",
+      "banglaMeaning": "মুদ্রার মান হ্রাস",
+      "exampleSentence": "The government announced a devaluation."
+    },
+    {
+      "word": "Remittance",
+      "pronunciation": "/rɪˈmɪtəns/",
+      "meaning": "Money sent by migrants to their home country",
+      "banglaMeaning": "প্রেরিত অর্থ",
+      "exampleSentence": "Remittances are a key source of foreign income."
+    },
+    {
+      "word": "Foreign Aid",
+      "pronunciation": "/ˈfɒrɪn eɪd/",
+      "meaning": "Money or goods given by one country to another",
+      "banglaMeaning": "বিদেশী সাহায্য",
+      "exampleSentence": "Foreign aid was pledged for disaster relief."
+    },
+    {
+      "word": "Diplomacy",
+      "pronunciation": "/dɪˈploʊməsi/",
+      "meaning": "Managing relations between countries",
+      "banglaMeaning": "কূটনীতি",
+      "exampleSentence": "Diplomacy is essential for peace."
+    },
+    {
+      "word": "Ambassador",
+      "pronunciation": "/æmˈbæsədər/",
+      "meaning": "A diplomatic representative",
+      "banglaMeaning": "রাষ্ট্রদূত",
+      "exampleSentence": "The ambassador met with foreign officials."
+    },
+    {
+      "word": "Diplomat",
+      "pronunciation": "/ˈdɪpləmæt/",
+      "meaning": "A person representing their country abroad",
+      "banglaMeaning": "কূটনীতিক",
+      "exampleSentence": "Diplomats negotiated the agreement."
+    },
+    {
+      "word": "Consulate",
+      "pronunciation": "/ˈkɒnsjʊlɪt/",
+      "meaning": "A diplomatic office in a foreign city",
+      "banglaMeaning": "কনস্যুলেট",
+      "exampleSentence": "The consulate issued the visa."
+    },
+    {
+      "word": "Embassy",
+      "pronunciation": "/ˈɛmbəsi/",
+      "meaning": "A diplomatic mission in a capital city",
+      "banglaMeaning": "দূতাবাস",
+      "exampleSentence": "The embassy was evacuated."
+    },
+    {
+      "word": "Sovereignty",
+      "pronunciation": "/ˈsɒvrɪnti/",
+      "meaning": "A country's independent authority",
+      "banglaMeaning": "সার্বভৌমত্ব",
+      "exampleSentence": "The country defended its sovereignty."
+    },
+    {
+      "word": "Territory",
+      "pronunciation": "/ˈtɛrɪtɔːri/",
+      "meaning": "An area under a country's control",
+      "banglaMeaning": "অঞ্চল",
+      "exampleSentence": "The territory is disputed."
+    },
+    {
+      "word": "Border",
+      "pronunciation": "/ˈbɔːrdər/",
+      "meaning": "A line separating two countries",
+      "banglaMeaning": "সীমানা",
+      "exampleSentence": "The border was closed."
+    },
+    {
+      "word": "Refugee",
+      "pronunciation": "/ˌrɛfjuˈdʒiː/",
+      "meaning": "Someone fleeing danger in their country",
+      "banglaMeaning": "শরণার্থী",
+      "exampleSentence": "Thousands of refugees crossed the border."
+    },
+    {
+      "word": "Asylum",
+      "pronunciation": "/əˈsaɪləm/",
+      "meaning": "Protection granted to refugees",
+      "banglaMeaning": "আশ্রয়",
+      "exampleSentence": "He applied for political asylum."
+    },
+    {
+      "word": "Migrant",
+      "pronunciation": "/ˈmaɪɡrənt/",
+      "meaning": "Someone moving to another place",
+      "banglaMeaning": "অভিবাসী",
+      "exampleSentence": "Migrants risk their lives to reach Europe."
+    },
+    {
+      "word": "Immigration",
+      "pronunciation": "/ˌɪmɪˈɡreɪʃən/",
+      "meaning": "Permanent relocation to another country",
+      "banglaMeaning": "অভিবাসন",
+      "exampleSentence": "Immigration laws were tightened."
+    },
+    {
+      "word": "Deportation",
+      "pronunciation": "/ˌdiːpɔːrˈteɪʃən/",
+      "meaning": "Forcibly sending someone out of a country",
+      "banglaMeaning": "প্রত্যর্পণ",
+      "exampleSentence": "Deportation orders were issued."
+    },
+    {
+      "word": "Sanctuary",
+      "pronunciation": "/ˈsæŋktʃueri/",
+      "meaning": "A safe place for refugees",
+      "banglaMeaning": "আশ্রয়স্থল",
+      "exampleSentence": "The church offered sanctuary."
+    },
+    {
+      "word": "Displaced",
+      "pronunciation": "/dɪsˈpleɪst/",
+      "meaning": "Forced to leave home",
+      "banglaMeaning": "বাস্তুচ্যুত",
+      "exampleSentence": "Millions are internally displaced."
+    },
+    {
+      "word": "Humanitarian",
+      "pronunciation": "/hjuːˌmænɪˈtɛriən/",
+      "meaning": "Concerned with human welfare",
+      "banglaMeaning": "মানবিক",
+      "exampleSentence": "Humanitarian aid was sent to the region."
+    },
+    {
+      "word": "Genocide",
+      "pronunciation": "/ˈdʒɛnəsaɪd/",
+      "meaning": "Systematic killing of a group of people",
+      "banglaMeaning": "গণহত্যা",
+      "exampleSentence": "The world condemned the genocide."
+    },
+    {
+      "word": "War Crime",
+      "pronunciation": "/wɔːr kraɪm/",
+      "meaning": "An illegal act during war",
+      "banglaMeaning": "যুদ্ধাপরাধ",
+      "exampleSentence": "The general was tried for war crimes."
+    },
+    {
+      "word": "Atrocity",
+      "pronunciation": "/əˈtrɒsɪti/",
+      "meaning": "An extremely cruel act",
+      "banglaMeaning": "নৃশংসতা",
+      "exampleSentence": "The atrocities shocked the world."
+    },
+    {
+      "word": "Human Rights",
+      "pronunciation": "/ˈhjuːmən raɪts/",
+      "meaning": "Basic rights every person has",
+      "banglaMeaning": "মানবাধিকার",
+      "exampleSentence": "Human rights must be protected."
+    },
+    {
+      "word": "Censorship",
+      "pronunciation": "/ˈsɛnsərʃɪp/",
+      "meaning": "Controlling what can be published",
+      "banglaMeaning": "সেন্সরশিপ",
+      "exampleSentence": "Press censorship was criticized."
+    },
+    {
+      "word": "Freedom of Speech",
+      "pronunciation": "/ˈfriːdəm əv spiːtʃ/",
+      "meaning": "The right to express opinions",
+      "banglaMeaning": "বাক স্বাধীনতা",
+      "exampleSentence": "Freedom of speech is a fundamental right."
+    },
+    {
+      "word": "Press Freedom",
+      "pronunciation": "/prɛs ˈfriːdəm/",
+      "meaning": "The freedom of journalists to report",
+      "banglaMeaning": "সংবাদ মাধ্যমের স্বাধীনতা",
+      "exampleSentence": "Press freedom is under threat."
+    },
+    {
+      "word": "Media Bias",
+      "pronunciation": "/ˈmiːdiə ˈbaɪəs/",
+      "meaning": "Prejudice in news reporting",
+      "banglaMeaning": "গণমাধ্যমের পক্ষপাত",
+      "exampleSentence": "The channel was accused of media bias."
+    },
+    {
+      "word": "Propaganda",
+      "pronunciation": "/ˌprɒpəˈɡændə/",
+      "meaning": "Biased information to influence opinion",
+      "banglaMeaning": "প্রচারণা",
+      "exampleSentence": "The government used propaganda."
+    },
+    {
+      "word": "Misinformation",
+      "pronunciation": "/ˌmɪsɪnfərˈmeɪʃən/",
+      "meaning": "False information spread unintentionally",
+      "banglaMeaning": "ভুল তথ্য",
+      "exampleSentence": "Misinformation spread rapidly on social media."
+    },
+    {
+      "word": "Disinformation",
+      "pronunciation": "/dɪsˌɪnfərˈmeɪʃən/",
+      "meaning": "False information spread deliberately",
+      "banglaMeaning": "ভুয়া তথ্য",
+      "exampleSentence": "Disinformation campaigns targeted the election."
+    },
+    {
+      "word": "Fact-check",
+      "pronunciation": "/fækt tʃɛk/",
+      "meaning": "Verifying the truth of claims",
+      "banglaMeaning": "তথ্য যাচাই",
+      "exampleSentence": "Journalists fact-checked the politician's claims."
+    },
+    {
+      "word": "Hoax",
+      "pronunciation": "/hoʊks/",
+      "meaning": "A deceptive trick or false story",
+      "banglaMeaning": "প্রতারণা",
+      "exampleSentence": "The story turned out to be a hoax."
+    },
+    {
+      "word": "Conspiracy Theory",
+      "pronunciation": "/kənˈspɪrəsi ˈθɪəri/",
+      "meaning": "A belief that events are secretly plotted",
+      "banglaMeaning": "ষড়যন্ত্র তত্ত্ব",
+      "exampleSentence": "Conspiracy theories spread online."
+    },
+    {
+      "word": "Fake News",
+      "pronunciation": "/feɪk njuːz/",
+      "meaning": "False stories presented as news",
+      "banglaMeaning": "ভুয়া খবর",
+      "exampleSentence": "Fake news can influence public opinion."
+    },
+    {
+      "word": "Viral",
+      "pronunciation": "/ˈvaɪrəl/",
+      "meaning": "Spreading rapidly online",
+      "banglaMeaning": "ভাইরাল",
+      "exampleSentence": "The video went viral on social media."
+    },
+    {
+      "word": "Trending",
+      "pronunciation": "/ˈtrɛndɪŋ/",
+      "meaning": "Popular on social media at a given time",
+      "banglaMeaning": "ট্রেন্ডিং",
+      "exampleSentence": "The hashtag is trending worldwide."
+    },
+    {
+      "word": "Hashtag",
+      "pronunciation": "/ˈhæʃtæɡ/",
+      "meaning": "A word prefixed by # used on social media",
+      "banglaMeaning": "হ্যাশট্যাগ",
+      "exampleSentence": "The campaign started with a hashtag."
+    },
+    {
+      "word": "Social Media",
+      "pronunciation": "/ˈsoʊʃəl ˈmiːdiə/",
+      "meaning": "Platforms for online communication",
+      "banglaMeaning": "সোশ্যাল মিডিয়া",
+      "exampleSentence": "The news spread quickly on social media."
+    },
+    {
+      "word": "Platform",
+      "pronunciation": "/ˈplætfɔːrm/",
+      "meaning": "A digital service or website",
+      "banglaMeaning": "প্ল্যাটফর্ম",
+      "exampleSentence": "Twitter is a popular platform."
+    },
+    {
+      "word": "Outlet",
+      "pronunciation": "/ˈaʊtlɛt/",
+      "meaning": "A media organization",
+      "banglaMeaning": "মাধ্যম",
+      "exampleSentence": "News outlets reported the story."
+    },
+    {
+      "word": "Broadcast",
+      "pronunciation": "/ˈbrɔːdkæst/",
+      "meaning": "A TV or radio transmission",
+      "banglaMeaning": "সম্প্রচার",
+      "exampleSentence": "The broadcast was watched by millions."
+    },
+    {
+      "word": "Live",
+      "pronunciation": "/laɪv/",
+      "meaning": "Broadcast in real time",
+      "banglaMeaning": "লাইভ",
+      "exampleSentence": "We have live coverage of the event."
+    },
+    {
+      "word": "Coverage",
+      "pronunciation": "/ˈkʌvərɪdʒ/",
+      "meaning": "Reporting on an event",
+      "banglaMeaning": "কভারেজ",
+      "exampleSentence": "Live coverage of the match started at 8 PM."
+    },
+    {
+      "word": "Update",
+      "pronunciation": "/ʌpˈdeɪt/",
+      "meaning": "New information about a developing story",
+      "banglaMeaning": "আপডেট",
+      "exampleSentence": "We will bring you updates as they come."
+    },
+    {
+      "word": "Bulletin",
+      "pronunciation": "/ˈbʊlɪtɪn/",
+      "meaning": "A brief news report",
+      "banglaMeaning": "বুলেটিন",
+      "exampleSentence": "The news bulletin airs every hour."
+    },
+    {
+      "word": "Edition",
+      "pronunciation": "/ɪˈdɪʃən/",
+      "meaning": "A particular issue of a newspaper",
+      "banglaMeaning": "সংস্করণ",
+      "exampleSentence": "The morning edition is sold out."
+    },
+    {
+      "word": "Circulation",
+      "pronunciation": "/ˌsɜːrkjʊˈleɪʃən/",
+      "meaning": "The number of copies distributed",
+      "banglaMeaning": "প্রচলন",
+      "exampleSentence": "The newspaper has a circulation of 100,000."
+    },
+    {
+      "word": "Readership",
+      "pronunciation": "/ˈriːdərʃɪp/",
+      "meaning": "The number of readers",
+      "banglaMeaning": "পাঠক সংখ্যা",
+      "exampleSentence": "The magazine has a wide readership."
+    },
+    {
+      "word": "Subscriber",
+      "pronunciation": "/səbˈskraɪbər/",
+      "meaning": "Someone who pays for a publication",
+      "banglaMeaning": "গ্রাহক",
+      "exampleSentence": "Digital subscribers increased by 20%."
+    },
+    {
+      "word": "Paywall",
+      "pronunciation": "/ˈpeɪwɔːl/",
+      "meaning": "A system restricting access to paid users",
+      "banglaMeaning": "পেওয়াল",
+      "exampleSentence": "The article is behind a paywall."
+    },
+    {
+      "word": "Columnist",
+      "pronunciation": "/ˈkɒləmnɪst/",
+      "meaning": "A writer of regular opinion pieces",
+      "banglaMeaning": "কলামিস্ট",
+      "exampleSentence": "The columnist wrote about climate change."
+    },
+    {
+      "word": "Op-ed",
+      "pronunciation": "/ɒp ɛd/",
+      "meaning": "A page opposite the editorial for opinions",
+      "banglaMeaning": "ওপ-এড",
+      "exampleSentence": "Her op-ed was published in the Times."
+    },
+    {
+      "word": "Editorial",
+      "pronunciation": "/ˌɛdɪˈtɔːriəl/",
+      "meaning": "An article expressing the newspaper's view",
+      "banglaMeaning": "সম্পাদকীয়",
+      "exampleSentence": "The editorial criticized the government."
+    },
+    {
+      "word": "Feature",
+      "pronunciation": "/ˈfiːtʃər/",
+      "meaning": "A detailed, in-depth article",
+      "banglaMeaning": "ফিচার",
+      "exampleSentence": "The magazine published a feature on poverty."
+    },
+    {
+      "word": "Interview",
+      "pronunciation": "/ˈɪntərvjuː/",
+      "meaning": "A conversation where questions are asked",
+      "banglaMeaning": "সাক্ষাৎকার",
+      "exampleSentence": "The interview was printed in full."
+    },
+    {
+      "word": "Review",
+      "pronunciation": "/rɪˈvjuː/",
+      "meaning": "An assessment of a product or event",
+      "banglaMeaning": "পর্যালোচনা",
+      "exampleSentence": "The movie review was positive."
+    },
+    {
+      "word": "Obituary",
+      "pronunciation": "/əˈbɪtʃuəri/",
+      "meaning": "A notice of someone's death",
+      "banglaMeaning": "মৃত্যুসংবাদ",
+      "exampleSentence": "The obituary was published in the local paper."
+    },
+    {
+      "word": "In Memoriam",
+      "pronunciation": "/ɪn məˈmɔːriæm/",
+      "meaning": "In memory of someone who died",
+      "banglaMeaning": "স্মৃতির প্রতি",
+      "exampleSentence": "The article was written in memoriam."
+    },
+    {
+      "word": "Tribute",
+      "pronunciation": "/ˈtrɪbjuːt/",
+      "meaning": "An act showing respect",
+      "banglaMeaning": "শ্রদ্ধাঞ্জলি",
+      "exampleSentence": "Tributes poured in from around the world."
+    },
+    {
+      "word": "Mourning",
+      "pronunciation": "/ˈmɔːrnɪŋ/",
+      "meaning": "Expressing grief after a death",
+      "banglaMeaning": "শোক",
+      "exampleSentence": "The nation went into mourning."
+    },
+    {
+      "word": "State Funeral",
+      "pronunciation": "/steɪt ˈfjuːnərəl/",
+      "meaning": "A funeral arranged by the government",
+      "banglaMeaning": "রাষ্ট্রীয় অন্ত্যেষ্টিক্রিয়া",
+      "exampleSentence": "The leader was given a state funeral."
+    },
+    {
+      "word": "Anniversary",
+      "pronunciation": "/ˌænɪˈvɜːrsəri/",
+      "meaning": "The annual date of an event",
+      "banglaMeaning": "বার্ষিকী",
+      "exampleSentence": "The anniversary of the attack was marked."
+    },
+    {
+      "word": "Commemoration",
+      "pronunciation": "/kəˌmɛməˈreɪʃən/",
+      "meaning": "A ceremony to remember an event",
+      "banglaMeaning": "স্মরণ",
+      "exampleSentence": "A commemoration was held at the site."
+    },
+    {
+      "word": "Centenary",
+      "pronunciation": "/sɛnˈtiːnəri/",
+      "meaning": "A 100th anniversary",
+      "banglaMeaning": "শতবার্ষিকী",
+      "exampleSentence": "The centenary of independence was celebrated."
+    },
+    {
+      "word": "Bicentenary",
+      "pronunciation": "/ˌbaɪsɛnˈtiːnəri/",
+      "meaning": "A 200th anniversary",
+      "banglaMeaning": "দ্বিশতবার্ষিকী",
+      "exampleSentence": "The bicentenary of the battle was observed."
+    },
+    {
+      "word": "Famine",
+      "pronunciation": "/ˈfæmɪn/",
+      "meaning": "Extreme food shortage",
+      "banglaMeaning": "দুর্ভিক্ষ",
+      "exampleSentence": "Famine affected millions in the region."
+    },
+    {
+      "word": "Drought",
+      "pronunciation": "/draʊt/",
+      "meaning": "A long period without rain",
+      "banglaMeaning": "খরা",
+      "exampleSentence": "The drought ruined the crops."
+    },
+    {
+      "word": "Flood",
+      "pronunciation": "/flʌd/",
+      "meaning": "Overflow of water onto land",
+      "banglaMeaning": "বন্যা",
+      "exampleSentence": "The flood submerged entire villages."
+    },
+    {
+      "word": "Landslide",
+      "pronunciation": "/ˈlændslaɪd/",
+      "meaning": "Earth sliding down a slope",
+      "banglaMeaning": "ভূমিধস",
+      "exampleSentence": "The landslide blocked the road."
+    },
+    {
+      "word": "Earthquake",
+      "pronunciation": "/ˈɜːrθkweɪk/",
+      "meaning": "Shaking of the ground",
+      "banglaMeaning": "ভূমিকম্প",
+      "exampleSentence": "The earthquake measured 7.2 on the Richter scale."
+    },
+    {
+      "word": "Aftershock",
+      "pronunciation": "/ˈæftərʃɒk/",
+      "meaning": "A smaller earthquake after a larger one",
+      "banglaMeaning": "পরবর্তী কম্পন",
+      "exampleSentence": "Aftershocks continued for days."
+    },
+    {
+      "word": "Tsunami",
+      "pronunciation": "/tsuːˈnɑːmi/",
+      "meaning": "A huge ocean wave caused by an earthquake",
+      "banglaMeaning": "সুনামি",
+      "exampleSentence": "The tsunami devastated coastal areas."
+    },
+    {
+      "word": "Cyclone",
+      "pronunciation": "/ˈsaɪkloʊn/",
+      "meaning": "A large storm with strong winds",
+      "banglaMeaning": "ঘূর্ণিঝড়",
+      "exampleSentence": "The cyclone hit the coast with great force."
+    },
+    {
+      "word": "Hurricane",
+      "pronunciation": "/ˈhʌrɪkeɪn/",
+      "meaning": "A powerful tropical storm",
+      "banglaMeaning": "হারিকেন",
+      "exampleSentence": "The hurricane destroyed thousands of homes."
+    },
+    {
+      "word": "Typhoon",
+      "pronunciation": "/taɪˈfuːn/",
+      "meaning": "A tropical storm in Asia",
+      "banglaMeaning": "টাইফুন",
+      "exampleSentence": "The typhoon caused widespread flooding."
+    },
+    {
+      "word": "Tornado",
+      "pronunciation": "/tɔːrˈneɪdoʊ/",
+      "meaning": "A violent rotating column of air",
+      "banglaMeaning": "টর্নেডো",
+      "exampleSentence": "The tornado ripped through the town."
+    },
+    {
+      "word": "Wildfire",
+      "pronunciation": "/ˈwaɪldfaɪər/",
+      "meaning": "A large, destructive fire in nature",
+      "banglaMeaning": "দাবানল",
+      "exampleSentence": "Wildfires swept through the forest."
+    },
+    {
+      "word": "Eruption",
+      "pronunciation": "/ɪˈrʌpʃən/",
+      "meaning": "A volcano exploding",
+      "banglaMeaning": "অগ্ন্যুৎপাত",
+      "exampleSentence": "The volcano eruption covered the city in ash."
+    },
+    {
+      "word": "Lava",
+      "pronunciation": "/ˈlɑːvə/",
+      "meaning": "Melted rock from a volcano",
+      "banglaMeaning": "লাভা",
+      "exampleSentence": "Lava flowed down the mountain."
+    },
+    {
+      "word": "Ashes",
+      "pronunciation": "/ˈæʃɪz/",
+      "meaning": "Powder left after burning",
+      "banglaMeaning": "ছাই",
+      "exampleSentence": "Ash from the volcano covered everything."
+    },
+    {
+      "word": "Climate Change",
+      "pronunciation": "/ˈklaɪmɪt tʃeɪndʒ/",
+      "meaning": "Long-term change in global weather",
+      "banglaMeaning": "জলবায়ু পরিবর্তন",
+      "exampleSentence": "Climate change is a global crisis."
+    },
+    {
+      "word": "Global Warming",
+      "pronunciation": "/ˈɡloʊbəl ˈwɔːrmɪŋ/",
+      "meaning": "Rise in Earth's average temperature",
+      "banglaMeaning": "গ্লোবাল ওয়ার্মিং",
+      "exampleSentence": "Global warming leads to rising sea levels."
+    },
+    {
+      "word": "Greenhouse Gas",
+      "pronunciation": "/ˈɡriːnhaʊs ɡæs/",
+      "meaning": "Gases that trap heat in the atmosphere",
+      "banglaMeaning": "গ্রিনহাউস গ্যাস",
+      "exampleSentence": "Carbon dioxide is a greenhouse gas."
+    },
+    {
+      "word": "Carbon Footprint",
+      "pronunciation": "/ˈkɑːrbən ˈfʊtprɪnt/",
+      "meaning": "The amount of carbon emitted by an activity",
+      "banglaMeaning": "কার্বন ফুটপ্রিন্ট",
+      "exampleSentence": "We need to reduce our carbon footprint."
+    },
+    {
+      "word": "Emission",
+      "pronunciation": "/ɪˈmɪʃən/",
+      "meaning": "Pollutants released into the air",
+      "banglaMeaning": "নির্গমন",
+      "exampleSentence": "Vehicle emissions are a major pollutant."
+    },
+    {
+      "word": "Pollution",
+      "pronunciation": "/pəˈluːʃən/",
+      "meaning": "Harmful substances in the environment",
+      "banglaMeaning": "দূষণ",
+      "exampleSentence": "Air pollution is a health hazard."
+    },
+    {
+      "word": "Deforestation",
+      "pronunciation": "/diːˌfɒrɪˈsteɪʃən/",
+      "meaning": "Clearing of forests",
+      "banglaMeaning": "বন উজাড়",
+      "exampleSentence": "Deforestation threatens wildlife."
+    },
+    {
+      "word": "Biodiversity",
+      "pronunciation": "/ˌbaɪoʊdaɪˈvɜːrsɪti/",
+      "meaning": "Variety of plant and animal life",
+      "banglaMeaning": "জীববৈচিত্র্য",
+      "exampleSentence": "The region is rich in biodiversity."
+    },
+    {
+      "word": "Ecosystem",
+      "pronunciation": "/ˈiːkoʊsɪstəm/",
+      "meaning": "A community of living organisms",
+      "banglaMeaning": "বাস্তুতন্ত্র",
+      "exampleSentence": "The ecosystem was damaged by pollution."
+    },
+    {
+      "word": "Extinction",
+      "pronunciation": "/ɪkˈstɪŋkʃən/",
+      "meaning": "When a species dies out completely",
+      "banglaMeaning": "বিলুপ্তি",
+      "exampleSentence": "Many species face extinction."
+    },
+    {
+      "word": "Endangered",
+      "pronunciation": "/ɪnˈdeɪndʒərd/",
+      "meaning": "At risk of extinction",
+      "banglaMeaning": "বিপন্ন",
+      "exampleSentence": "The Bengal tiger is endangered."
+    },
+    {
+      "word": "Conservation",
+      "pronunciation": "/ˌkɒnsərˈveɪʃən/",
+      "meaning": "Protecting nature and wildlife",
+      "banglaMeaning": "সংরক্ষণ",
+      "exampleSentence": "Conservation efforts are increasing."
+    },
+    {
+      "word": "Renewable Energy",
+      "pronunciation": "/rɪˈnjuːəbəl ˈɛnərdʒi/",
+      "meaning": "Energy from natural, replenishable sources",
+      "banglaMeaning": "নবায়নযোগ্য শক্তি",
+      "exampleSentence": "Solar power is a renewable energy source."
+    },
+    {
+      "word": "Fossil Fuel",
+      "pronunciation": "/ˈfɒsəl fjuːəl/",
+      "meaning": "Fuel from ancient organic remains",
+      "banglaMeaning": "জীবাশ্ম জ্বালানি",
+      "exampleSentence": "Fossil fuels contribute to global warming."
+    },
+    {
+      "word": "Paris Agreement",
+      "pronunciation": "/ˈpærɪs əˈɡriːmənt/",
+      "meaning": "Global climate change accord",
+      "banglaMeaning": "প্যারিস চুক্তি",
+      "exampleSentence": "The Paris Agreement aims to limit warming."
+    },
+    {
+      "word": "Summit",
+      "pronunciation": "/ˈsʌmɪt/",
+      "meaning": "A meeting of world leaders",
+      "banglaMeaning": "শীর্ষবৈঠক",
+      "exampleSentence": "The climate summit was held in Glasgow."
+    },
+    {
+      "word": "Protocol",
+      "pronunciation": "/ˈproʊtəkɒl/",
+      "meaning": "A set of diplomatic rules",
+      "banglaMeaning": "প্রটোকল",
+      "exampleSentence": "Diplomatic protocol was followed."
+    },
+    {
+      "word": "Memorandum",
+      "pronunciation": "/ˌmɛməˈrændəm/",
+      "meaning": "A formal note or agreement",
+      "banglaMeaning": "স্মারক",
+      "exampleSentence": "A memorandum of understanding was signed."
+    },
+    {
+      "word": "Accord",
+      "pronunciation": "/əˈkɔːrd/",
+      "meaning": "A formal agreement",
+      "banglaMeaning": "চুক্তি",
+      "exampleSentence": "The peace accord was signed."
+    },
+    {
+      "word": "Mandate",
+      "pronunciation": "/ˈmændeɪt/",
+      "meaning": "An official order or authority",
+      "banglaMeaning": "আদেশ",
+      "exampleSentence": "The UN mandate authorized the mission."
+    },
+    {
+      "word": "Mission",
+      "pronunciation": "/ˈmɪʃən/",
+      "meaning": "An important assignment",
+      "banglaMeaning": "মিশন",
+      "exampleSentence": "The peacekeeping mission was deployed."
+    },
+    {
+      "word": "Deployment",
+      "pronunciation": "/dɪˈplɔɪmənt/",
+      "meaning": "Sending troops or resources",
+      "banglaMeaning": "মোতায়েন",
+      "exampleSentence": "The deployment of troops was ordered."
+    },
+    {
+      "word": "Troops",
+      "pronunciation": "/truːps/",
+      "meaning": "Soldiers",
+      "banglaMeaning": "সেনা",
+      "exampleSentence": "Troops were sent to the border."
+    },
+    {
+      "word": "Peacekeeping",
+      "pronunciation": "/ˈpiːskiːpɪŋ/",
+      "meaning": "Maintaining peace in conflict zones",
+      "banglaMeaning": "শান্তিরক্ষা",
+      "exampleSentence": "UN peacekeeping forces were deployed."
+    },
+    {
+      "word": "Humanitarian Corridor",
+      "pronunciation": "/hjuːˌmænɪˈtɛriən ˈkɒrɪdɔːr/",
+      "meaning": "A safe passage for aid delivery",
+      "banglaMeaning": "মানবিক করিডোর",
+      "exampleSentence": "A humanitarian corridor was established."
+    },
+    {
+      "word": "Arms Deal",
+      "pronunciation": "/ɑːrmz diːl/",
+      "meaning": "An agreement to sell weapons",
+      "banglaMeaning": "অস্ত্র চুক্তি",
+      "exampleSentence": "The arms deal was controversial."
+    },
+    {
+      "word": "Nuclear Proliferation",
+      "pronunciation": "/ˈnjuːkliər prəˌlɪfəˈreɪʃən/",
+      "meaning": "Spread of nuclear weapons",
+      "banglaMeaning": "পারমাণবিক অস্ত্র বিস্তার",
+      "exampleSentence": "The treaty aims to prevent nuclear proliferation."
+    },
+    {
+      "word": "Disarmament",
+      "pronunciation": "/dɪsˈɑːrməmənt/",
+      "meaning": "Reducing military weapons",
+      "banglaMeaning": "নিরস্ত্রীকরণ",
+      "exampleSentence": "Disarmament talks resumed."
+    },
+    {
+      "word": "Espionage",
+      "pronunciation": "/ˈɛspiənɑːʒ/",
+      "meaning": "Spying",
+      "banglaMeaning": "গুপ্তচরবৃত্তি",
+      "exampleSentence": "The diplomat was expelled for espionage."
+    },
+    {
+      "word": "Intelligence",
+      "pronunciation": "/ɪnˈtɛlɪdʒəns/",
+      "meaning": "Secret information gathered about a country",
+      "banglaMeaning": "গোয়েন্দা তথ্য",
+      "exampleSentence": "Intelligence agencies reported the threat."
+    },
+    {
+      "word": "CIA",
+      "pronunciation": "/ˌsiː aɪ ˈeɪ/",
+      "meaning": "Central Intelligence Agency of the US",
+      "banglaMeaning": "সিআইএ",
+      "exampleSentence": "The CIA investigated the case."
+    },
+    {
+      "word": "FBI",
+      "pronunciation": "/ˌɛf biː ˈaɪ/",
+      "meaning": "Federal Bureau of Investigation of the US",
+      "banglaMeaning": "এফবিআই",
+      "exampleSentence": "The FBI arrested the suspect."
+    },
+    {
+      "word": "Interpol",
+      "pronunciation": "/ˈɪntərpɒl/",
+      "meaning": "International police organization",
+      "banglaMeaning": "ইন্টারপোল",
+      "exampleSentence": "Interpol issued a global alert."
+    },
+    {
+      "word": "Extradition",
+      "pronunciation": "/ˌɛkstrəˈdɪʃən/",
+      "meaning": "Sending a suspect to another country for trial",
+      "banglaMeaning": "প্রত্যর্পণ",
+      "exampleSentence": "The extradition request was approved."
+    },
+    {
+      "word": "Indictment",
+      "pronunciation": "/ɪnˈdaɪtmənt/",
+      "meaning": "A formal charge of a serious crime",
+      "banglaMeaning": "অভিযোগপত্র",
+      "exampleSentence": "The indictment was unsealed."
+    },
+    {
+      "word": "Arraignment",
+      "pronunciation": "/əˈreɪnmənt/",
+      "meaning": "A court hearing where charges are read",
+      "banglaMeaning": "আসামি আদালতে হাজিরা",
+      "exampleSentence": "The arraignment is scheduled for Monday."
+    },
+    {
+      "word": "Bail",
+      "pronunciation": "/beɪl/",
+      "meaning": "Temporary release from jail pending trial",
+      "banglaMeaning": "জামিন",
+      "exampleSentence": "He was granted bail."
+    },
+    {
+      "word": "Detention",
+      "pronunciation": "/dɪˈtɛnʃən/",
+      "meaning": "Being held in custody",
+      "banglaMeaning": "আটক",
+      "exampleSentence": "He was placed in detention."
+    },
+    {
+      "word": "Custody",
+      "pronunciation": "/ˈkʌstədi/",
+      "meaning": "Being kept under arrest",
+      "banglaMeaning": "পুলিশ হেফাজত",
+      "exampleSentence": "The suspect is in police custody."
+    },
+    {
+      "word": "Incarceration",
+      "pronunciation": "/ɪnˌkɑːrsəˈreɪʃən/",
+      "meaning": "Being imprisoned",
+      "banglaMeaning": "কারাদণ্ড",
+      "exampleSentence": "Incarceration rates are rising."
+    },
+    {
+      "word": "Imprisonment",
+      "pronunciation": "/ɪmˈprɪzənmənt/",
+      "meaning": "The state of being in prison",
+      "banglaMeaning": "কারাবাস",
+      "exampleSentence": "He was sentenced to life imprisonment."
+    },
+    {
+      "word": "Parole",
+      "pronunciation": "/pəˈroʊl/",
+      "meaning": "Early release from prison with conditions",
+      "banglaMeaning": "প্যারোল",
+      "exampleSentence": "He was released on parole."
+    },
+    {
+      "word": "Amnesty",
+      "pronunciation": "/ˈæmnɪsti/",
+      "meaning": "An official pardon for a group",
+      "banglaMeaning": "সাধারণ ক্ষমা",
+      "exampleSentence": "The government granted amnesty to rebels."
+    },
+    {
+      "word": "Pardon",
+      "pronunciation": "/ˈpɑːrdən/",
+      "meaning": "Forgiveness for a crime",
+      "banglaMeaning": "মার্জনা",
+      "exampleSentence": "The president granted him a pardon."
+    },
+    {
+      "word": "Clemency",
+      "pronunciation": "/ˈklɛmənsi/",
+      "meaning": "Mercy shown to a criminal",
+      "banglaMeaning": "দয়া",
+      "exampleSentence": "He appealed for clemency."
+    },
+    {
+      "word": "Repatriation",
+      "pronunciation": "/riːˌpætriˈeɪʃən/",
+      "meaning": "Returning someone to their home country",
+      "banglaMeaning": "প্রত্যাবাসন",
+      "exampleSentence": "Repatriation of refugees began."
+    },
+    {
+      "word": "Resettlement",
+      "pronunciation": "/riːˈsɛtəlmənt/",
+      "meaning": "Moving to a new place to live",
+      "banglaMeaning": "পুনর্বাসন",
+      "exampleSentence": "Resettlement programs were offered."
+    },
+    {
+      "word": "Integration",
+      "pronunciation": "/ˌɪntɪˈɡreɪʃən/",
+      "meaning": "Becoming part of a new society",
+      "banglaMeaning": "একীকরণ",
+      "exampleSentence": "Integration of migrants is a challenge."
+    },
+    {
+      "word": "Xenophobia",
+      "pronunciation": "/ˌzɛnəˈfoʊbiə/",
+      "meaning": "Fear or hatred of foreigners",
+      "banglaMeaning": "বিদেশী বিদ্বেষ",
+      "exampleSentence": "Xenophobia is on the rise."
+    },
+    {
+      "word": "Racism",
+      "pronunciation": "/ˈreɪsɪzəm/",
+      "meaning": "Discrimination based on race",
+      "banglaMeaning": "বর্ণবাদ",
+      "exampleSentence": "Racism has no place in society."
+    },
+    {
+      "word": "Discrimination",
+      "pronunciation": "/dɪˌskrɪmɪˈneɪʃən/",
+      "meaning": "Unfair treatment based on group",
+      "banglaMeaning": "বৈষম্য",
+      "exampleSentence": "Discrimination is illegal."
+    },
+    {
+      "word": "Prejudice",
+      "pronunciation": "/ˈprɛdʒʊdɪs/",
+      "meaning": "Preconceived negative opinion",
+      "banglaMeaning": "পূর্বধারণা",
+      "exampleSentence": "Prejudice leads to injustice."
+    },
+    {
+      "word": "Segregation",
+      "pronunciation": "/ˌsɛɡrɪˈɡeɪʃən/",
+      "meaning": "Forced separation of groups",
+      "banglaMeaning": "বিচ্ছিন্নতা",
+      "exampleSentence": "Segregation was abolished."
+    },
+    {
+      "word": "Apartheid",
+      "pronunciation": "/əˈpɑːrteɪt/",
+      "meaning": "Extreme racial segregation system",
+      "banglaMeaning": "বর্ণবাদী শাসন",
+      "exampleSentence": "Apartheid ended in 1994."
+    },
+    {
+      "word": "Inequality",
+      "pronunciation": "/ˌɪnɪˈkwɒlɪti/",
+      "meaning": "Unfair differences in status or wealth",
+      "banglaMeaning": "অসমতা",
+      "exampleSentence": "Income inequality is growing."
+    },
+    {
+      "word": "Equality",
+      "pronunciation": "/ɪˈkwɒlɪti/",
+      "meaning": "The state of being equal",
+      "banglaMeaning": "সমতা",
+      "exampleSentence": "The constitution guarantees equality."
+    },
+    {
+      "word": "Justice",
+      "pronunciation": "/ˈdʒʌstɪs/",
+      "meaning": "Fair treatment under the law",
+      "banglaMeaning": "বিচার",
+      "exampleSentence": "Justice was served."
+    },
+    {
+      "word": "Injustice",
+      "pronunciation": "/ɪnˈdʒʌstɪs/",
+      "meaning": "Lack of fairness",
+      "banglaMeaning": "অবিচার",
+      "exampleSentence": "The protest was against injustice."
+    },
+    {
+      "word": "Martial Law",
+      "pronunciation": "/ˈmɑːrʃəl lɔː/",
+      "meaning": "Military rule during emergency",
+      "banglaMeaning": "সামরিক আইন",
+      "exampleSentence": "Martial law was declared."
+    },
+    {
+      "word": "Curfew",
+      "pronunciation": "/ˈkɜːrfjuː/",
+      "meaning": "A restriction on being out at certain times",
+      "banglaMeaning": "কারফিউ",
+      "exampleSentence": "A curfew was imposed from 8 PM."
+    },
+    {
+      "word": "State of Emergency",
+      "pronunciation": "/steɪt əv ɪˈmɜːrdʒənsi/",
+      "meaning": "A government's special powers during crisis",
+      "banglaMeaning": "জরুরি অবস্থা",
+      "exampleSentence": "A state of emergency was declared."
+    },
+    {
+      "word": "Lockdown",
+      "pronunciation": "/ˈlɒkdaʊn/",
+      "meaning": "Restrictions on movement",
+      "banglaMeaning": "লকডাউন",
+      "exampleSentence": "The city was under lockdown."
+    },
+    {
+      "word": "Quarantine",
+      "pronunciation": "/ˈkwɒrəntiːn/",
+      "meaning": "Isolation to prevent disease spread",
+      "banglaMeaning": "কোয়ারেন্টিন",
+      "exampleSentence": "Travelers were placed in quarantine."
+    },
+    {
+      "word": "Pandemic",
+      "pronunciation": "/pænˈdɛmɪk/",
+      "meaning": "A global disease outbreak",
+      "banglaMeaning": "মহামারী",
+      "exampleSentence": "The COVID-19 pandemic changed the world."
+    },
+    {
+      "word": "Epidemic",
+      "pronunciation": "/ˌɛpɪˈdɛmɪk/",
+      "meaning": "A widespread disease in a community",
+      "banglaMeaning": "প্রাদুর্ভাব",
+      "exampleSentence": "An epidemic of dengue fever broke out."
+    },
+    {
+      "word": "Outbreak",
+      "pronunciation": "/ˈaʊtbreɪk/",
+      "meaning": "A sudden start of a disease",
+      "banglaMeaning": "প্রাদুর্ভাব",
+      "exampleSentence": "The virus outbreak started in March."
+    },
+    {
+      "word": "Vaccination",
+      "pronunciation": "/ˌvæksɪˈneɪʃən/",
+      "meaning": "Giving a vaccine to prevent disease",
+      "banglaMeaning": "টিকা",
+      "exampleSentence": "Vaccination drives were launched."
+    },
+    {
+      "word": "Immunity",
+      "pronunciation": "/ɪˈmjuːnɪti/",
+      "meaning": "Resistance to a disease",
+      "banglaMeaning": "অনাক্রম্যতা",
+      "exampleSentence": "Herd immunity helps protect the population."
+    },
+    {
+      "word": "Infectious",
+      "pronunciation": "/ɪnˈfɛkʃəs/",
+      "meaning": "Able to spread from person to person",
+      "banglaMeaning": "সংক্রামক",
+      "exampleSentence": "Measles is highly infectious."
+    },
+    {
+      "word": "Contagious",
+      "pronunciation": "/kənˈteɪdʒəs/",
+      "meaning": "Spread by close contact",
+      "banglaMeaning": "সংক্রামক",
+      "exampleSentence": "The disease is very contagious."
+    },
+    {
+      "word": "Symptom",
+      "pronunciation": "/ˈsɪmptəm/",
+      "meaning": "A sign of a disease",
+      "banglaMeaning": "লক্ষণ",
+      "exampleSentence": "Fever is a common symptom."
+    },
+    {
+      "word": "Diagnosis",
+      "pronunciation": "/ˌdaɪəɡˈnoʊsɪs/",
+      "meaning": "Identifying a disease",
+      "banglaMeaning": "রোগ নির্ণয়",
+      "exampleSentence": "Early diagnosis improves survival."
+    },
+    {
+      "word": "Treatment",
+      "pronunciation": "/ˈtriːtmənt/",
+      "meaning": "Medical care for a disease",
+      "banglaMeaning": "চিকিৎসা",
+      "exampleSentence": "Patients received treatment."
+    },
+    {
+      "word": "Cure",
+      "pronunciation": "/kjʊr/",
+      "meaning": "A remedy that eliminates a disease",
+      "banglaMeaning": "প্রতিকার",
+      "exampleSentence": "There is no known cure."
+    },
+    {
+      "word": "Therapy",
+      "pronunciation": "/ˈθɛrəpi/",
+      "meaning": "Treatment to relieve a condition",
+      "banglaMeaning": "থেরাপি",
+      "exampleSentence": "Physical therapy helped him recover."
+    },
+    {
+      "word": "Surgery",
+      "pronunciation": "/ˈsɜːrdʒəri/",
+      "meaning": "Medical operation",
+      "banglaMeaning": "অস্ত্রোপচার",
+      "exampleSentence": "The surgery was successful."
+    },
+    {
+      "word": "Intensive Care",
+      "pronunciation": "/ɪnˈtɛnsɪv kɛər/",
+      "meaning": "Specialized care for critical patients",
+      "banglaMeaning": "নিবিড় পরিচর্যা",
+      "exampleSentence": "He was admitted to intensive care."
+    },
+    {
+      "word": "Mortality Rate",
+      "pronunciation": "/mɔːrˈtælɪti reɪt/",
+      "meaning": "The rate of death from a disease",
+      "banglaMeaning": "মৃত্যুর হার",
+      "exampleSentence": "The mortality rate has declined."
+    },
+    {
+      "word": "Recovery Rate",
+      "pronunciation": "/rɪˈkʌvəri reɪt/",
+      "meaning": "The rate of recovery from a disease",
+      "banglaMeaning": "সুস্থতার হার",
+      "exampleSentence": "The recovery rate is improving."
+    },
+    {
+      "word": "Frontline Workers",
+      "pronunciation": "/ˈfrʌntlaɪn ˈwɜːrkərz/",
+      "meaning": "Workers directly dealing with crises",
+      "banglaMeaning": "সামনের সারির কর্মী",
+      "exampleSentence": "Frontline workers risked their lives."
+    },
+    {
+      "word": "Essential Services",
+      "pronunciation": "/ɪˈsɛnʃəl ˈsɜːrvɪsɪz/",
+      "meaning": "Services necessary for daily life",
+      "banglaMeaning": "অত্যাবশ্যক সেবা",
+      "exampleSentence": "Essential services continued during the lockdown."
+    },
+    {
+      "word": "Infrastructure",
+      "pronunciation": "/ˈɪnfrəstrʌktʃər/",
+      "meaning": "Basic facilities needed for a society",
+      "banglaMeaning": "অবকাঠামো",
+      "exampleSentence": "The government invested in infrastructure."
+    },
+    {
+      "word": "Development",
+      "pronunciation": "/dɪˈvɛləpmənt/",
+      "meaning": "Progress and growth",
+      "banglaMeaning": "উন্নয়ন",
+      "exampleSentence": "Economic development is a priority."
+    },
+    {
+      "word": "Progress",
+      "pronunciation": "/ˈprɒɡrɛs/",
+      "meaning": "Forward movement or improvement",
+      "banglaMeaning": "অগ্রগতি",
+      "exampleSentence": "The country has made significant progress."
+    },
+    {
+      "word": "Modernization",
+      "pronunciation": "/ˌmɒdərnaɪˈzeɪʃən/",
+      "meaning": "Updating to modern standards",
+      "banglaMeaning": "আধুনিকীকরণ",
+      "exampleSentence": "Modernization of railways is underway."
+    },
+    {
+      "word": "Urbanization",
+      "pronunciation": "/ˌɜːrbənaɪˈzeɪʃən/",
+      "meaning": "Growth of cities",
+      "banglaMeaning": "নগরায়ন",
+      "exampleSentence": "Urbanization is happening rapidly."
+    },
+    {
+      "word": "Industrialization",
+      "pronunciation": "/ɪnˌdʌstriəlaɪˈzeɪʃən/",
+      "meaning": "Development of industries",
+      "banglaMeaning": "শিল্পায়ন",
+      "exampleSentence": "Industrialization led to economic growth."
+    },
+    {
+      "word": "Globalization",
+      "pronunciation": "/ˌɡloʊbəlaɪˈzeɪʃən/",
+      "meaning": "Integration of world economies",
+      "banglaMeaning": "বিশ্বায়ন",
+      "exampleSentence": "Globalization has both benefits and drawbacks."
+    },
+    {
+      "word": "Privatization",
+      "pronunciation": "/ˌpraɪvətaɪˈzeɪʃən/",
+      "meaning": "Transferring from public to private ownership",
+      "banglaMeaning": "বেসরকারিকরণ",
+      "exampleSentence": "Privatization of state-owned enterprises continued."
+    },
+    {
+      "word": "Nationalization",
+      "pronunciation": "/ˌnæʃənəlaɪˈzeɪʃən/",
+      "meaning": "Transferring from private to government ownership",
+      "banglaMeaning": "জাতীয়করণ",
+      "exampleSentence": "The government announced nationalization of banks."
+    },
+    {
+      "word": "Liberalization",
+      "pronunciation": "/ˌlɪbərəlaɪˈzeɪʃən/",
+      "meaning": "Removing government controls",
+      "banglaMeaning": "উদারীকরণ",
+      "exampleSentence": "Economic liberalization boosted growth."
+    },
+    {
+      "word": "Deregulation",
+      "pronunciation": "/diːˌrɛɡjʊˈleɪʃən/",
+      "meaning": "Removing regulations",
+      "banglaMeaning": "নিয়ন্ত্রণমুক্তকরণ",
+      "exampleSentence": "Deregulation of the industry occurred."
+    },
+    {
+      "word": "Monopoly",
+      "pronunciation": "/məˈnɒpəli/",
+      "meaning": "Single company dominating a market",
+      "banglaMeaning": "একচেটিয়া বাজার",
+      "exampleSentence": "The company was accused of monopoly."
+    },
+    {
+      "word": "Oligopoly",
+      "pronunciation": "/ˌɒlɪˈɡɒpəli/",
+      "meaning": "A few companies dominating a market",
+      "banglaMeaning": "অলিগোপলি",
+      "exampleSentence": "The telecom sector is an oligopoly."
+    },
+    {
+      "word": "Cartel",
+      "pronunciation": "/kɑːrˈtɛl/",
+      "meaning": "A group of companies fixing prices",
+      "banglaMeaning": "কার্টেল",
+      "exampleSentence": "The cartel controlled oil prices."
+    },
+    {
+      "word": "Shareholder",
+      "pronunciation": "/ˈʃɛərˌhoʊldər/",
+      "meaning": "An owner of shares in a company",
+      "banglaMeaning": "শেয়ারহোল্ডার",
+      "exampleSentence": "Shareholders approved the merger."
+    },
+    {
+      "word": "Dividend",
+      "pronunciation": "/ˈdɪvɪdɛnd/",
+      "meaning": "A share of profits paid to shareholders",
+      "banglaMeaning": "লভ্যাংশ",
+      "exampleSentence": "The company announced a dividend."
+    },
+    {
+      "word": "Interest Rate",
+      "pronunciation": "/ˈɪntrɪst reɪt/",
+      "meaning": "The cost of borrowing money",
+      "banglaMeaning": "সুদের হার",
+      "exampleSentence": "The central bank raised interest rates."
+    },
+    {
+      "word": "Central Bank",
+      "pronunciation": "/ˈsɛntrəl bæŋk/",
+      "meaning": "A country's main monetary authority",
+      "banglaMeaning": "কেন্দ্রীয় ব্যাংক",
+      "exampleSentence": "The central bank controls inflation."
+    },
+    {
+      "word": "Monetary Policy",
+      "pronunciation": "/ˈmʌnɪtəri ˈpɒlɪsi/",
+      "meaning": "Central bank's actions on money supply",
+      "banglaMeaning": "আর্থিক নীতি",
+      "exampleSentence": "Monetary policy was tightened."
+    },
+    {
+      "word": "Fiscal Policy",
+      "pronunciation": "/ˈfɪskəl ˈpɒlɪsi/",
+      "meaning": "Government's tax and spending decisions",
+      "banglaMeaning": "রাজস্ব নীতি",
+      "exampleSentence": "Fiscal policy was expanded to stimulate growth."
+    },
+    {
+      "word": "Subprime",
+      "pronunciation": "/ˌsʌbˈpraɪm/",
+      "meaning": "High-risk loans",
+      "banglaMeaning": "সাবপ্রাইম",
+      "exampleSentence": "Subprime mortgages caused the financial crisis."
+    },
+    {
+      "word": "Bailout",
+      "pronunciation": "/ˈbeɪlaʊt/",
+      "meaning": "Financial rescue of a failing company",
+      "banglaMeaning": "বেলআউট",
+      "exampleSentence": "The government approved a bailout for the bank."
+    },
+    {
+      "word": "Default",
+      "pronunciation": "/dɪˈfɔːlt/",
+      "meaning": "Failure to repay a loan",
+      "banglaMeaning": "খেলাপি",
+      "exampleSentence": "The country defaulted on its debt."
+    },
+    {
+      "word": "Bankruptcy",
+      "pronunciation": "/ˈbæŋkrʌptsi/",
+      "meaning": "Being legally unable to pay debts",
+      "banglaMeaning": "দেউলিয়া",
+      "exampleSentence": "The company filed for bankruptcy."
+    },
+    {
+      "word": "Foreclosure",
+      "pronunciation": "/fɔːrˈkloʊʒər/",
+      "meaning": "Taking property for unpaid mortgage",
+      "banglaMeaning": "বাজেয়াপ্তি",
+      "exampleSentence": "Foreclosure rates increased."
+    },
+    {
+      "word": "Austerity",
+      "pronunciation": "/ɔːˈstɛrɪti/",
+      "meaning": "Strict economic measures to reduce spending",
+      "banglaMeaning": "মিতব্যয়িতা",
+      "exampleSentence": "Austerity measures were imposed."
+    },
+    {
+      "word": "Stimulus",
+      "pronunciation": "/ˈstɪmjʊləs/",
+      "meaning": "Government spending to boost the economy",
+      "banglaMeaning": "উদ্দীপনা",
+      "exampleSentence": "A stimulus package was announced."
+    },
+    {
+      "word": "Incentive",
+      "pronunciation": "/ɪnˈsɛntɪv/",
+      "meaning": "Something to encourage action",
+      "banglaMeaning": "উৎসাহ",
+      "exampleSentence": "Tax incentives promote investment."
+    },
+    {
+      "word": "Subsidy",
+      "pronunciation": "/ˈsʌbsɪdi/",
+      "meaning": "Government financial support",
+      "banglaMeaning": "ভর্তুকি",
+      "exampleSentence": "Agricultural subsidies were cut."
+    },
+    {
+      "word": "Revenue",
+      "pronunciation": "/ˈrɛvənjuː/",
+      "meaning": "Income from taxes or sales",
+      "banglaMeaning": "রাজস্ব",
+      "exampleSentence": "Tax revenue increased."
+    },
+    {
+      "word": "Expenditure",
+      "pronunciation": "/ɪkˈspɛndɪtʃər/",
+      "meaning": "Money spent by government",
+      "banglaMeaning": "ব্যয়",
+      "exampleSentence": "Government expenditure rose."
+    },
+    {
+      "word": "Debt",
+      "pronunciation": "/dɛt/",
+      "meaning": "Money owed",
+      "banglaMeaning": "ঋণ",
+      "exampleSentence": "National debt reached a record high."
+    },
+    {
+      "word": "Deficit",
+      "pronunciation": "/ˈdɛfɪsɪt/",
+      "meaning": "Shortfall of money",
+      "banglaMeaning": "ঘাটতি",
+      "exampleSentence": "The budget deficit widened."
+    },
+    {
+      "word": "Inauguration",
+      "pronunciation": "/ɪˌnɔːɡjʊˈreɪʃən/",
+      "meaning": "A formal ceremony to start something",
+      "banglaMeaning": "উদ্বোধন",
+      "exampleSentence": "The president's inauguration was televised."
+    },
+    {
+      "word": "Oath",
+      "pronunciation": "/oʊθ/",
+      "meaning": "A formal promise",
+      "banglaMeaning": "শপথ",
+      "exampleSentence": "He took the oath of office."
+    },
+    {
+      "word": "Swearing-in",
+      "pronunciation": "/ˈswɛrɪŋ ɪn/",
+      "meaning": "Ceremony where someone takes an oath",
+      "banglaMeaning": "শপথ গ্রহণ",
+      "exampleSentence": "The swearing-in ceremony was held."
+    },
+    {
+      "word": "Tenure",
+      "pronunciation": "/ˈtɛnjʊr/",
+      "meaning": "The period of holding an office",
+      "banglaMeaning": "কার্যকাল",
+      "exampleSentence": "His tenure as CEO ended."
+    },
+    {
+      "word": "Term",
+      "pronunciation": "/tɜːrm/",
+      "meaning": "A fixed period in office",
+      "banglaMeaning": "মেয়াদ",
+      "exampleSentence": "The president serves a four-year term."
+    },
+    {
+      "word": "Re-elect",
+      "pronunciation": "/ˌriː ɪˈlɛkt/",
+      "meaning": "To elect again",
+      "banglaMeaning": "পুনর্নির্বাচিত",
+      "exampleSentence": "The mayor was re-elected."
+    },
+    {
+      "word": "Resignation",
+      "pronunciation": "/ˌrɛzɪɡˈneɪʃən/",
+      "meaning": "Formally leaving a position",
+      "banglaMeaning": "পদত্যাগ",
+      "exampleSentence": "The minister announced his resignation."
+    },
+    {
+      "word": "Impeachment",
+      "pronunciation": "/ɪmˈpiːtʃmənt/",
+      "meaning": "Charging a public official with misconduct",
+      "banglaMeaning": "অভিশংসন",
+      "exampleSentence": "The impeachment trial began."
+    },
+    {
+      "word": "Referendum",
+      "pronunciation": "/ˌrɛfəˈrɛndəm/",
+      "meaning": "A direct vote by the people on a issue",
+      "banglaMeaning": "গণভোট",
+      "exampleSentence": "The referendum approved the new constitution."
+    },
+    {
+      "word": "Franchise",
+      "pronunciation": "/ˈfræntʃaɪz/",
+      "meaning": "The right to vote",
+      "banglaMeaning": "ভোটাধিকার",
+      "exampleSentence": "Universal adult franchise was granted."
+    },
+    {
+      "word": "Constituency",
+      "pronunciation": "/kənˈstɪtʃuənsi/",
+      "meaning": "An electoral district",
+      "banglaMeaning": "নির্বাচনী এলাকা",
+      "exampleSentence": "He represents the Dhaka constituency."
+    },
+    {
+      "word": "Incumbent",
+      "pronunciation": "/ɪnˈkʌmbənt/",
+      "meaning": "The current holder of a position",
+      "banglaMeaning": "বিদায়ী",
+      "exampleSentence": "The incumbent lost the election."
+    },
+    {
+      "word": "Challenger",
+      "pronunciation": "/ˈtʃælɪndʒər/",
+      "meaning": "A person competing against the incumbent",
+      "banglaMeaning": "প্রতিদ্বন্দ্বী",
+      "exampleSentence": "The challenger won the election."
+    },
+    {
+      "word": "Manifesto",
+      "pronunciation": "/ˌmænɪˈfɛstoʊ/",
+      "meaning": "A party's public declaration of policies",
+      "banglaMeaning": "ইশতেহার",
+      "exampleSentence": "The party released its election manifesto."
+    },
+    {
+      "word": "Agenda",
+      "pronunciation": "/əˈdʒɛndə/",
+      "meaning": "A list of items to be addressed",
+      "banglaMeaning": "এজেন্ডা",
+      "exampleSentence": "The government set its legislative agenda."
+    },
+    {
+      "word": "Policy",
+      "pronunciation": "/ˈpɒlɪsi/",
+      "meaning": "A course of action adopted by government",
+      "banglaMeaning": "নীতি",
+      "exampleSentence": "The new policy aims to reduce poverty."
+    },
+    {
+      "word": "Reform",
+      "pronunciation": "/rɪˈfɔːrm/",
+      "meaning": "Changes to improve a system",
+      "banglaMeaning": "সংস্কার",
+      "exampleSentence": "Education reforms were introduced."
+    },
+    {
+      "word": "Initiative",
+      "pronunciation": "/ɪˈnɪʃətɪv/",
+      "meaning": "A new plan or program",
+      "banglaMeaning": "উদ্যোগ",
+      "exampleSentence": "A new health initiative was launched."
+    },
+    {
+      "word": "Scheme",
+      "pronunciation": "/skiːm/",
+      "meaning": "A systematic plan",
+      "banglaMeaning": "পরিকল্পনা",
+      "exampleSentence": "The government announced a pension scheme."
+    },
+    {
+      "word": "Program",
+      "pronunciation": "/ˈproʊɡræm/",
+      "meaning": "A set of planned activities",
+      "banglaMeaning": "কর্মসূচি",
+      "exampleSentence": "The development program was funded."
+    },
+    {
+      "word": "Project",
+      "pronunciation": "/ˈprɒdʒɛkt/",
+      "meaning": "A planned piece of work",
+      "banglaMeaning": "প্রকল্প",
+      "exampleSentence": "The bridge project was completed."
+    },
+    {
+      "word": "Infrastructure",
+      "pronunciation": "/ˈɪnfrəstrʌktʃər/",
+      "meaning": "Basic physical systems of a country",
+      "banglaMeaning": "অবকাঠামো",
+      "exampleSentence": "Infrastructure spending was increased."
+    },
+    {
+      "word": "Public Sector",
+      "pronunciation": "/ˈpʌblɪk ˈsɛktər/",
+      "meaning": "Government-owned organizations",
+      "banglaMeaning": "পাবলিক সেক্টর",
+      "exampleSentence": "Public sector salaries were raised."
+    },
+    {
+      "word": "Private Sector",
+      "pronunciation": "/ˈpraɪvɪt ˈsɛktər/",
+      "meaning": "Businesses not owned by government",
+      "banglaMeaning": "বেসরকারি খাত",
+      "exampleSentence": "The private sector drives innovation."
+    },
+    {
+      "word": "Civil Society",
+      "pronunciation": "/ˈsɪvəl səˈsaɪəti/",
+      "meaning": "Non-governmental organizations and groups",
+      "banglaMeaning": "সিভিল সোসাইটি",
+      "exampleSentence": "Civil society activists protested."
+    },
+    {
+      "word": "NGO",
+      "pronunciation": "/ˌɛn dʒiː ˈoʊ/",
+      "meaning": "Non-Governmental Organization",
+      "banglaMeaning": "এনজিও",
+      "exampleSentence": "NGOs provided relief to the poor."
+    },
+    {
+      "word": "Accountability",
+      "pronunciation": "/əˌkaʊntəˈbɪlɪti/",
+      "meaning": "Responsibility for actions",
+      "banglaMeaning": "জবাবদিহি",
+      "exampleSentence": "The government must ensure accountability."
+    },
+    {
+      "word": "Transparency",
+      "pronunciation": "/trænsˈpærənsi/",
+      "meaning": "Openness in government operations",
+      "banglaMeaning": "স্বচ্ছতা",
+      "exampleSentence": "Transparency builds public trust."
+    },
+    {
+      "word": "Ombudsman",
+      "pronunciation": "/ˈɒmbʊdzmən/",
+      "meaning": "An official investigating complaints",
+      "banglaMeaning": "অম্বাডসম্যান",
+      "exampleSentence": "The ombudsman investigated the complaint."
+    },
+    {
+      "word": "Audit",
+      "pronunciation": "/ˈɔːdɪt/",
+      "meaning": "An official financial inspection",
+      "banglaMeaning": "নিরীক্ষা",
+      "exampleSentence": "The audit revealed financial irregularities."
+    },
+    {
+      "word": "Commission",
+      "pronunciation": "/kəˈmɪʃən/",
+      "meaning": "A body with a specific purpose",
+      "banglaMeaning": "কমিশন",
+      "exampleSentence": "The election commission announced results."
+    },
+    {
+      "word": "Committee",
+      "pronunciation": "/kəˈmɪti/",
+      "meaning": "A group appointed for a task",
+      "banglaMeaning": "কমিটি",
+      "exampleSentence": "The committee submitted its report."
+    },
+    {
+      "word": "Task Force",
+      "pronunciation": "/tæsk fɔːrs/",
+      "meaning": "A group for a specific mission",
+      "banglaMeaning": "টাস্ক ফোর্স",
+      "exampleSentence": "A task force was formed to fight corruption."
+    },
+    {
+      "word": "Tribunal",
+      "pronunciation": "/traɪˈbjuːnəl/",
+      "meaning": "A court-like body",
+      "banglaMeaning": "ট্রাইবুনাল",
+      "exampleSentence": "The tribunal heard the case."
+    },
+    {
+      "word": "Arbitration",
+      "pronunciation": "/ˌɑːrbɪˈtreɪʃən/",
+      "meaning": "Settling a dispute outside court",
+      "banglaMeaning": "মধ্যস্থতা",
+      "exampleSentence": "The dispute was settled through arbitration."
+    }
+  ]
+}

@@ -1,1 +1,1715 @@
-{"chapter": 33, "level": "Advanced", "title": "Interview English", "words": []}
+{
+  "chapter": 33,
+  "level": "Advanced",
+  "title": "Interview English",
+  "words": [
+    {
+      "word": "Resume",
+      "pronunciation": "/ˈrɛzəmeɪ/",
+      "meaning": "A document summarizing qualifications and experience",
+      "banglaMeaning": "জীবনবৃত্তান্ত / রিজুমে",
+      "exampleSentence": "I updated my resume before applying for the job."
+    },
+    {
+      "word": "Cover Letter",
+      "pronunciation": "/ˈkʌvər ˈlɛtər/",
+      "meaning": "A letter introducing yourself with a job application",
+      "banglaMeaning": "কভার লেটার",
+      "exampleSentence": "Write a compelling cover letter for each application."
+    },
+    {
+      "word": "Applicant",
+      "pronunciation": "/ˈæplɪkənt/",
+      "meaning": "A person who applies for a job",
+      "banglaMeaning": "আবেদনকারী",
+      "exampleSentence": "There were over 200 applicants for the position."
+    },
+    {
+      "word": "Candidate",
+      "pronunciation": "/ˈkændɪdeɪt/",
+      "meaning": "A person being considered for a job",
+      "banglaMeaning": "প্রার্থী",
+      "exampleSentence": "The candidate impressed the interview panel."
+    },
+    {
+      "word": "Interviewer",
+      "pronunciation": "/ˈɪntərvjuːər/",
+      "meaning": "The person who conducts the interview",
+      "banglaMeaning": "সাক্ষাৎকার গ্রহীতা",
+      "exampleSentence": "The interviewer asked about my strengths."
+    },
+    {
+      "word": "Interviewee",
+      "pronunciation": "/ˌɪntərvjuːˈiː/",
+      "meaning": "The person being interviewed",
+      "banglaMeaning": "সাক্ষাৎকার গ্রহণকারী",
+      "exampleSentence": "The interviewee answered all questions confidently."
+    },
+    {
+      "word": "Shortlist",
+      "pronunciation": "/ˈʃɔːrtlɪst/",
+      "meaning": "A list of selected candidates for further review",
+      "banglaMeaning": "শর্টলিস্ট",
+      "exampleSentence": "I was shortlisted for the final interview round."
+    },
+    {
+      "word": "Qualification",
+      "pronunciation": "/ˌkwɒlɪfɪˈkeɪʃən/",
+      "meaning": "A skill or credential needed for a job",
+      "banglaMeaning": "যোগ্যতা",
+      "exampleSentence": "What qualifications are required for this role?"
+    },
+    {
+      "word": "Experience",
+      "pronunciation": "/ɪkˈspɪriəns/",
+      "meaning": "Practical knowledge gained from working",
+      "banglaMeaning": "অভিজ্ঞতা",
+      "exampleSentence": "I have five years of experience in marketing."
+    },
+    {
+      "word": "Background",
+      "pronunciation": "/ˈbækɡraʊnd/",
+      "meaning": "A person's education and work history",
+      "banglaMeaning": "পটভূমি",
+      "exampleSentence": "My background is in software engineering."
+    },
+    {
+      "word": "Strength",
+      "pronunciation": "/strɛŋθ/",
+      "meaning": "A positive skill or quality",
+      "banglaMeaning": "শক্তি / দক্ষতা",
+      "exampleSentence": "My greatest strength is problem-solving."
+    },
+    {
+      "word": "Weakness",
+      "pronunciation": "/ˈwiːknɪs/",
+      "meaning": "An area that needs improvement",
+      "banglaMeaning": "দুর্বলতা",
+      "exampleSentence": "I am working on improving my public speaking weakness."
+    },
+    {
+      "word": "Achievement",
+      "pronunciation": "/əˈtʃiːvmənt/",
+      "meaning": "Something accomplished successfully",
+      "banglaMeaning": "অর্জন / সাফল্য",
+      "exampleSentence": "One of my greatest achievements was leading that project."
+    },
+    {
+      "word": "Accomplishment",
+      "pronunciation": "/əˈkʌmplɪʃmənt/",
+      "meaning": "Something successfully completed",
+      "banglaMeaning": "কৃতিত্ব",
+      "exampleSentence": "I highlighted my key accomplishments in the interview."
+    },
+    {
+      "word": "Skill Set",
+      "pronunciation": "/skɪl sɛt/",
+      "meaning": "A collection of skills and abilities",
+      "banglaMeaning": "দক্ষতার সেট",
+      "exampleSentence": "My skill set matches the job requirements perfectly."
+    },
+    {
+      "word": "Expertise",
+      "pronunciation": "/ˌɛkspɜːrˈtiːz/",
+      "meaning": "Specialized knowledge or skill",
+      "banglaMeaning": "বিশেষজ্ঞতা",
+      "exampleSentence": "He has expertise in data analytics."
+    },
+    {
+      "word": "Proficiency",
+      "pronunciation": "/prəˈfɪʃənsi/",
+      "meaning": "High level of skill or competence",
+      "banglaMeaning": "দক্ষতা / পারদর্শিতা",
+      "exampleSentence": "Proficiency in English is required for this role."
+    },
+    {
+      "word": "Fluency",
+      "pronunciation": "/ˈfluːənsi/",
+      "meaning": "The ability to speak a language smoothly",
+      "banglaMeaning": "সাবলীলতা",
+      "exampleSentence": "Fluency in Bengali and English is an advantage."
+    },
+    {
+      "word": "Bilingual",
+      "pronunciation": "/baɪˈlɪŋɡwəl/",
+      "meaning": "Able to speak two languages fluently",
+      "banglaMeaning": "দ্বিভাষিক",
+      "exampleSentence": "Bilingual candidates are preferred for this position."
+    },
+    {
+      "word": "Reference",
+      "pronunciation": "/ˈrɛfərəns/",
+      "meaning": "A person who can vouch for your work",
+      "banglaMeaning": "সুপারিশকারী / রেফারেন্স",
+      "exampleSentence": "Please provide two professional references."
+    },
+    {
+      "word": "Portfolio",
+      "pronunciation": "/pɔːrtˈfoʊlioʊ/",
+      "meaning": "A collection of your best work samples",
+      "banglaMeaning": "পোর্টফোলিও",
+      "exampleSentence": "Bring your portfolio to the interview."
+    },
+    {
+      "word": "Job Description",
+      "pronunciation": "/dʒɒb dɪˈskrɪpʃən/",
+      "meaning": "A document outlining job duties and requirements",
+      "banglaMeaning": "চাকরির বিবরণ",
+      "exampleSentence": "Read the job description carefully before applying."
+    },
+    {
+      "word": "Job Posting",
+      "pronunciation": "/dʒɒb ˈpoʊstɪŋ/",
+      "meaning": "An advertisement for a job vacancy",
+      "banglaMeaning": "চাকরির বিজ্ঞপ্তি",
+      "exampleSentence": "I saw the job posting on LinkedIn."
+    },
+    {
+      "word": "Vacancy",
+      "pronunciation": "/ˈveɪkənsi/",
+      "meaning": "An available job position",
+      "banglaMeaning": "শূন্যপদ",
+      "exampleSentence": "There is a vacancy in the finance department."
+    },
+    {
+      "word": "Position",
+      "pronunciation": "/pəˈzɪʃən/",
+      "meaning": "A job or role in a company",
+      "banglaMeaning": "পদ",
+      "exampleSentence": "I applied for the position of marketing manager."
+    },
+    {
+      "word": "Role",
+      "pronunciation": "/roʊl/",
+      "meaning": "A function or responsibility within a company",
+      "banglaMeaning": "ভূমিকা",
+      "exampleSentence": "This role requires strong leadership skills."
+    },
+    {
+      "word": "Responsibility",
+      "pronunciation": "/rɪˌspɒnsɪˈbɪlɪti/",
+      "meaning": "A duty or task you are accountable for",
+      "banglaMeaning": "দায়িত্ব",
+      "exampleSentence": "Managing the team is my primary responsibility."
+    },
+    {
+      "word": "Accountability",
+      "pronunciation": "/əˌkaʊntəˈbɪlɪti/",
+      "meaning": "Being responsible for results",
+      "banglaMeaning": "জবাবদিহিতা",
+      "exampleSentence": "Accountability is valued in this company."
+    },
+    {
+      "word": "Deadline",
+      "pronunciation": "/ˈdɛdlaɪn/",
+      "meaning": "The final date for completing a task",
+      "banglaMeaning": "শেষ সময়সীমা",
+      "exampleSentence": "Can you handle tight deadlines?"
+    },
+    {
+      "word": "Target",
+      "pronunciation": "/ˈtɑːrɡɪt/",
+      "meaning": "A goal to achieve",
+      "banglaMeaning": "লক্ষ্য",
+      "exampleSentence": "We have monthly sales targets to meet."
+    },
+    {
+      "word": "Workload",
+      "pronunciation": "/ˈwɜːrkloʊd/",
+      "meaning": "The amount of work assigned",
+      "banglaMeaning": "কর্মভার",
+      "exampleSentence": "How do you manage a heavy workload?"
+    },
+    {
+      "word": "Pressure",
+      "pronunciation": "/ˈprɛʃər/",
+      "meaning": "Stress from demanding situations",
+      "banglaMeaning": "চাপ",
+      "exampleSentence": "I work well under pressure."
+    },
+    {
+      "word": "Multitasking",
+      "pronunciation": "/ˈmʌltiˌtæskɪŋ/",
+      "meaning": "Doing multiple tasks at the same time",
+      "banglaMeaning": "মাল্টিটাস্কিং",
+      "exampleSentence": "Multitasking is essential in fast-paced environments."
+    },
+    {
+      "word": "Team Player",
+      "pronunciation": "/tiːm ˈpleɪər/",
+      "meaning": "Someone who works well with others",
+      "banglaMeaning": "দলের খেলোয়াড়",
+      "exampleSentence": "I consider myself a good team player."
+    },
+    {
+      "word": "Collaboration",
+      "pronunciation": "/kəˌlæbəˈreɪʃən/",
+      "meaning": "Working together with others",
+      "banglaMeaning": "সহযোগিতা",
+      "exampleSentence": "Collaboration between departments is important."
+    },
+    {
+      "word": "Initiative",
+      "pronunciation": "/ɪˈnɪʃətɪv/",
+      "meaning": "Taking action without being told",
+      "banglaMeaning": "উদ্যোগ",
+      "exampleSentence": "I took the initiative to improve the process."
+    },
+    {
+      "word": "Proactive",
+      "pronunciation": "/proʊˈæktɪv/",
+      "meaning": "Taking action in advance",
+      "banglaMeaning": "সক্রিয় / অগ্রসর",
+      "exampleSentence": "Employers value proactive employees."
+    },
+    {
+      "word": "Adaptability",
+      "pronunciation": "/əˌdæptəˈbɪlɪti/",
+      "meaning": "Ability to adjust to new conditions",
+      "banglaMeaning": "অভিযোজন ক্ষমতা",
+      "exampleSentence": "Adaptability is key in a changing work environment."
+    },
+    {
+      "word": "Flexibility",
+      "pronunciation": "/ˌflɛksɪˈbɪlɪti/",
+      "meaning": "Willingness to change or adjust",
+      "banglaMeaning": "নমনীয়তা",
+      "exampleSentence": "I am flexible with working hours."
+    },
+    {
+      "word": "Leadership",
+      "pronunciation": "/ˈliːdərʃɪp/",
+      "meaning": "The ability to guide and manage a team",
+      "banglaMeaning": "নেতৃত্ব",
+      "exampleSentence": "I have strong leadership skills from managing projects."
+    },
+    {
+      "word": "Management",
+      "pronunciation": "/ˈmænɪdʒmənt/",
+      "meaning": "The process of overseeing people or operations",
+      "banglaMeaning": "ব্যবস্থাপনা",
+      "exampleSentence": "I have experience in project management."
+    },
+    {
+      "word": "Supervise",
+      "pronunciation": "/ˈsuːpərvaɪz/",
+      "meaning": "To oversee work of others",
+      "banglaMeaning": "তত্ত্বাবধান করা",
+      "exampleSentence": "I supervised a team of five employees."
+    },
+    {
+      "word": "Coordinate",
+      "pronunciation": "/koʊˈɔːrdɪneɪt/",
+      "meaning": "To organize activities or people",
+      "banglaMeaning": "সমন্বয় করা",
+      "exampleSentence": "I coordinated the annual company event."
+    },
+    {
+      "word": "Delegate",
+      "pronunciation": "/ˈdɛlɪɡeɪt/",
+      "meaning": "To assign tasks to others",
+      "banglaMeaning": "দায়িত্ব অর্পণ করা",
+      "exampleSentence": "A good manager knows how to delegate."
+    },
+    {
+      "word": "Mentor",
+      "pronunciation": "/ˈmɛntɔːr/",
+      "meaning": "An experienced guide",
+      "banglaMeaning": "পরামর্শদাতা",
+      "exampleSentence": "My mentor helped me grow professionally."
+    },
+    {
+      "word": "Peer",
+      "pronunciation": "/pɪər/",
+      "meaning": "A colleague at the same level",
+      "banglaMeaning": "সহকর্মী / সমকক্ষ",
+      "exampleSentence": "My peers respect my work ethic."
+    },
+    {
+      "word": "Subordinate",
+      "pronunciation": "/səˈbɔːrdɪnət/",
+      "meaning": "An employee under your supervision",
+      "banglaMeaning": "অধস্তন",
+      "exampleSentence": "I provide feedback to my subordinates regularly."
+    },
+    {
+      "word": "Superior",
+      "pronunciation": "/suːˈpɪriər/",
+      "meaning": "A person higher in rank",
+      "banglaMeaning": "উর্ধ্বতন",
+      "exampleSentence": "I reported directly to my superior."
+    },
+    {
+      "word": "Hierarchy",
+      "pronunciation": "/ˈhaɪərɑːrki/",
+      "meaning": "A ranking system in an organization",
+      "banglaMeaning": "স্তরক্রম",
+      "exampleSentence": "The company has a flat hierarchy."
+    },
+    {
+      "word": "Organizational Structure",
+      "pronunciation": "/ˌɔːrɡənɪˈzeɪʃənəl ˈstrʌktʃər/",
+      "meaning": "How a company is arranged",
+      "banglaMeaning": "সাংগঠনিক কাঠামো",
+      "exampleSentence": "I understand the organizational structure well."
+    },
+    {
+      "word": "Salary",
+      "pronunciation": "/ˈsæləri/",
+      "meaning": "Fixed regular payment for work",
+      "banglaMeaning": "বেতন",
+      "exampleSentence": "What salary range are you expecting?"
+    },
+    {
+      "word": "Compensation",
+      "pronunciation": "/ˌkɒmpɛnˈseɪʃən/",
+      "meaning": "Total pay including benefits",
+      "banglaMeaning": "ক্ষতিপূরণ / বেতন-ভাতা",
+      "exampleSentence": "The compensation package includes health insurance."
+    },
+    {
+      "word": "Negotiation",
+      "pronunciation": "/nɪˌɡoʊʃiˈeɪʃən/",
+      "meaning": "Discussion to reach an agreement about salary",
+      "banglaMeaning": "আলোচনা",
+      "exampleSentence": "Salary negotiation is a normal part of hiring."
+    },
+    {
+      "word": "Package",
+      "pronunciation": "/ˈpækɪdʒ/",
+      "meaning": "Total employment offer including salary and benefits",
+      "banglaMeaning": "প্যাকেজ",
+      "exampleSentence": "The offer package includes a performance bonus."
+    },
+    {
+      "word": "Benefits",
+      "pronunciation": "/ˈbɛnɪfɪts/",
+      "meaning": "Non-wage compensation like insurance, leave",
+      "banglaMeaning": "সুবিধা",
+      "exampleSentence": "The job offers excellent benefits."
+    },
+    {
+      "word": "Increment",
+      "pronunciation": "/ˈɪnkrəmənt/",
+      "meaning": "An increase in salary",
+      "banglaMeaning": "বেতন বৃদ্ধি",
+      "exampleSentence": "Annual increments depend on performance."
+    },
+    {
+      "word": "Notice Period",
+      "pronunciation": "/ˈnoʊtɪs ˈpɪriəd/",
+      "meaning": "Time between resignation and leaving",
+      "banglaMeaning": "নোটিশ পিরিয়ড",
+      "exampleSentence": "My notice period is 30 days."
+    },
+    {
+      "word": "Probation Period",
+      "pronunciation": "/prəˈbeɪʃən ˈpɪriəd/",
+      "meaning": "Trial period for a new employee",
+      "banglaMeaning": "পরীক্ষামূলক সময়",
+      "exampleSentence": "The probation period lasts three months."
+    },
+    {
+      "word": "Confirmation",
+      "pronunciation": "/ˌkɒnfərˈmeɪʃən/",
+      "meaning": "Permanent employment after probation",
+      "banglaMeaning": "নিশ্চিতকরণ",
+      "exampleSentence": "I received confirmation of my employment."
+    },
+    {
+      "word": "Resignation",
+      "pronunciation": "/ˌrɛzɪɡˈneɪʃən/",
+      "meaning": "Formally leaving a job",
+      "banglaMeaning": "ইস্তফা",
+      "exampleSentence": "I submitted my resignation last week."
+    },
+    {
+      "word": "Offer Letter",
+      "pronunciation": "/ˈɒfər ˈlɛtər/",
+      "meaning": "A formal job offer document",
+      "banglaMeaning": "অফার লেটার",
+      "exampleSentence": "I received the offer letter today."
+    },
+    {
+      "word": "Appointment Letter",
+      "pronunciation": "/əˈpɔɪntmənt ˈlɛtər/",
+      "meaning": "A letter confirming a job appointment",
+      "banglaMeaning": "নিয়োগপত্র",
+      "exampleSentence": "The appointment letter states my joining date."
+    },
+    {
+      "word": "Joining Date",
+      "pronunciation": "/ˈdʒɔɪnɪŋ deɪt/",
+      "meaning": "The first day of work",
+      "banglaMeaning": "যোগদানের তারিখ",
+      "exampleSentence": "My joining date is next Monday."
+    },
+    {
+      "word": "Relocation",
+      "pronunciation": "/ˌriːloʊˈkeɪʃən/",
+      "meaning": "Moving to a new city for a job",
+      "banglaMeaning": "স্থানান্তর",
+      "exampleSentence": "The company offers relocation assistance."
+    },
+    {
+      "word": "Commute",
+      "pronunciation": "/kəˈmjuːt/",
+      "meaning": "Travel between home and work",
+      "banglaMeaning": "যাতায়াত",
+      "exampleSentence": "My commute to the office is 30 minutes."
+    },
+    {
+      "word": "Work From Home",
+      "pronunciation": "/wɜːrk frʌm hoʊm/",
+      "meaning": "Working remotely from home",
+      "banglaMeaning": "হোম অফিস / বাড়ি থেকে কাজ",
+      "exampleSentence": "The company offers work from home options."
+    },
+    {
+      "word": "Remote Work",
+      "pronunciation": "/rɪˈmoʊt wɜːrk/",
+      "meaning": "Working outside the office",
+      "banglaMeaning": "দূরবর্তী কাজ",
+      "exampleSentence": "Remote work has become more common."
+    },
+    {
+      "word": "Hybrid Model",
+      "pronunciation": "/ˈhaɪbrɪd ˈmɒdəl/",
+      "meaning": "Mix of office and remote work",
+      "banglaMeaning": "হাইব্রিড মডেল",
+      "exampleSentence": "We follow a hybrid work model."
+    },
+    {
+      "word": "Overtime",
+      "pronunciation": "/ˈoʊvərtaɪm/",
+      "meaning": "Extra hours worked beyond normal schedule",
+      "banglaMeaning": "ওভারটাইম",
+      "exampleSentence": "Overtime is compensated with extra pay."
+    },
+    {
+      "word": "Shift",
+      "pronunciation": "/ʃɪft/",
+      "meaning": "A scheduled period of work",
+      "banglaMeaning": "শিফট",
+      "exampleSentence": "I work the morning shift."
+    },
+    {
+      "word": "Rotating Shift",
+      "pronunciation": "/ˈroʊteɪtɪŋ ʃɪft/",
+      "meaning": "Shifts that change on a schedule",
+      "banglaMeaning": "ঘূর্ণায়মান শিফট",
+      "exampleSentence": "The job requires working rotating shifts."
+    },
+    {
+      "word": "Day Shift",
+      "pronunciation": "/deɪ ʃɪft/",
+      "meaning": "Work during daytime hours",
+      "banglaMeaning": "ডে শিফট",
+      "exampleSentence": "I prefer the day shift."
+    },
+    {
+      "word": "Night Shift",
+      "pronunciation": "/naɪt ʃɪft/",
+      "meaning": "Work during nighttime hours",
+      "banglaMeaning": "নাইট শিফট",
+      "exampleSentence": "Night shift workers get extra allowance."
+    },
+    {
+      "word": "Attendance",
+      "pronunciation": "/əˈtɛndəns/",
+      "meaning": "Being present at work",
+      "banglaMeaning": "উপস্থিতি",
+      "exampleSentence": "Regular attendance is expected."
+    },
+    {
+      "word": "Absenteeism",
+      "pronunciation": "/ˌæbsənˈtiːɪzəm/",
+      "meaning": "Frequent absence from work",
+      "banglaMeaning": "অনুপস্থিতি",
+      "exampleSentence": "High absenteeism affects productivity."
+    },
+    {
+      "word": "Leave",
+      "pronunciation": "/liːv/",
+      "meaning": "Time off from work",
+      "banglaMeaning": "ছুটি",
+      "exampleSentence": "I need to apply for annual leave."
+    },
+    {
+      "word": "Sick Leave",
+      "pronunciation": "/sɪk liːv/",
+      "meaning": "Time off due to illness",
+      "banglaMeaning": "অসুস্থতাজনিত ছুটি",
+      "exampleSentence": "He is on sick leave today."
+    },
+    {
+      "word": "Casual Leave",
+      "pronunciation": "/ˈkæʒuəl liːv/",
+      "meaning": "Short leave for personal reasons",
+      "banglaMeaning": "কারণান্তর ছুটি",
+      "exampleSentence": "I took casual leave for a family event."
+    },
+    {
+      "word": "Annual Leave",
+      "pronunciation": "/ˈænjuəl liːv/",
+      "meaning": "Yearly paid vacation days",
+      "banglaMeaning": "বার্ষিক ছুটি",
+      "exampleSentence": "I have 20 days of annual leave per year."
+    },
+    {
+      "word": "Career",
+      "pronunciation": "/kəˈrɪər/",
+      "meaning": "Your professional life and progress",
+      "banglaMeaning": "পেশা / ক্যারিয়ার",
+      "exampleSentence": "I want to build a career in finance."
+    },
+    {
+      "word": "Career Growth",
+      "pronunciation": "/kəˈrɪər ɡroʊθ/",
+      "meaning": "Professional development and advancement",
+      "banglaMeaning": "ক্যারিয়ার উন্নতি",
+      "exampleSentence": "This role offers good career growth opportunities."
+    },
+    {
+      "word": "Opportunity",
+      "pronunciation": "/ˌɒpərˈtjuːnɪti/",
+      "meaning": "A chance for advancement",
+      "banglaMeaning": "সুযোগ",
+      "exampleSentence": "This job is a great opportunity for me."
+    },
+    {
+      "word": "Promotion",
+      "pronunciation": "/prəˈmoʊʃən/",
+      "meaning": "Moving to a higher position",
+      "banglaMeaning": "পদোন্নতি",
+      "exampleSentence": "I am hoping for a promotion next year."
+    },
+    {
+      "word": "Transfer",
+      "pronunciation": "/ˈtrænsfɜːr/",
+      "meaning": "Moving to another department or location",
+      "banglaMeaning": "বদলি",
+      "exampleSentence": "I applied for a transfer to the sales team."
+    },
+    {
+      "word": "Lateral Move",
+      "pronunciation": "/ˈlætərəl muːv/",
+      "meaning": "Moving to a different role at the same level",
+      "banglaMeaning": "পার্শ্বীয় স্থানান্তর",
+      "exampleSentence": "A lateral move can broaden your experience."
+    },
+    {
+      "word": "Vertical Growth",
+      "pronunciation": "/ˈvɜːrtɪkəl ɡroʊθ/",
+      "meaning": "Upward career advancement",
+      "banglaMeaning": "উল্লম্ব উন্নতি",
+      "exampleSentence": "Vertical growth means moving up the ladder."
+    },
+    {
+      "word": "Job Satisfaction",
+      "pronunciation": "/dʒɒb ˌsætɪsˈfækʃən/",
+      "meaning": "Contentment with your work",
+      "banglaMeaning": "চাকরির সন্তুষ্টি",
+      "exampleSentence": "Job satisfaction is more important than salary."
+    },
+    {
+      "word": "Work-life Balance",
+      "pronunciation": "/wɜːrk laɪf ˈbæləns/",
+      "meaning": "Balance between work and personal life",
+      "banglaMeaning": "কাজ-জীবনের ভারসাম্য",
+      "exampleSentence": "The company promotes work-life balance."
+    },
+    {
+      "word": "Burnout",
+      "pronunciation": "/ˈbɜːrnaʊt/",
+      "meaning": "Physical/mental exhaustion from overwork",
+      "banglaMeaning": "বার্নআউট / ক্লান্তি",
+      "exampleSentence": "Burnout is common in high-pressure jobs."
+    },
+    {
+      "word": "Stress Management",
+      "pronunciation": "/strɛs ˈmænɪdʒmənt/",
+      "meaning": "Techniques to handle stress",
+      "banglaMeaning": "চাপ ব্যবস্থাপনা",
+      "exampleSentence": "How do you handle stress management?"
+    },
+    {
+      "word": "Conflict Resolution",
+      "pronunciation": "/ˈkɒnflɪkt ˌrɛzəˈluːʃən/",
+      "meaning": "Solving disagreements in the workplace",
+      "banglaMeaning": "দ্বন্দ্ব সমাধান",
+      "exampleSentence": "Conflict resolution is an important skill for managers."
+    },
+    {
+      "word": "Problem-solving",
+      "pronunciation": "/ˈprɒbləm ˈsɒlvɪŋ/",
+      "meaning": "Finding solutions to challenges",
+      "banglaMeaning": "সমস্যা সমাধান",
+      "exampleSentence": "Problem-solving is one of my key strengths."
+    },
+    {
+      "word": "Critical Thinking",
+      "pronunciation": "/ˈkrɪtɪkəl ˈθɪŋkɪŋ/",
+      "meaning": "Analyzing facts to make decisions",
+      "banglaMeaning": "সমালোচনামূলক চিন্তা",
+      "exampleSentence": "Critical thinking is essential for this role."
+    },
+    {
+      "word": "Decision Making",
+      "pronunciation": "/dɪˈsɪʒən ˈmeɪkɪŋ/",
+      "meaning": "Choosing the best course of action",
+      "banglaMeaning": "সিদ্ধান্ত গ্রহণ",
+      "exampleSentence": "I am confident in my decision-making abilities."
+    },
+    {
+      "word": "Analytical Skills",
+      "pronunciation": "/ˌænəˈlɪtɪkəl skɪlz/",
+      "meaning": "Ability to analyze data and situations",
+      "banglaMeaning": "বিশ্লেষণী দক্ষতা",
+      "exampleSentence": "Strong analytical skills are required for this job."
+    },
+    {
+      "word": "Interpersonal Skills",
+      "pronunciation": "/ˌɪntərˈpɜːrsənəl skɪlz/",
+      "meaning": "Skills for interacting with people",
+      "banglaMeaning": "আন্তঃব্যক্তিক দক্ষতা",
+      "exampleSentence": "Good interpersonal skills help in teamwork."
+    },
+    {
+      "word": "Communication Skills",
+      "pronunciation": "/kəˌmjuːnɪˈkeɪʃən skɪlz/",
+      "meaning": "Ability to express ideas clearly",
+      "banglaMeaning": "যোগাযোগ দক্ষতা",
+      "exampleSentence": "Excellent communication skills are a must."
+    },
+    {
+      "word": "Presentation Skills",
+      "pronunciation": "/ˌprɛzənˈteɪʃən skɪlz/",
+      "meaning": "Ability to present to an audience",
+      "banglaMeaning": "উপস্থাপনা দক্ষতা",
+      "exampleSentence": "I have strong presentation skills."
+    },
+    {
+      "word": "Public Speaking",
+      "pronunciation": "/ˈpʌblɪk ˈspiːkɪŋ/",
+      "meaning": "Speaking in front of an audience",
+      "banglaMeaning": "জনসমক্ষে বক্তব্য",
+      "exampleSentence": "I am improving my public speaking skills."
+    },
+    {
+      "word": "Negotiation Skill",
+      "pronunciation": "/nɪˌɡoʊʃiˈeɪʃən skɪl/",
+      "meaning": "Ability to negotiate effectively",
+      "banglaMeaning": "আলোচনার দক্ষতা",
+      "exampleSentence": "Negotiation skills are valuable in business."
+    },
+    {
+      "word": "Time Management",
+      "pronunciation": "/taɪm ˈmænɪdʒmənt/",
+      "meaning": "Organizing time effectively",
+      "banglaMeaning": "সময় ব্যবস্থাপনা",
+      "exampleSentence": "Good time management helps meet deadlines."
+    },
+    {
+      "word": "Prioritize",
+      "pronunciation": "/praɪˈɒrɪtaɪz/",
+      "meaning": "Arrange tasks by importance",
+      "banglaMeaning": "অগ্রাধিকার দেওয়া",
+      "exampleSentence": "I know how to prioritize my tasks."
+    },
+    {
+      "word": "Self-motivation",
+      "pronunciation": "/ˌsɛlf ˌmoʊtɪˈveɪʃən/",
+      "meaning": "Drive to work without external push",
+      "banglaMeaning": "আত্মপ্রেরণা",
+      "exampleSentence": "Self-motivation is key for remote work."
+    },
+    {
+      "word": "Discipline",
+      "pronunciation": "/ˈdɪsɪplɪn/",
+      "meaning": "Controlled and organized behavior",
+      "banglaMeaning": "শৃঙ্খলা",
+      "exampleSentence": "Discipline is important in professional life."
+    },
+    {
+      "word": "Professionalism",
+      "pronunciation": "/prəˈfɛʃənəlɪzəm/",
+      "meaning": "Competent and proper workplace behavior",
+      "banglaMeaning": "পেশাদারিত্ব",
+      "exampleSentence": "Professionalism is expected in all interactions."
+    },
+    {
+      "word": "Ethics",
+      "pronunciation": "/ˈɛθɪks/",
+      "meaning": "Moral principles in the workplace",
+      "banglaMeaning": "নীতিশাস্ত্র",
+      "exampleSentence": "The company has a strong code of ethics."
+    },
+    {
+      "word": "Integrity",
+      "pronunciation": "/ɪnˈtɛɡrɪti/",
+      "meaning": "Honesty and strong moral principles",
+      "banglaMeaning": "সততা / নৈতিকতা",
+      "exampleSentence": "Integrity is valued in this organization."
+    },
+    {
+      "word": "Work Ethic",
+      "pronunciation": "/wɜːrk ˈɛθɪk/",
+      "meaning": "Attitude towards work and responsibility",
+      "banglaMeaning": "কর্মনিষ্ঠা",
+      "exampleSentence": "I have a strong work ethic."
+    },
+    {
+      "word": "Dedication",
+      "pronunciation": "/ˌdɛdɪˈkeɪʃən/",
+      "meaning": "Commitment to a task or purpose",
+      "banglaMeaning": "উৎসর্গ / নিষ্ঠা",
+      "exampleSentence": "My dedication to work is evident from my results."
+    },
+    {
+      "word": "Commitment",
+      "pronunciation": "/kəˈmɪtmənt/",
+      "meaning": "Being dedicated to a job or goal",
+      "banglaMeaning": "প্রতিশ্রুতি / অঙ্গীকার",
+      "exampleSentence": "I am looking for long-term commitment."
+    },
+    {
+      "word": "Passion",
+      "pronunciation": "/ˈpæʃən/",
+      "meaning": "Strong enthusiasm for something",
+      "banglaMeaning": "আবেগ / ভালোবাসা",
+      "exampleSentence": "I have a passion for software development."
+    },
+    {
+      "word": "Motivation",
+      "pronunciation": "/ˌmoʊtɪˈveɪʃən/",
+      "meaning": "Reason or drive to do something",
+      "banglaMeaning": "প্রেরণা",
+      "exampleSentence": "What is your motivation for applying?"
+    },
+    {
+      "word": "Ambition",
+      "pronunciation": "/æmˈbɪʃən/",
+      "meaning": "Strong desire to achieve success",
+      "banglaMeaning": "উচ্চাকাঙ্ক্ষা",
+      "exampleSentence": "My ambition is to become a team leader."
+    },
+    {
+      "word": "Goal",
+      "pronunciation": "/ɡoʊl/",
+      "meaning": "Something you aim to achieve",
+      "banglaMeaning": "লক্ষ্য",
+      "exampleSentence": "My long-term goal is to manage a department."
+    },
+    {
+      "word": "Vision",
+      "pronunciation": "/ˈvɪʒən/",
+      "meaning": "Future aspiration or goal",
+      "banglaMeaning": "দৃষ্টিভঙ্গি",
+      "exampleSentence": "I share the company's vision."
+    },
+    {
+      "word": "Mission",
+      "pronunciation": "/ˈmɪʃən/",
+      "meaning": "A company's core purpose",
+      "banglaMeaning": "মিশন",
+      "exampleSentence": "Our mission is to deliver quality products."
+    },
+    {
+      "word": "Strategy",
+      "pronunciation": "/ˈstrætədʒi/",
+      "meaning": "A plan to achieve a goal",
+      "banglaMeaning": "কৌশল",
+      "exampleSentence": "What strategy would you use to increase sales?"
+    },
+    {
+      "word": "Approach",
+      "pronunciation": "/əˈproʊtʃ/",
+      "meaning": "A method of doing something",
+      "banglaMeaning": "পদ্ধতি",
+      "exampleSentence": "Describe your approach to project management."
+    },
+    {
+      "word": "Methodology",
+      "pronunciation": "/ˌmɛθəˈdɒlədʒi/",
+      "meaning": "A system of methods used in work",
+      "banglaMeaning": "পদ্ধতিবিজ্ঞান",
+      "exampleSentence": "We follow Agile methodology."
+    },
+    {
+      "word": "Innovation",
+      "pronunciation": "/ˌɪnəˈveɪʃən/",
+      "meaning": "Introducing new ideas or methods",
+      "banglaMeaning": "উদ্ভাবন",
+      "exampleSentence": "Innovation drives business growth."
+    },
+    {
+      "word": "Creativity",
+      "pronunciation": "/ˌkriːeɪˈtɪvɪti/",
+      "meaning": "Using imagination to create new ideas",
+      "banglaMeaning": "সৃজনশীলতা",
+      "exampleSentence": "Creativity is important in marketing roles."
+    },
+    {
+      "word": "Resourceful",
+      "pronunciation": "/rɪˈzɔːrsfəl/",
+      "meaning": "Able to solve problems creatively",
+      "banglaMeaning": "সম্পদশালী / উপায়বুদ্ধি সম্পন্ন",
+      "exampleSentence": "A resourceful person can handle any challenge."
+    },
+    {
+      "word": "Detail-oriented",
+      "pronunciation": "/ˈdiːteɪl ˈɔːriɛntɪd/",
+      "meaning": "Paying close attention to details",
+      "banglaMeaning": "বিস্তারিত-মনোযোগী",
+      "exampleSentence": "I am a detail-oriented person."
+    },
+    {
+      "word": "Organized",
+      "pronunciation": "/ˈɔːrɡənaɪzd/",
+      "meaning": "Arranged in a systematic way",
+      "banglaMeaning": "সংগঠিত",
+      "exampleSentence": "I keep my work organized."
+    },
+    {
+      "word": "Efficient",
+      "pronunciation": "/ɪˈfɪʃənt/",
+      "meaning": "Achieving maximum productivity with minimum waste",
+      "banglaMeaning": "দক্ষ / কার্যকর",
+      "exampleSentence": "I find efficient ways to complete tasks."
+    },
+    {
+      "word": "Productive",
+      "pronunciation": "/prəˈdʌktɪv/",
+      "meaning": "Producing good results",
+      "banglaMeaning": "উৎপাদনশীল",
+      "exampleSentence": "I am most productive in the morning."
+    },
+    {
+      "word": "Performance",
+      "pronunciation": "/pərˈfɔːrməns/",
+      "meaning": "How well someone does their work",
+      "banglaMeaning": "কর্মক্ষমতা",
+      "exampleSentence": "My performance exceeded expectations."
+    },
+    {
+      "word": "Evaluation",
+      "pronunciation": "/ɪˌvæljuˈeɪʃən/",
+      "meaning": "Assessment of work performance",
+      "banglaMeaning": "মূল্যায়ন",
+      "exampleSentence": "The annual evaluation determines salary increases."
+    },
+    {
+      "word": "Feedback",
+      "pronunciation": "/ˈfiːdbæk/",
+      "meaning": "Comments on work performance",
+      "banglaMeaning": "প্রতিক্রিয়া / ফিডব্যাক",
+      "exampleSentence": "I appreciate constructive feedback."
+    },
+    {
+      "word": "Appraisal",
+      "pronunciation": "/əˈpreɪzəl/",
+      "meaning": "Formal assessment of employee performance",
+      "banglaMeaning": "মূল্যায়ন",
+      "exampleSentence": "The appraisal meeting is next week."
+    },
+    {
+      "word": "KPI",
+      "pronunciation": "/ˌkeɪ piː ˈaɪ/",
+      "meaning": "Key Performance Indicator",
+      "banglaMeaning": "মূল কর্মক্ষমতা সূচক",
+      "exampleSentence": "Meeting KPIs is essential for performance review."
+    },
+    {
+      "word": "Benchmark",
+      "pronunciation": "/ˈbɛntʃmɑːrk/",
+      "meaning": "A standard for comparison",
+      "banglaMeaning": "মানদণ্ড",
+      "exampleSentence": "Our team sets the benchmark for quality."
+    },
+    {
+      "word": "Achievement",
+      "pronunciation": "/əˈtʃiːvmənt/",
+      "meaning": "Something successfully done",
+      "banglaMeaning": "অর্জন",
+      "exampleSentence": "My biggest achievement was launching the product on time."
+    },
+    {
+      "word": "Milestone",
+      "pronunciation": "/ˈmaɪlstoʊn/",
+      "meaning": "An important stage in development",
+      "banglaMeaning": "মাইলফলক",
+      "exampleSentence": "Reaching 10,000 customers was a major milestone."
+    },
+    {
+      "word": "Outcome",
+      "pronunciation": "/ˈaʊtkʌm/",
+      "meaning": "The final result of an effort",
+      "banglaMeaning": "ফলাফল",
+      "exampleSentence": "The outcome of the project was successful."
+    },
+    {
+      "word": "Contribution",
+      "pronunciation": "/ˌkɒntrɪˈbjuːʃən/",
+      "meaning": "Something you contributed to a project",
+      "banglaMeaning": "অবদান",
+      "exampleSentence": "My contribution to the project was recognized."
+    },
+    {
+      "word": "Impact",
+      "pronunciation": "/ˈɪmpækt/",
+      "meaning": "The effect of your work",
+      "banglaMeaning": "প্রভাব",
+      "exampleSentence": "My work had a positive impact on the team."
+    },
+    {
+      "word": "Result-driven",
+      "pronunciation": "/rɪˈzʌlt ˈdrɪvən/",
+      "meaning": "Focused on achieving results",
+      "banglaMeaning": "ফলাফল-কেন্দ্রিক",
+      "exampleSentence": "I am a result-driven professional."
+    },
+    {
+      "word": "Data-driven",
+      "pronunciation": "/ˈdeɪtə ˈdrɪvən/",
+      "meaning": "Making decisions based on data",
+      "banglaMeaning": "ডেটা-চালিত",
+      "exampleSentence": "We take a data-driven approach."
+    },
+    {
+      "word": "Hands-on",
+      "pronunciation": "/hændz ɒn/",
+      "meaning": "Involved in practical work",
+      "banglaMeaning": "হাতেকলমে",
+      "exampleSentence": "I prefer a hands-on approach to management."
+    },
+    {
+      "word": "End-to-end",
+      "pronunciation": "/ɛnd tuː ɛnd/",
+      "meaning": "From start to finish",
+      "banglaMeaning": "শেষ পর্যন্ত",
+      "exampleSentence": "I managed the project end-to-end."
+    },
+    {
+      "word": "Cross-functional",
+      "pronunciation": "/krɒs ˈfʌŋkʃənəl/",
+      "meaning": "Involving multiple departments",
+      "banglaMeaning": "ক্রস-ফাংশনাল",
+      "exampleSentence": "I worked with a cross-functional team."
+    },
+    {
+      "word": "Stakeholder",
+      "pronunciation": "/ˈsteɪkˌhoʊldər/",
+      "meaning": "Someone with interest in a project",
+      "banglaMeaning": "স্বার্থধারী",
+      "exampleSentence": "I communicated with stakeholders regularly."
+    },
+    {
+      "word": "Client-facing",
+      "pronunciation": "/ˈklaɪənt ˈfeɪsɪŋ/",
+      "meaning": "Directly dealing with clients",
+      "banglaMeaning": "ক্লায়েন্ট-মুখী",
+      "exampleSentence": "This role is client-facing."
+    },
+    {
+      "word": "Customer-centric",
+      "pronunciation": "/ˈkʌstəmər ˈsɛntrɪk/",
+      "meaning": "Focused on customer needs",
+      "banglaMeaning": "গ্রাহক-কেন্দ্রিক",
+      "exampleSentence": "We follow a customer-centric approach."
+    },
+    {
+      "word": "Value Addition",
+      "pronunciation": "/ˈvæljuː ædˈdɪʃən/",
+      "meaning": "Improving value through work",
+      "banglaMeaning": "মূল্য সংযোজন",
+      "exampleSentence": "How can you bring value addition to our company?"
+    },
+    {
+      "word": "Core Competency",
+      "pronunciation": "/kɔːr kəmˈpiːtənsi/",
+      "meaning": "A key strength or skill",
+      "banglaMeaning": "মূল দক্ষতা",
+      "exampleSentence": "Problem-solving is my core competency."
+    },
+    {
+      "word": "Transferable Skill",
+      "pronunciation": "/trænsˈfɜːrəbəl skɪl/",
+      "meaning": "A skill useful in different jobs",
+      "banglaMeaning": "স্থানান্তরযোগ্য দক্ষতা",
+      "exampleSentence": "Communication is a transferable skill."
+    },
+    {
+      "word": "Soft Skill",
+      "pronunciation": "/sɒft skɪl/",
+      "meaning": "Personal attributes like communication",
+      "banglaMeaning": "সফট স্কিল",
+      "exampleSentence": "Soft skills are as important as technical skills."
+    },
+    {
+      "word": "Hard Skill",
+      "pronunciation": "/hɑːrd skɪl/",
+      "meaning": "Technical skills learned through training",
+      "banglaMeaning": "হার্ড স্কিল",
+      "exampleSentence": "Coding is a hard skill."
+    },
+    {
+      "word": "Technical Skill",
+      "pronunciation": "/ˈtɛknɪkəl skɪl/",
+      "meaning": "Job-specific technical ability",
+      "banglaMeaning": "প্রযুক্তিগত দক্ষতা",
+      "exampleSentence": "What technical skills do you have?"
+    },
+    {
+      "word": "Domain Knowledge",
+      "pronunciation": "/doʊˈmeɪn ˈnɒlɪdʒ/",
+      "meaning": "Expertise in a specific field",
+      "banglaMeaning": "ডোমেইন জ্ঞান",
+      "exampleSentence": "Domain knowledge in finance is required."
+    },
+    {
+      "word": "Industry",
+      "pronunciation": "/ˈɪndəstri/",
+      "meaning": "A specific sector of business",
+      "banglaMeaning": "শিল্প",
+      "exampleSentence": "I have experience in the IT industry."
+    },
+    {
+      "word": "Sector",
+      "pronunciation": "/ˈsɛktər/",
+      "meaning": "A division of the economy",
+      "banglaMeaning": "খাত",
+      "exampleSentence": "The banking sector is growing."
+    },
+    {
+      "word": "Market",
+      "pronunciation": "/ˈmɑːrkɪt/",
+      "meaning": "The industry or area of business",
+      "banglaMeaning": "বাজার",
+      "exampleSentence": "I understand the local market well."
+    },
+    {
+      "word": "Trend",
+      "pronunciation": "/trɛnd/",
+      "meaning": "A general direction of change",
+      "banglaMeaning": "ধারা / প্রবণতা",
+      "exampleSentence": "I keep up with industry trends."
+    },
+    {
+      "word": "Insight",
+      "pronunciation": "/ˈɪnsaɪt/",
+      "meaning": "Deep understanding of a situation",
+      "banglaMeaning": "অন্তর্দৃষ্টি",
+      "exampleSentence": "I provided valuable insights to the team."
+    },
+    {
+      "word": "Perspective",
+      "pronunciation": "/pərˈspɛktɪv/",
+      "meaning": "A particular way of viewing things",
+      "banglaMeaning": "দৃষ্টিকোণ",
+      "exampleSentence": "I bring a fresh perspective to problems."
+    },
+    {
+      "word": "Point of View",
+      "pronunciation": "/pɔɪnt əv vjuː/",
+      "meaning": "One's opinion or standpoint",
+      "banglaMeaning": "দৃষ্টিভঙ্গি",
+      "exampleSentence": "I respect different points of view."
+    },
+    {
+      "word": "Opinion",
+      "pronunciation": "/əˈpɪnjən/",
+      "meaning": "Personal belief or view",
+      "banglaMeaning": "মতামত",
+      "exampleSentence": "What is your opinion on this matter?"
+    },
+    {
+      "word": "Suggestion",
+      "pronunciation": "/səˈdʒɛstʃən/",
+      "meaning": "An idea or recommendation",
+      "banglaMeaning": "পরামর্শ",
+      "exampleSentence": "I welcome your suggestions."
+    },
+    {
+      "word": "Recommendation",
+      "pronunciation": "/ˌrɛkəmɛnˈdeɪʃən/",
+      "meaning": "A formal suggestion",
+      "banglaMeaning": "সুপারিশ",
+      "exampleSentence": "I gave my recommendation to the team."
+    },
+    {
+      "word": "Solution",
+      "pronunciation": "/səˈluːʃən/",
+      "meaning": "A way to solve a problem",
+      "banglaMeaning": "সমাধান",
+      "exampleSentence": "I proposed a solution to the issue."
+    },
+    {
+      "word": "Alternative",
+      "pronunciation": "/ɔːlˈtɜːrnətɪv/",
+      "meaning": "Another option or choice",
+      "banglaMeaning": "বিকল্প",
+      "exampleSentence": "We need to consider alternative approaches."
+    },
+    {
+      "word": "Option",
+      "pronunciation": "/ˈɒpʃən/",
+      "meaning": "A choice or possibility",
+      "banglaMeaning": "বিকল্প",
+      "exampleSentence": "We have several options to explore."
+    },
+    {
+      "word": "Plan B",
+      "pronunciation": "/plæn biː/",
+      "meaning": "A backup plan",
+      "banglaMeaning": "বিকল্প পরিকল্পনা",
+      "exampleSentence": "Always have a Plan B."
+    },
+    {
+      "word": "Scenario",
+      "pronunciation": "/sɪˈnærioʊ/",
+      "meaning": "A possible situation",
+      "banglaMeaning": "পরিস্থিতি",
+      "exampleSentence": "Consider the worst-case scenario."
+    },
+    {
+      "word": "Situation",
+      "pronunciation": "/ˌsɪtʃuˈeɪʃən/",
+      "meaning": "A set of circumstances",
+      "banglaMeaning": "পরিস্থিতি",
+      "exampleSentence": "How would you handle this situation?"
+    },
+    {
+      "word": "Context",
+      "pronunciation": "/ˈkɒntɛkst/",
+      "meaning": "The circumstances around an event",
+      "banglaMeaning": "প্রসঙ্গ",
+      "exampleSentence": "Let me give you some context."
+    },
+    {
+      "word": "Case Study",
+      "pronunciation": "/keɪs ˈstʌdi/",
+      "meaning": "Detailed analysis of a real situation",
+      "banglaMeaning": "কেস স্টাডি",
+      "exampleSentence": "We discussed a case study in the interview."
+    },
+    {
+      "word": "Hypothetical",
+      "pronunciation": "/ˌhaɪpəˈθɛtɪkəl/",
+      "meaning": "Based on assumed conditions",
+      "banglaMeaning": "কাল্পনিক",
+      "exampleSentence": "Let me ask you a hypothetical question."
+    },
+    {
+      "word": "Example",
+      "pronunciation": "/ɪɡˈzæmpəl/",
+      "meaning": "A specific instance to illustrate a point",
+      "banglaMeaning": "উদাহরণ",
+      "exampleSentence": "Can you give me an example?"
+    },
+    {
+      "word": "Instance",
+      "pronunciation": "/ˈɪnstəns/",
+      "meaning": "A particular occurrence",
+      "banglaMeaning": "ঘটনা",
+      "exampleSentence": "In one instance, I solved a critical issue."
+    },
+    {
+      "word": "Experience",
+      "pronunciation": "/ɪkˈspɪriəns/",
+      "meaning": "Practical knowledge from past work",
+      "banglaMeaning": "অভিজ্ঞতা",
+      "exampleSentence": "Tell me about your experience."
+    },
+    {
+      "word": "Background",
+      "pronunciation": "/ˈbækɡraʊnd/",
+      "meaning": "Your education and work history",
+      "banglaMeaning": "পটভূমি",
+      "exampleSentence": "What is your educational background?"
+    },
+    {
+      "word": "Track Record",
+      "pronunciation": "/træk ˈrɛkɔːrd/",
+      "meaning": "Past performance or achievements",
+      "banglaMeaning": "অতীত কর্মদক্ষতা",
+      "exampleSentence": "He has an excellent track record."
+    },
+    {
+      "word": "Success Story",
+      "pronunciation": "/səkˈsɛs ˈstɔːri/",
+      "meaning": "An example of a past success",
+      "banglaMeaning": "সাফল্যের গল্প",
+      "exampleSentence": "Share a success story from your career."
+    },
+    {
+      "word": "Challenge",
+      "pronunciation": "/ˈtʃælɪndʒ/",
+      "meaning": "A difficult task or problem",
+      "banglaMeaning": "চ্যালেঞ্জ",
+      "exampleSentence": "Describe a challenge you overcame."
+    },
+    {
+      "word": "Obstacle",
+      "pronunciation": "/ˈɒbstəkəl/",
+      "meaning": "Something that blocks progress",
+      "banglaMeaning": "বাধা",
+      "exampleSentence": "I overcame many obstacles to achieve my goal."
+    },
+    {
+      "word": "Difficulty",
+      "pronunciation": "/ˈdɪfɪkəlti/",
+      "meaning": "A problem or challenge",
+      "banglaMeaning": "কষ্ট / সমস্যা",
+      "exampleSentence": "We faced difficulties during the project."
+    },
+    {
+      "word": "Setback",
+      "pronunciation": "/ˈsɛtbæk/",
+      "meaning": "A delay or reversal in progress",
+      "banglaMeaning": "বিপর্যয় / বাধা",
+      "exampleSentence": "The setback taught us valuable lessons."
+    },
+    {
+      "word": "Failure",
+      "pronunciation": "/ˈfeɪljər/",
+      "meaning": "Lack of success",
+      "banglaMeaning": "ব্যর্থতা",
+      "exampleSentence": "I learned from my failures."
+    },
+    {
+      "word": "Mistake",
+      "pronunciation": "/mɪˈsteɪk/",
+      "meaning": "An error or wrong action",
+      "banglaMeaning": "ভুল",
+      "exampleSentence": "Everyone makes mistakes."
+    },
+    {
+      "word": "Lesson Learned",
+      "pronunciation": "/ˈlɛsən ˈlɜːrnd/",
+      "meaning": "Knowledge gained from an experience",
+      "banglaMeaning": "শিক্ষা",
+      "exampleSentence": "The lesson learned helped me grow."
+    },
+    {
+      "word": "Growth",
+      "pronunciation": "/ɡroʊθ/",
+      "meaning": "Development or improvement",
+      "banglaMeaning": "বৃদ্ধি",
+      "exampleSentence": "I am looking for personal growth."
+    },
+    {
+      "word": "Improvement",
+      "pronunciation": "/ɪmˈpruːvmənt/",
+      "meaning": "Making something better",
+      "banglaMeaning": "উন্নতি",
+      "exampleSentence": "Continuous improvement is my goal."
+    },
+    {
+      "word": "Development",
+      "pronunciation": "/dɪˈvɛləpmənt/",
+      "meaning": "Process of growing or improving",
+      "banglaMeaning": "উন্নয়ন",
+      "exampleSentence": "Professional development is important."
+    },
+    {
+      "word": "Progress",
+      "pronunciation": "/ˈprɒɡrɛs/",
+      "meaning": "Forward movement toward a goal",
+      "banglaMeaning": "অগ্রগতি",
+      "exampleSentence": "I am making good progress in my role."
+    },
+    {
+      "word": "Advancement",
+      "pronunciation": "/ədˈvænsmənt/",
+      "meaning": "Progress in career or skill",
+      "banglaMeaning": "অগ্রসরণ",
+      "exampleSentence": "I am seeking advancement opportunities."
+    },
+    {
+      "word": "Upgrade",
+      "pronunciation": "/ˈʌpɡreɪd/",
+      "meaning": "Improvement or enhancement",
+      "banglaMeaning": "উন্নতীকরণ",
+      "exampleSentence": "I upgraded my skills through training."
+    },
+    {
+      "word": "Training",
+      "pronunciation": "/ˈtreɪnɪŋ/",
+      "meaning": "Teaching or learning skills",
+      "banglaMeaning": "প্রশিক্ষণ",
+      "exampleSentence": "The company provides training programs."
+    },
+    {
+      "word": "Workshop",
+      "pronunciation": "/ˈwɜːrkʃɒp/",
+      "meaning": "A training session on a topic",
+      "banglaMeaning": "কর্মশালা",
+      "exampleSentence": "I attended a leadership workshop."
+    },
+    {
+      "word": "Seminar",
+      "pronunciation": "/ˈsɛmɪnɑːr/",
+      "meaning": "An educational presentation or conference",
+      "banglaMeaning": "সেমিনার",
+      "exampleSentence": "I participated in a seminar on AI."
+    },
+    {
+      "word": "Conference",
+      "pronunciation": "/ˈkɒnfərəns/",
+      "meaning": "A formal meeting of professionals",
+      "banglaMeaning": "সম্মেলন",
+      "exampleSentence": "I presented at a conference."
+    },
+    {
+      "word": "Webinar",
+      "pronunciation": "/ˈwɛbɪnɑːr/",
+      "meaning": "An online seminar",
+      "banglaMeaning": "ওয়েবিনার",
+      "exampleSentence": "The webinar was very informative."
+    },
+    {
+      "word": "Certification",
+      "pronunciation": "/ˌsɜːrtɪfɪˈkeɪʃən/",
+      "meaning": "Official proof of a qualification",
+      "banglaMeaning": "সার্টিফিকেশন",
+      "exampleSentence": "I earned a project management certification."
+    },
+    {
+      "word": "Degree",
+      "pronunciation": "/dɪˈɡriː/",
+      "meaning": "An academic qualification from university",
+      "banglaMeaning": "ডিগ্রি",
+      "exampleSentence": "I have a degree in computer science."
+    },
+    {
+      "word": "Diploma",
+      "pronunciation": "/dɪˈploʊmə/",
+      "meaning": "A certificate of education",
+      "banglaMeaning": "ডিপ্লোমা",
+      "exampleSentence": "She holds a diploma in graphic design."
+    },
+    {
+      "word": "Major",
+      "pronunciation": "/ˈmeɪdʒər/",
+      "meaning": "Main area of study in university",
+      "banglaMeaning": "প্রধান বিষয়",
+      "exampleSentence": "My major was business administration."
+    },
+    {
+      "word": "Minor",
+      "pronunciation": "/ˈmaɪnər/",
+      "meaning": "Secondary area of study",
+      "banglaMeaning": "গৌণ বিষয়",
+      "exampleSentence": "I minored in English literature."
+    },
+    {
+      "word": "Graduate",
+      "pronunciation": "/ˈɡrædʒuɪt/",
+      "meaning": "Someone who completed a degree",
+      "banglaMeaning": "গ্রাজুয়েট / স্নাতক",
+      "exampleSentence": "I am a recent graduate."
+    },
+    {
+      "word": "Postgraduate",
+      "pronunciation": "/ˌpoʊstˈɡrædʒuɪt/",
+      "meaning": "Advanced study after a degree",
+      "banglaMeaning": "স্নাতকোত্তর",
+      "exampleSentence": "I am pursuing postgraduate studies."
+    },
+    {
+      "word": "Undergraduate",
+      "pronunciation": "/ˌʌndərˈɡrædʒuɪt/",
+      "meaning": "A student working towards a bachelor's degree",
+      "banglaMeaning": "আন্ডারগ্রাজুয়েট",
+      "exampleSentence": "I completed my undergraduate studies at Dhaka University."
+    },
+    {
+      "word": "Bachelor",
+      "pronunciation": "/ˈbætʃələr/",
+      "meaning": "First university degree",
+      "banglaMeaning": "ব্যাচেলর",
+      "exampleSentence": "I have a Bachelor of Science degree."
+    },
+    {
+      "word": "Master",
+      "pronunciation": "/ˈmæstər/",
+      "meaning": "Advanced university degree",
+      "banglaMeaning": "মাস্টার",
+      "exampleSentence": "She has a Master's in Business Administration."
+    },
+    {
+      "word": "PhD",
+      "pronunciation": "/ˌpiː eɪtʃ ˈdiː/",
+      "meaning": "Doctor of Philosophy — highest academic degree",
+      "banglaMeaning": "পিএইচডি",
+      "exampleSentence": "He completed his PhD in economics."
+    },
+    {
+      "word": "Scholarship",
+      "pronunciation": "/ˈskɒlərʃɪp/",
+      "meaning": "Financial aid for education",
+      "banglaMeaning": "বৃত্তি",
+      "exampleSentence": "I won a scholarship to study abroad."
+    },
+    {
+      "word": "Internship",
+      "pronunciation": "/ˈɪntɜːrnʃɪp/",
+      "meaning": "Temporary work experience",
+      "banglaMeaning": "ইন্টার্নশিপ",
+      "exampleSentence": "I completed a summer internship."
+    },
+    {
+      "word": "Trainee",
+      "pronunciation": "/treɪˈniː/",
+      "meaning": "Someone learning on the job",
+      "banglaMeaning": "প্রশিক্ষণার্থী",
+      "exampleSentence": "I joined as a management trainee."
+    },
+    {
+      "word": "Apprentice",
+      "pronunciation": "/əˈprɛntɪs/",
+      "meaning": "Someone learning a trade from an expert",
+      "banglaMeaning": "শিক্ষানবিশ",
+      "exampleSentence": "He worked as an apprentice electrician."
+    },
+    {
+      "word": "Volunteer",
+      "pronunciation": "/ˌvɒlənˈtɪər/",
+      "meaning": "Someone who works without pay",
+      "banglaMeaning": "স্বেচ্ছাসেবক",
+      "exampleSentence": "I volunteered at a nonprofit organization."
+    },
+    {
+      "word": "Freelance",
+      "pronunciation": "/ˈfriːlæns/",
+      "meaning": "Self-employed work",
+      "banglaMeaning": "ফ্রিল্যান্স",
+      "exampleSentence": "I worked as a freelance writer."
+    },
+    {
+      "word": "Contractual",
+      "pronunciation": "/kənˈtræktʃuəl/",
+      "meaning": "Based on a fixed-term contract",
+      "banglaMeaning": "চুক্তিভিত্তিক",
+      "exampleSentence": "I am on a contractual basis."
+    },
+    {
+      "word": "Permanent",
+      "pronunciation": "/ˈpɜːrmənənt/",
+      "meaning": "Ongoing, not temporary",
+      "banglaMeaning": "স্থায়ী",
+      "exampleSentence": "I am looking for a permanent position."
+    },
+    {
+      "word": "Full-time",
+      "pronunciation": "/fʊl taɪm/",
+      "meaning": "Working standard work hours",
+      "banglaMeaning": "পূর্ণকালীন",
+      "exampleSentence": "This is a full-time position."
+    },
+    {
+      "word": "Part-time",
+      "pronunciation": "/pɑːrt taɪm/",
+      "meaning": "Working fewer hours than full-time",
+      "banglaMeaning": "খণ্ডকালীন",
+      "exampleSentence": "I am looking for a part-time job."
+    },
+    {
+      "word": "Freelancer",
+      "pronunciation": "/ˈfriːlænsər/",
+      "meaning": "A self-employed person",
+      "banglaMeaning": "ফ্রিল্যান্সার",
+      "exampleSentence": "I work as a freelancer."
+    },
+    {
+      "word": "Entrepreneur",
+      "pronunciation": "/ˌɒntrəprəˈnɜːr/",
+      "meaning": "Someone who starts their own business",
+      "banglaMeaning": "উদ্যোক্তা",
+      "exampleSentence": "She is a successful entrepreneur."
+    },
+    {
+      "word": "Founder",
+      "pronunciation": "/ˈfaʊndər/",
+      "meaning": "Someone who starts a company",
+      "banglaMeaning": "প্রতিষ্ঠাতা",
+      "exampleSentence": "He is the founder of a tech startup."
+    },
+    {
+      "word": "Co-founder",
+      "pronunciation": "/koʊ ˈfaʊndər/",
+      "meaning": "A joint founder of a company",
+      "banglaMeaning": "সহ-প্রতিষ্ঠাতা",
+      "exampleSentence": "She is the co-founder of the company."
+    },
+    {
+      "word": "CEO",
+      "pronunciation": "/ˌsiː iː ˈoʊ/",
+      "meaning": "Chief Executive Officer",
+      "banglaMeaning": "প্রধান নির্বাহী কর্মকর্তা",
+      "exampleSentence": "The CEO sets the company vision."
+    },
+    {
+      "word": "CTO",
+      "pronunciation": "/ˌsiː tiː ˈoʊ/",
+      "meaning": "Chief Technology Officer",
+      "banglaMeaning": "প্রধান প্রযুক্তি কর্মকর্তা",
+      "exampleSentence": "The CTO oversees all technical operations."
+    },
+    {
+      "word": "CFO",
+      "pronunciation": "/ˌsiː ɛf ˈoʊ/",
+      "meaning": "Chief Financial Officer",
+      "banglaMeaning": "প্রধান অর্থ কর্মকর্তা",
+      "exampleSentence": "The CFO manages the company finances."
+    },
+    {
+      "word": "COO",
+      "pronunciation": "/ˌsiː oʊ ˈoʊ/",
+      "meaning": "Chief Operating Officer",
+      "banglaMeaning": "প্রধান পরিচালন কর্মকর্তা",
+      "exampleSentence": "The COO handles daily operations."
+    },
+    {
+      "word": "Manager",
+      "pronunciation": "/ˈmænɪdʒər/",
+      "meaning": "A person who oversees a team or department",
+      "banglaMeaning": "ম্যানেজার",
+      "exampleSentence": "I want to become a project manager."
+    },
+    {
+      "word": "Supervisor",
+      "pronunciation": "/ˈsuːpərvaɪzər/",
+      "meaning": "Someone who oversees workers",
+      "banglaMeaning": "তত্ত্বাবধায়ক",
+      "exampleSentence": "The supervisor checks the quality of work."
+    },
+    {
+      "word": "Team Lead",
+      "pronunciation": "/tiːm liːd/",
+      "meaning": "Leader of a team",
+      "banglaMeaning": "টিম লিড",
+      "exampleSentence": "I served as team lead for the project."
+    },
+    {
+      "word": "Head of Department",
+      "pronunciation": "/hɛd əv dɪˈpɑːrtmənt/",
+      "meaning": "Person in charge of a department",
+      "banglaMeaning": "বিভাগীয় প্রধান",
+      "exampleSentence": "She is the head of the marketing department."
+    },
+    {
+      "word": "Director",
+      "pronunciation": "/dɪˈrɛktər/",
+      "meaning": "A senior management role",
+      "banglaMeaning": "পরিচালক",
+      "exampleSentence": "The director approved the budget."
+    },
+    {
+      "word": "Vice President",
+      "pronunciation": "/vaɪs ˈprɛzɪdənt/",
+      "meaning": "A high-level executive",
+      "banglaMeaning": "ভাইস প্রেসিডেন্ট",
+      "exampleSentence": "The vice president oversees multiple departments."
+    },
+    {
+      "word": "President",
+      "pronunciation": "/ˈprɛzɪdənt/",
+      "meaning": "The head of a company",
+      "banglaMeaning": "প্রেসিডেন্ট",
+      "exampleSentence": "The president announced a new initiative."
+    },
+    {
+      "word": "Executive",
+      "pronunciation": "/ɪɡˈzɛkjʊtɪv/",
+      "meaning": "A high-level manager",
+      "banglaMeaning": "নির্বাহী",
+      "exampleSentence": "Senior executives make strategic decisions."
+    },
+    {
+      "word": "Officer",
+      "pronunciation": "/ˈɒfɪsər/",
+      "meaning": "A person with a specific role in a company",
+      "banglaMeaning": "কর্মকর্তা",
+      "exampleSentence": "He is a compliance officer."
+    },
+    {
+      "word": "Analyst",
+      "pronunciation": "/ˈænəlɪst/",
+      "meaning": "A person who analyzes data or situations",
+      "banglaMeaning": "বিশ্লেষক",
+      "exampleSentence": "I worked as a business analyst."
+    },
+    {
+      "word": "Consultant",
+      "pronunciation": "/kənˈsʌltənt/",
+      "meaning": "An expert who gives professional advice",
+      "banglaMeaning": "পরামর্শক",
+      "exampleSentence": "The consultant advised on the restructuring."
+    },
+    {
+      "word": "Specialist",
+      "pronunciation": "/ˈspɛʃəlɪst/",
+      "meaning": "An expert in a particular field",
+      "banglaMeaning": "বিশেষজ্ঞ",
+      "exampleSentence": "She is a marketing specialist."
+    },
+    {
+      "word": "Coordinator",
+      "pronunciation": "/koʊˈɔːrdɪneɪtər/",
+      "meaning": "Someone who organizes activities",
+      "banglaMeaning": "সমন্বয়কারী",
+      "exampleSentence": "The event coordinator planned the conference."
+    },
+    {
+      "word": "Assistant",
+      "pronunciation": "/əˈsɪstənt/",
+      "meaning": "Someone who helps a senior person",
+      "banglaMeaning": "সহকারী",
+      "exampleSentence": "I worked as an administrative assistant."
+    },
+    {
+      "word": "Associate",
+      "pronunciation": "/əˈsoʊʃiɪt/",
+      "meaning": "A junior-level employee",
+      "banglaMeaning": "অ্যাসোসিয়েট",
+      "exampleSentence": "She joined as a sales associate."
+    },
+    {
+      "word": "Entry Level",
+      "pronunciation": "/ˈɛntri ˈlɛvəl/",
+      "meaning": "A job for beginners",
+      "banglaMeaning": "প্রবেশ স্তর",
+      "exampleSentence": "I am looking for entry-level positions."
+    },
+    {
+      "word": "Junior",
+      "pronunciation": "/ˈdʒuːniər/",
+      "meaning": "Lower rank or experience level",
+      "banglaMeaning": "জুনিয়র",
+      "exampleSentence": "I started as a junior developer."
+    },
+    {
+      "word": "Senior",
+      "pronunciation": "/ˈsiːniər/",
+      "meaning": "Higher rank or more experience",
+      "banglaMeaning": "সিনিয়র",
+      "exampleSentence": "He is a senior engineer."
+    },
+    {
+      "word": "Mid-level",
+      "pronunciation": "/mɪd ˈlɛvəl/",
+      "meaning": "Intermediate experience level",
+      "banglaMeaning": "মিড-লেভেল",
+      "exampleSentence": "This role is for mid-level professionals."
+    },
+    {
+      "word": "Executive Level",
+      "pronunciation": "/ɪɡˈzɛkjʊtɪv ˈlɛvəl/",
+      "meaning": "Top management level",
+      "banglaMeaning": "নির্বাহী স্তর",
+      "exampleSentence": "This decision is made at the executive level."
+    }
+  ]
+}

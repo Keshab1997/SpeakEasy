@@ -1,1 +1,2471 @@
-{"chapter": 34, "level": "Advanced", "title": "Formal English", "words": []}
+{
+  "chapter": 34,
+  "level": "Advanced",
+  "title": "Formal English",
+  "words": [
+    {
+      "word": "Commence",
+      "pronunciation": "/kəˈmɛns/",
+      "meaning": "To begin or start",
+      "banglaMeaning": "শুরু করা",
+      "exampleSentence": "The meeting will commence at 10 AM."
+    },
+    {
+      "word": "Terminate",
+      "pronunciation": "/ˈtɜːrmɪneɪt/",
+      "meaning": "To bring to an end",
+      "banglaMeaning": "সমাপ্ত করা",
+      "exampleSentence": "The contract will terminate on December 31st."
+    },
+    {
+      "word": "Conclude",
+      "pronunciation": "/kənˈkluːd/",
+      "meaning": "To bring to a close",
+      "banglaMeaning": "উপসংহারে আসা",
+      "exampleSentence": "We conclude the agreement today."
+    },
+    {
+      "word": "Initiate",
+      "pronunciation": "/ɪˈnɪʃieɪt/",
+      "meaning": "To cause something to begin",
+      "banglaMeaning": "সূচনা করা",
+      "exampleSentence": "The company will initiate the investigation."
+    },
+    {
+      "word": "Proceed",
+      "pronunciation": "/prəˈsiːd/",
+      "meaning": "To continue with a course of action",
+      "banglaMeaning": "অগ্রসর হওয়া",
+      "exampleSentence": "Please proceed with the payment."
+    },
+    {
+      "word": "Cease",
+      "pronunciation": "/siːs/",
+      "meaning": "To stop or discontinue",
+      "banglaMeaning": "বন্ধ করা",
+      "exampleSentence": "All operations must cease immediately."
+    },
+    {
+      "word": "Resume",
+      "pronunciation": "/rɪˈzjuːm/",
+      "meaning": "To begin again after a pause",
+      "banglaMeaning": "পুনরায় শুরু করা",
+      "exampleSentence": "We will resume work after the break."
+    },
+    {
+      "word": "Establish",
+      "pronunciation": "/ɪˈstæblɪʃ/",
+      "meaning": "To set up or create",
+      "banglaMeaning": "প্রতিষ্ঠা করা",
+      "exampleSentence": "The company was established in 1995."
+    },
+    {
+      "word": "Determine",
+      "pronunciation": "/dɪˈtɜːrmɪn/",
+      "meaning": "To decide or find out",
+      "banglaMeaning": "নির্ধারণ করা",
+      "exampleSentence": "We need to determine the cause of the issue."
+    },
+    {
+      "word": "Designate",
+      "pronunciation": "/ˈdɛzɪɡneɪt/",
+      "meaning": "To assign or appoint officially",
+      "banglaMeaning": "নিয়োগ দেওয়া",
+      "exampleSentence": "He was designated as team leader."
+    },
+    {
+      "word": "Contribute",
+      "pronunciation": "/kənˈtrɪbjuːt/",
+      "meaning": "To give or provide something",
+      "banglaMeaning": "অবদান রাখা",
+      "exampleSentence": "Each member will contribute to the project."
+    },
+    {
+      "word": "Participate",
+      "pronunciation": "/pɑːrˈtɪsɪpeɪt/",
+      "meaning": "To take part in something",
+      "banglaMeaning": "অংশগ্রহণ করা",
+      "exampleSentence": "All employees are required to participate."
+    },
+    {
+      "word": "Collaborate",
+      "pronunciation": "/kəˈlæbəreɪt/",
+      "meaning": "To work jointly with others",
+      "banglaMeaning": "সহযোগিতা করা",
+      "exampleSentence": "The two departments will collaborate on this project."
+    },
+    {
+      "word": "Consult",
+      "pronunciation": "/kənˈsʌlt/",
+      "meaning": "To seek advice or information",
+      "banglaMeaning": "পরামর্শ করা",
+      "exampleSentence": "Please consult the manager before deciding."
+    },
+    {
+      "word": "Inform",
+      "pronunciation": "/ɪnˈfɔːrm/",
+      "meaning": "To tell or notify someone",
+      "banglaMeaning": "জানানো",
+      "exampleSentence": "We regret to inform you about the delay."
+    },
+    {
+      "word": "Notify",
+      "pronunciation": "/ˈnoʊtɪfaɪ/",
+      "meaning": "To formally inform",
+      "banglaMeaning": "বিজ্ঞপ্তি দেওয়া",
+      "exampleSentence": "Please notify all staff members."
+    },
+    {
+      "word": "Acknowledge",
+      "pronunciation": "/əkˈnɒlɪdʒ/",
+      "meaning": "To accept or admit receipt",
+      "banglaMeaning": "স্বীকার করা",
+      "exampleSentence": "We acknowledge receipt of your application."
+    },
+    {
+      "word": "Confirm",
+      "pronunciation": "/kənˈfɜːrm/",
+      "meaning": "To verify or establish the truth",
+      "banglaMeaning": "নিশ্চিত করা",
+      "exampleSentence": "Please confirm your attendance."
+    },
+    {
+      "word": "Verify",
+      "pronunciation": "/ˈvɛrɪfaɪ/",
+      "meaning": "To check the truth or accuracy",
+      "banglaMeaning": "যাচাই করা",
+      "exampleSentence": "We need to verify the documents."
+    },
+    {
+      "word": "Validate",
+      "pronunciation": "/ˈvælɪdeɪt/",
+      "meaning": "To confirm something is correct",
+      "banglaMeaning": "বৈধতা যাচাই করা",
+      "exampleSentence": "The results must be validated by an expert."
+    },
+    {
+      "word": "Authorize",
+      "pronunciation": "/ˈɔːθəraɪz/",
+      "meaning": "To give official permission",
+      "banglaMeaning": "অনুমোদন দেওয়া",
+      "exampleSentence": "Only the director can authorize this."
+    },
+    {
+      "word": "Approve",
+      "pronunciation": "/əˈpruːv/",
+      "meaning": "To officially agree to something",
+      "banglaMeaning": "অনুমোদন করা",
+      "exampleSentence": "The board approved the proposal."
+    },
+    {
+      "word": "Sanction",
+      "pronunciation": "/ˈsæŋkʃən/",
+      "meaning": "Official permission or approval",
+      "banglaMeaning": "অনুমোদন",
+      "exampleSentence": "The project received government sanction."
+    },
+    {
+      "word": "Prohibit",
+      "pronunciation": "/prəˈhɪbɪt/",
+      "meaning": "To officially forbid",
+      "banglaMeaning": "নিষেধ করা",
+      "exampleSentence": "Smoking is strictly prohibited in the building."
+    },
+    {
+      "word": "Restrict",
+      "pronunciation": "/rɪˈstrɪkt/",
+      "meaning": "To limit or confine",
+      "banglaMeaning": "সীমাবদ্ধ করা",
+      "exampleSentence": "Access to the lab is restricted."
+    },
+    {
+      "word": "Mandate",
+      "pronunciation": "/ˈmændeɪt/",
+      "meaning": "An official order or requirement",
+      "banglaMeaning": "অধিদেশ / বাধ্যতামূলক আদেশ",
+      "exampleSentence": "Wearing helmets is mandated by law."
+    },
+    {
+      "word": "Stipulate",
+      "pronunciation": "/ˈstɪpjʊleɪt/",
+      "meaning": "To specify as a condition",
+      "banglaMeaning": "শর্ত দেওয়া",
+      "exampleSentence": "The contract stipulates a 30-day notice period."
+    },
+    {
+      "word": "Regulate",
+      "pronunciation": "/ˈrɛɡjʊleɪt/",
+      "meaning": "To control according to rules",
+      "banglaMeaning": "নিয়ন্ত্রণ করা",
+      "exampleSentence": "The industry is regulated by the government."
+    },
+    {
+      "word": "Comply",
+      "pronunciation": "/kəmˈplaɪ/",
+      "meaning": "To act according to rules or requests",
+      "banglaMeaning": "মেনে চলা",
+      "exampleSentence": "All employees must comply with safety regulations."
+    },
+    {
+      "word": "Adhere",
+      "pronunciation": "/ədˈhɪər/",
+      "meaning": "To stick to a rule or standard",
+      "banglaMeaning": "অনুসরণ করা",
+      "exampleSentence": "We must adhere to the guidelines."
+    },
+    {
+      "word": "Conform",
+      "pronunciation": "/kənˈfɔːrm/",
+      "meaning": "To match or comply with standards",
+      "banglaMeaning": "অনুরূপ হওয়া",
+      "exampleSentence": "The product must conform to quality standards."
+    },
+    {
+      "word": "Violate",
+      "pronunciation": "/ˈvaɪəleɪt/",
+      "meaning": "To break a rule or law",
+      "banglaMeaning": "লঙ্ঘন করা",
+      "exampleSentence": "Do not violate the terms of agreement."
+    },
+    {
+      "word": "Infringe",
+      "pronunciation": "/ɪnˈfrɪndʒ/",
+      "meaning": "To actively break a law or right",
+      "banglaMeaning": "অধিকার লঙ্ঘন করা",
+      "exampleSentence": "This action infringes on our rights."
+    },
+    {
+      "word": "Constitute",
+      "pronunciation": "/ˈkɒnstɪtjuːt/",
+      "meaning": "To make up or form something",
+      "banglaMeaning": "গঠন করা",
+      "exampleSentence": "This constitutes a breach of contract."
+    },
+    {
+      "word": "Comprise",
+      "pronunciation": "/kəmˈpraɪz/",
+      "meaning": "To consist of or include",
+      "banglaMeaning": "গঠিত হওয়া",
+      "exampleSentence": "The committee comprises five members."
+    },
+    {
+      "word": "Convey",
+      "pronunciation": "/kənˈveɪ/",
+      "meaning": "To communicate or express",
+      "banglaMeaning": "প্রকাশ করা",
+      "exampleSentence": "Please convey my regards to the team."
+    },
+    {
+      "word": "Communicate",
+      "pronunciation": "/kəˈmjuːnɪkeɪt/",
+      "meaning": "To share information",
+      "banglaMeaning": "যোগাযোগ করা",
+      "exampleSentence": "We communicated the changes to all departments."
+    },
+    {
+      "word": "Correspond",
+      "pronunciation": "/ˌkɒrɪˈspɒnd/",
+      "meaning": "To exchange letters or messages",
+      "banglaMeaning": "পত্রালাপ করা",
+      "exampleSentence": "We have been corresponding with the client."
+    },
+    {
+      "word": "Elaborate",
+      "pronunciation": "/ɪˈlæbəreɪt/",
+      "meaning": "To explain in more detail",
+      "banglaMeaning": "বিস্তারিত বলা",
+      "exampleSentence": "Could you elaborate on your proposal?"
+    },
+    {
+      "word": "Clarify",
+      "pronunciation": "/ˈklærɪfaɪ/",
+      "meaning": "To make something clear",
+      "banglaMeaning": "পরিষ্কার করা",
+      "exampleSentence": "Please clarify your statement."
+    },
+    {
+      "word": "Specify",
+      "pronunciation": "/ˈspɛsɪfaɪ/",
+      "meaning": "To state clearly and exactly",
+      "banglaMeaning": "উল্লেখ করা",
+      "exampleSentence": "Please specify the quantity required."
+    },
+    {
+      "word": "Indicate",
+      "pronunciation": "/ˈɪndɪkeɪt/",
+      "meaning": "To point out or show",
+      "banglaMeaning": "নির্দেশ করা",
+      "exampleSentence": "The survey indicates a positive trend."
+    },
+    {
+      "word": "Illustrate",
+      "pronunciation": "/ˈɪləstreɪt/",
+      "meaning": "To explain using examples",
+      "banglaMeaning": "দৃষ্টান্ত দিয়ে বোঝানো",
+      "exampleSentence": "Let me illustrate with an example."
+    },
+    {
+      "word": "Demonstrate",
+      "pronunciation": "/ˈdɛmənstreɪt/",
+      "meaning": "To show clearly",
+      "banglaMeaning": "প্রদর্শন করা",
+      "exampleSentence": "The data demonstrates our progress."
+    },
+    {
+      "word": "Exhibit",
+      "pronunciation": "/ɪɡˈzɪbɪt/",
+      "meaning": "To show or display",
+      "banglaMeaning": "প্রদর্শিত করা",
+      "exampleSentence": "The exhibit will be open to the public."
+    },
+    {
+      "word": "Possess",
+      "pronunciation": "/pəˈzɛs/",
+      "meaning": "To have or own",
+      "banglaMeaning": "অধিকার করা",
+      "exampleSentence": "The candidate possesses excellent qualifications."
+    },
+    {
+      "word": "Obtain",
+      "pronunciation": "/əbˈteɪn/",
+      "meaning": "To get or acquire",
+      "banglaMeaning": "প্রাপ্ত করা",
+      "exampleSentence": "You must obtain prior approval."
+    },
+    {
+      "word": "Acquire",
+      "pronunciation": "/əˈkwaɪər/",
+      "meaning": "To gain possession of something",
+      "banglaMeaning": "অর্জন করা",
+      "exampleSentence": "The company acquired new technology."
+    },
+    {
+      "word": "Procure",
+      "pronunciation": "/prəˈkjʊər/",
+      "meaning": "To obtain with care or effort",
+      "banglaMeaning": "সংগ্রহ করা",
+      "exampleSentence": "We need to procure the necessary equipment."
+    },
+    {
+      "word": "Produce",
+      "pronunciation": "/prəˈdjuːs/",
+      "meaning": "To create or manufacture",
+      "banglaMeaning": "উৎপাদন করা",
+      "exampleSentence": "The factory produces automotive parts."
+    },
+    {
+      "word": "Manufacture",
+      "pronunciation": "/ˌmænjʊˈfæktʃər/",
+      "meaning": "To make goods on a large scale",
+      "banglaMeaning": "শিল্পোৎপাদন করা",
+      "exampleSentence": "They manufacture electronics in China."
+    },
+    {
+      "word": "Distribute",
+      "pronunciation": "/dɪˈstrɪbjuːt/",
+      "meaning": "To give out or spread",
+      "banglaMeaning": "বিতরণ করা",
+      "exampleSentence": "We distribute products nationwide."
+    },
+    {
+      "word": "Allocate",
+      "pronunciation": "/ˈæləkeɪt/",
+      "meaning": "To assign for a specific purpose",
+      "banglaMeaning": "বরাদ্দ করা",
+      "exampleSentence": "Funds have been allocated for the project."
+    },
+    {
+      "word": "Assign",
+      "pronunciation": "/əˈsaɪn/",
+      "meaning": "To allocate a task or role",
+      "banglaMeaning": "নির্ধারণ করা",
+      "exampleSentence": "She was assigned to the marketing team."
+    },
+    {
+      "word": "Delegate",
+      "pronunciation": "/ˈdɛlɪɡeɪt/",
+      "meaning": "To entrust a task to another",
+      "banglaMeaning": "প্রতিনিধিত্ব করা",
+      "exampleSentence": "A manager should delegate effectively."
+    },
+    {
+      "word": "Substitute",
+      "pronunciation": "/ˈsʌbstɪtjuːt/",
+      "meaning": "To replace someone or something",
+      "banglaMeaning": "বিকল্প দেওয়া",
+      "exampleSentence": "He will substitute for the manager."
+    },
+    {
+      "word": "Compensate",
+      "pronunciation": "/ˈkɒmpɛnseɪt/",
+      "meaning": "To pay for loss or injury",
+      "banglaMeaning": "ক্ষতিপূরণ দেওয়া",
+      "exampleSentence": "The company compensated the workers."
+    },
+    {
+      "word": "Reimburse",
+      "pronunciation": "/ˌriːɪmˈbɜːrs/",
+      "meaning": "To repay someone for expenses",
+      "banglaMeaning": "ফেরত দেওয়া",
+      "exampleSentence": "We will reimburse your travel expenses."
+    },
+    {
+      "word": "Remunerate",
+      "pronunciation": "/rɪˈmjuːnəreɪt/",
+      "meaning": "To pay for services rendered",
+      "banglaMeaning": "পারিশ্রমিক দেওয়া",
+      "exampleSentence": "Freelancers are remunerated per project."
+    },
+    {
+      "word": "Disburse",
+      "pronunciation": "/dɪsˈbɜːrs/",
+      "meaning": "To pay out money",
+      "banglaMeaning": "পরিশোধ করা",
+      "exampleSentence": "The funds will be disbursed next week."
+    },
+    {
+      "word": "Retain",
+      "pronunciation": "/rɪˈteɪn/",
+      "meaning": "To keep or hold",
+      "banglaMeaning": "ধরে রাখা",
+      "exampleSentence": "We aim to retain our best employees."
+    },
+    {
+      "word": "Withhold",
+      "pronunciation": "/wɪðˈhoʊld/",
+      "meaning": "To hold back from giving",
+      "banglaMeaning": "আটকে রাখা",
+      "exampleSentence": "Tax is withheld from your salary."
+    },
+    {
+      "word": "Relinquish",
+      "pronunciation": "/rɪˈlɪŋkwɪʃ/",
+      "meaning": "To give up voluntarily",
+      "banglaMeaning": "ত্যাগ করা",
+      "exampleSentence": "He relinquished his position as chairman."
+    },
+    {
+      "word": "Surrender",
+      "pronunciation": "/səˈrɛndər/",
+      "meaning": "To give up under pressure",
+      "banglaMeaning": "আত্মসমর্পণ করা",
+      "exampleSentence": "The suspect surrendered to the authorities."
+    },
+    {
+      "word": "Waive",
+      "pronunciation": "/weɪv/",
+      "meaning": "To voluntarily give up a right",
+      "banglaMeaning": "মওকুফ করা",
+      "exampleSentence": "The fee was waived for eligible students."
+    },
+    {
+      "word": "Forfeit",
+      "pronunciation": "/ˈfɔːrfɪt/",
+      "meaning": "To lose as a penalty",
+      "banglaMeaning": "বাজেয়াপ্ত করা",
+      "exampleSentence": "He forfeited his deposit."
+    },
+    {
+      "word": "Abstain",
+      "pronunciation": "/əbˈsteɪn/",
+      "meaning": "To refrain from doing something",
+      "banglaMeaning": "বিরত থাকা",
+      "exampleSentence": "Ten members voted, three abstained."
+    },
+    {
+      "word": "Refrain",
+      "pronunciation": "/rɪˈfreɪn/",
+      "meaning": "To resist doing something",
+      "banglaMeaning": "সংযম করা",
+      "exampleSentence": "Please refrain from smoking in the office."
+    },
+    {
+      "word": "Endeavor",
+      "pronunciation": "/ɪnˈdɛvər/",
+      "meaning": "To try hard to achieve something",
+      "banglaMeaning": "প্রচেষ্টা করা",
+      "exampleSentence": "We will endeavor to complete on time."
+    },
+    {
+      "word": "Undertake",
+      "pronunciation": "/ˌʌndərˈteɪk/",
+      "meaning": "To commit to a task",
+      "banglaMeaning": "দায়িত্ব নেওয়া",
+      "exampleSentence": "She undertook the responsibility of organizing the event."
+    },
+    {
+      "word": "Facilitate",
+      "pronunciation": "/fəˈsɪlɪteɪt/",
+      "meaning": "To make easier",
+      "banglaMeaning": "সহজতর করা",
+      "exampleSentence": "This software facilitates data analysis."
+    },
+    {
+      "word": "Implement",
+      "pronunciation": "/ˈɪmplɪmɛnt/",
+      "meaning": "To put into effect",
+      "banglaMeaning": "বাস্তবায়ন করা",
+      "exampleSentence": "We will implement the new policy next month."
+    },
+    {
+      "word": "Execute",
+      "pronunciation": "/ˈɛksɪkjuːt/",
+      "meaning": "To carry out a plan",
+      "banglaMeaning": "কার্যকর করা",
+      "exampleSentence": "The plan was executed successfully."
+    },
+    {
+      "word": "Administer",
+      "pronunciation": "/ədˈmɪnɪstər/",
+      "meaning": "To manage or oversee",
+      "banglaMeaning": "পরিচালনা করা",
+      "exampleSentence": "She administers the scholarship program."
+    },
+    {
+      "word": "Supervise",
+      "pronunciation": "/ˈsuːpərvaɪz/",
+      "meaning": "To oversee work or workers",
+      "banglaMeaning": "তত্ত্বাবধান করা",
+      "exampleSentence": "He supervises a team of ten."
+    },
+    {
+      "word": "Oversee",
+      "pronunciation": "/ˌoʊvərˈsiː/",
+      "meaning": "To watch over and direct",
+      "banglaMeaning": "নিরীক্ষণ করা",
+      "exampleSentence": "The manager oversees daily operations."
+    },
+    {
+      "word": "Coordinate",
+      "pronunciation": "/koʊˈɔːrdɪneɪt/",
+      "meaning": "To organize activities",
+      "banglaMeaning": "সমন্বয় করা",
+      "exampleSentence": "She coordinated the training session."
+    },
+    {
+      "word": "Integrate",
+      "pronunciation": "/ˈɪntɪɡreɪt/",
+      "meaning": "To combine into a whole",
+      "banglaMeaning": "একীভূত করা",
+      "exampleSentence": "We integrated the two systems."
+    },
+    {
+      "word": "Consolidate",
+      "pronunciation": "/kənˈsɒlɪdeɪt/",
+      "meaning": "To combine into one",
+      "banglaMeaning": "একত্রিত করা",
+      "exampleSentence": "The departments were consolidated."
+    },
+    {
+      "word": "Merge",
+      "pronunciation": "/mɜːrdʒ/",
+      "meaning": "To combine two things into one",
+      "banglaMeaning": "একীভূত হওয়া",
+      "exampleSentence": "The two companies merged last year."
+    },
+    {
+      "word": "Separate",
+      "pronunciation": "/ˈsɛpəreɪt/",
+      "meaning": "To divide or keep apart",
+      "banglaMeaning": "পৃথক করা",
+      "exampleSentence": "The items must be kept separate."
+    },
+    {
+      "word": "Segregate",
+      "pronunciation": "/ˈsɛɡrɪɡeɪt/",
+      "meaning": "To separate from others",
+      "banglaMeaning": "বিচ্ছিন্ন করা",
+      "exampleSentence": "Waste should be segregated for recycling."
+    },
+    {
+      "word": "Classify",
+      "pronunciation": "/ˈklæsɪfaɪ/",
+      "meaning": "To arrange in categories",
+      "banglaMeaning": "শ্রেণীবদ্ধ করা",
+      "exampleSentence": "Documents are classified by date."
+    },
+    {
+      "word": "Categorize",
+      "pronunciation": "/ˈkætəɡəraɪz/",
+      "meaning": "To place in a category",
+      "banglaMeaning": "বিভাগে ভাগ করা",
+      "exampleSentence": "The data is categorized by region."
+    },
+    {
+      "word": "Prioritize",
+      "pronunciation": "/praɪˈɒrɪtaɪz/",
+      "meaning": "To rank in order of importance",
+      "banglaMeaning": "অগ্রাধিকার দেওয়া",
+      "exampleSentence": "We need to prioritize urgent tasks."
+    },
+    {
+      "word": "Systematize",
+      "pronunciation": "/ˈsɪstəmətaɪz/",
+      "meaning": "To arrange in a system",
+      "banglaMeaning": "পদ্ধতিগত করা",
+      "exampleSentence": "We systematized the filing process."
+    },
+    {
+      "word": "Streamline",
+      "pronunciation": "/ˈstriːmlaɪn/",
+      "meaning": "To make more efficient",
+      "banglaMeaning": "সরলীকরণ করা",
+      "exampleSentence": "We streamlined the approval process."
+    },
+    {
+      "word": "Optimize",
+      "pronunciation": "/ˈɒptɪmaɪz/",
+      "meaning": "To make the best use of",
+      "banglaMeaning": "অপটিমাইজ করা",
+      "exampleSentence": "We optimized the workflow."
+    },
+    {
+      "word": "Accelerate",
+      "pronunciation": "/əkˈsɛləreɪt/",
+      "meaning": "To increase speed",
+      "banglaMeaning": "গতিশীল করা",
+      "exampleSentence": "We need to accelerate production."
+    },
+    {
+      "word": "Expedite",
+      "pronunciation": "/ˈɛkspɪdaɪt/",
+      "meaning": "To make a process faster",
+      "banglaMeaning": "দ্রুততর করা",
+      "exampleSentence": "Please expedite the shipment."
+    },
+    {
+      "word": "Postpone",
+      "pronunciation": "/poʊˈspoʊn/",
+      "meaning": "To delay to a later time",
+      "banglaMeaning": "স্থগিত করা",
+      "exampleSentence": "The meeting has been postponed."
+    },
+    {
+      "word": "Defer",
+      "pronunciation": "/dɪˈfɜːr/",
+      "meaning": "To put off to a later time",
+      "banglaMeaning": "মুলতুবি রাখা",
+      "exampleSentence": "Payment can be deferred for 30 days."
+    },
+    {
+      "word": "Prolong",
+      "pronunciation": "/prəˈlɒŋ/",
+      "meaning": "To extend in duration",
+      "banglaMeaning": "দীর্ঘায়িত করা",
+      "exampleSentence": "Do not prolong the discussion unnecessarily."
+    },
+    {
+      "word": "Extend",
+      "pronunciation": "/ɪkˈstɛnd/",
+      "meaning": "To make longer in time or space",
+      "banglaMeaning": "বাড়ানো",
+      "exampleSentence": "The deadline has been extended."
+    },
+    {
+      "word": "Shorten",
+      "pronunciation": "/ˈʃɔːrtən/",
+      "meaning": "To make shorter",
+      "banglaMeaning": "ছোট করা",
+      "exampleSentence": "We need to shorten the delivery time."
+    },
+    {
+      "word": "Evaluate",
+      "pronunciation": "/ɪˈvæljueɪt/",
+      "meaning": "To assess or judge the value",
+      "banglaMeaning": "মূল্যায়ন করা",
+      "exampleSentence": "We will evaluate all proposals."
+    },
+    {
+      "word": "Assess",
+      "pronunciation": "/əˈsɛs/",
+      "meaning": "To evaluate or estimate",
+      "banglaMeaning": "নির্ধারণ করা",
+      "exampleSentence": "We need to assess the risks."
+    },
+    {
+      "word": "Analyze",
+      "pronunciation": "/ˈænəlaɪz/",
+      "meaning": "To examine in detail",
+      "banglaMeaning": "বিশ্লেষণ করা",
+      "exampleSentence": "The data was analyzed carefully."
+    },
+    {
+      "word": "Examine",
+      "pronunciation": "/ɪɡˈzæmɪn/",
+      "meaning": "To inspect closely",
+      "banglaMeaning": "পরীক্ষা করা",
+      "exampleSentence": "The committee will examine the evidence."
+    },
+    {
+      "word": "Inspect",
+      "pronunciation": "/ɪnˈspɛkt/",
+      "meaning": "To look at carefully",
+      "banglaMeaning": "পরিদর্শন করা",
+      "exampleSentence": "The building was inspected for safety."
+    },
+    {
+      "word": "Scrutinize",
+      "pronunciation": "/ˈskruːtɪnaɪz/",
+      "meaning": "To examine very closely",
+      "banglaMeaning": "গভীরভাবে পরীক্ষা করা",
+      "exampleSentence": "The contract was thoroughly scrutinized."
+    },
+    {
+      "word": "Review",
+      "pronunciation": "/rɪˈvjuː/",
+      "meaning": "To examine or assess formally",
+      "banglaMeaning": "পুনর্বিবেচনা করা",
+      "exampleSentence": "The manager will review your work."
+    },
+    {
+      "word": "Appraise",
+      "pronunciation": "/əˈpreɪz/",
+      "meaning": "To assess the value or quality",
+      "banglaMeaning": "মূল্যায়ন করা",
+      "exampleSentence": "The property was appraised at $500,000."
+    },
+    {
+      "word": "Quantify",
+      "pronunciation": "/ˈkwɒntɪfaɪ/",
+      "meaning": "To measure or express as a number",
+      "banglaMeaning": "পরিমাপ করা",
+      "exampleSentence": "We need to quantify the results."
+    },
+    {
+      "word": "Qualify",
+      "pronunciation": "/ˈkwɒlɪfaɪ/",
+      "meaning": "To meet the necessary requirements",
+      "banglaMeaning": "যোগ্যতা অর্জন করা",
+      "exampleSentence": "You qualify for the discount."
+    },
+    {
+      "word": "Justify",
+      "pronunciation": "/ˈdʒʌstɪfaɪ/",
+      "meaning": "To show or prove to be right",
+      "banglaMeaning": "সমর্থন করা",
+      "exampleSentence": "Can you justify this expense?"
+    },
+    {
+      "word": "Substantiate",
+      "pronunciation": "/səbˈstænʃieɪt/",
+      "meaning": "To provide evidence to support",
+      "banglaMeaning": "প্রমাণিত করা",
+      "exampleSentence": "Claims must be substantiated with data."
+    },
+    {
+      "word": "Corroborate",
+      "pronunciation": "/kəˈrɒbəreɪt/",
+      "meaning": "To confirm with evidence",
+      "banglaMeaning": "সমর্থন করা",
+      "exampleSentence": "The witness corroborated his statement."
+    },
+    {
+      "word": "Authenticate",
+      "pronunciation": "/ɔːˈθɛntɪkeɪt/",
+      "meaning": "To prove as genuine",
+      "banglaMeaning": "প্রমাণীকরণ করা",
+      "exampleSentence": "The signature must be authenticated."
+    },
+    {
+      "word": "Certify",
+      "pronunciation": "/ˈsɜːrtɪfaɪ/",
+      "meaning": "To formally confirm",
+      "banglaMeaning": "সনদ দেওয়া",
+      "exampleSentence": "The document is certified by the authority."
+    },
+    {
+      "word": "Attest",
+      "pronunciation": "/əˈtɛst/",
+      "meaning": "To declare something is true",
+      "banglaMeaning": "সাক্ষ্য দেওয়া",
+      "exampleSentence": "I attest that the information is accurate."
+    },
+    {
+      "word": "Testify",
+      "pronunciation": "/ˈtɛstɪfaɪ/",
+      "meaning": "To give evidence under oath",
+      "banglaMeaning": "সাক্ষ্য দেওয়া",
+      "exampleSentence": "He testified before the committee."
+    },
+    {
+      "word": "Allege",
+      "pronunciation": "/əˈlɛdʒ/",
+      "meaning": "To claim without proof",
+      "banglaMeaning": "অভিযোগ করা",
+      "exampleSentence": "The report alleges misconduct."
+    },
+    {
+      "word": "Accuse",
+      "pronunciation": "/əˈkjuːz/",
+      "meaning": "To charge with wrongdoing",
+      "banglaMeaning": "অভিযুক্ত করা",
+      "exampleSentence": "He was accused of negligence."
+    },
+    {
+      "word": "Convicted",
+      "pronunciation": "/kənˈvɪktɪd/",
+      "meaning": "Found guilty in court",
+      "banglaMeaning": "দোষী সাব্যস্ত",
+      "exampleSentence": "He was convicted of fraud."
+    },
+    {
+      "word": "Acquitted",
+      "pronunciation": "/əˈkwɪtɪd/",
+      "meaning": "Declared not guilty",
+      "banglaMeaning": "খালাস পাওয়া",
+      "exampleSentence": "The defendant was acquitted."
+    },
+    {
+      "word": "Indict",
+      "pronunciation": "/ɪnˈdaɪt/",
+      "meaning": "To formally charge with a crime",
+      "banglaMeaning": "অভিযোগ আনা",
+      "exampleSentence": "He was indicted for corruption."
+    },
+    {
+      "word": "Litigate",
+      "pronunciation": "/ˈlɪtɪɡeɪt/",
+      "meaning": "To take legal action",
+      "banglaMeaning": "মামলা করা",
+      "exampleSentence": "They decided to litigate the dispute."
+    },
+    {
+      "word": "Arbitrate",
+      "pronunciation": "/ˈɑːrbɪtreɪt/",
+      "meaning": "To settle a dispute legally",
+      "banglaMeaning": "মধ্যস্থতা করা",
+      "exampleSentence": "The dispute was arbitrated."
+    },
+    {
+      "word": "Mediate",
+      "pronunciation": "/ˈmiːdieɪt/",
+      "meaning": "To help resolve a conflict",
+      "banglaMeaning": "মধ্যস্থতা করা",
+      "exampleSentence": "A mediator helped them reach a settlement."
+    },
+    {
+      "word": "Convene",
+      "pronunciation": "/kənˈviːn/",
+      "meaning": "To come together for a meeting",
+      "banglaMeaning": "একত্র হওয়া",
+      "exampleSentence": "The board convened for an emergency session."
+    },
+    {
+      "word": "Assemble",
+      "pronunciation": "/əˈsɛmbəl/",
+      "meaning": "To gather together",
+      "banglaMeaning": "জড়ো করা",
+      "exampleSentence": "The staff assembled in the hall."
+    },
+    {
+      "word": "Adjourn",
+      "pronunciation": "/əˈdʒɜːrn/",
+      "meaning": "To suspend a meeting",
+      "banglaMeaning": "মুলতুবি রাখা",
+      "exampleSentence": "The meeting was adjourned until tomorrow."
+    },
+    {
+      "word": "Dissolve",
+      "pronunciation": "/dɪˈzɒlv/",
+      "meaning": "To end or terminate officially",
+      "banglaMeaning": "ভেঙ্গে দেওয়া",
+      "exampleSentence": "The committee was dissolved."
+    },
+    {
+      "word": "Nominate",
+      "pronunciation": "/ˈnɒmɪneɪt/",
+      "meaning": "To propose someone for a position",
+      "banglaMeaning": "মনোনীত করা",
+      "exampleSentence": "She was nominated for the award."
+    },
+    {
+      "word": "Elect",
+      "pronunciation": "/ɪˈlɛkt/",
+      "meaning": "To choose by voting",
+      "banglaMeaning": "নির্বাচিত করা",
+      "exampleSentence": "He was elected as the chairperson."
+    },
+    {
+      "word": "Appoint",
+      "pronunciation": "/əˈpɔɪnt/",
+      "meaning": "To assign someone to a role",
+      "banglaMeaning": "নিয়োগ দেওয়া",
+      "exampleSentence": "She was appointed as director."
+    },
+    {
+      "word": "Ratify",
+      "pronunciation": "/ˈrætɪfaɪ/",
+      "meaning": "To formally approve",
+      "banglaMeaning": "অনুমোদন দেওয়া",
+      "exampleSentence": "The treaty was ratified by all parties."
+    },
+    {
+      "word": "Endorse",
+      "pronunciation": "/ɪnˈdɔːrs/",
+      "meaning": "To publicly support",
+      "banglaMeaning": "সমর্থন করা",
+      "exampleSentence": "The proposal was endorsed by the board."
+    },
+    {
+      "word": "Advocate",
+      "pronunciation": "/ˈædvəkeɪt/",
+      "meaning": "To publicly support a cause",
+      "banglaMeaning": "সমর্থন করা",
+      "exampleSentence": "She advocates for workers' rights."
+    },
+    {
+      "word": "Promulgate",
+      "pronunciation": "/ˈprɒməlɡeɪt/",
+      "meaning": "To make widely known",
+      "banglaMeaning": "প্রচার করা",
+      "exampleSentence": "The new laws were promulgated."
+    },
+    {
+      "word": "Disseminate",
+      "pronunciation": "/dɪˈsɛmɪneɪt/",
+      "meaning": "To spread information widely",
+      "banglaMeaning": "প্রচার করা",
+      "exampleSentence": "The findings were disseminated through journals."
+    },
+    {
+      "word": "Circulate",
+      "pronunciation": "/ˈsɜːrkjəleɪt/",
+      "meaning": "To pass around",
+      "banglaMeaning": "প্রচলন করা",
+      "exampleSentence": "The memo was circulated among staff."
+    },
+    {
+      "word": "Distribute",
+      "pronunciation": "/dɪˈstrɪbjuːt/",
+      "meaning": "To give out to multiple people",
+      "banglaMeaning": "বিতরণ করা",
+      "exampleSentence": "The reports were distributed to all departments."
+    },
+    {
+      "word": "Submit",
+      "pronunciation": "/səbˈmɪt/",
+      "meaning": "To present for consideration",
+      "banglaMeaning": "জমা দেওয়া",
+      "exampleSentence": "Please submit your application by Friday."
+    },
+    {
+      "word": "Propose",
+      "pronunciation": "/prəˈpoʊz/",
+      "meaning": "To put forward a plan",
+      "banglaMeaning": "প্রস্তাব করা",
+      "exampleSentence": "I propose a change to the schedule."
+    },
+    {
+      "word": "Recommend",
+      "pronunciation": "/ˌrɛkəˈmɛnd/",
+      "meaning": "To suggest as suitable",
+      "banglaMeaning": "সুপারিশ করা",
+      "exampleSentence": "I recommend we accept the offer."
+    },
+    {
+      "word": "Suggest",
+      "pronunciation": "/səˈdʒɛst/",
+      "meaning": "To put forward an idea",
+      "banglaMeaning": "পরামর্শ দেওয়া",
+      "exampleSentence": "I suggest revising the timeline."
+    },
+    {
+      "word": "Advise",
+      "pronunciation": "/ədˈvaɪz/",
+      "meaning": "To offer counsel or recommendation",
+      "banglaMeaning": "উপদেশ দেওয়া",
+      "exampleSentence": "The lawyer advised us to settle."
+    },
+    {
+      "word": "Urge",
+      "pronunciation": "/ɜːrdʒ/",
+      "meaning": "To strongly recommend",
+      "banglaMeaning": "জোর দেওয়া",
+      "exampleSentence": "I urge you to reconsider."
+    },
+    {
+      "word": "Instruct",
+      "pronunciation": "/ɪnˈstrʌkt/",
+      "meaning": "To give an order or direction",
+      "banglaMeaning": "নির্দেশ দেওয়া",
+      "exampleSentence": "I instructed them to proceed."
+    },
+    {
+      "word": "Direct",
+      "pronunciation": "/dɪˈrɛkt/",
+      "meaning": "To give official instructions",
+      "banglaMeaning": "নির্দেশনা দেওয়া",
+      "exampleSentence": "The manager directed us to start immediately."
+    },
+    {
+      "word": "Command",
+      "pronunciation": "/kəˈmænd/",
+      "meaning": "To give an authoritative order",
+      "banglaMeaning": "আদেশ করা",
+      "exampleSentence": "The officer commanded silence."
+    },
+    {
+      "word": "Enforce",
+      "pronunciation": "/ɪnˈfɔːrs/",
+      "meaning": "To make sure rules are followed",
+      "banglaMeaning": "প্রয়োগ করা",
+      "exampleSentence": "The law must be enforced strictly."
+    },
+    {
+      "word": "Execute",
+      "pronunciation": "/ˈɛksɪkjuːt/",
+      "meaning": "To carry out a plan or order",
+      "banglaMeaning": "কার্যকর করা",
+      "exampleSentence": "The order was executed immediately."
+    },
+    {
+      "word": "Perform",
+      "pronunciation": "/pərˈfɔːrm/",
+      "meaning": "To carry out an action or task",
+      "banglaMeaning": "সম্পাদন করা",
+      "exampleSentence": "The team performed exceptionally well."
+    },
+    {
+      "word": "Conduct",
+      "pronunciation": "/kənˈdʌkt/",
+      "meaning": "To organize and carry out",
+      "banglaMeaning": "পরিচালনা করা",
+      "exampleSentence": "They conducted a thorough investigation."
+    },
+    {
+      "word": "Undergo",
+      "pronunciation": "/ˌʌndərˈɡoʊ/",
+      "meaning": "To experience or go through",
+      "banglaMeaning": "অতিক্রম করা",
+      "exampleSentence": "The company underwent major restructuring."
+    },
+    {
+      "word": "Encounter",
+      "pronunciation": "/ɪnˈkaʊntər/",
+      "meaning": "To experience something unexpected",
+      "banglaMeaning": "সম্মুখীন হওয়া",
+      "exampleSentence": "We encountered several difficulties."
+    },
+    {
+      "word": "Overcome",
+      "pronunciation": "/ˌoʊvərˈkʌm/",
+      "meaning": "To successfully deal with a problem",
+      "banglaMeaning": "অতিক্রম করা",
+      "exampleSentence": "We overcame all obstacles."
+    },
+    {
+      "word": "Mitigate",
+      "pronunciation": "/ˈmɪtɪɡeɪt/",
+      "meaning": "To reduce the severity of",
+      "banglaMeaning": "লাঘব করা",
+      "exampleSentence": "We took steps to mitigate the risks."
+    },
+    {
+      "word": "Alleviate",
+      "pronunciation": "/əˈliːvieɪt/",
+      "meaning": "To make less severe",
+      "banglaMeaning": "উপশম করা",
+      "exampleSentence": "The measures alleviated the crisis."
+    },
+    {
+      "word": "Eliminate",
+      "pronunciation": "/ɪˈlɪmɪneɪt/",
+      "meaning": "To remove completely",
+      "banglaMeaning": "দূর করা",
+      "exampleSentence": "We eliminated all inefficiencies."
+    },
+    {
+      "word": "Eradicate",
+      "pronunciation": "/ɪˈrædɪkeɪt/",
+      "meaning": "To destroy completely",
+      "banglaMeaning": "সমূলে উৎপাটন করা",
+      "exampleSentence": "The goal is to eradicate poverty."
+    },
+    {
+      "word": "Rectify",
+      "pronunciation": "/ˈrɛktɪfaɪ/",
+      "meaning": "To correct a mistake",
+      "banglaMeaning": "সংশোধন করা",
+      "exampleSentence": "We need to rectify the error."
+    },
+    {
+      "word": "Amend",
+      "pronunciation": "/əˈmɛnd/",
+      "meaning": "To make a change to improve",
+      "banglaMeaning": "সংশোধন করা",
+      "exampleSentence": "The policy was amended."
+    },
+    {
+      "word": "Revise",
+      "pronunciation": "/rɪˈvaɪz/",
+      "meaning": "To re-examine and make changes",
+      "banglaMeaning": "পুনর্বিবেচনা করা",
+      "exampleSentence": "We revised the budget."
+    },
+    {
+      "word": "Modify",
+      "pronunciation": "/ˈmɒdɪfaɪ/",
+      "meaning": "To make minor changes",
+      "banglaMeaning": "পরিবর্তন করা",
+      "exampleSentence": "The design was modified."
+    },
+    {
+      "word": "Alter",
+      "pronunciation": "/ˈɔːltər/",
+      "meaning": "To change partly",
+      "banglaMeaning": "পরিবর্তন করা",
+      "exampleSentence": "The schedule was altered."
+    },
+    {
+      "word": "Adjust",
+      "pronunciation": "/əˈdʒʌst/",
+      "meaning": "To make small changes for improvement",
+      "banglaMeaning": "সমন্বয় করা",
+      "exampleSentence": "We adjusted the settings."
+    },
+    {
+      "word": "Regulate",
+      "pronunciation": "/ˈrɛɡjʊleɪt/",
+      "meaning": "To control with rules",
+      "banglaMeaning": "নিয়ন্ত্রণ করা",
+      "exampleSentence": "The device regulates temperature."
+    },
+    {
+      "word": "Maintain",
+      "pronunciation": "/meɪnˈteɪn/",
+      "meaning": "To keep in good condition",
+      "banglaMeaning": "রক্ষণাবেক্ষণ করা",
+      "exampleSentence": "We maintain high standards."
+    },
+    {
+      "word": "Sustain",
+      "pronunciation": "/səˈsteɪn/",
+      "meaning": "To keep going over time",
+      "banglaMeaning": "টিকিয়ে রাখা",
+      "exampleSentence": "We must sustain the growth."
+    },
+    {
+      "word": "Preserve",
+      "pronunciation": "/prɪˈzɜːrv/",
+      "meaning": "To keep safe from harm",
+      "banglaMeaning": "সংরক্ষণ করা",
+      "exampleSentence": "We must preserve natural resources."
+    },
+    {
+      "word": "Conserve",
+      "pronunciation": "/kənˈsɜːrv/",
+      "meaning": "To protect from waste",
+      "banglaMeaning": "সংরক্ষণ করা",
+      "exampleSentence": "We need to conserve energy."
+    },
+    {
+      "word": "Reserve",
+      "pronunciation": "/rɪˈzɜːrv/",
+      "meaning": "To keep for future use",
+      "banglaMeaning": "সংরক্ষিত রাখা",
+      "exampleSentence": "Please reserve a seat for me."
+    },
+    {
+      "word": "Allot",
+      "pronunciation": "/əˈlɒt/",
+      "meaning": "To give out a share",
+      "banglaMeaning": "বরাদ্দ করা",
+      "exampleSentence": "Each member was allotted a task."
+    },
+    {
+      "word": "Distribute",
+      "pronunciation": "/dɪˈstrɪbjuːt/",
+      "meaning": "To give out portions",
+      "banglaMeaning": "বন্টন করা",
+      "exampleSentence": "The funds were distributed evenly."
+    },
+    {
+      "word": "Contribute",
+      "pronunciation": "/kənˈtrɪbjuːt/",
+      "meaning": "To give towards a common purpose",
+      "banglaMeaning": "অবদান রাখা",
+      "exampleSentence": "All members contributed to the discussion."
+    },
+    {
+      "word": "Donate",
+      "pronunciation": "/ˈdoʊneɪt/",
+      "meaning": "To give for a good cause",
+      "banglaMeaning": "দান করা",
+      "exampleSentence": "The company donated to charity."
+    },
+    {
+      "word": "Sponsor",
+      "pronunciation": "/ˈspɒnsər/",
+      "meaning": "To support financially",
+      "banglaMeaning": "পৃষ্ঠপোষকতা করা",
+      "exampleSentence": "The event was sponsored by a local business."
+    },
+    {
+      "word": "Patronize",
+      "pronunciation": "/ˈpætrənaɪz/",
+      "meaning": "To support with money",
+      "banglaMeaning": "পৃষ্ঠপোষকতা করা",
+      "exampleSentence": "They patronize local artists."
+    },
+    {
+      "word": "Subsidize",
+      "pronunciation": "/ˈsʌbsɪdaɪz/",
+      "meaning": "To support with public money",
+      "banglaMeaning": "ভর্তুকি দেওয়া",
+      "exampleSentence": "The government subsidizes agriculture."
+    },
+    {
+      "word": "Fund",
+      "pronunciation": "/fʌnd/",
+      "meaning": "To provide money for",
+      "banglaMeaning": "অর্থায়ন করা",
+      "exampleSentence": "The project was funded by investors."
+    },
+    {
+      "word": "Finance",
+      "pronunciation": "/ˈfaɪnæns/",
+      "meaning": "To provide money for a purpose",
+      "banglaMeaning": "অর্থায়ন করা",
+      "exampleSentence": "The bank financed the purchase."
+    },
+    {
+      "word": "Generate",
+      "pronunciation": "/ˈdʒɛnəreɪt/",
+      "meaning": "To produce or create",
+      "banglaMeaning": "উৎপন্ন করা",
+      "exampleSentence": "The campaign generated new leads."
+    },
+    {
+      "word": "Yield",
+      "pronunciation": "/jiːld/",
+      "meaning": "To produce a result or profit",
+      "banglaMeaning": "ফল দেওয়া",
+      "exampleSentence": "The investment yielded high returns."
+    },
+    {
+      "word": "Accumulate",
+      "pronunciation": "/əˈkjuːmjʊleɪt/",
+      "meaning": "To gather over time",
+      "banglaMeaning": "সঞ্চয় করা",
+      "exampleSentence": "Interest accumulates annually."
+    },
+    {
+      "word": "Amass",
+      "pronunciation": "/əˈmæs/",
+      "meaning": "To collect a large amount",
+      "banglaMeaning": "জড়ো করা",
+      "exampleSentence": "He amassed a fortune through investments."
+    },
+    {
+      "word": "Aggregate",
+      "pronunciation": "/ˈæɡrɪɡɪt/",
+      "meaning": "To combine into a total",
+      "banglaMeaning": "সমন্বিত করা",
+      "exampleSentence": "The aggregate sales exceeded targets."
+    },
+    {
+      "word": "Augment",
+      "pronunciation": "/ɔːɡˈmɛnt/",
+      "meaning": "To make larger or increase",
+      "banglaMeaning": "বৃদ্ধি করা",
+      "exampleSentence": "We need to augment our resources."
+    },
+    {
+      "word": "Enhance",
+      "pronunciation": "/ɪnˈhæns/",
+      "meaning": "To improve the quality or value",
+      "banglaMeaning": "বৃদ্ধি করা",
+      "exampleSentence": "The upgrade enhanced system performance."
+    },
+    {
+      "word": "Amplify",
+      "pronunciation": "/ˈæmplɪfaɪ/",
+      "meaning": "To make larger or stronger",
+      "banglaMeaning": "প্রসারিত করা",
+      "exampleSentence": "The microphone amplifies sound."
+    },
+    {
+      "word": "Magnify",
+      "pronunciation": "/ˈmæɡnɪfaɪ/",
+      "meaning": "To make appear larger",
+      "banglaMeaning": "বড় করে দেখা",
+      "exampleSentence": "The microscope magnifies tiny organisms."
+    },
+    {
+      "word": "Intensify",
+      "pronunciation": "/ɪnˈtɛnsɪfaɪ/",
+      "meaning": "To become stronger or more intense",
+      "banglaMeaning": "তীব্র করা",
+      "exampleSentence": "The competition is intensifying."
+    },
+    {
+      "word": "Diminish",
+      "pronunciation": "/dɪˈmɪnɪʃ/",
+      "meaning": "To become smaller or less",
+      "banglaMeaning": "হ্রাস করা",
+      "exampleSentence": "The impact diminished over time."
+    },
+    {
+      "word": "Decline",
+      "pronunciation": "/dɪˈklaɪn/",
+      "meaning": "To decrease or become worse",
+      "banglaMeaning": "হ্রাস পাওয়া",
+      "exampleSentence": "Sales have declined this quarter."
+    },
+    {
+      "word": "Deteriorate",
+      "pronunciation": "/dɪˈtɪriəreɪt/",
+      "meaning": "To become progressively worse",
+      "banglaMeaning": "অবনতি হওয়া",
+      "exampleSentence": "The situation deteriorated rapidly."
+    },
+    {
+      "word": "Dwindle",
+      "pronunciation": "/ˈdwɪndəl/",
+      "meaning": "To gradually become less",
+      "banglaMeaning": "ক্ষীণ হওয়া",
+      "exampleSentence": "Resources are dwindling."
+    },
+    {
+      "word": "Escalate",
+      "pronunciation": "/ˈɛskəleɪt/",
+      "meaning": "To increase in intensity",
+      "banglaMeaning": "বৃদ্ধি পাওয়া",
+      "exampleSentence": "The conflict escalated quickly."
+    },
+    {
+      "word": "Surge",
+      "pronunciation": "/sɜːrdʒ/",
+      "meaning": "A sudden increase",
+      "banglaMeaning": "হঠাৎ বৃদ্ধি",
+      "exampleSentence": "There was a surge in demand."
+    },
+    {
+      "word": "Fluctuate",
+      "pronunciation": "/ˈflʌktʃueɪt/",
+      "meaning": "To change frequently",
+      "banglaMeaning": "ওঠানামা করা",
+      "exampleSentence": "Prices fluctuate with the market."
+    },
+    {
+      "word": "Stabilize",
+      "pronunciation": "/ˈsteɪbɪlaɪz/",
+      "meaning": "To make stable or steady",
+      "banglaMeaning": "স্থিতিশীল করা",
+      "exampleSentence": "The economy is beginning to stabilize."
+    },
+    {
+      "word": "Normalize",
+      "pronunciation": "/ˈnɔːrməlaɪz/",
+      "meaning": "To return to normal",
+      "banglaMeaning": "স্বাভাবিক করা",
+      "exampleSentence": "Relations between the countries normalized."
+    },
+    {
+      "word": "Standardize",
+      "pronunciation": "/ˈstændərdaɪz/",
+      "meaning": "To make consistent",
+      "banglaMeaning": "মানানুসারে করা",
+      "exampleSentence": "We standardized the procedures."
+    },
+    {
+      "word": "Regulate",
+      "pronunciation": "/ˈrɛɡjʊleɪt/",
+      "meaning": "To control with rules",
+      "banglaMeaning": "নিয়ন্ত্রণ করা",
+      "exampleSentence": "The industry is heavily regulated."
+    },
+    {
+      "word": "Monitor",
+      "pronunciation": "/ˈmɒnɪtər/",
+      "meaning": "To observe over time",
+      "banglaMeaning": "নজরদারি করা",
+      "exampleSentence": "We monitor progress weekly."
+    },
+    {
+      "word": "Supervise",
+      "pronunciation": "/ˈsuːpərvaɪz/",
+      "meaning": "To watch over work",
+      "banglaMeaning": "তত্ত্বাবধান করা",
+      "exampleSentence": "A manager supervises the team."
+    },
+    {
+      "word": "Oversee",
+      "pronunciation": "/ˌoʊvərˈsiː/",
+      "meaning": "To supervise operations",
+      "banglaMeaning": "নিরীক্ষণ করা",
+      "exampleSentence": "She oversees the entire department."
+    },
+    {
+      "word": "Inspect",
+      "pronunciation": "/ɪnˈspɛkt/",
+      "meaning": "To examine officially",
+      "banglaMeaning": "পরিদর্শন করা",
+      "exampleSentence": "The inspector checked the site."
+    },
+    {
+      "word": "Audit",
+      "pronunciation": "/ˈɔːdɪt/",
+      "meaning": "To examine accounts officially",
+      "banglaMeaning": "নিরীক্ষা করা",
+      "exampleSentence": "The accounts are audited annually."
+    },
+    {
+      "word": "Scrutinize",
+      "pronunciation": "/ˈskruːtɪnaɪz/",
+      "meaning": "To examine minutely",
+      "banglaMeaning": "গভীরভাবে দেখা",
+      "exampleSentence": "The contract was scrutinized."
+    },
+    {
+      "word": "Survey",
+      "pronunciation": "/ˈsɜːrveɪ/",
+      "meaning": "To examine an area or group",
+      "banglaMeaning": "জরিপ করা",
+      "exampleSentence": "We surveyed 500 customers."
+    },
+    {
+      "word": "Investigate",
+      "pronunciation": "/ɪnˈvɛstɪɡeɪt/",
+      "meaning": "To examine thoroughly to find truth",
+      "banglaMeaning": "তদন্ত করা",
+      "exampleSentence": "The police are investigating the case."
+    },
+    {
+      "word": "Interrogate",
+      "pronunciation": "/ɪnˈtɛrəɡeɪt/",
+      "meaning": "To question aggressively",
+      "banglaMeaning": "জিজ্ঞাসাবাদ করা",
+      "exampleSentence": "The suspect was interrogated."
+    },
+    {
+      "word": "Cross-examine",
+      "pronunciation": "/krɒs ɪɡˈzæmɪn/",
+      "meaning": "To question a witness in court",
+      "banglaMeaning": "জেরা করা",
+      "exampleSentence": "The lawyer cross-examined the witness."
+    },
+    {
+      "word": "Depose",
+      "pronunciation": "/dɪˈpoʊz/",
+      "meaning": "To give sworn testimony",
+      "banglaMeaning": "শপথবদ্ধ সাক্ষ্য দেওয়া",
+      "exampleSentence": "The witness deposed before the court."
+    },
+    {
+      "word": "Affirm",
+      "pronunciation": "/əˈfɜːrm/",
+      "meaning": "To state firmly and publicly",
+      "banglaMeaning": "দৃঢ়ভাবে বলা",
+      "exampleSentence": "I affirm the statement is true."
+    },
+    {
+      "word": "Declare",
+      "pronunciation": "/dɪˈklɛər/",
+      "meaning": "To announce officially",
+      "banglaMeaning": "ঘোষণা করা",
+      "exampleSentence": "The results were declared."
+    },
+    {
+      "word": "Proclaim",
+      "pronunciation": "/prəˈkleɪm/",
+      "meaning": "To announce publicly",
+      "banglaMeaning": "প্রচার করা",
+      "exampleSentence": "The king proclaimed a holiday."
+    },
+    {
+      "word": "Announce",
+      "pronunciation": "/əˈnaʊns/",
+      "meaning": "To make known publicly",
+      "banglaMeaning": "ঘোষণা করা",
+      "exampleSentence": "The CEO announced the merger."
+    },
+    {
+      "word": "Disclose",
+      "pronunciation": "/dɪsˈkloʊz/",
+      "meaning": "To reveal confidential information",
+      "banglaMeaning": "প্রকাশ করা",
+      "exampleSentence": "The company disclosed its earnings."
+    },
+    {
+      "word": "Divulge",
+      "pronunciation": "/daɪˈvʌldʒ/",
+      "meaning": "To reveal secrets",
+      "banglaMeaning": "গোপন তথ্য ফাঁস করা",
+      "exampleSentence": "Do not divulge confidential information."
+    },
+    {
+      "word": "Reveal",
+      "pronunciation": "/rɪˈviːl/",
+      "meaning": "To make known",
+      "banglaMeaning": "প্রকাশ করা",
+      "exampleSentence": "The report revealed serious issues."
+    },
+    {
+      "word": "Conceal",
+      "pronunciation": "/kənˈsiːl/",
+      "meaning": "To hide or keep secret",
+      "banglaMeaning": "গোপন করা",
+      "exampleSentence": "He concealed the evidence."
+    },
+    {
+      "word": "Suppress",
+      "pronunciation": "/səˈprɛs/",
+      "meaning": "To prevent from being known",
+      "banglaMeaning": "দমন করা",
+      "exampleSentence": "The information was suppressed."
+    },
+    {
+      "word": "Omit",
+      "pronunciation": "/oʊˈmɪt/",
+      "meaning": "To leave out or exclude",
+      "banglaMeaning": "বাদ দেওয়া",
+      "exampleSentence": "Important details were omitted."
+    },
+    {
+      "word": "Exclude",
+      "pronunciation": "/ɪkˈskluːd/",
+      "meaning": "To keep out as not allowed",
+      "banglaMeaning": "বাদ দেওয়া",
+      "exampleSentence": "Some items are excluded from the offer."
+    },
+    {
+      "word": "Include",
+      "pronunciation": "/ɪnˈkluːd/",
+      "meaning": "To contain as part of",
+      "banglaMeaning": "অন্তর্ভুক্ত করা",
+      "exampleSentence": "The price includes taxes."
+    },
+    {
+      "word": "Comprise",
+      "pronunciation": "/kəmˈpraɪz/",
+      "meaning": "To consist of",
+      "banglaMeaning": "গঠিত হওয়া",
+      "exampleSentence": "The package comprises several items."
+    },
+    {
+      "word": "Consist",
+      "pronunciation": "/kənˈsɪst/",
+      "meaning": "To be composed of",
+      "banglaMeaning": "গঠিত হওয়া",
+      "exampleSentence": "The committee consists of five members."
+    },
+    {
+      "word": "Encompass",
+      "pronunciation": "/ɪnˈkʌmpəs/",
+      "meaning": "To include a wide range",
+      "banglaMeaning": "ঘিরে রাখা",
+      "exampleSentence": "The project encompasses many areas."
+    },
+    {
+      "word": "Embrace",
+      "pronunciation": "/ɪmˈbreɪs/",
+      "meaning": "To accept or include willingly",
+      "banglaMeaning": "গ্রহণ করা",
+      "exampleSentence": "We embrace new technologies."
+    },
+    {
+      "word": "Encompass",
+      "pronunciation": "/ɪnˈkʌmpəs/",
+      "meaning": "To include comprehensively",
+      "banglaMeaning": "পরিবেষ্টিত করা",
+      "exampleSentence": "The study encompasses multiple disciplines."
+    },
+    {
+      "word": "Entail",
+      "pronunciation": "/ɪnˈteɪl/",
+      "meaning": "To involve as necessary",
+      "banglaMeaning": "আবশ্যক করা",
+      "exampleSentence": "The job entails extensive travel."
+    },
+    {
+      "word": "Require",
+      "pronunciation": "/rɪˈkwaɪər/",
+      "meaning": "To need or demand",
+      "banglaMeaning": "প্রয়োজন হওয়া",
+      "exampleSentence": "This position requires a degree."
+    },
+    {
+      "word": "Necessitate",
+      "pronunciation": "/nɪˈsɛsɪteɪt/",
+      "meaning": "To make necessary",
+      "banglaMeaning": "আবশ্যক করা",
+      "exampleSentence": "The delay necessitated a new plan."
+    },
+    {
+      "word": "Mandate",
+      "pronunciation": "/ˈmændeɪt/",
+      "meaning": "To require by law",
+      "banglaMeaning": "বাধ্যতামূলক করা",
+      "exampleSentence": "The law mandates safety inspections."
+    },
+    {
+      "word": "Oblige",
+      "pronunciation": "/əˈblaɪdʒ/",
+      "meaning": "To compel or require",
+      "banglaMeaning": "বাধ্য করা",
+      "exampleSentence": "I am obliged to report this."
+    },
+    {
+      "word": "Compel",
+      "pronunciation": "/kəmˈpɛl/",
+      "meaning": "To force someone to do something",
+      "banglaMeaning": "জোর করা",
+      "exampleSentence": "The evidence compels us to act."
+    },
+    {
+      "word": "Constrain",
+      "pronunciation": "/kənˈstreɪn/",
+      "meaning": "To limit or restrict",
+      "banglaMeaning": "সীমাবদ্ধ করা",
+      "exampleSentence": "We are constrained by the budget."
+    },
+    {
+      "word": "Restrain",
+      "pronunciation": "/rɪˈstreɪn/",
+      "meaning": "To prevent from acting",
+      "banglaMeaning": "সংযত করা",
+      "exampleSentence": "He restrained himself from reacting."
+    },
+    {
+      "word": "Hinder",
+      "pronunciation": "/ˈhɪndər/",
+      "meaning": "To create difficulties",
+      "banglaMeaning": "বাধা দেওয়া",
+      "exampleSentence": "Bad weather hindered progress."
+    },
+    {
+      "word": "Impede",
+      "pronunciation": "/ɪmˈpiːd/",
+      "meaning": "To delay or block",
+      "banglaMeaning": "বাধা দেওয়া",
+      "exampleSentence": "Traffic impeded our arrival."
+    },
+    {
+      "word": "Obstruct",
+      "pronunciation": "/əbˈstrʌkt/",
+      "meaning": "To block or prevent",
+      "banglaMeaning": "আটকানো",
+      "exampleSentence": "The fallen tree obstructed the road."
+    },
+    {
+      "word": "Prohibit",
+      "pronunciation": "/prəˈhɪbɪt/",
+      "meaning": "To forbid by law",
+      "banglaMeaning": "নিষিদ্ধ করা",
+      "exampleSentence": "Smoking is prohibited."
+    },
+    {
+      "word": "Forbid",
+      "pronunciation": "/fərˈbɪd/",
+      "meaning": "To order not to do",
+      "banglaMeaning": "নিষেধ করা",
+      "exampleSentence": "I forbid you to go."
+    },
+    {
+      "word": "Ban",
+      "pronunciation": "/bæn/",
+      "meaning": "To officially prohibit",
+      "banglaMeaning": "নিষিদ্ধ করা",
+      "exampleSentence": "The product was banned."
+    },
+    {
+      "word": "Permit",
+      "pronunciation": "/pərˈmɪt/",
+      "meaning": "To allow officially",
+      "banglaMeaning": "অনুমতি দেওয়া",
+      "exampleSentence": "Smoking is not permitted."
+    },
+    {
+      "word": "Authorize",
+      "pronunciation": "/ˈɔːθəraɪz/",
+      "meaning": "To give official permission",
+      "banglaMeaning": "অনুমোদন দেওয়া",
+      "exampleSentence": "Only the manager can authorize overtime."
+    },
+    {
+      "word": "License",
+      "pronunciation": "/ˈlaɪsəns/",
+      "meaning": "To grant official permission",
+      "banglaMeaning": "লাইসেন্স দেওয়া",
+      "exampleSentence": "The restaurant is licensed to serve alcohol."
+    },
+    {
+      "word": "Grant",
+      "pronunciation": "/ɡrænt/",
+      "meaning": "To give or allow officially",
+      "banglaMeaning": "মঞ্জুর করা",
+      "exampleSentence": "The visa was granted."
+    },
+    {
+      "word": "Deny",
+      "pronunciation": "/dɪˈnaɪ/",
+      "meaning": "To refuse to give or allow",
+      "banglaMeaning": "অস্বীকার করা",
+      "exampleSentence": "The application was denied."
+    },
+    {
+      "word": "Refuse",
+      "pronunciation": "/rɪˈfjuːz/",
+      "meaning": "To decline to do or accept",
+      "banglaMeaning": "প্রত্যাখ্যান করা",
+      "exampleSentence": "I refuse to accept the terms."
+    },
+    {
+      "word": "Reject",
+      "pronunciation": "/rɪˈdʒɛkt/",
+      "meaning": "To dismiss as unacceptable",
+      "banglaMeaning": "বাতিল করা",
+      "exampleSentence": "The offer was rejected."
+    },
+    {
+      "word": "Decline",
+      "pronunciation": "/dɪˈklaɪn/",
+      "meaning": "To politely refuse",
+      "banglaMeaning": "বিনীতভাবে অস্বীকার করা",
+      "exampleSentence": "I must decline the invitation."
+    },
+    {
+      "word": "Accept",
+      "pronunciation": "/əkˈsɛpt/",
+      "meaning": "To agree to receive",
+      "banglaMeaning": "গ্রহণ করা",
+      "exampleSentence": "We accept your proposal."
+    },
+    {
+      "word": "Agree",
+      "pronunciation": "/əˈɡriː/",
+      "meaning": "To share the same opinion",
+      "banglaMeaning": "সম্মত হওয়া",
+      "exampleSentence": "We agree to the terms."
+    },
+    {
+      "word": "Consent",
+      "pronunciation": "/kənˈsɛnt/",
+      "meaning": "To give permission",
+      "banglaMeaning": "সম্মতি দেওয়া",
+      "exampleSentence": "She consented to the procedure."
+    },
+    {
+      "word": "Assent",
+      "pronunciation": "/əˈsɛnt/",
+      "meaning": "To agree formally",
+      "banglaMeaning": "সম্মতি দেওয়া",
+      "exampleSentence": "The board assented to the proposal."
+    },
+    {
+      "word": "Dissolve",
+      "pronunciation": "/dɪˈzɒlv/",
+      "meaning": "To formally end",
+      "banglaMeaning": "ভেঙে দেওয়া",
+      "exampleSentence": "The partnership was dissolved."
+    },
+    {
+      "word": "Abrogate",
+      "pronunciation": "/ˈæbrəɡeɪt/",
+      "meaning": "To abolish by official means",
+      "banglaMeaning": "বাতিল করা",
+      "exampleSentence": "The treaty was abrogated."
+    },
+    {
+      "word": "Repeal",
+      "pronunciation": "/rɪˈpiːl/",
+      "meaning": "To revoke a law",
+      "banglaMeaning": "প্রত্যাহার করা",
+      "exampleSentence": "The law was repealed."
+    },
+    {
+      "word": "Revoke",
+      "pronunciation": "/rɪˈvoʊk/",
+      "meaning": "To take back officially",
+      "banglaMeaning": "প্রত্যাহার করা",
+      "exampleSentence": "His license was revoked."
+    },
+    {
+      "word": "Rescind",
+      "pronunciation": "/rɪˈsɪnd/",
+      "meaning": "To cancel officially",
+      "banglaMeaning": "বাতিল করা",
+      "exampleSentence": "The contract was rescinded."
+    },
+    {
+      "word": "Nullify",
+      "pronunciation": "/ˈnʌlɪfaɪ/",
+      "meaning": "To make legally void",
+      "banglaMeaning": "বাতিল করা",
+      "exampleSentence": "The agreement was nullified."
+    },
+    {
+      "word": "Validate",
+      "pronunciation": "/ˈvælɪdeɪt/",
+      "meaning": "To confirm legally",
+      "banglaMeaning": "বৈধ করা",
+      "exampleSentence": "The will was validated."
+    },
+    {
+      "word": "Ratify",
+      "pronunciation": "/ˈrætɪfaɪ/",
+      "meaning": "To approve formally",
+      "banglaMeaning": "অনুমোদন করা",
+      "exampleSentence": "The amendment was ratified."
+    },
+    {
+      "word": "Enact",
+      "pronunciation": "/ɪˈnækt/",
+      "meaning": "To make into law",
+      "banglaMeaning": "আইন করা",
+      "exampleSentence": "The legislation was enacted."
+    },
+    {
+      "word": "Legislate",
+      "pronunciation": "/ˈlɛdʒɪsleɪt/",
+      "meaning": "To make or pass laws",
+      "banglaMeaning": "আইন প্রণয়ন করা",
+      "exampleSentence": "Parliament legislates new laws."
+    },
+    {
+      "word": "Decree",
+      "pronunciation": "/dɪˈkriː/",
+      "meaning": "An official order",
+      "banglaMeaning": "ডিক্রি / আদেশ",
+      "exampleSentence": "The president issued a decree."
+    },
+    {
+      "word": "Ordinance",
+      "pronunciation": "/ˈɔːrdɪnəns/",
+      "meaning": "A law or regulation",
+      "banglaMeaning": "অধ্যাদেশ",
+      "exampleSentence": "The city passed an ordinance."
+    },
+    {
+      "word": "Statute",
+      "pronunciation": "/ˈstætʃuːt/",
+      "meaning": "A written law",
+      "banglaMeaning": "সংবিধি",
+      "exampleSentence": "The statute was passed in 2020."
+    },
+    {
+      "word": "Provision",
+      "pronunciation": "/prəˈvɪʒən/",
+      "meaning": "A clause in a legal document",
+      "banglaMeaning": "বিধান",
+      "exampleSentence": "The contract includes a termination provision."
+    },
+    {
+      "word": "Clause",
+      "pronunciation": "/klɔːz/",
+      "meaning": "A section in a legal document",
+      "banglaMeaning": "ধারা",
+      "exampleSentence": "Read clause 5 carefully."
+    },
+    {
+      "word": "Article",
+      "pronunciation": "/ˈɑːrtɪkəl/",
+      "meaning": "A section in a document or law",
+      "banglaMeaning": "অনুচ্ছেদ",
+      "exampleSentence": "Article 14 guarantees equality."
+    },
+    {
+      "word": "Section",
+      "pronunciation": "/ˈsɛkʃən/",
+      "meaning": "A part of a document",
+      "banglaMeaning": "ধারা",
+      "exampleSentence": "Refer to section 3 of the policy."
+    },
+    {
+      "word": "Paragraph",
+      "pronunciation": "/ˈpærəɡræf/",
+      "meaning": "A distinct section of writing",
+      "banglaMeaning": "প্যারাগ্রাফ",
+      "exampleSentence": "The relevant information is in paragraph 2."
+    },
+    {
+      "word": "Subsection",
+      "pronunciation": "/ˈsʌbˌsɛkʃən/",
+      "meaning": "A division within a section",
+      "banglaMeaning": "উপধারা",
+      "exampleSentence": "See subsection 3.1 for details."
+    },
+    {
+      "word": "Appendix",
+      "pronunciation": "/əˈpɛndɪks/",
+      "meaning": "Supplementary material at the end",
+      "banglaMeaning": "পরিশিষ্ট",
+      "exampleSentence": "The data is in the appendix."
+    },
+    {
+      "word": "Annex",
+      "pronunciation": "/ˈænɛks/",
+      "meaning": "A document added to an agreement",
+      "banglaMeaning": "সংযুক্তি",
+      "exampleSentence": "The map is attached as an annex."
+    },
+    {
+      "word": "Addendum",
+      "pronunciation": "/əˈdɛndəm/",
+      "meaning": "Something added to a document",
+      "banglaMeaning": "সংযোজনী",
+      "exampleSentence": "An addendum was added to the contract."
+    },
+    {
+      "word": "Amendment",
+      "pronunciation": "/əˈmɛndmənt/",
+      "meaning": "A change to a document",
+      "banglaMeaning": "সংশোধনী",
+      "exampleSentence": "The amendment was approved."
+    },
+    {
+      "word": "Revision",
+      "pronunciation": "/rɪˈvɪʒən/",
+      "meaning": "A corrected or updated version",
+      "banglaMeaning": "পুনর্বিবেচনা",
+      "exampleSentence": "The revision includes new data."
+    },
+    {
+      "word": "Version",
+      "pronunciation": "/ˈvɜːrʒən/",
+      "meaning": "A particular form of something",
+      "banglaMeaning": "সংস্করণ",
+      "exampleSentence": "This is the final version."
+    },
+    {
+      "word": "Draft",
+      "pronunciation": "/dræft/",
+      "meaning": "A preliminary version",
+      "banglaMeaning": "খসড়া",
+      "exampleSentence": "I prepared a draft of the report."
+    },
+    {
+      "word": "Finalize",
+      "pronunciation": "/ˈfaɪnəlaɪz/",
+      "meaning": "To complete and make final",
+      "banglaMeaning": "চূড়ান্ত করা",
+      "exampleSentence": "We need to finalize the agreement."
+    },
+    {
+      "word": "Execute",
+      "pronunciation": "/ˈɛksɪkjuːt/",
+      "meaning": "To formally sign and complete",
+      "banglaMeaning": "স্বাক্ষর ও সম্পাদন করা",
+      "exampleSentence": "The contract was executed by both parties."
+    },
+    {
+      "word": "Witness",
+      "pronunciation": "/ˈwɪtnɪs/",
+      "meaning": "Someone who signs confirming an act",
+      "banglaMeaning": "সাক্ষী",
+      "exampleSentence": "The document was signed in the presence of a witness."
+    },
+    {
+      "word": "Notarize",
+      "pronunciation": "/ˈnoʊtəraɪz/",
+      "meaning": "To certify by a notary public",
+      "banglaMeaning": "নোটারি করানো",
+      "exampleSentence": "The affidavit must be notarized."
+    },
+    {
+      "word": "Legalize",
+      "pronunciation": "/ˈliːɡəlaɪz/",
+      "meaning": "To make legal",
+      "banglaMeaning": "আইনি বৈধতা দেওয়া",
+      "exampleSentence": "The document needs to be legalized."
+    },
+    {
+      "word": "Authenticate",
+      "pronunciation": "/ɔːˈθɛntɪkeɪt/",
+      "meaning": "To prove genuine",
+      "banglaMeaning": "প্রমাণীকরণ করা",
+      "exampleSentence": "The signature must be authenticated."
+    },
+    {
+      "word": "Obligation",
+      "pronunciation": "/ˌɒblɪˈɡeɪʃən/",
+      "meaning": "A legal or moral duty",
+      "banglaMeaning": "বাধ্যবাধকতা",
+      "exampleSentence": "We have an obligation to fulfill the contract."
+    },
+    {
+      "word": "Liability",
+      "pronunciation": "/ˌlaɪəˈbɪlɪti/",
+      "meaning": "Legal responsibility",
+      "banglaMeaning": "দায়বদ্ধতা",
+      "exampleSentence": "The company has limited liability."
+    },
+    {
+      "word": "Accountable",
+      "pronunciation": "/əˈkaʊntəbəl/",
+      "meaning": "Responsible for actions",
+      "banglaMeaning": "জবাবদিহি",
+      "exampleSentence": "Managers are accountable for their decisions."
+    },
+    {
+      "word": "Answerable",
+      "pronunciation": "/ˈænsərəbəl/",
+      "meaning": "Required to explain actions",
+      "banglaMeaning": "দায়বদ্ধ",
+      "exampleSentence": "We are answerable to the board."
+    },
+    {
+      "word": "Indemnify",
+      "pronunciation": "/ɪnˈdɛmnɪfaɪ/",
+      "meaning": "To compensate for harm or loss",
+      "banglaMeaning": "ক্ষতিপূরণ দেওয়া",
+      "exampleSentence": "The insurer will indemnify the policyholder."
+    },
+    {
+      "word": "Exempt",
+      "pronunciation": "/ɪɡˈzɛmpt/",
+      "meaning": "Free from an obligation",
+      "banglaMeaning": "মুক্ত",
+      "exampleSentence": "Charities are exempt from tax."
+    },
+    {
+      "word": "Immune",
+      "pronunciation": "/ɪˈmjuːn/",
+      "meaning": "Protected from something",
+      "banglaMeaning": "অনাক্রম্য",
+      "exampleSentence": "Diplomats are immune from prosecution."
+    },
+    {
+      "word": "Privilege",
+      "pronunciation": "/ˈprɪvɪlɪdʒ/",
+      "meaning": "A special right or advantage",
+      "banglaMeaning": "বিশেষাধিকার",
+      "exampleSentence": "It is a privilege to work here."
+    },
+    {
+      "word": "Entitlement",
+      "pronunciation": "/ɪnˈtaɪtəlmənt/",
+      "meaning": "The right to receive something",
+      "banglaMeaning": "অধিকার",
+      "exampleSentence": "Employees have entitlement to annual leave."
+    },
+    {
+      "word": "Qualification",
+      "pronunciation": "/ˌkwɒlɪfɪˈkeɪʃən/",
+      "meaning": "A condition that must be met",
+      "banglaMeaning": "যোগ্যতা",
+      "exampleSentence": "Meeting the qualifications is essential."
+    },
+    {
+      "word": "Prerequisite",
+      "pronunciation": "/priːˈrɛkwɪzɪt/",
+      "meaning": "Something required beforehand",
+      "banglaMeaning": "পূর্বশর্ত",
+      "exampleSentence": "A degree is a prerequisite for this job."
+    },
+    {
+      "word": "Precondition",
+      "pronunciation": "/priːkənˈdɪʃən/",
+      "meaning": "A condition that must be fulfilled first",
+      "banglaMeaning": "পূর্ব শর্ত",
+      "exampleSentence": "Ceasefire is a precondition for talks."
+    },
+    {
+      "word": "Term",
+      "pronunciation": "/tɜːrm/",
+      "meaning": "A condition in an agreement",
+      "banglaMeaning": "শর্ত",
+      "exampleSentence": "The terms of the contract are fair."
+    },
+    {
+      "word": "Condition",
+      "pronunciation": "/kənˈdɪʃən/",
+      "meaning": "A requirement in an agreement",
+      "banglaMeaning": "শর্ত",
+      "exampleSentence": "Payment is conditional on delivery."
+    },
+    {
+      "word": "Covenant",
+      "pronunciation": "/ˈkʌvənənt/",
+      "meaning": "A formal agreement or promise",
+      "banglaMeaning": "চুক্তি",
+      "exampleSentence": "The covenant was signed by both parties."
+    },
+    {
+      "word": "Pledge",
+      "pronunciation": "/plɛdʒ/",
+      "meaning": "A serious promise",
+      "banglaMeaning": "অঙ্গীকার",
+      "exampleSentence": "He made a pledge to donate."
+    },
+    {
+      "word": "Guarantee",
+      "pronunciation": "/ˌɡærənˈtiː/",
+      "meaning": "A formal assurance",
+      "banglaMeaning": "গ্যারান্টি",
+      "exampleSentence": "The product comes with a one-year guarantee."
+    },
+    {
+      "word": "Warranty",
+      "pronunciation": "/ˈwɒrənti/",
+      "meaning": "A written guarantee",
+      "banglaMeaning": "ওয়ারেন্টি",
+      "exampleSentence": "The warranty covers manufacturing defects."
+    },
+    {
+      "word": "Indemnity",
+      "pronunciation": "/ɪnˈdɛmnɪti/",
+      "meaning": "Security against loss",
+      "banglaMeaning": "নিরাপত্তা",
+      "exampleSentence": "The insurance provides indemnity."
+    },
+    {
+      "word": "Insurance",
+      "pronunciation": "/ɪnˈʃʊərəns/",
+      "meaning": "Financial protection against loss",
+      "banglaMeaning": "বীমা",
+      "exampleSentence": "Health insurance is provided."
+    },
+    {
+      "word": "Premium",
+      "pronunciation": "/ˈpriːmiəm/",
+      "meaning": "The amount paid for insurance",
+      "banglaMeaning": "প্রিমিয়াম",
+      "exampleSentence": "The insurance premium is paid annually."
+    },
+    {
+      "word": "Claim",
+      "pronunciation": "/kleɪm/",
+      "meaning": "A request for payment under insurance",
+      "banglaMeaning": "দাবি",
+      "exampleSentence": "We filed an insurance claim."
+    },
+    {
+      "word": "Deductible",
+      "pronunciation": "/dɪˈdʌktɪbəl/",
+      "meaning": "Amount paid before insurance covers",
+      "banglaMeaning": "ছাড়যোগ্য",
+      "exampleSentence": "The deductible is $500."
+    },
+    {
+      "word": "Policy",
+      "pronunciation": "/ˈpɒlɪsi/",
+      "meaning": "A set of rules or insurance contract",
+      "banglaMeaning": "নীতি / পলিসি",
+      "exampleSentence": "Read the insurance policy carefully."
+    },
+    {
+      "word": "Procedure",
+      "pronunciation": "/prəˈsiːdʒər/",
+      "meaning": "An official way of doing something",
+      "banglaMeaning": "পদ্ধতি",
+      "exampleSentence": "Follow the standard procedure."
+    },
+    {
+      "word": "Protocol",
+      "pronunciation": "/ˈproʊtəkɒl/",
+      "meaning": "Official rules of behavior",
+      "banglaMeaning": "প্রটোকল",
+      "exampleSentence": "Diplomatic protocol must be observed."
+    },
+    {
+      "word": "Guideline",
+      "pronunciation": "/ˈɡaɪdlaɪn/",
+      "meaning": "A general rule or advice",
+      "banglaMeaning": "নির্দেশিকা",
+      "exampleSentence": "Follow the safety guidelines."
+    },
+    {
+      "word": "Regulation",
+      "pronunciation": "/ˌrɛɡjʊˈleɪʃən/",
+      "meaning": "An official rule",
+      "banglaMeaning": "নিয়ম",
+      "exampleSentence": "The regulation requires a license."
+    },
+    {
+      "word": "Ordinance",
+      "pronunciation": "/ˈɔːrdɪnəns/",
+      "meaning": "A local law",
+      "banglaMeaning": "অধ্যাদেশ",
+      "exampleSentence": "The city ordinance bans plastic bags."
+    },
+    {
+      "word": "Legislation",
+      "pronunciation": "/ˌlɛdʒɪsˈleɪʃən/",
+      "meaning": "Laws passed by a government",
+      "banglaMeaning": "আইন",
+      "exampleSentence": "New legislation was introduced."
+    },
+    {
+      "word": "Jurisdiction",
+      "pronunciation": "/ˌdʒʊrɪsˈdɪkʃən/",
+      "meaning": "The authority to make legal decisions",
+      "banglaMeaning": "আইনগত এখতিয়ার",
+      "exampleSentence": "This court has jurisdiction over the case."
+    },
+    {
+      "word": "Sovereignty",
+      "pronunciation": "/ˈsɒvrɪnti/",
+      "meaning": "Supreme power or authority",
+      "banglaMeaning": "সার্বভৌমত্ব",
+      "exampleSentence": "The country's sovereignty must be respected."
+    },
+    {
+      "word": "Autonomy",
+      "pronunciation": "/ɔːˈtɒnəmi/",
+      "meaning": "Self-governing power",
+      "banglaMeaning": "স্বায়ত্তশাসন",
+      "exampleSentence": "The region was granted autonomy."
+    },
+    {
+      "word": "Authority",
+      "pronunciation": "/ɔːˈθɒrɪti/",
+      "meaning": "The power to give orders",
+      "banglaMeaning": "কর্তৃত্ব",
+      "exampleSentence": "Only the manager has authority to approve."
+    },
+    {
+      "word": "Power",
+      "pronunciation": "/ˈpaʊər/",
+      "meaning": "The ability to act or influence",
+      "banglaMeaning": "ক্ষমতা",
+      "exampleSentence": "The board has the power to veto."
+    },
+    {
+      "word": "Influence",
+      "pronunciation": "/ˈɪnfluəns/",
+      "meaning": "The capacity to affect others",
+      "banglaMeaning": "প্রভাব",
+      "exampleSentence": "He has influence over the committee."
+    },
+    {
+      "word": "Control",
+      "pronunciation": "/kənˈtroʊl/",
+      "meaning": "The power to direct",
+      "banglaMeaning": "নিয়ন্ত্রণ",
+      "exampleSentence": "The manager maintains control over operations."
+    },
+    {
+      "word": "Dominate",
+      "pronunciation": "/ˈdɒmɪneɪt/",
+      "meaning": "To have power over",
+      "banglaMeaning": "আধিপত্য করা",
+      "exampleSentence": "The company dominates the market."
+    },
+    {
+      "word": "Prevail",
+      "pronunciation": "/prɪˈveɪl/",
+      "meaning": "To prove more powerful",
+      "banglaMeaning": "জয়ী হওয়া",
+      "exampleSentence": "Justice prevailed in the end."
+    },
+    {
+      "word": "Triumph",
+      "pronunciation": "/ˈtraɪəmf/",
+      "meaning": "A great victory",
+      "banglaMeaning": "বিজয়",
+      "exampleSentence": "The team celebrated their triumph."
+    },
+    {
+      "word": "Prevail",
+      "pronunciation": "/prɪˈveɪl/",
+      "meaning": "To succeed despite difficulties",
+      "banglaMeaning": "প্রবল থাকা",
+      "exampleSentence": "Truth will prevail."
+    },
+    {
+      "word": "Persist",
+      "pronunciation": "/pərˈsɪst/",
+      "meaning": "To continue firmly",
+      "banglaMeaning": "অটল থাকা",
+      "exampleSentence": "If you persist, you will succeed."
+    },
+    {
+      "word": "Endure",
+      "pronunciation": "/ɪnˈdʊr/",
+      "meaning": "To suffer patiently",
+      "banglaMeaning": "সহ্য করা",
+      "exampleSentence": "We must endure the difficulties."
+    },
+    {
+      "word": "Withstand",
+      "pronunciation": "/wɪðˈstænd/",
+      "meaning": "To resist or survive",
+      "banglaMeaning": "প্রতিরোধ করা",
+      "exampleSentence": "The building withstood the earthquake."
+    },
+    {
+      "word": "Tolerate",
+      "pronunciation": "/ˈtɒləreɪt/",
+      "meaning": "To allow something",
+      "banglaMeaning": "সহ্য করা",
+      "exampleSentence": "We do not tolerate discrimination."
+    },
+    {
+      "word": "Accept",
+      "pronunciation": "/əkˈsɛpt/",
+      "meaning": "To agree to receive",
+      "banglaMeaning": "গ্রহণ করা",
+      "exampleSentence": "We accept your apology."
+    },
+    {
+      "word": "Adopt",
+      "pronunciation": "/əˈdɒpt/",
+      "meaning": "To take up or start using",
+      "banglaMeaning": "গ্রহণ করা",
+      "exampleSentence": "We adopted a new approach."
+    },
+    {
+      "word": "Adapt",
+      "pronunciation": "/əˈdæpt/",
+      "meaning": "To adjust to new conditions",
+      "banglaMeaning": "খাপ খাওয়ানো",
+      "exampleSentence": "We must adapt to changes."
+    },
+    {
+      "word": "Adjust",
+      "pronunciation": "/əˈdʒʌst/",
+      "meaning": "To make minor changes",
+      "banglaMeaning": "সামঞ্জস্য করা",
+      "exampleSentence": "We adjusted the plan."
+    },
+    {
+      "word": "Accommodate",
+      "pronunciation": "/əˈkɒmədeɪt/",
+      "meaning": "To provide for or adjust to",
+      "banglaMeaning": "স্থান দেওয়া",
+      "exampleSentence": "We can accommodate your request."
+    },
+    {
+      "word": "Facilitate",
+      "pronunciation": "/fəˈsɪlɪteɪt/",
+      "meaning": "To make easier",
+      "banglaMeaning": "সহজ করা",
+      "exampleSentence": "The software facilitates communication."
+    },
+    {
+      "word": "Enable",
+      "pronunciation": "/ɪˈneɪbəl/",
+      "meaning": "To make possible",
+      "banglaMeaning": "সক্ষম করা",
+      "exampleSentence": "The grant enabled us to expand."
+    },
+    {
+      "word": "Empower",
+      "pronunciation": "/ɪmˈpaʊər/",
+      "meaning": "To give power or authority",
+      "banglaMeaning": "ক্ষমতায়ন করা",
+      "exampleSentence": "We empower our employees."
+    },
+    {
+      "word": "Entitle",
+      "pronunciation": "/ɪnˈtaɪtəl/",
+      "meaning": "To give the right to",
+      "banglaMeaning": "অধিকার দেওয়া",
+      "exampleSentence": "You are entitled to a refund."
+    },
+    {
+      "word": "Authorize",
+      "pronunciation": "/ˈɔːθəraɪz/",
+      "meaning": "To give official power",
+      "banglaMeaning": "অনুমোদন দেওয়া",
+      "exampleSentence": "I authorize you to act."
+    },
+    {
+      "word": "Commission",
+      "pronunciation": "/kəˈmɪʃən/",
+      "meaning": "To formally appoint",
+      "banglaMeaning": "নিযুক্ত করা",
+      "exampleSentence": "He was commissioned to lead the project."
+    },
+    {
+      "word": "Engage",
+      "pronunciation": "/ɪnˈɡeɪdʒ/",
+      "meaning": "To hire or employ",
+      "banglaMeaning": "নিয়োগ করা",
+      "exampleSentence": "We engaged a consultant."
+    },
+    {
+      "word": "Employ",
+      "pronunciation": "/ɪmˈplɔɪ/",
+      "meaning": "To give work to",
+      "banglaMeaning": "চাকরি দেওয়া",
+      "exampleSentence": "The firm employs 200 people."
+    },
+    {
+      "word": "Recruit",
+      "pronunciation": "/rɪˈkruːt/",
+      "meaning": "To find new employees",
+      "banglaMeaning": "নিয়োগ দেওয়া",
+      "exampleSentence": "We are recruiting new staff."
+    },
+    {
+      "word": "Hire",
+      "pronunciation": "/ˈhaɪər/",
+      "meaning": "To employ someone",
+      "banglaMeaning": "ভাড়া করা",
+      "exampleSentence": "We hired a new manager."
+    },
+    {
+      "word": "Dismiss",
+      "pronunciation": "/dɪsˈmɪs/",
+      "meaning": "To fire or let go",
+      "banglaMeaning": "বরখাস্ত করা",
+      "exampleSentence": "He was dismissed for misconduct."
+    },
+    {
+      "word": "Terminate",
+      "pronunciation": "/ˈtɜːrmɪneɪt/",
+      "meaning": "To end employment",
+      "banglaMeaning": "চাকরি শেষ করা",
+      "exampleSentence": "Her contract was terminated."
+    },
+    {
+      "word": "Discharge",
+      "pronunciation": "/dɪsˈtʃɑːrdʒ/",
+      "meaning": "To release from employment",
+      "banglaMeaning": "অবমুক্ত করা",
+      "exampleSentence": "He was discharged from the company."
+    },
+    {
+      "word": "Lay Off",
+      "pronunciation": "/leɪ ɒf/",
+      "meaning": "To end employment due to business needs",
+      "banglaMeaning": "ছাঁটাই করা",
+      "exampleSentence": "The company laid off 50 workers."
+    },
+    {
+      "word": "Resign",
+      "pronunciation": "/rɪˈzaɪn/",
+      "meaning": "To voluntarily leave a job",
+      "banglaMeaning": "ইস্তফা দেওয়া",
+      "exampleSentence": "She resigned from her position."
+    },
+    {
+      "word": "Retire",
+      "pronunciation": "/rɪˈtaɪər/",
+      "meaning": "To leave work at an older age",
+      "banglaMeaning": "অবসর নেওয়া",
+      "exampleSentence": "He retired after 30 years of service."
+    },
+    {
+      "word": "Vacate",
+      "pronunciation": "/ˈveɪkeɪt/",
+      "meaning": "To leave a position or property",
+      "banglaMeaning": "খালি করা",
+      "exampleSentence": "You must vacate the office by Friday."
+    },
+    {
+      "word": "Relinquish",
+      "pronunciation": "/rɪˈlɪŋkwɪʃ/",
+      "meaning": "To give up voluntarily",
+      "banglaMeaning": "ত্যাগ করা",
+      "exampleSentence": "He relinquished his claim."
+    },
+    {
+      "word": "Renounce",
+      "pronunciation": "/rɪˈnaʊns/",
+      "meaning": "To formally give up",
+      "banglaMeaning": "পরিত্যাগ করা",
+      "exampleSentence": "He renounced his citizenship."
+    },
+    {
+      "word": "Abdicate",
+      "pronunciation": "/ˈæbdɪkeɪt/",
+      "meaning": "To give up a position of power",
+      "banglaMeaning": "পদত্যাগ করা",
+      "exampleSentence": "The king abdicated the throne."
+    }
+  ]
+}

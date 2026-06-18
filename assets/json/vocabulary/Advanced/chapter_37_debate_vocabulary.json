@@ -1,1 +1,2191 @@
-{"chapter": 37, "level": "Advanced", "title": "Debate Vocabulary", "words": []}
+{
+  "chapter": 37,
+  "level": "Advanced",
+  "title": "Debate Vocabulary",
+  "words": [
+    {
+      "word": "Motion",
+      "pronunciation": "/ˈmoʊʃən/",
+      "meaning": "The topic being debated",
+      "banglaMeaning": "প্রস্তাব",
+      "exampleSentence": "The motion for debate is that social media does more harm than good."
+    },
+    {
+      "word": "Proposition",
+      "pronunciation": "/ˌprɒpəˈzɪʃən/",
+      "meaning": "The side arguing in favor of the motion",
+      "banglaMeaning": "প্রস্তাব পক্ষ",
+      "exampleSentence": "The proposition team presented their first argument."
+    },
+    {
+      "word": "Opposition",
+      "pronunciation": "/ˌɒpəˈzɪʃən/",
+      "meaning": "The side arguing against the motion",
+      "banglaMeaning": "বিরোধী পক্ষ",
+      "exampleSentence": "The opposition rebutted the claim."
+    },
+    {
+      "word": "Rebuttal",
+      "pronunciation": "/rɪˈbʌtəl/",
+      "meaning": "A response that counters an argument",
+      "banglaMeaning": "খণ্ডন",
+      "exampleSentence": "She made a strong rebuttal."
+    },
+    {
+      "word": "Refute",
+      "pronunciation": "/rɪˈfjuːt/",
+      "meaning": "To prove an argument is wrong",
+      "banglaMeaning": "খণ্ডন করা",
+      "exampleSentence": "The evidence refuted the opposing argument."
+    },
+    {
+      "word": "Counterargument",
+      "pronunciation": "/ˈkaʊntərˌɑːrɡjumənt/",
+      "meaning": "An argument that opposes another",
+      "banglaMeaning": "প্রতিযুক্তি",
+      "exampleSentence": "Prepare a counterargument for that point."
+    },
+    {
+      "word": "Rejoinder",
+      "pronunciation": "/rɪˈdʒɔɪndər/",
+      "meaning": "A quick, witty reply in debate",
+      "banglaMeaning": "জবাব",
+      "exampleSentence": "His rejoinder silenced the opposition."
+    },
+    {
+      "word": "Clash",
+      "pronunciation": "/klæʃ/",
+      "meaning": "A direct disagreement between sides",
+      "banglaMeaning": "সংঘর্ষ",
+      "exampleSentence": "There was a clash of opinions."
+    },
+    {
+      "word": "Contention",
+      "pronunciation": "/kənˈtɛnʃən/",
+      "meaning": "A point asserted in argument",
+      "banglaMeaning": "বিবাদ",
+      "exampleSentence": "Her main contention is that the policy is flawed."
+    },
+    {
+      "word": "Assertion",
+      "pronunciation": "/əˈsɜːrʃən/",
+      "meaning": "A confident statement without proof",
+      "banglaMeaning": "দাবি",
+      "exampleSentence": "That assertion needs evidence."
+    },
+    {
+      "word": "Claim",
+      "pronunciation": "/kleɪm/",
+      "meaning": "A statement that something is true",
+      "banglaMeaning": "দাবি",
+      "exampleSentence": "The claim was supported by data."
+    },
+    {
+      "word": "Premise",
+      "pronunciation": "/ˈprɛmɪs/",
+      "meaning": "A foundational assumption in an argument",
+      "banglaMeaning": "ভিত্তি",
+      "exampleSentence": "The premise of your argument is weak."
+    },
+    {
+      "word": "Fallacy",
+      "pronunciation": "/ˈfæləsi/",
+      "meaning": "A mistaken belief or flawed reasoning",
+      "banglaMeaning": "যুক্তিদোষ",
+      "exampleSentence": "That is a logical fallacy."
+    },
+    {
+      "word": "Logical Fallacy",
+      "pronunciation": "/ˈlɒdʒɪkəl ˈfæləsi/",
+      "meaning": "An error in reasoning",
+      "banglaMeaning": "যুক্তিগত ত্রুটি",
+      "exampleSentence": "Ad hominem is a common logical fallacy."
+    },
+    {
+      "word": "Ad Hominem",
+      "pronunciation": "/æd ˈhɒmɪnɛm/",
+      "meaning": "Attacking the person instead of the argument",
+      "banglaMeaning": "ব্যক্তিগত আক্রমণ",
+      "exampleSentence": "Ad hominem attacks weaken your argument."
+    },
+    {
+      "word": "Straw Man",
+      "pronunciation": "/strɔː mæn/",
+      "meaning": "Misrepresenting someone's argument to attack it",
+      "banglaMeaning": "মিথ্যা যুক্তি",
+      "exampleSentence": "That's a straw man of my position."
+    },
+    {
+      "word": "Red Herring",
+      "pronunciation": "/rɛd ˈhɛrɪŋ/",
+      "meaning": "An irrelevant point to distract from the issue",
+      "banglaMeaning": "বিভ্রান্তিকর তথ্য",
+      "exampleSentence": "Bringing up that statistic is a red herring."
+    },
+    {
+      "word": "Slippery Slope",
+      "pronunciation": "/ˈslɪpəri sloʊp/",
+      "meaning": "Arguing that one step leads to extreme outcomes",
+      "banglaMeaning": "পিচ্ছিল ঢালু যুক্তি",
+      "exampleSentence": "That is a slippery slope argument."
+    },
+    {
+      "word": "Circular Reasoning",
+      "pronunciation": "/ˈsɜːrkjʊlər ˈriːzənɪŋ/",
+      "meaning": "An argument that assumes what it tries to prove",
+      "banglaMeaning": "চক্রাকার যুক্তি",
+      "exampleSentence": "Circular reasoning proves nothing."
+    },
+    {
+      "word": "False Dilemma",
+      "pronunciation": "/fɔːls dɪˈlɛmə/",
+      "meaning": "Presenting only two options when more exist",
+      "banglaMeaning": "মিথ্যা дилемা",
+      "exampleSentence": "That's a false dilemma; there are other options."
+    },
+    {
+      "word": "Hasty Generalization",
+      "pronunciation": "/ˈheɪsti ˌdʒɛnərəlaɪˈzeɪʃən/",
+      "meaning": "A conclusion based on insufficient evidence",
+      "banglaMeaning": "তাড়াহুড়ো সাধারণীকরণ",
+      "exampleSentence": "That's a hasty generalization from just one example."
+    },
+    {
+      "word": "Appeal to Authority",
+      "pronunciation": "/əˈpiːl tuː ɔːˈθɒrɪti/",
+      "meaning": "Using an expert's opinion as proof",
+      "banglaMeaning": "কর্তৃপক্ষের প্রতি আবেদন",
+      "exampleSentence": "Appeal to authority is not always valid."
+    },
+    {
+      "word": "Appeal to Emotion",
+      "pronunciation": "/əˈpiːl tuː ɪˈmoʊʃən/",
+      "meaning": "Using emotion instead of logic",
+      "banglaMeaning": "আবেগের প্রতি আবেদন",
+      "exampleSentence": "Don't use appeal to emotion; use facts."
+    },
+    {
+      "word": "Appeal to Fear",
+      "pronunciation": "/əˈpiːl tuː fɪər/",
+      "meaning": "Using fear to persuade",
+      "banglaMeaning": "ভয় দেখানো",
+      "exampleSentence": "The argument was an appeal to fear."
+    },
+    {
+      "word": "Appeal to Ignorance",
+      "pronunciation": "/əˈpiːl tuː ˈɪɡnərəns/",
+      "meaning": "Claiming something is true because it hasn't been disproven",
+      "banglaMeaning": "অজ্ঞতার প্রতি আবেদন",
+      "exampleSentence": "Appeal to ignorance is a weak argument."
+    },
+    {
+      "word": "Bandwagon Fallacy",
+      "pronunciation": "/ˈbændwæɡən ˈfæləsi/",
+      "meaning": "Arguing something is true because many believe it",
+      "banglaMeaning": "গণতান্ত্রিক যুক্তিদোষ",
+      "exampleSentence": "Just because everyone does it is a bandwagon fallacy."
+    },
+    {
+      "word": "Correlation vs Causation",
+      "pronunciation": "/ˌkɒrɪˈleɪʃən vɜːrs kɔːˈzeɪʃən/",
+      "meaning": "Confusing a relationship with a cause",
+      "banglaMeaning": "সম্পর্ক বনাম কারণ",
+      "exampleSentence": "Correlation does not imply causation."
+    },
+    {
+      "word": "Confirmation Bias",
+      "pronunciation": "/ˌkɒnfərˈmeɪʃən ˈbaɪəs/",
+      "meaning": "Favoring evidence that supports your view",
+      "banglaMeaning": "নিশ্চিতকরণ পক্ষপাত",
+      "exampleSentence": "Confirmation bias prevents objective analysis."
+    },
+    {
+      "word": "Anecdotal Evidence",
+      "pronunciation": "/ˌænɪkˈdoʊtəl ˈɛvɪdəns/",
+      "meaning": "Evidence based on personal stories",
+      "banglaMeaning": "ব্যক্তিগত ঘটনার প্রমাণ",
+      "exampleSentence": "Anecdotal evidence is not statistically valid."
+    },
+    {
+      "word": "Empirical Evidence",
+      "pronunciation": "/ɪmˈpɪrɪkəl ˈɛvɪdəns/",
+      "meaning": "Evidence based on observation or experience",
+      "banglaMeaning": "অভিজ্ঞতাভিত্তিক প্রমাণ",
+      "exampleSentence": "Empirical evidence supports our position."
+    },
+    {
+      "word": "Circumstantial Evidence",
+      "pronunciation": "/ˌsɜːrkəmˈstænʃəl ˈɛvɪdəns/",
+      "meaning": "Evidence that implies a fact but does not prove it",
+      "banglaMeaning": "পরিস্থিতিগত প্রমাণ",
+      "exampleSentence": "The case relies on circumstantial evidence."
+    },
+    {
+      "word": "Burden of Proof",
+      "pronunciation": "/ˈbɜːrdən əv pruːf/",
+      "meaning": "The obligation to prove one's claim",
+      "banglaMeaning": "প্রমাণের দায়িত্ব",
+      "exampleSentence": "The burden of proof lies with the proposition."
+    },
+    {
+      "word": "Standard of Proof",
+      "pronunciation": "/ˈstændərd əv pruːf/",
+      "meaning": "The level of evidence required",
+      "banglaMeaning": "প্রমাণের মান",
+      "exampleSentence": "Beyond reasonable doubt is the standard of proof."
+    },
+    {
+      "word": "Beyond Reasonable Doubt",
+      "pronunciation": "/bɪˈjɒnd ˈriːzənəbəl daʊt/",
+      "meaning": "Evidence that leaves no reasonable doubt",
+      "banglaMeaning": "যুক্তিসঙ্গত সন্দেহের উর্ধ্বে",
+      "exampleSentence": "The case was proven beyond reasonable doubt."
+    },
+    {
+      "word": "Preponderance of Evidence",
+      "pronunciation": "/prɪˈpɒndərəns əv ˈɛvɪdəns/",
+      "meaning": "Evidence that is more convincing than the opposing side",
+      "banglaMeaning": "প্রমাণের প্রাধান্য",
+      "exampleSentence": "The preponderance of evidence supports our case."
+    },
+    {
+      "word": "Prima Facie",
+      "pronunciation": "/ˈpraɪmə ˈfeɪʃi/",
+      "meaning": "At first glance; sufficient evidence to proceed",
+      "banglaMeaning": "প্রথম দৃষ্টিতে",
+      "exampleSentence": "There is prima facie evidence of wrongdoing."
+    },
+    {
+      "word": "Supposition",
+      "pronunciation": "/ˌsʌpəˈzɪʃən/",
+      "meaning": "An assumption based on limited information",
+      "banglaMeaning": "অনুমান",
+      "exampleSentence": "That is merely a supposition."
+    },
+    {
+      "word": "Conjecture",
+      "pronunciation": "/kənˈdʒɛktʃər/",
+      "meaning": "An opinion formed without evidence",
+      "banglaMeaning": "অনুমান",
+      "exampleSentence": "That is pure conjecture."
+    },
+    {
+      "word": "Speculation",
+      "pronunciation": "/ˌspɛkjʊˈleɪʃən/",
+      "meaning": "Forming theories without firm evidence",
+      "banglaMeaning": "জল্পনা",
+      "exampleSentence": "We need facts, not speculation."
+    },
+    {
+      "word": "Hypothesis",
+      "pronunciation": "/haɪˈpɒθɪsɪs/",
+      "meaning": "A proposed explanation to be tested",
+      "banglaMeaning": "অনুমান",
+      "exampleSentence": "Let's work with that hypothesis."
+    },
+    {
+      "word": "Inference",
+      "pronunciation": "/ˈɪnfərəns/",
+      "meaning": "A conclusion reached from evidence",
+      "banglaMeaning": "অনুমিত সিদ্ধান্ত",
+      "exampleSentence": "What inference can we draw from this?"
+    },
+    {
+      "word": "Deduction",
+      "pronunciation": "/dɪˈdʌkʃən/",
+      "meaning": "Reasoning from general to specific",
+      "banglaMeaning": "নিগমন",
+      "exampleSentence": "Deduction leads to a certain conclusion."
+    },
+    {
+      "word": "Induction",
+      "pronunciation": "/ɪnˈdʌkʃən/",
+      "meaning": "Reasoning from specific to general",
+      "banglaMeaning": "আবেশ",
+      "exampleSentence": "Induction draws a general principle from examples."
+    },
+    {
+      "word": "Analogy",
+      "pronunciation": "/əˈnælədʒi/",
+      "meaning": "A comparison between two similar things",
+      "banglaMeaning": "সাদৃশ্য",
+      "exampleSentence": "Let me use an analogy to explain."
+    },
+    {
+      "word": "Metaphor",
+      "pronunciation": "/ˈmɛtəfɔːr/",
+      "meaning": "A figure of speech comparing two things",
+      "banglaMeaning": "রূপক",
+      "exampleSentence": "That metaphor is very effective."
+    },
+    {
+      "word": "Rhetoric",
+      "pronunciation": "/ˈrɛtərɪk/",
+      "meaning": "The art of effective speaking or writing",
+      "banglaMeaning": "অলঙ্কারশাস্ত্র",
+      "exampleSentence": "His rhetoric was powerful but lacked substance."
+    },
+    {
+      "word": "Rhetorical Question",
+      "pronunciation": "/rɪˈtɒrɪkəl ˈkwɛstʃən/",
+      "meaning": "A question asked for effect, not an answer",
+      "banglaMeaning": "অলঙ্কারিক প্রশ্ন",
+      "exampleSentence": "She used a rhetorical question to make her point."
+    },
+    {
+      "word": "Eloquence",
+      "pronunciation": "/ˈɛləkwəns/",
+      "meaning": "Fluent and persuasive speech",
+      "banglaMeaning": "বাগ্মিতা",
+      "exampleSentence": "The speaker's eloquence impressed the audience."
+    },
+    {
+      "word": "Persuasion",
+      "pronunciation": "/pərˈsweɪʒən/",
+      "meaning": "The ability to convince others",
+      "banglaMeaning": "প্ররোচনা",
+      "exampleSentence": "Persuasion is key in a debate."
+    },
+    {
+      "word": "Conviction",
+      "pronunciation": "/kənˈvɪkʃən/",
+      "meaning": "A firmly held belief",
+      "banglaMeaning": "দৃঢ় বিশ্বাস",
+      "exampleSentence": "She spoke with conviction."
+    },
+    {
+      "word": "Articulate",
+      "pronunciation": "/ɑːrˈtɪkjʊlɪt/",
+      "meaning": "Able to express ideas clearly",
+      "banglaMeaning": "স্পষ্ট ভাষী",
+      "exampleSentence": "He is an articulate speaker."
+    },
+    {
+      "word": "Coherent",
+      "pronunciation": "/koʊˈhɪrənt/",
+      "meaning": "Logical and well-organized",
+      "banglaMeaning": "সুসংগত",
+      "exampleSentence": "Your argument is not coherent."
+    },
+    {
+      "word": "Cogent",
+      "pronunciation": "/ˈkoʊdʒənt/",
+      "meaning": "Clear, logical, and convincing",
+      "banglaMeaning": "যুক্তিগ্রাহ্য",
+      "exampleSentence": "That is a cogent argument."
+    },
+    {
+      "word": "Compelling",
+      "pronunciation": "/kəmˈpɛlɪŋ/",
+      "meaning": "Extremely convincing",
+      "banglaMeaning": "বাধ্যকারী",
+      "exampleSentence": "The evidence is compelling."
+    },
+    {
+      "word": "Conclusive",
+      "pronunciation": "/kənˈkluːsɪv/",
+      "meaning": "Settling a question decisively",
+      "banglaMeaning": "চূড়ান্ত",
+      "exampleSentence": "The proof is conclusive."
+    },
+    {
+      "word": "Devoid",
+      "pronunciation": "/dɪˈvɔɪd/",
+      "meaning": "Completely lacking",
+      "banglaMeaning": "বর্জিত",
+      "exampleSentence": "The argument is devoid of logic."
+    },
+    {
+      "word": "Irrefutable",
+      "pronunciation": "/ɪˈrɛfjʊtəbəl/",
+      "meaning": "Impossible to disprove",
+      "banglaMeaning": "অখণ্ডনীয়",
+      "exampleSentence": "The data is irrefutable."
+    },
+    {
+      "word": "Incontrovertible",
+      "pronunciation": "/ɪnˌkɒntrəˈvɜːrtɪbəl/",
+      "meaning": "Not open to question",
+      "banglaMeaning": "অকাট্য",
+      "exampleSentence": "That is incontrovertible evidence."
+    },
+    {
+      "word": "Unsubstantiated",
+      "pronunciation": "/ˌʌnsəbˈstænʃieɪtɪd/",
+      "meaning": "Not supported by evidence",
+      "banglaMeaning": "অপ্রমাণিত",
+      "exampleSentence": "Your claim is unsubstantiated."
+    },
+    {
+      "word": "Implausible",
+      "pronunciation": "/ɪmˈplɔːzɪbəl/",
+      "meaning": "Not seeming reasonable or probable",
+      "banglaMeaning": "অবিশ্বাস্য",
+      "exampleSentence": "That explanation is implausible."
+    },
+    {
+      "word": "Tenable",
+      "pronunciation": "/ˈtɛnəbəl/",
+      "meaning": "Reasonable and defensible",
+      "banglaMeaning": "যুক্তিসঙ্গত",
+      "exampleSentence": "Your position is no longer tenable."
+    },
+    {
+      "word": "Untenable",
+      "pronunciation": "/ʌnˈtɛnəbəl/",
+      "meaning": "Not able to be defended",
+      "banglaMeaning": "অসঙ্গত",
+      "exampleSentence": "That argument is untenable."
+    },
+    {
+      "word": "Sound",
+      "pronunciation": "/saʊnd/",
+      "meaning": "Valid and reliable",
+      "banglaMeaning": "সঠিক",
+      "exampleSentence": "That is a sound argument."
+    },
+    {
+      "word": "Valid",
+      "pronunciation": "/ˈvælɪd/",
+      "meaning": "Logically correct",
+      "banglaMeaning": "বৈধ",
+      "exampleSentence": "Your reasoning is valid."
+    },
+    {
+      "word": "Invalid",
+      "pronunciation": "/ɪnˈvælɪd/",
+      "meaning": "Not logically correct",
+      "banglaMeaning": "অবৈধ",
+      "exampleSentence": "That conclusion is invalid."
+    },
+    {
+      "word": "Flawed",
+      "pronunciation": "/flɔːd/",
+      "meaning": "Containing mistakes or weaknesses",
+      "banglaMeaning": "ত্রুটিপূর্ণ",
+      "exampleSentence": "The argument is fundamentally flawed."
+    },
+    {
+      "word": "Weak",
+      "pronunciation": "/wiːk/",
+      "meaning": "Lacking strength or force",
+      "banglaMeaning": "দুর্বল",
+      "exampleSentence": "That is a weak counterargument."
+    },
+    {
+      "word": "Strong",
+      "pronunciation": "/strɒŋ/",
+      "meaning": "Forceful and convincing",
+      "banglaMeaning": "শক্তিশালী",
+      "exampleSentence": "She made a strong case."
+    },
+    {
+      "word": "Robust",
+      "pronunciation": "/roʊˈbʌst/",
+      "meaning": "Strong and effective",
+      "banglaMeaning": "মজবুত",
+      "exampleSentence": "The evidence is robust."
+    },
+    {
+      "word": "Nuanced",
+      "pronunciation": "/ˈnjuːɑːnst/",
+      "meaning": "Involving subtle distinctions",
+      "banglaMeaning": "সূক্ষ্ম",
+      "exampleSentence": "A nuanced argument considers both sides."
+    },
+    {
+      "word": "Subtle",
+      "pronunciation": "/ˈsʌtəl/",
+      "meaning": "Delicate and not obvious",
+      "banglaMeaning": "সূক্ষ্ম",
+      "exampleSentence": "There is a subtle difference between the two positions."
+    },
+    {
+      "word": "Polarizing",
+      "pronunciation": "/ˈpoʊləraɪzɪŋ/",
+      "meaning": "Dividing people into opposite groups",
+      "banglaMeaning": "মেরুকরণকারী",
+      "exampleSentence": "This is a polarizing issue."
+    },
+    {
+      "word": "Contentious",
+      "pronunciation": "/kənˈtɛnʃəs/",
+      "meaning": "Causing disagreement",
+      "banglaMeaning": "বিতর্কিত",
+      "exampleSentence": "The topic is highly contentious."
+    },
+    {
+      "word": "Controversial",
+      "pronunciation": "/ˌkɒntrəˈvɜːrʃəl/",
+      "meaning": "Causing public disagreement",
+      "banglaMeaning": "বিতর্কিত",
+      "exampleSentence": "That is a controversial statement."
+    },
+    {
+      "word": "Devoid",
+      "pronunciation": "/dɪˈvɔɪd/",
+      "meaning": "Completely without",
+      "banglaMeaning": "শূন্য",
+      "exampleSentence": "The argument is devoid of merit."
+    },
+    {
+      "word": "Impartial",
+      "pronunciation": "/ɪmˈpɑːrʃəl/",
+      "meaning": "Not favoring either side",
+      "banglaMeaning": "নিরপেক্ষ",
+      "exampleSentence": "The judge must remain impartial."
+    },
+    {
+      "word": "Biased",
+      "pronunciation": "/ˈbaɪəst/",
+      "meaning": "Showing unfair preference",
+      "banglaMeaning": "পক্ষপাতদুষ্ট",
+      "exampleSentence": "That source is biased."
+    },
+    {
+      "word": "Objective",
+      "pronunciation": "/əbˈdʒɛktɪv/",
+      "meaning": "Based on facts, not feelings",
+      "banglaMeaning": "বস্তুনিষ্ঠ",
+      "exampleSentence": "Try to be objective in your analysis."
+    },
+    {
+      "word": "Subjective",
+      "pronunciation": "/səbˈdʒɛktɪv/",
+      "meaning": "Based on personal feelings",
+      "banglaMeaning": "বিষয়ভিত্তিক",
+      "exampleSentence": "That is a subjective opinion."
+    },
+    {
+      "word": "Rational",
+      "pronunciation": "/ˈræʃənəl/",
+      "meaning": "Based on reason",
+      "banglaMeaning": "যুক্তিসঙ্গত",
+      "exampleSentence": "A rational argument uses logic."
+    },
+    {
+      "word": "Irrational",
+      "pronunciation": "/ɪˈræʃənəl/",
+      "meaning": "Not based on reason",
+      "banglaMeaning": "অযৌক্তিক",
+      "exampleSentence": "That is an irrational fear."
+    },
+    {
+      "word": "Emotive",
+      "pronunciation": "/ɪˈmoʊtɪv/",
+      "meaning": "Causing strong emotions",
+      "banglaMeaning": "আবেগপূর্ণ",
+      "exampleSentence": "The speaker used emotive language."
+    },
+    {
+      "word": "Neutral",
+      "pronunciation": "/ˈnjuːtrəl/",
+      "meaning": "Not supporting either side",
+      "banglaMeaning": "নিরপেক্ষ",
+      "exampleSentence": "The moderator must remain neutral."
+    },
+    {
+      "word": "Moderator",
+      "pronunciation": "/ˈmɒdəreɪtər/",
+      "meaning": "A person who controls the debate",
+      "banglaMeaning": "মডারেটর",
+      "exampleSentence": "The moderator called for order."
+    },
+    {
+      "word": "Adjudicator",
+      "pronunciation": "/əˈdʒuːdɪkeɪtər/",
+      "meaning": "A judge in a debate",
+      "banglaMeaning": "বিচারক",
+      "exampleSentence": "The adjudicator declared the winner."
+    },
+    {
+      "word": "Panel",
+      "pronunciation": "/ˈpænəl/",
+      "meaning": "A group of judges or experts",
+      "banglaMeaning": "প্যানেল",
+      "exampleSentence": "The panel asked challenging questions."
+    },
+    {
+      "word": "Floor",
+      "pronunciation": "/flɔːr/",
+      "meaning": "The right to speak in a debate",
+      "banglaMeaning": "বক্তৃতার সুযোগ",
+      "exampleSentence": "The chair gave the floor to the opposition."
+    },
+    {
+      "word": "Point of Order",
+      "pronunciation": "/pɔɪnt əv ˈɔːrdər/",
+      "meaning": "A question about debate rules",
+      "banglaMeaning": "শৃঙ্খলা সংক্রান্ত প্রশ্ন",
+      "exampleSentence": "I rise on a point of order."
+    },
+    {
+      "word": "Point of Information",
+      "pronunciation": "/pɔɪnt əv ˌɪnfərˈmeɪʃən/",
+      "meaning": "A brief interjection with a question or fact",
+      "banglaMeaning": "তথ্যের বক্তব্য",
+      "exampleSentence": "Will the speaker accept a point of information?"
+    },
+    {
+      "word": "Interjection",
+      "pronunciation": "/ˌɪntərˈdʒɛkʃən/",
+      "meaning": "A remark interrupting the speaker",
+      "banglaMeaning": "মধ্যে বক্তব্য",
+      "exampleSentence": "Interjections must be brief."
+    },
+    {
+      "word": "Heckling",
+      "pronunciation": "/ˈhɛklɪŋ/",
+      "meaning": "Interrupting a speaker aggressively",
+      "banglaMeaning": "বাঁধা দেওয়া",
+      "exampleSentence": "Heckling is not allowed in formal debates."
+    },
+    {
+      "word": "Cross-examination",
+      "pronunciation": "/krɒs ɪɡˌzæmɪˈneɪʃən/",
+      "meaning": "Questioning the opposing side",
+      "banglaMeaning": "জেরা",
+      "exampleSentence": "Cross-examination can expose weaknesses."
+    },
+    {
+      "word": "Opening Statement",
+      "pronunciation": "/ˈoʊpənɪŋ ˈsteɪtmənt/",
+      "meaning": "The first speech in a debate",
+      "banglaMeaning": "প্রাথমিক বক্তব্য",
+      "exampleSentence": "The proposition made its opening statement."
+    },
+    {
+      "word": "Closing Statement",
+      "pronunciation": "/ˈkloʊzɪŋ ˈsteɪtmənt/",
+      "meaning": "The final speech summarizing arguments",
+      "banglaMeaning": "সমাপনী বক্তব্য",
+      "exampleSentence": "The closing statement should summarize key points."
+    },
+    {
+      "word": "Summary",
+      "pronunciation": "/ˈsʌməri/",
+      "meaning": "A brief restatement of main points",
+      "banglaMeaning": "সারসংক্ষেপ",
+      "exampleSentence": "The summary recapped the debate."
+    },
+    {
+      "word": "Constructive Speech",
+      "pronunciation": "/kənˈstrʌktɪv spiːtʃ/",
+      "meaning": "A speech presenting new arguments",
+      "banglaMeaning": "গঠনমূলক বক্তৃতা",
+      "exampleSentence": "The constructive speech builds the case."
+    },
+    {
+      "word": "Rebuttal Speech",
+      "pronunciation": "/rɪˈbʌtəl spiːtʃ/",
+      "meaning": "A speech responding to opposing arguments",
+      "banglaMeaning": "খণ্ডন বক্তৃতা",
+      "exampleSentence": "The rebuttal speech addressed each point."
+    },
+    {
+      "word": "Case",
+      "pronunciation": "/keɪs/",
+      "meaning": "The overall argument of a side",
+      "banglaMeaning": "পক্ষসমর্থন",
+      "exampleSentence": "The proposition built a strong case."
+    },
+    {
+      "word": "Thesis",
+      "pronunciation": "/ˈθiːsɪs/",
+      "meaning": "The main argument of a speech",
+      "banglaMeaning": "মূল প্রতিপাদ্য",
+      "exampleSentence": "The thesis of our argument is clear."
+    },
+    {
+      "word": "Theme",
+      "pronunciation": "/θiːm/",
+      "meaning": "The central idea running through an argument",
+      "banglaMeaning": "থিম",
+      "exampleSentence": "The theme of justice ran through the debate."
+    },
+    {
+      "word": "Angle",
+      "pronunciation": "/ˈæŋɡəl/",
+      "meaning": "A particular way of approaching an issue",
+      "banglaMeaning": "কোণ",
+      "exampleSentence": "Let's approach this from a different angle."
+    },
+    {
+      "word": "Perspective",
+      "pronunciation": "/pərˈspɛktɪv/",
+      "meaning": "A particular way of viewing an issue",
+      "banglaMeaning": "দৃষ্টিকোণ",
+      "exampleSentence": "Consider the issue from a moral perspective."
+    },
+    {
+      "word": "Standpoint",
+      "pronunciation": "/ˈstændpɔɪnt/",
+      "meaning": "A position from which things are considered",
+      "banglaMeaning": "দৃষ্টিভঙ্গি",
+      "exampleSentence": "From a legal standpoint, the case is clear."
+    },
+    {
+      "word": "Framework",
+      "pronunciation": "/ˈfreɪmwɜːrk/",
+      "meaning": "A structure for organizing arguments",
+      "banglaMeaning": "কাঠামো",
+      "exampleSentence": "Let's establish a framework for the debate."
+    },
+    {
+      "word": "Context",
+      "pronunciation": "/ˈkɒntɛkst/",
+      "meaning": "The circumstances surrounding an issue",
+      "banglaMeaning": "প্রসঙ্গ",
+      "exampleSentence": "We must consider the broader context."
+    },
+    {
+      "word": "Criteria",
+      "pronunciation": "/kraɪˈtɪriə/",
+      "meaning": "Standards for judging arguments",
+      "banglaMeaning": "মানদণ্ড",
+      "exampleSentence": "What criteria should we use to evaluate this?"
+    },
+    {
+      "word": "Metric",
+      "pronunciation": "/ˈmɛtrɪk/",
+      "meaning": "A standard of measurement",
+      "banglaMeaning": "পরিমাপক",
+      "exampleSentence": "Economic growth is not the only metric."
+    },
+    {
+      "word": "Benchmark",
+      "pronunciation": "/ˈbɛntʃmɑːrk/",
+      "meaning": "A standard for comparison",
+      "banglaMeaning": "মানদণ্ড",
+      "exampleSentence": "We need a benchmark to evaluate success."
+    },
+    {
+      "word": "Paradigm",
+      "pronunciation": "/ˈpærədaɪm/",
+      "meaning": "A typical example or model",
+      "banglaMeaning": "দৃষ্টান্ত",
+      "exampleSentence": "This represents a paradigm shift."
+    },
+    {
+      "word": "Precedent",
+      "pronunciation": "/ˈprɛsɪdənt/",
+      "meaning": "An earlier example used for comparison",
+      "banglaMeaning": "নজির",
+      "exampleSentence": "There is no precedent for this situation."
+    },
+    {
+      "word": "Analogous",
+      "pronunciation": "/əˈnæləɡəs/",
+      "meaning": "Comparable in certain ways",
+      "banglaMeaning": "সাদৃশ্যপূর্ণ",
+      "exampleSentence": "This case is analogous to the previous one."
+    },
+    {
+      "word": "Hypothetical",
+      "pronunciation": "/ˌhaɪpəˈθɛtɪkəl/",
+      "meaning": "Based on assumed conditions",
+      "banglaMeaning": "কাল্পনিক",
+      "exampleSentence": "Consider this hypothetical situation."
+    },
+    {
+      "word": "Counterfactual",
+      "pronunciation": "/ˌkaʊntərˈfæktʃuəl/",
+      "meaning": "Considering what did not happen",
+      "banglaMeaning": "বিপরীত সত্য",
+      "exampleSentence": "A counterfactual analysis helps test assumptions."
+    },
+    {
+      "word": "Status Quo",
+      "pronunciation": "/ˌsteɪtəs ˈkwoʊ/",
+      "meaning": "The existing state of affairs",
+      "banglaMeaning": "বর্তমান অবস্থা",
+      "exampleSentence": "The opposition defends the status quo."
+    },
+    {
+      "word": "Change",
+      "pronunciation": "/tʃeɪndʒ/",
+      "meaning": "Making something different",
+      "banglaMeaning": "পরিবর্তন",
+      "exampleSentence": "The proposition argued for change."
+    },
+    {
+      "word": "Reform",
+      "pronunciation": "/rɪˈfɔːrm/",
+      "meaning": "Change to improve a system",
+      "banglaMeaning": "সংস্কার",
+      "exampleSentence": "The motion calls for reform."
+    },
+    {
+      "word": "Progressive",
+      "pronunciation": "/prəˈɡrɛsɪv/",
+      "meaning": "Favoring social reform",
+      "banglaMeaning": "প্রগতিশীল",
+      "exampleSentence": "A progressive approach is needed."
+    },
+    {
+      "word": "Conservative",
+      "pronunciation": "/kənˈsɜːrvətɪv/",
+      "meaning": "Favoring traditional values",
+      "banglaMeaning": "রক্ষণশীল",
+      "exampleSentence": "The conservative view resists change."
+    },
+    {
+      "word": "Radical",
+      "pronunciation": "/ˈrædɪkəl/",
+      "meaning": "Extreme or fundamental change",
+      "banglaMeaning": "মৌলবাদী",
+      "exampleSentence": "That is a radical proposal."
+    },
+    {
+      "word": "Moderate",
+      "pronunciation": "/ˈmɒdərɪt/",
+      "meaning": "Not extreme",
+      "banglaMeaning": "মধ্যপন্থী",
+      "exampleSentence": "A moderate position considers both sides."
+    },
+    {
+      "word": "Extreme",
+      "pronunciation": "/ɪkˈstriːm/",
+      "meaning": "Far from the center",
+      "banglaMeaning": "চরম",
+      "exampleSentence": "That is an extreme view."
+    },
+    {
+      "word": "Center",
+      "pronunciation": "/ˈsɛntər/",
+      "meaning": "A moderate political position",
+      "banglaMeaning": "মধ্যপথ",
+      "exampleSentence": "The center ground often wins elections."
+    },
+    {
+      "word": "Left-wing",
+      "pronunciation": "/lɛft wɪŋ/",
+      "meaning": "Favoring progressive policies",
+      "banglaMeaning": "বামপন্থী",
+      "exampleSentence": "Left-wing parties support social equality."
+    },
+    {
+      "word": "Right-wing",
+      "pronunciation": "/raɪt wɪŋ/",
+      "meaning": "Favoring conservative policies",
+      "banglaMeaning": "ডানপন্থী",
+      "exampleSentence": "Right-wing parties emphasize tradition."
+    },
+    {
+      "word": "Liberalism",
+      "pronunciation": "/ˈlɪbərəlɪzəm/",
+      "meaning": "Belief in individual rights and freedom",
+      "banglaMeaning": "উদারবাদ",
+      "exampleSentence": "Liberalism emphasizes personal freedom."
+    },
+    {
+      "word": "Conservatism",
+      "pronunciation": "/kənˈsɜːrvətɪzəm/",
+      "meaning": "Belief in preserving tradition",
+      "banglaMeaning": "রক্ষণশীলতা",
+      "exampleSentence": "Conservatism values stability."
+    },
+    {
+      "word": "Socialism",
+      "pronunciation": "/ˈsoʊʃəlɪzəm/",
+      "meaning": "A system where means of production are publicly owned",
+      "banglaMeaning": "সমাজতন্ত্র",
+      "exampleSentence": "Socialism advocates for collective ownership."
+    },
+    {
+      "word": "Capitalism",
+      "pronunciation": "/ˈkæpɪtəlɪzəm/",
+      "meaning": "An economic system with private ownership",
+      "banglaMeaning": "পুঁজিবাদ",
+      "exampleSentence": "Capitalism drives innovation."
+    },
+    {
+      "word": "Democracy",
+      "pronunciation": "/dɪˈmɒkrəsi/",
+      "meaning": "Government elected by the people",
+      "banglaMeaning": "গণতন্ত্র",
+      "exampleSentence": "Democracy allows citizen participation."
+    },
+    {
+      "word": "Autocracy",
+      "pronunciation": "/ɔːˈtɒkrəsi/",
+      "meaning": "Government by one person with unlimited power",
+      "banglaMeaning": "স্বৈরতন্ত্র",
+      "exampleSentence": "Autocracy concentrates power in one leader."
+    },
+    {
+      "word": "Meritocracy",
+      "pronunciation": "/ˌmɛrɪˈtɒkrəsi/",
+      "meaning": "A system where advancement is based on ability",
+      "banglaMeaning": "মেধাতন্ত্র",
+      "exampleSentence": "Meritocracy rewards talent and hard work."
+    },
+    {
+      "word": "Oligarchy",
+      "pronunciation": "/ˈɒlɪɡɑːrki/",
+      "meaning": "Government by a small group",
+      "banglaMeaning": "অলিগার্কি",
+      "exampleSentence": "The country is ruled by an oligarchy."
+    },
+    {
+      "word": "Plutocracy",
+      "pronunciation": "/pluːˈtɒkrəsi/",
+      "meaning": "Government by the wealthy",
+      "banglaMeaning": "ধনিকতন্ত্র",
+      "exampleSentence": "Critics say the country is a plutocracy."
+    },
+    {
+      "word": "Theocracy",
+      "pronunciation": "/θiˈɒkrəsi/",
+      "meaning": "Government based on religion",
+      "banglaMeaning": "ধর্মতন্ত্র",
+      "exampleSentence": "Theocracy blends religion and governance."
+    },
+    {
+      "word": "Secularism",
+      "pronunciation": "/ˈsɛkjʊlərɪzəm/",
+      "meaning": "Separation of religion from government",
+      "banglaMeaning": "ধর্মনিরপেক্ষতা",
+      "exampleSentence": "Secularism ensures freedom of belief."
+    },
+    {
+      "word": "Populism",
+      "pronunciation": "/ˈpɒpjʊlɪzəm/",
+      "meaning": "Appealing to ordinary people against elites",
+      "banglaMeaning": "জনতাবাদ",
+      "exampleSentence": "Populism is on the rise globally."
+    },
+    {
+      "word": "Nationalism",
+      "pronunciation": "/ˈnæʃənəlɪzəm/",
+      "meaning": "Patriotic feeling for one's country",
+      "banglaMeaning": "জাতীয়তাবাদ",
+      "exampleSentence": "Nationalism can unite or divide."
+    },
+    {
+      "word": "Globalism",
+      "pronunciation": "/ˈɡloʊbəlɪzəm/",
+      "meaning": "The idea that countries should cooperate globally",
+      "banglaMeaning": "বৈশ্বিকবাদ",
+      "exampleSentence": "Globalism promotes international cooperation."
+    },
+    {
+      "word": "Isolationism",
+      "pronunciation": "/ˌaɪsəˈleɪʃənɪzəm/",
+      "meaning": "A policy of staying apart from world affairs",
+      "banglaMeaning": "বিচ্ছিন্নতাবাদ",
+      "exampleSentence": "Isolationism avoids foreign entanglements."
+    },
+    {
+      "word": "Imperialism",
+      "pronunciation": "/ɪmˈpɪriəlɪzəm/",
+      "meaning": "Extending a country's power over others",
+      "banglaMeaning": "সাম্রাজ্যবাদ",
+      "exampleSentence": "Imperialism has a long history."
+    },
+    {
+      "word": "Colonialism",
+      "pronunciation": "/kəˈloʊniəlɪzəm/",
+      "meaning": "Settling and controlling another territory",
+      "banglaMeaning": "ঔপনিবেশিকতা",
+      "exampleSentence": "Colonialism had lasting impacts."
+    },
+    {
+      "word": "Militarism",
+      "pronunciation": "/ˈmɪlɪtərɪzəm/",
+      "meaning": "A strong military focus in government",
+      "banglaMeaning": "সামরিকবাদ",
+      "exampleSentence": "Militarism prioritizes military strength."
+    },
+    {
+      "word": "Pacifism",
+      "pronunciation": "/ˈpæsɪfɪzəm/",
+      "meaning": "Opposition to war and violence",
+      "banglaMeaning": "শান্তিবাদ",
+      "exampleSentence": "Pacifism rejects the use of force."
+    },
+    {
+      "word": "Feminism",
+      "pronunciation": "/ˈfɛmɪnɪzəm/",
+      "meaning": "Advocacy for women's rights",
+      "banglaMeaning": "নারীবাদ",
+      "exampleSentence": "Feminism seeks gender equality."
+    },
+    {
+      "word": "Environmentalism",
+      "pronunciation": "/ɪnˌvaɪrənˈmɛntəlɪzəm/",
+      "meaning": "Concern for protecting the environment",
+      "banglaMeaning": "পরিবেশবাদ",
+      "exampleSentence": "Environmentalism advocates for sustainable policies."
+    },
+    {
+      "word": "Utilitarianism",
+      "pronunciation": "/juːˌtɪlɪˈtɛriənɪzəm/",
+      "meaning": "The greatest good for the greatest number",
+      "banglaMeaning": "উপযোগবাদ",
+      "exampleSentence": "Utilitarianism focuses on outcomes."
+    },
+    {
+      "word": "Deontology",
+      "pronunciation": "/ˌdiːɒnˈtɒlədʒi/",
+      "meaning": "Ethics based on duty and rules",
+      "banglaMeaning": "কর্তব্যবাদ",
+      "exampleSentence": "Deontology says some actions are inherently right."
+    },
+    {
+      "word": "Relativism",
+      "pronunciation": "/ˈrɛlətɪvɪzəm/",
+      "meaning": "The idea that truth depends on context",
+      "banglaMeaning": "আপেক্ষিকবাদ",
+      "exampleSentence": "Relativism challenges universal truths."
+    },
+    {
+      "word": "Absolutism",
+      "pronunciation": "/ˈæbsəluːtɪzəm/",
+      "meaning": "Belief in absolute principles",
+      "banglaMeaning": "পরমবাদ",
+      "exampleSentence": "Absolutism holds that some values are universal."
+    },
+    {
+      "word": "Skepticism",
+      "pronunciation": "/ˈskɛptɪsɪzəm/",
+      "meaning": "Doubting the truth of claims",
+      "banglaMeaning": "সন্দেহবাদ",
+      "exampleSentence": "Skepticism is healthy in a debate."
+    },
+    {
+      "word": "Cynicism",
+      "pronunciation": "/ˈsɪnɪsɪzəm/",
+      "meaning": "Belief that people are motivated by self-interest",
+      "banglaMeaning": "নৈরাশ্যবাদ",
+      "exampleSentence": "Cynicism can undermine constructive debate."
+    },
+    {
+      "word": "Dogma",
+      "pronunciation": "/ˈdɒɡmə/",
+      "meaning": "A belief held as absolute truth",
+      "banglaMeaning": "গোঁড়ামি",
+      "exampleSentence": "Dogma prevents open discussion."
+    },
+    {
+      "word": "Ideology",
+      "pronunciation": "/ˌaɪdiˈɒlədʒi/",
+      "meaning": "A system of beliefs and ideas",
+      "banglaMeaning": "আদর্শ",
+      "exampleSentence": "Ideology shapes political views."
+    },
+    {
+      "word": "Doctrine",
+      "pronunciation": "/ˈdɒktrɪn/",
+      "meaning": "A set of official beliefs",
+      "banglaMeaning": "মতবাদ",
+      "exampleSentence": "The doctrine was questioned."
+    },
+    {
+      "word": "Principle",
+      "pronunciation": "/ˈprɪnsəpəl/",
+      "meaning": "A fundamental truth or rule",
+      "banglaMeaning": "নীতি",
+      "exampleSentence": "We must debate based on principles."
+    },
+    {
+      "word": "Value",
+      "pronunciation": "/ˈvæljuː/",
+      "meaning": "A person's standards of behavior",
+      "banglaMeaning": "মূল্যবোধ",
+      "exampleSentence": "Honesty is an important value."
+    },
+    {
+      "word": "Ethics",
+      "pronunciation": "/ˈɛθɪks/",
+      "meaning": "Moral principles governing behavior",
+      "banglaMeaning": "নৈতিকতা",
+      "exampleSentence": "The ethics of the policy are questionable."
+    },
+    {
+      "word": "Morality",
+      "pronunciation": "/məˈrælɪti/",
+      "meaning": "Principles of right and wrong",
+      "banglaMeaning": "নৈতিকতা",
+      "exampleSentence": "Morality should guide our decisions."
+    },
+    {
+      "word": "Virtue",
+      "pronunciation": "/ˈvɜːrtʃuː/",
+      "meaning": "A quality considered morally good",
+      "banglaMeaning": "সৎগুণ",
+      "exampleSentence": "Justice is a key virtue."
+    },
+    {
+      "word": "Vice",
+      "pronunciation": "/vaɪs/",
+      "meaning": "Immoral or wicked behavior",
+      "banglaMeaning": "পাপ",
+      "exampleSentence": "Greed is a vice."
+    },
+    {
+      "word": "Conscience",
+      "pronunciation": "/ˈkɒnʃəns/",
+      "meaning": "A person's moral sense of right and wrong",
+      "banglaMeaning": "বিবেক",
+      "exampleSentence": "Follow your conscience."
+    },
+    {
+      "word": "Duty",
+      "pronunciation": "/ˈdjuːti/",
+      "meaning": "A moral or legal obligation",
+      "banglaMeaning": "কর্তব্য",
+      "exampleSentence": "We have a duty to protect the vulnerable."
+    },
+    {
+      "word": "Rights",
+      "pronunciation": "/raɪts/",
+      "meaning": "Legal or moral entitlements",
+      "banglaMeaning": "অধিকার",
+      "exampleSentence": "Human rights must be protected."
+    },
+    {
+      "word": "Obligation",
+      "pronunciation": "/ˌɒblɪˈɡeɪʃən/",
+      "meaning": "An act one is morally bound to do",
+      "banglaMeaning": "বাধ্যবাধকতা",
+      "exampleSentence": "We have an obligation to help."
+    },
+    {
+      "word": "Responsibility",
+      "pronunciation": "/rɪˌspɒnsɪˈbɪlɪti/",
+      "meaning": "The state of being accountable",
+      "banglaMeaning": "দায়িত্ব",
+      "exampleSentence": "With power comes responsibility."
+    },
+    {
+      "word": "Accountability",
+      "pronunciation": "/əˌkaʊntəˈbɪlɪti/",
+      "meaning": "Being required to explain actions",
+      "banglaMeaning": "জবাবদিহিতা",
+      "exampleSentence": "Accountability is essential in governance."
+    },
+    {
+      "word": "Liberty",
+      "pronunciation": "/ˈlɪbərti/",
+      "meaning": "The state of being free",
+      "banglaMeaning": "স্বাধীনতা",
+      "exampleSentence": "Liberty is a fundamental right."
+    },
+    {
+      "word": "Freedom",
+      "pronunciation": "/ˈfriːdəm/",
+      "meaning": "The power to act without restraint",
+      "banglaMeaning": "স্বাধীনতা",
+      "exampleSentence": "Freedom of speech is protected."
+    },
+    {
+      "word": "Equality",
+      "pronunciation": "/ɪˈkwɒlɪti/",
+      "meaning": "The state of being equal",
+      "banglaMeaning": "সমতা",
+      "exampleSentence": "Equality before the law is essential."
+    },
+    {
+      "word": "Justice",
+      "pronunciation": "/ˈdʒʌstɪs/",
+      "meaning": "Fair treatment under the law",
+      "banglaMeaning": "বিচার",
+      "exampleSentence": "Justice must be impartial."
+    },
+    {
+      "word": "Fairness",
+      "pronunciation": "/ˈfɛrnɪs/",
+      "meaning": "Impartial and just treatment",
+      "banglaMeaning": "ন্যায্যতা",
+      "exampleSentence": "Fairness requires equal opportunity."
+    },
+    {
+      "word": "Dignity",
+      "pronunciation": "/ˈdɪɡnɪti/",
+      "meaning": "The state of being worthy of respect",
+      "banglaMeaning": "মর্যাদা",
+      "exampleSentence": "Human dignity must be preserved."
+    },
+    {
+      "word": "Respect",
+      "pronunciation": "/rɪˈspɛkt/",
+      "meaning": "Due regard for others",
+      "banglaMeaning": "সম্মান",
+      "exampleSentence": "Respect opposing viewpoints."
+    },
+    {
+      "word": "Tolerance",
+      "pronunciation": "/ˈtɒlərəns/",
+      "meaning": "Accepting different views",
+      "banglaMeaning": "সহনশীলতা",
+      "exampleSentence": "Tolerance is vital in a democracy."
+    },
+    {
+      "word": "Pluralism",
+      "pronunciation": "/ˈplʊrəlɪzəm/",
+      "meaning": "Acceptance of diverse groups",
+      "banglaMeaning": "বহুত্ববাদ",
+      "exampleSentence": "Pluralism enriches society."
+    },
+    {
+      "word": "Diversity",
+      "pronunciation": "/daɪˈvɜːrsɪti/",
+      "meaning": "Variety of different groups",
+      "banglaMeaning": "বৈচিত্র্য",
+      "exampleSentence": "Diversity brings different perspectives."
+    },
+    {
+      "word": "Inclusion",
+      "pronunciation": "/ɪnˈkluːʒən/",
+      "meaning": "Involving all groups equally",
+      "banglaMeaning": "অন্তর্ভুক্তি",
+      "exampleSentence": "Inclusion ensures no one is left behind."
+    },
+    {
+      "word": "Discrimination",
+      "pronunciation": "/dɪˌskrɪmɪˈneɪʃən/",
+      "meaning": "Unfair treatment of a group",
+      "banglaMeaning": "বৈষম্য",
+      "exampleSentence": "Discrimination is morally wrong."
+    },
+    {
+      "word": "Prejudice",
+      "pronunciation": "/ˈprɛdʒʊdɪs/",
+      "meaning": "Preconceived judgment",
+      "banglaMeaning": "পূর্বধারণা",
+      "exampleSentence": "Prejudice clouds objective judgment."
+    },
+    {
+      "word": "Stereotype",
+      "pronunciation": "/ˈstɛriətaɪp/",
+      "meaning": "A generalized belief about a group",
+      "banglaMeaning": "স্টেরিওটাইপ",
+      "exampleSentence": "Stereotypes are often misleading."
+    },
+    {
+      "word": "Stigma",
+      "pronunciation": "/ˈstɪɡmə/",
+      "meaning": "A mark of shame or disgrace",
+      "banglaMeaning": "কলঙ্ক",
+      "exampleSentence": "Mental illness still carries a stigma."
+    },
+    {
+      "word": "Marginalization",
+      "pronunciation": "/ˌmɑːrdʒɪnəlaɪˈzeɪʃən/",
+      "meaning": "Treating a group as unimportant",
+      "banglaMeaning": "প্রান্তিকীকরণ",
+      "exampleSentence": "Marginalization denies equal opportunities."
+    },
+    {
+      "word": "Empowerment",
+      "pronunciation": "/ɪmˈpaʊərmənt/",
+      "meaning": "Giving power or authority",
+      "banglaMeaning": "ক্ষমতায়ন",
+      "exampleSentence": "Empowerment enables people to take control."
+    },
+    {
+      "word": "Sovereignty",
+      "pronunciation": "/ˈsɒvrɪnti/",
+      "meaning": "Supreme power over a territory",
+      "banglaMeaning": "সার্বভৌমত্ব",
+      "exampleSentence": "Sovereignty must be respected."
+    },
+    {
+      "word": "Legitimacy",
+      "pronunciation": "/lɪˈdʒɪtɪməsi/",
+      "meaning": "Acceptance as right or valid",
+      "banglaMeaning": "বৈধতা",
+      "exampleSentence": "The government's legitimacy was questioned."
+    },
+    {
+      "word": "Authority",
+      "pronunciation": "/ɔːˈθɒrɪti/",
+      "meaning": "The power to give orders",
+      "banglaMeaning": "কর্তৃত্ব",
+      "exampleSentence": "The committee has authority to decide."
+    },
+    {
+      "word": "Power",
+      "pronunciation": "/ˈpaʊər/",
+      "meaning": "The ability to influence or control",
+      "banglaMeaning": "ক্ষমতা",
+      "exampleSentence": "Power must be balanced."
+    },
+    {
+      "word": "Influence",
+      "pronunciation": "/ˈɪnfluəns/",
+      "meaning": "The capacity to affect others",
+      "banglaMeaning": "প্রভাব",
+      "exampleSentence": "Media has a strong influence on public opinion."
+    },
+    {
+      "word": "Hegemony",
+      "pronunciation": "/hɪˈdʒɛməni/",
+      "meaning": "Leadership or dominance by one group",
+      "banglaMeaning": "আধিপত্য",
+      "exampleSentence": "The country seeks regional hegemony."
+    },
+    {
+      "word": "Supremacy",
+      "pronunciation": "/suːˈprɛməsi/",
+      "meaning": "The state of being superior to all",
+      "banglaMeaning": "শ্রেষ্ঠত্ব",
+      "exampleSentence": "Supremacy of law is essential."
+    },
+    {
+      "word": "Subordination",
+      "pronunciation": "/səˌbɔːrdɪˈneɪʃən/",
+      "meaning": "Being under the control of another",
+      "banglaMeaning": "অধীনতা",
+      "exampleSentence": "Subordination of one group to another is wrong."
+    },
+    {
+      "word": "Hierarchy",
+      "pronunciation": "/ˈhaɪərɑːrki/",
+      "meaning": "A system of ranking",
+      "banglaMeaning": "স্তরক্রম",
+      "exampleSentence": "The hierarchy of power must be examined."
+    },
+    {
+      "word": "Class",
+      "pronunciation": "/klæs/",
+      "meaning": "A social or economic group",
+      "banglaMeaning": "শ্রেণী",
+      "exampleSentence": "Class divisions create inequality."
+    },
+    {
+      "word": "Caste",
+      "pronunciation": "/kæst/",
+      "meaning": "A hereditary social class",
+      "banglaMeaning": "জাতি",
+      "exampleSentence": "Caste discrimination is illegal."
+    },
+    {
+      "word": "Privilege",
+      "pronunciation": "/ˈprɪvɪlɪdʒ/",
+      "meaning": "A special advantage",
+      "banglaMeaning": "সুবিধা",
+      "exampleSentence": "Privilege is often invisible to those who have it."
+    },
+    {
+      "word": "Disadvantage",
+      "pronunciation": "/ˌdɪsədˈvæntɪdʒ/",
+      "meaning": "An unfavorable condition",
+      "banglaMeaning": "অসুবিধা",
+      "exampleSentence": "The policy helps the disadvantaged."
+    },
+    {
+      "word": "Poverty",
+      "pronunciation": "/ˈpɒvərti/",
+      "meaning": "The state of being extremely poor",
+      "banglaMeaning": "দারিদ্র্য",
+      "exampleSentence": "Poverty is a global challenge."
+    },
+    {
+      "word": "Wealth",
+      "pronunciation": "/wɛlθ/",
+      "meaning": "An abundance of valuable assets",
+      "banglaMeaning": "সম্পদ",
+      "exampleSentence": "Wealth inequality is growing."
+    },
+    {
+      "word": "Inequality",
+      "pronunciation": "/ˌɪnɪˈkwɒlɪti/",
+      "meaning": "Unfair differences",
+      "banglaMeaning": "অসমতা",
+      "exampleSentence": "Income inequality is a major issue."
+    },
+    {
+      "word": "Redistribution",
+      "pronunciation": "/ˌriːdɪstrɪˈbjuːʃən/",
+      "meaning": "Reallocating wealth or resources",
+      "banglaMeaning": "পুনর্বণ্টন",
+      "exampleSentence": "Redistribution of wealth is a policy goal."
+    },
+    {
+      "word": "Welfare",
+      "pronunciation": "/ˈwɛlfɛər/",
+      "meaning": "Government support for those in need",
+      "banglaMeaning": "কল্যাণ",
+      "exampleSentence": "The welfare state provides a safety net."
+    },
+    {
+      "word": "Subsidy",
+      "pronunciation": "/ˈsʌbsɪdi/",
+      "meaning": "Financial support from government",
+      "banglaMeaning": "ভর্তুকি",
+      "exampleSentence": "Fuel subsidies are being cut."
+    },
+    {
+      "word": "Taxation",
+      "pronunciation": "/tækˈseɪʃən/",
+      "meaning": "The system of levying taxes",
+      "banglaMeaning": "কর",
+      "exampleSentence": "Progressive taxation reduces inequality."
+    },
+    {
+      "word": "Progressive Tax",
+      "pronunciation": "/prəˈɡrɛsɪv tæks/",
+      "meaning": "Higher tax rate for higher income",
+      "banglaMeaning": "প্রগতিশীল কর",
+      "exampleSentence": "A progressive tax system is fairer."
+    },
+    {
+      "word": "Regressive Tax",
+      "pronunciation": "/rɪˈɡrɛsɪv tæks/",
+      "meaning": "Higher burden on lower income",
+      "banglaMeaning": "অগ্রগামী কর",
+      "exampleSentence": "Sales tax is regressive."
+    },
+    {
+      "word": "Flat Tax",
+      "pronunciation": "/flæt tæks/",
+      "meaning": "A single tax rate for all",
+      "banglaMeaning": "ফ্ল্যাট ট্যাক্স",
+      "exampleSentence": "A flat tax is simple but may be unfair."
+    },
+    {
+      "word": "Inflation",
+      "pronunciation": "/ɪnˈfleɪʃən/",
+      "meaning": "Rise in prices over time",
+      "banglaMeaning": "মুদ্রাস্ফীতি",
+      "exampleSentence": "Inflation erodes purchasing power."
+    },
+    {
+      "word": "Deflation",
+      "pronunciation": "/dɪˈfleɪʃən/",
+      "meaning": "Decrease in prices",
+      "banglaMeaning": "মুদ্রাসংকোচন",
+      "exampleSentence": "Deflation can lead to economic stagnation."
+    },
+    {
+      "word": "Stagflation",
+      "pronunciation": "/ˌstæɡˈfleɪʃən/",
+      "meaning": "High inflation combined with stagnant growth",
+      "banglaMeaning": "স্ট্যাগফ্লেশন",
+      "exampleSentence": "Stagflation is a difficult economic condition."
+    },
+    {
+      "word": "Recession",
+      "pronunciation": "/rɪˈsɛʃən/",
+      "meaning": "A period of economic decline",
+      "banglaMeaning": "মন্দা",
+      "exampleSentence": "The economy is in recession."
+    },
+    {
+      "word": "Growth",
+      "pronunciation": "/ɡroʊθ/",
+      "meaning": "Increase in economic activity",
+      "banglaMeaning": "বৃদ্ধি",
+      "exampleSentence": "Economic growth benefits society."
+    },
+    {
+      "word": "Development",
+      "pronunciation": "/dɪˈvɛləpmənt/",
+      "meaning": "Progress in living standards",
+      "banglaMeaning": "উন্নয়ন",
+      "exampleSentence": "Development must be sustainable."
+    },
+    {
+      "word": "Sustainability",
+      "pronunciation": "/səˌsteɪnəˈbɪlɪti/",
+      "meaning": "Meeting present needs without harming the future",
+      "banglaMeaning": "টেকসই উন্নয়ন",
+      "exampleSentence": "Sustainability must guide our choices."
+    },
+    {
+      "word": "Renewable",
+      "pronunciation": "/rɪˈnjuːəbəl/",
+      "meaning": "Capable of being replenished",
+      "banglaMeaning": "নবায়নযোগ্য",
+      "exampleSentence": "Renewable energy is the future."
+    },
+    {
+      "word": "Fossil Fuel",
+      "pronunciation": "/ˈfɒsəl fjuːəl/",
+      "meaning": "Non-renewable energy from ancient remains",
+      "banglaMeaning": "জীবাশ্ম জ্বালানি",
+      "exampleSentence": "Fossil fuels contribute to climate change."
+    },
+    {
+      "word": "Carbon Neutral",
+      "pronunciation": "/ˈkɑːrbən ˈnjuːtrəl/",
+      "meaning": "Producing no net carbon emissions",
+      "banglaMeaning": "কার্বন নিরপেক্ষ",
+      "exampleSentence": "Many countries aim to be carbon neutral."
+    },
+    {
+      "word": "Net Zero",
+      "pronunciation": "/nɛt ˈzɪroʊ/",
+      "meaning": "Achieving balance between emissions and removal",
+      "banglaMeaning": "নেট জিরো",
+      "exampleSentence": "The target is net zero by 2050."
+    },
+    {
+      "word": "Anthropogenic",
+      "pronunciation": "/ˌænθrəpəˈdʒɛnɪk/",
+      "meaning": "Caused by human activity",
+      "banglaMeaning": "মানবসৃষ্ট",
+      "exampleSentence": "Anthropogenic climate change is undeniable."
+    },
+    {
+      "word": "Biodiversity",
+      "pronunciation": "/ˌbaɪoʊdaɪˈvɜːrsɪti/",
+      "meaning": "Variety of life on Earth",
+      "banglaMeaning": "জীববৈচিত্র্য",
+      "exampleSentence": "Biodiversity loss is alarming."
+    },
+    {
+      "word": "Ecosystem",
+      "pronunciation": "/ˈiːkoʊsɪstəm/",
+      "meaning": "A community of interacting organisms",
+      "banglaMeaning": "বাস্তুতন্ত্র",
+      "exampleSentence": "The ecosystem is fragile."
+    },
+    {
+      "word": "Conservation",
+      "pronunciation": "/ˌkɒnsərˈveɪʃən/",
+      "meaning": "Protection of nature",
+      "banglaMeaning": "সংরক্ষণ",
+      "exampleSentence": "Consation efforts must be increased."
+    },
+    {
+      "word": "Extinction",
+      "pronunciation": "/ɪkˈstɪŋkʃən/",
+      "meaning": "The end of a species",
+      "banglaMeaning": "বিলুপ্তি",
+      "exampleSentence": "Many species face extinction."
+    },
+    {
+      "word": "Endangered",
+      "pronunciation": "/ɪnˈdeɪndʒərd/",
+      "meaning": "At risk of extinction",
+      "banglaMeaning": "বিপন্ন",
+      "exampleSentence": "The species is endangered."
+    },
+    {
+      "word": "Habitat",
+      "pronunciation": "/ˈhæbɪtæt/",
+      "meaning": "The natural home of an organism",
+      "banglaMeaning": "আবাসস্থল",
+      "exampleSentence": "Habitat destruction threatens wildlife."
+    },
+    {
+      "word": "Deforestation",
+      "pronunciation": "/diːˌfɒrɪˈsteɪʃən/",
+      "meaning": "Clearing of forests",
+      "banglaMeaning": "বন উজাড়",
+      "exampleSentence": "Deforestation contributes to climate change."
+    },
+    {
+      "word": "Pollution",
+      "pronunciation": "/pəˈluːʃən/",
+      "meaning": "Harmful substances in the environment",
+      "banglaMeaning": "দূষণ",
+      "exampleSentence": "Air pollution affects health."
+    },
+    {
+      "word": "Emissions",
+      "pronunciation": "/ɪˈmɪʃənz/",
+      "meaning": "Substances released into the air",
+      "banglaMeaning": "নির্গমন",
+      "exampleSentence": "Emissions must be reduced."
+    },
+    {
+      "word": "Greenhouse Effect",
+      "pronunciation": "/ˈɡriːnhaʊs ɪˈfɛkt/",
+      "meaning": "Trapping of heat by gases in the atmosphere",
+      "banglaMeaning": "গ্রিনহাউস প্রভাব",
+      "exampleSentence": "The greenhouse effect is warming the planet."
+    },
+    {
+      "word": "Global Warming",
+      "pronunciation": "/ˈɡloʊbəl ˈwɔːrmɪŋ/",
+      "meaning": "Rise in Earth's temperature",
+      "banglaMeaning": "গ্লোবাল ওয়ার্মিং",
+      "exampleSentence": "Global warming causes sea levels to rise."
+    },
+    {
+      "word": "Climate Change",
+      "pronunciation": "/ˈklaɪmɪt tʃeɪndʒ/",
+      "meaning": "Long-term change in weather patterns",
+      "banglaMeaning": "জলবায়ু পরিবর্তন",
+      "exampleSentence": "Climate change is the defining issue of our time."
+    },
+    {
+      "word": "Industrial Revolution",
+      "pronunciation": "/ɪnˈdʌstriəl ˌrɛvəˈluːʃən/",
+      "meaning": "The period of rapid industrial growth",
+      "banglaMeaning": "শিল্প বিপ্লব",
+      "exampleSentence": "The Industrial Revolution transformed society."
+    },
+    {
+      "word": "Technological Advancement",
+      "pronunciation": "/ˌtɛknəˈlɒdʒɪkəl ədˈvænsmənt/",
+      "meaning": "Progress in technology",
+      "banglaMeaning": "প্রযুক্তিগত অগ্রগতি",
+      "exampleSentence": "Technological advancement creates new opportunities."
+    },
+    {
+      "word": "Artificial Intelligence",
+      "pronunciation": "/ˌɑːrtɪˈfɪʃəl ɪnˈtɛlɪdʒəns/",
+      "meaning": "Intelligence by machines",
+      "banglaMeaning": "কৃত্রিম বুদ্ধিমত্তা",
+      "exampleSentence": "Artificial intelligence is changing every industry."
+    },
+    {
+      "word": "Automation",
+      "pronunciation": "/ˌɔːtəˈmeɪʃən/",
+      "meaning": "Use of machines to replace human work",
+      "banglaMeaning": "অটোমেশন",
+      "exampleSentence": "Automation may lead to job losses."
+    },
+    {
+      "word": "Globalization",
+      "pronunciation": "/ˌɡloʊbəlaɪˈzeɪʃən/",
+      "meaning": "Integration of world economies",
+      "banglaMeaning": "বিশ্বায়ন",
+      "exampleSentence": "Globalization has winners and losers."
+    },
+    {
+      "word": "Free Trade",
+      "pronunciation": "/friː treɪd/",
+      "meaning": "Trade without tariffs or barriers",
+      "banglaMeaning": "মুক্ত বাণিজ্য",
+      "exampleSentence": "Free trade benefits all countries."
+    },
+    {
+      "word": "Protectionism",
+      "pronunciation": "/prəˈtɛkʃənɪzəm/",
+      "meaning": "Protecting domestic industries from imports",
+      "banglaMeaning": "সুরক্ষাবাদ",
+      "exampleSentence": "Protectionism can harm global trade."
+    },
+    {
+      "word": "Tariff",
+      "pronunciation": "/ˈtærɪf/",
+      "meaning": "A tax on imported goods",
+      "banglaMeaning": "শুল্ক",
+      "exampleSentence": "Tariffs make imported goods expensive."
+    },
+    {
+      "word": "Quota",
+      "pronunciation": "/ˈkwoʊtə/",
+      "meaning": "A limit on imports",
+      "banglaMeaning": "কোটা",
+      "exampleSentence": "Import quotas protect local industries."
+    },
+    {
+      "word": "Sanctions",
+      "pronunciation": "/ˈsæŋkʃənz/",
+      "meaning": "Penalties against a country",
+      "banglaMeaning": "নিষেধাজ্ঞা",
+      "exampleSentence": "Economic sanctions were imposed."
+    },
+    {
+      "word": "Embargo",
+      "pronunciation": "/ɪmˈbɑːrɡoʊ/",
+      "meaning": "A ban on trade",
+      "banglaMeaning": "নিষেধাজ্ঞা",
+      "exampleSentence": "The embargo was lifted."
+    },
+    {
+      "word": "Regulation",
+      "pronunciation": "/ˌrɛɡjʊˈleɪʃən/",
+      "meaning": "A rule made by authority",
+      "banglaMeaning": "নিয়ম",
+      "exampleSentence": "Regulation protects consumers."
+    },
+    {
+      "word": "Deregulation",
+      "pronunciation": "/diːˌrɛɡjʊˈleɪʃən/",
+      "meaning": "Removing regulations",
+      "banglaMeaning": "নিয়ন্ত্রণমুক্তকরণ",
+      "exampleSentence": "Deregulation can boost competition."
+    },
+    {
+      "word": "Privatization",
+      "pronunciation": "/ˌpraɪvətaɪˈzeɪʃən/",
+      "meaning": "Transfer from public to private",
+      "banglaMeaning": "বেসরকারিকরণ",
+      "exampleSentence": "Privatization of state assets was controversial."
+    },
+    {
+      "word": "Nationalization",
+      "pronunciation": "/ˌnæʃənəlaɪˈzeɪʃən/",
+      "meaning": "Transfer from private to public",
+      "banglaMeaning": "জাতীয়করণ",
+      "exampleSentence": "Nationalization of industries occurred."
+    },
+    {
+      "word": "Monopoly",
+      "pronunciation": "/məˈnɒpəli/",
+      "meaning": "Single company dominating a market",
+      "banglaMeaning": "একচেটিয়া",
+      "exampleSentence": "Monopoly reduces competition."
+    },
+    {
+      "word": "Oligopoly",
+      "pronunciation": "/ˌɒlɪˈɡɒpəli/",
+      "meaning": "Few companies dominating a market",
+      "banglaMeaning": "অলিগোপলি",
+      "exampleSentence": "The industry is an oligopoly."
+    },
+    {
+      "word": "Competition",
+      "pronunciation": "/ˌkɒmpɪˈtɪʃən/",
+      "meaning": "Rivalry between businesses",
+      "banglaMeaning": "প্রতিযোগিতা",
+      "exampleSentence": "Competition benefits consumers."
+    },
+    {
+      "word": "Innovation",
+      "pronunciation": "/ˌɪnəˈveɪʃən/",
+      "meaning": "New ideas or methods",
+      "banglaMeaning": "উদ্ভাবন",
+      "exampleSentence": "Innovation drives progress."
+    },
+    {
+      "word": "Entrepreneurship",
+      "pronunciation": "/ˌɒntrəprəˈnɜːrʃɪp/",
+      "meaning": "Starting new businesses",
+      "banglaMeaning": "উদ্যোক্তা",
+      "exampleSentence": "Entrepreneurship fuels the economy."
+    },
+    {
+      "word": "Consumerism",
+      "pronunciation": "/kənˈsjuːmərɪzəm/",
+      "meaning": "Preoccupation with buying goods",
+      "banglaMeaning": "ভোগবাদ",
+      "exampleSentence": "Consumerism drives economic growth."
+    },
+    {
+      "word": "Materialism",
+      "pronunciation": "/məˈtɪriəlɪzəm/",
+      "meaning": "Valuing possessions over other things",
+      "banglaMeaning": "বস্তুবাদ",
+      "exampleSentence": "Materialism is often criticized."
+    },
+    {
+      "word": "Education",
+      "pronunciation": "/ˌɛdʒʊˈkeɪʃən/",
+      "meaning": "The process of teaching and learning",
+      "banglaMeaning": "শিক্ষা",
+      "exampleSentence": "Education is the key to opportunity."
+    },
+    {
+      "word": "Literacy",
+      "pronunciation": "/ˈlɪtərəsi/",
+      "meaning": "The ability to read and write",
+      "banglaMeaning": "সাক্ষরতা",
+      "exampleSentence": "Literacy rates have improved."
+    },
+    {
+      "word": "Numeracy",
+      "pronunciation": "/ˈnjuːmərəsi/",
+      "meaning": "The ability to use numbers",
+      "banglaMeaning": "গণিত দক্ষতা",
+      "exampleSentence": "Numeracy is as important as literacy."
+    },
+    {
+      "word": "Curriculum",
+      "pronunciation": "/kəˈrɪkjʊləm/",
+      "meaning": "The subjects taught in a course",
+      "banglaMeaning": "পাঠ্যসূচি",
+      "exampleSentence": "The curriculum needs updating."
+    },
+    {
+      "word": "Pedagogy",
+      "pronunciation": "/ˈpɛdəɡɒdʒi/",
+      "meaning": "The method of teaching",
+      "banglaMeaning": "শিক্ষণ পদ্ধতি",
+      "exampleSentence": "Pedagogy should be engaging."
+    },
+    {
+      "word": "Public Health",
+      "pronunciation": "/ˈpʌblɪk hɛlθ/",
+      "meaning": "Health of the population",
+      "banglaMeaning": "জনস্বাস্থ্য",
+      "exampleSentence": "Public health measures save lives."
+    },
+    {
+      "word": "Healthcare",
+      "pronunciation": "/ˈhɛlθkɛər/",
+      "meaning": "Medical services",
+      "banglaMeaning": "স্বাস্থ্যসেবা",
+      "exampleSentence": "Healthcare is a basic right."
+    },
+    {
+      "word": "Universal Healthcare",
+      "pronunciation": "/ˌjuːnɪˈvɜːrsəl ˈhɛlθkɛər/",
+      "meaning": "Healthcare for all citizens",
+      "banglaMeaning": "সর্বজনীন স্বাস্থ্যসেবা",
+      "exampleSentence": "Universal healthcare ensures everyone gets treatment."
+    },
+    {
+      "word": "Privatized Healthcare",
+      "pronunciation": "/ˈpraɪvətaɪzd ˈhɛlθkɛər/",
+      "meaning": "Healthcare run by private companies",
+      "banglaMeaning": "বেসরকারি স্বাস্থ্যসেবা",
+      "exampleSentence": "Privatized healthcare can be expensive."
+    },
+    {
+      "word": "Vaccination",
+      "pronunciation": "/ˌvæksɪˈneɪʃən/",
+      "meaning": "Immunization against diseases",
+      "banglaMeaning": "টিকা",
+      "exampleSentence": "Vaccination prevents disease outbreaks."
+    },
+    {
+      "word": "Mandatory Vaccination",
+      "pronunciation": "/ˈmændətɔːri ˌvæksɪˈneɪʃən/",
+      "meaning": "Required by law to vaccinate",
+      "banglaMeaning": "বাধ্যতামূলক টিকা",
+      "exampleSentence": "Mandatory vaccination is debated."
+    },
+    {
+      "word": "Herd Immunity",
+      "pronunciation": "/hɜːrd ɪˈmjuːnɪti/",
+      "meaning": "Indirect protection from vaccination",
+      "banglaMeaning": "হার্ড ইমিউনিটি",
+      "exampleSentence": "Herd immunity protects the vulnerable."
+    },
+    {
+      "word": "Pandemic",
+      "pronunciation": "/pænˈdɛmɪk/",
+      "meaning": "A global disease outbreak",
+      "banglaMeaning": "মহামারী",
+      "exampleSentence": "The pandemic highlighted healthcare gaps."
+    },
+    {
+      "word": "Lockdown",
+      "pronunciation": "/ˈlɒkdaʊn/",
+      "meaning": "Restricting movement to control disease",
+      "banglaMeaning": "লকডাউন",
+      "exampleSentence": "Lockdowns reduced virus transmission."
+    },
+    {
+      "word": "Social Distancing",
+      "pronunciation": "/ˈsoʊʃəl ˈdɪstənsɪŋ/",
+      "meaning": "Keeping distance to prevent spread",
+      "banglaMeaning": "সামাজিক দূরত্ব",
+      "exampleSentence": "Social distancing became normal."
+    },
+    {
+      "word": "Quarantine",
+      "pronunciation": "/ˈkwɒrəntiːn/",
+      "meaning": "Isolation for disease control",
+      "banglaMeaning": "কোয়ারেন্টিন",
+      "exampleSentence": "Quarantine prevents disease spread."
+    },
+    {
+      "word": "Civil Liberties",
+      "pronunciation": "/ˈsɪvəl ˈlɪbərtiz/",
+      "meaning": "Individual rights and freedoms",
+      "banglaMeaning": "নাগরিক স্বাধীনতা",
+      "exampleSentence": "Civil liberties must be protected."
+    },
+    {
+      "word": "Privacy",
+      "pronunciation": "/ˈprɪvəsi/",
+      "meaning": "Freedom from public attention",
+      "banglaMeaning": "গোপনীয়তা",
+      "exampleSentence": "Privacy is a fundamental right."
+    },
+    {
+      "word": "Surveillance",
+      "pronunciation": "/sərˈveɪləns/",
+      "meaning": "Close monitoring of people",
+      "banglaMeaning": "নজরদারি",
+      "exampleSentence": "Mass surveillance raises privacy concerns."
+    },
+    {
+      "word": "Censorship",
+      "pronunciation": "/ˈsɛnsərʃɪp/",
+      "meaning": "Suppressing speech or information",
+      "banglaMeaning": "সেন্সরশিপ",
+      "exampleSentence": "Censorship limits free expression."
+    },
+    {
+      "word": "Freedom of Speech",
+      "pronunciation": "/ˈfriːdəm əv spiːtʃ/",
+      "meaning": "The right to express opinions",
+      "banglaMeaning": "বাক স্বাধীনতা",
+      "exampleSentence": "Freedom of speech has limits."
+    },
+    {
+      "word": "Hate Speech",
+      "pronunciation": "/heɪt spiːtʃ/",
+      "meaning": "Speech that incites hatred",
+      "banglaMeaning": "ঘৃণামূলক বক্তব্য",
+      "exampleSentence": "Hate speech should be regulated."
+    },
+    {
+      "word": "Misinformation",
+      "pronunciation": "/ˌmɪsɪnfərˈmeɪʃən/",
+      "meaning": "False information unintentionally spread",
+      "banglaMeaning": "ভুল তথ্য",
+      "exampleSentence": "Misinformation spreads quickly online."
+    },
+    {
+      "word": "Disinformation",
+      "pronunciation": "/dɪsˌɪnfərˈmeɪʃən/",
+      "meaning": "False information deliberately spread",
+      "banglaMeaning": "ভুয়া তথ্য",
+      "exampleSentence": "Disinformation is a threat to democracy."
+    },
+    {
+      "word": "Fake News",
+      "pronunciation": "/feɪk njuːz/",
+      "meaning": "False stories presented as news",
+      "banglaMeaning": "ভুয়া খবর",
+      "exampleSentence": "Fake news undermines trust in media."
+    },
+    {
+      "word": "Media Literacy",
+      "pronunciation": "/ˈmiːdiə ˈlɪtərəsi/",
+      "meaning": "The ability to evaluate media critically",
+      "banglaMeaning": "মিডিয়া সাক্ষরতা",
+      "exampleSentence": "Media literacy is essential today."
+    },
+    {
+      "word": "Critical Thinking",
+      "pronunciation": "/ˈkrɪtɪkəl ˈθɪŋkɪŋ/",
+      "meaning": "Analyzing facts to form judgments",
+      "banglaMeaning": "সমালোচনামূলক চিন্তা",
+      "exampleSentence": "Critical thinking helps evaluate arguments."
+    },
+    {
+      "word": "Reason",
+      "pronunciation": "/ˈriːzən/",
+      "meaning": "The power of logical thought",
+      "banglaMeaning": "যুক্তি",
+      "exampleSentence": "Reason should guide our decisions."
+    },
+    {
+      "word": "Logic",
+      "pronunciation": "/ˈlɒdʒɪk/",
+      "meaning": "The science of reasoning",
+      "banglaMeaning": "যুক্তিবিদ্যা",
+      "exampleSentence": "Logic is essential in debate."
+    },
+    {
+      "word": "Emotion",
+      "pronunciation": "/ɪˈmoʊʃən/",
+      "meaning": "Strong feelings",
+      "banglaMeaning": "আবেগ",
+      "exampleSentence": "Emotion can cloud rational judgment."
+    },
+    {
+      "word": "Intuition",
+      "pronunciation": "/ˌɪntuˈɪʃən/",
+      "meaning": "The ability to understand without reasoning",
+      "banglaMeaning": "স্বজ্ঞা",
+      "exampleSentence": "Intuition is not always reliable."
+    },
+    {
+      "word": "Evidence",
+      "pronunciation": "/ˈɛvɪdəns/",
+      "meaning": "Facts supporting a claim",
+      "banglaMeaning": "প্রমাণ",
+      "exampleSentence": "Claims need evidence."
+    },
+    {
+      "word": "Proof",
+      "pronunciation": "/pruːf/",
+      "meaning": "Evidence establishing a fact",
+      "banglaMeaning": "প্রমাণ",
+      "exampleSentence": "The burden of proof is on the claimant."
+    },
+    {
+      "word": "Data",
+      "pronunciation": "/ˈdeɪtə/",
+      "meaning": "Facts and statistics",
+      "banglaMeaning": "তথ্য",
+      "exampleSentence": "Data supports our argument."
+    },
+    {
+      "word": "Statistics",
+      "pronunciation": "/stəˈtɪstɪks/",
+      "meaning": "Numerical data",
+      "banglaMeaning": "পরিসংখ্যান",
+      "exampleSentence": "Statistics can be misleading."
+    },
+    {
+      "word": "Percentage",
+      "pronunciation": "/pərˈsɛntɪdʒ/",
+      "meaning": "A rate or proportion per hundred",
+      "banglaMeaning": "শতকরা হার",
+      "exampleSentence": "A large percentage agreed."
+    },
+    {
+      "word": "Ratio",
+      "pronunciation": "/ˈreɪʃioʊ/",
+      "meaning": "A relationship between two amounts",
+      "banglaMeaning": "অনুপাত",
+      "exampleSentence": "The ratio of supporters to opponents is 2:1."
+    },
+    {
+      "word": "Proportion",
+      "pronunciation": "/prəˈpɔːrʃən/",
+      "meaning": "A part of a whole",
+      "banglaMeaning": "আনুপাতিক হার",
+      "exampleSentence": "A large proportion of the population agrees."
+    },
+    {
+      "word": "Majority",
+      "pronunciation": "/məˈdʒɒrɪti/",
+      "meaning": "The greater number",
+      "banglaMeaning": "সংখ্যাগরিষ্ঠ",
+      "exampleSentence": "The majority supports the policy."
+    },
+    {
+      "word": "Minority",
+      "pronunciation": "/maɪˈnɒrɪti/",
+      "meaning": "The smaller number",
+      "banglaMeaning": "সংখ্যালঘু",
+      "exampleSentence": "Minority rights must be protected."
+    },
+    {
+      "word": "Consensus",
+      "pronunciation": "/kənˈsɛnsəs/",
+      "meaning": "General agreement",
+      "banglaMeaning": "ঐকমত্য",
+      "exampleSentence": "There is a scientific consensus on climate change."
+    },
+    {
+      "word": "Unanimous",
+      "pronunciation": "/juːˈnænɪməs/",
+      "meaning": "Fully agreed by all",
+      "banglaMeaning": "সর্বসম্মত",
+      "exampleSentence": "The decision was unanimous."
+    },
+    {
+      "word": "Divided",
+      "pronunciation": "/dɪˈvaɪdɪd/",
+      "meaning": "Split into opposing groups",
+      "banglaMeaning": "বিভক্ত",
+      "exampleSentence": "The public is divided on the issue."
+    },
+    {
+      "word": "Polarized",
+      "pronunciation": "/ˈpoʊləraɪzd/",
+      "meaning": "Divided into extreme opposites",
+      "banglaMeaning": "মেরুকৃত",
+      "exampleSentence": "Society has become increasingly polarized."
+    },
+    {
+      "word": "Stalemate",
+      "pronunciation": "/ˈsteɪlmeɪt/",
+      "meaning": "A situation where no progress is possible",
+      "banglaMeaning": "অচলাবস্থা",
+      "exampleSentence": "The debate ended in a stalemate."
+    },
+    {
+      "word": "Gridlock",
+      "pronunciation": "/ˈɡrɪdlɒk/",
+      "meaning": "A situation with no forward movement",
+      "banglaMeaning": "স্থবিরতা",
+      "exampleSentence": "Political gridlock prevented legislation."
+    },
+    {
+      "word": "Impasse",
+      "pronunciation": "/ɪmˈpæs/",
+      "meaning": "A situation with no way forward",
+      "banglaMeaning": "অচলাবস্থা",
+      "exampleSentence": "Negotiations reached an impasse."
+    },
+    {
+      "word": "Dilemma",
+      "pronunciation": "/dɪˈlɛmə/",
+      "meaning": "A difficult choice",
+      "banglaMeaning": "дилемা",
+      "exampleSentence": "We face a moral dilemma."
+    },
+    {
+      "word": "Paradox",
+      "pronunciation": "/ˈpærədɒks/",
+      "meaning": "A self-contradictory statement",
+      "banglaMeaning": "প্যারাডক্স",
+      "exampleSentence": "It is a paradox that wealth does not guarantee happiness."
+    },
+    {
+      "word": "Irony",
+      "pronunciation": "/ˈaɪrəni/",
+      "meaning": "A situation that is the opposite of what is expected",
+      "banglaMeaning": "বিদ্রুপ",
+      "exampleSentence": "The irony was not lost on the audience."
+    },
+    {
+      "word": "Hypocrisy",
+      "pronunciation": "/hɪˈpɒkrɪsi/",
+      "meaning": "Claiming standards one does not follow",
+      "banglaMeaning": "ভণ্ডামি",
+      "exampleSentence": "The opposition accused the government of hypocrisy."
+    },
+    {
+      "word": "Double Standard",
+      "pronunciation": "/ˈdʌbəl ˈstændərd/",
+      "meaning": "Applying different rules to different groups",
+      "banglaMeaning": "দ্বৈত মানদণ্ড",
+      "exampleSentence": "That is a double standard."
+    },
+    {
+      "word": "Ultimatum",
+      "pronunciation": "/ˌʌltɪˈmeɪtəm/",
+      "meaning": "A final demand or threat",
+      "banglaMeaning": "অল্টিমেটাম",
+      "exampleSentence": "They issued an ultimatum."
+    },
+    {
+      "word": "Compromise",
+      "pronunciation": "/ˈkɒmprəmaɪz/",
+      "meaning": "An agreement reached by mutual concession",
+      "banglaMeaning": "আপস",
+      "exampleSentence": "Compromise is essential in politics."
+    },
+    {
+      "word": "Concession",
+      "pronunciation": "/kənˈsɛʃən/",
+      "meaning": "Something given up in a negotiation",
+      "banglaMeaning": "ছাড়",
+      "exampleSentence": "Both sides made concessions."
+    },
+    {
+      "word": "Negotiation",
+      "pronunciation": "/nɪˌɡoʊʃiˈeɪʃən/",
+      "meaning": "Discussion to reach an agreement",
+      "banglaMeaning": "আলোচনা",
+      "exampleSentence": "Negotiation requires give and take."
+    },
+    {
+      "word": "Mediation",
+      "pronunciation": "/ˌmiːdiˈeɪʃən/",
+      "meaning": "Helping two sides reach agreement",
+      "banglaMeaning": "মধ্যস্থতা",
+      "exampleSentence": "Mediation helped resolve the conflict."
+    },
+    {
+      "word": "Arbitration",
+      "pronunciation": "/ˌɑːrbɪˈtreɪʃən/",
+      "meaning": "Settlement by a third party",
+      "banglaMeaning": "মধ্যস্থতা",
+      "exampleSentence": "Arbitration is legally binding."
+    },
+    {
+      "word": "Resolution",
+      "pronunciation": "/ˌrɛzəˈluːʃən/",
+      "meaning": "A solution to a problem",
+      "banglaMeaning": "সমাধান",
+      "exampleSentence": "We seek a peaceful resolution."
+    },
+    {
+      "word": "Settlement",
+      "pronunciation": "/ˈsɛtəlmənt/",
+      "meaning": "An official agreement to end a dispute",
+      "banglaMeaning": "নিষ্পত্তি",
+      "exampleSentence": "A settlement was reached."
+    }
+  ]
+}

@@ -1,1 +1,1022 @@
-{"chapter": 32, "level": "Advanced", "title": "Business English", "words": []}
+{
+  "chapter": 32,
+  "level": "Advanced",
+  "title": "Business English",
+  "words": [
+    {
+      "word": "Revenue",
+      "pronunciation": "/ˈrɛvənjuː/",
+      "meaning": "Income generated from business activities",
+      "banglaMeaning": "রাজস্ব / আয়",
+      "exampleSentence": "The company's revenue increased by 20% this quarter."
+    },
+    {
+      "word": "Profit",
+      "pronunciation": "/ˈprɒfɪt/",
+      "meaning": "Financial gain after deducting expenses",
+      "banglaMeaning": "মুনাফা / লাভ",
+      "exampleSentence": "We need to increase profit margins this year."
+    },
+    {
+      "word": "Investment",
+      "pronunciation": "/ɪnˈvɛstmənt/",
+      "meaning": "Money put into something to generate returns",
+      "banglaMeaning": "বিনিয়োগ",
+      "exampleSentence": "The investment in new technology paid off quickly."
+    },
+    {
+      "word": "Budget",
+      "pronunciation": "/ˈbʌdʒɪt/",
+      "meaning": "A financial plan for a period",
+      "banglaMeaning": "বাজেট",
+      "exampleSentence": "We must stay within the allocated budget."
+    },
+    {
+      "word": "Expense",
+      "pronunciation": "/ɪkˈspɛns/",
+      "meaning": "Cost incurred in running a business",
+      "banglaMeaning": "খরচ / ব্যয়",
+      "exampleSentence": "Travel expenses must be approved in advance."
+    },
+    {
+      "word": "Invoice",
+      "pronunciation": "/ˈɪnvɔɪs/",
+      "meaning": "A bill for goods or services provided",
+      "banglaMeaning": "চালান / বিল",
+      "exampleSentence": "Please send the invoice by email."
+    },
+    {
+      "word": "Asset",
+      "pronunciation": "/ˈæsɛt/",
+      "meaning": "Something valuable owned by a business",
+      "banglaMeaning": "সম্পদ",
+      "exampleSentence": "Intellectual property is a valuable asset."
+    },
+    {
+      "word": "Liability",
+      "pronunciation": "/ˌlaɪəˈbɪlɪti/",
+      "meaning": "A company's financial debt or obligation",
+      "banglaMeaning": "দায় / দেনা",
+      "exampleSentence": "The company has too many liabilities."
+    },
+    {
+      "word": "Shareholder",
+      "pronunciation": "/ˈʃɛərˌhoʊldər/",
+      "meaning": "Someone who owns shares in a company",
+      "banglaMeaning": "শেয়ারহোল্ডার",
+      "exampleSentence": "Shareholders voted on the merger proposal."
+    },
+    {
+      "word": "Dividend",
+      "pronunciation": "/ˈdɪvɪdɛnd/",
+      "meaning": "A portion of profit distributed to shareholders",
+      "banglaMeaning": "লভ্যাংশ",
+      "exampleSentence": "The board declared a dividend of $2 per share."
+    },
+    {
+      "word": "Merger",
+      "pronunciation": "/ˈmɜːrdʒər/",
+      "meaning": "Combining two companies into one",
+      "banglaMeaning": "একীভবন / মার্জার",
+      "exampleSentence": "The merger created the largest tech company in Asia."
+    },
+    {
+      "word": "Acquisition",
+      "pronunciation": "/ˌækwɪˈzɪʃən/",
+      "meaning": "Buying another company or asset",
+      "banglaMeaning": "অধিগ্রহণ",
+      "exampleSentence": "The acquisition strengthened our market position."
+    },
+    {
+      "word": "Stakeholder",
+      "pronunciation": "/ˈsteɪkˌhoʊldər/",
+      "meaning": "A person with interest in a business",
+      "banglaMeaning": "স্বার্থধারী / স্টেকহোল্ডার",
+      "exampleSentence": "We must consider all stakeholder opinions."
+    },
+    {
+      "word": "Equity",
+      "pronunciation": "/ˈɛkwɪti/",
+      "meaning": "Ownership value in a company",
+      "banglaMeaning": "ইকুইটি / মালিকানা স্বত্ব",
+      "exampleSentence": "He holds a 30% equity stake in the firm."
+    },
+    {
+      "word": "Depreciation",
+      "pronunciation": "/dɪˌpriːʃiˈeɪʃən/",
+      "meaning": "Reduction in value of an asset over time",
+      "banglaMeaning": "অবচয়",
+      "exampleSentence": "The depreciation of equipment is calculated annually."
+    },
+    {
+      "word": "Audit",
+      "pronunciation": "/ˈɔːdɪt/",
+      "meaning": "Official inspection of financial accounts",
+      "banglaMeaning": "নিরীক্ষা / অডিট",
+      "exampleSentence": "The annual audit revealed some discrepancies."
+    },
+    {
+      "word": "Forecast",
+      "pronunciation": "/ˈfɔːrkæst/",
+      "meaning": "Prediction of future trends or sales",
+      "banglaMeaning": "পূর্বাভাস",
+      "exampleSentence": "The sales forecast for next year is optimistic."
+    },
+    {
+      "word": "Quarterly",
+      "pronunciation": "/ˈkwɔːrtərli/",
+      "meaning": "Occurring every three months",
+      "banglaMeaning": "ত্রৈমাসিক",
+      "exampleSentence": "We publish quarterly financial reports."
+    },
+    {
+      "word": "Portfolio",
+      "pronunciation": "/pɔːrtˈfoʊlioʊ/",
+      "meaning": "A collection of investments or projects",
+      "banglaMeaning": "পোর্টফোলিও",
+      "exampleSentence": "Diversify your portfolio to reduce risk."
+    },
+    {
+      "word": "Collateral",
+      "pronunciation": "/kəˈlætərəl/",
+      "meaning": "Property pledged as security for a loan",
+      "banglaMeaning": "জামানত / বন্ধক",
+      "exampleSentence": "The bank asked for collateral against the loan."
+    },
+    {
+      "word": "Agenda",
+      "pronunciation": "/əˈdʒɛndə/",
+      "meaning": "A list of items to discuss in a meeting",
+      "banglaMeaning": "এজেন্ডা / কার্যসূচী",
+      "exampleSentence": "Please add this topic to the meeting agenda."
+    },
+    {
+      "word": "Minutes",
+      "pronunciation": "/ˈmɪnɪts/",
+      "meaning": "Official written record of a meeting",
+      "banglaMeaning": "কার্যবিবরণী / মিনিটস",
+      "exampleSentence": "She took detailed minutes during the board meeting."
+    },
+    {
+      "word": "Negotiate",
+      "pronunciation": "/nɪˈɡoʊʃieɪt/",
+      "meaning": "To discuss terms to reach an agreement",
+      "banglaMeaning": "আলোচনা করা",
+      "exampleSentence": "We need to negotiate better payment terms."
+    },
+    {
+      "word": "Contract",
+      "pronunciation": "/ˈkɒntrækt/",
+      "meaning": "A legally binding agreement",
+      "banglaMeaning": "চুক্তি",
+      "exampleSentence": "Both parties signed the contract yesterday."
+    },
+    {
+      "word": "Proposal",
+      "pronunciation": "/prəˈpoʊzəl/",
+      "meaning": "A suggested plan or business offer",
+      "banglaMeaning": "প্রস্তাব",
+      "exampleSentence": "We submitted a proposal to the client."
+    },
+    {
+      "word": "Stake",
+      "pronunciation": "/steɪk/",
+      "meaning": "Financial interest or share in a business",
+      "banglaMeaning": "অংশ / অংশীদারিত্ব",
+      "exampleSentence": "They acquired a majority stake in the startup."
+    },
+    {
+      "word": "Benchmark",
+      "pronunciation": "/ˈbɛntʃmɑːrk/",
+      "meaning": "A standard for measuring performance",
+      "banglaMeaning": "বেন্চমার্ক / মানদণ্ড",
+      "exampleSentence": "We use industry benchmarks to evaluate our performance."
+    },
+    {
+      "word": "Synergy",
+      "pronunciation": "/ˈsɪnərdʒi/",
+      "meaning": "Combined effort producing greater results",
+      "banglaMeaning": "সমন্বয় / সিনার্জি",
+      "exampleSentence": "The merger created synergy between the two teams."
+    },
+    {
+      "word": "Turnover",
+      "pronunciation": "/ˈtɜːrnˌoʊvər/",
+      "meaning": "Total sales or employee replacement rate",
+      "banglaMeaning": "টার্নওভার / বিক্রয় পরিমাণ",
+      "exampleSentence": "High employee turnover is a concern for HR."
+    },
+    {
+      "word": "Incentive",
+      "pronunciation": "/ɪnˈsɛntɪv/",
+      "meaning": "Something that motivates or encourages action",
+      "banglaMeaning": "উদ্দীপনা / প্রণোদনা",
+      "exampleSentence": "The bonus is a great incentive for the sales team."
+    },
+    {
+      "word": "Commission",
+      "pronunciation": "/kəˈmɪʃən/",
+      "meaning": "A fee paid based on sales made",
+      "banglaMeaning": "কমিশন",
+      "exampleSentence": "He earns a 10% commission on every sale."
+    },
+    {
+      "word": "Revenue Stream",
+      "pronunciation": "/ˈrɛvənjuː striːm/",
+      "meaning": "A source of income for a business",
+      "banglaMeaning": "আয়ের উৎস",
+      "exampleSentence": "Subscription is our main revenue stream."
+    },
+    {
+      "word": "IPO",
+      "pronunciation": "/ˌaɪ piː ˈoʊ/",
+      "meaning": "Initial Public Offering — first sale of stock to public",
+      "banglaMeaning": "আইপিও / প্রাথমিক পাবলিক অফারিং",
+      "exampleSentence": "The company plans to launch its IPO next year."
+    },
+    {
+      "word": "Amortization",
+      "pronunciation": "/əˌmɔːrtɪˈzeɪʃən/",
+      "meaning": "Gradual writing off of an intangible asset",
+      "banglaMeaning": "পরিশোধিতকরণ",
+      "exampleSentence": "The amortization of the patent spans 10 years."
+    },
+    {
+      "word": "Gross Margin",
+      "pronunciation": "/ɡroʊs ˈmɑːrdʒɪn/",
+      "meaning": "Revenue minus cost of goods sold",
+      "banglaMeaning": "মোট মুনাফার হার",
+      "exampleSentence": "Our gross margin improved after reducing production costs."
+    },
+    {
+      "word": "Net Worth",
+      "pronunciation": "/nɛt wɜːrθ/",
+      "meaning": "Total assets minus total liabilities",
+      "banglaMeaning": "নিট মূলধন",
+      "exampleSentence": "The company's net worth has doubled in five years."
+    },
+    {
+      "word": "Cash Flow",
+      "pronunciation": "/kæʃ floʊ/",
+      "meaning": "Movement of money in and out of business",
+      "banglaMeaning": "নগদ প্রবাহ",
+      "exampleSentence": "Positive cash flow is essential for survival."
+    },
+    {
+      "word": "Insolvency",
+      "pronunciation": "/ɪnˈsɒlvənsi/",
+      "meaning": "Inability to pay debts when due",
+      "banglaMeaning": "দেউলিয়াত্ব",
+      "exampleSentence": "The company filed for insolvency last month."
+    },
+    {
+      "word": "Diversification",
+      "pronunciation": "/daɪˌvɜːrsɪfɪˈkeɪʃən/",
+      "meaning": "Spreading investments across different areas",
+      "banglaMeaning": "বৈচিত্র্যায়ন",
+      "exampleSentence": "Diversification helps reduce business risk."
+    },
+    {
+      "word": "Fiscal Year",
+      "pronunciation": "/ˈfɪskəl jɪər/",
+      "meaning": "A 12-month accounting period",
+      "banglaMeaning": "অর্থবছর",
+      "exampleSentence": "Our fiscal year ends on March 31st."
+    },
+    {
+      "word": "Liquidation",
+      "pronunciation": "/ˌlɪkwɪˈdeɪʃən/",
+      "meaning": "Selling off assets to pay debts",
+      "banglaMeaning": "তরলীকরণ / লিকুইডেশন",
+      "exampleSentence": "The company went into liquidation after bankruptcy."
+    },
+    {
+      "word": "Overhead",
+      "pronunciation": "/ˌoʊvərˈhɛd/",
+      "meaning": "Ongoing business expenses not tied to production",
+      "banglaMeaning": "ওভারহেড / পরিচালন ব্যয়",
+      "exampleSentence": "We are trying to reduce overhead costs."
+    },
+    {
+      "word": "Franchise",
+      "pronunciation": "/ˈfræntʃaɪz/",
+      "meaning": "License to operate a branded business",
+      "banglaMeaning": "ফ্র্যাঞ্চাইজি",
+      "exampleSentence": "He opened a fast food franchise in the city."
+    },
+    {
+      "word": "Subsidiary",
+      "pronunciation": "/səbˈsɪdiəri/",
+      "meaning": "A company controlled by a parent company",
+      "banglaMeaning": "অধীনস্থ কোম্পানি / সহায়ক",
+      "exampleSentence": "The subsidiary operates independently."
+    },
+    {
+      "word": "Underwrite",
+      "pronunciation": "/ˌʌndərˈraɪt/",
+      "meaning": "To financially guarantee or insure",
+      "banglaMeaning": "আন্ডাররাইট করা",
+      "exampleSentence": "The bank agreed to underwrite the stock offering."
+    },
+    {
+      "word": "Deposit",
+      "pronunciation": "/dɪˈpɒzɪt/",
+      "meaning": "Money placed in a bank account",
+      "banglaMeaning": "আমানত / জমা",
+      "exampleSentence": "Please make a deposit of $500 to open the account."
+    },
+    {
+      "word": "Withdrawal",
+      "pronunciation": "/wɪðˈdrɔːəl/",
+      "meaning": "Taking money out of an account",
+      "banglaMeaning": "উত্তোলন / তোলা",
+      "exampleSentence": "A large withdrawal was made from the account."
+    },
+    {
+      "word": "Interest Rate",
+      "pronunciation": "/ˈɪntrɪst reɪt/",
+      "meaning": "Percentage charged on borrowed money",
+      "banglaMeaning": "সুদের হার",
+      "exampleSentence": "The interest rate on the loan is 8%."
+    },
+    {
+      "word": "Principal",
+      "pronunciation": "/ˈprɪnsəpəl/",
+      "meaning": "Original sum of money borrowed or invested",
+      "banglaMeaning": "মূলধন / আসল",
+      "exampleSentence": "The principal amount of the loan is $50,000."
+    },
+    {
+      "word": "Default",
+      "pronunciation": "/dɪˈfɔːlt/",
+      "meaning": "Failure to repay a loan",
+      "banglaMeaning": "খেলাপি",
+      "exampleSentence": "The borrower defaulted on the loan payment."
+    },
+    {
+      "word": "Credit Score",
+      "pronunciation": "/ˈkrɛdɪt skɔːr/",
+      "meaning": "A number representing creditworthiness",
+      "banglaMeaning": "ক্রেডিট স্কোর",
+      "exampleSentence": "A good credit score helps get lower interest rates."
+    },
+    {
+      "word": "Lease",
+      "pronunciation": "/liːs/",
+      "meaning": "A contract to rent property or equipment",
+      "banglaMeaning": "লিজ / ইজারা",
+      "exampleSentence": "We signed a five-year lease for the office space."
+    },
+    {
+      "word": "Mortgage",
+      "pronunciation": "/ˈmɔːrɡɪdʒ/",
+      "meaning": "A loan used to buy property",
+      "banglaMeaning": "বন্ধকী ঋণ",
+      "exampleSentence": "They took a mortgage to buy the building."
+    },
+    {
+      "word": "Equity Financing",
+      "pronunciation": "/ˈɛkwɪti ˈfaɪnænsɪŋ/",
+      "meaning": "Raising capital by selling shares",
+      "banglaMeaning": "ইকুইটি ফাইন্যান্সিং",
+      "exampleSentence": "The startup raised funds through equity financing."
+    },
+    {
+      "word": "Debt Financing",
+      "pronunciation": "/dɛt ˈfaɪnænsɪŋ/",
+      "meaning": "Raising capital by borrowing money",
+      "banglaMeaning": "ঋণ অর্থায়ন",
+      "exampleSentence": "Debt financing allows the company to retain ownership."
+    },
+    {
+      "word": "Venture Capital",
+      "pronunciation": "/ˈvɛntʃər ˌkæpɪtəl/",
+      "meaning": "Investment in early-stage high-growth companies",
+      "banglaMeaning": "ভেঞ্চার ক্যাপিটাল",
+      "exampleSentence": "They secured venture capital funding for their startup."
+    },
+    {
+      "word": "Angel Investor",
+      "pronunciation": "/ˈeɪndʒəl ɪnˈvɛstər/",
+      "meaning": "A wealthy individual who invests in startups",
+      "banglaMeaning": "এঞ্জেল ইনভেস্টর",
+      "exampleSentence": "An angel investor provided the initial funding."
+    },
+    {
+      "word": "Due Diligence",
+      "pronunciation": "/djuː ˈdɪlɪdʒəns/",
+      "meaning": "Investigation before a business deal",
+      "banglaMeaning": "যথাযথ পরিশ্রম / ডিউ ডিলিজেন্স",
+      "exampleSentence": "We conducted due diligence before the acquisition."
+    },
+    {
+      "word": "Joint Venture",
+      "pronunciation": "/dʒɔɪnt ˈvɛntʃər/",
+      "meaning": "A business partnership between two companies",
+      "banglaMeaning": "যৌথ উদ্যোগ",
+      "exampleSentence": "The two firms formed a joint venture."
+    },
+    {
+      "word": "Outsource",
+      "pronunciation": "/ˈaʊtsɔːrs/",
+      "meaning": "To contract work to an external company",
+      "banglaMeaning": "আউটসোর্স করা",
+      "exampleSentence": "We outsource our customer support to a third party."
+    },
+    {
+      "word": "Freelancer",
+      "pronunciation": "/ˈfriːlænsər/",
+      "meaning": "A self-employed person offering services",
+      "banglaMeaning": "ফ্রিল্যান্সার",
+      "exampleSentence": "We hired a freelancer for the graphic design project."
+    },
+    {
+      "word": "Invoice",
+      "pronunciation": "/ˈɪnvɔɪs/",
+      "meaning": "A bill for goods or services",
+      "banglaMeaning": "চালান",
+      "exampleSentence": "The invoice must be paid within 30 days."
+    },
+    {
+      "word": "Receipt",
+      "pronunciation": "/rɪˈsiːt/",
+      "meaning": "A document confirming payment",
+      "banglaMeaning": "রসিদ",
+      "exampleSentence": "Keep the receipt for reimbursement."
+    },
+    {
+      "word": "Quotation",
+      "pronunciation": "/kwoʊˈteɪʃən/",
+      "meaning": "An estimated cost for a service or product",
+      "banglaMeaning": "উদ্ধৃতি / কোঠেশন",
+      "exampleSentence": "Please send a quotation for the project."
+    },
+    {
+      "word": "Procurement",
+      "pronunciation": "/prəˈkjʊərmənt/",
+      "meaning": "The process of purchasing goods or services",
+      "banglaMeaning": "ক্রয় / সংগ্রহ",
+      "exampleSentence": "The procurement department handles vendor contracts."
+    },
+    {
+      "word": "Supply Chain",
+      "pronunciation": "/səˈplaɪ tʃeɪn/",
+      "meaning": "The network involved in producing and delivering a product",
+      "banglaMeaning": "সাপ্লাই চেইন",
+      "exampleSentence": "We need to optimize our supply chain."
+    },
+    {
+      "word": "Inventory",
+      "pronunciation": "/ˈɪnvəntɔːri/",
+      "meaning": "Stock of goods held by a business",
+      "banglaMeaning": "ইনভেন্টরি / মজুদ",
+      "exampleSentence": "We conduct a monthly inventory check."
+    },
+    {
+      "word": "Logistics",
+      "pronunciation": "/ləˈdʒɪstɪks/",
+      "meaning": "The coordination of moving goods",
+      "banglaMeaning": "লজিস্টিকস",
+      "exampleSentence": "Logistics is key for e-commerce businesses."
+    },
+    {
+      "word": "Wholesale",
+      "pronunciation": "/ˈhoʊlseɪl/",
+      "meaning": "Selling goods in large quantities at low prices",
+      "banglaMeaning": "পাইকারি",
+      "exampleSentence": "We buy products at wholesale prices."
+    },
+    {
+      "word": "Retail",
+      "pronunciation": "/ˈriːteɪl/",
+      "meaning": "Selling goods directly to consumers",
+      "banglaMeaning": "খুচরা",
+      "exampleSentence": "The retail sector is growing rapidly."
+    },
+    {
+      "word": "E-commerce",
+      "pronunciation": "/ˈiːˌkɒmɜːrs/",
+      "meaning": "Buying and selling goods online",
+      "banglaMeaning": "ই-কমার্স",
+      "exampleSentence": "E-commerce sales have increased dramatically."
+    },
+    {
+      "word": "Brand Equity",
+      "pronunciation": "/brænd ˈɛkwɪti/",
+      "meaning": "The value of a brand's reputation",
+      "banglaMeaning": "ব্র্যান্ড ইকুইটি",
+      "exampleSentence": "Strong brand equity commands customer loyalty."
+    },
+    {
+      "word": "Market Share",
+      "pronunciation": "/ˈmɑːrkɪt ʃɛər/",
+      "meaning": "A company's portion of total market sales",
+      "banglaMeaning": "বাজার অংশ",
+      "exampleSentence": "We aim to capture 25% market share."
+    },
+    {
+      "word": "Competitor",
+      "pronunciation": "/kəmˈpɛtɪtər/",
+      "meaning": "A rival business in the same market",
+      "banglaMeaning": "প্রতিযোগী",
+      "exampleSentence": "Our main competitor launched a similar product."
+    },
+    {
+      "word": "Monopoly",
+      "pronunciation": "/məˈnɒpəli/",
+      "meaning": "Exclusive control of a market by one company",
+      "banglaMeaning": "একচেটিয়া অধিকার",
+      "exampleSentence": "The company has a monopoly in the local market."
+    },
+    {
+      "word": "SME",
+      "pronunciation": "/ˌɛs ɛm ˈiː/",
+      "meaning": "Small and Medium-sized Enterprise",
+      "banglaMeaning": "ক্ষুদ্র ও মাঝারি উদ্যোগ",
+      "exampleSentence": "SMEs are the backbone of the economy."
+    },
+    {
+      "word": "CEO",
+      "pronunciation": "/ˌsiː iː ˈoʊ/",
+      "meaning": "Chief Executive Officer — highest-ranking manager",
+      "banglaMeaning": "প্রধান নির্বাহী কর্মকর্তা",
+      "exampleSentence": "The CEO announced a new company strategy."
+    },
+    {
+      "word": "CFO",
+      "pronunciation": "/ˌsiː ɛf ˈoʊ/",
+      "meaning": "Chief Financial Officer",
+      "banglaMeaning": "প্রধান অর্থ কর্মকর্তা",
+      "exampleSentence": "The CFO presented the annual financial report."
+    },
+    {
+      "word": "Board of Directors",
+      "pronunciation": "/bɔːrd əv dɪˈrɛktərz/",
+      "meaning": "A group elected to govern a company",
+      "banglaMeaning": "পরিচালক পর্ষদ",
+      "exampleSentence": "The board of directors approved the budget."
+    },
+    {
+      "word": "Annual Report",
+      "pronunciation": "/ˈænjuəl rɪˈpɔːrt/",
+      "meaning": "A yearly financial summary of a company",
+      "banglaMeaning": "বার্ষিক প্রতিবেদন",
+      "exampleSentence": "Shareholders received the annual report."
+    },
+    {
+      "word": "Insolvency",
+      "pronunciation": "/ɪnˈsɒlvənsi/",
+      "meaning": "Inability to pay debts",
+      "banglaMeaning": "স্বচ্ছলতার অভাব",
+      "exampleSentence": "The firm faces insolvency if sales don't improve."
+    },
+    {
+      "word": "Dividend Yield",
+      "pronunciation": "/ˈdɪvɪdɛnd jiːld/",
+      "meaning": "Dividend income as a percentage of share price",
+      "banglaMeaning": "লভ্যাংশের হার",
+      "exampleSentence": "The stock offers a 4% dividend yield."
+    },
+    {
+      "word": "Stock Exchange",
+      "pronunciation": "/stɒk ɪksˈtʃeɪndʒ/",
+      "meaning": "A marketplace for buying and selling shares",
+      "banglaMeaning": "শেয়ার বাজার",
+      "exampleSentence": "The company is listed on the stock exchange."
+    },
+    {
+      "word": "Portfolio Manager",
+      "pronunciation": "/pɔːrtˈfoʊlioʊ ˈmænɪdʒər/",
+      "meaning": "A professional who manages investments",
+      "banglaMeaning": "পোর্টফোলিও ম্যানেজার",
+      "exampleSentence": "A portfolio manager handles client investments."
+    },
+    {
+      "word": "Hedge Fund",
+      "pronunciation": "/hɛdʒ fʌnd/",
+      "meaning": "An investment fund using complex strategies",
+      "banglaMeaning": "হেজ ফান্ড",
+      "exampleSentence": "Hedge funds often take high-risk positions."
+    },
+    {
+      "word": "Mutual Fund",
+      "pronunciation": "/ˈmjuːtʃuəl fʌnd/",
+      "meaning": "A pooled investment vehicle",
+      "banglaMeaning": "মিউচুয়াল ফান্ড",
+      "exampleSentence": "Investing in a mutual fund diversifies risk."
+    },
+    {
+      "word": "Bond",
+      "pronunciation": "/bɒnd/",
+      "meaning": "A debt security issued by a company or government",
+      "banglaMeaning": "বন্ড",
+      "exampleSentence": "Government bonds are considered low-risk investments."
+    },
+    {
+      "word": "Share",
+      "pronunciation": "/ʃɛər/",
+      "meaning": "A unit of ownership in a company",
+      "banglaMeaning": "শেয়ার",
+      "exampleSentence": "The share price rose by 5% today."
+    },
+    {
+      "word": "Bull Market",
+      "pronunciation": "/bʊl ˈmɑːrkɪt/",
+      "meaning": "A market with rising prices",
+      "banglaMeaning": "বুল মার্কেট / ঊর্ধ্বমুখী বাজার",
+      "exampleSentence": "Investors are optimistic during a bull market."
+    },
+    {
+      "word": "Bear Market",
+      "pronunciation": "/bɛər ˈmɑːrkɪt/",
+      "meaning": "A market with falling prices",
+      "banglaMeaning": "বিয়ার মার্কেট / নিম্নমুখী বাজার",
+      "exampleSentence": "A bear market often causes panic selling."
+    },
+    {
+      "word": "Blue Chip",
+      "pronunciation": "/bluː tʃɪp/",
+      "meaning": "A well-established, financially sound company",
+      "banglaMeaning": "ব্লু চিপ",
+      "exampleSentence": "Blue chip stocks are safe long-term investments."
+    },
+    {
+      "word": "Startup",
+      "pronunciation": "/ˈstɑːrtʌp/",
+      "meaning": "A newly established business",
+      "banglaMeaning": "স্টার্টআপ",
+      "exampleSentence": "The startup received funding from multiple investors."
+    },
+    {
+      "word": "Business Plan",
+      "pronunciation": "/ˈbɪznɪs plæn/",
+      "meaning": "A document outlining business goals and strategy",
+      "banglaMeaning": "ব্যবসায়িক পরিকল্পনা",
+      "exampleSentence": "A solid business plan is essential for funding."
+    },
+    {
+      "word": "Exit Strategy",
+      "pronunciation": "/ˈɛksɪt ˈstrætədʒi/",
+      "meaning": "A plan for leaving a business investment",
+      "banglaMeaning": "প্রস্থান কৌশল",
+      "exampleSentence": "Investors want to see a clear exit strategy."
+    },
+    {
+      "word": "Scalability",
+      "pronunciation": "/ˌskeɪləˈbɪlɪti/",
+      "meaning": "Ability to grow without proportional cost increase",
+      "banglaMeaning": "স্কেলযোগ্যতা",
+      "exampleSentence": "Scalability is key for tech startups."
+    },
+    {
+      "word": "Revenue Model",
+      "pronunciation": "/ˈrɛvənjuː ˈmɒdəl/",
+      "meaning": "How a business generates income",
+      "banglaMeaning": "আয় মডেল",
+      "exampleSentence": "Our revenue model is based on subscriptions."
+    },
+    {
+      "word": "Break-even",
+      "pronunciation": "/breɪk ˈiːvən/",
+      "meaning": "Point where revenue equals costs",
+      "banglaMeaning": "ব্রেক-ইভেন / সমতল",
+      "exampleSentence": "The company reached break-even in its second year."
+    },
+    {
+      "word": "ROI",
+      "pronunciation": "/ˌɑːr oʊ ˈaɪ/",
+      "meaning": "Return on Investment — profit relative to cost",
+      "banglaMeaning": "বিনিয়োগে প্রত্যাবর্তন",
+      "exampleSentence": "The marketing campaign gave a 300% ROI."
+    },
+    {
+      "word": "KPI",
+      "pronunciation": "/ˌkeɪ piː ˈaɪ/",
+      "meaning": "Key Performance Indicator — a measurable metric",
+      "banglaMeaning": "মূল কর্মক্ষমতা সূচক",
+      "exampleSentence": "Sales growth is our primary KPI."
+    },
+    {
+      "word": "SWOT Analysis",
+      "pronunciation": "/swɒt əˈnælɪsɪs/",
+      "meaning": "Evaluation of Strengths, Weaknesses, Opportunities, Threats",
+      "banglaMeaning": "সোয়োট বিশ্লেষণ",
+      "exampleSentence": "We conducted a SWOT analysis of the market."
+    },
+    {
+      "word": "Pitch Deck",
+      "pronunciation": "/pɪtʃ dɛk/",
+      "meaning": "A presentation to pitch a business idea",
+      "banglaMeaning": "পিচ ডেক",
+      "exampleSentence": "The founder presented a compelling pitch deck."
+    },
+    {
+      "word": "Networking",
+      "pronunciation": "/ˈnɛtwɜːrkɪŋ/",
+      "meaning": "Building professional relationships",
+      "banglaMeaning": "নেটওয়ার্কিং",
+      "exampleSentence": "Networking is essential for career growth."
+    },
+    {
+      "word": "Mentor",
+      "pronunciation": "/ˈmɛntɔːr/",
+      "meaning": "An experienced advisor",
+      "banglaMeaning": "মেন্টর / পরামর্শদাতা",
+      "exampleSentence": "My mentor guided me through the startup journey."
+    },
+    {
+      "word": "Internship",
+      "pronunciation": "/ˈɪntɜːrnʃɪp/",
+      "meaning": "Temporary work experience for students",
+      "banglaMeaning": "ইন্টার্নশিপ",
+      "exampleSentence": "She completed an internship at a marketing firm."
+    },
+    {
+      "word": "Resignation",
+      "pronunciation": "/ˌrɛzɪɡˈneɪʃən/",
+      "meaning": "Voluntarily leaving a job",
+      "banglaMeaning": "ইস্তফা",
+      "exampleSentence": "He submitted his resignation letter."
+    },
+    {
+      "word": "Layoff",
+      "pronunciation": "/ˈleɪɒf/",
+      "meaning": "Termination of employees due to business reasons",
+      "banglaMeaning": "ছাঁটাই",
+      "exampleSentence": "The company announced a major layoff."
+    },
+    {
+      "word": "Severance",
+      "pronunciation": "/ˈsɛvərəns/",
+      "meaning": "Compensation paid to a terminated employee",
+      "banglaMeaning": "বিচ্ছেদ বেতন",
+      "exampleSentence": "He received six months of severance pay."
+    },
+    {
+      "word": "Payroll",
+      "pronunciation": "/ˈpeɪroʊl/",
+      "meaning": "List of employees and their salaries",
+      "banglaMeaning": "বেতন তালিকা",
+      "exampleSentence": "The payroll department processes salaries monthly."
+    },
+    {
+      "word": "Bonus",
+      "pronunciation": "/ˈboʊnəs/",
+      "meaning": "Extra payment beyond regular salary",
+      "banglaMeaning": "বোনাস",
+      "exampleSentence": "Employees received a year-end bonus."
+    },
+    {
+      "word": "Perks",
+      "pronunciation": "/pɜːrks/",
+      "meaning": "Additional benefits beyond salary",
+      "banglaMeaning": "সুবিধা",
+      "exampleSentence": "Free lunch and gym membership are company perks."
+    },
+    {
+      "word": "Medical Leave",
+      "pronunciation": "/ˈmɛdɪkəl liːv/",
+      "meaning": "Time off work for health reasons",
+      "banglaMeaning": "চিকিৎসা ছুটি",
+      "exampleSentence": "He is on medical leave for two weeks."
+    },
+    {
+      "word": "Maternity Leave",
+      "pronunciation": "/məˈtɜːrnɪti liːv/",
+      "meaning": "Time off for a woman after childbirth",
+      "banglaMeaning": "মাতৃত্বকালীন ছুটি",
+      "exampleSentence": "She is on maternity leave for six months."
+    },
+    {
+      "word": "Probation",
+      "pronunciation": "/prəˈbeɪʃən/",
+      "meaning": "A trial period for a new employee",
+      "banglaMeaning": "পরীক্ষামূলক সময়",
+      "exampleSentence": "The probation period is three months."
+    },
+    {
+      "word": "Appraisal",
+      "pronunciation": "/əˈpreɪzəl/",
+      "meaning": "Evaluation of employee performance",
+      "banglaMeaning": "মূল্যায়ন",
+      "exampleSentence": "The annual appraisal determines salary increments."
+    },
+    {
+      "word": "Promotion",
+      "pronunciation": "/prəˈmoʊʃən/",
+      "meaning": "Advancement to a higher position",
+      "banglaMeaning": "পদোন্নতি",
+      "exampleSentence": "She got a promotion to senior manager."
+    },
+    {
+      "word": "Demotion",
+      "pronunciation": "/diːˈmoʊʃən/",
+      "meaning": "Moving to a lower position",
+      "banglaMeaning": "পদাবনতি",
+      "exampleSentence": "Poor performance led to his demotion."
+    },
+    {
+      "word": "Transfer",
+      "pronunciation": "/ˈtrænsfɜːr/",
+      "meaning": "Moving an employee to another department or location",
+      "banglaMeaning": "বদলি",
+      "exampleSentence": "He requested a transfer to the Dhaka office."
+    },
+    {
+      "word": "Secondment",
+      "pronunciation": "/sɪˈkɒndmənt/",
+      "meaning": "Temporary assignment to another role or company",
+      "banglaMeaning": "সেকেন্ডমেন্ট",
+      "exampleSentence": "She is on secondment to the London office."
+    },
+    {
+      "word": "Confidentiality",
+      "pronunciation": "/ˌkɒnfɪdɛnʃiˈælɪti/",
+      "meaning": "Keeping information secret",
+      "banglaMeaning": "গোপনীয়তা",
+      "exampleSentence": "All employees must sign a confidentiality agreement."
+    },
+    {
+      "word": "Non-disclosure",
+      "pronunciation": "/nɒn dɪsˈkloʊʒər/",
+      "meaning": "Agreement to keep information private",
+      "banglaMeaning": "অ-প্রকাশ চুক্তি",
+      "exampleSentence": "We signed a non-disclosure agreement."
+    },
+    {
+      "word": "Copyright",
+      "pronunciation": "/ˈkɒpiraɪt/",
+      "meaning": "Legal right over original creative work",
+      "banglaMeaning": "কপিরাইট",
+      "exampleSentence": "The company holds the copyright to the software."
+    },
+    {
+      "word": "Trademark",
+      "pronunciation": "/ˈtreɪdmɑːrk/",
+      "meaning": "A symbol or name legally registered for a brand",
+      "banglaMeaning": "ট্রেডমার্ক",
+      "exampleSentence": "The logo is a registered trademark."
+    },
+    {
+      "word": "Patent",
+      "pronunciation": "/ˈpætənt/",
+      "meaning": "Exclusive right over an invention",
+      "banglaMeaning": "পেটেন্ট",
+      "exampleSentence": "The company filed a patent for the new technology."
+    },
+    {
+      "word": "Royalty",
+      "pronunciation": "/ˈrɔɪəlti/",
+      "meaning": "Payment to the owner of intellectual property",
+      "banglaMeaning": "রয়্যালটি",
+      "exampleSentence": "The author earns a 10% royalty on book sales."
+    },
+    {
+      "word": "Franchisee",
+      "pronunciation": "/ˌfræntʃaɪˈziː/",
+      "meaning": "A person who buys a franchise",
+      "banglaMeaning": "ফ্র্যাঞ্চাইজি গ্রহীতা",
+      "exampleSentence": "The franchisee opened three outlets in the city."
+    },
+    {
+      "word": "Franchisor",
+      "pronunciation": "/ˈfræntʃaɪzɔːr/",
+      "meaning": "A company that grants franchises",
+      "banglaMeaning": "ফ্র্যাঞ্চাইজি দাতা",
+      "exampleSentence": "The franchisor provides training and support."
+    },
+    {
+      "word": "Arbitration",
+      "pronunciation": "/ˌɑːrbɪˈtreɪʃən/",
+      "meaning": "Settling disputes outside court",
+      "banglaMeaning": "মধ্যস্থতা",
+      "exampleSentence": "The dispute was resolved through arbitration."
+    },
+    {
+      "word": "Litigation",
+      "pronunciation": "/ˌlɪtɪˈɡeɪʃən/",
+      "meaning": "The process of taking legal action",
+      "banglaMeaning": "মামলা / আইনি পদক্ষেপ",
+      "exampleSentence": "Litigation can be expensive and time-consuming."
+    },
+    {
+      "word": "Breach of Contract",
+      "pronunciation": "/briːtʃ əv ˈkɒntrækt/",
+      "meaning": "Violation of a contract's terms",
+      "banglaMeaning": "চুক্তি ভঙ্গ",
+      "exampleSentence": "They sued for breach of contract."
+    },
+    {
+      "word": "Force Majeure",
+      "pronunciation": "/fɔːrs mæˈʒɜːr/",
+      "meaning": "Unforeseeable circumstances preventing contract fulfillment",
+      "banglaMeaning": "অপ্রতিরোধ্য বল",
+      "exampleSentence": "The pandemic was considered a force majeure event."
+    },
+    {
+      "word": "Tender",
+      "pronunciation": "/ˈtɛndər/",
+      "meaning": "A formal offer or bid for a project",
+      "banglaMeaning": "টেন্ডার",
+      "exampleSentence": "Our company submitted a tender for the construction project."
+    },
+    {
+      "word": "Vendor",
+      "pronunciation": "/ˈvɛndɔːr/",
+      "meaning": "A supplier of goods or services",
+      "banglaMeaning": "বিক্রেতা / ভেন্ডর",
+      "exampleSentence": "We need to find a reliable vendor."
+    },
+    {
+      "word": "Distributor",
+      "pronunciation": "/dɪˈstrɪbjʊtər/",
+      "meaning": "An agent who supplies goods to retailers",
+      "banglaMeaning": "বিতরণকারী",
+      "exampleSentence": "The distributor covers the entire region."
+    },
+    {
+      "word": "Consignment",
+      "pronunciation": "/kənˈsaɪnmənt/",
+      "meaning": "A shipment of goods",
+      "banglaMeaning": "চালান",
+      "exampleSentence": "The consignment arrived at the port yesterday."
+    },
+    {
+      "word": "Customs",
+      "pronunciation": "/ˈkʌstəmz/",
+      "meaning": "Government tax on imported goods",
+      "banglaMeaning": "শুল্ক / কাস্টমস",
+      "exampleSentence": "The goods are stuck at customs."
+    },
+    {
+      "word": "Tariff",
+      "pronunciation": "/ˈtærɪf/",
+      "meaning": "A tax imposed on imports or exports",
+      "banglaMeaning": "শুল্ক",
+      "exampleSentence": "New tariffs affected international trade."
+    },
+    {
+      "word": "Embargo",
+      "pronunciation": "/ɪmˈbɑːrɡoʊ/",
+      "meaning": "An official ban on trade",
+      "banglaMeaning": "নিষেধাজ্ঞা",
+      "exampleSentence": "The trade embargo was lifted after negotiations."
+    },
+    {
+      "word": "Exchange Rate",
+      "pronunciation": "/ɪksˈtʃeɪndʒ reɪt/",
+      "meaning": "The value of one currency against another",
+      "banglaMeaning": "বিনিময় হার",
+      "exampleSentence": "The exchange rate is favorable for exports."
+    },
+    {
+      "word": "Letter of Credit",
+      "pronunciation": "/ˈlɛtər əv ˈkrɛdɪt/",
+      "meaning": "A bank guarantee for payment in trade",
+      "banglaMeaning": "ঋণপত্র",
+      "exampleSentence": "The seller requested a letter of credit."
+    },
+    {
+      "word": "Bill of Lading",
+      "pronunciation": "/bɪl əv ˈleɪdɪŋ/",
+      "meaning": "A shipping document for transported goods",
+      "banglaMeaning": "বিল অফ লেডিং",
+      "exampleSentence": "The bill of lading confirms the shipment."
+    },
+    {
+      "word": "Incoterms",
+      "pronunciation": "/ˈɪŋkətɜːrmz/",
+      "meaning": "International commercial trade terms",
+      "banglaMeaning": "ইনকোটার্মস",
+      "exampleSentence": "We agreed on FOB as the incoterm."
+    },
+    {
+      "word": "Freight",
+      "pronunciation": "/freɪt/",
+      "meaning": "Goods transported by ship, plane, or truck",
+      "banglaMeaning": "মালামাল / কার্গো",
+      "exampleSentence": "The freight was delayed due to bad weather."
+    },
+    {
+      "word": "Demurrage",
+      "pronunciation": "/dɪˈmɜːrɪdʒ/",
+      "meaning": "A fee for delaying cargo beyond allowed time",
+      "banglaMeaning": "ডিমারেজ / বিলম্ব ফি",
+      "exampleSentence": "We had to pay demurrage for the delayed container."
+    },
+    {
+      "word": "Dumping",
+      "pronunciation": "/ˈdʌmpɪŋ/",
+      "meaning": "Exporting goods at below market price",
+      "banglaMeaning": "ডাম্পিং",
+      "exampleSentence": "Anti-dumping duties were imposed on steel imports."
+    },
+    {
+      "word": "Subsidy",
+      "pronunciation": "/ˈsʌbsɪdi/",
+      "meaning": "Government financial aid to a business",
+      "banglaMeaning": "ভর্তুকি",
+      "exampleSentence": "The government provides subsidies to farmers."
+    }
+  ]
+}

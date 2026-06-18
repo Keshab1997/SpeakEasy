@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/vocabulary_chapter_model.dart';
@@ -25,12 +26,41 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
 
   static const int _totalQuestions = 10;
 
+  final FlutterTts _tts = FlutterTts();
+  bool _muted = false;
+
   @override
   void initState() {
     super.initState();
+    _tts.setLanguage('en-US');
+    _tts.setSpeechRate(0.45);
     _ensureBoxOpen().then((_) {
       WidgetsBinding.instance.addPostFrameCallback((_) => _buildQuestions());
     });
+  }
+
+  @override
+  void dispose() {
+    _tts.stop();
+    super.dispose();
+  }
+
+  Future<void> _speak(String word) async {
+    if (_muted) return;
+    await _tts.speak(word);
+  }
+
+  void _select(String option) {
+    if (_answered) return;
+    final isCorrect = option == _questions[_current].correctAnswer;
+    setState(() {
+      _selected = _questions[_current].options.indexOf(option);
+      _answered = true;
+      if (isCorrect) _score++;
+    });
+    if (!_muted) {
+      _tts.speak(isCorrect ? 'Correct' : 'Wrong');
+    }
   }
 
   Future<void> _ensureBoxOpen() async {
@@ -86,15 +116,7 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
       _score = 0;
       _finished = false;
     });
-  }
-
-  void _select(String option) {
-    if (_answered) return;
-    setState(() {
-      _selected = _questions[_current].options.indexOf(option);
-      _answered = true;
-      if (option == _questions[_current].correctAnswer) _score++;
-    });
+    Future.delayed(const Duration(milliseconds: 300), () => _speak(questions.first.word));
   }
 
   void _next() {
@@ -111,86 +133,21 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
         _selected = null;
         _answered = false;
       });
+      _speak(_questions[_current].word);
     }
   }
 
   void _showHistory() {
-    final history = HiveService.getTestHistory();
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
-      builder: (_) => DraggableScrollableSheet(
-        expand: false,
-        initialChildSize: 0.6,
-        builder: (_, controller) => Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.fromLTRB(20, 16, 20, 8),
-              child: Row(children: [
-                Icon(Icons.history_rounded, color: AppColors.primary),
-                SizedBox(width: 8),
-                Text('Test History',
-                    style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
-              ]),
-            ),
-            const Divider(height: 1),
-            if (history.isEmpty)
-              const Padding(
-                padding: EdgeInsets.all(32),
-                child: Text('No history yet. Complete a test first!',
-                    textAlign: TextAlign.center),
-              )
-            else
-              Expanded(
-                child: ListView.builder(
-                  controller: controller,
-                  padding: const EdgeInsets.all(12),
-                  itemCount: history.length,
-                  itemBuilder: (_, i) {
-                    final s = history[i];
-                    final words = List<String>.from(s['words'] as List);
-                    final score = s['score'] as int;
-                    final total = s['total'] as int;
-                    final date = DateTime.tryParse(s['date'] as String);
-                    final dateStr = date != null
-                        ? '${date.day}/${date.month}  ${date.hour}:${date.minute.toString().padLeft(2, '0')}'
-                        : '';
-                    return Card(
-                      margin: const EdgeInsets.only(bottom: 8),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14)),
-                      child: ListTile(
-                        leading: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            color: AppColors.primary.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Text('$score/$total',
-                              style: const TextStyle(
-                                  color: AppColors.primary,
-                                  fontWeight: FontWeight.bold)),
-                        ),
-                        title: Text(words.take(4).join(', ') + '...',
-                            maxLines: 1, overflow: TextOverflow.ellipsis),
-                        subtitle: Text(dateStr,
-                            style: const TextStyle(fontSize: 11)),
-                        trailing: TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                            _buildQuestions(words);
-                          },
-                          child: const Text('Retry'),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-          ],
-        ),
+      builder: (_) => _HistorySheet(
+        onRetry: (words) {
+          Navigator.pop(context);
+          _buildQuestions(words);
+        },
       ),
     );
   }
@@ -215,6 +172,11 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
         title: const Text('Vocabulary Test',
             style: TextStyle(fontWeight: FontWeight.w900)),
         actions: [
+          IconButton(
+            icon: Icon(_muted ? Icons.volume_off_rounded : Icons.volume_up_rounded),
+            onPressed: () => setState(() => _muted = !_muted),
+            tooltip: _muted ? 'Unmute' : 'Mute',
+          ),
           IconButton(
             icon: const Icon(Icons.history_rounded),
             onPressed: _showHistory,
@@ -256,6 +218,25 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
                           color: Colors.white70,
                           fontSize: 15,
                           fontStyle: FontStyle.italic)),
+                const SizedBox(height: 12),
+                GestureDetector(
+                  onTap: () => _speak(q.word),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.volume_up_rounded, color: Colors.white, size: 20),
+                        SizedBox(width: 6),
+                        Text('Pronounce', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 13)),
+                      ],
+                    ),
+                  ),
+                ),
               ]),
             ),
             const SizedBox(height: 16),
@@ -386,4 +367,150 @@ class _Question {
   final String correctAnswer;
   final List<String> options;
   const _Question({required this.word, required this.pronunciation, required this.correctAnswer, required this.options});
+}
+
+class _HistorySheet extends StatefulWidget {
+  final void Function(List<String> words) onRetry;
+  const _HistorySheet({required this.onRetry});
+
+  @override
+  State<_HistorySheet> createState() => _HistorySheetState();
+}
+
+class _HistorySheetState extends State<_HistorySheet> {
+  List<Map<String, dynamic>> _history = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _history = HiveService.getTestHistory();
+  }
+
+  void _refresh() {
+    setState(() {
+      _history = HiveService.getTestHistory();
+    });
+  }
+
+  Future<void> _delete(int index) async {
+    await HiveService.deleteTestSession(index);
+    _refresh();
+  }
+
+  Future<void> _clearAll() async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Clear All History?'),
+        content: const Text('This cannot be undone.'),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('Clear All', style: TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true) {
+      await HiveService.clearAllTestSessions();
+      _refresh();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return DraggableScrollableSheet(
+      expand: false,
+      initialChildSize: 0.6,
+      builder: (_, controller) => Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 16, 8, 8),
+            child: Row(children: [
+              const Icon(Icons.history_rounded, color: AppColors.primary),
+              const SizedBox(width: 8),
+              const Expanded(
+                child: Text('Test History',
+                    style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
+              ),
+              if (_history.isNotEmpty)
+                TextButton.icon(
+                  onPressed: _clearAll,
+                  icon: const Icon(Icons.delete_sweep_rounded, size: 18),
+                  label: const Text('Clear All'),
+                  style: TextButton.styleFrom(foregroundColor: Colors.red),
+                ),
+            ]),
+          ),
+          const Divider(height: 1),
+          if (_history.isEmpty)
+            const Padding(
+              padding: EdgeInsets.all(32),
+              child: Text('No history yet. Complete a test first!',
+                  textAlign: TextAlign.center),
+            )
+          else
+            Expanded(
+              child: ListView.builder(
+                controller: controller,
+                padding: const EdgeInsets.all(12),
+                itemCount: _history.length,
+                itemBuilder: (_, i) {
+                  final s = _history[i];
+                  final words = List<String>.from(s['words'] as List);
+                  final score = s['score'] as int;
+                  final total = s['total'] as int;
+                  final date = DateTime.tryParse(s['date'] as String);
+                  final dateStr = date != null
+                      ? '${date.day}/${date.month}  ${date.hour}:${date.minute.toString().padLeft(2, '0')}'
+                      : '';
+                  return Dismissible(
+                    key: ValueKey('${s['date']}_$i'),
+                    direction: DismissDirection.endToStart,
+                    background: Container(
+                      alignment: Alignment.centerRight,
+                      padding: const EdgeInsets.only(right: 20),
+                      margin: const EdgeInsets.only(bottom: 8),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      child: const Icon(Icons.delete_rounded, color: Colors.white),
+                    ),
+                    onDismissed: (_) => _delete(i),
+                    child: Card(
+                      margin: const EdgeInsets.only(bottom: 8),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14)),
+                      child: ListTile(
+                        leading: Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: AppColors.primary.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text('$score/$total',
+                              style: const TextStyle(
+                                  color: AppColors.primary,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                        title: Text(words.take(4).join(', ') + '...',
+                            maxLines: 1, overflow: TextOverflow.ellipsis),
+                        subtitle: Text(dateStr,
+                            style: const TextStyle(fontSize: 11)),
+                        trailing: TextButton(
+                          onPressed: () => widget.onRetry(words),
+                          child: const Text('Retry'),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+        ],
+      ),
+    );
+  }
 }
