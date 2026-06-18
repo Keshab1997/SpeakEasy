@@ -1,0 +1,30 @@
+name: Validate Vocabulary JSON
+
+on:
+  push:
+    paths:
+      - 'assets/json/vocabulary/**/*.json'
+    branches: [main]
+  pull_request:
+    paths:
+      - 'assets/json/vocabulary/**/*.json'
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate all JSON files
+        run: |
+          failed=0
+          while IFS= read -r -d '' f; do
+            if python3 -m json.tool "$f" > /dev/null 2>&1; then
+              echo "✓ $f"
+            else
+              echo "✗ INVALID: $f"
+              failed=1
+            fi
+          done < <(find assets/json/vocabulary -name '*.json' -print0)
+          exit $failed

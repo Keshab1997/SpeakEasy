@@ -13,6 +13,7 @@ class HiveService {
     await Hive.openBox(_settingsBox);
     await Hive.openBox(_historyBox);
     await Hive.openBox(_vocabProgressBox);
+    await Hive.openBox('vocab_cache');
   }
 
   static Box get _vocabProgress => Hive.box(_vocabProgressBox);
