@@ -1,0 +1,12 @@
+{"chapter": 22, "level": "Intermediate", "title": "Banking Vocabulary", "words": [
+  {"word": "Account", "pronunciation": "/əˈkaʊnt/", "meaning": "A record of money at a bank", "banglaMeaning": "হিসাব / অ্যাকাউন্ট", "exampleSentence": "I opened a bank account today."},
+  {"word": "Deposit", "pronunciation": "/dɪˈpɒzɪt/", "meaning": "Money put into a bank account", "banglaMeaning": "জমা / আমানত", "exampleSentence": "He made a deposit of 5000 taka."},
+  {"word": "Withdrawal", "pronunciation": "/wɪðˈdrɔːəl/", "meaning": "Taking money out of a bank", "banglaMeaning": "উত্তোলন", "exampleSentence": "She made a withdrawal at the ATM."},
+  {"word": "Interest", "pronunciation": "/ˈɪntrəst/", "meaning": "Extra money paid on savings or loans", "banglaMeaning": "সুদ", "exampleSentence": "The bank pays 5% interest."},
+  {"word": "Loan", "pronunciation": "/loʊn/", "meaning": "Money borrowed from a bank", "banglaMeaning": "ঋণ / লোন", "exampleSentence": "He took a loan to buy a house."},
+  {"word": "Transaction", "pronunciation": "/trænˈzækʃən/", "meaning": "A financial exchange", "banglaMeaning": "লেনদেন", "exampleSentence": "Check your last transaction online."},
+  {"word": "ATM", "pronunciation": "/ˌeɪ tiː ˈem/", "meaning": "Machine for withdrawing cash", "banglaMeaning": "এটিএম", "exampleSentence": "I withdrew money from the ATM."},
+  {"word": "Cheque", "pronunciation": "/tʃek/", "meaning": "A written payment order", "banglaMeaning": "চেক", "exampleSentence": "He paid by cheque."},
+  {"word": "Exchange Rate", "pronunciation": "/ɪksˈtʃeɪndʒ reɪt/", "meaning": "Value of one currency in another", "banglaMeaning": "বিনিময় হার", "exampleSentence": "Check the exchange rate before travelling."},
+  {"word": "Balance", "pronunciation": "/ˈbæləns/", "meaning": "Amount of money in an account", "banglaMeaning": "ব্যালেন্স / জের", "exampleSentence": "My account balance is low."}
+]}

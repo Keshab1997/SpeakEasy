@@ -1,0 +1,12 @@
+{"chapter": 20, "level": "Intermediate", "title": "Technology", "words": [
+  {"word": "Software", "pronunciation": "/ˈsɒftweər/", "meaning": "Computer programs", "banglaMeaning": "সফটওয়্যার", "exampleSentence": "He works in software development."},
+  {"word": "Database", "pronunciation": "/ˈdeɪtəbeɪs/", "meaning": "Organized collection of data", "banglaMeaning": "ডেটাবেস", "exampleSentence": "The database stores all user information."},
+  {"word": "Algorithm", "pronunciation": "/ˈælɡərɪðəm/", "meaning": "Step-by-step problem solving process", "banglaMeaning": "অ্যালগরিদম", "exampleSentence": "The search algorithm is very fast."},
+  {"word": "Network", "pronunciation": "/ˈnetwɜːrk/", "meaning": "Connected system of computers", "banglaMeaning": "নেটওয়ার্ক", "exampleSentence": "The office has a fast network."},
+  {"word": "Application", "pronunciation": "/ˌæplɪˈkeɪʃən/", "meaning": "A program on a device", "banglaMeaning": "অ্যাপ্লিকেশন / অ্যাপ", "exampleSentence": "Download the application from the store."},
+  {"word": "Artificial Intelligence", "pronunciation": "/ˌɑːrtɪˈfɪʃəl ɪnˈtelɪdʒəns/", "meaning": "Machine simulation of human intelligence", "banglaMeaning": "কৃত্রিম বুদ্ধিমত্তা", "exampleSentence": "AI is changing the world rapidly."},
+  {"word": "Cloud Computing", "pronunciation": "/klaʊd kəmˈpjuːtɪŋ/", "meaning": "Using internet-based services for storage", "banglaMeaning": "ক্লাউড কম্পিউটিং", "exampleSentence": "We store files using cloud computing."},
+  {"word": "Cybersecurity", "pronunciation": "/ˈsaɪbərsɪkjʊərɪti/", "meaning": "Protection of computer systems", "banglaMeaning": "সাইবার নিরাপত্তা", "exampleSentence": "Cybersecurity is very important today."},
+  {"word": "Password", "pronunciation": "/ˈpæswɜːrd/", "meaning": "Secret word to access a system", "banglaMeaning": "পাসওয়ার্ড", "exampleSentence": "Keep your password strong and secret."},
+  {"word": "Download", "pronunciation": "/ˈdaʊnloʊd/", "meaning": "Copy data from internet to device", "banglaMeaning": "ডাউনলোড", "exampleSentence": "Download the app from Play Store."}
+]}

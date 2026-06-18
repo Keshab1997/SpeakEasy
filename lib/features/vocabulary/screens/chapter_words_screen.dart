@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/vocabulary_chapter_model.dart';
+import '../../../providers/vocab_progress_provider.dart';
 
-class ChapterWordsScreen extends StatelessWidget {
+class ChapterWordsScreen extends ConsumerStatefulWidget {
   final VocabularyChapter chapter;
   const ChapterWordsScreen({super.key, required this.chapter});
+
+  @override
+  ConsumerState<ChapterWordsScreen> createState() => _ChapterWordsScreenState();
+}
+
+class _ChapterWordsScreenState extends ConsumerState<ChapterWordsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Mark chapter as read when opened
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(vocabProgressProvider.notifier).markRead(widget.chapter.chapter);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +31,9 @@ class ChapterWordsScreen extends StatelessWidget {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Chapter ${chapter.chapter}',
+            Text('Chapter ${widget.chapter.chapter}',
                 style: const TextStyle(fontSize: 12, color: Colors.grey)),
-            Text(chapter.title,
+            Text(widget.chapter.title,
                 style:
                     const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
           ],
@@ -25,9 +41,9 @@ class ChapterWordsScreen extends StatelessWidget {
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
-        itemCount: chapter.words.length,
+        itemCount: widget.chapter.words.length,
         itemBuilder: (context, index) {
-          final w = chapter.words[index];
+          final w = widget.chapter.words[index];
           return Card(
             margin: const EdgeInsets.only(bottom: 10),
             shape:

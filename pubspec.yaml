@@ -75,6 +75,9 @@ flutter:
 
   assets:
     - assets/json/vocabulary/
+    - assets/json/vocabulary/Beginner/
+    - assets/json/vocabulary/Intermediate/
+    - assets/json/vocabulary/Advanced/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

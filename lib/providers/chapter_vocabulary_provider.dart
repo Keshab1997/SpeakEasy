@@ -8,7 +8,10 @@ final chapterAssetPathsProvider = FutureProvider<List<String>>((ref) async {
   return manifest
       .listAssets()
       .where((p) =>
-          p.startsWith('assets/json/vocabulary/') && p.endsWith('.json'))
+          (p.startsWith('assets/json/vocabulary/Beginner/') ||
+           p.startsWith('assets/json/vocabulary/Intermediate/') ||
+           p.startsWith('assets/json/vocabulary/Advanced/')) &&
+          p.endsWith('.json'))
       .toList()
     ..sort();
 });

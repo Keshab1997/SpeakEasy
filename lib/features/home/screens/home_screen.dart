@@ -5,6 +5,7 @@ import '../../../providers/auth_provider.dart';
 import '../../../providers/lesson_provider.dart';
 import '../../../providers/progress_provider.dart';
 import '../../../providers/vocabulary_provider.dart';
+import '../../vocabulary/screens/vocabulary_test_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   final Function(int)? onNavigateToTab;
@@ -650,11 +651,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
   Widget _buildQuickPracticeSection(ThemeData theme, bool isDark) {
     final items = [
       {'title': 'Vocabulary', 'icon': Icons.menu_book_rounded, 'gradient': AppColors.primaryGradient, 'tab': 1},
+      {'title': 'Vocab Test', 'icon': Icons.quiz_rounded, 'gradient': AppColors.accentGradient, 'tab': -1},
       {'title': 'Grammar', 'icon': Icons.edit_note_rounded, 'gradient': AppColors.purpleGradient, 'tab': 1},
       {'title': 'Conversation', 'icon': Icons.forum_rounded, 'gradient': AppColors.secondaryGradient, 'tab': 2},
       {'title': 'Listening', 'icon': Icons.headset_rounded, 'gradient': AppColors.infoGradient, 'tab': 2},
       {'title': 'Speaking', 'icon': Icons.mic_rounded, 'gradient': AppColors.pinkGradient, 'tab': 2},
-      {'title': 'Quiz', 'icon': Icons.quiz_rounded, 'gradient': AppColors.accentGradient, 'tab': 2},
     ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -670,7 +671,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
             final item = items[index];
             final grad = item['gradient'] as List<Color>;
             return GestureDetector(
-              onTap: () => widget.onNavigateToTab?.call(item['tab'] as int),
+              onTap: () {
+                final tab = item['tab'] as int;
+                if (tab == -1) {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => const VocabularyTestScreen()));
+                } else {
+                  widget.onNavigateToTab?.call(tab);
+                }
+              },
               child: Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
