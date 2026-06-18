@@ -1,1 +1,182 @@
-{"chapter": 31, "level": "Intermediate", "title": "Everyday Idioms", "words": []}
+{
+  "chapter": 31,
+  "level": "Intermediate",
+  "title": "Everyday Idioms",
+  "words": [
+    {
+      "word": "Break a leg",
+      "pronunciation": "/breɪk ə lɛɡ/",
+      "meaning": "Good luck",
+      "banglaMeaning": "শুভ কামনা",
+      "exampleSentence": "Break a leg on your performance tonight!"
+    },
+    {
+      "word": "Hit the hay",
+      "pronunciation": "/hɪt ðə heɪ/",
+      "meaning": "To go to bed",
+      "banglaMeaning": "ঘুমাতে যাওয়া",
+      "exampleSentence": "I am tired, I am going to hit the hay."
+    },
+    {
+      "word": "Feeling under the weather",
+      "pronunciation": "/ˈfiːlɪŋ ˈʌndər ðə ˈwɛðər/",
+      "meaning": "Feeling sick or unwell",
+      "banglaMeaning": "অসুস্থ বোধ করা",
+      "exampleSentence": "I am feeling under the weather today."
+    },
+    {
+      "word": "Piece of cake",
+      "pronunciation": "/piːs əv keɪk/",
+      "meaning": "Something very easy",
+      "banglaMeaning": "খুব সহজ কাজ",
+      "exampleSentence": "The exam was a piece of cake."
+    },
+    {
+      "word": "Once in a blue moon",
+      "pronunciation": "/wʌns ɪn ə bluː muːn/",
+      "meaning": "Very rarely",
+      "banglaMeaning": "কদাচিৎ",
+      "exampleSentence": "I eat ice cream once in a blue moon."
+    },
+    {
+      "word": "When pigs fly",
+      "pronunciation": "/wɛn pɪɡz flaɪ/",
+      "meaning": "Something that will never happen",
+      "banglaMeaning": "যা কখনও হবে না",
+      "exampleSentence": "He will clean his room when pigs fly."
+    },
+    {
+      "word": "Cost an arm and a leg",
+      "pronunciation": "/kɒst æn ɑːrm ænd ə lɛɡ/",
+      "meaning": "Very expensive",
+      "banglaMeaning": "অত্যন্ত দামি",
+      "exampleSentence": "That designer bag costs an arm and a leg."
+    },
+    {
+      "word": "Let the cat out of the bag",
+      "pronunciation": "/lɛt ðə kæt aʊt əv ðə bæɡ/",
+      "meaning": "To reveal a secret",
+      "banglaMeaning": "গোপন কথা ফাঁস করা",
+      "exampleSentence": "She let the cat out of the bag about the surprise."
+    },
+    {
+      "word": "Hit the nail on the head",
+      "pronunciation": "/hɪt ðə neɪl ɒn ðə hɛd/",
+      "meaning": "To be exactly right",
+      "banglaMeaning": "একদম সঠিক বলা",
+      "exampleSentence": "You hit the nail on the head with that answer."
+    },
+    {
+      "word": "Burn the midnight oil",
+      "pronunciation": "/bɜːrn ðə ˈmɪdnaɪt ɔɪl/",
+      "meaning": "To study or work late at night",
+      "banglaMeaning": "রাত জেগে পড়াশোনা করা",
+      "exampleSentence": "I burned the midnight oil to finish my assignment."
+    },
+    {
+      "word": "The ball is in your court",
+      "pronunciation": "/ðə bɔːl ɪz ɪn jɔːr kɔːrt/",
+      "meaning": "It is your turn to decide",
+      "banglaMeaning": "এখন আপনার সিদ্ধান্তের পালা",
+      "exampleSentence": "I have done my part, now the ball is in your court."
+    },
+    {
+      "word": "Get cold feet",
+      "pronunciation": "/ɡɛt koʊld fiːt/",
+      "meaning": "To become nervous or scared",
+      "banglaMeaning": "ভয় পাওয়া / পিছিয়ে আসা",
+      "exampleSentence": "He got cold feet before the interview."
+    },
+    {
+      "word": "Keep your chin up",
+      "pronunciation": "/kiːp jɔːr tʃɪn ʌp/",
+      "meaning": "To stay positive in a hard situation",
+      "banglaMeaning": "হাল ছেড়ো না",
+      "exampleSentence": "Keep your chin up, things will improve."
+    },
+    {
+      "word": "Speak of the devil",
+      "pronunciation": "/spiːk əv ðə ˈdɛvəl/",
+      "meaning": "The person just mentioned appears",
+      "banglaMeaning": "যার কথা বলছি সে এসে গেছে",
+      "exampleSentence": "Speak of the devil, here comes Rina!"
+    },
+    {
+      "word": "Out of the blue",
+      "pronunciation": "/aʊt əv ðə bluː/",
+      "meaning": "Suddenly and unexpectedly",
+      "banglaMeaning": "হঠাৎ করেই",
+      "exampleSentence": "She called me out of the blue after five years."
+    },
+    {
+      "word": "Call it a day",
+      "pronunciation": "/kɔːl ɪt ə deɪ/",
+      "meaning": "To stop working for the day",
+      "banglaMeaning": "আজকের মতো শেষ করা",
+      "exampleSentence": "We are tired, let's call it a day."
+    },
+    {
+      "word": "Add fuel to the fire",
+      "pronunciation": "/æd ˈfjuːəl tuː ðə ˈfaɪər/",
+      "meaning": "To make a bad situation worse",
+      "banglaMeaning": "আগুনে ঘি ঢালা",
+      "exampleSentence": "His rude comments added fuel to the fire."
+    },
+    {
+      "word": "Bite the bullet",
+      "pronunciation": "/baɪt ðə ˈbʊlɪt/",
+      "meaning": "To face a difficult situation bravely",
+      "banglaMeaning": "সাহস করে মোকাবিলা করা",
+      "exampleSentence": "I bit the bullet and told him the truth."
+    },
+    {
+      "word": "Steal someone's thunder",
+      "pronunciation": "/stiːl ˈsʌmwʌnz ˈθʌndər/",
+      "meaning": "To take attention away from someone",
+      "banglaMeaning": "কারও সাফল্য ম্লান করা",
+      "exampleSentence": "He stole my thunder by announcing his news first."
+    },
+    {
+      "word": "Go Dutch",
+      "pronunciation": "/ɡoʊ dʌtʃ/",
+      "meaning": "To split the bill equally",
+      "banglaMeaning": "বিল ভাগ করে দেওয়া",
+      "exampleSentence": "We went Dutch on the dinner bill."
+    },
+    {
+      "word": "Sit tight",
+      "pronunciation": "/sɪt taɪt/",
+      "meaning": "To wait patiently",
+      "banglaMeaning": "ধৈর্য ধরে অপেক্ষা করা",
+      "exampleSentence": "Sit tight, the doctor will see you soon."
+    },
+    {
+      "word": "Face the music",
+      "pronunciation": "/feɪs ðə ˈmjuːzɪk/",
+      "meaning": "To accept the consequences",
+      "banglaMeaning": "পরিণতি মেনে নেওয়া",
+      "exampleSentence": "He made a mistake and now he has to face the music."
+    },
+    {
+      "word": "Ring a bell",
+      "pronunciation": "/rɪŋ ə bɛl/",
+      "meaning": "To sound familiar",
+      "banglaMeaning": "চেনা মনে হওয়া",
+      "exampleSentence": "That name rings a bell but I cannot remember him."
+    },
+    {
+      "word": "Play it by ear",
+      "pronunciation": "/pleɪ ɪt baɪ ɪər/",
+      "meaning": "To decide as things go",
+      "banglaMeaning": "পরিস্থিতি বুঝে কাজ করা",
+      "exampleSentence": "We don't have a plan, let's play it by ear."
+    },
+    {
+      "word": "Cut somebody some slack",
+      "pronunciation": "/kʌt ˈsʌmbədi sʌm slæk/",
+      "meaning": "To be less critical of someone",
+      "banglaMeaning": "কাউকে ছাড় দেওয়া",
+      "exampleSentence": "He is new here, so cut him some slack."
+    }
+  ]
+}

@@ -1,1 +1,182 @@
-{"chapter": 30, "level": "Intermediate", "title": "Common Phrasal Verbs", "words": []}
+{
+  "chapter": 30,
+  "level": "Intermediate",
+  "title": "Common Phrasal Verbs",
+  "words": [
+    {
+      "word": "Get up",
+      "pronunciation": "/ɡɛt ʌp/",
+      "meaning": "To rise from bed",
+      "banglaMeaning": "ঘুম থেকে ওঠা",
+      "exampleSentence": "I get up at 6 am every morning."
+    },
+    {
+      "word": "Turn on",
+      "pronunciation": "/tɜːrn ɒn/",
+      "meaning": "To start a device or light",
+      "banglaMeaning": "চালু করা",
+      "exampleSentence": "Please turn on the fan."
+    },
+    {
+      "word": "Turn off",
+      "pronunciation": "/tɜːrn ɒf/",
+      "meaning": "To stop a device or light",
+      "banglaMeaning": "বন্ধ করা",
+      "exampleSentence": "Turn off the lights before leaving."
+    },
+    {
+      "word": "Put on",
+      "pronunciation": "/pʊt ɒn/",
+      "meaning": "To wear clothing",
+      "banglaMeaning": "পরে নেওয়া / পরা",
+      "exampleSentence": "Put on your jacket, it is cold."
+    },
+    {
+      "word": "Take off",
+      "pronunciation": "/teɪk ɒf/",
+      "meaning": "To remove clothing",
+      "banglaMeaning": "খুলে ফেলা",
+      "exampleSentence": "Take off your shoes before entering."
+    },
+    {
+      "word": "Look for",
+      "pronunciation": "/lʊk fɔːr/",
+      "meaning": "To search for something",
+      "banglaMeaning": "খোঁজা",
+      "exampleSentence": "I am looking for my keys."
+    },
+    {
+      "word": "Wait for",
+      "pronunciation": "/weɪt fɔːr/",
+      "meaning": "To stay until someone arrives",
+      "banglaMeaning": "অপেক্ষা করা",
+      "exampleSentence": "Please wait for me at the gate."
+    },
+    {
+      "word": "Ask for",
+      "pronunciation": "/æsk fɔːr/",
+      "meaning": "To request something",
+      "banglaMeaning": "চাওয়া / অনুরোধ করা",
+      "exampleSentence": "She asked for a glass of water."
+    },
+    {
+      "word": "Call back",
+      "pronunciation": "/kɔːl bæk/",
+      "meaning": "To return a phone call",
+      "banglaMeaning": "ফিরতি কল করা",
+      "exampleSentence": "I will call you back later."
+    },
+    {
+      "word": "Come back",
+      "pronunciation": "/kʌm bæk/",
+      "meaning": "To return",
+      "banglaMeaning": "ফিরে আসা",
+      "exampleSentence": "Come back home soon."
+    },
+    {
+      "word": "Go out",
+      "pronunciation": "/ɡoʊ aʊt/",
+      "meaning": "To leave home for an activity",
+      "banglaMeaning": "বাইরে যাওয়া",
+      "exampleSentence": "Let's go out for dinner tonight."
+    },
+    {
+      "word": "Sit down",
+      "pronunciation": "/sɪt daʊn/",
+      "meaning": "To take a seat",
+      "banglaMeaning": "বসা",
+      "exampleSentence": "Please sit down and relax."
+    },
+    {
+      "word": "Stand up",
+      "pronunciation": "/stænd ʌp/",
+      "meaning": "To rise from a seated position",
+      "banglaMeaning": "দাঁড়ানো",
+      "exampleSentence": "Stand up when the teacher enters."
+    },
+    {
+      "word": "Wake up",
+      "pronunciation": "/weɪk ʌp/",
+      "meaning": "To stop sleeping",
+      "banglaMeaning": "জেগে ওঠা",
+      "exampleSentence": "Wake up! It is already late."
+    },
+    {
+      "word": "Grow up",
+      "pronunciation": "/ɡroʊ ʌp/",
+      "meaning": "To become an adult",
+      "banglaMeaning": "বড় হওয়া",
+      "exampleSentence": "I grew up in a small village."
+    },
+    {
+      "word": "Hurry up",
+      "pronunciation": "/ˈhʌri ʌp/",
+      "meaning": "To do something quickly",
+      "banglaMeaning": "তাড়াতাড়ি করা",
+      "exampleSentence": "Hurry up or we will miss the bus."
+    },
+    {
+      "word": "Clean up",
+      "pronunciation": "/kliːn ʌp/",
+      "meaning": "To make a place tidy",
+      "banglaMeaning": "পরিষ্কার করা",
+      "exampleSentence": "Clean up your room before dinner."
+    },
+    {
+      "word": "Pick up",
+      "pronunciation": "/pɪk ʌp/",
+      "meaning": "To lift something or collect someone",
+      "banglaMeaning": "তোলা / নিয়ে আসা",
+      "exampleSentence": "Pick up the book from the floor."
+    },
+    {
+      "word": "Drop off",
+      "pronunciation": "/drɒp ɒf/",
+      "meaning": "To leave someone or something at a place",
+      "banglaMeaning": "নামিয়ে দেওয়া / রেখে আসা",
+      "exampleSentence": "I will drop you off at school."
+    },
+    {
+      "word": "Fill in",
+      "pronunciation": "/fɪl ɪn/",
+      "meaning": "To complete a form",
+      "banglaMeaning": "পূরণ করা",
+      "exampleSentence": "Fill in this application form."
+    },
+    {
+      "word": "Throw away",
+      "pronunciation": "/θroʊ əˈweɪ/",
+      "meaning": "To discard something",
+      "banglaMeaning": "ফেলে দেওয়া",
+      "exampleSentence": "Throw away that old newspaper."
+    },
+    {
+      "word": "Put away",
+      "pronunciation": "/pʊt əˈweɪ/",
+      "meaning": "To store something in its place",
+      "banglaMeaning": "গুছিয়ে রাখা",
+      "exampleSentence": "Put away your toys after playing."
+    },
+    {
+      "word": "Turn around",
+      "pronunciation": "/tɜːrn əˈraʊnd/",
+      "meaning": "To face the opposite direction",
+      "banglaMeaning": "ঘুরে দাঁড়ানো",
+      "exampleSentence": "Turn around and look at me."
+    },
+    {
+      "word": "Show around",
+      "pronunciation": "/ʃoʊ əˈraʊnd/",
+      "meaning": "To guide someone through a place",
+      "banglaMeaning": "ঘুরিয়ে দেখানো",
+      "exampleSentence": "She showed me around the new office."
+    },
+    {
+      "word": "Calm down",
+      "pronunciation": "/kɑːm daʊn/",
+      "meaning": "To become relaxed after being angry",
+      "banglaMeaning": "শান্ত হওয়া",
+      "exampleSentence": "Calm down and tell me what happened."
+    }
+  ]
+}

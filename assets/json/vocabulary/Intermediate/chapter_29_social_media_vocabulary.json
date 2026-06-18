@@ -1,1 +1,182 @@
-{"chapter": 29, "level": "Intermediate", "title": "Social Media Vocabulary", "words": []}
+{
+  "chapter": 29,
+  "level": "Intermediate",
+  "title": "Social Media Vocabulary",
+  "words": [
+    {
+      "word": "Post",
+      "pronunciation": "/poʊst/",
+      "meaning": "To share content on social media",
+      "banglaMeaning": "পোস্ট করা",
+      "exampleSentence": "I will post my vacation photos on Facebook."
+    },
+    {
+      "word": "Like",
+      "pronunciation": "/laɪk/",
+      "meaning": "To show approval for a post",
+      "banglaMeaning": "লাইক দেওয়া",
+      "exampleSentence": "She got over a hundred likes on her photo."
+    },
+    {
+      "word": "Share",
+      "pronunciation": "/ʃɛər/",
+      "meaning": "To repost someone else's content",
+      "banglaMeaning": "শেয়ার করা",
+      "exampleSentence": "Please share this post with your friends."
+    },
+    {
+      "word": "Comment",
+      "pronunciation": "/ˈkɒmɛnt/",
+      "meaning": "A response or remark on a post",
+      "banglaMeaning": "মন্তব্য",
+      "exampleSentence": "Leave a comment below the video."
+    },
+    {
+      "word": "Follower",
+      "pronunciation": "/ˈfɒloʊər/",
+      "meaning": "Someone who subscribes to your updates",
+      "banglaMeaning": "অনুসারী / ফলোয়ার",
+      "exampleSentence": "She has over ten thousand followers on Instagram."
+    },
+    {
+      "word": "Trending",
+      "pronunciation": "/ˈtrɛndɪŋ/",
+      "meaning": "Popular or widely discussed at a given time",
+      "banglaMeaning": "ট্রেন্ডিং / আলোচিত",
+      "exampleSentence": "That hashtag is trending worldwide."
+    },
+    {
+      "word": "Notification",
+      "pronunciation": "/ˌnoʊtɪfɪˈkeɪʃən/",
+      "meaning": "An alert about new activity",
+      "banglaMeaning": "বিজ্ঞপ্তি",
+      "exampleSentence": "I got a notification about your comment."
+    },
+    {
+      "word": "Hashtag",
+      "pronunciation": "/ˈhæʃtæɡ/",
+      "meaning": "A word or phrase preceded by # to group posts",
+      "banglaMeaning": "হ্যাশট্যাগ",
+      "exampleSentence": "Use the hashtag #travel to reach more people."
+    },
+    {
+      "word": "Influencer",
+      "pronunciation": "/ˈɪnfluənsər/",
+      "meaning": "A person who affects others' opinions on social media",
+      "banglaMeaning": "ইনফ্লুয়েন্সার",
+      "exampleSentence": "The influencer promoted the new product."
+    },
+    {
+      "word": "Engagement",
+      "pronunciation": "/ɪnˈɡeɪdʒmənt/",
+      "meaning": "The amount of interaction a post receives",
+      "banglaMeaning": "ইন্টারঅ্যাকশন / ব্যস্ততা",
+      "exampleSentence": "High engagement means more likes and comments."
+    },
+    {
+      "word": "Viral",
+      "pronunciation": "/ˈvaɪrəl/",
+      "meaning": "Content that spreads extremely quickly",
+      "banglaMeaning": "ভাইরাল",
+      "exampleSentence": "The video went viral overnight."
+    },
+    {
+      "word": "DM",
+      "pronunciation": "/diː ɛm/",
+      "meaning": "Direct Message — a private message",
+      "banglaMeaning": "ডিএম / ব্যক্তিগত বার্তা",
+      "exampleSentence": "Send me a DM if you have any questions."
+    },
+    {
+      "word": "Tag",
+      "pronunciation": "/tæɡ/",
+      "meaning": "To mention someone in a post or photo",
+      "banglaMeaning": "ট্যাগ করা",
+      "exampleSentence": "Tag your friends in the comments."
+    },
+    {
+      "word": "Story",
+      "pronunciation": "/ˈstɔːri/",
+      "meaning": "A temporary photo or video that disappears after 24 hours",
+      "banglaMeaning": "স্টোরি",
+      "exampleSentence": "I posted a story about my day at the beach."
+    },
+    {
+      "word": "Feed",
+      "pronunciation": "/fiːd/",
+      "meaning": "A stream of posts from accounts you follow",
+      "banglaMeaning": "ফিড",
+      "exampleSentence": "Your feed shows updates from your friends."
+    },
+    {
+      "word": "Handle",
+      "pronunciation": "/ˈhændəl/",
+      "meaning": "A username on social media",
+      "banglaMeaning": "হ্যান্ডেল / ইউজারনেম",
+      "exampleSentence": "My Instagram handle is @travel_diaries."
+    },
+    {
+      "word": "Bio",
+      "pronunciation": "/ˈbaɪoʊ/",
+      "meaning": "A short description on a profile page",
+      "banglaMeaning": "বায়ো / পরিচিতি",
+      "exampleSentence": "Update your bio to tell people about yourself."
+    },
+    {
+      "word": "FYP",
+      "pronunciation": "/ɛf waɪ piː/",
+      "meaning": "For You Page — a personalized feed on TikTok",
+      "banglaMeaning": "এফওয়াইপি",
+      "exampleSentence": "My video got on the FYP and went viral."
+    },
+    {
+      "word": "Filter",
+      "pronunciation": "/ˈfɪltər/",
+      "meaning": "An effect applied to photos or videos",
+      "banglaMeaning": "ফিল্টার",
+      "exampleSentence": "She used a vintage filter on her photo."
+    },
+    {
+      "word": "Unfriend",
+      "pronunciation": "/ʌnˈfrɛnd/",
+      "meaning": "To remove someone from your friend list",
+      "banglaMeaning": "আনফ্রেন্ড করা",
+      "exampleSentence": "He unfriended me after our argument."
+    },
+    {
+      "word": "Block",
+      "pronunciation": "/blɒk/",
+      "meaning": "To prevent someone from seeing your content",
+      "banglaMeaning": "ব্লক করা",
+      "exampleSentence": "I had to block that spam account."
+    },
+    {
+      "word": "Mute",
+      "pronunciation": "/mjuːt/",
+      "meaning": "To stop seeing someone's posts without unfollowing",
+      "banglaMeaning": "মিউট করা",
+      "exampleSentence": "I muted her stories because she posts too often."
+    },
+    {
+      "word": "Stream",
+      "pronunciation": "/striːm/",
+      "meaning": "To broadcast live video",
+      "banglaMeaning": "স্ট্রিম / লাইভ সম্প্রচার",
+      "exampleSentence": "She will stream her concert on YouTube."
+    },
+    {
+      "word": "Subscribe",
+      "pronunciation": "/səbˈskraɪb/",
+      "meaning": "To follow a channel for regular updates",
+      "banglaMeaning": "সাবস্ক্রাইব করা",
+      "exampleSentence": "Please subscribe to my channel."
+    },
+    {
+      "word": "Verified",
+      "pronunciation": "/ˈvɛrɪfaɪd/",
+      "meaning": "A blue checkmark confirming a real account",
+      "banglaMeaning": "ভেরিফাইড / যাচাইকৃত",
+      "exampleSentence": "His account has a verified blue badge."
+    }
+  ]
+}
