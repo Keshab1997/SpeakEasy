@@ -1,10 +1,183 @@
 {
   "chapter": 1,
   "level": "Beginner",
-  "title": "Alphabet",
+  "title": "Alphabet (বর্ণমালা)",
   "icon": "abc",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "The English alphabet has 26 letters. Each letter has two forms: capital (uppercase) and small (lowercase). Letters are divided into vowels and consonants. Learning the alphabet is the first step to reading, writing, and speaking English correctly.",
+  "banglaDescription": "ইংরেজি বর্ণমালায় ২৬টি অক্ষর রয়েছে। প্রতিটি অক্ষরের দুইটি রূপ আছে: বড় হাতের (capital) এবং ছোট হাতের (small)। অক্ষরগুলোকে দুভাগে ভাগ করা হয়েছে: vowel এবং consonant। বর্ণমালা শেখা হল ইংরেজি সঠিকভাবে পড়া, লেখা এবং বলার প্রথম ধাপ।",
+  "topics": [
+    {
+      "name": "What are Letters?",
+      "banglaName": "অক্ষর কী?",
+      "definition": "A letter is a symbol that represents a sound in a language. The English alphabet has 26 letters from A to Z. Each letter has a unique shape and sound.",
+      "banglaDefinition": "অক্ষর হলো এমন একটি প্রতীক যা ভাষার একটি ধ্বনিকে উপস্থাপন করে। ইংরেজি বর্ণমালায় A থেকে Z পর্যন্ত ২৬টি অক্ষর রয়েছে। প্রতিটি অক্ষরের আলাদা আকৃতি এবং ধ্বনি আছে।",
+      "formula": "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z",
+      "rules": [
+        "ইংরেজি বর্ণমালায় মোট ২৬টি অক্ষর রয়েছে।",
+        "প্রতিটি অক্ষরের দুইটি রূপ আছে: Capital (A, B, C) এবং Small (a, b, c)।",
+        "২৬টি অক্ষরের মধ্যে ৫টি vowel এবং ২১টি consonant।",
+        "অক্ষরগুলোর ক্রম (sequence) কখনো বদলায় না — একে alphabetical order বলে।"
+      ],
+      "examples": [
+        { "en": "A is the first letter.", "bn": "A হলো প্রথম অক্ষর।" },
+        { "en": "Z is the last letter.", "bn": "Z হলো শেষ অক্ষর।" },
+        { "en": "My name starts with 'M'.", "bn": "আমার নাম 'M' দিয়ে শুরু হয়।" },
+        { "en": "There are 26 letters in English.", "bn": "ইংরেজিতে ২৬টি অক্ষর আছে।" }
+      ],
+      "tips": "বর্ণমালাটি ক্রমান্বয়ে (A to Z) মুখস্থ করো। গানের মাধ্যমে (ABC song) শিখতে পারো। প্রতিদিন একবার করে A থেকে Z বলার অভ্যাস করো।"
+    },
+    {
+      "name": "Vowels (স্বরধ্বনি)",
+      "banglaName": "স্বরধ্বনি",
+      "definition": "Vowels are letters that represent open sounds. The five vowels in English are A, E, I, O, U. Vowels are the most important letters because every word must contain at least one vowel sound.",
+      "banglaDefinition": "Vowel হলো সেই অক্ষরগুলো যা খোলা মুখে উচ্চারিত হয়। ইংরেজিতে ৫টি vowel: A, E, I, O, U। Vowel সবচেয়ে গুরুত্বপূর্ণ কারণ প্রতিটি শব্দে অন্তত একটি vowel sound থাকতে হয়।",
+      "formula": "Vowels = A, E, I, O, U",
+      "rules": [
+        "Vowel মোট ৫টি: A, E, I, O, U।",
+        "প্রতি ইংরেজি শব্দে কমপক্ষে একটি vowel থাকে।",
+        "কোনো শব্দে vowel না থাকলে সেটি বৈধ ইংরেজি শব্দ নয়।",
+        "Vowel দুই ধরনের sound দেয়: short sound এবং long sound।",
+        "কখনও কখনও 'Y' vowel-এর মতো কাজ করে (যেমন: myth, gym)।"
+      ],
+      "examples": [
+        { "en": "Apple starts with vowel A.", "bn": "Apple vowel A দিয়ে শুরু হয়।" },
+        { "en": "Egg starts with vowel E.", "bn": "Egg vowel E দিয়ে শুরু হয়।" },
+        { "en": "Ice starts with vowel I.", "bn": "Ice vowel I দিয়ে শুরু হয়।" },
+        { "en": "Orange starts with vowel O.", "bn": "Orange vowel O দিয়ে শুরু হয়।" },
+        { "en": "Umbrella starts with vowel U.", "bn": "Umbrella vowel U দিয়ে শুরু হয়।" },
+        { "en": "The word 'sky' has no vowel but Y acts as a vowel.", "bn": "'Sky' শব্দে কোনো vowel নেই কিন্তু Y vowel-এর মতো কাজ করছে।" }
+      ],
+      "tips": "Vowelগুলো মুখস্থ রাখবে: A, E, I, O, U। 'A-E-I-O-U' বলে না রেখে 'Apple-Egg-Ice-Orange-Umbrella' দিয়ে মনে রাখতে পারো।"
+    },
+    {
+      "name": "Consonants (ব্যঞ্জনধ্বনি)",
+      "banglaName": "ব্যঞ্জনধ্বনি",
+      "definition": "Consonants are letters that are not vowels. They represent sounds made by blocking the air in some way. There are 21 consonants in English: B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y, Z.",
+      "banglaDefinition": "Consonant হলো সেই অক্ষরগুলো যা vowel নয়। এগুলো এমন ধ্বনিকে উপস্থাপন করে যা মুখের মধ্যে বাতাস বন্ধ করে উচ্চারিত হয়। ইংরেজিতে ২১টি consonant আছে: B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y, Z।",
+      "formula": "Consonants = B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y, Z",
+      "rules": [
+        "Consonant মোট ২১টি।",
+        "Vowel ছাড়া বাকি সব অক্ষর consonant।",
+        "প্রতি শব্দে vowel এবং consonant-এর একটি সমন্বয় থাকে।",
+        "কিছু consonant দুই রকম sound দেয় (যেমন: C — 'cat' এ 'k', 'city' তে 's')।",
+        "Consonantগুলো vowel-এর সাথে মিলে syllable তৈরি করে।"
+      ],
+      "examples": [
+        { "en": "B is a consonant. e.g., 'Ball' starts with B.", "bn": "B একটি consonant। যেমন 'Ball' B দিয়ে শুরু।" },
+        { "en": "C has two sounds: 'k' as in 'cat' and 's' as in 'city'.", "bn": "C-এর দুইটি sound আছে: 'k' যেমন 'cat'-এ, এবং 's' যেমন 'city'-তে।" },
+        { "en": "The word 'school' has consonants s, c, h, l.", "bn": "'School' শব্দে consonantগুলো হলো s, c, h, l।" },
+        { "en": "Q is almost always followed by U (queen, quick).", "bn": "Q-এর পরে প্রায় সবসময় U থাকে (queen, quick)।" }
+      ],
+      "tips": "২৬ থেকে ৫টি vowel বাদ দিলে ২১টি consonant পেয়ে যাবে। Consonant-দের sound শিখতে চাইলে শব্দের শুরুতে ঐ consonant দিয়ে শুরু করে practice করো।"
+    },
+    {
+      "name": "Capital and Small Letters (বড় ও ছোট হাতের অক্ষর)",
+      "banglaName": "বড় ও ছোট হাতের অক্ষর",
+      "definition": "Every English letter has two forms: capital letter (uppercase) and small letter (lowercase). Capital letters are bigger and are used at the beginning of sentences, for proper nouns, and in special cases. Small letters are used for everything else.",
+      "banglaDefinition": "প্রতি ইংরেজি অক্ষরের দুইটি আকৃতি রয়েছে: capital letter (বড় হাতের) এবং small letter (ছোট হাতের)। Capital letter বড়ো হয় এবং বাক্যের শুরুতে, নামের জন্য এবং বিশেষ ক্ষেত্রে ব্যবহৃত হয়। বাকি সব ক্ষেত্রে small letter ব্যবহৃত হয়।",
+      "formula": "A a | B b | C c | D d | E e | F f | G g | H h | I i | J j | K k | L l | M m | N n | O o | P p | Q q | R r | S s | T t | U u | V v | W w | X x | Y y | Z z",
+      "rules": [
+        "Capital letter দিয়ে sentence শুরু করতে হয়: 'The sun is hot.'",
+        "নামের (proper noun) প্রথম letter capital হয়: 'John', 'Dhaka', 'Monday'।",
+        "Pronoun 'I' সর্বদা capital I হবে, ছোট i নয়।",
+        "Title-এর গুরুত্বপূর্ণ শব্দের প্রথম letter capital হয়: 'The Cat in the Hat'।",
+        "সবকিছু CAPITAL letter-এ লেখা মানে 'চিৎকার করা' (online-এ shouting)।",
+        "Small letter দিয়েই বেশিরভাগ লেখা হয়।"
+      ],
+      "examples": [
+        { "en": "Correct: 'My name is Sarah.'", "bn": "ঠিক: 'My name is Sarah.'" },
+        { "en": "Wrong: 'my name is sarah.'", "bn": "ভুল: 'my name is sarah.'" },
+        { "en": "Correct: 'I live in London.' (I is always capital)", "bn": "ঠিক: 'I live in London.' (I সবসময় capital)" },
+        { "en": "Correct: 'Have you met Dr. Ahmed?'", "bn": "ঠিক: 'Have you met Dr. Ahmed?'" }
+      ],
+      "tips": "মনে রাখবে: ৫ জায়গায় capital letter ব্যবহার করা হয় — ১) বাক্যের শুরুতে, ২) নামের জন্য, ৩) 'I' pronoun-এর জন্য, ৪) দিন/মাসের নামের জন্য, ৫) Title-এর জন্য।"
+    },
+    {
+      "name": "Vowel Sounds: Short and Long (স্বল্প ও দীর্ঘ স্বরধ্বনি)",
+      "banglaName": "স্বল্প ও দীর্ঘ স্বরধ্বনি",
+      "definition": "Each vowel can make two main types of sounds: short sounds and long sounds. A short vowel sound is quick and brief, while a long vowel sound says the name of the letter itself. Understanding these sounds is key to correct pronunciation.",
+      "banglaDefinition": "প্রতি vowel দুই ধরনের sound দিতে পারে: short sound এবং long sound। Short vowel sound ছোট এবং দ্রুত, কিন্তু long vowel sound অক্ষরটির নামটি বলে (যেমন A বলে 'এ')। এই sound দুটি ঠিকভাবে বোঝা সঠিক উচ্চারণের চাবিকাঠি।",
+      "formula": "A: short /æ/ (apple) | long /eɪ/ (ape)\nE: short /e/ (egg) | long /iː/ (eagle)\nI: short /ɪ/ (ink) | long /aɪ/ (ice)\nO: short /ɒ/ (ox) | long /oʊ/ (open)\nU: short /ʌ/ (up) | long /juː/ (unicorn)",
+      "rules": [
+        "Short vowel sound: CVC (Consonant-Vowel-Consonant) প্যাটার্নে যেমন — c-a-t, d-o-g, b-u-s।",
+        "Long vowel sound: vowel-এর পরে consonant + 'e' থাকলে — c-a-k-e, k-i-t-e, n-o-t-e।",
+        "Long vowel sound: দুই vowel পাশাপাশি থাকলে — b-oa-t, s-ai-l, b-ea-t।",
+        "Long vowel sound: শব্দের শেষে vowel থাকলে — g-o, h-e, m-y।",
+        "এই নিয়মগুলো সবসময় খাটে না; exceptions (ব্যতিক্রম) আছে।"
+      ],
+      "examples": [
+        { "en": "Short A: 'cat' (c-a-t)", "bn": "Short A: 'cat' (c-a-t)" },
+        { "en": "Long A: 'cake' (c-a-k-e)", "bn": "Long A: 'cake' (c-a-k-e)" },
+        { "en": "Short E: 'bed' (b-e-d)", "bn": "Short E: 'bed' (b-e-d)" },
+        { "en": "Long E: 'bee' (b-e-e)", "bn": "Long E: 'bee' (b-e-e)" },
+        { "en": "Short I: 'sit' (s-i-t)", "bn": "Short I: 'sit' (s-i-t)" },
+        { "en": "Long I: 'bite' (b-i-t-e)", "bn": "Long I: 'bite' (b-i-t-e)" },
+        { "en": "Short O: 'hot' (h-o-t)", "bn": "Short O: 'hot' (h-o-t)" },
+        { "en": "Long O: 'home' (h-o-m-e)", "bn": "Long O: 'home' (h-o-m-e)" },
+        { "en": "Short U: 'cup' (c-u-p)", "bn": "Short U: 'cup' (c-u-p)" },
+        { "en": "Long U: 'cute' (c-u-t-e)", "bn": "Long U: 'cute' (c-u-t-e)" }
+      ],
+      "tips": "Short sound-এর জন্য CVC প্যাটার্ন মনে রেখো: C(a)t, D(o)g, S(i)t, B(e)d, C(u)p। Long sound-এর জন্য 'silent e' নিয়ম মনে রেখো: cakE, bikE, homE, cutE।"
+    },
+    {
+      "name": "Silent Letters (নীরব অক্ষর)",
+      "banglaName": "নীরব অক্ষর",
+      "definition": "Silent letters are letters that are written but not pronounced in a word. Many English words have silent letters. They exist for historical reasons and make English spelling challenging.",
+      "banglaDefinition": "Silent letter হলো সেই অক্ষরগুলো যা লেখা থাকে কিন্তু উচ্চারিত হয় না। অনেক ইংরেজি শব্দে silent letter থাকে। এগুলো ঐতিহাসিক কারণে থাকে এবং ইংরেজি বানানকে কঠিন করে তোলে।",
+      "formula": "Silent Letters:\nk (knee), w (write), b (doubt), h (hour),\ng (gnat), p (psychology), l (talk), t (castle)",
+      "rules": [
+        "K-এর পরে n থাকলে K নীরব: 'knee', 'knife', 'know', 'knock'।",
+        "W-এর পরে r থাকলে W নীরব: 'write', 'wrong', 'wrist', 'wrap'।",
+        "শব্দের শুরুতে g-এর পরে n থাকলে G নীরব: 'gnat', 'gnaw', 'sign', 'design'।",
+        "H কিছু শব্দের শুরুতে নীরব: 'hour', 'honest', 'heir', 'honor'।",
+        "B, M-এর পরে থাকলে নীরব: 'thumb', 'lamb', 'comb', 'climb'।",
+        "P, n, s, t-এর আগে থাকলে নীরব: 'psychology', 'pneumonia', 'receipt'।",
+        "L, alk, alm, ould-এর আগে থাকলে প্রায় নীরব: 'talk', 'calm', 'would', 'half'।",
+        "T, sten, stle, tch-এর মধ্যে থাকলে নীরব: 'castle', 'listen', 'match', 'watch'।"
+      ],
+      "examples": [
+        { "en": "k is silent in 'knife'. Say: nife.", "bn": "'Knife'-এ K নীরব। বলো: nife।" },
+        { "en": "w is silent in 'write'. Say: rite.", "bn": "'Write'-এ W নীরব। বলো: rite।" },
+        { "en": "b is silent in 'lamb'. Say: lam.", "bn": "'Lamb'-এ B নীরব। বলো: lam।" },
+        { "en": "h is silent in 'hour'. Say: our.", "bn": "'Hour'-এ H নীরব। বলো: our।" },
+        { "en": "g is silent in 'sign'. Say: sine.", "bn": "'Sign'-এ G নীরব। বলো: sine।" },
+        { "en": "t is silent in 'castle'. Say: cASSle.", "bn": "'Castle'-এ T নীরব। বলো: cASSle।" },
+        { "en": "l is silent in 'talk'. Say: tawk.", "bn": "'Talk'-এ L নীরব। বলো: tawk।" },
+        { "en": "p is silent in 'psychology'. Say: sycology.", "bn": "'Psychology'-এ P নীরব। বলো: sycology।" }
+      ],
+      "tips": "Silent letter practice করার সহজ উপায়: শব্দটি যেভাবে লেখা হয়েছে সেভাবে বলো না, বরং সঠিক উচ্চারণ শুনে শেখো। বেশি করে পড়বে এবং শুনবে। একটি silent letter তালিকা সাথে রাখো।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Writing 'I' as small letter 'i' in the middle of a sentence.",
+      "correct": "Always write 'I' as a capital letter.",
+      "explanation": "ইংরেজিতে 'I' (আমি) pronoun-টি সর্বদা capital letter-এ লিখতে হয়। ছোট 'i' ব্যবহার করা ভুল। মনে রাখবে: 'I' সবসময় বড় H-এ।"
+    },
+    {
+      "wrong": "Confusing 'then' (t-h-e-n) and 'than' (t-h-a-n).",
+      "correct": "'Then' means time; 'than' means comparison.",
+      "explanation": "এই দুটি শব্দে vowel আলাদা: 'then'-এ short E, 'than'-এ short A। অর্থও আলাদা — 'then' মানে 'তারপর', 'than' মানে 'থেকে' (তুলনা)।"
+    },
+    {
+      "wrong": "Writing 'recieve' instead of 'receive'.",
+      "correct": "The correct spelling is 'receive' (i before e except after c).",
+      "explanation": "নিয়ম: 'c'-এর পরে 'ei' আসে, 'ie' নয়। তাই recEIve, decEIve, concEIve — সঠিক বানান মনে রাখবে।"
+    },
+    {
+      "wrong": "Writing 'thier' instead of 'their'.",
+      "correct": "The correct spelling is 'their'.",
+      "explanation": "এই শব্দে 'i'-এর আগে 'e' আসে: th-E-i-r। অনেকেই উল্টা করে ফেলে। মনে রাখবে: 'their' = 'they' + 'ir' নয়।"
+    },
+    {
+      "wrong": "Confusing 'its' (possessive) and 'it's' (it is).",
+      "correct": "'Its' means belonging to it; 'it's' means 'it is' or 'it has'.",
+      "explanation": "'It's'-এ apostrophe আছে কারণ এটি 'it is' বা 'it has'-এর সংক্ষিপ্ত রূপ। 'Its'-এ কোনো apostrophe নেই — এটি possessive (তার)।"
+    },
+    {
+      "wrong": "Saying 'aks' instead of 'ask'.",
+      "correct": "The letters are in order: a-s-k, not a-k-s.",
+      "explanation": "অনেকে 'ask'-কে উল্টে 'aks' বলে। সঠিক উচ্চারণ 'ask' (a-s-k)। মনে রাখবে: আপনি 'ask' করেন, 'aks' নন।"
+    }
+  ]
 }

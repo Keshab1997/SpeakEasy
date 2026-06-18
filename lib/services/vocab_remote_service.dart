@@ -10,12 +10,14 @@ class VocabRemoteService {
   static const String _cacheBox = 'vocab_cache';
   static const String _manifestKey = 'remote_manifest';
 
-  static Future<Box> _getBox() async {
+  static Future<Box> getCacheBox() async {
     if (!Hive.isBoxOpen(_cacheBox)) {
       await Hive.openBox(_cacheBox);
     }
     return Hive.box(_cacheBox);
   }
+
+  static Future<Box> _getBox() async => getCacheBox();
 
   /// Tries: 1) GitHub raw → 2) Hive cache → 3) local asset bundle
   static Future<String> loadChapterJson(String assetPath) async {
@@ -65,5 +67,15 @@ class VocabRemoteService {
   static Future<void> clearCache() async {
     final box = await _getBox();
     await box.clear();
+  }
+
+  /// Clear only grammar-related cache entries
+  static Future<void> clearGrammarCache() async {
+    final box = await _getBox();
+    final keys = box.keys.where((k) =>
+        k is String && k.startsWith('chapter_assets/json/grammar/'));
+    for (final k in keys) {
+      await box.delete(k);
+    }
   }
 }

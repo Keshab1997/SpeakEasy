@@ -1,10 +1,185 @@
 {
   "chapter": 2,
   "level": "Beginner",
-  "title": "Word",
+  "title": "Word (শব্দ)",
   "icon": "abc",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "A word is the smallest unit of language that has meaning on its own. Words are the building blocks of sentences. Every word belongs to a specific category called parts of speech. Understanding what words are and how they work is essential for learning English.",
+  "banglaDescription": "শব্দ হলো ভাষার ক্ষুদ্রতম একক যা নিজে নিজে অর্থ বহন করে। শব্দগুলো বাক্যের নির্মাণ উপাদান। প্রতিটি শব্দ একটি নির্দিষ্ট বিভাগের অন্তর্গত, যাকে parts of speech বলে। শব্দ কী এবং কীভাবে কাজ করে তা বোঝা ইংরেজি শেখার জন্য অপরিহার্য।",
+  "topics": [
+    {
+      "name": "What is a Word?",
+      "banglaName": "শব্দ কী?",
+      "definition": "A word is a single unit of language that has meaning and can be spoken or written. Words can be short (like 'a', 'I') or long (like 'beautiful', 'unbelievable'). Every word is made up of one or more letters and represents an idea, object, action, or feeling.",
+      "banglaDefinition": "শব্দ হলো ভাষার একটি একক যা অর্থবহ এবং বলা বা লেখা যায়। শব্দ ছোট হতে পারে ('a', 'I' এর মতো) বা লম্বা ('beautiful', 'unbelievable' এর মতো)। প্রতিটি শব্দ এক বা একাধিক অক্ষর দিয়ে গঠিত এবং একটি ধারণা, বস্তু, কাজ বা অনুভূতি প্রকাশ করে।",
+      "formula": "Word = Letters arranged in a meaningful order\nExample: c + a + t = 'cat' (a meaningful word)",
+      "rules": [
+        "একটি শব্দ এক বা একাধিক অক্ষর নিয়ে গঠিত।",
+        "প্রতি শব্দের একটি অর্থ আছে (কখনও একাধিক অর্থ থাকতে পারে)।",
+        "শব্দ বাক্যের গঠনের মৌলিক একক।",
+        "শব্দের সঠিক বানান (spelling) এবং উচ্চারণ (pronunciation) শিখতে হয়।",
+        "একই শব্দ ভিন্ন প্রসঙ্গে ভিন্ন অর্থ দিতে পারে (যেমন: 'bank' — টাকার ব্যাংক বা নদীর তীর)।",
+        "শব্দকে দুটি বড় ভাগে ভাগ করা যায়: Content Words এবং Function Words।"
+      ],
+      "examples": [
+        { "en": "'Tree' is a word that means a tall plant.", "bn": "'Tree' একটি শব্দ যার অর্থ লম্বা গাছ।" },
+        { "en": "'Run' is a word that means to move fast.", "bn": "'Run' একটি শব্দ যার অর্থ দ্রুত দৌড়ানো।" },
+        { "en": "The word 'apple' has 5 letters.", "bn": "'Apple' শব্দটিতে ৫টি অক্ষর আছে।" },
+        { "en": "'Happiness' is a long word made from 'happy'.", "bn": "'Happiness' একটি লম্বা শব্দ যা 'happy' থেকে তৈরি।" },
+        { "en": "One word can have many meanings: 'light' can mean brightness or not heavy.", "bn": "একটি শব্দের অনেক অর্থ হতে পারে: 'light' মানে আলো বা হালকা।" }
+      ],
+      "tips": "প্রতিদিন ৫টি নতুন শব্দ শেখার অভ্যাস করো। শব্দ শেখার সময় তার অর্থ, বানান, উচ্চারণ এবং একটি উদাহরণ বাক্য মনে রাখবে।"
+    },
+    {
+      "name": "Content Words and Function Words",
+      "banglaName": "অর্থবোধক ও কার্যকরী শব্দ",
+      "definition": "Content words are words that have clear, independent meaning. They carry the main meaning of a sentence. Function words are words that help connect content words and show grammatical relationships. They have little meaning on their own but are essential for grammar.",
+      "banglaDefinition": "Content words হলো সেই শব্দ যাদের স্পষ্ট, স্বাধীন অর্থ আছে। এগুলো বাক্যের মূল অর্থ বহন করে। Function words হলো শব্দ যা content words-কে সংযুক্ত করতে এবং ব্যাকরণগত সম্পর্ক দেখাতে সাহায্য করে। এদের নিজস্ব অর্থ খুব কম কিন্তু ব্যাকরণের জন্য অপরিহার্য।",
+      "formula": "Content Words = Nouns, Verbs, Adjectives, Adverbs\nFunction Words = Prepositions, Conjunctions, Articles, Pronouns, Auxiliary Verbs",
+      "rules": [
+        "Content words-এর নিজস্ব অর্থ আছে — এদের 'open class words' বলে।",
+        "নতুন নতুন content words ভাষায় যুক্ত হয় (যেমন: 'google', 'selfie')।",
+        "Content words-এর মধ্যে পড়ে: Noun (বিশেষ্য), Verb (ক্রিয়া), Adjective (বিশেষণ), Adverb (ক্রিয়াবিশেষণ)।",
+        "Function words-এর নিজস্ব অর্থ খুব কম — এদের 'closed class words' বলে।",
+        "Function words-এর মধ্যে পড়ে: Article (a, an, the), Preposition (in, on, at), Conjunction (and, but, or), Pronoun (I, you, he), Auxiliary Verb (is, are, have)।",
+        "Function words খুব কমই পরিবর্তিত হয় এবং নতুন শব্দ এই শ্রেণীতে যোগ হয় না।"
+      ],
+      "examples": [
+        { "en": "Content word: 'dog' (নাম), 'beautiful' (গুণ), 'quickly' (ভাবে)", "bn": "Content word: 'dog' (নাম), 'beautiful' (গুণ), 'quickly' (ভাবে)" },
+        { "en": "Function word: 'the', 'and', 'in', 'is'", "bn": "Function word: 'the', 'and', 'in', 'is'" },
+        { "en": "Sentence: 'The beautiful dog ran quickly.' Content: beautiful, dog, ran, quickly. Function: The.", "bn": "বাক্য: 'The beautiful dog ran quickly.' Content: beautiful, dog, ran, quickly. Function: The." },
+        { "en": "Sentence: 'She is in the house.' Content: house. Function: She, is, in, the.", "bn": "বাক্য: 'She is in the house.' Content: house. Function: She, is, in, the." },
+        { "en": "Content words change form: 'run' → 'ran' → 'running'.", "bn": "Content words রূপ বদলায়: 'run' → 'ran' → 'running'।" },
+        { "en": "Function words rarely change: 'the' always 'the'.", "bn": "Function words খুব কমই বদলায়: 'the' সবসময় 'the'।" }
+      ],
+      "tips": "একটি বাক্যে কয়টি content word আর কয়টি function word আছে তা শনাক্ত করার অভ্যাস করো। Content words বাক্যের মূল বার্তা বহন করে, আর function words সেই বার্তাকে সুসংগঠিত করে।"
+    },
+    {
+      "name": "Root Words, Prefixes and Suffixes",
+      "banglaName": "মূলশব্দ, উপসর্গ ও প্রত্যয়",
+      "definition": "A root word is the basic part of a word that carries the core meaning. A prefix is a group of letters added to the beginning of a root word to change its meaning. A suffix is a group of letters added to the end of a root word to change its meaning or grammatical function.",
+      "banglaDefinition": "মূলশব্দ (root word) হলো শব্দের মৌলিক অংশ যা মূল অর্থ বহন করে। Prefix (উপসর্গ) হলো অক্ষরের একটি দল যা মূলশব্দের শুরুতে যোগ করে অর্থ পরিবর্তন করে। Suffix (প্রত্যয়) হলো অক্ষরের একটি দল যা মূলশব্দের শেষে যোগ করে অর্থ বা ব্যাকরণগত কাজ পরিবর্তন করে।",
+      "formula": "Prefix + Root + Suffix = New Word\nun- + happy + -ness = unhappiness\ndis- + agree + -ment = disagreement",
+      "rules": [
+        "Root word হলো শব্দের সবচেয়ে মৌলিক রূপ, যা আর ভাঙা যায় না।",
+        "Prefix যোগ করলে শব্দের অর্থ পরিবর্তিত হয়: 'happy' → 'unhappy' (বিপরীত অর্থ)।",
+        "Prefixes সাধারণত শব্দের নেতিবাচক বা বিপরীত অর্থ তৈরি করে: un-, in-, dis-, mis-, non-।",
+        "Suffix যোগ করলে শব্দের ব্যাকরণগত শ্রেণী পরিবর্তিত হয়: 'teach' (verb) → 'teacher' (noun)।",
+        "Suffixes noun (-tion, -ness, -ment, -er), adjective (-ful, -less, -able), অথবা adverb (-ly) তৈরি করে।",
+        "একটি মূলশব্দে একাধিক prefix এবং suffix থাকতে পারে: un-believ-able (un = prefix, able = suffix)۔"
+      ],
+      "examples": [
+        { "en": "Root 'agree' + prefix 'dis-' = 'disagree' (বিরোধ করা)", "bn": "Root 'agree' + prefix 'dis-' = 'disagree' (বিরোধ করা)" },
+        { "en": "Root 'help' + suffix '-ful' = 'helpful' (সহায়ক)", "bn": "Root 'help' + suffix '-ful' = 'helpful' (সহায়ক)" },
+        { "en": "Root 'help' + suffix '-less' = 'helpless' (অসহায়)", "bn": "Root 'help' + suffix '-less' = 'helpless' (অসহায়)" },
+        { "en": "Root 'teach' + suffix '-er' = 'teacher' (শিক্ষক)", "bn": "Root 'teach' + suffix '-er' = 'teacher' (শিক্ষক)" },
+        { "en": "Root 'care' + suffix '-ful' + '-ly' = 'carefully' (সাবধানে)", "bn": "Root 'care' + suffix '-ful' + '-ly' = 'carefully' (সাবধানে)" },
+        { "en": "Common prefixes: re- (again: rewrite), pre- (before: preview), mis- (wrong: mistake)", "bn": "সাধারণ prefixes: re- (আবার: rewrite), pre- (আগে: preview), mis- (ভুল: mistake)" }
+      ],
+      "tips": "একটি root word শেখার পর তার সাথে বিভিন্ন prefix এবং suffix যোগ করে কয়টি নতুন শব্দ তৈরি করা যায় তা অনুশীলন করো। যেমন: 'play' → replay, player, playful, playing। এটি শব্দভান্ডার দ্রুত বাড়ানোর একটি কার্যকর উপায়।"
+    },
+    {
+      "name": "Synonyms and Antonyms",
+      "banglaName": "সমার্থক ও বিপরীতার্থক শব্দ",
+      "definition": "Synonyms are words that have similar meanings. Antonyms are words that have opposite meanings. Learning synonyms and antonyms helps you express ideas more precisely and makes your vocabulary richer.",
+      "banglaDefinition": "Synonyms (সমার্থক শব্দ) হলো সেই শব্দ যাদের অর্থ একই বা প্রায় একই। Antonyms (বিপরীতার্থক শব্দ) হলো সেই শব্দ যাদের অর্থ বিপরীত। Synonyms এবং antonyms শেখা আপনাকে ধারণাগুলো আরও স্পষ্টভাবে প্রকাশ করতে এবং শব্দভান্ডার সমৃদ্ধ করতে সাহায্য করে।",
+      "formula": "Synonym: Word A ≈ Word B (similar meaning)\nAntonym: Word A ≠ Word B (opposite meaning)\n\nExample:\nSynonym: big ≈ large, happy ≈ joyful\nAntonym: big ≠ small, hot ≠ cold",
+      "rules": [
+        "Synonyms-এর অর্থ সম্পূর্ণ এক নয়, প্রায় একই রকম হয় — subtle difference থাকতে পারে।",
+        "'Big' এবং 'large' প্রায় একই, কিন্তু 'big' বেশি সাধারণ, 'large' বেশি আনুষ্ঠানিক।",
+        "অ্যান্টনিম দুটি শব্দের অর্থ সম্পূর্ণ বিপরীত হয়।",
+        "কিছু শব্দের একাধিক synonym আছে: 'good' → excellent, fine, great, superb।",
+        "কিছু শব্দের একাধিক antonym আছে: 'hot' → cold, cool, freezing, chilly।",
+        "শব্দের প্রেক্ষাপট (context) বুঝে synonym বাছাই করতে হয় — সব synonym সব জায়গায় খাটে না।"
+      ],
+      "examples": [
+        { "en": "Synonym: 'happy' ≈ 'joyful' ≈ 'glad' ≈ 'cheerful'", "bn": "সমার্থক: 'happy' ≈ 'joyful' ≈ 'glad' ≈ 'cheerful'" },
+        { "en": "Antonym: 'hot' ≠ 'cold'", "bn": "বিপরীত: 'hot' ≠ 'cold'" },
+        { "en": "Synonym: 'fast' ≈ 'quick' ≈ 'swift' ≈ 'rapid'", "bn": "সমার্থক: 'fast' ≈ 'quick' ≈ 'swift' ≈ 'rapid'" },
+        { "en": "Antonym: 'fast' ≠ 'slow'", "bn": "বিপরীত: 'fast' ≠ 'slow'" },
+        { "en": "Synonym: 'begin' ≈ 'start' ≈ 'commence' (commence is formal)", "bn": "সমার্থক: 'begin' ≈ 'start' ≈ 'commence' (commence আনুষ্ঠানিক)" },
+        { "en": "Antonym: 'begin' ≠ 'end' / 'finish'", "bn": "বিপরীত: 'begin' ≠ 'end' / 'finish'" },
+        { "en": "Synonym: 'beautiful' ≈ 'pretty' ≈ 'lovely' ≈ 'gorgeous' (gorgeous is stronger)", "bn": "সমার্থক: 'beautiful' ≈ 'pretty' ≈ 'lovely' ≈ 'gorgeous' (gorgeous শক্তিশালী)" }
+      ],
+      "tips": "একটি নতুন শব্দ শেখার সময় তার একটি synonym এবং একটি antonym সঙ্গে শেখার চেষ্টা করো। থিসরাস (thesaurus) ব্যবহার করে শব্দের synonyms এবং antonyms খুঁজে বের করার অভ্যাস করো।"
+    },
+    {
+      "name": "Word Families",
+      "banglaName": "শব্দ পরিবার",
+      "definition": "A word family is a group of words that share the same root word. They have related meanings but different grammatical forms. Learning word families helps you understand how words are connected and expand your vocabulary efficiently.",
+      "banglaDefinition": "Word family হলো শব্দের একটি দল যারা একই root word (মূলশব্দ) ভাগ করে নেয়। এদের অর্থ সম্পর্কিত কিন্তু ব্যাকরণগত রূপ ভিন্ন। Word families শেখা আপনাকে বুঝতে সাহায্য করে যে শব্দগুলো কীভাবে সংযুক্ত, এবং দক্ষতার সাথে শব্দভান্ডার বাড়াতে সাহায্য করে।",
+      "formula": "Root → Noun → Verb → Adjective → Adverb\n\nExample:\nCare (noun) → Care (verb) → Careful (adj) → Carefully (adv)\nBeauty (noun) → Beautify (verb) → Beautiful (adj) → Beautifully (adv)",
+      "rules": [
+        "Word family-র সব শব্দ একই মূল থেকে এসেছে।",
+        "Word family-র শব্দগুলো বিভিন্ন parts of speech-এ হতে পারে।",
+        "Suffix যোগ করে একই root থেকে বিভিন্ন word family তৈরি হয়।",
+        "Word family জানলে একটি শব্দের সব রূপ একসঙ্গে শেখা যায়।",
+        "প্রতিটি word family-র একটি base word (মূল শব্দ) থাকে।",
+        "পরীক্ষায় (IELTS, TOEFL) word family বোঝা খুব গুরুত্বপূর্ণ।"
+      ],
+      "examples": [
+        { "en": "Family of 'act': act (v/n), action (n), active (adj), actively (adv), activity (n)", "bn": "'Act'-এর পরিবার: act (v/n), action (n), active (adj), actively (adv), activity (n)" },
+        { "en": "Family of 'beauty': beauty (n), beautiful (adj), beautifully (adv), beautify (v)", "bn": "'Beauty'-র পরিবার: beauty (n), beautiful (adj), beautifully (adv), beautify (v)" },
+        { "en": "Family of 'create': create (v), creation (n), creative (adj), creatively (adv), creator (n)", "bn": "'Create'-এর পরিবার: create (v), creation (n), creative (adj), creatively (adv), creator (n)" },
+        { "en": "Family of 'hope': hope (v/n), hopeful (adj), hopefully (adv), hopeless (adj)", "bn": "'Hope'-এর পরিবার: hope (v/n), hopeful (adj), hopefully (adv), hopeless (adj)" },
+        { "en": "Family of 'help': help (v/n), helpful (adj), helpless (adj), helpfully (adv)", "bn": "'Help'-এর পরিবার: help (v/n), helpful (adj), helpless (adj), helpfully (adv)" }
+      ],
+      "tips": "একটি নতুন root word শেখার সময় তার পুরো word family টি একসঙ্গে শেখার চেষ্টা করো। এটি একই সাথে vocabulary এবং grammar — দুটোই শিখতে সাহায্য করবে। একটি নোটবুকে word family list তৈরি করো।"
+    },
+    {
+      "name": "Compound Words",
+      "banglaName": "যৌগিক শব্দ",
+      "definition": "A compound word is formed when two or more words are joined together to create a new word with a new meaning. Compound words can be written as one word (closed), with a hyphen (hyphenated), or as separate words (open).",
+      "banglaDefinition": "যৌগিক শব্দ (compound word) তৈরি হয় যখন দুই বা ততোধিক শব্দ একসঙ্গে যুক্ত হয়ে একটি নতুন শব্দ তৈরি করে যার নতুন অর্থ হয়। যৌগিক শব্দ তিনভাবে লেখা যায়: একসঙ্গে (closed), হাইফেন সহ (hyphenated), অথবা আলাদাভাবে (open)।",
+      "formula": "Word 1 + Word 2 = Compound Word\n\nClosed: sun + flower = sunflower\nHyphenated: mother + in + law = mother-in-law\nOpen: ice + cream = ice cream",
+      "rules": [
+        "Compound word-এর অর্থ সাধারণত দুটি শব্দের অর্থের সমন্বয়।",
+        "কিছু compound word একসঙ্গে লেখা হয়: 'notebook', 'bedroom', 'toothbrush'।",
+        "কিছু compound word হাইফেন দিয়ে লেখা হয়: 'well-known', 'twenty-one', 'father-in-law'।",
+        "কিছু compound word আলাদাভাবে লেখা হয়: 'ice cream', 'high school', 'post office'।",
+        "কোন compound word কীভাবে লিখতে হবে তা শিখতে dictionary ব্যবহার করো।",
+        "বেশিরভাগ compound word-এর main stress প্রথম শব্দের উপর পড়ে: 'GREENhouse' (not greenHOUSE)।"
+      ],
+      "examples": [
+        { "en": "Closed: 'tooth' + 'brush' = 'toothbrush' (দাঁতের ব্রাশ)", "bn": "একসঙ্গে: 'tooth' + 'brush' = 'toothbrush' (দাঁতের ব্রাশ)" },
+        { "en": "Closed: 'rain' + 'bow' = 'rainbow' (রংধনু)", "bn": "একসঙ্গে: 'rain' + 'bow' = 'rainbow' (রংধনু)" },
+        { "en": "Hyphenated: 'well' + 'known' = 'well-known' (সুপরিচিত)", "bn": "হাইফেন সহ: 'well' + 'known' = 'well-known' (সুপরিচিত)" },
+        { "en": "Hyphenated: 'mother' + 'in' + 'law' = 'mother-in-law' (শাশুড়ি)", "bn": "হাইফেন সহ: 'mother' + 'in' + 'law' = 'mother-in-law' (শাশুড়ি)" },
+        { "en": "Open: 'ice' + 'cream' = 'ice cream' (আইসক্রিম)", "bn": "আলাদা: 'ice' + 'cream' = 'ice cream' (আইসক্রিম)" },
+        { "en": "Open: 'high' + 'school' = 'high school' (উচ্চ বিদ্যালয়)", "bn": "আলাদা: 'high' + 'school' = 'high school' (উচ্চ বিদ্যালয়)" }
+      ],
+      "tips": "Compound words চিনতে পারলে reading comprehension অনেক সহজ হয়। প্রতিদিনের পড়ায় যেসব compound word পাও, সেগুলো নোট করো এবং সঠিক বানান শেখো। মনে রাখবে: compound word-এর অর্থ সবসময় দুটি শব্দের অর্থের সরল যোগফল নয় — যেমন 'butterfly' (মাখন+মাছি নয়, প্রজাপতি)।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Writing compound words incorrectly: 'every day' vs 'everyday'.",
+      "correct": "'Everyday' (এক শব্দ = সাধারণ) vs 'every day' (দুই শব্দ = প্রতিদিন)।",
+      "explanation": "'Everyday' একটি adjective যার অর্থ 'সাধারণ' বা 'দৈনন্দিন' (যেমন: 'everyday problems')। 'Every day' (আলাদা) মানে 'প্রতিদিন' (যেমন: 'I go to work every day')। দুইটির অর্থ এবং ব্যবহার আলাদা।"
+    },
+    {
+      "wrong": "Confusing 'its' and 'it's'.",
+      "correct": "'Its' = possessive (তার); 'it's' = 'it is' বা 'it has'।",
+      "explanation": "'Its' কোনো possessive form — apostrophe নেই (যেমন: 'The cat licked its paw')। 'It's' সবসময় 'it is' বা 'it has'-এর সংক্ষিপ্ত রূপ (যেমন: 'It's raining')। মনে রাখবে: possessive-এ কখনো apostrophe হয় না।"
+    },
+    {
+      "wrong": "Saying 'I am having a car.'",
+      "correct": "Correct: 'I have a car.'",
+      "explanation": "'Have' যখন 'possess' (অধিকার) অর্থে ব্যবহৃত হয়, তখন তা continuous form-এ ব্যবহার করা যায় না। 'I am having' শুধু তখনই সঠিক যখন 'having' মানে 'খাওয়া' বা 'অভিজ্ঞতা নেওয়া' (যেমন: 'I am having dinner')।"
+    },
+    {
+      "wrong": "Confusing 'their', 'there', and 'they're'.",
+      "correct": "'Their' = possessive (তাদের); 'there' = place (সেখানে); 'they're' = 'they are'।",
+      "explanation": "তিনটি শব্দের উচ্চারণ একই কিন্তু অর্থ এবং বানান ভিন্ন। 'Their' দিয়ে মালিকানা বোঝায় (their book)। 'There' দিয়ে স্থান বোঝায় (over there)। 'They're' হলো 'they are'-এর সংক্ষিপ্ত রূপ (they're coming)।"
+    },
+    {
+      "wrong": "Using 'more better' instead of 'better'.",
+      "correct": "Correct: 'This is better.' (not 'more better')",
+      "explanation": "'Better' ইতিমধ্যেই 'good'-এর comparative form। Comparative form-এর সাথে 'more' ব্যবহার করা যায় না। একই নিয়ম 'best'-এর জন্যও (superlative)। 'More better' বা 'most best' বলা ভুল।"
+    },
+    {
+      "wrong": "Writing 'alot' instead of 'a lot'.",
+      "correct": "Correct: 'a lot' (দুই শব্দ, আলাদা করে)",
+      "explanation": "'A lot' সবসময় দুই শব্দে লেখা হয়। 'Alot' একটি সাধারণ ভুল বানান। মনে রাখবে: 'a lot' = 'a' + 'lot' — দুই শব্দ আলাদা। 'Allot' (এক শব্দ) একটি ভিন্ন শব্দ যার অর্থ 'বরাদ্দ করা'।"
+    }
+  ]
 }
