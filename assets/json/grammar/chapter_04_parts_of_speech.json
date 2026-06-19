@@ -1,10 +1,291 @@
 {
   "chapter": 4,
   "level": "Beginner",
-  "title": "Parts of Speech",
+  "title": "Parts of Speech (পদ প্রকরণ)",
   "icon": "category",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Parts of speech are the categories that words are grouped into based on their function in a sentence. There are eight parts of speech in English: Noun, Pronoun, Verb, Adjective, Adverb, Preposition, Conjunction, and Interjection. Every word in a sentence belongs to one of these categories. Understanding parts of speech is the foundation of English grammar.",
+  "banglaDescription": "পদ প্রকরণ (Parts of Speech) হলো সেই বিভাগ যেখানে বাক্যে কাজের ভিত্তিতে শব্দগুলোকে ভাগ করা হয়। ইংরেজিতে আটটি parts of speech আছে: Noun (বিশেষ্য), Pronoun (সর্বনাম), Verb (ক্রিয়া), Adjective (বিশেষণ), Adverb (ক্রিয়াবিশেষণ), Preposition (পদান্বয়ী অব্যয়), Conjunction (সংযোজক), এবং Interjection (আবেগসূচক অব্যয়)। বাক্যের প্রতিটি শব্দ এই বিভাগগুলোর একটির অন্তর্ভুক্ত। Parts of speech বোঝা ইংরেজি ব্যাকরণের ভিত্তি।",
+  "topics": [
+    {
+      "name": "What are Parts of Speech?",
+      "banglaName": "পদ প্রকরণ কী?",
+      "definition": "Parts of speech are the building blocks of English grammar. They classify words based on how they are used in a sentence. A single word can belong to different parts of speech depending on its use. For example, 'light' can be a noun (the light), a verb (light the candle), or an adjective (light weight). Learning parts of speech helps you understand sentence structure and use words correctly.",
+      "banglaDefinition": "Parts of speech ইংরেজি ব্যাকরণের নির্মাণ উপাদান। তারা বাক্যে ব্যবহারের ভিত্তিতে শব্দকে শ্রেণীবদ্ধ করে। একটি শব্দ তার ব্যবহারের উপর নির্ভর করে ভিন্ন ভিন্ন part of speech হতে পারে। যেমন, 'light' noun (আলো), verb (বাতি জ্বালানো), বা adjective (হালকা) হতে পারে। Parts of speech শেখা বাক্যের গঠন বুঝতে এবং শব্দ সঠিকভাবে ব্যবহার করতে সাহায্য করে।",
+      "formula": "8 Parts of Speech:\n1. Noun → Name of a person, place, thing, or idea\n2. Pronoun → Replaces a noun\n3. Verb → Shows action or state\n4. Adjective → Describes a noun\n5. Adverb → Describes a verb, adjective, or adverb\n6. Preposition → Shows relationship between words\n7. Conjunction → Connects words or sentences\n8. Interjection → Expresses emotion",
+      "rules": [
+        "ইংরেজিতে মোট ৮টি parts of speech আছে।",
+        "একটি শব্দ বাক্যে তার ব্যবহার অনুযায়ী ভিন্ন part of speech হতে পারে।",
+        "প্রতি শব্দ বাক্যে অন্তত একটি part of speech-এর ভূমিকা পালন করে।",
+        "কিছু শব্দ একসঙ্গে একাধিক part of speech হতে পারে (যেমন: 'well' — adverb, noun, adjective)।",
+        "Parts of speech শেখা সঠিক বাক্য গঠনের জন্য অপরিহার্য।",
+        "একই category-র word-গুলো সাধারণত একই রকম grammatical behavior দেখায়।",
+        "Context (প্রসঙ্গ) দেখে বুঝতে হয় একটি শব্দ কোন part of speech।"
+      ],
+      "examples": [
+        { "en": "Noun: 'Dog', 'Dhaka', 'Happiness' — these are names.", "bn": "Noun: 'Dog', 'Dhaka', 'Happiness' — এগুলো নাম।" },
+        { "en": "Pronoun: 'He', 'She', 'It', 'They' — replace nouns.", "bn": "Pronoun: 'He', 'She', 'It', 'They' — noun-এর পরিবর্তে ব্যবহৃত হয়।" },
+        { "en": "Verb: 'Run', 'Eat', 'Sleep', 'Think' — show actions.", "bn": "Verb: 'Run', 'Eat', 'Sleep', 'Think' — কাজ বোঝায়।" },
+        { "en": "Adjective: 'Beautiful', 'Tall', 'Hot' — describe nouns.", "bn": "Adjective: 'Beautiful', 'Tall', 'Hot' — noun-কে বর্ণনা করে।" },
+        { "en": "Adverb: 'Quickly', 'Very', 'Well' — describe verbs.", "bn": "Adverb: 'Quickly', 'Very', 'Well' — verb-কে বর্ণনা করে।" },
+        { "en": "Same word, different use: 'I work hard.' (verb) / 'Hard work pays off.' (noun)", "bn": "একই শব্দ ভিন্ন ব্যবহার: 'I work hard.' (verb) / 'Hard work pays off.' (noun)" }
+      ],
+      "tips": "একটি শব্দ কোন part of speech তা বের করার সহজ উপায়: বাক্যে শব্দটির কাজ দেখো। এটি কি নাম বোঝাচ্ছে? → Noun। কাজ বোঝাচ্ছে? → Verb। গুণ বোঝাচ্ছে? → Adjective। একটি অভিধানে (dictionary) শব্দের পাশে n., v., adj., adv. ইত্যাদি লেখা থাকে — সেগুলো দেখে part of speech চেনার অভ্যাস করো।"
+    },
+    {
+      "name": "Noun (বিশেষ্য)",
+      "banglaName": "বিশেষ্য",
+      "definition": "A noun is a word that names a person, place, thing, or idea. Nouns are the most common part of speech. They can be common (general) or proper (specific). Nouns can also be countable (book, apple) or uncountable (water, music). Almost every sentence contains at least one noun.",
+      "banglaDefinition": "Noun (বিশেষ্য) হলো সেই শব্দ যা কোনো ব্যক্তি, স্থান, বস্তু, বা ধারণার নাম বোঝায়। Noun সবচেয়ে সাধারণ part of speech। এগুলো common (সাধারণ) বা proper (নির্দিষ্ট) হতে পারে। Noun countable (বই, আপেল) বা uncountable (পানি, গান) ও হতে পারে। প্রায় প্রতি বাক্যে অন্তত একটি noun থাকে।",
+      "formula": "Noun = Name of something\n\nTypes:\nCommon Noun → city, boy, country\nProper Noun → Dhaka, John, Bangladesh\nCountable Noun → book, apple, chair\nUncountable Noun → water, air, information\n\nExample: 'The boy lives in Dhaka.' → boy (common), Dhaka (proper)",
+      "rules": [
+        "Proper noun সবসময় capital letter দিয়ে শুরু হয়।",
+        "Common noun সাধারণত capital letter দিয়ে শুরু হয় না (sentence-এর শুরু ছাড়া)।",
+        "Countable noun-এর plural form থাকে: book → books, apple → apples।",
+        "Uncountable noun-এর plural form হয় না: water, milk, music।",
+        "কিছু noun concrete (বাস্তব): table, tree। কিছু abstract (ধারণা): love, freedom।",
+        "Noun বাক্যে subject, object, বা complement হিসেবে কাজ করতে পারে।",
+        "Collective noun একসঙ্গে একটি দলকে বোঝায়: team, family, crowd।"
+      ],
+      "examples": [
+        { "en": "Person: 'Shakespeare wrote many plays.'", "bn": "ব্যক্তি: 'Shakespeare অনেক নাটক লিখেছেন।'" },
+        { "en": "Place: 'We visited Cox's Bazar last summer.'", "bn": "স্থান: 'আমরা গত গ্রীষ্মে কক্সবাজার ঘুরতে গিয়েছিলাম।'" },
+        { "en": "Thing: 'Please pass me the book.'", "bn": "বস্তু: 'অনুগ্রহ করে বইটি আমাকে দাও।'" },
+        { "en": "Idea: 'Honesty is the best policy.'", "bn": "ধারণা: 'সততাই সর্বোৎকৃষ্ট পন্থা।'" },
+        { "en": "Proper: 'Maria lives in London.'", "bn": "Proper: 'Maria লন্ডনে থাকে।'" },
+        { "en": "Common: 'A girl is playing in the park.'", "bn": "Common: 'একটি মেয়ে পার্কে খেলছে।'" }
+      ],
+      "tips": "Noun চেনার উপায়: শব্দটির আগে 'a', 'an', 'the' বসিয়ে দেখো। যদি বসে, তবে এটি noun (যেমন: a book, the man)। আরও দেখো শব্দটির plural form আছে কিনা। মনে রাখবে: proper noun সবসময় capital letter দিয়ে শুরু হয়।"
+    },
+    {
+      "name": "Pronoun (সর্বনাম)",
+      "banglaName": "সর্বনাম",
+      "definition": "A pronoun is a word that is used in place of a noun. Pronouns help us avoid repeating the same noun over and over. Common pronouns include I, you, he, she, it, we, they, me, him, her, us, them. Pronouns change form based on their role in the sentence (subject, object, possessive).",
+      "banglaDefinition": "Pronoun (সর্বনাম) হলো সেই শব্দ যা noun-এর পরিবর্তে ব্যবহৃত হয়। Pronoun ব্যবহার করে একই noun বারবার বলা এড়ানো যায়। সাধারণ pronouns: I, you, he, she, it, we, they, me, him, her, us, them। Pronouns বাক্যে তাদের ভূমিকা (subject, object, possessive) অনুযায়ী রূপ বদলায়।",
+      "formula": "Pronoun Types:\nSubject Pronoun: I, you, he, she, it, we, they\nObject Pronoun: me, you, him, her, it, us, them\nPossessive Pronoun: mine, yours, his, hers, its, ours, theirs\n\nExample:\nSubject: 'She loves music.'\nObject: 'The teacher praised him.'\nPossessive: 'This book is mine.'",
+      "rules": [
+        "Pronoun noun-এর পুনরাবৃত্তি এড়াতে ব্যবহৃত হয়।",
+        "Subject pronoun বাক্যের subject হিসেবে কাজ করে (I, he, she, we, they)।",
+        "Object pronoun verb বা preposition-এর object হিসেবে কাজ করে (me, him, her, us, them)।",
+        "Possessive pronoun মালিকানা বোঝায় এবং noun-এর পরে ব্যবহৃত হয় (mine, yours, his)।",
+        "Possessive adjective (my, your, his, her) noun-এর আগে বসে, কিন্তু possessive pronoun একা বসে।",
+        "'I' (আমি) সবসময় capital letter-এ লিখতে হবে।",
+        "Pronoun-এর antecedent (যে noun-কে নির্দেশ করে) স্পষ্ট হতে হবে।"
+      ],
+      "examples": [
+        { "en": "Without pronoun: 'Maria is a doctor. Maria works at a hospital.'", "bn": "Pronoun ছাড়া: 'মারিয়া একজন ডাক্তার। মারিয়া একটি হাসপাতালে কাজ করে।'" },
+        { "en": "With pronoun: 'Maria is a doctor. She works at a hospital.'", "bn": "Pronoun সহ: 'মারিয়া একজন ডাক্তার। সে একটি হাসপাতালে কাজ করে।'" },
+        { "en": "Subject: 'We enjoy reading books.'", "bn": "Subject: 'আমরা বই পড়তে উপভোগ করি।'" },
+        { "en": "Object: 'The gift is for you.'", "bn": "Object: 'উপহারটি তোমার জন্য।'" },
+        { "en": "Possessive: 'That pen is hers.'", "bn": "Possessive: 'ওই কলমটি তার।'" },
+        { "en": "Possessive adj: 'Her pen is blue.' vs Possessive pro: 'The blue pen is hers.'", "bn": "Possessive adj: 'Her pen is blue.' vs Possessive pro: 'The blue pen is hers.'" }
+      ],
+      "tips": "Pronoun ব্যবহারের সময় মনে রাখবে: একটি sentence-এ pronoun-টি কোন noun-কে নির্দেশ করছে তা স্পষ্ট হতে হবে। যেমন: 'Rina and Soni went to the market because she needed vegetables.' — এখানে 'she' কাকে বোঝাচ্ছে? Rina না Soni? অস্পষ্ট। এড়িয়ে চলো।"
+    },
+    {
+      "name": "Verb (ক্রিয়া)",
+      "banglaName": "ক্রিয়া",
+      "definition": "A verb is a word that describes an action, occurrence, or state of being. Verbs are the heart of a sentence — every complete sentence must have a verb. Verbs can show physical actions (run, eat), mental actions (think, believe), or states of being (is, are, was, seem). Verbs change form to show tense, person, and number.",
+      "banglaDefinition": "Verb (ক্রিয়া) হলো সেই শব্দ যা কোনো কাজ, ঘটনা, বা অবস্থা বর্ণনা করে। Verb বাক্যের প্রাণ — প্রতি পূর্ণ বাক্যে একটি verb থাকতে হবে। Verb শারীরিক কাজ (দৌড়ানো, খাওয়া), মানসিক কাজ (চিন্তা করা, বিশ্বাস করা), বা অবস্থা (হওয়া, থাকা) বোঝাতে পারে। Verb কাল (tense), person, এবং number অনুযায়ী রূপ বদলায়।",
+      "formula": "Verb Types:\nAction Verb → She runs every morning.\nLinking Verb → He is a teacher.\nAuxiliary Verb → She is coming.\nModal Verb → You must go.\n\nFormula: Sentence = Subject + Verb + (Object)\nExample: Birds (S) fly (V) in the sky.",
+      "rules": [
+        "প্রতি পূর্ণ বাক্যে একটি main verb থাকা আবশ্যক।",
+        "Action verb শারীরিক বা মানসিক কাজ বোঝায়: run, think, eat, sleep।",
+        "Linking verb (is, am, are, was, were, seem, become) subject-কে complement-এর সাথে সংযুক্ত করে।",
+        "Auxiliary verb (helping verb) main verb-কে সাহায্য করে: is going, has eaten, will come।",
+        "Modal verb (can, could, may, might, shall, should, will, would, must) ability, permission, necessity বোঝায়।",
+        "Verb-এর form tense (past, present, future) অনুযায়ী বদলায়।",
+        "Subject-verb agreement: subject singular হলে verb singular হয়, plural হলে plural হয়।"
+      ],
+      "examples": [
+        { "en": "Action: 'The children play in the garden.'", "bn": "কাজ: 'শিশুরা বাগানে খেলে।'" },
+        { "en": "Mental action: 'I believe in hard work.'", "bn": "মানসিক কাজ: 'আমি কঠোর পরিশ্রমে বিশ্বাস করি।'" },
+        { "en": "Linking: 'She seems happy today.'", "bn": "Linking: 'সে আজ খুশি মনে হচ্ছে।'" },
+        { "en": "Auxiliary: 'They are coming to the party.'", "bn": "Auxiliary: 'তারা পার্টিতে আসছে।'" },
+        { "en": "Modal: 'You must complete the assignment.'", "bn": "Modal: 'তোমাকে অ্যাসাইনমেন্টটি সম্পূর্ণ করতে হবে।'" },
+        { "en": "State: 'I am tired after the long journey.'", "bn": "অবস্থা: 'দীর্ঘ যাত্রার পর আমি ক্লান্ত।'" }
+      ],
+      "tips": "Verb চেনার সহজ উপায়: বাক্যটিতে 'He/She/It' বসিয়ে দেখো — যে শব্দটি পরিবর্তিত হয় সেটিই verb। যেমন: 'They walk fast' → 'He walks fast' (walk → walks, তাই walk হলো verb)। বাক্যে 'is/am/are/was/were' থাকলে সেগুলোও verb।"
+    },
+    {
+      "name": "Adjective (বিশেষণ)",
+      "banglaName": "বিশেষণ",
+      "definition": "An adjective is a word that describes or modifies a noun or pronoun. Adjectives tell us more about a noun — what kind, how many, which one, or how much. They make our language more colorful and specific. Adjectives usually come before the noun they describe, or after a linking verb.",
+      "banglaDefinition": "Adjective (বিশেষণ) হলো সেই শব্দ যা noun বা pronoun-কে বর্ণনা বা পরিবর্তন করে। Adjective আমাদের noun সম্পর্কে আরও বলে — কেমন, কত, কোনটি, বা কতটুকু। এগুলো আমাদের ভাষাকে আরও রঙিন এবং সুনির্দিষ্ট করে। Adjective সাধারণত noun-এর আগে বসে, বা linking verb-এর পরে বসে।",
+      "formula": "Adjective = Describes a noun/pronoun\n\nPosition 1 (before noun): Adjective + Noun\n→ a beautiful flower, a tall building\n\nPosition 2 (after linking verb): Subject + Verb + Adjective\n→ The flower is beautiful.\n→ He seems tired.",
+      "rules": [
+        "Adjective noun-এর গুণ, অবস্থা, সংখ্যা, বা পরিমাণ বোঝায়।",
+        "Adjective সাধারণত noun-এর আগে বসে: 'a red car'।",
+        "Adjective linking verb (is, am, are, was, were, seem, feel, look) এর পরে বসে: 'She feels happy'।",
+        "একটি noun-এর আগে একাধিক adjective থাকতে পারে: 'a beautiful big white house'।",
+        "Adjective-এর three degrees আছে: positive (big), comparative (bigger), superlative (biggest)।",
+        "Proper adjective proper noun থেকে আসে এবং capital letter দিয়ে শুরু হয়: 'Bangladeshi culture'।",
+        "কিছু adjective-এর পরে specific preposition লাগে: interested in, afraid of, good at।"
+      ],
+      "examples": [
+        { "en": "Quality: 'She wore a beautiful dress.'", "bn": "গুণ: 'সে একটি সুন্দর পোশাক পরেছিল।'" },
+        { "en": "Size: 'They live in a huge house.'", "bn": "আকার: 'তারা একটি বিশাল বাড়িতে থাকে।'" },
+        { "en": "Color: 'The sky is blue today.'", "bn": "রং: 'আজ আকাশ নীল।'" },
+        { "en": "Number: 'I have three cats.'", "bn": "সংখ্যা: 'আমার তিনটি বিড়াল আছে।'" },
+        { "en": "Opinion: 'It was an excellent movie.'", "bn": "মতামত: 'এটি একটি চমৎকার সিনেমা ছিল।'" },
+        { "en": "After linking verb: 'The soup tastes delicious.'", "bn": "Linking verb-এর পরে: 'সুপটি সুস্বাদু লাগছে।'" }
+      ],
+      "tips": "Adjective চেনার উপায়: noun-এর আগে 'very' বসিয়ে দেখো। 'Very' বসালে যদি অর্থপূর্ণ হয়, তবে শব্দটি adjective (যেমন: very beautiful, very tall)। '{a/an/the} + ___ + noun' প্যাটার্নে ফাঁকা জায়গায় সাধারণত adjective বসে। মনে রাখবে: adjective সবসময় noun-কে বর্ণনা করে, verb-কে নয়।"
+    },
+    {
+      "name": "Adverb (ক্রিয়াবিশেষণ)",
+      "banglaName": "ক্রিয়াবিশেষণ",
+      "definition": "An adverb is a word that modifies a verb, an adjective, or another adverb. Adverbs tell us how (manner), when (time), where (place), how often (frequency), or to what extent (degree) something happens. Most adverbs end in '-ly', but not all (fast, well, very, quite). Adverbs make our expressions more precise.",
+      "banglaDefinition": "Adverb (ক্রিয়াবিশেষণ) হলো সেই শব্দ যা verb, adjective, বা অন্য adverb-কে পরিবর্তন করে। Adverb আমাদের বলে কিভাবে (পদ্ধতি), কখন (সময়), কোথায় (স্থান), কতবার (পৌনঃপুনিকতা), বা কতটুকু (পরিমাণ) কিছু ঘটে। বেশিরভাগ adverb '-ly' দিয়ে শেষ হয়, কিন্তু সব নয় (fast, well, very, quite)। Adverb আমাদের প্রকাশকে আরও সুনির্দিষ্ট করে।",
+      "formula": "Adverb modifies:\n1. Verb → She sings beautifully.\n2. Adjective → It is very hot.\n3. Adverb → He drives too fast.\n\nTypes:\nManner: slowly, carefully, well\nTime: now, then, yesterday\nPlace: here, there, inside\nFrequency: always, never, often\nDegree: very, quite, almost, too",
+      "rules": [
+        "Adverb সাধারণত '-ly' suffix যোগ করে adjective থেকে তৈরি হয়: quick → quickly, careful → carefully।",
+        "সব '-ly' word adverb নয়: friendly, lovely, lonely — এগুলো adjective।",
+        "Adverb of manner সাধারণত verb-এর পরে বসে: 'She danced gracefully।'",
+        "Adverb of time বাক্যের শুরুতে বা শেষে বসে: 'Yesterday, I met him.'",
+        "Adverb of frequency subject-এর পরে, main verb-এর আগে বসে: 'She always comes on time.'",
+        "'Well' হল 'good'-এর adverb form: 'She speaks English well.' (adverb) / 'She is a good speaker.' (adjective)",
+        "'Very', 'quite', 'too', 'almost' — এগুলো adverb of degree এবং adjective বা adverb-কে modifies করে।"
+      ],
+      "examples": [
+        { "en": "Manner: 'The children played happily in the park.'", "bn": "পদ্ধতি: 'শিশুরা পার্কে খুশিতে খেলল।'" },
+        { "en": "Time: 'We will leave tomorrow morning.'", "bn": "সময়: 'আমরা আগামীকাল সকালে চলে যাব।'" },
+        { "en": "Place: 'Please sit here.'", "bn": "স্থান: 'অনুগ্রহ করে এখানে বসুন।'" },
+        { "en": "Frequency: 'I never eat junk food.'", "bn": "পৌনঃপুনিকতা: 'আমি কখনো জাঙ্ক ফুড খাই না।'" },
+        { "en": "Degree: 'The movie was too long.'", "bn": "পরিমাণ: 'সিনেমাটি খুব লম্বা ছিল।'" },
+        { "en": "Modifying adjective: 'She is extremely talented.'", "bn": "Adjective-কে modify: 'সে অত্যন্ত প্রতিভাবান।'" },
+        { "en": "Modifying adverb: 'He drives too fast.'", "bn": "Adverb-কে modify: 'সে খুব দ্রুত গাড়ি চালায়।'" }
+      ],
+      "tips": "Adverb চেনার উপায়: adjective-কে '-ly' যোগ করে adverb বানাও (quick → quickly)। কিন্তু মনে রাখবে: 'good' → 'well' (অনিয়মিত)। আরও দেখো শব্দটি verb-কে modify করছে কিনা — 'He runs fast' (fast adverb, verb 'runs' কে modify করছে)। 'Fast' adjective-ও হতে পারে: 'a fast car'।"
+    },
+    {
+      "name": "Preposition (পদান্বয়ী অব্যয়)",
+      "banglaName": "পদান্বয়ী অব্যয়",
+      "definition": "A preposition is a word that shows the relationship between a noun (or pronoun) and another word in the sentence. Prepositions usually indicate location (in, on, at), direction (to, toward, into), time (before, after, during), or other relationships (of, for, with, about). A preposition is always followed by a noun or pronoun called its object.",
+      "banglaDefinition": "Preposition (পদান্বয়ী অব্যয়) হলো সেই শব্দ যা একটি noun (বা pronoun) এবং বাক্যের অন্য শব্দের মধ্যে সম্পর্ক দেখায়। Preposition সাধারণত অবস্থান (in, on, at), দিক (to, toward, into), সময় (before, after, during), বা অন্য সম্পর্ক (of, for, with, about) নির্দেশ করে। Preposition-এর পরে সবসময় একটি noun বা pronoun (তার object) থাকে।",
+      "formula": "Preposition + Noun/Pronoun = Prepositional Phrase\n\nCommon Prepositions:\nPlace: in, on, at, under, behind, between\nTime: before, after, during, until, since\nDirection: to, from, into, out of, toward\nOther: of, for, with, without, about\n\nExample: 'The book is on the table.'\n→ on (preposition) + the table (object) = prepositional phrase",
+      "rules": [
+        "Preposition-এর পরে সবসময় একটি noun বা pronoun (object) থাকে।",
+        "Preposition + এর object = Prepositional Phrase।",
+        "'In' সাধারণত বড় জায়গা/অঞ্চলের জন্য: in Dhaka, in Bangladesh।",
+        "'On' সাধারণত পৃষ্ঠ/সারফেসের জন্য: on the table, on the wall।",
+        "'At' সাধারণত নির্দিষ্ট পয়েন্ট/ঠিকানার জন্য: at the door, at 5 PM।",
+        "কিছু verb-এর সাথে নির্দিষ্ট preposition ব্যবহৃত হয়: listen to, look at, wait for, depend on।",
+        "Preposition বাক্যের শেষে বসতে পারে (informal English-এ): 'Who are you waiting for?'",
+        "বাংলা থেকে ইংরেজি অনুবাদে preposition-এর ব্যবহার প্রায়ই আলাদা হয় — মনে রাখতে হবে।"
+      ],
+      "examples": [
+        { "en": "Place: 'The cat is under the bed.'", "bn": "স্থান: 'বিড়ালটি বিছানার নিচে আছে।'" },
+        { "en": "Time: 'I will meet you after lunch.'", "bn": "সময়: 'আমি লাঞ্চের পরে তোমার সাথে দেখা করব।'" },
+        { "en": "Direction: 'She walked toward the door.'", "bn": "দিক: 'সে দরজার দিকে হেঁটেছিল।'" },
+        { "en": "Relationship: 'This is a gift for you.'", "bn": "সম্পর্ক: 'এটি তোমার জন্য একটি উপহার।'" },
+        { "en": "Fixed verb + prep: 'I am looking for my keys.'", "bn": "নির্দিষ্ট verb + prep: 'আমি আমার চাবি খুঁজছি।'" },
+        { "en": "Fixed adj + prep: 'She is afraid of spiders.'", "bn": "নির্দিষ্ট adj + prep: 'সে মাকড়সাকে ভয় পায়।'" }
+      ],
+      "tips": "Preposition শেখার সবচেয়ে ভালো উপায়: এগুলোকে category অনুযায়ী মুখস্থ করো — place (in/on/at), time (at/on/in/by), direction (to/from/into)। সবচেয়ে বেশি ভুল হয় 'in', 'on', 'at' নিয়ে। মনে রাখবে: in Bangladesh, on Main Street, at 123 Main Street — একই জিনিসের জন্য তিনটি different preposition।"
+    },
+    {
+      "name": "Conjunction (সংযোজক)",
+      "banglaName": "সংযোজক",
+      "definition": "A conjunction is a word that connects words, phrases, or sentences. Conjunctions join similar elements together to create more complex and interesting sentences. There are three main types: coordinating (and, but, or, nor, for, yet, so), subordinating (because, although, when, if, since, while), and correlative (either...or, neither...nor, both...and).",
+      "banglaDefinition": "Conjunction (সংযোজক) হলো সেই শব্দ যা শব্দ, phrase, বা বাক্যকে সংযুক্ত করে। Conjunction একই ধরনের উপাদানকে যুক্ত করে আরও জটিল ও আকর্ষণীয় বাক্য তৈরি করে। তিন ধরনের conjunction আছে: coordinating (and, but, or, nor, for, yet, so), subordinating (because, although, when, if, since, while), এবং correlative (either...or, neither...nor, both...and)।",
+      "formula": "Coordinating (FANBOYS): For, And, Nor, But, Or, Yet, So\n→ I like tea, and she likes coffee.\n\nSubordinating: Because, Although, When, If, Since, While, etc.\n→ I stayed home because it was raining.\n\nCorrelative: Either...or, Neither...nor, Both...and, Not only...but also\n→ Either you come, or I will leave.",
+      "rules": [
+        "Coordinating conjunction সমান গুরুত্বের দুইটি element যুক্ত করে।",
+        "FANBOYS মনে রাখার উপায়: For, And, Nor, But, Or, Yet, So।",
+        "Subordinating conjunction একটি dependent clause কে independent clause-এর সাথে যুক্ত করে।",
+        "Subordinating conjunction দিয়ে বাক্য শুরু হলে clause-এর পরে comma বসে: 'Because it rained, we stayed home.'",
+        "Correlative conjunction জোড়ায় জোড়ায় ব্যবহৃত হয়: either...or, neither...nor, both...and।",
+        "'But' বিপরীত অর্থ দেখায়, 'and' যোগ করে, 'or' বিকল্প দেখায়, 'so' ফলাফল দেখায়।",
+        "একটি বাক্যে অত্যধিক conjunction ব্যবহার করা উচিত নয় (run-on sentence এড়িয়ে চলো)।"
+      ],
+      "examples": [
+        { "en": "Coordinating: 'I wanted to go, but I was too tired.'", "bn": "Coordinating: 'আমি যেতে চেয়েছিলাম, কিন্তু আমি খুব ক্লান্ত ছিলাম।'" },
+        { "en": "Coordinating: 'She bought apples and oranges.'", "bn": "Coordinating: 'সে আপেল এবং কমলা কিনেছে।'" },
+        { "en": "Subordinating: 'We stayed inside because it was raining.'", "bn": "Subordinating: 'বৃষ্টি হওয়ায় আমরা ভিতরে ছিলাম।'" },
+        { "en": "Subordinating: 'Although he is rich, he is not happy.'", "bn": "Subordinating: 'যদিও সে ধনী, তবুও সে সুখী নয়।'" },
+        { "en": "Correlative: 'Either you study, or you will fail.'", "bn": "Correlative: 'হয় তুমি পড়ো, নয়তো ফেল করবে।'" },
+        { "en": "Correlative: 'She is both smart and hardworking.'", "bn": "Correlative: 'সে স্মার্ট এবং পরিশ্রমী উভয়ই।'" }
+      ],
+      "tips": "FANBOYS মনে রাখো: For, And, Nor, But, Or, Yet, So। এগুলো coordinating conjunction। Subordinating conjunction দিয়ে বাক্য শুরু করলে comma দিতে ভুলো না। 'Because' এবং 'so' একসঙ্গে ব্যবহার করো না — 'Because it rained, so we stayed home' —これは ভুল (একটিই যথেষ্ট)।"
+    },
+    {
+      "name": "Interjection (আবেগসূচক অব্যয়)",
+      "banglaName": "আবেগসূচক অব্যয়",
+      "definition": "An interjection is a word or phrase that expresses sudden emotion or feeling. Interjections are often followed by an exclamation mark (!). They are not grammatically connected to the rest of the sentence. Common interjections include Oh!, Wow!, Ouch!, Hurray!, Alas!, Hey!, and Oops!. Interjections add emotion and spontaneity to speech and writing.",
+      "banglaDefinition": "Interjection (আবেগসূচক অব্যয়) হলো একটি শব্দ বা phrase যা হঠাৎ আবেগ বা অনুভূতি প্রকাশ করে। Interjection-এর পরে সাধারণত exclamation mark (!) বসে। এগুলো ব্যাকরণগতভাবে বাক্যের বাকি অংশের সাথে সংযুক্ত নয়। সাধারণ interjections: Oh!, Wow!, Ouch!, Hurray!, Alas!, Hey!, Oops!। Interjection বক্তব্য ও লেখায় আবেগ এবং স্বতঃস্ফূর্ততা যোগ করে।",
+      "formula": "Interjection + (!) or (,)\n\nStrong emotion: Interjection!\n→ Wow! That's amazing!\n→ Ouch! It hurts!\n\nMild emotion: Interjection, + sentence.\n→ Oh, I didn't know that.\n→ Well, let's go then.",
+      "rules": [
+        "Interjection আবেগ প্রকাশ করে এবং বাক্যের বাইরে থাকে।",
+        "প্রবল আবেগে interjection-এর পরে (!) বসে: 'Hurray! We won the match!'",
+        "মৃদু আবেগে interjection-এর পরে (,) বসে: 'Oh, I see what you mean.'",
+        "Interjection ব্যাকরণগতভাবে sentence-এর সাথে সম্পর্কিত নয়।",
+        "সাধারণ interjections: Oh (বোঝা/আশ্চর্য), Wow (বিস্ময়), Ouch (ব্যথা), Hey (মনোযোগ), Alas (দুঃখ), Hurray (আনন্দ), Oops (ভুল), Ah (উপলব্ধি)।",
+        "Interjection সাধারণত বাক্যের শুরুতে বসে।",
+        "কিছু interjection sound-এর মতো (Ah, Oh, Eh) — এদের নির্দিষ্ট অর্থ বোঝার জন্য context দেখা প্রয়োজন।"
+      ],
+      "examples": [
+        { "en": "Wow! What a beautiful sunset!", "bn": "ওয়াও! কী সুন্দর সূর্যাস্ত!" },
+        { "en": "Ouch! I stepped on a nail.", "bn": "ওউচ! আমার পায়ে পেরেক বিঁধেছে।" },
+        { "en": "Hurray! We passed the exam!", "bn": "হুররে! আমরা পরীক্ষায় পাস করেছি!" },
+        { "en": "Alas! He is no more.", "bn": "হায়! তিনি আর নেই।" },
+        { "en": "Oh, I forgot to bring my phone.", "bn": "ওহ, আমি আমার ফোন আনতে ভুলে গেছি।" },
+        { "en": "Hey! Wait for me!", "bn": "হেই! আমার জন্য অপেক্ষা করো!" },
+        { "en": "Oops! I dropped the glass.", "bn": "ওপস! আমি গ্লাসটি ফেলে দিয়েছি।" },
+        { "en": "Well, that's an interesting question.", "bn": "আচ্ছা, এটি একটি интересный প্রশ্ন।" }
+      ],
+      "tips": "Interjection চেনা খুব সহজ — এগুলো বাক্যের বাইরে দাঁড়িয়ে আবেগ প্রকাশ করে। লেখার সময় interjection-এর পর ! দিতে ভুলো না (প্রবল আবেগে)। কথোপকথনে interjection ব্যবহার স্বাভাবিক, কিন্তু formal writing-এ এগুলো এড়িয়ে চলা ভালো। 'Well', 'Oh', 'I mean' — এগুলো discourse markers-ও হতে পারে।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Confusing 'your' and 'you're': 'Your a good friend.'",
+      "correct": "'You're a good friend.' (You're = You are)",
+      "explanation": "'Your' একটি possessive adjective (তোমার), আর 'you're' হলো 'you are'-এর contraction। মনে রাখবে: 'your'-এর পরে সবসময় noun আসে (your book), 'you're'-এর পরে adjective বা noun আসে (you're nice, you're a friend)।"
+    },
+    {
+      "wrong": "Using 'good' as an adverb: 'She sings good.'",
+      "correct": "'She sings well.'",
+      "explanation": "'Good' একটি adjective — এটি noun-কে বর্ণনা করে (a good singer)। 'Well' একটি adverb — এটি verb-কে বর্ণনা করে (sings well)। 'She sings good' ভুল কারণ 'sings' একটি verb, এটিকে modify করতে adverb লাগে — 'well'।"
+    },
+    {
+      "wrong": "Confusing 'there', 'their', and 'they're': 'Their going to the park.'",
+      "correct": "'They're going to the park.' (They're = They are)",
+      "explanation": "'There' = স্থান (over there), 'Their' = possessive (their house), 'They're' = 'they are'-এর contraction। তিনটির উচ্চারণ একই কিন্তু অর্থ ভিন্ন। মনে রাখবে: 'they're'-এর apostrophe 'are'-এর জন্য, 'their'-এ possessive দেখায়, 'there' স্থান বোঝায়।"
+    },
+    {
+      "wrong": "Using 'then' instead of 'than' in comparisons: 'She is taller then me.'",
+      "correct": "'She is taller than me.'",
+      "explanation": "'Then' সময় বোঝায় (first this, then that), আর 'than' তুলনা বোঝায় (taller than, better than)। তুলনা করার সময় সবসময় 'than' ব্যবহার করো। মনে রাখবে: comparison = than, time = then।"
+    },
+    {
+      "wrong": "Confusing 'its' and 'it's': 'The dog wagged it's tail.'",
+      "correct": "'The dog wagged its tail.'",
+      "explanation": "'Its' (apostrophe ছাড়া) possessive form — 'তার' (কোনো বস্তু/প্রাণীর)। 'It's' (apostrophe সহ) হলো 'it is' বা 'it has'-এর contraction। মনে রাখবে: possessive-এ কখনো apostrophe হয় না — his, hers, its — কোনো apostrophe নেই।"
+    },
+    {
+      "wrong": "Using 'me' as a subject: 'Me and my friend went to the market.'",
+      "correct": "'My friend and I went to the market.'",
+      "explanation": "Subject-এ 'me' নয়, 'I' ব্যবহার করতে হবে। 'Me' হলো object pronoun। আরও নিয়ম: নিজের কথা আগে না বলে অন্যকে আগে বলো: 'my friend and I', not 'I and my friend'। 'Me and my friend' —これは double ভুল।"
+    },
+    {
+      "wrong": "Confusing 'less' and 'fewer': 'I have less books than you.'",
+      "correct": "'I have fewer books than you.'",
+      "explanation": "'Fewer' countable noun-এর সাথে ব্যবহার হয় (fewer books, fewer people)। 'Less' uncountable noun-এর সাথে ব্যবহার হয় (less water, less time)। মনে রাখবে: countable = fewer, uncountable = less। 'Less than 10 dollars' বলা যায় (এখানে money একটি amount হিসেবে গণ্য)।"
+    },
+    {
+      "wrong": "Using double prepositions: 'Where are you at?' instead of 'Where are you?'",
+      "correct": "'Where are you?' (not 'Where are you at?')",
+      "explanation": "'Where' নিজেই স্থান বোঝায় — এর সাথে 'at' যোগ করা অপ্রয়োজনীয়। 'Where are you at?' grammatical ভুল। শুধু 'Where are you?' বলাই যথেষ্ট। একইভাবে 'Where are you going to?' না বলে 'Where are you going?' বলো।"
+    },
+    {
+      "wrong": "Using 'of' instead of 'have': 'I could of gone to the party.'",
+      "correct": "'I could have gone to the party.' or 'I could've gone...'",
+      "explanation": "'Could of', 'should of', 'would of' — এগুলো সাধারণ ভুল। সঠিক form হলো 'could have', 'should have', 'would have'। 'Could've' উচ্চারণে 'could of'-এর মতো শোনায়, কিন্তু লেখার সময় 'could have' বা 'could've' লিখতে হবে। 'Of' একটি preposition, এটি verb হিসেবে কাজ করে না।"
+    },
+    {
+      "wrong": "Subject-verb agreement error: 'He don't like coffee.'",
+      "correct": "'He doesn't like coffee.'",
+      "explanation": "Third person singular (he, she, it) এ 'do not' নয়, 'does not' (doesn't) ব্যবহার করতে হবে। 'He don't'是一个 common error। মনে রাখবে: he/she/it → does not/doesn't, I/you/we/they → do not/don't।"
+    }
+  ]
 }
