@@ -1,10 +1,249 @@
 {
   "chapter": 16,
   "level": "Beginner",
-  "title": "Gender",
+  "title": "Gender (লিঙ্গ)",
   "icon": "wc",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "In English, gender refers to the classification of nouns and pronouns based on sex or its absence. Unlike Bengali, which has grammatical gender, English uses natural gender — words change based on the actual sex of the person or animal. The four gender categories are: masculine (male), feminine (female), common (both male and female), and neuter (no sex — objects, ideas). Understanding gender helps you use pronouns (he/she/it) and related words correctly.",
+  "banglaDescription": "ইংরেজিতে, লিঙ্গ বলতে noun এবং pronoun-এর শ্রেণিবিভাগ বোঝায় যা লিঙ্গ বা তার অনুপস্থিতির উপর ভিত্তি করে। বাংলার মতো নয় — বাংলায় ব্যাকরণগত লিঙ্গ আছে, কিন্তু ইংরেজিতে প্রাকৃতিক লিঙ্গ (natural gender) ব্যবহৃত হয় — শব্দ ব্যক্তি বা প্রাণীর প্রকৃত লিঙ্গ অনুযায়ী পরিবর্তিত হয়। চারটি লিঙ্গ বিভাগ: masculine (পুংলিঙ্গ), feminine (স্ত্রীলিঙ্গ), common (উভয় লিঙ্গ), এবং neuter (ক্লীব — কোনো লিঙ্গ নেই: বস্তু, ধারণা)। লিঙ্গ বোঝা আপনাকে pronoun (he/she/it) এবং সম্পর্কিত শব্দ সঠিকভাবে ব্যবহার করতে সাহায্য করে।",
+  "topics": [
+    {
+      "name": "What is Gender in English?",
+      "banglaName": "ইংরেজিতে লিঙ্গ কী?",
+      "definition": "Gender in English is based on natural sex, not grammar. This means only people, animals, and sometimes personified objects have gender. English has four genders: Masculine (male — man, boy, king, husband), Feminine (female — woman, girl, queen, wife), Common (both — doctor, teacher, student, child, friend), and Neuter (no sex — book, table, tree, water, idea). This is different from Bengali where every noun has a grammatical gender.",
+      "banglaDefinition": "ইংরেজিতে লিঙ্গ প্রাকৃতিক লিঙ্গের উপর ভিত্তি করে, ব্যাকরণের উপর নয়। এর অর্থ শুধু মানুষ, প্রাণী, এবং কখনও কখনও ব্যক্তিত্বপূর্ণ বস্তুর লিঙ্গ আছে। ইংরেজিতে চারটি লিঙ্গ: Masculine (পুংলিঙ্গ — পুরুষ, ছেলে, রাজা, স্বামী), Feminine (স্ত্রীলিঙ্গ — নারী, মেয়ে, রানি, স্ত্রী), Common (উভয় — ডাক্তার, শিক্ষক, ছাত্র, শিশু, বন্ধু), এবং Neuter (ক্লীব — বই, টেবিল, গাছ, পানি, ধারণা)। এটি বাংলা থেকে ভিন্ন যেখানে প্রতিটি noun-এর ব্যাকরণগত লিঙ্গ আছে।",
+      "formula": "FOUR GENDERS IN ENGLISH:\n\n1. MASCULINE (Male):\n   man, boy, king, prince, husband, brother, father, sir, waiter, actor\n\n2. FEMININE (Female):\n   woman, girl, queen, princess, wife, sister, mother, madam, waitress, actress\n\n3. COMMON (Either Male or Female):\n   doctor, teacher, student, child, friend, parent, baby, singer, artist, engineer\n\n4. NEUTER (No sex — things, ideas, concepts):\n   book, table, chair, pen, city, country, river, mountain, love, beauty, water\n\nPRONOUN MATCHING:\nMasculine → he, him, his\nFeminine → she, her, hers\nNeuter → it, its\nCommon → he/she or they (singular they)",
+      "rules": [
+        "ইংরেজিতে grammatical gender নেই — natural gender ব্যবহৃত হয়। অর্থাৎ 'book' feminine বা masculine নয় — 'it'।",
+        "শুধু মানুষ এবং প্রাণীর biological sex অনুযায়ী he/she ব্যবহৃত হয়।",
+        "Common gender noun-এ gender নির্দিষ্ট না থাকলে 'they' (singular they) ব্যবহার করা যায়: 'Every student must bring their book.'",
+        "Neuter gender noun-এর জন্য 'it' ব্যবহার হয়: 'The table is broken. It needs repair.'",
+        "কাব্যিক/সাহিত্যিক ইংরেজিতে কখনও কখনও বস্তুকে personify করে he/she ব্যবহার করা হয়: sun = he, moon = she, ship = she।",
+        "পেশার নাম এখন gender-neutral: 'firefighter' (not fireman), 'police officer' (not policeman), 'chairperson' (not chairman)।"
+      ],
+      "examples": [
+        { "en": "Masculine: 'My father is a doctor. He works at a hospital in Delhi.'", "bn": "Masculine: 'আমার বাবা একজন ডাক্তার। তিনি দিল্লির একটি হাসপাতালে কাজ করেন।'" },
+        { "en": "Feminine: 'My mother is a lawyer. She practices at the Kolkata High Court.'", "bn": "Feminine: 'আমার মা একজন উকিল। তিনি কলকাতা হাইকোর্টে প্র্যাকটিস করেন।'" },
+        { "en": "Common: 'The teacher will explain the lesson. They will be here soon.' (singular they)", "bn": "Common: 'শিক্ষক পাঠটি ব্যাখ্যা করবেন। তারা শীঘ্রই আসবেন।'" },
+        { "en": "Neuter: 'My phone is not working. It needs to be repaired.'", "bn": "Neuter: 'আমার ফোন কাজ করছে না। এটি মেরামত করা দরকার।'" },
+        { "en": "Personified: 'The ship sailed across the Bay of Bengal. She was a beautiful vessel.'", "bn": "Personified: 'জাহাজটি বঙ্গোপসাগর পাড়ি দিল। এটি একটি সুন্দর জাহাজ ছিল।'" }
+      ],
+      "tips": "বাংলা থেকে ইংরেজিতে আসার সময় সবচেয়ে বড় পরিবর্তন: বাংলায় 'বই', 'টেবিল', 'চেয়ার' — সব noun-এর লিঙ্গ আছে, কিন্তু ইংরেজিতে নেই। ইংরেজিতে শুধু মানুষ আর প্রাণীর প্রাকৃতিক লিঙ্গ দেখো। বস্তু, ধারণা, এবং জড় জিনিস — সব 'it'। 'It is a beautiful book.' 'It is on the table.' 'I love it.' 'It' ব্যবহার করতে দ্বিধা করো না — এটাই সঠিক। ব্যতিক্রম: কাব্যিক বা emotional context-এ কখনও কখনও বস্তুকে 'she' বলা হয়: জাহাজ, দেশ, গাড়ি।"
+    },
+    {
+      "name": "Masculine and Feminine Noun Pairs",
+      "banglaName": "পুংলিঙ্গ ও স্ত্রীলিঙ্গ noun-এর জোড়া",
+      "definition": "Many English nouns have different forms for masculine and feminine. The feminine form is often created by adding a suffix (-ess, -ine, -trix) to the masculine form, but some are completely different words. Common suffix patterns: -er/-or → -ess (waiter/waitress, actor/actress), -o → -a (hero/heroine). Some pairs use entirely different words: king/queen, husband/wife, brother/sister, father/mother, uncle/aunt, nephew/niece, gentleman/lady.",
+      "banglaDefinition": "ইংরেজিতে অনেক noun-এর পুংলিঙ্গ এবং স্ত্রীলিঙ্গের জন্য আলাদা রূপ আছে। স্ত্রীলিঙ্গ প্রায়ই পুংলিঙ্গের সাথে suffix (-ess, -ine, -trix) যোগ করে তৈরি হয়, কিন্তু কিছু সম্পূর্ণ ভিন্ন শব্দ। সাধারণ suffix প্যাটার্ন: -er/-or → -ess (waiter/waitress, actor/actress), -o → -a (hero/heroine)। কিছু জোড়া সম্পূর্ণ ভিন্ন শব্দ ব্যবহার করে: king/queen, husband/wife, brother/sister, father/mother, uncle/aunt, nephew/niece, gentleman/lady।",
+      "formula": "MASCULINE → FEMININE BY SUFFIX:\n\n-ER → -ESS:\nwaiter → waitress    tiger → tigress\nlion → lioness       waiter → waitress\n\n-OR → -ESS:\nactor → actress      director → directress (rare)\n\n-ESS (other forms):\nprince → princess    count → countess\nhost → hostess       steward → stewardess (now 'flight attendant')\n\n-O → -A:\nhero → heroine\n\nDIFFERENT WORDS (no suffix):\nking → queen                 husband → wife\nfather → mother              brother → sister\nson → daughter               uncle → aunt\nnephew → niece               gentleman → lady\nboy → girl                   man → woman\n\nMODERN TREND:\nMany feminine forms are becoming obsolete. 'Actor' is now used for both genders.\n'Flight attendant' replaces 'steward/stewardess'.",
+      "rules": [
+        "-ess suffix যুক্ত feminine forms — কিছু পুরনো হয়ে যাচ্ছে: 'actress' এখনও সাধারণ, কিন্তু 'waitress' → 'server', 'stewardess' → 'flight attendant'।",
+        "Completely different words মনে রাখবে: father/mother, brother/sister, son/daughter, uncle/aunt, nephew/niece, husband/wife, king/queen।",
+        "কিছু noun-এর feminine form-এ বানান পরিবর্তন হয়: tiger → tigress, god → goddess (double 's'), conductor → conductress (rare)।",
+        "Modern English অনেক feminine form এড়িয়ে gender-neutral term ব্যবহার করে: 'police officer' (not policeman/policewoman), 'firefighter' (not fireman/firewoman).",
+        "'Cow' feminine (স্ত্রী), 'bull' masculine (পুং), কিন্তু 'cattle' সাধারণ (common) — প্রাণীর ক্ষেত্রে বিভিন্ন শব্দ।"
+      ],
+      "examples": [
+        { "en": "-ess suffix: 'The prince and princess attended the wedding.'", "bn": "-ess suffix: 'রাজকুমার এবং রাজকুমারী বিয়েতে যোগ দিয়েছিলেন।'" },
+        { "en": "Different words: 'My nephew is visiting from Mumbai, and my niece is coming from Delhi.'", "bn": "Different words: 'আমার ভাগনে মুম্বাই থেকে আসছে, আর আমার ভাইঝি দিল্লি থেকে আসছে।'" },
+        { "en": "Modern gender-neutral: 'Akshay Kumar is a famous actor. Deepika Padukone is also a famous actor.' (not 'actress')", "bn": "Modern gender-neutral: 'অক্ষয় কুমার একজন বিখ্যাত অভিনেতা। দীপিকা পাড়ুকোনও একজন বিখ্যাত অভিনেতা (actor)।'" },
+        { "en": "Different words: 'The king and queen of the royal family visited the hospital.'", "bn": "Different words: 'রাজপরিবারের রাজা এবং রানি হাসপাতালে গিয়েছিলেন।'" },
+        { "en": "Traditional feminine: 'The hero of the film saved the heroine from danger.'", "bn": "Traditional feminine: 'ছবির নায়ক নায়িকাকে বিপদ থেকে বাঁচিয়েছে।'" }
+      ],
+      "tips": "Masculine-feminine pairs শেখার সময় modern usage-ও জানো। 'Actress' এখনও চলছে, কিন্তু 'actor' উভয় লিঙ্গের জন্য গ্রহণযোগ্য। 'Waiter' আর 'waitress'-এর পরিবর্তে 'server' বেশি common। 'Stewardess' → 'flight attendant', 'policeman' → 'police officer', 'fireman' → 'firefighter', 'chairman' → 'chairperson'। পুরনো feminine forms জানাও দরকার (বই পড়তে), কিন্তু ব্যবহারে gender-neutral terms-কে অগ্রাধিকার দাও।"
+    },
+    {
+      "name": "Common Gender: Words for Both",
+      "banglaName": "সাধারণ লিঙ্গ: উভয়ের জন্য শব্দ",
+      "definition": "Common gender nouns can refer to either male or female people. These words do not change form based on sex. Examples: child, baby, parent, sibling, cousin, friend, student, teacher, doctor, engineer, artist, singer, dancer, driver, chef, guest, person, adult, teenager, patient, customer, client, colleague, partner, neighbour, stranger, visitor. The pronoun for these depends on context or uses singular 'they' when gender is unknown or irrelevant.",
+      "banglaDefinition": "Common gender noun পুরুষ বা নারী উভয়কেই নির্দেশ করতে পারে। এই শব্দগুলো লিঙ্গ অনুযায়ী পরিবর্তিত হয় না। উদাহরণ: child, baby, parent, sibling, cousin, friend, student, teacher, doctor, engineer, artist, singer, dancer, driver, chef, guest, person, adult, teenager, patient, customer, client, colleague, partner, neighbour, stranger, visitor। এদের pronoun context-এর উপর নির্ভর করে বা gender অজানা থাকলে singular 'they' ব্যবহার হয়।",
+      "formula": "COMMON GENDER NOUNS (উভয় লিঙ্গ):\n\nFamily: child, parent, sibling, cousin, spouse, partner\n\nProfessions: doctor, teacher, engineer, lawyer, artist, singer, dancer, writer, journalist, chef, driver, pilot, nurse\n\nRelationships: friend, colleague, neighbour, guest, classmate, teammate, partner, customer, client\n\nOther: person, adult, teenager, baby, student, patient, member, citizen, passenger, tourist, volunteer, stranger\n\nPRONOUN USE:\nKnown male: 'The doctor is busy. He will see you soon.'\nKnown female: 'The doctor is busy. She will see you soon.'\nUnknown: 'Every doctor must be dedicated to their work.' (singular they)\n\nEVERYONE / SOMEONE / ANYONE / NO ONE:\n'Everyone must bring their own lunch.'\n'Someone left their bag here.'\n'If anyone has a question, they should ask now.'",
+      "rules": [
+        "Common gender noun-এর লিঙ্গ জানা থাকলে he/she ব্যবহার করো।",
+        "লিঙ্গ অজানা বা অনির্দিষ্ট থাকলে singular 'they' ব্যবহার করো: 'A student should submit their homework on time.'",
+        "Indefinite pronoun (everyone, someone, anyone, no one) সবসময় singular 'they' নেয়: 'Everyone enjoyed themselves.'",
+        "পেশার নাম এখন gender-neutral — সকল পেশা common gender হিসেবে গণ্য।",
+        "'Child', 'baby' — যদি লিঙ্গ জানা থাকে, he/she বলা যায়; না জানলে 'they' বা 'it' (বিশেষ করে baby)।"
+      ],
+      "examples": [
+        { "en": "Common + known gender: 'My doctor is a woman. She is very kind.'", "bn": "Common + known gender: 'আমার ডাক্তার একজন নারী। তিনি খুব দয়ালু।'" },
+        { "en": "Common + singular they: 'Every child deserves to have their dreams fulfilled.'", "bn": "Common + singular they: " },
+        { "en": "Indefinite: 'If anyone needs help, they can ask the guide.'", "bn": "Indefinite: 'কারো সাহায্যের প্রয়োজন হলে, তারা গাইডকে জিজ্ঞাসা করতে পারে।'" },
+        { "en": "Common: 'The teacher announced that they would be retiring next year.'", "bn": "Common: 'শিক্ষক ঘোষণা করলেন যে তারা আগামী বছর অবসর নেবেন।'" },
+        { "en": "Common: 'Every passenger must show their ticket before boarding the train.'", "bn": "Common: 'প্রত্যেক যাত্রীকে ট্রেনে ওঠার আগে তাদের টিকিট দেখাতে হবে।'" },
+        { "en": "Common: 'The new neighbour seems very friendly — they introduced themselves.'", "bn": "Common: 'নতুন প্রতিবেশী খুব বন্ধুত্বপূর্ণ মনে হচ্ছে — তারা নিজেদের পরিচয় দিয়েছে।'" }
+      ],
+      "tips": "Common gender-এ সবচেয়ে গুরুত্বপূর্ণ নিয়ম: Singular 'they'। 'Every student must bring their book' — grammatically 'student' singular, 'their' plural — এটি এখন standard English। 'Everyone', 'someone', 'anyone', 'no one'-এর সাথেও singular 'they': 'Someone has left their phone on the desk.' এই ব্যবহার formal এবং informal উভয় English-এ গ্রহণযোগ্য। Gender অজানা থাকলে 'he/she' লিখতে হবে না — 'they' বলাই ভালো।"
+    },
+    {
+      "name": "Neuter Gender: It and Things",
+      "banglaName": "ক্লীব লিঙ্গ: It এবং বস্তু",
+      "definition": "Neuter gender refers to nouns that have no sex or life — objects, concepts, places, natural phenomena, and abstract ideas. The pronoun for neuter gender is 'it' (subject), 'its' (possessive), and 'itself' (reflexive). Unlike Bengali where every noun has gender (বই feminine? Actually books are neuter in Bengali too), English neuter includes: all inanimate objects (table, chair, phone, car), abstract ideas (love, peace, honesty, truth), natural phenomena (rain, thunder, lightning), food (rice, curry, bread), and most places (city, country, river).",
+      "banglaDefinition": "ক্লীব লিঙ্গ সেই noun-গুলিকে বোঝায় যাদের কোনো লিঙ্গ বা প্রাণ নেই — বস্তু, ধারণা, স্থান, প্রাকৃতিক ঘটনা, এবং বিমূর্ত ধারণা। ক্লীব লিঙ্গের pronoun হলো 'it' (কর্তা), 'its' (সম্বন্ধ), এবং 'itself' (আত্মবাচক)। বাংলার মতো নয় যেখানে প্রতিটি noun-এর লিঙ্গ আছে, ইংরেজি neuter-এ অন্তর্ভুক্ত: সব জড় বস্তু (টেবিল, চেয়ার, ফোন, গাড়ি), বিমূর্ত ধারণা (ভালোবাসা, শান্তি, সততা, সত্য), প্রাকৃতিক ঘটনা (বৃষ্টি, বজ্র, বিদ্যুৎ), খাদ্য (চাল, তরকারি, রুটি), এবং অধিকাংশ স্থান (শহর, দেশ, নদী)।",
+      "formula": "NEUTER GENDER NOUNS:\n\nObjects: table, chair, bed, phone, computer, book, pen, bag, car, bus, train, building\n\nAbstract: love, peace, honesty, truth, beauty, knowledge, information, advice, luck, happiness\n\nNatural: rain, snow, thunder, lightning, wind, fire, water, air, earth, sky, ocean\n\nFood: rice, bread, butter, milk, tea, coffee, biryani, curry, fruit\n\nPlaces: Kolkata, Delhi, India, the Ganges, the Himalayas, the Taj Mahal — BUT personified use 'she'\n\nPRONOUN USE:\n'I bought a new phone. It is very fast.'\n'The weather in Kolkata is humid. It becomes uncomfortable in summer.'\n'Love is a beautiful feeling. It can change people.'\n\nEXCEPTION (personification):\n'India is proud of her heritage.' (country as motherland)\n'The ship sailed with her crew.' (ships traditionally 'she')\n'The sun is setting. He is beautiful today.' (poetic)",
+      "rules": [
+        "জড় বস্তু, বিমূর্ত ধারণা, এবং প্রাকৃতিক ঘটনার জন্য 'it' ব্যবহার করো: 'The book is on the table. It is mine.'",
+        "খাবার এবং পানীয় — 'it': 'The biryani is delicious. It is from the famous shop.'",
+        "স্থান এবং দেশ — সাধারণত 'it': 'Kolkata is a big city. It is known as the City of Joy.'",
+        "Personification (ব্যক্তিত্বারণ): কাব্যিক বা emotional context-এ দেশ, জাহাজ, প্রকৃতিকে 'she' বলা হয়।",
+        "শিশু এবং প্রাণী: লিঙ্গ জানা না থাকলে 'it' ব্যবহার করা যায়, কিন্তু pet-দের জন্য সাধারণত 'he'/'she'।",
+        "'Baby' — 'it' গ্রহণযোগ্য কিন্তু impersonal; 'they' বা 'he/she' বেশি natural।"
+      ],
+      "examples": [
+        { "en": "Object: 'I love my new car. It is perfect for driving in Kolkata traffic.'", "bn": "বস্তু: 'আমি আমার নতুন গাড়ি পছন্দ করি। এটি কলকাতার ট্রাফিকে চালানোর জন্য উপযুক্ত।'" },
+        { "en": "Abstract: 'Honesty is the best policy. It always wins in the end.'", "bn": "বিমূর্ত: 'সততা সর্বোৎকৃষ্ট পন্থা। এটি শেষ পর্যন্ত জয়ী হয়।'" },
+        { "en": "Place: 'Mumbai is the financial capital of India. It never sleeps.'", "bn": "স্থান: 'মুম্বাই ভারতের আর্থিক রাজধানী। এটি কখনো ঘুমায় না।'" },
+        { "en": "Food: 'This Hyderabadi biryani is amazing. It has the perfect blend of spices.'", "bn": "খাদ্য: 'এই হায়দ্রাবাদি বিরিয়ানি অসাধারণ। এতে মশলার নিখুঁত মিশ্রণ আছে।'" },
+        { "en": "Personification: 'The Ganges is sacred to millions. She flows through the heart of India.'", "bn": "Personification: 'গঙ্গা কোটি মানুষের কাছে পবিত্র। তিনি ভারতের হৃদয় দিয়ে প্রবাহিত হন।'" },
+        { "en": "Natural: 'The monsoon has arrived. It brings relief from the heat.'", "bn": "প্রাকৃতিক: 'মনসুন এসে গেছে। এটি গরম থেকে স্বস্তি আনে।'" }
+      ],
+      "tips": "Neuter gender-এ 'it' ব্যবহার করতে দ্বিধা করো না — ইংরেজিতে বস্তু, ধারণা, স্থান সব 'it'। 'India is a beautiful country. I love it.' 'The food is spicy. I like it.' 'The book is interesting. I am reading it.' ব্যতিক্রম দুটি: (১) দেশকে মাতৃভূমি হিসেবে 'she' (patriotic context), (২) জাহাজকে 'she' (nautical tradition)। দৈনন্দিন জীবনে সবকিছু 'it'। Pet-দের জন্য 'he/she' ব্যবহার করো (তারা পরিবারের সদস্য)। 'The dog is hungry. He wants food.'"
+    },
+    {
+      "name": "Gender in Pronouns: He, She, It, They",
+      "banglaName": "Pronoun-এ লিঙ্গ: He, She, It, They",
+      "definition": "Pronouns in English change based on gender and number. The personal pronouns are: Masculine (he, him, his), Feminine (she, her, hers), Neuter (it, its), Common/Plural (they, them, theirs). The choice of pronoun must agree with the noun it refers to. Modern English also uses 'they' as a singular pronoun for non-binary individuals or when gender is unknown. Possessive pronouns also change: his (masculine), her/hers (feminine), its (neuter), their/theirs (plural/singular they).",
+      "banglaDefinition": "ইংরেজিতে pronoun লিঙ্গ এবং সংখ্যা অনুযায়ী পরিবর্তিত হয়। Personal pronouns: Masculine (he, him, his), Feminine (she, her, hers), Neuter (it, its), Common/Plural (they, them, theirs)। pronoun-এর পছন্দ অবশ্যই noun-এর সাথে agree করতে হবে। আধুনিক ইংরেজি singular 'they' ব্যবহার করে non-binary ব্যক্তি বা অজানা লিঙ্গের জন্য। Possessive pronouns-ও পরিবর্তিত হয়: his (পুং), her/hers (স্ত্রী), its (ক্লীব), their/theirs (plural/singular they)।",
+      "formula": "SUBJECT PRONOUNS (কর্তা):\nMasculine: He — 'He is a teacher.'\nFeminine: She — 'She is a doctor.'\nNeuter: It — 'It is a nice book.'\nSingular They: They — 'They are my friend.'\n\nOBJECT PRONOUNS (কর্ম):\nMasculine: Him — 'I called him.'\nFeminine: Her — 'I called her.'\nNeuter: It — 'I read it.'\nSingular They: Them — 'I called them.'\n\nPOSSESSIVE ADJECTIVES (সম্বন্ধ determiner):\nHis — 'His house'\nHer — 'Her house'\nIts — 'Its color'\nTheir — 'Their house' (singular they)\n\nPOSSESSIVE PRONOUNS (সম্বন্ধ সর্বনাম):\nHis — 'The book is his.'\nHers — 'The book is hers.'\nIts — (rarely used)\nTheirs — 'The book is theirs.'",
+      "rules": [
+        "Subject pronoun verb-এর আগে বসে: 'He works at the bank.' 'She lives in Chennai.'",
+        "Object pronoun verb/preposition-এর পরে বসে: 'I met him at the station. Give this to her.'",
+        "Possessive adjective noun-এর আগে বসে: 'This is her bag. I like his style.'",
+        "Possessive pronoun noun-এর পরে বসে, একা: 'This bag is hers. That book is his.'",
+        "'Its' possessive adjective হিসেবে ব্যবহৃত হয় (its color), possessive pronoun হিসেবে নয়।",
+        "Singular 'they' এখন formal English-এ স্বীকৃত। Oxford Dictionary এবং APA Style guide এটি অনুমোদন করে।",
+        "'Everyone', 'everybody', 'someone', 'somebody' — সবার সাথে singular 'they': 'Everyone should bring their ID.'"
+      ],
+      "examples": [
+        { "en": "He: 'My brother is a software engineer. He works in Bengaluru.'", "bn": "He: 'আমার ভাই একজন সফটওয়্যার ইঞ্জিনিয়ার। তিনি বেঙ্গালুরুতে কাজ করেন।'" },
+        { "en": "She: 'My sister is studying medicine. She wants to be a doctor.'", "bn": "She: 'আমার বোন মেডিসিন পড়ছে। সে ডাক্তার হতে চায়।'" },
+        { "en": "It: 'The Victoria Memorial is beautiful. It was built in 1921.'", "bn": "It: 'ভিক্টোরিয়া মেমোরিয়াল সুন্দর। এটি ১৯২১ সালে নির্মিত হয়েছিল।'" },
+        { "en": "Singular They: 'Every student must submit their assignment by Friday.'", "bn": "Singular They: 'প্রত্যেক ছাত্রকে শুক্রবারের মধ্যে তাদের অ্যাসাইনমেন্ট জমা দিতে হবে।'" },
+        { "en": "Possessive: 'This is Ravi's phone, and that is Priya's. His is blue, hers is red.'", "bn": "Possessive: 'এটি রবির ফোন, আর ওটি প্রিয়ার। তার নীল, তার লাল।'" }
+      ],
+      "tips": "Pronoun agreement সবচেয়ে গুরুত্বপূর্ণ। Noun singular হলে pronoun singular: 'The student...he/she/they'। Noun plural হলে pronoun plural: 'The students...they'। Singular 'they' সম্পর্কে মনে রাখবে: এটি grammatically plural (they নেয়, them নেয়, their নেয়, have নেয়), কিন্তু semantically singular (এক ব্যক্তিকে নির্দেশ করে)। 'Someone has left their phone. They will come back for it.' — সম্পূর্ণ grammatically correct এবং modern English-এ স্বীকৃত।"
+    },
+    {
+      "name": "Gender-Neutral Language",
+      "banglaName": "লিঙ্গ-নিরপেক্ষ ভাষা",
+      "definition": "Gender-neutral language avoids bias toward a particular sex or gender. It is increasingly important in modern English for inclusivity. Key strategies: use gender-neutral job titles (police officer instead of policeman, chairperson instead of chairman), use singular 'they' instead of 'he' as default, use 'humankind' instead of 'mankind', and avoid words that assume male as default. This is not just political correctness — it reflects real changes in society and language.",
+      "banglaDefinition": "লিঙ্গ-নিরপেক্ষ ভাষা একটি নির্দিষ্ট লিঙ্গের প্রতি পক্ষপাত এড়ায়। অন্তর্ভুক্তিমূলক ভাষার জন্য আধুনিক ইংরেজিতে এটি ক্রমশ গুরুত্বপূর্ণ। মূল কৌশল: gender-neutral job title ব্যবহার (policeman-এর পরিবর্তে police officer, chairman-এর পরিবর্তে chairperson), default হিসেবে 'he'-এর পরিবর্তে singular 'they' ব্যবহার, 'mankind'-এর পরিবর্তে 'humankind' ব্যবহার, এবং পুরুষকে default হিসেবে ধরে নেওয়া শব্দ এড়ানো। এটি কেবল রাজনৈতিক শুদ্ধতা নয় — এটি সমাজ এবং ভাষার বাস্তব পরিবর্তন প্রতিফলিত করে।",
+      "formula": "GENDER-NEUTRAL JOB TITLES:\n\nTraditional → Gender-Neutral:\nPoliceman / Policewoman → Police Officer\nFireman → Firefighter\nChairman / Chairwoman → Chairperson / Chair\nSteward / Stewardess → Flight Attendant\nWaiter / Waitress → Server / Food Server\nActor / Actress → Actor (for both)\nMaid → House Cleaner / Housekeeper\nSalesman / Saleswoman → Salesperson / Sales Representative\n\nINCLUSIVE PRONOUNS:\n'Every student should bring his book.' → 'Every student should bring their book.'\n'A doctor must care for his patients.' → 'A doctor must care for their patients.'\n'If anyone calls, tell him I am busy.' → 'If anyone calls, tell them I am busy.'\n\nINCLUSIVE WORDS:\nMankind → Humankind / People\nManpower → Workforce / Staff / Personnel\nMan-made → Artificial / Synthetic / Manufactured\nBusinessman → Businessperson / Executive / Entrepreneur\nCountryman → Compatriot / Citizen",
+      "rules": [
+        "পেশা বোঝাতে -man/-woman suffix এড়িয়ে gender-neutral term ব্যবহার করো: 'police officer', 'firefighter', 'mail carrier' (not postman)।",
+        "Default হিসেবে 'he' ব্যবহার করো না — 'he or she' বা singular 'they' ব্যবহার করো।",
+        "সাহিত্যিক বা ঐতিহাসিক প্রসঙ্গ ছাড়া 'mankind' → 'humankind', 'man-made' → 'artificial/synthetic'।",
+        "'Ladies and gentlemen'-এর পরিবর্তে 'everyone', 'dear guests', 'esteemed guests' বেশি inclusive।",
+        "Marriage সম্পর্ক বোঝাতে 'husband/wife'-এর পরিবর্তে 'spouse' বা 'partner' ব্যবহার করা যায়।",
+        "Non-binary ব্যক্তিদের জন্য 'they/them' pronoun ব্যবহার সম্মানের বিষয়।"
+      ],
+      "examples": [
+        { "en": "Traditional vs Neutral: 'Every chairman must report' → 'Every chairperson must report.'", "bn": "Traditional vs Neutral: 'প্রত্যেক চেয়ারম্যানকে রিপোর্ট করতে হবে' → 'প্রত্যেক সভাপতিকে রিপোর্ট করতে হবে।'" },
+        { "en": "Singular they: 'If a student needs help, they should visit the office.'", "bn": "Singular they: 'যদি কোনো ছাত্রের সাহায্যের প্রয়োজন হয়, তাদের অফিসে আসা উচিত।'" },
+        { "en": "Job titles: 'My cousin is a firefighter in Mumbai.' (not fireman)", "bn": "Job titles: 'আমার কাজিন মুম্বাইতে একজন ফায়ারফাইটার।'" },
+        { "en": "Inclusive: 'Good evening, everyone! Welcome to the celebration.' (not 'ladies and gentlemen')", "bn": "Inclusive: 'শুভ সন্ধ্যা, সবার! উদযাপনে স্বাগতম।'" },
+        { "en": "Spouse: 'Each employee may bring their spouse to the company dinner.'", "bn": "Spouse: 'প্রত্যেক কর্মচারী কোম্পানির ডিনারে তাদের পত্নী/পতিকে আনতে পারেন।'" },
+        { "en": "Neutral: 'The sales representative will visit us tomorrow.' (not salesman)", "bn": "Neutral: 'বিক্রয় প্রতিনিধি আগামীকাল আমাদের দেখতে আসবেন।'" }
+      ],
+      "tips": "Gender-neutral language ব্যবহার করা এখন standard English। শুরুতে কয়েকটি সহজ পরিবর্তন করো: (১) 'Policeman' → 'Police Officer', 'Fireman' → 'Firefighter'। (২) 'Mankind' → 'Humankind' বা 'People'। (৩) 'Businessman' → 'Businessperson' বা 'Entrepreneur'। (৪) 'He' default হিসেবে ব্যবহার না করে 'they' বা 'he or she' ব্যবহার করো। (৫) 'Ladies and gentlemen'-এর পরিবর্তে 'Everyone' বলো। এগুলো খুব স্বাভাবিকভাবে ব্যবহার করতে শেখো — এটি ইংরেজির natural evolution।"
+    },
+    {
+      "name": "Gender in Animals",
+      "banglaName": "প্রাণীর লিঙ্গ",
+      "definition": "Many animals have different words for male, female, and young. Some are very common (cow/bull/calf, hen/rooster/chick), while others use the same word for both (elephant, giraffe, crocodile). Domestic animals usually have distinct names, while wild animals often use 'male/female + animal name'. For pets, we often use 'he' or 'she' based on the animal's sex, while for wild animals or when sex is unknown, 'it' is common.",
+      "banglaDefinition": "অনেক প্রাণীর পুরুষ, স্ত্রী, এবং বাচ্চার জন্য আলাদা শব্দ আছে। কিছু খুব সাধারণ (গাভী/ষাঁড়/বাছুর, মুরগি/মোরগ/ছানা), অন্যদের উভয় লিঙ্গের জন্য একই শব্দ (হাতি, জিরাফ, কুমির)। গৃহপালিত প্রাণীর সাধারণত আলাদা নাম আছে, যখন বন্য প্রাণীর জন্য প্রায়ই 'male/female + প্রাণীর নাম' ব্যবহার হয়। পোষা প্রাণীর জন্য আমরা প্রাণীর লিঙ্গ অনুযায়ী 'he' বা 'she' ব্যবহার করি, বন্য প্রাণী বা অজানা লিঙ্গের জন্য 'it' সাধারণ।",
+      "formula": "COMMON ANIMAL GENDER PAIRS:\n\nDog → Bitch (female), Puppy (young)\nBull → Cow (female), Calf (young)\nRooster/Cock → Hen (female), Chick (young)\nStallion/Horse → Mare (female), Foal (young)\nRam → Ewe (female), Lamb (young)\nBuck → Doe (female — deer/rabbit), Fawn (young deer), Kit (young rabbit)\nBoar → Sow (female pig), Piglet (young)\nTom (Tomcat) → Queen (female cat), Kitten (young)\nDrake → Duck (female), Duckling (young)\nGander → Goose (female), Gosling (young)\n\nANIMALS WITH SAME WORD:\nElephant (male or female), Giraffe, Crocodile, Snake, Turtle, Fish, Eagle, Crow, Parrot, Monkey, Zebra, Camel\n→ Use 'male elephant', 'female elephant', or 'baby elephant'\n\nPRONOUN USE:\nPet (known gender): 'My dog Bruno is very loyal. He follows me everywhere.'\nWild animal (unknown): 'Look at that elephant. It is so huge.'\nLiterary: 'The lion is the king of the jungle. He is fearless.'",
+      "rules": [
+        "গৃহপালিত প্রাণীর নির্দিষ্ট masculine/feminine নাম আছে: cow/bull, hen/rooster, duck/drake, goose/gander।",
+        "অধিকাংশ বন্য প্রাণীর লিঙ্গ ভেদে একই শব্দ: elephant, giraffe, crocodile, zebra — 'male elephant', 'female elephant' বলতে হয়।",
+        "Young animals-এর নির্দিষ্ট নাম: puppy (কুকুরছানা), kitten (বিড়ালছানা), calf (বাছুর), foal (ঘোড়ার বাচ্চা), lamb (মেষশাবক), piglet (শূকরের বাচ্চা), duckling (হাঁসের বাচ্চা), chick (মুরগির বাচ্চা), fawn (হরিণশাবক)।",
+        "Pet-দের জন্য always 'he'/'she' ব্যবহার করো (তারা পরিবারের সদস্য): 'My cat is sleeping. She is so cute.'",
+        "বন্য প্রাণী, পতঙ্গ, এবং অজানা লিঙ্গের প্রাণীর জন্য 'it' ব্যবহার করো: 'A crow is sitting on the tree. It is cawing.'"
+      ],
+      "examples": [
+        { "en": "Cow/Bull: 'The farmer has ten cows and one bull on his farm.'", "bn": "Cow/Bull: 'কৃষকের খামারে দশটি গাভী এবং একটি ষাঁড় আছে।'" },
+        { "en": "Hen/Rooster: 'The hen laid an egg, but the rooster woke everyone up at 5 AM.'", "bn": "Hen/Rooster: 'মুরগিটি একটি ডিম পাড়ল, কিন্তু মোরগটি সকাল ৫টায় সবাইকে জাগিয়ে দিল।'" },
+        { "en": "Same word: 'Look at those elephants! The male elephant has bigger tusks.'", "bn": "একই শব্দ: 'ওই হাতিগুলো দেখো! পুরুষ হাতির দাঁত বড় হয়।'" },
+        { "en": "Young animal: 'The cat gave birth to three kittens yesterday.'", "bn": "Young animal: 'বিড়ালটি গতকাল তিনটি বিড়ালছানার জন্ম দিয়েছে।'" },
+        { "en": "Pet: 'My parrot Mithu is very talkative. He can say many words.'", "bn": "Pet: 'আমার তোতা পাখি মিঠু খুব বাক্পটু। সে অনেক শব্দ বলতে পারে।'" },
+        { "en": "Wild: 'A snake was crossing the road. It moved very fast.'", "bn": "Wild: 'একটি সাপ রাস্তা পার হচ্ছিল। এটি খুব দ্রুত চলছিল।'" }
+      ],
+      "tips": "প্রাণীর লিঙ্গ শেখার সময় সবচেয়ে সাধারণ pair গুলো আগে শেখো: cow/bull (গাভী/ষাঁড়), hen/rooster (মুরগি/মোরগ), duck/drake (হাঁস/পাতিহাঁস), horse/mare (ঘোড়া/ঘোটকী), dog/bitch (কুকুর/কুকুরী)। সাধারণ প্রাণী (যার ভিন্ন লিঙ্গ নাম নেই): 'male peacock', 'female peacock'। Pet-দের he/she বলতে ভুলবে না — এটি ইংরেজি culture-এর অংশ। 'It' একটি প্রাণীর জন্য ব্যবহার করা slightly disrespectful মনে হতে পারে যদি প্রাণীটি পরিচিত হয়।"
+    },
+    {
+      "name": "Gender in Literature and Poetry",
+      "banglaName": "সাহিত্য ও কবিতায় লিঙ্গ",
+      "definition": "In literature and poetry, inanimate objects, natural forces, and abstract concepts are often personified with masculine or feminine pronouns. Traditional associations: the sun, death, time, and war are often masculine (he). The moon, nature, the earth, the sea, ships, and countries are often feminine (she). Love, wisdom, and fortune can be either. These are literary conventions, not grammar rules, and add emotional depth to writing.",
+      "banglaDefinition": "সাহিত্য এবং কবিতায়, জড় বস্তু, প্রাকৃতিক শক্তি, এবং বিমূর্ত ধারণাকে প্রায়ই পুংলিঙ্গ বা স্ত্রীলিঙ্গ সর্বনাম দিয়ে ব্যক্তিত্বপূর্ণ করা হয়। ঐতিহ্যগত সম্পর্ক: সূর্য, মৃত্যু, সময়, এবং যুদ্ধ প্রায়ই পুংলিঙ্গ (he)। চন্দ্র, প্রকৃতি, পৃথিবী, সমুদ্র, জাহাজ, এবং দেশ প্রায়ই স্ত্রীলিঙ্গ (she)। ভালোবাসা, প্রজ্ঞা, এবং ভাগ্য উভয়ই হতে পারে। এগুলি ব্যাকরণগত নিয়ম নয়, সাহিত্যিক প্রথা, এবং লেখায় আবেগগত গভীরতা যোগ করে।",
+      "formula": "LITERARY GENDER CONVENTIONS:\n\nTRADITIONALLY MASCULINE (He):\nSun — 'The sun hid his face behind the clouds.'\nDeath — 'Death claimed his victims without mercy.'\nTime — 'Time waits for no one. He is unforgiving.'\nWar — 'War showed his cruel face.'\nAnger — 'His anger was like a storm.'\nWinter — 'Winter spread his icy fingers.'\n\nTRADITIONALLY FEMININE (She):\nMoon — 'The moon cast her silver light.'\nNature — 'Nature heals with her gentle touch.'\nEarth/Motherland — 'India is proud of her children.'\nSea/Ocean — 'The sea showed her fury.'\nShip/Boat — 'The Titanic sank on her maiden voyage.'\nFortune/Luck — 'Fortune smiled on her chosen ones.'\nSpring — 'Spring arrived with her basket of flowers.'\n\nVARIABLE (either):\nLove, Wisdom, Death, Fate — context অনুযায়ী পরিবর্তিত হয়।",
+      "rules": [
+        "সাহিত্যিক personification — আনুষ্ঠানিক ব্যাকরণের নিয়ম নয়, লেখকের stylistic choice।",
+        "সূর্য সাধারণত 'he', চাঁদ সাধারণত 'she' — এই convention প্রাচীন পুরাণ থেকে এসেছে (Greek/Roman mythology)।",
+        "দেশকে 'she' বলা হয় দেশপ্রেমিক প্রসঙ্গে: 'India is proud of her heritage.'",
+        "যানবাহন (জাহাজ, গাড়ি, ট্রেন) প্রায়ই 'she': 'The Rajdhani Express runs on her route daily.'",
+        "প্রাকৃতিক শক্তি যেমন ঝড়, বজ্র — 'he' (পুরুষালি শক্তি হিসেবে): 'The storm unleashed his fury on the coast.'",
+        "এই conventions দৈনন্দিন ইংরেজিতে নয় — শুধু সাহিত্য, কবিতা, এবং বক্তৃতায়। দৈনন্দিন জীবনে সূর্য 'it', জাহাজ 'it', দেশ 'it'।"
+      ],
+      "examples": [
+        { "en": "Sun: 'The sun rose slowly, spreading his golden rays over the Ganges.'", "bn": "সূর্য: 'সূর্য ধীরে উদিত হল, তার সোনালি রশ্মি গঙ্গার উপর ছড়িয়ে।'" },
+        { "en": "Moon: 'The full moon shone brightly, casting her silver glow on the Taj Mahal.'", "bn": "চাঁদ: 'পূর্ণিমার চাঁদ উজ্জ্বলভাবে shone, তাজমহলের উপর তার রূপালী আভা ছড়িয়ে।'" },
+        { "en": "Country: 'India is proud of her ancient culture and traditions.'", "bn": "দেশ: 'ভারত তার প্রাচীন সংস্কৃতি ও ঐতিহ্যে গর্বিত।'" },
+        { "en": "Ship: 'The Vikrant, India's first aircraft carrier, served her nation with pride.'", "bn": "জাহাজ: 'ভারতের প্রথম বিমানবাহক বিক্রান্ত গর্বের সাথে তার দেশের সেবা করেছিল।'" },
+        { "en": "Death: 'Death knocked at his door, but the old man was not afraid.'", "bn": "মৃত্যু: 'মৃত্যু তার দরজায় কড়া নাড়ল, কিন্তু বৃদ্ধ ভীত ছিলেন না।'" },
+        { "en": "Nature: 'Spring arrived with her colorful flowers and warm breeze.'", "bn": "প্রকৃতি: 'বসন্ত তার রঙিন ফুল এবং উষ্ণ হাওয়া নিয়ে এল।'" }
+      ],
+      "tips": "সাহিত্যিক gender conventions জানা দরকার (বই পড়তে), কিন্তু দৈনন্দিন ইংরেজিতে ব্যবহার করো না। 'The sun is hot. It is summer.' (সাধারণ), 'The sun hid his face behind the clouds.' (কাব্যিক)। 'The moon is bright tonight. It is beautiful.' (সাধারণ), 'The moon cast her silver light.' (কাব্যিক)। দৈনন্দিন জীবনে সবকিছু 'it', সাহিত্যে personification ব্যবহার করো 'he'/'she'। এই পার্থক্যটা বুঝলে ইংরেজি সাহিত্য পড়তে সুবিধা হবে।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "'The table is beautiful. I like her colour.'",
+      "correct": "'The table is beautiful. I like its colour.'",
+      "explanation": "বাংলায় 'টেবিল' feminine ('টেবিলটা সুন্দর, তার রঙ ভালো'), কিন্তু ইংরেজিতে সব বস্তু neuter='it'। 'Her color' ভুল — 'its color' সঠিক। 'It' possessive = 'its' (কোনো apostrophe নেই)। মনে রাখবে: ইংরেজিতে grammatical gender নেই — শুধু natural gender। মানুষ আর প্রাণী ছাড়া সবকিছু 'it'। ব্যতিক্রম: সাহিত্যে personification (যেখানে জাহাজ, দেশ, প্রকৃতিকে 'she' বলা হয়)। দৈনন্দিন জীবনে 'its' ব্যবহার করো।"
+    },
+    {
+      "wrong": "'Every student must bring his book tomorrow.' — When students may include females.",
+      "correct": "'Every student must bring their book tomorrow.' or 'Every student must bring his or her book tomorrow.'",
+      "explanation": "সব student পুরুষ নয় — 'his' ব্যবহার bias তৈরি করে। আধুনিক standard English-এ singular 'they' ব্যবহার করো: 'their book'। 'His or her' formal কিন্তু ভারী। 'Their' সহজ এবং inclusive। 'Everyone', 'someone', 'anyone', 'no one'-এর সাথেও একই নিয়ম: 'Everyone should bring their lunch' (not 'his lunch')। APA, Chicago, Oxford Dictionary — সবাই singular 'they' অনুমোদন করে।"
+    },
+    {
+      "wrong": "'The doctor said he will see you now.' — When the doctor is a woman.",
+      "correct": "'The doctor said she will see you now.' or 'The doctor will see you now.' (avoid pronoun if unsure)",
+      "explanation": "যদি ডাক্তারের লিঙ্গ জানা থাকে (মহিলা), তাহলে 'he' নয়, 'she' ব্যবহার করো। শুধু 'he' default হিসেবে ব্যবহার করা ভুল — এটি ধরে নেয় সব ডাক্তার পুরুষ। লিঙ্গ জানা না থাকলে: singular 'they' ('The doctor will see you now. They are waiting.') বা বাক্যটি পুনর্গঠন করো ('The doctor will see you now.')। ৫০ বছর আগে 'he' default ছিল, কিন্তু এখন আর নয়।"
+    },
+    {
+      "wrong": "'The baby is crying. I think it is hungry.' — While grammatically correct, parents may prefer 'he/she'.",
+      "correct": "'The baby is crying. I think he/she is hungry.' or 'The baby is crying. I think they are hungry.' (if gender unknown)",
+      "explanation": "Grammatically 'it' for baby ঠিক, কিন্তু যখন বাবা-মা বা পিতামাতা কথা বলছে, 'it' impersonal and cold মনে হতে পারে। 'It' সাধারণত অজানা বা অচেনা বাচ্চার জন্য ঠিক: 'Look at that baby. It is so cute.' কিন্তু বাবা-মা সবসময় 'he/she' ব্যবহার করবেন: 'My baby is crying. He is hungry. She needs milk.' Singular 'they' অজানা লিঙ্গের জন্য safe option।"
+    },
+    {
+      "wrong": "'The lioness is protecting it's cubs.'",
+      "correct": "'The lioness is protecting her cubs.' or 'The lioness is protecting its cubs.'",
+      "explanation": "এখানে দুটি ভুল সম্ভব: (১) 'It's' = it is — possessive 'its' (no apostrophe) হওয়া উচিত। (২) প্রাণী এবং তার বাচ্চার সম্পর্কে 'its' ব্যবহার করা যায়, কিন্তু feminine 'her' বেশি natural যখন মা-বাচ্চার সম্পর্ক। 'The lioness is protecting her cubs' — এখানে 'her' সঠিক কারণ lioness feminine। 'It's' শুধু 'it is' বা 'it has' বোঝায়: 'It's raining. It's been a long day.'"
+    },
+    {
+      "wrong": "'The policewoman helped me find my way.' — While not wrong, 'police officer' is preferred today.",
+      "correct": "'The police officer helped me find my way.' (gender-neutral)",
+      "explanation": "'Policeman' এবং 'policewoman' এখন outdated। 'Police officer' gender-neutral এবং preferred। একইভাবে: 'firefighter' (not fireman/firewoman), 'mail carrier' (not postman), 'flight attendant' (not steward/stewardess), 'chairperson' (not chairman/chairwoman), 'server' (not waiter/waitress)। আধুনিক ইংরেজি পেশার নামে gender-neutral terms ব্যবহারে উৎসাহিত করে।"
+    },
+    {
+      "wrong": "'None of the guests have brought their invitation cards.' — Is this correct? Yes, it is!",
+      "correct": "Actually this is grammatically correct! 'None' can take plural verb and 'their' is fine.",
+      "explanation": "'None of the guests have brought their invitation cards' সম্পূর্ণ সঠিক। 'None' singular বা plural verb নিতে পারে: 'None of the water is left' (uncountable, singular), 'None of the guests are here' (countable plural, plural)। 'Their' plural possessive pronoun — 'guests' plural, তাই 'their' সঠিক। এটা common gender-এর সাথে সম্পর্কিত নয় — এটি simply plural agreement।"
+    },
+    {
+      "wrong": "'Man has always dreamed of flying. Man invented the airplane.'",
+      "correct": "'Humans have always dreamed of flying. People invented the airplane.' or 'Humanity has always dreamed of flying.'",
+      "explanation": "'Man' ('মানুষ' অর্থে সকল মানুষের জন্য) এখন gender-biased মনে করা হয়। 'Mankind' → 'Humankind', 'Man' → 'Humanity', 'Humans', 'People'। 'Man-made' → 'Artificial', 'Synthetic', 'Manufactured'। 'Manpower' → 'Workforce', 'Staff', 'Personnel'। বৈজ্ঞানিক বা academic লেখায় 'humans', 'human beings', 'people' ব্যবহার করো। 'Man'-এর এই obsolete usage এড়িয়ে চলাই ভালো।"
+    },
+    {
+      "wrong": "'She is a women engineer.'",
+      "correct": "'She is an engineer.' or 'She is a female engineer.' (if gender specification is necessary)",
+      "explanation": "'Women engineer' ভুল — 'woman' noun, 'engineer' noun — দুটি noun একসাথে বসে না এভাবে। 'Woman engineer' grammatically ঠিক হতে পারে (compound noun হিসেবে), কিন্তু 'female engineer' বেশি গ্রহণযোগ্য। তবে পেশার নামে gender উল্লেখ না করাই ভালো — 'She is an engineer' sufficient। 'Lady doctor', 'woman driver', 'male nurse' — এগুলো unnecessary gender specification যা stereotype reinforce করে। 'Doctor', 'nurse', 'engineer' — সব common gender।"
+    },
+    {
+      "wrong": "'The sun is very hot today. She is burning.'",
+      "correct": "'The sun is very hot today. It is burning.' (everyday speech) or 'The sun is burning. He is fierce today.' (poetic/literary)",
+      "explanation": "দৈনন্দিন কথোপকথনে সূর্যের জন্য 'she' ভুল — 'it' সঠিক। সাহিত্যে সূর্য 'he' (masculine), চাঁদ 'she' (feminine) — এগুলি poetic convention। কিন্তু সাধারণ conversation-এ: sun = it, moon = it, wind = it, sea = it। 'She is burning' বললে মানুষ বুঝতে পারবে না তুমি সূর্যের কথা বলছ নাকি কোনো মহিলার। Literary convention আর everyday speech-এর পার্থক্য বুঝতে হবে।"
+    }
+  ]
 }
