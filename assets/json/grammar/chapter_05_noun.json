@@ -1,10 +1,322 @@
 {
   "chapter": 5,
   "level": "Beginner",
-  "title": "Noun",
+  "title": "Noun (বিশেষ্য)",
   "icon": "abc",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "A noun is a word that names a person, place, thing, or idea. Nouns are the most common type of word in the English language. Every sentence has at least one noun. Nouns can be classified in many ways: common or proper, concrete or abstract, countable or uncountable, and more. Understanding nouns is essential for building strong English skills.",
+  "banglaDescription": "Noun (বিশেষ্য) হলো সেই শব্দ যা কোনো ব্যক্তি, স্থান, বস্তু বা ধারণার নাম বোঝায়। ইংরেজি ভাষায় noun সবচেয়ে সাধারণ ধরনের শব্দ। প্রতিটি বাক্যে অন্তত একটি noun থাকে। Noun-কে বিভিন্নভাবে শ্রেণীবদ্ধ করা যায়: common বা proper, concrete বা abstract, countable বা uncountable, ইত্যাদি। Noun বোঝা শক্তিশালী ইংরেজি দক্ষতা গড়ে তোলার জন্য অপরিহার্য।",
+  "topics": [
+    {
+      "name": "What is a Noun?",
+      "banglaName": "বিশেষ্য কী?",
+      "definition": "A noun is a word that identifies a person (boy, teacher, John), place (city, park, Dhaka), thing (book, table, car), or idea (love, freedom, honesty). Nouns are the names we give to everything around us. They are the building blocks of sentences. Almost every sentence contains at least one noun.",
+      "banglaDefinition": "Noun (বিশেষ্য) হলো সেই শব্দ যা একজন ব্যক্তি (ছেলে, শিক্ষক, জন), একটি স্থান (শহর, পার্ক, ঢাকা), একটি বস্তু (বই, টেবিল, গাড়ি), বা একটি ধারণা (ভালোবাসা, স্বাধীনতা, সততা) চিহ্নিত করে। Noun হল সেই নাম যা আমরা আমাদের চারপাশের সবকিছুকে দেই। এগুলো বাক্যের নির্মাণ উপাদান। প্রায় প্রতিটি বাক্যে অন্তত একটি noun থাকে।",
+      "formula": "Noun = Name of:\n- Person: teacher, doctor, Rahim\n- Place: school, market, Sylhet\n- Thing: pen, mobile, tree\n- Idea: peace, happiness, education\n\nExample: 'The teacher went to the school.'\n→ teacher (person) + school (place)",
+      "rules": [
+        "Noun যে কোনো ব্যক্তি, স্থান, বস্তু, বা ধারণার নাম হতে পারে।",
+        "Noun বাক্যের subject, object, বা complement হিসেবে কাজ করতে পারে।",
+        "Proper noun (নাম) সবসময় capital letter দিয়ে শুরু হয়।",
+        "Common noun সাধারণত capital letter দিয়ে শুরু হয় না (বাক্যের শুরু ছাড়া)।",
+        "Noun-এর সংখ্যা (singular/plural) এবং রূপ (gender) থাকতে পারে।",
+        "Noun-এর আগে article (a, an, the) ব্যবহার করা যায়।",
+        "Noun-কে adjective দিয়ে বর্ণনা করা যায়: 'a beautiful garden'।"
+      ],
+      "examples": [
+        { "en": "Person: 'The doctor examined the patient.'", "bn": "ব্যক্তি: 'ডাক্তার রোগীকে পরীক্ষা করলেন।'" },
+        { "en": "Place: 'We visited the National Museum.'", "bn": "স্থান: 'আমরা জাতীয় জাদুঘর পরিদর্শন করেছি।'" },
+        { "en": "Thing: 'Please put the book on the table.'", "bn": "বস্তু: 'অনুগ্রহ করে বইটি টেবিলে রাখো।'" },
+        { "en": "Idea: 'Education is the key to success.'", "bn": "ধারণা: 'শিক্ষা সাফল্যের চাবিকাঠি।'" },
+        { "en": "Multiple nouns: 'The girl bought flowers from the shop in the market.'", "bn": "একাধিক noun: 'মেয়েটি বাজার থেকে দোকানে ফুল কিনেছে।'" }
+      ],
+      "tips": "Noun চেনার সহজ উপায়: 'a', 'an', 'the' বসিয়ে দেখো — 'a book', 'an apple', 'the man' — যদি অর্থপূর্ণ হয়, তবে শব্দটি noun। আরও দেখো শব্দটির plural form আছে কিনা (book → books)। যে শব্দটি 'who' বা 'what' প্রশ্নের উত্তর দেয়, সেটিই noun।"
+    },
+    {
+      "name": "Common and Proper Nouns",
+      "banglaName": "সাধারণ ও নামবাচক বিশেষ্য",
+      "definition": "Common nouns are general names for people, places, or things (city, boy, country). Proper nouns are specific names for particular people, places, or things (Dhaka, John, Bangladesh). Proper nouns always begin with a capital letter. Common nouns begin with a capital letter only at the start of a sentence.",
+      "banglaDefinition": "Common noun (সাধারণ বিশেষ্য) হলো ব্যক্তি, স্থান বা বস্তুর সাধারণ নাম (শহর, ছেলে, দেশ)। Proper noun (নামবাচক বিশেষ্য) হলো নির্দিষ্ট ব্যক্তি, স্থান বা বস্তুর বিশেষ নাম (ঢাকা, জন, বাংলাদেশ)। Proper noun সবসময় capital letter দিয়ে শুরু হয়। Common noun শুধু বাক্যের শুরুতে capital letter দিয়ে শুরু হয়।",
+      "formula": "Common Noun (General) → Proper Noun (Specific)\ncity → Dhaka\ncountry → Bangladesh\nboy → Rahim\nriver → Padma\n\nExample:\nCommon: 'The boy lives in a city.'\nProper: 'Rahim lives in Dhaka.'",
+      "rules": [
+        "Common noun একটি শ্রেণীর সব সদস্যের জন্য ব্যবহার হয়: 'dog' (যেকোনো কুকুর)।",
+        "Proper noun একটি নির্দিষ্ট সদস্যের নাম: 'Tommy' (একটি নির্দিষ্ট কুকুর)।",
+        "Proper noun সবসময় capital letter দিয়ে শুরু হয়।",
+        "Common noun বাক্যের মাঝে capital letter হয় না।",
+        "Days, months, holidays — proper noun: Monday, January, Eid।",
+        "জাতি, ভাষা, ধর্ম — proper noun: Bengali, English, Islam।",
+        "বই, সিনেমা, গানের শিরোনাম — proper noun: 'The Cat in the Hat'।",
+        "একই শব্দ common এবং proper উভয়ই হতে পারে: 'I love my mom.' (common) / 'Can I go, Mom?' (proper)"
+      ],
+      "examples": [
+        { "en": "Common: 'I live in a city.'", "bn": "Common: 'আমি একটি শহরে থাকি।'" },
+        { "en": "Proper: 'I live in Chittagong.'", "bn": "Proper: 'আমি চট্টগ্রামে থাকি।'" },
+        { "en": "Common: 'She is a teacher.'", "bn": "Common: 'সে একজন শিক্ষক।'" },
+        { "en": "Proper: 'Ms. Fatima is my teacher.'", "bn": "Proper: 'ফাতিমা ম্যাম আমার শিক্ষক।'" },
+        { "en": "Common: 'Let's go to the river.'", "bn": "Common: 'চলো নদীতে যাই।'" },
+        { "en": "Proper: 'Let's go to the Padma River.'", "bn": "Proper: 'চলো পদ্মা নদীতে যাই।'" }
+      ],
+      "tips": "Proper noun চেনার উপায়: দেখো শব্দটি capital letter দিয়ে শুরু হয়েছে কিনা (বাক্যের প্রথম শব্দ ছাড়া)। 'I met Mr. Khan on Friday in January.' — এখানে Mr. Khan, Friday, January সবগুলো proper noun। 'I love my country.' — 'country' common noun, কারণ এটি capital দিয়ে শুরু হয়নি।"
+    },
+    {
+      "name": "Concrete and Abstract Nouns",
+      "banglaName": "বাস্তব ও বিমূর্ত বিশেষ্য",
+      "definition": "Concrete nouns are things that can be seen, touched, heard, smelled, or tasted. They have physical existence. Abstract nouns are ideas, feelings, qualities, or concepts that cannot be perceived with the five senses. They exist only in the mind. Understanding this difference helps in choosing the right words for expression.",
+      "banglaDefinition": "Concrete noun (বাস্তব বিশেষ্য) হলো সেই বস্তু যা দেখা, স্পর্শ করা, শোনা, গন্ধ নেওয়া বা স্বাদ নেওয়া যায়। এদের শারীরিক অস্তিত্ব আছে। Abstract noun (বিমূর্ত বিশেষ্য) হলো ধারণা, অনুভূতি, গুণ বা ধারণা যা পাঁচটি ইন্দ্রিয় দিয়ে অনুভব করা যায় না। এগুলো শুধু মনের মধ্যে বিদ্যমান। এই পার্থক্য বোঝা সঠিক শব্দ চয়নে সাহায্য করে।",
+      "formula": "Concrete Noun (5 senses) → pen, table, rain, music, flower\nAbstract Noun (ideas/feelings) → love, anger, beauty, freedom, honesty\n\nExample:\nConcrete: 'The flower smells sweet.' (can touch, smell)\nAbstract: 'Her beauty is remarkable.' (cannot touch beauty)",
+      "rules": [
+        "Concrete noun পাঁচ ইন্দ্রিয় দিয়ে অনুভব করা যায় — দেখতে, ছুঁতে, শুনতে, গন্ধ নিতে, বা স্বাদ নিতে পারো।",
+        "Concrete noun-এর উদাহরণ: table, apple, rain, dog, music, perfume।",
+        "Abstract noun দেখা বা স্পর্শ করা যায় না — শুধু অনুভব করা যায়: love, sadness, courage।",
+        "Abstract noun সাধারণত feeling, quality, state, বা concept বোঝায়।",
+        "Abstract noun প্রায়ই suffix যোগ করে concrete noun বা adjective থেকে তৈরি হয়: child → childhood, happy → happiness, friend → friendship।",
+        "একই noun কখনও concrete, কখনও abstract হতে পারে: 'The light is bright.' (concrete) / 'She is the light of my life.' (abstract)"
+      ],
+      "examples": [
+        { "en": "Concrete: 'The children played with a red ball.'", "bn": "Concrete: 'শিশুরা একটি লাল বল নিয়ে খেলল।'" },
+        { "en": "Concrete: 'I can smell the fresh coffee.'", "bn": "Concrete: 'আমি তাজা কফির গন্ধ পাচ্ছি।'" },
+        { "en": "Abstract: 'Honesty is the best policy.'", "bn": "Abstract: 'সততাই সর্বোৎকৃষ্ট পন্থা।'" },
+        { "en": "Abstract: 'She felt great joy at the news.'", "bn": "Abstract: 'সে খবরে খুব আনন্দ অনুভব করল।'" },
+        { "en": "Concrete: 'The rain fell on the roof.'", "bn": "Concrete: 'বৃষ্টি ছাদে পড়ল।'" },
+        { "en": "Abstract: 'Patience is a valuable quality.'", "bn": "Abstract: 'ধৈর্য একটি মূল্যবান গুণ।'" }
+      ],
+      "tips": "Concrete vs Abstract চেনার সহজ পরীক্ষা: শব্দটি কি তুমি ছুঁতে বা ধরতে পারো? → Concrete. নাকি শুধু ভাবতে/অনুভব করতে পারো? → Abstract. যেমন: 'book' → ধরতে পারো → Concrete. 'knowledge' → ধরতে পারো না → Abstract. মনে রাখবে: concrete = physical, abstract = mental/emotional."
+    },
+    {
+      "name": "Countable and Uncountable Nouns",
+      "banglaName": "গণনাযোগ্য ও অগণনাযোগ্য বিশেষ্য",
+      "definition": "Countable nouns are things that can be counted and have both singular and plural forms (one apple, two apples). Uncountable nouns are things that cannot be counted and do not usually have a plural form (water, rice, information). This distinction affects which articles, quantifiers, and verbs to use.",
+      "banglaDefinition": "Countable noun (গণনাযোগ্য বিশেষ্য) হলো সেই বস্তু যা গণনা করা যায় এবং যার singular ও plural রূপ আছে (একটি আপেল, দুইটি আপেল)। Uncountable noun (অগণনাযোগ্য বিশেষ্য) হলো সেই বস্তু যা গণনা করা যায় না এবং যার সাধারণত plural রূপ নেই (পানি, চাল, তথ্য)। এই পার্থক্য কোন article, quantifier, এবং verb ব্যবহার করতে হবে তা নির্ধারণ করে।",
+      "formula": "Countable (can count):\nSingular: a book, an apple, one chair\nPlural: two books, many apples, several chairs\n\nUncountable (can't count):\nwater, rice, air, information, homework, music\n\nExample:\nCountable: 'I have three books.'\nUncountable: 'I need some water.'",
+      "rules": [
+        "Countable noun-এর singular এবং plural দুই রূপই আছে: book → books, child → children।",
+        "Countable singular noun-এর আগে 'a' বা 'an' বসে: a book, an orange।",
+        "Countable plural noun-এর সাথে 'many', 'few', 'several', 'a few' ব্যবহার হয়।",
+        "Uncountable noun-এর সাধারণত plural form হয় না: water (not waters), information (not informations)।",
+        "Uncountable noun-এর আগে 'a' বা 'an' বসে না: 'a water' (ভুল), 'some water' (ঠিক)।",
+        "Uncountable noun-এর সাথে 'much', 'little', 'a little', 'some', 'any' ব্যবহার হয়।",
+        "কিছু noun countable এবং uncountable উভয়ই হতে পারে, অর্থ ভিন্ন হয়: 'I had a coffee.' (countable = one cup) / 'Coffee is grown in Brazil.' (uncountable)",
+        "Uncountable noun count করতে চাইলে quantifier ব্যবহার করতে হয়: a glass of water, a piece of information, a kilo of rice।"
+      ],
+      "examples": [
+        { "en": "Countable singular: 'I have a car.'", "bn": "Countable singular: 'আমার একটি গাড়ি আছে।'" },
+        { "en": "Countable plural: 'There are many cars on the road.'", "bn": "Countable plural: 'রাস্তায় অনেক গাড়ি আছে।'" },
+        { "en": "Uncountable: 'Can I have some water?'", "bn": "Uncountable: 'আমি কি কিছু পানি পেতে পারি?'" },
+        { "en": "Uncountable: 'She gave me good advice.'", "bn": "Uncountable: 'সে আমাকে ভালো উপদেশ দিয়েছে।'" },
+        { "en": "Both: 'There is hair in my soup!' (uncountable) / 'There are three hairs on my shirt.' (countable)", "bn": "দুটোই: 'আমার সূপে চুল আছে!' (uncountable) / 'আমার শার্টে তিনটি চুল আছে।' (countable)" },
+        { "en": "Quantifier: 'I need two glasses of milk.'", "bn": "পরিমাণবাচক: 'আমার দুই গ্লাস দুধ দরকার।'" }
+      ],
+      "tips": "Countable/Uncountable চেনার সহজ উপায়: 'many' বসিয়ে দেখো — 'many books' (✓) → countable। 'many water' (✗) → uncountable। Uncountable noun-এর সাথে 'much' ব্যবহার করো: 'much water'। মনে রাখবে: rice, water, air, information, news, furniture, homework, luggage — এগুলো uncountable। 'News' দেখতে plural কিন্তু uncountable: 'The news is good.'"
+    },
+    {
+      "name": "Collective Nouns",
+      "banglaName": "সমষ্টিবাচক বিশেষ্য",
+      "definition": "A collective noun is a word that refers to a group of people, animals, or things as a single unit. Collective nouns are singular in form but represent multiple members. Common collective nouns include team, family, crowd, audience, committee, flock, herd, and bunch. They can take singular or plural verbs depending on context.",
+      "banglaDefinition": "Collective noun (সমষ্টিবাচক বিশেষ্য) হলো সেই শব্দ যা একগুচ্ছ ব্যক্তি, প্রাণী বা বস্তুকে একটি একক হিসেবে নির্দেশ করে। Collective noun আকারে singular কিন্তু একাধিক সদস্যকে প্রতিনিধিত্ব করে। সাধারণ collective nouns: team, family, crowd, audience, committee, flock, herd, bunch। প্রসঙ্গভেদে এগুলো singular বা plural verb নিতে পারে।",
+      "formula": "Collective Noun = Group of...\nPeople: team, family, crowd, audience, committee, class\nAnimals: flock (sheep), herd (cows), pack (wolves), swarm (bees)\nThings: bunch (flowers/keys), set (tools), collection (stamps)\n\nExample:\n'The team is playing well.' (as a unit — singular)\n'The team are wearing their new uniforms.' (as individuals — plural)",
+      "rules": [
+        "Collective noun দেখতে singular কিন্তু একাধিক সদস্য বোঝায়।",
+        "যুক্তরাজ্যের ইংরেজিতে (BrE) collective noun-এর সাথে plural verb বেশি ব্যবহার হয়।",
+        "মার্কিন ইংরেজিতে (AmE) collective noun-এর সাথে singular verb বেশি ব্যবহার হয়।",
+        "গোষ্ঠীকে একক হিসেবে দেখালে singular verb: 'The family lives in Dhaka.'",
+        "গোষ্ঠীর সদস্যদের আলাদাভাবে দেখালে plural verb: 'The family are having dinner.'",
+        "Collective noun-এর জন্য specific pronoun: team → it (সিঙ্গুলার) বা they (প্লুরাল).",
+        "কিছু collective noun শুধু নির্দিষ্ট প্রাণীর জন্য: school of fish, pride of lions, gaggle of geese।"
+      ],
+      "examples": [
+        { "en": "People: 'The class is studying for the exam.'", "bn": "ব্যক্তি: 'ক্লাস পরীক্ষার জন্য পড়ছে।'" },
+        { "en": "Animals: 'A flock of birds is flying south.'", "bn": "প্রাণী: 'এক ঝাঁক পাখি দক্ষিণে উড়ছে।'" },
+        { "en": "Things: 'She bought a bunch of flowers.'", "bn": "বস্তু: 'সে একগুচ্ছ ফুল কিনেছে।'" },
+        { "en": "Singular: 'The committee has made its decision.'", "bn": "Singular: 'কমিটি তার সিদ্ধান্ত নিয়েছে।'" },
+        { "en": "Plural: 'The committee have submitted their reports.'", "bn": "Plural: 'কমিটি সদস্যরা তাদের রিপোর্ট জমা দিয়েছেন।'" },
+        { "en": "Animals: 'A swarm of bees attacked the bear.'", "bn": "প্রাণী: 'মৌমাছির একটি ঝাঁক ভাল্লুককে আক্রমণ করল।'" }
+      ],
+      "tips": "Collective noun ব্যবহারের সময় verb-এর সঠিক form নির্বাচন করো। তুমি যদি গোষ্ঠীটিকে একটি একক হিসেবে দেখো, singular verb ব্যবহার করো: 'The team wins.' (team হিসেবে)। যদি সদস্যদের আলাদাভাবে দেখো, plural verb ব্যবহার করো: 'The team are arguing.' (সদস্যরা তর্ক করছে)। মনে রাখবে: Flock, herd, swarm, pack — এগুলো specific collective noun প্রাণীদের জন্য।"
+    },
+    {
+      "name": "Singular and Plural Nouns",
+      "banglaName": "একবচন ও বহুবচন বিশেষ্য",
+      "definition": "Singular nouns refer to one person, place, thing, or idea. Plural nouns refer to more than one. Most plural nouns are formed by adding -s or -es to the singular form. However, there are many irregular plurals that do not follow this rule. Correct plural formation is essential for proper grammar.",
+      "banglaDefinition": "Singular noun (একবচন) একটি ব্যক্তি, স্থান, বস্তু বা ধারণাকে নির্দেশ করে। Plural noun (বহুবচন) একাধিককে নির্দেশ করে। বেশিরভাগ plural noun singular-এর সাথে -s বা -es যোগ করে গঠিত হয়। কিন্তু অনেক অনিয়মিত (irregular) plural আছে যা এই নিয়ম অনুসরণ করে না। সঠিক plural formation সঠিক ব্যাকরণের জন্য অপরিহার্য।",
+      "formula": "Regular Plurals:\nMost nouns: book → books (add -s)\n-s, -ss, -sh, -ch, -x, -o: box → boxes (add -es)\nConsonant + y: baby → babies (y→i, add -es)\n-f/-fe: leaf → leaves (f→v, add -es)\n\nIrregular Plurals:\nman → men, woman → women, child → children\ntooth → teeth, foot → feet, mouse → mice\n\nExample:\n'Singular: one cat → Plural: two cats'",
+      "rules": [
+        "বেশিরভাগ noun-এর শেষে -s যোগ করলে plural হয়: cat → cats, book → books।",
+        "-s, -ss, -sh, -ch, -x, -o শেষে noun-এ -es যোগ হয়: bus → buses, box → boxes, potato → potatoes।",
+        "Consonant + 'y' শেষে noun-এ 'y' → 'i' করে -es যোগ হয়: baby → babies, city → cities।",
+        "Vowel + 'y' শেষে noun-এ শুধু -s যোগ হয়: boy → boys, day → days, key → keys।",
+        "-f বা -fe শেষে noun-এ 'f' → 'v' করে -es যোগ হয়: leaf → leaves, knife → knives, wife → wives।",
+        "-o শেষে কিছু noun-এ শুধু -s যোগ হয়: photo → photos, piano → pianos (exceptions)।",
+        "Irregular plural-এর নির্দিষ্ট নিয়ম নেই — এগুলো মুখস্থ করতে হয়: child → children, mouse → mice, ox → oxen।",
+        "কিছু noun-এর singular এবং plural একই: sheep → sheep, deer → deer, fish → fish।",
+        "কিছু noun শুধু plural: scissors, trousers, glasses, pants, thanks।"
+      ],
+      "examples": [
+        { "en": "Regular -s: 'One book, two books.'", "bn": "Regular -s: 'একটি বই, দুইটি বই।'" },
+        { "en": "Regular -es: 'One box, two boxes.'", "bn": "Regular -es: 'একটি বাক্স, দুইটি বাক্স।'" },
+        { "en": "y→i+es: 'One baby, two babies.'", "bn": "y→i+es: 'একটি শিশু, দুইটি শিশু।'" },
+        { "en": "f→v+es: 'One leaf, two leaves.'", "bn": "f→v+es: 'একটি পাতা, দুইটি পাতা।'" },
+        { "en": "Irregular: 'One child, two children.'", "bn": "অনিয়মিত: 'একটি শিশু, দুইটি শিশু।'" },
+        { "en": "Same form: 'One sheep, two sheep.'", "bn": "একই রূপ: 'একটি ভেড়া, দুইটি ভেড়া।'" },
+        { "en": "Only plural: 'These scissors are sharp.'", "bn": "শুধু plural: 'এই কাঁচিটি ধারালো।'" },
+        { "en": "Irregular: 'One mouse, two mice.'", "bn": "অনিয়মিত: 'একটি ইঁদুর, দুইটি ইঁদুর।'" }
+      ],
+      "tips": "Plural গঠনের সময় সবচেয়ে বেশি ভুল হয় -y এবং -f দিয়ে শেষ noun-গুলোতে। মনে রাখবে: consonant + y → ies (baby → babies), vowel + y → ys (boy → boys)। এবং -f/-fe → ves (leaf → leaves, but roof → roofs — exception)। অনিয়মিত plural গুলো বারবার পড়ে মুখস্থ করো: man/men, woman/women, child/children, tooth/teeth, foot/feet।"
+    },
+    {
+      "name": "Possessive Nouns",
+      "banglaName": "সম্বন্ধপদ বিশেষ্য",
+      "definition": "A possessive noun shows ownership or possession. It is formed by adding an apostrophe and the letter 's ('s) to a singular noun, or just an apostrophe (') to most plural nouns. Possessive nouns tell us who or what owns something, making sentences clearer and more concise.",
+      "banglaDefinition": "Possessive noun (সম্বন্ধপদ বিশেষ্য) মালিকানা বা অধিকার দেখায়। এটি singular noun-এ apostrophe এবং 's' ('s) যোগ করে এবং বেশিরভাগ plural noun-এ শুধু apostrophe (') যোগ করে গঠিত হয়। Possessive noun আমাদের বলে কে বা কী কিছুর মালিক, যা বাক্যকে পরিষ্কার ও সংক্ষিপ্ত করে।",
+      "formula": "Singular noun: Noun + 's → the boy's bag\nPlural noun (ending in -s): Noun + ' → the boys' bags\nPlural noun (not ending in -s): Noun + 's → the children's toys\n\nExample:\n'This is Rahim's book.' (one Rahim)\n'This is the students' classroom.' (many students)",
+      "rules": [
+        "Singular noun-এর শেষে 's যোগ করো: 'the girl's dress', 'John's car', 'the cat's tail'।",
+        "Singular noun যদি -s-এ শেষ হয়, তবুও 's যোগ করো: 'James's house', 'the bus's engine'।",
+        "Plural noun যদি -s-এ শেষ হয়, শুধু ' যোগ করো: 'the girls' dresses', 'the students' books'।",
+        "Plural noun যদি -s-এ শেষ না হয়, 's যোগ করো: 'the children's park', 'the men's room', 'the women's club'।",
+        "একাধিক ব্যক্তির যৌথ মালিকানায় শেষ ব্যক্তির নামে 's যোগ করো: 'John and Mary's house' (তারা একসাথে বাড়ির মালিক)।",
+        "পৃথক মালিকানায় প্রতিটি নামে 's যোগ করো: 'John's and Mary's cars' (জন এর আলাদা গাড়ি, মেরির আলাদা গাড়ি)।",
+        "Compound noun-এর শেষ শব্দে 's যোগ করো: 'my mother-in-law's house'।",
+        "Possessive form-এ apostrophe-এর পরের noun বাদ দেওয়া যায়: 'I went to the doctor's.' (= doctor's office)"
+      ],
+      "examples": [
+        { "en": "Singular: 'This is Samia's pencil.'", "bn": "Singular: 'এটি সামিয়ার পেন্সিল।'" },
+        { "en": "Plural -s: 'The teachers' lounge is on the second floor.'", "bn": "Plural -s: 'শিক্ষকদের বিশ্রামাগার দ্বিতীয় তলায়।'" },
+        { "en": "Plural not -s: 'The children's playground is new.'", "bn": "Plural not -s: 'শিশুদের খেলার মাঠটি নতুন।'" },
+        { "en": "Joint: 'Rina and Mina's room is very tidy.'", "bn": "যৌথ: 'রিনা এবং মিনার রুম খুব পরিপাটি।'" },
+        { "en": "Separate: 'Rina's and Mina's rooms are very tidy.'", "bn": "পৃথক: 'রিনার এবং মিনার রুম খুব পরিপাটি।'" },
+        { "en": "Without following noun: 'I'm going to the dentist's.'", "bn": "পরের noun ছাড়া: 'আমি ডেন্টিস্টের কাছে যাচ্ছি।'" }
+      ],
+      "tips": "Possessive noun-এ apostrophe-এর সঠিক ব্যবহার মনে রাখো: singular = 's, plural -s = s'। বিভ্রান্তি এড়াতে মনে রাখবে: 'the boys' hostel' (একাধিক ছেলের হোস্টেল) vs 'the boy's hostel' (এক ছেলের হোস্টেল) — apostrophe-এর অবস্থানই পার্থক্য তৈরি করে।"
+    },
+    {
+      "name": "Compound Nouns",
+      "banglaName": "যৌগিক বিশেষ্য",
+      "definition": "A compound noun is a noun made up of two or more words that function as a single unit. Compound nouns can be written in three ways: closed (as one word: toothpaste, bedroom), open (as separate words: ice cream, post office), or hyphenated (with a hyphen: mother-in-law, well-being).",
+      "banglaDefinition": "Compound noun (যৌগিক বিশেষ্য) হলো দুই বা ততোধিক শব্দ নিয়ে গঠিত একটি noun যা একটি একক হিসেবে কাজ করে। Compound noun তিনভাবে লেখা যায়: closed (এক শব্দ: toothpaste, bedroom), open (আলাদা শব্দ: ice cream, post office), বা hyphenated (হাইফেন সহ: mother-in-law, well-being)।",
+      "formula": "Compound Noun = Word 1 + Word 2 (+ Word 3...)\n\nClosed: tooth + brush → toothbrush\nOpen: high + school → high school\nHyphenated: mother + in + law → mother-in-law\n\nExample:\n'Please put the toothpaste in the bathroom.'\n→ toothpaste (closed), bathroom (closed)",
+      "rules": [
+        "Closed compound noun একসঙ্গে লেখা হয়: bedroom, notebook, toothpaste, haircut, rainfall।",
+        "Open compound noun আলাদা আলাদা লেখা হয়: ice cream, post office, high school, living room।",
+        "Hyphenated compound noun হাইফেন দিয়ে লেখা হয়: mother-in-law, well-being, check-in, editor-in-chief।",
+        "কোন compound noun কোনভাবে লিখতে হবে তা dictionary দেখে নিশ্চিত হতে হবে।",
+        "Compound noun-এর plural সাধারণত শেষ শব্দে হয়: toothbrushes, ice creams, mothers-in-law।",
+        "কিছু compound noun-এ plural মূল শব্দে হয়: passers-by, brothers-in-law।",
+        "Compound noun-এর main stress সাধারণত প্রথম শব্দের উপর পড়ে: 'GREENhouse, 'TOOTHpaste, 'BEDroom।",
+        "Compound noun-এর অর্থ সবসময় দুটি শব্দের অর্থের যোগফল নয়: 'butterfly' (মাখন+মাছি নয়, প্রজাপতি)।"
+      ],
+      "examples": [
+        { "en": "Closed: 'She keeps her money in a piggy bank.' (piggybank)", "bn": "এক শব্দ: 'সে তার টাকা পিগি ব্যাংকে রাখে।'" },
+        { "en": "Closed: 'I need a new haircut.'", "bn": "এক শব্দ: 'আমার নতুন চুল কাটানো দরকার।'" },
+        { "en": "Open: 'We go to high school together.'", "bn": "আলাদা: 'আমরা একসাথে উচ্চ বিদ্যালয়ে যাই।'" },
+        { "en": "Open: 'Would you like some ice cream?'", "bn": "আলাদা: 'তুমি কি কিছু আইসক্রিম চাও?'" },
+        { "en": "Hyphenated: 'My mother-in-law is visiting us.'", "bn": "হাইফেন: 'আমার শাশুড়ি আমাদের সাথে দেখা করতে আসছেন।'" },
+        { "en": "Hyphenated: 'He is the editor-in-chief of the newspaper.'", "bn": "হাইফেন: 'তিনি পত্রিকার সম্পাদক-ইন-চিফ।'" }
+      ],
+      "tips": "Compound noun শেখার সময় তিনটি লেখার নিয়ম মনে রাখো: closed (এক শব্দ), open (আলাদা), hyphenated (হাইফেন)। কোন নিয়মটি সঠিক তা জানতে dictionary ব্যবহার করো। সময়ের সাথে সাথে কিছু open compound noun closed হয়ে যায়: 'web site' → 'website', 'e-mail' → 'email'।"
+    },
+    {
+      "name": "Gender in Nouns",
+      "banglaName": "বিশেষ্যের লিঙ্গ",
+      "definition": "Gender in nouns refers to whether a noun is masculine (male), feminine (female), common (both), or neuter (no gender). Unlike Bengali, English does not have grammatical gender for all nouns. Only nouns referring to living things have gender. Objects and ideas are usually neuter (it).",
+      "banglaDefinition": "Noun-এ লিঙ্গ (gender) বোঝায় nounটি masculine (পুরুষ), feminine (মহিলা), common (উভয়), বা neuter (নিরপেক্ষ) কিনা। বাংলার মত ইংরেজিতে সব noun-এর grammatical gender নেই। শুধু জীবিত বস্তু নির্দেশক noun-এর gender আছে। বস্তু এবং ধারণা সাধারণত neuter (it) হয়।",
+      "formula": "Masculine: boy, man, father, king, actor, lion\nFeminine: girl, woman, mother, queen, actress, lioness\nCommon: baby, child, friend, student, teacher, parent\nNeuter: book, table, tree, water, idea, love\n\nExample:\n'My brother (masculine) is a doctor. My sister (feminine) is a nurse.'",
+      "rules": [
+        "Masculine noun পুরুষ বা স্ত্রী-পুরুষ বোঝায়: man, boy, father, king, uncle, waiter।",
+        "Feminine noun নারী বা স্ত্রী প্রাণী বোঝায়: woman, girl, mother, queen, aunt, waitress।",
+        "Common noun উভয় লিঙ্গের জন্য ব্যবহার করা যায়: baby, child, friend, student, teacher, doctor।",
+        "Neuter noun কোনো লিঙ্গ নির্দেশ করে না: book, table, river, city, love, education।",
+        "অনেক feminine noun masculine-এ -ess যোগ করে তৈরি হয়: actor → actress, lion → lioness, host → hostess।",
+        "কিছু feminine noun সম্পূর্ণ ভিন্ন শব্দ: man → woman, king → queen, husband → wife, uncle → aunt।",
+        "ইংরেজিতে পেশা বোঝাতে gender-neutral term ব্যবহারের প্রবণতা বাড়ছে: 'firefighter' (not fireman), 'chairperson' (not chairman).",
+        "প্রাণীর ক্ষেত্রে প্রায়শই 'common gender' ব্যবহার হয় যেখানে লিঙ্গ স্পষ্ট না: dog, cat, horse।"
+      ],
+      "examples": [
+        { "en": "Masculine: 'My father is a businessman.'", "bn": "Masculine: 'আমার বাবা একজন ব্যবসায়ী।'" },
+        { "en": "Feminine: 'My mother is a teacher.'", "bn": "Feminine: 'আমার মা একজন শিক্ষক।'" },
+        { "en": "Common: 'The child is playing in the park.'", "bn": "Common: 'শিশুটি পার্কে খেলছে।'" },
+        { "en": "Neuter: 'The book is on the table.' (it)", "bn": "Neuter: 'বইটি টেবিলের উপর আছে।' (এটি)" },
+        { "en": "-ess suffix: 'The princess lives in a palace.' (prince → princess)", "bn": "-ess suffix: 'রাজকন্যা একটি প্রাসাদে থাকেন।' (prince → princess)" },
+        { "en": "Different word: 'The bride and groom looked happy.'", "bn": "ভিন্ন শব্দ: 'বর ও কনে খুশি দেখাচ্ছিল।'" },
+        { "en": "Gender-neutral: 'Please ask the flight attendant for assistance.'", "bn": "Gender-neutral: 'অনুগ্রহ করে ফ্লাইট অ্যাটেন্ডেন্টের কাছে সাহায্য চান।'" }
+      ],
+      "tips": "ইংরেজিতে শুধু মানুষ ও প্রাণীর noun-এর gender চিন্তা করতে হয়। বস্তু ও ধারণা সবসময় 'it'। পেশার নাম এখন gender-neutral ব্যবহার করাই ভালো: 'police officer' (not policeman), 'server' (not waiter/waitress)। বাংলার মত ইংরেজিতে 'table' বা 'book'-এর gender নেই — সবসময় 'it' হবে।"
+    },
+    {
+      "name": "Functions of Nouns in a Sentence",
+      "banglaName": "বাক্যে বিশেষ্যের ভূমিকা",
+      "definition": "A noun can perform different functions in a sentence. It can be the subject (doer of the action), the object (receiver of the action), the complement (renames or describes the subject), the object of a preposition, or show possession. Understanding these functions helps in constructing grammatically correct sentences.",
+      "banglaDefinition": "একটি noun বাক্যে বিভিন্ন ভূমিকা পালন করতে পারে। এটি subject (কাজের কর্তা), object (কাজের গ্রহীতা), complement (subject-এর পুনঃনামকরণ বা বর্ণনা), preposition-এর object, অথবা মালিকানা দেখাতে পারে। এই ভূমিকাগুলো বোঝা ব্যাকরণসম্মত বাক্য গঠনে সাহায্য করে।",
+      "formula": "1. Subject: 'The cat sleeps.' (who sleeps? → cat)\n2. Direct Object: 'I read a book.' (read what? → book)\n3. Indirect Object: 'She gave him a gift.' (gave to whom? → him)\n4. Subject Complement: 'He is a doctor.' (doctor = he)\n5. Object of Preposition: 'The pen is on the table.'\n6. Possessive: 'This is Rina's bag.'",
+      "rules": [
+        "Subject: noun বাক্যের কর্তা — verb-কে 'who' বা 'what' প্রশ্ন করে subject পাওয়া যায়।",
+        "Direct Object: verb-এর কাজ সরাসরি যার উপর পড়ে — verb-কে 'what' বা 'whom' প্রশ্ন করে direct object পাওয়া যায়।",
+        "Indirect Object: কার জন্য বা কাকে — 'to whom' বা 'for whom' প্রশ্ন করে indirect object পাওয়া যায়।",
+        "Subject Complement: linking verb (is, am, are, was, were, seem, become) এর পরে বসে subject-কে রি命名 করে।",
+        "Object of Preposition: preposition-এর পরে যে noun বসে: in the 'room', on the 'table', with 'friends'।",
+        "Possessive noun: মালিকানা দেখায়: 'the student's notebook', 'the girls' hostel'।",
+        "Appositive: একটি noun আরেকটি noun-এর পরে বসে তার ব্যাখ্যা দেয়: 'Mr. Khan, the principal, spoke to us.'",
+        "একটি noun একই বাক্যে একাধিক ভূমিকা পালন করতে পারে না, কিন্তু একটি বাক্যে একাধিক noun বিভিন্ন ভূমিকায় থাকতে পারে।"
+      ],
+      "examples": [
+        { "en": "Subject: 'Rahim plays cricket.'", "bn": "Subject: 'রহিম ক্রিকেট খেলে।'" },
+        { "en": "Direct Object: 'Rahim plays cricket.'", "bn": "Direct Object: 'রহিম ক্রিকেট খেলে।'" },
+        { "en": "Indirect Object: 'Mother gave me a gift.'", "bn": "Indirect Object: 'মা আমাকে একটি উপহার দিলেন।'" },
+        { "en": "Subject Complement: 'She became a teacher.'", "bn": "Subject Complement: 'সে একজন শিক্ষক হল।'" },
+        { "en": "Object of Prep: 'The book is on the desk.'", "bn": "Object of Prep: 'বইটি ডেস্কের উপর আছে।'" },
+        { "en": "Possessive: 'That is Samia's bicycle.'", "bn": "Possessive: 'ওটা সামিয়ার সাইকেল।'" },
+        { "en": "Appositive: 'Dr. Yunus, the Nobel laureate, is from Bangladesh.'", "bn": "Appositive: 'ড. ইউনূস, নোবেল বিজয়ী, বাংলাদেশের।'" }
+      ],
+      "tips": "বাক্যে noun-এর ভূমিকা চিনতে প্রশ্ন করো: 'Who/what does the action?' → Subject. 'Who/what receives the action?' → Object. 'After preposition?' → Object of preposition. 'After linking verb?' → Complement. প্রতিটি বাক্যে noun-এর ভূমিকা চিহ্নিত করার অভ্যাস করো — এটি sentence structure বোঝার সবচেয়ে কার্যকর উপায়।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Using 'much' with countable nouns: 'I don't have much books.'",
+      "correct": "'I don't have many books.' or 'I don't have much water.'",
+      "explanation": "'Much' uncountable noun-এর সাথে ব্যবহার হয় (much water, much time)। 'Many' countable noun-এর সাথে ব্যবহার হয় (many books, many people)। মনে রাখবে: countable = many, uncountable = much। কথোপকথনে 'a lot of' উভয়ের জন্যই ব্যবহার করা যায়।"
+    },
+    {
+      "wrong": "Adding 's' to uncountable nouns: 'I need informations.' or 'He gave me advices.'",
+      "correct": "'I need information.' and 'He gave me advice.'",
+      "explanation": "Information, advice, news, furniture, luggage, homework — এগুলো uncountable এবং এদের plural form হয় না। 'Information' এর plural 'pieces of information'। বাংলায় 'তথ্যসমূহ' বললেও ইংরেজিতে 'informations' ভুল।"
+    },
+    {
+      "wrong": "Incorrect plural form: 'I saw two sheeps in the field.'",
+      "correct": "'I saw two sheep in the field.'",
+      "explanation": "কিছু noun-এর singular এবং plural একই রকম: sheep, deer, fish, aircraft, series, species। 'Sheeps' একটি সাধারণ ভুল। একইভাবে 'deers' ভুল — সঠিক হলো 'deer'। 'Fishes' বললে বিভিন্ন প্রজাতির মাছ বোঝায়।"
+    },
+    {
+      "wrong": "Apostrophe in wrong place: 'The student's are waiting.' (plural possessive confused with plural)",
+      "correct": "'The students are waiting.' (just plural, no possession) or 'The student's bag is here.' (possessive)",
+      "explanation": "Plural করতে apostrophe লাগে না — শুধু -s যোগ করো: students, teachers, books। Apostrophe শুধু possession দেখাতে ব্যবহৃত হয়: 'the student's book'। 'Student's' মানে 'এক ছাত্রের', 'Students' মানে 'একাধিক ছাত্র'।"
+    },
+    {
+      "wrong": "Confusing 'its' and 'it's': 'The cat licked it's paw.'",
+      "correct": "'The cat licked its paw.'",
+      "explanation": "'Its' (no apostrophe) হলো possessive form — 'তার'। 'It's' (with apostrophe) হলো 'it is' বা 'it has'-এর contraction। মনে রাখবে: possessive pronoun-এ কখনো apostrophe হয় না: his, hers, its, ours, yours, theirs — কোনো apostrophe নেই।"
+    },
+    {
+      "wrong": "Using 'less' with countable nouns: 'I have less books than you.'",
+      "correct": "'I have fewer books than you.' or 'I have less water than you.'",
+      "explanation": "'Less' uncountable noun-এর সাথে (less water, less time, less money)। 'Fewer' countable noun-এর সাথে (fewer books, fewer people, fewer chairs)। সুপারমার্কেটে '10 items or less' দেখা গেলেও grammatically '10 items or fewer' সঠিক।"
+    },
+    {
+      "wrong": "Wrong gender-neutral term: 'Every student must bring his book.'",
+      "correct": "'Every student must bring his or her book.' or 'Every student must bring their book.'",
+      "explanation": "এখন 'his' শুধু ব্যবহার করলে gender-biased ধরা হয়। 'His or her' একটু ভারী কিন্তু গ্রহণযোগ্য। সবচেয়ে প্রচলিত সমাধান: 'their' ব্যবহার করা (একবচন their) — 'Every student must bring their book.' এটি এখন standard English হিসেবে স্বীকৃত।"
+    },
+    {
+      "wrong": "Using double possessive incorrectly: 'That is a friend of my brother.'",
+      "correct": "'That is a friend of my brother's.' (double possessive)",
+      "explanation": "'A friend of my brother's' — এখানে double possessive (of + 's) ব্যবহার সঠিক কারণ এটি 'my brother's friends'-এর মধ্যে একজনকে বোঝায়। 'A picture of my brother' (my brother-এর ছবি, যেখানে brother subject) vs 'A picture of my brother's' (my brother-এর তোলা বা মালিকানাধীন ছবি)।"
+    },
+    {
+      "wrong": "Capitalization: 'I visited the doctor on monday.'",
+      "correct": "'I visited the doctor on Monday.'",
+      "explanation": "Days of the week (Monday, Tuesday), months (January, February), এবং holidays (Eid, Christmas) সবসময় capital letter দিয়ে শুরু হয়। 'Doctor' এখানে common noun (পেশা) → capital লাগবে না। কিন্তু 'Dr. Rahman' এটা proper noun → capital লাগবে।"
+    },
+    {
+      "wrong": "Confusing 'woman' and 'women' in pronunciation/spelling: 'A women came to the office.'",
+      "correct": "'A woman came to the office.'",
+      "explanation": "'Woman' (উচ্চারণ: wu-mn) singular — একজন মহিলা। 'Women' (উচ্চারণ: wi-min) plural — একাধিক মহিলা। 'A women' ভুল, কারণ 'a' সবসময় singular noun-এর সাথে যায়। লেখার সময় এবং উচ্চারণে পার্থক্যটি মনে রাখবে।"
+    }
+  ]
 }
