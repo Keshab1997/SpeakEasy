@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/grammar_chapter_model.dart';
 import '../../../providers/grammar_provider.dart';
+import '../../../services/vocab_remote_service.dart';
 import 'grammar_detail_screen.dart';
 
 class GrammarListScreen extends ConsumerStatefulWidget {
@@ -15,6 +16,7 @@ class GrammarListScreen extends ConsumerStatefulWidget {
 class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
   final _scrollController = ScrollController();
   int _selectedTab = 0;
+  bool _isRefreshing = false;
 
   static const _sectionHeaderHeight = 52.0;
   static const _cardHeight = 90.0;
@@ -41,6 +43,33 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
     }
   }
 
+  Future<void> _clearCacheAndRefresh() async {
+    setState(() => _isRefreshing = true);
+    try {
+      await VocabRemoteService.clearGrammarCache();
+      ref.invalidate(allGrammarChaptersProvider);
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Cache cleared! Refreshing data...'),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Failed to clear cache.'),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _isRefreshing = false);
+    }
+  }
+
   @override
   void dispose() {
     _scrollController.dispose();
@@ -54,6 +83,19 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Grammar'),
+        actions: [
+          IconButton(
+            icon: _isRefreshing
+                ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Icon(Icons.refresh_rounded),
+            onPressed: _isRefreshing ? null : _clearCacheAndRefresh,
+            tooltip: 'Clear cache & refresh',
+          ),
+        ],
         bottom: chaptersAsync.whenOrNull(
           data: (map) {
             final levels = map.keys.toList();
