@@ -1,10 +1,253 @@
 {
   "chapter": 17,
   "level": "Beginner",
-  "title": "Person",
+  "title": "Person (পুরুষ)",
   "icon": "person",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "In English grammar, 'person' refers to the grammatical distinction between the speaker (first person), the person spoken to (second person), and the person or thing spoken about (third person). Person affects which pronouns you use (I/we, you, he/she/it/they) and how verbs are conjugated (especially the third person singular -s). Understanding person is essential for correct pronoun use, verb agreement, and clear communication.",
+  "banglaDescription": "ইংরেজি ব্যাকরণে, 'Person' (পুরুষ) বলতে বক্তা (প্রথম পুরুষ), যার সাথে কথা বলা হচ্ছে (দ্বিতীয় পুরুষ), এবং যার সম্পর্কে কথা বলা হচ্ছে (তৃতীয় পুরুষ) — এর মধ্যে ব্যাকরণগত পার্থক্য বোঝায়। Person নির্ধারণ করে কোন pronoun ব্যবহার করবে (I/we, you, he/she/it/they) এবং verb কিভাবে conjugated হয় (বিশেষ করে third person singular -s)। Person বোঝা সঠিক pronoun ব্যবহার, verb agreement, এবং পরিষ্কার যোগাযোগের জন্য অপরিহার্য।",
+  "topics": [
+    {
+      "name": "What is Person in Grammar?",
+      "banglaName": "ব্যাকরণে Person কী?",
+      "definition": "Grammatical person tells us the relationship between the speaker and what is being talked about. There are three persons: First person = the speaker (I — speaking about myself, We — speaking about myself and others). Second person = the person being spoken to (You). Third person = the person or thing being spoken about (He, She, It, They, and all nouns). Person affects pronoun choice, verb endings, and possessive forms.",
+      "banglaDefinition": "ব্যাকরণগত পুরুষ (Person) বক্তা এবং যা নিয়ে কথা বলা হচ্ছে তার মধ্যে সম্পর্ক জানায়। তিনটি পুরুষ আছে: প্রথম পুরুষ = বক্তা (I — নিজের সম্পর্কে বলা, We — নিজে ও অন্যদের নিয়ে বলা)। দ্বিতীয় পুরুষ = যার সাথে কথা বলা হচ্ছে (You)। তৃতীয় পুরুষ = যার সম্পর্কে কথা বলা হচ্ছে (He, She, It, They, এবং সব noun)। Person pronoun পছন্দ, verb ending, এবং possessive form-কে প্রভাবিত করে।",
+      "formula": "THREE PERSONS:\n\nFIRST PERSON (প্রথম পুরুষ — বক্তা):\nSingular: I (আমি) — 'I live in Kolkata.'\nPlural: We (আমরা) — 'We love this city.'\n\nSECOND PERSON (দ্বিতীয় পুরুষ — শ্রোতা):\nSingular & Plural: You (তুমি/আপনি/তোমরা) — 'You are my friend.'\n\nTHIRD PERSON (তৃতীয় পুরুষ — সম্পর্কে বলা):\nMasculine Singular: He (সে-পুরুষ) — 'He is a teacher.'\nFeminine Singular: She (সে-নারী) — 'She is a doctor.'\nNeuter Singular: It (এটি) — 'It is a book.'\nCommon Plural: They (তারা) — 'They are students.'\n\nPERSON & VERB (Present Simple):\nI/You/We/They work (no -s)\nHe/She/It works (-s added)",
+      "rules": [
+        "প্রথম পুরুষ (I, We) — বক্তা নিজের সম্পর্কে বলছে।",
+        "দ্বিতীয় পুরুষ (You) — যার সাথে কথা হচ্ছে। Note: 'You' singular এবং plural উভয়ের জন্য একই।",
+        "তৃতীয় পুরুষ (He, She, It, They + সব noun) — যার সম্পর্কে কথা বলা হচ্ছে।",
+        "Present simple tense-এ third person singular-এর সাথে verb-এ -s/-es যোগ হয়: 'He works', 'She goes', 'It rains'।",
+        "First person singular 'I' সবসময় capital letter: 'I am from India.' (not 'i am')",
+        "'You' singular এবং plural একই, কিন্তু reflexive form ভিন্ন: 'yourself' (singular), 'yourselves' (plural)।",
+        "Third person plural 'They' singular 'they' হিসেবেও ব্যবহৃত হয় (gender-neutral)।"
+      ],
+      "examples": [
+        { "en": "1st Person: 'I am learning English to speak with my colleagues.'", "bn": "১ম পুরুষ: 'আমি ইংরেজি শিখছি আমার সহকর্মীদের সাথে কথা বলার জন্য।'" },
+        { "en": "2nd Person: 'You should visit the Taj Mahal at least once.'", "bn": "২য় পুরুষ: 'তোমার অন্তত একবার তাজমহল দেখা উচিত।'" },
+        { "en": "3rd Person Sing: 'She works at the Infosys campus in Mysore.'", "bn": "৩য় পুরুষ এক: 'সে মহীশূরের ইনফোসিস ক্যাম্পাসে কাজ করে।'" },
+        { "en": "3rd Person Pl: 'They have been living in Chennai for ten years.'", "bn": "৩য় পুরুষ বহু: 'তারা দশ বছর ধরে চেন্নাইয়ে থাকছে।'" },
+        { "en": "1st Person Pl: 'We celebrate Diwali with great enthusiasm every year.'", "bn": "১ম পুরুষ বহু: 'আমরা প্রতিবছর খুব উৎসাহের সাথে দিওয়ালি উদযাপন করি।'" }
+      ],
+      "tips": "Person মনে রাখার সহজ উপায়: (১) I/We = যে বলছে (১ম পুরুষ)। (২) You = যাকে বলা হচ্ছে (২য় পুরুষ)। (৩) He/She/It/They + সব noun = যার সম্পর্কে বলা হচ্ছে (৩য় পুরুষ)। Present simple-এ শুধু 3rd person singular-এ verb-এ -s যোগ হয় — বাকি সব person-এ verb-এর কোনো পরিবর্তন নেই। 'He/She/It works' vs 'I/You/We/They work' — এই পার্থক্যটাই সবচেয়ে গুরুত্বপূর্ণ।"
+    },
+    {
+      "name": "First Person: I and We",
+      "banglaName": "প্রথম পুরুষ: I এবং We",
+      "definition": "First person refers to the speaker. 'I' is singular (one person speaking about themselves). 'We' is plural (the speaker plus at least one other person). First person pronouns change form based on their function in the sentence: subject (I, we), object (me, us), possessive determiner (my, our), possessive pronoun (mine, ours), and reflexive (myself, ourselves). First person is used in personal stories, opinions, and when speaking for a group.",
+      "banglaDefinition": "প্রথম পুরুষ বক্তাকে নির্দেশ করে। 'I' singular (একজন ব্যক্তি নিজের সম্পর্কে বলছে)। 'We' plural (বক্তা এবং আরও অন্তত একজন)। প্রথম পুরুষের pronoun বাক্যে তার কাজ অনুযায়ী ফর্ম পরিবর্তন করে: subject (I, we), object (me, us), possessive determiner (my, our), possessive pronoun (mine, ours), এবং reflexive (myself, ourselves)। প্রথম পুরুষ ব্যক্তিগত গল্প, মতামত, এবং গ্রুপের পক্ষে কথা বলতে ব্যবহৃত হয়।",
+      "formula": "FIRST PERSON PRONOUNS:\n\nSubject (কর্তা): I / We\n'I love Kolkata. We often visit the Howrah Bridge.'\n\nObject (কর্ম): Me / Us\n'The teacher praised me. The trip was fun for us.'\n\nPossessive Determiner: My / Our\n'This is my house. Our family lives here.'\n\nPossessive Pronoun: Mine / Ours\n'This book is mine. That car is ours.'\n\nReflexive: Myself / Ourselves\n'I taught myself Hindi. We enjoyed ourselves at the fair.'\n\nVERB FORMS WITH FIRST PERSON:\nPresent: I work / We work (no -s)\nPast: I worked / We worked\nFuture: I will work / We will work",
+      "rules": [
+        "'I' সবসময় capital letter — sentence-এর মাঝখানেও: 'My friend and I went to the market.'",
+        "'I' subject position-এ, 'me' object position-এ: 'Riya and I went' (✓), 'Riya and me went' (✗)।",
+        "'We' = I + others inclusive ('we all' = speaker + listeners) বা exclusive ('we Indians' = speaker + other Indians, excluding listener)।",
+        "Formal/academic writing-এ 'I' avoid করা হয় — passive voice বা impersonal structure ব্যবহার হয়: 'It is believed that...' (not 'I believe...')।",
+        "Personal narrative, email, conversation-এ 'I' ব্যবহার সম্পূর্ণ ঠিক।",
+        "'We' ব্যবহৃত হয় রাজকীয় 'We' (royal we — monarch-দের দ্বারা), editorial 'We' (সংবাদপত্রে), এবং inclusive 'We' (সবাইকে অন্তর্ভুক্ত করে)।"
+      ],
+      "examples": [
+        { "en": "I + verb: 'I work at a bank in South Kolkata.'", "bn": "I + verb: 'আমি দক্ষিণ কলকাতার একটি ব্যাংকে কাজ করি।'" },
+        { "en": "We + verb: 'We are planning a trip to the Sundarbans next month.'", "bn": "We + verb: 'আমরা আগামী মাসে সুন্দরবন ভ্রমণের পরিকল্পনা করছি।'" },
+        { "en": "Me (object): 'Ramesh invited me to his sister's wedding.'", "bn": "Me (object): 'রমেশ আমাকে তার বোনের বিয়েতে আমন্ত্রণ জানিয়েছে।'" },
+        { "en": "My (possessive): 'My grandmother taught me how to cook Bengali sweets.'", "bn": "My (possessive): 'আমার দিদা আমাকে বাংলা মিষ্টি রান্না শিখিয়েছেন।'" },
+        { "en": "Ours (possessive pronoun): 'This cultural heritage is ours to protect.'", "bn": "Ours (possessive pronoun): 'এই সাংস্কৃতিক ঐতিহ্য রক্ষা করা আমাদের।'" },
+        { "en": "Myself (reflexive): 'I hurt myself while playing cricket.'", "bn": "Myself (reflexive): 'ক্রিকেট খেলতে গিয়ে আমি নিজেকে আঘাত করেছি।'" }
+      ],
+      "tips": "First person-এ সবচেয়ে বড় ভুল: 'I' আর 'me' নিয়ে। নিয়ম: Subject হলে 'I', object হলে 'me'। 'Ravi and I went to the store' (✓) — এখানে 'Ravi and I' subject। 'The teacher gave Ravi and me a book' (✓) — এখানে 'Ravi and me' object। 'Between you and I' (✗) — 'between' preposition, তাই 'between you and me' (✓)। নিজেকে check করার উপায়: 'I went' → 'Ravi and I went'; 'gave me' → 'gave Ravi and me'।"
+    },
+    {
+      "name": "Second Person: You",
+      "banglaName": "দ্বিতীয় পুরুষ: You",
+      "definition": "Second person refers to the person or people being spoken to. Unlike many languages (including Bengali), English uses 'you' for both singular and plural, formal and informal. There is no separate 'thou' in modern English. Second person pronouns: subject/object (you), possessive determiner (your), possessive pronoun (yours), reflexive singular (yourself), reflexive plural (yourselves). 'You' always takes a plural verb form, even when referring to one person.",
+      "banglaDefinition": "দ্বিতীয় পুরুষ যার সাথে কথা বলা হচ্ছে তাকে নির্দেশ করে। অনেক ভাষার (বাংলা সহ) মতো নয় — ইংরেজি singular এবং plural, formal এবং informal উভয়ের জন্য 'you' ব্যবহার করে। আধুনিক ইংরেজিতে আলাদা 'thou' নেই। দ্বিতীয় পুরুষের pronoun: subject/object (you), possessive determiner (your), possessive pronoun (yours), reflexive singular (yourself), reflexive plural (yourselves)। 'You' সবসময় plural verb form নেয়, এমনকি এক ব্যক্তির জন্যও।",
+      "formula": "SECOND PERSON PRONOUNS:\n\nSubject & Object: You (singular & plural)\n'You are my best friend.' (one person)\n'You are all invited to the party.' (multiple people)\n\nPossessive Determiner: Your\n'Your bag is on the table.'\n'Is this your car?'\n\nPossessive Pronoun: Yours\n'This book is yours.'\n'The choice is yours.'\n\nReflexive Singular: Yourself\n'You should take care of yourself.'\n\nReflexive Plural: Yourselves\n'Please help yourselves to some food.'\n\nVERB FORM:\nYou always take plural verb (no -s):\n'You work hard.' (one person)\n'You work hard.' (many people)\n'You are kind.' / 'You were late.'",
+      "rules": [
+        "'You' singular এবং plural একই — context বা 'all'/'both'/'two' যোগ করে পার্থক্য বোঝানো যায়: 'You all are welcome.' 'You two should come.'",
+        "'You'-এর পরে verb সবসময় plural form (present simple-এ -s নেই): 'You go', 'You eat', 'You are'।",
+        "'Your' = possessive determiner (noun-এর আগে): 'Your house is beautiful.'",
+        "'Yours' = possessive pronoun (noun-এর পরে, একা): 'This house is yours.'",
+        "'Yourself' = singular reflexive: 'You should believe in yourself.'",
+        "'Yourselves' = plural reflexive: 'Take care of yourselves during the trip.'",
+        "Formal letter-এ 'You' capital 'Y' না করলেও চলে, কিন্তু কিছু formal correspondence-এ 'You' কখনও কখনও capitalized হয়।"
+      ],
+      "examples": [
+        { "en": "You (singular): 'You are the best teacher I have ever had.'", "bn": "You (singular): 'তুমি সেরা শিক্ষক যাকে আমি কখনো পেয়েছি।'" },
+        { "en": "You (plural): 'All of you must complete the assignment by Friday.'", "bn": "You (plural): 'তোমাদের সবাইকে শুক্রবারের মধ্যে অ্যাসাইনমেন্ট শেষ করতে হবে।'" },
+        { "en": "Your: 'Your knowledge of Indian classical music is impressive.'", "bn": "Your: 'ভারতীয় শাস্ত্রীয় সঙ্গীত সম্পর্কে তোমার জ্ঞান চিত্তাকর্ষক।'" },
+        { "en": "Yours: 'This wonderful idea was yours, not mine.'", "bn": "Yours: 'এই চমৎকার ধারণাটি ছিল তোমার, আমার নয়।'" },
+        { "en": "Yourself: 'You should be proud of yourself for completing the marathon.'", "bn": "Yourself: 'ম্যারাথন শেষ করার জন্য তোমার নিজের উপর গর্ব করা উচিত।'" },
+        { "en": "Yourselves: 'Make yourselves at home while I prepare some tea.'", "bn": "Yourselves: 'আমি চা তৈরি করার সময় তোমরা নিজেদের বাড়ির মতো অনুভব করো।'" }
+      ],
+      "tips": "'You'-এর ব্যাপারে সবচেয়ে গুরুত্বপূর্ণ বিষয়: Bengali speaker-রা প্রায়ই 'you' singular আর plural বুঝতে সমস্যা হয়। 'You' singular, কিন্তু verb ending সবসময় plural. 'You is' (✗) → 'You are' (✓)। 'You was' (✗) → 'You were' (✓)। Singular 'you' বোঝাতে 'you yourself', plural বোঝাতে 'you yourselves'। আরও স্পষ্ট করতে: 'you all', 'you two', 'you guys' (informal), 'everyone' (formal): 'You all are invited.' / 'Everyone is invited.'"
+    },
+    {
+      "name": "Third Person: He, She, It, They",
+      "banglaName": "তৃতীয় পুরুষ: He, She, It, They",
+      "definition": "Third person refers to the person or thing being talked about, not the speaker or listener. Third person includes: He (masculine singular), She (feminine singular), It (neuter singular), They (plural for all), and all nouns (Ravi, Priya, the book, the students). Third person singular is the only person where present simple verbs take an -s ending (he works, she goes, it rains). Third person is the most common in writing and formal speech.",
+      "banglaDefinition": "তৃতীয় পুরুষ বক্তা বা শ্রোতা নয়, যার সম্পর্কে কথা বলা হচ্ছে তাকে নির্দেশ করে। তৃতীয় পুরুষে অন্তর্ভুক্ত: He (পুংলিঙ্গ একবচন), She (স্ত্রীলিঙ্গ একবচন), It (ক্লীব একবচন), They (সবার জন্য বহুবচন), এবং সব noun (রবি, প্রিয়া, বই, ছাত্ররা)। Third person singular-ই একমাত্র person যেখানে present simple verb-এ -s ending যোগ হয় (he works, she goes, it rains)। তৃতীয় পুরুষ লেখা এবং আনুষ্ঠানিক বক্তৃতায় সবচেয়ে সাধারণ।",
+      "formula": "THIRD PERSON PRONOUNS:\n\nMasculine: He / Him / His / Himself\n'He is a doctor. I met him. This is his clinic. He built it himself.'\n\nFeminine: She / Her / Hers / Herself\n'She is a lawyer. I called her. This case is hers. She prepared it herself.'\n\nNeuter: It / It / Its / Itself\n'It is a book. I read it. Its cover is red.'\n\nPlural (all): They / Them / Their / Theirs / Themselves\n'They are from Delhi. I know them. This is their house. That car is theirs.'\n\nSingular They (gender-neutral):\n'Someone called. They left a message.'\n\nTHIRD PERSON VERB (Present Simple):\nHe/She/It + verb-s/es: works, goes, watches, studies, does, has\n'Ravi works at Google. Priya goes to college. The train arrives at 6 PM.'",
+      "rules": [
+        "Third person singular present simple-এ verb-এ -s/-es যোগ: 'He speaks Hindi. She watches movies. It rains a lot.'",
+        "'He' masculine (পুরুষ) এবং 'She' feminine (নারী) মানুষের জন্য।",
+        "'It' বস্তু, ধারণা, প্রাণী (যখন লিঙ্গ অজানা), এবং আবহাওয়া/সময়ের জন্য: 'It is raining. It is 5 PM.'",
+        "'They' plural (তারা) এবং gender-neutral singular (সে — any gender) হিসেবে ব্যবহৃত।",
+        "Third person possessive: his (his book), her (her book), its (its cover), their (their book) — 'its' কোনো apostrophe নেয় না।",
+        "'Has' = third person singular of 'have': 'He has a car. She has two sisters.'",
+        "'Does' = third person singular of 'do': 'He does his work. She does not like tea.'"
+      ],
+      "examples": [
+        { "en": "He: 'My father is a farmer. He grows rice in his fields.'", "bn": "He: 'আমার বাবা একজন কৃষক। তিনি তার জমিতে ধান চাষ করেন।'" },
+        { "en": "She: 'My mother is a nurse. She works at the local hospital.'", "bn": "She: 'আমার মা একজন নার্স। তিনি স্থানীয় হাসপাতালে কাজ করেন।'" },
+        { "en": "It: 'The Victoria Memorial is stunning. It was built in 1921. Its architecture is breathtaking.'", "bn": "It: 'ভিক্টোরিয়া মেমোরিয়াল stunning. এটি ১৯২১ সালে নির্মিত। এর স্থাপত্য শ্বাসরুদ্ধকর।'" },
+        { "en": "They (plural): 'My neighbours are from Gujarat. They speak Gujarati at home.'", "bn": "They (plural): 'আমার প্রতিবেশীরা গুজরাটের। তারা বাড়িতে গুজরাটি বলে।'" },
+        { "en": "They (singular): 'Every student must bring their ID card.'", "bn": "They (singular): 'প্রত্যেক ছাত্রকে তাদের আইডি কার্ড আনতে হবে।'" },
+        { "en": "Has/Does: 'She has a beautiful collection of silk saris. He does yoga every morning.'", "bn": "Has/Does: 'তার সিল্ক শাড়ির একটি সুন্দর সংগ্রহ আছে। সে প্রতিদিন সকালে যোগব্যায়াম করে।'" }
+      ],
+      "tips": "Third person singular present simple-এ -s যোগ করা Bengali speakers-এর জন্য সবচেয়ে বড় চ্যালেঞ্জ। বাংলায় 'সে কাজ করে' = 'He work' (বাংলায় verb পরিবর্তন হয় না), কিন্তু ইংরেজিতে 'He work-s'। নিয়ম: He/She/It + verb + s/es. 'My father work in a bank' (✗) → 'My father works in a bank' (✓)। 'She go to school' (✗) → 'She goes to school' (✓)। 'It rain a lot' (✗) → 'It rains a lot' (✓)। এই -s টা সবসময় মনে রাখবে।"
+    },
+    {
+      "name": "Person and Verb Agreement",
+      "banglaName": "Person এবং Verb Agreement",
+      "definition": "Verb agreement means the verb form changes based on the person and number of the subject. In English, this is mostly visible in the present simple tense, where third person singular takes -s/-es. The verb 'to be' has the most variations: I am, you are, he/she/it is, we are, they are. The verb 'to have' changes: I/you/we/they have, he/she/it has. The auxiliary 'do' changes: I/you/we/they do, he/she/it does. Past tense only changes for 'to be' (I/he/she/it was, you/we/they were).",
+      "banglaDefinition": "Verb agreement মানে verb-এর ফর্ম subject-এর person এবং number অনুযায়ী পরিবর্তিত হয়। ইংরেজিতে এটি প্রধানত present simple tense-এ দেখা যায়, যেখানে third person singular -s/-es নেয়। Verb 'to be'-এর সবচেয়ে বেশি variation: I am, you are, he/she/it is, we are, they are। Verb 'to have' পরিবর্তিত হয়: I/you/we/they have, he/she/it has। Auxiliary 'do' পরিবর্তিত হয়: I/you/we/they do, he/she/it does। Past tense-এ শুধু 'to be' পরিবর্তিত হয় (I/he/she/it was, you/we/they were)।",
+      "formula": "VERB 'TO BE' (হওয়া):\nPerson     Present    Past\n1st Sing:  I am       I was\n2nd Sing:  You are    You were\n3rd Sing:  He/She/It is  He/She/It was\n1st Pl:    We are     We were\n2nd Pl:    You are    You were\n3rd Pl:    They are   They were\n\nVERB 'TO HAVE' (করা):\n1st/2nd:  I/You/We/They have\n3rd Sing: He/She/It has\n\nVERB 'TO DO' (করা):\n1st/2nd:  I/You/We/They do\n3rd Sing: He/She/It does\n\nPRESENT SIMPLE (General verb):\nI/You/We/They + verb (base form): 'I work. They play.'\nHe/She/It + verb + s/es: 'He works. She plays. It rains.'\n\nSPELLING RULES FOR -S/-ES:\nMost verbs: add -s → work/works, eat/eats, speak/speaks\nVerbs ending in -s, -sh, -ch, -x, -o: add -es → go/goes, watch/watches, fix/fixes, wash/washes\nVerbs ending in consonant + y: change y to i and add -es → study/studies, cry/cries, fly/flies\nVerbs ending in vowel + y: add -s → play/plays, say/says, buy/buys\nHave → Has (irregular)",
+      "rules": [
+        "Present simple-এ শুধু third person singular-এ verb-এ পরিবর্তন: 'I work' vs 'He works' — বাকি সব person-এ verb base form থাকে।",
+        "'To be' verb সব person-এ আলাদা: I am, you are, he/she/it is, we are, they are।",
+        "'To have': I/you/we/they have, he/she/it has। 'Have' is irregular in third person।",
+        "Negative এবং question-এ auxiliary 'do/does' ব্যবহার: 'He does not work. Does she sing?'",
+        "Modal verb-এর পরে verb সবসময় base form: 'He can swim. She must go.' (no -s)",
+        "Subject-verb agreement সবসময় match করতে হবে: 'The boy plays' (singular), 'The boys play' (plural)।"
+      ],
+      "examples": [
+        { "en": "To be: 'I am from Kolkata. You are from Mumbai. She is from Chennai.'", "bn": "To be: 'আমি কলকাতার। তুমি মুম্বাইয়ের। সে চেন্নাইয়ের।'" },
+        { "en": "To have: 'He has a flat in Delhi. They have a house in Goa.'", "bn": "To have: 'তার দিল্লিতে একটি ফ্ল্যাট আছে। তাদের গোয়ায় একটি বাড়ি আছে।'" },
+        { "en": "Present simple -s: 'My sister teaches at a school in Howrah.'", "bn": "Present simple -s: 'আমার বোন হাওড়ার একটি স্কুলে পড়ায়।'" },
+        { "en": "Does/Do: 'Does your brother work in Bengaluru? Yes, he does. Do you like biryani?'", "bn": "Does/Do: 'তোমার ভাই কি বেঙ্গালুরুতে কাজ করে? হ্যাঁ। তুমি কি বিরিয়ানি পছন্দ করো?'" },
+        { "en": "Spelling rule: 'She studies hard for her exams. He goes to the gym every day.'", "bn": "Spelling rule: 'সে তার পরীক্ষার জন্য কঠোর পড়াশোনা করে। সে প্রতিদিন জিমে যায়।'" }
+      ],
+      "tips": "Subject-verb agreement-এ সবচেয়ে গুরুত্বপূর্ণ নিয়ম: Third person singular present simple = verb + s। বাকি সব person = base verb। নিজেকে প্রশ্ন করো: 'Subject টি He/She/It নাকি?' যদি হ্যাঁ, তাহলে -s যোগ করো। 'My father cook dinner' (✗) — 'He' = third person singular → 'My father cooks dinner' (✓)। 'The children plays outside' (✗) — 'Children' = they = plural → 'The children play outside' (✓)। 'The dog bark' (✗) → 'The dog barks' (✓)।"
+    },
+    {
+      "name": "Person and Register: Formal vs Informal",
+      "banglaName": "Person এবং রেজিস্টার: Formal বনাম Informal",
+      "definition": "The choice of person changes based on register (formality level). First person 'I' is common in conversation but often avoided in academic writing. Second person 'you' is direct and common in instructions, but 'one' or passive voice is used in formal contexts. Third person is the most formal and objective. Knowing when to use each person is important for appropriate communication in different situations.",
+      "banglaDefinition": "Person-এর পছন্দ রেজিস্টার (আনুষ্ঠানিকতার স্তর) অনুযায়ী পরিবর্তিত হয়। প্রথম পুরুষ 'I' কথোপকথনে সাধারণ কিন্তু academic লেখায় প্রায়ই এড়ানো হয়। দ্বিতীয় পুরুষ 'you' সরাসরি এবং নির্দেশনায় সাধারণ, কিন্তু আনুষ্ঠানিক প্রসঙ্গে 'one' বা passive voice ব্যবহৃত হয়। তৃতীয় পুরুষ সবচেয়ে formal এবং objective। বিভিন্ন পরিস্থিতিতে কখন কোন person ব্যবহার করতে হবে তা জানা উপযুক্ত যোগাযোগের জন্য গুরুত্বপূর্ণ।",
+      "formula": "REGISTER GUIDE:\n\nINFORMAL (Conversation, Text, Email to friends):\nFirst Person: 'I think this is a good idea.'\nSecond Person: 'You should try the biryani here.'\n\nNEUTRAL (Work email, Blog, Presentation):\nMix of persons: 'We believe this solution works.'\n'Our team recommends this approach.'\n\nFORMAL (Academic writing, Reports, Official documents):\nThird Person preferred: 'It is believed that...'\n'One must consider the following points.'\nPassive: 'The experiment was conducted.'\n\nINSTRUCTIONS (Recipes, Manuals, Signs):\nImperative (you implied): 'Mix the ingredients.' 'Press the button.'\n'Turn left at the traffic signal.'\n\nIMPERSONAL 'ONE':\n'One should always carry an ID in India.' (formal)\n'You should always carry an ID.' (informal)\n'People should carry ID.' (neutral)",
+      "rules": [
+        "Informal: 'I' এবং 'you' ব্যবহার করা যায় — বন্ধু, পরিবার, সহকর্মীদের সাথে casual conversation।",
+        "Formal academic writing: 'I' avoid করো — passive বা impersonal structure ব্যবহার করো: 'It can be argued that...' (not 'I argue that...')।",
+        "Business English: 'We' ব্যবহার করা good — teamwork এবং collective effort দেখায়: 'We recommend that...'",
+        "Formal speech: 'One' ব্যবহার করা যায়: 'One should always be punctual.' (এটি 'you'-এর চেয়ে formal)।",
+        "Instructions এবং recipes: imperative mood (you implied): 'Boil the water. Add the tea leaves. Let it steep.'",
+        "Scientific writing: third person passive: 'The samples were collected from the Ganges.'"
+      ],
+      "examples": [
+        { "en": "Informal: 'I think you should visit the Gateway of India.'", "bn": "Informal: 'আমি মনে করি তোমার গেটওয়ে অফ ইন্ডিয়া দেখা উচিত।'" },
+        { "en": "Formal: 'It is recommended that visitors see the Gateway of India.'", "bn": "Formal: 'সুপারিশ করা হয় যে দর্শনার্থীরা গেটওয়ে অফ ইন্ডিয়া দেখুন।'" },
+        { "en": "Instruction: 'Take the metro from Park Street to Dum Dum junction.'", "bn": "Instruction: 'পার্ক স্ট্রিট থেকে দমদম জংশন পর্যন্ত মেট্রো নিন।'" },
+        { "en": "One (formal): 'One must be careful when crossing the road in Indian cities.'", "bn": "One (formal): 'ভারতীয় শহরে রাস্তা পার হওয়ার সময় সতর্ক থাকা উচিত।'" },
+        { "en": "Academic: 'The research was conducted over a period of six months.'", "bn": "Academic: 'গবেষণাটি ছয় মাসের সময়কাল ধরে পরিচালিত হয়েছিল।'" },
+        { "en": "Business: 'We believe our proposal meets all your requirements.'", "bn": "Business: 'আমরা বিশ্বাস করি আমাদের প্রস্তাব আপনার সব প্রয়োজন পূরণ করে।'" }
+      ],
+      "tips": "Register এবং person-এর সম্পর্ক: তুমি যত formal হবে, person তত 'দূরে' সরবে। সবচেয়ে informal: I → You। মধ্যম: We → Passive। সবচেয়ে formal: One / It / Passive। চিন্তা করো: বন্ধুকে বলবে 'You should try this', অধ্যাপককে বলবে 'One might consider this', গবেষণাপত্রে লিখবে 'This was found to be...'। Context বুঝে person select করা ইংরেজি fluency-র লক্ষণ।"
+    },
+    {
+      "name": "Person in Pronouns: Full Table",
+      "banglaName": "Pronoun-এ Person: সম্পূর্ণ তালিকা",
+      "definition": "Pronouns change completely based on person, number, case, and gender. The full pronoun table includes: Subject pronouns (who does the action), Object pronouns (who receives the action), Possessive determiners (whose — before noun), Possessive pronouns (whose — replacing noun), and Reflexive pronouns (self-action). Mastery of this table is essential for grammatical accuracy.",
+      "banglaDefinition": "Pronoun person, number, case, এবং gender অনুযায়ী সম্পূর্ণভাবে পরিবর্তিত হয়। সম্পূর্ণ pronoun টেবিলে অন্তর্ভুক্ত: Subject pronoun (কে কাজ করে), Object pronoun (কে কাজ গ্রহণ করে), Possessive determiner (কার — noun-এর আগে), Possessive pronoun (কার — noun-কে প্রতিস্থাপন করে), এবং Reflexive pronoun (নিজে)। এই টেবিল আয়ত্ত করা ব্যাকরণগত নির্ভুলতার জন্য অপরিহার্য।",
+      "formula": "COMPLETE PRONOUN TABLE:\n\nPerson  | Subject | Object  | Poss Det | Poss Pro | Reflexive\n--------|---------|---------|----------|----------|----------\n1st Sing| I       | me      | my       | mine     | myself\n2nd Sing| you     | you     | your     | yours    | yourself\n3rd Masc| he      | him     | his      | his      | himself\n3rd Fem | she     | her     | her      | hers     | herself\n3rd Neu | it      | it      | its      | -        | itself\n1st Plur| we      | us      | our      | ours     | ourselves\n2nd Plur| you     | you     | your     | yours    | yourselves\n3rd Plur| they    | them    | their    | theirs   | themselves\n\nSingular They:\nSubject: they    Object: them    Poss: their/theirs    Reflexive: themselves\n\nEXAMPLES:\n'I love my country. India is mine. I will protect it myself.'\n'She told her story. The idea was hers. She did it herself.'\n'They brought their children. The bags are theirs. They enjoyed themselves.'",
+      "rules": [
+        "Subject pronoun (I, you, he, she, it, we, they) verb-এর আগে বসে: 'She sings well.'",
+        "Object pronoun (me, you, him, her, it, us, them) verb/preposition-এর পরে বসে: 'I called him. Give it to me.'",
+        "Possessive determiner (my, your, his, her, its, our, their) noun-এর আগে বসে: 'This is my house.'",
+        "Possessive pronoun (mine, yours, his, hers, its, ours, theirs) noun-কে replace করে: 'This house is mine.'",
+        "Reflexive pronoun (myself, yourself, himself, herself, itself, ourselves, yourselves, themselves) subject-এর same person-কে বোঝায়: 'I taught myself.'"
+      ],
+      "examples": [
+        { "en": "Subject: 'I live in Kolkata. He lives in Delhi. They live in Mumbai.'", "bn": "Subject: 'আমি কলকাতায় থাকি। সে দিল্লিতে থাকে। তারা মুম্বাইয়ে থাকে।'" },
+        { "en": "Object: 'The manager called me. I told him the news. She invited them.'", "bn": "Object: 'ম্যানেজার আমাকে ডেকেছে। আমি তাকে খবর বললাম। সে তাদের আমন্ত্রণ জানিয়েছে।'" },
+        { "en": "Poss Det: 'My phone is broken. Can I use your phone? His phone is also not working.'", "bn": "Poss Det: 'আমার ফোন ভাঙা। আমি কি তোমার ফোন ব্যবহার করতে পারি? তার ফোনও কাজ করছে না।'" },
+        { "en": "Poss Pro: 'Is this book yours or mine? The blue one is his, and the red one is hers.'", "bn": "Poss Pro: 'এই বইটি কি তোমার না আমার? নীলটি তার, আর লালটি তার (মহিলা)।'" },
+        { "en": "Reflexive: 'He taught himself to play the sitar. She hurt herself while dancing.'", "bn": "Reflexive: 'সে নিজেকে সেতার বাজাতে শিখিয়েছে। নাচার সময় সে নিজেকে আঘাত করেছে।'" }
+      ],
+      "tips": "Pronoun টেবিল মুখস্থ করার সহজ উপায়: প্যাটার্ন খুঁজে বের করো। Subject এবং Object-এ: I→me, we→us, they→them, he→him, she→her (h দিয়ে শুরু, m দিয়ে শেষ)। Possessive determiner এবং pronoun: my→mine, your→yours, her→hers, our→ours, their→theirs (determiner-এ s নেই, pronoun-এ s যোগ)। Reflexive: my+self, your+self, him+self, her+self, it+self, our+selves, your+selves, them+selves। Exception: his (determiner এবং pronoun একই)।"
+    },
+    {
+      "name": "Person in Commands and Requests",
+      "banglaName": "আদেশ ও অনুরোধে Person",
+      "definition": "Commands (imperatives) use an implied second person 'you' as the subject. The verb is in the base form: 'Sit down.' 'Please bring me some water.' Negative commands use 'do not'/'don't': 'Don't be late.' Requests use 'please' and often question form: 'Could you help me?' Polite requests use 'would you', 'could you', 'would you mind'. First person suggestions use 'let's' (let us): 'Let's go to the museum.'",
+      "banglaDefinition": "আদেশ (imperative)-এ subject হিসেবে implied second person 'you' ব্যবহৃত হয়। Verb base form-এ থাকে: 'Sit down.' 'দয়া করে আমার জন্য কিছু পানি এনে দাও।' নেতিবাচক আদেশে 'do not'/'don't' ব্যবহার: 'Don't be late.' অনুরোধে 'please' এবং প্রায়ই প্রশ্ন ফর্ম ব্যবহার: 'Could you help me?' ভদ্র অনুরোধে 'would you', 'could you', 'would you mind' ব্যবহার। প্রথম পুরুষের suggestions-এ 'let's' (let us) ব্যবহার: 'Let's go to the museum.'",
+      "formula": "COMMANDS (Imperative — You implied):\n'Open the door.' 'Please sit down.' 'Call me later.'\n'Turn left at the next signal.' 'Take the metro to Park Street.'\n\nNEGATIVE COMMANDS:\n'Don't be late.' 'Do not smoke here.' 'Don't forget your ticket.'\n\nREQUESTS:\n'Please pass the salt.' 'Could you help me with this?'\n'Would you mind opening the window?'\n'Can you please tell me the time?'\n\nSUGGESTIONS (First Person Inclusive):\n'Let's go to the Victoria Memorial.'\n'Let's eat at the new restaurant.'\n'Let's not argue about this.'\n\nFORMAL REQUESTS (Third Person):\n'Would the gentleman please take his seat?'\n'Customers are requested to wait in line.'",
+      "rules": [
+        "Imperative-এ subject 'you' উহ্য (implied) থাকে, verb base form: 'Close the door.' (You close the door.)",
+        "Negative imperative: 'Don't + verb': 'Don't worry. Don't be late. Don't eat on the metro.'",
+        "Polite requests: 'Could you...?', 'Would you...?', 'Would you mind + verb-ing...?' — question form but function is request।",
+        "'Let's' = let us = first person plural suggestion: 'Let's take a taxi.' 'Let's not wait any longer.'",
+        "Formal notice-এ third person passive: 'Passengers are requested to keep their tickets ready.'",
+        "Very formal: 'Would the guests please make their way to the dining hall.' (third person request)"
+      ],
+      "examples": [
+        { "en": "Command: 'Take the second left after the India Gate.'", "bn": "Command: 'ইন্ডিয়া গেটের পরে দ্বিতীয় বামে নিন।'" },
+        { "en": "Polite request: 'Could you please tell me how to get to the Howrah Bridge?'", "bn": "Polite request: 'আপনি কি দয়া করে বলবেন কিভাবে হাওড়া ব্রিজে যেতে হয়?'" },
+        { "en": "Suggestion: 'Let's visit the Science City this weekend.'", "bn": "Suggestion: 'চলো এই সপ্তাহান্তে সায়েন্স সিটি দেখতে যাই।'" },
+        { "en": "Negative: 'Don't forget to buy tickets for the Durga Puja concert.'", "bn": "Negative: 'দুর্গাপূজার কনসার্টের টিকিট কিনতে ভুলো না।'" },
+        { "en": "Formal: 'Would all passengers please proceed to the boarding gate.'", "bn": "Formal: 'সকল যাত্রীকে বোর্ডিং গেটের দিকে যেতে অনুরোধ করা হচ্ছে।'" },
+        { "en": "Offer: 'Let me help you with your luggage.'", "bn": "Offer: 'আমি তোমাকে তোমার লাগেজ নিতে সাহায্য করি।'" }
+      ],
+      "tips": "Commands এবং requests-এ person-এর ব্যবহার: Command = you implied (imperative): 'Sit down.' Request = you explicit (question form): 'Could you sit down?' Suggestion = we (let's): 'Let's sit down.' Offer = I: 'Let me help.' Bengali থেকে ইংরেজিতে আসার সময় মনে রাখবে: ইংরেজি imperative খুব direct — তাই 'please' যোগ করা বা question form ব্যবহার করা polite। 'Give me water' (direct — আদেশ), 'Could you give me some water?' (polite — অনুরোধ)। Context বুঝে use করো।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "'He work in a bank in Mumbai.'",
+      "correct": "'He works in a bank in Mumbai.'",
+      "explanation": "Third person singular (He/She/It) present simple-এ verb-এর সাথে -s যোগ করতে হবে। 'He work' ভুল — 'He works' সঠিক। বাংলায় 'সে কাজ করে' — verb-এ কোনো পরিবর্তন নেই, তাই Bengali speakers এই ভুল বেশি করে। নিয়ম: I/You/We/They = base verb (work, go, eat, play)। He/She/It = verb + s/es (works, goes, eats, plays)। 'My father work in a bank' (✗) → 'My father works in a bank' (✓)। 'She go to school' (✗) → 'She goes to school' (✓)।"
+    },
+    {
+      "wrong": "'Me and my friend went to the book fair.'",
+      "correct": "'My friend and I went to the book fair.'",
+      "explanation": "দুটি নিয়ম: (১) Subject-এ 'me' নয়, 'I' ব্যবহার করো: 'My friend and I' (✓), 'Me and my friend' (✗)। 'I' = subject pronoun, 'me' = object pronoun। (২) ইংরেজি convention-এ প্রথমে অন্য person, তারপর 'I': 'My friend and I' (✓), 'I and my friend' (possible but less polite)। Check করার উপায়: বাক্যটি থেকে 'my friend and' সরিয়ে দাও — 'Me went' (✗) → 'I went' (✓)। 'The teacher gave my friend and I a book' (✗) — এখানে object, তাই 'my friend and me' (✓)।"
+    },
+    {
+      "wrong": "'Your a great teacher.' — Confusing 'your' and 'you're'.",
+      "correct": "'You're a great teacher.' (You are) or 'Your teaching is great.' (possessive)",
+      "explanation": "'Your' = possessive determiner (তোমার): 'Your book', 'Your house', 'Your idea'। 'You're' = 'You are' (তুমি): 'You're kind', 'You're my friend', 'You're right'। 'Your a teacher' (✗) → 'You're a teacher' (✓) অথবা 'Your teaching is great' (✓ — possessive + noun)। মনে রাখার ট্রিক: 'Your' এর পরে noun থাকে (your book), 'You're' এর পরে adjective/verb থাকে (you're nice/you're going)। 'You're' = you are — 'are' প্রতিস্থাপন করে test করো।"
+    },
+    {
+      "wrong": "'Myself and my colleagues will attend the meeting.'",
+      "correct": "'My colleagues and I will attend the meeting.'",
+      "explanation": "'Myself' reflexive pronoun — subject যখন object-এর same person, তখন ব্যবহার হয়: 'I taught myself.' 'I hurt myself.' 'I will do it myself.' Subject হিসেবে 'myself' ব্যবহার করা ভুল। 'Myself will attend' (✗) → 'I will attend' (✓)। 'Call me if you need anything. I will do it myself.' (✓ — এখানে 'myself' reflexive/emphatic)। 'Myself' formal/business English-এ 'I' বা 'me'-এর polite substitute হিসেবে ব্যবহৃত হয়, কিন্তু grammatically incorrect।"
+    },
+    {
+      "wrong": "'Between you and I, this plan will not work.'",
+      "correct": "'Between you and me, this plan will not work.'",
+      "explanation": "'Between' preposition — preposition-এর পরে object pronoun লাগে (me, not I)। 'Between you and I' is a very common mistake (many native speakers make it too!)। 'Between you and me' (✓), 'Between him and her' (✓), 'Between us' (✓)। Preposition-এর পরে সবসময় object pronoun: 'for me', 'to him', 'with her', 'between us', 'about them'। 'Between you and I' (✗) → মনে রাখবে: 'between' = preposition → object pronoun।"
+    },
+    {
+      "wrong": "'He don't like spicy food.'",
+      "correct": "'He doesn't like spicy food.'",
+      "explanation": "Third person singular negative-এ 'doesn't' (does not) ব্যবহার হয়, 'don't' নয়। 'He don't' (✗) → 'He doesn't' (✓)। 'She don't know' (✗) → 'She doesn't know' (✓)। 'It don't matter' (✗) → 'It doesn't matter' (✓)। Present simple negative: I/You/We/They + don't + verb — 'I don't like.' He/She/It + doesn't + verb — 'He doesn't like.' 'Doesn't' = 'does not' — 'does' ই third person singular auxiliary। 'Doesn't'-এর পরে verb base form থাকে: 'He doesn't works' (✗) → 'He doesn't work' (✓)।"
+    },
+    {
+      "wrong": "'Us Indians love our cricket.' — 'Us' as subject.",
+      "correct": "'We Indians love our cricket.' (subject) or 'Cricket is loved by us Indians.' (object)",
+      "explanation": "'We' = subject pronoun (কর্তা), 'Us' = object pronoun (কর্ম)। 'Us Indians love cricket' (✗) — 'Us' subject-এ ভুল। 'We Indians' (✓) — 'We' subject। 'The teacher taught us Indians' (✓) — 'Us' object। Check করার উপায়: 'Indians' বাদ দিয়ে দেখো — 'Us love cricket' (✗) → 'We love cricket' (✓)। 'The teacher taught we' (✗) → 'The teacher taught us' (✓)। একই নিয়ম: 'We students request...' (✓), 'The principal praised us students' (✓)।"
+    },
+    {
+      "wrong": "'It's color is beautiful.' — Confusing 'its' and 'it's'.",
+      "correct": "'Its color is beautiful.' (possessive — এর রঙ) or 'It's a beautiful color.' (it is — এটি একটি সুন্দর রঙ)",
+      "explanation": "'Its' (apostrophe ছাড়া) = possessive determiner — 'এর': 'Its color', 'Its name', 'Its history'। 'It's' (apostrophe সহ) = 'it is' বা 'it has': 'It's a nice day. It's been a long time.' 'It's color' (✗) = 'It is color' → অর্থ হয় না। 'Its color' (✓) = 'এর রঙ'। মনে রাখার ট্রিক: 'his' এবং 'her' — এদের কোনো apostrophe নেই — একইভাবে 'its'-ও apostrophe নেয় না। Apostrophe থাকলেই বুঝবে 'it is' বা 'it has'।"
+    },
+    {
+      "wrong": "'One should always do his duty.' — Mixing 'one' and 'his'.",
+      "correct": "'One should always do one's duty.' (formal/consistent) or 'You should always do your duty.' (informal) or 'People should do their duty.' (neutral)",
+      "explanation": "'One' formal impersonal pronoun — এটি 'he' বা 'his'-এর সাথে mix করা উচিত নয়। 'One should do his duty' (✗) → 'One should do one's duty' (✓) বা 'You should do your duty' (informal)। 'One'-এর possessive = 'one's': 'One must take care of one's health.' আধুনিক ইংরেজিতে 'one' খুব formal — বেশিরভাগ প্রসঙ্গে 'you' বা 'people' ব্যবহার করাই ভালো: 'You should take care of your health.' / 'People should take care of their health.'"
+    },
+    {
+      "wrong": "'If anyone calls, tell him I am busy.' — Assuming all callers are male.",
+      "correct": "'If anyone calls, tell them I am busy.' (gender-neutral) or 'If anyone calls, tell him or her I am busy.' (formal but clunky)",
+      "explanation": "'Anyone' gender-neutral word — 'him' ব্যবহার করে ধরে নেওয়া হচ্ছে caller সবসময় পুরুষ। 'Anyone' = যেকোনো ব্যক্তি (পুরুষ বা নারী)। Correct: singular 'they' — 'tell them'। 'Him or her' grammatically ঠিক কিন্তু ভারী। 'Them' সহজ এবং inclusive। একই নিয়ম: 'Everyone should bring their ID' (not 'his ID'), 'Nobody called, did they?' (not 'did he?'), 'Someone left their phone' (not 'his phone'). Singular 'they' এখন সব style guide-এ স্বীকৃত।"
+    }
+  ]
 }
