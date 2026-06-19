@@ -22,7 +22,7 @@
         "Context (প্রসঙ্গ) দেখে বুঝতে হয় একটি শব্দ কোন part of speech।"
       ],
       "examples": [
-        { "en": "Noun: 'Dog', 'Dhaka', 'Happiness' — these are names.", "bn": "Noun: 'Dog', 'Dhaka', 'Happiness' — এগুলো নাম।" },
+        { "en": "Noun: 'Dog', 'Kolkata', 'Happiness' — these are names.", "bn": "Noun: 'Dog', 'Kolkata', 'Happiness' — এগুলো নাম।" },
         { "en": "Pronoun: 'He', 'She', 'It', 'They' — replace nouns.", "bn": "Pronoun: 'He', 'She', 'It', 'They' — noun-এর পরিবর্তে ব্যবহৃত হয়।" },
         { "en": "Verb: 'Run', 'Eat', 'Sleep', 'Think' — show actions.", "bn": "Verb: 'Run', 'Eat', 'Sleep', 'Think' — কাজ বোঝায়।" },
         { "en": "Adjective: 'Beautiful', 'Tall', 'Hot' — describe nouns.", "bn": "Adjective: 'Beautiful', 'Tall', 'Hot' — noun-কে বর্ণনা করে।" },
@@ -36,7 +36,7 @@
       "banglaName": "বিশেষ্য",
       "definition": "A noun is a word that names a person, place, thing, or idea. Nouns are the most common part of speech. They can be common (general) or proper (specific). Nouns can also be countable (book, apple) or uncountable (water, music). Almost every sentence contains at least one noun.",
       "banglaDefinition": "Noun (বিশেষ্য) হলো সেই শব্দ যা কোনো ব্যক্তি, স্থান, বস্তু, বা ধারণার নাম বোঝায়। Noun সবচেয়ে সাধারণ part of speech। এগুলো common (সাধারণ) বা proper (নির্দিষ্ট) হতে পারে। Noun countable (বই, আপেল) বা uncountable (পানি, গান) ও হতে পারে। প্রায় প্রতি বাক্যে অন্তত একটি noun থাকে।",
-      "formula": "Noun = Name of something\n\nTypes:\nCommon Noun → city, boy, country\nProper Noun → Dhaka, John, Bangladesh\nCountable Noun → book, apple, chair\nUncountable Noun → water, air, information\n\nExample: 'The boy lives in Dhaka.' → boy (common), Dhaka (proper)",
+      "formula": "Noun = Name of something\n\nTypes:\nCommon Noun → city, boy, country\nProper Noun → Kolkata, John, India\nCountable Noun → book, apple, chair\nUncountable Noun → water, air, information\n\nExample: 'The boy lives in Kolkata.' → boy (common), Kolkata (proper)",
       "rules": [
         "Proper noun সবসময় capital letter দিয়ে শুরু হয়।",
         "Common noun সাধারণত capital letter দিয়ে শুরু হয় না (sentence-এর শুরু ছাড়া)।",
@@ -48,7 +48,7 @@
       ],
       "examples": [
         { "en": "Person: 'Shakespeare wrote many plays.'", "bn": "ব্যক্তি: 'Shakespeare অনেক নাটক লিখেছেন।'" },
-        { "en": "Place: 'We visited Cox's Bazar last summer.'", "bn": "স্থান: 'আমরা গত গ্রীষ্মে কক্সবাজার ঘুরতে গিয়েছিলাম।'" },
+        { "en": "Place: 'We visited Puri Beach last summer.'", "bn": "স্থান: 'আমরা গত গ্রীষ্মে পুরী সৈকত ঘুরতে গিয়েছিলাম।'" },
         { "en": "Thing: 'Please pass me the book.'", "bn": "বস্তু: 'অনুগ্রহ করে বইটি আমাকে দাও।'" },
         { "en": "Idea: 'Honesty is the best policy.'", "bn": "ধারণা: 'সততাই সর্বোৎকৃষ্ট পন্থা।'" },
         { "en": "Proper: 'Maria lives in London.'", "bn": "Proper: 'Maria লন্ডনে থাকে।'" },
@@ -79,7 +79,7 @@
         { "en": "Possessive: 'That pen is hers.'", "bn": "Possessive: 'ওই কলমটি তার।'" },
         { "en": "Possessive adj: 'Her pen is blue.' vs Possessive pro: 'The blue pen is hers.'", "bn": "Possessive adj: 'Her pen is blue.' vs Possessive pro: 'The blue pen is hers.'" }
       ],
-      "tips": "Pronoun ব্যবহারের সময় মনে রাখবে: একটি sentence-এ pronoun-টি কোন noun-কে নির্দেশ করছে তা স্পষ্ট হতে হবে। যেমন: 'Rina and Soni went to the market because she needed vegetables.' — এখানে 'she' কাকে বোঝাচ্ছে? Rina না Soni? অস্পষ্ট। এড়িয়ে চলো।"
+      "tips": "Pronoun ব্যবহারের সময় মনে রাখবে: একটি sentence-এ pronoun-টি কোন noun-কে নির্দেশ করছে তা স্পষ্ট হতে হবে। যেমন: 'Priya and Neha went to the market because she needed vegetables.' — এখানে 'she' কাকে বোঝাচ্ছে? Priya না Neha? অস্পষ্ট। এড়িয়ে চলো।"
     },
     {
       "name": "Verb (ক্রিয়া)",
@@ -118,7 +118,7 @@
         "Adjective linking verb (is, am, are, was, were, seem, feel, look) এর পরে বসে: 'She feels happy'।",
         "একটি noun-এর আগে একাধিক adjective থাকতে পারে: 'a beautiful big white house'।",
         "Adjective-এর three degrees আছে: positive (big), comparative (bigger), superlative (biggest)।",
-        "Proper adjective proper noun থেকে আসে এবং capital letter দিয়ে শুরু হয়: 'Bangladeshi culture'।",
+        "Proper adjective proper noun থেকে আসে এবং capital letter দিয়ে শুরু হয়: 'Indian culture'।",
         "কিছু adjective-এর পরে specific preposition লাগে: interested in, afraid of, good at।"
       ],
       "examples": [
@@ -166,7 +166,7 @@
       "rules": [
         "Preposition-এর পরে সবসময় একটি noun বা pronoun (object) থাকে।",
         "Preposition + এর object = Prepositional Phrase।",
-        "'In' সাধারণত বড় জায়গা/অঞ্চলের জন্য: in Dhaka, in Bangladesh।",
+        "'In' সাধারণত বড় জায়গা/অঞ্চলের জন্য: in Kolkata, in India।",
         "'On' সাধারণত পৃষ্ঠ/সারফেসের জন্য: on the table, on the wall।",
         "'At' সাধারণত নির্দিষ্ট পয়েন্ট/ঠিকানার জন্য: at the door, at 5 PM।",
         "কিছু verb-এর সাথে নির্দিষ্ট preposition ব্যবহৃত হয়: listen to, look at, wait for, depend on।",
@@ -181,7 +181,7 @@
         { "en": "Fixed verb + prep: 'I am looking for my keys.'", "bn": "নির্দিষ্ট verb + prep: 'আমি আমার চাবি খুঁজছি।'" },
         { "en": "Fixed adj + prep: 'She is afraid of spiders.'", "bn": "নির্দিষ্ট adj + prep: 'সে মাকড়সাকে ভয় পায়।'" }
       ],
-      "tips": "Preposition শেখার সবচেয়ে ভালো উপায়: এগুলোকে category অনুযায়ী মুখস্থ করো — place (in/on/at), time (at/on/in/by), direction (to/from/into)। সবচেয়ে বেশি ভুল হয় 'in', 'on', 'at' নিয়ে। মনে রাখবে: in Bangladesh, on Main Street, at 123 Main Street — একই জিনিসের জন্য তিনটি different preposition।"
+      "tips": "Preposition শেখার সবচেয়ে ভালো উপায়: এগুলোকে category অনুযায়ী মুখস্থ করো — place (in/on/at), time (at/on/in/by), direction (to/from/into)। সবচেয়ে বেশি ভুল হয় 'in', 'on', 'at' নিয়ে। মনে রাখবে: in India, on Main Street, at 123 Main Street — একই জিনিসের জন্য তিনটি different preposition।"
     },
     {
       "name": "Conjunction (সংযোজক)",

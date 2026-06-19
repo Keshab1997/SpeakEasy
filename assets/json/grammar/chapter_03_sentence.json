@@ -160,7 +160,7 @@
         { "en": "The baby is sleeping.", "bn": "শিশুটি ঘুমাচ্ছে।" },
         { "en": "My father bought a new car.", "bn": "আমার বাবা একটি নতুন গাড়ি কিনেছেন।" },
         { "en": "The sun rises in the east and sets in the west. (compound verb)", "bn": "সূর্য পূর্ব দিকে ওঠে এবং পশ্চিম দিকে অস্ত যায়। (যৌগিক ক্রিয়া)" },
-        { "en": "Rina and Mina are best friends. (compound subject)", "bn": "রিনা এবং মিনা是最好的 বন্ধু। (যৌগিক কর্তা)" },
+        { "en": "Priya and Kavya are best friends. (compound subject)", "bn": "প্রিয়া এবং কাব্যা是最好的 বন্ধু। (যৌগিক কর্তা)" },
         { "en": "She walked slowly through the dark forest at midnight.", "bn": "সে মধ্যরাতে অন্ধকার বনের মধ্য দিয়ে ধীরে ধীরে হেঁটেছিল।" },
         { "en": "The tall man with a black hat opened the door carefully.", "bn": "কালো টুপিওয়ালা লম্বা লোকটি সাবধানে দরজাটি খুলল।" }
       ],
@@ -212,7 +212,7 @@
         { "en": "Wrong: 'the sun is shining brightly' (no capital, no period)", "bn": "ভুল: 'the sun is shining brightly' (capital নাই, punctuation নাই)" },
         { "en": "Correct: 'Are you coming to the party?'", "bn": "ঠিক: 'Are you coming to the party?'" },
         { "en": "Correct: 'What a lovely garden!'", "bn": "ঠিক: 'What a lovely garden!'" },
-        { "en": "Correct: 'Mr. and Mrs. Khan live in Dhaka.'", "bn": "ঠিক: 'Mr. and Mrs. Khan live in Dhaka.'" },
+        { "en": "Correct: 'Mr. and Mrs. Sharma live in Kolkata.'", "bn": "ঠিক: 'Mr. and Mrs. Sharma live in Kolkata.'" },
         { "en": "Correct: 'I think therefore I am.' — Descartes", "bn": "ঠিক: 'I think therefore I am.' — Descartes" }
       ],
       "tips": "ইংরেজিতে বাক্য লেখার সময় তিনটি জিনিস মনে রাখবে: ১) প্রথম letter capital, ২) শেষে proper punctuation, ৩) 'I' সবসময় capital। প্রতিদিন ইংরেজি লেখার সময় এই তিনটি নিয়ম মেনে চলার অভ্যাস করো। মোবাইল ফোনে typing করলেও এই নিয়মগুলো অনুসরণ করো।"

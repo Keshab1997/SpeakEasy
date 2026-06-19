@@ -9,9 +9,9 @@
     {
       "name": "What is a Pronoun?",
       "banglaName": "সর্বনাম কী?",
-      "definition": "A pronoun is a word that takes the place of a noun in a sentence. Instead of saying 'Maria' again and again, we can say 'she'. Pronouns make our speech and writing smoother and less repetitive. The noun that a pronoun refers to is called its antecedent. Every pronoun must agree with its antecedent in number, gender, and person.",
+      "definition": "A pronoun is a word that takes the place of a noun in a sentence. Instead of saying 'Priya' again and again, we can say 'she'. Pronouns make our speech and writing smoother and less repetitive. The noun that a pronoun refers to is called its antecedent. Every pronoun must agree with its antecedent in number, gender, and person.",
       "banglaDefinition": "Pronoun (সর্বনাম) হলো সেই শব্দ যা বাক্যে noun-এর স্থান নেয়। বারবার 'মারিয়া' না বলে আমরা 'সে' বলতে পারি। Pronoun আমাদের বক্তব্য ও লেখাকে মসৃণ এবং কম পুনরাবৃত্তিমূলক করে তোলে। যে noun-কে pronoun নির্দেশ করে তাকে antecedent বলে। প্রতিটি pronoun-কে তার antecedent-এর সাথে number, gender, এবং person-এ согласный হতে হবে।",
-      "formula": "Pronoun = Replaces a Noun\n\nNoun (antecedent) → Pronoun\nMaria → She\nThe book → It\nThe students → They\n\nExample:\nWithout pronoun: 'Rina is a doctor. Rina works at a hospital.'\nWith pronoun: 'Rina is a doctor. She works at a hospital.'",
+      "formula": "Pronoun = Replaces a Noun\n\nNoun (antecedent) → Pronoun\nPriya → She\nThe book → It\nThe students → They\n\nExample:\nWithout pronoun: 'Priya is a doctor. Priya works at a hospital.'\nWith pronoun: 'Priya is a doctor. She works at a hospital.'",
       "rules": [
         "Pronoun noun-এর পুনরাবৃত্তি এড়াতে ব্যবহৃত হয়।",
         "প্রতি pronoun-এর একটি antecedent (যে noun-কে নির্দেশ করে) থাকা উচিত।",
@@ -22,14 +22,14 @@
         "বিভিন্ন ধরনের pronoun বাক্যে ভিন্ন ভিন্ন কাজ করে।"
       ],
       "examples": [
-        { "en": "Without pronoun: 'John is my friend. John lives in Dhaka.'", "bn": "Pronoun ছাড়া: 'জন আমার বন্ধু। জন ঢাকায় থাকে।'" },
-        { "en": "With pronoun: 'John is my friend. He lives in Dhaka.'", "bn": "Pronoun সহ: 'জন আমার বন্ধু। সে ঢাকায় থাকে।'" },
+        { "en": "Without pronoun: 'John is my friend. John lives in Kolkata.'", "bn": "Pronoun ছাড়া: 'জন আমার বন্ধু। জন ঢাকায় থাকে।'" },
+        { "en": "With pronoun: 'John is my friend. He lives in Kolkata.'", "bn": "Pronoun সহ: 'জন আমার বন্ধু। সে ঢাকায় থাকে।'" },
         { "en": "Antecedent: 'The students finished their homework.' (students = antecedent, their = pronoun)", "bn": "Antecedent: 'ছাত্ররা তাদের হোমওয়ার্ক শেষ করল।' (students = antecedent, their = pronoun)" },
         { "en": "Number agreement: 'The dog wagged its tail.' (singular → its)", "bn": "Number agreement: 'কুকুরটি তার লেজ নাড়ালো।' (singular → its)" },
         { "en": "Gender agreement: 'My sister loves her job.' (feminine → her)", "bn": "Gender agreement: 'আমার বোন তার চাকরি ভালোবাসে।' (feminine → her)" },
-        { "en": "Unclear antecedent: 'Rina and Soni went shopping, but she didn't buy anything.' (who is 'she'?)", "bn": "অস্পষ্ট antecedent: 'রিনা এবং সনি শপিং করতে গেল, কিন্তু সে কিছুই কিনল না।' ('সে' কে?)" }
+        { "en": "Unclear antecedent: 'Priya and Neha went shopping, but she didn't buy anything.' (who is 'she'?)", "bn": "অস্পষ্ট antecedent: 'প্রিয়া এবং নেহা শপিং করতে গেল, কিন্তু সে কিছুই কিনল না।' ('সে' কে?)" }
       ],
-      "tips": "Pronoun ব্যবহারের সময় সবচেয়ে গুরুত্বপূর্ণ নিয়ম: antecedent স্পষ্ট হতে হবে। 'Rina and Soni went to the market because she needed vegetables' — এখানে 'she' কাকে বোঝাচ্ছে? Rina নাকি Soni? বোঝা যাচ্ছে না। antecedent স্পষ্ট না হলে noun-ই ব্যবহার করো।"
+      "tips": "Pronoun ব্যবহারের সময় সবচেয়ে গুরুত্বপূর্ণ নিয়ম: antecedent স্পষ্ট হতে হবে। 'Priya and Neha went to the market because she needed vegetables' — এখানে 'she' কাকে বোঝাচ্ছে? Priya নাকি Neha? বোঝা যাচ্ছে না। antecedent স্পষ্ট না হলে noun-ই ব্যবহার করো।"
     },
     {
       "name": "Personal Pronouns",
@@ -132,7 +132,7 @@
         { "en": "Pronoun: 'Those are my grandparents.'", "bn": "Pronoun: 'ওঁরা আমার দাদা-দাদি।'" },
         { "en": "Adjective: 'Those people are my grandparents.'", "bn": "Adjective: 'ওই লোকেরা আমার দাদা-দাদি।'" },
         { "en": "Time: 'That was a wonderful vacation.'", "bn": "সময়: 'ওটা ছিল একটি চমৎকার ছুটি।'" },
-        { "en": "Phone: 'Hello, this is Rahim speaking.' (introducing oneself)", "bn": "ফোন: 'হ্যালো, আমি রহিম বলছি।' (নিজের পরিচয়)" }
+        { "en": "Phone: 'Hello, this is Arjun speaking.' (introducing oneself)", "bn": "ফোন: 'হ্যালো, আমি অর্জুন বলছি।' (নিজের পরিচয়)" }
       ],
       "tips": "Demonstrative pronoun চেনার উপায়: দেখো শব্দটি (this, that, these, those) noun-এর আগে না একা বসেছে। 'This book' → adjective (book শব্দটি আছে)। 'This is a book' → pronoun (একা বসেছে)। ফোনে নিজের পরিচয় দেওয়ার সময় 'This is...' ব্যবহার করো (I am... না)।"
     },
@@ -212,7 +212,7 @@
         { "en": "Which: 'The movie which we watched was boring.'", "bn": "Which: 'আমরা যে সিনেমাটি দেখেছি সেটি boring ছিল।'" },
         { "en": "That: 'The house that Jack built is very old.'", "bn": "That: 'যে বাড়িটি জ্যাক তৈরি করেছে সেটি খুব পুরনো।'" },
         { "en": "Whose: 'The woman whose bag was stolen called the police.'", "bn": "Whose: 'যে মহিলার ব্যাগ চুরি হয়েছে তিনি পুলিশ ডেকেছেন।'" },
-        { "en": "Preposition: 'The person to whom you should speak is Mr. Khan.'", "bn": "Preposition: 'যার সাথে আপনার কথা বলা উচিত তিনি মি. খান।'" }
+        { "en": "Preposition: 'The person to whom you should speak is Mr. Sharma.'", "bn": "Preposition: 'যার সাথে আপনার কথা বলা উচিত তিনি মি. শর্মা।'" }
       ],
       "tips": "Relative pronoun নির্বাচনের নিয়ম: ব্যক্তি → who/that, বস্তু → which/that, মালিকানা → whose। 'Who' subject-এর জন্য, 'whom' object-এর জন্য (কিন্তু কথোপকথনে 'who'多用 হয়)। যে relative clause তথ্যটি essential (defining) — তাতে 'that' বেশি ব্যবহার হয়। Non-essential তথ্যের জন্য comma দিয়ে আলাদা করে 'which' ব্যবহার করো।"
     },
@@ -221,7 +221,7 @@
       "banglaName": "পারস্পরিক সর্বনাম",
       "definition": "Reciprocal pronouns express a mutual action or relationship between two or more people. They show that each person in a group does something to or for the others. There are only two reciprocal pronouns in English: each other (for two people) and one another (for three or more people). However, in everyday use, this distinction is often ignored.",
       "banglaDefinition": "Reciprocal pronoun (পারস্পরিক সর্বনাম) দুই বা ততোধিক ব্যক্তির মধ্যে পারস্পরিক কাজ বা সম্পর্ক প্রকাশ করে। এরা দেখায় যে একটি দলের প্রতিটি ব্যক্তি অন্যদের জন্য কিছু করে বা অন্যদের প্রতি কিছু করে। ইংরেজিতে মাত্র দুটি reciprocal pronoun আছে: each other (দুই ব্যক্তির জন্য) এবং one another (তিন বা ততোধিক ব্যক্তির জন্য)। তবে দৈনন্দিন ব্যবহারে এই পার্থক্য প্রায়ই উপেক্ষা করা হয়।",
-      "formula": "Two people: each other\n→ 'Rina and Soni love each other.'\n\nThree+ people: one another\n→ 'The team members help one another.'\n\nPossessive form:\n→ 'They borrowed each other's books.'\n→ 'They borrowed one another's notes.'",
+      "formula": "Two people: each other\n→ 'Priya and Neha love each other.'\n\nThree+ people: one another\n→ 'The team members help one another.'\n\nPossessive form:\n→ 'They borrowed each other's books.'\n→ 'They borrowed one another's notes.'",
       "rules": [
         "'Each other' দুই ব্যক্তির মধ্যে পারস্পরিক সম্পর্ক বোঝায়।",
         "'One another' তিন বা ততোধিক ব্যক্তির মধ্যে পারস্পরিক সম্পর্ক বোঝায়।",
@@ -259,9 +259,9 @@
       "explanation": "'Its' (no apostrophe) possessive pronoun — 'তার'। 'It's' (with apostrophe) = 'it is' বা 'it has'। Possessive pronoun-এ কখনো apostrophe হয় না: his, hers, its, ours, yours, theirs — কোনো apostrophe নেই। মনে রাখবে: its = possessive, it's = it is।"
     },
     {
-      "wrong": "Unclear antecedent: 'Rina told Soni that she passed the exam.'",
-      "correct": "'Rina told Soni, \"I passed the exam.\"' or 'Rina told Soni that Rina passed the exam.' or specify: 'Rina told Soni that Soni passed the exam.'",
-      "explanation": "এখানে 'she' কাকে বোঝাচ্ছে — Rina নাকি Soni? বোঝার উপায় নেই। antecedent স্পষ্ট না হলে direct speech ব্যবহার করো, অথবা antecedent পুনরাবৃত্তি করো। Pronoun ব্যবহারের সময় antecedent সবসময় স্পষ্ট রাখবে।"
+      "wrong": "Unclear antecedent: 'Priya told Neha that she passed the exam.'",
+      "correct": "'Priya told Neha, \"I passed the exam.\"' or 'Priya told Neha that Priya passed the exam.' or specify: 'Priya told Neha that Neha passed the exam.'",
+      "explanation": "এখানে 'she' কাকে বোঝাচ্ছে — Priya নাকি Neha? বোঝার উপায় নেই। antecedent স্পষ্ট না হলে direct speech ব্যবহার করো, অথবা antecedent পুনরাবৃত্তি করো। Pronoun ব্যবহারের সময় antecedent সবসময় স্পষ্ট রাখবে।"
     },
     {
       "wrong": "Using 'their' with singular indefinite pronoun: 'Everyone must bring their book.' — This is actually CORRECT in modern English, but some still consider it wrong.",

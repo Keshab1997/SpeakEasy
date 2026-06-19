@@ -9,9 +9,9 @@
     {
       "name": "What is a Noun?",
       "banglaName": "বিশেষ্য কী?",
-      "definition": "A noun is a word that identifies a person (boy, teacher, John), place (city, park, Dhaka), thing (book, table, car), or idea (love, freedom, honesty). Nouns are the names we give to everything around us. They are the building blocks of sentences. Almost every sentence contains at least one noun.",
+      "definition": "A noun is a word that identifies a person (boy, teacher, John), place (city, park, Kolkata), thing (book, table, car), or idea (love, freedom, honesty). Nouns are the names we give to everything around us. They are the building blocks of sentences. Almost every sentence contains at least one noun.",
       "banglaDefinition": "Noun (বিশেষ্য) হলো সেই শব্দ যা একজন ব্যক্তি (ছেলে, শিক্ষক, জন), একটি স্থান (শহর, পার্ক, ঢাকা), একটি বস্তু (বই, টেবিল, গাড়ি), বা একটি ধারণা (ভালোবাসা, স্বাধীনতা, সততা) চিহ্নিত করে। Noun হল সেই নাম যা আমরা আমাদের চারপাশের সবকিছুকে দেই। এগুলো বাক্যের নির্মাণ উপাদান। প্রায় প্রতিটি বাক্যে অন্তত একটি noun থাকে।",
-      "formula": "Noun = Name of:\n- Person: teacher, doctor, Rahim\n- Place: school, market, Sylhet\n- Thing: pen, mobile, tree\n- Idea: peace, happiness, education\n\nExample: 'The teacher went to the school.'\n→ teacher (person) + school (place)",
+      "formula": "Noun = Name of:\n- Person: teacher, doctor, Arjun\n- Place: school, market, Mumbai\n- Thing: pen, mobile, tree\n- Idea: peace, happiness, education\n\nExample: 'The teacher went to the school.'\n→ teacher (person) + school (place)",
       "rules": [
         "Noun যে কোনো ব্যক্তি, স্থান, বস্তু, বা ধারণার নাম হতে পারে।",
         "Noun বাক্যের subject, object, বা complement হিসেবে কাজ করতে পারে।",
@@ -33,28 +33,28 @@
     {
       "name": "Common and Proper Nouns",
       "banglaName": "সাধারণ ও নামবাচক বিশেষ্য",
-      "definition": "Common nouns are general names for people, places, or things (city, boy, country). Proper nouns are specific names for particular people, places, or things (Dhaka, John, Bangladesh). Proper nouns always begin with a capital letter. Common nouns begin with a capital letter only at the start of a sentence.",
+      "definition": "Common nouns are general names for people, places, or things (city, boy, country). Proper nouns are specific names for particular people, places, or things (Kolkata, John, India). Proper nouns always begin with a capital letter. Common nouns begin with a capital letter only at the start of a sentence.",
       "banglaDefinition": "Common noun (সাধারণ বিশেষ্য) হলো ব্যক্তি, স্থান বা বস্তুর সাধারণ নাম (শহর, ছেলে, দেশ)। Proper noun (নামবাচক বিশেষ্য) হলো নির্দিষ্ট ব্যক্তি, স্থান বা বস্তুর বিশেষ নাম (ঢাকা, জন, বাংলাদেশ)। Proper noun সবসময় capital letter দিয়ে শুরু হয়। Common noun শুধু বাক্যের শুরুতে capital letter দিয়ে শুরু হয়।",
-      "formula": "Common Noun (General) → Proper Noun (Specific)\ncity → Dhaka\ncountry → Bangladesh\nboy → Rahim\nriver → Padma\n\nExample:\nCommon: 'The boy lives in a city.'\nProper: 'Rahim lives in Dhaka.'",
+      "formula": "Common Noun (General) → Proper Noun (Specific)\ncity → Kolkata\ncountry → India\nboy → Arjun\nriver → Ganges\n\nExample:\nCommon: 'The boy lives in a city.'\nProper: 'Arjun lives in Kolkata.'",
       "rules": [
         "Common noun একটি শ্রেণীর সব সদস্যের জন্য ব্যবহার হয়: 'dog' (যেকোনো কুকুর)।",
         "Proper noun একটি নির্দিষ্ট সদস্যের নাম: 'Tommy' (একটি নির্দিষ্ট কুকুর)।",
         "Proper noun সবসময় capital letter দিয়ে শুরু হয়।",
         "Common noun বাক্যের মাঝে capital letter হয় না।",
-        "Days, months, holidays — proper noun: Monday, January, Eid।",
+        "Days, months, holidays — proper noun: Monday, January, Diwali।",
         "জাতি, ভাষা, ধর্ম — proper noun: Bengali, English, Islam।",
         "বই, সিনেমা, গানের শিরোনাম — proper noun: 'The Cat in the Hat'।",
         "একই শব্দ common এবং proper উভয়ই হতে পারে: 'I love my mom.' (common) / 'Can I go, Mom?' (proper)"
       ],
       "examples": [
         { "en": "Common: 'I live in a city.'", "bn": "Common: 'আমি একটি শহরে থাকি।'" },
-        { "en": "Proper: 'I live in Chittagong.'", "bn": "Proper: 'আমি চট্টগ্রামে থাকি।'" },
+        { "en": "Proper: 'I live in Chennai.'", "bn": "Proper: 'আমি চেন্নাইতে থাকি।'" },
         { "en": "Common: 'She is a teacher.'", "bn": "Common: 'সে একজন শিক্ষক।'" },
         { "en": "Proper: 'Ms. Fatima is my teacher.'", "bn": "Proper: 'ফাতিমা ম্যাম আমার শিক্ষক।'" },
         { "en": "Common: 'Let's go to the river.'", "bn": "Common: 'চলো নদীতে যাই।'" },
-        { "en": "Proper: 'Let's go to the Padma River.'", "bn": "Proper: 'চলো পদ্মা নদীতে যাই।'" }
+        { "en": "Proper: 'Let's go to the Ganges River.'", "bn": "Proper: 'চলো গঙ্গা নদীতে যাই।'" }
       ],
-      "tips": "Proper noun চেনার উপায়: দেখো শব্দটি capital letter দিয়ে শুরু হয়েছে কিনা (বাক্যের প্রথম শব্দ ছাড়া)। 'I met Mr. Khan on Friday in January.' — এখানে Mr. Khan, Friday, January সবগুলো proper noun। 'I love my country.' — 'country' common noun, কারণ এটি capital দিয়ে শুরু হয়নি।"
+      "tips": "Proper noun চেনার উপায়: দেখো শব্দটি capital letter দিয়ে শুরু হয়েছে কিনা (বাক্যের প্রথম শব্দ ছাড়া)। 'I met Mr. Sharma on Friday in January.' — এখানে Mr. Sharma, Friday, January সবগুলো proper noun। 'I love my country.' — 'country' common noun, কারণ এটি capital দিয়ে শুরু হয়নি।"
     },
     {
       "name": "Concrete and Abstract Nouns",
@@ -116,7 +116,7 @@
         "Collective noun দেখতে singular কিন্তু একাধিক সদস্য বোঝায়।",
         "যুক্তরাজ্যের ইংরেজিতে (BrE) collective noun-এর সাথে plural verb বেশি ব্যবহার হয়।",
         "মার্কিন ইংরেজিতে (AmE) collective noun-এর সাথে singular verb বেশি ব্যবহার হয়।",
-        "গোষ্ঠীকে একক হিসেবে দেখালে singular verb: 'The family lives in Dhaka.'",
+        "গোষ্ঠীকে একক হিসেবে দেখালে singular verb: 'The family lives in Kolkata.'",
         "গোষ্ঠীর সদস্যদের আলাদাভাবে দেখালে plural verb: 'The family are having dinner.'",
         "Collective noun-এর জন্য specific pronoun: team → it (সিঙ্গুলার) বা they (প্লুরাল).",
         "কিছু collective noun শুধু নির্দিষ্ট প্রাণীর জন্য: school of fish, pride of lions, gaggle of geese।"
@@ -165,7 +165,7 @@
       "banglaName": "সম্বন্ধপদ বিশেষ্য",
       "definition": "A possessive noun shows ownership or possession. It is formed by adding an apostrophe and the letter 's ('s) to a singular noun, or just an apostrophe (') to most plural nouns. Possessive nouns tell us who or what owns something, making sentences clearer and more concise.",
       "banglaDefinition": "Possessive noun (সম্বন্ধপদ বিশেষ্য) মালিকানা বা অধিকার দেখায়। এটি singular noun-এ apostrophe এবং 's' ('s) যোগ করে এবং বেশিরভাগ plural noun-এ শুধু apostrophe (') যোগ করে গঠিত হয়। Possessive noun আমাদের বলে কে বা কী কিছুর মালিক, যা বাক্যকে পরিষ্কার ও সংক্ষিপ্ত করে।",
-      "formula": "Singular noun: Noun + 's → the boy's bag\nPlural noun (ending in -s): Noun + ' → the boys' bags\nPlural noun (not ending in -s): Noun + 's → the children's toys\n\nExample:\n'This is Rahim's book.' (one Rahim)\n'This is the students' classroom.' (many students)",
+      "formula": "Singular noun: Noun + 's → the boy's bag\nPlural noun (ending in -s): Noun + ' → the boys' bags\nPlural noun (not ending in -s): Noun + 's → the children's toys\n\nExample:\n'This is Arjun's book.' (one Arjun)\n'This is the students' classroom.' (many students)",
       "rules": [
         "Singular noun-এর শেষে 's যোগ করো: 'the girl's dress', 'John's car', 'the cat's tail'।",
         "Singular noun যদি -s-এ শেষ হয়, তবুও 's যোগ করো: 'James's house', 'the bus's engine'।",
@@ -177,11 +177,11 @@
         "Possessive form-এ apostrophe-এর পরের noun বাদ দেওয়া যায়: 'I went to the doctor's.' (= doctor's office)"
       ],
       "examples": [
-        { "en": "Singular: 'This is Samia's pencil.'", "bn": "Singular: 'এটি সামিয়ার পেন্সিল।'" },
+        { "en": "Singular: 'This is Kavya's pencil.'", "bn": "Singular: 'এটি কাব্যার পেন্সিল।'" },
         { "en": "Plural -s: 'The teachers' lounge is on the second floor.'", "bn": "Plural -s: 'শিক্ষকদের বিশ্রামাগার দ্বিতীয় তলায়।'" },
         { "en": "Plural not -s: 'The children's playground is new.'", "bn": "Plural not -s: 'শিশুদের খেলার মাঠটি নতুন।'" },
-        { "en": "Joint: 'Rina and Mina's room is very tidy.'", "bn": "যৌথ: 'রিনা এবং মিনার রুম খুব পরিপাটি।'" },
-        { "en": "Separate: 'Rina's and Mina's rooms are very tidy.'", "bn": "পৃথক: 'রিনার এবং মিনার রুম খুব পরিপাটি।'" },
+        { "en": "Joint: 'Priya and Kavya's room is very tidy.'", "bn": "যৌথ: 'প্রিয়া এবং কাব্যার রুম খুব পরিপাটি।'" },
+        { "en": "Separate: 'Priya's and Kavya's rooms are very tidy.'", "bn": "পৃথক: 'প্রিয়ার এবং কাব্যার রুম খুব পরিপাটি।'" },
         { "en": "Without following noun: 'I'm going to the dentist's.'", "bn": "পরের noun ছাড়া: 'আমি ডেন্টিস্টের কাছে যাচ্ছি।'" }
       ],
       "tips": "Possessive noun-এ apostrophe-এর সঠিক ব্যবহার মনে রাখো: singular = 's, plural -s = s'। বিভ্রান্তি এড়াতে মনে রাখবে: 'the boys' hostel' (একাধিক ছেলের হোস্টেল) vs 'the boy's hostel' (এক ছেলের হোস্টেল) — apostrophe-এর অবস্থানই পার্থক্য তৈরি করে।"
@@ -244,7 +244,7 @@
       "banglaName": "বাক্যে বিশেষ্যের ভূমিকা",
       "definition": "A noun can perform different functions in a sentence. It can be the subject (doer of the action), the object (receiver of the action), the complement (renames or describes the subject), the object of a preposition, or show possession. Understanding these functions helps in constructing grammatically correct sentences.",
       "banglaDefinition": "একটি noun বাক্যে বিভিন্ন ভূমিকা পালন করতে পারে। এটি subject (কাজের কর্তা), object (কাজের গ্রহীতা), complement (subject-এর পুনঃনামকরণ বা বর্ণনা), preposition-এর object, অথবা মালিকানা দেখাতে পারে। এই ভূমিকাগুলো বোঝা ব্যাকরণসম্মত বাক্য গঠনে সাহায্য করে।",
-      "formula": "1. Subject: 'The cat sleeps.' (who sleeps? → cat)\n2. Direct Object: 'I read a book.' (read what? → book)\n3. Indirect Object: 'She gave him a gift.' (gave to whom? → him)\n4. Subject Complement: 'He is a doctor.' (doctor = he)\n5. Object of Preposition: 'The pen is on the table.'\n6. Possessive: 'This is Rina's bag.'",
+      "formula": "1. Subject: 'The cat sleeps.' (who sleeps? → cat)\n2. Direct Object: 'I read a book.' (read what? → book)\n3. Indirect Object: 'She gave him a gift.' (gave to whom? → him)\n4. Subject Complement: 'He is a doctor.' (doctor = he)\n5. Object of Preposition: 'The pen is on the table.'\n6. Possessive: 'This is Priya's bag.'",
       "rules": [
         "Subject: noun বাক্যের কর্তা — verb-কে 'who' বা 'what' প্রশ্ন করে subject পাওয়া যায়।",
         "Direct Object: verb-এর কাজ সরাসরি যার উপর পড়ে — verb-কে 'what' বা 'whom' প্রশ্ন করে direct object পাওয়া যায়।",
@@ -252,17 +252,17 @@
         "Subject Complement: linking verb (is, am, are, was, were, seem, become) এর পরে বসে subject-কে রি命名 করে।",
         "Object of Preposition: preposition-এর পরে যে noun বসে: in the 'room', on the 'table', with 'friends'।",
         "Possessive noun: মালিকানা দেখায়: 'the student's notebook', 'the girls' hostel'।",
-        "Appositive: একটি noun আরেকটি noun-এর পরে বসে তার ব্যাখ্যা দেয়: 'Mr. Khan, the principal, spoke to us.'",
+        "Appositive: একটি noun আরেকটি noun-এর পরে বসে তার ব্যাখ্যা দেয়: 'Mr. Sharma, the principal, spoke to us.'",
         "একটি noun একই বাক্যে একাধিক ভূমিকা পালন করতে পারে না, কিন্তু একটি বাক্যে একাধিক noun বিভিন্ন ভূমিকায় থাকতে পারে।"
       ],
       "examples": [
-        { "en": "Subject: 'Rahim plays cricket.'", "bn": "Subject: 'রহিম ক্রিকেট খেলে।'" },
-        { "en": "Direct Object: 'Rahim plays cricket.'", "bn": "Direct Object: 'রহিম ক্রিকেট খেলে।'" },
+        { "en": "Subject: 'Arjun plays cricket.'", "bn": "Subject: 'অর্জুন ক্রিকেট খেলে।'" },
+        { "en": "Direct Object: 'Arjun plays cricket.'", "bn": "Direct Object: 'অর্জুন ক্রিকেট খেলে।'" },
         { "en": "Indirect Object: 'Mother gave me a gift.'", "bn": "Indirect Object: 'মা আমাকে একটি উপহার দিলেন।'" },
         { "en": "Subject Complement: 'She became a teacher.'", "bn": "Subject Complement: 'সে একজন শিক্ষক হল।'" },
         { "en": "Object of Prep: 'The book is on the desk.'", "bn": "Object of Prep: 'বইটি ডেস্কের উপর আছে।'" },
-        { "en": "Possessive: 'That is Samia's bicycle.'", "bn": "Possessive: 'ওটা সামিয়ার সাইকেল।'" },
-        { "en": "Appositive: 'Dr. Yunus, the Nobel laureate, is from Bangladesh.'", "bn": "Appositive: 'ড. ইউনূস, নোবেল বিজয়ী, বাংলাদেশের।'" }
+        { "en": "Possessive: 'That is Kavya's bicycle.'", "bn": "Possessive: 'ওটা কাব্যার সাইকেল।'" },
+        { "en": "Appositive: 'Dr. Kalam, the former President, is from India.'", "bn": "Appositive: 'ড. কালাম, প্রাক্তন রাষ্ট্রপতি, ভারতের।'" }
       ],
       "tips": "বাক্যে noun-এর ভূমিকা চিনতে প্রশ্ন করো: 'Who/what does the action?' → Subject. 'Who/what receives the action?' → Object. 'After preposition?' → Object of preposition. 'After linking verb?' → Complement. প্রতিটি বাক্যে noun-এর ভূমিকা চিহ্নিত করার অভ্যাস করো — এটি sentence structure বোঝার সবচেয়ে কার্যকর উপায়।"
     }
@@ -311,7 +311,7 @@
     {
       "wrong": "Capitalization: 'I visited the doctor on monday.'",
       "correct": "'I visited the doctor on Monday.'",
-      "explanation": "Days of the week (Monday, Tuesday), months (January, February), এবং holidays (Eid, Christmas) সবসময় capital letter দিয়ে শুরু হয়। 'Doctor' এখানে common noun (পেশা) → capital লাগবে না। কিন্তু 'Dr. Rahman' এটা proper noun → capital লাগবে।"
+      "explanation": "Days of the week (Monday, Tuesday), months (January, February), এবং holidays (Diwali, Christmas) সবসময় capital letter দিয়ে শুরু হয়। 'Doctor' এখানে common noun (পেশা) → capital লাগবে না। কিন্তু 'Dr. Verma' এটা proper noun → capital লাগবে।"
     },
     {
       "wrong": "Confusing 'woman' and 'women' in pronunciation/spelling: 'A women came to the office.'",
