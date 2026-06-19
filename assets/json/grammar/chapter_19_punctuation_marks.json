@@ -1,10 +1,259 @@
 {
   "chapter": 19,
   "level": "Beginner",
-  "title": "Punctuation Marks",
+  "title": "Punctuation Marks (যতি চিহ্ন)",
   "icon": "format_quote",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Punctuation marks are symbols used in writing to separate sentences, clarify meaning, and indicate pauses, tone, and structure. They are the traffic signals of language — they tell the reader when to stop, pause, question, or exclaim. The main punctuation marks in English are: full stop (.), comma (,), question mark (?), exclamation mark (!), quotation marks (\" \"), apostrophe ('), colon (:), semi-colon (;), hyphen (-), dash (—), brackets (()), and ellipsis (...). Correct punctuation makes your writing clear, professional, and easy to read.",
+  "banglaDescription": "যতি চিহ্ন (Punctuation marks) হলো সেই চিহ্ন যা লেখায় বাক্য পৃথক করতে, অর্থ পরিষ্কার করতে, এবং বিরতি, সুর ও গঠন নির্দেশ করতে ব্যবহৃত হয়। এরা ভাষার ট্রাফিক সিগন্যাল — পাঠককে বলে কখন থামতে হবে, বিরতি নিতে হবে, প্রশ্ন করতে হবে, বা বিস্মিত হতে হবে। ইংরেজির প্রধান যতি চিহ্ন: full stop (.), comma (,), question mark (?), exclamation mark (!), quotation marks (\" \"), apostrophe ('), colon (:), semi-colon (;), hyphen (-), dash (—), brackets (()), এবং ellipsis (...)। সঠিক যতি চিহ্ন আপনার লেখাকে পরিষ্কার, পেশাদার এবং পড়তে সহজ করে তোলে।",
+  "topics": [
+    {
+      "name": "What is Punctuation?",
+      "banglaName": "যতি চিহ্ন কী?",
+      "definition": "Punctuation is the system of symbols used in writing to separate sentences and clarify meaning. Without punctuation, words would run together and meaning would be unclear. Punctuation marks indicate: where sentences end (.), where pauses go (,), when a question is asked (?), strong emotion (!), possession ('), and quoted speech (\" \"). Good punctuation is essential for clear, professional writing. A famous example: 'Let's eat, Grandma!' vs 'Let's eat Grandma!' — punctuation saves lives!",
+      "banglaDefinition": "যতি চিহ্ন হলো লেখায় ব্যবহৃত প্রতীকগুলির পদ্ধতি যা বাক্য পৃথক করতে এবং অর্থ পরিষ্কার করতে সাহায্য করে। যতি চিহ্ন ছাড়া শব্দগুলো একসাথে চলতে থাকবে এবং অর্থ অস্পষ্ট হবে। যতি চিহ্ন নির্দেশ করে: কোথায় বাক্য শেষ হয় (.), কোথায় বিরতি যায় (,), কখন প্রশ্ন করা হয় (?), শক্তিশালী আবেগ (!), possessiveness ('), এবং উদ্ধৃত বক্তব্য (\" \")। সঠিক যতি চিহ্ন পরিষ্কার, পেশাদার লেখার জন্য অপরিহার্য। একটি বিখ্যাত উদাহরণ: 'Let's eat, Grandma!' vs 'Let's eat Grandma!' — যতি চিহ্ন জীবন বাঁচায়!",
+      "formula": "MAIN PUNCTUATION MARKS:\n\n.  Full Stop / Period — Ends a sentence\n,  Comma — Pause, separates items\n?  Question Mark — Asks a question\n!  Exclamation Mark — Strong emotion/surprise\n\" \" Quotation Marks — Direct speech, quotes\n'  Apostrophe — Possession, contraction\n:  Colon — Introduces a list or explanation\n;  Semi-Colon — Connects related sentences\n-  Hyphen — Joins words\n—  Dash — Strong pause or break\n( ) Brackets — Additional information\n... Ellipsis — Trailing off, omitted words\n\nFAMOUS PUNCTUATION EXAMPLE:\n'A woman, without her man, is nothing.' (comma)\n'A woman: without her, man is nothing.' (colon + comma)\n— Same words, completely different meaning!",
+      "rules": [
+        "প্রতি sentence শেষে punctuation আবশ্যক — . বা ? বা !।",
+        "Punctuation বাক্যের অর্থ পরিবর্তন করতে পারে — careful হতে হবে।",
+        "Punctuation marks লেখার tone এবং rhythm তৈরি করে।",
+        "একটি sentence-এ একাধিক punctuation marks ব্যবহার করা যায়: 'What a beautiful sunset! (Have you ever seen one like this?)'",
+        "বাংলা এবং ইংরেজি punctuation প্রায় একই, কিন্তু কিছু পার্থক্য আছে (যেমন quotation marks বাংলায় „ ” )।",
+        "Punctuation rules style guide (APA, MLA, Chicago) অনুযায়ী সামান্য পরিবর্তিত হতে পারে।"
+      ],
+      "examples": [
+        { "en": "Without punctuation: 'I love cooking my family and my dog' (confusing!)", "bn": "যতি ছাড়া: 'আমি রান্না করতে ভালোবাসি আমার পরিবার এবং আমার কুকুর' (বিভ্রান্তিকর!)" },
+        { "en": "With punctuation: 'I love cooking, my family, and my dog.' (clear!)", "bn": "যতি সহ: 'আমি রান্না করতে, আমার পরিবারকে, এবং আমার কুকুরকে ভালোবাসি।' (স্পষ্ট!)" },
+        { "en": "Question vs Statement: 'You are coming.' (statement) vs 'You are coming?' (question)", "bn": "প্রশ্ন বনাম বিবৃতি: 'তুমি আসছ।' (বিবৃতি) vs 'তুমি আসছ?' (প্রশ্ন)" },
+        { "en": "Punctuation changes tone: 'I'm fine.' (neutral) vs 'I'm fine!' (happy/defensive) vs 'I'm fine?' (uncertain)", "bn": "যতি চিহ্ন টোন পরিবর্তন করে: 'আমি ঠিক আছি।' vs 'আমি ঠিক আছি!' vs 'আমি ঠিক আছি?'" }
+      ],
+      "tips": "Punctuation-এর সবচেয়ে গুরুত্বপূর্ণ কাজ: অর্থ স্পষ্ট করা। 'Let's eat, Grandma' (ঠাকুমা, চলো খাই) vs 'Let's eat Grandma' (চলো ঠাকুমাকে খাই) — কমা জীবন বাঁচায়! প্রতিবার punctuation দেওয়ার সময় ভাবো: 'এই চিহ্ন ছাড়া কি অর্থ পরিবর্তন হবে?' উত্তর 'হ্যাঁ' হলে punctuation অপরিহার্য। Writing শেষে punctuation marks check করা অভ্যাস করো।"
+    },
+    {
+      "name": "Full Stop (.) and Comma (,)",
+      "banglaName": "দাঁড়ি (.) এবং কমা (,)",
+      "definition": "The full stop (or period) ends a declarative sentence or imperative. It is the most common punctuation mark. The comma indicates a short pause within a sentence. Commas separate items in a list, join clauses with conjunctions, set off introductory elements, surround non-essential information, and separate adjectives. The Oxford comma (the last comma before 'and'/'or' in a list) is optional but recommended for clarity. 'I bought rice, dal, and vegetables' vs 'I bought rice, dal and vegetables'.",
+      "banglaDefinition": "Full stop (বা period) একটি declarative sentence বা imperative শেষ করে। এটি সবচেয়ে সাধারণ যতি চিহ্ন। Comma একটি বাক্যের মধ্যে সংক্ষিপ্ত বিরতি নির্দেশ করে। Comma তালিকার items পৃথক করে, conjunction-এর সাথে clause যোগ করে, introductory elements আলাদা করে, অপ্রয়োজনীয় তথ্যের চারপাশে বসে, এবং adjectives পৃথক করে। Oxford comma (তালিকার শেষ 'and'/'or'-এর আগের comma) ঐচ্ছিক কিন্তু স্পষ্টতার জন্য সুপারিশ করা হয়। 'I bought rice, dal, and vegetables' vs 'I bought rice, dal and vegetables'।",
+      "formula": "FULL STOP (.) USES:\n1. End a sentence: 'I live in Kolkata. I love this city.'\n2. Abbreviations: Dr., Mr., Mrs., Inc., etc., e.g.\n3. Indirect questions: 'She asked if I was coming.' (no ?)\n\nCOMMA (,) USES:\n\n1. LIST (সিরিজ):\n'I bought rice, dal, vegetables, and spices.' (Oxford comma)\n\n2. BEFORE FANBOYS (compound sentences):\n'I went to the market, and I bought some vegetables.'\n\n3. AFTER INTRODUCTORY ELEMENTS:\n'After the rain stopped, we went for a walk.'\n'However, I am not sure about this.'\n\n4. NON-ESSENTIAL INFORMATION:\n'My father, who lives in Delhi, is a doctor.'\n\nThe Taj Mahal, which is in Agra, is beautiful.'\n\n5. DIRECT ADDRESS:\n'Ravi, could you please help me?'\n'Thank you, sir, for your guidance.'",
+      "rules": [
+        "Full stop সব declarative এবং imperative sentence-এর শেষে দাও: 'I am going to school.' 'Close the door.'",
+        "Abbreviation-এ full stop: Dr., Mrs., Mr., St., Ave., but modern style often omits: Dr, Mrs, Mr.",
+        "Comma list-এ items আলাদা করে: 'I packed my clothes, shoes, toiletries, and a book.'",
+        "FANBOYS (for, and, nor, but, or, yet, so) — এদের আগে comma যখন two independent clauses join করে: 'I was tired, but I continued working.'",
+        "Introductory element-এর পরে comma: 'In the morning, I go for a walk.' 'If it rains, the match will be cancelled.'",
+        "Oxford comma — consistently use বা consistently omit — but be clear।",
+        "Comma splice (দুটি independent clause শুধু comma দিয়ে join) — এড়িয়ে চলো: × 'I went to the store, I bought milk.' → 'I went to the store, and I bought milk.'"
+      ],
+      "examples": [
+        { "en": "Full Stop: 'The Victoria Memorial is a beautiful monument. It attracts many tourists.'", "bn": "দাঁড়ি: 'ভিক্টোরিয়া মেমোরিয়াল একটি সুন্দর স্মৃতিস্তম্ভ। এটি অনেক পর্যটককে আকর্ষণ করে।'" },
+        { "en": "Comma (list): 'I bought a silk sari, a cotton kurta, leather sandals, and wooden crafts.'", "bn": "Comma (তালিকা): 'আমি একটি সিল্ক শাড়ি, একটি সুতির কুর্তা, চামড়ার স্যান্ডেল এবং কাঠের হস্তশিল্প কিনলাম।'" },
+        { "en": "Comma (intro): 'After visiting the Taj Mahal, we went to Agra Fort.'", "bn": "Comma (intro): 'তাজমহল দেখার পর, আমরা আগ্রা ফোর্টে গেলাম।'" },
+        { "en": "Comma (non-essential): 'My mother, who is a wonderful cook, makes the best biryani.'", "bn": "Comma (non-essential): 'আমার মা, যিনি একজন চমৎকার রাঁধুনি, সেরা বিরিয়ানি বানান।'" },
+        { "en": "Comma (address): 'Priya, can you please pass me the salt?'", "bn": "Comma (address): 'প্রিয়া, তুমি কি দয়া করে লবণটা দেবে?'" },
+        { "en": "No comma splice: ✗ 'The train arrived, I boarded it.' → ✓ 'The train arrived, and I boarded it.' or 'When the train arrived, I boarded it.'", "bn": "Comma splice নয়: ✗ 'ট্রেন এল, আমি উঠলাম।' → ✓ 'ট্রেন এল, এবং আমি উঠলাম।' বা 'যখন ট্রেন এল, আমি উঠলাম।'" }
+      ],
+      "tips": "Full stop এবং comma — সবচেয়ে বেশি ব্যবহৃত punctuation। Full stop = sentence-এর শেষ। Comma = বিরতি। একটি সহজ test: জোরে পড়ো। যেখানে স্বাভাবিকভাবে দম নেবে, সেখানে comma। যেখানে sentence শেষ হবে, সেখানে full stop। Comma splice (দুটি sentence শুধু comma দিয়ে join) — Bengali speakers-এর জন্য common ভুল। বাংলায় 'আমি বাজারে গেলাম, আমি সবজি কিনলাম' ঠিক, কিন্তু ইংরেজিতে comma splice ভুল। Conjunction যোগ করো বা full stop দিয়ে আলাদা করো।"
+    },
+    {
+      "name": "Question Mark (?) and Exclamation Mark (!)",
+      "banglaName": "প্রশ্নচিহ্ন (?) এবং বিস্ময়চিহ্ন (!)",
+      "definition": "The question mark ends a direct question: 'Where is the station?' The exclamation mark shows strong emotion, surprise, urgency, or emphasis: 'Watch out!' 'What a beautiful view!' Question marks go only after direct questions, not indirect ones: 'She asked where the station was.' (no ?). Exclamation marks should be used sparingly — one per paragraph is enough. Overusing them makes writing seem childish or overly dramatic.",
+      "banglaDefinition": "প্রশ্নচিহ্ন (?) সরাসরি প্রশ্ন শেষ করে: 'স্টেশন কোথায়?' বিস্ময়চিহ্ন (!) শক্তিশালী আবেগ, বিস্ময়, জরুরিতা, বা জোর দেখায়: 'সাবধান!' 'কী সুন্দর দৃশ্য!' প্রশ্নচিহ্ন শুধু প্রত্যক্ষ প্রশ্নের পরে যায়, পরোক্ষ প্রশ্নের পরে নয়: 'সে জিজ্ঞাসা করল স্টেশন কোথায়।' (কোনো ?)। বিস্ময়চিহ্ন অল্প ব্যবহার করো — প্রতি প্যারায় একটি যথেষ্ট। অতিরিক্ত ব্যবহার লেখাকে শিশুসুলভ বা অতিনাটকীয় করে তোলে।",
+      "formula": "QUESTION MARK (?):\n\nDirect Question: 'What time does the train leave?'\nTag Question: 'You are coming, aren't you?'\nRhetorical: 'Who doesn't love Kolkata?'\n\nNOT used for:\nIndirect Question: 'He asked what time the train left.' (no ?)\nPolite Request: 'Could you please help me.' (sometimes . instead of ? for polite requests)\n\nEXCLAMATION MARK (!):\n\nStrong Emotion: 'I can't believe we won the match!'\nCommands/Urgency: 'Look out! There's a car!'\nInterjections: 'Wow! That's amazing!' 'Ouch! That hurts!'\nEmphatic Statements: 'I absolutely love this city!'\n\nDO NOT OVERUSE:\n✗ 'I went to the market! I bought some vegetables! They were fresh!'\n✓ 'I went to the market, and I bought some vegetables. They were fresh!'\n\nCOMBINATION:\n'What! You are leaving already?'\n'Are you serious!?' (informal — both ? and !) — called 'interrobang'",
+      "rules": [
+        "Direct question-এর পরে ?: 'What is your name?' 'How do I get to Howrah station?'",
+        "Indirect question-এর পরে .: 'She asked me what my name was.' 'I wonder where he is.'",
+        "Tag question-এর শেষে ?: 'You like biryani, don't you?'",
+        "Rhetorical question-এও ?: 'Who cares?' (expecting no answer)",
+        "Exclamation mark সতর্কতা, surprise, এবং জোরালো নির্দেশে: 'Watch out!', 'Happy Birthday!', 'Stop!'",
+        "Exclamation mark খুব বেশি ব্যবহার করো না — formal/academic writing-এ avoid করাই ভালো।",
+        "Question mark এবং exclamation mark একসাথে ব্যবহার informal English-এ সম্ভব: 'What are you doing!?'"
+      ],
+      "examples": [
+        { "en": "Direct Question: 'How can I book a train ticket from Howrah to Delhi?'", "bn": "Direct Question: 'হাওড়া থেকে দিল্লির ট্রেনের টিকিট কিভাবে বুক করব?'" },
+        { "en": "Indirect Question: 'She wanted to know how she could book a train ticket.' (no ?)", "bn": "Indirect Question: 'সে জানতে চেয়েছিল কিভাবে ট্রেনের টিকিট বুক করবে।' (কোনো ? নয়)" },
+        { "en": "Tag Question: 'You have visited the Taj Mahal, haven't you?'", "bn": "Tag Question: 'তুমি তাজমহল দেখেছ, তাই না?'" },
+        { "en": "Exclamation: 'What a magnificent view of the Himalayas from here!'", "bn": "Exclamation: 'এখান থেকে হিমালয়ের কী চমৎকার দৃশ্য!'" },
+        { "en": "Warning: 'Be careful! The traffic in Kolkata can be chaotic.'", "bn": "সতর্কতা: 'সাবধান! কলকাতার ট্রাফিক বিশৃঙ্খল হতে পারে।'" },
+        { "en": "Interjection: 'Wow! The Biryani at this restaurant is amazing!'", "bn": "Interjection: 'বাহ! এই রেস্টুরেন্টের বিরিয়ানি অসাধারণ!'" }
+      ],
+      "tips": "Question mark আর Exclamation mark-এর মূল পার্থক্য: ? = জানতে চাওয় (question), ! = আবেগ দেখানো (emotion)। 'You are going?' = আমি নিশ্চিত নই, জানতে চাচ্ছি। 'You are going!' = আমি অবাক হয়েছি, জোর দিচ্ছি। 'You are going.' = আমি জানি, statement। একই sentence তিনভাবে! Exclamation mark খুব বেশি ব্যবহার করলে effect কমে যায় — reserve করো special moments-এর জন্য। Formal writing-এ exclamation mark avoid করাই best।"
+    },
+    {
+      "name": "Quotation Marks / Inverted Commas (\" \" / ' ')",
+      "banglaName": "উদ্ধৃতি চিহ্ন (\" \" / ' ')",
+      "definition": "Quotation marks (also called inverted commas or quotes) enclose direct speech, quotations from sources, titles of short works (articles, poems, songs), and words used in a special sense. Double quotes (\" \") are common in American English, while single quotes (' ') are common in British English for direct speech. In both systems, quotes within quotes alternate: 'He said, \"I am coming.\"' or \"She said, 'I am coming.'\" Punctuation placement inside or outside quotes varies between US and UK styles.",
+      "banglaDefinition": "উদ্ধৃতি চিহ্ন (Quotation marks বা inverted commas) প্রত্যক্ষ উক্তি, উৎস থেকে উদ্ধৃতি, ছোট কাজের শিরোনাম (নিবন্ধ, কবিতা, গান), এবং বিশেষ অর্থে ব্যবহৃত শব্দ ঘিরে রাখে। American English-এ double quotes (\" \") সাধারণ, British English-এ single quotes (' ') প্রত্যক্ষ উক্তির জন্য সাধারণ। উভয় পদ্ধতিতে, quotes-এর ভিতর quotes alternates: 'He said, \"I am coming.\"' বা \"She said, 'I am coming.'\" US এবং UK শৈলীতে punctuation-এর অবস্থান (quotes-এর ভিতরে বা বাইরে) ভিন্ন।",
+      "formula": "QUOTATION MARKS USES:\n\n1. DIRECT SPEECH:\nAmerican: Ravi said, \"I am going to Delhi.\"\nBritish: Ravi said, 'I am going to Delhi.'\n\n2. QUOTES WITHIN QUOTES:\nAmerican: \"She said, 'I will be late,' and left.\"\nBritish: 'She said, \"I will be late,\" and left.'\n\n3. TITLES (short works):\n'Have you read the story \"The Open Window\"?'\n'I love the song \"Vande Mataram\".'\n\n4. WORDS AS WORDS:\n'The word \"curry\" comes from Tamil.'\n\nPUNCTUATION PLACEMENT:\nAmerican (logical — commas/periods INSIDE quotes):\n\"I am tired,\" he said. (comma inside)\nHe said, \"I am tired.\" (period inside)\n\nBritish (logical — punctuation depends on context):\n'I am tired', he said. (comma outside)\nHe said, 'I am tired.' (period inside if part of quote)",
+      "rules": [
+        "Direct speech শুরু এবং শেষ করতে quotes ব্যবহার করো: 'She said, \"I love Kolkata.\"'",
+        "Quote-এর প্রথম শব্দ capital letter: He said, \"This city is beautiful.\"",
+        "Reporting verb-এর আগে comma: She said, \"I am coming.\" / \"I am coming,\" she said.",
+        "Titles of short works: poems, articles, songs, short stories → quotes. Long works (books, movies) → italics or underline।",
+        "US English: commas and periods always inside closing quotes: \"I am tired,\" he said. \"Wait.\"",
+        "UK English: punctuation ভিতরে বা বাইরে — context এবং logic অনুযায়ী।",
+        "Quote-এর মধ্যে quote: US = \"outer 'inner' quote\", UK = 'outer \"inner\" quote'।"
+      ],
+      "examples": [
+        { "en": "Direct speech: 'The guide said, \"The Taj Mahal was built by Shah Jahan.\"'", "bn": "প্রত্যক্ষ উক্তি: 'গাইড বলল, \"তাজমহল শাহজাহান নির্মাণ করেছিলেন।\"'" },
+        { "en": "Quote within quote: 'She asked, \"Have you read the story 'The Selfish Giant'?\"'", "bn": "উদ্ধৃতির মধ্যে উদ্ধৃতি: 'সে জিজ্ঞাসা করল, \"তুমি কি 'The Selfish Giant' গল্পটি পড়েছ?\"'" },
+        { "en": "Title: 'Tagore's poem \"Where the Mind is Without Fear\" is inspiring.'", "bn": "শিরোনাম: 'ঠাকুরের কবিতা \"Where the Mind is Without Fear\" অনুপ্রেরণাদায়ক।'" },
+        { "en": "Punctuation US: 'He said, \"I will call you tomorrow,\" and left the room.'", "bn": "Punctuation US: 'সে বলল, \"আমি আগামীকাল তোমাকে ফোন করব,\" এবং ঘর থেকে চলে গেল।'" },
+        { "en": "Punctuation UK: 'He said, \"I will call you tomorrow\", and left the room.'", "bn": "Punctuation UK: 'সে বলল, \"আমি আগামীকাল তোমাকে ফোন করব\", এবং ঘর থেকে চলে গেল।'" },
+        { "en": "Special word: 'What people call \"luck\" is often hard work and preparation.'", "bn": "বিশেষ অর্থ: 'লোকেরা যাকে \"ভাগ্য\" বলে তা প্রায়ই কঠোর পরিশ্রম এবং প্রস্তুতি।'" }
+      ],
+      "tips": "Quotation marks-এ সবচেয়ে বিভ্রান্তিকর বিষয়: punctuation কোথায় বসে — quotes-এর ভিতরে না বাইরে। US style: commas এবং periods সবসময় quotation marks-এর ভিতরে। 'He said, \"I am tired.\"' — period inside। UK style: punctuation logic অনুযায়ী — quote-এর অংশ হলে inside, না হলে outside। যেকোনো style বেছে নাও, কিন্তু consistent থাকো। দীর্ঘ quote (৪০+ words) — block quote format (indentation, no quotation marks) ব্যবহার করো।"
+    },
+    {
+      "name": "Apostrophe (')",
+      "banglaName": "অ্যাপোস্ট্রফি (')",
+      "definition": "The apostrophe has two main uses: to show possession and to form contractions (shortened forms). For possession: add 's to singular nouns (Ravi's book, the cat's tail, India's culture). For plural nouns ending in -s, add only an apostrophe (the students' hostel, the teachers' room). For plural nouns not ending in -s, add 's (children's park, women's rights). For contractions: don't (do not), can't (cannot), it's (it is/it has), I'm (I am), they're (they are). The apostrophe is never used to form plurals — this is a very common mistake!",
+      "banglaDefinition": "অ্যাপোস্ট্রফির দুটি প্রধান ব্যবহার: possessiveness দেখানো এবং contraction (সংক্ষিপ্ত রূপ) গঠন। Possession-এর জন্য: singular noun-এ 's যোগ (রবির বই, বিড়ালের লেজ, ভারতের সংস্কৃতি)। -s-এ শেষ হওয়া plural noun-এ শুধু apostrophe যোগ (ছাত্রদের হোস্টেল, শিক্ষকদের কক্ষ)। -s-এ শেষ না হওয়া plural noun-এ 's যোগ (শিশুদের পার্ক, নারীদের অধিকার)। Contraction-এর জন্য: don't (do not), can't (cannot), it's (it is/it has), I'm (I am), they're (they are)। Apostrophe never plural গঠনে ব্যবহার হয় না — এটি একটি খুব সাধারণ ভুল!",
+      "formula": "APOSTROPHE FOR POSSESSION:\n\nSingular Noun + 's:\n'Ravi's house' 'India's population' 'The cat's tail'\n'My mother's cooking' 'Today's weather'\n\nPlural Noun Ending in -s + ':\n'The students' hostel' 'The teachers' room'\n'My parents' house' 'The cities' infrastructure'\n\nPlural Noun NOT Ending in -s + 's:\n'Children's park' 'Women's rights'\n'Men's section' 'People's choice'\n\nJoint Possession (শেষ person-এ):\n'Ravi and Priya's house' (তাদের shared house)\n\nIndividual Possession (প্রত্যেক person-এ):\n'Ravi's and Priya's houses' (আলাদা বাড়ি)\n\nAPOSTROPHE FOR CONTRACTIONS:\nI am → I'm        You are → You're\nHe is → He's      She is → She's\nIt is → It's      We are → We're\nThey are → They're\nDo not → Don't    Cannot → Can't\nWill not → Won't  Would not → Wouldn't\nI have → I've     Could have → Could've\n\nWARNING: Its (possessive) vs It's (it is)\n'Its color is beautiful.' (possessive — no apostrophe)\n'It's a beautiful day.' (contraction — it is)",
+      "rules": [
+        "Singular noun-এ possession: 's — 'Ravi's laptop', 'the city's metro', 'Kolkata's culture'।",
+        "Plural noun -s-এ শেষ: শুধু ' — 'the students' bags', 'the workers' demands'।",
+        "Plural noun -s-এ শেষ না: 's — 'children's toys', 'women's clothing', 'men's shoes'।",
+        "Contraction: apostrophe দেখায় letters omitted — don't (do not), can't (cannot), I'll (I will), they'd (they had/would)।",
+        "'Its' (possessive) এবং 'it's' (it is) — কখনো confuse করো না। 'Its' = possessive (no apostrophe), 'it's' = contraction (apostrophe)।",
+        "Apostrophe কখনো plural গঠনে ব্যবহার করো না: × 'Banana's for sale' → ✓ 'Bananas for sale'।",
+        "Names ending in -s: 'James's book' বা 'James' book' — উভয়ই acceptable (style guide অনুযায়ী)।"
+      ],
+      "examples": [
+        { "en": "Possession singular: 'Priya's collection of vintage coins is impressive.'", "bn": "Possession singular: 'প্রিয়ার পুরনো মুদ্রার সংগ্রহ চিত্তাকর্ষক।'" },
+        { "en": "Possession plural: 'The employees' union demanded better wages.'", "bn": "Possession plural: 'কর্মচারীদের ইউনিয়ন ভালো মজুরি দাবি করে।'" },
+        { "en": "Irregular plural: 'The children's park in our neighbourhood is well-maintained.'", "bn": "অনিয়মিত plural: 'আমাদের এলাকার শিশুদের পার্ক ভালোভাবে রক্ষণাবেক্ষণ করা হয়।'" },
+        { "en": "Contraction: 'I'm learning English because it's important for my career.'", "bn": "Contraction: 'আমি ইংরেজি শিখছি কারণ এটি আমার কেরিয়ারের জন্য গুরুত্বপূর্ণ।'" },
+        { "en": "Its vs It's: 'The phone is new. Its screen is cracked already! It's very expensive to repair.'", "bn": "Its vs It's: 'ফোনটি নতুন। এর স্ক্রিন ইতিমধ্যে ফাটল! এটি মেরামত করা খুব ব্যয়বহুল।'" },
+        { "en": "Joint possession: 'Ravi and Priya's wedding was a grand affair.'", "bn": "Joint possession: 'রবি এবং প্রিয়ার বিয়েটি একটি জমকালো অনুষ্ঠান ছিল।'" }
+      ],
+      "tips": "Apostrophe-এ সবচেয়ে বড় ২টি নিয়ম: (1) Possession দেখাতে 's বা ' — 'Ravi's book', 'the boys' hostel'। (২) Contraction দেখাতে apostrophe — 'don't', 'can't', 'it's', 'I'm'। সবচেয়ে common ভুল: its/it's। 'Its' = possessive (no apostrophe — যেমন his, her) — 'The dog wagged its tail.' 'It's' = it is — 'It's raining.' আরেকটি common ভুল: plural-এ apostrophe — 'Apple's ₹80/kg' ✗ → 'Apples ₹80/kg' ✓। Apostrophe NEVER plural-এর জন্য। শুধু possession এবং contraction-এর জন্য।"
+    },
+    {
+      "name": "Colon (:) and Semi-Colon (;)",
+      "banglaName": "কোলন (:) এবং সেমি-কোলন (;)",
+      "definition": "The colon (:) introduces something — a list, a quotation, an explanation, or an example. It signals 'what follows explains or completes what came before'. The semi-colon (;) connects two independent clauses that are closely related in meaning, without using a conjunction. It is stronger than a comma but weaker than a full stop. Semi-colons are also used to separate items in a complex list where items already contain commas.",
+      "banglaDefinition": "Colon (:) কিছু পরিচয় করিয়ে দেয় — একটি তালিকা, একটি উদ্ধৃতি, একটি ব্যাখ্যা, বা একটি উদাহরণ। এটি সংকেত দেয় 'যা অনুসরণ করে তা আগে যা বলা হয়েছে তা ব্যাখ্যা করে বা সম্পূর্ণ করে'। Semi-colon (;) দুটি independent clause সংযুক্ত করে যাদের অর্থ ঘনিষ্ঠভাবে সম্পর্কিত, conjunction ব্যবহার না করে। এটি comma-এর চেয়ে শক্তিশালী কিন্তু full stop-এর চেয়ে দুর্বল। Semi-colon জটিল তালিকায় items পৃথক করতেও ব্যবহৃত হয় যেখানে items-এর মধ্যে comma আছে।",
+      "formula": "COLON (:) — USE:\n\n1. INTRODUCING A LIST:\n'Please bring the following items: a passport, a visa, and tickets.'\n\n2. INTRODUCING A QUOTATION:\n'The Prime Minister said: \"We will work for the nation.\"'\n\n3. EXPLANATION / EXAMPLE:\n'I have one goal: to visit the Taj Mahal at sunset.'\n'The reason is simple: we don't have enough time.'\n\n4. SUBTITLES:\n'India: A Journey Through Time'\n'Kolkata: The City of Joy'\n\nNOTE: Capitalize the first word after colon if it's a complete sentence.\n'He gave one reason: He was tired.' (US style)\n'He gave one reason: he was tired.' (UK style)\n\nSEMI-COLON (;) — USE:\n\n1. CONNECT RELATED CLAUSES:\n'I love Kolkata; it is my hometown.'\n'The sun was setting; the sky turned orange.'\n\n2. WITH CONJUNCTIVE ADVERBS:\n'The train was late; however, we caught it.'\n'She studied hard; therefore, she passed.'\n\n3. COMPLEX LISTS:\n'The speakers were: Dr. Sharma, from Delhi; Dr. Bose, from Kolkata; and Dr. Patel, from Mumbai.'",
+      "rules": [
+        "Colon-এর আগে একটি complete independent clause থাকতে হবে: 'I bought: rice, dal, vegetables' ✗ (incomplete আগে) → 'I bought three items: rice, dal, vegetables' ✓।",
+        "Colon list introduce করে, explanation দেয়, বা quotation introduce করে।",
+        "Colon-এর পরে ছোট letter (UK) বা capital letter (US — যদি complete sentence হয়)।",
+        "Semi-colon দুটি independent clause join করে conjunction ছাড়া: 'I went to Delhi; I visited the Red Fort.'",
+        "Semi-colon conjunctive adverb-এর আগে বসে: 'I was tired; however, I continued.'",
+        "Semi-colon complex list-এ items পৃথক করতে: 'I visited Delhi, India; Dhaka, Bangladesh; and London, UK.'",
+        "Semi-colon full stop-এর মতো strong নয়, কিন্তু comma-এর মতো weak নয় — মাঝামাঝি।"
+      ],
+      "examples": [
+        { "en": "Colon (list): 'The train from Howrah offers three classes: sleeper, AC 3-tier, and AC 2-tier.'", "bn": "Colon (তালিকা): 'হাওড়া থেকে ট্রেনে তিনটি ক্লাস আছে: sleeper, AC 3-tier, এবং AC 2-tier।'" },
+        { "en": "Colon (explanation): 'The plan was simple: take the metro to Park Street and walk to the museum.'", "bn": "Colon (ব্যাখ্যা): 'পরিকল্পনাটি সহজ ছিল: পার্ক স্ট্রিট পর্যন্ত মেট্রো নেও এবং জাদুঘরে হাঁটা।'" },
+        { "en": "Colon (subtitle): 'The book is titled 'India: A Spiritual Journey'.'", "bn": "Colon (উপশিরোনাম): 'বইটির শিরোনাম 'India: A Spiritual Journey'।'" },
+        { "en": "Semi-colon: 'The sun set behind the Taj Mahal; the view was breathtaking.'", "bn": "Semi-colon: 'সূর্য তাজমহলের পিছনে অস্ত গেল; দৃশ্যটি শ্বাসরুদ্ধকর ছিল।'" },
+        { "en": "Semi-colon + conjunctive: 'The traffic was terrible; nevertheless, we reached the airport on time.'", "bn": "Semi-colon + conjunctive: 'ট্রাফিক ভয়ানক ছিল; nevertheless, আমরা সময়মতো বিমানবন্দরে পৌঁছালাম।'" },
+        { "en": "Complex list: 'The team included Ravi from Kolkata, West Bengal; Priya from Mumbai, Maharashtra; and Amit from Chennai, Tamil Nadu.'", "bn": "জটিল তালিকা: 'দলে অন্তর্ভুক্ত ছিল: পশ্চিমবঙ্গের কলকাতা থেকে রবি; মহারাষ্ট্রের মুম্বাই থেকে প্রিয়া; এবং তামিলনাড়ুর চেন্নাই থেকে অমিত।'" }
+      ],
+      "tips": "Colon এবং Semi-colon-এর পার্থক্য: Colon = 'যেমন' বা 'নিম্নরূপ' (introduces something)। Semi-colon = 'এবং' বা 'তবে' (connects two related ideas)। Colon-এর আগে complete sentence লাগে, colon-এর পরে list, quote, বা explanation থাকে। Semi-colon দুটি complete sentence কে conjunction ছাড়া join করে — 'I went to the market; I bought vegetables.' Colon and semi-colon formal writing-এ বেশি ব্যবহৃত হয়। দৈনন্দিন writing-এ বেশি ব্যবহার করো না — simple sentences দিয়েই কাজ চলে।"
+    },
+    {
+      "name": "Hyphen (-) and Dash (—)",
+      "banglaName": "হাইফেন (-) এবং ড্যাশ (—)",
+      "definition": "The hyphen (-) is a short line used to join words together (compound words): 'well-known', 'mother-in-law', 'twenty-one', 'state-of-the-art'. The dash comes in two lengths: en-dash (–) for ranges (2010–2020, Kolkata–Delhi flight), and em-dash (—) for a strong break in thought — like this — or to set off parenthetical information. Unlike hyphens, dashes are used between words that remain separate. In informal writing, a hyphen is sometimes used as a dash, but proper punctuation distinguishes them.",
+      "banglaDefinition": "হাইফেন (-) একটি ছোট রেখা যা শব্দ একসাথে যোগ করতে ব্যবহৃত হয় (যৌগিক শব্দ): 'well-known', 'mother-in-law', 'twenty-one', 'state-of-the-art'। ড্যাশ দুই দৈর্ঘ্যের হয়: en-dash (–) রেঞ্জের জন্য (২০১০–২০২০, কলকাতা–দিল্লি ফ্লাইট), এবং em-dash (—) চিন্তায় শক্তিশালী বিরতির জন্য — যেমন — বা গৌণ তথ্য ঘিরে রাখতে। হাইফেনের মতো নয়, ড্যাশ ব্যবহৃত হয় শব্দের মধ্যে যা পৃথক থাকে। অনানুষ্ঠানিক লেখায়, হাইফেন কখনও কখনও ড্যাশ হিসেবে ব্যবহৃত হয়, কিন্তু সঠিক যতি চিহ্ন এদের পার্থক্য করে।",
+      "formula": "HYPHEN (-):\n\n1. COMPOUND WORDS:\n'well-known author', 'mother-in-law', 'passer-by', 'six-year-old child'\n\n2. COMPOUND NUMBERS (21-99):\n'twenty-one', 'thirty-three', 'ninety-nine'\n\n3. PREFIXES (before proper nouns or to avoid confusion):\n'ex-President', 'anti-Indian', 're-cover (cover again)' vs 'recover (get better)'\n\n4. COMPOUND ADJECTIVES BEFORE NOUNS:\n'A well-known monument' but 'The monument is well known.' (no hyphen after noun)\n'An up-to-date report' but 'The report is up to date.'\n\nEN-DASH (–) — Word length of 'n':\n'1990–2000' (ranges of numbers/time)\n'Kolkata–Delhi train' (routes)\n'Hindu–Muslim unity' (relationships)\n\nEM-DASH (—) — Word length of 'm':\nStrong break in thought: 'I was going to the market — wait, I forgot my wallet!'\nParenthetical: 'The Taj Mahal — a symbol of love — was built by Shah Jahan.'\nEmphasis: 'There is only one thing to do — work hard.'",
+      "rules": [
+        "Hyphen শব্দের মধ্যে যোগ করে: 'well-known', 'part-time', 'mother-in-law', 'twenty-one'।",
+        "Hyphen compound adjective-এ noun-এর আগে: 'A first-class ticket' (ticket-এর আগে hyphen), কিন্তু 'The ticket is first class' (noun-এর পরে hyphen নেই)।",
+        "En-dash (–) সংখ্যা এবং সময়ের range দেখায়: 10:00 AM–5:00 PM, pages 10–20, Kolkata–Delhi।",
+        "Em-dash (—) একটি strong break — comma-এর চেয়ে strong, bracket-এর চেয়ে less formal।",
+        "Em-dash-এর আগে পরে space দেওয়া style-dependent (Chicago = no space, AP = space)।",
+        "এক sentence-এ ২টির বেশি em-dash ব্যবহার করো না।",
+        "Typing: hyphen = - key; en-dash = Option + - (Mac); em-dash = Shift + Option + - (Mac) বা — (HTML)।"
+      ],
+      "examples": [
+        { "en": "Hyphen (compound): 'My mother-in-law makes the best Bengali sweets.'", "bn": "Hyphen (যৌগিক): 'আমার শাশুড়ি সবচেয়ে ভালো বাংলা মিষ্টি বানান।'" },
+        { "en": "Hyphen (age): 'A six-year-old boy asked me about the Howrah Bridge.'", "bn": "Hyphen (বয়স): 'একটি ছয় বছরের ছেলে আমাকে হাওড়া ব্রিজ সম্পর্কে জিজ্ঞাসা করল।'" },
+        { "en": "Hyphen (number): 'I need to read pages twenty-one to thirty-five.'", "bn": "Hyphen (সংখ্যা): 'আমাকে একুশ থেকে পঁয়ত্রিশ পৃষ্ঠা পড়তে হবে।'" },
+        { "en": "En-dash (range): 'The festival will be held from October 1st–10th.'", "bn": "En-dash (রেঞ্জ): 'উৎসবটি ১লা–১০ই অক্টোবর অনুষ্ঠিত হবে।'" },
+        { "en": "Em-dash (break): 'The Victoria Memorial — built in 1921 — is one of Kolkata's most famous landmarks.'", "bn": "Em-dash (বিরতি): 'ভিক্টোরিয়া মেমোরিয়াল — ১৯২১ সালে নির্মিত — কলকাতার সবচেয়ে বিখ্যাত ঐতিহাসিক স্থানগুলির একটি।'" },
+        { "en": "Em-dash (emphasis): 'There is only one thing you need to know about Kolkata — the food is incredible!'", "bn": "Em-dash (জোর): 'কলকাতা সম্পর্কে তোমার শুধু একটি জিনিস জানা দরকার — খাবার অবিশ্বাস্য!'" }
+      ],
+      "tips": "Hyphen vs Dash পার্থক্য: Hyphen = short (যোগ করে): 'well-known author', 'twenty-one', 'mother-in-law'। Dash = long (পৃথক করে): 'Kolkata–Delhi' (en-dash) বা 'The food — it was amazing!' (em-dash)। Keyboard-এ: Hyphen = - key। En-dash = Option + -। Em-dash = Shift + Option + -। দৈনন্দিন লেখায় em-dash খুব useful — এটি comma, colon, এবং brackets-এর substitute হিসেবে কাজ করে। কিন্তু formal writing-এ em-dash limited ব্যবহার করো।"
+    },
+    {
+      "name": "Brackets, Parentheses, Ellipsis, and Other Marks",
+      "banglaName": "বন্ধনী, Ellipsis এবং অন্যান্য চিহ্ন",
+      "definition": "Other useful punctuation marks include: Parentheses ( ) / Round brackets — enclose additional information, explanations, or asides. Square brackets [ ] — enclose editorial comments in quoted material. Ellipsis (...) — indicates trailing off, a pause, or omitted words from a quotation. Slash (/) — indicates alternatives (and/or), fractions (1/2), or line breaks in poetry. Bullet points and numbered lists — organize information clearly. Each mark has specific uses that improve clarity in writing.",
+      "banglaDefinition": "অন্যান্য দরকারী যতি চিহ্ন: Parentheses ( ) / Round brackets — অতিরিক্ত তথ্য, ব্যাখ্যা, বা পাশের মন্তব্য ঘিরে রাখে। Square brackets [ ] — উদ্ধৃত উপাদানে সম্পাদকীয় মন্তব্য ঘিরে রাখে। Ellipsis (...) — থেমে যাওয়া, বিরতি, বা উদ্ধৃতি থেকে বাদ দেওয়া শব্দ নির্দেশ করে। Slash (/) — বিকল্প নির্দেশ করে (and/or), ভগ্নাংশ (১/২), বা কবিতার লাইন বিরতি। Bullet points এবং numbered lists — তথ্য পরিষ্কারভাবে সংগঠিত করে। প্রতিটি চিহ্নের নির্দিষ্ট ব্যবহার আছে যা লেখায় স্পষ্টতা উন্নত করে।",
+      "formula": "PARENTHESES ( ):\n\nThe Taj Mahal (which is in Agra) is a UNESCO World Heritage site.\nMy father (a doctor by profession) loves gardening.\n\nSQUARE BRACKETS [ ]:\n'She said, \"He [Tagore] won the Nobel Prize in 1913.\"'\n'They arrived on [sic] the wrong day.' (sic = 'as written, even if wrong')\n\nELLIPSIS (...):\nTrailing off: 'I was thinking... maybe we should go to the museum.'\nPause: 'The food was... interesting.' (polite way to say it was bad)\nOmission: 'The Preamble begins: \"We, the people of India...\"'\n\nSLASH (/):\nAlternatives: 'Please bring your passport and/or visa.'\nFractions: 'Add 1/2 cup of sugar.'\n'And/or': 'You can pay by cash and/or card.'\nPoetry: 'I wandered lonely as a cloud / That floats on high o'er vales and hills.'\n\nBULLET POINTS:\n• First item\n• Second item\n• Third item\n\nNUMBERED LISTS:\n1. First step\n2. Second step\n3. Third step",
+      "rules": [
+        "Parentheses অতিরিক্ত তথ্যের জন্য যা sentence-এর main meaning-এর জন্য অপরিহার্য নয়।",
+        "Square brackets quote-এ editor-এর যোগ করা তথ্যের জন্য: 'He [Shah Jahan] built the Taj.'",
+        "Ellipsis-এর ৩টি dot (...) — trailing off, pause, বা omitted words দেখাতে।",
+        "Ellipsis formal writing-এ quote থেকে words omit করতে: 'The Preamble states... \"justice, liberty, equality\"...'",
+        "Slash alternatives দেখায়: 'and/or', 'his/her', 'pass/fail' — কিন্তু formal writing-এ avoid করাই ভালো।",
+        "Bullet points তথ্য পরিষ্কারভাবে উপস্থাপন করতে — formal/informal উভয় লেখায়।",
+        "Numbered lists নির্দিষ্ট order বা sequence দেখাতে: step-by-step instructions।"
+      ],
+      "examples": [
+        { "en": "Parentheses: 'The Ganges (also known as Ganga) is the longest river in India.'", "bn": "Parentheses: 'গঙ্গা (গঙ্গা নামেও পরিচিত) ভারতের দীর্ঘতম নদী।'" },
+        { "en": "Square brackets: 'The report stated: \"He [the Prime Minister] announced a new policy.\"'", "bn": "Square brackets: 'প্রতিবেদনে বলা হয়েছে: \"তিনি [প্রধানমন্ত্রী] একটি নতুন নীতি ঘোষণা করেছেন।\"'" },
+        { "en": "Ellipsis (pause): 'The Biryani was... let's just say it was an experience.'", "bn": "Ellipsis (বিরতি): 'বিরিয়ানি ছিল... ধরা যাক এটি একটি অভিজ্ঞতা ছিল।'" },
+        { "en": "Ellipsis (omission): 'The Constitution begins: \"We, the people of India...\"'", "bn": "Ellipsis (বাদ): 'সংবিধান শুরু হয়েছে: \"আমরা, ভারতের জনগণ...\"'" },
+        { "en": "Slash: 'Please bring your photo ID and/or a copy of your passport.'", "bn": "Slash: 'অনুগ্রহ করে আপনার ফটো আইডি এবং/অথবা পাসপোর্টের একটি কপি আনুন।'" },
+        { "en": "Bullet points:\n• Visit the Victoria Memorial\n• Take a walk on the Howrah Bridge\n• Enjoy street food in Park Street", "bn": "Bullet points:\n• ভিক্টোরিয়া মেমোরিয়াল দেখুন\n• হাওড়া ব্রিজে হাঁটুন\n• পার্ক স্ট্রিটে স্ট্রিট ফুড উপভোগ করুন" }
+      ],
+      "tips": "Parentheses vs commas vs em-dashes: তিনটিই অতিরিক্ত তথ্যের জন্য, কিন্তু formal level ভিন্ন। Commas = least disruptive: 'My brother, who lives in Mumbai, is visiting.' Parentheses = more separate: 'My brother (who lives in Mumbai) is visiting.' Em-dashes = most emphatic: 'My brother — who lives in Mumbai — is visiting.' Choose based on how much you want the information to stand out। Ellipsis দৈনন্দিন text/message-এ বেশি ব্যবহার হয়, formal writing-এ কম। Slash 'and/or' formal writing-ে avoid করাই ভালো — 'or both' লেখো।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "'The banana's are ₹80 per dozen.' (Apostrophe in plural)",
+      "correct": "'The bananas are ₹80 per dozen.'",
+      "explanation": "Apostrophe কখনো plural গঠনে ব্যবহার করো না। 'Banana's' = 'banana is' বা 'banana-এর possession'। Plural 'bananas' — কোনো apostrophe নেই। 'Apple's ₹100/kg' ✗ → 'Apples ₹100/kg' ✓। 'Book's for sale' ✗ → 'Books for sale' ✓। '60's music' ✗ → '60s music' ✓ (দশক)। 'CD's' ✗ → 'CDs' ✓ (plural abbreviation)। '1990's' ✗ → '1990s' ✓। Apostrophe শুধু possession (Ravi's) এবং contraction (it's) দেখায় — plural নয়। P.S. '80' = 'eighty rupees', not 'eighty rupees'।"
+    },
+    {
+      "wrong": "Comma splice: 'I went to the market, I bought some vegetables.'",
+      "correct": "'I went to the market, and I bought some vegetables.' or 'I went to the market. I bought some vegetables.' or 'I went to the market; I bought some vegetables.'",
+      "explanation": "দুটি independent clause শুধু comma দিয়ে join করা comma splice — ভুল। তিনটি সমাধান: (1) Conjunction যোগ করো: 'I went to the market, and I bought vegetables.' (2) Full stop দিয়ে আলাদা করো: 'I went to the market. I bought vegetables.' (3) Semi-colon ব্যবহার করো: 'I went to the market; I bought vegetables.' বাংলা থেকে ইংরেজি করার সময় এই ভুল বেশি হয় কারণ বাংলায় comma splice গ্রহণযোগ্য। ইংরেজিতে নয়।"
+    },
+    {
+      "wrong": "'Its a beautiful day to visit the museum.'",
+      "correct": "'It's a beautiful day to visit the museum.' (it is) or 'The museum is famous for its architecture.' (possessive)",
+      "explanation": "'Its' (apostrophe ছাড়া) = possessive determiner: 'Its color', 'Its history', 'Its location'। 'It's' (apostrophe সহ) = 'it is' বা 'it has': 'It's raining. It's been a long day.' 'Its a beautiful day' (✗) → 'Its' মানে 'এর' — 'শুটকি একটি সুন্দর দিন' অর্থহীন। 'It's a beautiful day' (✓) → 'এটি একটি সুন্দর দিন'। মনে রাখার ট্রিক: 'It's' = 'it is' — 'is' বসিয়ে দেখো। 'Its' (no apostrophe) = possessive — যেমন 'his', 'her'।"
+    },
+    {
+      "wrong": "'She asked me where I was going?' (Question mark in indirect question)",
+      "correct": "'She asked me where I was going.' (Full stop — indirect question)",
+      "explanation": "Indirect question (পরোক্ষ প্রশ্ন) — question mark লাগে না, full stop লাগে। 'She asked me where I was going' — এটি reporting, direct question নয়। 'He asked if I was coming.' (no ?) 'I wonder what time it is.' (no ?) 'Tell me what you want.' (no ?) 'Could you tell me where the station is.' (কখনও কখনও polite request-এ . দেওয়া যায়)। শুধুমাত্র direct question-এ ?: 'Where are you going?' 'What is your name?'"
+    },
+    {
+      "wrong": "'The book which is on the table is mine.' (Missing comma for non-essential clause)",
+      "correct": "Depends on meaning:\nNon-essential: 'The book, which is on the table, is mine.' (only one book)\nEssential: 'The book which is on the table is mine.' (multiple books, specifying which one)",
+      "explanation": "'Which' clause-এর আগে comma দিতে হবে কিনা তা নির্ভর করে clause টি essential (restrictive) নাকি non-essential (non-restrictive) তার উপর। Non-essential clause = commas দ্বারা ঘেরা, তথ্যটি অপ্রয়োজনীয় (বাদ দিলেও অর্থ বদলায় না): 'The Taj Mahal, which is in Agra, is beautiful.' (একটাই তাজমহল, তাই 'which is in Agra' non-essential) Essential clause = no commas, তথ্যটি প্রয়োজনীয়: 'The book which is on the table is mine.' (অনেক বইয়ের মধ্যে নির্দিষ্ট করছে)। 'That' সবসময় essential clause-এর জন্য: 'The book that is on the table is mine.'"
+    },
+    {
+      "wrong": "Overusing exclamation marks: 'I went to the market! I bought some vegetables! They were very fresh! I am so happy!'",
+      "correct": "'I went to the market. I bought some vegetables. They were very fresh! I am so happy.'",
+      "explanation": "প্রতি sentence-এ exclamation mark (!) ব্যবহার করলে effect নষ্ট হয়। Exclamation mark সংরক্ষণ করো সত্যিই exciting বা surprising moments-এর জন্য। Formal writing-এ exclamation mark খুব কম ব্যবহার করো। 'I went to the market!' = কেন excited? এটা normal activity। 'We won the match!' = এটা exciting, so ! justified। নিয়ম: এক প্যারায় একটির বেশি exclamation mark না দেওয়া ভালো। Academic/professional writing-এ ! avoid করাই best।"
+    },
+    {
+      "wrong": "Quotation marks with commas/periods: 'I am tired', he said. (British style — correct in UK)",
+      "correct": "US: 'I am tired,' he said. (comma inside quotes) UK: 'I am tired', he said. (comma outside — if not part of quote)",
+      "explanation": "US এবং UK punctuation rules ভিন্ন। US English (American style): commas এবং periods সবসময় closing quotation marks-এর ভিতরে: \"I am tired,\" he said. \"Wait.\" UK English (British style): punctuation quote-এর part হলে inside, না হলে outside: 'I am tired', he said. 'He said, \"I am tired.\"' যেকোনো style বাছাই করো, কিন্তু consistent থাকো। এক লেখায় দুই style mix করো না। Note: question marks এবং exclamation marks উভয় style-এ logic অনুযায়ী: Did he say, \"Are you coming?\" (whole sentence প্রশ্ন) vs He asked, \"Are you coming?\" (quote-ই প্রশ্ন)?"
+    },
+    {
+      "wrong": "'There are three things I love about Kolkata the food the culture and the people.' (No punctuation)",
+      "correct": "'There are three things I love about Kolkata: the food, the culture, and the people.'",
+      "explanation": "এই sentence-এ colon এবং comma উভয়ই প্রয়োজন। Colon list introduce করে: 'three things: food, culture, people.' Comma list items আলাদা করে: 'the food, the culture, and the people.' Punctuation ছাড়া sentence পড়া কঠিন এবং অর্থ অস্পষ্ট। 'I love cooking my family and my dog' — punctuation ছাড়া ভয়ঙ্কর অর্থ! 'I love cooking, my family, and my dog' — পরিষ্কার অর্থ। Always punctuate your sentences clearly।"
+    },
+    {
+      "wrong": "'I have one goal in life, to travel the world.' (Comma instead of colon)",
+      "correct": "'I have one goal in life: to travel the world.' (Colon — introduces explanation)",
+      "explanation": "Colon ব্যবহার করো যখন প্রথম অংশ সম্পূর্ণ sentence এবং দ্বিতীয় অংশ তা ব্যাখ্যা/প্রসারিত করে। 'I have one goal in life, to travel the world' — comma wrong here। 'I have one goal in life: to travel the world' — colon correct। 'The reason is simple: we don't have time.' (colon) vs 'The reason is simple, and we don't have time' (comma with 'and')। Colon = explanation/elaboration follows। Comma = pause within same structure।"
+    },
+    {
+      "wrong": "Run-on sentence: 'The train arrived I boarded it quickly I found my seat.'",
+      "correct": "'The train arrived. I boarded it quickly. I found my seat.' or 'The train arrived, I boarded it quickly, and I found my seat.'",
+      "explanation": "Run-on sentence (fused sentence) = multiple independent clauses punctuation বা conjunction ছাড়া joined। 'The train arrived I boarded it' — এর মধ্যে punctuation বা conjunction দরকার। Fix করার ৩টি উপায়: (1) Separate sentences: 'The train arrived. I boarded it.' (2) Comma + conjunction: 'The train arrived, and I boarded it.' (3) Semi-colon: 'The train arrived; I boarded it.' সংক্ষিপ্ত related clauses-এর জন্য semi-colon ভালো। দীর্ঘ clauses-এর জন্য separate sentences best।"
+    }
+  ]
 }
