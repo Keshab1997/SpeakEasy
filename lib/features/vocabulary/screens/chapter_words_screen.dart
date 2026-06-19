@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/vocabulary_chapter_model.dart';
 import '../../../providers/vocab_progress_provider.dart';
+import '../../../services/hive_service.dart';
 
 class ChapterWordsScreen extends ConsumerStatefulWidget {
   final VocabularyChapter chapter;
@@ -13,13 +14,32 @@ class ChapterWordsScreen extends ConsumerStatefulWidget {
 }
 
 class _ChapterWordsScreenState extends ConsumerState<ChapterWordsScreen> {
+  final _scrollController = ScrollController();
+
   @override
   void initState() {
     super.initState();
-    // Mark chapter as read when opened
+    _scrollController.addListener(_onScroll);
+    // Mark chapter as read + save as last opened for Continue Learning
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(vocabProgressProvider.notifier).markRead(widget.chapter.chapter);
+      HiveService.setLastOpenedChapter('vocabulary', widget.chapter.chapter);
     });
+  }
+
+  void _onScroll() {
+    if (!_scrollController.hasClients) return;
+    if (_scrollController.position.maxScrollExtent > 0) {
+      final pct = _scrollController.offset / _scrollController.position.maxScrollExtent;
+      HiveService.setChapterProgress('vocabulary', widget.chapter.chapter, pct);
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -40,6 +60,7 @@ class _ChapterWordsScreenState extends ConsumerState<ChapterWordsScreen> {
         ),
       ),
       body: ListView.builder(
+        controller: _scrollController,
         padding: const EdgeInsets.all(16),
         itemCount: widget.chapter.words.length,
         itemBuilder: (context, index) {

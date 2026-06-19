@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../services/hive_service.dart';
+import '../../../services/tts_service.dart';
 import '../../../providers/auth_provider.dart';
-import '../../../providers/lesson_provider.dart';
 import '../../../providers/progress_provider.dart';
 import '../../../providers/todo_list_provider.dart';
+import '../../../models/todo_item.dart';
 import '../../../providers/vocabulary_provider.dart';
+import '../../../providers/chapter_vocabulary_provider.dart';
+import '../../../providers/grammar_provider.dart';
+import '../../../models/vocabulary_chapter_model.dart';
+import '../../../models/grammar_chapter_model.dart';
 import '../../../providers/theme_provider.dart';
 import '../../grammar/screens/grammar_list_screen.dart';
+import '../../grammar/screens/grammar_detail_screen.dart';
 import '../../grammar/screens/grammar_test_list_screen.dart';
+import '../../vocabulary/screens/chapter_words_screen.dart';
 import '../../vocabulary/screens/vocabulary_test_screen.dart';
 import '../../conversation/screens/conversation_screen.dart';
 import '../widgets/study_plan_section.dart';
@@ -28,36 +35,22 @@ class HomeScreen extends ConsumerStatefulWidget {
   ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends ConsumerState<HomeScreen>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _animationController;
-  late final Animation<double> _scaleAnimation;
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  final _tts = TtsService();
   bool _isSpeaking = false;
 
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 200),
-    );
-    _scaleAnimation = Tween<double>(begin: 1.0, end: 1.3).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
-    );
     // Fetch progress on load
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(progressProvider.notifier).fetchProgress();
     });
   }
 
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  void _speakWord() {
+  void _speakWord(String word) {
     setState(() => _isSpeaking = true);
+    _tts.speak(word);
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) setState(() => _isSpeaking = false);
     });
@@ -70,11 +63,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
     return 'Good Evening';
   }
 
-  /// Deterministic daily word pick: index = dayOfYear % list.length
-  int _todayWordIndex(int total) {
+  /// Changes every 10 minutes: index = tenMinSlot % total
+  int _wordIndex(int total) {
     final now = DateTime.now();
-    final dayOfYear = now.difference(DateTime(now.year, 1, 1)).inDays;
-    return total == 0 ? 0 : dayOfYear % total;
+    final totalMinutes = now.hour * 60 + now.minute;
+    final tenMinSlot = totalMinutes ~/ 10;
+    return total == 0 ? 0 : tenMinSlot % total;
   }
 
   @override
@@ -85,7 +79,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
     final authAsync = ref.watch(authProvider);
     final progressAsync = ref.watch(progressProvider);
     final vocabAsync = ref.watch(vocabularyProvider);
-    final lessonsAsync = ref.watch(lessonProvider);
+    final chaptersAsync = ref.watch(allChaptersProvider);
+    final grammarAsync = ref.watch(allGrammarChaptersProvider);
     final studyState = ref.watch(todoListProvider);
 
     final user = authAsync.asData?.value;
@@ -94,7 +89,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
     }
     final progress = progressAsync.asData?.value;
     final allWords = vocabAsync.asData?.value ?? [];
-    final allLessons = lessonsAsync.asData?.value ?? [];
+    final allChapterWords = (chaptersAsync.asData?.value ?? [])
+        .expand((chapter) => chapter.words)
+        .toList();
+    final allVocabChapters = chaptersAsync.asData?.value ?? [];
+    final allGrammarChapters = grammarAsync.asData?.value ?? [];
 
     // Derived values — progress from Study Plan (todo list)
     final streakDays = progress?.streakDays ?? 0;
@@ -103,18 +102,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
     final progressPct = (lessonsCompleted / totalLessons).clamp(0.0, 1.0);
     final favoritesCount = allWords.where((w) => w.isFavorite).length;
 
-    // Today's word
-    final todayWord = allWords.isEmpty ? null : allWords[_todayWordIndex(allWords.length)];
+    // Today's word from JSON chapters — changes every 10 minutes
+    final todayWord = allChapterWords.isEmpty ? null : allChapterWords[_wordIndex(allChapterWords.length)];
 
     // Group lessons by level for Continue Learning
-    final levels = ['Beginner', 'Intermediate', 'Advanced'];
-    final levelGradients = [
-      AppColors.primaryGradient,
-      AppColors.purpleGradient,
-      AppColors.secondaryGradient,
-    ];
-    final levelEmojis = ['🌱', '📖', '🚀'];
-
     return Scaffold(
       appBar: AppBar(
         title: const Row(
@@ -187,13 +178,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
               const SizedBox(height: 20),
               _buildProgressCard(theme, streakDays, lessonsCompleted, progressPct, totalLessons),
               const SizedBox(height: 24),
-              _buildTodaysWordCard(theme, isDark, todayWord),
+              _buildTodaysWordCard(theme, isDark, todayWord, isLoading: chaptersAsync.isLoading),
               const SizedBox(height: 24),
               _buildAiTeacherBanner(theme),
               const SizedBox(height: 24),
               _buildContinueLearningSection(
-                theme, isDark, allLessons, levels, levelGradients, levelEmojis,
-                progress?.completedLessonIds ?? [],
+                theme, isDark, studyState, allGrammarChapters, allVocabChapters,
               ),
               const SizedBox(height: 24),
               const StudyPlanSection(),
@@ -318,18 +308,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
   }
 
   // TODAY'S WORD
-  Widget _buildTodaysWordCard(ThemeData theme, bool isDark, todayWord) {
-    if (todayWord == null) {
-      return Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: isDark ? AppColors.borderDark : AppColors.borderLight, width: 1.5),
-        ),
-        child: const Center(child: Text('Loading today\'s word...')),
-      );
-    }
+  Widget _buildTodaysWordCard(ThemeData theme, bool isDark, ChapterWord? todayWord, {required bool isLoading}) {
+    if (isLoading) return _buildLoadingWordCard(theme, isDark);
+    if (todayWord == null) return _buildEmptyWordCard(theme, isDark);
 
     return Container(
       width: double.infinity,
@@ -352,6 +333,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                   const Icon(Icons.wb_sunny_outlined, color: AppColors.accent, size: 20),
                   const SizedBox(width: 8),
                   const Text("TODAY'S WORD", style: TextStyle(color: AppColors.accent, fontSize: 12, fontWeight: FontWeight.bold, letterSpacing: 1.2)),
+                  const Spacer(),
+                  Text(
+                    _timeSlotLabel(),
+                    style: TextStyle(color: AppColors.accent.withOpacity(0.6), fontSize: 10, fontWeight: FontWeight.w600),
+                  ),
                 ],
               ),
             ),
@@ -363,75 +349,51 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            todayWord.word,
-                            style: theme.textTheme.headlineLarge?.copyWith(fontSize: 26, fontWeight: FontWeight.w900, color: AppColors.primary),
-                          ),
-                          if (todayWord.pronunciation.isNotEmpty)
+                      Flexible(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
                             Text(
-                              todayWord.pronunciation,
-                              style: const TextStyle(color: Colors.grey, fontSize: 14, fontStyle: FontStyle.italic),
+                              todayWord.word,
+                              style: theme.textTheme.headlineLarge?.copyWith(fontSize: 26, fontWeight: FontWeight.w900, color: AppColors.primary),
                             ),
-                        ],
+                            if (todayWord.pronunciation.isNotEmpty)
+                              Text(
+                                todayWord.pronunciation,
+                                style: const TextStyle(color: Colors.grey, fontSize: 14, fontStyle: FontStyle.italic),
+                              ),
+                          ],
+                        ),
                       ),
-                      Row(
-                        children: [
-                          GestureDetector(
-                            onTap: _speakWord,
-                            child: AnimatedContainer(
-                              duration: const Duration(milliseconds: 200),
-                              padding: const EdgeInsets.all(12),
-                              decoration: BoxDecoration(
-                                color: _isSpeaking ? AppColors.primary.withOpacity(0.2) : (isDark ? Colors.grey[800] : Colors.grey[100]),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                _isSpeaking ? Icons.volume_up_rounded : Icons.volume_mute_rounded,
-                                color: _isSpeaking ? AppColors.primary : (isDark ? Colors.white70 : Colors.black54),
-                                size: 24,
-                              ),
-                            ),
+                      GestureDetector(
+                        onTap: () => _speakWord(todayWord.word),
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: _isSpeaking ? AppColors.primary.withOpacity(0.2) : (isDark ? Colors.grey[800] : Colors.grey[100]),
+                            shape: BoxShape.circle,
                           ),
-                          const SizedBox(width: 10),
-                          GestureDetector(
-                            onTap: () {
-                              ref.read(vocabularyProvider.notifier).toggleFavorite(todayWord.id, todayWord.isFavorite);
-                              _animationController.forward().then((_) => _animationController.reverse());
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                content: Text(todayWord.isFavorite ? 'Removed from favorites' : 'Added to favorites'),
-                                duration: const Duration(seconds: 1),
-                                behavior: SnackBarBehavior.floating,
-                              ));
-                            },
-                            child: ScaleTransition(
-                              scale: _scaleAnimation,
-                              child: Container(
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: todayWord.isFavorite ? Colors.red.withOpacity(0.1) : (isDark ? Colors.grey[800] : Colors.grey[100]),
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  todayWord.isFavorite ? Icons.favorite_rounded : Icons.favorite_outline_rounded,
-                                  color: todayWord.isFavorite ? Colors.red : (isDark ? Colors.white70 : Colors.black54),
-                                  size: 24,
-                                ),
-                              ),
-                            ),
+                          child: Icon(
+                            _isSpeaking ? Icons.volume_up_rounded : Icons.volume_mute_rounded,
+                            color: _isSpeaking ? AppColors.primary : (isDark ? Colors.white70 : Colors.black54),
+                            size: 24,
                           ),
-                        ],
+                        ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 16),
                   const Divider(height: 1),
                   const SizedBox(height: 16),
+                  if (todayWord.meaning.isNotEmpty) ...[
+                    const Text('Meaning (ইংরেজি):', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey)),
+                    const SizedBox(height: 4),
+                    Text(todayWord.meaning, style: theme.textTheme.titleMedium?.copyWith(fontSize: 16, fontWeight: FontWeight.w500)),
+                    const SizedBox(height: 12),
+                  ],
                   if (todayWord.banglaMeaning.isNotEmpty) ...[
-                    const Text('Meaning (অর্থ):', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey)),
+                    const Text('Meaning (বাংলা):', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey)),
                     const SizedBox(height: 4),
                     Text(todayWord.banglaMeaning, style: theme.textTheme.titleMedium?.copyWith(fontSize: 18, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 12),
@@ -462,92 +424,318 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
     );
   }
 
-  // CONTINUE LEARNING
+  Widget _buildLoadingWordCard(ThemeData theme, bool isDark) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: isDark ? AppColors.borderDark : AppColors.borderLight, width: 1.5),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              color: AppColors.accent.withOpacity(0.1),
+              child: const Row(
+                children: [
+                  Icon(Icons.wb_sunny_outlined, color: AppColors.accent, size: 20),
+                  SizedBox(width: 8),
+                  Text("TODAY'S WORD", style: TextStyle(color: AppColors.accent, fontSize: 12, fontWeight: FontWeight.bold, letterSpacing: 1.2)),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SizedBox(height: 10),
+                    SizedBox(
+                      width: 24, height: 24,
+                      child: CircularProgressIndicator(strokeWidth: 2.5, color: AppColors.primary),
+                    ),
+                    const SizedBox(height: 16),
+                    Text('Loading vocabulary...',
+                      style: TextStyle(color: Colors.grey.shade500, fontSize: 13, fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(height: 10),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildEmptyWordCard(ThemeData theme, bool isDark) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: isDark ? AppColors.borderDark : AppColors.borderLight, width: 1.5),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              color: AppColors.accent.withOpacity(0.1),
+              child: const Row(
+                children: [
+                  Icon(Icons.wb_sunny_outlined, color: AppColors.accent, size: 20),
+                  SizedBox(width: 8),
+                  Text("TODAY'S WORD", style: TextStyle(color: AppColors.accent, fontSize: 12, fontWeight: FontWeight.bold, letterSpacing: 1.2)),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SizedBox(height: 10),
+                    Icon(Icons.menu_book_rounded, size: 40, color: Colors.grey.shade300),
+                    const SizedBox(height: 12),
+                    Text('No words available', style: TextStyle(color: Colors.grey.shade500, fontSize: 13)),
+                    const SizedBox(height: 10),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  String _timeSlotLabel() {
+    final now = DateTime.now();
+    final totalMinutes = now.hour * 60 + now.minute;
+    final slotStart = (totalMinutes ~/ 10) * 10;
+    final slotEnd = slotStart + 10;
+    final hh = slotStart ~/ 60;
+    final mm = slotStart % 60;
+    final hh2 = slotEnd ~/ 60;
+    final mm2 = slotEnd % 60;
+    return '${hh.toString().padLeft(2, '0')}:${mm.toString().padLeft(2, '0')} - ${hh2.toString().padLeft(2, '0')}:${mm2.toString().padLeft(2, '0')}';
+  }
+
+  // CONTINUE LEARNING — next pending Grammar + Vocabulary chapters
   Widget _buildContinueLearningSection(
-    ThemeData theme, bool isDark, List allLessons, List<String> levels,
-    List<List<Color>> levelGradients, List<String> levelEmojis, List<String> completedIds,
+    ThemeData theme, bool isDark, StudyPlanState studyState,
+    List<GrammarChapter> allGrammarChapters, List<VocabularyChapter> allVocabChapters,
   ) {
+    final items = studyState.items;
+    final grammarItems = items.where((i) => i.type == 'grammar').toList();
+    final vocabItems = items.where((i) => i.type == 'vocabulary').toList();
+    final grammarDone = grammarItems.where((i) => i.status == TodoStatus.completed).length;
+    final vocabDone = vocabItems.where((i) => i.status == TodoStatus.completed).length;
+    final grammarTotal = grammarItems.length;
+    final vocabTotal = vocabItems.length;
+
+    GrammarChapter? findGrammar(int chapterNum) {
+      for (final c in allGrammarChapters) {
+        if (c.chapter == chapterNum) return c;
+      }
+      return null;
+    }
+
+    VocabularyChapter? findVocab(int chapterNum) {
+      for (final c in allVocabChapters) {
+        if (c.chapter == chapterNum) return c;
+      }
+      return null;
+    }
+
+    // Next pending items
+    TodoItem? findById(List<TodoItem> list, String? id) {
+      if (id == null) return null;
+      for (final item in list) {
+        if (item.id == id) return item;
+      }
+      return null;
+    }
+
+    // Resume: last opened chapter (if still pending), else next pending
+    final lastOpened = HiveService.getLastOpenedChapter();
+    TodoItem? resumeFromHive(String type, String prefix) {
+      if (lastOpened == null) return null;
+      if (lastOpened['type'] != type) return null;
+      final ch = lastOpened['chapter'] as int?;
+      if (ch == null) return null;
+      final item = findById(items, '${prefix}_$ch');
+      if (item != null && item.status == TodoStatus.pending) return item;
+      return null;
+    }
+
+    final resumeGrammar = resumeFromHive('grammar', 'grammar')
+        ?? findById(items, studyState.nextGrammarId);
+    final resumeVocab = resumeFromHive('vocabulary', 'vocab')
+        ?? findById(items, studyState.nextVocabId);
+
+    final hasAny = resumeGrammar != null || resumeVocab != null;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Continue Learning', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800)),
+            Flexible(
+              child: Row(
+                children: [
+                  const Icon(Icons.play_circle_outline_rounded, color: AppColors.primary, size: 22),
+                  const SizedBox(width: 8),
+                  Flexible(
+                    child: Text('Continue Learning',
+                      style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             TextButton(
               onPressed: () => widget.onNavigateToLessons?.call(),
-              child: const Row(children: [Text('See All'), Icon(Icons.chevron_right_rounded, size: 16)]),
+              child: const Row(children: [Text('All Chapters'), Icon(Icons.chevron_right_rounded, size: 16)]),
             ),
           ],
         ),
         const SizedBox(height: 12),
-        SizedBox(
-          height: 160,
-          child: allLessons.isEmpty
-              ? const Center(child: Text('No lessons available'))
-              : ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: levels.length,
-                  separatorBuilder: (_, __) => const SizedBox(width: 16),
-                  itemBuilder: (context, index) {
-                    final level = levels[index];
-                    final grad = levelGradients[index];
-                    final emoji = levelEmojis[index];
-                    final levelLessons = allLessons.where((l) => l.level == level).toList();
-                    final total = levelLessons.length;
-                    final done = total == 0 ? 0 : levelLessons.where((l) => completedIds.contains(l.id)).length;
-                    final pct = total == 0 ? 0.0 : (done / total).clamp(0.0, 1.0);
+        if (!hasAny)
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.green.withOpacity(0.06),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: Colors.green.withOpacity(0.15)),
+            ),
+            child: const Row(
+              children: [
+                Icon(Icons.celebration_rounded, color: Colors.green, size: 24),
+                SizedBox(width: 12),
+                Text('All chapters completed! 🎉',
+                  style: TextStyle(color: Colors.green, fontWeight: FontWeight.w600, fontSize: 15),
+                ),
+              ],
+            ),
+          )
+        else
+          SizedBox(
+            height: 170,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
+              itemCount: (resumeGrammar != null ? 1 : 0) + (resumeVocab != null ? 1 : 0),
+              separatorBuilder: (_, __) => const SizedBox(width: 16),
+              itemBuilder: (context, index) {
+                final isGrammar = resumeGrammar != null && (index == 0 || resumeVocab == null);
+                final todo = (isGrammar ? resumeGrammar : resumeVocab)!;
+                final color = isGrammar ? AppColors.purpleGradient[0] : AppColors.primary;
+                final gradient = isGrammar ? AppColors.purpleGradient : AppColors.primaryGradient;
+                final icon = isGrammar ? Icons.edit_note_rounded : Icons.menu_book_rounded;
+                final typeLabel = isGrammar ? 'GRAMMAR' : 'VOCABULARY';
+                final done = isGrammar ? grammarDone : vocabDone;
+                final total = isGrammar ? grammarTotal : vocabTotal;
+                final chapterPct = HiveService.getChapterProgress(
+                  isGrammar ? 'grammar' : 'vocabulary',
+                  todo.chapterNumber,
+                );
+                final pct = chapterPct > 0 ? chapterPct : (total == 0 ? 0.0 : (done / total).clamp(0.0, 1.0));
 
-                    return GestureDetector(
-                      onTap: () => widget.onNavigateToLessons?.call(),
-                      child: Container(
-                        width: 200,
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: isDark ? AppColors.borderDark : AppColors.borderLight, width: 1.2),
-                          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 8, offset: const Offset(0, 4))],
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                return GestureDetector(
+                  onTap: () {
+                    if (isGrammar) {
+                      final ch = findGrammar(todo.chapterNumber);
+                      if (ch != null) {
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => GrammarDetailScreen(chapter: ch)));
+                      }
+                    } else {
+                      final ch = findVocab(todo.chapterNumber);
+                      if (ch != null) {
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => ChapterWordsScreen(chapter: ch)));
+                      }
+                    }
+                  },
+                  child: Container(
+                    width: 220,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: isDark ? AppColors.borderDark : AppColors.borderLight, width: 1.2),
+                      boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 8, offset: const Offset(0, 4))],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.all(8),
-                                  decoration: BoxDecoration(gradient: LinearGradient(colors: grad), borderRadius: BorderRadius.circular(12)),
-                                  child: Text(emoji, style: const TextStyle(fontSize: 18)),
-                                ),
-                                Text('${(pct * 100).toInt()}%', style: TextStyle(color: grad[0], fontWeight: FontWeight.bold, fontSize: 13)),
-                              ],
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(gradient: LinearGradient(colors: gradient), borderRadius: BorderRadius.circular(12)),
+                              child: Icon(icon, color: Colors.white, size: 20),
                             ),
-                            const Spacer(),
-                            Text(level, style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: 15), maxLines: 1, overflow: TextOverflow.ellipsis),
-                            const SizedBox(height: 4),
-                            Text('$done/$total Lessons', style: theme.textTheme.bodyMedium?.copyWith(fontSize: 12)),
-                            const SizedBox(height: 12),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(4),
-                              child: Stack(
-                                children: [
-                                  Container(height: 6, width: double.infinity, color: isDark ? Colors.grey[800] : Colors.grey[200]),
-                                  FractionallySizedBox(
-                                    widthFactor: pct,
-                                    child: Container(height: 6, decoration: BoxDecoration(gradient: LinearGradient(colors: grad), borderRadius: BorderRadius.circular(4))),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            Text('${(pct * 100).toInt()}%',
+                              style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 13)),
                           ],
                         ),
-                      ),
-                    );
-                  },
-                ),
-        ),
+                        const Spacer(),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: color.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Text(typeLabel,
+                            style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.bold)),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(todo.title,
+                          style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: 14),
+                          maxLines: 1, overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: 2),
+                        Text('Chapter ${todo.chapterNumber} • ${todo.level}',
+                          style: TextStyle(color: Colors.grey.shade500, fontSize: 11)),
+                        const SizedBox(height: 10),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(4),
+                          child: Stack(
+                            children: [
+                              Container(height: 6, width: double.infinity,
+                                color: isDark ? Colors.grey[800] : Colors.grey[200]),
+                              FractionallySizedBox(
+                                widthFactor: pct,
+                                child: Container(height: 6,
+                                  decoration: BoxDecoration(gradient: LinearGradient(colors: gradient),
+                                    borderRadius: BorderRadius.circular(4))),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
       ],
     );
   }

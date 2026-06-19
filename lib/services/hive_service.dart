@@ -325,4 +325,28 @@ class HiveService {
     if (raw == null) return null;
     return Map<String, dynamic>.from(raw as Map);
   }
+
+  // ── Last Opened Chapter (for Continue Learning resume) ──
+
+  static Future<void> setLastOpenedChapter(String type, int chapterNumber) async {
+    await _settings.put('last_opened_chapter', {'type': type, 'chapter': chapterNumber});
+  }
+
+  static Map<String, dynamic>? getLastOpenedChapter() {
+    final raw = _settings.get('last_opened_chapter');
+    if (raw == null) return null;
+    return Map<String, dynamic>.from(raw as Map);
+  }
+
+  // ── Chapter Scroll Progress (for Continue Learning %) ──
+
+  static Future<void> setChapterProgress(String type, int chapterNumber, double progress) async {
+    final key = 'chapter_progress_${type}_$chapterNumber';
+    await _settings.put(key, progress.clamp(0.0, 1.0));
+  }
+
+  static double getChapterProgress(String type, int chapterNumber) {
+    final key = 'chapter_progress_${type}_$chapterNumber';
+    return _settings.get(key, defaultValue: 0.0) as double;
+  }
 }
