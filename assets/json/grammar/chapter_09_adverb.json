@@ -1,10 +1,266 @@
 {
   "chapter": 9,
   "level": "Beginner",
-  "title": "Adverb",
+  "title": "Adverb (ক্রিয়াবিশেষণ)",
   "icon": "speed",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "An adverb is a word that modifies or describes a verb, an adjective, or another adverb. Adverbs tell us how (manner), when (time), where (place), how often (frequency), or to what extent (degree) something happens. Most adverbs end in '-ly', but many common ones do not. Adverbs make our expressions more precise and detailed.",
+  "banglaDescription": "Adverb (ক্রিয়াবিশেষণ) হলো সেই শব্দ যা verb, adjective, বা অন্য adverb-কে পরিবর্তন বা বর্ণনা করে। Adverb আমাদের বলে কিভাবে (পদ্ধতি), কখন (সময়), কোথায় (স্থান), কতবার (পৌনঃপুনিকতা), বা কতটুকু (পরিমাণ) কিছু ঘটে। বেশিরভাগ adverb '-ly' দিয়ে শেষ হয়, কিন্তু অনেক সাধারণ adverb-এর '-ly' নেই। Adverb আমাদের প্রকাশকে আরও সুনির্দিষ্ট এবং বিস্তারিত করে।",
+  "topics": [
+    {
+      "name": "What is an Adverb?",
+      "banglaName": "ক্রিয়াবিশেষণ কী?",
+      "definition": "An adverb is a word that gives more information about a verb, an adjective, or another adverb. It answers questions like 'How?', 'When?', 'Where?', 'How often?', and 'To what extent?'. Adverbs make sentences more informative and interesting. They can appear in different positions in a sentence depending on what they modify.",
+      "banglaDefinition": "Adverb (ক্রিয়াবিশেষণ) হলো সেই শব্দ যা verb, adjective, বা অন্য adverb সম্পর্কে আরও তথ্য দেয়। এটি 'কিভাবে?', 'কখন?', 'কোথায়?', 'কতবার?', এবং 'কতটুকু?' এর মতো প্রশ্নের উত্তর দেয়। Adverb বাক্যকে আরও তথ্যপূর্ণ এবং আকর্ষণীয় করে তোলে। তারা কী modify করছে তার উপর নির্ভর করে বাক্যে বিভিন্ন অবস্থানে বসতে পারে।",
+      "formula": "Adverb modifies:\n1. Verb → She runs quickly.\n2. Adjective → It is very hot in Chennai.\n3. Adverb → He drives too fast.\n\nQuestions adverbs answer:\nHow? → She sings beautifully.\nWhen? → We will leave tomorrow.\nWhere? → Please sit here.\nHow often? → I always drink chai in the morning.\nTo what extent? → The movie was quite boring.",
+      "rules": [
+        "Adverb সাধারণত verb-কে modify করে: 'The rickshaw moves slowly.'",
+        "Adverb adjective-কে modify করে: 'The biryani was extremely delicious.'",
+        "Adverb অন্য adverb-কে modify করে: 'She speaks very clearly.'",
+        "বেশিরভাগ adverb '-ly' suffix যোগ করে adjective থেকে তৈরি: quick → quickly, careful → carefully।",
+        "সব '-ly' word adverb নয়: friendly, lovely, lonely — এগুলো adjective।",
+        "'Well' হল 'good'-এর adverb form: 'She speaks English well.'",
+        "Adverb বাক্যের বিভিন্ন অবস্থানে বসতে পারে — শুরুতে, মাঝে, বা শেষে।"
+      ],
+      "examples": [
+        { "en": "Modifying verb: 'The local train moves slowly through the city.'", "bn": "Verb modify: 'লোকাল ট্রেন শহরের মধ্যে ধীরে ধীরে চলে।'" },
+        { "en": "Modifying adjective: 'The Howrah Bridge is really impressive at night.'", "bn": "Adjective modify: 'হাওড়া ব্রিজ রাতে সত্যিই চিত্তাকর্ষক।'" },
+        { "en": "Modifying adverb: 'She performed the Bharatanatyam dance very gracefully.'", "bn": "Adverb modify: 'সে ভরতনাট্যম নাচটি খুব gracefulভাবে পরিবেশন করল।'" },
+        { "en": "How: 'The children played happily in the park.'", "bn": "কিভাবে: 'শিশুরা পার্কে খুশিতে খেলল।'" },
+        { "en": "When: 'The train to Delhi will arrive soon.'", "bn": "কখন: 'দিল্লিগামী ট্রেন শীঘ্রই আসবে।'" },
+        { "en": "Where: 'Please keep the bag here.'", "bn": "কোথায়: 'অনুগ্রহ করে ব্যাগটি এখানে রাখো।'" }
+      ],
+      "tips": "Adverb চেনার সবচেয়ে সহজ উপায়: adjective-কে '-ly' যোগ করে adverb বানাও (quick → quickly)। কিন্তু মনে রাখবে: 'good' → 'well' (অনিয়মিত)। আরও দেখো শব্দটি verb-কে modify করছে কিনা — 'He runs fast' (fast adverb, verb 'runs' কে modify করছে)। 'Fast' adjective-ও হতে পারে: 'a fast train'।"
+    },
+    {
+      "name": "Adverbs of Manner",
+      "banglaName": "রীতিবাচক ক্রিয়াবিশেষণ",
+      "definition": "Adverbs of manner describe how an action is performed. They answer the question 'How?'. These adverbs usually come after the verb or after the object. Most adverbs of manner are formed by adding '-ly' to adjectives. They make actions more vivid and specific by describing the way something happens.",
+      "banglaDefinition": "Adverb of manner (রীতিবাচক ক্রিয়াবিশেষণ) বর্ণনা করে কিভাবে একটি কাজ সম্পাদিত হয়। এরা 'কিভাবে?' প্রশ্নের উত্তর দেয়। এই adverbs সাধারণত verb-এর পরে বা object-এর পরে বসে। বেশিরভাগ adverb of manner adjective-এর সাথে '-ly' যোগ করে তৈরি হয়। এরা কিভাবে কিছু ঘটে তা বর্ণনা করে কাজকে আরও জীবন্ত এবং সুনির্দিষ্ট করে।",
+      "formula": "Adjective + -ly = Adverb of Manner\nquick → quickly, careful → carefully, perfect → perfectly\n\nPosition:\nSubject + Verb + Adverb → She dances gracefully.\nSubject + Verb + Object + Adverb → He drives the car carefully.\n\nIrregular: good → well, fast → fast, hard → hard",
+      "rules": [
+        "Adverb of manner সাধারণত verb-এর পরে বসে: 'She sings beautifully.'",
+        "Object থাকলে adverb object-এর পরে বসে: 'He made the biryani perfectly.'",
+        "Adjective + -ly: slow → slowly, quiet → quietly, honest → honestly।",
+        "Consonant + 'y' শেষে adjective: y → i, + ly: happy → happily, easy → easily।",
+        "'-le' শেষে adjective: e → y: gentle → gently, possible → possibly।",
+        "'-ic' শেষে adjective: -ically: dramatic → dramatically, automatic → automatically।",
+        "অনিয়মিত: good → well, fast → fast, hard → hard, early → early, late → late।",
+        "কিছু '-ly' ending adjective adverb নয়: friendly, lovely, lonely, silly, cowardly।"
+      ],
+      "examples": [
+        { "en": "Regular: 'The kathak dancer moved gracefully across the stage.'", "bn": "Regular: 'কথক নর্তকী মঞ্চ জুড়ে gracefulভাবে সরেছিল।'" },
+        { "en": "Regular: 'She carefully folded her silk sari.'", "bn": "Regular: 'সে সাবধানে তার সিল্কের শাড়িটি ভাঁজ করল।'" },
+        { "en": "Irregular: 'He drives very fast on the Mumbai-Pune highway.'", "bn": "অনিয়মিত: 'সে মুম্বাই-পুনে হাইওয়েতে খুব দ্রুত গাড়ি চালায়।'" },
+        { "en": "Irregular: 'She speaks Hindi well.'", "bn": "অনিয়মিত: 'সে ভালো হিন্দি বলে।'" },
+        { "en": "After object: 'The cook prepared the thali perfectly.'", "bn": "Object-এর পরে: 'রাঁধুনি থালিটি perfectly প্রস্তুত করল।'" },
+        { "en": "Y→i+ly: 'The children played happily at the festival.'", "bn": "Y→i+ly: 'শিশুরা উৎসবে খুশিতে খেলল।'" }
+      ],
+      "tips": "Adverb of manner সাধারণত '-ly' দিয়ে শেষ হয়, কিন্তু সব নয়। 'Fast', 'hard', 'well', 'early' — এগুলো '-ly' ছাড়াই adverb। আরও মনে রাখবে: 'I work hard' (hard = adverb) vs 'This bed is hard' (hard = adjective)। 'Hardly' একটি ভিন্ন শব্দ যার অর্থ 'সবে মাত্র' বা 'প্রায় নয়': 'I hardly know him.'"
+    },
+    {
+      "name": "Adverbs of Time",
+      "banglaName": "সময়বাচক ক্রিয়াবিশেষণ",
+      "definition": "Adverbs of time tell us when an action happens. They answer the question 'When?'. Common adverbs of time include today, tomorrow, yesterday, now, then, soon, later, early, late, recently, already, yet, still, before, and after. Adverbs of time can appear at the beginning or end of a sentence.",
+      "banglaDefinition": "Adverb of time (সময়বাচক ক্রিয়াবিশেষণ) আমাদের বলে কখন একটি কাজ ঘটে। এরা 'কখন?' প্রশ্নের উত্তর দেয়। সাধারণ adverbs of time: today, tomorrow, yesterday, now, then, soon, later, early, late, recently, already, yet, still, before, after। Adverbs of time বাক্যের শুরুতে বা শেষে বসতে পারে।",
+      "formula": "Position:\nBeginning: 'Yesterday, I went to the Victoria Memorial.'\nEnd: 'I went to the Victoria Memorial yesterday.'\n\nCommon Adverbs of Time:\ndefinite: today, yesterday, tomorrow, now, then\nrelative: soon, later, early, late, recently\nfrequency-related: already, yet, still, finally, eventually",
+      "rules": [
+        "Adverb of time সাধারণত বাক্যের শেষে বসে: 'I will meet you tomorrow.'",
+        "জোর দিতে বাক্যের শুরুতে বসাতে পারো: 'Tomorrow, we are leaving for Goa.'",
+        "'Already' affirmative sentence-এ এবং 'yet' negative/question-এ ব্যবহৃত হয়।",
+        "'Still' চলমান অবস্থা বোঝায়: 'I still live in Kolkata.'",
+        "'Yet' সাধারণত বাক্যের শেষে বসে: 'Have you visited the Taj Mahal yet?'",
+        "'Already' verb-এর আগে বা বাক্যের শেষে: 'I have already eaten' / 'I have eaten already.'",
+        "'Ever' এবং 'never' time adverb কিন্তু frequency-এর সাথেও সম্পর্কিত।"
+      ],
+      "examples": [
+        { "en": "Definite: 'We visited the Ajanta Caves yesterday.'", "bn": "নির্দিষ্ট: 'আমরা গতকাল অজন্তা গুহা দেখতে গিয়েছিলাম।'" },
+        { "en": "Definite: 'I will call you tomorrow morning.'", "bn": "নির্দিষ্ট: 'আমি আগামীকাল সকালে তোমাকে ফোন করব।'" },
+        { "en": "Relative: 'The Durga Puja will start soon.'", "bn": "আপেক্ষিক: 'দুর্গাপূজা শীঘ্রই শুরু হবে।'" },
+        { "en": "Already: 'I have already booked the train tickets to Varanasi.'", "bn": "Already: 'আমি ইতিমধ্যে বারাণসীর ট্রেনের টিকিট বুক করেছি।'" },
+        { "en": "Yet: 'Have you tried Hyderabadi biryani yet?'", "bn": "Yet: 'তুমি কি এখনও হায়দরাবাদি বিরিয়ানি খেয়েছ?'" },
+        { "en": "Still: 'She still remembers her first visit to the Golden Temple.'", "bn": "Still: 'সে এখনও স্বর্ণমন্দিরে তার প্রথম ভ্রমণের কথা মনে রাখে।'" }
+      ],
+      "tips": "Adverb of time-এর অবস্থান নিয়ে মনে রাখবে: বাক্যের শেষে — সবচেয়ে সাধারণ। শুরুতে — জোর দিতে। 'Already' (ইতিমধ্যে) এবং 'yet' (এখনও) এর পার্থক্য মনে রাখো: 'Already' affirmative-এ, 'yet' question/negative-এ। 'I have already eaten' vs 'I haven't eaten yet' / 'Have you eaten yet?'"
+    },
+    {
+      "name": "Adverbs of Place",
+      "banglaName": "স্থানবাচক ক্রিয়াবিশেষণ",
+      "definition": "Adverbs of place tell us where an action takes place. They answer the question 'Where?'. Common adverbs of place include here, there, everywhere, nowhere, inside, outside, upstairs, downstairs, nearby, far, away, above, below, and somewhere. These adverbs usually come after the verb or after the object.",
+      "banglaDefinition": "Adverb of place (স্থানবাচক ক্রিয়াবিশেষণ) আমাদের বলে কোথায় একটি কাজ সংঘটিত হয়। এরা 'কোথায়?' প্রশ্নের উত্তর দেয়। সাধারণ adverbs of place: here, there, everywhere, nowhere, inside, outside, upstairs, downstairs, nearby, far, away, above, below, somewhere। এই adverbs সাধারণত verb-এর পরে বা object-এর পরে বসে।",
+      "formula": "Subject + Verb + Adverb of Place\n→ The children are playing outside.\n→ Please sit here.\n→ The temple is nearby.\n\nSubject + Verb + Object + Adverb of Place\n→ I put the keys somewhere.\n→ She left her bag there.",
+      "rules": [
+        "Adverb of place সাধারণত verb-এর পরে বসে: 'The market is nearby.'",
+        "Object থাকলে object-এর পরে বসে: 'She kept the flowers here.'",
+        "'Here' (এখানে) এবং 'there' (সেখানে) সবচেয়ে সাধারণ।",
+        "'Everywhere' (সর্বত্র): 'I looked everywhere for my phone.'",
+        "'Nowhere' (কোথাও না): 'The bus was nowhere in sight.'",
+        "'Somewhere' (কোথাও): 'My keys are somewhere in this room.'",
+        "'Inside/outside' (ভিতরে/বাইরে): 'Let's go inside — it's too hot outside.'",
+        "'Here' এবং 'there' sentence-এর শুরুতে বসাতে পারে inversion: 'Here comes the train!'"
+      ],
+      "examples": [
+        { "en": "Here: 'The famous Kolkata tram is here.'", "bn": "Here: 'বিখ্যাত কলকাতা ট্রাম এখানে।'" },
+        { "en": "There: 'The Charminar is there in the old city.'", "bn": "There: 'চারমিনার সেখানে পুরনো শহরে।'" },
+        { "en": "Everywhere: 'During Diwali, lights are everywhere in the city.'", "bn": "Everywhere: 'দিওয়ালির সময় শহর জুড়ে আলো থাকে।'" },
+        { "en": "Inside: 'It's too hot outside; let's sit inside the café.'", "bn": "Inside: 'বাইরে খুব গরম; চলো ক্যাফের ভিতরে বসি।'" },
+        { "en": "Somewhere: 'The India Gate is somewhere near the center of Delhi.'", "bn": "Somewhere: 'ইন্ডিয়া গেট দিল্লির কেন্দ্রের কাছাকাছি কোথাও।'" },
+        { "en": "Nearby: 'Is there a good dosa restaurant nearby?'", "bn": "Nearby: 'কাছাকাছি কি কোনো ভালো দোসা রেস্তোরাঁ আছে?'" }
+      ],
+      "tips": "Adverb of place এবং preposition-এর মধ্যে পার্থক্য বুঝবে: adverb একা বসে (I went inside), preposition-এর পরে object লাগে (I went inside the house)। 'Here' এবং 'there' প্রায়ই preposition-এর সাথে ব্যবহৃত হয়: 'over here', 'in there', 'down there'। মনে রাখবে: place adverb প্রশ্নের উত্তর দেয় 'where?'।"
+    },
+    {
+      "name": "Adverbs of Frequency",
+      "banglaName": "পৌনঃপুনিকতাবাচক ক্রিয়াবিশেষণ",
+      "definition": "Adverbs of frequency tell us how often an action occurs. They answer the question 'How often?'. These adverbs range from 100% (always) to 0% (never). Common adverbs of frequency include always, usually, often, sometimes, occasionally, rarely, seldom, and never. Their position in a sentence depends on the verb type.",
+      "banglaDefinition": "Adverb of frequency (পৌনঃপুনিকতাবাচক ক্রিয়াবিশেষণ) আমাদের বলে কতবার একটি কাজ ঘটে। এরা 'কতবার?' প্রশ্নের উত্তর দেয়। এই adverbs 100% (সর্বদা) থেকে 0% (কখনও নয়) পর্যন্ত হতে পারে। সাধারণ adverbs of frequency: always, usually, often, sometimes, occasionally, rarely, seldom, never। বাক্যে এদের অবস্থান verb-এর ধরনের উপর নির্ভর করে।",
+      "formula": "100% → always (সর্বদা)\n90% → usually (সাধারণত)\n70% → often (প্রায়ই)\n50% → sometimes (মাঝে মাঝে)\n30% → occasionally (কখনও কখনও)\n10% → rarely/seldom (কদাচিৎ)\n0% → never (কখনও না)\n\nPosition:\nBefore main verb: 'I always drink chai in the morning.'\nAfter 'be' verb: 'He is always late.'\nBetween auxiliary and main: 'I have never been to Kerala.'",
+      "rules": [
+        "Adverb of frequency সাধারণত main verb-এর আগে বসে: 'She always takes the metro.'",
+        "Be verb (is, am, are, was, were) এর পরে বসে: 'The Howrah Bridge is always crowded.'",
+        "Auxiliary verb থাকলে auxiliary এবং main verb-এর মাঝে বসে: 'I have never visited Mysore.'",
+        "'Sometimes' এবং 'occasionally' বাক্যের শুরুতে বা শেষেও বসতে পারে।",
+        "'Never' এবং 'rarely' নেতিবাচক অর্থ বহন করে — এগুলোর সাথে 'not' ব্যবহার হয় না: 'I never eat meat' (not 'I don't never')।",
+        "'Seldom' খুব কম ব্যবহার হয়, 'rarely' বেশি common।",
+        "'Always' এবং 'never' চূড়ান্ত — 100% এবং 0%।"
+      ],
+      "examples": [
+        { "en": "Always: 'I always have a cup of tea in the morning.'", "bn": "Always: 'আমি সকালে সবসময় এক কাপ চা খাই।'" },
+        { "en": "Usually: 'The Mumbai local train is usually very crowded.'", "bn": "Usually: 'মুম্বাই লোকাল ট্রেন সাধারণত খুব ভিড় থাকে।'" },
+        { "en": "Sometimes: 'Sometimes I take the metro to work.'", "bn": "Sometimes: 'মাঝে মাঝে আমি মেট্রোতে কাজে যাই।'" },
+        { "en": "Rarely: 'I rarely eat outside because my mother cooks great food.'", "bn": "Rarely: 'আমি খুব কমই বাইরে খাই কারণ আমার মা খুব ভালো রান্না করেন।'" },
+        { "en": "Never: 'I have never been to the Red Fort.'", "bn": "Never: 'আমি কখনও লাল কেল্লায় যাইনি।'" },
+        { "en": "After be: 'The Victoria Memorial is always crowded on weekends.'", "bn": "Be-এর পরে: 'ভিক্টোরিয়া মেমোরিয়াল সপ্তাহান্তে সবসময় ভিড় থাকে।'" }
+      ],
+      "tips": "Adverb of frequency-এর অবস্থান মনে রাখার সহজ উপায়: 'Always'/'never'/'often' সাধারণত main verb-এর আগে (I always eat) কিন্তু 'be' verb-এর পরে (I am always happy)। 'Sometimes' সবচেয়ে flexible — শুরুতে, মাঝে, শেষে যেকোনো জায়গায় বসতে পারে। 'Never' নিজেই negative — এর সাথে 'not' ব্যবহার করো না।"
+    },
+    {
+      "name": "Adverbs of Degree",
+      "banglaName": "পরিমাণবাচক ক্রিয়াবিশেষণ",
+      "definition": "Adverbs of degree tell us the intensity, extent, or level of an action, adjective, or another adverb. They answer the question 'To what extent?'. Common adverbs of degree include very, quite, too, enough, almost, nearly, extremely, highly, absolutely, completely, barely, hardly, and scarcely. They usually come before the word they modify.",
+      "banglaDefinition": "Adverb of degree (পরিমাণবাচক ক্রিয়াবিশেষণ) আমাদের বলে একটি কাজ, adjective, বা অন্য adverb-এর তীব্রতা, পরিমাণ, বা মাত্রা। এরা 'কতটুকু?' প্রশ্নের উত্তর দেয়। সাধারণ adverbs of degree: very, quite, too, enough, almost, nearly, extremely, highly, absolutely, completely, barely, hardly, scarcely। এরা সাধারণত তারা যে শব্দ modify করে তার আগে বসে।",
+      "formula": "Adverb + Adjective → The biryani is very spicy.\nAdverb + Adverb → She sings quite beautifully.\nAdverb + Verb → I almost missed the train to Howrah.\n\nCommon intensifiers: very, extremely, incredibly, highly\nCommon mitigators: quite, fairly, rather, somewhat\n\nExample:\n'This curry is very spicy.' (high degree)\n'This curry is somewhat spicy.' (medium degree)\n'This curry is barely spicy.' (low degree)",
+      "rules": [
+        "Adverb of degree সাধারণত adjective বা adverb-এর আগে বসে: 'The Taj Mahal is incredibly beautiful.'",
+        "'Very' সবচেয়ে সাধারণ intensifier: 'The metro is very fast and convenient.'",
+        "'Too' অতিরিক্ত পরিমাণ বোঝায় (negative connotation): 'The chai is too hot.'",
+        "'Enough' adjective-এর পরে বসে: 'The tea is hot enough.' (not 'enough hot')।",
+        "'Almost' এবং 'nearly' 'প্রায়' অর্থে: 'I almost missed the train.'",
+        "'Quite' এবং 'fairly' মধ্যম মাত্রা বোঝায়: 'The movie was quite good.'",
+        "'Hardly' এবং 'barely' 'প্রায় না' অর্থে (negative meaning): 'I hardly know him.'",
+        "'Absolutely' এবং 'completely' চূড়ান্ত পর্যায়ের degree বোঝায়: 'I completely agree with you.'"
+      ],
+      "examples": [
+        { "en": "Very: 'The sunset at Puri Beach is very beautiful.'", "bn": "Very: 'পুরী সৈকতে সূর্যাস্ত খুব সুন্দর।'" },
+        { "en": "Too: 'The panipuri is too spicy for me.'", "bn": "Too: 'পানিপুরি আমার জন্য খুব মসলাদার।'" },
+        { "en": "Enough: 'The train is fast enough to reach Delhi by morning.'", "bn": "Enough: 'ট্রেনটি সকালে দিল্লি পৌঁছানোর মতো যথেষ্ট দ্রুত।'" },
+        { "en": "Almost: 'We almost missed the darshan at the temple.'", "bn": "Almost: 'আমরা প্রায় মন্দিরে দর্শন মিস করেছিলাম।'" },
+        { "en": "Extremely: 'The traffic in Mumbai is extremely heavy during peak hours.'", "bn": "Extremely: 'পিক আওয়ারে মুম্বাইয়ের ট্রাফিক অত্যন্ত ভারী।'" },
+        { "en": "Quite: 'The Bharatnatyam performance was quite impressive.'", "bn": "Quite: 'ভরতনাট্যম পরিবেশনাটি বেশ впечатляющее ছিল।'" }
+      ],
+      "tips": "Adverb of degree ব্যবহারের সময় মনে রাখবে: 'Very' এবং 'too' এর পার্থক্য — 'very hot' = খুব গরম (neutral), 'too hot' = অতিরিক্ত গরম (negative — অসুবিধার কারণ)। 'Enough' adjective-এর পরে বসে: 'big enough', 'fast enough', 'hot enough' — কখনও 'enough big' বলো না। 'Hardly' = 'প্রায় নয়', এর সাথে 'not' ব্যবহার হয় না।"
+    },
+    {
+      "name": "Comparative and Superlative Adverbs",
+      "banglaName": "ক্রিয়াবিশেষণের তুলনা",
+      "definition": "Adverbs can also have comparative and superlative forms to compare actions. Comparative adverbs compare how two people or things do an action. Superlative adverbs compare how three or more people or things do an action. Short adverbs (like fast, hard, early) add -er and -est. Longer adverbs use more and most.",
+      "banglaDefinition": "Adverb-ও comparative এবং superlative form-এ কাজের তুলনা করতে পারে। Comparative adverb দুই ব্যক্তি বা বস্তু কিভাবে একটি কাজ করে তা তুলনা করে। Superlative adverb তিন বা ততোধিক ব্যক্তি বা বস্তু কিভাবে একটি কাজ করে তা তুলনা করে। ছোট adverb (যেমন fast, hard, early) -er এবং -est যোগ করে। লম্বা adverb more এবং most ব্যবহার করে।",
+      "formula": "Short adverbs: -er / -est\nfast → faster → fastest\nhard → harder → hardest\nearly → earlier → earliest\n\nLong adverbs (usually -ly): more / most\nbeautifully → more beautifully → most beautifully\ncarefully → more carefully → most carefully\n\nIrregular:\nwell → better → best\nbadly → worse → worst\nfar → farther/further → farthest/furthest",
+      "rules": [
+        "Short adverb (fast, hard, early, late, soon, long) → -er/-est যোগ করো।",
+        "Long adverb (-ly দিয়ে শেষ) → more/most ব্যবহার করো।",
+        "Comparative-এ 'than' ব্যবহার হয়: 'She dances better than me.'",
+        "Superlative-এ 'the' ব্যবহার হয়: 'She dances the best in the class.'",
+        "অনিয়মিত: well → better → best, badly → worse → worst।",
+        "'Hard' এবং 'hardly' ভিন্ন শব্দ: 'She works hard' (comparative: harder) vs 'She hardly works' (comparative: more hardly — but rare)।",
+        "'Early' → earlier → earliest (regular short adverb)।",
+        "কথোপকথনে superlative adverb-এ 'the' প্রায়ই বাদ দেওয়া হয়: 'She runs fastest.'"
+      ],
+      "examples": [
+        { "en": "Short: 'The Shatabdi Express runs faster than the local train.'", "bn": "Short: 'শতাব্দী এক্সপ্রেস লোকাল ট্রেনের চেয়ে দ্রুত চলে।'" },
+        { "en": "Short: 'Of all the students, Arjun works the hardest.'", "bn": "Short: " },
+        { "en": "Long: 'She speaks Hindi more fluently than her brother.'", "bn": "Long: 'সে তার ভাইয়ের চেয়ে বেশি সাবলীলভাবে হিন্দি বলে।'" },
+        { "en": "Long: 'He completed the assignment the most carefully.'", "bn": "Long: 'সে সবচেয়ে সাবধানে অ্যাসাইনমেন্টটি সম্পূর্ণ করল।'" },
+        { "en": "Irregular: 'Priya sings better than Neha.'", "bn": "অনিয়মিত: 'প্রিয়া নেহার চেয়ে ভালো গান গায়।'" },
+        { "en": "Irregular: 'She performed the worst in the dance competition.'", "bn": "অনিয়মিত: 'সে নাচের প্রতিযোগিতায় সবচেয়ে খারাপ পারফর্ম করল।'" }
+      ],
+      "tips": "Adverb-এর তুলনা করার সময় মনে রাখবে: ছোট adverb (-er/-est) এবং লম্বা adverb (more/most) এর নিয়ম আলাদা। 'Quickly' → 'more quickly' (not 'quicklier')। 'Fast' → 'faster' (not 'more fast')। অনিয়মিত adverb গুলো মুখস্থ করো: well → better → best, badly → worse → worst, far → farther/further → farthest/furthest।"
+    },
+    {
+      "name": "Position of Adverbs in a Sentence",
+      "banglaName": "বাক্যে ক্রিয়াবিশেষণের অবস্থান",
+      "definition": "The position of an adverb in a sentence depends on what type of adverb it is and what it modifies. There are three main positions: front (beginning of the sentence), mid (between the subject and verb, or after auxiliary), and end (at the end of the sentence). Different types of adverbs have preferred positions.",
+      "banglaDefinition": "বাক্যে adverb-এর অবস্থান নির্ভর করে এটি কী ধরনের adverb এবং কী modify করছে তার উপর। তিনটি প্রধান অবস্থান: front (বাক্যের শুরুতে), mid (subject এবং verb-এর মাঝে, বা auxiliary-এর পরে), এবং end (বাক্যের শেষে)। বিভিন্ন ধরনের adverb-এর পছন্দের অবস্থান আলাদা।",
+      "formula": "Front (beginning):\n'Yesterday, I visited the Gateway of India.'\n'Sometimes, I take the metro to Connaught Place.'\n\nMid (before main verb / after be / after auxiliary):\n'I always drink chai in the morning.'\n'She is always on time.'\n'I have never been to Chennai.'\n\nEnd (after verb/object):\n'She sings beautifully.'\n'He drives carefully.'",
+      "rules": [
+        "Adverb of manner (কিভাবে) → end position: 'She cooks well.'",
+        "Adverb of place (কোথায়) → end position: 'The book is here.'",
+        "Adverb of time (কখন) → end or front: 'I met her yesterday.' / 'Yesterday, I met her.'",
+        "Adverb of frequency (কতবার) → mid position: 'She always takes the bus.'",
+        "Adverb of degree (কতটুকু) → before the word it modifies: 'The biryani is very tasty.'",
+        "এক বাক্যে একাধিক adverb থাকলে ক্রম: Manner → Place → Time: 'She danced beautifully at the festival yesterday.'",
+        "জোর দিতে front position ব্যবহার করো: 'Never have I seen such a beautiful temple.'"
+      ],
+      "examples": [
+        { "en": "Front: 'Every morning, I go for a walk at Marine Drive.'", "bn": "Front: 'প্রতি সকালে, আমি মেরিন ড্রাইভে হাঁটতে যাই।'" },
+        { "en": "Mid: 'She always visits the temple before exams.'", "bn": "Mid: 'সে পরীক্ষার আগে সবসময় মন্দিরে যায়।'" },
+        { "en": "End: 'The children played happily in the garden.'", "bn": "End: 'শিশুরা বাগানে খুশিতে খেলল।'" },
+        { "en": "Manner + Place + Time: 'He walked slowly along the Ganges at sunset.'", "bn": "Manner + Place + Time: " },
+        { "en": "Before adj: 'The Taj Mahal is incredibly beautiful at dawn.'", "bn": "Adjective-এর আগে: 'ভোরবেলা তাজমহল অবিশ্বাস্যভাবে সুন্দর।'" },
+        { "en": "After auxiliary: 'I have never tasted such delicious mangoes.'", "bn": "Auxiliary-এর পরে: 'আমি কখনও এত সুস্বাদু আম খাইনি।'" }
+      ],
+      "tips": "এক বাক্যে একাধিক adverb থাকার সময় ক্রম মনে রাখবে: **Manner → Place → Time**। যেমন: 'She sang (manner) beautifully (place) at the concert (time) last night.' ফ্রিকোয়েন্সি adverb (always, never) সবসময় mid position-এ থাকে — main verb-এর আগে (I always eat) কিন্তু be verb-এর পরে (I am always happy)।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Confusing 'good' and 'well': 'She speaks English good.'",
+      "correct": "'She speaks English well.'",
+      "explanation": "'Good' একটি adjective — noun-কে বর্ণনা করে (a good speaker)। 'Well' একটি adverb — verb-কে বর্ণনা করে (speaks well)। 'She speaks good' ভুল কারণ 'speaks' একটি verb। 'She is good' ঠিক কারণ 'is' একটি linking verb। মনে রাখবে: action verb → well, linking verb → good।"
+    },
+    {
+      "wrong": "Using 'more' + comparative adverb: 'She ran more faster than me.'",
+      "correct": "'She ran faster than me.'",
+      "explanation": "'Faster' ইতিমধ্যেই comparative form। 'More faster' double comparative — ভুল। 'More' ব্যবহার করো শুধু long adverbs-এর জন্য: 'more beautifully', 'more carefully'। Short adverbs (-er) এর সাথে 'more' ব্যবহার করা যাবে না।"
+    },
+    {
+      "wrong": "Incorrect position of 'enough': 'The tea is enough hot.'",
+      "correct": "'The tea is hot enough.'",
+      "explanation": "'Enough' adjective বা adverb-এর পরে বসে, আগে নয়। 'Enough hot' ভুল — সঠিক হলো 'hot enough'। মনে রাখবে: 'enough' adjective-এর পরে (big enough, fast enough) কিন্তু noun-এর আগে বসে (enough water, enough time)।"
+    },
+    {
+      "wrong": "Using 'hardly' instead of 'hard': 'She hardly works for the exam.'",
+      "correct": "If you mean she works with effort: 'She works hard for the exam.' If you mean she almost doesn't work: 'She hardly works for the exam.' (these mean opposite things!)",
+      "explanation": "'Hard' এবং 'hardly' সম্পূর্ণ ভিন্ন অর্থের শব্দ। 'Hard' = কঠোরভাবে (adverb of manner): 'She works hard.' 'Hardly' = প্রায় নয় (adverb of degree): 'She hardly works' = সে প্রায় কাজ করে না। 'Hardly' negative meaning বহন করে — এর সাথে 'not' ব্যবহার হয় না।"
+    },
+    {
+      "wrong": "Using 'late' and 'lately' interchangeably: 'I have been busy late.'",
+      "correct": "'I have been busy lately.'",
+      "explanation": "'Late' = দেরিতে (adverb of time): 'I came home late.' 'Lately' = ইদানীং (adverb of time meaning 'recently'): 'I have been tired lately.' 'Lately' সাধারণত present perfect বা present perfect continuous tense-এর সাথে ব্যবহার হয়।"
+    },
+    {
+      "wrong": "Double negative with 'never' or 'hardly': 'I don't never eat meat.'",
+      "correct": "'I never eat meat.' or 'I don't ever eat meat.'",
+      "explanation": "'Never' নিজেই negative — এর সাথে 'not' ব্যবহার করলে double negative হয়, যা grammatically ভুল। 'I don't never' → ভুল। সঠিক: 'I never eat' বা 'I don't ever eat'। একই নিয়ম 'hardly', 'rarely', 'scarcely'-এর জন্যও: 'I hardly know him' (not 'I don't hardly know him')।"
+    },
+    {
+      "wrong": "Confusing 'sometime', 'sometimes', and 'some time': 'I will meet you sometimes.'",
+      "correct": "'I will meet you sometime.' (কোনো এক সময়)",
+      "explanation": "'Sometime' = কোনো এক অনির্দিষ্ট সময় (adverb): 'Let's meet sometime next week.' 'Sometimes' = মাঝে মাঝে (adverb of frequency): 'Sometimes I go to the park.' 'Some time' = কিছু সময় (adjective + noun): 'I need some time to finish this.'"
+    },
+    {
+      "wrong": "Adverb instead of adjective after linking verbs: 'The flower smells sweetly.'",
+      "correct": "'The flower smells sweet.' (linking verb + adjective)",
+      "explanation": "'Smell', 'taste', 'look', 'feel', 'sound' — এরা linking verb হলে adjective নেয়, adverb নয়। 'The flower smells sweet' (flower is sweet) vs 'She smelled the flower sweetly' (she smelled in a sweet way — action verb + adverb)। Linking verb = adjective, Action verb = adverb।"
+    },
+    {
+      "wrong": "Wrong order of multiple adverbs: 'She arrived yesterday at the station happily.'",
+      "correct": "'She arrived happily at the station yesterday.' (Manner → Place → Time)",
+      "explanation": "এক বাক্যে একাধিক adverb থাকলে সঠিক ক্রম: Manner → Place → Time। 'Happily' (manner) → 'at the station' (place) → 'yesterday' (time)। 'She arrived yesterday at the station happily' — এই ক্রমটি awkward শোনায়। Manner → Place → Time মনে রাখবে।"
+    },
+    {
+      "wrong": "Using 'everywhere' as a subject: 'Everywhere is crowded during Durga Puja.' — This is actually correct!",
+      "correct": "'Everywhere is crowded during Durga Puja.' is correct. 'Everywhere' can be a subject.",
+      "explanation": "'Everywhere', 'nowhere', 'somewhere' — এগুলো adverb কিন্তু বাক্যের subject হিসেবেও কাজ করতে পারে। 'Everywhere is beautiful in Kerala.' 'Nowhere is safe during the storm.' 'Somewhere is calling my name.' — এগুলো grammatically correct। তাই এটি আসলে ভুল নয়।"
+    }
+  ]
 }
