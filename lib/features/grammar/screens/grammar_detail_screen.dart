@@ -1,11 +1,66 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/grammar_chapter_model.dart';
+import '../../../services/vocab_remote_service.dart';
 
-class GrammarDetailScreen extends StatelessWidget {
+class GrammarDetailScreen extends ConsumerStatefulWidget {
   final GrammarChapter chapter;
 
   const GrammarDetailScreen({super.key, required this.chapter});
+
+  @override
+  ConsumerState<GrammarDetailScreen> createState() =>
+      _GrammarDetailScreenState();
+}
+
+class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> {
+  final _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_onScroll);
+    _restoreScrollPosition();
+  }
+
+  Future<void> _restoreScrollPosition() async {
+    final box = await VocabRemoteService.getCacheBox();
+    final saved =
+        box.get('scroll_pos_chapter_${widget.chapter.chapter}') as double?;
+    if (saved != null && saved > 0 && _scrollController.hasClients) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (_scrollController.hasClients) {
+          _scrollController.jumpTo(saved.clamp(
+            0,
+            _scrollController.position.maxScrollExtent,
+          ));
+        }
+      });
+    }
+  }
+
+  void _onScroll() {
+    if (!_scrollController.hasClients) return;
+    _lastScrollOffset = _scrollController.offset;
+  }
+
+  double _lastScrollOffset = 0;
+
+  @override
+  void dispose() {
+    _saveScrollPosition();
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _saveScrollPosition() async {
+    if (_lastScrollOffset <= 0) return;
+    final box = await VocabRemoteService.getCacheBox();
+    await box.put('scroll_pos_chapter_${widget.chapter.chapter}',
+        _lastScrollOffset);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,23 +68,26 @@ class GrammarDetailScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(chapter.title,
+        title: Text(widget.chapter.title,
             style: theme.textTheme.titleLarge
                 ?.copyWith(fontWeight: FontWeight.w800)),
       ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+        controller: _scrollController,
+        padding: const EdgeInsets.fromLTRB(8, 8, 8, 32),
         children: [
-          if (chapter.description.isNotEmpty)
+          if (widget.chapter.description.isNotEmpty)
             _DescriptionHero(
-              description: chapter.description,
-              banglaDescription: chapter.banglaDescription,
+              description: widget.chapter.description,
+              banglaDescription: widget.chapter.banglaDescription,
             ),
           const SizedBox(height: 8),
-          ...chapter.topics.map((topic) => _TopicCard(topic: topic)),
-          if (chapter.commonMistakes.isNotEmpty) ...[
+          ...widget.chapter.topics
+              .map((topic) => _TopicCard(topic: topic)),
+          if (widget.chapter.commonMistakes.isNotEmpty) ...[
             const SizedBox(height: 20),
-            _CommonMistakesSection(mistakes: chapter.commonMistakes),
+            _CommonMistakesSection(
+                mistakes: widget.chapter.commonMistakes),
           ],
         ],
       ),
@@ -50,7 +108,7 @@ class _DescriptionHero extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -60,7 +118,7 @@ class _DescriptionHero extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.primary.withOpacity(0.1)),
       ),
       child: Column(
@@ -92,7 +150,7 @@ class _SectionLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Padding(
-      padding: const EdgeInsets.only(top: 18, bottom: 10),
+      padding: const EdgeInsets.only(top: 16, bottom: 8),
       child: Row(
         children: [
           Container(
@@ -132,11 +190,11 @@ class _TopicCard extends StatelessWidget {
     final isDark = theme.brightness == Brightness.dark;
 
     return Container(
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
         border: Border.all(
             color: isDark ? AppColors.borderDark : AppColors.borderLight),
       ),
@@ -178,10 +236,10 @@ class _TopicCard extends StatelessWidget {
           if (topic.banglaDefinition.isNotEmpty) ...[
             const SizedBox(height: 8),
             Container(
-              padding: const EdgeInsets.all(14),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: AppColors.primary.withOpacity(0.05),
-                borderRadius: BorderRadius.circular(14),
+                borderRadius: BorderRadius.circular(12),
                 border:
                     Border.all(color: AppColors.primary.withOpacity(0.08)),
               ),
@@ -194,10 +252,10 @@ class _TopicCard extends StatelessWidget {
             _SectionLabel(bangla: 'সূত্র', english: 'Formula'),
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(14),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: AppColors.accent.withOpacity(0.08),
-                borderRadius: BorderRadius.circular(14),
+                borderRadius: BorderRadius.circular(12),
                 border:
                     Border.all(color: AppColors.accent.withOpacity(0.15)),
               ),
@@ -213,14 +271,14 @@ class _TopicCard extends StatelessWidget {
           if (topic.rules.isNotEmpty) ...[
             _SectionLabel(bangla: 'নিয়মসমূহ', english: 'Rules'),
             ...topic.rules.asMap().entries.map((e) => Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
+                  padding: const EdgeInsets.only(bottom: 6),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(top: 1, right: 12),
-                        width: 24,
-                        height: 24,
+                        margin: const EdgeInsets.only(top: 1, right: 10),
+                        width: 22,
+                        height: 22,
                         decoration: BoxDecoration(
                           color: AppColors.primary.withOpacity(0.1),
                           shape: BoxShape.circle,
@@ -229,7 +287,7 @@ class _TopicCard extends StatelessWidget {
                           child: Text('${e.key + 1}',
                               style: TextStyle(
                                   color: AppColors.primary,
-                                  fontSize: 12,
+                                  fontSize: 11,
                                   fontWeight: FontWeight.w700)),
                         ),
                       ),
@@ -245,11 +303,11 @@ class _TopicCard extends StatelessWidget {
           if (topic.examples.isNotEmpty) ...[
             _SectionLabel(bangla: 'উদাহরণ', english: 'Examples'),
             ...topic.examples.map((ex) => Container(
-                  margin: const EdgeInsets.only(bottom: 8),
-                  padding: const EdgeInsets.all(14),
+                  margin: const EdgeInsets.only(bottom: 6),
+                  padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: isDark ? Colors.grey[900] : Colors.grey[50],
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                         color: isDark
                             ? Colors.grey[800]!
@@ -276,7 +334,7 @@ class _TopicCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 6),
+                      const SizedBox(height: 4),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -302,10 +360,10 @@ class _TopicCard extends StatelessWidget {
           if (topic.tips.isNotEmpty) ...[
             _SectionLabel(bangla: 'পরামর্শ', english: 'Tips'),
             Container(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
                 color: Colors.blue.withOpacity(0.06),
-                borderRadius: BorderRadius.circular(14),
+                borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: Colors.blue.withOpacity(0.12)),
               ),
               child: Row(
@@ -344,10 +402,10 @@ class _CommonMistakesSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red.withOpacity(0.04),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
         border: Border.all(color: Colors.red.withOpacity(0.1)),
       ),
       child: Column(
@@ -381,10 +439,10 @@ class _CommonMistakesSection extends StatelessWidget {
           const SizedBox(height: 16),
           ...mistakes.map((m) => Container(
                 margin: const EdgeInsets.only(bottom: 10),
-                padding: const EdgeInsets.all(14),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: isDark(context) ? AppColors.surfaceDark : Colors.white,
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(12),
                   border: Border.all(
                       color: isDark(context)
                           ? AppColors.borderDark
