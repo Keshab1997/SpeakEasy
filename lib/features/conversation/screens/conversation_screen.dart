@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
 import '../../../core/constants/app_colors.dart';
 import '../../../services/ai_service.dart';
 import '../../../services/hive_service.dart';
@@ -18,6 +19,13 @@ class _ConversationScreenState extends State<ConversationScreen> {
   bool _roleSelected = false;
   Map<String, dynamic>? _selectedRole;
   String _userName = '';
+  String? _currentSessionId;
+  final stt.SpeechToText _speech = stt.SpeechToText();
+  bool _isListening = false;
+  bool _speechAvailable = false;
+  String _locale = 'en_US';
+  final List<String> _locales = ['en_US', 'bn_BD'];
+  final List<String> _localeLabels = ['EN', 'BN'];
 
   final List<Map<String, dynamic>> _roles = [
     {'title': 'Waiter', 'subtitle': 'Restaurant', 'icon': Icons.restaurant_rounded, 'emoji': '🍽️',
@@ -42,10 +50,74 @@ class _ConversationScreenState extends State<ConversationScreen> {
   void initState() {
     super.initState();
     _userName = HiveService.getUserName();
+    _tryRestoreLastSession();
+    _initSpeech();
+  }
+
+  void _initSpeech() async {
+    _speechAvailable = await _speech.initialize();
+    setState(() {});
+  }
+
+  void _tryRestoreLastSession() {
+    final lastId = HiveService.getLastActiveConversationId();
+    if (lastId.isEmpty) return;
+    final sessions = HiveService.getChatSessions();
+    final session = sessions.where((s) => s['id'] == lastId).firstOrNull;
+    if (session != null && session['role'] != null) {
+      _currentSessionId = session['id'] as String;
+      _selectedRole = Map<String, dynamic>.from(session['role'] as Map);
+      _roleSelected = true;
+      _messages.addAll(
+        (session['messages'] as List).map((e) => Map<String, dynamic>.from(e as Map)),
+      );
+    }
+  }
+
+  void _startNewChat() {
+    _autoSaveSession();
+    setState(() {
+      _currentSessionId = DateTime.now().millisecondsSinceEpoch.toString();
+      _messages.clear();
+      _isTyping = true;
+    });
+    final role = _selectedRole;
+    if (role == null) {
+      setState(() => _isTyping = false);
+      return;
+    }
+    final displayName = _userName.isNotEmpty ? _userName : 'there';
+    final roleEmoji = role['emoji'] as String;
+    final roleTitle = role['title'] as String;
+    final systemPrompt = role['prompt'] as String;
+    final fullPrompt = '$systemPrompt\n\n'
+        'IMPORTANT: Always respond in English first, then provide Bangla translation below.\n'
+        'Format: [English]\\n\\nবাংলা: [Bangla translation]\\n---\n'
+        'Start the conversation now by greeting $displayName as a $roleTitle. '
+        'Ask your first question.';
+
+    AIService().sendMessageWithSystem(
+      'Start the conversation as $roleTitle. Greet me and ask the first question.',
+      systemPrompt: fullPrompt,
+      history: [],
+    ).then((response) {
+      if (!mounted) return;
+      setState(() {
+        _isTyping = false;
+        _messages.add({
+          'text': '$roleEmoji $response',
+          'isMe': false,
+          'time': _formatTime(DateTime.now()),
+        });
+      });
+      _scrollToBottom();
+      _autoSaveSession();
+    });
   }
 
   void _selectRole(Map<String, dynamic> role) {
     setState(() {
+      _currentSessionId = DateTime.now().millisecondsSinceEpoch.toString();
       _selectedRole = role;
       _roleSelected = true;
       _messages.clear();
@@ -76,6 +148,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
         });
       });
       _scrollToBottom();
+      _autoSaveSession();
     });
   }
 
@@ -134,7 +207,49 @@ class _ConversationScreenState extends State<ConversationScreen> {
         });
       });
       _scrollToBottom();
+      _autoSaveSession();
     });
+  }
+
+  void _autoSaveSession() {
+    if (_currentSessionId == null || _selectedRole == null || _messages.isEmpty) return;
+    final firstUserMsg = _messages.firstWhere(
+      (m) => m['isMe'] == true,
+      orElse: () => const {'text': 'Conversation Practice'},
+    );
+    final title = '${_selectedRole!['emoji']} ${_selectedRole!['title']} — ${(firstUserMsg['text'] as String).length > 30 ? '${(firstUserMsg['text'] as String).substring(0, 30)}...' : firstUserMsg['text'] as String}';
+    HiveService.saveChatSession({
+      'id': _currentSessionId,
+      'title': title,
+      'messages': List<Map<String, dynamic>>.from(_messages),
+      'role': _selectedRole,
+      'updatedAt': DateTime.now().toIso8601String(),
+    });
+    HiveService.setLastActiveConversationId(_currentSessionId!);
+  }
+
+  void _loadSession(Map<String, dynamic> session) {
+    setState(() {
+      _currentSessionId = session['id'] as String;
+      _selectedRole = Map<String, dynamic>.from(session['role'] as Map);
+      _roleSelected = true;
+      _messages.clear();
+      _messages.addAll(
+        (session['messages'] as List).map((e) => Map<String, dynamic>.from(e as Map)),
+      );
+    });
+    _scrollToBottom();
+    Navigator.pop(context);
+  }
+
+  void _deleteSession(String id) {
+    HiveService.deleteChatSession(id);
+    if (HiveService.getLastActiveConversationId() == id) {
+      HiveService.setLastActiveConversationId('');
+    }
+    if (id == _currentSessionId) {
+      _startNewChat();
+    }
   }
 
   List<Map<String, String>> _buildMessageHistory() {
@@ -146,6 +261,148 @@ class _ConversationScreenState extends State<ConversationScreen> {
       });
     }
     return result;
+  }
+
+  void _showHistoryDrawer() {
+    final sessions = HiveService.getChatSessions();
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (ctx) {
+        return StatefulBuilder(
+          builder: (ctx, setSheetState) => Container(
+            height: MediaQuery.of(context).size.height * 0.75,
+            decoration: BoxDecoration(
+              color: isDark ? AppColors.backgroundDark : Colors.white,
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.fromLTRB(20, 16, 12, 12),
+                  decoration: BoxDecoration(
+                    border: Border(bottom: BorderSide(color: isDark ? AppColors.borderDark : Colors.grey[200]!, width: 1)),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.history_rounded, size: 22, color: AppColors.primary),
+                      const SizedBox(width: 8),
+                      const Text('Conversation History', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                      const Spacer(),
+                      if (sessions.isNotEmpty)
+                        IconButton(
+                          icon: const Icon(Icons.delete_sweep_rounded, size: 22, color: Colors.red),
+                          tooltip: 'Delete all',
+                          onPressed: () {
+                            showDialog(
+                              context: ctx,
+                              builder: (dCtx) => AlertDialog(
+                                title: const Text('Delete all conversations?'),
+                                actions: [
+                                  TextButton(onPressed: () => Navigator.pop(dCtx), child: const Text('Cancel')),
+                                  TextButton(
+                                    onPressed: () {
+                                      HiveService.deleteAllChatSessions();
+                                      HiveService.setLastActiveConversationId('');
+                                      _startNewChat();
+                                      Navigator.pop(dCtx);
+                                      setSheetState(() {});
+                                    },
+                                    child: const Text('Delete All', style: TextStyle(color: Colors.red)),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      IconButton(
+                        icon: const Icon(Icons.close_rounded, size: 22),
+                        onPressed: () => Navigator.pop(ctx),
+                      ),
+                    ],
+                  ),
+                ),
+                if (sessions.isEmpty)
+                  Expanded(
+                    child: Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.chat_bubble_outline_rounded, size: 48, color: Colors.grey[400]),
+                          const SizedBox(height: 12),
+                          Text('No conversation history yet', style: TextStyle(color: Colors.grey[500], fontSize: 15)),
+                        ],
+                      ),
+                    ),
+                  )
+                else
+                  Expanded(
+                    child: ListView.builder(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      itemCount: sessions.length,
+                      itemBuilder: (ctx, idx) {
+                        final s = sessions[idx];
+                        final isActive = s['id'] == _currentSessionId;
+                        final updatedAt = s['updatedAt'] as String? ?? '';
+                        final dateStr = updatedAt.isNotEmpty
+                            ? _formatDate(DateTime.parse(updatedAt))
+                            : '';
+                        return Dismissible(
+                          key: ValueKey(s['id']),
+                          direction: DismissDirection.endToStart,
+                          background: Container(
+                            alignment: Alignment.centerRight,
+                            padding: const EdgeInsets.only(right: 24),
+                            color: Colors.red,
+                            child: const Icon(Icons.delete_outline_rounded, color: Colors.white, size: 24),
+                          ),
+                          onDismissed: (_) {
+                            _deleteSession(s['id'] as String);
+                            setSheetState(() {});
+                          },
+                          child: ListTile(
+                            selected: isActive,
+                            selectedTileColor: AppColors.primary.withOpacity(0.08),
+                            leading: CircleAvatar(
+                              radius: 18,
+                              backgroundColor: isActive ? AppColors.primary : (isDark ? Colors.white10 : Colors.grey[200]),
+                              child: Icon(Icons.forum_rounded, size: 18,
+                                  color: isActive ? Colors.white : (isDark ? Colors.white54 : Colors.grey[600])),
+                            ),
+                            title: Text(
+                              s['title'] as String? ?? 'Conversation',
+                              style: TextStyle(
+                                fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+                                fontSize: 14,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            subtitle: dateStr.isNotEmpty
+                                ? Text(dateStr, style: TextStyle(fontSize: 11, color: Colors.grey[500]))
+                                : null,
+                            trailing: IconButton(
+                              icon: Icon(Icons.close_rounded, size: 18, color: Colors.grey[400]),
+                              onPressed: () {
+                                _deleteSession(s['id'] as String);
+                                setSheetState(() {});
+                              },
+                            ),
+                            onTap: () => _loadSession(s),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
   void _scrollToBottom() {
@@ -167,11 +424,49 @@ class _ConversationScreenState extends State<ConversationScreen> {
     return '$h:$m $ampm';
   }
 
+  String _formatDate(DateTime dt) {
+    final now = DateTime.now();
+    final diff = now.difference(dt);
+    if (diff.inDays == 0) return 'Today';
+    if (diff.inDays == 1) return 'Yesterday';
+    if (diff.inDays < 7) return '${diff.inDays} days ago';
+    return '${dt.day}/${dt.month}/${dt.year}';
+  }
+
   @override
   void dispose() {
     _messageController.dispose();
     _scrollController.dispose();
+    _speech.stop();
     super.dispose();
+  }
+
+  void _startListening() async {
+    if (!_speechAvailable) {
+      _speechAvailable = await _speech.initialize();
+      if (!_speechAvailable) return;
+    }
+    final existingText = _messageController.text.trim();
+    _isListening = true;
+    setState(() {});
+    await _speech.listen(
+      onResult: (result) {
+        final words = result.recognizedWords;
+        setState(() {
+          if (existingText.isNotEmpty) {
+            _messageController.text = '$existingText $words';
+          } else {
+            _messageController.text = words;
+          }
+        });
+      },
+      localeId: _locale,
+    );
+  }
+
+  void _stopListening() async {
+    await _speech.stop();
+    setState(() => _isListening = false);
   }
 
   @override
@@ -186,14 +481,16 @@ class _ConversationScreenState extends State<ConversationScreen> {
                 children: [
                   Text(_selectedRole!['emoji'] as String, style: const TextStyle(fontSize: 22)),
                   const SizedBox(width: 8),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('${_selectedRole!['title']} (Role Play)',
-                          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-                      Text('Practice English conversation',
-                          style: TextStyle(fontSize: 11, color: isDark ? Colors.white54 : Colors.black45)),
-                    ],
+                  Flexible(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('${_selectedRole!['title']} (Role Play)',
+                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                        Text('Practice English conversation',
+                            style: TextStyle(fontSize: 11, color: isDark ? Colors.white54 : Colors.black45)),
+                      ],
+                    ),
                   ),
                 ],
               )
@@ -201,13 +498,30 @@ class _ConversationScreenState extends State<ConversationScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: _roleSelected
-              ? () => setState(() {
+              ? () {
+                  _autoSaveSession();
+                  setState(() {
                     _roleSelected = false;
                     _selectedRole = null;
                     _messages.clear();
-                  })
+                  });
+                }
               : () => Navigator.pop(context),
         ),
+        actions: [
+          if (_roleSelected) ...[
+            IconButton(
+              icon: const Icon(Icons.history_rounded, size: 24),
+              tooltip: 'History',
+              onPressed: _showHistoryDrawer,
+            ),
+            IconButton(
+              icon: const Icon(Icons.add_comment_rounded, size: 24),
+              tooltip: 'New Chat',
+              onPressed: _startNewChat,
+            ),
+          ],
+        ],
       ),
       body: _roleSelected ? _buildChatUI(isDark) : _buildRoleSelection(isDark),
     );
@@ -334,11 +648,49 @@ class _ConversationScreenState extends State<ConversationScreen> {
               ),
               const SizedBox(width: 8),
               CircleAvatar(
-                backgroundColor: AppColors.primary,
-                radius: 22,
-                child: IconButton(
-                  onPressed: _sendMessage,
-                  icon: const Icon(Icons.send_rounded, color: Colors.white, size: 20),
+                  backgroundColor: _isListening ? Colors.red : (isDark ? Colors.white12 : Colors.grey[300]),
+                  radius: 22,
+                  child: IconButton(
+                    onPressed: _isListening ? _stopListening : _startListening,
+                    icon: Icon(
+                      _isListening ? Icons.mic_rounded : Icons.mic_none_rounded,
+                      color: _isListening ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                      size: 20,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 4),
+                GestureDetector(
+                  onTap: () {
+                    final idx = _locales.indexOf(_locale);
+                    setState(() => _locale = _locales[(idx + 1) % _locales.length]);
+                  },
+                  child: Container(
+                    width: 32,
+                    height: 32,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: _isListening ? Colors.red.withOpacity(0.2) : (isDark ? Colors.white12 : Colors.grey[200]),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: AppColors.primary.withOpacity(0.3), width: 1),
+                    ),
+                    child: Text(
+                      _localeLabels[_locales.indexOf(_locale)],
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: _isListening ? Colors.white : AppColors.primary,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                CircleAvatar(
+                  backgroundColor: AppColors.primary,
+                  radius: 22,
+                  child: IconButton(
+                    onPressed: _sendMessage,
+                    icon: const Icon(Icons.send_rounded, color: Colors.white, size: 20),
                 ),
               ),
             ],

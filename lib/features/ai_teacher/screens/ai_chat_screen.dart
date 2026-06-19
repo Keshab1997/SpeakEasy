@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
 import '../../../core/constants/app_colors.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../services/ai_service.dart';
@@ -19,15 +20,43 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
   bool _isTyping = false;
   String _userName = '';
   String? _currentSessionId;
+  final stt.SpeechToText _speech = stt.SpeechToText();
+  bool _isListening = false;
+  bool _speechAvailable = false;
+  String _locale = 'en_US';
+  final List<String> _locales = ['en_US', 'bn_BD'];
+  final List<String> _localeLabels = ['EN', 'BN'];
 
   @override
   void initState() {
     super.initState();
     _userName = HiveService.getUserName();
-    _startNewChat();
+    _tryRestoreLastSession();
+    _initSpeech();
+  }
+
+  void _initSpeech() async {
+    _speechAvailable = await _speech.initialize();
+    setState(() {});
+  }
+
+  void _tryRestoreLastSession() {
+    final lastId = HiveService.getLastActiveChatId();
+    if (lastId.isEmpty) return _startNewChat();
+    final sessions = HiveService.getChatSessions();
+    final session = sessions.where((s) => s['id'] == lastId).firstOrNull;
+    if (session != null) {
+      _currentSessionId = session['id'] as String;
+      _messages.addAll(
+        (session['messages'] as List).map((e) => Map<String, dynamic>.from(e as Map)),
+      );
+    } else {
+      _startNewChat();
+    }
   }
 
   void _startNewChat() {
+    _autoSaveSession();
     setState(() {
       _currentSessionId = DateTime.now().millisecondsSinceEpoch.toString();
       _messages.clear();
@@ -118,7 +147,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
   }
 
   void _autoSaveSession() {
-    if (_currentSessionId == null) return;
+    if (_currentSessionId == null || _messages.isEmpty) return;
     final firstUserMsg = _messages.firstWhere(
       (m) => m['isMe'] == true,
       orElse: () => const {'text': 'Chat with Keshab'},
@@ -132,6 +161,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       'messages': List<Map<String, dynamic>>.from(_messages),
       'updatedAt': DateTime.now().toIso8601String(),
     });
+    HiveService.setLastActiveChatId(_currentSessionId!);
   }
 
   void _loadSession(Map<String, dynamic> session) {
@@ -148,6 +178,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
 
   void _deleteSession(String id) {
     HiveService.deleteChatSession(id);
+    if (HiveService.getLastActiveChatId() == id) {
+      HiveService.setLastActiveChatId('');
+    }
     if (id == _currentSessionId) {
       _startNewChat();
     }
@@ -196,6 +229,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                   TextButton(
                                     onPressed: () {
                                       HiveService.deleteAllChatSessions();
+                                      HiveService.setLastActiveChatId('');
                                       _startNewChat();
                                       Navigator.pop(dCtx);
                                       setSheetState(() {});
@@ -326,7 +360,36 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
   void dispose() {
     _messageController.dispose();
     _scrollController.dispose();
+    _speech.stop();
     super.dispose();
+  }
+
+  void _startListening() async {
+    if (!_speechAvailable) {
+      _speechAvailable = await _speech.initialize();
+      if (!_speechAvailable) return;
+    }
+    final existingText = _messageController.text.trim();
+    _isListening = true;
+    setState(() {});
+    await _speech.listen(
+      onResult: (result) {
+        final words = result.recognizedWords;
+        setState(() {
+          if (existingText.isNotEmpty) {
+            _messageController.text = '$existingText $words';
+          } else {
+            _messageController.text = words;
+          }
+        });
+      },
+      localeId: _locale,
+    );
+  }
+
+  void _stopListening() async {
+    await _speech.stop();
+    setState(() => _isListening = false);
   }
 
   @override
@@ -341,7 +404,12 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       "Let's practice greetings",
     ];
 
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () async {
+        _autoSaveSession();
+        return true;
+      },
+      child: Scaffold(
       appBar: AppBar(
         title: Row(
           children: [
@@ -556,6 +624,44 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                 ),
                 const SizedBox(width: 8),
                 CircleAvatar(
+                    backgroundColor: _isListening ? Colors.red : (isDark ? Colors.white12 : Colors.grey[300]),
+                    radius: 22,
+                    child: IconButton(
+                      onPressed: _isListening ? _stopListening : _startListening,
+                      icon: Icon(
+                        _isListening ? Icons.mic_rounded : Icons.mic_none_rounded,
+                        color: _isListening ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                        size: 20,
+                      ),
+                    ),
+                  ),
+                const SizedBox(width: 4),
+                GestureDetector(
+                  onTap: () {
+                    final idx = _locales.indexOf(_locale);
+                    setState(() => _locale = _locales[(idx + 1) % _locales.length]);
+                  },
+                  child: Container(
+                    width: 32,
+                    height: 32,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: _isListening ? Colors.red.withOpacity(0.2) : (isDark ? Colors.white12 : Colors.grey[200]),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: AppColors.primary.withOpacity(0.3), width: 1),
+                    ),
+                    child: Text(
+                      _localeLabels[_locales.indexOf(_locale)],
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: _isListening ? Colors.white : AppColors.primary,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                CircleAvatar(
                   backgroundColor: AppColors.primary,
                   radius: 22,
                   child: IconButton(
@@ -567,6 +673,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
             ),
           ),
         ],
+      ),
       ),
     );
   }

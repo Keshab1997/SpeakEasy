@@ -197,6 +197,24 @@ class HiveService {
     await _settings.put('chatSessions', <Map<String, dynamic>>[]);
   }
 
+  // Last Active Conversation
+  static Future<void> setLastActiveConversationId(String id) async {
+    await _settings.put('lastActiveConvId', id);
+  }
+
+  static String getLastActiveConversationId() {
+    return _settings.get('lastActiveConvId', defaultValue: '') as String;
+  }
+
+  // Last Active AI Chat
+  static Future<void> setLastActiveChatId(String id) async {
+    await _settings.put('lastActiveChatId', id);
+  }
+
+  static String getLastActiveChatId() {
+    return _settings.get('lastActiveChatId', defaultValue: '') as String;
+  }
+
   // History
   static Future<void> addToHistory(String lessonId) async {
     final history = _history.get('lessonIds', defaultValue: <String>[]) as List<String>;
