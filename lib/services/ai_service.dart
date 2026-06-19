@@ -54,17 +54,17 @@ class AIService {
     }
   }
 
-  Future<String> sendMessageWithSystem(String message, {String? systemPrompt}) async {
+  Future<String> sendMessageWithSystem(String message, {String? systemPrompt, List<Map<String, String>>? history}) async {
     if (_apiKey.isEmpty) return _getLocalResponse(message);
 
     try {
-      return await _callOpenAI(message, systemPrompt: systemPrompt);
+      return await _callOpenAI(message, systemPrompt: systemPrompt, history: history);
     } catch (_) {
       return _getLocalResponse(message);
     }
   }
 
-  Future<String> _callOpenAI(String message, {String? systemPrompt}) async {
+  Future<String> _callOpenAI(String message, {String? systemPrompt, List<Map<String, String>>? history}) async {
     final url = Uri.parse('$_baseUrl/chat/completions');
     final userName = HiveService.getUserName();
 
@@ -88,6 +88,9 @@ class AIService {
           'Keep responses friendly, concise, and encouraging. '
           'Always address the student by name when possible.'
     });
+    if (history != null && history.isNotEmpty) {
+      messages.addAll(history);
+    }
     messages.add({'role': 'user', 'content': message});
 
     final response = await http.post(

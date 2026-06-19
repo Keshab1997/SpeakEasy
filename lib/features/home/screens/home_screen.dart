@@ -10,6 +10,7 @@ import '../../../providers/theme_provider.dart';
 import '../../grammar/screens/grammar_list_screen.dart';
 import '../../grammar/screens/grammar_test_list_screen.dart';
 import '../../vocabulary/screens/vocabulary_test_screen.dart';
+import '../../conversation/screens/conversation_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   final Function(int)? onNavigateToTab;
@@ -677,7 +678,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
       {'title': 'Vocab Test', 'icon': Icons.quiz_rounded, 'gradient': AppColors.accentGradient, 'tab': -1},
       {'title': 'Grammar', 'icon': Icons.edit_note_rounded, 'gradient': AppColors.purpleGradient, 'tab': -2},
       {'title': 'Grammar Test', 'icon': Icons.quiz_rounded, 'gradient': AppColors.accentGradient, 'tab': -3},
-      {'title': 'Conversation', 'icon': Icons.forum_rounded, 'gradient': AppColors.secondaryGradient, 'tab': 2},
+      {'title': 'Conversation', 'icon': Icons.forum_rounded, 'gradient': AppColors.secondaryGradient, 'tab': -4},
       {'title': 'Listening', 'icon': Icons.headset_rounded, 'gradient': AppColors.infoGradient, 'tab': 2},
       {'title': 'Speaking', 'icon': Icons.mic_rounded, 'gradient': AppColors.pinkGradient, 'tab': 2},
     ];
@@ -703,6 +704,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                   Navigator.push(context, MaterialPageRoute(builder: (_) => const GrammarListScreen()));
                 } else if (tab == -3) {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => const GrammarTestListScreen()));
+                } else if (tab == -4) {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => const ConversationScreen()));
                 } else {
                   widget.onNavigateToTab?.call(tab);
                 }
