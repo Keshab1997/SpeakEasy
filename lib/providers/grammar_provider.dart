@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/grammar_chapter_model.dart';
@@ -21,7 +22,17 @@ final allGrammarChaptersProvider =
     FutureProvider<List<GrammarChapter>>((ref) async {
   await _bustOldCache();
   final paths = await ref.watch(grammarAssetPathsProvider.future);
-  final chapters = await Future.wait(paths.map(_loadChapter));
+
+  final results = await Future.wait(paths.map((path) async {
+    try {
+      return await _loadChapter(path);
+    } catch (e) {
+      debugPrint('Failed to load chapter: $path — $e');
+      return null;
+    }
+  }));
+
+  final chapters = results.whereType<GrammarChapter>().toList();
   chapters.sort((a, b) => a.chapter.compareTo(b.chapter));
   return chapters;
 });
