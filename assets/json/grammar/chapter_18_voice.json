@@ -174,7 +174,7 @@
         { "en": "Obvious: 'The train tickets can be booked online.' (by passengers — obvious)", "bn": "স্পষ্ট: 'ট্রেনের টিকিট অনলাইনে বুক করা যায়।' (যাত্রীদের দ্বারা — স্পষ্ট)" },
         { "en": "Unimportant: 'The meeting has been postponed until next week.'", "bn": "গুরুত্বহীন: 'মিটিং আগামী সপ্তাহ পর্যন্ত স্থগিত করা হয়েছে।'" },
         { "en": "General: 'Sanskrit is taught in many Indian schools.'", "bn": "সাধারণ: 'অনেক ভারতীয় স্কুলে সংস্কৃত পড়ানো হয়।'" },
-        { "en": "Important agent: 'The song 'Vande Mataram' was written by Bankim Chandra Chattopadhyay.'", "bn": "গুরুত্বপূর্ণ agent: "'বন্দে মাতরম' গানটি বঙ্কিমচন্দ্র চট্টোপাধ্যায় লিখেছিলেন।"" },
+        { "en": "Important agent: \"The song 'Vande Mataram' was written by Bankim Chandra Chattopadhyay.\"", "bn": "গুরুত্বপূর্ণ agent: 'বন্দে মাতরম' গানটি বঙ্কিমচন্দ্র চট্টোপাধ্যায় লিখেছিলেন।" },
         { "en": "Instrument: 'The letter was written with a fountain pen.'", "bn": "Instrument: 'চিঠিটি ফাউন্টেন পেন দিয়ে লেখা হয়েছিল।'" }
       ],
       "tips": "Agentless passive সবচেয়ে বেশি ব্যবহৃত হয়। মনে রাখবে: 'by-phrase' শুধু যোগ করো যখন agent জানা important। 'My car was stolen' — agentless (কার stole করেছে জানি না)। 'The Mona Lisa was painted by Leonardo da Vinci' — agent important (লিওনার্দো দা ভিঞ্চি বিখ্যাত শিল্পী)। 'Rice is grown in West Bengal' — agentless (obvious — farmers)। সাধারণ নিয়ম: agent না জানালে বা না বললেও চললে by-phrase বাদ দাও।"
