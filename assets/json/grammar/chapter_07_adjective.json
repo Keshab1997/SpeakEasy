@@ -1,10 +1,269 @@
 {
   "chapter": 7,
   "level": "Beginner",
-  "title": "Adjective",
+  "title": "Adjective (বিশেষণ)",
   "icon": "palette",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "An adjective is a word that describes or modifies a noun or pronoun. Adjectives tell us more about a person, place, or thing — what kind, how many, which one, or how much. They make our language colourful and specific. Without adjectives, our speech would be plain and boring. Adjectives are essential for expressing thoughts clearly and vividly.",
+  "banglaDescription": "Adjective (বিশেষণ) হলো সেই শব্দ যা noun বা pronoun-কে বর্ণনা বা পরিবর্তন করে। Adjective আমাদের ব্যক্তি, স্থান বা বস্তু সম্পর্কে আরও বলে — কেমন, কত, কোনটি, বা কতটুকু। এগুলো আমাদের ভাষাকে রঙিন এবং সুনির্দিষ্ট করে তোলে। Adjective ছাড়া আমাদের বক্তব্য হবে নীরস এবং সাধারণ। চিন্তা স্পষ্ট ও জীবন্তভাবে প্রকাশের জন্য adjective অপরিহার্য।",
+  "topics": [
+    {
+      "name": "What is an Adjective?",
+      "banglaName": "বিশেষণ কী?",
+      "definition": "An adjective is a word that describes a noun or pronoun. It gives more information about the noun — its quality, size, color, quantity, or which one it is. Adjectives usually come before the noun they describe, or after a linking verb. They answer questions like 'What kind?', 'How many?', and 'Which one?'.",
+      "banglaDefinition": "Adjective (বিশেষণ) হলো সেই শব্দ যা noun বা pronoun-কে বর্ণনা করে। এটি noun সম্পর্কে আরও তথ্য দেয় — তার গুণ, আকার, রং, পরিমাণ, বা কোনটি। Adjective সাধারণত noun-এর আগে বসে, বা linking verb-এর পরে বসে। এরা 'কেমন?', 'কতটি?', এবং 'কোনটি?' এর মতো প্রশ্নের উত্তর দেয়।",
+      "formula": "Adjective + Noun = Describes the noun\n→ a beautiful flower, a tall building, a red car\n\nSubject + Linking Verb + Adjective\n→ The flower is beautiful.\n→ He seems tired.\n→ The food smells good.",
+      "rules": [
+        "Adjective noun-এর গুণ, আকার, রং, সংখ্যা, বা অবস্থা বোঝায়।",
+        "Adjective সাধারণত noun-এর আগে বসে: 'a delicious biryani', 'an old temple'।",
+        "Adjective linking verb (is, am, are, was, were, seem, feel, look, taste, smell) এর পরে বসে।",
+        "একটি noun-এর আগে একাধিক adjective থাকতে পারে: 'a beautiful old red sari'।",
+        "Adjective-এর তিনটি degree আছে: positive (tall), comparative (taller), superlative (tallest)।",
+        "কিছু adjective-এর পরে নির্দিষ্ট preposition ব্যবহৃত হয়: interested in, afraid of, good at।",
+        "Adjective কখনও কখনও noun-এর পরে বসে (পরিমাণ বোঝাতে): 'something special', 'nothing new'।"
+      ],
+      "examples": [
+        { "en": "Quality: 'Kolkata is a vibrant city.'", "bn": "গুণ: 'কলকাতা একটি প্রাণবন্ত শহর।'" },
+        { "en": "Size: 'We visited a huge temple in Chennai.'", "bn": "আকার: 'আমরা চেন্নাইয়ে একটি বিশাল মন্দির দেখতে গিয়েছিলাম।'" },
+        { "en": "Color: 'She wore a red sari at the wedding.'", "bn": "রং: 'সে বিয়েতে একটি লাল শাড়ি পরেছিল।'" },
+        { "en": "Number: 'I bought three mangoes from the market.'", "bn": "সংখ্যা: 'আমি বাজার থেকে তিনটি আম কিনেছি।'" },
+        { "en": "Opinion: 'It was an excellent Bollywood movie.'", "bn": "মতামত: 'এটি একটি চমৎকার বলিউড সিনেমা ছিল।'" },
+        { "en": "After linking verb: 'The curry tastes spicy.'", "bn": "Linking verb-এর পরে: 'তরকারিটি মসলাদার লাগছে।'" }
+      ],
+      "tips": "Adjective চেনার সবচেয়ে সহজ উপায়: noun-এর আগে 'very' বসিয়ে দেখো। 'Very' বসালে যদি অর্থপূর্ণ হয়, তবে শব্দটি adjective (very beautiful, very tall, very tasty)। 'A/an/the + ___ + noun' এই প্যাটার্নে ফাঁকা জায়গায় সাধারণত adjective বসে। মনে রাখবে: adjective সবসময় noun-কে বর্ণনা করে, verb-কে নয়।"
+    },
+    {
+      "name": "Types of Adjectives",
+      "banglaName": "বিশেষণের প্রকারভেদ",
+      "definition": "Adjectives can be classified into several types based on what they describe. Descriptive adjectives tell us about quality or kind. Quantitative adjectives tell us about quantity. Demonstrative adjectives point to specific things. Possessive adjectives show ownership. Interrogative adjectives ask questions. Distributive adjectives refer to individual members of a group.",
+      "banglaDefinition": "Adjective-কে তারা কী বর্ণনা করে তার ভিত্তিতে বিভিন্ন প্রকারে ভাগ করা যায়। Descriptive adjective গুণ বা ধরন বোঝায়। Quantitative adjective পরিমাণ বোঝায়। Demonstrative adjective নির্দিষ্ট বস্তু নির্দেশ করে। Possessive adjective মালিকানা দেখায়। Interrogative adjective প্রশ্ন জিজ্ঞাসা করে। Distributive adjective একটি দলের পৃথক সদস্যদের নির্দেশ করে।",
+      "formula": "Descriptive: a hot cup of chai, a crowded train\nQuantitative: some money, enough time, many people\nDemonstrative: this book, that car, these flowers\nPossessive: my bag, her house, their school\nInterrogative: which color, what time, whose pen\nDistributive: each student, every city, neither option",
+      "rules": [
+        "Descriptive adjective গুণ, রং, আকার ইত্যাদি বোঝায়: 'a spicy curry', 'a tall building'।",
+        "Quantitative adjective পরিমাণ বা সংখ্যা বোঝায়: some, any, much, many, enough, all, several।",
+        "Demonstrative adjective (this, that, these, those) noun-এর আগে বসে নির্দেশ করে।",
+        "Possessive adjective (my, your, his, her, its, our, their) মালিকানা দেখায়।",
+        "Interrogative adjective (which, what, whose) noun-এর আগে বসে প্রশ্ন তৈরি করে।",
+        "Distributive adjective (each, every, either, neither) দলের প্রতিটি সদস্যকে আলাদাভাবে নির্দেশ করে।",
+        "একই শব্দ (যেমন: this, that, which) — adjective যখন noun-এর আগে বসে, pronoun যখন একা বসে।"
+      ],
+      "examples": [
+        { "en": "Descriptive: 'The sweet smell of jasmine filled the air.'", "bn": "Descriptive: 'জুঁইয়ের মিষ্টি গন্ধ বাতাসে ভরে গেল।'" },
+        { "en": "Quantitative: 'I need some sugar for the tea.'", "bn": "Quantitative: 'চায়ের জন্য আমার কিছু চিনি দরকার।'" },
+        { "en": "Demonstrative: 'This sari is from Varanasi.'", "bn": "Demonstrative: 'এই শাড়িটি বারাণসীর।'" },
+        { "en": "Possessive: 'My grandmother told me an interesting story.'", "bn": "Possessive: 'আমার দাদী আমাকে একটি মজার গল্প বলেছিলেন।'" },
+        { "en": "Interrogative: 'Which train goes to Howrah station?'", "bn": "Interrogative: 'কোন ট্রেনটি হাওড়া স্টেশনে যায়?'" },
+        { "en": "Distributive: 'Every student must submit their homework by Monday.'", "bn": "Distributive: 'প্রত্যেক ছাত্রকে সোমবারের মধ্যে হোমওয়ার্ক জমা দিতে হবে।'" }
+      ],
+      "tips": "Adjective-এর ধরন চেনার সহজ উপায়: adjective-টি কী বোঝাচ্ছে তা দেখো। গুণ/রং/আকার → Descriptive। পরিমাণ → Quantitative। নির্দেশনা → Demonstrative। মালিকানা → Possessive। প্রশ্ন → Interrogative। প্রতিটি/প্রত্যেক → Distributive। একটি বাক্যে একাধিক ধরনের adjective থাকতে পারে।"
+    },
+    {
+      "name": "Descriptive Adjectives",
+      "banglaName": "গুণবাচক বিশেষণ",
+      "definition": "Descriptive adjectives are the most common type of adjective. They describe the quality, kind, or state of a noun. They tell us what something is like — its appearance, color, size, shape, taste, sound, or other characteristics. These adjectives make our descriptions vivid and specific.",
+      "banglaDefinition": "Descriptive adjective (গুণবাচক বিশেষণ) সবচেয়ে সাধারণ ধরনের adjective। এগুলো noun-এর গুণ, ধরন, বা অবস্থা বর্ণনা করে। এরা আমাদের বলে কিছু কেমন — তার চেহারা, রং, আকার, আকৃতি, স্বাদ, শব্দ, বা অন্যান্য বৈশিষ্ট্য। এই adjective আমাদের বর্ণনাকে জীবন্ত এবং সুনির্দিষ্ট করে তোলে।",
+      "formula": "Descriptive Adjective + Noun\n→ a golden temple, a spicy curry, a quiet village\n\nNoun + Linking Verb + Descriptive Adjective\n→ The Taj Mahal is magnificent.\n→ The mangoes are sweet.\n→ The journey was long.",
+      "rules": [
+        "Descriptive adjective noun-এর শারীরিক বৈশিষ্ট্য বোঝাতে পারে: big, small, round, square।",
+        "সংবেদনশীল (sensory) বৈশিষ্ট্য বোঝাতে পারে: sweet, spicy, loud, soft, bright।",
+        "ব্যক্তিত্বের বৈশিষ্ট্য বোঝাতে পারে: kind, honest, brave, intelligent।",
+        "অবস্থা বোঝাতে পারে: happy, tired, hungry, cold।",
+        "Descriptive adjective-এর comparative এবং superlative form থাকে: sweet → sweeter → sweetest।",
+        "বাংলায় 'গুণবাচক বিশেষণ' যা ইংরেজিতে descriptive adjective।",
+        "ভালো descriptive adjective ব্যবহার করলে লেখা প্রাণবন্ত হয়।"
+      ],
+      "examples": [
+        { "en": "Appearance: 'The red fort is a historic monument in Delhi.'", "bn": "চেহারা: 'লাল কেল্লা দিল্লির একটি ঐতিহাসিক স্মৃতিস্তম্ভ।'" },
+        { "en": "Taste: 'These mangoes from Maharashtra are very sweet.'", "bn": "স্বাদ: 'মহারাষ্ট্রের এই আমগুলো খুব মিষ্টি।'" },
+        { "en": "Size: 'We walked through a narrow lane in old Kolkata.'", "bn": "আকার: 'আমরা পুরনো কলকাতার একটি সরু গলিতে হেঁটেছিলাম।'" },
+        { "en": "Personality: 'My grandfather is a very wise man.'", "bn": "ব্যক্তিত্ব: 'আমার দাদা একজন খুব জ্ঞানী মানুষ।'" },
+        { "en": "State: 'The children were excited about the Diwali festival.'", "bn": "অবস্থা: 'শিশুরা দিওয়ালি উৎসব নিয়ে উত্তেজিত ছিল।'" },
+        { "en": "Color: 'The sky turned orange during the sunset at Puri Beach.'", "bn": "রং: 'পুরী সৈকতে সূর্যাস্তের সময় আকাশ কমলা হয়ে গিয়েছিল।'" }
+      ],
+      "tips": "Descriptive adjective ব্যবহার করে লেখাকে আরও প্রাণবন্ত করো। 'A good meal' না বলে 'a delicious, aromatic biryani' বলো। 'A nice view' না বলে 'a breathtaking view of the Himalayas' বলো। তবে অতিরিক্ত adjective ব্যবহার করো না — একটি সুনির্দিষ্ট adjective অনেকগুলো সাধারণ adjective-এর চেয়ে ভালো।"
+    },
+    {
+      "name": "Degrees of Comparison",
+      "banglaName": "তুলনার মাত্রা",
+      "definition": "Adjectives have three degrees of comparison to show different levels of a quality. The Positive degree is the basic form of an adjective. The Comparative degree compares two things. The Superlative degree compares three or more things and shows the highest or lowest level. Understanding comparisons is essential for expressing differences and similarities.",
+      "banglaDefinition": "Adjective-এর তিনটি degree of comparison আছে যা একটি গুণের বিভিন্ন মাত্রা দেখায়। Positive degree হলো adjective-এর মৌলিক রূপ। Comparative degree দুইটি বস্তুর তুলনা করে। Superlative degree তিন বা ততোধিক বস্তুর তুলনা করে এবং সর্বোচ্চ বা সর্বনিম্ন মাত্রা দেখায়। তুলনা বোঝা পার্থক্য ও সাদৃশ্য প্রকাশের জন্য অপরিহার্য।",
+      "formula": "Positive (no comparison): The Ganges is a long river.\nComparative (two things): The Ganges is longer than the Yamuna.\nSuperlative (three+ things): The Ganges is the longest river in India.\n\nFormation:\nShort adj: tall → taller → tallest\nLong adj: beautiful → more beautiful → most beautiful\nIrregular: good → better → best, bad → worse → worst",
+      "rules": [
+        "Positive degree মৌলিক রূপ: 'Kolkata is a big city.'",
+        "Comparative degree দুইয়ের তুলনা: 'Kolkata is bigger than Chennai.'",
+        "Superlative degree তিন বা তার বেশি: 'Mumbai is the biggest city in India.'",
+        "এক syllable-যুক্ত adjective-এ -er/-est যোগ হয়: tall → taller → tallest।",
+        "দুই syllable-যুক্ত adjective-এ more/most বা -er/-est (শেষে -y থাকলে): happy → happier → happiest।",
+        "তিন বা ততোধিক syllable-যুক্ত adjective-এ more/most: beautiful → more beautiful → most beautiful।",
+        "অনিয়মিত: good → better → best, bad → worse → worst, far → farther/further।",
+        "Comparative-এ 'than' ব্যবহার হয়: 'Delhi is more polluted than Kolkata.'",
+        "Superlative-এর আগে 'the' ব্যবহার হয়: 'Mount Everest is the highest peak.'"
+      ],
+      "examples": [
+        { "en": "Positive: 'The Qutub Minar is a tall monument.'", "bn": "Positive: 'কুতুব মিনার একটি উঁচু স্মৃতিস্তম্ভ।'" },
+        { "en": "Comparative: 'The Qutub Minar is taller than the Charminar.'", "bn": "Comparative: 'কুতুব মিনার চারমিনারের চেয়ে উঁচু।'" },
+        { "en": "Superlative: 'The Qutub Minar is one of the tallest monuments in India.'", "bn": "Superlative: 'কুতুব মিনার ভারতের সবচেয়ে উঁচু স্মৃতিস্তম্ভগুলোর মধ্যে একটি।'" },
+        { "en": "Irregular: 'This is the best biryani I have ever eaten.'", "bn": "অনিয়মিত: 'এটি আমি খাওয়া সেরা বিরিয়ানি।'" },
+        { "en": "Comparative: 'My grandmother is older than my grandfather.'", "bn": "Comparative: 'আমার দাদী আমার দাদার চেয়ে বড়।'" },
+        { "en": "Superlative: 'Winter in Shimla is colder than in Kolkata.' — wait, this is comparative", "bn": "" },
+        { "en": "Correct comparative: 'The weather in Shimla is colder than in Kolkata.'", "bn": "ঠিক comparative: 'শিমলার আবহাওয়া কলকাতার চেয়ে ঠান্ডা।'" }
+      ],
+      "tips": "Degree of comparison ব্যবহারের সময় মনে রাখবে: Comparative-এ সবসময় 'than' ব্যবহার করতে হবে এবং দুটি জিনিসের তুলনা করতে হবে। Superlative-এ 'the' ব্যবহার করতে হবে এবং তিন বা তার বেশি জিনিসের মধ্যে তুলনা করতে হবে। 'More better' বা 'most best' বলা ভুল — better এবং best ইতিমধ্যেই comparative এবং superlative।"
+    },
+    {
+      "name": "Order of Adjectives",
+      "banglaName": "বিশেষণের ক্রম",
+      "definition": "When multiple adjectives are used before a noun, they must follow a specific order. The standard order is: Opinion, Size, Age, Shape, Color, Origin, Material, Purpose (OSASCOMP). Native English speakers use this order naturally, but learners need to practice it. Using the wrong order can sound awkward or incorrect.",
+      "banglaDefinition": "একটি noun-এর আগে একাধিক adjective ব্যবহার করলে একটি নির্দিষ্ট ক্রম অনুসরণ করতে হয়। আদর্শ ক্রম হলো: Opinion (মতামত), Size (আকার), Age (বয়স), Shape (আকৃতি), Color (রং), Origin (উৎপত্তি), Material (উপাদান), Purpose (উদ্দেশ্য) — সংক্ষেপে OSASCOMP। স্থানীয় ইংরেজি ভাষাভাষীরা এই ক্রম স্বাভাবিকভাবেই ব্যবহার করে, কিন্তু শিক্ষার্থীদের অনুশীলন করতে হয়। ভুল ক্রম অদ্ভুত বা ভুল শোনাতে পারে।",
+      "formula": "OSASCOMP:\nO = Opinion (beautiful, ugly, nice)\nS = Size (big, small, tiny)\nA = Age (old, new, young)\nS = Shape (round, square, flat)\nC = Color (red, blue, golden)\nO = Origin (Indian, Italian, Punjabi)\nM = Material (cotton, silk, wooden)\nP = Purpose (sleeping, cooking, walking)\n\nExample: a beautiful (O) big (S) old (A) round (S) golden (C) Indian (O) silk (M) wedding (P) sari",
+      "rules": [
+        "Opinion (মতামত) adjective সবার আগে বসে: beautiful, nice, ugly, wonderful।",
+        "Size (আকার) দ্বিতীয়: big, small, huge, tiny, long।",
+        "Age (বয়স) তৃতীয়: old, new, young, ancient, modern।",
+        "Shape (আকৃতি) চতুর্থ: round, square, flat, triangular।",
+        "Color (রং) পঞ্চম: red, blue, golden, white, green।",
+        "Origin (উৎপত্তি) ষষ্ঠ: Indian, Italian, Punjabi, Chinese।",
+        "Material (উপাদান) সপ্তম: silk, cotton, wooden, gold, plastic।",
+        "Purpose (উদ্দেশ্য) অষ্টম ও শেষ: sleeping (bag), cooking (oil), walking (stick)।",
+        "দুই-তিনটির বেশি adjective একসাথে ব্যবহার না করাই ভালো — বাক্য ভারী হয়ে যায়।"
+      ],
+      "examples": [
+        { "en": "Correct: 'A lovely old Indian temple.' (Opinion + Age + Origin)", "bn": "ঠিক: 'একটি চমৎকার পুরনো ভারতীয় মন্দির।'" },
+        { "en": "Correct: 'A big round red Bengali sweet.' (Size + Shape + Color + Origin)", "bn": "ঠিক: 'একটি বড় গোল লাল বাঙালি মিষ্টি।'" },
+        { "en": "Correct: 'She wore a beautiful long red Punjabi silk dupatta.'", "bn": "ঠিক: 'সে একটি সুন্দর লম্বা লাল পাঞ্জাবি সিল্কের dupatta পরেছিল।'" },
+        { "en": "Wrong: 'A red big old car.' → Correct: 'A big old red car.'", "bn": "ভুল: 'A red big old car.' → ঠিক: 'A big old red car.'" },
+        { "en": "Wrong: 'An Indian beautiful silk sari.' → Correct: 'A beautiful Indian silk sari.'", "bn": "ভুল: 'An Indian beautiful silk sari.' → ঠিক: 'A beautiful Indian silk sari.'" },
+        { "en": "Correct: 'A delicious hot bowl of tomato soup.'", "bn": "ঠিক: 'একটি সুস্বাদু গরম বাটি টমেটো স্যুপ।'" }
+      ],
+      "tips": "OSASCOMP মনে রাখার সহজ উপায়: 'OSASCOMP' শব্দটি মুখস্থ করো। অথবা বাক্যটি মনে রাখো: **O**n **S**unday **A**t **S**chool **C**olors **O**f **M**any **P**laces। তবে ভয় পেও না — বেশিরভাগ সময় ২-৩টির বেশি adjective একসাথে লাগে না। Natural হতে বেশি practice করো।"
+    },
+    {
+      "name": "Proper Adjectives",
+      "banglaName": "নামবাচক বিশেষণ",
+      "definition": "A proper adjective is an adjective that is formed from a proper noun and begins with a capital letter. They describe something as coming from or relating to a specific place, person, or culture. Common proper adjectives include Indian, Bengali, Punjabi, Italian, Chinese, Victorian, Shakespearean, and Buddhist.",
+      "banglaDefinition": "Proper adjective (নামবাচক বিশেষণ) হলো সেই adjective যা proper noun থেকে তৈরি এবং capital letter দিয়ে শুরু হয়। এরা কোনো নির্দিষ্ট স্থান, ব্যক্তি, বা সংস্কৃতি থেকে আসা বা সম্পর্কিত কিছু বর্ণনা করে। সাধারণ proper adjectives: Indian, Bengali, Punjabi, Italian, Chinese, Victorian, Shakespearean, Buddhist।",
+      "formula": "Proper Noun → Proper Adjective\nIndia → Indian\nBengal → Bengali\nPunjab → Punjabi\nShakespeare → Shakespearean\nBuddha → Buddhist\n\nExample:\n'Proper noun: I love India.'\n'Proper adjective: I love Indian food.'",
+      "rules": [
+        "Proper adjective সবসময় capital letter দিয়ে শুরু হয়: 'Indian cuisine', 'Bengali literature'।",
+        "Proper adjective সাধারণত proper noun-এ suffix যোগ করে তৈরি হয়: -an, -ian, -ese, -ic, -ish।",
+        "-an/-ian: India → Indian, Italy → Italian, Russia → Russian।",
+        "-ese: China → Chinese, Japan → Japanese, Nepal → Nepalese।",
+        "-ish: Britain → British, Poland → Polish, Turkey → Turkish।",
+        "-ic: Tibet → Tibetan, Arab → Arabic (also -ic for some)।",
+        "কিছু proper adjective-এর কোনো suffix লাগে না: Punjabi, Bengali, Gujarati (এগুলো ভাষা ও জাতি নাম থেকেই এসেছে)।",
+        "Proper adjective সাধারণত origin, nationality, বা culture বোঝায়।"
+      ],
+      "examples": [
+        { "en": "Nationality: 'I love South Indian filter coffee.'", "bn": "জাতীয়তা: 'আমি দক্ষিণ ভারতীয় ফিল্টার কফি পছন্দ করি।'" },
+        { "en": "Culture: 'We celebrated the Bengali New Year with great enthusiasm.'", "bn": "সংস্কৃতি: 'আমরা খুব উৎসাহের সাথে বাংলা নববর্ষ উদযাপন করেছি।'" },
+        { "en": "Regional: 'Punjabi music is very lively and energetic.'", "bn": "আঞ্চলিক: 'পাঞ্জাবি সঙ্গীত খুব প্রাণবন্ত এবং উদ্যমী।'" },
+        { "en": "Historical: 'The Mughal architecture is visible in many parts of Delhi.'", "bn": "ঐতিহাসিক: 'মুঘল স্থাপত্য দিল্লির অনেক জায়গায় দেখা যায়।'" },
+        { "en": "Literary: 'She is a scholar of Shakespearean literature.'", "bn": "সাহিত্যিক: 'সে শেক্সপিয়রীয় সাহিত্যের একটি পণ্ডিত।'" },
+        { "en": "Religious: 'The Buddhist monasteries in Ladakh are very peaceful.'", "bn": "ধর্মীয়: 'লাদাখের বৌদ্ধ মঠগুলো খুব শান্তিপূর্ণ।'" }
+      ],
+      "tips": "Proper adjective-এর সবচেয়ে গুরুত্বপূর্ণ নিয়ম: সবসময় capital letter দিয়ে শুরু করতে হবে। 'indian food' (ভুল), 'Indian food' (ঠিক)। মনে রাখবে: proper adjective proper noun থেকে আসে, তাই capital letter তার সাথে আসে। 'India' যেমন capital 'I', 'Indian'-ও capital 'I'।"
+    },
+    {
+      "name": "Compound Adjectives",
+      "banglaName": "যৌগিক বিশেষণ",
+      "definition": "A compound adjective is an adjective made up of two or more words that work together to describe a noun. Compound adjectives are often hyphenated, especially when they come before the noun. They can be formed using numbers, nouns, adjectives, and past or present participles.",
+      "banglaDefinition": "Compound adjective (যৌগিক বিশেষণ) হলো দুই বা ততোধিক শব্দ নিয়ে গঠিত adjective যা একসাথে noun-কে বর্ণনা করে। Compound adjective প্রায়শই hyphenated হয়, বিশেষ করে যখন noun-এর আগে বসে। এগুলো সংখ্যা, noun, adjective, এবং past বা present participle ব্যবহার করে গঠিত হয়।",
+      "formula": "Number + Noun: a five-minute walk, a ten-page report\nAdjective + Noun: a full-time job, a long-term plan\nAdjective + Participle: a good-looking man, a well-known writer\nNoun + Adjective: a world-famous temple, a tax-free zone\nNoun + Participle: a mouth-watering dish, a heart-breaking story\n\nExample: 'Kolkata is a well-planned city with a centuries-old history.'",
+      "rules": [
+        "Compound adjective সাধারণত noun-এর আগে বসলে hyphenated হয়: 'a well-known author'।",
+        "Noun-এর পরে বসলে hyphen সাধারণত প্রয়োজন হয় না: 'The author is well known.'",
+        "Number + noun compound adjective singular হয়: 'a five-day trip' (not five-days trip)।",
+        "Number + noun compound adjective-এ noun plural হয় না: 'a ten-minute walk', 'a two-hour journey'।",
+        "Hyphenated compound adjective সবসময় একক adjective হিসেবে কাজ করে।",
+        "কিছু compound adjective এত সাধারণ যে hyphen ছাড়াই লেখা হয়: 'newspaper', 'bedroom' (noun হিসাবে)।",
+        "Emoji বা ইমোজি ব্যবহার না করে compound adjective বানিয়ে নিজের表达能力 বাড়াও।"
+      ],
+      "examples": [
+        { "en": "Number + Noun: 'Kolkata is a 300-year-old city.'", "bn": "সংখ্যা + Noun: 'কলকাতা একটি ৩০০ বছরের পুরনো শহর।'" },
+        { "en": "Adjective + Participle: 'The Howrah Bridge is a well-known landmark.'", "bn": "Adjective + Participle: 'হাওড়া ব্রিজ একটি সুপরিচিত ল্যান্ডমার্ক।'" },
+        { "en": "Noun + Adjective: 'The world-famous Taj Mahal is in Agra.'", "bn": "Noun + Adjective: 'বিশ্ব-বিখ্যাত তাজমহল আগ্রায় অবস্থিত।'" },
+        { "en": "Noun + Participle: 'The mouth-watering aroma of biryani filled the street.'", "bn": "Noun + Participle: " },
+        { "en": "Adjective + Noun: 'She is a full-time teacher at a Kolkata school.'", "bn": "Adjective + Noun: 'সে একটি কলকাতা স্কুলে পূর্ণ-সময়ের শিক্ষক।'" },
+        { "en": "Time: 'We took a two-hour train from Howrah to Bardhaman.'", "bn": "সময়: 'আমরা হাওড়া থেকে বর্ধমান পর্যন্ত দুই ঘন্টার ট্রেন নিয়েছিলাম।'" }
+      ],
+      "tips": "Compound adjective ব্যবহারের সময় সবচেয়ে গুরুত্বপূর্ণ নিয়ম: noun-এর আগে বসলে hyphen দাও, noun-এর পরে বসলে দিও না। 'A well-known actor' (hyphen) vs 'The actor is well known' (no hyphen)। 'A five-year-old child' vs 'The child is five years old' — notice 'year' singular in hyphenated form."
+    },
+    {
+      "name": "Predicate Adjectives",
+      "banglaName": "বিধেয় বিশেষণ",
+      "definition": "A predicate adjective is an adjective that comes after a linking verb and describes the subject of the sentence. Instead of coming before the noun, it follows verbs like is, am, are, was, were, seem, appear, look, feel, taste, smell, and become. Predicate adjectives describe the subject, not the verb.",
+      "banglaDefinition": "Predicate adjective (বিধেয় বিশেষণ) হলো সেই adjective যা linking verb-এর পরে বসে এবং বাক্যের subject-কে বর্ণনা করে। noun-এর আগে না বসে এটি is, am, are, was, were, seem, appear, look, feel, taste, smell, become-এর মতো verb-এর পরে বসে। Predicate adjective subject-কে বর্ণনা করে, verb-কে নয়।",
+      "formula": "Subject + Linking Verb + Predicate Adjective\n\nThe food tastes delicious.\nShe looks beautiful.\nHe became famous.\nThe flowers smell sweet.\n\nLinking Verbs:\nbe (is/am/are/was/were), seem, appear, look,\nfeel, taste, smell, sound, become, grow, remain",
+      "rules": [
+        "Predicate adjective linking verb-এর পরে বসে এবং subject-কে বর্ণনা করে।",
+        "Linking verb 'be' (is, am, are, was, were) সবচেয়ে সাধারণ।",
+        "Sense verbs (look, feel, taste, smell, sound) predicate adjective নেয়।",
+        "'Become', 'seem', 'appear', 'remain', 'grow' — predicate adjective নিতে পারে।",
+        "Predicate adjective এবং adverb গুলিয়ে ফেলো না: 'She looks beautiful' (adj) vs 'She looks beautifully' (adv — but means she is looking at something in a beautiful way)।",
+        "একই verb কখনও linking, কখনও action verb হতে পারে: 'He looked angry' (linking) vs 'He looked at the painting' (action)।",
+        "Predicate adjective-এর পরে আর noun বসে না — এটি subject-কে বর্ণনা করেই থামে।"
+      ],
+      "examples": [
+        { "en": "Be: 'The Taj Mahal is magnificent.'", "bn": "Be: 'তাজমহল চমৎকার।'" },
+        { "en": "Become: 'He became famous after his Bollywood debut.'", "bn": "Become: 'সে তার বলিউড অভিষেকের পরে বিখ্যাত হয়ে গেল।'" },
+        { "en": "Taste: 'This Hyderabadi biryani tastes amazing.'", "bn": "Taste: 'এই হায়দরাবাদি বিরিয়ানির স্বাদ অসাধারণ।'" },
+        { "en": "Feel: 'I feel tired after the long train journey.'", "bn": "Feel: 'দীর্ঘ ট্রেন যাত্রার পর আমি ক্লান্ত বোধ করছি।'" },
+        { "en": "Look: 'The bride looked stunning in her red sari.'", "bn": "Look: 'কনে তার লাল শাড়িতে অপরূপ দেখাচ্ছিল।'" },
+        { "en": "Smell: 'The jasmine flowers smell sweet.'", "bn": "Smell: 'জুঁই ফুলের গন্ধ মিষ্টি।'" },
+        { "en": "Sound: 'That idea sounds interesting.'", "bn": "Sound: 'ধারণাটি интересный শোনাচ্ছে।'" }
+      ],
+      "tips": "Predicate adjective এবং adverb-এর পার্থক্য বুঝতে হবে। Linking verb-এর পরে adjective বসে subject-কে বর্ণনা করে: 'She looks happy' (she is happy)। Action verb-এর পরে adverb বসে verb-কে বর্ণনা করে: 'She looked happily at the photo' (she looked in a happy way)। 'Taste', 'smell', 'feel' — এরা linking verb হলে adjective নেয়, action verb হলে adverb নেয়।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Using 'more' with comparative adjective: 'This mango is more sweeter than that one.'",
+      "correct": "'This mango is sweeter than that one.' or 'This mango is more sweet than that one.' (but 'sweeter' is better)",
+      "explanation": "'Sweeter' ইতিমধ্যেই comparative form। comparative-এর সাথে 'more' ব্যবহার করা double comparative — ভুল। 'More sweeter' বা 'more better' বলা যাবে না। মনে রাখবে: short adjective → -er (sweeter), long adjective → more + adjective (more beautiful)।"
+    },
+    {
+      "wrong": "Confusing 'good' and 'well': 'She speaks English good.'",
+      "correct": "'She speaks English well.'",
+      "explanation": "'Good' একটি adjective — noun-কে বর্ণনা করে (a good speaker)। 'Well' একটি adverb — verb-কে বর্ণনা করে (speaks well)। 'She speaks good' ভুল, কারণ 'speaks' একটি verb। 'She is good' ঠিক, কারণ 'is' একটি linking verb এবং 'good' predicate adjective।"
+    },
+    {
+      "wrong": "Wrong order of adjectives: 'A red big old car.'",
+      "correct": "'A big old red car.' (Size → Age → Color)",
+      "explanation": "OSASCOMP নিয়ম অনুযায়ী: Size (big) → Age (old) → Color (red)। 'A red big old car' শোনায় awkward কারণ order সঠিক নয়। মনে রাখবে: Opinion → Size → Age → Shape → Color → Origin → Material → Purpose।"
+    },
+    {
+      "wrong": "Using 'less' with countable nouns: 'I have less books than my friend.'",
+      "correct": "'I have fewer books than my friend.' or 'I have less water than my friend.'",
+      "explanation": "'Less' uncountable noun-এর সাথে (less water, less time, less sugar)। 'Fewer' countable noun-এর সাথে (fewer books, fewer people, fewer mangoes)। Supermarket-এ '10 items or less' common, কিন্তু grammatically '10 items or fewer' সঠিক।"
+    },
+    {
+      "wrong": "Not using 'the' with superlative: 'She is best student in the class.'",
+      "correct": "'She is the best student in the class.'",
+      "explanation": "Superlative adjective-এর আগে সবসময় 'the' লাগে: the best, the tallest, the most beautiful। 'She is best' ভুল। মনে রাখবে: comparative → 'than', superlative → 'the'। এটি superlative degree-র একটি অপরিহার্য নিয়ম।"
+    },
+    {
+      "wrong": "Confusing 'bored' and 'boring' (and similar -ed/-ing pairs): 'The movie was very bored.'",
+      "correct": "'The movie was very boring.' and 'I was very bored.'",
+      "explanation": "-ing adjective কিছু বা কাউকে সেই অনুভূতি দিচ্ছে (the movie is boring — it makes me feel bored)। -ed adjective সেই অনুভূতি গ্রহণ করছে (I am bored — I feel bored)। একই নিয়ম: exciting/excited, interesting/interested, confusing/confused।"
+    },
+    {
+      "wrong": "Using 'then' instead of 'than': 'Kolkata is bigger then Chennai.'",
+      "correct": "'Kolkata is bigger than Chennai.'",
+      "explanation": "'Then' সময় বোঝায় (first this, then that)। 'Than' তুলনা বোঝায় (bigger than, taller than, more expensive than)। তুলনা করার সময় সবসময় 'than' ব্যবহার করো। 'Then' comparison-এ ব্যবহার একটি সাধারণ ভুল।"
+    },
+    {
+      "wrong": "Double superlative: 'This is the most tallest building in India.'",
+      "correct": "'This is the tallest building in India.' or 'This is the most tall building in India.' (unusual)",
+      "explanation": "'Tallest' ইতিমধ্যেই superlative। 'Most tallest' double superlative — ভুল। -est এবং most একসাথে ব্যবহার করা যাবে না। মনে রাখবে: একটি adjective-এর একটি মাত্র superlative form আছে: tallest (not most tallest), most beautiful (not most beautifullest)।"
+    },
+    {
+      "wrong": "Using 'very' with absolute adjectives: 'This is very unique.'",
+      "correct": "'This is unique.' or 'This is truly unique.' or 'This is almost unique.'",
+      "explanation": "'Unique' একটি absolute adjective — এর অর্থ 'one of a kind'। কোনো কিছু 'very unique' হতে পারে না — হয় unique বা not unique। অন্যান্য absolute adjectives: perfect, complete, dead, pregnant, square। এগুলোকে 'very' দিয়ে modify না করাই ভালো। 'Absolutely unique' বা 'truly unique' বলা যেতে পারে।"
+    },
+    {
+      "wrong": "Adjective after 'enough': 'The tea is enough hot.'",
+      "correct": "'The tea is hot enough.'",
+      "explanation": "'Enough' adjective-এর পরে বসে, আগে নয়। 'Enough hot' ভুল — সঠিক হলো 'hot enough'। মনে রাখবে: 'enough' সবসময় adjective-এর পরে এবং noun-এর আগে বসে: 'I have enough money' (noun-এর আগে), 'The tea is hot enough' (adjective-এর পরে)।"
+    }
+  ]
 }
