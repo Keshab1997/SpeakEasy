@@ -80,22 +80,24 @@ class AIService {
   }
 
   Future<String> sendMessage(String message) async {
-    if (_apiKey.isEmpty) return _getLocalResponse(message);
+    if (_apiKey.isEmpty) throw Exception('API_KEY_MISSING');
 
     try {
       return await _callOpenAI(message);
-    } catch (_) {
-      return _getLocalResponse(message);
+    } catch (e) {
+      if (e.toString().contains('API_KEY_MISSING')) rethrow;
+      throw Exception('API_CALL_FAILED');
     }
   }
 
   Future<String> sendMessageWithSystem(String message, {String? systemPrompt, List<Map<String, String>>? history}) async {
-    if (_apiKey.isEmpty) return _getLocalResponse(message);
+    if (_apiKey.isEmpty) throw Exception('API_KEY_MISSING');
 
     try {
       return await _callOpenAI(message, systemPrompt: systemPrompt, history: history);
-    } catch (_) {
-      return _getLocalResponse(message);
+    } catch (e) {
+      if (e.toString().contains('API_KEY_MISSING')) rethrow;
+      throw Exception('API_CALL_FAILED');
     }
   }
 

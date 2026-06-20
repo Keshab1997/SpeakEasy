@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:flutter_markdown/flutter_markdown.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../services/ai_service.dart';
 import '../../../services/hive_service.dart';
+import '../../settings/screens/api_setup_guide_screen.dart';
+import '../../settings/screens/settings_screen.dart';
 
 class AiChatScreen extends ConsumerStatefulWidget {
   const AiChatScreen({super.key});
@@ -23,6 +27,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
   final stt.SpeechToText _speech = stt.SpeechToText();
   bool _isListening = false;
   bool _speechAvailable = false;
+  bool _isAiConfigured = false;
+  String _aiModel = '';
+  List<String> _suggestedQuestions = [];
   String _locale = 'en_US';
   final List<String> _locales = ['en_US', 'bn_BD'];
   final List<String> _localeLabels = ['EN', 'BN'];
@@ -31,6 +38,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
   void initState() {
     super.initState();
     _userName = HiveService.getUserName();
+    final activeKey = HiveService.getActiveAiKey();
+    _isAiConfigured = activeKey?['key']?.toString().isNotEmpty ?? false;
+    _aiModel = activeKey?['model']?.toString() ?? '';
     _tryRestoreLastSession();
     _initSpeech();
   }
@@ -67,13 +77,19 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
 
   void _addGreeting() {
     final displayName = _userName.isNotEmpty ? _userName : 'there';
-    setState(() {
-      _messages.add({
-        'text': 'Hello $displayName! 👋\n\nI am Keshab, your AI English Teacher. '
+    final greetingText = _isAiConfigured
+        ? 'Hello $displayName! 👋\n\nI am Keshab, your AI English Teacher. '
             'You can ask me anything about English — grammar, vocabulary, '
             'pronunciation, or just chat with me in English or Bangla. '
             'I am here to help you improve!\n\n'
-            'How are you doing today?',
+            'How are you doing today?'
+        : 'Hello $displayName! 👋\n\nI am Keshab, your AI English Teacher. '
+            'To get started, please set up your AI API key by tapping the '
+            '🔧 Setup button above.\n\n'
+            'Once configured, you can ask me anything about English!';
+    setState(() {
+      _messages.add({
+        'text': greetingText,
         'isMe': false,
         'time': _formatTime(DateTime.now()),
       });
@@ -103,6 +119,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       });
       _messageController.clear();
       _isTyping = true;
+      _suggestedQuestions = [];
     });
 
     _scrollToBottom();
@@ -121,28 +138,63 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
             'When introducing new vocabulary, give the English word with meaning and example in English, '
             'then translate the example to Bangla. '
             'Keep responses friendly, concise, and encouraging. '
-            'Always address the student by name when possible.'
+            'Always address the student by name when possible. '
+            'IMPORTANT: At the end of your response, suggest 2-4 related follow-up questions that the student might ask. '
+            'Format them as a numbered or bulleted list, each ending with a question mark. '
+            'Example:\n'
+            '- What is present perfect tense?\n'
+            '- How do I use past tense?\n'
+            '- Can you explain future tense?'
         : null;
 
     void addResponse(String response) {
       if (!mounted) return;
+      final suggestions = _extractSuggestions(response);
+      final cleanResponse = _removeSuggestions(response);
       setState(() {
         _isTyping = false;
         _messages.add({
-          'text': response,
+          'text': cleanResponse,
           'isMe': false,
           'time': _formatTime(DateTime.now()),
         });
+        _suggestedQuestions = suggestions;
       });
       _scrollToBottom();
       _autoSaveSession();
     }
 
+    void handleError(Object error) {
+      if (!mounted) return;
+      final activeKey = HiveService.getActiveAiKey();
+      setState(() {
+        _isTyping = false;
+        _isAiConfigured = activeKey?['key']?.toString().isNotEmpty ?? false;
+        _aiModel = activeKey?['model']?.toString() ?? '';
+      });
+      
+      final errorStr = error.toString();
+      if (errorStr.contains('API_KEY_MISSING')) {
+        _showSetupDialog(
+          'AI Model Not Configured',
+          'Please set up your AI API key to use the AI teacher feature.',
+        );
+      } else if (errorStr.contains('API_CALL_FAILED')) {
+        _showSetupDialog(
+          'Connection Failed',
+          'Unable to connect to AI service. Please check your API key configuration.',
+        );
+      }
+    }
+
     if (systemPrompt != null) {
       AIService().sendMessageWithSystem(text, systemPrompt: systemPrompt)
-          .then(addResponse);
+          .then(addResponse)
+          .catchError(handleError);
     } else {
-      AIService().sendMessage(text).then(addResponse);
+      AIService().sendMessage(text)
+          .then(addResponse)
+          .catchError(handleError);
     }
   }
 
@@ -392,22 +444,75 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
     setState(() => _isListening = false);
   }
 
+  List<String> _extractSuggestions(String text) {
+    final suggestions = <String>[];
+    final lines = text.split('\n');
+    
+    for (var line in lines) {
+      line = line.trim();
+      if (line.startsWith('- ') && line.endsWith('?')) {
+        suggestions.add(line.substring(2));
+      } else if (RegExp(r'^\d+\.\s').hasMatch(line) && line.endsWith('?')) {
+        suggestions.add(line.replaceFirst(RegExp(r'^\d+\.\s'), ''));
+      }
+    }
+    
+    return suggestions.take(4).toList();
+  }
+
+  String _removeSuggestions(String text) {
+    final lines = text.split('\n');
+    final cleanLines = <String>[];
+    
+    for (var line in lines) {
+      final trimmed = line.trim();
+      if ((trimmed.startsWith('- ') || RegExp(r'^\d+\.\s').hasMatch(trimmed)) && trimmed.endsWith('?')) {
+        continue;
+      }
+      cleanLines.add(line);
+    }
+    
+    return cleanLines.join('\n').trim();
+  }
+
+  void _showSetupDialog(String title, String message) {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(ctx);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ApiSetupGuideScreen()),
+              );
+            },
+            style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary),
+            child: const Text('Setup Guide', style: TextStyle(color: Colors.white)),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    final quickTopics = [
-      "Check my grammar",
-      "Suggest vocabulary",
-      "বাংলায় ইংরেজি শেখা",
-      "Let's practice greetings",
-    ];
 
     return WillPopScope(
       onWillPop: () async {
         _autoSaveSession();
-        return true;
+        Navigator.of(context).pop();
+        return false;
       },
       child: Scaffold(
       appBar: AppBar(
@@ -435,15 +540,24 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                     Container(
                       width: 8,
                       height: 8,
-                      decoration: const BoxDecoration(
-                        color: Colors.green,
+                      decoration: BoxDecoration(
+                        color: _isAiConfigured ? Colors.green : Colors.orange,
                         shape: BoxShape.circle,
                       ),
                     ),
                     const SizedBox(width: 4),
-                    const Text(
-                      'Online',
-                      style: TextStyle(fontSize: 11, color: Colors.green, fontWeight: FontWeight.bold),
+                    Flexible(
+                      child: Text(
+                        _isAiConfigured 
+                            ? (_aiModel.isNotEmpty ? _aiModel : 'Online')
+                            : 'Setup Required',
+                        style: TextStyle(
+                          fontSize: 11,
+                          color: _isAiConfigured ? Colors.green : Colors.orange,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ],
                 ),
@@ -453,6 +567,15 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
           ],
         ),
         actions: [
+          if (!_isAiConfigured)
+            IconButton(
+              icon: const Icon(Icons.settings_suggest_rounded, size: 24, color: Colors.orange),
+              tooltip: 'Setup AI',
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const SettingsScreen()),
+              ),
+            ),
           IconButton(
             icon: const Icon(Icons.history_rounded, size: 24),
             tooltip: 'Chat History',
@@ -469,161 +592,210 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
         children: [
           // Chat messages area
           Expanded(
-            child: ListView.builder(
+            child: SingleChildScrollView(
               controller: _scrollController,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               physics: const BouncingScrollPhysics(),
-              itemCount: _messages.length,
-              itemBuilder: (context, index) {
-                final msg = _messages[index];
-                final isMe = msg['isMe'] as bool;
-
-                return Align(
-                  alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
-                  child: Container(
-                    margin: const EdgeInsets.only(bottom: 12),
-                    constraints: BoxConstraints(
-                      maxWidth: MediaQuery.of(context).size.width * 0.78,
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    decoration: BoxDecoration(
-                      color: isMe
-                          ? AppColors.primary
-                          : (isDark ? AppColors.surfaceDark : Colors.grey[100]),
-                      borderRadius: BorderRadius.only(
-                        topLeft: const Radius.circular(18),
-                        topRight: const Radius.circular(18),
-                        bottomLeft: isMe ? const Radius.circular(18) : const Radius.circular(0),
-                        bottomRight: isMe ? const Radius.circular(0) : const Radius.circular(18),
-                      ),
-                      border: !isMe && isDark
-                          ? Border.all(color: AppColors.borderDark, width: 0.5)
-                          : null,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          msg['text'] as String,
-                          style: TextStyle(
-                            color: isMe ? Colors.white : (isDark ? Colors.white.withOpacity(0.9) : Colors.black87),
-                            fontSize: 15,
-                            height: 1.35,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            msg['time'] as String,
-                            style: TextStyle(
-                              color: isMe ? Colors.white60 : Colors.grey,
-                              fontSize: 10,
+              child: Column(
+                children: [
+                  ..._messages.map((msg) {
+                    final isMe = msg['isMe'] as bool;
+                    return Align(
+                      alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
+                      child: GestureDetector(
+                        onLongPress: () {
+                          Clipboard.setData(ClipboardData(text: msg['text'] as String));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: const Text('Message copied'),
+                              duration: const Duration(seconds: 2),
+                              behavior: SnackBarBehavior.floating,
+                              margin: const EdgeInsets.all(16),
                             ),
+                          );
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 12),
+                          constraints: BoxConstraints(
+                            maxWidth: MediaQuery.of(context).size.width * 0.78,
+                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                          decoration: BoxDecoration(
+                            color: isMe
+                                ? AppColors.primary
+                                : (isDark ? AppColors.surfaceDark : Colors.grey[100]),
+                            borderRadius: BorderRadius.only(
+                              topLeft: const Radius.circular(18),
+                              topRight: const Radius.circular(18),
+                              bottomLeft: isMe ? const Radius.circular(18) : const Radius.circular(0),
+                              bottomRight: isMe ? const Radius.circular(0) : const Radius.circular(18),
+                            ),
+                            border: !isMe && isDark
+                                ? Border.all(color: AppColors.borderDark, width: 0.5)
+                                : null,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              if (isMe)
+                                Text(
+                                  msg['text'] as String,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    height: 1.35,
+                                  ),
+                                )
+                              else
+                                MarkdownBody(
+                                  data: msg['text'] as String,
+                                  selectable: false,
+                                  styleSheet: MarkdownStyleSheet(
+                                    p: TextStyle(
+                                      color: isDark ? Colors.white.withOpacity(0.9) : Colors.black87,
+                                      fontSize: 15,
+                                      height: 1.35,
+                                    ),
+                                    strong: TextStyle(
+                                      color: isDark ? Colors.white : Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    em: TextStyle(
+                                      color: isDark ? Colors.white.withOpacity(0.9) : Colors.black87,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                    code: TextStyle(
+                                      backgroundColor: isDark ? Colors.white10 : Colors.grey[200],
+                                      color: AppColors.primary,
+                                      fontFamily: 'monospace',
+                                    ),
+                                    codeblockDecoration: BoxDecoration(
+                                      color: isDark ? Colors.white10 : Colors.grey[200],
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    listBullet: TextStyle(
+                                      color: isDark ? Colors.white.withOpacity(0.9) : Colors.black87,
+                                    ),
+                                  ),
+                                ),
+                              const SizedBox(height: 4),
+                              Align(
+                                alignment: Alignment.bottomRight,
+                                child: Text(
+                                  msg['time'] as String,
+                                  style: TextStyle(
+                                    color: isMe ? Colors.white60 : Colors.grey,
+                                    fontSize: 10,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
+                      ),
+                    );
+                  }),
+
+                  if (_isTyping)
+                    Padding(
+                      padding: const EdgeInsets.only(left: 4, bottom: 12),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          children: [
+                            const SizedBox(
+                              width: 12,
+                              height: 12,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Text(
+                              'AI is typing...',
+                              style: TextStyle(fontSize: 12, color: Colors.grey[600], fontStyle: FontStyle.italic),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                );
-              },
+
+                  // Suggested questions above input
+                  if (_suggestedQuestions.isNotEmpty && !_isTyping)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: SizedBox(
+                        height: 38,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          physics: const BouncingScrollPhysics(),
+                          itemCount: _suggestedQuestions.length,
+                          itemBuilder: (context, index) {
+                            final question = _suggestedQuestions[index];
+                            return Padding(
+                              padding: const EdgeInsets.only(right: 8),
+                              child: ActionChip(
+                                avatar: const Icon(Icons.lightbulb_outline, size: 16),
+                                label: Text(
+                                  question.length > 40 ? '${question.substring(0, 40)}...' : question,
+                                  style: const TextStyle(fontSize: 12),
+                                ),
+                                backgroundColor: isDark ? AppColors.surfaceDark : Colors.white,
+                                side: BorderSide(color: AppColors.primary.withOpacity(0.3)),
+                                padding: const EdgeInsets.symmetric(horizontal: 8),
+                                onPressed: () {
+                                  _messageController.text = question;
+                                  setState(() => _suggestedQuestions = []);
+                                  _sendMessage();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                ],
+              ),
             ),
           ),
 
-          if (_isTyping) ...[
-            Padding(
-              padding: const EdgeInsets.only(left: 20, bottom: 12),
-              child: Align(
-                alignment: Alignment.centerLeft,
+          // Message input bar with suggestions below
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: isDark ? AppColors.backgroundDark : Colors.white,
+                  border: Border(
+                    top: BorderSide(
+                      color: isDark ? AppColors.borderDark : Colors.grey[100]!,
+                      width: 1.5,
+                    ),
+                  ),
+                ),
                 child: Row(
                   children: [
-                    const SizedBox(
-                      width: 12,
-                      height: 12,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 2,
-                        valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
+                    Expanded(
+                      child: TextField(
+                        controller: _messageController,
+                        onSubmitted: (_) => _sendMessage(),
+                        decoration: InputDecoration(
+                          hintText: 'Ask your teacher anything...',
+                          hintStyle: const TextStyle(fontSize: 15),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(24),
+                            borderSide: BorderSide.none,
+                          ),
+                          filled: true,
+                          fillColor: isDark ? AppColors.surfaceDark : Colors.grey[100],
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                        ),
                       ),
                     ),
                     const SizedBox(width: 8),
-                    Text(
-                      'AI is typing...',
-                      style: TextStyle(fontSize: 12, color: Colors.grey[600], fontStyle: FontStyle.italic),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-
-          // Quick prompt chips
-          SizedBox(
-            height: 42,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              physics: const BouncingScrollPhysics(),
-              itemCount: quickTopics.length,
-              itemBuilder: (context, index) {
-                final topic = quickTopics[index];
-                return Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: ActionChip(
-                    label: Text(
-                      topic,
-                      style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
-                    ),
-                    backgroundColor: isDark ? AppColors.surfaceDark : Colors.white,
-                    side: BorderSide(
-                      color: isDark ? AppColors.borderDark : Colors.grey[200]!,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    onPressed: () {
-                      _messageController.text = topic;
-                      _sendMessage();
-                    },
-                  ),
-                );
-              },
-            ),
-          ),
-          const SizedBox(height: 8),
-
-          // Message input bar
-          Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: isDark ? AppColors.backgroundDark : Colors.white,
-              border: Border(
-                top: BorderSide(
-                  color: isDark ? AppColors.borderDark : Colors.grey[100]!,
-                  width: 1.5,
-                ),
-              ),
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _messageController,
-                    onSubmitted: (_) => _sendMessage(),
-                    decoration: InputDecoration(
-                      hintText: 'Ask your teacher anything...',
-                      hintStyle: const TextStyle(fontSize: 15),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(24),
-                        borderSide: BorderSide.none,
-                      ),
-                      filled: true,
-                      fillColor: isDark ? AppColors.surfaceDark : Colors.grey[100],
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 8),
-                CircleAvatar(
+                    CircleAvatar(
                     backgroundColor: _isListening ? Colors.red : (isDark ? Colors.white12 : Colors.grey[300]),
                     radius: 22,
                     child: IconButton(
@@ -672,6 +844,8 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
               ],
             ),
           ),
+          ],
+        ),
         ],
       ),
       ),
