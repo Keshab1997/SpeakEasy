@@ -30,7 +30,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       ),
       const VocabularyScreen(),
       const SpeakingScreen(),
-      const AiChatScreen(),
+      AiChatScreen(onNavigateToHome: () => _onTabChanged(0)),
       const ProfileScreen(),
     ];
 

@@ -11,7 +11,9 @@ import '../../settings/screens/api_setup_guide_screen.dart';
 import '../../settings/screens/settings_screen.dart';
 
 class AiChatScreen extends ConsumerStatefulWidget {
-  const AiChatScreen({super.key});
+  final VoidCallback? onNavigateToHome;
+  
+  const AiChatScreen({super.key, this.onNavigateToHome});
 
   @override
   ConsumerState<AiChatScreen> createState() => _AiChatScreenState();
@@ -511,8 +513,11 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
     return WillPopScope(
       onWillPop: () async {
         _autoSaveSession();
-        Navigator.of(context).pop();
-        return false;
+        if (widget.onNavigateToHome != null) {
+          widget.onNavigateToHome!();
+          return false;
+        }
+        return true;
       },
       child: Scaffold(
       appBar: AppBar(
