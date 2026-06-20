@@ -1,10 +1,486 @@
 {
   "chapter": 21,
   "level": "Beginner",
-  "title": "Introduction to Tense",
+  "title": "Introduction to Tense (টেন্স বা কাল)",
   "icon": "schedule",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Tense shows the time of an action or event. There are three main tenses in English: Present, Past, and Future. Each tense has four types: Indefinite (Simple), Continuous, Perfect, and Perfect Continuous. Understanding tense is essential for speaking and writing English correctly.",
+  "banglaDescription": "Tense (কাল) কোনো কাজ বা ঘটনার সময় নির্দেশ করে। ইংরেজিতে তিনটি প্রধান tense আছে: Present (বর্তমান), Past (অতীত) এবং Future (ভবিষ্যৎ)। প্রতিটি tense-এর চারটি প্রকার আছে: Indefinite (সাধারণ), Continuous (ঘটমান), Perfect (পূর্ণ), এবং Perfect Continuous (পূর্ণ ঘটমান)। Tense বোঝা ইংরেজি সঠিকভাবে বলা এবং লেখার জন্য অপরিহার্য।",
+  "topics": [
+    {
+      "name": "What is Tense? (টেন্স কী?)",
+      "banglaName": "টেন্স বা কাল কী?",
+      "definition": "Tense is a form of a verb that shows the time when an action happens. It tells us whether something happens in the present, happened in the past, or will happen in the future. Every sentence in English has a tense.",
+      "banglaDefinition": "Tense হলো ক্রিয়ার (verb) এমন একটি রূপ যা কোনো কাজ কখন ঘটে তা নির্দেশ করে। এটি বলে দেয় যে কোনো কিছু বর্তমানে ঘটে, অতীতে ঘটেছিল, নাকি ভবিষ্যতে ঘটবে। ইংরেজিতে প্রতিটি বাক্যের একটি tense আছে।",
+      "formula": "Tense = Time of Action + Form of Verb\n\nThree Main Tenses:\n1. Present Tense (বর্তমান কাল)\n2. Past Tense (অতীত কাল)\n3. Future Tense (ভবিষ্যৎ কাল)",
+      "rules": [
+        "Tense নির্দেশ করে কাজ কখন হয়েছে — বর্তমানে, অতীতে, বা ভবিষ্যতে।",
+        "প্রধান তিনটি tense-এর প্রতিটির চারটি করে প্রকার (types) আছে।",
+        "Tense পরিবর্তনের সাথে সাথে verb-এর রূপও বদলে যায়।",
+        "একই বাক্যে সময় (time) এবং tense-এর মিল থাকতে হবে।",
+        "বাংলায় 'কাল' বলতে tense বোঝায়। যেমন: বর্তমান কাল, অতীত কাল, ভবিষ্যৎ কাল।"
+      ],
+      "examples": [
+        { "en": "I eat rice. (Present - সাধারণ বর্তমান)", "bn": "আমি ভাত খাই। (Present Tense)" },
+        { "en": "I ate rice. (Past - অতীত)", "bn": "আমি ভাত খেয়েছিলাম। (Past Tense)" },
+        { "en": "I will eat rice. (Future - ভবিষ্যৎ)", "bn": "আমি ভাত খাব। (Future Tense)" },
+        { "en": "She writes a letter. (Present)", "bn": "সে একটি চিঠি লেখে। (Present)" },
+        { "en": "She wrote a letter. (Past)", "bn": "সে একটি চিঠি লিখেছিল। (Past)" },
+        { "en": "She will write a letter. (Future)", "bn": "সে একটি চিঠি লিখবে। (Future)" }
+      ],
+      "tips": "Tense শেখার সবচেয়ে সহজ উপায়: প্রথমে তিনটি প্রধান tense (Present, Past, Future) চিনতে শেখো। তারপর প্রতিটির চারটি প্রকার আলাদাভাবে শেখো। প্রতিদিন একটি করে tense practice করো।"
+    },
+    {
+      "name": "Time Expressions in Tense (টেন্সে সময় নির্দেশক শব্দ)",
+      "banglaName": "টেন্সে সময় নির্দেশক শব্দ",
+      "definition": "Time expressions are words or phrases that help identify which tense to use. Words like 'every day', 'now', 'yesterday', 'tomorrow' indicate the time of action. Learning time expressions makes it easier to choose the correct tense.",
+      "banglaDefinition": "Time expressions হলো সেই শব্দ বা শব্দগুচ্ছ যা কোন tense ব্যবহার করতে হবে তা চিনতে সাহায্য করে। 'প্রতিদিন', 'এখন', 'গতকাল', 'আগামীকাল' এর মতো শব্দগুলো কাজের সময় নির্দেশ করে। Time expressions শেখা সঠিক tense বেছে নেওয়াকে সহজ করে।",
+      "formula": "Present Time: everyday, always, usually, now, at present\nPast Time: yesterday, last night, ago, in 2020, before\nFuture Time: tomorrow, next week, soon, later, in the future",
+      "rules": [
+        "Present tense-এর সাথে: every day, always, usually, often, sometimes, now, at present ব্যবহার হয়।",
+        "Past tense-এর সাথে: yesterday, last night/week/month, ago, in 1990, just now ব্যবহার হয়।",
+        "Future tense-এর সাথে: tomorrow, next day/week/month/year, soon, later, in the future ব্যবহার হয়।",
+        "Present Continuous-এর সাথে: now, at the moment, right now, currently, today ব্যবহৃত হয়।",
+        "Present Perfect-এর সাথে: already, just, ever, never, recently, since, for ব্যবহৃত হয়।"
+      ],
+      "examples": [
+        { "en": "I go to school every day. (Present)", "bn": "আমি প্রতিদিন স্কুলে যাই। (Present)" },
+        { "en": "I went to school yesterday. (Past)", "bn": "আমি গতকাল স্কুলে গিয়েছিলাম। (Past)" },
+        { "en": "I will go to school tomorrow. (Future)", "bn": "আমি আগামীকাল স্কুলে যাব। (Future)" },
+        { "en": "She is reading now. (Present Continuous)", "bn": "সে এখন পড়ছে। (Present Continuous)" },
+        { "en": "I have already eaten. (Present Perfect)", "bn": "আমি ইতিমধ্যে খেয়েছি। (Present Perfect)" },
+        { "en": "They have been living here since 2010. (Present Perfect Continuous)", "bn": "তারা ২০১০ সাল থেকে এখানে বসবাস করছে। (Present Perfect Continuous)" }
+      ],
+      "tips": "Time expressions মনে রাখার সহজ উপায়: Present = 'every', Past = 'yesterday/last', Future = 'tomorrow/next' — এই তিনটি মূল শব্দ মনে রেখে সময় চিনতে পারবে। একটি সময়ের সাথে আরও শব্দ জুড়ে দিতে থাকো।"
+    },
+    {
+      "name": "Subject-Verb Agreement in Tense (টেন্সে Subject-Verb Agreement)",
+      "banglaName": "টেন্সে Subject-Verb Agreement",
+      "definition": "Subject-verb agreement means the subject and the verb in a sentence must match in number and person. If the subject is singular, the verb must be singular. If the subject is plural, the verb must be plural. This is very important in present tense.",
+      "banglaDefinition": "Subject-verb agreement মানে বাক্যের subject এবং verb-এর মধ্যে সংখ্যা ও ব্যক্তির মিল থাকতে হবে। Subject যদি singular হয়, তাহলে verb-ও singular হবে। Subject যদি plural হয়, তাহলে verb-ও plural হবে। Present tense-এ এটি খুবই গুরুত্বপূর্ণ।",
+      "formula": "Singular Subject (He/She/It) → Verb + s/es\nPlural Subject (I/We/You/They) → Verb (base form)",
+      "rules": [
+        "Present Indefinite tense-এ, Third Person Singular Subject-এর (He, She, It) সাথে verb-এর সাথে s/es যোগ হয়।",
+        "I, We, You, They — এদের সাথে verb-এর base form ব্যবহার হয়।",
+        "Past tense-এ subject-verb agreement খুব একটা পরিবর্তন হয় না (was/were ছাড়া)।",
+        "Future tense-এ সব subject-এর জন্য 'will' ব্যবহার হয় — কোনো পরিবর্তন নেই।",
+        "To be verb-এর (am, is, are, was, were) subject অনুযায়ী আলাদা রূপ আছে।"
+      ],
+      "examples": [
+        { "en": "He eats rice. (Singular subject + eats)", "bn": "সে ভাত খায়। (Singular subject + eats)" },
+        { "en": "They eat rice. (Plural subject + eat)", "bn": "তারা ভাত খায়। (Plural subject + eat)" },
+        { "en": "She goes to school. (She + goes)", "bn": "সে স্কুলে যায়। (She + goes)" },
+        { "en": "I go to school. (I + go)", "bn": "আমি স্কুলে যাই। (I + go)" },
+        { "en": "The boy runs fast. (The boy = singular)", "bn": "ছেলেটি দ্রুত দৌড়ায়। (ছেলেটি = singular)" },
+        { "en": "The boys run fast. (The boys = plural)", "bn": "ছেলেরা দ্রুত দৌড়ায়। (ছেলেরা = plural)" }
+      ],
+      "tips": "Present tense-এ s/es যোগের নিয়ম মনে রাখবে: He, She, It, এবং Singular এর সাথে s/es। যেমন — He eat-s, She go-es, It rain-s। বাকি সব subject-এর জন্য s ছাড়া base verb ব্যবহার করবে।"
+    },
+    {
+      "name": "Present Tense (বর্তমান কাল)",
+      "banglaName": "বর্তমান কাল",
+      "definition": "Present Tense is used to describe actions that happen regularly, are happening now, or are generally true. It has four types: Present Indefinite (Simple Present), Present Continuous, Present Perfect, and Present Perfect Continuous.",
+      "banglaDefinition": "Present Tense (বর্তমান কাল) ব্যবহার করা হয় নিয়মিত ঘটে এমন কাজ, এখন ঘটছে এমন কাজ, বা সবসময় সত্য এমন বিষয় বর্ণনা করতে। এর চারটি প্রকার আছে: Present Indefinite, Present Continuous, Present Perfect, এবং Present Perfect Continuous।",
+      "formula": "1. Present Indefinite: Subject + V1 + Object\n2. Present Continuous: Subject + am/is/are + V1+ing + Object\n3. Present Perfect: Subject + have/has + V3 + Object\n4. Present Perfect Continuous: Subject + have/has + been + V1+ing + Object + since/for",
+      "rules": [
+        "Present Indefinite: অভ্যাস, সাধারণ সত্য, নিয়মিত কাজ বোঝাতে — I eat rice every day.",
+        "Present Continuous: এখন চলছে এমন কাজ বোঝাতে — I am eating rice now.",
+        "Present Perfect: সম্প্রতি শেষ হয়েছে কিন্তু ফল এখনো আছে — I have eaten rice.",
+        "Present Perfect Continuous: অতীতে শুরু হয়ে এখনও চলছে — I have been eating rice for 10 minutes.",
+        "Present tense-এ He/She/It-এর সাথে verb-এ s/es যোগ হয়।"
+      ],
+      "examples": [
+        { "en": "I speak English every day. (Present Indefinite)", "bn": "আমি প্রতিদিন ইংরেজি বলি। (Present Indefinite)" },
+        { "en": "I am speaking English now. (Present Continuous)", "bn": "আমি এখন ইংরেজি বলছি। (Present Continuous)" },
+        { "en": "I have spoken English. (Present Perfect)", "bn": "আমি ইংরেজি বলেছি। (Present Perfect)" },
+        { "en": "I have been speaking English for 2 hours. (Present Perfect Continuous)", "bn": "আমি ২ ঘন্টা ধরে ইংরেজি বলছি। (Present Perfect Continuous)" },
+        { "en": "The sun rises in the east. (Universal truth - Present Indefinite)", "bn": "সূর্য পূর্বদিকে উদয় হয়। (সার্বজনীন সত্য - Present Indefinite)" },
+        { "en": "She is reading a book at the moment. (Present Continuous)", "bn": "সে এই মুহূর্তে একটি বই পড়ছে। (Present Continuous)" }
+      ],
+      "tips": "Present Tense শেখার সময় মনে রাখবে: Indefinite = অভ্যাস, Continuous = এখন চলছে, Perfect = শেষ হয়েছে কিন্তু ফল আছে, Perfect Continuous = শুরু হয়েছে এবং এখনও চলছে। প্রতিটি টাইপের নিজস্ব helping verb এবং verb form আছে।"
+    },
+    {
+      "name": "Past Tense (অতীত কাল)",
+      "banglaName": "অতীত কাল",
+      "definition": "Past Tense is used to describe actions that happened and finished in the past. It has four types: Past Indefinite (Simple Past), Past Continuous, Past Perfect, and Past Perfect Continuous.",
+      "banglaDefinition": "Past Tense (অতীত কাল) ব্যবহার করা হয় অতীতে ঘটে যাওয়া এবং শেষ হয়ে যাওয়া কাজ বর্ণনা করতে। এর চারটি প্রকার আছে: Past Indefinite, Past Continuous, Past Perfect, এবং Past Perfect Continuous।",
+      "formula": "1. Past Indefinite: Subject + V2 + Object\n2. Past Continuous: Subject + was/were + V1+ing + Object\n3. Past Perfect: Subject + had + V3 + Object\n4. Past Perfect Continuous: Subject + had + been + V1+ing + Object + since/for",
+      "rules": [
+        "Past Indefinite: অতীতে ঘটে যাওয়া কাজ বোঝাতে — I ate rice yesterday.",
+        "Past Continuous: অতীতে কোনো নির্দিষ্ট সময়ে চলছিল এমন কাজ — I was eating rice at 8 PM last night.",
+        "Past Perfect: অতীতের দুই কাজের মধ্যে আগে ঘটেছিলো সেটি বোঝাতে — I had eaten rice before you came.",
+        "Past Perfect Continuous: অতীতে শুরু হয়ে কিছু সময় ধরে চলেছিল এবং শেষ হয়েছিল — I had been eating rice for 10 minutes before he arrived.",
+        "Past tense-এ subject-verb agreement সহজ: শুধু was (singular) এবং were (plural) মনে রাখবে।"
+      ],
+      "examples": [
+        { "en": "I visited my grandmother yesterday. (Past Indefinite)", "bn": "আমি গতকাল আমার দাদিকে দেখতে গিয়েছিলাম। (Past Indefinite)" },
+        { "en": "I was watching TV when you called. (Past Continuous)", "bn": "আমি টিভি দেখছিলাম যখন তুমি ফোন করেছিলে। (Past Continuous)" },
+        { "en": "She had already left when I arrived. (Past Perfect)", "bn": "আমি পৌঁছানোর আগেই সে চলে গিয়েছিল। (Past Perfect)" },
+        { "en": "They had been waiting for two hours before the bus came. (Past Perfect Continuous)", "bn": "বাস আসার আগে তারা দুই ঘন্টা ধরে অপেক্ষা করছিল। (Past Perfect Continuous)" },
+        { "en": "We played football last Sunday. (Past Indefinite)", "bn": "আমরা গত রবিবার ফুটবল খেলেছিলাম। (Past Indefinite)" },
+        { "en": "He was sleeping when the phone rang. (Past Continuous)", "bn": "ফোন বাজার সময় সে ঘুমাচ্ছিল। (Past Continuous)" }
+      ],
+      "tips": "Past Tense-এ V2 (Past form) ব্যবহার হয়। Irregular verb-গুলোর past form আলাদাভাবে মুখস্থ করতে হবে। যেমন: go → went, eat → ate, write → wrote। Past Continuous = was/were + V1+ing। Past Perfect = had + V3। Past Perfect Continuous = had been + V1+ing।"
+    },
+    {
+      "name": "Future Tense (ভবিষ্যৎ কাল)",
+      "banglaName": "ভবিষ্যৎ কাল",
+      "definition": "Future Tense is used to describe actions that will happen in the future. It has four types: Future Indefinite (Simple Future), Future Continuous, Future Perfect, and Future Perfect Continuous.",
+      "banglaDefinition": "Future Tense (ভবিষ্যৎ কাল) ব্যবহার করা হয় ভবিষ্যতে ঘটবে এমন কাজ বর্ণনা করতে। এর চারটি প্রকার আছে: Future Indefinite, Future Continuous, Future Perfect, এবং Future Perfect Continuous।",
+      "formula": "1. Future Indefinite: Subject + will/shall + V1 + Object\n2. Future Continuous: Subject + will be + V1+ing + Object\n3. Future Perfect: Subject + will have + V3 + Object\n4. Future Perfect Continuous: Subject + will have been + V1+ing + Object + since/for",
+      "rules": [
+        "Future Indefinite: ভবিষ্যতে ঘটবে এমন কাজ — I will eat rice tomorrow.",
+        "Future Continuous: ভবিষ্যতে কোনো নির্দিষ্ট সময়ে চলবে এমন কাজ — I will be eating rice at 8 PM tomorrow.",
+        "Future Perfect: ভবিষ্যতে কোনো সময়ের আগে শেষ হবে এমন কাজ — I will have eaten rice by 8 PM.",
+        "Future Perfect Continuous: ভবিষ্যতে শুরু হয়ে কিছু সময় ধরে চলতে থাকবে — I will have been eating rice for 10 minutes by 8 PM.",
+        "সব subject-এর জন্য will ব্যবহার হয়। Shall শুধুমাত্র I এবং We-এর সাথে ব্যবহার করা যায় (প্রথাগত)।"
+      ],
+      "examples": [
+        { "en": "I will call you tomorrow. (Future Indefinite)", "bn": "আমি আগামীকাল তোমাকে ফোন করব। (Future Indefinite)" },
+        { "en": "She will be traveling to Dhaka next week. (Future Continuous)", "bn": "সে আগামী সপ্তাহে ঢাকা ভ্রমণ করবে। (Future Continuous)" },
+        { "en": "By 2025, I will have completed my degree. (Future Perfect)", "bn": "২০২৫ সালের মধ্যে আমি আমার ডিগ্রি সম্পন্ন করেছি হব। (Future Perfect)" },
+        { "en": "By December, I will have been working here for 5 years. (Future Perfect Continuous)", "bn": "ডিসেম্বরের মধ্যে, আমি এখানে ৫ বছর ধরে কাজ করছি হব। (Future Perfect Continuous)" },
+        { "en": "We shall go to the park tomorrow. (Future Indefinite with shall)", "bn": "আমরা আগামীকাল পার্কে যাব। (shall সহ Future Indefinite)" },
+        { "en": "The train will arrive at 10 AM. (Future Indefinite)", "bn": "ট্রেনটি সকাল ১০টায় আসবে। (Future Indefinite)" }
+      ],
+      "tips": "Future Tense-এর মূল কথা: সব জায়গায় 'will' ব্যবহার হয় এবং verb-এর base form (V1) নেয়। Future Continuous = will be + V1+ing। Future Perfect = will have + V3। Future Perfect Continuous = will have been + V1+ing। মনে রাখবে: Future tense-এ subject অনুযায়ী verb change হয় না।"
+    },
+    {
+      "name": "Present Indefinite Tense (বর্তমান সাধারণ কাল)",
+      "banglaName": "বর্তমান সাধারণ কাল",
+      "definition": "Present Indefinite Tense (also called Simple Present) is used for habits, general truths, repeated actions, and fixed schedules. It is the most basic and most commonly used tense in English.",
+      "banglaDefinition": "Present Indefinite Tense (Simple Present) অভ্যাস, সাধারণ সত্য, পুনরাবৃত্তিমূলক কাজ এবং নির্দিষ্ট সময়সূচী বোঝাতে ব্যবহৃত হয়। এটি ইংরেজিতে সবচেয়ে মৌলিক এবং সবচেয়ে বেশি ব্যবহৃত tense।",
+      "formula": "Affirmative: Subject + V1 (+ s/es for He/She/It) + Object\nNegative: Subject + do/does + not + V1 + Object\nInterrogative: Do/Does + Subject + V1 + Object + ?",
+      "rules": [
+        "অভ্যাস বা daily routine বোঝাতে: I wake up at 6 AM every day.",
+        "সাধারণ সত্য (universal truth) বোঝাতে: The earth revolves around the sun.",
+        "নির্দিষ্ট সময়সূচী (fixed schedule) বোঝাতে: The train leaves at 9 PM.",
+        "He/She/It এবং Singular subject-এর সাথে verb-এর শেষে s/es যোগ হয়।",
+        "Negative এবং Interrogative বাক্যে do/does ব্যবহৃত হয় এবং মূল verb-এর সাথে s/es থাকে না।"
+      ],
+      "examples": [
+        { "en": "I drink tea every morning.", "bn": "আমি প্রতিদিন সকালে চা খাই।" },
+        { "en": "She reads the newspaper daily.", "bn": "সে প্রতিদিন সংবাদপত্র পড়ে।" },
+        { "en": "The sun rises in the east.", "bn": "সূর্য পূর্বদিকে উদয় হয়।" },
+        { "en": "We play cricket on Fridays.", "bn": "আমরা শুক্রবারে ক্রিকেট খেলি।" },
+        { "en": "He does not eat meat.", "bn": "সে মাংস খায় না।" },
+        { "en": "Do you speak English?", "bn": "তুমি কি ইংরেজি বলো?" }
+      ],
+      "tips": "Present Indefinite মনে রাখার সহজ উপায়: Verb-এর base form ব্যবহার হয়, শুধু He/She/It-এর সাথে s/es যোগ হয়। Negative বাক্যে do not/don't বা does not/doesn't ব্যবহার হয়। প্রতিদিনের কাজ বলতে এই tense ব্যবহার করো।"
+    },
+    {
+      "name": "Present Continuous Tense (বর্তমান ঘটমান কাল)",
+      "banglaName": "বর্তমান ঘটমান কাল",
+      "definition": "Present Continuous Tense is used to describe actions that are happening right now, at the moment of speaking, or around the current time. It is also used for future planned actions.",
+      "banglaDefinition": "Present Continuous Tense ব্যবহার করা হয় এই মুহূর্তে বা বর্তমান সময়ের কাছাকাছি ঘটছে এমন কাজ বোঝাতে। এটি ভবিষ্যতের পরিকল্পিত কাজের জন্যও ব্যবহৃত হয়।",
+      "formula": "Affirmative: Subject + am/is/are + V1+ing + Object\nNegative: Subject + am/is/are + not + V1+ing + Object\nInterrogative: Am/Is/Are + Subject + V1+ing + Object + ?",
+      "rules": [
+        "এখন (now) চলছে এমন কাজ বোঝাতে: I am reading a book now.",
+        "এই সময়ের কাছাকাছি চলছে এমন কাজ: I am learning Spanish these days.",
+        "ভবিষ্যতের পরিকল্পিত কাজ: I am meeting my friend tomorrow.",
+        "I-এর সাথে am, He/She/It-এর সাথে is, We/You/They-এর সাথে are ব্যবহৃত হয়।",
+        "কিছু verb (যেমন: know, believe, love, hate) সাধারণত Continuous tense-এ ব্যবহৃত হয় না (stative verbs)।"
+      ],
+      "examples": [
+        { "en": "I am writing an email right now.", "bn": "আমি এখন একটি ইমেল লিখছি।" },
+        { "en": "She is cooking dinner at the moment.", "bn": "সে এই মুহূর্তে রাতের খাবার রান্না করছে।" },
+        { "en": "They are playing football in the park.", "bn": "তারা পার্কে ফুটবল খেলছে।" },
+        { "en": "He is not sleeping; he is studying.", "bn": "সে ঘুমাচ্ছে না; সে পড়ছে।" },
+        { "en": "Are you coming to the party tonight?", "bn": "তুমি কি আজ রাতে পার্টিতে আসছো?" },
+        { "en": "The baby is crying because he is hungry.", "bn": "বাচ্চাটি কাঁদছে কারণ তার ক্ষুধা লেগেছে।" }
+      ],
+      "tips": "Present Continuous সবসময় am/is/are দিয়ে শুরু হয় এবং main verb-এর সাথে -ing যোগ হয়। এখন কি হচ্ছে? — এই প্রশ্নের উত্তর দিতে এই tense ব্যবহার করো। Stative verbs (জ্ঞান, অনুভূতি, ইচ্ছা বোঝানো verb) সাধারণত Continuous হয় না।"
+    },
+    {
+      "name": "Present Perfect Tense (বর্তমান পূর্ণ কাল)",
+      "banglaName": "বর্তমান পূর্ণ কাল",
+      "definition": "Present Perfect Tense connects the past with the present. It is used for actions that started in the past and continue to the present, or actions that happened at an unspecified time in the past but have a result in the present.",
+      "banglaDefinition": "Present Perfect Tense অতীতকে বর্তমানের সাথে সংযুক্ত করে। এটি অতীতে শুরু হয়ে এখনও চলছে এমন কাজ, বা অতীতে অনির্দিষ্ট সময়ে ঘটেছে কিন্তু বর্তমানে ফল আছে এমন কাজ বোঝাতে ব্যবহৃত হয়।",
+      "formula": "Affirmative: Subject + have/has + V3 + Object\nNegative: Subject + have/has + not + V3 + Object\nInterrogative: Have/Has + Subject + V3 + Object + ?",
+      "rules": [
+        "অতীতে অনির্দিষ্ট সময়ে ঘটেছে (সময় উল্লেখ নেই): I have visited the Taj Mahal.",
+        "অতীতে শুরু হয়ে এখনও চলছে: I have lived here for 5 years.",
+        "সম্প্রতি শেষ হয়েছে (just, already, yet-সহ): She has just finished her homework.",
+        "I/We/You/They-এর সাথে have, He/She/It-এর সাথে has ব্যবহৃত হয়।",
+        "এই tense-এ past time (yesterday, last week, ago) ব্যবহার করা যায় না।"
+      ],
+      "examples": [
+        { "en": "I have seen this movie before.", "bn": "আমি এই সিনেমাটি আগে দেখেছি।" },
+        { "en": "She has lived in Dhaka since 2015.", "bn": "সে ২০১৫ সাল থেকে ঢাকায় বাস করছে।" },
+        { "en": "They have already eaten dinner.", "bn": "তারা ইতিমধ্যে রাতের খাবার খেয়েছে।" },
+        { "en": "He has not finished his work yet.", "bn": "সে এখনও তার কাজ শেষ করেনি।" },
+        { "en": "Have you ever been to London?", "bn": "তুমি কি কখনো লন্ডন গিয়েছ?" },
+        { "en": "I have just received your message.", "bn": "আমি এইমাত্র তোমার বার্তা পেয়েছি।" }
+      ],
+      "tips": "Present Perfect-এ past participle (V3) ব্যবহার হয়। মধ্যে 'have' বা 'has' থাকে। সময় উল্লেখ করা যায় না (yesterday, last year বলা যাবে না)। 'Just', 'already', 'yet', 'ever', 'never', 'since', 'for' — এই শব্দগুলো Present Perfect-এ প্রায়ই ব্যবহৃত হয়।"
+    },
+    {
+      "name": "Present Perfect Continuous Tense (বর্তমান পূর্ণ ঘটমান কাল)",
+      "banglaName": "বর্তমান পূর্ণ ঘটমান কাল",
+      "definition": "Present Perfect Continuous Tense is used for actions that started in the past, are still continuing in the present, and may continue into the future. It emphasizes the duration or the continuous nature of the action.",
+      "banglaDefinition": "Present Perfect Continuous Tense অতীতে শুরু হয়ে এখনও বর্তমানে চলছে এবং ভবিষ্যতেও চলতে পারে এমন কাজ বোঝাতে ব্যবহৃত হয়। এটি কাজের সময়কাল বা ধারাবাহিকতার উপর জোর দেয়।",
+      "formula": "Affirmative: Subject + have/has + been + V1+ing + Object + since/for\nNegative: Subject + have/has + not + been + V1+ing + Object\nInterrogative: Have/Has + Subject + been + V1+ing + Object + ?",
+      "rules": [
+        "অতীতে শুরু হয়েছে এবং এখনও চলছে: I have been studying for two hours.",
+        "কাজের সময়কাল (duration) বোঝাতে: They have been waiting for 30 minutes.",
+        "কাজের ফল এখন দেখা যাচ্ছে: She is tired because she has been working all day.",
+        "since (একটি নির্দিষ্ট সময়) এবং for (সময়কাল) ব্যবহার করা হয়।",
+        "যে কাজ চলছে তার উপরে জোর দিতে এই tense ব্যবহৃত হয়।"
+      ],
+      "examples": [
+        { "en": "I have been learning English for three years.", "bn": "আমি তিন বছর ধরে ইংরেজি শিখছি।" },
+        { "en": "She has been reading since morning.", "bn": "সে সকাল থেকে পড়ছে।" },
+        { "en": "They have been playing cricket for two hours.", "bn": "তারা দুই ঘন্টা ধরে ক্রিকেট খেলছে।" },
+        { "en": "It has been raining since yesterday.", "bn": "গতকাল থেকে বৃষ্টি হচ্ছে।" },
+        { "en": "He has not been feeling well lately.", "bn": "ইদানীং সে ভালো বোধ করছে না।" },
+        { "en": "How long have you been waiting?", "bn": "তুমি কতক্ষণ ধরে অপেক্ষা করছ?" }
+      ],
+      "tips": "Present Perfect Continuous-এর গঠন: have/has + been + V1+ing। সময় বোঝাতে since (নির্দিষ্ট সময়: since morning, since 2020) এবং for (সময়কাল: for 2 hours, for 5 years) ব্যবহার হয়। এই tense কাজের ধারাবাহিকতা বোঝায়।"
+    },
+    {
+      "name": "Past Indefinite Tense (অতীত সাধারণ কাল)",
+      "banglaName": "অতীত সাধারণ কাল",
+      "definition": "Past Indefinite Tense (Simple Past) is used to describe actions that happened and finished at a specific time in the past. It is the most common past tense in English.",
+      "banglaDefinition": "Past Indefinite Tense (Simple Past) অতীতে নির্দিষ্ট সময়ে ঘটে যাওয়া এবং শেষ হয়ে যাওয়া কাজ বোঝাতে ব্যবহৃত হয়। এটি ইংরেজিতে সবচেয়ে সাধারণ অতীত কাল।",
+      "formula": "Affirmative: Subject + V2 + Object\nNegative: Subject + did + not + V1 + Object\nInterrogative: Did + Subject + V1 + Object + ?",
+      "rules": [
+        "অতীতে নির্দিষ্ট সময়ে ঘটেছে: I met him yesterday.",
+        "অতীতে শেষ হয়ে গেছে (বর্তমানে কোনো সম্পর্ক নেই): She lived in London when she was a child.",
+        "অতীতের অভ্যাস: I always walked to school when I was young.",
+        "Regular verb-এর সাথে -ed যোগ হয় (walk → walked, play → played)।",
+        "Irregular verb-এর আলাদা past form থাকে (go → went, eat → ate, see → saw) মুখস্থ করতে হবে।"
+      ],
+      "examples": [
+        { "en": "I visited my grandparents last weekend.", "bn": "আমি গত সপ্তাহান্তে আমার দাদা-দাদিকে দেখতে গিয়েছিলাম।" },
+        { "en": "She bought a new dress yesterday.", "bn": "সে গতকাল একটি নতুন জামা কিনেছিল।" },
+        { "en": "They played football in the afternoon.", "bn": "তারা বিকালে ফুটবল খেলেছিল।" },
+        { "en": "He did not come to the party last night.", "bn": "সে গত রাতে পার্টিতে আসেনি।" },
+        { "en": "Did you watch the movie?", "bn": "তুমি কি সিনেমাটি দেখেছিলে?" },
+        { "en": "We went to Cox's Bazar last summer.", "bn": "আমরা গত গ্রীষ্মে কক্সবাজার গিয়েছিলাম।" }
+      ],
+      "tips": "Past Indefinite = V2 (past form)। Negative = did not + V1। Interrogative = Did + V1। 'Yesterday', 'last night', 'ago', 'in 2010' — এই শব্দগুলো past tense-এর সংকেত। Irregular verb-গুলোর past form আলাদাভাবে প্র্যাকটিস করো।"
+    },
+    {
+      "name": "Past Continuous Tense (অতীত ঘটমান কাল)",
+      "banglaName": "অতীত ঘটমান কাল",
+      "definition": "Past Continuous Tense is used for actions that were ongoing at a specific time in the past. It is often used to describe a longer action that was interrupted by a shorter action.",
+      "banglaDefinition": "Past Continuous Tense অতীতে কোনো নির্দিষ্ট সময়ে চলছিল এমন কাজ বোঝাতে ব্যবহৃত হয়। এটি প্রায়ই একটি দীর্ঘ কাজ বোঝাতে ব্যবহৃত হয় যা একটি ছোট কাজ দ্বারা বাধাপ্রাপ্ত হয়।",
+      "formula": "Affirmative: Subject + was/were + V1+ing + Object\nNegative: Subject + was/were + not + V1+ing + Object\nInterrogative: Was/Were + Subject + V1+ing + Object + ?",
+      "rules": [
+        "অতীতে নির্দিষ্ট সময়ে চলছিল: I was watching TV at 8 PM last night.",
+        "একটি কাজ চলছিল এবং অন্য কাজ এসে বাধা দিয়েছে: I was sleeping when the phone rang.",
+        "অতীতে একই সময়ে দুটি কাজ চলছিল: She was cooking while I was reading.",
+        "I/He/She/It-এর সাথে was, We/You/They-এর সাথে were ব্যবহৃত হয়।",
+        "Past Continuous-এর সাথে often 'when' এবং 'while' ব্যবহৃত হয়।"
+      ],
+      "examples": [
+        { "en": "I was studying when my friend called.", "bn": "আমি পড়ছিলাম যখন আমার বন্ধু ফোন করেছিল।" },
+        { "en": "She was cooking dinner while he was watching TV.", "bn": "সে রাতের খাবার রান্না করছিল যখন সে টিভি দেখছিল।" },
+        { "en": "They were playing cricket at 5 PM yesterday.", "bn": "তারা গতকাল বিকেল ৫টায় ক্রিকেট খেলছিল।" },
+        { "en": "It was raining heavily last night.", "bn": "গত রাতে প্রচুর বৃষ্টি হচ্ছিল।" },
+        { "en": "He was not listening to the teacher.", "bn": "সে শিক্ষকের কথা শুনছিল না।" },
+        { "en": "Were you sleeping when I called?", "bn": "আমি ফোন করার সময় তুমি কি ঘুমাচ্ছিলে?" }
+      ],
+      "tips": "Past Continuous = was/were + V1+ing। 'When' + short action (past indefinite), 'While' + long action (past continuous)। যেমন: I was eating when he arrived. / He arrived while I was eating। সময় উল্লেখ করতে হবে।"
+    },
+    {
+      "name": "Past Perfect Tense (অতীত পূর্ণ কাল)",
+      "banglaName": "অতীত পূর্ণ কাল",
+      "definition": "Past Perfect Tense is used to show that one action happened before another action in the past. It helps to clarify the sequence of two past events — which one happened first.",
+      "banglaDefinition": "Past Perfect Tense দেখানোর জন্য ব্যবহৃত হয় যে একটি কাজ অতীতের আরেকটি কাজের আগে ঘটেছিল। এটি অতীতের দুইটি ঘটনার ক্রম স্পষ্ট করতে সাহায্য করে — কোনটি আগে ঘটেছিল।",
+      "formula": "Affirmative: Subject + had + V3 + Object\nNegative: Subject + had + not + V3 + Object\nInterrogative: Had + Subject + V3 + Object + ?",
+      "rules": [
+        "অতীতের দুই কাজের মধ্যে আগেরটি বোঝাতে: I had eaten before you came.",
+        "অতীতে একটি নির্দিষ্ট সময়ের আগে শেষ হয়েছে: She had finished the work by 5 PM.",
+        "Past Perfect সবসময় অন্য একটি past event বা time-এর সাথে ব্যবহার করা হয়।",
+        "সকল subject-এর জন্য 'had' ব্যবহার হয় — কোনো পরিবর্তন নেই।",
+        "'Before', 'after', 'by the time', 'already', 'just' — এই শব্দগুলো Past Perfect-এর সাথে প্রায়ই ব্যবহৃত হয়।"
+      ],
+      "examples": [
+        { "en": "I had finished my homework before my mother came home.", "bn": "আমার মা বাড়ি আসার আগে আমি আমার বাড়ির কাজ শেষ করেছিলাম।" },
+        { "en": "She had already left when I arrived.", "bn": "আমি পৌঁছানোর সময় সে ইতিমধ্যে চলে গিয়েছিল।" },
+        { "en": "They had eaten all the food by the time we reached.", "bn": "আমরা পৌঁছানোর সময় তারা সব খাবার খেয়ে ফেলেছিল।" },
+        { "en": "He had never seen such a beautiful place before.", "bn": "সে এর আগে এমন সুন্দর জায়গা কখনো দেখেনি।" },
+        { "en": "After I had completed the course, I applied for the job.", "bn": "কোর্স শেষ করার পর আমি চাকরির জন্য আবেদন করেছিলাম।" },
+        { "en": "Had you met him before the party?", "bn": "পার্টির আগে তুমি কি তার সাথে দেখা করেছিলে?" }
+      ],
+      "tips": "Past Perfect = had + V3। মনে রাখবে: যখন অতীতের দুইটি কাজের কথা বলবে, যে কাজটি আগে ঘটেছে তার জন্য Past Perfect (had + V3) এবং পরের কাজটির জন্য Past Indefinite (V2) ব্যবহার করো। যেমন: I had eaten (first) when she arrived (second)."
+    },
+    {
+      "name": "Past Perfect Continuous Tense (অতীত পূর্ণ ঘটমান কাল)",
+      "banglaName": "অতীত পূর্ণ ঘটমান কাল",
+      "definition": "Past Perfect Continuous Tense is used for actions that were ongoing in the past for some time before another past action or time. It emphasizes the duration of the earlier action.",
+      "banglaDefinition": "Past Perfect Continuous Tense অতীতে অন্য কোনো কাজ বা সময়ের আগে কিছু সময় ধরে চলছিল এমন কাজ বোঝাতে ব্যবহৃত হয়। এটি আগের কাজের সময়কালের উপর জোর দেয়।",
+      "formula": "Affirmative: Subject + had + been + V1+ing + Object + since/for\nNegative: Subject + had + not + been + V1+ing + Object\nInterrogative: Had + Subject + been + V1+ing + Object + ?",
+      "rules": [
+        "অতীতে অন্য কাজ শুরুর আগে কিছু সময় ধরে চলছিল: I had been waiting for an hour when she arrived.",
+        "অতীতে নির্দিষ্ট সময়ের আগে কিছু সময় ধরে চলছিল: By 2020, I had been living here for 5 years.",
+        "Past Perfect Continuous-এ 'since' (নির্দিষ্ট সময়) এবং 'for' (সময়কাল) ব্যবহার হয়।",
+        "সকল subject-এর জন্য 'had been' ব্যবহার হয়।",
+        "এই tense-এ কাজের সময়কাল (duration) গুরুত্বপূর্ণ, শুধু ঘটনা নয়।"
+      ],
+      "examples": [
+        { "en": "I had been studying for two hours when my friend came.", "bn": "আমার বন্ধু আসার সময় আমি দুই ঘন্টা ধরে পড়ছিলাম।" },
+        { "en": "She had been working at the company for five years before she quit.", "bn": "চাকরি ছাড়ার আগে সে কোম্পানিতে পাঁচ বছর ধরে কাজ করছিল।" },
+        { "en": "They had been traveling since morning when they finally reached the hotel.", "bn": "অবশেষে হোটেলে পৌঁছানোর সময় তারা সকাল থেকে ভ্রমণ করছিল।" },
+        { "en": "He was tired because he had been running for an hour.", "bn": "সে ক্লান্ত ছিল কারণ সে এক ঘন্টা ধরে দৌড়াচ্ছিল।" },
+        { "en": "The ground was wet because it had been raining all night.", "bn": "মাঠ ভিজে ছিল কারণ সারা রাত বৃষ্টি হচ্ছিল।" },
+        { "en": "Had you been waiting long before the bus arrived?", "bn": "বাস আসার আগে তুমি কি অনেকক্ষণ অপেক্ষা করছিলে?" }
+      ],
+      "tips": "Past Perfect Continuous = had + been + V1+ing। এটি Past Perfect-এর মতোই কিন্তু Continuous-এ থাকে এবং সময়কাল (duration) বোঝায়। মনে রেখ: 'had been' সবসময় একসাথে থাকে এবং verb-এর সাথে -ing যোগ হয়। এটা অতীতের দীর্ঘ কাজ বোঝায় যা অন্য কাজের আগে চলছিল।"
+    },
+    {
+      "name": "Future Indefinite Tense (ভবিষ্যৎ সাধারণ কাল)",
+      "banglaName": "ভবিষ্যৎ সাধারণ কাল",
+      "definition": "Future Indefinite Tense (Simple Future) is used for actions that will happen in the future. It is used for predictions, promises, spontaneous decisions, and planned actions.",
+      "banglaDefinition": "Future Indefinite Tense (Simple Future) ভবিষ্যতে ঘটবে এমন কাজ বোঝাতে ব্যবহৃত হয়। এটি ভবিষ্যদ্বাণী, প্রতিশ্রুতি, আকস্মিক সিদ্ধান্ত এবং পরিকল্পিত কাজের জন্য ব্যবহৃত হয়।",
+      "formula": "Affirmative: Subject + will/shall + V1 + Object\nNegative: Subject + will/shall + not + V1 + Object\nInterrogative: Will/Shall + Subject + V1 + Object + ?",
+      "rules": [
+        "ভবিষ্যদ্বাণী (prediction): It will rain tomorrow.",
+        "প্রতিশ্রুতি (promise): I will help you with your homework.",
+        "আকস্মিক সিদ্ধান্ত (spontaneous decision): The phone is ringing — I will answer it.",
+        "অনুরোধ (request): Will you please open the door?",
+        "সকল subject-এর সাথে will ব্যবহার হয়। Shall শুধুমাত্র I এবং We-এর সাথে প্রথাগতভাবে ব্যবহার হয়।"
+      ],
+      "examples": [
+        { "en": "I will call you later.", "bn": "আমি পরে তোমাকে ফোন করব।" },
+        { "en": "She will come to the party tomorrow.", "bn": "সে আগামীকাল পার্টিতে আসবে।" },
+        { "en": "It will be sunny tomorrow.", "bn": "আগামীকাল রোদ থাকবে।" },
+        { "en": "I will not forget your help.", "bn": "আমি তোমার সাহায্য ভুলব না।" },
+        { "en": "Will you marry me?", "bn": "তুমি কি আমাকে বিয়ে করবে?" },
+        { "en": "We shall overcome one day. (formal)", "bn": "আমরা একদিন জয়ী হব। (আনুষ্ঠানিক)" }
+      ],
+      "tips": "Future Indefinite = will + V1। Negative = will not (won't) + V1। Interrogative = Will + subject + V1?। মনে রাখবে: Will + V1 (base form) — verb-এর কোনো পরিবর্তন হয় না। সব subject-এর জন্য একই নিয়ম।"
+    },
+    {
+      "name": "Future Continuous Tense (ভবিষ্যৎ ঘটমান কাল)",
+      "banglaName": "ভবিষ্যৎ ঘটমান কাল",
+      "definition": "Future Continuous Tense is used for actions that will be ongoing at a specific time in the future. It describes an action that will be in progress at a particular moment in the future.",
+      "banglaDefinition": "Future Continuous Tense ভবিষ্যতে কোনো নির্দিষ্ট সময়ে চলতে থাকবে এমন কাজ বোঝাতে ব্যবহৃত হয়। এটি ভবিষ্যতে একটি নির্দিষ্ট মুহূর্তে চলমান থাকবে এমন কাজ বর্ণনা করে।",
+      "formula": "Affirmative: Subject + will be + V1+ing + Object\nNegative: Subject + will not be + V1+ing + Object\nInterrogative: Will + Subject + be + V1+ing + Object + ?",
+      "rules": [
+        "ভবিষ্যতে নির্দিষ্ট সময়ে চলবে: I will be watching TV at 8 PM tonight.",
+        "ভবিষ্যতে একটি কাজ চলবে এবং অন্য কাজ হবে: I will be studying when you arrive.",
+        "ভবিষ্যতের পরিকল্পিত বা নিশ্চিত কাজ: She will be traveling to London next week.",
+        "ভদ্রভাবে জিজ্ঞাসা করতে (polite inquiry): Will you be joining us for dinner?",
+        "সকল subject-এর জন্য 'will be' ব্যবহার হয়।"
+      ],
+      "examples": [
+        { "en": "I will be waiting for you at the station.", "bn": "আমি স্টেশনে তোমার জন্য অপেক্ষা করব।" },
+        { "en": "She will be sleeping when we arrive.", "bn": "আমরা পৌঁছানোর সময় সে ঘুমাবে।" },
+        { "en": "They will be playing cricket at 4 PM tomorrow.", "bn": "তারা আগামীকাল বিকেল ৪টায় ক্রিকেট খেলবে।" },
+        { "en": "He will not be attending the meeting tomorrow.", "bn": "সে আগামীকাল মিটিংয়ে অংশ নিচ্ছে না।" },
+        { "en": "Will you be using the car this evening?", "bn": "তুমি কি আজ সন্ধ্যায় গাড়ি ব্যবহার করবে?" },
+        { "en": "This time next week, I will be flying to Japan.", "bn": "আগামী সপ্তাহে এই সময়ে, আমি জাপান উড়ে যাচ্ছি।" }
+      ],
+      "tips": "Future Continuous = will be + V1+ing। 'At 5 PM', 'this time tomorrow', 'when you arrive' — এই ধরনের সময় নির্দেশক শব্দ Future Continuous-এর সাথে ব্যবহৃত হয়। মনে রেখ: সবসময় 'will be' একসাথে থাকে এবং verb-এর সাথে -ing যোগ হয়।"
+    },
+    {
+      "name": "Future Perfect Tense (ভবিষ্যৎ পূর্ণ কাল)",
+      "banglaName": "ভবিষ্যৎ পূর্ণ কাল",
+      "definition": "Future Perfect Tense is used for actions that will be completed before a specific time or action in the future. It looks back from a point in the future and says something will be done by then.",
+      "banglaDefinition": "Future Perfect Tense ভবিষ্যতে নির্দিষ্ট সময় বা কাজের আগে সম্পন্ন হবে এমন কাজ বোঝাতে ব্যবহৃত হয়। এটি ভবিষ্যতের কোনো বিন্দু থেকে পিছনে তাকিয়ে বলে যে সেই সময়ের মধ্যে কাজটি শেষ হয়ে যাবে।",
+      "formula": "Affirmative: Subject + will have + V3 + Object\nNegative: Subject + will not have + V3 + Object\nInterrogative: Will + Subject + have + V3 + Object + ?",
+      "rules": [
+        "ভবিষ্যতে একটি নির্দিষ্ট সময়ের আগে শেষ হবে: I will have finished the work by 6 PM.",
+        "ভবিষ্যতে অন্য কাজের আগে শেষ হবে: She will have left before you arrive.",
+        "'By' (নির্দিষ্ট সময়ের মধ্যে), 'by the time' (যেই সময়ের মধ্যে), 'before' (আগে) — এই শব্দগুলো ব্যবহৃত হয়।",
+        "সকল subject-এর জন্য 'will have' ব্যবহার হয়।",
+        "এই tense ভবিষ্যতে কোনো কিছুর completion-এর উপর জোর দেয়।"
+      ],
+      "examples": [
+        { "en": "I will have completed the project by next Monday.", "bn": "আমি আগামী সোমবারের মধ্যে প্রকল্পটি সম্পন্ন করেছি হব।" },
+        { "en": "She will have graduated by 2025.", "bn": "সে ২০২৫ সালের মধ্যে স্নাতক সম্পন্ন করেছে হবে।" },
+        { "en": "They will have arrived by the time we reach the station.", "bn": "আমরা স্টেশনে পৌঁছানোর সময় তারা পৌঁছে গেছে হবে।" },
+        { "en": "He will not have finished the exam before noon.", "bn": "সে দুপুরের আগে পরীক্ষা শেষ করেনি হবে।" },
+        { "en": "Will you have eaten by the time I come?", "bn": "আমি আসার সময় তুমি কি খেয়ে নিয়েছ হবে?" },
+        { "en": "By December, I will have been here for three years.", "bn": "ডিসেম্বরের মধ্যে, আমি এখানে তিন বছর পূর্ণ করেছি হব।" }
+      ],
+      "tips": "Future Perfect = will have + V3। 'By' এবং 'by the time' মনে রাখার চাবিকাঠি। যেমন: By 8 PM, I will have finished dinner। ভবিষ্যতে একটি অ্যাকশন সম্পন্ন হবে — এটি মনে রাখলেই হবে।"
+    },
+    {
+      "name": "Future Perfect Continuous Tense (ভবিষ্যৎ পূর্ণ ঘটমান কাল)",
+      "banglaName": "ভবিষ্যৎ পূর্ণ ঘটমান কাল",
+      "definition": "Future Perfect Continuous Tense is used for actions that will have been ongoing for a period of time before a specific time or event in the future. It emphasizes the duration of the action up to a point in the future.",
+      "banglaDefinition": "Future Perfect Continuous Tense ভবিষ্যতে নির্দিষ্ট সময় বা ঘটনার আগে কিছু সময় ধরে চলতে থাকবে এমন কাজ বোঝাতে ব্যবহৃত হয়। এটি ভবিষ্যতের একটি বিন্দু পর্যন্ত কাজের সময়কালের উপর জোর দেয়।",
+      "formula": "Affirmative: Subject + will have been + V1+ing + Object + since/for\nNegative: Subject + will not have been + V1+ing + Object\nInterrogative: Will + Subject + have been + V1+ing + Object + ?",
+      "rules": [
+        "ভবিষ্যতে নির্দিষ্ট সময় পর্যন্ত কাজ চলছিল: By next year, I will have been working here for 10 years.",
+        "ভবিষ্যতে অন্য কাজের আগে কাজ চলছিল: I will have been studying for 3 hours by the time you arrive.",
+        "এই tense-এ 'since' (নির্দিষ্ট সময়) এবং 'for' (সময়কাল) ব্যবহৃত হয়।",
+        "সকল subject-এর জন্য 'will have been' ব্যবহার হয়।",
+        "Future Perfect Continuous খুব কম ব্যবহৃত হলেও উচ্চ স্তরের ইংরেজির জন্য জানা জরুরি।"
+      ],
+      "examples": [
+        { "en": "By 2026, I will have been living in Dhaka for five years.", "bn": "২০২৬ সালের মধ্যে, আমি ঢাকায় পাঁচ বছর ধরে বাস করছি হব।" },
+        { "en": "She will have been teaching at this school for 20 years by next March.", "bn": "আগামী মার্চের মধ্যে, সে এই স্কুলে ২০ বছর ধরে শিক্ষকতা করছি হবে।" },
+        { "en": "They will have been traveling for 12 hours by the time they arrive.", "bn": "তারা পৌঁছানোর সময় ১২ ঘন্টা ধরে ভ্রমণ করছি হবে।" },
+        { "en": "He will have been waiting for an hour when the train finally arrives.", "bn": "ট্রেন অবশেষে আসার সময় সে এক ঘন্টা ধরে অপেক্ষা করছি হবে।" },
+        { "en": "Will you have been studying for long when I visit you?", "bn": "আমি তোমাকে দেখতে গেলে তুমি কি অনেকক্ষণ ধরে পড়ছি হবে?" },
+        { "en": "By the end of this year, I will have been learning English for three years.", "bn": "এই বছরের শেষের মধ্যে, আমি তিন বছর ধরে ইংরেজি শিখছি হব।" }
+      ],
+      "tips": "Future Perfect Continuous = will have been + V1+ing। এটি tense-গুলোর মধ্যে সবচেয়ে জটিল, তাই অনেকেই এটি ব্যবহার করে না। তবে পরীক্ষায় আসে। 'By + time' + 'for + duration' — এই প্যাটার্ন ব্যবহার করে তৈরি করো।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I am go to school every day.",
+      "correct": "I go to school every day.",
+      "explanation": "Present Indefinite-এ am/is/are ব্যবহার করা হয় না। শুধু main verb (V1) ব্যবহার হয়। 'I am go' ভুল — সঠিক হলো 'I go'। Present Continuous-এর সাথে am/is/are ব্যবহার হয়: I am going now।"
+    },
+    {
+      "wrong": "She eat rice every day.",
+      "correct": "She eats rice every day.",
+      "explanation": "He/She/It-এর সাথে Present Indefinite-এ verb-এর সাথে s/es যোগ করতে হয়। She eat নয়, She eats হবে। মনে রাখবে: Third Person Singular-এর সাথে s/es যোগ বাধ্যতামূলক।"
+    },
+    {
+      "wrong": "I have seen him yesterday.",
+      "correct": "I saw him yesterday. OR I have seen him.",
+      "explanation": "Present Perfect-এর সাথে 'yesterday' ব্যবহার করা যায় না। 'Yesterday' অতীত নির্দিষ্ট সময় — তাই Past Indefinite (saw) ব্যবহার করতে হবে। Present Perfect ব্যবহার করলে সময় উল্লেখ না করেই বলতে হবে: I have seen him।"
+    },
+    {
+      "wrong": "I was go to school when you called.",
+      "correct": "I was going to school when you called.",
+      "explanation": "Past Continuous-এ verb-এর সাথে -ing যোগ করতে হয়। 'Was go' ভুল — সঠিক হলো 'was going'। মনে রাখবে: Continuous tense-এর মূল নিয়ম = be verb + V1+ing।"
+    },
+    {
+      "wrong": "I will going to the market tomorrow.",
+      "correct": "I will go to the market tomorrow. OR I am going to the market tomorrow.",
+      "explanation": "Future Indefinite = will + V1 (base form), 'will + V1+ing' নয়। 'Will going' ভুল — সঠিক হলো 'will go'। 'Going to' ব্যবহার করলে 'am/is/are going to' দিতে হবে: I am going to go।"
+    },
+    {
+      "wrong": "He has been worked for two hours.",
+      "correct": "He has been working for two hours. OR He has worked for two hours.",
+      "explanation": "Present Perfect Continuous-এ verb-এর সাথে -ing যোগ হয় (has been + V1+ing)। 'Has been worked' ভুল — সঠিক হলো 'has been working'। Present Perfect-এ V3 হয়: has worked।"
+    },
+    {
+      "wrong": "I had went to the market before you came.",
+      "correct": "I had gone to the market before you came.",
+      "explanation": "Past Perfect-এ V3 ব্যবহার করতে হয় (had + V3)। 'Went' হলো V2 (Past Indefinite-এর জন্য)। 'Had went' ভুল — সঠিক হলো 'had gone'। Go-এর V3 = gone, V2 = went।"
+    },
+    {
+      "wrong": "She doesn't likes coffee.",
+      "correct": "She doesn't like coffee.",
+      "explanation": "Negative বাক্যে 'does' ব্যবহার করলে main verb-এর সাথে আর s/es যোগ হয় না। 'Doesn't likes' ভুল — সঠিক হলো 'doesn't like'। Do/Does-এর পরে সবসময় base form (V1) ব্যবহার হয়।"
+    },
+    {
+      "wrong": "I will be go to the meeting.",
+      "correct": "I will go to the meeting. OR I will be going to the meeting.",
+      "explanation": "Future Continuous-এর জন্য 'will be + V1+ing' প্রয়োজন। 'Will be go' ভুল — 'will be going' হবে। মনে রাখবে: be-এর পরে V1+ing লাগে, V1 নয়।"
+    },
+    {
+      "wrong": "If I will come, I will call you.",
+      "correct": "If I come, I will call you.",
+      "explanation": "If-যুক্ত conditional clause-এ Future tense ব্যবহৃত হয় না। if-এর পরে Present tense ব্যবহার হয় (if + present, ... + future)। নিয়ম: 'If + Present, Future' — যেমন: If you study, you will pass।"
+    },
+    {
+      "wrong": "By next month, I am working here for 5 years.",
+      "correct": "By next month, I will have been working here for 5 years.",
+      "explanation": "'By next month' ভবিষ্যতের সময় নির্দেশ করে। তাই Future Perfect Continuous ব্যবহার করতে হবে। Present Continuous ('am working') ভবিষ্যতের দীর্ঘ কাজের সময়কাল বোঝাতে পারে না।"
+    },
+    {
+      "wrong": "I have been knowing her for 10 years.",
+      "correct": "I have known her for 10 years. OR I have been knowing is wrong.",
+      "explanation": "'Know' একটি stative verb — এটি সাধারণত Continuous tense-এ ব্যবহৃত হয় না। Present Perfect Continuous ব্যবহার করা যায় না। সঠিক: I have known her for 10 years। Stative verbs: know, believe, hate, love, want, etc."
+    }
+  ]
 }
