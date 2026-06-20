@@ -20,6 +20,7 @@ import '../../grammar/screens/grammar_test_list_screen.dart';
 import '../../vocabulary/screens/chapter_words_screen.dart';
 import '../../vocabulary/screens/vocabulary_test_screen.dart';
 import '../../conversation/screens/conversation_screen.dart';
+import '../../translator/screens/banglish_translator_screen.dart';
 import '../widgets/study_plan_section.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -876,6 +877,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       {'title': 'Conversation', 'icon': Icons.forum_rounded, 'gradient': AppColors.secondaryGradient, 'tab': -4},
       {'title': 'Listening', 'icon': Icons.headset_rounded, 'gradient': AppColors.infoGradient, 'tab': 2},
       {'title': 'Speaking', 'icon': Icons.mic_rounded, 'gradient': AppColors.pinkGradient, 'tab': 2},
+      {'title': 'Translate', 'icon': Icons.translate_rounded, 'gradient': [const Color(0xFF00BCD4), const Color(0xFF009688)], 'tab': -5},
     ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -901,6 +903,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => const GrammarTestListScreen()));
                 } else if (tab == -4) {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => const ConversationScreen()));
+                } else if (tab == -5) {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => const BanglishTranslatorScreen()));
                 } else {
                   widget.onNavigateToTab?.call(tab);
                 }

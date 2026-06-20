@@ -8,6 +8,7 @@ class HiveService {
   static const String _vocabTestHistoryBox = 'vocab_test_history';
   static const String _masterGuideHistoryBox = 'master_guide_history';
   static const String _studyPlanBox = 'study_plan';
+  static const String _translatorHistoryBox = 'translator_history';
 
   static Future<void> initialize() async {
     await Hive.initFlutter();
@@ -18,6 +19,7 @@ class HiveService {
     await Hive.openBox('vocab_cache');
     await Hive.openBox(_masterGuideHistoryBox);
     await Hive.openBox(_studyPlanBox);
+    await Hive.openBox(_translatorHistoryBox);
   }
 
   static Box get _vocabProgress => Hive.box(_vocabProgressBox);
@@ -324,6 +326,40 @@ class HiveService {
     final raw = Hive.box(_studyPlanBox).get('weekly_test');
     if (raw == null) return null;
     return Map<String, dynamic>.from(raw as Map);
+  }
+
+  // ── Translator History ──
+
+  static Future<void> saveTranslation(Map<String, dynamic> entry) async {
+    if (!Hive.isBoxOpen(_translatorHistoryBox)) {
+      await Hive.openBox(_translatorHistoryBox);
+    }
+    final box = Hive.box(_translatorHistoryBox);
+    final history = getTranslationHistory();
+    history.insert(0, entry);
+    if (history.length > 100) history.removeLast();
+    await box.put('entries', history);
+  }
+
+  static List<Map<String, dynamic>> getTranslationHistory() {
+    if (!Hive.isBoxOpen(_translatorHistoryBox)) return [];
+    final box = Hive.box(_translatorHistoryBox);
+    final raw = box.get('entries', defaultValue: []) as List;
+    return raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
+  }
+
+  static Future<void> deleteTranslation(int index) async {
+    if (!Hive.isBoxOpen(_translatorHistoryBox)) return;
+    final box = Hive.box(_translatorHistoryBox);
+    final history = getTranslationHistory();
+    if (index < 0 || index >= history.length) return;
+    history.removeAt(index);
+    await box.put('entries', history);
+  }
+
+  static Future<void> clearTranslationHistory() async {
+    if (!Hive.isBoxOpen(_translatorHistoryBox)) return;
+    await Hive.box(_translatorHistoryBox).put('entries', <Map<String, dynamic>>[]);
   }
 
   // ── Last Opened Chapter (for Continue Learning resume) ──

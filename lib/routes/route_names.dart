@@ -19,4 +19,5 @@ class RouteNames {
   static const String quizResult = '/quiz/result';
   static const String settings = '/settings';
   static const String profile = '/profile';
+  static const String banglishTranslator = '/banglish-translator';
 }
