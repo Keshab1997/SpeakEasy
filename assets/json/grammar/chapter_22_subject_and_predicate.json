@@ -1,10 +1,336 @@
 {
   "chapter": 22,
   "level": "Intermediate",
-  "title": "Subject and Predicate",
+  "title": "Subject and Predicate (উদ্দেশ্য ও বিধেয়)",
   "icon": "subject",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Every complete sentence in English has two main parts: a Subject and a Predicate. The subject tells us who or what the sentence is about, and the predicate tells us what the subject does or is. Understanding subject and predicate is essential for forming correct sentences in English.",
+  "banglaDescription": "ইংরেজির প্রতিটি সম্পূর্ণ বাক্যের দুটি প্রধান অংশ থাকে: Subject (উদ্দেশ্য) এবং Predicate (বিধেয়)। Subject বলে বাক্যটি কাকে বা কী নিয়ে, আর Predicate বলে subject কী করে বা কী। Subject এবং Predicate বোঝা ইংরেজিতে সঠিক বাক্য গঠনের জন্য অপরিহার্য।",
+  "topics": [
+    {
+      "name": "What is Subject and Predicate? (Subject ও Predicate কী?)",
+      "banglaName": "Subject ও Predicate কী?",
+      "definition": "Subject is the person, place, thing, or idea that the sentence is about — it is the 'doer' of the action. Predicate is the part of the sentence that tells something about the subject — it contains the verb and tells what the subject does, is, or has. Every complete sentence must have both a subject and a predicate.",
+      "banglaDefinition": "Subject (উদ্দেশ্য) হলো সেই ব্যক্তি, স্থান, বস্তু বা ধারণা যাকে নিয়ে বাক্যটি — এটি কাজের 'কর্তা'। Predicate (বিধেয়) হলো বাক্যের সেই অংশ যা subject সম্পর্কে কিছু বলে — এতে verb থাকে এবং বলে subject কী করে, কী, বা কী আছে। প্রতিটি সম্পূর্ণ বাক্যে অবশ্যই subject এবং predicate উভয়ই থাকতে হবে।",
+      "formula": "Complete Sentence = Subject + Predicate\n\nSubject = Who/What the sentence is about\nPredicate = What the subject does/is/has\n\nExample:\n- The boy (Subject) + runs fast (Predicate)\n- She (Subject) + is a teacher (Predicate)\n- Birds (Subject) + fly in the sky (Predicate)",
+      "rules": [
+        "প্রতিটি সম্পূর্ণ বাক্যে একটি Subject এবং একটি Predicate থাকে।",
+        "Subject সাধারণত বাক্যের শুরুতে থাকে (কিন্তু সবসময় নয়)।",
+        "Subject একটি noun, pronoun, বা noun phrase হতে পারে।",
+        "Predicate-এ সবসময় একটি verb (finite verb) থাকে।",
+        "Subject খুঁজতে 'Who?' বা 'What?' প্রশ্ন করলে উত্তর পাওয়া যায়।",
+        "Predicate খুঁজতে 'What about the subject?' প্রশ্ন করলে উত্তর পাওয়া যায়।"
+      ],
+      "examples": [
+        { "en": "The sun (Subject) shines brightly (Predicate).", "bn": "সূর্য (Subject) উজ্জ্বলভাবে আলো দেয় (Predicate)।" },
+        { "en": "My mother (Subject) cooks delicious food (Predicate).", "bn": "আমার মা (Subject) সুস্বাদু খাবার রান্না করেন (Predicate)।" },
+        { "en": "The children (Subject) are playing in the garden (Predicate).", "bn": "বাচ্চারা (Subject) বাগানে খেলছে (Predicate)।" },
+        { "en": "A beautiful butterfly (Subject) sat on the flower (Predicate).", "bn": "একটি সুন্দর প্রজাপতি (Subject) ফুলের উপর বসল (Predicate)।" },
+        { "en": "We (Subject) love our country (Predicate).", "bn": "আমরা (Subject) আমাদের দেশকে ভালোবাসি (Predicate)।" },
+        { "en": "The old man (Subject) walked slowly (Predicate).", "bn": "বৃদ্ধ লোকটি (Subject) ধীরে ধীরে হাঁটল (Predicate)।" }
+      ],
+      "tips": "Subject খুঁজতে বাক্যের শুরুতে 'Who' বা 'What' বসিয়ে প্রশ্ন করো। যেমন: 'The boy is reading.' → Who is reading? → 'The boy' (Subject)। তারপর বাকি অংশটুকু হলো Predicate। এভাবে প্রতিটি বাক্য ভেঙে দেখার অভ্যাস করো।"
+    },
+    {
+      "name": "Simple Subject vs Complete Subject (সরল Subject ও সম্পূর্ণ Subject)",
+      "banglaName": "সরল Subject ও সম্পূর্ণ Subject",
+      "definition": "Simple Subject is the main noun or pronoun in the subject without any modifiers. Complete Subject includes the simple subject along with all its modifiers (adjectives, articles, phrases, etc.). Understanding this difference helps in identifying the core of the subject.",
+      "banglaDefinition": "Simple Subject (সরল Subject) হলো subject-এর মূল noun বা pronoun — কোনো modifier ছাড়া। Complete Subject (সম্পূর্ণ Subject)-এর মধ্যে simple subject এবং তার সব modifiers (adjective, article, phrase ইত্যাদি) অন্তর্ভুক্ত থাকে। এই পার্থক্য বোঝা subject-এর মূল অংশ চিহ্নিত করতে সাহায্য করে।",
+      "formula": "Simple Subject = Main noun/pronoun (no modifiers)\nComplete Subject = Simple Subject + All its modifiers\n\nExample:\nSentence: 'The tall boy with blue eyes runs fast.'\n- Simple Subject: 'boy'\n- Complete Subject: 'The tall boy with blue eyes'",
+      "rules": [
+        "Simple Subject হলো বাক্যের মূল noun বা pronoun — এটি একটিমাত্র শব্দ।",
+        "Complete Subject হলো simple subject + তার সাথে ব্যবহৃত সব words/phrases।",
+        "Complete Subject-এ article (a, an, the), adjective, prepositional phrase ইত্যাদি থাকতে পারে।",
+        "Simple Subject খুঁজতে Complete Subject থেকে adjective এবং phrase বাদ দিতে হবে।",
+        "Simple Subject সবসময় singular বা plural হতে পারে।",
+        "Complete Subject-এর দৈর্ঘ্য ছোট বা বড় দুটোই হতে পারে।"
+      ],
+      "examples": [
+        { "en": "The brave firefighter rescued the cat. (Simple: firefighter | Complete: The brave firefighter)", "bn": "সাহসী অগ্নিনির্বাপক কর্মী বাচ্চাটিকে উদ্ধার করল। (Simple: অগ্নিনির্বাপক | Complete: সাহসী অগ্নিনির্বাপক কর্মী)" },
+        { "en": "A small brown dog barked loudly. (Simple: dog | Complete: A small brown dog)", "bn": "একটি ছোট বাদামী কুকুর জোরে ঘেউ ঘেউ করল। (Simple: কুকুর | Complete: একটি ছোট বাদামী কুকুর)" },
+        { "en": "My best friend from school came to visit. (Simple: friend | Complete: My best friend from school)", "bn": "স্কুলের আমার সবচেয়ে ভালো বন্ধু দেখতে এল। (Simple: বন্ধু | Complete: স্কুলের আমার সবচেয়ে ভালো বন্ধু)" },
+        { "en": "Rain falls from clouds. (Simple: Rain | Complete: Rain)", "bn": "বৃষ্টি মেঘ থেকে পড়ে। (Simple: বৃষ্টি | Complete: বৃষ্টি)" },
+        { "en": "The old wooden bridge collapsed yesterday. (Simple: bridge | Complete: The old wooden bridge)", "bn": "পুরনো কাঠের সেতুটি গতকাল ভেঙে পড়ল। (Simple: সেতু | Complete: পুরনো কাঠের সেতুটি)" },
+        { "en": "She writes poems beautifully. (Simple: She | Complete: She)", "bn": "সে সুন্দর কবিতা লেখে। (Simple: সে | Complete: সে)" }
+      ],
+      "tips": "Simple Subject খুঁজতে Complete Subject থেকে adjective, article, এবং qualifying words বাদ দিয়ে মূল noun/pronoun টি খুঁজে বের করো। যেমন: 'The three little pigs' → Simple Subject = 'pigs'। 'Pigs' ছাড়া বাকি সব (The three little) হলো modifiers।"
+    },
+    {
+      "name": "Simple Predicate vs Complete Predicate (সরল Predicate ও সম্পূর্ণ Predicate)",
+      "banglaName": "সরল Predicate ও সম্পূর্ণ Predicate",
+      "definition": "Simple Predicate is the main verb or verb phrase in the predicate — it tells what the subject does. Complete Predicate includes the verb (simple predicate) along with all its objects, complements, and modifiers. The complete predicate is everything in the sentence except the complete subject.",
+      "banglaDefinition": "Simple Predicate (সরল Predicate) হলো predicate-এর মূল verb বা verb phrase — এটি বলে subject কী করে। Complete Predicate (সম্পূর্ণ Predicate)-এর মধ্যে verb (simple predicate) এবং তার সব object, complement, এবং modifier অন্তর্ভুক্ত থাকে। Complete predicate হলো complete subject ছাড়া বাক্যের বাকি সবকিছু।",
+      "formula": "Simple Predicate = Main verb / Verb phrase\nComplete Predicate = Simple Predicate + Objects + Complements + Modifiers\n\nComplete Predicate = Whole Sentence - Complete Subject\n\nExample:\n'The little girl sang a beautiful song.'\n- Simple Predicate: 'sang'\n- Complete Predicate: 'sang a beautiful song'",
+      "rules": [
+        "Simple Predicate হলো verb বা verb phrase (যেমন: run, is sleeping, has been eating)।",
+        "Complete Predicate-এ verb + object + complement + adverb/adverbial phrase থাকে।",
+        "Complete Predicate বের করতে Complete Subject বাক্য থেকে বাদ দিলে যা থাকে তাই।",
+        "Simple Predicate একটি শব্দ বা একাধিক শব্দ (helping verb + main verb) হতে পারে।",
+        "Complete Predicate সবসময় complete subject-এর পরে বাকি অংশ নিয়ে গঠিত হয়।",
+        "Verb phrase-এ একাধিক helping verb + main verb থাকতে পারে (যেমন: will have been waiting)।"
+      ],
+      "examples": [
+        { "en": "The children played in the park. (Simple: played | Complete: played in the park)", "bn": "বাচ্চারা পার্কে খেলেছিল। (Simple: খেলেছিল | Complete: পার্কে খেলেছিল)" },
+        { "en": "She is reading an interesting book. (Simple: is reading | Complete: is reading an interesting book)", "bn": "সে একটি আকর্ষণীয় বই পড়ছে। (Simple: পড়ছে | Complete: একটি আকর্ষণীয় বই পড়ছে)" },
+        { "en": "My father has been working for ten hours. (Simple: has been working | Complete: has been working for ten hours)", "bn": "আমার বাবা দশ ঘন্টা ধরে কাজ করছেন। (Simple: কাজ করছেন | Complete: দশ ঘন্টা ধরে কাজ করছেন)" },
+        { "en": "The birds fly. (Simple: fly | Complete: fly)", "bn": "পাখিরা উড়ে। (Simple: উড়ে | Complete: উড়ে)" },
+        { "en": "We will visit the museum tomorrow. (Simple: will visit | Complete: will visit the museum tomorrow)", "bn": "আমরা আগামীকাল জাদুঘর দেখতে যাব। (Simple: যাব | Complete: আগামীকাল জাদুঘর দেখতে যাব)" },
+        { "en": "The dog barked loudly at the stranger. (Simple: barked | Complete: barked loudly at the stranger)", "bn": "কুকুরটি অপরিচিত লোকটির দিকে জোরে ঘেউ ঘেউ করল। (Simple: ঘেউ ঘেউ করল | Complete: অপরিচিত লোকটির দিকে জোরে ঘেউ ঘেউ করল)" }
+      ],
+      "tips": "Complete Predicate বের করার সহজ উপায়: বাক্যটির Subject বাদ দিয়ে বাকি সবকিছুই Complete Predicate। Simple Predicate হলো verb বা verb phrase টুকু। যেমন: 'The man (Subject) + is walking his dog in the park (Complete Predicate)' — এর মধ্যে 'is walking' হলো Simple Predicate।"
+    },
+    {
+      "name": "Subject in Different Positions (বিভিন্ন অবস্থানে Subject)",
+      "banglaName": "বিভিন্ন অবস্থানে Subject",
+      "definition": "While the subject usually comes at the beginning of a sentence, it can also appear in different positions. In interrogative sentences, the subject comes after the helping verb. In imperative sentences, the subject ('you') is implied or hidden. Understanding subject positions helps in identifying the subject correctly in all sentence types.",
+      "banglaDefinition": "Subject সাধারণত বাক্যের শুরুতে থাকলেও এটি ভিন্ন অবস্থানেও থাকতে পারে। Interrogative sentence-এ subject helping verb-এর পরে আসে। Imperative sentence-এ subject ('you') উহ্য থাকে। সব ধরনের বাক্যে সঠিকভাবে subject চিহ্নিত করতে subject-এর অবস্থান বোঝা জরুরি।",
+      "formula": "Declarative: Subject + Verb + Object (The boy reads a book.)\nInterrogative: Helping Verb + Subject + Main Verb (Does the boy read?)\nImperative: (You) + Verb (Read the book!)\nExclamatory: What/How + Object + Subject + Verb (What a nice boy he is!)\n\nSubject after the verb (Inversion):\n- Here comes the bus.\n- There goes my friend.",
+      "rules": [
+        "Assertive/Declarative বাক্যে Subject সাধারণত verb-এর আগে থাকে।",
+        "Interrogative বাক্যে Subject helping verb-এর পরে এবং main verb-এর আগে থাকে।",
+        "Imperative বাক্যে Subject 'You' উহ্য (implied) থাকে।",
+        "Exclamatory বাক্যে Subject সাধারণত বাক্যের মাঝে থাকে।",
+        "'There' এবং 'Here' দিয়ে শুরু বাক্যে Subject verb-এর পরে আসে।",
+        "Inversion (Subject-Verb এর অবস্থান পরিবর্তন) কিছু বিশেষ বাক্যে দেখা যায়।"
+      ],
+      "examples": [
+        { "en": "She loves reading books. (Subject at the beginning)", "bn": "সে বই পড়তে ভালোবাসে। (Subject শুরুতে)" },
+        { "en": "Does she love reading books? (Subject after 'Does')", "bn": "সে কি বই পড়তে ভালোবাসে? (Subject 'Does'-এর পরে)" },
+        { "en": "Close the door. (Subject 'You' is implied)", "bn": "দরজা বন্ধ করো। (Subject 'You' উহ্য)" },
+        { "en": "Here comes the teacher. (Subject 'the teacher' after verb)", "bn": "এই যে শিক্ষক আসছেন। (Subject 'শিক্ষক' verb-এর পরে)" },
+        { "en": "What a beautiful painting she made! (Subject 'she' in the middle)", "bn": "সে কী সুন্দর ছবি এঁকেছে! (Subject 'সে' মাঝখানে)" },
+        { "en": "Under the tree sat an old man. (Subject 'an old man' after verb)", "bn": "গাছের নিচে একজন বৃদ্ধ লোক বসেছিল। (Subject 'বৃদ্ধ লোক' verb-এর পরে)" }
+      ],
+      "tips": "Subject খুঁজতে সবসময় 'Who?' বা 'What?' প্রশ্ন করো। Imperative বাক্যে Subject উহ্য থাকে — সেটি সবসময় 'You'। Interrogative বাক্যে subject খুঁজতে helping verb-এর পরে দেখো। Inversion-এর ক্ষেত্রে verb-এর পরে subject খোঁজো।"
+    },
+    {
+      "name": "Compound Subject (যৌগিক Subject)",
+      "banglaName": "যৌগিক Subject",
+      "definition": "A Compound Subject consists of two or more simple subjects that share the same verb and are joined by a conjunction like 'and', 'or', or 'nor'. Compound subjects make sentences more efficient by combining related ideas about different subjects doing the same action.",
+      "banglaDefinition": "Compound Subject (যৌগিক Subject) দুই বা ততোধিক simple subject নিয়ে গঠিত হয় যারা একই verb share করে এবং 'and', 'or', 'nor'-এর মতো conjunction দ্বারা যুক্ত থাকে। Compound subject একই কাজ করছে এমন ভিন্ন subject-কে একত্রিত করে বাক্যকে আরও দক্ষ করে তোলে।",
+      "formula": "Compound Subject = Subject 1 + Conjunction + Subject 2\n\nExamples:\n- John and Mary are coming. (John + and + Mary)\n- The teacher or the principal will speak. (teacher + or + principal)\n- Neither the boy nor his friends were present. (boy + nor + friends)\n\nVerb Agreement:\n- 'And' → usually plural verb\n- 'Or/Nor' → verb agrees with the subject closest to it",
+      "rules": [
+        "Compound Subject 'and' দ্বারা যুক্ত হলে সাধারণত plural verb ব্যবহার হয় (বিরল ক্ষেত্রে singular)।",
+        "Compound Subject 'or'/'nor' দ্বারা যুক্ত হলে verb নিকটতম subject-এর সাথে согласуется (agrees)।",
+        "Compound Subject-এর প্রতিটি অংশ singular বা plural হতে পারে।",
+        "'Both...and' দিয়ে যুক্ত subject-এর সাথে plural verb ব্যবহার হয়।",
+        "'Either...or' এবং 'Neither...nor' দিয়ে যুক্ত subject-এর verb নিকটতম subject অনুযায়ী হয়।",
+        "Compound Subject-এ দুইটির বেশি subject থাকতে পারে (যেমন: A, B, and C are coming)।"
+      ],
+      "examples": [
+        { "en": "Rina and Mina are best friends. (Compound Subject: Rina + and + Mina)", "bn": "রিনা এবং মিনা সবচেয়ে ভালো বন্ধু। (Compound Subject: রিনা + এবং + মিনা)" },
+        { "en": "The teacher or the students are responsible. (Verb agrees with 'students')", "bn": "শিক্ষক বা ছাত্ররা দায়ী। (Verb 'ছাত্ররা'-এর সাথে согласуется)" },
+        { "en": "Neither the manager nor his assistants were present. (Verb agrees with 'assistants')", "bn": "ম্যানেজার বা তার সহকারীরা কেউ উপস্থিত ছিল না। (Verb 'সহকারীরা'-এর সাথে согласуется)" },
+        { "en": "Both the cat and the dog are sleeping. (Plural verb with 'both...and')", "bn": "বিড়াল এবং কুকুর দুটোই ঘুমাচ্ছে। ('Both...and'-এর সাথে plural verb)" },
+        { "en": "Either the students or the teacher is wrong. (Verb agrees with 'teacher' - the nearest subject)", "bn": "হয় ছাত্ররা নয় শিক্ষক ভুল। (Verb নিকটতম subject 'teacher'-এর সাথে согласуется)" },
+        { "en": "My brother, my sister, and my cousin are coming to visit. (Three-part compound subject)", "bn": "আমার ভাই, বোন এবং কাজিন দেখতে আসছে। (তিন অংশের compound subject)" }
+      ],
+      "tips": "Compound Subject-এর verb নির্ধারণের নিয়ম: (1) 'And' থাকলে সাধারণত plural verb। (2) 'Or/Nor' থাকলে verb নিকটতম subject-এর সাথে согласуется। যেমন: 'Either the boys or the girl is coming' — 'girl' নিকটতম, তাই 'is'। 'Either the girl or the boys are coming' — 'boys' নিকটতম, তাই 'are'।"
+    },
+    {
+      "name": "Compound Predicate (যৌগিক Predicate)",
+      "banglaName": "যৌগিক Predicate",
+      "definition": "A Compound Predicate (also called Compound Verb) consists of two or more verbs or verb phrases that share the same subject and are joined by a conjunction. It allows one subject to perform multiple actions in a single sentence without repeating the subject.",
+      "banglaDefinition": "Compound Predicate (যৌগিক Predicate) দুই বা ততোধিক verb বা verb phrase নিয়ে গঠিত হয় যারা একই subject share করে এবং conjunction দ্বারা যুক্ত থাকে। এটি একই subject-কে একাধিক কাজ সম্পাদন করতে দেয় বাক্যটিকে পুনরাবৃত্তি না করে।",
+      "formula": "Compound Predicate = Verb 1 + Conjunction + Verb 2\n\nExample:\nThe boy (Subject) + ran to the store (VP1) and bought some milk (VP2).\n\nStructure:\nSubject + [Verb Phrase 1 + Conjunction + Verb Phrase 2]\n         ←------- Compound Predicate --------→",
+      "rules": [
+        "Compound Predicate-এর সব verb একই subject-কে নির্দেশ করে।",
+        "Compound Predicate 'and', 'but', 'or', 'yet' ইত্যাদি conjunction দ্বারা যুক্ত হতে পারে।",
+        "Compound Predicate-এ দুই বা ততোধিক verb phrase থাকতে পারে।",
+        "Compound Predicate এবং Compound Subject আলাদা জিনিস — এদের混淆 (confuse) করা উচিত নয়।",
+        "Compound Predicate-এ different tenses ব্যবহার করা যেতে পারে, তবে সাধারণত একই tense হয়।",
+        "একটি বাক্যে একাধিক verb থাকলেই তা Compound Predicate নয় — verb গুলোকে একই subject নির্দেশ করতে হবে।"
+      ],
+      "examples": [
+        { "en": "She woke up, brushed her teeth, and had breakfast. (3 verbs, same subject 'She')", "bn": "সে জেগে উঠল, দাঁত ব্রাশ করল এবং নাস্তা করল। (3টি verb, একই subject 'সে')" },
+        { "en": "The dog barked loudly but did not bite anyone. (2 verbs with 'but')", "bn": "কুকুরটি জোরে ঘেউ ঘেউ করল কিন্তু কাউকে কামড়াল না। (2টি verb 'but' দ্বারা যুক্ত)" },
+        { "en": "My father will pick me up and drop me at school. (2 verbs in future tense)", "bn": "আমার বাবা আমাকে নিতে আসবে এবং স্কুলে নামিয়ে দেবে। (2টি verb ভবিষ্যৎ tense-এ)" },
+        { "en": "The baby cried for a while and then fell asleep. (2 verbs, same subject 'The baby')", "bn": "বাচ্চাটি কিছুক্ষণ কাঁদল এবং তারপর ঘুমিয়ে পড়ল। (2টি verb, একই subject 'বাচ্চাটি')" },
+        { "en": "He opened the door, walked inside, and sat on the chair. (3 consecutive actions)", "bn": "সে দরজা খুলল, ভিতরে গেল এবং চেয়ারে বসল। (3টি ধারাবাহিক কাজ)" },
+        { "en": "I bought the tickets but forgot to bring them. (2 verbs with 'but', same subject 'I')", "bn": "আমি টিকিট কিনেছিলাম কিন্তু সেগুলো আনতে ভুলে গিয়েছিলাম। (2টি verb 'but' দ্বারা, একই subject 'আমি')" }
+      ],
+      "tips": "Compound Predicate চিনতে: একটি subject-এর পরে একাধিক verb বা verb phrase থাকলে এবং সেগুলো 'and', 'but', 'or' ইত্যাদি দিয়ে যুক্ত থাকলে সেটি Compound Predicate। মনে রাখবে: Compound Subject = একাধিক subject + একটি verb। Compound Predicate = একটি subject + একাধিক verb। এই দুটি আলাদা।"
+    },
+    {
+      "name": "Subject in Imperative Sentences (আদেশসূচক বাক্যে Subject)",
+      "banglaName": "আদেশসূচক বাক্যে Subject",
+      "definition": "Imperative sentences give commands, requests, or advice. In imperative sentences, the subject 'You' is usually implied (hidden) — it is not written but understood. However, sometimes 'You' is explicitly stated for emphasis, or a noun is used as a subject in requests.",
+      "banglaDefinition": "Imperative sentence (আদেশসূচক বাক্য) আদেশ, অনুরোধ বা উপদেশ দেয়। Imperative sentence-এ subject 'You' সাধারণত উহ্য (লুকানো) থাকে — এটি লেখা হয় না কিন্তু বোঝা যায়। তবে কখনও কখনও জোর দিতে 'You' স্পষ্টভাবে বলা হয়, অথবা অনুরোধে noun subject হিসেবে ব্যবহৃত হয়।",
+      "formula": "Standard Imperative: (You) + Verb + Object → 'Close the door.' (You is implied)\nEmphatic Imperative: You + Verb + Object → 'You close the door!'\nRequest: Name + Verb + Object → 'John, close the door.'\nNegative Imperative: (You) + Do not/Don't + Verb → 'Don't touch that!'\n\nSubject in Imperative = 'You' (usually implied/unspoken)",
+      "rules": [
+        "Imperative বাক্যে subject 'You' সাধারণত উহ্য (implied) থাকে।",
+        "জোর দিতে বা নির্দিষ্ট কাউকে লক্ষ্য করে 'You' স্পষ্টভাবে বলা যেতে পারে।",
+        "Negative Imperative-এ 'Do not' বা 'Don't' ব্যবহার হয়।",
+        "Polite request-এ 'Please' যোগ করা হয় (Please sit down)।",
+        "Let's (Let us) দিয়ে শুরু বাক্যে subject 'us' (we) — যেমন: Let's go. (Let us go.)",
+        "Imperative বাক্যের verb সবসময় base form (V1) হয়।"
+      ],
+      "examples": [
+        { "en": "Sit down. (Subject 'You' is implied)", "bn": "বসো। (Subject 'You' উহ্য)" },
+        { "en": "Don't make noise. (Negative imperative, subject 'You' implied)", "bn": "শব্দ করো না। (নেতিবাচক imperative, subject 'You' উহ্য)" },
+        { "en": "You sit down right now! (Emphatic, 'You' is stated)", "bn": "তুমি এখনই বসো! (জোরালো, 'You' উল্লেখিত)" },
+        { "en": "Please open the window. (Polite request)", "bn": "অনুগ্রহ করে জানালাটি খোলো। (ভদ্র অনুরোধ)" },
+        { "en": "Let's go to the park. (Subject 'us' or 'we')", "bn": "চলো পার্কে যাই। (Subject 'us' বা 'we')" },
+        { "en": "Students, submit your assignments by Friday. (Subject 'Students' addressed directly)", "bn": "ছাত্ররা, শুক্রবারের মধ্যে তোমাদের অ্যাসাইনমেন্ট জমা দাও। (Subject 'ছাত্ররা' সরাসরি সম্বোধন)" }
+      ],
+      "tips": "Imperative বাক্যের subject সবসময় 'You' — মনে রাখবে তা বাক্যে না থাকলেও বোঝা যায়। এটা চেনার উপায়: বাক্যটি যদি আদেশ, অনুরোধ, নিষেধ বা উপদেশ দেয়, তাহলে এটি imperative এবং এর subject উহ্য 'You'। 'Let's' দিয়ে শুরু বাক্যগুলোতেও subject থাকে (us/we)।"
+    },
+    {
+      "name": "Subject in Interrogative Sentences (প্রশ্নবোধক বাক্যে Subject)",
+      "banglaName": "প্রশ্নবোধক বাক্যে Subject",
+      "definition": "In interrogative sentences (questions), the subject usually appears after the helping verb (auxiliary verb) or after the question word. Finding the subject in questions can be tricky because the normal subject-verb order is inverted. Understanding this inversion is key to identifying subjects correctly.",
+      "banglaDefinition": "Interrogative sentence-এ (প্রশ্নবোধক বাক্যে) subject সাধারণত helping verb-এর পরে বা question word-এর পরে আসে। প্রশ্নে subject খুঁজে পাওয়া কঠিন হতে পারে কারণ স্বাভাবিক subject-verb ক্রম উল্টে যায় (inversion)। সঠিকভাবে subject চিহ্নিত করার জন্য এই inversion বোঝা চাবিকাঠি।",
+      "formula": "Yes/No Questions: Helping Verb + Subject + Main Verb?\n  → Is she coming?   (Subject: she)\n  → Do you like tea?  (Subject: you)\n\nWH Questions: WH Word + Helping Verb + Subject + Main Verb?\n  → Where is he going?    (Subject: he)\n  → What are they eating?  (Subject: they)\n\nWH Questions (Subject as WH): WH Word (Subject) + Verb?\n  → Who came?  (Subject: Who)\n  → What happened?  (Subject: What)",
+      "rules": [
+        "Yes/No প্রশ্নে subject helping verb-এর পরে আসে।",
+        "WH প্রশ্নে subject WH word-এর পরে এবং helping verb-এর পরে আসে।",
+        "যখন WH word নিজেই subject হয় (Who, What), তখন inversion হয় না।",
+        "Tag questions-এ subject pronoun হিসেবে ব্যবহৃত হয় (You are coming, aren't you?)।",
+        "Question-এ subject খুঁজতে উত্তর দেওয়ার সময় subject টি চিহ্নিত করো।",
+        "কিছু indirect question-এ normal word order থাকে (I know where he lives)।"
+      ],
+      "examples": [
+        { "en": "Are you coming to the party? (Subject: you — after 'Are')", "bn": "তুমি কি পার্টিতে আসছো? (Subject: তুমি — 'Are'-এর পরে)" },
+        { "en": "Where does she live? (Subject: she — after 'does')", "bn": "সে কোথায় থাকে? (Subject: সে — 'does'-এর পরে)" },
+        { "en": "Who wrote this letter? (Subject: Who — WH word itself is subject)", "bn": "কে এই চিঠি লিখেছে? (Subject: কে — WH word নিজেই subject)" },
+        { "en": "What is making that noise? (Subject: What — WH word itself is subject)", "bn": "কী ওই শব্দ করছে? (Subject: কী — WH word নিজেই subject)" },
+        { "en": "Have they finished their homework? (Subject: they — after 'Have')", "bn": "তারা কি তাদের বাড়ির কাজ শেষ করেছে? (Subject: তারা — 'Have'-এর পরে)" },
+        { "en": "Why was the baby crying? (Subject: the baby — after 'was')", "bn": "বাচ্চাটি কেন কাঁদছিল? (Subject: বাচ্চাটি — 'was'-এর পরে)" }
+      ],
+      "tips": "Question-এ subject খুঁজতে সহজ উপায়: প্রশ্নটির উত্তর দাও। উত্তরটির Subject-ই প্রশ্নের Subject। যেমন: 'Is Rina reading?' → উত্তর: 'Yes, Rina is reading.' → Subject = 'Rina'। আর যখন 'Who' বা 'What' দিয়ে প্রশ্ন শুরু হয় এবং সেটিই কাজটি করছে, তখন WH word-ই Subject।"
+    },
+    {
+      "name": "Subject in 'There' and 'Here' Sentences ('There' ও 'Here' বাক্যে Subject)",
+      "banglaName": "'There' ও 'Here' বাক্যে Subject",
+      "definition": "In sentences beginning with 'There' or 'Here', the subject comes after the verb. 'There' and 'Here' are not the subjects — they are adverbs or introductory words. The real subject appears later in the sentence, and the verb must agree with the real subject, not with 'There' or 'Here'.",
+      "banglaDefinition": "'There' বা 'Here' দিয়ে শুরু বাক্যে subject verb-এর পরে আসে। 'There' এবং 'Here' subject নয় — এগুলো adverb বা introductory word। আসল subject বাক্যের পরে আসে, এবং verb-কে আসল subject-এর সাথে согласовать (agree) করতে হবে, 'There' বা 'Here'-এর সাথে নয়।",
+      "formula": "There/Here + Verb + Subject (+ Rest of the sentence)\n\nExamples:\nThere + is + a cat + on the roof.\nHere + comes + the bus + now.\n\nVerb Agreement:\n- There is + Singular Subject (There is a book on the table.)\n- There are + Plural Subject (There are many books on the table.)\n- Here comes + Singular Subject (Here comes the teacher.)\n- Here come + Plural Subject (Here come the students.)",
+      "rules": [
+        "'There' এবং 'Here' কখনোই subject হয় না — এগুলো dummy subject বা adverb।",
+        "আসল subject (real subject) verb-এর পরে আসে।",
+        "Verb-কে real subject-এর সাথে согласовать করতে হবে।",
+        "'There is' singular subject-এর সাথে, 'There are' plural subject-এর সাথে ব্যবহার হয়।",
+        "'Here comes' singular subject-এর সাথে, 'Here come' plural subject-এর সাথে ব্যবহার হয়।",
+        "এই ধরনের বাক্যে subject-verb inversion ঘটে (subject পরে আসে)।"
+      ],
+      "examples": [
+        { "en": "There is a bird on the tree. (Real subject: a bird — singular → 'is')", "bn": "গাছটিতে একটি পাখি আছে। (আসল subject: একটি পাখি — singular → 'is')" },
+        { "en": "There are many stars in the sky. (Real subject: many stars — plural → 'are')", "bn": "আকাশে অনেক তারা আছে। (আসল subject: অনেক তারা — plural → 'are')" },
+        { "en": "Here comes the bride. (Real subject: the bride — singular → 'comes')", "bn": "এই যে কনে আসছে। (আসল subject: কনে — singular → 'comes')" },
+        { "en": "Here come the guests. (Real subject: the guests — plural → 'come')", "bn": "এই যে অতিথিরা আসছে। (আসল subject: অতিথিরা — plural → 'come')" },
+        { "en": "There was a loud noise last night. (Real subject: a loud noise)", "bn": "গত রাতে একটি জোরে শব্দ হয়েছিল। (আসল subject: একটি জোরে শব্দ)" },
+        { "en": "There were five students in the class. (Real subject: five students — plural)", "bn": "ক্লাসে পাঁচজন ছাত্র ছিল। (আসল subject: পাঁচজন ছাত্র — plural)" }
+      ],
+      "tips": "'There is/are' এবং 'Here comes/come' বাক্যে subject চিনতে ভুল করো না — 'There' এবং 'Here' কখনোই subject নয়। Subject সবসময় verb-এর পরে থাকে। Verb-এর সংখ্যা (singular/plural) দেখে subject চিহ্নিত করো। যেমন: 'There are many problems' → 'problems' = subject (plural → 'are')।"
+    },
+    {
+      "name": "How to Find Subject and Predicate (Subject ও Predicate খোঁজার নিয়ম)",
+      "banglaName": "Subject ও Predicate খোঁজার নিয়ম",
+      "definition": "Finding the subject and predicate in any sentence follows a simple step-by-step method. First, find the verb. Then ask 'Who?' or 'What?' before the verb to find the subject. Finally, everything after the subject (including the verb) is the predicate. This method works for almost all sentence types.",
+      "banglaDefinition": "যেকোনো বাক্যে subject এবং predicate খোঁজার একটি সহজ ধাপে ধাপে পদ্ধতি আছে। প্রথমে, verb খুঁজে বের করো। তারপর verb-এর আগে 'কে?' বা 'কী?' প্রশ্ন করে subject খুঁজে বের করো। শেষে, subject-এর পরে সবকিছু (verb সহ) হলো predicate। এই পদ্ধতি প্রায় সব ধরনের বাক্যের জন্য কাজ করে।",
+      "formula": "Step 1: Find the VERB (action word or state of being)\nStep 2: Ask 'WHO?' or 'WHAT?' before the verb → Answer = SUBJECT\nStep 3: Everything after the subject = PREDICATE\n\nExample:\n'The tall girl sings beautifully.'\nStep 1: Verb = 'sings'\nStep 2: Who sings? → 'The tall girl' = Subject\nStep 3: 'sings beautifully' = Predicate\n\nSpecial cases:\n- Imperative: Subject = implied 'You'\n- Question: Answer the question to find the subject",
+      "rules": [
+        "প্রথমে verb খুঁজো — এতে কাজ বা অবস্থা বোঝায়।",
+        "Verb-এর আগে 'কে?' (Who?) প্রশ্ন করো — উত্তরটি Subject।",
+        "Verb-এর আগে 'কী?' (What?) প্রশ্ন করো — উত্তরটিও Subject হতে পারে।",
+        "Subject বের করার পর বাকি সবকিছুই Predicate।",
+        "Imperative বাক্যে Subject = উহ্য 'You'।",
+        "Interrogative বাক্যে প্রশ্নের উত্তর দিয়ে Subject বের করো।"
+      ],
+      "examples": [
+        { "en": "The little girl with red shoes is dancing. (Verb: is dancing | Who is dancing? → Subject: The little girl with red shoes | Predicate: is dancing)", "bn": "লাল জুতো পরা ছোট মেয়েটি নাচছে। (Verb: নাচছে | কে নাচছে? → Subject: লাল জুতো পরা ছোট মেয়েটি | Predicate: নাচছে)" },
+        { "en": "The book on the table is mine. (Verb: is | What is mine? → Subject: The book on the table | Predicate: is mine)", "bn": "টেবিলের উপর রাখা বইটি আমার। (Verb: হলো | কী আমার? → Subject: টেবিলের উপর রাখা বইটি | Predicate: হলো আমার)" },
+        { "en": "Close the window. (Imperative → Subject: You (implied) | Predicate: Close the window)", "bn": "জানালাটি বন্ধ করো। (Imperative → Subject: তুমি (উহ্য) | Predicate: জানালাটি বন্ধ করো)" },
+        { "en": "Where are you going? (Answer: I am going to school → Subject: You | Predicate: are going where)", "bn": "তুমি কোথায় যাচ্ছ? (উত্তর: আমি স্কুলে যাচ্ছি → Subject: তুমি | Predicate: কোথায় যাচ্ছ)" },
+        { "en": "There are seven wonders in the world. (Verb: are | What are? → Subject: seven wonders | Predicate: are in the world)", "bn": "বিশ্বে সাতটি আশ্চর্য আছে। (Verb: আছে | কী আছে? → Subject: সাতটি আশ্চর্য | Predicate: বিশ্বে আছে)" },
+        { "en": "My brother and I play cricket every Sunday. (Verb: play | Who play? → Subject: My brother and I | Predicate: play cricket every Sunday)", "bn": "আমার ভাই এবং আমি প্রতি রবিবার ক্রিকেট খেলি। (Verb: খেলি | কে খেলে? → Subject: আমার ভাই এবং আমি | Predicate: প্রতি রবিবার ক্রিকেট খেলি)" }
+      ],
+      "tips": "Subject এবং Predicate বের করার অভ্যাস করো প্রতিদিন। যেকোনো বাক্য নিয়ে 'কে/কী + verb' প্রশ্ন করো। যেমন: 'The cat sleeps on the sofa.' → 'কে/কী sleeps?' → 'The cat' (Subject) → বাকি অংশ 'sleeps on the sofa' (Predicate)। ১০টি বাক্য নিয়ে এই practice করলে বিষয়টি পরিষ্কার হয়ে যাবে।"
+    },
+    {
+      "name": "Special Cases of Subject (বিশেষ Subject-এর ক্ষেত্র)",
+      "banglaName": "বিশেষ Subject-এর ক্ষেত্র",
+      "definition": "Sometimes subjects can be tricky — they may be gerunds (verbal nouns), infinitives, clauses, or even phrases. A phrase or clause can act as the subject of a sentence. Understanding these special cases helps in identifying subjects in complex sentences.",
+      "banglaDefinition": "কখনও কখনও subject জটিল হতে পারে — এগুলো gerund (ক্রিয়াবাচক বিশেষ্য), infinitive, clause, বা phrase হতে পারে। একটি phrase বা clause বাক্যের subject হিসেবে কাজ করতে পারে। এই বিশেষ ক্ষেত্রগুলো বোঝা জটিল বাক্যে subject চিহ্নিত করতে সাহায্য করে।",
+      "formula": "Gerund as Subject: Verb+ing as noun → 'Swimming is good for health.'\nInfinitive as Subject: To + Verb as noun → 'To err is human.'\nClause as Subject: Whole clause → 'What he said surprised everyone.'\nNoun Phrase as Subject: 'Playing cricket' → 'Playing cricket is fun.'\n\nFormula:\n[Gerund / Infinitive / Clause / Phrase] + Verb + ...\n        ↑ This is the SUBJECT",
+      "rules": [
+        "Gerund (V1+ing) একটি noun হিসেবে subject হতে পারে — যেমন: Running is healthy.",
+        "Infinitive (To + V1) একটি noun হিসেবে subject হতে পারে — যেমন: To study is important.",
+        "একটি সম্পূর্ণ clause (that-clause, wh-clause) subject হতে পারে — যেমন: That he passed is great.",
+        "Subject হিসেবে gerund বা infinitive ব্যবহার করলে verb singular হয় (is, was, has)।",
+        "কখনও কখনও 'It' dummy subject হিসেবে ব্যবহৃত হয় এবং আসল subject পরে আসে — যেমন: IT is easy TO LEARN ENGLISH.",
+        "Quantifier phrase (some of, many of, most of) subject হিসেবে কাজ করতে পারে — যেমন: Some of the students are late."
+      ],
+      "examples": [
+        { "en": "Swimming is a great exercise. (Subject: Swimming — gerund)", "bn": "সাঁতার কাটা একটি চমৎকার ব্যায়াম। (Subject: সাঁতার কাটা — gerund)" },
+        { "en": "To forgive is divine. (Subject: To forgive — infinitive)", "bn": "ক্ষমা করা ঈশ্বরের গুণ। (Subject: ক্ষমা করা — infinitive)" },
+        { "en": "What she said made everyone cry. (Subject: What she said — clause)", "bn": "সে যা বলল তা সবাইকে কাঁদিয়েছে। (Subject: সে যা বলল — clause)" },
+        { "en": "It is important to practice daily. (Real subject: to practice daily | Dummy subject: It)", "bn": "প্রতিদিন practice করা গুরুত্বপূর্ণ। (আসল subject: প্রতিদিন practice করা | ডামি subject: It)" },
+        { "en": "That he won the award is no surprise. (Subject: That he won the award — clause)", "bn": "সে পুরস্কার জিতেছে তা বিস্ময়কর নয়। (Subject: সে পুরস্কার জিতেছে — clause)" },
+        { "en": "Some of the milk has gone bad. (Subject: Some of the milk — quantifier phrase)", "bn": "কিছু দুধ নষ্ট হয়ে গেছে। (Subject: কিছু দুধ — quantifier phrase)" }
+      ],
+      "tips": "Gerund (V1+ing) এবং Infinitive (To+V1) যখন subject হয়, তখন verb singular হয়। যেমন: 'Reading is fun' (is — singular)। Clause যখন subject হয়, সেটিও singular verb নেয়: 'What we need is more time' (is — singular)। 'It' দিয়ে শুরু বাক্যে 'It' ডামি subject — আসল subject পরে থাকে।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "The boy and the girl is playing.",
+      "correct": "The boy and the girl are playing.",
+      "explanation": "'The boy and the girl' একটি compound subject যা 'and' দ্বারা যুক্ত। 'And' থাকলে subject plural হয়, তাই 'is' না হয়ে 'are' হবে। Compound Subject + and = plural verb।"
+    },
+    {
+      "wrong": "She go to school every day.",
+      "correct": "She goes to school every day.",
+      "explanation": "'She' একটি third person singular subject। Present tense-এ third person singular subject-এর সাথে verb-এর s/es যোগ হয়। 'She go' ভুল — সঠিক হলো 'She goes'।"
+    },
+    {
+      "wrong": "Is going to the market.",
+      "correct": "He is going to the market. OR She is going to the market.",
+      "explanation": "এটি একটি অসম্পূর্ণ বাক্য — এখানে subject নেই। 'Is going' — কে যাচ্ছে? প্রতিটি বাক্যে একটি subject থাকতে হবে। Subject ছাড়া বাক্য অসম্পূর্ণ (incomplete/fragment)। সঠিক: 'He is going to the market.'"
+    },
+    {
+      "wrong": "There is many problems in this city.",
+      "correct": "There are many problems in this city.",
+      "explanation": "'There' দিয়ে শুরু বাক্যে verb আসল subject-এর সাথে согласуется। এখানে আসল subject 'many problems' (plural)। তাই 'is' না হয়ে 'are' হবে। 'There is' singular-এর জন্য, 'There are' plural-এর জন্য।"
+    },
+    {
+      "wrong": "Either the teachers or the principal are coming.",
+      "correct": "Either the teachers or the principal is coming.",
+      "explanation": "'Either...or' দিয়ে যুক্ত compound subject-এ verb নিকটতম subject-এর সাথে согласуется। এখানে 'the principal' (singular) নিকটতম, তাই 'are' না হয়ে 'is' হবে। নিয়ম: or/nor-এর পরে যে subject, তার সাথে verb согласуется।"
+    },
+    {
+      "wrong": "Running are good for health.",
+      "correct": "Running is good for health.",
+      "explanation": "'Running' একটি gerund যা subject হিসেবে singular। Gerund subject সবসময় singular verb নেয়। তাই 'are' না হয়ে 'is' হবে। Gerund + singular verb — এই নিয়ম মনে রাখবে।"
+    },
+    {
+      "wrong": "Where is the children playing?",
+      "correct": "Where are the children playing?",
+      "explanation": "এই interrogative বাক্যে subject হলো 'the children' (plural)। Verb-কে subject-এর সাথে согласовать করতে হবে। 'The children' plural হওয়ায় 'is' না হয়ে 'are' হবে। প্রশ্নবোধক বাক্যেও subject-verb agreement মেনে চলতে হবে।"
+    },
+    {
+      "wrong": "My mother and father both is teachers.",
+      "correct": "My mother and father both are teachers.",
+      "explanation": "'My mother and father' একটি compound subject ('and' দ্বারা যুক্ত)। Compound Subject + and = plural subject → plural verb 'are'। 'Both' যোগ করলেও subject plural-ই থাকে।"
+    },
+    {
+      "wrong": "Here come the bus.",
+      "correct": "Here comes the bus.",
+      "explanation": "'Here' দিয়ে শুরু বাক্যে verb-এর পরে আসা subject-এর সাথে согласовать করতে হবে। 'The bus' (singular), তাই 'come' না হয়ে 'comes' হবে। 'Here comes' + singular, 'Here come' + plural।"
+    },
+    {
+      "wrong": "To travel are expensive.",
+      "correct": "To travel is expensive.",
+      "explanation": "'To travel' একটি infinitive যা subject হিসেবে singular। Infinitive subject সবসময় singular verb নেয়। তাই 'are' না হয়ে 'is' হবে।"
+    },
+    {
+      "wrong": "The dog with the puppies are sleeping.",
+      "correct": "The dog with the puppies is sleeping.",
+      "explanation": "এখানে subject হলো 'The dog' (singular)। 'With the puppies' একটি prepositional phrase যা subject নয়। Prepositional phrase (with, along with, together with) subject-এর সংখ্যা পরিবর্তন করে না। তাই 'are' না হয়ে 'is' হবে।"
+    },
+    {
+      "wrong": "Is the boys playing in the field?",
+      "correct": "Are the boys playing in the field?",
+      "explanation": "এই প্রশ্নবোধক বাক্যে subject হলো 'the boys' (plural)। প্রশ্নবোধক বাক্যেও subject-verb agreement বজায় রাখতে হবে। 'The boys' plural → 'is' না হয়ে 'are' হবে।"
+    }
+  ]
 }
