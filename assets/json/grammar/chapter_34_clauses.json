@@ -1,10 +1,114 @@
 {
   "chapter": 34,
   "level": "Intermediate",
-  "title": "Clauses",
+  "title": "Clauses (ক্লজ / বাক্যাংশ)",
   "icon": "account_tree",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "A clause is a group of words that contains a subject and a finite verb. Unlike a phrase, a clause can sometimes stand alone as a complete sentence. Mastering clauses is key to upgrading your spoken English from simple sentences to complex and compound sentences.",
+  "banglaDescription": "Clause (ক্লজ বা বাক্যাংশ) হলো এমন একদল শব্দ যার মধ্যে একটি নির্দিষ্ট subject (কর্তা) এবং একটি finite verb (সমাপিকা ক্রিয়া) থাকে। ফ্রেজের সাথে এর প্রধান পার্থক্য হলো, একটি ক্লজ অনেক সময় নিজেই একটি সম্পূর্ণ বাক্য হিসেবে দাঁড়াতে পারে। স্পোকেন ইংলিশে ছোট ছোট সাধারণ বাক্য থেকে জটিল ও বড় বাক্য তৈরিতে ক্লজের ব্যবহার জানা অত্যন্ত জরুরি।",
+  "topics": [
+    {
+      "name": "What is a Clause? (Clause কী?)",
+      "banglaName": "Clause কী?",
+      "definition": "A clause is a grammatical unit that consists of a subject and a verb. Every complete sentence contains at least one clause. There are two main types of clauses: Independent (Main) Clauses and Dependent (Subordinate) Clauses.",
+      "banglaDefinition": "Clause হলো বাক্যের এমন একটি অংশ যার নিজস্ব একটি subject এবং একটি verb থাকে। প্রতিটি পূর্ণাঙ্গ বাক্যে অন্তত একটি ক্লজ অবশ্যই থাকে। ক্লজ প্রধানত দুই প্রকার: Independent (স্বাধীন) Clause এবং Dependent (অধীন) Clause।",
+      "formula": "Subject + Finite Verb = Clause\n\nExample:\n- I speak English. (One subject, one verb = One clause)",
+      "rules": [
+        "একটি ক্লজে অবশ্যই একটি কাজ সম্পন্নকারী (subject) এবং একটি কাজ সম্পন্ন হওয়া (verb) থাকতে হবে।",
+        "একটি বাক্যে একাধিক ক্লজ থাকতে পারে, যা বিভিন্ন conjunction (and, but, because, although) দ্বারা যুক্ত হয়।"
+      ],
+      "examples": [
+        { "en": "She works hard. (Simple clause)", "bn": "সে কঠোর পরিশ্রম করে।" },
+        { "en": "I know that he is a good doctor. (Two clauses)", "bn": "আমি জানি যে সে একজন ভালো ডাক্তার।" },
+        { "en": "The sun rose and the fog disappeared.", "bn": "সূর্য উঠেছিল এবং কুয়াশা কেটে গিয়েছিল।" },
+        { "en": "If you study, you will pass. (Two clauses connected by 'If')", "bn": "যদি তুমি পড়াশোনা করো, তবে তুমি পাস করবে।" }
+      ],
+      "tips": "সহজ কথায়, একটি বাক্যে যতগুলো finite verb থাকবে, ঠিক ততগুলোই ক্লজ থাকবে।"
+    },
+    {
+      "name": "Independent Clause (স্বাধীন বা প্রধান বাক্যাংশ)",
+      "banglaName": "স্বাধীন বা প্রধান বাক্যাংশ",
+      "definition": "An independent clause (also called a main clause) contains a subject and a verb and expresses a complete thought. It can stand alone as a simple sentence.",
+      "banglaDefinition": "একটি Independent Clause বা প্রধান বাক্যাংশে একটি subject এবং verb থাকে এবং এটি সম্পূর্ণ নিজের অর্থ নিজে প্রকাশ করতে পারে। নিজের অর্থ প্রকাশের জন্য এটি অন্য কোনো বাক্যাংশের ওপর নির্ভর করে না এবং এটি নিজেই একটি পূর্ণাঙ্গ বাক্য হতে পারে।",
+      "formula": "Subject + Verb + Object/Extension = Complete Thought (Independent Clause)",
+      "rules": [
+        "যেকোনো সাধারণ বাক্য (Simple Sentence) মূলত একটি Independent Clause।",
+        "দুটি Independent Clause-কে and, but, or, so দিয়ে যুক্ত করে Compound Sentence তৈরি করা যায়।"
+      ],
+      "examples": [
+        { "en": "I love drinking coffee in the morning.", "bn": "আমি সকালে কফি খেতে পছন্দ করি।" },
+        { "en": "He went to the market, but he forgot to buy milk.", "bn": "সে বাজারে গিয়েছিল, কিন্তু সে দুধ কিনতে ভুলে গিয়েছিল।" },
+        { "en": "The train arrived on time.", "bn": "ট্রেনটি সঠিক সময়ে পৌঁছেছিল।" },
+        { "en": "They won the match easily.", "bn": "তারা সহজেই ম্যাচটিতে জিতে গিয়েছিল।" }
+      ],
+      "tips": "স্পোকেন ইংলিশের শুরুতে আমরা সাধারণত এই Independent Clause বা ছোট ছোট স্বাধীন বাক্য দিয়েই মনের ভাব প্রকাশ করা শুরু করি।"
+    },
+    {
+      "name": "Dependent Clause (অধীন বা অপ্রধান বাক্যাংশ)",
+      "banglaName": "অধীন বা অপ্রধান বাক্যাংশ",
+      "definition": "A dependent clause (or subordinate clause) contains a subject and a verb but does not express a complete thought. It starts with subordinating conjunctions (because, although, if, since, when) and must be attached to an independent clause to make sense.",
+      "banglaDefinition": "একটি Dependent Clause-এ subject এবং verb থাকা সত্ত্বেও এটি সম্পূর্ণ মনের ভাব প্রকাশ করতে পারে না। এটি সাধারণত subordinating conjunction (যেমন: because, although, if, since, when) দিয়ে শুরু হয় এবং অর্থ সম্পূর্ণ করার জন্য প্রধান ক্লজের ওপর নির্ভর করে।",
+      "formula": "Subordinating Conjunction + Subject + Verb = Incomplete Thought (Dependent Clause)",
+      "rules": [
+        "Dependent Clause কখনো একা একটি বাক্য হিসেবে বসতে পারে না।",
+        "যদি বাক্যের শুরুতে Dependent Clause থাকে, তবে তার শেষে একটি কমা (,) বসিয়ে তারপর Independent Clause লিখতে হয়।"
+      ],
+      "examples": [
+        { "en": "Because I was tired, I went to bed early.", "bn": "যেহেতু আমি ক্লান্ত ছিলাম, আমি তাড়াতাড়ি ঘুমাতে গিয়েছিলাম।" },
+        { "en": "Although it was raining, they played football.", "bn": "যদিও বৃষ্টি হচ্ছিল, তারা ফুটবল খেলেছিল।" },
+        { "en": "If you help me, I will reward you.", "bn": "যদি তুমি আমাকে সাহায্য করো, তবে আমি তোমাকে পুরস্কৃত করব।" },
+        { "en": "I will call you when I arrive.", "bn": "আমি পৌঁছানোর পর তোমাকে কল করব।" }
+      ],
+      "tips": "কথা বলার সময় কারণ (because), শর্ত (if) বা সময় (when) প্রকাশ করতে আমরা অজান্তেই এই dependent clause গুলো ব্যবহার করি।"
+    },
+    {
+      "name": "Relative Clauses in Daily English (দৈনন্দিন কথোপকথনে রিলেটিভ ক্লজ)",
+      "banglaName": "দৈনন্দিন কথোপকথনে রিলেটিভ ক্লজ",
+      "definition": "A relative clause is a type of dependent clause that starts with a relative pronoun (who, which, that, whose, where) and describes a noun that came before it. It helps you add detail about people or things without starting a new sentence.",
+      "banglaDefinition": "Relative Clause হলো এমন এক ধরণের অধীন ক্লজ যা relative pronoun (যেমন: who, which, that, whose, where) দিয়ে শুরু হয় এবং তার পূর্বে থাকা কোনো noun সম্পর্কে অতিরিক্ত তথ্য দেয়। নতুন কোনো বাক্য শুরু না করেই কোনো ব্যক্তি বা বস্তু সম্পর্কে বিস্তারিত বলতে এটি ব্যবহৃত হয়।",
+      "formula": "Noun + [who/which/that + Subject + Verb]",
+      "rules": [
+        "ব্যক্তির ক্ষেত্রে 'who', বস্তুর বা প্রাণীর ক্ষেত্রে 'which' বা 'that', এবং স্থানের ক্ষেত্রে 'where' ব্যবহার করে এই ক্লজ গঠিত হয়।",
+        "এটি বাক্যের মাঝখানে বা শেষে বসে আগের noun-টিকে মডিফাই করে।"
+      ],
+      "examples": [
+        { "en": "The man who called you is my uncle.", "bn": "যে লোকটি তোমাকে ফোন করেছিল, সে আমার চাচা।" },
+        { "en": "This is the phone that I bought yesterday.", "bn": "এটি সেই ফোন যা আমি গতকাল কিনেছিলাম।" },
+        { "en": "I visited the school where I studied as a child.", "bn": "আমি সেই স্কুলটিতে গিয়েছিলাম যেখানে আমি ছোটবেলায় পড়াশোনা করেছি।" },
+        { "en": "She is the teacher whose classes I enjoy.", "bn": "তিনি সেই শিক্ষিকা যাঁর ক্লাসগুলো আমি উপভোগ করি।" }
+      ],
+      "tips": "কারো পরিচয় বা কোনো জিনিসের বিবরণ দিতে 'who' বা 'that' যুক্ত রিলেটিভ ক্লজ ব্যবহার করুন। এটি আপনার ইংরেজিকে অনেক চমৎকার ও প্রাঞ্জল করবে।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Because I was sick.",
+      "correct": "Because I was sick, I did not go to work.",
+      "explanation": "'Because I was sick' একটি dependent clause। এটি একা কোনো বাক্য হতে পারে না, এর সাথে একটি independent clause যোগ করা জরুরি।"
+    },
+    {
+      "wrong": "The girl which stood first is my sister.",
+      "correct": "The girl who stood first is my sister.",
+      "explanation": "ব্যক্তির ক্ষেত্রে relative pronoun 'who' বসে, 'which' বসে বস্তু বা প্রাণীর ক্ষেত্রে।"
+    },
+    {
+      "wrong": "Although he is rich, but he is unhappy.",
+      "correct": "Although he is rich, he is unhappy. OR He is rich, but he is unhappy.",
+      "explanation": "ইংরেজিতে 'Although' এবং 'but' দুটি বিপরীতমুখী conjunction একই বাক্যে একসাথে ব্যবহৃত হয় না। যেকোনো একটি ব্যবহার করতে হবে।"
+    },
+    {
+      "wrong": "If you will come, I will go.",
+      "correct": "If you come, I will go.",
+      "explanation": "শর্তযুক্ত বাক্যে (Conditional Sentence) 'If' ক্লজটি সাধারণত present tense-এ থাকে, future tense (will) হয় না।"
+    },
+    {
+      "wrong": "I like the book who you gave me.",
+      "correct": "I like the book which you gave me. OR I like the book that you gave me.",
+      "explanation": "বই একটি বস্তু, তাই এর জন্য 'who' নয়, 'which' বা 'that' ব্যবহার করতে হবে।"
+    },
+    {
+      "wrong": "This is the restaurant where we ate there.",
+      "correct": "This is the restaurant where we ate.",
+      "explanation": "'Where' নিজেই স্থানটি নির্দেশ করছে, তাই ক্লজের শেষে পুনরায় 'there' ব্যবহার করা বাহুল্য বা ভুল।"
+    }
+  ]
 }

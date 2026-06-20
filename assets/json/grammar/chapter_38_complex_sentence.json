@@ -1,10 +1,91 @@
 {
   "chapter": 38,
   "level": "Intermediate",
-  "title": "Complex Sentence",
+  "title": "Complex Sentence (জটিল বাক্য)",
   "icon": "looks_3",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "A complex sentence combines one independent clause (a complete thought) with at least one dependent clause (an incomplete thought) using subordinating conjunctions like 'because', 'although', 'if', or 'when'. Mastering complex sentences is essential for explaining causes, relationships, conditions, and time in spoken English.",
+  "banglaDescription": "Complex Sentence (জটিল বাক্য) হলো এমন এক ধরনের বাক্য যা একটি independent clause (স্বাধীন বাক্যাংশ) এবং অন্তত একটি dependent clause (অধীন বা অপ্রধান বাক্যাংশ)-কে subordinating conjunction (যেমন: because, although, if, when) দিয়ে যুক্ত করে তৈরি করা হয়। ইংরেজিতে কোনো কাজের কারণ, শর্ত, সময় বা পারস্পরিক সম্পর্ক বিস্তারিতভাবে ব্যাখ্যা করার জন্য কমপ্লেক্স সেন্টেন্স জানা অত্যন্ত জরুরি।",
+  "topics": [
+    {
+      "name": "What is a Complex Sentence? (Complex Sentence কী?)",
+      "banglaName": "Complex Sentence কী?",
+      "definition": "A complex sentence consists of one independent clause and one or more dependent clauses. The dependent clause cannot stand on its own as a sentence; it relies on the independent clause to complete its meaning. They are linked by a subordinating conjunction.",
+      "banglaDefinition": "Complex Sentence হলো এমন একটি বাক্য যা একটি প্রধান স্বাধীন বাক্য এবং এক বা একাধিক অপ্রধান বা অধীন বাক্যাংশের সমন্বয়ে গঠিত হয়। অধীন বাক্যাংশটি একা একা কোনো অর্থ প্রকাশ করতে পারে না, এটি তার সম্পূর্ণ অর্থের জন্য প্রধান বাক্যের ওপর নির্ভর করে। এরা একটি subordinating conjunction দ্বারা পরস্পর যুক্ত থাকে।",
+      "formula": "- Pattern A: Subordinating Conjunction + Dependent Clause, + Independent Clause\n- Pattern B: Independent Clause + Subordinating Conjunction + Dependent Clause",
+      "rules": [
+        "যদি অধীন ক্লজটি (dependent clause) বাক্যের শুরুতে বসে, তবে তার পরে একটি কমা (,) দিতে হবে (যেমন: Pattern A)।",
+        "যদি স্বাধীন ক্লজটি (independent clause) বাক্যের শুরুতে বসে, তবে সাধারণত মাঝখানে কোনো কমা বসে না (যেমন: Pattern B)।"
+      ],
+      "examples": [
+        { "en": "When the bell rang, the students left. (Pattern A with comma)", "bn": "যখন ঘণ্টাটি বেজেছিল, ছাত্ররা চলে গিয়েছিল।" },
+        { "en": "The students left when the bell rang. (Pattern B without comma)", "bn": "ছাত্ররা চলে গিয়েছিল যখন ঘণ্টাটি বেজেছিল।" },
+        { "en": "I couldn't attend the meeting because I was stuck in traffic.", "bn": "আমি মিটিংয়ে উপস্থিত হতে পারিনি কারণ আমি যানজটে আটকে ছিলাম।" },
+        { "en": "Although they lost the game, they played exceptionally well.", "bn": "যদিও তারা খেলায় হেরে গিয়েছিল, তারা অসাধারণ খেলেছিল।" }
+      ],
+      "tips": "কথা বলার সময় আপনি যেকোনো প্যাটার্ন ব্যবহার করতে পারেন। তবে মনে রাখবেন, শুরুতেই 'If' বা 'When' বা 'Because' বললে বাক্যের মাঝখানে একটু থামতে (pause) হয়, যা লেখার সময় কমা (,) হিসেবে বসে।"
+    },
+    {
+      "name": "Common Subordinating Conjunctions (সাধারণ সাবঅর্ডিনেটিং কনজাংশনসমূহ)",
+      "banglaName": "সাধারণ সাবঅর্ডিনেটিং কনজাংশনসমূহ",
+      "definition": "Subordinating conjunctions show the relationship between the clauses. Common types include: Time (when, before, after, while, since, until), Cause/Effect (because, since, as), Contrast (although, even though, though), and Condition (if, unless).",
+      "banglaDefinition": "Subordinating conjunction-গুলো বাক্যের দুটি অংশের মধ্যে সম্পর্ক নির্ধারণ করে। এগুলো প্রধানত কয়েক ধরণের হয়: সময় নির্দেশক (when, before, after, while, since, until), কারণ নির্দেশক (because, since, as), বৈপরীত্য বা দ্বিমত নির্দেশক (although, even though) এবং শর্ত নির্দেশক (if, unless)।",
+      "formula": "Dependent Clause (starts with subordinating conjunction) + Independent Clause",
+      "rules": [
+        "সময় বা কারণ ব্যাখ্যা করতে 'since' বা 'as' ব্যবহার করা যায়।",
+        "'Unless' শব্দের অর্থ 'যদি না'। এটি নেতিবাচক শর্ত প্রকাশে বসে (Unless = If not)।"
+      ],
+      "examples": [
+        { "en": "As I was busy, I couldn't call you. (Cause)", "bn": "যেহেতু আমি ব্যস্ত ছিলাম, তাই আমি তোমাকে কল করতে পারিনি।" },
+        { "en": "I will wait here until you return. (Time)", "bn": "তুমি ফিরে না আসা পর্যন্ত আমি এখানে অপেক্ষা করব।" },
+        { "en": "Even though she was tired, she helped me. (Contrast)", "bn": "যদিও সে ক্লান্ত ছিল, তবুও সে আমাকে সাহায্য করেছিল।" },
+        { "en": "You will miss the train unless you walk fast. (Condition)", "bn": "যদি না তুমি দ্রুত হাঁটো, তবে তুমি ট্রেনটি মিস করবে।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে 'Although'-এর চেয়ে 'Even though' বেশি ব্যবহৃত হয়, কারণ এটি বৈপরীত্যের ওপর একটু বেশি জোর দেয় এবং শুনতে চমৎকার শোনায়।"
+    },
+    {
+      "name": "Relative Clauses as Complex Sentences (রিলেটিভ ক্লজ দিয়ে জটিল বাক্য)",
+      "banglaName": "রিলেটিভ ক্লজ দিয়ে জটিল বাক্য",
+      "definition": "We also create complex sentences using relative pronouns (who, which, that, whose, whom) to form relative clauses. These clauses describe a noun in the main clause, making our speech more descriptive.",
+      "banglaDefinition": "আমরা relative pronoun (যেমন: who, which, that, whose) ব্যবহার করে রিলেটিভ ক্লজের মাধ্যমেও কমপ্লেক্স সেন্টেন্স তৈরি করতে পারি। এই ক্লজগুলো প্রধান বাক্যের কোনো নির্দিষ্ট noun বা pronoun সম্পর্কে বিস্তারিত তথ্য প্রদান করে বাক্যকে তথ্যবহুল করে তোলে।",
+      "formula": "Subject + [Relative Clause starting with Who/Which/That] + Verb + Object",
+      "rules": [
+        "ব্যক্তির ক্ষেত্রে 'who' এবং বস্তু বা বিষয়ের ক্ষেত্রে 'which' বা 'that' বসে।",
+        "এই ক্লজটি সাধারণত যে নাউনটিকে বর্ণনা করছে, তার ঠিক পরেই বসে।"
+      ],
+      "examples": [
+        { "en": "The book that you recommended is really good.", "bn": "যে বইটি তুমি সুপারিশ করেছিলে, সেটি সত্যিই খুব ভালো।" },
+        { "en": "I know the doctor who lives in this building.", "bn": "আমি সেই ডাক্তারকে চিনি যিনি এই বিল্ডিংয়ে থাকেন।" },
+        { "en": "The mobile which I lost yesterday was very expensive.", "bn": "আমি গতকাল যে মোবাইলটি হারিয়েছি, সেটি খুব দামি ছিল।" },
+        { "en": "This is the city where I was born.", "bn": "এটি সেই শহর যেখানে আমি জন্মগ্রহণ করেছিলাম।" }
+      ],
+      "tips": "কারো সম্পর্কে বিস্তারিত বলতে নতুন বাক্য শুরু না করে 'who' বা 'that' দিয়ে বাক্যটি বড় করুন। যেমন: 'This is my friend who helped me.'"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Because I had no money, so I couldn't buy it.",
+      "correct": "Because I had no money, I couldn't buy it. OR I had no money, so I couldn't buy it.",
+      "explanation": "কমপ্লেক্স সেন্টেন্সে 'Because' ব্যবহার করলে পরবর্তীতে আর 'so' ব্যবহার করা যাবে না। একই বাক্যে দুটি সংযোগকারী বসালে বাক্যটি ভুল হয়ে যায়।"
+    },
+    {
+      "wrong": "Although it was raining, but we enjoyed the picnic.",
+      "correct": "Although it was raining, we enjoyed the picnic. OR It was raining, but we enjoyed the picnic.",
+      "explanation": "একই বাক্যে 'Although' এবং 'but' একসাথে বসানো যাবে না। 'Although' থাকলে কেবল কমা (,) বসবে।"
+    },
+    {
+      "wrong": "If you will work hard, you will succeed.",
+      "correct": "If you work hard, you will succeed.",
+      "explanation": "শর্তযুক্ত জটিল বাক্যে (If Clause) সাধারণত future tense (will) বসে না। এটি present simple tense-এ হবে।"
+    },
+    {
+      "wrong": "I cannot help you unless you do not tell me the truth.",
+      "correct": "I cannot help you unless you tell me the truth. OR I cannot help you if you do not tell me the truth.",
+      "explanation": "'Unless' শব্দের অর্থই হলো 'যদি না' (negative)। তাই 'unless'-এর পরের অংশে পুনরায় 'not' ব্যবহার করা যাবে না (Double negative ভুল)।"
+    },
+    {
+      "wrong": "The movie was so interesting when I watched it.",
+      "correct": "The movie was very interesting when I watched it.",
+      "explanation": "'So' এবং 'when' এর ব্যবহারে সামঞ্জস্য রাখা জরুরি। সাধারণ বর্ণনায় তীব্রতা প্রকাশে 'very' ব্যবহার করা অধিকতর সঠিক।"
+    }
+  ]
 }

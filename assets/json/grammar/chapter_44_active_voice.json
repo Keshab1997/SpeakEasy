@@ -1,10 +1,91 @@
 {
   "chapter": 44,
   "level": "Intermediate",
-  "title": "Active Voice",
+  "title": "Active Voice (অ্যাক্টিভ ভয়েস)",
   "icon": "record_voice_over",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Active Voice is a sentence structure where the subject performs the action of the verb directly. In spoken English, Active Voice is highly preferred because it is direct, energetic, clear, and much easier to understand than Passive Voice.",
+  "banglaDescription": "Active Voice (কর্তৃবাচ্য) হলো এমন এক ধরণের বাক্য গঠন যেখানে বাক্যের subject বা কর্তা নিজেই সরাসরি কাজটি সম্পন্ন করে। দৈনন্দিন কথোপকথনে বা স্পোকেন ইংলিশে অ্যাক্টিভ ভয়েসের গুরুত্ব সবচেয়ে বেশি, কারণ এটি সরাসরি, জোরালো, পরিষ্কার এবং প্যাসিভ ভয়েসের চেয়ে অনেক সহজে মনের ভাব প্রকাশ করে।",
+  "topics": [
+    {
+      "name": "What is Active Voice? (Active Voice কী?)",
+      "banglaName": "Active Voice কী?",
+      "definition": "Active Voice is when the subject of the sentence is the doer of the action. The sentence structure clearly shows 'who' did 'what'. It is the most natural way to organize your thoughts when speaking.",
+      "banglaDefinition": "যখন কোনো বাক্যের subject বা কর্তা নিজেই সক্রিয়ভাবে কাজটি করে, তখন তাকে Active Voice বলে। এই ধরণের বাক্যে কে কাজ করছে এবং কী কাজ করছে তা একদম পরিষ্কারভাবে বোঝা যায়।",
+      "formula": "Subject (Doer) + Verb (Action) + Object (Receiver)\n\nExample:\n- Rupa baked a cake. ('Rupa' is doing the action directly)",
+      "rules": [
+        "অ্যাক্টিভ ভয়েসে কর্তা সর্বদা বাক্যের শুরুতে অবস্থান করে ও বেশি গুরুত্ব পায়।",
+        "কথা বলার সময় প্রায় ৮০%-৯০% ক্ষেত্রে আমরা এই অ্যাক্টিভ ভয়েস গঠনটিই ব্যবহার করি।"
+      ],
+      "examples": [
+        { "en": "I watch movies. (Present Simple)", "bn": "আমি সিনেমা দেখি।" },
+        { "en": "He painted the wall. (Past Simple)", "bn": "সে দেওয়ালে রঙ করেছিল।" },
+        { "en": "They will build a house. (Future Simple)", "bn": "তারা একটি বাড়ি তৈরি করবে।" },
+        { "en": "She is making coffee. (Present Continuous)", "bn": "সে কফি তৈরি করছে।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে অনাবশ্যক জটিলতা এড়াতে প্যাসিভ ভয়েস (যেমন: 'Coffee is being made by her') পরিহার করে সবসময় অ্যাক্টিভ ভয়েস (যেমন: 'She is making coffee') ব্যবহার করুন।"
+    },
+    {
+      "name": "Active Voice across Tenses (বিভিন্ন টেন্সে Active Voice)",
+      "banglaName": "বিভিন্ন টেন্সে Active Voice",
+      "definition": "The active voice changes form depending on the tense of the sentence. Whether talking about the past, present, or future, the subject remains the main focal point of the active sentence.",
+      "banglaDefinition": "টেন্সের ওপর ভিত্তি করে অ্যাক্টিভ ভয়েসের verb-এর রূপ পরিবর্তিত হয়। বর্তমান, অতীত কিংবা ভবিষ্যৎ—যেকোনো সময়ের কথাই বলা হোক না কেন, অ্যাক্টিভ বাক্যে সাবজেক্ট বা কর্তাই সবসময় বাক্যের আকর্ষণের কেন্দ্রবিন্দু থাকে।",
+      "formula": "- Present: Subject + V1 (+ s/es) + Object\n- Past: Subject + V2 + Object\n- Future: Subject + will + V1 + Object",
+      "rules": [
+        "Continuous টেন্সে subject অনুযায়ী am/is/are/was/were-এর পর verb-এর সাথে '-ing' যুক্ত হয়।",
+        "Perfect টেন্সে subject অনুযায়ী have/has/had-এর পর verb-এর past participle (V3) রূপ বসে।"
+      ],
+      "examples": [
+        { "en": "We eat rice every day. (Habit)", "bn": "আমরা প্রতিদিন ভাত খাই।" },
+        { "en": "I have completed my homework. (Recent action)", "bn": "আমি আমার বাড়ির কাজ শেষ করেছি।" },
+        { "en": "She was singing a song. (Past continuous)", "bn": "সে একটি গান গাইছিল।" },
+        { "en": "They had left before I arrived. (Past perfect)", "bn": "আমি পৌঁছানোর আগেই তারা চলে গিয়েছিল।" }
+      ],
+      "tips": "কথা বলার সময় টেন্সের গঠন ঠিক রাখা অত্যন্ত জরুরি। ভুল এড়াতে সাবজেক্টের সাথে সাহায্যকারী ভার্বের সঠিক মেলবন্ধন অনুশীলন করুন।"
+    },
+    {
+      "name": "Transforming Passive to Active for Natural Speaking (প্যাসিভ থেকে অ্যাক্টিভে রূপান্তর)",
+      "banglaName": "প্যাসিভ থেকে অ্যাক্টিভে রূপান্তর",
+      "definition": "Sometimes we accidentally use passive voice, which sounds formal or robotic. Converting passive voice ('The ball was kicked by me') to active voice ('I kicked the ball') makes your English sound much more natural, friendly, and native.",
+      "banglaDefinition": "কখনো কখনো আমরা না জেনেই অতিরিক্ত প্যাসিভ ভয়েস ব্যবহার করে ফেলি, যা আমাদের কথাকে অতিরিক্ত প্রাতিষ্ঠানিক বা যান্ত্রিক করে তোলে। প্যাসিভ বাক্যকে অ্যাক্টিভ বাক্যে রূপান্তর করলে কথাবার্তা অনেক বেশি স্বাভাবিক, বন্ধুত্বপূর্ণ ও চমৎকার শোনায়।",
+      "formula": "- Passive: Object + be verb + V3 + by + Subject\n- Active: Subject + Verb + Object",
+      "rules": [
+        "প্যাসিভ বাক্যের শেষের 'by'-এর পরের অংশটিকে অ্যাক্টিভ বাক্যের শুরুতে Subject হিসেবে নিয়ে আসতে হবে।",
+        "Be verb-টি বাদ দিয়ে মূল verb-টিকে টেন্স অনুযায়ী রূপান্তর করতে হবে।"
+      ],
+      "examples": [
+        { "en": "A song was sung by him. -> He sang a song.", "bn": "তার দ্বারা একটি গান গাওয়া হয়েছিল। -> সে একটি গান গেয়েছিল।" },
+        { "en": "The letter was written by her. -> She wrote the letter.", "bn": "চিঠিটি তার দ্বারা লেখা হয়েছিল। -> সে চিঠিটি লিখেছিল।" },
+        { "en": "English is spoken by them. -> They speak English.", "bn": "তাদের দ্বারা ইংরেজি বলা হয়। -> তারা ইংরেজি বলে।" },
+        { "en": "The car will be driven by me. -> I will drive the car.", "bn": "গাড়িটি আমার দ্বারা চালানো হবে। -> আমি গাড়িটি চালাব।" }
+      ],
+      "tips": "বাস্তব কথোপকথনে 'This work was done by me' বলা পরিহার করুন। এর পরিবর্তে বলুন 'I did this work'। এটি অনেক বেশি সাবলীল ও স্পষ্ট।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "The coffee is drinking by me.",
+      "correct": "I am drinking coffee.",
+      "explanation": "কফি নিজে নিজেকে পান করতে পারে না। তাই কফিকে সাবজেক্ট বানিয়ে অ্যাক্টিভ বাক্য গঠন করা ব্যাকরণগতভাবে ভুল।"
+    },
+    {
+      "wrong": "He is sing a song.",
+      "correct": "He is singing a song. OR He sings a song.",
+      "explanation": "Active Voice-এ 'am/is/are'-এর পর সরাসরি verb-এর বেস ফর্ম বসে না। কাজ চলমান বোঝাতে '-ing' যোগ করতে হবে।"
+    },
+    {
+      "wrong": "Yesterday, a mistake made by him.",
+      "correct": "Yesterday, he made a mistake.",
+      "explanation": "অ্যাক্টিভ ভয়েসে সরাসরি কর্তাকে দিয়ে কাজ করাতে হবে। 'made by him' এটি প্যাসিভ গঠন প্রকাশ করে, যা এখানে ভুল।"
+    },
+    {
+      "wrong": "They has completed the project.",
+      "correct": "They have completed the project.",
+      "explanation": "Subject যদি plural (They) হয়, তবে সাহায্যকারী ভার্ব হিসেবে 'have' বসবে, 'has' নয়।"
+    },
+    {
+      "wrong": "She was cooked dinner.",
+      "correct": "She cooked dinner. OR She was cooking dinner.",
+      "explanation": "Active Voice-এ 'She was cooked' এর অর্থ দাঁড়ায় 'তাঁকে রান্না করা হয়েছিল' (প্যাসিভ)। তাই অ্যাক্টিভ করতে 'She cooked' অথবা 'She was cooking' বলতে হবে।"
+    }
+  ]
 }

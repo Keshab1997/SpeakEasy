@@ -1,10 +1,124 @@
 {
   "chapter": 31,
   "level": "Intermediate",
-  "title": "Gerund",
+  "title": "Gerund (জেরান্ড)",
   "icon": "play_arrow",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "A gerund is a verb form ending in '-ing' that functions as a noun in a sentence (e.g., 'Reading is fun'). In spoken English, gerunds are incredibly useful for talking about activities, hobbies, likes, dislikes, and daily habits.",
+  "banglaDescription": "Gerund হলো verb-এর সাথে '-ing' যুক্ত একটি রূপ যা বাক্যে মূলত noun (বিশেষ্য) হিসেবে কাজ করে (যেমন: 'Reading is fun')। দৈনন্দিন কথাবার্তায় বিভিন্ন কর্মকাণ্ড, শখ, পছন্দ-অপছন্দ এবং নিয়মিত অভ্যাসের কথা বলার জন্য জেরান্ডের ব্যবহার জানা অত্যন্ত গুরুত্বপূর্ণ।",
+  "topics": [
+    {
+      "name": "What is a Gerund? (Gerund কী?)",
+      "banglaName": "Gerund কী?",
+      "definition": "A gerund is a noun formed from a verb by adding '-ing'. It looks like a continuous verb but functions as a noun, meaning it represents an action as a concept or activity rather than an ongoing action.",
+      "banglaDefinition": "Verb-এর শেষে '-ing' যুক্ত হয়ে যখন তা একই সাথে verb ও noun-এর কাজ সম্পন্ন করে, তখন তাকে Gerund বলে। দেখতে এটি চলমান কাজের মতো মনে হলেও এটি মূলত একটি ধারণাগত কাজ বা বিষয়ের নাম প্রকাশ করে।",
+      "formula": "Verb + ing = Gerund (Acts as a Noun)\n\nExample:\n- Swimming is a great exercise. (Here, 'Swimming' is the name of the activity)",
+      "rules": [
+        "Gerund একটি সাধারণ noun-এর মতোই কাজ করে। এটি বাক্যের subject বা object হিসেবে বসতে পারে।",
+        "বাক্যে কাজ চলমান বোঝাতে gerund বসে না, বরং কাজের নাম বোঝাতে ব্যবহৃত হয়।"
+      ],
+      "examples": [
+        { "en": "Smoking is harmful to health.", "bn": "ধূমপান স্বাস্থ্যের জন্য ক্ষতিকর।" },
+        { "en": "I like reading novels.", "bn": "আমি উপন্যাস পড়তে পছন্দ করি।" },
+        { "en": "Teaching is his profession.", "bn": "শিক্ষকতা তার পেশা।" },
+        { "en": "She enjoys dancing.", "bn": "সে নাচ উপভোগ করে।" }
+      ],
+      "tips": "সহজে মনে রাখুন: বাংলা অনুবাদে যখন কাজের নামের শেষে 'আ' বা 'ন' প্রত্যয় আসে (যেমন: পড়া, লেখা, ঘুমানো, দৌড়ানো), তখন ইংরেজিতে Gerund ব্যবহৃত হয়।"
+    },
+    {
+      "name": "Gerund as Subject and Object (সাবজেক্ট ও অবজেক্ট হিসেবে Gerund)",
+      "banglaName": "সাবজেক্ট ও অবজেক্ট হিসেবে Gerund",
+      "definition": "Just like any other noun, a gerund can be the subject (the performer of the action) or the object (the receiver of the action) of a sentence.",
+      "banglaDefinition": "অন্যান্য সাধারণ noun-এর মতোই, একটি gerund কোনো বাক্যের শুরুতে বসে subject হিসেবে কাজ করতে পারে, আবার verb-এর পরে বসে object হিসেবেও ব্যবহৃত হতে পারে।",
+      "formula": "- As Subject: Gerund + Verb + Object/Extension\n- As Object: Subject + Verb + Gerund",
+      "rules": [
+        "Gerund যখন subject হিসেবে বসে, তখন তার পরবর্তী verb-টি সাধারণত Singular (একবচন) হয়।",
+        "পছন্দ-অপছন্দ বোঝাতে সাধারণ verb-এর (like, love, hate, enjoy) পরে object হিসেবে gerund খুব বেশি ব্যবহৃত হয়।"
+      ],
+      "examples": [
+        { "en": "Learning English is fun. (Subject)", "bn": "ইংরেজি শেখা মজাদার।" },
+        { "en": "Walking keeps you healthy. (Subject)", "bn": "হাঁটা আপনাকে সুস্থ রাখে।" },
+        { "en": "I love cooking for my family. (Object)", "bn": "আমি আমার পরিবারের জন্য রান্না করতে পছন্দ করি।" },
+        { "en": "He hates waiting in lines. (Object)", "bn": "সে লাইনে দাঁড়িয়ে অপেক্ষা করা অপছন্দ করে।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে নিজের কোনো শখ বা ভালো লাগার কথা বলতে 'I like + Gerund' বা 'I enjoy + Gerund' প্যাটার্নটি ব্যবহার করুন (যেমন: I enjoy photography)।"
+    },
+    {
+      "name": "Gerund after Prepositions (Preposition-এর পর Gerund)",
+      "banglaName": "Preposition-এর পর Gerund",
+      "definition": "Whenever a verb is used directly after a preposition (like in, on, of, for, about, after, before, without, by), it must be in its gerund form (verb + ing).",
+      "banglaDefinition": "বাক্যে যেকোনো preposition (যেমন: in, on, of, for, about, after, before, without, by) এর ঠিক পরে যদি কোনো verb বসাতে হয়, তবে সেই verb-টির সাথে বাধ্যতামূলকভাবে '-ing' যুক্ত করে gerund করতে হয়।",
+      "formula": "Preposition + Gerund (Verb + ing)\n\nExample:\n- I am good at drawing.",
+      "rules": [
+        "একমাত্র 'to' preposition বাদে অন্য সব preposition-এর পর verb বসলে তার সাথে 'ing' যুক্ত হয় (to-এর ক্ষেত্রে সাধারণত V1 বসে, তবে কিছু ব্যতিক্রম আছে)।",
+        "ধন্যবাদ বা কৃতজ্ঞতা প্রকাশের সময় 'for'-এর পর জেরান্ড বসে।"
+      ],
+      "examples": [
+        { "en": "Thank you for helping me.", "bn": "আমাকে সাহায্য করার জন্য আপনাকে ধন্যবাদ।" },
+        { "en": "She left without saying goodbye.", "bn": "সে বিদায় না জানিয়েই চলে গেল।" },
+        { "en": "I am interested in joining the club.", "bn": "আমি ক্লাবে যোগ দিতে আগ্রহী।" },
+        { "en": "He went home after finishing the meeting.", "bn": "সে মিটিং শেষ করার পর বাড়ি চলে গেল।" }
+      ],
+      "tips": "কথোপকথনে ভুল এড়াতে মনে রাখুন, 'for', 'after', 'before' বা 'without' বলার পর কোনো কাজের কথা বলতে গেলেই সাথে সাথে ভার্বটির সাথে '-ing' যোগ করে দেবেন।"
+    },
+    {
+      "name": "Verbs Followed by Gerund (Gerund গ্রহণকারী সাধারণ ভার্ব)",
+      "banglaName": "Gerund গ্রহণকারী সাধারণ ভার্ব",
+      "definition": "There are some specific verbs that are always followed by a gerund instead of an infinitive. Common examples include: enjoy, mind, avoid, stop, finish, and practice.",
+      "banglaDefinition": "ইংরেজিতে এমন কিছু নির্দিষ্ট verb রয়েছে যেগুলোর পরে অন্য কোনো কাজ যুক্ত করতে হলে 'to + V1' না বসিয়ে সরাসরি gerund (V+ing) ব্যবহার করতে হয়। যেমন: enjoy, mind, avoid, stop, finish এবং practice।",
+      "formula": "Subject + [Specific Verb] + Gerund (Verb + ing)",
+      "rules": [
+        "'Would you mind' দিয়ে কাউকে ভদ্রভাবে অনুরোধ করার সময় এর পরের verb-টির সাথে সর্বদা '-ing' যুক্ত হয়।",
+        "এই verb গুলোর পরে 'to + verb' বসানো ব্যাকরণগতভাবে ভুল।"
+      ],
+      "examples": [
+        { "en": "Would you mind closing the door?", "bn": "আপনি কি দয়া করে দরজাটি বন্ধ করবেন?" },
+        { "en": "You should avoid eating junk food.", "bn": "তোমার অস্বাস্থ্যকর খাবার খাওয়া এড়িয়ে চলা উচিত।" },
+        { "en": "Please stop making noise.", "bn": "দয়া করে গোলমাল করা বন্ধ করো।" },
+        { "en": "We practiced speaking English together.", "bn": "আমরা একসাথে ইংরেজি বলা অনুশীলন করেছিলাম।" }
+      ],
+      "tips": "কাউকে কোনো অনুরোধ করার জন্য 'Would you mind...' এর ব্যবহার স্পোকেন ইংলিশে অত্যন্ত জনপ্রিয় এবং মার্জিত। যেমন: 'Would you mind helping me?' (আমাকে একটু সাহায্য করবেন?)"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I am good at speak English.",
+      "correct": "I am good at speaking English.",
+      "explanation": "Preposition 'at'-এর পরে verb আসলে তার সাথে '-ing' যুক্ত করে gerund করতে হয়।"
+    },
+    {
+      "wrong": "Would you mind to open the window?",
+      "correct": "Would you mind opening the window?",
+      "explanation": "'Would you mind'-এর পর ইনফিনিটিভ (to open) বসে না, সর্বদা জেরান্ড (opening) বসে।"
+    },
+    {
+      "wrong": "I look forward to meet you.",
+      "correct": "I look forward to meeting you.",
+      "explanation": "'Look forward to' একটি বিশেষ ফ্রেজ, যেখানে 'to' থাকার পরেও এর পরে ইনফিনিটিভ না বসে gerund (meeting) বসে।"
+    },
+    {
+      "wrong": "She is used to wake up early.",
+      "correct": "She is used to waking up early.",
+      "explanation": "Subject-এর পর 'be verb + used to' (অভ্যস্ত হওয়া) থাকলে এর পরের verb-টির সাথে 'ing' যুক্ত হয়।"
+    },
+    {
+      "wrong": "He went to market for buy a phone.",
+      "correct": "He went to market to buy a phone. OR He went to market for buying a phone.",
+      "explanation": "উদ্দেশ্য প্রকাশ করতে 'to + V1' (to buy) সবচেয়ে উত্তম। যদি 'for' ব্যবহার করতেই হয়, তবে এরপর অবশ্যই gerund (buying) বসাতে হবে।"
+    },
+    {
+      "wrong": "I enjoy to watch movies.",
+      "correct": "I enjoy watching movies.",
+      "explanation": "'Enjoy' একটি নির্দিষ্ট verb যার পর সরাসরি gerund বসে, ইনফিনিটিভ নয়।"
+    },
+    {
+      "wrong": "He avoided to answer my question.",
+      "correct": "He avoided answering my question.",
+      "explanation": "'Avoid'-এর পর পরবর্তী verb-টি সর্বদা gerund বা ing-যুক্ত হয়।"
+    },
+    {
+      "wrong": "Smoking is bad but I cannot stop to smoke.",
+      "correct": "Smoking is bad but I cannot stop smoking.",
+      "explanation": "কোনো অভ্যাস বা কাজ পুরোপুরি বন্ধ করা বোঝাতে 'stop'-এর পর gerund বসে (stop smoking)। 'Stop to smoke' মানে হলো ধূমপান করার জন্য পথিমধ্যে থামা।"
+    }
+  ]
 }

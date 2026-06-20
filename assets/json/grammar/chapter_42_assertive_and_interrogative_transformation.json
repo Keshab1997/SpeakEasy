@@ -1,10 +1,97 @@
 {
   "chapter": 42,
   "level": "Intermediate",
-  "title": "Assertive and Interrogative Transformation",
+  "title": "Assertive and Interrogative Transformation (বিবৃতি ও প্রশ্নবোধক রূপান্তর)",
   "icon": "swap_horiz",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Assertive to Interrogative transformation involves changing a statement into a question without changing its original meaning. In spoken English, this skill is incredibly useful for making persuasive statements, showing emphasis, or asking rhetorical questions.",
+  "banglaDescription": "Assertive to Interrogative transformation হলো বাক্যের মূল অর্থ অপরিবর্তিত রেখে একটি সাধারণ বিবৃতি বা স্টেটমেন্টকে প্রশ্নবোধক বাক্যে রূপান্তর করা। স্পোকেন ইংলিশে নিজের কথার ওপর জোর দিতে, কাউকে প্রভাবিত করতে বা কোনো বিষয়ে চমৎকার যুক্তি তুলে ধরতে (রোহিঙ্গা বা রিটোরিক্যাল প্রশ্ন হিসেবে) এই রূপান্তর খুবই কার্যকর ভূমিকা পালন করে।",
+  "topics": [
+    {
+      "name": "Affirmative Assertive to Negative Interrogative (হাঁ-বোধক থেকে না-বোধক প্রশ্ন)",
+      "banglaName": "হাঁ-বোধক থেকে না-বোধক প্রশ্ন",
+      "definition": "If the assertive sentence is positive (affirmative), the interrogative sentence must be negative. This is because asking a negative question confirms the positive statement, keeping the meaning unchanged.",
+      "banglaDefinition": "যদি সাধারণ বাক্যটি হাঁ-বোধক (positive) হয়, তবে প্রশ্নবোধক করার সময় সেটিকে না-বোধক (negative) করতে হবে। কারণ একটি না-বোধক প্রশ্নের ভেতরেই হাঁ-বোধক সত্যটি লুকিয়ে থাকে, যার ফলে বাক্যের মূল অর্থ পরিবর্তন হয় না।",
+      "formula": "Helping Verb + n't (not) + Subject + Verb + Extension + ?\n\nExample:\n- He is a good student. -> Isn't he a good student?",
+      "rules": [
+        "বাক্যে helping verb (am, is, are, was, were, can, should ইত্যাদি) থাকলে সেটিকে শুরুতে এনে তার সাথে 'not'-এর সংক্ষিপ্ত রূপ 'n't' যুক্ত করতে হবে।",
+        "যদি কোনো helping verb না থাকে, তবে Subject অনুযায়ী Don't / Doesn't / Didn't শুরুতে বসাতে হবে।"
+      ],
+      "examples": [
+        { "en": "He is very kind. -> Isn't he very kind?", "bn": "সে খুব দয়ালু। -> সে কি খুব দয়ালু নয়? (অর্থাৎ, সে আসলেই খুব দয়ালু)" },
+        { "en": "She plays tennis well. -> Doesn't she play tennis well?", "bn": "সে ভালো টেনিস খেলে। -> সে কি ভালো টেনিস খেলে না?" },
+        { "en": "They went to the party. -> Didn't they go to the party?", "bn": "তারা পার্টিতে গিয়েছিল। -> তারা কি পার্টিতে যায়নি?" },
+        { "en": "We should respect our teachers. -> Shouldn't we respect our teachers?", "bn": "আমাদের শিক্ষকদের সম্মান করা উচিত। -> আমাদের কি শিক্ষকদের সম্মান করা উচিত নয়?" }
+      ],
+      "tips": "স্পোকেন ইংলিশে কাউকে নিজের মতের সাথে একমত করাতে আমরা প্রায়ই এভাবে না-বোধক প্রশ্ন করি। যেমন: 'Isn't it beautiful?' (এটি কি সুন্দর নয়?)"
+    },
+    {
+      "name": "Negative Assertive to Positive Interrogative (না-বোধক থেকে হাঁ-বোধক প্রশ্ন)",
+      "banglaName": "না-বোধক থেকে হাঁ-বোধক প্রশ্ন",
+      "definition": "If the assertive sentence is negative (containing not, never, no), the interrogative sentence must be positive. This confirms that the negative statement is indeed true, preserving the original meaning.",
+      "banglaDefinition": "যদি সাধারণ বাক্যটি না-বোধক (negative) হয়, তবে প্রশ্নবোধক করার সময় বাক্যটিকে হাঁ-বোধক (positive) করতে হবে। অর্থাৎ বাক্য থেকে 'not', 'never' বা 'no' বাদ দিতে হবে।",
+      "formula": "Helping Verb (Positive) + Subject + Verb + Extension + ?\n\nExample:\n- He is not a liar. -> Is he a liar?",
+      "rules": [
+        "বাক্যে 'not' থাকলে তা উঠে যাবে এবং কেবল সাহায্যকারী ভার্বটি সামনে বসবে।",
+        "বাক্যে 'never' থাকলে তা পরিবর্তিত হয়ে 'ever' হবে।",
+        "বাক্যে 'nothing' থাকলে তা পরিবর্তিত হয়ে 'anything' হবে।"
+      ],
+      "examples": [
+        { "en": "He is not a thief. -> Is he a thief?", "bn": "সে চোর নয়। -> সে কি চোর?" },
+        { "en": "I can never forget you. -> Can I ever forget you?", "bn": "আমি তোমাকে কখনো ভুলতে পারব না। -> আমি কি তোমাকে কখনো ভুলতে পারব?" },
+        { "en": "There is nothing to worry about. -> Is there anything to worry about?", "bn": "চিন্তা করার কিছু নেই। -> চিন্তা করার মতো কিছু কি আছে?" },
+        { "en": "They do not watch television. -> Do they watch television?", "bn": "তারা টেলিভিশন দেখে না। -> তারা কি টেলিভিশন দেখে?" }
+      ],
+      "tips": "কথা বলার সময় যখন আপনি কাউকে আশ্বস্ত করতে চান, তখন এভাবে প্রশ্ন করতে পারেন। যেমন: 'Can I ever hurt you?' (আমি কি কখনো তোমাকে আঘাত করতে পারি?)"
+    },
+    {
+      "name": "Transforming 'Everybody' and 'Nobody' ('Everybody' এবং 'Nobody' যুক্ত বাক্য)",
+      "banglaName": "'Everybody' এবং 'Nobody' যুক্ত বাক্য",
+      "definition": "To transform sentences starting with 'Everybody', 'Everyone', or 'All', we use 'Who + negative helping verb'. For sentences starting with 'Nobody', 'No one', or 'None', we simply use 'Who + positive verb'.",
+      "banglaDefinition": "বাক্যে 'Everybody', 'Everyone' বা 'All' থাকলে তা রূপান্তর করতে 'Who + negative helping verb' ব্যবহৃত হয়। আর যদি 'Nobody', 'No one' বা 'None' থাকে, তবে খুব সহজেই সেটিকে সরিয়ে শুধু 'Who' বসিয়ে দিলেই চলে।",
+      "formula": "- Everybody -> Who + does not / did not + V1 + ...?\n- Nobody -> Who + Verb + ...?",
+      "rules": [
+        "Everybody/Everyone থাকলে প্রশ্নবোধক করার সময় 'Who doesn't...' ব্যবহার করা সবচেয়ে সহজ ও প্রচলিত নিয়ম।",
+        "Nobody/No one থাকলে নেতিবাচক অর্থটি প্রশ্ন করার সময় এমনিতেই প্রকাশ পেয়ে যায়, তাই কোনো negative verb বসে না।"
+      ],
+      "examples": [
+        { "en": "Everybody wants to be happy. -> Who doesn't want to be happy?", "bn": "সবাই সুখী হতে চায়। -> কে সুখী হতে চায় না?" },
+        { "en": "Nobody can do this. -> Who can do this?", "bn": "কেউ এটি করতে পারে না। -> কে এটি করতে পারে?" },
+        { "en": "Everyone knows him. -> Who doesn't know him?", "bn": "সবাই তাকে চেনে। -> তাকে কে চেনে না?" },
+        { "en": "No one was present there. -> Who was present there?", "bn": "সেখানে কেউ উপস্থিত ছিল না। -> সেখানে কে উপস্থিত ছিল?" }
+      ],
+      "tips": "কথোপকথনে কোনো চরম সত্য বা সাধারণ ধারণা প্রকাশ করতে 'Who doesn't know?' (কে জানে না?) বা 'Who cares?' (কে পরোয়া করে?) এর মতো প্রশ্নগুলো দারুণ প্রভাব তৈরি করে।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "He is a good doctor. -> Is he a good doctor?",
+      "correct": "He is a good doctor. -> Isn't he a good doctor?",
+      "explanation": "হাঁ-বোধক বাক্যকে প্রশ্নবোধক করার সময় নেতিবাচক (negative) না করলে বাক্যের আসল অর্থ বদলে যায়। তাই 'Isn't he' হবে।"
+    },
+    {
+      "wrong": "I cannot do this. -> Cannot I do this?",
+      "correct": "I cannot do this. -> Can I do this?",
+      "explanation": "মূল বাক্যে 'cannot' বা না-বোধক শব্দ থাকলে প্রশ্ন করার সময় 'not' বাদ দিতে হবে।"
+    },
+    {
+      "wrong": "Everybody loves his country. -> Who loves his country?",
+      "correct": "Everybody loves his country. -> Who doesn't love his country?",
+      "explanation": "'Everybody' থাকলে প্রশ্নটি না-বোধক হবে, তাই 'Who doesn't love...' সঠিক রূপ।"
+    },
+    {
+      "wrong": "Nobody lives here. -> Who doesn't live here?",
+      "correct": "Nobody lives here. -> Who lives here?",
+      "explanation": "'Nobody' নিজেই একটি না-বোধক শব্দ, তাই প্রশ্নবোধক করার সময় নতুন করে 'doesn't' আনা ভুল। শুধু 'Who lives here?' হবে।"
+    },
+    {
+      "wrong": "He has no money. -> Has he no money?",
+      "correct": "He has no money. -> Has he any money?",
+      "explanation": "'No' বা 'not' থাকলে রূপান্তরের সময় তা উঠে যায় এবং তার পরিবর্তে 'any' বসে।"
+    },
+    {
+      "wrong": "He went to school. -> Did he went to school?",
+      "correct": "He went to school. -> Didn't he go to school?",
+      "explanation": "অতীতের সাধারণ হাঁ-বোধক বাক্যকে প্রশ্ন করতে 'Didn't' শুরুতে বসবে এবং এরপরে verb-এর বেস ফর্ম (go) বসাতে হবে।"
+    }
+  ]
 }

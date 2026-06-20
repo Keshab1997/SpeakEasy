@@ -1,10 +1,91 @@
 {
   "chapter": 43,
   "level": "Intermediate",
-  "title": "Exclamatory Transformation",
+  "title": "Exclamatory Transformation (বিস্ময়সূচক রূপান্তর)",
   "icon": "alternate_email",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Exclamatory transformation involves changing a regular declarative statement (Assertive) into an emotional expression of surprise, joy, sorrow, or wonder (Exclamatory), and vice versa. This transition is essential for adding flavor, passion, and natural emotion to your spoken English.",
+  "banglaDescription": "Exclamatory transformation হলো কোনো সাধারণ বিবৃতিমূলক বাক্যকে (Assertive) অতিরিক্ত বিস্ময়, আনন্দ, দুঃখ বা চরম অনুভূতি প্রকাশকারী বাক্যে (Exclamatory) রূপান্তর করা। স্পোকেন ইংলিশে কৃত্রিমভাবে বা যান্ত্রিকভাবে কথা না বলে, মনের ভেতরের প্রকৃত অনুভূতি, উচ্ছ্বাস বা দুঃখ ফুটিয়ে তোলার জন্য এই রূপান্তরের ব্যবহার জানা অত্যন্ত জরুরি।",
+  "topics": [
+    {
+      "name": "Transforming with 'What' and 'How' ('What' এবং 'How' দিয়ে রূপান্তর)",
+      "banglaName": "'What' এবং 'How' দিয়ে রূপান্তর",
+      "definition": "We often use 'What' or 'How' to turn an assertive sentence with words like 'very' or 'great' into an exclamatory sentence. 'What' is used when there is a noun (with a/an), and 'How' is used when there is only an adjective or adverb.",
+      "banglaDefinition": "Assertive বাক্যে 'very' বা 'great' থাকলে তা পরিবর্তন করে বিস্ময় প্রকাশ করতে আমরা 'What' বা 'How' ব্যবহার করি। বাক্যে যদি noun থাকে (এবং a/an থাকে), তবে 'What' বসে। আর যদি কেবল adjective বা adverb থাকে, তবে 'How' ব্যবহৃত হয়।",
+      "formula": "- Pattern A: What + a/an + Adjective + Noun + Subject + Verb + !\n- Pattern B: How + Adjective/Adverb + Subject + Verb + !",
+      "rules": [
+        "রূপান্তরের সময় 'very' বা 'great' শব্দগুলো বাদ চলে যায়।",
+        "বাক্যের সাবজেক্ট ও ভার্বটি একবারে শেষের দিকে চলে যায় এবং সবশেষে একটি বিস্ময়সূচক চিহ্ন (!) বসাতে হয়।"
+      ],
+      "examples": [
+        { "en": "It is a very beautiful bird. -> What a beautiful bird it is!", "bn": "এটি খুব সুন্দর একটি পাখি। -> বাহ! কি সুন্দর পাখি এটি!" },
+        { "en": "The boy is very clever. -> How clever the boy is!", "bn": "ছেলেটি খুব চালাক। -> ছেলেটি কি চালাক রে বাবা!" },
+        { "en": "It is a great pity. -> What a pity!", "bn": "এটি অত্যন্ত দুঃখজনক বিষয়। -> কি করুণ একটি বিষয়!" },
+        { "en": "She sings very sweetly. -> How sweetly she sings!", "bn": "সে খুব মিষ্টি সুরে গান গায়। -> কি মিষ্টি সুরেই না সে গায়!" }
+      ],
+      "tips": "স্পোকেন ইংলিশে পুরো বাক্য না বলে অনেক সময় শুধু শেষের অংশটুকু তুলেও বিস্ময় প্রকাশ করা হয়। যেমন: 'What a beautiful view!' (কি সুন্দর দৃশ্য!)"
+    },
+    {
+      "name": "Expressing Wishes with 'If' or 'Had' ('If' বা 'Had' দিয়ে মনের ইচ্ছা প্রকাশ)",
+      "banglaName": "'If' বা 'Had' দিয়ে মনের ইচ্ছা প্রকাশ",
+      "definition": "When an assertive sentence expresses a strong, unrealistic wish using 'I wish', we can transform it into an exclamatory sentence by replacing 'I wish' with 'If', 'Had', 'Would that', or 'Could I'.",
+      "banglaDefinition": "যখন কোনো Assertive বাক্যে 'I wish' ব্যবহার করে অবাস্তব বা তীব্র মনের ইচ্ছা প্রকাশ করা হয়, তখন বিস্ময়সূচক রূপান্তরের জন্য 'I wish'-এর পরিবর্তে 'If', 'Had' বা 'Would that' বসানো যায়।",
+      "formula": "- I wish + Subject + were ... -> If I were ... !\n- I wish + Subject + had ... -> Had I ... !",
+      "rules": [
+        "বাক্যের শুরুতে 'If' বা 'Had' বসে এবং বাক্যের শেষভাগে বিস্ময়সূচক চিহ্ন (!) বসে।",
+        "'Had' বা 'If' চলে আসলে শুরুতে থাকা 'I wish' অংশটি সম্পূর্ণ বাদ চলে যায়।"
+      ],
+      "examples": [
+        { "en": "I wish I were a child again. -> If I were a child again!", "bn": "আমি যদি আবার শিশু হতে পারতাম! -> আহা, আমি যদি আবার শিশু হতে পারতাম!" },
+        { "en": "I wish I had the wings of a bird. -> Had I the wings of a bird!", "bn": "আমার যদি পাখির মতো ডানা থাকত! -> যদি আমার পাখির মতো ডানা থাকত!" },
+        { "en": "I wish I could help you. -> Would that I could help you!", "bn": "আমি যদি তোমাকে সাহায্য করতে পারতাম! -> ইশ, আমি যদি তোমাকে সাহায্য করতে পারতাম!" }
+      ],
+      "tips": "নিজের কোনো অতৃপ্ত ইচ্ছা বা অসম্ভব স্বপ্নের কথা বলার সময় 'If I were...' ফ্রেজটি স্পোকেন ইংলিশে চমৎকার শোনায়। যেমন: 'If I were a billionaire!'"
+    },
+    {
+      "name": "Using Interjections like 'Hurrah', 'Alas', and 'Wow' (আবেগসূচক শব্দের ব্যবহার)",
+      "banglaName": "আবেগসূচক শব্দের ব্যবহার",
+      "definition": "We can transform statements that express joy, sorrow, or wonder by using specific emotional exclamation words (interjections) like 'Hurrah!', 'Alas!', 'Wow!', or 'Oh!'.",
+      "banglaDefinition": "আনন্দ, দুঃখ বা আকস্মিক বিস্ময় প্রকাশকারী সাধারণ বাক্যগুলোকে রূপান্তর করতে আমরা নির্দিষ্ট কিছু আবেগসূচক শব্দ বা Interjection ব্যবহার করি। যেমন: আনন্দের জন্য 'Hurrah!', দুঃখের জন্য 'Alas!', এবং বিস্ময়ের জন্য 'Wow!' বা 'Oh!'।"
+      ,
+      "formula": "Interjection! + Simple Assertive Sentence",
+      "rules": [
+        "আনন্দ প্রকাশে 'It is a matter of joy that' এর পরিবর্তে 'Hurrah!' বসে।",
+        "দুঃখ প্রকাশে 'It is a matter of sorrow that' এর পরিবর্তে 'Alas!' বসে।"
+      ],
+      "examples": [
+        { "en": "It is a matter of joy that we won. -> Hurrah! We have won.", "bn": "এটি অত্যন্ত আনন্দের বিষয় যে আমরা জিতেছি। -> কি আনন্দ! আমরা জিতে গেছি।" },
+        { "en": "It is a matter of sorrow that he is dead. -> Alas! He is dead.", "bn": "এটি দুঃখের বিষয় যে সে মারা গেছে। -> হায়! সে আর বেঁচে নেই।" },
+        { "en": "I am surprised to see the view. -> Wow! What a view.", "bn": "দৃশ্যটি দেখে আমি বিস্মিত হয়েছি। -> ওয়াও! কি অসাধারণ দৃশ্য।" },
+        { "en": "It is very sad that she failed. -> Alas! She failed.", "bn": "সে ফেল করেছে এটা খুবই দুঃখজনক। -> হায়! সে ফেল করল।" }
+      ],
+      "tips": "বাস্তব কথোপকথনে কেবল গ্রামার মেনে বাক্য বড় না করে 'Wow!', 'Oh my god!', 'Alas!'—এই শব্দগুলো সঠিক কণ্ঠস্বরের (tone) সাথে উচ্চারণ করলে আপনার অনুভূতি চমৎকারভাবে প্রকাশ পাবে।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "What a beautiful bird is it!",
+      "correct": "What a beautiful bird it is!",
+      "explanation": "Exclamatory বাক্যে 'What' বা 'How' দিয়ে শুরু করলে Subject ও Verb বাক্যের একদম শেষে বসে। সাহায্যকারী verb-টি আগে বসানো যাবে না।"
+    },
+    {
+      "wrong": "How a clever boy he is!",
+      "correct": "What a clever boy he is! OR How clever the boy is!",
+      "explanation": "Noun (clever boy) এবং 'a' থাকলে 'What' ব্যবহার করতে হবে। শুধু Adjective থাকলে 'How' বসাতে হবে।"
+    },
+    {
+      "wrong": "I wish I was a king. -> If I was a king!",
+      "correct": "If I were a king!",
+      "explanation": "অবাস্তব বা কাল্পনিক ইচ্ছা প্রকাশে সবসময় 'were' ব্যবহার করতে হয়, 'was' ব্যবহার করা ভুল।"
+    },
+    {
+      "wrong": "Hurrah, we won the game.",
+      "correct": "Hurrah! We won the game.",
+      "explanation": "আবেগসূচক শব্দের ঠিক পরেই বিস্ময়সূচক চিহ্ন (!) ব্যবহার করতে হবে, শুধু কমা দেওয়া সঠিক নয়।"
+    },
+    {
+      "wrong": "How beautifully she sings! -> She sings how beautifully.",
+      "correct": "She sings very beautifully.",
+      "explanation": "Exclamatory থেকে Assertive করার সময় 'How' বা 'What' উঠে যাবে এবং তার জায়গায় 'very' বা 'great' বসবে।"
+    }
+  ]
 }

@@ -1,10 +1,114 @@
 {
   "chapter": 33,
   "level": "Intermediate",
-  "title": "Phrases",
+  "title": "Phrases (ফ্রেজ / শব্দগুচ্ছ)",
   "icon": "format_align_left",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "A phrase is a group of two or more words that function as a single unit in a sentence, but do not contain both a subject and a verb (e.g., 'on the table', 'a beautiful day'). Learning phrases is essential for spoken English, as native speakers constantly use them to express ideas more naturally than single words.",
+  "banglaDescription": "Phrase (ফ্রেজ বা শব্দগুচ্ছ) হলো এমন একদল শব্দ যা বাক্যে একটি একক অংশ হিসেবে কাজ করে, কিন্তু এতে কোনো নির্দিষ্ট subject বা finite verb (সমাপিকা ক্রিয়া) থাকে না (যেমন: 'on the table', 'a beautiful day')। স্পোকেন ইংলিশে ফ্রেজের গুরুত্ব অপরিসীম, কারণ নেটিভ স্পিকাররা একক শব্দের চেয়ে বিভিন্ন ফ্রেজ ব্যবহার করে মনের ভাব অনেক বেশি প্রাণবন্ত ও স্বাভাবিকভাবে প্রকাশ করেন।",
+  "topics": [
+    {
+      "name": "What is a Phrase? (Phrase কী?)",
+      "banglaName": "Phrase কী?",
+      "definition": "A phrase is a small group of words standing together as a conceptual unit. Unlike a clause, a phrase does not have both a subject and a predicate/verb, meaning it cannot stand alone as a complete sentence.",
+      "banglaDefinition": "Phrase বা শব্দগুচ্ছ হলো পাশাপাশি বসা দুই বা ততোধিক শব্দের সমষ্টি যা কোনো একটি ধারণা প্রকাশ করে। ক্লজ (clause)-এর মতো ফ্রেজে কোনো নিজস্ব subject এবং verb থাকে না, যার ফলে এটি একা একা একটি সম্পূর্ণ বাক্য গঠন করতে পারে না।",
+      "formula": "Group of Words (No Subject-Verb combination) = Phrase\n\nExample:\n- In the morning (No subject, no verb. Just a time phrase)",
+      "rules": [
+        "ফ্রেজে কখনো পূর্ণাঙ্গ বা সমাপ্ত কোনো কাজ বোঝায় না, কারণ এতে finite verb থাকে না।",
+        "একটি ফ্রেজ বাক্যের যেকোনো জায়গায় বসে noun, adjective, adverb বা preposition-এর কাজ করতে পারে।"
+      ],
+      "examples": [
+        { "en": "I sleep early in the night. (Time phrase)", "bn": "আমি রাতের শুরুতে তাড়াতাড়ি ঘুমিয়ে পড়ি।" },
+        { "en": "She bought a brand new car. (Noun phrase)", "bn": "সে একদম নতুন একটি গাড়ি কিনেছে।" },
+        { "en": "He speaks in a polite way. (Manner phrase)", "bn": "সে বিনয়ীভাবে কথা বলে।" },
+        { "en": "The book is under the table. (Place phrase)", "bn": "বইটি টেবিলের নিচে আছে।" }
+      ],
+      "tips": "স্পোকেন ইংলিশ শিখতে হলে আলাদা আলাদা শব্দের অর্থ মুখস্থ করার চেয়ে ছোট ছোট ফ্রেজ মুখস্থ করা অনেক বেশি কার্যকর।"
+    },
+    {
+      "name": "Noun Phrase and Adjective Phrase (নাউন ও এডজেক্টিভ ফ্রেজ)",
+      "banglaName": "নাউন ও এডজেক্টিভ ফ্রেজ",
+      "definition": "A Noun Phrase consists of a noun and other words that modify it (e.g., 'the tall girl'). An Adjective Phrase is a group of words that describes a noun or pronoun (e.g., 'extremely talented').",
+      "banglaDefinition": "একটি Noun Phrase মূলত একটি প্রধান noun এবং তাকে বর্ণনা করার জন্য আশেপাশের কিছু শব্দ নিয়ে গঠিত হয় (যেমন: 'the tall girl')। আর একটি Adjective Phrase হলো এমন একদল শব্দ যা কোনো noun বা pronoun-এর দোষ, গুণ বা অবস্থা বর্ণনা করে (যেমন: 'extremely talented')।",
+      "formula": "- Noun Phrase: [Determiner/Adjective] + Noun\n- Adjective Phrase: [Adverb] + Adjective OR Prepositional phrase describing a noun",
+      "rules": [
+        "Noun Phrase বাক্যের subject বা object হিসেবে বসতে পারে (যেমন: 'The little boy is crying')।",
+        "Adjective Phrase কোনো noun-এর ঠিক পরে বা linking verb-এর পরে বসে তার অবস্থা বর্ণনা করে।"
+      ],
+      "examples": [
+        { "en": "The smart young man won the competition. (Noun phrase)", "bn": "বুদ্ধিমান তরুণ লোকটি প্রতিযোগিতায় জয়ী হয়েছিল।" },
+        { "en": "I want to buy a very expensive phone. (Noun phrase)", "bn": "আমি একটি অত্যন্ত দামি ফোন কিনতে চাই।" },
+        { "en": "The tea is extremely hot. (Adjective phrase describing the tea)", "bn": "চা-টি অত্যন্ত গরম।" },
+        { "en": "He is a man of great courage. (Adjective phrase describing the man)", "bn": "তিনি অত্যন্ত সাহসী একজন মানুষ।" }
+      ],
+      "tips": "কারো প্রশংসা করার সময় শুধু 'good' না বলে 'extremely helpful' বা 'a person with a golden heart' এর মতো ফ্রেজ ব্যবহার করলে আপনার ইংরেজি অনেক সমৃদ্ধ শোনায়।"
+    },
+    {
+      "name": "Prepositional and Adverbial Phrases (প্রেপজিশনাল ও এডভার্বিয়াল ফ্রেজ)",
+      "banglaName": "প্রেপজিশনাল ও এডভার্বিয়াল ফ্রেজ",
+      "definition": "A Prepositional Phrase starts with a preposition and ends with a noun or pronoun (e.g., 'at the office'). An Adverbial Phrase is a group of words that functions as an adverb, telling us how, when, where, or why something happens.",
+      "banglaDefinition": "একটি Prepositional Phrase শুরু হয় একটি preposition দিয়ে এবং শেষ হয় কোনো noun বা pronoun দিয়ে (যেমন: 'at the office')। আর Adverbial Phrase হলো এমন শব্দগুচ্ছ যা বাক্যে adverb-এর মতো কাজ করে, অর্থাৎ কোনো কাজ কীভাবে, কখন, কোথায় বা কেন ঘটছে তা নির্দেশ করে।",
+      "formula": "- Prepositional Phrase: Preposition + Noun/Pronoun\n- Adverbial Phrase: Group of words answering 'Where', 'When', 'How' or 'Why'",
+      "rules": [
+        "প্রেপজিশনাল ফ্রেজ বাক্যে স্থান, সময় বা দিক নির্দেশ করতে সবচেয়ে বেশি ব্যবহৃত হয়।",
+        "এডভার্বিয়াল ফ্রেজ কোনো verb-কে মডিফাই করে বা তার বিস্তারিত তথ্য প্রদান করে।"
+      ],
+      "examples": [
+        { "en": "My keys are on the kitchen counter. (Prepositional / Place)", "bn": "আমার চাবিগুলো রান্নাঘরের কাউন্টারের উপর আছে।" },
+        { "en": "We will meet in a few minutes. (Adverbial / Time)", "bn": "আমরা কয়েক মিনিটের মধ্যে দেখা করব।" },
+        { "en": "He answered the questions with great ease. (Adverbial / Manner)", "bn": "সে খুব সহজেই প্রশ্নগুলোর উত্তর দিয়েছিল।" },
+        { "en": "She ran as fast as possible. (Adverbial / Manner)", "bn": "সে যতটা সম্ভব দ্রুত দৌড়েছিল।" }
+      ],
+      "tips": "কোথায় বা কখন কোনো কাজ হচ্ছে তা বিস্তারিত বলতে এই ফ্রেজগুলো প্রতিদিনের কথাবার্তায় অনবরত ব্যবহৃত হয়।"
+    },
+    {
+      "name": "Common Conversational Phrases (কথোপকথনে ব্যবহৃত সাধারণ ফ্রেজসমূহ)",
+      "banglaName": "কথোপকথনে ব্যবহৃত সাধারণ ফ্রেজসমূহ",
+      "definition": "In daily English, we use many fixed phrases that do not translate word-for-word but carry special meanings. Mastering these idiomatic phrases will instantly make your English sound more natural and fluent.",
+      "banglaDefinition": "দৈনন্দিন ইংরেজিতে আমরা এমন অনেক স্থায়ী বা নির্দিষ্ট ফ্রেজ ব্যবহার করি যা আক্ষরিক অনুবাদ করলে অর্থ মেলে না, কিন্তু গভীর অর্থ বহন করে। এই ফ্রেজগুলো আয়ত্ত করতে পারলে আপনার স্পোকেন ইংলিশ নিমেষেই অনেক বেশি সাবলীল দেখাবে।",
+      "formula": "Fixed Phrase = Specific Contextual Meaning",
+      "rules": [
+        "এই ফ্রেজগুলোর ভেতরের শব্দ পরিবর্তন করা যায় না, এদের রূপ নির্দিষ্ট থাকে।",
+        "কথা বলার সময় সংযোগকারী বা 'filler' হিসেবে এই ফ্রেজগুলো চমৎকার কাজ করে।"
+      ],
+      "examples": [
+        { "en": "By the way, did you complete the task? (Changing topic)", "bn": "ভালো কথা/প্রসঙ্গক্রমে, তুমি কি কাজটি শেষ করেছিলে?" },
+        { "en": "At the end of the day, family is what matters. (In conclusion)", "bn": "দিনের শেষে (সব হিসাব-নিকাশ শেষে), পরিবারই সবচেয়ে গুরুত্বপূর্ণ।" },
+        { "en": "To be honest, I don't like this place. (Expressing truth)", "bn": "সত্যি বলতে, আমি এই জায়গাটি পছন্দ করি না।" },
+        { "en": "As a matter of fact, I know him very well. (Emphasizing a fact)", "bn": "আসলে/প্রকৃতপক্ষে, আমি তাকে খুব ভালো করেই চিনি।" }
+      ],
+      "tips": "কোনো বিষয়ে নিজের মতামত দেওয়ার সময় সরাসরি কথা শুরু না করে 'To be honest...' বা 'As far as I know...' (আমার জানামতে) দিয়ে শুরু করলে কথা অনেক সুন্দর দেখায়।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "He is a man with rich.",
+      "correct": "He is a rich man. OR He is a man of wealth.",
+      "explanation": "ফ্রেজ গঠনের সময় সঠিক শব্দচয়ন করতে হবে। 'man with rich' ভুল গঠন, 'man of wealth' (ধনী মানুষ) একটি সঠিক এডজেক্টিভ ফ্রেজ।"
+    },
+    {
+      "wrong": "I will meet you after few minute.",
+      "correct": "I will meet you in a few minutes.",
+      "explanation": "ভবিষ্যতে কোনো সময়ের মধ্যে বোঝাতে ফ্রেজটি হবে 'in a few minutes', 'after few minute' নয়।"
+    },
+    {
+      "wrong": "By the way of, where are you going?",
+      "correct": "By the way, where are you going?",
+      "explanation": "প্রসঙ্গ পরিবর্তনের সঠিক ফ্রেজটি হলো 'By the way', এর সাথে 'of' যুক্ত করা ভুল।"
+    },
+    {
+      "wrong": "At the end of day, we need peace.",
+      "correct": "At the end of the day, we need peace.",
+      "explanation": "সঠিক ফ্রেজটি হলো 'At the end of the day' (দিনের শেষে), এখানে নির্দিষ্ট করে 'the' বসাতে হবে।"
+    },
+    {
+      "wrong": "She ran with very fastly.",
+      "correct": "She ran very fast. OR She ran with great speed.",
+      "explanation": "'with very fastly' বলে কোনো সঠিক ফ্রেজ নেই। আপনি বলতে পারেন 'very fast' অথবা 'with great speed'।"
+    },
+    {
+      "wrong": "To honest, I didn't do it.",
+      "correct": "To be honest, I didn't do it.",
+      "explanation": "সঠিক ভদ্র ফ্রেজটি হলো 'To be honest' (সত্যি বলতে), 'To honest' নয়।"
+    }
+  ]
 }

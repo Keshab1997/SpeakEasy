@@ -1,10 +1,91 @@
 {
   "chapter": 35,
   "level": "Intermediate",
-  "title": "Phrase vs Clause",
+  "title": "Phrase vs Clause (ফ্রেজ বনাম ক্লজ)",
   "icon": "compare_arrows",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Understanding the difference between a phrase and a clause is a milestone in mastering English grammar. While both are groups of words, a clause has a subject-verb combination and can sometimes be a full sentence, whereas a phrase lacks this combination. Learning to identify and use both correctly will make your spoken English highly structured and natural.",
+  "banglaDescription": "Phrase (শব্দগুচ্ছ) এবং Clause (বাক্যাংশ)-এর মধ্যকার পার্থক্য বুঝতে পারা ইংরেজি ব্যাকরণ আয়ত্ত করার একটি অন্যতম প্রধান ধাপ। দুটিই শব্দসমষ্টি হলেও, ক্লজ-এ একটি subject ও verb থাকে এবং এটি কখনো কখনো সম্পূর্ণ বাক্য হতে পারে; কিন্তু ফ্রেজে কোনো subject-verb জোড়া থাকে না। এদের সঠিক ব্যবহার জানলে আপনার স্পোকেন ইংলিশ অত্যন্ত গোছানো ও নিখুঁত হবে।",
+  "topics": [
+    {
+      "name": "Key Differences (প্রধান পার্থক্যসমূহ)",
+      "banglaName": "প্রধান পার্থক্যসমূহ",
+      "definition": "The most fundamental difference is the presence of a subject and a finite verb. A phrase is just a collection of words without a subject doing an action. A clause must have a subject and a verb.",
+      "banglaDefinition": "ফ্রেজ ও ক্লজের মূল পার্থক্য হলো subject এবং finite verb-এর উপস্থিতি। ফ্রেজ হলো কেবল কিছু শব্দের সমষ্টি যেখানে কোনো কাজ সম্পাদনকারী সাবজেক্ট বা সমাপিকা ক্রিয়া থাকে না। অন্যদিকে ক্লজে অবশ্যই একটি নির্দিষ্ট subject এবং একটি verb থাকবে।",
+      "formula": "- Phrase = Group of words (No Subject + Verb combination)\n- Clause = Group of words (Has Subject + Verb combination)",
+      "rules": [
+        "ফ্রেজ কখনো কোনো সম্পূর্ণ মনের ভাব একা প্রকাশ করতে পারে না (যেমন: in the school)।",
+        "একটি Independent Clause নিজেই একটি সম্পূর্ণ বাক্য হতে পারে এবং সম্পূর্ণ অর্থ প্রকাশ করতে পারে (যেমন: I study in the school)।"
+      ],
+      "examples": [
+        { "en": "After the storm (Phrase - No verb)", "bn": "ঝড়ের পরে (কোনো ক্রিয়া নেই)" },
+        { "en": "After the storm passed (Clause - 'storm' is subject, 'passed' is verb)", "bn": "ঝড়টি কেটে যাওয়ার পর (সাবজেক্ট ও ভার্ব আছে)" },
+        { "en": "On the road (Phrase - Place description)", "bn": "রাস্তার উপরে (ফ্রেজ)" },
+        { "en": "He is walking on the road. (Sentence containing a Clause and a Phrase)", "bn": "সে রাস্তার উপর হাঁটছে। ('He is walking' হলো ক্লজ, 'on the road' হলো ফ্রেজ)" }
+      ],
+      "tips": "মনে রাখুন: ফ্রেজে কোনো 'Action' বা কাজ সমাপ্ত হওয়ার ব্যাপার থাকে না, ক্লজে অবশ্যই একটি কাজ ও তার কর্তার উল্লেখ থাকে।"
+    },
+    {
+      "name": "How to Identify in a Sentence (বাক্যে এদের চেনার উপায়)",
+      "banglaName": "বাক্যে এদের চেনার উপায়",
+      "definition": "To identify whether a group of words is a phrase or a clause, look for a finite verb. If there is a verb and a subject matching it, it is a clause. If there is no verb or only a non-finite verb (like to + verb or verb + ing acting as noun/adjective), it is a phrase.",
+      "banglaDefinition": "একটি বাক্যে কোনো শব্দগুচ্ছ ফ্রেজ নাকি ক্লজ তা চেনার সহজ উপায় হলো তার ভেতরের verb-টি খোঁজা। যদি সেখানে কোনো subject এবং তার সাথে মানানসই সমাপিকা ক্রিয়া থাকে, তবে তা ক্লজ। আর যদি কোনো verb না থাকে, অথবা কেবল অসমাপিকা ক্রিয়া (যেমন: to + V1 বা ing-যুক্ত verb যা noun/adjective হিসেবে কাজ করছে) থাকে, তবে তা ফ্রেজ।",
+      "formula": "- Look for the Verb -> No Verb? -> Phrase\n- Look for the Verb -> Has Verb + Subject? -> Clause",
+      "rules": [
+        "'To sing a song' - এটি একটি ফ্রেজ (Infinitive phrase), কারণ এখানে কোনো subject বা finite verb নেই।",
+        "'She sings a song' - এটি একটি ক্লজ, কারণ এখানে 'She' হলো subject এবং 'sings' হলো finite verb।"
+      ],
+      "examples": [
+        { "en": "Walking in the park is good. ('Walking in the park' is a Phrase acting as Subject)", "bn": "পার্কে হাঁটা ভালো।" },
+        { "en": "While I was walking in the park, I saw him. ('While I was walking in the park' is a Clause)", "bn": "আমি যখন পার্কে হাঁটছিলাম, তখন তাকে দেখেছিলাম।" },
+        { "en": "A girl with blue eyes (Phrase - Describes the girl)", "bn": "নীল চোখের একটি মেয়ে (ফ্রেজ)" },
+        { "en": "The girl who has blue eyes (Clause - 'who' acts as subject, 'has' is verb)", "bn": "যে মেয়েটির নীল চোখ রয়েছে (ক্লজ)" }
+      ],
+      "tips": "স্পোকেন ইংলিশে কথা বলার সময় এই দুটির সংমিশ্রণে বড় ও সুন্দর বাক্য তৈরি করা সহজ হয়।"
+    },
+    {
+      "name": "Using Phrases and Clauses to Speak Better (কথোপকথন উন্নত করতে এদের ব্যবহার)",
+      "banglaName": "কথোপকথন উন্নত করতে এদের ব্যবহার",
+      "definition": "To improve your fluency, you should practice expanding short sentences (simple clauses) by adding descriptive phrases or dependent clauses. This turns robotic-sounding English into natural, flowing speech.",
+      "banglaDefinition": "আপনার ফ্লুয়েন্সি বা সাবলীলতা বাড়াতে ছোট ছোট বাক্যকে (simple clauses) বিভিন্ন বর্ণনামূলক ফ্রেজ বা অধীন ক্লজ যুক্ত করে বড় করার অভ্যাস করতে হবে। এটি যান্ত্রিক ইংরেজিকে অত্যন্ত প্রাকৃতিক ও শ্রুতিমধুর কথোপকথনে রূপান্তর করে।",
+      "formula": "Base Sentence (Clause) + Descriptive Phrase + Connector/Dependent Clause = Rich Sentence",
+      "rules": [
+        "শুধুমাত্র 'I bought a phone' না বলে ফ্রেজ যোগ করুন: 'I bought a brand new phone with a great camera.'",
+        "ক্লজ যোগ করে আরও বড় করুন: 'I bought a brand new phone because my old one was broken.'"
+      ],
+      "examples": [
+        { "en": "I went to London. (Simple clause)", "bn": "আমি লন্ডনে গিয়েছিলাম।" },
+        { "en": "I went to London last summer to visit my cousin. (Clause + Time phrase + Purpose phrase)", "bn": "আমি গত গ্রীষ্মে আমার কাজিনকে দেখতে লন্ডনে গিয়েছিলাম।" },
+        { "en": "I went to London last summer to visit my cousin, who has been living there for five years. (Added relative clause)", "bn": "আমি গত গ্রীষ্মে লন্ডনে আমার কাজিনকে দেখতে গিয়েছিলাম, যে সেখানে পাঁচ বছর ধরে বসবাস করছে।" },
+        { "en": "Speaking English daily helps you grow. (Gerund phrase + Clause)", "bn": "প্রতিদিন ইংরেজি বলা আপনাকে উন্নত হতে সাহায্য করে।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে ফ্লুয়েন্ট হতে চাইলে সবসময় এক লাইনের ছোট উত্তর না দিয়ে একটি ক্লজের সাথে একটি ফ্রেজ বা আরেকটি ক্লজ জুড়ে দিয়ে উত্তরটি একটু বড় করার চেষ্টা করুন।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "The lady with a red dress she is my mother.",
+      "correct": "The lady in the red dress is my mother.",
+      "explanation": "'The lady in the red dress' একটি ফ্রেজ যা সাবজেক্ট হিসেবে কাজ করছে। এরপর আবার আলাদা করে 'she' বসানোর কোনো প্রয়োজন নেই, সরাসরি verb বসবে।"
+    },
+    {
+      "wrong": "Although she was tired, but she finished the report.",
+      "correct": "Although she was tired, she finished the report.",
+      "explanation": "এটি একটি জটিল বাক্য। 'Although' দ্বারা শুরু হওয়া ক্লজটির পর অপর স্বাধীন ক্লজটির শুরুতে 'but' বসানো ব্যাকরণগতভাবে ভুল।"
+    },
+    {
+      "wrong": "In the morning I wake up, then I drink tea.",
+      "correct": "In the morning, I wake up and drink tea.",
+      "explanation": "বাক্যের শুরুতে 'In the morning' ফ্রেজটির পর একটি কমা ব্যবহার করা ভালো এবং বাক্যটিকে সুন্দর সংযোগকারী (and) দিয়ে যুক্ত করা সাবলীল শোনায়।"
+    },
+    {
+      "wrong": "I met a man with very friendly.",
+      "correct": "I met a very friendly man.",
+      "explanation": "'with very friendly' ভুল ফ্রেজ। সঠিক বিশেষণধর্মী ফ্রেজ বা শব্দগুচ্ছটি হবে 'a very friendly man'।"
+    },
+    {
+      "wrong": "The car which broke down yesterday it was very old.",
+      "correct": "The car which broke down yesterday was very old.",
+      "explanation": "'The car' এর পর relative clause ব্যবহার করার পর মূল verb-এর আগে পুনরায় 'it' বসানো ভুল, কারণ সাবজেক্ট 'The car' ইতিমধ্যে শুরুতেই নির্দিষ্ট আছে।"
+    }
+  ]
 }

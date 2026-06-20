@@ -1,10 +1,81 @@
 {
   "chapter": 40,
   "level": "Intermediate",
-  "title": "Degree Change",
+  "title": "Degree Change (ডিগ্রি পরিবর্তন)",
   "icon": "trending_up",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Degree change involves transforming sentences containing adjectives in positive, comparative, and superlative degrees without altering their meaning. This is vital in spoken English for making comparisons between people, things, or situations.",
+  "banglaDescription": "Degree Change (ডিগ্রি পরিবর্তন) বলতে বাক্যের মূল অর্থ অপরিবর্তিত রেখে Adjective-এর বিভিন্ন রূপ (Positive, Comparative, Superlative)-এর পারস্পরিক পরিবর্তনকে বোঝায়। ইংরেজিতে কথা বলার সময় বিভিন্ন ব্যক্তি, বস্তু বা পরিস্থিতির মধ্যে তুলনা করার জন্য এটি অত্যন্ত প্রয়োজনীয়।",
+  "topics": [
+    {
+      "name": "Positive to Comparative (পজিটিভ থেকে কম্পারেটিভ রূপান্তর)",
+      "banglaName": "Positive থেকে Comparative রূপান্তর",
+      "definition": "Changing an adjective from its base form (Positive) to its comparative form (using -er or more) when comparing two or more entities.",
+      "banglaDefinition": "দুটি ব্যক্তি বা বস্তুর মধ্যে তুলনা প্রকাশ করতে Adjective-এর মূল রূপ (Positive) থেকে তুলনামূলক রূপ (Comparative, যা সাধারণত -er বা more যোগে গঠিত হয়)-এ পরিবর্তন করা।",
+      "formula": "- Positive: No other + Singular Noun + ... + as + Adjective + as + Subject\n- Comparative: Subject + Verb + Comparative Adjective + than any other + Singular Noun",
+      "rules": [
+        "Positive বাক্যটি 'No other' দিয়ে শুরু হলে Comparative করার সময় শেষদিকের Subject-টি প্রথমে আসে।",
+        "Comparative Adjective-এর পর সর্বদা 'than any other' (একবচনের ক্ষেত্রে) বা 'than all other' (বহুবচনের ক্ষেত্রে) বসে।"
+      ],
+      "examples": [
+        { "en": "Positive: No other boy in the class is as intelligent as Rahat.", "bn": "ক্লাসের অন্য কোনো ছেলে রাহাতের মতো এত বুদ্ধিমান নয়।" },
+        { "en": "Comparative: Rahat is more intelligent than any other boy in the class.", "bn": "রাহাত ক্লাসের অন্য যেকোনো ছেলের চেয়ে বেশি বুদ্ধিমান।" },
+        { "en": "Positive: No other city in Bangladesh is as big as Dhaka.", "bn": "বাংলাদেশের অন্য কোনো city ঢাকার মতো এত বড় নয়।" },
+        { "en": "Comparative: Dhaka is bigger than any other city in Bangladesh.", "bn": "ঢাকা বাংলাদেশের অন্য যেকোনো শহরের চেয়ে বড়।" }
+      ],
+      "tips": "দৈনন্দিন কথোপকথনে কারও সাথে সরাসরি তুলনা করতে 'Comparative' রূপটি (যেমন: bigger than, taller than, better than) বেশি প্রচলিত ও সহজ মনে হয়।"
+    },
+    {
+      "name": "Comparative to Superlative (কম্পারেটিভ থেকে সুপারলেটিভ রূপান্তর)",
+      "banglaName": "Comparative থেকে Superlative রূপান্তর",
+      "definition": "Converting a comparison between one and all others (Comparative) into the highest degree of comparison (Superlative using -est or most).",
+      "banglaDefinition": "কারও বা কোনো কিছুর সাথে সবার তুলনা বোঝাতে Comparative রূপ থেকে সর্বোচ্চ তুলনামূলক রূপ Superlative (যা সাধারণত -est বা most যোগে গঠিত হয়)-এ রূপান্তর করা।",
+      "formula": "- Comparative: Subject + Verb + Comparative Adjective + than any other + Noun\n- Superlative: Subject + Verb + the + Superlative Adjective + Noun\n- Comparative: Subject + Verb + Comparative Adjective + than most other + Noun -> Superlative: Subject + Verb + one of the + Superlative Adjective + Plural Noun",
+      "rules": [
+        "Superlative Adjective-এর পূর্বে অবশ্যই 'the' বসাতে হবে।",
+        "যদি Comparative বাক্যে 'than most other' থাকে, তবে Superlative-এ 'the'-এর পরিবর্তে 'one of the' বসবে।"
+      ],
+      "examples": [
+        { "en": "Comparative: Iron is more useful than any other metal.", "bn": "লোহা অন্য যেকোনো ধাতুর চেয়ে বেশি দরকারী।" },
+        { "en": "Superlative: Iron is the most useful metal.", "bn": "লোহা সবচেয়ে দরকারী ধাতু।" },
+        { "en": "Comparative: He is better than most other boys in the team.", "bn": "সে দলের অধিকাংশ ছেলের চেয়ে ভালো।" },
+        { "en": "Superlative: He is one of the best boys in the team.", "bn": "সে দলের অন্যতম সেরা ছেলেদের একজন।" }
+      ],
+      "tips": "কোনো কিছুকে দল বা সম্প্রদায়ের মধ্যে 'সেরা' বা 'সবচেয়ে ভালো' বলতে চাইলে সরাসরি Superlative form যেমন- 'He is the best candidate' অথবা 'It is the most beautiful place' ব্যবহার করুন।"
+    },
+    {
+      "name": "Superlative to Positive (সুপারলেটিভ থেকে পজিটিভ রূপান্তর)",
+      "banglaName": "Superlative থেকে Positive রূপান্তর",
+      "definition": "Changing a superlative statement (expressing the highest degree) into a positive statement (expressing equality or general comparison) using 'No other' or 'Very few'.",
+      "banglaDefinition": "সবচেয়ে উৎকৃষ্ট বা নিকৃষ্ট কোনো কিছুকে সমতা বা সাধারণ তুলনার মাধ্যমে প্রকাশ করতে Superlative থেকে Positive-এ রূপান্তর করা। এক্ষেত্রে সাধারণত 'No other' বা 'Very few' ব্যবহার করা হয়।",
+      "formula": "- Superlative with 'the' -> Positive: No other + Noun + Verb + as + Adjective + as + Subject\n- Superlative with 'one of the' -> Positive: Very few + Plural Noun + Plural Verb + as + Adjective + as + Subject",
+      "rules": [
+        "সাধারণ Superlative বাক্যের ক্ষেত্রে 'No other' দিয়ে বাক্য শুরু করতে হয় এবং Verb-টি singular হয়।",
+        "বাক্যে 'one of the' থাকলে 'Very few' দিয়ে শুরু করতে হবে এবং Verb-টি অবশ্যই plural (যেমন: are, were) হবে।"
+      ],
+      "examples": [
+        { "en": "Superlative: He is the oldest man in the village.", "bn": "তিনি গ্রামের সবচেয়ে বয়স্ক লোক।" },
+        { "en": "Positive: No other man in the village is as old as he.", "bn": "গ্রামের অন্য কোনো লোক তার মতো এত বয়স্ক নয়।" },
+        { "en": "Superlative: Gold is one of the most precious metals.", "bn": "স্বর্ণ অন্যতম মূল্যবান ধাতুগুলোর একটি।" },
+        { "en": "Positive: Very few metals are as precious as gold.", "bn": "খুব কম ধাতুই স্বর্ণের মতো এত মূল্যবান।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে 'as...as' ব্যবহার করে খুব সহজেই সমতা বা একই রকম গুণ প্রকাশ করা যায়। যেমন: 'I am as fast as you.' (আমি তোমার মতোই দ্রুত।)"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "He is more taller than me.",
+      "correct": "He is taller than me. OR He is taller than I am.",
+      "explanation": "একই সাথে দুটি Comparative রূপ (double comparative) ব্যবহার করা ভুল। 'taller' নিজেই একটি comparative রূপ, তাই এর আগে আলাদাভাবে 'more' বসবে না।"
+    },
+    {
+      "wrong": "He is one of the best boy in the class.",
+      "correct": "He is one of the best boys in the class.",
+      "explanation": "'One of the'-এর পরে সর্বদা plural noun (বহুবচন বিশিষ্ট বিশেষ্য) বসে, কারণ এটি অনেকের মধ্যে একজনকে নির্দেশ করে।"
+    },
+    {
+      "wrong": "This book is more better than that one.",
+      "correct": "This book is much better than that one. OR This book is better than that one.",
+      "explanation": "Comparative Adjective-কে জোর দিতে 'more' ব্যবহার করা যায় না। তীব্রতা বাড়াতে 'much' অথবা 'far' ব্যবহার করা সঠিক।"
+    }
+  ]
 }

@@ -1,10 +1,119 @@
 {
   "chapter": 32,
   "level": "Intermediate",
-  "title": "Participle",
+  "title": "Participle (পার্টিসিপল)",
   "icon": "contrast",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "A participle is a word formed from a verb that is used as an adjective to modify nouns, or as an auxiliary verb to form continuous and perfect tenses. There are three types: Present, Past, and Perfect Participle. Understanding participles allows you to construct descriptively rich and sophisticated sentences in spoken English.",
+  "banglaDescription": "Participle হলো verb-এর এমন একটি রূপ যা একই সাথে verb এবং adjective-এর কাজ করে (যেমন: কোনো ব্যক্তি বা বস্তুর অবস্থা বর্ণনা করা)। এটি টেন্স গঠনেও সাহায্য করে। পার্টিসিপল তিন প্রকার: Present, Past এবং Perfect। পার্টিসিপলের ব্যবহার জানলে স্পোকেন ইংলিশে যেকোনো ঘটনার বা অবস্থার চমৎকার ও আকর্ষণীয় বর্ণনা দেওয়া যায়।",
+  "topics": [
+    {
+      "name": "What is a Participle? (Participle কী?)",
+      "banglaName": "Participle কী?",
+      "definition": "A participle is a verb-like word that functions as an adjective in a sentence to describe a noun, or is used alongside helping verbs to create tense structures. It has three main forms: Present (ending in -ing), Past (ending in -ed/-en/-t), and Perfect (having + past participle).",
+      "banglaDefinition": "Participle হলো verb থেকে উৎপন্ন এমন একটি শব্দ যা বাক্যে adjective-এর মতো কাজ করে কোনো noun বা pronoun-এর অবস্থা প্রকাশ করে, অথবা বিভিন্ন continuous ও perfect tense গঠনে সাহায্য করে। পার্টিসিপল প্রধানত তিন প্রকার: Present (V+ing), Past (V3) এবং Perfect (having + V3)।",
+      "formula": "- Present Participle: Verb + ing (Active state)\n- Past Participle: Verb (V3 form) (Passive/Completed state)\n- Perfect Participle: Having + Verb (V3 form)",
+      "rules": [
+        "পার্টিসিপল যখন adjective হিসেবে কাজ করে, তখন তা সাধারণত যার দোষ-গুণ বা অবস্থা প্রকাশ করছে, তার ঠিক পূর্বে বসে।",
+        "জেরান্ড এবং প্রেজেন্ট পার্টিসিপলের রূপ এক হলেও কাজ আলাদা; জেরান্ড কাজ করে noun হিসেবে, আর পার্টিসিপল কাজ করে adjective বা চলমান অবস্থা হিসেবে।"
+      ],
+      "examples": [
+        { "en": "I saw a flying bird. (Present Participle)", "bn": "আমি একটি উড়ন্ত পাখি দেখেছিলাম।" },
+        { "en": "Don't sit on that broken chair. (Past Participle)", "bn": "ঐ ভাঙা চেয়ারটিতে বসো না।" },
+        { "en": "Having lost my key, I had to call a locksmith. (Perfect Participle)", "bn": "চাবি হারিয়ে ফেলার পর, আমাকে একজন তালা মেরামতকারীকে ডাকতে হয়েছিল।" },
+        { "en": "We are walking in the park. (Tense builder)", "bn": "আমরা পার্কে হাঁটছি।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে কোনো কিছুর তাৎক্ষণিক অবস্থা বর্ণনা করতে পার্টিসিপলের ব্যবহার অনেক বেশি শোনা যায় (যেমন: a crying baby - কান্নারত শিশু)।"
+    },
+    {
+      "name": "Present Participle vs. Gerund (প্রেজেন্ট পার্টিসিপল এবং জেরান্ডের পার্থক্য)",
+      "banglaName": "প্রেজেন্ট পার্টিসিপল এবং জেরান্ডের পার্থক্য",
+      "definition": "Both Gerund and Present Participle end in '-ing', but they do different jobs. A Gerund acts like a noun (it is the name of an activity). A Present Participle acts like an adjective (describing a noun) or shows a continuous action.",
+      "banglaDefinition": "Gerund এবং Present Participle উভয়ের শেষেই '-ing' থাকে, কিন্তু তাদের কাজের ধরন সম্পূর্ণ আলাদা। Gerund কাজ করে noun বা বিষয়ের নাম হিসেবে। আর Present Participle কাজ করে adjective (অবস্থা বর্ণনা করা) অথবা চলমান কোনো কাজের সময় বুঝাতে।",
+      "formula": "- Gerund = Verb + ing (Acts as Noun - answers 'What?')\n- Present Participle = Verb + ing (Acts as Adjective - answers 'How / What kind of?')",
+      "rules": [
+        "বাক্যে 'Swimming is good' - এখানে 'Swimming' একটি বিষয়ের নাম (Gerund)।",
+        "'I saw him swimming' - এখানে 'swimming' তার চলমান অবস্থা বা কাজ বোঝাচ্ছে (Present Participle)।"
+      ],
+      "examples": [
+        { "en": "I love painting. (Gerund - What do you love?)", "bn": "আমি ছবি আঁকা পছন্দ করি।" },
+        { "en": "Look at that painting girl. (Present Participle - Which girl?)", "bn": "ছবি আঁকতে থাকা মেয়েটির দিকে তাকাও।" },
+        { "en": "Sleeping is necessary. (Gerund - Subject)", "bn": "ঘুমানো প্রয়োজন।" },
+        { "en": "Don't disturb a sleeping dog. (Present Participle - Describes 'dog')", "bn": "ঘুমন্ত কুকুরকে বিরক্ত কোরো না।" }
+      ],
+      "tips": "যদি '-ing' যুক্ত শব্দটি কোনো ব্যক্তি বা বস্তুর অবস্থা প্রকাশ করে (কেমন অবস্থায় আছে), তবে সেটি Participle। আর যদি তা কোনো কাজের নাম সরাসরি নির্দেশ করে, তবে তা Gerund।"
+    },
+    {
+      "name": "Past Participle (পাস্ট পার্টিসিপল)",
+      "banglaName": "পাস্ট পার্টিসিপল",
+      "definition": "The Past Participle is the third form of a verb (V3). It is used to form perfect tenses (e.g., 'has gone'), passive voice (e.g., 'is eaten'), or as an adjective to describe a completed state or feeling (e.g., 'a bored student', 'a broken phone').",
+      "banglaDefinition": "Past Participle হলো verb-এর তৃতীয় রূপ (V3)। এটি মূলত perfect tense গঠনে, passive voice গঠনে অথবা কোনো কিছুর হয়ে যাওয়া বা সম্পন্ন হওয়া অবস্থা বর্ণনাকারী adjective হিসেবে ব্যবহৃত হয় (যেমন: 'a bored student' - বিরক্ত ছাত্র, 'a broken phone' - ভাঙা ফোন)।",
+      "formula": "- Tense/Passive: Auxiliary Verb + Past Participle (V3)\n- Adjective: Past Participle (V3) + Noun",
+      "rules": [
+        "Past Participle যখন adjective হিসেবে কাজ করে, তখন এটি মূলত কোনো কাজ সম্পূর্ণ হয়ে যাওয়ার পর বস্তুর অবস্থা বোঝায়।",
+        "মানুষের নিজের কোনো অনুভূতি বা অবস্থা প্রকাশ করতে সাধারণত past participle ব্যবহৃত হয় (যেমন: excited, tired, bored)।"
+      ],
+      "examples": [
+        { "en": "I am so tired today. (My feeling/state)", "bn": "আমি আজ খুব ক্লান্ত।" },
+        { "en": "The police recovered the stolen car. (Completed state)", "bn": "পুলিশ চুরি হওয়া গাড়িটি উদ্ধার করেছে।" },
+        { "en": "I have written the letter. (Perfect tense)", "bn": "আমি চিঠিটি লিখেছি।" },
+        { "en": "This glass is broken. (Passive state)", "bn": "এই গ্লাসটি ভাঙা।" }
+      ],
+      "tips": "মানুষের অনুভূতি প্রকাশ করতে '-ed' (Past Participle) ব্যবহার করুন, আর ঐ অনুভূতির পেছনের কারণ বর্ণনা করতে '-ing' (Present Participle) ব্যবহার করুন। যেমন: 'I am bored (আমি ক্লান্ত/বিরক্ত)' কারণ 'The movie is boring (সিনেমাটি বিরক্তিকর)।'"
+    },
+    {
+      "name": "Perfect Participle (পারফেক্ট পার্টিসিপল)",
+      "banglaName": "পারফেক্ট পার্টিসিপল",
+      "definition": "A perfect participle is formed by using 'having' followed by the past participle (V3) of the verb. It is used to show that one action was completed before another action started.",
+      "banglaDefinition": "যখন কোনো কাজ শেষ হওয়ার ঠিক পর পরই অন্য আরেকটি কাজ শুরু হয়, তখন পূর্বের কাজটি প্রকাশ করতে 'having + past participle (V3)' ব্যবহার করা হয়। একেই Perfect Participle বলে।",
+      "formula": "Having + Past Participle (V3) + Clause (Next Action)\n\nExample:\n- Having finished his homework, he went to play.",
+      "rules": [
+        "দুটি কাজের মধ্যে একটি আগে সম্পন্ন হতে হবে। যে কাজটি আগে শেষ হয়েছে তার পূর্বে 'having + V3' বসে।",
+        "বাক্যের দুই অংশের সাবজেক্ট বা কর্তা সাধারণত একই ব্যক্তি বা বস্তু হয়ে থাকে।"
+      ],
+      "examples": [
+        { "en": "Having cooked dinner, she watched TV.", "bn": "রাতের খাবার রান্না করার পর, সে টিভি দেখেছিল।" },
+        { "en": "Having received the money, he paid the bill.", "bn": "টাকাটি পাওয়ার পর, সে বিলটি পরিশোধ করেছিল।" },
+        { "en": "Having heard the news, they rushed to the spot.", "bn": "খবরটি শোনার পর, তারা ঘটনাস্থলে ছুটে গিয়েছিল।" },
+        { "en": "Having traveled all day, they were exhausted.", "bn": "সারাদিন ভ্রমণ করার পর, তারা ক্লান্ত হয়ে পড়েছিল।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে 'After finishing my homework, I went out' বলার চেয়ে 'Having finished my homework, I went out' বলা বাক্যকে অনেক বেশি মার্জিত ও উন্নত করে তোলে।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I am very interesting in this topic.",
+      "correct": "I am very interested in this topic.",
+      "explanation": "ব্যক্তির নিজস্ব অনুভূতি বা আগ্রহ প্রকাশ করতে past participle (interested) ব্যবহার করতে হবে, present participle (interesting) নয়।"
+    },
+    {
+      "wrong": "The movie was so bored.",
+      "correct": "The movie was so boring.",
+      "explanation": "কোনো জিনিস বা বিষয় যা অন্য কারো মাঝে অনুভূতি তৈরি করে, তার জন্য present participle (boring) ব্যবহার করতে হবে।"
+    },
+    {
+      "wrong": "Don't touch the breaking glass.",
+      "correct": "Don't touch the broken glass.",
+      "explanation": "গ্লাসটি ইতিমধ্যে ভেঙে গেছে (সম্পন্ন কাজ), তাই এর অবস্থা প্রকাশ করতে past participle (broken) ব্যবহার করতে হবে।"
+    },
+    {
+      "wrong": "I saw a wound bird.",
+      "correct": "I saw a wounded bird.",
+      "explanation": "'Wound' (আঘাত) এর past participle রূপ 'wounded' (আহত) ব্যবহার করতে হবে পাখির অবস্থা বোঝাতে।"
+    },
+    {
+      "wrong": "Having finish the work, he slept.",
+      "correct": "Having finished the work, he slept.",
+      "explanation": "'Having'-এর পরে সর্বদা verb-এর past participle (V3) ফর্ম বসাতে হবে।"
+    },
+    {
+      "wrong": "I heard him to sing a song.",
+      "correct": "I heard him sing a song. OR I heard him singing a song.",
+      "explanation": "'Hear' বা 'heard' এর পর 'to' ছাড়াই মূল verb বসে অথবা চলমান অবস্থা বোঝাতে present participle (singing) বসে।"
+    },
+    {
+      "wrong": "The losted phone was found.",
+      "correct": "The lost phone was found.",
+      "explanation": "'Lose' verb-এর past participle রূপ হলো 'lost', 'losted' বলে ইংরেজিতে কোনো শব্দ নেই।"
+    }
+  ]
 }

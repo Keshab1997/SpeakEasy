@@ -1,10 +1,93 @@
 {
   "chapter": 37,
   "level": "Intermediate",
-  "title": "Compound Sentence",
+  "title": "Compound Sentence (যৌগিক বাক্য)",
   "icon": "looks_two",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "A compound sentence connects two or more independent clauses (complete thoughts) using coordinating conjunctions like 'and', 'but', 'or', and 'so'. In spoken English, compound sentences are vital for linking related ideas smoothly without making separate, choppy sentences.",
+  "banglaDescription": "Compound Sentence (যৌগিক বাক্য) হলো এমন এক ধরনের বাক্য যা দুই বা ততোধিক স্বাধীন বাক্য বা ক্লজকে coordinating conjunction (যেমন: and, but, or, so) দ্বারা যুক্ত করে গঠিত হয়। স্পোকেন ইংলিশে ছোট ছোট বাক্যকে ভেঙে ভেঙে না বলে, সেগুলোকে সুন্দরভাবে ও সাবলীলভাবে সংযোগ করতে কম্পাউন্ড সেন্টেন্স চমৎকার সাহায্য করে।",
+  "topics": [
+    {
+      "name": "What is a Compound Sentence? (Compound Sentence কী?)",
+      "banglaName": "Compound Sentence কী?",
+      "definition": "A compound sentence contains at least two independent clauses of equal grammatical rank. This means both parts of the sentence could stand alone as complete, separate sentences. They are joined by a coordinating conjunction or a semicolon.",
+      "banglaDefinition": "Compound Sentence হলো এমন একটি বাক্য যেখানে সমান গুরুত্বের অন্তত দুটি স্বাধীন ক্লজ বা পূর্ণাঙ্গ বাক্য থাকে। এর অর্থ হলো, বাক্যের দুটি অংশই আলাদা আলাদা দুটি স্বাধীন বাক্য হিসেবে প্রকাশ পেতে পারে। এদেরকে সাধারণত একটি coordinating conjunction বা সেমিকোলন দ্বারা যুক্ত করা হয়।",
+      "formula": "Independent Clause + Coordinating Conjunction + Independent Clause\n\nExample:\n- I like tea, but my sister likes coffee. (Both sides are complete sentences)",
+      "rules": [
+        "কম্পাউন্ড বাক্যের যুক্ত হওয়া প্রতিটি অংশের নিজস্ব subject এবং finite verb থাকে।",
+        "coordinating conjunction ব্যবহার করার সময় সাধারণত কনজাংশনটির ঠিক পূর্বে একটি কমা (,) বসাতে হয় (অনানুষ্ঠানিক বা ছোট বাক্যে এটি বাদ দেওয়া হতে পারে)।"
+      ],
+      "examples": [
+        { "en": "I wanted to go for a walk, but it started to rain.", "bn": "আমি হাঁটতে যেতে চেয়েছিলাম, কিন্তু বৃষ্টি শুরু হয়ে গেল।" },
+        { "en": "You can study hard for the exam, or you can fail.", "bn": "তুমি পরীক্ষার জন্য কঠোর পড়াশোনা করতে পারো, অথবা ফেল করতে পারো।" },
+        { "en": "He did not study, so he did not pass the test.", "bn": "সে পড়াশোনা করেনি, তাই সে পরীক্ষায় পাস করতে পারেনি।" },
+        { "en": "She plays the piano, and her brother sings. (Two complete actions)", "bn": "সে পিয়ানো বাজায় এবং তার ভাই গান গায়।" }
+      ],
+      "tips": "কম্পাউন্ড সেন্টেন্সে যুক্ত থাকা বাক্য দুটিকে আলাদা করলেও তাদের অর্থের কোনো ক্ষতি হয় না। যেমন: 'I wanted to go. It started to rain.'"
+    },
+    {
+      "name": "The FANBOYS Conjunctions (FANBOYS কনজাংশনসমূহ)",
+      "banglaName": "FANBOYS কনজাংশনসমূহ",
+      "definition": "To easily remember the coordinating conjunctions used in compound sentences, we use the acronym 'FANBOYS': For, And, Nor, But, Or, Yet, So. In spoken English, 'And', 'But', 'Or', and 'So' are the most frequently used.",
+      "banglaDefinition": "কম্পাউন্ড সেন্টেন্স তৈরিতে ব্যবহৃত coordinating conjunction-গুলোকে সহজে মনে রাখার জন্য একটি অতি পরিচিত সংক্ষিপ্ত রূপ হলো 'FANBOYS'। এর পূর্ণরূপ হলো: For (কারণ), And (এবং), Nor (তাও না), But (কিন্তু), Or (অথবা), Yet (তবুও), So (তাই)। এদের মধ্যে স্পোকেন ইংলিশে And, But, Or এবং So সবচেয়ে বেশি ব্যবহৃত হয়।",
+      "formula": "Clause 1 + , [F - A - N - B - O - Y - S] + Clause 2",
+      "rules": [
+        "And: দুটি একই ধরণের বা সমধর্মী ধারণা যোগ করতে বসে।",
+        "But / Yet: দুটি বিপরীতধর্মী ধারণাকে যুক্ত করতে ব্যবহৃত হয়।",
+        "Or: কোনো পছন্দ বা বিকল্প বিষয় প্রকাশ করতে বসে।",
+        "So: কোনো কাজের ফলাফল প্রকাশ করতে ব্যবহৃত হয়।"
+      ],
+      "examples": [
+        { "en": "The weather was cold, yet they went swimming. (Contrast)", "bn": "আবহাওয়া ঠান্ডা ছিল, তবুও তারা সাঁতার কাটতে গিয়েছিল।" },
+        { "en": "I was very hungry, so I ordered some food. (Result)", "bn": "আমি খুব ক্ষুধার্ত ছিলাম, তাই আমি কিছু খাবার অর্ডার করেছিলাম।" },
+        { "en": "He speaks Spanish, and he also understands Italian. (Addition)", "bn": "সে স্প্যানিশ ভাষায় কথা বলে এবং সে ইতালীয় ভাষাও বোঝে।" },
+        { "en": "Would you like some tea, or do you prefer coffee? (Choice)", "bn": "আপনি কি চা খাবেন, নাকি কফি পছন্দ করবেন?" }
+      ],
+      "tips": "স্পোকেন ইংলিশে কোনো কিছুর ফলাফল প্রকাশ করার সময় 'So' শব্দটি ব্যাপকভাবে ব্যবহৃত হয়। যেমন: 'I was late, so I took a taxi' (আমার দেরি হচ্ছিল, তাই আমি একটা ট্যাক্সি নিয়েছিলাম)।"
+    },
+    {
+      "name": "Using Conjunctive Adverbs (Conjunctive Adverb-এর ব্যবহার)",
+      "banglaName": "Conjunctive Adverb-এর ব্যবহার",
+      "definition": "You can also join two independent clauses using transition words called conjunctive adverbs (e.g., however, therefore, moreover, otherwise). When writing, these are preceded by a semicolon and followed by a comma, but in speaking, they provide smooth and professional transitions.",
+      "banglaDefinition": "দুইটি স্বাধীন বাক্যকে যুক্ত করতে আপনি কিছু বিশেষ লিঙ্কিং শব্দ বা Conjunctive Adverb ব্যবহার করতে পারেন (যেমন: however - তবে, therefore - অতএব, moreover - তাছাড়া, otherwise - অন্যথায়)। কথ্য ইংরেজিতে এগুলো আপনার মতামতকে আরও যুক্তিযুক্ত ও পেশাদার করে তোলে।",
+      "formula": "Clause 1 + ; [however/therefore/otherwise] + , + Clause 2",
+      "rules": [
+        "কথোপকথনে এই শব্দগুলো বলার পর সামান্য থামতে (pause) হয়।",
+        "এদের ব্যবহার সাধারণত একটু ফরমাল বা প্রাতিষ্ঠানিক আলোচনায় বেশি হয়ে থাকে।"
+      ],
+      "examples": [
+        { "en": "He trained very hard; therefore, he won the race.", "bn": "সে কঠোর প্রশিক্ষণ নিয়েছিল; অতএব, সে রেসটিতে জিতেছিল।" },
+        { "en": "You must study; otherwise, you will not pass.", "bn": "তোমাকে অবশ্যই পড়াশোনা করতে হবে; অন্যথায়, তুমি পাস করতে পারবে না।" },
+        { "en": "I love this laptop; however, it is too expensive.", "bn": "আমি এই ল্যাপটপটি পছন্দ করি; তবে, এটি খুবই দামি।" },
+        { "en": "She is highly qualified; moreover, she has great experience.", "bn": "সে অত্যন্ত যোগ্য; তাছাড়া, তার চমৎকার অভিজ্ঞতা রয়েছে।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে 'but'-এর জায়গায় 'however' এবং 'so'-এর জায়গায় 'therefore' বা 'that's why' ব্যবহার করলে আপনার কথার মান অনেক উন্নত শোনায়।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I wanted to buy a car, I didn't have enough money.",
+      "correct": "I wanted to buy a car, but I didn't have enough money.",
+      "explanation": "দুটি স্বাধীন বাক্যকে কেবল কমা দিয়ে সরাসরি যুক্ত করা ভুল। এদের মাঝে অবশ্যই একটি coordinating conjunction (যেমন: but) বসাতে হবে।"
+    },
+    {
+      "wrong": "He was sick so he did not come.",
+      "correct": "He was sick, so he did not come.",
+      "explanation": "কম্পাউন্ড সেন্টেন্সে দুটি সম্পূর্ণ ক্লজকে 'so' বা অন্য কোনো FANBOYS দ্বারা যুক্ত করার সময় কনজাংশনের আগে একটি কমা (,) দেওয়া নিয়মসম্মত।"
+    },
+    {
+      "wrong": "Although she was tired, but she kept working.",
+      "correct": "She was tired, but she kept working. OR Although she was tired, she kept working.",
+      "explanation": "কম্পাউন্ড সেন্টেন্সে 'but' বসলে বাক্যের শুরুতে 'Although' বসানো যাবে না। 'Although' বসালে সেটি কমপ্লেক্স সেন্টেন্স হয়ে যায়।"
+    },
+    {
+      "wrong": "You must go now, otherwise you will miss the train.",
+      "correct": "You must go now; otherwise, you will miss the train.",
+      "explanation": "'Otherwise' একটি conjunctive adverb। এটিকে যুক্ত করার সময় কমার পরিবর্তে সেমিকোলন এবং এরপর একটি কমা ব্যবহার করতে হয়।"
+    },
+    {
+      "wrong": "I like reading novels, also I love writing stories.",
+      "correct": "I like reading novels, and I also love writing stories.",
+      "explanation": "'Also' সরাসরি দুটি স্বাধীন ক্লজকে যুক্ত করতে পারে না। এখানে একটি coordinating conjunction 'and' ব্যবহার করা প্রয়োজন।"
+    }
+  ]
 }

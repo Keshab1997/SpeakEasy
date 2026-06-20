@@ -1,10 +1,83 @@
 {
   "chapter": 41,
   "level": "Intermediate",
-  "title": "Affirmative and Negative Transformation",
+  "title": "Affirmative and Negative Transformation (হ্যাঁ-বোধক ও না-বোধক বাক্যের রূপান্তর)",
   "icon": "compare",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Affirmative and Negative Transformation is the process of changing a positive statement into a negative one (or vice versa) without changing the core meaning. In spoken English, this allows you to emphasize points or sound more polite.",
+  "banglaDescription": "Affirmative and Negative Transformation হলো বাক্যের মূল অর্থ ঠিক রেখে হ্যাঁ-বোধক বাক্যকে না-বোধক বাক্যে (অথবা বিপরীত উপায়ে) রূপান্তর করা। স্পোকেন ইংলিশে কোনো বিষয়ে জোর দিতে বা ভদ্রতা বজায় রেখে কথা বলতে এই রূপান্তর জানা খুবই দরকার।",
+  "topics": [
+    {
+      "name": "Only / Alone Transformation (Only / Alone যুক্ত বাক্যের রূপান্তর)",
+      "banglaName": "Only / Alone যুক্ত বাক্যের রূপান্তর",
+      "definition": "Transforming sentences containing 'only' or 'alone' into negative sentences using 'none but' (for persons), 'nothing but' (for things), or 'not more than / not less than' (for numbers/age).",
+      "banglaDefinition": "বাক্যে 'only' বা 'alone' থাকলে নেগেটিভ করার সময় ব্যক্তির ক্ষেত্রে 'none but', বস্তুর ক্ষেত্রে 'nothing but' এবং সংখ্যা বা বয়সের ক্ষেত্রে 'not more than/not less than' ব্যবহার করতে হয়।",
+      "formula": "- Only/Alone (Person) -> None but + Person\n- Only (Thing) -> Nothing but + Thing\n- Only (Number/Age) -> Not more than / Not less than + Number/Age",
+      "rules": [
+        "ব্যক্তির ক্ষেত্রে 'None but' সবসময় বাক্যের একদম শুরুতে বসে।",
+        "বস্তু বা সংখ্যার ক্ষেত্রে 'nothing but' বা 'not more than' সাধারণত 'only' এর স্থানে সরাসরি প্রতিস্থাপিত হয়।"
+      ],
+      "examples": [
+        { "en": "Affirmative: Only Allah can help us.", "bn": "একমাত্র আল্লাহ আমাদের সাহায্য করতে পারেন।" },
+        { "en": "Negative: None but Allah can help us.", "bn": "আল্লাহ ছাড়া আর কেউ আমাদের সাহায্য করতে পারেন না।" },
+        { "en": "Affirmative: He bought only some toys.", "bn": "সে কেবল কিছু খেলনা কিনেছিল।" },
+        { "en": "Negative: He bought nothing but some toys.", "bn": "সে খেলনা ছাড়া আর কিছুই কেনেনি।" },
+        { "en": "Affirmative: She is only ten years old.", "bn": "তার বয়স মাত্র দশ বছর।" },
+        { "en": "Negative: She is not more than ten years old.", "bn": "তার বয়স দশ বছরের বেশি নয়।" }
+      ],
+      "tips": "কারও প্রশংসা করতে বা কারও অনন্য সাধারণ ভূমিকা তুলে ধরতে 'none but' ব্যবহার করা অনেক বেশি মার্জিত ও চমৎকার শোনায়।"
+    },
+    {
+      "name": "Must / Have to / Has to (Must / Have to / Has to যুক্ত বাক্যের রূপান্তর)",
+      "banglaName": "Must / Have to / Has to যুক্ত বাক্যের রূপান্তর",
+      "definition": "Transforming affirmative sentences with 'must', 'have to', or 'has to' into negative statements using 'cannot but' + base verb or 'cannot help' + verb-ing.",
+      "banglaDefinition": "হ্যাঁ-বোধক বাক্যে 'must', 'have to', বা 'has to' থাকলে না-বোধক করার সময় 'cannot but' (তারপরে verb-এর মূল রূপ) অথবা 'cannot help' (তারপরে verb+ing) ব্যবহার করতে হয়।",
+      "formula": "- Must/Have to -> Cannot but + Verb (base form)\n- Must/Have to -> Cannot help + Verb-ing",
+      "rules": [
+        "'Cannot but'-এর পরে verb-এর কোনো পরিবর্তন করতে হয় না (base form বসে)।",
+        "যদি 'Cannot help' ব্যবহার করেন, তবে তার পরবর্তী verb-এর সাথে অবশ্যই 'ing' যোগ করতে হবে।"
+      ],
+      "examples": [
+        { "en": "Affirmative: You must obey your parents.", "bn": "তোমাকে অবশ্যই তোমার বাবা-মাকে মান্য করতে হবে।" },
+        { "en": "Negative: You cannot but obey your parents.", "bn": "তুমি তোমার বাবা-মাকে মান্য না করে পারো না।" },
+        { "en": "Affirmative: We must yield to our fate.", "bn": "আমাদের অবশ্যই ভাগ্যের কাছে নতি স্বীকার করতে হবে।" },
+        { "en": "Negative: We cannot help yielding to our fate.", "bn": "আমাদের ভাগ্যের কাছে নতি স্বীকার না করে উপায় নেই।" }
+      ],
+      "tips": "আমরা যখন বাংলায় বলি 'আমি না হেসে পারলাম না' বা 'কাজটি না করে আমার উপায় নেই', তখন ইংরেজিতে 'cannot but' বা 'cannot help' ব্যবহার করতে হয়। যেমন: 'I cannot help laughing.' (আমি না হেসে পারলাম না।)"
+    },
+    {
+      "name": "Both...and / As soon as (Both...and এবং As soon as যুক্ত বাক্যের রূপান্তর)",
+      "banglaName": "Both...and এবং As soon as যুক্ত বাক্যের রূপান্তর",
+      "definition": "Converting sentences with 'both...and' into 'not only...but also' and 'as soon as' sentences into 'no sooner had...than' to form negatives.",
+      "banglaDefinition": "হ্যাঁ-বোধক বাক্যে 'both...and' থাকলে নেগেটিভ করার সময় 'not only...but also' এবং 'as soon as' থাকলে 'no sooner had...than' ব্যবহার করে বাক্য পরিবর্তন করা হয়।",
+      "formula": "- Both A and B -> Not only A but also B\n- As soon as + Subject + Past Verb -> No sooner had + Subject + V3 (Past Participle) + ... + than + Subject + Past Verb",
+      "rules": [
+        "'As soon as' উঠে গিয়ে 'No sooner had' বসে এবং প্রথম ক্লজের Verb-টি Past Participle (V3) হয়ে যায়।",
+        "দুই ক্লজের মাঝখানের কমা (,) উঠে গিয়ে সেখানে 'than' বসাতে হবে।"
+      ],
+      "examples": [
+        { "en": "Affirmative: He took both coffee and tea.", "bn": "সে কফি এবং চা উভয়ই নিয়েছিল।" },
+        { "en": "Negative: He took not only coffee but also tea.", "bn": "সে কেবল কফিই নেয়নি, চাও নিয়েছিল।" },
+        { "en": "Affirmative: As soon as the thief saw the police, he ran away.", "bn": "চোরটি পুলিশকে দেখামাত্রই পালিয়ে গেল।" },
+        { "en": "Negative: No sooner had the thief seen the police than he ran away.", "bn": "চোরটি পুলিশকে দেখতে না দেখতেই পালিয়ে গেল।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে কারও দুটি গুণের কথা একসাথে প্রকাশ করতে 'not only...but also' চমৎকার একটি ফ্রেজ। যেমন: 'She is not only smart but also very kind.'"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I cannot help but laughing.",
+      "correct": "I cannot help laughing. OR I cannot but laugh.",
+      "explanation": "'cannot help' এবং 'cannot but' দুটি আলাদা ব্যাকরণগত নিয়ম। 'cannot help'-এর পর direct verb+ing বসে এবং 'cannot but'-এর পর base verb বসে। এদের একসাথে গুলিয়ে ফেলা যাবে না।"
+    },
+    {
+      "wrong": "No sooner had we reached the station when the train left.",
+      "correct": "No sooner had we reached the station than the train left.",
+      "explanation": "No sooner had-এর পরবর্তী অংশে সবসময় 'than' বসে, 'when' বা 'then' বসানো ভুল।"
+    },
+    {
+      "wrong": "He wants none but money.",
+      "correct": "He wants nothing but money.",
+      "explanation": "টাকা (money) কোনো ব্যক্তি নয়, এটি একটি বস্তু বা বিষয়। তাই ব্যক্তির ক্ষেত্রে প্রযোজ্য 'none but' ব্যবহার না করে বস্তুর ক্ষেত্রে প্রযোজ্য 'nothing but' ব্যবহার করতে হবে।"
+    }
+  ]
 }

@@ -1,10 +1,125 @@
 {
   "chapter": 30,
   "level": "Intermediate",
-  "title": "Infinitive",
+  "title": "Infinitive (ইনফিনিটিভ)",
   "icon": "arrow_forward",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "An infinitive is the base form of a verb, usually preceded by the word 'to' (e.g., 'to go', 'to speak'). Infinitives act as nouns, adjectives, or adverbs in a sentence. Mastering infinitives helps you connect ideas smoothly and talk about purposes, goals, and desires in spoken English.",
+  "banglaDescription": "Infinitive হলো মূলত verb-এর বেস ফর্ম (V1) যার পূর্বে সাধারণত 'to' বসে (যেমন: 'to go', 'to speak')। এটি বাক্যে noun, adjective বা adverb হিসেবে কাজ করে। স্পোকেন ইংলিশে উদ্দেশ্য, লক্ষ্য এবং মনের ইচ্ছা প্রকাশ করতে এবং বাক্যকে সুন্দরভাবে জুড়তে ইনফিনিটিভের ব্যবহার জানা অত্যন্ত জরুরি।",
+  "topics": [
+    {
+      "name": "What is an Infinitive? (Infinitive কী?)",
+      "banglaName": "Infinitive কী?",
+      "definition": "An infinitive is the most basic form of a verb that has not been conjugated. It is usually structured as 'to + Verb (Base Form)'. It does not change with the subject or tense of the sentence.",
+      "banglaDefinition": "Infinitive হলো verb-এর সবচেয়ে সাধারণ বা অপরিবর্তিত রূপ। সাধারণত 'to + Verb (Base Form)' এভাবে এটি গঠিত হয়। বাক্যের সাবজেক্ট কিংবা টেন্সের পরিবর্তনের সাথে ইনফিনিটিভের কোনো পরিবর্তন হয় না।",
+      "formula": "Subject + Verb + to + Verb (Base Form / V1) + Extension\n\nExample:\n- I want to learn English. (Not: to learning / to learned)",
+      "rules": [
+        "Infinitive চেনার সহজ উপায় হলো মূল verb-এর আগে 'to' থাকা।",
+        "to-এর পর সর্বদা verb-এর বেস ফর্ম (V1) বসে, কোনো s/es, ing বা past form যুক্ত হয় না।",
+        "নেতিবাচক বা Negative করতে 'not' শব্দটি 'to'-এর ঠিক আগে বসে (যেমন: not to do)।"
+      ],
+      "examples": [
+        { "en": "I hope to see you soon. (Expectation)", "bn": "আমি আশা করি তোমার সাথে শীঘ্রই দেখা হবে।" },
+        { "en": "She decided not to go. (Negative action)", "bn": "সে না যাওয়ার সিদ্ধান্ত নিয়েছিল।" },
+        { "en": "To err is human. (Subject of sentence)", "bn": "মানুষমাত্রই ভুল করে।" },
+        { "en": "It is easy to learn this. (Adjective modifier)", "bn": "এটি শেখা সহজ।" }
+      ],
+      "tips": "মনে রাখবেন, 'to' এখানে কোনো preposition নয়, এটি verb-এর একটি অংশ হিসেবে কাজ করে। বাংলা করার সময় সাধারণত 'করতে', 'যেতে', 'খেতে' (তে-বিভক্তি) অর্থ প্রকাশ পায়।"
+    },
+    {
+      "name": "Infinitive of Purpose (উদ্দেশ্য প্রকাশে ইনফিনিটিভ)",
+      "banglaName": "উদ্দেশ্য প্রকাশে ইনফিনিটিভ",
+      "definition": "We often use the infinitive (to + verb) to explain 'why' someone does something. It shows the purpose or reason behind an action. It is a shorter way of saying 'in order to'.",
+      "banglaDefinition": "কেউ কোনো কাজ 'কেন' করছে—তা ব্যাখ্যা করতে আমরা প্রায়ই infinitive ব্যবহার করি। এটি কাজের পেছনের উদ্দেশ্য বা কারণ প্রকাশ করে। এটি মূলত 'in order to' (উদ্দেশ্যে)-এর একটি সংক্ষিপ্ত ও চমৎকার রূপ।",
+      "formula": "Main Clause (Action) + to + Verb (Purpose)\n\nExample:\n- I went to the market to buy some vegetables.",
+      "rules": [
+        "কোনো প্রশ্নের উত্তর যদি 'কেন' (why) দিয়ে শুরু হয়, তবে তার জবাবে ইনফিনিটিভ ব্যবহার করা সবচেয়ে সহজ ও স্বাভাবিক।",
+        "উদ্দেশ্য বোঝাতে 'for buying' বলার চেয়ে 'to buy' বলা স্পোকেন ইংলিশে অনেক বেশি শুদ্ধ শোনায়।"
+      ],
+      "examples": [
+        { "en": "I joined this course to improve my English.", "bn": "আমি আমার ইংরেজি উন্নত করার জন্য এই কোর্সে যোগ দিয়েছি।" },
+        { "en": "He called me to invite me to the party.", "bn": "সে আমাকে পার্টিতে আমন্ত্রণ জানানোর জন্য ফোন করেছিল।" },
+        { "en": "She works hard to support her family.", "bn": "সে তার পরিবারকে সাহায্য করার জন্য কঠোর পরিশ্রম করে।" },
+        { "en": "We use a knife to cut vegetables.", "bn": "আমরা সবজি কাটার জন্য ছুরি ব্যবহার করি।" }
+      ],
+      "tips": "কথা বলার সময় 'কেন করছেন' বোঝাতে সরাসরি 'to + Verb' ব্যবহার করুন। যেমন: 'Why did you go?' - 'To meet my friend.'"
+    },
+    {
+      "name": "Common Verbs Followed by Infinitive (ইনফিনিটিভ গ্রহণকারী সাধারণ ভার্ব)",
+      "banglaName": "ইনফিনিটিভ গ্রহণকারী সাধারণ ভার্ব",
+      "definition": "In English, certain verbs are naturally followed by an infinitive (to + verb) rather than a gerund. Some of the most common ones are: want, need, decide, hope, promise, plan, and agree.",
+      "banglaDefinition": "ইংরেজিতে কিছু নির্দিষ্ট verb রয়েছে যেগুলোর ঠিক পরে পরবর্তী কাজ বোঝাতে সর্বদা infinitive (to + verb) বসে। দৈনন্দিন কথোপকথনে বহুল ব্যবহৃত এমন কিছু verb হলো: want, need, decide, hope, promise, plan এবং agree।",
+      "formula": "Subject + [Specific Verb (want/need/decide etc.)] + to + Verb (V1)",
+      "rules": [
+        "এই verb গুলোর পর সরাসরি ing-যুক্ত verb বসানো যাবে না (যেমন: I want going ভুল, I want to go সঠিক)।",
+        "অতীতের ঘটনা হলেও প্রথম verb-টি পরিবর্তিত হবে, কিন্তু 'to'-এর পরের verb-টি অপরিবর্তিত থাকবে (যেমন: We decided to leave)।"
+      ],
+      "examples": [
+        { "en": "I want to speak fluent English.", "bn": "আমি অনর্গল ইংরেজি বলতে চাই।" },
+        { "en": "You need to focus on your studies.", "bn": "তোমার পড়াশোনায় মনোযোগ দেওয়া প্রয়োজন।" },
+        { "en": "They planned to start a new business.", "bn": "তারা একটি নতুন ব্যবসা শুরু করার পরিকল্পনা করেছিল।" },
+        { "en": "He promised not to tell anyone.", "bn": "সে কাউকে না বলার প্রতিশ্রুতি দিয়েছিল।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে 'want to' কে দ্রুত উচ্চারণের সময় 'wanna' (ওয়ানা) এবং 'need to' কে 'needa' বলা হয়ে থাকে। তবে ফরমাল ক্ষেত্রে মূল রূপটিই ব্যবহার করা ভালো।"
+    },
+    {
+      "name": "Bare Infinitive: Infinitives Without 'To' (টু-বিহীন ইনফিনিটিভ)",
+      "banglaName": "টু-বিহীন ইনফিনিটিভ",
+      "definition": "A bare infinitive is an infinitive verb that is used without the word 'to'. We use it after modal verbs (can, could, should, must) and after specific verbs like make, let, help, and hear.",
+      "banglaDefinition": "যখন কোনো ইনফিনিটিভ 'to' ছাড়াই সরাসরি ব্যবহৃত হয়, তখন তাকে Bare Infinitive বলে। সকল মোডাল ভার্ব (can, could, should, must) এবং কিছু বিশেষ verb যেমন: make, let, help এবং hear-এর পরে 'to' বাদ দিয়ে শুধু verb-এর বেস ফর্ম বসে।",
+      "formula": "Subject + [let / make / modal verb] + Object + Verb (Base Form without 'to')",
+      "rules": [
+        "'Let' বা 'Make' এর পরে কোনো ব্যক্তি বা বস্তু বসলে তার পরবর্তী verb-টির পূর্বে 'to' বসে না।",
+        "মোডাল ভার্বের পর কখনো 'to' বসে না (ব্যতিক্রম: ought to)।"
+      ],
+      "examples": [
+        { "en": "Let me go. (Not: Let me to go)", "bn": "আমাকে যেতে দাও।" },
+        { "en": "She made me laugh. (Not: made me to laugh)", "bn": "সে আমাকে হাসিয়েছিল।" },
+        { "en": "I can run fast. (After modal verb)", "bn": "আমি দ্রুত দৌড়াতে পারি।" },
+        { "en": "He helped me solve the problem. (Can also use: to solve)", "bn": "সে আমাকে সমস্যাটি সমাধান করতে সাহায্য করেছিল।" }
+      ],
+      "tips": "কাউকে দিয়ে জোর করে কোনো কাজ করিয়ে নেওয়া বোঝাতে 'make' ব্যবহার করা হয়। যেমন: 'My boss made me work late' (আমার বস আমাকে দিয়ে দেরিতে কাজ করিয়ে নিয়েছিলেন)। এখানে 'to work' বলা ভুল হবে।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I want to going there.",
+      "correct": "I want to go there.",
+      "explanation": "To-এর পরে সর্বদা verb-এর মূল রূপ বা বেস ফর্ম বসে। এর সাথে '-ing' যুক্ত করা যাবে না।"
+    },
+    {
+      "wrong": "She decided to not buy the dress.",
+      "correct": "She decided not to buy the dress.",
+      "explanation": "ইনফিনিটিভকে নেতিবাচক বা negative করতে 'not' শব্দটি সর্বদা 'to'-এর আগে বসে, 'to'-এর পরে বা মাঝে নয়।"
+    },
+    {
+      "wrong": "He made me to cry.",
+      "correct": "He made me cry.",
+      "explanation": "'Make' বা 'made' verb-এর পর bare infinitive বসে, অর্থাৎ এখানে 'to' ব্যবহার করা যাবে না।"
+    },
+    {
+      "wrong": "Let him to speak first.",
+      "correct": "Let him speak first.",
+      "explanation": "'Let'-এর পর অবজেক্ট থাকলে তার পরের verb-টির সাথে 'to' বসে না।"
+    },
+    {
+      "wrong": "I came here for meeting you.",
+      "correct": "I came here to meet you.",
+      "explanation": "কোনো উদ্দেশ্যে কোথাও যাওয়া বা কিছু করার ক্ষেত্রে 'for + ing' ব্যবহার করার চেয়ে 'to + V1' (Infinitive of purpose) ব্যবহার করা বেশি স্বাভাবিক ও প্রচলিত।"
+    },
+    {
+      "wrong": "They hope to passed the exam.",
+      "correct": "They hope to pass the exam.",
+      "explanation": "'To'-এর পরে verb-এর অতীত রূপ (passed) বসানো যাবে না। সবসময় বেস ফর্ম (pass) বসাতে হবে।"
+    },
+    {
+      "wrong": "It is difficult to learning English.",
+      "correct": "It is difficult to learn English.",
+      "explanation": "Adjective-এর পরে যখন কোনো কাজ করা বোঝায়, তখন 'to + verb-এর বেস ফর্ম' ব্যবহৃত হয়।"
+    },
+    {
+      "wrong": "I would like to asking a question.",
+      "correct": "I would like to ask a question.",
+      "explanation": "'Would like to' একটি কমন ফ্রেজ যার পর সরাসরি verb-এর বেস ফর্ম বসে।"
+    }
+  ]
 }

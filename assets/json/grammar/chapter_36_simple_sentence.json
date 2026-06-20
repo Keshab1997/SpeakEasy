@@ -1,10 +1,90 @@
 {
   "chapter": 36,
   "level": "Intermediate",
-  "title": "Simple Sentence",
+  "title": "Simple Sentence (সরল বাক্য)",
   "icon": "looks_one",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "A simple sentence consists of a single independent clause with a subject and a verb. It expresses a single, complete thought. In spoken English, simple sentences are the building blocks of clear, direct, and effective communication.",
+  "banglaDescription": "Simple Sentence (সরল বাক্য) হলো এমন একটি বাক্য যাতে কেবল একটি মাত্র independent clause (স্বাধীন বাক্যাংশ) থাকে, অর্থাৎ একটি subject এবং একটি finite verb থাকে। এটি একটিমাত্র সম্পূর্ণ মনের ভাব প্রকাশ করে। স্পোকেন ইংলিশে পরিষ্কার, সরাসরি এবং সহজভাবে মনের ভাব প্রকাশের জন্য সিম্পল সেন্টেন্স হলো সবচেয়ে গুরুত্বপূর্ণ ভিত্তি।",
+  "topics": [
+    {
+      "name": "What is a Simple Sentence? (Simple Sentence কী?)",
+      "banglaName": "Simple Sentence কী?",
+      "definition": "A simple sentence is a sentence structure that has only one independent clause. It must have one subject (the person or thing doing the action) and one predicate/verb (the action itself), and it must make complete sense on its own.",
+      "banglaDefinition": "Simple Sentence হলো এমন একটি বাক্য যার মধ্যে কেবল একটিমাত্র স্বাধীন বাক্যাংশ বা ক্লজ থাকে। এতে একটি মাত্র subject এবং একটি মাত্র verb থাকে এবং এটি নিজে নিজেই সম্পূর্ণ অর্থ প্রকাশ করতে সক্ষম হয়।",
+      "formula": "Subject + Finite Verb + Object/Extension\n\nExample:\n- I drink tea. (One subject 'I', one finite verb 'drink')",
+      "rules": [
+        "সিম্পল সেন্টেন্সে কোনো অবজেক্ট বা অতিরিক্ত অংশ (extension) থাকতেও পারে, আবার নাও থাকতে পারে (যেমন: 'He runs' এটিও একটি সিম্পল সেন্টেন্স)।",
+        "এতে কোনো subordinating বা coordinating conjunction (যেমন: because, although, but, so) দিয়ে অন্য কোনো ক্লজ যুক্ত করা থাকে না।"
+      ],
+      "examples": [
+        { "en": "The sun shines brightly.", "bn": "সূর্য উজ্জ্বলভাবে কিরণ দেয়।" },
+        { "en": "She loves English literature.", "bn": "সে ইংরেজি সাহিত্য পছন্দ করে।" },
+        { "en": "They are playing football in the field.", "bn": "তারা মাঠে ফুটবল খেলছে।" },
+        { "en": "The train arrived late.", "bn": "ট্রেনটি দেরিতে পৌঁছেছিল।" }
+      ],
+      "tips": "স্পোকেন ইংলিশ শুরু করার সময় সবসময় সিম্পল সেন্টেন্স দিয়ে শুরু করবেন। এটি ভুল হওয়ার সম্ভাবনা কমিয়ে দেয় এবং শ্রোতা আপনার কথা সহজে বুঝতে পারেন।"
+    },
+    {
+      "name": "Compound Subjects and Verbs (যৌগিক সাবজেক্ট ও ভার্ব)",
+      "banglaName": "যৌগিক সাবজেক্ট ও ভার্ব",
+      "definition": "A simple sentence can still be 'simple' even if it has a compound subject (two or more people doing the same action) or a compound verb (one subject doing two different actions). As long as there is only one main clause, it remains a simple sentence.",
+      "banglaDefinition": "কোনো বাক্যে যদি একের অধিক subject (যৌগিক সাবজেক্ট) অথবা একের অধিক verb (যৌগিক ভার্ব) থাকে, তবুও সেটি একটি Simple Sentence হিসেবেই গণ্য হবে—যতক্ষণ না পর্যন্ত সেখানে একাধিক আলাদা ক্লজ বা বাক্য তৈরি হচ্ছে।",
+      "formula": "- Compound Subject: Subject 1 + and + Subject 2 + Verb + ...\n- Compound Verb: Subject + Verb 1 + and + Verb 2 + ...",
+      "rules": [
+        "দুইজন ব্যক্তি একই কাজ করলে 'and' দিয়ে সাবজেক্ট দুটি যুক্ত হলেও বাক্যটি সিম্পল সেন্টেন্সই থাকে (যেমন: Jack and Jill)।",
+        "একই ব্যক্তি দুটি কাজ করলে 'and' দিয়ে ভার্ব দুটি যুক্ত হলেও বাক্যটি সিম্পল থাকে।"
+      ],
+      "examples": [
+        { "en": "Rahim and Karim went to the market. (Compound Subject)", "bn": "রহিম এবং করিম বাজারে গিয়েছিল।" },
+        { "en": "He washed the dishes and cooked dinner. (Compound Verb)", "bn": "সে থালাবাসন ধুয়েছিল এবং রাতের খাবার রান্না করেছিল।" },
+        { "en": "My brother and I speak English fluently.", "bn": "আমার ভাই এবং আমি অনর্গল ইংরেজি বলি।" },
+        { "en": "She sat down and wrote a letter.", "bn": "সে বসেছিল এবং একটি চিঠি লিখেছিল।" }
+      ],
+      "tips": "মাথায় রাখবেন, রহিম ও করিম মিলে একটি কাজ করছে, তাই এটি একটিই ক্লজ। আবার একই ব্যক্তি দুটি কাজ পরপর করছে, এখানেও সাবজেক্ট একটিই। তাই এগুলো সরল বাক্য বা Simple Sentence।"
+    },
+    {
+      "name": "Adding Phrases to Expand Simple Sentences (ফ্রেজ যুক্ত করে বাক্য বড় করা)",
+      "banglaName": "ফ্রেজ যুক্ত করে বাক্য বড় করা",
+      "definition": "A simple sentence does not have to be short. You can add prepositional phrases, adjective phrases, or infinitives to make a simple sentence longer and more descriptive, without turning it into a compound or complex sentence.",
+      "banglaDefinition": "সিম্পল সেন্টেন্স মানেই যে সবসময় ছোট বাক্য হবে, এমনটি নয়। আপনি বাক্যের মূল সাবজেক্ট ও ভার্ব অপরিবর্তিত রেখে বিভিন্ন prepositional phrase, adjective phrase বা infinitive যুক্ত করে বাক্যটিকে অনেক বড় ও তথ্যবহুল করতে পারেন, কিন্তু তবুও এটি সিম্পল সেন্টেন্সই থাকবে।",
+      "formula": "Subject + Verb + [Prepositional/Infinitive/Adjective Phrase]\n\nExample:\n- She wants to buy a house in Dhaka to live with her parents.",
+      "rules": [
+        "বাক্য বড় করার জন্য ফ্রেজ যোগ করা হলেও খেয়াল রাখতে হবে যেন নতুন কোনো finite verb ও তার সাথে নতুন কোনো subject যুক্ত না হয়ে যায়।"
+      ],
+      "examples": [
+        { "en": "Despite the heavy rain, we went to school. (Phrase + Clause)", "bn": "ভারী বৃষ্টি সত্ত্বেও আমরা স্কুলে গিয়েছিলাম।" },
+        { "en": "The boy with blue eyes is my younger brother. (Noun + Adjective Phrase)", "bn": "নীল চোখের ছেলেটি আমার ছোট ভাই।" },
+        { "en": "To improve her fluency, she practices English every single day.", "bn": "নিজের সাবলীলতা বাড়াতে সে প্রতিদিন ইংরেজি অনুশীলন করে।" },
+        { "en": "The book on the top shelf is very interesting.", "bn": "সবচেয়ে উপরের তাকের বইটি খুবই চমৎকার।" }
+      ],
+      "tips": "দীর্ঘ বাক্য বলার সময় যদি আপনি ভয় পান, তবে একটি ছোট সিম্পল সেন্টেন্সের শেষে একটি prepositional বা infinitive phrase (যেমন: to learn, in the morning) যোগ করে বাক্যটি বড় করার চেষ্টা করুন।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "She went to school, she met her friends.",
+      "correct": "She went to school and met her friends. OR After going to school, she met her friends.",
+      "explanation": "দুটি ভিন্ন ক্লজকে কমা (,) দিয়ে যুক্ত করা ব্যাকরণগতভাবে ভুল (একে Comma Splice বলে)। সিম্পল করতে চাইলে একটি ভার্বকে পার্টিসিপল বা ফ্রেজ বানাতে হবে অথবা 'and' দিয়ে যুক্ত করতে হবে।"
+    },
+    {
+      "wrong": "Because I was tired I went to sleep.",
+      "correct": "Because of being tired, I went to sleep. OR Being tired, I went to sleep. (Simple)",
+      "explanation": "'Because I was tired...' এটি একটি complex sentence। সিম্পল করতে হলে 'Because of + being' বা সরাসরি present participle (Being tired) ব্যবহার করতে হবে।"
+    },
+    {
+      "wrong": "To err is human, so we make mistakes.",
+      "correct": "To err is human. OR Being human, we make mistakes.",
+      "explanation": "মাঝখানে 'so' বসিয়ে আরেকটি ক্লজ যুক্ত করলে তা আর সিম্পল বাক্য থাকে না, কম্পাউন্ড হয়ে যায়।"
+    },
+    {
+      "wrong": "The girl who stands there is my sister. (Make it Simple)",
+      "correct": "The girl standing there is my sister. (Simple)",
+      "explanation": "'who stands there' একটি রিলেটিভ ক্লজ (Complex)। একে সিম্পল করার জন্য 'standing there' (Present participle phrase) ব্যবহার করতে হবে।"
+    },
+    {
+      "wrong": "Despite of his poverty, he is honest.",
+      "correct": "Despite his poverty, he is honest. OR In spite of his poverty, he is honest.",
+      "explanation": "সিম্পল সেন্টেন্সে ফ্রেজ ব্যবহারের সময় মনে রাখবেন, 'Despite'-এর পর কখনো 'of' বসে না। তবে 'In spite'-এর পর 'of' বসাতে হবে।"
+    }
+  ]
 }

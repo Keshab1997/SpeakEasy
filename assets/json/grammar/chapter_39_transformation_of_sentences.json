@@ -1,10 +1,81 @@
 {
   "chapter": 39,
   "level": "Intermediate",
-  "title": "Transformation of Sentences",
+  "title": "Transformation of Sentences (বাক্য পরিবর্তন)",
   "icon": "transform",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Transformation of sentences involves changing the grammatical structure of a sentence (Simple, Compound, Complex) without changing its original meaning. This helps you express the same idea in multiple ways, making your spoken English more diverse and fluent.",
+  "banglaDescription": "Transformation of Sentences (বাক্য পরিবর্তন) হলো কোনো বাক্যের মূল অর্থ অপরিবর্তিত রেখে তার ব্যাকরণগত গঠন (Simple, Compound বা Complex) পরিবর্তন করা। এটি আপনাকে একই কথা বিভিন্ন উপায়ে প্রকাশ করতে সাহায্য করে, যা আপনার স্পোকেন ইংলিশকে আরও বৈচিত্র্যময় ও সাবলীল করে তোলে।",
+  "topics": [
+    {
+      "name": "Simple to Compound (সহজ থেকে যৌগিক বাক্য)",
+      "banglaName": "Simple থেকে Compound বাক্য পরিবর্তন",
+      "definition": "Converting a simple sentence (one independent clause with one subject and verb) into a compound sentence (two independent clauses joined by coordinating conjunctions like 'and', 'but', or 'or').",
+      "banglaDefinition": "একটি মাত্র subject এবং finite verb বিশিষ্ট Simple sentence-কে coordinating conjunction (যেমন: and, but, or) ব্যবহার করে দুই বা ততোধিক স্বাধীন বাক্য বা Compound sentence-এ রূপান্তর করা।",
+      "formula": "- Rule A: In spite of / Despite -> Compound with 'but'\n- Rule B: Verb+ing (at start) -> Compound with 'and'\n- Rule C: Too...to -> Compound with 'and so'",
+      "rules": [
+        "Simple বাক্যে 'In spite of' (সত্ত্বেও) থাকলে তা Compound করার সময় বিপরীতার্থক দুটি ক্লজকে 'but' দ্বারা যুক্ত করতে হয়।",
+        "একটি কাজ করার পরপরই অন্য একটি কাজ হলে প্রথম অংশটির verb-এর সাথে 'ing' বাদ দিয়ে দুটি অংশকে 'and' দ্বারা যুক্ত করতে হয়।"
+      ],
+      "examples": [
+        { "en": "Simple: In spite of his illness, he attended the class.", "bn": "তার অসুস্থতা সত্ত্বেও, সে ক্লাসে উপস্থিত হয়েছিল।" },
+        { "en": "Compound: He was ill, but he attended the class.", "bn": "সে অসুস্থ ছিল, কিন্তু সে ক্লাসে উপস্থিত হয়েছিল।" },
+        { "en": "Simple: Closing the door, I went out to play.", "bn": "দরজাটি বন্ধ করে, আমি বাইরে খেলতে গিয়েছিলাম।" },
+        { "en": "Compound: I closed the door and went out to play.", "bn": "আমি দরজাটি বন্ধ করেছিলাম এবং বাইরে খেলতে গিয়েছিলাম।" }
+      ],
+      "tips": "কথা বলার সময় বড় বড় সরল বাক্য বা complex বাক্য তৈরি করার চেয়ে 'and' বা 'but' দিয়ে সহজে দুটি ছোট বাক্য যুক্ত করে কথা বলা অনেক সহজ ও স্বাচ্ছন্দ্যদায়ক।"
+    },
+    {
+      "name": "Compound to Complex (যৌগিক থেকে জটিল বাক্য)",
+      "banglaName": "Compound থেকে Complex বাক্য পরিবর্তন",
+      "definition": "Changing a compound sentence into a complex sentence by replacing coordinating conjunctions with subordinating conjunctions like 'although', 'if', 'since', or 'when'.",
+      "banglaDefinition": "Compound বাক্যের সংযোগকারী শব্দগুলো (and, but, or) বাদ দিয়ে সেগুলোর জায়গায় subordinating conjunction (যেমন: although, if, since, when) বসিয়ে জটিল বা Complex বাক্য তৈরি করা।",
+      "formula": "- Rule A: Compound with 'but' -> Complex with 'Although'\n- Rule B: Compound with 'or' -> Complex with 'If... not' or 'Unless'\n- Rule C: Compound with 'and' -> Complex with 'Since' / 'As' / 'When'",
+      "rules": [
+        "Compound বাক্যে 'but' থাকলে Complex করার সময় বাক্যের শুরুতে 'Although' (যদিও) বসাতে হয় এবং 'but' উঠে গিয়ে কমা (,) বসে।",
+        "Compound বাক্যে 'or' থাকলে Complex করার সময় 'If' বা 'Unless' ব্যবহার করে নেতিবাচক শর্ত তৈরি করতে হয়।"
+      ],
+      "examples": [
+        { "en": "Compound: He worked hard, but he failed.", "bn": "সে কঠোর পরিশ্রম করেছিল, কিন্তু সে ব্যর্থ হয়েছিল।" },
+        { "en": "Complex: Although he worked hard, he failed.", "bn": "যদিও সে কঠোর পরিশ্রম করেছিল, তবুও সে ব্যর্থ হয়েছিল।" },
+        { "en": "Compound: Read attentively, or you will fail.", "bn": "মনোযোগ দিয়ে পড়ো, অন্যথায় তুমি ফেল করবে।" },
+        { "en": "Complex: If you do not read attentively, you will fail.", "bn": "যদি তুমি মনোযোগ দিয়ে না পড়ো, তবে তুমি ফেল করবে।" }
+      ],
+      "tips": "স্পোকেন ইংলিশে বিতর্ক বা দ্বিমত প্রকাশ করতে 'Although' দিয়ে বাক্য শুরু করার অভ্যাস করুন। এটি আপনার বক্তব্যকে আরও যুক্তিযুক্ত করে তোলে।"
+    },
+    {
+      "name": "Simple to Complex (সহজ থেকে জটিল বাক্য)",
+      "banglaName": "Simple থেকে Complex বাক্য পরিবর্তন",
+      "definition": "Expanding a word or phrase in a simple sentence into a dependent clause to make it a complex sentence.",
+      "banglaDefinition": "Simple sentence-এর কোনো শব্দ বা শব্দগুচ্ছকে (phrase) একটি অপ্রধান বাক্যাংশে (dependent clause) রূপান্তর করে Complex sentence তৈরি করা।",
+      "formula": "- Rule A: Simple with 'because of' -> Complex with 'Since/As/Because'\n- Rule B: Simple with Present Participle -> Complex with 'When'\n- Rule C: Simple with Adjective + Noun -> Complex with Relative Pronoun (who/which/that)",
+      "rules": [
+        "'Because of' (কারণে) থাকলে Complex করার সময় কারণ নির্দেশক 'since', 'as' বা 'because' দিয়ে একটি নতুন ক্লজ তৈরি করতে হয়।",
+        "কোনো বস্তুকে বর্ণনা করতে 'which' বা 'that' এবং ব্যক্তিকে বর্ণনা করতে 'who' ব্যবহার করে ক্লজটি বড় করা যায়।"
+      ],
+      "examples": [
+        { "en": "Simple: Because of his poverty, he couldn't buy books.", "bn": "দরিদ্রতার কারণে সে বই কিনতে পারেনি।" },
+        { "en": "Complex: As he was poor, he couldn't buy books.", "bn": "যেহেতু সে দরিদ্র ছিল, সে বই কিনতে পারেনি।" },
+        { "en": "Simple: I saw a flying bird.", "bn": "আমি একটি উড়ন্ত পাখি দেখেছিলাম।" },
+        { "en": "Complex: I saw a bird which was flying.", "bn": "আমি একটি পাখি দেখেছিলাম যেটি উড়ছিল।" }
+      ],
+      "tips": "যখন আপনি কোনো ব্যক্তি বা বস্তুর বিস্তারিত বর্ণনা দিতে চান, তখন সাধারণ সরল বাক্যের বদলে 'who' বা 'which' ব্যবহার করে কমপ্লেক্স বাক্য তৈরি করতে পারেন। যেমন: 'I have a friend who lives in London.'"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Although he was rich, but he was unhappy.",
+      "correct": "Although he was rich, he was unhappy. OR He was rich, but he was unhappy.",
+      "explanation": "একই বাক্যে 'Although' (Complex) এবং 'but' (Compound) একসাথে ব্যবহার করা যাবে না। যেকোনো একটি গঠন বেছে নিতে হবে।"
+    },
+    {
+      "wrong": "If you don't run fast, or you will miss the train.",
+      "correct": "If you don't run fast, you will miss the train. OR Run fast, or you will miss the train.",
+      "explanation": "শর্তযুক্ত 'If' ক্লজের সাথে 'or' ব্যবহার করা ভুল। 'or' শুধুমাত্র Compound বাক্যেই ব্যবহৃত হয়।"
+    },
+    {
+      "wrong": "Despite of his hard work, he did not pass.",
+      "correct": "Despite his hard work, he did not pass. OR In spite of his hard work, he did not pass.",
+      "explanation": "'In spite'-এর পরে 'of' বসে, কিন্তু 'Despite'-এর পরে কোনো 'of' বসে না।"
+    }
+  ]
 }
