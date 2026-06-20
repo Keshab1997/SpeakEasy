@@ -1,30 +1,44 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+import 'dart:io';
 
-import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:hive/hive.dart';
 
-import 'package:flutter_spoken_english_app/main.dart';
+import 'package:flutter_spoken_english_app/providers/last_opened_chapter_provider.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  late Directory tempDir;
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  setUpAll(() async {
+    tempDir = Directory.systemTemp.createTempSync('hive_widget_test_');
+    Hive.init(tempDir.path);
+    await Hive.openBox('settings');
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  tearDownAll(() async {
+    await Hive.deleteFromDisk();
+    if (tempDir.existsSync()) tempDir.deleteSync(recursive: true);
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  setUp(() async {
+    await Hive.box('settings').clear();
+  });
+
+  test('lastOpenedChapterProvider exposes state through ProviderContainer', () {
+    final container = ProviderContainer();
+    addTearDown(container.dispose);
+
+    // Initial state is null when no chapter has been opened
+    expect(container.read(lastOpenedChapterProvider), isNull);
+
+    // setOpened updates state observable through the container
+    container
+        .read(lastOpenedChapterProvider.notifier)
+        .setOpened('grammar', 3);
+    final state = container.read(lastOpenedChapterProvider);
+    expect(state, isNotNull);
+    expect(state!.type, 'grammar');
+    expect(state.chapter, 3);
+    expect(state.progress, 0.0);
   });
 }

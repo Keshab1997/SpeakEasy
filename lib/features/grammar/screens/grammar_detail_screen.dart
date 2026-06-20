@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/grammar_chapter_model.dart';
-import '../../../services/hive_service.dart';
+import '../../../providers/last_opened_chapter_provider.dart';
 import '../../../services/vocab_remote_service.dart';
 import 'grammar_master_screen.dart';
 
@@ -27,7 +27,15 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> {
     super.initState();
     _scrollController.addListener(_onScroll);
     _restoreScrollPosition();
-    HiveService.setLastOpenedChapter('grammar', widget.chapter.chapter);
+    // Defer provider state mutation to after the current frame: Riverpod
+    // forbids modifying a provider while the widget tree is being built,
+    // and initState runs synchronously during element mount.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      ref
+          .read(lastOpenedChapterProvider.notifier)
+          .setOpened('grammar', widget.chapter.chapter);
+    });
   }
 
   Future<void> _restoreScrollPosition() async {
@@ -82,7 +90,7 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> {
     // Save scroll progress % for Continue Learning
     if (_scrollController.hasClients && _scrollController.position.maxScrollExtent > 0) {
       final pct = _lastScrollOffset / _scrollController.position.maxScrollExtent;
-      await HiveService.setChapterProgress('grammar', widget.chapter.chapter, pct);
+      ref.read(lastOpenedChapterProvider.notifier).updateProgress('grammar', widget.chapter.chapter, pct);
     }
   }
 

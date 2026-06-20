@@ -10,6 +10,7 @@ import '../../../models/todo_item.dart';
 import '../../../providers/vocabulary_provider.dart';
 import '../../../providers/chapter_vocabulary_provider.dart';
 import '../../../providers/grammar_provider.dart';
+import '../../../providers/last_opened_chapter_provider.dart';
 import '../../../models/vocabulary_chapter_model.dart';
 import '../../../models/grammar_chapter_model.dart';
 import '../../../providers/theme_provider.dart';
@@ -82,6 +83,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final chaptersAsync = ref.watch(allChaptersProvider);
     final grammarAsync = ref.watch(allGrammarChaptersProvider);
     final studyState = ref.watch(todoListProvider);
+    final lastOpenedChapter = ref.watch(lastOpenedChapterProvider);
 
     final user = authAsync.asData?.value;
     if (user?.name != null && user!.name.isNotEmpty) {
@@ -183,7 +185,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               _buildAiTeacherBanner(theme),
               const SizedBox(height: 24),
               _buildContinueLearningSection(
-                theme, isDark, studyState, allGrammarChapters, allVocabChapters,
+                theme, isDark, studyState, allGrammarChapters, allVocabChapters, lastOpenedChapter,
               ),
               const SizedBox(height: 24),
               const StudyPlanSection(),
@@ -535,6 +537,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   Widget _buildContinueLearningSection(
     ThemeData theme, bool isDark, StudyPlanState studyState,
     List<GrammarChapter> allGrammarChapters, List<VocabularyChapter> allVocabChapters,
+    LastOpenedChapter? lastOpened,
   ) {
     final items = studyState.items;
     final grammarItems = items.where((i) => i.type == 'grammar').toList();
@@ -568,20 +571,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     }
 
     // Resume: last opened chapter (if still pending), else next pending
-    final lastOpened = HiveService.getLastOpenedChapter();
-    TodoItem? resumeFromHive(String type, String prefix) {
+    TodoItem? resumeFromLastOpened(String type, String prefix) {
       if (lastOpened == null) return null;
-      if (lastOpened['type'] != type) return null;
-      final ch = lastOpened['chapter'] as int?;
-      if (ch == null) return null;
-      final item = findById(items, '${prefix}_$ch');
+      if (lastOpened.type != type) return null;
+      final item = findById(items, '${prefix}_${lastOpened.chapter}');
       if (item != null && item.status == TodoStatus.pending) return item;
       return null;
     }
 
-    final resumeGrammar = resumeFromHive('grammar', 'grammar')
+    final resumeGrammar = resumeFromLastOpened('grammar', 'grammar')
         ?? findById(items, studyState.nextGrammarId);
-    final resumeVocab = resumeFromHive('vocabulary', 'vocab')
+    final resumeVocab = resumeFromLastOpened('vocabulary', 'vocab')
         ?? findById(items, studyState.nextVocabId);
 
     final hasAny = resumeGrammar != null || resumeVocab != null;
@@ -649,10 +649,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 final typeLabel = isGrammar ? 'GRAMMAR' : 'VOCABULARY';
                 final done = isGrammar ? grammarDone : vocabDone;
                 final total = isGrammar ? grammarTotal : vocabTotal;
-                final chapterPct = HiveService.getChapterProgress(
-                  isGrammar ? 'grammar' : 'vocabulary',
-                  todo.chapterNumber,
-                );
+                final cardType = isGrammar ? 'grammar' : 'vocabulary';
+                final chapterPct = (lastOpened != null &&
+                        lastOpened.type == cardType &&
+                        lastOpened.chapter == todo.chapterNumber)
+                    ? lastOpened.progress
+                    : HiveService.getChapterProgress(cardType, todo.chapterNumber);
                 final pct = chapterPct > 0 ? chapterPct : (total == 0 ? 0.0 : (done / total).clamp(0.0, 1.0));
 
                 return GestureDetector(

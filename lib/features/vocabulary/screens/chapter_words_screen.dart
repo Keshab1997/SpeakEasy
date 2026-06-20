@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/vocabulary_chapter_model.dart';
 import '../../../providers/vocab_progress_provider.dart';
-import '../../../services/hive_service.dart';
+import '../../../providers/last_opened_chapter_provider.dart';
 
 class ChapterWordsScreen extends ConsumerStatefulWidget {
   final VocabularyChapter chapter;
@@ -23,7 +23,7 @@ class _ChapterWordsScreenState extends ConsumerState<ChapterWordsScreen> {
     // Mark chapter as read + save as last opened for Continue Learning
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(vocabProgressProvider.notifier).markRead(widget.chapter.chapter);
-      HiveService.setLastOpenedChapter('vocabulary', widget.chapter.chapter);
+      ref.read(lastOpenedChapterProvider.notifier).setOpened('vocabulary', widget.chapter.chapter);
     });
   }
 
@@ -31,7 +31,7 @@ class _ChapterWordsScreenState extends ConsumerState<ChapterWordsScreen> {
     if (!_scrollController.hasClients) return;
     if (_scrollController.position.maxScrollExtent > 0) {
       final pct = _scrollController.offset / _scrollController.position.maxScrollExtent;
-      HiveService.setChapterProgress('vocabulary', widget.chapter.chapter, pct);
+      ref.read(lastOpenedChapterProvider.notifier).updateProgress('vocabulary', widget.chapter.chapter, pct);
     }
   }
 
