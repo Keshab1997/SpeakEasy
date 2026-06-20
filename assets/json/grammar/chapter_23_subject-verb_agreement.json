@@ -1,10 +1,181 @@
 {
   "chapter": 23,
   "level": "Intermediate",
-  "title": "Subject-Verb Agreement",
+  "title": "Subject-Verb Agreement (Subject এবং Verb এর মিল)",
   "icon": "check_circle",
-  "description": "",
-  "banglaDescription": "",
-  "topics": [],
-  "commonMistakes": []
+  "description": "Subject-verb agreement is the grammatical rule that the verb in a sentence must match the subject in number (singular or plural) and person (first, second, or third). It is key to speaking and writing English clearly and correctly.",
+  "banglaDescription": "Subject-Verb Agreement হলো ব্যাকরণের এমন একটি নিয়ম যা নির্দেশ করে বাক্যের verb-টিকে অবশ্যই subject-এর সংখ্যা (singular বা plural) এবং person (first, second বা third person) অনুযায়ী হতে হবে। ইংরেজিতে পরিষ্কার ও নির্ভুলভাবে কথা বলা এবং লেখার জন্য এটি অত্যন্ত গুরুত্বপূর্ণ।",
+  "topics": [
+    {
+      "name": "The Basic Rule of Agreement (মৌলিক নিয়ম)",
+      "banglaName": "মৌলিক নিয়ম",
+      "definition": "The basic rule of subject-verb agreement is very simple: a singular subject takes a singular verb, and a plural subject takes a plural verb. In the present tense, singular verbs for third-person subjects end in 's' or 'es', while plural verbs do not.",
+      "banglaDefinition": "Subject-verb agreement-এর মৌলিক নিয়মটি খুবই সহজ: Singular subject-এর সাথে singular verb এবং plural subject-এর সাথে plural verb ব্যবহৃত হয়। Present tense-এ, third person singular subject-এর ক্ষেত্রে verb-এর শেষে 's' বা 'es' যুক্ত হয়, কিন্তু plural subject-এর ক্ষেত্রে হয় না।",
+      "formula": "Singular Subject (He/She/It/Rina) → Singular Verb (is / was / has / verb+s/es)\nPlural Subject (They/We/You/The boys) → Plural Verb (are / were / have / base verb)",
+      "rules": [
+        "Subject যদি Singular (একবচন) হয়, তবে Verb-ও Singular হবে।",
+        "Subject যদি Plural (বহুবচন) হয়, তবে Verb-ও Plural হবে।",
+        "I এবং You-এর সাথে সর্বদা plural verb-এর রূপ ব্যবহৃত হয় (যেমন: I am/have/go, You are/have/go)।",
+        "Present Indefinite-এ subject third-person singular হলে মূল verb-এর সাথে s/es যুক্ত হয়।"
+      ],
+      "examples": [
+        { "en": "The baby cries for milk. (Singular Subject + Singular Verb)", "bn": "বাচ্চাটি দুধের জন্য কাঁদছে।" },
+        { "en": "The babies cry for milk. (Plural Subject + Plural Verb)", "bn": "বাচ্চারা দুধের জন্য কাঁদছে।" },
+        { "en": "She plays tennis. (Third person singular)", "bn": "সে টেনিস খেলে।" },
+        { "en": "They play tennis. (Third person plural)", "bn": "তারা টেনিস খেলে।" },
+        { "en": "I write a letter. (Exception: I is first person)", "bn": "আমি একটি চিঠি লিখি।" }
+      ],
+      "tips": "মনে রাখার সহজ উপায়: Noun-এর সাথে s/es যুক্ত হলে তা Plural হয় (যেমন: dog → dogs), কিন্তু Verb-এর সাথে s/es যুক্ত হলে তা Singular হয় (যেমন: run → runs)।"
+    },
+    {
+      "name": "Intervening Words and Phrases (মাঝের শব্দ বা Phrase-এর নিয়ম)",
+      "banglaName": "মাঝের শব্দ বা Phrase-এর নিয়ম",
+      "definition": "Sometimes, words or phrases come between the subject and the verb. These intervening words (such as prepositional phrases) do not change the subject. The verb must still agree with the real subject, not with the nouns inside the phrase.",
+      "banglaDefinition": "কখনও কখনও subject এবং verb-এর মাঝখানে কিছু শব্দ বা phrase চলে আসে। এই শব্দগুলো (যেমন prepositional phrase) আসল subject-কে পরিবর্তন করে না। Verb-কে সবসময় মূল subject অনুযায়ী ব্যবহার করতে হবে, মাঝের phrase-এর ভেতরের noun অনুযায়ী নয়।",
+      "formula": "Subject + [with / along with / together with / as well as / in addition to / of + Noun] + Verb\n*Verb agrees with the first Subject*",
+      "rules": [
+        "Prepositional phrase (যেমন: of, in, on, with) subject এবং verb-এর মাঝে থাকলেও তা verb-কে প্রভাবিত করে না।",
+        "Subject যদি as well as, along with, together with, accompanied by, in addition to ইত্যাদি দ্বারা যুক্ত থাকে, তবে প্রথম subject অনুযায়ী verb নির্ধারিত হয়।",
+        "মাঝখানের অতিরিক্ত অংশটি বাদ দিয়ে পড়লে আসল subject চেনা সহজ হয়।"
+      ],
+      "examples": [
+        { "en": "The teacher, along with her students, is coming. (Real subject: teacher)", "bn": "শিক্ষক, তার ছাত্রদের সাথে, আসছেন। (আসল subject: শিক্ষক — singular)" },
+        { "en": "The books on the table are mine. (Real subject: books)", "bn": "টেবিলের ওপরের বইগুলো আমার। (আসল subject: বইগুলো — plural)" },
+        { "en": "My father, as well as my uncles, works in Dhaka. (Real subject: My father)", "bn": "আমার চাচাদের পাশাপাশি আমার বাবাও ঢাকায় কাজ করেন।" },
+        { "en": "The quality of these mangoes is good. (Real subject: quality)", "bn": "এই আমগুলোর মান ভালো। (আসল subject: মান — singular)" }
+      ],
+      "tips": "বাক্যে 'of', 'with', 'as well as' ইত্যাদি থাকলে তার পরের অংশটিকে মনে মনে ঢেকে দিন। তাহলে আসল subject টি দেখতে পাবেন এবং সঠিক verb বসাতে পারবেন।"
+    },
+    {
+      "name": "Compound Subjects with 'And' (And দ্বারা যুক্ত Compound Subject)",
+      "banglaName": "And দ্বারা যুক্ত Compound Subject",
+      "definition": "When two or more subjects are connected by the conjunction 'and', they usually form a compound plural subject and require a plural verb. However, if the connected nouns refer to the same person, thing, or express a single idea, they take a singular verb.",
+      "banglaDefinition": "যখন দুই বা ততোধিক subject 'and' দ্বারা যুক্ত হয়, তখন তারা সাধারণত একটি plural subject গঠন করে এবং plural verb নেয়। তবে, যুক্ত হওয়া noun গুলো যদি একই ব্যক্তি বা বস্তুকে নির্দেশ করে অথবা একটি একক ধারণা প্রকাশ করে, তখন singular verb ব্যবহৃত হয়।",
+      "formula": "Subject 1 + and + Subject 2 = Plural Verb\nSubject 1 + and + Subject 2 (Single Concept/Same Person) = Singular Verb",
+      "rules": [
+        "সাধারণত 'and' দ্বারা দুটি আলাদা subject যুক্ত হলে plural verb হয় (যেমন: Rina and Mina are...)।",
+        "যদি দুটি noun একই ব্যক্তি বা বস্তুকে বোঝায় (সাধারণত একটির আগে article থাকে), তবে singular verb হয়।",
+        "যদি দুটি noun একটি নির্দিষ্ট খাবার বা একক ধারণা প্রকাশ করে (যেমন: bread and butter, rice and curry), তবে singular verb হয়।"
+      ],
+      "examples": [
+        { "en": "Fire and water do not agree.", "bn": "আগুন ও জল একসাথে চলে না।" },
+        { "en": "The headmaster and secretary is present. (Same person holding both posts)", "bn": "প্রধান শিক্ষক ও সম্পাদক উপস্থিত আছেন। (একই ব্যক্তি)" },
+        { "en": "The headmaster and the secretary are present. (Two different people)", "bn": "প্রধান শিক্ষক এবং সম্পাদক উপস্থিত আছেন। (দুটি ভিন্ন ব্যক্তি)" },
+        { "en": "Bread and butter is my favorite breakfast. (Single idea/meal)", "bn": "রুটি-মাখন আমার প্রিয় সকালের নাস্তা।" },
+        { "en": "Slow and steady wins the race. (Single proverb concept)", "bn": "ধীর ও স্থিররা দৌড়ে জয়ী হয়।" }
+      ],
+      "tips": "একই ব্যক্তি বা ভিন্ন ব্যক্তি চেনার উপায়: যদি 'and' এর পরের noun-টির আগে 'the/a/an' না থাকে, তবে সেটি একই ব্যক্তি (Singular)। আর যদি দুটির আগেই 'the' থাকে, তবে তারা আলাদা ব্যক্তি (Plural)।"
+    },
+    {
+      "name": "Or, Nor, Either...Or, Neither...Nor (বিকল্প সূচক Subject)",
+      "banglaName": "বিকল্প সূচক Subject",
+      "definition": "When compound subjects are joined by 'or', 'nor', 'either...or', or 'neither...nor', the verb agrees with the subject that is closest to it. If the closer subject is singular, the verb is singular. If the closer subject is plural, the verb is plural.",
+      "banglaDefinition": "যখন compound subject-সমূহ 'or', 'nor', 'either...or', অথবা 'neither...nor' দ্বারা যুক্ত থাকে, তখন verb-টি তার সবচেয়ে নিকটবর্তী subject অনুযায়ী নির্ধারিত হয়। নিকটবর্তী subject-টি singular হলে verb singular হবে, আর plural হলে verb plural হবে।",
+      "formula": "Either + Subject 1 + or + Subject 2 (Closest) + Verb\n*Verb agrees with Subject 2*",
+      "rules": [
+        "or, nor, either...or, neither...nor থাকলে verb-এর ঠিক বাম পাশের subject-টি দেখে verb নির্ধারণ করুন।",
+        "যদি একটি subject singular এবং অন্যটি plural হয়, তবে plural subject-টিকে verb-এর কাছে রাখা এবং plural verb ব্যবহার করা ভালো দেখায়।"
+      ],
+      "examples": [
+        { "en": "Either the teacher or the students are wrong. (Closest subject: students - plural)", "bn": "হয় শিক্ষক অথবা ছাত্ররা ভুল।" },
+        { "en": "Either the students or the teacher is wrong. (Closest subject: teacher - singular)", "bn": "হয় ছাত্ররা অথবা শিক্ষক ভুল।" },
+        { "en": "Neither he nor I am going. (Closest subject: I - takes am)", "bn": "সে বা আমি কেউই যাচ্ছি না।" },
+        { "en": "Are either my brothers or my father coming? (Closest subject: brothers in question form)", "bn": "আমার ভাইয়েরা নাকি আমার বাবা আসছেন?" }
+      ],
+      "tips": "এই ধরনের বাক্যে verb-এর ঠিক আগের শব্দটি পরীক্ষা করুন। সেটি একবচন হলে verb-ও একবচন হবে, বহুবচন হলে verb-ও বহুবচন হবে।"
+    },
+    {
+      "name": "Indefinite Pronouns (অনির্দিষ্ট সর্বনাম)",
+      "banglaName": "অনির্দিষ্ট সর্বনাম",
+      "definition": "Indefinite pronouns refer to non-specific people or things. Some indefinite pronouns are always singular, some are always plural, and others can be singular or plural depending on the context of the sentence.",
+      "banglaDefinition": "Indefinite pronouns কোনো নির্দিষ্ট ব্যক্তি বা বস্তুকে নির্দেশ করে না। কিছু indefinite pronoun সবসময় singular হয়, কিছু সবসময় plural হয়, এবং বাকিগুলো বাক্যের প্রেক্ষাপটের ওপর ভিত্তি করে singular বা plural হতে পারে।",
+      "formula": "Singular: Each, Every, Everyone, Someone, Nobody, Either, Neither → Singular Verb\nPlural: Both, Few, Many, Several → Plural Verb\nDepends: All, Some, Any, Most, None + [Countable/Uncountable Noun]",
+      "rules": [
+        "Each, every, everyone, everybody, anyone, anybody, someone, somebody, nobody, no one, either, neither — এগুলো সর্বদা singular verb নেয়।",
+        "Both, few, many, several — এগুলো সর্বদা plural verb নেয়।",
+        "All, some, any, most, none — এদের পরে countable noun থাকলে plural, এবং uncountable noun থাকলে singular verb হয়।"
+      ],
+      "examples": [
+        { "en": "Everyone is happy today. (Everyone = Singular)", "bn": "আজ সবাই খুশি।" },
+        { "en": "Each of the students has a book. (Each = Singular)", "bn": "ছাত্রদের প্রত্যেকের একটি করে বই আছে।" },
+        { "en": "Both of them are coming. (Both = Plural)", "bn": "তারা উভয়েই আসছে।" },
+        { "en": "Some of the milk is spoiled. (Milk = Uncountable)", "bn": "কিছু দুধ নষ্ট হয়ে গেছে।" },
+        { "en": "Some of the books are missing. (Books = Countable)", "bn": "কিছু বই পাওয়া যাচ্ছে না।" }
+      ],
+      "tips": "মনে রাখবেন, 'Each' বা 'Every' শব্দের পরে 'of the students' থাকলেও মূল কর্তা কিন্তু 'Each' (প্রত্যেকটি আলাদাভাবে), তাই verb সবসময় singular ('has'/'is') হবে।"
+    },
+    {
+      "name": "Collective Nouns and Special Nouns (সমষ্টিবাচক ও বিশেষ বিশেষ্য)",
+      "banglaName": "সমষ্টিবাচক ও বিশেষ বিশেষ্য",
+      "definition": "Collective nouns (like team, family, class) represent a group. They take a singular verb if the group acts as a single unit, and a plural verb if the members act individually. Also, some nouns look plural but are singular in meaning.",
+      "banglaDefinition": "Collective nouns (যেমন team, family, jury) একটি দলকে বোঝায়। পুরো দলটি যখন একসাথে একটি কাজ করে তখন singular verb হয়, কিন্তু দলের সদস্যরা যখন আলাদাভাবে কাজ করে তখন plural verb হয়। এছাড়াও কিছু noun দেখতে plural হলেও আসলে singular অর্থ প্রকাশ করে।",
+      "formula": "Collective Noun as a single unit → Singular Verb\nCollective Noun acting individually → Plural Verb\nNouns ending in 's' (Physics, News, Economics) → Singular Verb",
+      "rules": [
+        "Team, class, committee, family, jury — একতাবদ্ধ বোঝাতে singular verb নেয়।",
+        "যদি দলের সদস্যদের মধ্যে দ্বিমত বা আলাদা কাজ বোঝায়, তবে plural verb হয়।",
+        "Mathematics, Physics, News, Politics, Billiards — শেষে 's' থাকলেও এগুলো বিষয়ের নাম বা একক শব্দ হওয়ায় singular verb নেয়।",
+        "দূরত্ব (ten miles), টাকা (fifty dollars), সময় (five years) একক পরিমাণ বোঝালে singular verb হয়।"
+      ],
+      "examples": [
+        { "en": "The team is playing well. (Acting as one)", "bn": "দলটি ভালো খেলছে।" },
+        { "en": "The jury were divided in their opinions. (Individual actions/opinions)", "bn": "বিচারকবৃন্দ তাদের মতামতে বিভক্ত ছিলেন।" },
+        { "en": "Physics is my favorite subject. (Subject name)", "bn": "পদার্থবিজ্ঞান আমার প্রিয় বিষয়।" },
+        { "en": "Ten miles is a long distance to walk. (Single measurement)", "bn": "দশ মাইল হাঁটার জন্য দীর্ঘ পথ।" },
+        { "en": "Fifty dollars was too expensive for the shirt.", "bn": "শার্টটির জন্য পঞ্চাশ ডলার অনেক বেশি ছিল।" }
+      ],
+      "tips": "টাকা, সময় বা দূরত্বের ক্ষেত্রে সংখ্যাটি plural মনে হলেও সেটি যেহেতু একটি নির্দিষ্ট মোট পরিমাণকে নির্দেশ করে, তাই এদের সাথে সবসময় singular verb (is/was) বসাবেন।"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Everyone are present in the class.",
+      "correct": "Everyone is present in the class.",
+      "explanation": "'Everyone' একটি singular indefinite pronoun। বাংলায় 'সবাই' বলতে বহুবচন মনে হলেও ইংরেজিতে 'Everyone' ব্যাকরণগতভাবে singular, তাই এর সাথে 'is' বসবে।"
+    },
+    {
+      "wrong": "The quality of these apples are not good.",
+      "correct": "The quality of these apples is not good.",
+      "explanation": "এখানে বাক্যের আসল subject 'apples' নয়, বরং 'The quality' (মান), যা singular। তাই verb হবে 'is'।"
+    },
+    {
+      "wrong": "Rice and curry are my favorite food.",
+      "correct": "Rice and curry is my favorite food.",
+      "explanation": "'Rice and curry' দুটি ভিন্ন জিনিস হলেও একসাথে মিলে একটি নির্দিষ্ট খাবার বা একক ধারণা প্রকাশ করে, তাই singular verb 'is' ব্যবহৃত হবে।"
+    },
+    {
+      "wrong": "One of my friends are a doctor.",
+      "correct": "One of my friends is a doctor.",
+      "explanation": "'One of' দিয়ে শুরু বাক্যে অনেক বন্ধুর মধ্যে কেবল 'একজন' (One)-কে বোঝানো হচ্ছে। আসল subject 'One' হওয়ায় singular verb 'is' হবে।"
+    },
+    {
+      "wrong": "Neither Rina nor her sisters is coming.",
+      "correct": "Neither Rina nor her sisters are coming.",
+      "explanation": "'Neither...nor' যুক্ত বাক্যে verb-টি তার নিকটতম subject অনুযায়ী বসে। এখানে নিকটতম subject 'sisters' (plural) হওয়ায় 'are' হবে।"
+    },
+    {
+      "wrong": "The news of the accident are true.",
+      "correct": "The news of the accident is true.",
+      "explanation": "'News' শব্দটি দেখতে plural মনে হলেও এটি একটি singular uncountable noun। তাই এর সাথে singular verb 'is' বসে।"
+    },
+    {
+      "wrong": "There is many books on the shelf.",
+      "correct": "There are many books on the shelf.",
+      "explanation": "'There' দিয়ে শুরু বাক্যে verb-এর পরে থাকা আসল subject দেখে verb নির্ধারণ করতে হয়। এখানে আসল subject 'many books' (plural) হওয়ায় 'are' হবে।"
+    },
+    {
+      "wrong": "Each of the participants have received a certificate.",
+      "correct": "Each of the participants has received a certificate.",
+      "explanation": "'Each' (প্রত্যেক) সর্বদা singular subject হিসেবে গণ্য হয়। তাই verb হিসেবে 'have' এর পরিবর্তে singular form 'has' বসবে।"
+    },
+    {
+      "wrong": "Five years are a long time to wait.",
+      "correct": "Five years is a long time to wait.",
+      "explanation": "'Five years' সময়ের একটি নির্দিষ্ট সমষ্টি বা একক সময়কাল নির্দেশ করছে। তাই পরিমাপবাচক plural noun-এর পর singular verb 'is' বসে।"
+    },
+    {
+      "wrong": "The committee were unanimous in its decision.",
+      "correct": "The committee was unanimous in its decision.",
+      "explanation": "কমিটি বা দল যখন একতাবদ্ধভাবে বা সর্বসম্মতভাবে কাজ করে, তখন collective noun-টি singular হিসেবে কাজ করে। তাই 'was' বসবে।"
+    }
+  ]
 }
