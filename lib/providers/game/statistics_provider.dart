@@ -1,24 +1,42 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../services/statistics_service.dart';
+import '../../services/streak_service.dart';
 import '../../repositories/statistics_repository.dart';
 import '../../repositories/progress_repository.dart';
-import 'game_provider.dart';
 
 // ── Statistics State ──
 
 class StatisticsState {
+  // Overall counts
   final int totalGamesPlayed;
   final int totalCorrectAnswers;
   final int totalWrongAnswers;
   final double overallAccuracy;
+
+  // Rewards
   final int totalEarnedXP;
   final int totalEarnedCoins;
+
+  // Current live values (mirrored from progress so the screen has
+  // them without needing to also watch xpProvider/coinProvider).
   final int currentXP;
   final int currentLevel;
   final int currentCoins;
   final int currentStreak;
+  final int bestStreak;
+
+  // Performance
   final int highestScore;
+  final double averageScore;
   final String performanceRating;
+
+  // Phase 18 additions
+  final int bossWins;
+  final int dailyChallengeWins;
+  final int timePlayedSeconds;
+  final String timePlayedFormatted;
+
+  // Loading / error
   final bool isLoading;
 
   const StatisticsState({
@@ -32,8 +50,14 @@ class StatisticsState {
     this.currentLevel = 1,
     this.currentCoins = 0,
     this.currentStreak = 0,
+    this.bestStreak = 0,
     this.highestScore = 0,
+    this.averageScore = 0.0,
     this.performanceRating = 'Needs Practice',
+    this.bossWins = 0,
+    this.dailyChallengeWins = 0,
+    this.timePlayedSeconds = 0,
+    this.timePlayedFormatted = '0m',
     this.isLoading = false,
   });
 
@@ -48,8 +72,14 @@ class StatisticsState {
     int? currentLevel,
     int? currentCoins,
     int? currentStreak,
+    int? bestStreak,
     int? highestScore,
+    double? averageScore,
     String? performanceRating,
+    int? bossWins,
+    int? dailyChallengeWins,
+    int? timePlayedSeconds,
+    String? timePlayedFormatted,
     bool? isLoading,
   }) {
     return StatisticsState(
@@ -63,8 +93,15 @@ class StatisticsState {
       currentLevel: currentLevel ?? this.currentLevel,
       currentCoins: currentCoins ?? this.currentCoins,
       currentStreak: currentStreak ?? this.currentStreak,
+      bestStreak: bestStreak ?? this.bestStreak,
       highestScore: highestScore ?? this.highestScore,
+      averageScore: averageScore ?? this.averageScore,
       performanceRating: performanceRating ?? this.performanceRating,
+      bossWins: bossWins ?? this.bossWins,
+      dailyChallengeWins: dailyChallengeWins ?? this.dailyChallengeWins,
+      timePlayedSeconds: timePlayedSeconds ?? this.timePlayedSeconds,
+      timePlayedFormatted:
+          timePlayedFormatted ?? this.timePlayedFormatted,
       isLoading: isLoading ?? this.isLoading,
     );
   }
@@ -92,12 +129,35 @@ class StatisticsNotifier extends StateNotifier<StatisticsState> {
       currentLevel: summary['currentLevel'] as int,
       currentCoins: summary['currentCoins'] as int,
       currentStreak: summary['currentStreak'] as int,
+      bestStreak: summary['bestStreak'] as int,
       highestScore: summary['highestScore'] as int? ?? 0,
+      averageScore: (summary['averageScore'] as num?)?.toDouble() ?? 0.0,
       performanceRating: summary['performanceRating'] as String,
+      bossWins: summary['bossWins'] as int? ?? 0,
+      dailyChallengeWins: summary['dailyChallengeWins'] as int? ?? 0,
+      timePlayedSeconds: summary['timePlayedSeconds'] as int? ?? 0,
+      timePlayedFormatted:
+          summary['timePlayedFormatted'] as String? ?? '0m',
     );
   }
 
+  /// Public refresh hook so providers that mutate progress (XP, coins,
+  /// streak, achievements) can call this after their own refresh to
+  /// keep the statistics view in sync.
   void refresh() {
+    _refresh();
+  }
+
+  // Recording helpers — UI / other providers can call these to keep
+  // counters in sync without needing to know about the repository.
+
+  Future<void> recordBossWin() async {
+    await _statisticsService.recordBossWin();
+    _refresh();
+  }
+
+  Future<void> recordDailyChallengeWin() async {
+    await _statisticsService.recordDailyChallengeWin();
     _refresh();
   }
 }
@@ -106,10 +166,14 @@ final statisticsServiceProvider = Provider<StatisticsService>((ref) {
   return StatisticsService(
     statisticsRepository: StatisticsRepository(),
     progressRepository: ProgressRepository(),
+    streakService: StreakService(
+      progressRepository: ProgressRepository(),
+    ),
   );
 });
 
-final statisticsProvider = StateNotifierProvider<StatisticsNotifier, StatisticsState>((ref) {
+final statisticsProvider =
+    StateNotifierProvider<StatisticsNotifier, StatisticsState>((ref) {
   final statisticsService = ref.watch(statisticsServiceProvider);
   return StatisticsNotifier(statisticsService);
 });

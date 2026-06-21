@@ -26,6 +26,25 @@ class GameResultModel {
   @HiveField(6)
   final DateTime completedTime;
 
+  /// Discriminator for the originating game flow.
+  /// One of: 'normal', 'boss', 'daily_challenge'.
+  @HiveField(7)
+  final String gameType;
+
+  /// Wall-clock seconds spent on this round.
+  @HiveField(8)
+  final int durationSeconds;
+
+  /// Whether the player won a boss battle (only meaningful when
+  /// [gameType] is 'boss').
+  @HiveField(9)
+  final bool isBossWin;
+
+  /// Whether the player won the daily challenge (only meaningful when
+  /// [gameType] is 'daily_challenge').
+  @HiveField(10)
+  final bool isDailyChallengeWin;
+
   GameResultModel({
     this.score = 0,
     this.correctAnswers = 0,
@@ -34,6 +53,10 @@ class GameResultModel {
     this.earnedXP = 0,
     this.earnedCoins = 0,
     DateTime? completedTime,
+    this.gameType = 'normal',
+    this.durationSeconds = 0,
+    this.isBossWin = false,
+    this.isDailyChallengeWin = false,
   }) : completedTime = completedTime ?? DateTime.now();
 
   factory GameResultModel.fromMap(Map<String, dynamic> map) {
@@ -44,7 +67,12 @@ class GameResultModel {
       accuracy: (map['accuracy'] as num?)?.toDouble() ?? 0.0,
       earnedXP: map['earnedXP'] as int? ?? 0,
       earnedCoins: map['earnedCoins'] as int? ?? 0,
-      completedTime: (map['completedTime'] as Timestamp?)?.toDate() ?? DateTime.now(),
+      completedTime: (map['completedTime'] as Timestamp?)?.toDate() ??
+          DateTime.now(),
+      gameType: map['gameType'] as String? ?? 'normal',
+      durationSeconds: map['durationSeconds'] as int? ?? 0,
+      isBossWin: map['isBossWin'] as bool? ?? false,
+      isDailyChallengeWin: map['isDailyChallengeWin'] as bool? ?? false,
     );
   }
 
@@ -57,6 +85,10 @@ class GameResultModel {
       'earnedXP': earnedXP,
       'earnedCoins': earnedCoins,
       'completedTime': Timestamp.fromDate(completedTime),
+      'gameType': gameType,
+      'durationSeconds': durationSeconds,
+      'isBossWin': isBossWin,
+      'isDailyChallengeWin': isDailyChallengeWin,
     };
   }
 
@@ -68,6 +100,10 @@ class GameResultModel {
     int? earnedXP,
     int? earnedCoins,
     DateTime? completedTime,
+    String? gameType,
+    int? durationSeconds,
+    bool? isBossWin,
+    bool? isDailyChallengeWin,
   }) {
     return GameResultModel(
       score: score ?? this.score,
@@ -77,11 +113,17 @@ class GameResultModel {
       earnedXP: earnedXP ?? this.earnedXP,
       earnedCoins: earnedCoins ?? this.earnedCoins,
       completedTime: completedTime ?? this.completedTime,
+      gameType: gameType ?? this.gameType,
+      durationSeconds: durationSeconds ?? this.durationSeconds,
+      isBossWin: isBossWin ?? this.isBossWin,
+      isDailyChallengeWin: isDailyChallengeWin ?? this.isDailyChallengeWin,
     );
   }
 
   @override
   String toString() {
-    return 'GameResultModel(score: $score, correct: $correctAnswers, wrong: $wrongAnswers, accuracy: ${accuracy.toStringAsFixed(2)})';
+    return 'GameResultModel(score: $score, correct: $correctAnswers, '
+        'wrong: $wrongAnswers, accuracy: ${accuracy.toStringAsFixed(2)}, '
+        'type: $gameType, duration: ${durationSeconds}s)';
   }
 }

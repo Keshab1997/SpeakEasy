@@ -74,6 +74,7 @@ class BossBattleScreen extends ConsumerWidget {
                   ref.read(gameProvider.notifier).loadQuestions(
                     difficulty: 'hard',
                     limit: 20,
+                    gameType: 'boss',
                   );
                 },
                 style: ElevatedButton.styleFrom(

@@ -102,6 +102,7 @@ class DailyChallengeScreen extends ConsumerWidget {
                   ref.read(gameProvider.notifier).loadQuestions(
                     difficulty: 'intermediate',
                     limit: 15,
+                    gameType: 'daily_challenge',
                   );
                 },
                 style: ElevatedButton.styleFrom(

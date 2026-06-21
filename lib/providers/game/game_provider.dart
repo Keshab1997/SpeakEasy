@@ -44,6 +44,14 @@ class GameState {
   final bool showExplanation;
   final bool isAnswerChecked;
 
+  /// Discriminator for which flow started this round. Drives the
+  /// Phase 18 boss / daily-challenge win counters.
+  final String gameType;
+
+  /// Wall-clock start of the round. Captured when the first question
+  /// is loaded; used to compute [GameResultModel.durationSeconds].
+  final DateTime? startedAt;
+
   const GameState({
     this.questions = const [],
     this.currentQuestionIndex = 0,
@@ -55,6 +63,8 @@ class GameState {
     this.selectedAnswer,
     this.showExplanation = false,
     this.isAnswerChecked = false,
+    this.gameType = 'normal',
+    this.startedAt,
   });
 
   GameState copyWith({
@@ -68,6 +78,8 @@ class GameState {
     String? selectedAnswer,
     bool? showExplanation,
     bool? isAnswerChecked,
+    String? gameType,
+    DateTime? startedAt,
     bool clearError = false,
   }) {
     return GameState(
@@ -81,6 +93,8 @@ class GameState {
       selectedAnswer: selectedAnswer ?? this.selectedAnswer,
       showExplanation: showExplanation ?? this.showExplanation,
       isAnswerChecked: isAnswerChecked ?? this.isAnswerChecked,
+      gameType: gameType ?? this.gameType,
+      startedAt: startedAt ?? this.startedAt,
     );
   }
 
@@ -115,6 +129,7 @@ class GameNotifier extends StateNotifier<GameState> {
     String? difficulty,
     GameMode? mode,
     int? limit,
+    String gameType = 'normal',
   }) async {
     state = state.copyWith(isLoading: true, clearError: true);
 
@@ -133,6 +148,8 @@ class GameNotifier extends StateNotifier<GameState> {
         isGameOver: false,
         isLoading: false,
         lastResult: null,
+        gameType: gameType,
+        startedAt: DateTime.now(),
       );
     } catch (e) {
       state = state.copyWith(
@@ -198,19 +215,36 @@ class GameNotifier extends StateNotifier<GameState> {
   }
 
   Future<void> _finishGame(List<String> answers) async {
-    final result = await _gameService.calculateResult(
+    final duration = state.startedAt == null
+        ? Duration.zero
+        : DateTime.now().difference(state.startedAt!);
+
+    final baseResult = await _gameService.calculateResult(
       questions: state.questions,
       userAnswers: answers,
       earnedXP: 0, // Will be calculated by XpService
       earnedCoins: 0, // Will be calculated by CoinService
     );
 
-    await _gameService.saveResult(result);
+    // A round only counts as a boss / daily-challenge win when the
+    // player cleared it with a passing accuracy. The exact threshold is
+    // intentionally lenient (>= 50%) so partial-completion boss rounds
+    // still credit progress; tighten here if product policy changes.
+    final bool isWin = baseResult.accuracy >= 0.5;
+    final tagged = baseResult.copyWith(
+      gameType: state.gameType,
+      durationSeconds: duration.inSeconds,
+      isBossWin: state.gameType == 'boss' && isWin,
+      isDailyChallengeWin:
+          state.gameType == 'daily_challenge' && isWin,
+    );
+
+    await _gameService.saveResult(tagged, duration: duration);
 
     state = state.copyWith(
       userAnswers: answers,
       isGameOver: true,
-      lastResult: result,
+      lastResult: tagged,
     );
   }
 

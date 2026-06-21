@@ -10,6 +10,11 @@ class StatisticsRepository {
   static const String _jsonPath = 'assets/json/game/game_progress.json';
   static const String _firestoreCollection = 'game_statistics';
 
+  // ── Phase 18 meta-counter keys ──
+  static const String _bossWinsKey = 'boss_wins';
+  static const String _dailyWinsKey = 'daily_challenge_wins';
+  static const String _timePlayedKey = 'time_played_seconds';
+
   // ── JSON (Asset) ──
 
   Future<List<GameResultModel>> loadFromJson() async {
@@ -69,7 +74,8 @@ class StatisticsRepository {
     final results = getResults();
     if (results.isEmpty) return 0.0;
     final totalCorrect = results.fold(0, (sum, r) => sum + r.correctAnswers);
-    final totalQuestions = results.fold(0, (sum, r) => sum + r.correctAnswers + r.wrongAnswers);
+    final totalQuestions =
+        results.fold(0, (sum, r) => sum + r.correctAnswers + r.wrongAnswers);
     if (totalQuestions == 0) return 0.0;
     return totalCorrect / totalQuestions;
   }
@@ -86,6 +92,42 @@ class StatisticsRepository {
     final results = getResults();
     if (results.isEmpty) return null;
     return results.reduce((a, b) => a.accuracy >= b.accuracy ? a : b);
+  }
+
+  // ── Phase 18 counters (persistent meta) ──
+
+  int getBossWins() {
+    if (!Hive.isBoxOpen(_boxName)) return 0;
+    return Hive.box(_boxName).get(_bossWinsKey, defaultValue: 0) as int;
+  }
+
+  Future<void> incrementBossWins() async {
+    final box = await _ensureBox();
+    final current = getBossWins();
+    await box.put(_bossWinsKey, current + 1);
+  }
+
+  int getDailyChallengeWins() {
+    if (!Hive.isBoxOpen(_boxName)) return 0;
+    return Hive.box(_boxName).get(_dailyWinsKey, defaultValue: 0) as int;
+  }
+
+  Future<void> incrementDailyChallengeWins() async {
+    final box = await _ensureBox();
+    final current = getDailyChallengeWins();
+    await box.put(_dailyWinsKey, current + 1);
+  }
+
+  int getTimePlayedSeconds() {
+    if (!Hive.isBoxOpen(_boxName)) return 0;
+    return Hive.box(_boxName).get(_timePlayedKey, defaultValue: 0) as int;
+  }
+
+  Future<void> addTimePlayed(int seconds) async {
+    if (seconds <= 0) return;
+    final box = await _ensureBox();
+    final current = getTimePlayedSeconds();
+    await box.put(_timePlayedKey, current + seconds);
   }
 
   // ── Firestore (Remote) ──
@@ -107,6 +149,19 @@ class StatisticsRepository {
     await FirebaseFirestore.instance
         .collection(_firestoreCollection)
         .add(data);
+  }
+
+  Future<void> uploadMetaToFirestore(String userId) async {
+    final data = <String, dynamic>{
+      'userId': userId,
+      'bossWins': getBossWins(),
+      'dailyChallengeWins': getDailyChallengeWins(),
+      'timePlayedSeconds': getTimePlayedSeconds(),
+    };
+    await FirebaseFirestore.instance
+        .collection('${_firestoreCollection}_meta')
+        .doc(userId)
+        .set(data, SetOptions(merge: true));
   }
 
   // ── Sync ──

@@ -116,8 +116,32 @@ class GameService {
     );
   }
 
-  Future<void> saveResult(GameResultModel result) async {
-    await _statisticsRepository.saveResult(result);
+  Future<void> saveResult(
+    GameResultModel result, {
+    Duration? duration,
+  }) async {
+    // Persist duration into the result so historical aggregates stay
+    // accurate even if the caller forgets to thread it through.
+    final resultWithDuration = duration != null && result.durationSeconds == 0
+        ? result.copyWith(durationSeconds: duration.inSeconds)
+        : result;
+
+    await _statisticsRepository.saveResult(resultWithDuration);
+
+    // Cumulative time-played counter (Phase 18).
+    if (duration != null && duration.inSeconds > 0) {
+      await _statisticsRepository.addTimePlayed(duration.inSeconds);
+    }
+
+    // Phase 18 win counters — derived from the result's own flags so
+    // the same code path serves boss / daily / normal games.
+    if (resultWithDuration.isBossWin) {
+      await _statisticsRepository.incrementBossWins();
+    }
+    if (resultWithDuration.isDailyChallengeWin) {
+      await _statisticsRepository.incrementDailyChallengeWins();
+    }
+
     await _progressRepository.addXP(result.earnedXP);
     await _progressRepository.addCoins(result.earnedCoins);
   }

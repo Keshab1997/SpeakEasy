@@ -6,12 +6,19 @@ import '../../../providers/game/xp_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../../../providers/game/streak_provider.dart';
 
+/// Phase 18 Statistics screen.
+///
+/// Aggregates the persistent counters maintained by
+/// [StatisticsService] and renders them as a structured dashboard:
+/// performance rating, headline numbers, rewards, Phase-18 win /
+/// streak / time counters, today's progress, and a "current status"
+/// section that mirrors the live progress providers.
 class StatisticsScreen extends ConsumerWidget {
   const StatisticsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final statsState = ref.watch(statisticsProvider);
+    final stats = ref.watch(statisticsProvider);
     final xpState = ref.watch(xpProvider);
     final coinState = ref.watch(coinProvider);
     final streakState = ref.watch(streakProvider);
@@ -19,173 +26,582 @@ class StatisticsScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Statistics', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text(
+          'Statistics',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        actions: [
+          IconButton(
+            tooltip: 'Refresh',
+            icon: const Icon(Icons.refresh),
+            onPressed: () =>
+                ref.read(statisticsProvider.notifier).refresh(),
+          ),
+        ],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Performance Rating
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(colors: AppColors.primaryGradient),
-                borderRadius: BorderRadius.circular(20),
+      body: RefreshIndicator(
+        onRefresh: () async => ref.read(statisticsProvider.notifier).refresh(),
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _PerformanceBanner(rating: stats.performanceRating),
+              const SizedBox(height: 24),
+
+              _SectionHeader(
+                title: 'Overall Statistics',
+                icon: Icons.bar_chart,
               ),
-              child: Column(
-                children: [
-                  Text('Performance Rating', style: const TextStyle(color: Colors.white70, fontSize: 14)),
-                  const SizedBox(height: 8),
-                  Text(statsState.performanceRating, style: const TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 24),
-
-            // Overall Stats
-            Text('Overall Statistics', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 12),
-            GridView.count(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              mainAxisSpacing: 12,
-              crossAxisSpacing: 12,
-              childAspectRatio: 1.5,
-              children: [
-                _StatCard(label: 'Games Played', value: '${statsState.totalGamesPlayed}', icon: Icons.quiz, color: AppColors.primary),
-                _StatCard(label: 'Total Questions', value: '${statsState.totalQuestionsAnswered}', icon: Icons.help_outline, color: AppColors.info),
-                _StatCard(label: 'Correct Answers', value: '${statsState.totalCorrectAnswers}', icon: Icons.check_circle, color: AppColors.success),
-                _StatCard(label: 'Wrong Answers', value: '${statsState.totalWrongAnswers}', icon: Icons.cancel, color: AppColors.error),
-                _StatCard(label: 'Accuracy', value: '${(statsState.overallAccuracy * 100).toStringAsFixed(1)}%', icon: Icons.pie_chart, color: AppColors.warning),
-                _StatCard(label: 'Best Score', value: '${statsState.highestScore}', icon: Icons.emoji_events, color: Colors.amber),
-              ],
-            ),
-
-            const SizedBox(height: 24),
-
-            // Rewards Stats
-            Text('Rewards', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 12),
-            Row(
-              children: [
-                Expanded(
-                  child: _StatCard(
-                    label: 'Total XP',
-                    value: '${statsState.totalEarnedXP}',
-                    icon: Icons.star,
+              const SizedBox(height: 12),
+              _StatsGrid(
+                tiles: [
+                  _StatTileData(
+                    label: 'Games Played',
+                    value: '${stats.totalGamesPlayed}',
+                    icon: Icons.sports_esports,
+                    color: AppColors.primary,
+                  ),
+                  _StatTileData(
+                    label: 'Correct',
+                    value: '${stats.totalCorrectAnswers}',
+                    icon: Icons.check_circle,
+                    color: AppColors.success,
+                  ),
+                  _StatTileData(
+                    label: 'Wrong',
+                    value: '${stats.totalWrongAnswers}',
+                    icon: Icons.cancel,
+                    color: AppColors.error,
+                  ),
+                  _StatTileData(
+                    label: 'Accuracy',
+                    value:
+                        '${(stats.overallAccuracy * 100).toStringAsFixed(1)}%',
+                    icon: Icons.pie_chart,
+                    color: AppColors.warning,
+                  ),
+                  _StatTileData(
+                    label: 'Best Score',
+                    value: '${stats.highestScore}',
+                    icon: Icons.emoji_events,
                     color: Colors.amber,
                   ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: _StatCard(
-                    label: 'Total Coins',
-                    value: '${statsState.totalEarnedCoins}',
-                    icon: Icons.monetization_on,
-                    color: Colors.amberAccent,
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 24),
-
-            // Current Status
-            Text('Current Status', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 12),
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: theme.cardColor,
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: AppColors.borderLight),
-              ),
-              child: Column(
-                children: [
-                  _StatusRow(label: 'Current Level', value: '${xpState.currentLevel} - ${xpState.levelTitle}'),
-                  const Divider(),
-                  _StatusRow(label: 'Current XP', value: '${xpState.currentXP} / ${xpState.xpForNextLevel}'),
-                  const Divider(),
-                  _StatusRow(label: 'Level Progress', value: '${(xpState.levelProgress * 100).toStringAsFixed(1)}%'),
-                  const Divider(),
-                  _StatusRow(label: 'Current Coins', value: '${coinState.currentCoins}'),
-                  const Divider(),
-                  _StatusRow(label: 'Current Streak', value: '${streakState.currentStreak} days ${streakState.emoji}'),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 24),
-
-            // Streak Stats
-            Text('Streak', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 12),
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [Colors.orange, Colors.deepOrange]),
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    children: [
-                      Text('${streakState.currentStreak}', style: const TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold)),
-                      const Text('Current', style: TextStyle(color: Colors.white70, fontSize: 12)),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('${streakState.bestStreak}', style: const TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold)),
-                      const Text('Best', style: TextStyle(color: Colors.white70, fontSize: 12)),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text(streakState.emoji, style: const TextStyle(fontSize: 32)),
-                      const Text('Status', style: TextStyle(color: Colors.white70, fontSize: 12)),
-                    ],
+                  _StatTileData(
+                    label: 'Avg Score',
+                    value: stats.averageScore.toStringAsFixed(1),
+                    icon: Icons.analytics,
+                    color: AppColors.info,
                   ),
                 ],
               ),
-            ),
-          ],
+
+              const SizedBox(height: 24),
+              _SectionHeader(
+                title: 'Rewards',
+                icon: Icons.workspace_premium,
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: _GradientStatCard(
+                      label: 'Total XP',
+                      value: '${stats.totalEarnedXP}',
+                      icon: Icons.star,
+                      gradient: AppColors.accentGradient,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: _GradientStatCard(
+                      label: 'Total Coins',
+                      value: '${stats.totalEarnedCoins}',
+                      icon: Icons.monetization_on,
+                      gradient: AppColors.secondaryGradient,
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 24),
+              _SectionHeader(
+                title: 'Special Wins',
+                icon: Icons.military_tech,
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: _GradientStatCard(
+                      label: 'Boss Wins',
+                      value: '${stats.bossWins}',
+                      icon: Icons.shield,
+                      gradient: const [
+                        Color(0xFFEF4444),
+                        Color(0xFFB91C1C),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: _GradientStatCard(
+                      label: 'Daily Wins',
+                      value: '${stats.dailyChallengeWins}',
+                      icon: Icons.flash_on,
+                      gradient: AppColors.purpleGradient,
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 24),
+              _SectionHeader(
+                title: 'Streaks',
+                icon: Icons.local_fire_department,
+              ),
+              const SizedBox(height: 12),
+              _StreakCard(
+                current: streakState.currentStreak,
+                best: stats.bestStreak,
+                emoji: streakState.emoji,
+              ),
+
+              const SizedBox(height: 24),
+              _SectionHeader(
+                title: 'Time Played',
+                icon: Icons.timer,
+              ),
+              const SizedBox(height: 12),
+              _TimePlayedCard(
+                totalSeconds: stats.timePlayedSeconds,
+                formatted: stats.timePlayedFormatted,
+              ),
+
+              const SizedBox(height: 24),
+              _SectionHeader(
+                title: 'Current Status',
+                icon: Icons.person_outline,
+              ),
+              const SizedBox(height: 12),
+              _StatusCard(
+                rows: [
+                  _StatusRowData(
+                    label: 'Current Level',
+                    value:
+                        '${xpState.currentLevel} - ${xpState.levelTitle}',
+                  ),
+                  _StatusRowData(
+                    label: 'Level XP',
+                    value:
+                        '${xpState.currentXP} / ${xpState.xpForNextLevel} '
+                        '(${(xpState.levelProgress * 100).toStringAsFixed(1)}%)',
+                  ),
+                  _StatusRowData(
+                    label: 'Coins Balance',
+                    value: '${coinState.currentCoins}',
+                  ),
+                  _StatusRowData(
+                    label: 'Current Streak',
+                    value:
+                        '${streakState.currentStreak} days ${streakState.emoji}',
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 24),
+              _SectionHeader(
+                title: 'Recent Form',
+                icon: Icons.history,
+              ),
+              const SizedBox(height: 12),
+              _RecentFormCard(
+                bestScore: stats.highestScore,
+                averageScore: stats.averageScore,
+                accuracy:
+                    (stats.overallAccuracy * 100).toStringAsFixed(1),
+                rating: stats.performanceRating,
+              ),
+
+              const SizedBox(height: 32),
+              Center(
+                child: Text(
+                  'Keep playing to grow your stats!',
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: AppColors.textSecondaryLight,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class _StatCard extends StatelessWidget {
+// ── Section pieces ──
+
+class _PerformanceBanner extends StatelessWidget {
+  final String rating;
+  const _PerformanceBanner({required this.rating});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(colors: AppColors.primaryGradient),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Performance Rating',
+            style: TextStyle(color: Colors.white70, fontSize: 14),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            rating,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          const Text(
+            'Based on overall accuracy',
+            style: TextStyle(color: Colors.white70, fontSize: 12),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SectionHeader extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  const _SectionHeader({required this.title, required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Row(
+      children: [
+        Icon(icon, color: AppColors.primary, size: 20),
+        const SizedBox(width: 8),
+        Text(
+          title,
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _StatTileData {
   final String label;
   final String value;
   final IconData icon;
   final Color color;
+  const _StatTileData({
+    required this.label,
+    required this.value,
+    required this.icon,
+    required this.color,
+  });
+}
 
-  const _StatCard({required this.label, required this.value, required this.icon, required this.color});
+class _StatsGrid extends StatelessWidget {
+  final List<_StatTileData> tiles;
+  const _StatsGrid({required this.tiles});
+
+  @override
+  Widget build(BuildContext context) {
+    // Layout as row-pairs wrapped in IntrinsicHeight so each pair
+    // sizes to its tallest tile. This avoids the fixed-aspect-ratio
+    // overflow that a 2-column GridView hits on narrow phones.
+    final rows = <Widget>[];
+    for (int i = 0; i < tiles.length; i += 2) {
+      final left = tiles[i];
+      final right = (i + 1 < tiles.length) ? tiles[i + 1] : null;
+      rows.add(
+        IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(child: _StatCard(data: left)),
+              if (right != null) ...[
+                const SizedBox(width: 12),
+                Expanded(child: _StatCard(data: right)),
+              ],
+            ],
+          ),
+        ),
+      );
+      if (i + 2 < tiles.length) {
+        rows.add(const SizedBox(height: 12));
+      }
+    }
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: rows);
+  }
+}
+
+class _StatCard extends StatelessWidget {
+  final _StatTileData data;
+  const _StatCard({required this.data});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
       decoration: BoxDecoration(
         color: theme.cardColor,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.borderLight),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, color: color, size: 28),
-          const SizedBox(height: 8),
-          Text(value, style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold, color: color)),
-          Text(label, style: theme.textTheme.bodySmall, textAlign: TextAlign.center),
+          Icon(data.icon, color: data.color, size: 22),
+          const SizedBox(height: 6),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              data.value,
+              maxLines: 1,
+              style: theme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: data.color,
+              ),
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            data.label,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+            style: theme.textTheme.bodySmall,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _GradientStatCard extends StatelessWidget {
+  final String label;
+  final String value;
+  final IconData icon;
+  final List<Color> gradient;
+  const _GradientStatCard({
+    required this.label,
+    required this.value,
+    required this.icon,
+    required this.gradient,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(colors: gradient),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, color: Colors.white, size: 22),
+          const SizedBox(height: 6),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              value,
+              maxLines: 1,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            label,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(color: Colors.white70, fontSize: 12),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _StreakCard extends StatelessWidget {
+  final int current;
+  final int best;
+  final String emoji;
+  const _StreakCard({
+    required this.current,
+    required this.best,
+    required this.emoji,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Colors.orange, Colors.deepOrange],
+        ),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _StreakColumn(value: '$current', label: 'Current'),
+          _StreakColumn(value: '$best', label: 'Best'),
+          _StreakColumn(value: emoji, label: 'Status', isEmoji: true),
+        ],
+      ),
+    );
+  }
+}
+
+class _StreakColumn extends StatelessWidget {
+  final String value;
+  final String label;
+  final bool isEmoji;
+  const _StreakColumn({
+    required this.value,
+    required this.label,
+    this.isEmoji = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          value,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: isEmoji ? 32 : 32,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(
+          label,
+          style: const TextStyle(color: Colors.white70, fontSize: 12),
+        ),
+      ],
+    );
+  }
+}
+
+class _TimePlayedCard extends StatelessWidget {
+  final int totalSeconds;
+  final String formatted;
+  const _TimePlayedCard({
+    required this.totalSeconds,
+    required this.formatted,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final hours = totalSeconds ~/ 3600;
+    final minutes = (totalSeconds % 3600) ~/ 60;
+    final seconds = totalSeconds % 60;
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: theme.cardColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: AppColors.borderLight),
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: AppColors.info.withOpacity(0.12),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Icon(
+              Icons.timer,
+              color: AppColors.info,
+              size: 28,
+            ),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  formatted,
+                  style: theme.textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  '$hours h · $minutes m · $seconds s total',
+                  style: theme.textTheme.bodySmall,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _StatusRowData {
+  final String label;
+  final String value;
+  const _StatusRowData({required this.label, required this.value});
+}
+
+class _StatusCard extends StatelessWidget {
+  final List<_StatusRowData> rows;
+  const _StatusCard({required this.rows});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: theme.cardColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: AppColors.borderLight),
+      ),
+      child: Column(
+        children: [
+          for (int i = 0; i < rows.length; i++) ...[
+            _StatusRow(label: rows[i].label, value: rows[i].value),
+            if (i < rows.length - 1) const Divider(height: 1),
+          ],
         ],
       ),
     );
@@ -195,21 +611,107 @@ class _StatCard extends StatelessWidget {
 class _StatusRow extends StatelessWidget {
   final String label;
   final String value;
-
   const _StatusRow({required this.label, required this.value});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(label, style: theme.textTheme.bodyMedium),
-          Text(value, style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold)),
+          Text(
+            value,
+            style: theme.textTheme.bodyMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ],
       ),
+    );
+  }
+}
+
+class _RecentFormCard extends StatelessWidget {
+  final int bestScore;
+  final double averageScore;
+  final String accuracy;
+  final String rating;
+  const _RecentFormCard({
+    required this.bestScore,
+    required this.averageScore,
+    required this.accuracy,
+    required this.rating,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(colors: AppColors.infoGradient),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Snapshot',
+            style: TextStyle(color: Colors.white70, fontSize: 12),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            rating,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _MiniMetric(label: 'Best', value: '$bestScore'),
+              _MiniMetric(
+                label: 'Avg',
+                value: averageScore.toStringAsFixed(1),
+              ),
+              _MiniMetric(label: 'Accuracy', value: '$accuracy%'),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MiniMetric extends StatelessWidget {
+  final String label;
+  final String value;
+  const _MiniMetric({required this.label, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(color: Colors.white70, fontSize: 12),
+        ),
+        const SizedBox(height: 2),
+        Text(
+          value,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
     );
   }
 }

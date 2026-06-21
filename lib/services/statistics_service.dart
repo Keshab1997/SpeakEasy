@@ -1,16 +1,21 @@
 import '../models/game/game_result_model.dart';
 import '../repositories/statistics_repository.dart';
 import '../repositories/progress_repository.dart';
+import 'streak_service.dart';
 
 class StatisticsService {
   final StatisticsRepository _statisticsRepository;
   final ProgressRepository _progressRepository;
+  final StreakService _streakService;
 
   StatisticsService({
     required StatisticsRepository statisticsRepository,
     required ProgressRepository progressRepository,
+    StreakService? streakService,
   })  : _statisticsRepository = statisticsRepository,
-        _progressRepository = progressRepository;
+        _progressRepository = progressRepository,
+        _streakService = streakService ??
+            StreakService(progressRepository: progressRepository);
 
   // ── Core Statistics ──
 
@@ -100,17 +105,69 @@ class StatisticsService {
   }
 
   Duration getAverageGameDuration() {
-    // Placeholder — game duration tracking can be expanded
-    return const Duration(minutes: 2);
+    final results = _statisticsRepository.getResults();
+    final completed = results
+        .where((r) => r.durationSeconds > 0)
+        .toList(growable: false);
+    if (completed.isEmpty) return Duration.zero;
+    final totalSeconds =
+        completed.fold<int>(0, (sum, r) => sum + r.durationSeconds);
+    final avg = totalSeconds ~/ completed.length;
+    return Duration(seconds: avg);
+  }
+
+  // ── Phase 18 meta counters ──
+
+  int getBossWins() => _statisticsRepository.getBossWins();
+
+  Future<void> recordBossWin() async {
+    await _statisticsRepository.incrementBossWins();
+  }
+
+  int getDailyChallengeWins() =>
+      _statisticsRepository.getDailyChallengeWins();
+
+  Future<void> recordDailyChallengeWin() async {
+    await _statisticsRepository.incrementDailyChallengeWins();
+  }
+
+  int getTimePlayedSeconds() =>
+      _statisticsRepository.getTimePlayedSeconds();
+
+  Duration getTimePlayed() {
+    return Duration(seconds: getTimePlayedSeconds());
+  }
+
+  Future<void> addTimePlayed(Duration duration) async {
+    await _statisticsRepository.addTimePlayed(duration.inSeconds);
+  }
+
+  /// Best streak ever achieved. Sourced from the persistent
+  /// `longestStreak` recorded by the streak service so it survives
+  /// streak resets.
+  int getBestStreak() {
+    return _streakService.getLongestStreak();
+  }
+
+  // ── Time formatting helpers ──
+
+  /// Pretty-print a duration as `Hh Mm` (e.g. `2h 15m`) or `Mm Ss`
+  /// when under an hour.
+  String formatDuration(Duration d) {
+    if (d.inSeconds <= 0) return '0m';
+    final hours = d.inHours;
+    final minutes = d.inMinutes.remainder(60);
+    final seconds = d.inSeconds.remainder(60);
+    if (hours > 0) {
+      return '${hours}h ${minutes}m';
+    }
+    if (minutes > 0) {
+      return '${minutes}m ${seconds}s';
+    }
+    return '${seconds}s';
   }
 
   // ── Streak Statistics ──
-
-  int getBestStreak() {
-    // Best streak can be stored separately; returns current streak as fallback
-    final progress = _progressRepository.getProgress();
-    return progress?.streak ?? 0;
-  }
 
   // ── Performance Ratings ──
 
@@ -138,7 +195,8 @@ class StatisticsService {
   }
 
   List<GameResultModel> getTodayResults() {
-    final today = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+    final today =
+        DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
     final tomorrow = today.add(const Duration(days: 1));
     return getResultsByDateRange(start: today, end: tomorrow);
   }
@@ -146,7 +204,8 @@ class StatisticsService {
   List<GameResultModel> getThisWeekResults() {
     final now = DateTime.now();
     final weekStart = now.subtract(Duration(days: now.weekday - 1));
-    final weekStartDay = DateTime(weekStart.year, weekStart.month, weekStart.day);
+    final weekStartDay =
+        DateTime(weekStart.year, weekStart.month, weekStart.day);
     return getResultsByDateRange(start: weekStartDay, end: now);
   }
 
@@ -158,34 +217,29 @@ class StatisticsService {
 
   // ── Daily Stats ──
 
-  int getTodayGamesPlayed() {
-    return getTodayResults().length;
-  }
+  int getTodayGamesPlayed() => getTodayResults().length;
 
-  int getTodayCorrectAnswers() {
-    return getTodayResults().fold(0, (sum, r) => sum + r.correctAnswers);
-  }
+  int getTodayCorrectAnswers() =>
+      getTodayResults().fold(0, (sum, r) => sum + r.correctAnswers);
 
-  int getTodayWrongAnswers() {
-    return getTodayResults().fold(0, (sum, r) => sum + r.wrongAnswers);
-  }
+  int getTodayWrongAnswers() =>
+      getTodayResults().fold(0, (sum, r) => sum + r.wrongAnswers);
 
   double getTodayAccuracy() {
     final results = getTodayResults();
     if (results.isEmpty) return 0.0;
     final correct = results.fold(0, (sum, r) => sum + r.correctAnswers);
-    final total = results.fold(0, (sum, r) => sum + r.correctAnswers + r.wrongAnswers);
+    final total =
+        results.fold(0, (sum, r) => sum + r.correctAnswers + r.wrongAnswers);
     if (total == 0) return 0.0;
     return correct / total;
   }
 
-  int getTodayEarnedXP() {
-    return getTodayResults().fold(0, (sum, r) => sum + r.earnedXP);
-  }
+  int getTodayEarnedXP() =>
+      getTodayResults().fold(0, (sum, r) => sum + r.earnedXP);
 
-  int getTodayEarnedCoins() {
-    return getTodayResults().fold(0, (sum, r) => sum + r.earnedCoins);
-  }
+  int getTodayEarnedCoins() =>
+      getTodayResults().fold(0, (sum, r) => sum + r.earnedCoins);
 
   // ── Summary ──
 
@@ -202,9 +256,15 @@ class StatisticsService {
       'currentLevel': getCurrentLevel(),
       'currentCoins': getCurrentCoins(),
       'currentStreak': getCurrentStreak(),
+      'bestStreak': getBestStreak(),
+      'bossWins': getBossWins(),
+      'dailyChallengeWins': getDailyChallengeWins(),
+      'timePlayedSeconds': getTimePlayedSeconds(),
+      'timePlayedFormatted': formatDuration(getTimePlayed()),
       'bestAccuracy': getBestResult()?.accuracy ?? 0.0,
       'highestScore': getHighestScore(),
       'averageScore': getAverageScore(),
+      'averageGameDuration': formatDuration(getAverageGameDuration()),
       'performanceRating': getCurrentPerformanceRating(),
       'todayGamesPlayed': getTodayGamesPlayed(),
       'todayAccuracy': getTodayAccuracy(),
