@@ -1,6 +1,897 @@
 {
   "tenseType": "Present Continuous",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "pc_001",
+      "tenseType": "Present Continuous",
+      "question": "She ____ a book right now.",
+      "options": ["read", "is reading", "reads", "has read"],
+      "correctAnswer": "is reading",
+      "explanation": "'Right now' বর্তমানে চলমান কাজ বোঝায় — Present Continuous। 'She' third person singular, তাই 'is reading'। Structure: subject + am/is/are + verb-ing।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_002",
+      "tenseType": "Present Continuous",
+      "question": "They ____ football at the moment.",
+      "options": ["play", "are playing", "plays", "played"],
+      "correctAnswer": "are playing",
+      "explanation": "'At the moment' এখন চলছে বোঝায় — Present Continuous। 'They' plural, তাই 'are playing'। Structure: subject + am/is/are + verb-ing।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_003",
+      "tenseType": "Present Continuous",
+      "question": "I ____ for the exam now.",
+      "options": ["study", "am studying", "studies", "studied"],
+      "correctAnswer": "am studying",
+      "explanation": "'Now' বর্তমানে চলমান কাজ বোঝায়। 'I' এর সাথে 'am' বসে — 'am studying'। Present Continuous: am/is/are + verb-ing।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_004",
+      "tenseType": "Present Continuous",
+      "question": "He ____ to the market now.",
+      "options": ["go", "is going", "goes", "went"],
+      "correctAnswer": "is going",
+      "explanation": "'Now' বর্তমান মুহূর্তে চলমান কাজ। 'He' third person singular, তাই 'is going'। Present Continuous গঠন: subject + is + verb-ing।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_005",
+      "tenseType": "Present Continuous",
+      "question": "The children ____ in the park now.",
+      "options": ["play", "are playing", "plays", "played"],
+      "correctAnswer": "are playing",
+      "explanation": "'The children' plural subject, তাই 'are playing'। 'Now' বর্তমানে চলমান কাজ নির্দেশ করে। Present Continuous: are + verb-ing।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_006",
+      "tenseType": "Present Continuous",
+      "question": "My mother ____ dinner in the kitchen.",
+      "options": ["cook", "is cooking", "cooks", "cooked"],
+      "correctAnswer": "is cooking",
+      "explanation": "বর্তমানে চলমান কাজ (এখন রান্না করছে) — Present Continuous। 'My mother' third person singular, তাই 'is cooking'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_007",
+      "tenseType": "Present Continuous",
+      "question": "We ____ a movie right now.",
+      "options": ["watch", "are watching", "watches", "watched"],
+      "correctAnswer": "are watching",
+      "explanation": "'Right now' বর্তমান মুহূর্তের কাজ। 'We' plural, তাই 'are watching'। Present Continuous: am/is/are + verb-ing।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_008",
+      "tenseType": "Present Continuous",
+      "question": "The baby ____ at this moment.",
+      "options": ["cry", "is crying", "cries", "cried"],
+      "correctAnswer": "is crying",
+      "explanation": "'At this moment' এখনই ঘটছে — Present Continuous। 'The baby' third person singular, তাই 'is crying'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_009",
+      "tenseType": "Present Continuous",
+      "question": "You ____ very fast today.",
+      "options": ["talk", "are talking", "talks", "talked"],
+      "correctAnswer": "are talking",
+      "explanation": "'Today' এই মুহূর্তে চলমান কাজ। 'You' এর সাথে 'are' বসে — 'are talking'। Present Continuous: are + verb-ing।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_010",
+      "tenseType": "Present Continuous",
+      "question": "It ____ outside now.",
+      "options": ["rain", "is raining", "rains", "rained"],
+      "correctAnswer": "is raining",
+      "explanation": "'Now' বর্তমানে চলমান আবহাওয়া বোঝায় — Present Continuous। 'It' third person singular, তাই 'is raining'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_011",
+      "tenseType": "Present Continuous",
+      "question": "The students ____ to the teacher now.",
+      "options": ["listen", "are listening", "listens", "listened"],
+      "correctAnswer": "are listening",
+      "explanation": "'Now' বর্তমান মুহূর্তের কাজ। 'The students' plural, তাই 'are listening'। Present Continuous: are + verb-ing।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_012",
+      "tenseType": "Present Continuous",
+      "question": "He ____ a letter to his friend.",
+      "options": ["write", "is writing", "writes", "wrote"],
+      "correctAnswer": "is writing",
+      "explanation": "বর্তমানে চিঠি লিখছে — Present Continuous। 'He' third person singular, তাই 'is writing'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_013",
+      "tenseType": "Present Continuous",
+      "question": "They ____ a new house these days.",
+      "options": ["build", "are building", "builds", "built"],
+      "correctAnswer": "are building",
+      "explanation": "'These days' বর্তমান সময়ে চলমান কাজ বোঝায়। 'They' plural, তাই 'are building'। Present Continuous।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_014",
+      "tenseType": "Present Continuous",
+      "question": "I ____ for my keys. Can you help me?",
+      "options": ["look", "am looking", "looks", "looked"],
+      "correctAnswer": "am looking",
+      "explanation": "এখনই খুঁজছে — Present Continuous। 'I' এর সাথে 'am' — 'am looking'। বর্তমান মুহূর্তের কাজ বোঝাতে Continuous।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_015",
+      "tenseType": "Present Continuous",
+      "question": "She ____ a red dress today.",
+      "options": ["wear", "is wearing", "wears", "wore"],
+      "correctAnswer": "is wearing",
+      "explanation": "'Today' বিশেষ করে আজকের পোশাক বোঝাতে Present Continuous। 'She' third person singular, তাই 'is wearing'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_016",
+      "tenseType": "Present Continuous",
+      "question": "The birds ____ in the trees now.",
+      "options": ["sing", "are singing", "sings", "sang"],
+      "correctAnswer": "are singing",
+      "explanation": "'Now' বর্তমানে পাখি গান গাইছে — Present Continuous। 'The birds' plural, তাই 'are singing'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_017",
+      "tenseType": "Present Continuous",
+      "question": "We ____ for the bus at the moment.",
+      "options": ["wait", "are waiting", "waits", "waited"],
+      "correctAnswer": "are waiting",
+      "explanation": "'At the moment' এখন অপেক্ষা করছে — Present Continuous। 'We' plural, তাই 'are waiting'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_018",
+      "tenseType": "Present Continuous",
+      "question": "He ____ his room right now.",
+      "options": ["clean", "is cleaning", "cleans", "cleaned"],
+      "correctAnswer": "is cleaning",
+      "explanation": "'Right now' এই মুহূর্তে পরিষ্কার করছে — Present Continuous। 'He' third person singular, তাই 'is cleaning'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_019",
+      "tenseType": "Present Continuous",
+      "question": "The dog ____ in the garden now.",
+      "options": ["run", "is running", "runs", "ran"],
+      "correctAnswer": "is running",
+      "explanation": "'Now' বর্তমানে দৌড়াচ্ছে — Present Continuous। 'The dog' third person singular, তাই 'is running'। Note: run → running (double n)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_020",
+      "tenseType": "Present Continuous",
+      "question": "I ____ dinner at a restaurant tonight.",
+      "options": ["have", "am having", "has", "had"],
+      "correctAnswer": "am having",
+      "explanation": "'Tonight' নির্দিষ্ট সময়ের পরিকল্পনা — Present Continuous ভবিষ্যৎ অর্থেও ব্যবহৃত হয়। 'I am having'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_021",
+      "tenseType": "Present Continuous",
+      "question": "She ____ to London next week.",
+      "options": ["travel", "is travelling", "travels", "travelled"],
+      "correctAnswer": "is travelling",
+      "explanation": "'Next week' ভবিষ্যৎ পরিকল্পনা — Present Continuous ভবিষ্যৎ অর্থে। 'She is travelling'। Fixed arrangement বোঝাতে Present Continuous।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_022",
+      "tenseType": "Present Continuous",
+      "question": "They ____ a party tomorrow evening.",
+      "options": ["have", "are having", "has", "had"],
+      "correctAnswer": "are having",
+      "explanation": "'Tomorrow evening' নির্দিষ্ট ভবিষ্যৎ পরিকল্পনা — Present Continuous। 'They are having'। Arranged event বোঝাতে এই ব্যবহার।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_023",
+      "tenseType": "Present Continuous",
+      "question": "He ____ more responsible these days.",
+      "options": ["is being", "is", "was", "has been"],
+      "correctAnswer": "is being",
+      "explanation": "'Is being' + adjective বর্তমানে সাময়িক আচরণ বোঝায়। 'These days' নির্দেশ করে এটি সাময়িক পরিবর্তন। 'Is being responsible' = এই সময়ে দায়িত্বশীল আচরণ করছে।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_024",
+      "tenseType": "Present Continuous",
+      "question": "You ____ too much noise. Please stop.",
+      "options": ["make", "are making", "makes", "made"],
+      "correctAnswer": "are making",
+      "explanation": "এখনই বিরক্তিকর কাজ করছে — Present Continuous। 'You are making'। বর্তমান মুহূর্তের অভিযোগ বা irritation বোঝাতে Continuous।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_025",
+      "tenseType": "Present Continuous",
+      "question": "The company ____ new employees this month.",
+      "options": ["hire", "is hiring", "hires", "hired"],
+      "correctAnswer": "is hiring",
+      "explanation": "'This month' বর্তমান সময়ের চলমান প্রক্রিয়া — Present Continuous। 'The company' third person singular, তাই 'is hiring'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_026",
+      "tenseType": "Present Continuous",
+      "question": "I ____ a lot of progress in English lately.",
+      "options": ["make", "am making", "makes", "made"],
+      "correctAnswer": "am making",
+      "explanation": "'Lately' সাম্প্রতিক সময়ে চলমান উন্নতি — Present Continuous। 'I am making'। Gradually changing situation বোঝাতে Continuous।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_027",
+      "tenseType": "Present Continuous",
+      "question": "She ____ for her exams these days.",
+      "options": ["prepare", "is preparing", "prepares", "prepared"],
+      "correctAnswer": "is preparing",
+      "explanation": "'These days' বর্তমান সময়ের চলমান প্রস্তুতি — Present Continuous। 'She is preparing'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_028",
+      "tenseType": "Present Continuous",
+      "question": "The world's climate ____ rapidly.",
+      "options": ["change", "is changing", "changes", "changed"],
+      "correctAnswer": "is changing",
+      "explanation": "Gradual change (ধীরে ধীরে পরিবর্তন) Present Continuous এ বোঝানো হয়। 'The world's climate' third person singular, তাই 'is changing'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_029",
+      "tenseType": "Present Continuous",
+      "question": "He ____ more and more impatient every day.",
+      "options": ["become", "is becoming", "becomes", "became"],
+      "correctAnswer": "is becoming",
+      "explanation": "Gradual process (ধীরে ধীরে হচ্ছে) — Present Continuous। 'Is becoming' ক্রমাগত পরিবর্তন বোঝায়। 'Every day' সাথে gradual change।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_030",
+      "tenseType": "Present Continuous",
+      "question": "I ____ you tomorrow at 5 pm.",
+      "options": ["meet", "am meeting", "meets", "met"],
+      "correctAnswer": "am meeting",
+      "explanation": "'Tomorrow at 5 pm' নির্দিষ্ট ভবিষ্যৎ পরিকল্পনা — Present Continuous। 'I am meeting'। Fixed arrangement বোঝাতে Present Continuous।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pc_031",
+      "tenseType": "Present Continuous",
+      "question": "Identify the tense: 'She is reading a book now.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Continuous",
+      "explanation": "'Is reading' (am/is/are + verb-ing) এবং 'now' — এটি Present Continuous। বর্তমানে চলমান কাজ বোঝায়।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pc_032",
+      "tenseType": "Present Continuous",
+      "question": "Identify the tense: 'They are playing football at the moment.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Continuous",
+      "explanation": "'Are playing' (are + verb-ing) এবং 'at the moment' — Present Continuous। বর্তমান মুহূর্তের কাজ।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pc_033",
+      "tenseType": "Present Continuous",
+      "question": "Identify the tense: 'I am studying for my exam these days.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Continuous",
+      "explanation": "'Am studying' এবং 'these days' — Present Continuous। বর্তমান সময়ের চলমান প্রক্রিয়া বোঝায়।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pc_034",
+      "tenseType": "Present Continuous",
+      "question": "Identify the tense: 'He is going to the market now.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Continuous",
+      "explanation": "'Is going' (is + verb-ing) এবং 'now' — Present Continuous। বর্তমানে চলমান কাজ।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pc_035",
+      "tenseType": "Present Continuous",
+      "question": "Identify the tense: 'The baby is crying at this moment.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Continuous",
+      "explanation": "'Is crying' এবং 'at this moment' — Present Continuous। এখনই ঘটছে এমন কাজ।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pc_036",
+      "tenseType": "Present Continuous",
+      "question": "Identify the tense: 'We are watching a movie right now.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Continuous",
+      "explanation": "'Are watching' এবং 'right now' — Present Continuous। বর্তমান মুহূর্তের কাজ।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pc_037",
+      "tenseType": "Present Continuous",
+      "question": "Identify the tense: 'It is raining outside now.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Continuous",
+      "explanation": "'Is raining' এবং 'now' — Present Continuous। বর্তমানে চলমান আবহাওয়া।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pc_038",
+      "tenseType": "Present Continuous",
+      "question": "Identify the tense: 'The students are listening to the teacher.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Continuous",
+      "explanation": "'Are listening' — Present Continuous। বর্তমানে চলমান কাজ।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pc_039",
+      "tenseType": "Present Continuous",
+      "question": "Identify the tense: 'She is wearing a blue dress today.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Continuous",
+      "explanation": "'Is wearing' এবং 'today' — Present Continuous। আজকের বিশেষ পোশাক বোঝাতে Continuous।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pc_040",
+      "tenseType": "Present Continuous",
+      "question": "Identify the tense: 'I am meeting him tomorrow.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Future Indefinite"],
+      "correctAnswer": "Present Continuous",
+      "explanation": "'Am meeting' এবং 'tomorrow' — Present Continuous ভবিষ্যৎ পরিকল্পনা বোঝাতে। Fixed arrangement এর জন্য Present Continuous ব্যবহৃত হয়।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pc_041",
+      "tenseType": "Present Continuous",
+      "question": "Arrange: (now / is / she / a / reading / book)",
+      "options": [
+        "She is reading a book now.",
+        "She reading is a book now.",
+        "Now she reading a book.",
+        "She is a book reading now."
+      ],
+      "correctAnswer": "She is reading a book now.",
+      "explanation": "Present Continuous এর সঠিক ক্রম: Subject (She) + is + verb-ing (reading) + object (a book) + time (now)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pc_042",
+      "tenseType": "Present Continuous",
+      "question": "Arrange: (playing / they / are / football / now)",
+      "options": [
+        "They are playing football now.",
+        "They playing are football now.",
+        "Are they playing football now.",
+        "They are football playing now."
+      ],
+      "correctAnswer": "They are playing football now.",
+      "explanation": "Subject (They) + are + verb-ing (playing) + object (football) + time (now)। Present Continuous এর সঠিক গঠন।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pc_043",
+      "tenseType": "Present Continuous",
+      "question": "Arrange: (am / for / I / waiting / the / bus)",
+      "options": [
+        "I am waiting for the bus.",
+        "Am I waiting for the bus.",
+        "I waiting am for the bus.",
+        "I am for the bus waiting."
+      ],
+      "correctAnswer": "I am waiting for the bus.",
+      "explanation": "Subject (I) + am + verb-ing (waiting) + preposition (for) + object (the bus)। Present Continuous গঠন।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pc_044",
+      "tenseType": "Present Continuous",
+      "question": "Arrange: (is / kitchen / mother / in / cooking / the / my)",
+      "options": [
+        "My mother is cooking in the kitchen.",
+        "My mother cooking is in the kitchen.",
+        "Is my mother cooking in the kitchen.",
+        "My mother is in the kitchen cooking."
+      ],
+      "correctAnswer": "My mother is cooking in the kitchen.",
+      "explanation": "Subject (My mother) + is + verb-ing (cooking) + place (in the kitchen)। Present Continuous এর সঠিক ক্রম।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pc_045",
+      "tenseType": "Present Continuous",
+      "question": "Arrange: (tomorrow / are / a / they / having / party)",
+      "options": [
+        "They are having a party tomorrow.",
+        "They having are a party tomorrow.",
+        "Tomorrow are they having a party.",
+        "They are a party having tomorrow."
+      ],
+      "correctAnswer": "They are having a party tomorrow.",
+      "explanation": "Subject (They) + are + verb-ing (having) + object (a party) + time (tomorrow)। ভবিষ্যৎ পরিকল্পনা বোঝাতে Present Continuous।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pc_046",
+      "tenseType": "Present Continuous",
+      "question": "Arrange: (changing / is / climate / the / rapidly)",
+      "options": [
+        "The climate is changing rapidly.",
+        "The climate changing is rapidly.",
+        "Is the climate changing rapidly.",
+        "The climate is rapidly changing."
+      ],
+      "correctAnswer": "The climate is changing rapidly.",
+      "explanation": "Subject (The climate) + is + verb-ing (changing) + adverb (rapidly)। Gradual change বোঝাতে Present Continuous।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pc_047",
+      "tenseType": "Present Continuous",
+      "question": "Find the error: 'She are reading a book now.'",
+      "options": [
+        "She is reading a book now.",
+        "She am reading a book now.",
+        "She reading a book now.",
+        "She is read a book now."
+      ],
+      "correctAnswer": "She is reading a book now.",
+      "explanation": "'She' third person singular, তাই 'are' নয় — 'is' হবে। 'She is reading' সঠিক। Subject-verb agreement: he/she/it → is।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pc_048",
+      "tenseType": "Present Continuous",
+      "question": "Find the error: 'They is playing football now.'",
+      "options": [
+        "They are playing football now.",
+        "They am playing football now.",
+        "They playing football now.",
+        "They are play football now."
+      ],
+      "correctAnswer": "They are playing football now.",
+      "explanation": "'They' plural subject, তাই 'is' নয় — 'are' হবে। 'They are playing' সঠিক। Plural subject → are।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pc_049",
+      "tenseType": "Present Continuous",
+      "question": "Find the error: 'I is studying for my exam.'",
+      "options": [
+        "I am studying for my exam.",
+        "I are studying for my exam.",
+        "I studying for my exam.",
+        "I am study for my exam."
+      ],
+      "correctAnswer": "I am studying for my exam.",
+      "explanation": "'I' এর সাথে 'am' বসে, 'is' নয়। 'I am studying' সঠিক। I → am, he/she/it → is, you/we/they → are।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pc_050",
+      "tenseType": "Present Continuous",
+      "question": "Find the error: 'He is go to school now.'",
+      "options": [
+        "He is going to school now.",
+        "He goes to school now.",
+        "He is went to school now.",
+        "He go to school now."
+      ],
+      "correctAnswer": "He is going to school now.",
+      "explanation": "Present Continuous এ verb-ING হয়। 'Go' → 'going'। 'He is going' সঠিক। 'Is go' ভুল — verb এর সাথে ing যোগ করতে হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pc_051",
+      "tenseType": "Present Continuous",
+      "question": "Find the error: 'The children is playing in the park.'",
+      "options": [
+        "The children are playing in the park.",
+        "The children am playing in the park.",
+        "The children playing in the park.",
+        "The children is play in the park."
+      ],
+      "correctAnswer": "The children are playing in the park.",
+      "explanation": "'The children' plural, তাই 'is' নয় — 'are' হবে। 'The children are playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pc_052",
+      "tenseType": "Present Continuous",
+      "question": "Find the error: 'We is watching a movie right now.'",
+      "options": [
+        "We are watching a movie right now.",
+        "We am watching a movie right now.",
+        "We watching a movie right now.",
+        "We are watch a movie right now."
+      ],
+      "correctAnswer": "We are watching a movie right now.",
+      "explanation": "'We' plural, তাই 'is' নয় — 'are' হবে। 'We are watching' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pc_053",
+      "tenseType": "Present Continuous",
+      "question": "Find the error: 'It are raining outside now.'",
+      "options": [
+        "It is raining outside now.",
+        "It am raining outside now.",
+        "It raining outside now.",
+        "It is rain outside now."
+      ],
+      "correctAnswer": "It is raining outside now.",
+      "explanation": "'It' third person singular, তাই 'are' নয় — 'is' হবে। 'It is raining' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pc_054",
+      "tenseType": "Present Continuous",
+      "question": "Find the error: 'She is swim in the pool now.'",
+      "options": [
+        "She is swimming in the pool now.",
+        "She swims in the pool now.",
+        "She is swam in the pool now.",
+        "She is swiming in the pool now."
+      ],
+      "correctAnswer": "She is swimming in the pool now.",
+      "explanation": "'Swim' → 'swimming' (double m)। CVC pattern: consonant-vowel-consonant → শেষ consonant double হয়। 'Swiming' ভুল বানান।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pc_055",
+      "tenseType": "Present Continuous",
+      "question": "Find the error: 'He is writeing a letter.'",
+      "options": [
+        "He is writing a letter.",
+        "He writes a letter.",
+        "He is wrote a letter.",
+        "He is write a letter."
+      ],
+      "correctAnswer": "He is writing a letter.",
+      "explanation": "'Write' → 'writing' (e বাদ যায় + ing)। 'Writeing' ভুল — silent e থাকলে e বাদ দিয়ে ing যোগ হয়।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pc_056",
+      "tenseType": "Present Continuous",
+      "question": "Find the error: 'They are makeing a lot of noise.'",
+      "options": [
+        "They are making a lot of noise.",
+        "They makes a lot of noise.",
+        "They are made a lot of noise.",
+        "They are make a lot of noise."
+      ],
+      "correctAnswer": "They are making a lot of noise.",
+      "explanation": "'Make' → 'making' (e বাদ + ing)। 'Makeing' ভুল — silent e বাদ দিয়ে ing যোগ করতে হয়।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pc_057",
+      "tenseType": "Present Continuous",
+      "question": "Translate: 'সে এখন একটি বই পড়ছে।'",
+      "options": [
+        "She is reading a book now.",
+        "She reads a book now.",
+        "She read a book now.",
+        "She has read a book now."
+      ],
+      "correctAnswer": "She is reading a book now.",
+      "explanation": "'এখন পড়ছে' বর্তমানে চলমান কাজ — Present Continuous। 'She is reading' সঠিক। 'Reads' হলে অভ্যাস বোঝাত।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pc_058",
+      "tenseType": "Present Continuous",
+      "question": "Translate: 'তারা এখন ফুটবল খেলছে।'",
+      "options": [
+        "They are playing football now.",
+        "They play football now.",
+        "They played football now.",
+        "They have played football now."
+      ],
+      "correctAnswer": "They are playing football now.",
+      "explanation": "'এখন খেলছে' বর্তমানে চলমান — Present Continuous। 'They are playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pc_059",
+      "tenseType": "Present Continuous",
+      "question": "Translate: 'আমি এখন পড়াশোনা করছি।'",
+      "options": [
+        "I am studying now.",
+        "I study now.",
+        "I studied now.",
+        "I have studied now."
+      ],
+      "correctAnswer": "I am studying now.",
+      "explanation": "'এখন করছি' বর্তমানে চলমান — Present Continuous। 'I am studying' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pc_060",
+      "tenseType": "Present Continuous",
+      "question": "Translate: 'বৃষ্টি হচ্ছে এখন।'",
+      "options": [
+        "It is raining now.",
+        "It rains now.",
+        "It rained now.",
+        "It has rained now."
+      ],
+      "correctAnswer": "It is raining now.",
+      "explanation": "'এখন হচ্ছে' বর্তমানে চলমান — Present Continuous। 'It is raining' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pc_061",
+      "tenseType": "Present Continuous",
+      "question": "Translate: 'আমার মা রান্নাঘরে রান্না করছেন।'",
+      "options": [
+        "My mother is cooking in the kitchen.",
+        "My mother cooks in the kitchen.",
+        "My mother cooked in the kitchen.",
+        "My mother has cooked in the kitchen."
+      ],
+      "correctAnswer": "My mother is cooking in the kitchen.",
+      "explanation": "'রান্না করছেন' বর্তমানে চলমান — Present Continuous। 'My mother is cooking' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pc_062",
+      "tenseType": "Present Continuous",
+      "question": "Translate: 'আমরা এখন সিনেমা দেখছি।'",
+      "options": [
+        "We are watching a movie now.",
+        "We watch a movie now.",
+        "We watched a movie now.",
+        "We have watched a movie now."
+      ],
+      "correctAnswer": "We are watching a movie now.",
+      "explanation": "'এখন দেখছি' বর্তমানে চলমান — Present Continuous। 'We are watching' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pc_063",
+      "tenseType": "Present Continuous",
+      "question": "Translate: 'সে কাল সকালে লন্ডন যাচ্ছে।'",
+      "options": [
+        "She is going to London tomorrow morning.",
+        "She goes to London tomorrow morning.",
+        "She went to London tomorrow morning.",
+        "She has gone to London tomorrow morning."
+      ],
+      "correctAnswer": "She is going to London tomorrow morning.",
+      "explanation": "'কাল যাচ্ছে' ভবিষ্যৎ পরিকল্পনা — Present Continuous ভবিষ্যৎ অর্থে। 'She is going' সঠিক। Fixed arrangement বোঝায়।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pc_064",
+      "tenseType": "Present Continuous",
+      "question": "Translate: 'আবহাওয়া দ্রুত পরিবর্তন হচ্ছে।'",
+      "options": [
+        "The weather is changing rapidly.",
+        "The weather changes rapidly.",
+        "The weather changed rapidly.",
+        "The weather has changed rapidly."
+      ],
+      "correctAnswer": "The weather is changing rapidly.",
+      "explanation": "'পরিবর্তন হচ্ছে' gradual change — Present Continuous। 'Is changing' ক্রমাগত পরিবর্তন বোঝায়।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pc_065",
+      "tenseType": "Present Continuous",
+      "question": "Translate: 'আমি আগামীকাল তাকে দেখছি।'",
+      "options": [
+        "I am seeing him tomorrow.",
+        "I see him tomorrow.",
+        "I saw him tomorrow.",
+        "I have seen him tomorrow."
+      ],
+      "correctAnswer": "I am seeing him tomorrow.",
+      "explanation": "'আগামীকাল দেখছি' fixed arrangement — Present Continuous ভবিষ্যৎ অর্থে। 'I am seeing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pc_066",
+      "tenseType": "Present Continuous",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She is reading a book now.",
+        "She are reading a book now.",
+        "She is read a book now.",
+        "She reading a book now."
+      ],
+      "correctAnswer": "She is reading a book now.",
+      "explanation": "Quick: Present Continuous = subject + am/is/are + verb-ing। 'She' → is, 'read' → 'reading'।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pc_067",
+      "tenseType": "Present Continuous",
+      "question": "Choose the correct form: 'They ____ football now.'",
+      "options": ["are playing", "is playing", "play", "plays"],
+      "correctAnswer": "are playing",
+      "explanation": "Quick: 'They' plural → 'are', 'play' → 'playing'। 'They are playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pc_068",
+      "tenseType": "Present Continuous",
+      "question": "Pick the correct negative: 'She ____ a book now.'",
+      "options": ["is not reading", "does not read", "is not read", "not reading"],
+      "correctAnswer": "is not reading",
+      "explanation": "Quick: Present Continuous negative = subject + am/is/are + not + verb-ing। 'She is not reading' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pc_069",
+      "tenseType": "Present Continuous",
+      "question": "Pick the correct question form: '____ she reading a book?'",
+      "options": ["Is", "Are", "Am", "Do"],
+      "correctAnswer": "Is",
+      "explanation": "Quick: Present Continuous question = Am/Is/Are + subject + verb-ing? 'She' → 'Is'। 'Is she reading?' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pc_070",
+      "tenseType": "Present Continuous",
+      "question": "Which sentence shows a future arrangement?",
+      "options": [
+        "I am meeting him tomorrow.",
+        "I meet him every day.",
+        "I met him yesterday.",
+        "I have met him."
+      ],
+      "correctAnswer": "I am meeting him tomorrow.",
+      "explanation": "Quick: 'tomorrow' + 'am meeting' = ভবিষ্যৎ পরিকল্পনা। Present Continuous ভবিষ্যৎ অর্থে fixed arrangement বোঝায়।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pc_071",
+      "tenseType": "Present Continuous",
+      "question": "Choose the correct verb: 'The baby ____ now.'",
+      "options": ["is crying", "cries", "cry", "cried"],
+      "correctAnswer": "is crying",
+      "explanation": "Quick: 'now' + 'The baby' (singular) → 'is crying'। Present Continuous।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pc_072",
+      "tenseType": "Present Continuous",
+      "question": "Which sentence is correct (stative verb)?",
+      "options": [
+        "I am understanding the lesson now.",
+        "I understand the lesson now.",
+        "I understanding the lesson now.",
+        "I am understand the lesson now."
+      ],
+      "correctAnswer": "I understand the lesson now.",
+      "explanation": "Quick: 'understand' stative verb — সাধারণত Continuous এ বসে না। তাই 'I understand' সঠিক, 'am understanding' ভুল।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pc_073",
+      "tenseType": "Present Continuous",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "He is being very helpful these days.",
+        "He is very helpful these days.",
+        "He being very helpful these days.",
+        "He is been very helpful these days."
+      ],
+      "correctAnswer": "He is being very helpful these days.",
+      "explanation": "'Is being + adjective' সাময়িক আচরণ বোঝায়। 'These days' নির্দেশ করে এটি স্থায়ী নয়, বর্তমান সময়ের আচরণ।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pc_074",
+      "tenseType": "Present Continuous",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She is swimming in the pool.",
+        "She is swiming in the pool.",
+        "She is swim in the pool.",
+        "She are swimming in the pool."
+      ],
+      "correctAnswer": "She is swimming in the pool.",
+      "explanation": "Quick: 'swim' CVC pattern → double m → 'swimming'। 'She' → 'is'। 'She is swimming' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }
