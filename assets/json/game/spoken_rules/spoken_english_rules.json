@@ -1,0 +1,300 @@
+{
+  "id": "spoken_english_rules",
+  "title": "Spoken English Rules",
+  "banglaTitle": "স্পোকেন ইংলিশের নিয়ম",
+  "color": "#2563EB",
+  "icon": "record_voice_over",
+  "shortDescription": "ইংরেজি বলতে শেখার জন্য প্রয়োজনীয় নিয়ম ও টিপস",
+  "categories": [
+    {
+      "id": "basics",
+      "title": "Basic Sentence Structure",
+      "banglaTitle": "বেসিক বাক্য গঠন",
+      "icon": "architecture",
+      "color": "#10B981",
+      "explanation": "ইংরেজিতে কথা বলতে হলে প্রথমে বাক্য গঠনের নিয়ম জানতে হবে।",
+      "rules": [
+        {
+          "point": "Subject + Verb + Object - এটি সবচেয়ে সাধারণ বাক্যের গঠন। যেমন: I eat rice.",
+          "bangla": "Subject + Verb + Object - এটি হল সহজ বাক্য গঠন। যেমন: আমি ভাত খাই।"
+        },
+        {
+          "point": "Subject + Verb + Object + Extension - যেমন: I eat rice every day.",
+          "bangla": "Subject + Verb + Object + Extension - যেমন: আমি প্রতিদিন ভাত খাই।"
+        },
+        {
+          "point": "মনে রাখবে: Subject সবসময় বাক্যের শুরুতে বসে। যেমন: He, She, I, You, They, We",
+          "bangla": "মনে রাখবে: Subject সবসময় বাক্যের শুরুতে বসে। যেমন: সে, আমি, তুমি, তারা, আমরা"
+        },
+        {
+          "point": "Question গঠন: Wh-word + Helping Verb + Subject + Verb + Object? যেমন: What do you eat?",
+          "bangla": "প্রশ্ন গঠন: Wh-word + Helping Verb + Subject + Verb + Object? যেমন: তুমি কী খাও?"
+        }
+      ]
+    },
+    {
+      "id": "pronunciation",
+      "title": "Pronunciation & Accent",
+      "banglaTitle": "উচ্চারণ ও সুর",
+      "icon": "volume_up",
+      "color": "#F59E0B",
+      "explanation": "সঠিক উচ্চারণ ইংরেজি বলার জন্য সবচেয়ে গুরুত্বপূর্ণ।",
+      "rules": [
+        {
+          "point": "'th' sound: জিহ্বা দাঁতের মাঝে রেখে বলতে হয়। যেমন: think (থিন্ক), the (দ্যা)",
+          "bangla": "'th' ধ্বনি: জিহ্বা দাঁতের মাঝে রেখে বলতে হয়। যেমন: think, the"
+        },
+        {
+          "point": "'r' sound: জিহ্বা পিছনে নিয়ে বলতে হয়। যেমন: car (কার্), far (ফার্)",
+          "bangla": "'r' ধ্বনি: জিহ্বা পিছনে নিয়ে বলতে হয়। যেমন: car, far"
+        },
+        {
+          "point": "Word stress: প্রতিটি শব্দের একটি করে স্ট্রেস থাকে। যেমন: 'RE-cord (noun) vs re-CORD (verb)'",
+          "bangla": "শব্দের জোর: প্রতিটি শব্দের একটি করে জোর থাকে। যেমন: 'RE-cord (বিশেষ্য) vs re-CORD (ক্রিয়া)'"
+        },
+        {
+          "point": "Linking words: শব্দগুলো জোড়া দিয়ে বলো। যেমন: 'get out' → 'ge-tout', 'not at all' → 'no-ta-tall'",
+          "bangla": "শব্দ জোড়া: শব্দগুলো জোড়া দিয়ে বলো। যেমন: 'get out' → 'ge-tout'"
+        },
+        {
+          "point": "Silent letters: কিছু letters উচ্চারণ হয় না। যেমন: 'k' in 'know', 'b' in 'doubt', 'w' in 'write'",
+          "bangla": "নীরব অক্ষর: কিছু letters উচ্চারণ হয় না। যেমন: 'know' এ 'k', 'doubt' এ 'b', 'write' এ 'w'"
+        }
+      ]
+    },
+    {
+      "id": "grammar_essentials",
+      "title": "Grammar Essentials for Speaking",
+      "banglaTitle": "কথা বলার জন্য প্রয়োজনীয় ব্যাকরণ",
+      "icon": "menu_book",
+      "color": "#8B5CF6",
+      "explanation": "কথা বলার সময় শুদ্ধ ব্যাকরণ ব্যবহার করা জরুরি। নিচের নিয়মগুলো মনে রাখো।",
+      "rules": [
+        {
+          "point": "Present Tense ব্যবহার করো অভ্যাস ও সাধারণ সত্য বোঝাতে। যেমন: I wake up at 6 AM.",
+          "bangla": "Present Tense ব্যবহার করো অভ্যাস ও সাধারণ সত্য বোঝাতে।"
+        },
+        {
+          "point": "Past Tense ব্যবহার করো অতীতের ঘটনা বোঝাতে। যেমন: I visited Dhaka yesterday.",
+          "bangla": "Past Tense ব্যবহার করো অতীতের ঘটনা বোঝাতে।"
+        },
+        {
+          "point": "Future Tense ব্যবহার করো ভবিষ্যতের পরিকল্পনা বোঝাতে। যেমন: I will go tomorrow.",
+          "bangla": "Future Tense ব্যবহার করো ভবিষ্যতের পরিকল্পনা বোঝাতে।"
+        },
+        {
+          "point": "Modal Verbs: can (পারে), should (উচিত), must (অবশ্যই), may (হতে পারে) - এগুলো কথা বলার জন্য খুবই দরকারি।",
+          "bangla": "Modal Verbs: can (পারে), should (উচিত), must (অবশ্যই), may (হতে পারে) - এগুলো কথা বলার জন্য খুবই দরকারি।"
+        },
+        {
+          "point": "Prepositions: in, on, at, by, with, for - এদের সঠিক ব্যবহার জানতে হবে। যেমন: I am in the room, The book is on the table.",
+          "bangla": "Prepositions: in, on, at, by, with, for - এদের সঠিক ব্যবহার জানতে হবে।"
+        },
+        {
+          "point": "Articles: a, an, the - কোথায় বসে এবং কোথায় বসে না তা জানতে হবে। যেমন: a book, an apple, the sun",
+          "bangla": "Articles: a, an, the - কোথায় বসে এবং কোথায় বসে না তা জানতে হবে।"
+        }
+      ]
+    },
+    {
+      "id": "daily_phrases",
+      "title": "Daily Used Phrases",
+      "banglaTitle": "দৈনন্দিন ব্যবহৃত বাক্যাংশ",
+      "icon": "chat",
+      "color": "#06B6D4",
+      "explanation": "প্রতিদিনের কথোপকথনে ব্যবহৃত সাধারণ বাক্যাংশগুলো শিখে রাখো।",
+      "rules": [
+        {
+          "point": "Greetings: Hello, Hi, Good morning, Good evening, How are you?, What's up?",
+          "bangla": "শুভেচ্ছা: হ্যালো, হাই, গুড মর্নিং, গুড ইভনিং, হাউ আর ইউ?, হোয়াটস আপ?"
+        },
+        {
+          "point": "Apologies: I'm sorry, I apologize, Please forgive me, My mistake.",
+          "bangla": "ক্ষমা: আই অ্যাম সরি, আই অ্যাপোলজাইজ, প্লিজ ফরগিভ মি, মাই মিস্টেক।"
+        },
+        {
+          "point": "Requests: Please, Could you please, Would you mind, Can I have?",
+          "bangla": "অনুরোধ: প্লিজ, কুড ইউ প্লিজ, উড ইউ মাইন্ড, ক্যান আই হ্যাভ?"
+        },
+        {
+          "point": "Agreement: Yes, Of course, Absolutely, Definitely, Exactly, You're right.",
+          "bangla": "সম্মতি: ইয়েস, অফ কোর্স, অ্যাবসলিউটলি, ডেফিনিটলি, একজ্যাক্টলি, ইউ আর রাইট।"
+        },
+        {
+          "point": "Disagreement (polite): I'm not sure, I understand but..., Actually..., Maybe you're right but...",
+          "bangla": "অসম্মতি (ভদ্র): আই অ্যাম নট শিওর, আই আন্ডারস্ট্যান্ড বাট..., একচুয়ালি..., মেবি ইউ আর রাইট বাট..."
+        },
+        {
+          "point": "Asking for help: Can you help me?, Could you show me?, I need some assistance.",
+          "bangla": "সাহায্য চাওয়া: ক্যান ইউ হেল্প মি?, কুড ইউ শো মি?, আই নিড সাম অ্যাসিস্ট্যান্স।"
+        }
+      ]
+    },
+    {
+      "id": "common_mistakes",
+      "title": "Common Mistakes in Speaking",
+      "banglaTitle": "কথা বলার সময় সাধারণ ভুল",
+      "icon": "warning",
+      "color": "#EF4444",
+      "explanation": "বাংলাভাষীরা ইংরেজি বলতে গিয়ে প্রায়ই যে ভুলগুলো করে থাকে।",
+      "rules": [
+        {
+          "point": "ভুল: I am go to school ❌ → শুদ্ধ: I go to school ✅ (am/go একসাথে হয় না)",
+          "bangla": "ভুল: I am go to school ❌ → শুদ্ধ: I go to school ✅ (am/go একসাথে হয় না)"
+        },
+        {
+          "point": "ভুল: He don't know ❌ → শুদ্ধ: He doesn't know ✅ (He/She/It এর সাথে does ব্যবহার হয়)",
+          "bangla": "ভুল: He don't know ❌ → শুদ্ধ: He doesn't know ✅ (He/She/It এর সাথে does ব্যবহার হয়)"
+        },
+        {
+          "point": "ভুল: I am agree ❌ → শুদ্ধ: I agree ✅ (agree এর সাথে am বসে না)",
+          "bangla": "ভুল: I am agree ❌ → শুদ্ধ: I agree ✅ (agree এর সাথে am বসে না)"
+        },
+        {
+          "point": "ভুল: She didn't went ❌ → শুদ্ধ: She didn't go ✅ (did এর পর past form নয়)",
+          "bangla": "ভুল: She didn't went ❌ → শুদ্ধ: She didn't go ✅ (did এর পর past form নয়)"
+        },
+        {
+          "point": "ভুল: I have a headache since morning ❌ → শুদ্ধ: I have had a headache since morning ✅",
+          "bangla": "ভুল: I have a headache since morning ❌ → শুদ্ধ: I have had a headache since morning ✅"
+        },
+        {
+          "point": "ভুল: I want to go to home ❌ → শুদ্ধ: I want to go home ✅ (home এর আগে to বসে না)",
+          "bangla": "ভুল: I want to go to home ❌ → শুদ্ধ: I want to go home ✅ (home এর আগে to বসে না)"
+        },
+        {
+          "point": "ভুল: He is more taller than me ❌ → শুদ্ধ: He is taller than me ✅ (তুলনামূলক আর more একসাথে নয়)",
+          "bangla": "ভুল: He is more taller than me ❌ → শুদ্ধ: He is taller than me ✅ (তুলনামূলক আর more একসাথে নয়)"
+        }
+      ]
+    },
+    {
+      "id": "vocabulary_building",
+      "title": "Vocabulary Building Tips",
+      "banglaTitle": "শব্দভাণ্ডার বাড়ানোর টিপস",
+      "icon": "library_books",
+      "color": "#EC4899",
+      "explanation": "প্রতিদিন নতুন শব্দ শিখো এবং সেগুলো বাক্যে ব্যবহার করো।",
+      "rules": [
+        {
+          "point": "প্রতিদিন ৫টি নতুন শব্দ শেখো এবং সেগুলো দিয়ে বাক্য তৈরি করো।",
+          "bangla": "প্রতিদিন ৫টি নতুন শব্দ শেখো এবং সেগুলো দিয়ে বাক্য তৈরি করো।"
+        },
+        {
+          "point": "Word Family শেখো: যেমন beauty (noun) → beautiful (adj) → beautifully (adv)",
+          "bangla": "Word Family শেখো: যেমন beauty (বিশেষ্য) → beautiful (বিশেষণ) → beautifully (ক্রিয়াবিশেষণ)"
+        },
+        {
+          "point": "Synonyms (সমার্থক) ও Antonyms (বিপরীত) একসাথে শেখো। যেমন: big-large, happy-sad",
+          "bangla": "Synonyms (সমার্থক) ও Antonyms (বিপরীত) একসাথে শেখো। যেমন: big-large, happy-sad"
+        },
+        {
+          "point": "Collocations শেখো: স্বাভাবিক শব্দ জোড়া। যেমন: make a decision (না do a decision), take a shower (না give a shower)",
+          "bangla": "Collocations শেখো: স্বাভাবিক শব্দ জোড়া। যেমন: make a decision, take a shower"
+        },
+        {
+          "point": "Phrasal Verbs শেখো: look for (খোঁজা), give up (ছেড়ে দেওয়া), turn on (চালু করা)",
+          "bangla": "Phrasal Verbs শেখো: look for (খোঁজা), give up (ছেড়ে দেওয়া), turn on (চালু করা)"
+        },
+        {
+          "point": "Idioms শেখো: 'Break the ice' (নীরবতা ভাঙা), 'Piece of cake' (খুব সহজ)",
+          "bangla": "Idioms শেখো: 'Break the ice' (নীরবতা ভাঙা), 'Piece of cake' (খুব সহজ)"
+        }
+      ]
+    },
+    {
+      "id": "fluency_tips",
+      "title": "Fluency & Confidence Building",
+      "banglaTitle": "সাবলীলতা ও আত্মবিশ্বাস বাড়ানোর টিপস",
+      "icon": "trending_up",
+      "color": "#2563EB",
+      "explanation": "ইংরেজি বলার সময় সাবলীলতা ও আত্মবিশ্বাস বাড়ানোর জন্য নিচের টিপসগুলো ফলো করো।",
+      "rules": [
+        {
+          "point": "Self-talk: প্রতিদিন আয়নার সামনে দাঁড়িয়ে ৫ মিনিট ইংরেজিতে নিজের সাথে কথা বলো।",
+          "bangla": "Self-talk: প্রতিদিন আয়নার সামনে দাঁড়িয়ে ৫ মিনিট ইংরেজিতে নিজের সাথে কথা বলো।"
+        },
+        {
+          "point": "Slow is smooth, smooth is fast: প্রথমে ধীরে কিন্তু শুদ্ধভাবে বলো, পরে স্পিড বাড়াও।",
+          "bangla": "Slow is smooth, smooth is fast: প্রথমে ধীরে কিন্তু শুদ্ধভাবে বলো, পরে স্পিড বাড়াও।"
+        },
+        {
+          "point": "Shadowing technique: ইংরেজি ভিডিও/পডকাস্ট শুনে সাথে সাথে রিপিট করো।",
+          "bangla": "Shadowing technique: ইংরেজি ভিডিও/পডকাস্ট শুনে সাথে সাথে রিপিট করো।"
+        },
+        {
+          "point": "মনে মনে অনুবাদ করো না: বাংলা থেকে ইংরেজি অনুবাদ না করে সরাসরি ইংরেজিতে চিন্তা করো।",
+          "bangla": "মনে মনে অনুবাদ করো না: বাংলা থেকে ইংরেজি অনুবাদ না করে সরাসরি ইংরেজিতে চিন্তা করো।"
+        },
+        {
+          "point": "Filler words ব্যবহার করো সময় নেওয়ার জন্য: Well..., Actually..., You see..., I mean..., Let me think...",
+          "bangla": "Filler words ব্যবহার করো সময় নেওয়ার জন্য: Well..., Actually..., You see..., I mean..., Let me think..."
+        },
+        {
+          "point": "ভুল করতে ভয় পেও না: ভুল থেকে শেখো। প্রতিটি ভুল তোমাকে আরও ভালো ইংরেজি বলতে শেখাবে।",
+          "bangla": "ভুল করতে ভয় পেও না: ভুল থেকে শেখো। প্রতিটি ভুল তোমাকে আরও ভালো ইংরেজি বলতে শেখাবে।"
+        }
+      ]
+    },
+    {
+      "id": "question_forming",
+      "title": "Question Formation",
+      "banglaTitle": "প্রশ্ন তৈরি করার নিয়ম",
+      "icon": "help",
+      "color": "#7C3AED",
+      "explanation": "সঠিকভাবে প্রশ্ন করতে পারা ইংরেজি বলার জন্য অত্যন্ত জরুরি।",
+      "rules": [
+        {
+          "point": "Yes/No Questions: Helping Verb + Subject + Verb? যেমন: Do you like tea? Does she work here?",
+          "bangla": "Yes/No প্রশ্ন: Helping Verb + Subject + Verb? যেমন: Do you like tea? Does she work here?"
+        },
+        {
+          "point": "WH Questions: What/Where/When/Why/Who/How + Helping Verb + Subject + Verb? যেমন: Where do you live?",
+          "bangla": "WH প্রশ্ন: What/Where/When/Why/Who/How + Helping Verb + Subject + Verb? যেমন: Where do you live?"
+        },
+        {
+          "point": "Tag Questions: Statement + comma + opposite tag? যেমন: You like tea, don't you?",
+          "bangla": "Tag প্রশ্ন: Statement + comma + opposite tag? যেমন: You like tea, don't you?"
+        },
+        {
+          "point": "Polite Questions: Could you...? Would you...? May I...? যেমন: Could you help me?",
+          "bangla": "ভদ্র প্রশ্ন: Could you...? Would you...? May I...? যেমন: Could you help me?"
+        },
+        {
+          "point": "Embedded Questions: Can you tell me where the station is? (না Can you tell me where is the station?)",
+          "bangla": "Embedded প্রশ্ন: Can you tell me where the station is? (না Can you tell me where is the station?)"
+        }
+      ]
+    },
+    {
+      "id": "tenses_quick",
+      "title": "Quick Tense Guide for Speaking",
+      "banglaTitle": "কথা বলার জন্য দ্রুত Tense গাইড",
+      "icon": "timeline",
+      "color": "#059669",
+      "explanation": "কথোপকথনে সবচেয়ে বেশি যে tenses ব্যবহার হয় সেগুলোর দ্রুত গাইড।",
+      "rules": [
+        {
+          "point": "Present Indefinite: অভ্যাস ও সাধারণ সত্য। Signal: always, usually, every day. যেমন: I wake up at 6 AM.",
+          "bangla": "Present Indefinite: অভ্যাস ও সাধারণ সত্য। যেমন: I wake up at 6 AM."
+        },
+        {
+          "point": "Present Continuous: এখন ঘটছে। Signal: now, at the moment, currently. যেমন: I am reading now.",
+          "bangla": "Present Continuous: এখন ঘটছে। Signal: now, at the moment. যেমন: I am reading now."
+        },
+        {
+          "point": "Past Indefinite: অতীতে ঘটে গেছে। Signal: yesterday, last week, ago. যেমন: I met him yesterday.",
+          "bangla": "Past Indefinite: অতীতে ঘটে গেছে। Signal: yesterday, last week. যেমন: I met him yesterday."
+        },
+        {
+          "point": "Future: Will/Going to. Will→হঠাৎ সিদ্ধান্ত, Going to→পরিকল্পনা। যেমন: I will call you. I am going to travel.",
+          "bangla": "Future: Will/Going to. Will→হঠাৎ সিদ্ধান্ত, Going to→পরিকল্পনা।"
+        },
+        {
+          "point": "Present Perfect: অতীতে শুরু হয়ে এখনও চলছে/প্রভাব আছে। Signal: since, for, already, just. যেমন: I have lived here for 5 years.",
+          "bangla": "Present Perfect: অতীতে শুরু হয়ে এখনও চলছে/প্রভাব আছে। Signal: since, for, already. যেমন: I have lived here for 5 years."
+        }
+      ]
+    }
+  ]
+}

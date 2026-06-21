@@ -23,6 +23,7 @@ import '../../conversation/screens/conversation_screen.dart';
 import '../../translator/screens/banglish_translator_screen.dart';
 import '../../game/screens/game_home_screen.dart';
 import '../widgets/study_plan_section.dart';
+import '../widgets/spoken_rules_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   final Function(int)? onNavigateToTab;
@@ -892,6 +893,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       {'title': 'Listening', 'icon': Icons.headset_rounded, 'gradient': AppColors.infoGradient, 'tab': 2},
       {'title': 'Speaking', 'icon': Icons.mic_rounded, 'gradient': AppColors.pinkGradient, 'tab': 2},
       {'title': 'Translate', 'icon': Icons.translate_rounded, 'gradient': [const Color(0xFF00BCD4), const Color(0xFF009688)], 'tab': -5},
+      {'title': 'Spoken Rules', 'icon': Icons.auto_stories_rounded, 'gradient': [const Color(0xFF6366F1), const Color(0xFF8B5CF6)], 'tab': -6},
     ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -919,6 +921,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => const ConversationScreen()));
                 } else if (tab == -5) {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => const BanglishTranslatorScreen()));
+                } else if (tab == -6) {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => const SpokenRulesScreen()));
                 } else {
                   widget.onNavigateToTab?.call(tab);
                 }

@@ -157,6 +157,7 @@ flutter:
     - assets/json/game/
     - assets/json/game/questions/
     - assets/json/game/rules/
+    - assets/json/game/spoken_rules/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
