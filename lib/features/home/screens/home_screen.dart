@@ -216,14 +216,25 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           children: [
             Flexible(
               child: Text(
-                '${_getTimeGreeting()}, ${name ?? 'User'} ',
-                style: theme.textTheme.headlineLarge?.copyWith(fontWeight: FontWeight.w800, fontSize: 26),
+                _getTimeGreeting(),
+                style: theme.textTheme.headlineLarge?.copyWith(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 26,
+                ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
             const Text('👋', style: TextStyle(fontSize: 26)),
           ],
+        ),
+        const SizedBox(height: 4),
+        Text(
+          name != null && name.isNotEmpty ? name : 'User',
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w800,
+            fontSize: 18,
+          ),
         ),
         const SizedBox(height: 4),
         Text(

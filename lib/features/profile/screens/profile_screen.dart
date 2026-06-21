@@ -54,10 +54,13 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final email = user?.email ?? 'user@email.com';
     final initial = name.isNotEmpty ? name[0].toUpperCase() : 'U';
 
-    final streak = progress?.streakDays ?? 7;
-    final lessonsDone = progress?.lessonsCompleted ?? 15;
-    const vocabCount = 68;
-    final xp = progress?.quizScore ?? 320;
+    final String streakValue =
+        progressAsync.isLoading || progress == null ? '—' : '${progress.streakDays}';
+    final String lessonsDoneValue = progressAsync.isLoading || progress == null
+        ? '—'
+        : '${progress.lessonsCompleted}';
+    final String vocabCountValue = '—'; // No vocab learned metric in ProgressModel currently
+    final String xpValue = progressAsync.isLoading || progress == null ? '—' : '${progress.totalXP}';
 
     return Scaffold(
       appBar: AppBar(
@@ -134,10 +137,10 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     crossAxisSpacing: 12,
                     mainAxisSpacing: 12,
                     children: [
-                      _buildMetricTile(theme, '$streak Days', 'Current Streak', '🔥', Colors.deepOrange),
-                      _buildMetricTile(theme, '$lessonsDone Lessons', 'Completed', '📚', Colors.blue),
-                      _buildMetricTile(theme, '$vocabCount Words', 'Vocabulary Learned', '📖', Colors.teal),
-                      _buildMetricTile(theme, '$xp XP', 'Total Points', '✨', Colors.amber),
+                      _buildMetricTile(theme, '$streakValue Days', 'Current Streak', '🔥', Colors.deepOrange),
+                      _buildMetricTile(theme, '$lessonsDoneValue Lessons', 'Completed', '📚', Colors.blue),
+                      _buildMetricTile(theme, '$vocabCountValue Words', 'Vocabulary Learned', '📖', Colors.teal),
+                      _buildMetricTile(theme, '$xpValue XP', 'Total Points', '✨', Colors.amber),
                     ],
                   ),
                 ],

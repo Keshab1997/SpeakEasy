@@ -46,61 +46,78 @@ class TodoListNotifier extends StateNotifier<StudyPlanState> {
       List<VocabularyChapter> vocab) async {
     final defaultList = _buildDefaultList(grammar, vocab);
 
-    Map<String, String> firestoreCompleted = {};
-    bool firestoreOk = false;
-
-    if (_userId != null) {
-      try {
-        final doc =
-            await _firestore.collection('study_plan').doc(_userId!).get();
-        if (doc.exists && doc.data() != null) {
-          final data = doc.data()!;
-          final completed = data['completedItems'] as Map<String, dynamic>? ?? {};
-          for (final entry in completed.entries) {
-            firestoreCompleted[entry.key] = entry.value as String;
-          }
-          firestoreOk = true;
-        }
-      } catch (_) {}
-    }
-
-    // Apply completed status from the source of truth
-    final source = firestoreCompleted; // Firestore first, else empty
+    // Always read local Hive first; it contains full status objects.
     final saved = HiveService.getTodoItems();
     final hiveMap = <String, Map<String, dynamic>>{};
     for (final s in saved) {
       hiveMap[s['id'] as String] = s;
     }
 
+    // Firestore only stores completed timestamps, and may be partial.
+    final Map<String, String> firestoreCompleted = {};
+    bool firestoreDocExists = false;
+
+    if (_userId != null) {
+      try {
+        final doc =
+            await _firestore.collection('study_plan').doc(_userId!).get();
+        if (doc.exists && doc.data() != null) {
+          firestoreDocExists = true;
+          final data = doc.data()!;
+          final completed =
+              data['completedItems'] as Map<String, dynamic>? ?? {};
+          for (final entry in completed.entries) {
+            firestoreCompleted[entry.key] = entry.value as String;
+          }
+        }
+      } catch (_) {}
+    }
+
+    // Merge rules:
+    // - If Firestore has a timestamp for an item => use Firestore (completed).
+    // - Else if Hive has status=completed for that item => keep Hive completion.
+    // - Else => keep default pending.
     final items = defaultList.map((item) {
-      final fireTs = source[item.id];
+      final fireTs = firestoreCompleted[item.id];
       if (fireTs != null) {
         return item.copyWith(
-            status: TodoStatus.completed, completedAt: DateTime.parse(fireTs));
+          status: TodoStatus.completed,
+          completedAt: DateTime.parse(fireTs),
+        );
       }
-      if (!firestoreOk && _userId != null) {
-        // Firestore empty — maybe first login, check Hive
-        final h = hiveMap[item.id];
-        if (h != null && h['status'] == 'completed') {
-          return TodoItem.fromJson(h);
-        }
+
+      final h = hiveMap[item.id];
+      if (h != null && h['status'] == 'completed') {
+        return TodoItem.fromJson(h);
       }
-      if (_userId == null) {
-        // Not logged in — use Hive
-        final h = hiveMap[item.id];
-        if (h != null && h['status'] == 'completed') {
-          return TodoItem.fromJson(h);
-        }
-      }
+
       return item;
     }).toList();
 
-    // Cache to Hive
+    // Build a merged completed map (for self-heal to Firestore).
+    // This ensures permanent correctness even if Firestore was partial.
+    final mergedCompletedMap = <String, String>{};
+    for (final item in items) {
+      if (item.status == TodoStatus.completed && item.completedAt != null) {
+        mergedCompletedMap[item.id] = item.completedAt!.toIso8601String();
+      }
+    }
+
+    // Cache merged state to Hive (prevents overwrite-to-pending bugs).
     await HiveService.saveTodoItems(items.map((i) => i.toJson()).toList());
 
-    // If logged in and Firestore was empty, upload local data to cloud
-    if (_userId != null && !firestoreOk) {
-      _syncHiveToFirestore(items);
+    // If logged in and Firestore doc is missing/partial, sync merged completion to cloud.
+    if (_userId != null) {
+      if (!firestoreDocExists) {
+        _syncHiveToFirestore(items);
+      } else if (mergedCompletedMap.isNotEmpty) {
+        try {
+          await _firestore.collection('study_plan').doc(_userId!).set(
+            {'completedItems': mergedCompletedMap},
+            SetOptions(merge: true),
+          );
+        } catch (_) {}
+      }
     }
 
     _emit(items);
