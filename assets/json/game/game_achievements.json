@@ -1,0 +1,116 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-06-21",
+  "achievements": [
+    {
+      "id": "first_win",
+      "title": "First Win",
+      "description": "Win your very first game",
+      "icon": "🎉",
+      "category": "Milestone",
+      "xpReward": 50,
+      "coinReward": 25,
+      "unlocked": false
+    },
+    {
+      "id": "ten_correct",
+      "title": "10 Correct Answers",
+      "description": "Answer 10 questions correctly in total",
+      "icon": "🎯",
+      "category": "Milestone",
+      "xpReward": 75,
+      "coinReward": 40,
+      "unlocked": false
+    },
+    {
+      "id": "xp_100",
+      "title": "100 XP",
+      "description": "Earn a total of 100 XP",
+      "icon": "⚡",
+      "category": "XP",
+      "xpReward": 0,
+      "coinReward": 30,
+      "unlocked": false
+    },
+    {
+      "id": "streak_7",
+      "title": "7-Day Streak",
+      "description": "Keep a 7-day learning streak",
+      "icon": "🔥",
+      "category": "Streak",
+      "xpReward": 100,
+      "coinReward": 50,
+      "unlocked": false
+    },
+    {
+      "id": "present_tense_master",
+      "title": "Present Tense Master",
+      "description": "Complete all Present Tense levels",
+      "icon": "⏳",
+      "category": "Tense",
+      "xpReward": 150,
+      "coinReward": 75,
+      "unlocked": false
+    },
+    {
+      "id": "past_tense_master",
+      "title": "Past Tense Master",
+      "description": "Complete all Past Tense levels",
+      "icon": "📜",
+      "category": "Tense",
+      "xpReward": 150,
+      "coinReward": 75,
+      "unlocked": false
+    },
+    {
+      "id": "future_tense_master",
+      "title": "Future Tense Master",
+      "description": "Complete all Future Tense levels",
+      "icon": "🔮",
+      "category": "Tense",
+      "xpReward": 150,
+      "coinReward": 75,
+      "unlocked": false
+    },
+    {
+      "id": "tense_champion",
+      "title": "Tense Champion",
+      "description": "Master Present, Past, and Future tenses",
+      "icon": "👑",
+      "category": "Tense",
+      "xpReward": 300,
+      "coinReward": 150,
+      "unlocked": false
+    },
+    {
+      "id": "boss_slayer",
+      "title": "Boss Slayer",
+      "description": "Defeat your first Boss Battle",
+      "icon": "⚔️",
+      "category": "Battle",
+      "xpReward": 200,
+      "coinReward": 100,
+      "unlocked": false
+    },
+    {
+      "id": "speed_master",
+      "title": "Speed Master",
+      "description": "Answer 5 questions in a row with full time bonus",
+      "icon": "💨",
+      "category": "Skill",
+      "xpReward": 120,
+      "coinReward": 60,
+      "unlocked": false
+    },
+    {
+      "id": "perfect_round",
+      "title": "Perfect Round",
+      "description": "Finish a round with 100% accuracy",
+      "icon": "💯",
+      "category": "Skill",
+      "xpReward": 100,
+      "coinReward": 50,
+      "unlocked": false
+    }
+  ]
+}

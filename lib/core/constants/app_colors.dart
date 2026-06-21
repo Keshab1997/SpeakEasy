@@ -21,6 +21,12 @@ class AppColors {
   static const Color textSecondaryDark = Color(0xFF94A3B8); // Slate 400
   static const Color borderDark = Color(0xFF334155); // Slate 700
 
+  // Status Colors
+  static const Color success = Color(0xFF10B981); // Emerald Green
+  static const Color error = Color(0xFFEF4444); // Red
+  static const Color warning = Color(0xFFF59E0B); // Amber
+  static const Color info = Color(0xFF06B6D4); // Cyan
+
   // Card Gradients
   static const List<Color> primaryGradient = [Color(0xFF2563EB), Color(0xFF3B82F6)];
   static const List<Color> secondaryGradient = [Color(0xFF10B981), Color(0xFF059669)];

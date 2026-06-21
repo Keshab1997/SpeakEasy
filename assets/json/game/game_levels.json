@@ -1,0 +1,304 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-06-21",
+  "levels": [
+    {
+      "id": "beginner",
+      "name": "Beginner",
+      "description": "Master the basics of English tenses",
+      "order": 1,
+      "unlocked": true,
+      "completed": false,
+      "totalStars": 0,
+      "requiredXP": 0,
+      "categories": [
+        {
+          "id": "present_indefinite",
+          "name": "Present Indefinite",
+          "description": "Simple Present Tense - habits, routines, and general truths",
+          "tenseType": "Present",
+          "questionCount": 15,
+          "unlocked": true,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "present_continuous",
+          "name": "Present Continuous",
+          "description": "Present Continuous Tense - actions happening now",
+          "tenseType": "Present",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "present_perfect",
+          "name": "Present Perfect",
+          "description": "Present Perfect Tense - completed actions with present relevance",
+          "tenseType": "Present",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "present_perfect_continuous",
+          "name": "Present Perfect Continuous",
+          "description": "Present Perfect Continuous - actions that started in past and continue",
+          "tenseType": "Present",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "past_indefinite",
+          "name": "Past Indefinite",
+          "description": "Simple Past Tense - completed actions in the past",
+          "tenseType": "Past",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "past_continuous",
+          "name": "Past Continuous",
+          "description": "Past Continuous Tense - ongoing actions in the past",
+          "tenseType": "Past",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "past_perfect",
+          "name": "Past Perfect",
+          "description": "Past Perfect Tense - actions completed before another past action",
+          "tenseType": "Past",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "past_perfect_continuous",
+          "name": "Past Perfect Continuous",
+          "description": "Past Perfect Continuous - ongoing actions before past events",
+          "tenseType": "Past",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "future_indefinite",
+          "name": "Future Indefinite",
+          "description": "Simple Future Tense - future actions and predictions",
+          "tenseType": "Future",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "future_continuous",
+          "name": "Future Continuous",
+          "description": "Future Continuous Tense - ongoing future actions",
+          "tenseType": "Future",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "future_perfect",
+          "name": "Future Perfect",
+          "description": "Future Perfect Tense - actions that will be completed",
+          "tenseType": "Future",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "future_perfect_continuous",
+          "name": "Future Perfect Continuous",
+          "description": "Future Perfect Continuous - ongoing actions up to a future point",
+          "tenseType": "Future",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "comparison",
+          "name": "Comparison",
+          "description": "Compare and contrast different tenses",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "special_usage",
+          "name": "Special Usage",
+          "description": "Special cases and common mistakes",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "boss_level",
+          "name": "Boss Level",
+          "description": "Ultimate test of all beginner tenses",
+          "questionCount": 30,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        }
+      ]
+    },
+    {
+      "id": "intermediate",
+      "name": "Intermediate",
+      "description": "Advance your tense mastery",
+      "order": 2,
+      "unlocked": false,
+      "completed": false,
+      "totalStars": 0,
+      "requiredXP": 500,
+      "categories": [
+        {
+          "id": "present_tenses_advanced",
+          "name": "Present Tenses",
+          "description": "Advanced present tense usage",
+          "tenseType": "Present",
+          "questionCount": 20,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "past_tenses_advanced",
+          "name": "Past Tenses",
+          "description": "Complex past tense structures",
+          "tenseType": "Past",
+          "questionCount": 20,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "future_tenses_advanced",
+          "name": "Future Tenses",
+          "description": "Future perfect and continuous mastery",
+          "tenseType": "Future",
+          "questionCount": 20,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "comparison_advanced",
+          "name": "Comparison",
+          "description": "Advanced tense comparisons",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "special_usage_advanced",
+          "name": "Special Usage",
+          "description": "Idiomatic expressions with tenses",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "boss_level_intermediate",
+          "name": "Boss Level",
+          "description": "Ultimate intermediate challenge",
+          "questionCount": 30,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced",
+      "description": "Master complex tense structures",
+      "order": 3,
+      "unlocked": false,
+      "completed": false,
+      "totalStars": 0,
+      "requiredXP": 1500,
+      "categories": [
+        {
+          "id": "present_tenses_expert",
+          "name": "Present Tenses",
+          "description": "Expert-level present tense applications",
+          "tenseType": "Present",
+          "questionCount": 20,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "past_tenses_expert",
+          "name": "Past Tenses",
+          "description": "Mastery of past narrative tenses",
+          "tenseType": "Past",
+          "questionCount": 20,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "future_tenses_expert",
+          "name": "Future Tenses",
+          "description": "Predictive and speculative futures",
+          "tenseType": "Future",
+          "questionCount": 20,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "comparison_expert",
+          "name": "Comparison",
+          "description": "Subtle tense differences",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "special_usage_expert",
+          "name": "Special Usage",
+          "description": "Advanced tense patterns",
+          "tenseType": "Special",
+          "questionCount": 15,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        },
+        {
+          "id": "boss_level_advanced",
+          "name": "Boss Level",
+          "description": "Final boss - Master all tenses",
+          "questionCount": 35,
+          "unlocked": false,
+          "completed": false,
+          "stars": 0
+        }
+      ]
+    }
+  ]
+}

@@ -21,6 +21,7 @@ import '../../vocabulary/screens/chapter_words_screen.dart';
 import '../../vocabulary/screens/vocabulary_test_screen.dart';
 import '../../conversation/screens/conversation_screen.dart';
 import '../../translator/screens/banglish_translator_screen.dart';
+import '../../game/screens/game_home_screen.dart';
 import '../widgets/study_plan_section.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -194,6 +195,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               _buildDailyChallengeCard(theme, streakDays),
               const SizedBox(height: 24),
               _buildQuickPracticeSection(theme, isDark),
+              const SizedBox(height: 24),
+              _buildTenseGameCard(theme, isDark),
               const SizedBox(height: 24),
               _buildAchievementsSection(theme, isDark, streakDays, lessonsCompleted, favoritesCount),
               const SizedBox(height: 32),
@@ -935,6 +938,88 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           },
         ),
       ],
+    );
+  }
+
+  // TENSE GAME CARD
+  Widget _buildTenseGameCard(ThemeData theme, bool isDark) {
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const GameHomeScreen()),
+      ),
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: [
+            BoxShadow(color: const Color(0xFF6A11CB).withOpacity(0.35), blurRadius: 16, offset: const Offset(0, 8)),
+          ],
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              right: -16,
+              bottom: -16,
+              child: Icon(Icons.sports_esports_rounded, size: 120, color: Colors.white.withOpacity(0.1)),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Text(
+                        'TENSE GAME',
+                        style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1.0),
+                      ),
+                    ),
+                    const Spacer(),
+                    const Text('🎮', style: TextStyle(fontSize: 20)),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                const Text(
+                  'Tense Mastery',
+                  style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Practice tenses with fun game modes, earn XP & coins!',
+                  style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 13),
+                ),
+                const SizedBox(height: 16),
+                ElevatedButton.icon(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const GameHomeScreen()),
+                  ),
+                  icon: const Icon(Icons.play_arrow_rounded, size: 18),
+                  label: const Text('Play Now', style: TextStyle(fontWeight: FontWeight.bold)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: const Color(0xFF6A11CB),
+                    elevation: 0,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 
