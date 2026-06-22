@@ -202,8 +202,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               const SizedBox(height: 24),
               _buildDailyChallengeCard(theme, streakDays),
               const SizedBox(height: 24),
-              _buildQuickPracticeSection(theme, isDark),
-              const SizedBox(height: 24),
               _buildTenseGameCard(theme, isDark),
               const SizedBox(height: 24),
               _buildAchievementsSection(theme, isDark, streakDays, lessonsCompleted, favoritesCount),
