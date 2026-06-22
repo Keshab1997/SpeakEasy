@@ -1079,12 +1079,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   Widget _buildHomePracticeSection(ThemeData theme, bool isDark) {
     final items = [
       {'title': 'Vocab Test', 'icon': Icons.quiz_rounded, 'gradient': AppColors.accentGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const VocabularyTestScreen()))},
+      {'title': 'Verb Quiz', 'icon': Icons.transform_rounded, 'gradient': AppColors.accentGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const VerbFormPracticeScreen()))},
       {'title': 'Grammar Test', 'icon': Icons.quiz_rounded, 'gradient': AppColors.infoGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const GrammarTestListScreen()))},
       {'title': 'Conversation', 'icon': Icons.forum_rounded, 'gradient': AppColors.secondaryGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ConversationScreen()))},
-      {'title': 'Speaking', 'icon': Icons.mic_rounded, 'gradient': AppColors.pinkGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SpeakingScreen()))},
       {'title': 'Listening', 'icon': Icons.headset_rounded, 'gradient': AppColors.infoGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ListeningScreen()))},
+      {'title': 'Speaking', 'icon': Icons.mic_rounded, 'gradient': AppColors.pinkGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SpeakingScreen()))},
       {'title': 'Translate', 'icon': Icons.translate_rounded, 'gradient': [const Color(0xFF00BCD4), const Color(0xFF009688)], 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BanglishTranslatorScreen()))},
-      {'title': 'Verb Quiz', 'icon': Icons.transform_rounded, 'gradient': AppColors.accentGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const VerbFormPracticeScreen()))},
     ];
 
     return Column(

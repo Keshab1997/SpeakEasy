@@ -20,6 +20,13 @@ class PracticeScreen extends StatelessWidget {
       target: _Target.vocabTest,
     ),
     _Category(
+      title: 'Verb Forms Quiz',
+      subtitle: 'Practice V1-V5',
+      icon: Icons.transform_rounded,
+      gradient: AppColors.accentGradient,
+      target: _Target.verbFormsQuiz,
+    ),
+    _Category(
       title: 'Grammar Test',
       subtitle: 'Practice with tests',
       icon: Icons.quiz_rounded,
@@ -53,13 +60,6 @@ class PracticeScreen extends StatelessWidget {
       icon: Icons.translate_rounded,
       gradient: [Color(0xFF00BCD4), Color(0xFF009688)],
       target: _Target.translate,
-    ),
-    _Category(
-      title: 'Verb Forms Quiz',
-      subtitle: 'Practice V1-V5',
-      icon: Icons.transform_rounded,
-      gradient: AppColors.accentGradient,
-      target: _Target.verbFormsQuiz,
     ),
   ];
 
@@ -125,18 +125,20 @@ class PracticeScreen extends StatelessWidget {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(12),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(14),
                 ),
-                child: Icon(cat.icon, color: Colors.white, size: 26),
+                child: Icon(cat.icon, color: Colors.white, size: 22),
               ),
+              const SizedBox(height: 8),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -144,12 +146,12 @@ class PracticeScreen extends StatelessWidget {
                       style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16)),
-                  const SizedBox(height: 2),
+                          fontSize: 14)),
+                  const SizedBox(height: 1),
                   Text(cat.subtitle,
                       style: TextStyle(
                           color: Colors.white.withOpacity(0.8),
-                          fontSize: 11)),
+                          fontSize: 10)),
                 ],
               ),
             ],
