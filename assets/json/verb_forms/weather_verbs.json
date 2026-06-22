@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "v1": "rain",
+    "v2": "rained",
+    "v3": "rained",
+    "v4": "raining",
+    "v5": "rains",
+    "bangla": "বৃষ্টি হওয়া",
+    "meaning": "to fall as water in drops from the clouds"
+  },
+  {
+    "v1": "snow",
+    "v2": "snowed",
+    "v3": "snowed",
+    "v4": "snowing",
+    "v5": "snows",
+    "bangla": "তুষারপাত হওয়া",
+    "meaning": "to fall as frozen water vapor in the form of white flakes"
+  },
+  {
+    "v1": "shine",
+    "v2": "shone",
+    "v3": "shone",
+    "v4": "shining",
+    "v5": "shines",
+    "bangla": "কিরণ দেওয়া / রোদ ওঠা",
+    "meaning": "to give out a bright light, especially from the sun"
+  },
+  {
+    "v1": "blow",
+    "v2": "blew",
+    "v3": "blown",
+    "v4": "blowing",
+    "v5": "blows",
+    "bangla": "বাতাস প্রবাহিত হওয়া",
+    "meaning": "to move and create a current of air (used for wind)"
+  },
+  {
+    "v1": "freeze",
+    "v2": "froze",
+    "v3": "frozen",
+    "v4": "freezing",
+    "v5": "freezes",
+    "bangla": "জমাট বাঁধা / প্রচণ্ড ঠান্ডা হওয়া",
+    "meaning": "to turn into ice or feel extremely cold due to low temperatures"
+  },
+  {
+    "v1": "melt",
+    "v2": "melted",
+    "v3": "melted",
+    "v4": "melting",
+    "v5": "melts",
+    "bangla": "গলে যাওয়া (বরফ বা তুষার)",
+    "meaning": "to change from a solid to a liquid state due to heat"
+  },
+  {
+    "v1": "pour",
+    "v2": "poured",
+    "v3": "poured",
+    "v4": "pouring",
+    "v5": "pours",
+    "bangla": "মুষলধারে বৃষ্টি হওয়া",
+    "meaning": "to rain heavily and continuously"
+  },
+  {
+    "v1": "drizzle",
+    "v2": "drizzled",
+    "v3": "drizzled",
+    "v4": "drizzling",
+    "v5": "drizzles",
+    "bangla": "গুঁড়ি গুঁড়ি বৃষ্টি হওয়া",
+    "meaning": "to rain lightly in very small drops"
+  },
+  {
+    "v1": "storm",
+    "v2": "stormed",
+    "v3": "stormed",
+    "v4": "storming",
+    "v5": "storms",
+    "bangla": "ঝড় বয়ে যাওয়া",
+    "meaning": "to experience heavy rain, strong winds, and bad weather"
+  },
+  {
+    "v1": "thunder",
+    "v2": "thundered",
+    "v3": "thundered",
+    "v4": "thundering",
+    "v5": "thunders",
+    "bangla": "মেঘ গর্জন করা / বজ্রপাত হওয়া",
+    "meaning": "to make a loud rumbling noise in the sky during a storm"
+  },
+  {
+    "v1": "hail",
+    "v2": "hailed",
+    "v3": "hailed",
+    "v4": "hailing",
+    "v5": "hails",
+    "bangla": "শিলাবৃষ্টি হওয়া",
+    "meaning": "to fall as small pieces of ice from the sky"
+  },
+  {
+    "v1": "clear",
+    "v2": "cleared",
+    "v3": "cleared",
+    "v4": "clearing",
+    "v5": "clears",
+    "bangla": "আকাশ পরিষ্কার হওয়া (মেঘ কেটে যাওয়া)",
+    "meaning": "to become free of clouds, rain, or mist (often used as 'clear up')"
+  },
+  {
+    "v1": "cloud",
+    "v2": "clouded",
+    "v3": "clouded",
+    "v4": "clouding",
+    "v5": "clouds",
+    "bangla": "মেঘাচ্ছন্ন হওয়া",
+    "meaning": "to become covered with clouds (often used as 'cloud over')"
+  },
+  {
+    "v1": "cool",
+    "v2": "cooled",
+    "v3": "cooled",
+    "v4": "cooling",
+    "v5": "cools",
+    "bangla": "ঠান্ডা হওয়া / তাপমাত্রা কমা",
+    "meaning": "to become lower in temperature"
+  },
+  {
+    "v1": "warm",
+    "v2": "warmed",
+    "v3": "warmed",
+    "v4": "warming",
+    "v5": "warms",
+    "bangla": "উষ্ণ হওয়া / তাপমাত্রা বাড়া",
+    "meaning": "to become higher in temperature"
+  },
+  {
+    "v1": "forecast",
+    "v2": "forecast",
+    "v3": "forecast",
+    "v4": "forecasting",
+    "v5": "forecasts",
+    "bangla": "আবহাওয়ার পূর্বাভাস দেওয়া",
+    "meaning": "to predict future weather conditions"
+  },
+  {
+    "v1": "flood",
+    "v2": "flooded",
+    "v3": "flooded",
+    "v4": "flooding",
+    "v5": "floods",
+    "bangla": "বন্যা হওয়া / প্লাবিত হওয়া",
+    "meaning": "to cover dry land with a large amount of water, usually due to heavy rain"
+  },
+  {
+    "v1": "thaw",
+    "v2": "thawed",
+    "v3": "thawed",
+    "v4": "thawing",
+    "v5": "thaws",
+    "bangla": "বরফ গলা (আবহাওয়া উষ্ণ হওয়ার কারণে)",
+    "meaning": "to become warm enough for snow and ice to melt"
+  },
+  {
+    "v1": "gust",
+    "v2": "gusted",
+    "v3": "gusted",
+    "v4": "gusting",
+    "v5": "gusts",
+    "bangla": "দমকা বাতাস বওয়া",
+    "meaning": "to blow strongly for a short and sudden period"
+  },
+  {
+    "v1": "scorch",
+    "v2": "scorched",
+    "v3": "scorched",
+    "v4": "scorching",
+    "v5": "scorches",
+    "bangla": "তীব্র গরমে ঝলসে যাওয়া",
+    "meaning": "to become extremely and uncomfortably hot due to intense sunlight"
+  }
+]

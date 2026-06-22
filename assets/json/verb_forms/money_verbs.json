@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "v1": "earn",
+    "v2": "earned",
+    "v3": "earned",
+    "v4": "earning",
+    "v5": "earns",
+    "bangla": "উপার্জন করা",
+    "meaning": "to receive money as payment for work or services"
+  },
+  {
+    "v1": "spend",
+    "v2": "spent",
+    "v3": "spent",
+    "v4": "spending",
+    "v5": "spends",
+    "bangla": "খরচ করা / ব্যয় করা",
+    "meaning": "to use money to buy or pay for something"
+  },
+  {
+    "v1": "save",
+    "v2": "saved",
+    "v3": "saved",
+    "v4": "saving",
+    "v5": "saves",
+    "bangla": "সঞ্চয় করা",
+    "meaning": "to keep money for future use instead of spending it"
+  },
+  {
+    "v1": "pay",
+    "v2": "paid",
+    "v3": "paid",
+    "v4": "paying",
+    "v5": "pays",
+    "bangla": "পরিশোধ করা / টাকা দেওয়া",
+    "meaning": "to give money to someone for goods or services"
+  },
+  {
+    "v1": "buy",
+    "v2": "bought",
+    "v3": "bought",
+    "v4": "buying",
+    "v5": "buys",
+    "bangla": "কেনা / ক্রয় করা",
+    "meaning": "to obtain something by paying money for it"
+  },
+  {
+    "v1": "sell",
+    "v2": "sold",
+    "v3": "sold",
+    "v4": "selling",
+    "v5": "sells",
+    "bangla": "বিক্রি করা",
+    "meaning": "to give something to someone in exchange for money"
+  },
+  {
+    "v1": "borrow",
+    "v2": "borrowed",
+    "v3": "borrowed",
+    "v4": "borrowing",
+    "v5": "borrows",
+    "bangla": "ধার করা / কর্জ করা",
+    "meaning": "to take money from someone with the promise to return it later"
+  },
+  {
+    "v1": "lend",
+    "v2": "lent",
+    "v3": "lent",
+    "v4": "lending",
+    "v5": "lends",
+    "bangla": "ধার দেওয়া",
+    "meaning": "to give money to someone for a period of time, expecting it back"
+  },
+  {
+    "v1": "invest",
+    "v2": "invested",
+    "v3": "invested",
+    "v4": "investing",
+    "v5": "invests",
+    "bangla": "বিনিয়োগ করা",
+    "meaning": "to put money into a business or property to make a profit"
+  },
+  {
+    "v1": "waste",
+    "v2": "wasted",
+    "v3": "wasted",
+    "v4": "wasting",
+    "v5": "wastes",
+    "bangla": "অপচয় করা",
+    "meaning": "to spend money carelessly on useless things"
+  },
+  {
+    "v1": "donate",
+    "v2": "donated",
+    "v3": "donated",
+    "v4": "donating",
+    "v5": "donates",
+    "bangla": "দান করা",
+    "meaning": "to give money to a person or organization to help them"
+  },
+  {
+    "v1": "deposit",
+    "v2": "deposited",
+    "v3": "deposited",
+    "v4": "depositing",
+    "v5": "deposits",
+    "bangla": "জমা রাখা",
+    "meaning": "to put money into a bank account"
+  },
+  {
+    "v1": "withdraw",
+    "v2": "withdrew",
+    "v3": "withdrawn",
+    "v4": "withdrawing",
+    "v5": "withdraws",
+    "bangla": "টাকা তুলে নেওয়া / উত্তোলন করা",
+    "meaning": "to take money out of a bank account"
+  },
+  {
+    "v1": "owe",
+    "v2": "owed",
+    "v3": "owed",
+    "v4": "owing",
+    "v5": "owes",
+    "bangla": "ঋণী থাকা / দেনা থাকা",
+    "meaning": "to need to pay back money to someone"
+  },
+  {
+    "v1": "refund",
+    "v2": "refunded",
+    "v3": "refunded",
+    "v4": "refunding",
+    "v5": "refunds",
+    "bangla": "টাকা ফেরত দেওয়া / অর্থ ফেরত দেওয়া",
+    "meaning": "to give back money, especially because of an unsatisfactory product"
+  },
+  {
+    "v1": "transfer",
+    "v2": "transferred",
+    "v3": "transferred",
+    "v4": "transferring",
+    "v5": "transfers",
+    "bangla": "টাকা স্থানান্তর করা",
+    "meaning": "to move money from one account or place to another"
+  },
+  {
+    "v1": "cost",
+    "v2": "cost",
+    "v3": "cost",
+    "v4": "costing",
+    "v5": "costs",
+    "bangla": "মূল্য হওয়া / দাম পড়া",
+    "meaning": "to require a specific amount of money to be bought"
+  },
+  {
+    "v1": "charge",
+    "v2": "charged",
+    "v3": "charged",
+    "v4": "charging",
+    "v5": "charges",
+    "bangla": "মূল্য ধার্য করা / দাবি করা",
+    "meaning": "to ask for an amount of money as a price for service or goods"
+  },
+  {
+    "v1": "budget",
+    "v2": "budgeted",
+    "v3": "budgeted",
+    "v4": "budgeting",
+    "v5": "budgets",
+    "bangla": "আয়-ব্যয়ের হিসাব করা (বাজেট করা)",
+    "meaning": "to plan how much money to spend and save"
+  },
+  {
+    "v1": "exchange",
+    "v2": "exchanged",
+    "v3": "exchanged",
+    "v4": "exchanging",
+    "v5": "exchanges",
+    "bangla": "টাকা পরিবর্তন করা (কারেন্সি এক্সচেঞ্জ)",
+    "meaning": "to trade one currency or value for another"
+  }
+]

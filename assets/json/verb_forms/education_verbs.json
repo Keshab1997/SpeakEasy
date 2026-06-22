@@ -1,1 +1,218 @@
-[]
+[
+  {
+    "v1": "learn",
+    "v2": "learned",
+    "v3": "learned",
+    "v4": "learning",
+    "v5": "learns",
+    "bangla": "শেখা",
+    "meaning": "to gain knowledge or skill in something"
+  },
+  {
+    "v1": "teach",
+    "v2": "taught",
+    "v3": "taught",
+    "v4": "teaching",
+    "v5": "teaches",
+    "bangla": "শেখানো / শিক্ষাদান করা",
+    "meaning": "to give knowledge or lessons to someone"
+  },
+  {
+    "v1": "study",
+    "v2": "studied",
+    "v3": "studied",
+    "v4": "studying",
+    "v5": "studies",
+    "bangla": "পড়াশোনা করা",
+    "meaning": "to spend time learning about a subject"
+  },
+  {
+    "v1": "read",
+    "v2": "read",
+    "v3": "read",
+    "v4": "reading",
+    "v5": "reads",
+    "bangla": "পড়া",
+    "meaning": "to look at and understand written words"
+  },
+  {
+    "v1": "write",
+    "v2": "wrote",
+    "v3": "written",
+    "v4": "writing",
+    "v5": "writes",
+    "bangla": "লেখা",
+    "meaning": "to make letters or words on a surface with a pen or pencil"
+  },
+  {
+    "v1": "memorize",
+    "v2": "memorized",
+    "v3": "memorized",
+    "v4": "memorizing",
+    "v5": "memorizes",
+    "bangla": "মুখস্থ করা",
+    "meaning": "to learn something so that you can remember it perfectly"
+  },
+  {
+    "v1": "examine",
+    "v2": "examined",
+    "v3": "examined",
+    "v4": "examining",
+    "v5": "examines",
+    "bangla": "পরীক্ষা করা",
+    "meaning": "to look at closely or test someone's knowledge"
+  },
+  {
+    "v1": "explain",
+    "v2": "explained",
+    "v3": "explained",
+    "v4": "explaining",
+    "v5": "explains",
+    "bangla": "ব্যাখ্যা করা",
+    "meaning": "to make something clear or easy to understand"
+  },
+  {
+    "v1": "understand",
+    "v2": "understood",
+    "v3": "understood",
+    "v4": "understanding",
+    "v5": "understands",
+    "bangla": "বুঝতে পারা",
+    "meaning": "to know the meaning of something"
+  },
+  {
+    "v1": "practice",
+    "v2": "practiced",
+    "v3": "practiced",
+    "v4": "practicing",
+    "v5": "practices",
+    "bangla": "অনুশীলন করা",
+    "meaning": "to do something regularly to improve your skill"
+  },
+  {
+    "v1": "prepare",
+    "v2": "prepared",
+    "v3": "prepared",
+    "v4": "preparing",
+    "v5": "prepares",
+    "bangla": "প্রস্তুতি নেওয়া",
+    "meaning": "to get ready for something like an exam or class"
+  },
+  {
+    "v1": "revise",
+    "v2": "revised",
+    "v3": "revised",
+    "v4": "revising",
+    "v5": "revises",
+    "bangla": "রিভিশন দেওয়া / পুনরাবৃত্তি করা",
+    "meaning": "to study work again to prepare for an exam"
+  },
+  {
+    "v1": "attend",
+    "v2": "attended",
+    "v3": "attended",
+    "v4": "attending",
+    "v5": "attends",
+    "bangla": "যোগদান করা / উপস্থিত থাকা",
+    "meaning": "to go to or be present at a class or meeting"
+  },
+  {
+    "v1": "instruct",
+    "v2": "instructed",
+    "v3": "instructed",
+    "v4": "instructing",
+    "v5": "instructs",
+    "bangla": "নির্দেশ দেওয়া / শিক্ষাদান করা",
+    "meaning": "to teach someone how to do something"
+  },
+  {
+    "v1": "solve",
+    "v2": "solved",
+    "v3": "solved",
+    "v4": "solving",
+    "v5": "solves",
+    "bangla": "সমাধান করা",
+    "meaning": "to find an answer to a problem or question"
+  },
+  {
+    "v1": "fail",
+    "v2": "failed",
+    "v3": "failed",
+    "v4": "failing",
+    "v5": "fails",
+    "bangla": "ফেল করা / অকৃতকার্য হওয়া",
+    "meaning": "to not pass an exam or test"
+  },
+  {
+    "v1": "pass",
+    "v2": "passed",
+    "v3": "passed",
+    "v4": "passing",
+    "v5": "passes",
+    "bangla": "পাস করা / সফল হওয়া",
+    "meaning": "to achieve the required standard in an exam"
+  },
+  {
+    "v1": "evaluate",
+    "v2": "evaluated",
+    "v3": "evaluated",
+    "v4": "evaluating",
+    "v5": "evaluates",
+    "bangla": "মূল্যায়ন করা",
+    "meaning": "to judge the quality or value of someone's work"
+  },
+  {
+    "v1": "discuss",
+    "v2": "discussed",
+    "v3": "discussed",
+    "v4": "discussing",
+    "v5": "discusses",
+    "bangla": "আলোচনা করা",
+    "meaning": "to talk about a subject with other people"
+  },
+  {
+    "v1": "motivate",
+    "v2": "motivated",
+    "v3": "motivated",
+    "v4": "motivating",
+    "v5": "motivates",
+    "bangla": "অনুপ্রাণিত করা",
+    "meaning": "to make someone want to study or work hard"
+  },
+  {
+    "v1": "listen",
+    "v2": "listened",
+    "v3": "listened",
+    "v4": "listening",
+    "v5": "listens",
+    "bangla": "মনোযোগ দিয়ে শোনা",
+    "meaning": "to pay attention to what a teacher or speaker says"
+  },
+  {
+    "v1": "ask",
+    "v2": "asked",
+    "v3": "asked",
+    "v4": "asking",
+    "v5": "asks",
+    "bangla": "জিজ্ঞাসা করা / প্রশ্ন করা",
+    "meaning": "to put a question to someone to get information"
+  },
+  {
+    "v1": "graduate",
+    "v2": "graduated",
+    "v3": "graduated",
+    "v4": "graduating",
+    "v5": "graduates",
+    "bangla": "স্নাতক ডিগ্রি লাভ করা / পাস করে বের হওয়া",
+    "meaning": "to complete school, college, or university education successfully"
+  },
+  {
+    "v1": "research",
+    "v2": "researched",
+    "v3": "researched",
+    "v4": "researching",
+    "v5": "researches",
+    "bangla": "গবেষণা করা",
+    "meaning": "to study a subject in detail to discover new facts"
+  }
+]

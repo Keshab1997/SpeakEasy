@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "v1": "download",
+    "v2": "downloaded",
+    "v3": "downloaded",
+    "v4": "downloading",
+    "v5": "downloads",
+    "bangla": "ডাউনলোড করা (ইন্টারনেট থেকে তথ্য নামানো)",
+    "meaning": "to copy data or files from the internet to your device"
+  },
+  {
+    "v1": "upload",
+    "v2": "uploaded",
+    "v3": "uploaded",
+    "v4": "uploading",
+    "v5": "uploads",
+    "bangla": "আপলোড করা (ইন্টারনেটে তথ্য পাঠানো)",
+    "meaning": "to send data or files from your device to the internet"
+  },
+  {
+    "v1": "install",
+    "v2": "installed",
+    "v3": "installed",
+    "v4": "installing",
+    "v5": "installs",
+    "bangla": "ইনস্টল করা / সফটওয়্যার স্থাপন করা",
+    "meaning": "to put a software program onto a computer or phone"
+  },
+  {
+    "v1": "update",
+    "v2": "updated",
+    "v3": "updated",
+    "v4": "updating",
+    "v5": "updates",
+    "bangla": "আপডেট করা / হালনাগাদ করা",
+    "meaning": "to make a software or system more modern with new features"
+  },
+  {
+    "v1": "delete",
+    "v2": "deleted",
+    "v3": "deleted",
+    "v4": "deleting",
+    "v5": "deletes",
+    "bangla": "মুছে ফেলা",
+    "meaning": "to remove data, files, or programs from a device"
+  },
+  {
+    "v1": "browse",
+    "v2": "browsed",
+    "v3": "browsed",
+    "v4": "browsing",
+    "v5": "browses",
+    "bangla": "ব্রাউজ করা / ইন্টারনেট ঘাঁটাঘাঁটি করা",
+    "meaning": "to look at information or websites on the internet"
+  },
+  {
+    "v1": "search",
+    "v2": "searched",
+    "v3": "searched",
+    "v4": "searching",
+    "v5": "searches",
+    "bangla": "অনুসন্ধান করা / খোঁজা",
+    "meaning": "to look for information on a website or search engine"
+  },
+  {
+    "v1": "code",
+    "v2": "coded",
+    "v3": "coded",
+    "v4": "coding",
+    "v5": "codes",
+    "bangla": "কোড করা / প্রোগ্রাম তৈরি করা",
+    "meaning": "to write instructions for a computer program using language"
+  },
+  {
+    "v1": "debug",
+    "v2": "debugged",
+    "v3": "debugged",
+    "v4": "debugging",
+    "v5": "debugs",
+    "bangla": "ত্রুটি সংশোধন করা (বাগ মুক্ত করা)",
+    "meaning": "to find and remove errors or bugs from a computer program"
+  },
+  {
+    "v1": "connect",
+    "v2": "connected",
+    "v3": "connected",
+    "v4": "connecting",
+    "v5": "connects",
+    "bangla": "সংযুক্ত করা / সংযোগ দেওয়া",
+    "meaning": "to join a device to the internet or another device"
+  },
+  {
+    "v1": "disconnect",
+    "v2": "disconnected",
+    "v3": "disconnected",
+    "v4": "disconnecting",
+    "v5": "disconnects",
+    "bangla": "সংযোগ বিচ্ছিন্ন করা",
+    "meaning": "to break a connection between a device and the internet or another device"
+  },
+  {
+    "v1": "click",
+    "v2": "clicked",
+    "v3": "clicked",
+    "v4": "clicking",
+    "v5": "clicks",
+    "bangla": "ক্লিক করা / টেপা",
+    "meaning": "to press a button on a mouse or tap on a screen link"
+  },
+  {
+    "v1": "scroll",
+    "v2": "scrolled",
+    "v3": "scrolled",
+    "v4": "scrolling",
+    "v5": "scrolls",
+    "bangla": "স্ক্রোল করা (ওপরে-নিচে নামানো)",
+    "meaning": "to move text or pictures up, down, or across on a screen"
+  },
+  {
+    "v1": "scan",
+    "v2": "scanned",
+    "v3": "scanned",
+    "v4": "scanning",
+    "v5": "scans",
+    "bangla": "স্ক্যান করা",
+    "meaning": "to use a device to read or copy data into a digital format"
+  },
+  {
+    "v1": "format",
+    "v2": "formatted",
+    "v3": "formatted",
+    "v4": "formatting",
+    "v5": "formats",
+    "bangla": "ফরম্যাট করা / মেমোরি খালি করা",
+    "meaning": "to prepare a storage drive or reset a device to its original state"
+  },
+  {
+    "v1": "hack",
+    "v2": "hacked",
+    "v3": "hacked",
+    "v4": "hacking",
+    "v5": "hacks",
+    "bangla": "হ্যাক করা / অননুমোদিতভাবে প্রবেশ করা",
+    "meaning": "to gain unauthorized access to data in a computer or network"
+  },
+  {
+    "v1": "crash",
+    "v2": "crashed",
+    "v3": "crashed",
+    "v4": "crashing",
+    "v5": "crashes",
+    "bangla": "ক্র্যাশ করা / হঠাৎ বন্ধ হয়ে যাওয়া",
+    "meaning": "to stop working suddenly (for a program or hardware)"
+  },
+  {
+    "v1": "encrypt",
+    "v2": "encrypted",
+    "v3": "encrypted",
+    "v4": "encrypting",
+    "v5": "encrypts",
+    "bangla": "এনক্রিপ্ট করা / তথ্য লক বা পাসওয়ার্ড দিয়ে সুরক্ষিত করা",
+    "meaning": "to convert data into a secret code to prevent unauthorized access"
+  },
+  {
+    "v1": "restart",
+    "v2": "restarted",
+    "v3": "restarted",
+    "v4": "restarting",
+    "v5": "restarts",
+    "bangla": "রিস্টার্ট করা / পুনরায় চালু করা",
+    "meaning": "to turn off a device and turn it on again automatically"
+  },
+  {
+    "v1": "share",
+    "v2": "shared",
+    "v3": "shared",
+    "v4": "sharing",
+    "v5": "shares",
+    "bangla": "শেয়ার করা / বিনিময় করা",
+    "meaning": "to distribute or send digital content to other users"
+  }
+]

@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "v1": "heal",
+    "v2": "healed",
+    "v3": "healed",
+    "v4": "healing",
+    "v5": "heals",
+    "bangla": "আরোগ্য লাভ করা / ক্ষত শুকানো",
+    "meaning": "to become healthy or well again"
+  },
+  {
+    "v1": "cure",
+    "v2": "cured",
+    "v3": "cured",
+    "v4": "curing",
+    "v5": "cures",
+    "bangla": "রোগমুক্ত করা / নিরাময় করা",
+    "meaning": "to make someone healthy again after an illness"
+  },
+  {
+    "v1": "treat",
+    "v2": "treated",
+    "v3": "treated",
+    "v4": "treating",
+    "v5": "treats",
+    "bangla": "চিকিৎসা করা",
+    "meaning": "to give medical care and attention to someone"
+  },
+  {
+    "v1": "recover",
+    "v2": "recovered",
+    "v3": "recovered",
+    "v4": "recovering",
+    "v5": "recovers",
+    "bangla": "সুস্থ হয়ে ওঠা / সেরে ওঠা",
+    "meaning": "to become well again after being sick or injured"
+  },
+  {
+    "v1": "prescribe",
+    "v2": "prescribed",
+    "v3": "prescribed",
+    "v4": "prescribing",
+    "v5": "prescribes",
+    "bangla": "ওষুধের নির্দেশ দেওয়া (প্রেসক্রিপশন করা)",
+    "meaning": "to advise a particular medicine or treatment"
+  },
+  {
+    "v1": "diagnose",
+    "v2": "diagnosed",
+    "v3": "diagnosed",
+    "v4": "diagnosing",
+    "v5": "diagnoses",
+    "bangla": "রোগ নির্ণয় করা",
+    "meaning": "to identify an illness by examining the symptoms"
+  },
+  {
+    "v1": "suffer",
+    "v2": "suffered",
+    "v3": "suffered",
+    "v4": "suffering",
+    "v5": "suffers",
+    "bangla": "ভোগা / কষ্ট পাওয়া",
+    "meaning": "to experience physical or mental pain"
+  },
+  {
+    "v1": "infect",
+    "v2": "infected",
+    "v3": "infected",
+    "v4": "infecting",
+    "v5": "infects",
+    "bangla": "সংক্রমিত করা",
+    "meaning": "to pass a disease or bacteria to someone"
+  },
+  {
+    "v1": "bleed",
+    "v2": "bled",
+    "v3": "bled",
+    "v4": "bleeding",
+    "v5": "bleeds",
+    "bangla": "রক্ত ক্ষরণ হওয়া",
+    "meaning": "to lose blood from the body"
+  },
+  {
+    "v1": "cough",
+    "v2": "coughed",
+    "v3": "coughed",
+    "v4": "coughing",
+    "v5": "coughs",
+    "bangla": "কাশি দেওয়া",
+    "meaning": "to force air out of the lungs with a sudden sharp sound"
+  },
+  {
+    "v1": "sneeze",
+    "v2": "sneezed",
+    "v3": "sneezed",
+    "v4": "sneezing",
+    "v5": "sneezes",
+    "bangla": "হাঁচি দেওয়া",
+    "meaning": "to expel air suddenly and uncontrollably through the nose and mouth"
+  },
+  {
+    "v1": "vomit",
+    "v2": "vomited",
+    "v3": "vomited",
+    "v4": "vomiting",
+    "v5": "vomits",
+    "bangla": "বমি করা",
+    "meaning": "to empty the contents of the stomach through the mouth"
+  },
+  {
+    "v1": "faint",
+    "v2": "fainted",
+    "v3": "fainted",
+    "v4": "fainting",
+    "v5": "faints",
+    "bangla": "জ্ঞান হারানো / অচেতন হওয়া",
+    "meaning": "to lose consciousness temporarily for a short time"
+  },
+  {
+    "v1": "injure",
+    "v2": "injured",
+    "v3": "injured",
+    "v4": "injuring",
+    "v5": "injures",
+    "bangla": "আহত হওয়া / জখম করা",
+    "meaning": "to cause physical harm or damage to a person"
+  },
+  {
+    "v1": "ache",
+    "v2": "ached",
+    "v3": "ached",
+    "v4": "aching",
+    "v5": "aches",
+    "bangla": "একটানা মৃদু ব্যথা করা",
+    "meaning": "to feel a continuous, dull pain in a part of the body"
+  },
+  {
+    "v1": "operate",
+    "v2": "operated",
+    "v3": "operated",
+    "v4": "operating",
+    "v5": "operates",
+    "bangla": "অস্ত্রোপচার করা (অপারেশন করা)",
+    "meaning": "to perform a medical surgery on a patient"
+  },
+  {
+    "v1": "inject",
+    "v2": "injected",
+    "v3": "injected",
+    "v4": "injecting",
+    "v5": "injects",
+    "bangla": "ইনজেকশন দেওয়া / শরীরে সুঁই ফোটানো",
+    "meaning": "to introduce a medicine into the body using a needle"
+  },
+  {
+    "v1": "vaccinate",
+    "v2": "vaccinated",
+    "v3": "vaccinated",
+    "v4": "vaccinating",
+    "v5": "vaccinates",
+    "bangla": "টিকা দেওয়া",
+    "meaning": "to give a vaccine to protect against a specific disease"
+  },
+  {
+    "v1": "exercise",
+    "v2": "exercised",
+    "v3": "exercised",
+    "v4": "exercising",
+    "v5": "exercises",
+    "bangla": "ব্যায়াম করা / শারীরিক কসরত করা",
+    "meaning": "to do physical activity to stay fit and healthy"
+  },
+  {
+    "v1": "prevent",
+    "v2": "prevented",
+    "v3": "prevented",
+    "v4": "preventing",
+    "v5": "prevents",
+    "bangla": "প্রতিরোধ করা",
+    "meaning": "to stop a disease or something bad from happening"
+  }
+]

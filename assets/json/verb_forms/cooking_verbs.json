@@ -1,1 +1,227 @@
-[]
+[
+  {
+    "v1": "cook",
+    "v2": "cooked",
+    "v3": "cooked",
+    "v4": "cooking",
+    "v5": "cooks",
+    "bangla": "রান্না করা",
+    "meaning": "to prepare food by heating it"
+  },
+  {
+    "v1": "bake",
+    "v2": "baked",
+    "v3": "baked",
+    "v4": "baking",
+    "v5": "bakes",
+    "bangla": "বেক করা / সেঁকা",
+    "meaning": "to cook food in an oven using dry heat"
+  },
+  {
+    "v1": "boil",
+    "v2": "boiled",
+    "v3": "boiled",
+    "v4": "boiling",
+    "v5": "boils",
+    "bangla": "সেদ্ধ করা",
+    "meaning": "to cook food in boiling water"
+  },
+  {
+    "v1": "fry",
+    "v2": "fried",
+    "v3": "fried",
+    "v4": "frying",
+    "v5": "fries",
+    "bangla": "ভাজা",
+    "meaning": "to cook food in hot oil or fat"
+  },
+  {
+    "v1": "stir",
+    "v2": "stirred",
+    "v3": "stirred",
+    "v4": "stirring",
+    "v5": "stirs",
+    "bangla": "নাড়াচাড়া করা",
+    "meaning": "to mix ingredients by moving them in a circular pattern"
+  },
+  {
+    "v1": "chop",
+    "v2": "chopped",
+    "v3": "chopped",
+    "v4": "chopping",
+    "v5": "chops",
+    "bangla": "টুকরো করে কাটা",
+    "meaning": "to cut something into small pieces with a knife"
+  },
+  {
+    "v1": "slice",
+    "v2": "sliced",
+    "v3": "sliced",
+    "v4": "slicing",
+    "v5": "slices",
+    "bangla": "ফালি ফালি করে কাটা",
+    "meaning": "to cut food into thin, flat pieces"
+  },
+  {
+    "v1": "peel",
+    "v2": "peeled",
+    "v3": "peeled",
+    "v4": "peeling",
+    "v5": "peels",
+    "bangla": "খোসা ছাড়ানো",
+    "meaning": "to remove the outer skin of fruit or vegetables"
+  },
+  {
+    "v1": "mix",
+    "v2": "mixed",
+    "v3": "mixed",
+    "v4": "mixing",
+    "v5": "mixes",
+    "bangla": "মেশানো",
+    "meaning": "to combine two or more substances together"
+  },
+  {
+    "v1": "pour",
+    "v2": "poured",
+    "v3": "poured",
+    "v4": "pouring",
+    "v5": "pours",
+    "bangla": "ঢালা",
+    "meaning": "to transfer liquid from one container to another"
+  },
+  {
+    "v1": "grate",
+    "v2": "grated",
+    "v3": "grated",
+    "v4": "grating",
+    "v5": "grates",
+    "bangla": "ঝুরি ঝুরি করা (গ্রেট করা)",
+    "meaning": "to rub food against a grater to cut it into small shreds"
+  },
+  {
+    "v1": "grill",
+    "v2": "grilled",
+    "v3": "grilled",
+    "v4": "grilling",
+    "v5": "grills",
+    "bangla": "কয়লার আগুনে ঝলসানো",
+    "meaning": "to cook food on a metal frame over direct heat"
+  },
+  {
+    "v1": "roast",
+    "v2": "roasted",
+    "v3": "roasted",
+    "v4": "roasting",
+    "v5": "roasts",
+    "bangla": "শুকনো তাপে ঝলসানো",
+    "meaning": "to cook meat or vegetables in an oven or over a fire"
+  },
+  {
+    "v1": "steam",
+    "v2": "steamed",
+    "v3": "steamed",
+    "v4": "steaming",
+    "v5": "steams",
+    "bangla": "ভাপে রান্না করা",
+    "meaning": "to cook food using steam heat"
+  },
+  {
+    "v1": "melt",
+    "v2": "melted",
+    "v3": "melted",
+    "v4": "melting",
+    "v5": "melts",
+    "bangla": "গলানো",
+    "meaning": "to change from a solid to a liquid by heating"
+  },
+  {
+    "v1": "blend",
+    "v2": "blended",
+    "v3": "blended",
+    "v4": "blending",
+    "v5": "blends",
+    "bangla": "একত্রিত করা / ব্লেন্ড করা",
+    "meaning": "to mix ingredients thoroughly, often using a machine"
+  },
+  {
+    "v1": "whisk",
+    "v2": "whicked",
+    "v3": "whisked",
+    "v4": "whisking",
+    "v5": "whisks",
+    "bangla": "ডিম বা তরল দ্রুত ফেটানো",
+    "meaning": "to beat ingredients rapidly to incorporate air"
+  },
+  {
+    "v1": "squeeze",
+    "v2": "squeezed",
+    "v3": "squeezed",
+    "v4": "squeezing",
+    "v5": "squeezes",
+    "bangla": "রস চিপে বের করা",
+    "meaning": "to press something to extract liquid"
+  },
+  {
+    "v1": "simmer",
+    "v2": "simmered",
+    "v3": "simmered",
+    "v4": "simmering",
+    "v5": "simmers",
+    "bangla": "হালকা আঁচে ফোটানো",
+    "meaning": "to cook gently in liquid just below the boiling point"
+  },
+  {
+    "v1": "knead",
+    "v2": "kneaded",
+    "v3": "kneaded",
+    "v4": "kneading",
+    "v5": "kneads",
+    "bangla": "ছানা / মাখানো (আটা-ময়দা)",
+    "meaning": "to press and squeeze dough with hands"
+  },
+  {
+    "v1": "spread",
+    "v2": "spread",
+    "v3": "spread",
+    "v4": "spreading",
+    "v5": "spreads",
+    "bangla": "মাখানো / ছড়ানো",
+    "meaning": "to cover a surface with a thin layer of soft food"
+  },
+  {
+    "v1": "sprinkle",
+    "v2": "sprinkled",
+    "v3": "sprinkled",
+    "v4": "sprinkling",
+    "v5": "sprinkles",
+    "bangla": "ছিটানো",
+    "meaning": "to drop small drops or pieces of something over food"
+  },
+  {
+    "v1": "add",
+    "v2": "added",
+    "v3": "added",
+    "v4": "adding",
+    "v5": "adds",
+    "bangla": "যোগ করা",
+    "meaning": "to put ingredients together to increase the size or quantity"
+  },
+  {
+    "v1": "wash",
+    "v2": "washed",
+    "v3": "washed",
+    "v4": "washing",
+    "v5": "washes",
+    "bangla": "ধোয়া",
+    "meaning": "to clean food with water"
+  },
+  {
+    "v1": "serve",
+    "v2": "served",
+    "v3": "served",
+    "v4": "serving",
+    "v5": "serves",
+    "bangla": "পরিবেশন করা",
+    "meaning": "to provide food or drink to someone"
+  }
+]

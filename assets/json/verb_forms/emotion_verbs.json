@@ -1,1 +1,200 @@
-[]
+[
+  {
+    "v1": "feel",
+    "v2": "felt",
+    "v3": "felt",
+    "v4": "feeling",
+    "v5": "feels",
+    "bangla": "অনুভব করা",
+    "meaning": "to experience an emotion or physical sensation"
+  },
+  {
+    "v1": "love",
+    "v2": "loved",
+    "v3": "loved",
+    "v4": "loving",
+    "v5": "loves",
+    "bangla": "ভালোবাসা",
+    "meaning": "to feel deep affection for someone or something"
+  },
+  {
+    "v1": "hate",
+    "v2": "hated",
+    "v3": "hated",
+    "v4": "hating",
+    "v5": "hates",
+    "bangla": "ঘৃণা করা",
+    "meaning": "to dislike someone or something intensely"
+  },
+  {
+    "v1": "like",
+    "v2": "liked",
+    "v3": "liked",
+    "v4": "liking",
+    "v5": "likes",
+    "bangla": "পছন্দ করা",
+    "meaning": "to find something pleasant or agreeable"
+  },
+  {
+    "v1": "dislike",
+    "v2": "disliked",
+    "v3": "disliked",
+    "v4": "disliking",
+    "v5": "dislikes",
+    "bangla": "অপছন্দ করা",
+    "meaning": "to not like someone or something"
+  },
+  {
+    "v1": "fear",
+    "v2": "feared",
+    "v3": "feared",
+    "v4": "fearing",
+    "v5": "fears",
+    "bangla": "ভয় পাওয়া",
+    "meaning": "to be afraid of someone or something"
+  },
+  {
+    "v1": "worry",
+    "v2": "worried",
+    "v3": "worried",
+    "v4": "worrying",
+    "v5": "worries",
+    "bangla": "উদ্বিগ্ন হওয়া / চিন্তা করা",
+    "meaning": "to feel anxious or uneasy about something"
+  },
+  {
+    "v1": "trust",
+    "v2": "trusted",
+    "v3": "trusted",
+    "v4": "trusting",
+    "v5": "trusts",
+    "bangla": "বিশ্বাস করা",
+    "meaning": "to believe in the reliability or truth of someone"
+  },
+  {
+    "v1": "doubt",
+    "v2": "doubted",
+    "v3": "doubted",
+    "v4": "doubting",
+    "v5": "doubts",
+    "bangla": "সন্দেহ করা",
+    "meaning": "to feel uncertain about something"
+  },
+  {
+    "v1": "hope",
+    "v2": "hoped",
+    "v3": "hoped",
+    "v4": "hoping",
+    "v5": "hopes",
+    "bangla": "আশা করা",
+    "meaning": "to want something to happen and expect it to be possible"
+  },
+  {
+    "v1": "enjoy",
+    "v2": "enjoyed",
+    "v3": "enjoyed",
+    "v4": "enjoying",
+    "v5": "enjoys",
+    "bangla": "উপভোগ করা",
+    "meaning": "to take pleasure in something"
+  },
+  {
+    "v1": "annoy",
+    "v2": "annoyed",
+    "v3": "annoyed",
+    "v4": "annoying",
+    "v5": "annoys",
+    "bangla": "বিরক্ত করা",
+    "meaning": "to make someone slightly angry or irritated"
+  },
+  {
+    "v1": "scare",
+    "v2": "scared",
+    "v3": "scared",
+    "v4": "scaring",
+    "v5": "scares",
+    "bangla": "ভয় দেখানো / ভীত করা",
+    "meaning": "to make someone feel frightened"
+  },
+  {
+    "v1": "bore",
+    "v2": "bored",
+    "v3": "bored",
+    "v4": "boring",
+    "v5": "bores",
+    "bangla": "একঘেয়ে বোধ করা / বিরক্ত করা",
+    "meaning": "to make someone feel weary and uninterested"
+  },
+  {
+    "v1": "regret",
+    "v2": "regretted",
+    "v3": "regretted",
+    "v4": "regretting",
+    "v5": "regrets",
+    "bangla": "অনুশোচনা করা",
+    "meaning": "to feel sad or sorry about something done or lost"
+  },
+  {
+    "v1": "comfort",
+    "v2": "comforted",
+    "v3": "comforted",
+    "v4": "comforting",
+    "v5": "comforts",
+    "bangla": "সান্ত্বনা দেওয়া",
+    "meaning": "to make someone feel better when they are sad or worried"
+  },
+  {
+    "v1": "envy",
+    "v2": "envied",
+    "v3": "envied",
+    "v4": "envying",
+    "v5": "envies",
+    "bangla": "হিংসা করা",
+    "meaning": "to wish you had what someone else has"
+  },
+  {
+    "v1": "admire",
+    "v2": "admired",
+    "v3": "admired",
+    "v4": "admiring",
+    "v5": "admires",
+    "bangla": "শ্রদ্ধা বা প্রশংসা করা",
+    "meaning": "to respect and approve of someone or their behavior"
+  },
+  {
+    "v1": "appreciate",
+    "v2": "appreciated",
+    "v3": "appreciated",
+    "v4": "appreciating",
+    "v5": "appreciates",
+    "bangla": "প্রশংসা করা / গুরুত্ব বোঝা",
+    "meaning": "to recognize the full value of something or be grateful for it"
+  },
+  {
+    "v1": "grieve",
+    "v2": "grieved",
+    "v3": "grieved",
+    "v4": "grieving",
+    "v5": "grieves",
+    "bangla": "গভীর শোক প্রকাশ করা",
+    "meaning": "to feel great sadness, especially over someone's death"
+  },
+  {
+    "v1": "hurt",
+    "v2": "hurt",
+    "v3": "hurt",
+    "v4": "hurting",
+    "v5": "hurts",
+    "bangla": "কষ্ট দেওয়া / আঘাত করা",
+    "meaning": "to cause physical or emotional pain to someone"
+  },
+  {
+    "v1": "please",
+    "v2": "pleased",
+    "v3": "pleased",
+    "v4": "pleasing",
+    "v5": "pleases",
+    "bangla": "সন্তুষ্ট বা খুশি করা",
+    "meaning": "to make someone feel happy or satisfied"
+  }
+]

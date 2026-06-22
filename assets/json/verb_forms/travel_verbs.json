@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "v1": "travel",
+    "v2": "traveled",
+    "v3": "traveled",
+    "v4": "traveling",
+    "v5": "travels",
+    "bangla": "ভ্রমণ করা",
+    "meaning": "to make a journey, typically of some length"
+  },
+  {
+    "v1": "depart",
+    "v2": "departed",
+    "v3": "departed",
+    "v4": "departing",
+    "v5": "departs",
+    "bangla": "প্রস্থান করা / রওনা দেওয়া",
+    "meaning": "to leave a place, especially to start a journey"
+  },
+  {
+    "v1": "arrive",
+    "v2": "arrived",
+    "v3": "arrived",
+    "v4": "arriving",
+    "v5": "arrives",
+    "bangla": "পৌঁছানো",
+    "meaning": "to reach a place at the end of a journey"
+  },
+  {
+    "v1": "pack",
+    "v2": "packed",
+    "v3": "packed",
+    "v4": "packing",
+    "v5": "packs",
+    "bangla": "ব্যাগ বা মালপত্র গোছানো",
+    "meaning": "to put clothes and belongings into bags for travel"
+  },
+  {
+    "v1": "board",
+    "v2": "boarded",
+    "v3": "boarded",
+    "v4": "boarding",
+    "v5": "boards",
+    "bangla": "যানবাহনে চড়া (প্লেন, ট্রেন বা বাস)",
+    "meaning": "to get on a ship, aircraft, train, or bus"
+  },
+  {
+    "v1": "fly",
+    "v2": "flew",
+    "v3": "flown",
+    "v4": "flying",
+    "v5": "flies",
+    "bangla": "উড়ে যাওয়া / বিমানে ভ্রমণ করা",
+    "meaning": "to travel through the air in an aircraft"
+  },
+  {
+    "v1": "drive",
+    "v2": "drove",
+    "v3": "driven",
+    "v4": "driving",
+    "v5": "drives",
+    "bangla": "গাড়ি চালানো",
+    "meaning": "to operate and control the direction of a motor vehicle"
+  },
+  {
+    "v1": "ride",
+    "v2": "rode",
+    "v3": "ridden",
+    "v4": "riding",
+    "v5": "rides",
+    "bangla": "চড়া (যেমন বাইক বা ঘোড়া)",
+    "meaning": "to travel on a bicycle, motorcycle, or horse"
+  },
+  {
+    "v1": "explore",
+    "v2": "explored",
+    "v3": "explored",
+    "v4": "exploring",
+    "v5": "explores",
+    "bangla": "নতুন জায়গা ঘুরে দেখা / অন্বেষণ করা",
+    "meaning": "to travel through an unfamiliar area to learn about it"
+  },
+  {
+    "v1": "visit",
+    "v2": "visited",
+    "v3": "visited",
+    "v4": "visiting",
+    "v5": "visits",
+    "bangla": "বেড়াতে যাওয়া / পরিদর্শনে যাওয়া",
+    "meaning": "to go to see and spend time with someone or at a place"
+  },
+  {
+    "v1": "book",
+    "v2": "booked",
+    "v3": "booked",
+    "v4": "booking",
+    "v5": "books",
+    "bangla": "টিকিট বা হোটেল অগ্রিম বুক করা",
+    "meaning": "to reserve an accommodation, ticket, or service in advance"
+  },
+  {
+    "v1": "navigate",
+    "v2": "navigated",
+    "v3": "navigated",
+    "v4": "navigating",
+    "v5": "navigates",
+    "bangla": "পথ চেনা / দিক নির্ণয় করা",
+    "meaning": "to plan and direct the route or course of a journey"
+  },
+  {
+    "v1": "commute",
+    "v2": "commuted",
+    "v3": "commuted",
+    "v4": "commuting",
+    "v5": "commutes",
+    "bangla": "নিয়মিত যাতায়াত করা (যেমন বাড়ি থেকে অফিস)",
+    "meaning": "to travel some distance between one's home and place of work"
+  },
+  {
+    "v1": "tour",
+    "v2": "toured",
+    "v3": "toured",
+    "v4": "touring",
+    "v5": "tours",
+    "bangla": "পর্যটন করা / বিভিন্ন দর্শনীয় স্থান ঘুরে দেখা",
+    "meaning": "to travel around an area or country for pleasure"
+  },
+  {
+    "v1": "stay",
+    "v2": "stayed",
+    "v3": "stayed",
+    "v4": "staying",
+    "v5": "stays",
+    "bangla": "থাকা / সাময়িকভাবে অবস্থান করা",
+    "meaning": "to live in a place temporarily as a visitor or guest"
+  },
+  {
+    "v1": "land",
+    "v2": "landed",
+    "v3": "landed",
+    "v4": "landing",
+    "v5": "lands",
+    "bangla": "অবতরণ করা (মাটিতে নামা)",
+    "meaning": "to come down through the air and rest on the ground"
+  },
+  {
+    "v1": "hike",
+    "v2": "hiked",
+    "v3": "hiked",
+    "v4": "hiking",
+    "v5": "hikes",
+    "bangla": "পায়ে হেঁটে পাহাড় বা বন-জঙ্গলে ভ্রমণ করা",
+    "meaning": "to walk a long distance, especially across country or paths"
+  },
+  {
+    "v1": "rent",
+    "v2": "rented",
+    "v3": "rented",
+    "v4": "renting",
+    "v5": "rents",
+    "bangla": "ভাড়া করা (যেমন গাড়ি বা ঘর)",
+    "meaning": "to pay for the temporary use of something"
+  },
+  {
+    "v1": "cancel",
+    "v2": "canceled",
+    "v3": "canceled",
+    "v4": "canceling",
+    "v5": "cancels",
+    "bangla": "বাতিল করা",
+    "meaning": "to decide that a planned journey or reservation will not take place"
+  },
+  {
+    "v1": "guide",
+    "v2": "guided",
+    "v3": "guided",
+    "v4": "guiding",
+    "v5": "guides",
+    "bangla": "পথপ্রদর্শন করা",
+    "meaning": "to show the way to someone by leading them"
+  }
+]

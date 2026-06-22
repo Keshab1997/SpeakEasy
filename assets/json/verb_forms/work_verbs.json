@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "v1": "work",
+    "v2": "worked",
+    "v3": "worked",
+    "v4": "working",
+    "v5": "works",
+    "bangla": "কাজ করা",
+    "meaning": "to perform an activity to achieve a purpose or produce a result"
+  },
+  {
+    "v1": "employ",
+    "v2": "employed",
+    "v3": "employed",
+    "v4": "employing",
+    "v5": "employs",
+    "bangla": "চাকরি দেওয়া / নিয়োগ করা",
+    "meaning": "to give work to someone and pay them for it"
+  },
+  {
+    "v1": "hire",
+    "v2": "hired",
+    "v3": "hired",
+    "v4": "hiring",
+    "v5": "hires",
+    "bangla": "নিয়োগ করা (বেতনের বিনিময়ে)",
+    "meaning": "to employ someone for wages or a salary"
+  },
+  {
+    "v1": "fire",
+    "v2": "fired",
+    "v3": "fired",
+    "v4": "firing",
+    "v5": "fires",
+    "bangla": "চাকরিচ্যুত করা / বরখাস্ত করা",
+    "meaning": "to dismiss an employee from a job"
+  },
+  {
+    "v1": "resign",
+    "v2": "resigned",
+    "v3": "resigned",
+    "v4": "resigning",
+    "v5": "resigns",
+    "bangla": "পদত্যাগ করা",
+    "meaning": "to voluntarily leave a job or other position"
+  },
+  {
+    "v1": "retire",
+    "v2": "retired",
+    "v3": "retired",
+    "v4": "retiring",
+    "v5": "retires",
+    "bangla": "অবসর গ্রহণ করা",
+    "meaning": "to leave one's job and cease working, typically upon reaching the normal age"
+  },
+  {
+    "v1": "manage",
+    "v2": "managed",
+    "v3": "managed",
+    "v4": "managing",
+    "v5": "manages",
+    "bangla": "পরিচালনা করা",
+    "meaning": "to be in charge of a company, establishment, or project"
+  },
+  {
+    "v1": "supervise",
+    "v2": "supervised",
+    "v3": "supervised",
+    "v4": "supervising",
+    "v5": "supervises",
+    "bangla": "তদারকি করা",
+    "meaning": "to observe and direct the execution of a task, project, or activity"
+  },
+  {
+    "v1": "earn",
+    "v2": "earned",
+    "v3": "earned",
+    "v4": "earning",
+    "v5": "earns",
+    "bangla": "উপার্জন করা",
+    "meaning": "to obtain money in return for labor or services"
+  },
+  {
+    "v1": "promote",
+    "v2": "promoted",
+    "v3": "promoted",
+    "v4": "promoting",
+    "v5": "promotes",
+    "bangla": "পদোন্নতি দেওয়া",
+    "meaning": "to advance an employee to a higher position or rank"
+  },
+  {
+    "v1": "apply",
+    "v2": "applied",
+    "v3": "applied",
+    "v4": "applying",
+    "v5": "applies",
+    "bangla": "আবেদন করা",
+    "meaning": "to make a formal request, typically for a job"
+  },
+  {
+    "v1": "interview",
+    "v2": "interviewed",
+    "v3": "interviewed",
+    "v4": "interviewing",
+    "v5": "interviews",
+    "bangla": "সাক্ষাৎকার নেওয়া",
+    "meaning": "to question someone to discover whether they are suitable for a job"
+  },
+  {
+    "v1": "train",
+    "v2": "trained",
+    "v3": "trained",
+    "v4": "training",
+    "v5": "trains",
+    "bangla": "প্রশিক্ষণ দেওয়া",
+    "meaning": "to teach a person a particular skill or type of behavior for a job"
+  },
+  {
+    "v1": "collaborate",
+    "v2": "collaborated",
+    "v3": "collaborated",
+    "v4": "collaborating",
+    "v5": "collaborates",
+    "bangla": "সহযোগিতা করা / একত্রে কাজ করা",
+    "meaning": "to work jointly on an activity, especially to produce or create something"
+  },
+  {
+    "v1": "delegate",
+    "v2": "delegated",
+    "v3": "delegated",
+    "v4": "delegating",
+    "v5": "delegates",
+    "bangla": "দায়িত্ব অর্পণ করা",
+    "meaning": "to entrust a task or responsibility to another person, typically a subordinate"
+  },
+  {
+    "v1": "negotiate",
+    "v2": "negotiated",
+    "v3": "negotiated",
+    "v4": "negotiating",
+    "v5": "negotiates",
+    "bangla": "আলোচনা করে মীমাংসা করা / দরকষাকষি করা",
+    "meaning": "to try to reach an agreement or compromise by discussion"
+  },
+  {
+    "v1": "organize",
+    "v2": "organized",
+    "v3": "organized",
+    "v4": "organizing",
+    "v5": "organizes",
+    "bangla": "সংগঠিত করা / গুছিয়ে রাখা",
+    "meaning": "to arrange systematically; to coordinate activities"
+  },
+  {
+    "v1": "attend",
+    "v2": "attended",
+    "v3": "attended",
+    "v4": "attending",
+    "v5": "attends",
+    "bangla": "উপস্থিত থাকা (যেমন- মিটিং বা অফিসে)",
+    "meaning": "to be present at an event, meeting, or place of work"
+  },
+  {
+    "v1": "present",
+    "v2": "presented",
+    "v3": "presented",
+    "v4": "presenting",
+    "v5": "presents",
+    "bangla": "উপস্থাপন করা",
+    "meaning": "to show or offer an idea, project, or data for others to consider"
+  },
+  {
+    "v1": "achieve",
+    "v2": "achieved",
+    "v3": "achieved",
+    "v4": "achieving",
+    "v5": "achieves",
+    "bangla": "অর্জন করা / সফল হওয়া",
+    "meaning": "to successfully bring about or reach a desired objective or result"
+  }
+]

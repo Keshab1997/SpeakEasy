@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "v1": "play",
+    "v2": "played",
+    "v3": "played",
+    "v4": "playing",
+    "v5": "plays",
+    "bangla": "খেলা করা",
+    "meaning": "to take part in a game or sport"
+  },
+  {
+    "v1": "run",
+    "v2": "ran",
+    "v3": "run",
+    "v4": "running",
+    "v5": "runs",
+    "bangla": "দৌড়ানো",
+    "meaning": "to move fast using your legs and feet"
+  },
+  {
+    "v1": "kick",
+    "v2": "kicked",
+    "v3": "kicked",
+    "v4": "kicking",
+    "v5": "kicks",
+    "bangla": "লাথি মারা / কিক করা",
+    "meaning": "to hit something with your foot"
+  },
+  {
+    "v1": "throw",
+    "v2": "threw",
+    "v3": "thrown",
+    "v4": "throwing",
+    "v5": "throws",
+    "bangla": "ছুঁড়ে মারা / নিক্ষেপ করা",
+    "meaning": "to send something through the air using your arm and hand"
+  },
+  {
+    "v1": "catch",
+    "v2": "caught",
+    "v3": "caught",
+    "v4": "catching",
+    "v5": "catches",
+    "bangla": "ধরা",
+    "meaning": "to stop and hold something that is moving through the air"
+  },
+  {
+    "v1": "hit",
+    "v2": "hit",
+    "v3": "hit",
+    "v4": "hitting",
+    "v5": "hits",
+    "bangla": "আঘাত করা / মারা",
+    "meaning": "to strike a ball or object with a bat, racket, or hand"
+  },
+  {
+    "v1": "score",
+    "v2": "scored",
+    "v3": "scored",
+    "v4": "scoring",
+    "v5": "scores",
+    "bangla": "পয়েন্ট বা গোল অর্জন করা",
+    "meaning": "to win a point, goal, or run in a competitive game"
+  },
+  {
+    "v1": "win",
+    "v2": "won",
+    "v3": "won",
+    "v4": "winning",
+    "v5": "wins",
+    "bangla": "জেতা / জয়ী হওয়া",
+    "meaning": "to defeat opponents in a game, match, or race"
+  },
+  {
+    "v1": "lose",
+    "v2": "lost",
+    "v3": "lost",
+    "v4": "losing",
+    "v5": "loses",
+    "bangla": "হেরে যাওয়া / পরাজিত হওয়া",
+    "meaning": "to fail to win a game, match, or competition"
+  },
+  {
+    "v1": "train",
+    "v2": "trained",
+    "v3": "trained",
+    "v4": "training",
+    "v5": "trains",
+    "bangla": "প্রশিক্ষণ নেওয়া / অনুশীলন করা",
+    "meaning": "to prepare for a sports event by practicing regularly"
+  },
+  {
+    "v1": "coach",
+    "v2": "coached",
+    "v3": "coached",
+    "v4": "coaching",
+    "v5": "coaches",
+    "bangla": "প্রশিক্ষণ দেওয়া (কোচিং করানো)",
+    "meaning": "to teach and train players or a sports team"
+  },
+  {
+    "v1": "swim",
+    "v2": "swam",
+    "v3": "swum",
+    "v4": "swimming",
+    "v5": "swims",
+    "bangla": "সাঁতার কাটা",
+    "meaning": "to move through water by moving your body parts"
+  },
+  {
+    "v1": "shoot",
+    "v2": "shot",
+    "v3": "shot",
+    "v4": "shooting",
+    "v5": "shoots",
+    "bangla": "গোল করার উদ্দেশ্যে মারা (শুট করা)",
+    "meaning": "to kick or throw a ball toward the goal to score"
+  },
+  {
+    "v1": "pass",
+    "v2": "passed",
+    "v3": "passed",
+    "v4": "passing",
+    "v5": "passes",
+    "bangla": "সহযোগীকে বল দেওয়া (পাস করা)",
+    "meaning": "to kick or throw the ball to another player on your team"
+  },
+  {
+    "v1": "defend",
+    "v2": "defended",
+    "v3": "defended",
+    "v4": "defending",
+    "v5": "defends",
+    "bangla": "রক্ষা করা / ডিফেন্ড করা",
+    "meaning": "to protect your goal and stop opponents from scoring"
+  },
+  {
+    "v1": "tackle",
+    "v2": "tackled",
+    "v3": "tackled",
+    "v4": "tackling",
+    "v5": "tackles",
+    "bangla": "বাধা দেওয়া / বল কেড়ে নেওয়া (ট্যাকল করা)",
+    "meaning": "to try and take the ball away from an opponent"
+  },
+  {
+    "v1": "compete",
+    "v2": "competed",
+    "v3": "competed",
+    "v4": "competing",
+    "v5": "competes",
+    "bangla": "প্রতিযোগিতা করা",
+    "meaning": "to take part in a race or sports contest against others"
+  },
+  {
+    "v1": "cheer",
+    "v2": "cheered",
+    "v3": "cheered",
+    "v4": "cheering",
+    "v5": "cheers",
+    "bangla": "উৎসাহিত করা / উল্লাস করা",
+    "meaning": "to shout loudly to show support or happiness for a team"
+  },
+  {
+    "v1": "stretch",
+    "v2": "stretched",
+    "v3": "stretched",
+    "v4": "stretching",
+    "v5": "stretches",
+    "bangla": "হাত-পা টানটান করা (ওয়ার্ম-আপ করা)",
+    "meaning": "to extend your limbs to warm up muscles before playing"
+  },
+  {
+    "v1": "jump",
+    "v2": "jumped",
+    "v3": "jumped",
+    "v4": "jumping",
+    "v5": "jumps",
+    "bangla": "লাফানো",
+    "meaning": "to push yourself up into the air using your legs"
+  }
+]

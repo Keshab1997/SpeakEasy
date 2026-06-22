@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "v1": "clean",
+    "v2": "cleaned",
+    "v3": "cleaned",
+    "v4": "cleaning",
+    "v5": "cleans",
+    "bangla": "পরিষ্কার করা",
+    "meaning": "to remove dirt or dust from something"
+  },
+  {
+    "v1": "sweep",
+    "v2": "swept",
+    "v3": "swept",
+    "v4": "sweeping",
+    "v5": "sweeps",
+    "bangla": "ঝাড়ু দেওয়া",
+    "meaning": "to clean a floor using a broom"
+  },
+  {
+    "v1": "mop",
+    "v2": "mopped",
+    "v3": "mopped",
+    "v4": "mopping",
+    "v5": "mops",
+    "bangla": "মোছা (মেঝে)",
+    "meaning": "to clean or wash a floor using a wet mop"
+  },
+  {
+    "v1": "dust",
+    "v2": "dusted",
+    "v3": "dusted",
+    "v4": "dusting",
+    "v5": "dusts",
+    "bangla": "ধুলো ঝাড়া",
+    "meaning": "to remove dry dirt or dust from surfaces"
+  },
+  {
+    "v1": "wipe",
+    "v2": "wiped",
+    "v3": "wiped",
+    "v4": "wiping",
+    "v5": "wipes",
+    "bangla": "মুছে ফেলা",
+    "meaning": "to clean something by rubbing it with a cloth"
+  },
+  {
+    "v1": "wash",
+    "v2": "washed",
+    "v3": "washed",
+    "v4": "washing",
+    "v5": "washes",
+    "bangla": "ধৌত করা (ধোয়া)",
+    "meaning": "to clean something using water and soap"
+  },
+  {
+    "v1": "iron",
+    "v2": "ironed",
+    "v3": "ironed",
+    "v4": "ironing",
+    "v5": "irons",
+    "bangla": "ইস্ত্রি করা",
+    "meaning": "to make clothes smooth using a heated iron"
+  },
+  {
+    "v1": "fold",
+    "v2": "folded",
+    "v3": "folded",
+    "v4": "folding",
+    "v5": "folds",
+    "bangla": "ভাঁজ করা",
+    "meaning": "to bend clothes neatly so that one part covers another"
+  },
+  {
+    "v1": "vacuum",
+    "v2": "vacuumed",
+    "v3": "vacuumed",
+    "v4": "vacuuming",
+    "v5": "vacuums",
+    "bangla": "ভ্যাকুয়াম করা (মেঝে বা কার্পেট পরিষ্কার করা)",
+    "meaning": "to clean a surface using a vacuum cleaner"
+  },
+  {
+    "v1": "scrub",
+    "v2": "scrubbed",
+    "v3": "scrubbed",
+    "v4": "scrubbing",
+    "v5": "scrubs",
+    "bangla": "ঘষে মাজা / ঘষে পরিষ্কার করা",
+    "meaning": "to clean something by rubbing it hard with a brush"
+  },
+  {
+    "v1": "tidy",
+    "v2": "tidied",
+    "v3": "tidied",
+    "v4": "tidying",
+    "v5": "tidies",
+    "bangla": "গোছানো / পরিপাটি করা",
+    "meaning": "to make a room neat and organized"
+  },
+  {
+    "v1": "water",
+    "v2": "watered",
+    "v3": "watered",
+    "v4": "watering",
+    "v5": "waters",
+    "bangla": "জল দেওয়া (গাছে পানি দেওয়া)",
+    "meaning": "to pour water on plants or soil"
+  },
+  {
+    "v1": "dry",
+    "v2": "dried",
+    "v3": "dried",
+    "v4": "drying",
+    "v5": "dries",
+    "bangla": "শুকানো",
+    "meaning": "to remove moisture or water from something"
+  },
+  {
+    "v1": "empty",
+    "v2": "emptied",
+    "v3": "emptied",
+    "v4": "emptying",
+    "v5": "empties",
+    "bangla": "খালি করা (যেমন ডাস্টবিন)",
+    "meaning": "to remove the contents of a container or bin"
+  },
+  {
+    "v1": "repair",
+    "v2": "repaired",
+    "v3": "repaired",
+    "v4": "repaired",
+    "v5": "repairs",
+    "bangla": "মেরামত করা / ঠিক করা",
+    "meaning": "to fix something that is broken or damaged"
+  },
+  {
+    "v1": "paint",
+    "v2": "painted",
+    "v3": "painted",
+    "v4": "painting",
+    "v5": "paints",
+    "bangla": "রং করা",
+    "meaning": "to cover a wall or surface with paint"
+  },
+  {
+    "v1": "polish",
+    "v2": "polished",
+    "v3": "polished",
+    "v4": "polishing",
+    "v5": "polishes",
+    "bangla": "পালিশ করা / চকচকে করা",
+    "meaning": "to rub a surface to make it smooth and shiny"
+  },
+  {
+    "v1": "feed",
+    "v2": "fed",
+    "v3": "fed",
+    "v4": "feeding",
+    "v5": "feeds",
+    "bangla": "খাওয়ানো (যেমন পোষা প্রাণীকে)",
+    "meaning": "to give food to pets or family members"
+  },
+  {
+    "v1": "lock",
+    "v2": "locked",
+    "v3": "locked",
+    "v4": "locking",
+    "v5": "locks",
+    "bangla": "তালা দেওয়া / বন্ধ করা",
+    "meaning": "to secure doors or windows using a key"
+  },
+  {
+    "v1": "hang",
+    "v2": "hung",
+    "v3": "hung",
+    "v4": "hanging",
+    "v5": "hangs",
+    "bangla": "ঝুলিয়ে রাখা (যেমন কাপড় শুকাতে দেওয়া)",
+    "meaning": "to attach something at the top so that the lower part is free"
+  }
+]
