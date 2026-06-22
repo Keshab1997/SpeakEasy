@@ -1,0 +1,10 @@
+[
+  {"v1": "eat", "v2": "ate", "v3": "eaten", "v4": "eating", "v5": "eats", "bangla": "খাওয়া", "meaning": "to consume food"},
+  {"v1": "drink", "v2": "drank", "v3": "drunk", "v4": "drinking", "v5": "drinks", "bangla": "পান করা", "meaning": "to take liquid in"},
+  {"v1": "sleep", "v2": "slept", "v3": "slept", "v4": "sleeping", "v5": "sleeps", "bangla": "ঘুমানো", "meaning": "to rest with eyes closed"},
+  {"v1": "wake", "v2": "woke", "v3": "woken", "v4": "waking", "v5": "wakes", "bangla": "জাগা", "meaning": "to stop sleeping"},
+  {"v1": "wash", "v2": "washed", "v3": "washed", "v4": "washing", "v5": "washes", "bangla": "ধোয়া", "meaning": "to clean with water"},
+  {"v1": "dress", "v2": "dressed", "v3": "dressed", "v4": "dressing", "v5": "dresses", "bangla": "পোশাক পরা", "meaning": "to put on clothes"},
+  {"v1": "cook", "v2": "cooked", "v3": "cooked", "v4": "cooking", "v5": "cooks", "bangla": "রান্না করা", "meaning": "to prepare food"},
+  {"v1": "clean", "v2": "cleaned", "v3": "cleaned", "v4": "cleaning", "v5": "cleans", "bangla": "পরিষ্কার করা", "meaning": "to remove dirt"}
+]

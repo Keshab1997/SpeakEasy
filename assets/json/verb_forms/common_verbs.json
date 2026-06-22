@@ -1,0 +1,11 @@
+[
+  {"v1": "be", "v2": "was/were", "v3": "been", "v4": "being", "v5": "is/am/are", "bangla": "হওয়া", "meaning": "to exist"},
+  {"v1": "have", "v2": "had", "v3": "had", "v4": "having", "v5": "has", "bangla": "থাকা", "meaning": "to possess"},
+  {"v1": "do", "v2": "did", "v3": "done", "v4": "doing", "v5": "does", "bangla": "করা", "meaning": "to perform an action"},
+  {"v1": "make", "v2": "made", "v3": "made", "v4": "making", "v5": "makes", "bangla": "তৈরি করা / বানানো", "meaning": "to create or produce"},
+  {"v1": "take", "v2": "took", "v3": "taken", "v4": "taking", "v5": "takes", "bangla": "নেওয়া", "meaning": "to get hold of something"},
+  {"v1": "give", "v2": "gave", "v3": "given", "v4": "giving", "v5": "gives", "bangla": "দেওয়া", "meaning": "to hand over to someone"},
+  {"v1": "get", "v2": "got", "v3": "gotten/got", "v4": "getting", "v5": "gets", "bangla": "পাওয়া", "meaning": "to obtain or receive"},
+  {"v1": "put", "v2": "put", "v3": "put", "v4": "putting", "v5": "puts", "bangla": "রাখা", "meaning": "to place something somewhere"},
+  {"v1": "let", "v2": "let", "v3": "let", "v4": "letting", "v5": "lets", "bangla": "দেওয়া (অনুমতি)", "meaning": "to allow someone to do something"}
+]

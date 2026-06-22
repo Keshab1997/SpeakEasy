@@ -1,0 +1,10 @@
+[
+  {"v1": "go", "v2": "went", "v3": "gone", "v4": "going", "v5": "goes", "bangla": "যাওয়া", "meaning": "to move from one place to another"},
+  {"v1": "come", "v2": "came", "v3": "come", "v4": "coming", "v5": "comes", "bangla": "আসা", "meaning": "to move towards"},
+  {"v1": "run", "v2": "ran", "v3": "run", "v4": "running", "v5": "runs", "bangla": "দৌড়ানো", "meaning": "to move quickly on foot"},
+  {"v1": "walk", "v2": "walked", "v3": "walked", "v4": "walking", "v5": "walks", "bangla": "হাঁটা", "meaning": "to move at a regular pace"},
+  {"v1": "move", "v2": "moved", "v3": "moved", "v4": "moving", "v5": "moves", "bangla": "স্থানান্তরিত হওয়া", "meaning": "to change position"},
+  {"v1": "arrive", "v2": "arrived", "v3": "arrived", "v4": "arriving", "v5": "arrives", "bangla": "পৌঁছানো", "meaning": "to reach a destination"},
+  {"v1": "leave", "v2": "left", "v3": "left", "v4": "leaving", "v5": "leaves", "bangla": "ছেড়ে যাওয়া", "meaning": "to go away from"},
+  {"v1": "enter", "v2": "entered", "v3": "entered", "v4": "entering", "v5": "enters", "bangla": "প্রবেশ করা", "meaning": "to go into"}
+]

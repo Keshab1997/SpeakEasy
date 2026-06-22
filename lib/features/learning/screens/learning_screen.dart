@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../home/widgets/spoken_rules_screen.dart';
 import '../../vocabulary/screens/vocabulary_screen.dart';
+import '../../verb_forms/screens/verb_forms_screen.dart';
 import '../../grammar/screens/grammar_list_screen.dart';
 
 class LearningScreen extends StatelessWidget {
@@ -52,6 +53,15 @@ class LearningScreen extends StatelessWidget {
                 icon: Icons.menu_book_rounded,
                 gradient: AppColors.primaryGradient,
                 onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const VocabularyScreen())),
+              ),
+              const SizedBox(height: 16),
+              _buildLearningCard(
+                context: context,
+                title: 'Verb Forms',
+                subtitle: 'Master V1, V2, V3, V4, V5 forms of English verbs',
+                icon: Icons.transform_rounded,
+                gradient: [const Color(0xFF06B6D4), const Color(0xFF0891B2)],
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const VerbFormsScreen())),
               ),
               const SizedBox(height: 16),
               _buildLearningCard(

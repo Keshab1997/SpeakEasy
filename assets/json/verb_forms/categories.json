@@ -1,0 +1,9 @@
+[
+  {"id": "common_verbs", "title": "Common Verbs", "subtitle": "সাধারণ ক্রিয়া", "icon": "star", "color": "#2563EB"},
+  {"id": "irregular_verbs", "title": "Irregular Verbs", "subtitle": "অনিয়মিত ক্রিয়া", "icon": "bolt", "color": "#8B5CF6"},
+  {"id": "communication", "title": "Communication", "subtitle": "যোগাযোগমূলক ক্রিয়া", "icon": "chat", "color": "#10B981"},
+  {"id": "movement", "title": "Movement", "subtitle": "গতিসূচক ক্রিয়া", "icon": "directions_run", "color": "#F59E0B"},
+  {"id": "daily_routine", "title": "Daily Routine", "subtitle": "দৈনন্দিন ক্রিয়া", "icon": "schedule", "color": "#EC4899"},
+  {"id": "action_verbs", "title": "Action Verbs", "subtitle": "কর্মসূচক ক্রিয়া", "icon": "handyman", "color": "#06B6D4"},
+  {"id": "mental_verbs", "title": "Mental Verbs", "subtitle": "মানসিক ক্রিয়া", "icon": "psychology", "color": "#EF4444"}
+]

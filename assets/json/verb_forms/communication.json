@@ -1,0 +1,10 @@
+[
+  {"v1": "speak", "v2": "spoke", "v3": "spoken", "v4": "speaking", "v5": "speaks", "bangla": "বলা", "meaning": "to talk or say words"},
+  {"v1": "write", "v2": "wrote", "v3": "written", "v4": "writing", "v5": "writes", "bangla": "লেখা", "meaning": "to mark letters or words"},
+  {"v1": "read", "v2": "read", "v3": "read", "v4": "reading", "v5": "reads", "bangla": "পড়া", "meaning": "to look at written words"},
+  {"v1": "say", "v2": "said", "v3": "said", "v4": "saying", "v5": "says", "bangla": "কথা বলা", "meaning": "to utter words"},
+  {"v1": "tell", "v2": "told", "v3": "told", "v4": "telling", "v5": "tells", "bangla": "বলা (কাউকে)", "meaning": "to inform or narrate"},
+  {"v1": "ask", "v2": "asked", "v3": "asked", "v4": "asking", "v5": "asks", "bangla": "জিজ্ঞেস করা", "meaning": "to inquire"},
+  {"v1": "answer", "v2": "answered", "v3": "answered", "v4": "answering", "v5": "answers", "bangla": "উত্তর দেওয়া", "meaning": "to reply"},
+  {"v1": "call", "v2": "called", "v3": "called", "v4": "calling", "v5": "calls", "bangla": "ডাকা / ফোন করা", "meaning": "to contact by phone or shout"}
+]

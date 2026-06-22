@@ -27,6 +27,7 @@ import '../../translator/screens/banglish_translator_screen.dart';
 import '../../game/screens/game_home_screen.dart';
 import '../widgets/study_plan_section.dart';
 import '../widgets/spoken_rules_screen.dart';
+import '../../verb_forms/screens/verb_forms_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   final Function(int)? onNavigateToTab;
@@ -1007,7 +1008,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
-            itemCount: 3,
+            itemCount: 4,
             separatorBuilder: (_, __) => const SizedBox(width: 14),
             itemBuilder: (_, i) {
               final items = [
@@ -1022,6 +1023,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   'icon': Icons.menu_book_rounded,
                   'gradient': AppColors.primaryGradient,
                   'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const VocabularyScreen())),
+                },
+                {
+                  'title': 'Verb Forms',
+                  'icon': Icons.transform_rounded,
+                  'gradient': [Color(0xFF06B6D4), Color(0xFF0891B2)],
+                  'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const VerbFormsScreen())),
                 },
                 {
                   'title': 'Grammar',

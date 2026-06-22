@@ -1,0 +1,19 @@
+[
+  {"v1": "begin", "v2": "began", "v3": "begun", "v4": "beginning", "v5": "begins", "bangla": "শুরু করা", "meaning": "to start"},
+  {"v1": "break", "v2": "broke", "v3": "broken", "v4": "breaking", "v5": "breaks", "bangla": "ভাঙ্গা", "meaning": "to separate into pieces"},
+  {"v1": "bring", "v2": "brought", "v3": "brought", "v4": "bringing", "v5": "brings", "bangla": "আনা", "meaning": "to carry or convey"},
+  {"v1": "build", "v2": "built", "v3": "built", "v4": "building", "v5": "builds", "bangla": "নির্মাণ করা", "meaning": "to construct"},
+  {"v1": "buy", "v2": "bought", "v3": "bought", "v4": "buying", "v5": "buys", "bangla": "কেনা", "meaning": "to purchase"},
+  {"v1": "catch", "v2": "caught", "v3": "caught", "v4": "catching", "v5": "catches", "bangla": "ধরা", "meaning": "to capture or seize"},
+  {"v1": "choose", "v2": "chose", "v3": "chosen", "v4": "choosing", "v5": "chooses", "bangla": "বেছে নেওয়া", "meaning": "to select"},
+  {"v1": "cut", "v2": "cut", "v3": "cut", "v4": "cutting", "v5": "cuts", "bangla": "কাটা", "meaning": "to divide with a sharp tool"},
+  {"v1": "draw", "v2": "drew", "v3": "drawn", "v4": "drawing", "v5": "draws", "bangla": "আঁকা", "meaning": "to make a picture"},
+  {"v1": "drive", "v2": "drove", "v3": "driven", "v4": "driving", "v5": "drives", "bangla": "চালানো", "meaning": "to operate a vehicle"},
+  {"v1": "fall", "v2": "fell", "v3": "fallen", "v4": "falling", "v5": "falls", "bangla": "পড়া", "meaning": "to drop down"},
+  {"v1": "feel", "v2": "felt", "v3": "felt", "v4": "feeling", "v5": "feels", "bangla": "অনুভব করা", "meaning": "to experience an emotion"},
+  {"v1": "fight", "v2": "fought", "v3": "fought", "v4": "fighting", "v5": "fights", "bangla": "লড়াই করা", "meaning": "to struggle against"},
+  {"v1": "find", "v2": "found", "v3": "found", "v4": "finding", "v5": "finds", "bangla": "খুঁজে পাওয়া", "meaning": "to discover"},
+  {"v1": "fly", "v2": "flew", "v3": "flown", "v4": "flying", "v5": "flies", "bangla": "ওড়া", "meaning": "to move through air"},
+  {"v1": "grow", "v2": "grew", "v3": "grown", "v4": "growing", "v5": "grows", "bangla": "বড় হওয়া / জন্মানো", "meaning": "to increase in size"},
+  {"v1": "hide", "v2": "hid", "v3": "hidden", "v4": "hiding", "v5": "hides", "bangla": "লুকানো", "meaning": "to conceal from view"}
+]

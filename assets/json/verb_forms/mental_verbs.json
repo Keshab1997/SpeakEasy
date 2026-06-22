@@ -1,0 +1,10 @@
+[
+  {"v1": "think", "v2": "thought", "v3": "thought", "v4": "thinking", "v5": "thinks", "bangla": "চিন্তা করা", "meaning": "to have thoughts"},
+  {"v1": "know", "v2": "knew", "v3": "known", "v4": "knowing", "v5": "knows", "bangla": "জানা", "meaning": "to have information"},
+  {"v1": "believe", "v2": "believed", "v3": "believed", "v4": "believing", "v5": "believes", "bangla": "বিশ্বাস করা", "meaning": "to accept as true"},
+  {"v1": "understand", "v2": "understood", "v3": "understood", "v4": "understanding", "v5": "understands", "bangla": "বোঝা", "meaning": "to comprehend"},
+  {"v1": "remember", "v2": "remembered", "v3": "remembered", "v4": "remembering", "v5": "remembers", "bangla": "মনে রাখা", "meaning": "to recall"},
+  {"v1": "forget", "v2": "forgot", "v3": "forgotten", "v4": "forgetting", "v5": "forgets", "bangla": "ভুলে যাওয়া", "meaning": "to not remember"},
+  {"v1": "learn", "v2": "learned/learnt", "v3": "learned/learnt", "v4": "learning", "v5": "learns", "bangla": "শেখা", "meaning": "to gain knowledge"},
+  {"v1": "teach", "v2": "taught", "v3": "taught", "v4": "teaching", "v5": "teaches", "bangla": "শেখানো", "meaning": "to give knowledge"}
+]

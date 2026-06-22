@@ -1,0 +1,12 @@
+[
+  {"v1": "see", "v2": "saw", "v3": "seen", "v4": "seeing", "v5": "sees", "bangla": "দেখা", "meaning": "to perceive with eyes"},
+  {"v1": "hear", "v2": "heard", "v3": "heard", "v4": "hearing", "v5": "hears", "bangla": "শোনা", "meaning": "to perceive with ears"},
+  {"v1": "watch", "v2": "watched", "v3": "watched", "v4": "watching", "v5": "watches", "bangla": "দেখা (মনোযোগ দিয়ে)", "meaning": "to look at attentively"},
+  {"v1": "show", "v2": "showed", "v3": "shown", "v4": "showing", "v5": "shows", "bangla": "দেখানো", "meaning": "to display or demonstrate"},
+  {"v1": "open", "v2": "opened", "v3": "opened", "v4": "opening", "v5": "opens", "bangla": "খোলা", "meaning": "to make not closed"},
+  {"v1": "close", "v2": "closed", "v3": "closed", "v4": "closing", "v5": "closes", "bangla": "বন্ধ করা", "meaning": "to shut"},
+  {"v1": "push", "v2": "pushed", "v3": "pushed", "v4": "pushing", "v5": "pushes", "bangla": "ঠেলা দেওয়া", "meaning": "to exert force to move away"},
+  {"v1": "pull", "v2": "pulled", "v3": "pulled", "v4": "pulling", "v5": "pulls", "bangla": "টানা", "meaning": "to exert force to bring closer"},
+  {"v1": "carry", "v2": "carried", "v3": "carried", "v4": "carrying", "v5": "carries", "bangla": "বহন করা", "meaning": "to hold and move"},
+  {"v1": "lift", "v2": "lifted", "v3": "lifted", "v4": "lifting", "v5": "lifts", "bangla": "উত্তোলন করা", "meaning": "to raise upward"}
+]
