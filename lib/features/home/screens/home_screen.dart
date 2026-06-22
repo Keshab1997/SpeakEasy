@@ -1014,7 +1014,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 {
                   'title': 'Spoken Rules',
                   'icon': Icons.auto_stories_rounded,
-                  'gradient': [const Color(0xFF6366F1), const Color(0xFF8B5CF6)],
+                  'gradient': [Color(0xFF6366F1), Color(0xFF8B5CF6)],
                   'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SpokenRulesScreen())),
                 },
                 {
