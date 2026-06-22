@@ -58,6 +58,17 @@ class VerbFormCategory {
       'schedule': Icons.schedule_rounded,
       'handyman': Icons.handyman_rounded,
       'psychology': Icons.psychology_rounded,
+      'favorite': Icons.favorite_rounded,
+      'work': Icons.work_rounded,
+      'school': Icons.school_rounded,
+      'restaurant': Icons.restaurant_rounded,
+      'sports': Icons.sports_soccer_rounded,
+      'cloud': Icons.cloud_rounded,
+      'flight': Icons.flight_rounded,
+      'health': Icons.favorite_border_rounded,
+      'paid': Icons.paid_rounded,
+      'computer': Icons.computer_rounded,
+      'cleaning': Icons.cleaning_services_rounded,
     };
     return VerbFormCategory(
       id: j['id'] ?? '',

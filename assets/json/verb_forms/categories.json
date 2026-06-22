@@ -5,5 +5,16 @@
   {"id": "movement", "title": "Movement", "subtitle": "গতিসূচক ক্রিয়া", "icon": "directions_run", "color": "#F59E0B"},
   {"id": "daily_routine", "title": "Daily Routine", "subtitle": "দৈনন্দিন ক্রিয়া", "icon": "schedule", "color": "#EC4899"},
   {"id": "action_verbs", "title": "Action Verbs", "subtitle": "কর্মসূচক ক্রিয়া", "icon": "handyman", "color": "#06B6D4"},
-  {"id": "mental_verbs", "title": "Mental Verbs", "subtitle": "মানসিক ক্রিয়া", "icon": "psychology", "color": "#EF4444"}
+  {"id": "mental_verbs", "title": "Mental Verbs", "subtitle": "মানসিক ক্রিয়া", "icon": "psychology", "color": "#EF4444"},
+  {"id": "emotion_verbs", "title": "Emotion Verbs", "subtitle": "আবেগসূচক ক্রিয়া", "icon": "favorite", "color": "#F43F5E"},
+  {"id": "work_verbs", "title": "Work & Office", "subtitle": "চাকরি ও অফিস", "icon": "work", "color": "#6366F1"},
+  {"id": "education_verbs", "title": "Education & Study", "subtitle": "শিক্ষা ও পড়াশোনা", "icon": "school", "color": "#14B8A6"},
+  {"id": "cooking_verbs", "title": "Cooking & Food", "subtitle": "রান্না ও খাদ্য", "icon": "restaurant", "color": "#F97316"},
+  {"id": "sports_verbs", "title": "Sports & Exercise", "subtitle": "খেলা ও ব্যায়াম", "icon": "sports", "color": "#22C55E"},
+  {"id": "weather_verbs", "title": "Weather & Nature", "subtitle": "আবহাওয়া ও প্রকৃতি", "icon": "cloud", "color": "#0EA5E9"},
+  {"id": "travel_verbs", "title": "Travel & Direction", "subtitle": "ভ্রমণ ও দিকনির্দেশ", "icon": "flight", "color": "#A855F7"},
+  {"id": "health_verbs", "title": "Health & Body", "subtitle": "স্বাস্থ্য ও শরীর", "icon": "health", "color": "#84CC16"},
+  {"id": "money_verbs", "title": "Money & Business", "subtitle": "অর্থ ও ব্যবসা", "icon": "paid", "color": "#059669"},
+  {"id": "tech_verbs", "title": "Technology", "subtitle": "প্রযুক্তি", "icon": "computer", "color": "#3B82F6"},
+  {"id": "household_verbs", "title": "Household Chores", "subtitle": "ঘরের কাজ", "icon": "cleaning", "color": "#D946EF"}
 ]
