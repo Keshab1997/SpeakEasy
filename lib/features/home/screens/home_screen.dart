@@ -28,6 +28,7 @@ import '../../game/screens/game_home_screen.dart';
 import '../widgets/study_plan_section.dart';
 import '../widgets/spoken_rules_screen.dart';
 import '../../verb_forms/screens/verb_forms_screen.dart';
+import '../../verb_forms/screens/verb_form_practice_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   final Function(int)? onNavigateToTab;
@@ -1083,6 +1084,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       {'title': 'Speaking', 'icon': Icons.mic_rounded, 'gradient': AppColors.pinkGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SpeakingScreen()))},
       {'title': 'Listening', 'icon': Icons.headset_rounded, 'gradient': AppColors.infoGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ListeningScreen()))},
       {'title': 'Translate', 'icon': Icons.translate_rounded, 'gradient': [const Color(0xFF00BCD4), const Color(0xFF009688)], 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BanglishTranslatorScreen()))},
+      {'title': 'Verb Quiz', 'icon': Icons.transform_rounded, 'gradient': AppColors.accentGradient, 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const VerbFormPracticeScreen()))},
     ];
 
     return Column(

@@ -6,6 +6,7 @@ import '../../conversation/screens/conversation_screen.dart';
 import '../../listening/screens/listening_screen.dart';
 import '../../speaking/screens/speaking_screen.dart';
 import '../../translator/screens/banglish_translator_screen.dart';
+import '../../verb_forms/screens/verb_form_practice_screen.dart';
 
 class PracticeScreen extends StatelessWidget {
   const PracticeScreen({super.key});
@@ -52,6 +53,13 @@ class PracticeScreen extends StatelessWidget {
       icon: Icons.translate_rounded,
       gradient: [Color(0xFF00BCD4), Color(0xFF009688)],
       target: _Target.translate,
+    ),
+    _Category(
+      title: 'Verb Forms Quiz',
+      subtitle: 'Practice V1-V5',
+      icon: Icons.transform_rounded,
+      gradient: AppColors.accentGradient,
+      target: _Target.verbFormsQuiz,
     ),
   ];
 
@@ -120,7 +128,6 @@ class PracticeScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 padding: const EdgeInsets.all(10),
@@ -166,6 +173,8 @@ class PracticeScreen extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (_) => const SpeakingScreen()));
       case _Target.translate:
         Navigator.push(context, MaterialPageRoute(builder: (_) => const BanglishTranslatorScreen()));
+      case _Target.verbFormsQuiz:
+        Navigator.push(context, MaterialPageRoute(builder: (_) => const VerbFormPracticeScreen()));
     }
   }
 }
@@ -177,6 +186,7 @@ enum _Target {
   listening,
   speaking,
   translate,
+  verbFormsQuiz,
 }
 
 class _Category {
