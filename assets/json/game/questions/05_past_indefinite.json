@@ -1,6 +1,897 @@
 {
   "tenseType": "Past Indefinite",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "pi_001",
+      "tenseType": "Past Indefinite",
+      "question": "She ____ a book yesterday.",
+      "options": ["read", "reads", "readed", "was reading"],
+      "correctAnswer": "read",
+      "explanation": "'Yesterday' (গতকাল) অতীতের নির্দিষ্ট সময় নির্দেশ করে — Past Indefinite। 'read' এর past form (V2) হলো 'read' (উচ্চারণ রেড, কিন্তু বানান একই)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_002",
+      "tenseType": "Past Indefinite",
+      "question": "They ____ football yesterday afternoon.",
+      "options": ["play", "played", "plays", "playing"],
+      "correctAnswer": "played",
+      "explanation": "অতীতের কোনো নির্দিষ্ট সময়ের কাজ বোঝাতে Past Indefinite হয়। Regular verb 'play' এর past form হলো 'played'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_003",
+      "tenseType": "Past Indefinite",
+      "question": "I ____ for the exam last night.",
+      "options": ["study", "studied", "studies", "was studying"],
+      "correctAnswer": "studied",
+      "explanation": "'Last night' (গত রাতে) অতীতের নির্দিষ্ট সময় নির্দেশ করে। 'study' এর past form (V2) হলো 'studied' (y উঠে ied হয়)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_004",
+      "tenseType": "Past Indefinite",
+      "question": "He ____ to the market yesterday.",
+      "options": ["go", "went", "goes", "gone"],
+      "correctAnswer": "went",
+      "explanation": "অতীতের কাজ — Past Indefinite। Irregular verb 'go' এর past form (V2) হলো 'went' (go-went-gone)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_005",
+      "tenseType": "Past Indefinite",
+      "question": "The children ____ in the park last Sunday.",
+      "options": ["play", "played", "plays", "playing"],
+      "correctAnswer": "played",
+      "explanation": "'Last Sunday' অতীত নির্দেশক শব্দ, তাই Past Indefinite হবে। 'play' এর V2 রূপ 'played' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_006",
+      "tenseType": "Past Indefinite",
+      "question": "My mother ____ dinner in the kitchen yesterday.",
+      "options": ["cook", "cooked", "cooks", "cooking"],
+      "correctAnswer": "cooked",
+      "explanation": "গতকাল মা রান্না করেছিলেন — অতীতের শেষ হওয়া কাজ। 'cook' এর past form (V2) হলো 'cooked'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_007",
+      "tenseType": "Past Indefinite",
+      "question": "We ____ a movie last night.",
+      "options": ["watch", "watched", "watches", "watching"],
+      "correctAnswer": "watched",
+      "explanation": "'Last night' থাকার কারণে বাক্যটি Past Indefinite হবে। 'watch' এর past form 'watched'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_008",
+      "tenseType": "Past Indefinite",
+      "question": "The baby ____ a lot last night.",
+      "options": ["cry", "cried", "cries", "crying"],
+      "correctAnswer": "cried",
+      "explanation": "'cry' এর past form হলো 'cried' (y পরিবর্তিত হয়ে ied হয়)। গত রাতের কাজ হওয়ায় Past Indefinite।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_009",
+      "tenseType": "Past Indefinite",
+      "question": "You ____ very fast yesterday.",
+      "options": ["talk", "talked", "talks", "talking"],
+      "correctAnswer": "talked",
+      "explanation": "গতকাল তুমি দ্রুত কথা বলেছিলে — Past Indefinite। 'talk' এর V2 হলো 'talked'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_010",
+      "tenseType": "Past Indefinite",
+      "question": "It ____ heavily yesterday.",
+      "options": ["rain", "rained", "rains", "raining"],
+      "correctAnswer": "rained",
+      "explanation": "গতকাল ভারী বৃষ্টি হয়েছিল। 'rain' এর past form (V2) হলো 'rained'। Past Indefinite Tense।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_011",
+      "tenseType": "Past Indefinite",
+      "question": "The students ____ to the teacher carefully.",
+      "options": ["listen", "listened", "listens", "listening"],
+      "correctAnswer": "listened",
+      "explanation": "ছাত্ররা শিক্ষকের কথা মনোযোগ দিয়ে শুনেছিল (অতীতের কাজ)। 'listen' এর past form হলো 'listened'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_012",
+      "tenseType": "Past Indefinite",
+      "question": "He ____ a letter to his friend last week.",
+      "options": ["write", "wrote", "writes", "written"],
+      "correctAnswer": "wrote",
+      "explanation": "'Last week' অতীত নির্দেশক শব্দ। Irregular verb 'write' এর past form (V2) হলো 'wrote' (write-wrote-written)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_013",
+      "tenseType": "Past Indefinite",
+      "question": "They ____ a new house last year.",
+      "options": ["build", "built", "builds", "building"],
+      "correctAnswer": "built",
+      "explanation": "'Last year' অতীত নির্দেশক। Irregular verb 'build' এর past form হলো 'built' (build-built-built)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_014",
+      "tenseType": "Past Indefinite",
+      "question": "I ____ my keys in the drawer yesterday.",
+      "options": ["find", "found", "finds", "finding"],
+      "correctAnswer": "found",
+      "explanation": "গতকাল ড্রয়ারে চাবি পেয়েছিলাম। Irregular verb 'find' এর past form হলো 'found' (find-found-found)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_015",
+      "tenseType": "Past Indefinite",
+      "question": "She ____ a red dress to the party last Saturday.",
+      "options": ["wear", "wore", "wears", "worn"],
+      "correctAnswer": "wore",
+      "explanation": "গত শনিবার সে লাল জামা পরেছিল। 'wear' এর past form (V2) হলো 'wore' (wear-wore-worn)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_016",
+      "tenseType": "Past Indefinite",
+      "question": "The birds ____ away when they heard the noise.",
+      "options": ["fly", "flew", "flies", "flown"],
+      "correctAnswer": "flew",
+      "explanation": "শব্দ শুনে পাখিগুলো উড়ে গেল। 'fly' এর past form (V2) হলো 'flew' (fly-flew-flown)। Past Indefinite।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_017",
+      "tenseType": "Past Indefinite",
+      "question": "We ____ for the bus for an hour yesterday.",
+      "options": ["wait", "waited", "waits", "waiting"],
+      "correctAnswer": "waited",
+      "explanation": "গতকাল আমরা এক ঘণ্টা বাসের জন্য অপেক্ষা করেছিলাম। 'wait' এর past form হলো 'waited'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_018",
+      "tenseType": "Past Indefinite",
+      "question": "He ____ his room yesterday morning.",
+      "options": ["clean", "cleaned", "cleans", "cleaning"],
+      "correctAnswer": "cleaned",
+      "explanation": "গতকাল সকালে সে তার ঘর পরিষ্কার করেছিল। 'clean' এর past form (V2) হলো 'cleaned'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_019",
+      "tenseType": "Past Indefinite",
+      "question": "The dog ____ after the cat a moment ago.",
+      "options": ["run", "ran", "runs", "running"],
+      "correctAnswer": "ran",
+      "explanation": "'A moment ago' (কিছুক্ষণ আগে) অতীতের নির্দিষ্ট সময় বোঝায়। 'run' এর past form হলো 'ran' (run-ran-run)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_020",
+      "tenseType": "Past Indefinite",
+      "question": "I ____ dinner at a restaurant last night.",
+      "options": ["have", "had", "has", "having"],
+      "correctAnswer": "had",
+      "explanation": "গত রাতে রেস্তোরাঁয় রাতের খাবার খেয়েছিলাম। 'have' এর past form (V2) এখানে খাওয়া অর্থে 'had' হয়েছে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_021",
+      "tenseType": "Past Indefinite",
+      "question": "She ____ to London in 2020.",
+      "options": ["travel", "travelled", "travels", "travelling"],
+      "correctAnswer": "travelled",
+      "explanation": "'In 2020' অতীতে সম্পন্ন কাজ নির্দেশ করে। 'travel' এর past form হলো 'travelled' (double l)।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_022",
+      "tenseType": "Past Indefinite",
+      "question": "They ____ a party last Saturday.",
+      "options": ["have", "had", "has", "having"],
+      "correctAnswer": "had",
+      "explanation": "গত শনিবার তারা অনুষ্ঠান করেছিল। Past Indefinite গঠনে 'have' এর past form 'had' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_023",
+      "tenseType": "Past Indefinite",
+      "question": "He ____ a teacher before he became a writer.",
+      "options": ["is", "was", "were", "has been"],
+      "correctAnswer": "was",
+      "explanation": "অতীতের অবস্থা বা পেশা বোঝাতে past be-verb ব্যবহৃত হয়। 'He' singular, তাই 'was' বসবে।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_024",
+      "tenseType": "Past Indefinite",
+      "question": "You ____ too much noise during the class yesterday.",
+      "options": ["make", "made", "makes", "making"],
+      "correctAnswer": "made",
+      "explanation": "গতকাল ক্লাসের সময় তুমি অনেক গোলমাল করেছিলে। 'make' এর past form হলো 'made' (make-made-made)।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_025",
+      "tenseType": "Past Indefinite",
+      "question": "The company ____ fifty new employees last month.",
+      "options": ["hire", "hired", "hires", "hiring"],
+      "correctAnswer": "hired",
+      "explanation": "'Last month' অতীত সময় নির্দেশক। Regular verb 'hire' এর past form 'hired' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_026",
+      "tenseType": "Past Indefinite",
+      "question": "I ____ a lot of progress last semester.",
+      "options": ["make", "made", "makes", "making"],
+      "correctAnswer": "made",
+      "explanation": "গত সেমিস্টারে আমি অনেক উন্নতি করেছিলাম। 'make' এর V2 রূপ 'made' সঠিক। Past Indefinite Tense।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_027",
+      "tenseType": "Past Indefinite",
+      "question": "She ____ hard for her exams last week.",
+      "options": ["prepare", "prepared", "prepares", "preparing"],
+      "correctAnswer": "prepared",
+      "explanation": "গত সপ্তাহে সে পরীক্ষার জন্য কঠোর প্রস্তুতি নিয়েছিল। 'prepare' এর past form 'prepared' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_028",
+      "tenseType": "Past Indefinite",
+      "question": "The climate of this region ____ drastically over the last century.",
+      "options": ["change", "changed", "changes", "changing"],
+      "correctAnswer": "changed",
+      "explanation": "গত শতাব্দীতে এই অঞ্চলের জলবায়ু ব্যাপকভাবে পরিবর্তিত হয়েছিল। 'change' এর past form 'changed' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_029",
+      "tenseType": "Past Indefinite",
+      "question": "He ____ very angry when he heard the news.",
+      "options": ["become", "became", "becomes", "becoming"],
+      "correctAnswer": "became",
+      "explanation": "খবরটি শুনে সে খুব রাগান্বিত হয়েছিল। 'become' এর past form হলো 'became' (become-became-become)।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_030",
+      "tenseType": "Past Indefinite",
+      "question": "I ____ my old friend yesterday afternoon.",
+      "options": ["meet", "met", "meets", "meeting"],
+      "correctAnswer": "met",
+      "explanation": "গতকাল বিকেলে আমি আমার পুরোনো বন্ধুর সাথে দেখা করেছিলাম। 'meet' এর past form (V2) হলো 'met' (meet-met-met)।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pi_031",
+      "tenseType": "Past Indefinite",
+      "question": "Identify the tense: 'She read a book yesterday.'",
+      "options": ["Present Indefinite", "Present Continuous", "Past Indefinite", "Past Continuous"],
+      "correctAnswer": "Past Indefinite",
+      "explanation": "এখানে 'yesterday' এবং 'read' (যা past form হিসেবে উচ্চারিত) নির্দেশ করে এটি Past Indefinite Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pi_032",
+      "tenseType": "Past Indefinite",
+      "question": "Identify the tense: 'They played football.'",
+      "options": ["Past Indefinite", "Present Indefinite", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Past Indefinite",
+      "explanation": "Subject + verb-এর past form (played) — এটি Past Indefinite Tense-এর গঠন।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pi_033",
+      "tenseType": "Past Indefinite",
+      "question": "Identify the tense: 'I studied for my exam last night.'",
+      "options": ["Past Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Past Indefinite",
+      "explanation": "'studied' (V2) এবং 'last night' (গত রাতে) দ্বারা অতীতের কাজ নির্দেশিত হওয়ায় এটি Past Indefinite Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pi_034",
+      "tenseType": "Past Indefinite",
+      "question": "Identify the tense: 'He went to the market.'",
+      "options": ["Past Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Past Indefinite",
+      "explanation": "'went' হলো 'go' এর past form। Subject-এর সরাসরি পরে V2 বসেছে, তাই এটি Past Indefinite Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pi_035",
+      "tenseType": "Past Indefinite",
+      "question": "Identify the tense: 'The baby cried for hours.'",
+      "options": ["Past Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Past Indefinite",
+      "explanation": "'cried' হলো 'cry' এর past form। অতীতে ঘটিত কাজ বোঝাতে Past Indefinite ব্যবহৃত হয়েছে।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pi_036",
+      "tenseType": "Past Indefinite",
+      "question": "Identify the tense: 'We watched a movie last week.'",
+      "options": ["Past Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Past Indefinite",
+      "explanation": "'watched' (V2) এবং 'last week' ইঙ্গিত দেয় যে কাজটি অতীতে শেষ হয়েছে — এটি Past Indefinite Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pi_037",
+      "tenseType": "Past Indefinite",
+      "question": "Identify the tense: 'It rained heavily.'",
+      "options": ["Past Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Past Indefinite",
+      "explanation": "Subject + V2 (rained) দ্বারা অতীতে ঘটিত কোনো স্বাভাবিক প্রাকৃতিক ঘটনা বোঝানো হয়েছে — Past Indefinite।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pi_038",
+      "tenseType": "Past Indefinite",
+      "question": "Identify the tense: 'The students listened to the teacher.'",
+      "options": ["Past Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Past Indefinite",
+      "explanation": "এখানে auxiliary verb ছাড়া সরাসরি V2 'listened' বসেছে, যা Past Indefinite Tense নির্দেশ করে।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pi_039",
+      "tenseType": "Past Indefinite",
+      "question": "Identify the tense: 'She wore a beautiful blue dress.'",
+      "options": ["Past Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Past Indefinite",
+      "explanation": "'wore' হলো 'wear' এর past form। অতীতে কোনো একটি বিশেষ পোশাক পরার ঘটনা বোঝাতে Past Indefinite ব্যবহৃত হয়েছে।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pi_040",
+      "tenseType": "Past Indefinite",
+      "question": "Identify the tense: 'I met him in 2015.'",
+      "options": ["Past Indefinite", "Present Continuous", "Present Perfect", "Future Indefinite"],
+      "correctAnswer": "Past Indefinite",
+      "explanation": "অতীতের নির্দিষ্ট বছর 'in 2015' উল্লেখ আছে এবং verb-এর V2 'met' আছে। এটি Past Indefinite Tense।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pi_041",
+      "tenseType": "Past Indefinite",
+      "question": "Arrange: (yesterday / read / she / a / book)",
+      "options": [
+        "She read a book yesterday.",
+        "She yesterday read a book.",
+        "Yesterday read she a book.",
+        "She a book read yesterday."
+      ],
+      "correctAnswer": "She read a book yesterday.",
+      "explanation": "সঠিক গঠন: Subject (She) + V2 (read) + Object (a book) + Time (yesterday)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pi_042",
+      "tenseType": "Past Indefinite",
+      "question": "Arrange: (played / they / football / yesterday)",
+      "options": [
+        "They played football yesterday.",
+        "They yesterday played football.",
+        "Yesterday played they football.",
+        "They football played yesterday."
+      ],
+      "correctAnswer": "They played football yesterday.",
+      "explanation": "সঠিক গঠন: Subject (They) + V2 (played) + Object (football) + Time (yesterday)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pi_043",
+      "tenseType": "Past Indefinite",
+      "question": "Arrange: (for / I / waited / the / bus / yesterday)",
+      "options": [
+        "I waited for the bus yesterday.",
+        "I yesterday waited for the bus.",
+        "Waited I for the bus yesterday.",
+        "I waited yesterday for the bus."
+      ],
+      "correctAnswer": "I waited for the bus yesterday.",
+      "explanation": "সঠিক গঠন: Subject (I) + V2 (waited) + Prepositional Object (for the bus) + Time (yesterday)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pi_044",
+      "tenseType": "Past Indefinite",
+      "question": "Arrange: (cooked / kitchen / mother / in / the / my)",
+      "options": [
+        "My mother cooked in the kitchen.",
+        "My mother in the kitchen cooked.",
+        "Cooked my mother in the kitchen.",
+        "My mother kitchen in the cooked."
+      ],
+      "correctAnswer": "My mother cooked in the kitchen.",
+      "explanation": "সঠিক গঠন: Subject (My mother) + V2 (cooked) + Place (in the kitchen)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pi_045",
+      "tenseType": "Past Indefinite",
+      "question": "Arrange: (had / party / they / last / Saturday / a)",
+      "options": [
+        "They had a party last Saturday.",
+        "They last Saturday had a party.",
+        "Last Saturday had they a party.",
+        "They a party had last Saturday."
+      ],
+      "correctAnswer": "They had a party last Saturday.",
+      "explanation": "সঠিক গঠন: Subject (They) + V2 (had) + Object (a party) + Time (last Saturday)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pi_046",
+      "tenseType": "Past Indefinite",
+      "question": "Arrange: (changed / climate / the / rapidly)",
+      "options": [
+        "The climate changed rapidly.",
+        "The climate rapidly changed.",
+        "Changed the climate rapidly.",
+        "The climate changed is rapidly."
+      ],
+      "correctAnswer": "The climate changed rapidly.",
+      "explanation": "সঠিক গঠন: Subject (The climate) + V2 (changed) + Adverb (rapidly)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pi_047",
+      "tenseType": "Past Indefinite",
+      "question": "Find the error: 'She readed a book yesterday.'",
+      "options": [
+        "She read a book yesterday.",
+        "She was readed a book yesterday.",
+        "She reads a book yesterday.",
+        "She is read a book yesterday."
+      ],
+      "correctAnswer": "She read a book yesterday.",
+      "explanation": "'read' একটি irregular verb, এর past form 'read'-ই থাকে (বানান অপরিবর্তিত থাকে, 'readed' ভুল)।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pi_048",
+      "tenseType": "Past Indefinite",
+      "question": "Find the error: 'They was play football yesterday.'",
+      "options": [
+        "They played football yesterday.",
+        "They was playing football yesterday.",
+        "They plays football yesterday.",
+        "They did played football yesterday."
+      ],
+      "correctAnswer": "They played football yesterday.",
+      "explanation": "অতীতের সাধারণ ঘটনার গঠনে auxiliary 'was' বসে না, সরাসরি V2 বসে। 'They played' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pi_049",
+      "tenseType": "Past Indefinite",
+      "question": "Find the error: 'I writed a letter last night.'",
+      "options": [
+        "I wrote a letter last night.",
+        "I write a letter last night.",
+        "I was write a letter last night.",
+        "I writed a letter last night."
+      ],
+      "correctAnswer": "I wrote a letter last night.",
+      "explanation": "'write' একটি irregular verb, এর past form (V2) হলো 'wrote' ('writed' বলে কোনো শব্দ নেই)।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pi_050",
+      "tenseType": "Past Indefinite",
+      "question": "Find the error: 'He did went to school yesterday.'",
+      "options": [
+        "He went to school yesterday.",
+        "He did go to school yesterday.",
+        "He goes to school now.",
+        "He was went to school."
+      ],
+      "correctAnswer": "He went to school yesterday.",
+      "explanation": "Past Indefinite-এর হ্যাঁ-বোধক (affirmative) বাক্যে 'did' বসে না, সরাসরি V2 'went' বসে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pi_051",
+      "tenseType": "Past Indefinite",
+      "question": "Find the error: 'The children runned in the park.'",
+      "options": [
+        "The children ran in the park.",
+        "The children run in the park.",
+        "The children was ran in the park.",
+        "The children has run in the park."
+      ],
+      "correctAnswer": "The children ran in the park.",
+      "explanation": "'run' এর past form হলো 'ran' (run-ran-run)। 'runned' ভুল ব্যাকরণ।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pi_052",
+      "tenseType": "Past Indefinite",
+      "question": "Find the error: 'We seed a movie last night.'",
+      "options": [
+        "We saw a movie last night.",
+        "We watched a movie last night.",
+        "We see a movie last night.",
+        "We has seen a movie last night."
+      ],
+      "correctAnswer": "We saw a movie last night.",
+      "explanation": "'see' এর past form হলো 'saw' (see-saw-seen)। 'seed' কোনো সঠিক ইংরেজি শব্দ নয়।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pi_053",
+      "tenseType": "Past Indefinite",
+      "question": "Find the error: 'It was rained heavily yesterday.'",
+      "options": [
+        "It rained heavily yesterday.",
+        "It was rain heavily yesterday.",
+        "It rains heavily yesterday.",
+        "It rain heavily yesterday."
+      ],
+      "correctAnswer": "It rained heavily yesterday.",
+      "explanation": "Past Indefinite active voice-এ verb-এর পূর্বে auxiliary 'was' বসে না। 'It rained' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pi_054",
+      "tenseType": "Past Indefinite",
+      "question": "Find the error: 'She swimmed in the pool yesterday.'",
+      "options": [
+        "She swam in the pool yesterday.",
+        "She swims in the pool yesterday.",
+        "She was swam in the pool yesterday.",
+        "She swim in the pool yesterday."
+      ],
+      "correctAnswer": "She swam in the pool yesterday.",
+      "explanation": "'swim' এর past form হলো 'swam' (swim-swam-swum)। 'swimmed' ভুল বানান।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pi_055",
+      "tenseType": "Past Indefinite",
+      "question": "Find the error: 'He buyed a new car last week.'",
+      "options": [
+        "He bought a new car last week.",
+        "He buys a new car last week.",
+        "He was buy a new car last week.",
+        "He buy a new car last week."
+      ],
+      "correctAnswer": "He bought a new car last week.",
+      "explanation": "'buy' এর past form হলো 'bought' (buy-bought-bought)। 'buyed' ভুল রূপ।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pi_056",
+      "tenseType": "Past Indefinite",
+      "question": "Find the error: 'They maked a mistake.'",
+      "options": [
+        "They made a mistake.",
+        "They make a mistake.",
+        "They was make a mistake.",
+        "They did maked a mistake."
+      ],
+      "correctAnswer": "They made a mistake.",
+      "explanation": "'make' এর past form হলো 'made' (make-made-made)। 'maked' ভুল ব্যাকরণ।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pi_057",
+      "tenseType": "Past Indefinite",
+      "question": "Translate: 'সে গতকাল একটি বই পড়েছিল।'",
+      "options": [
+        "She read a book yesterday.",
+        "She reads a book yesterday.",
+        "She was reading a book yesterday.",
+        "She has read a book yesterday."
+      ],
+      "correctAnswer": "She read a book yesterday.",
+      "explanation": "'পড়েছিল' দ্বারা অতীত বোঝায় এবং 'গতকাল' থাকায় এটি Past Indefinite। 'She read (V2) a book yesterday' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pi_058",
+      "tenseType": "Past Indefinite",
+      "question": "Translate: 'তারা গতকাল ফুটবল খেলেছিল।'",
+      "options": [
+        "They played football yesterday.",
+        "They play football yesterday.",
+        "They was playing football yesterday.",
+        "They have played football yesterday."
+      ],
+      "correctAnswer": "They played football yesterday.",
+      "explanation": "'খেলেছিল' নির্দেশ করে কাজটি অতীতে শেষ হয়েছে। Past Indefinite অনুযায়ী 'They played football yesterday' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pi_059",
+      "tenseType": "Past Indefinite",
+      "question": "Translate: 'আমি গত রাতে পড়াশোনা করেছিলাম।'",
+      "options": [
+        "I studied last night.",
+        "I study last night.",
+        "I was studying last night.",
+        "I have studied last night."
+      ],
+      "correctAnswer": "I studied last night.",
+      "explanation": "গত রাতের শেষ হওয়া কাজ — Past Indefinite। 'I studied (V2) last night' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pi_060",
+      "tenseType": "Past Indefinite",
+      "question": "Translate: 'গতকাল বৃষ্টি হয়েছিল।'",
+      "options": [
+        "It rained yesterday.",
+        "It rains yesterday.",
+        "It was rain yesterday.",
+        "It has rained yesterday."
+      ],
+      "correctAnswer": "It rained yesterday.",
+      "explanation": "গতকাল বৃষ্টি হয়েছিল — Past Indefinite। আবহাওয়া ও বৃষ্টির ক্ষেত্রে Subject হিসেবে 'It' আসে। 'It rained yesterday' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pi_061",
+      "tenseType": "Past Indefinite",
+      "question": "Translate: 'আমার মা রান্না করেছিলেন।'",
+      "options": [
+        "My mother cooked.",
+        "My mother cooks.",
+        "My mother cooking.",
+        "My mother has cooked."
+      ],
+      "correctAnswer": "My mother cooked.",
+      "explanation": "অতীতের সাধারণ কাজ — Past Indefinite। 'My mother cooked (V2)' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pi_062",
+      "tenseType": "Past Indefinite",
+      "question": "Translate: 'আমরা একটি সিনেমা দেখেছিলাম।'",
+      "options": [
+        "We watched a movie.",
+        "We watch a movie.",
+        "We were watching a movie.",
+        "We have watched a movie."
+      ],
+      "correctAnswer": "We watched a movie.",
+      "explanation": "আমরা সিনেমাটি দেখেছিলাম (অতীতের কাজ) — Past Indefinite। 'We watched (V2) a movie' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pi_063",
+      "tenseType": "Past Indefinite",
+      "question": "Translate: 'সে গত বছর লন্ডন গিয়েছিল।'",
+      "options": [
+        "He went to London last year.",
+        "He goes to London last year.",
+        "He has gone to London last year.",
+        "He was going to London last year."
+      ],
+      "correctAnswer": "He went to London last year.",
+      "explanation": "'গত বছর' (last year) অতীতের নির্দিষ্ট সময়। 'go'-এর past form 'went' বসে। 'He went to London last year' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pi_064",
+      "tenseType": "Past Indefinite",
+      "question": "Translate: 'আবহাওয়া দ্রুত পরিবর্তিত হয়েছিল।'",
+      "options": [
+        "The weather changed rapidly.",
+        "The weather changes rapidly.",
+        "The weather was changing rapidly.",
+        "The weather has changed rapidly."
+      ],
+      "correctAnswer": "The weather changed rapidly.",
+      "explanation": "অতীতের পরিবর্তন প্রকাশ করতে Past Indefinite ব্যবহৃত হয়েছে। 'The weather changed rapidly' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pi_065",
+      "tenseType": "Past Indefinite",
+      "question": "Translate: 'আমি গতকাল তার সাথে দেখা করেছিলাম।'",
+      "options": [
+        "I met him yesterday.",
+        "I meet him yesterday.",
+        "I was meeting him yesterday.",
+        "I have met him yesterday."
+      ],
+      "correctAnswer": "I met him yesterday.",
+      "explanation": "গতকাল দেখা করেছিলাম — Past Indefinite। 'meet' এর past form 'met' বসে। 'I met him yesterday' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pi_066",
+      "tenseType": "Past Indefinite",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She read a book yesterday.",
+        "She reads a book yesterday.",
+        "She readed a book yesterday.",
+        "She reading a book yesterday."
+      ],
+      "correctAnswer": "She read a book yesterday.",
+      "explanation": "Quick: Past Indefinite-এ verb-এর V2 বসে। 'read' এর V2 রূপ হলো 'read' (বানান একই থাকে)।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pi_067",
+      "tenseType": "Past Indefinite",
+      "question": "Choose the correct form: 'They ____ to the party last night.'",
+      "options": ["went", "go", "gone", "goes"],
+      "correctAnswer": "went",
+      "explanation": "Quick: 'last night' নির্দেশ করে Past Indefinite। তাই 'go' এর past form 'went' বসবে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pi_068",
+      "tenseType": "Past Indefinite",
+      "question": "Pick the correct negative form: 'She ____ a book yesterday.'",
+      "options": ["did not read", "does not read", "did not readed", "not readed"],
+      "correctAnswer": "did not read",
+      "explanation": "Quick: Past Indefinite negative = subject + did not + V1 (present form)। তাই 'did not read' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pi_069",
+      "tenseType": "Past Indefinite",
+      "question": "Pick the correct question form: '____ she read a book yesterday?'",
+      "options": ["Did", "Does", "Do", "Was"],
+      "correctAnswer": "Did",
+      "explanation": "Quick: Past Indefinite-এ প্রশ্ন করতে সাহায্যকারী verb হিসেবে শুরুতে 'Did' বসে (Did + subject + V1)।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pi_070",
+      "tenseType": "Past Indefinite",
+      "question": "Which sentence represents a completed past action?",
+      "options": [
+        "I visited Paris in 2018.",
+        "I visit Paris.",
+        "I have visited Paris.",
+        "I am visiting Paris."
+      ],
+      "correctAnswer": "I visited Paris in 2018.",
+      "explanation": "Quick: 'in 2018' অতীতের নির্দিষ্ট সময় এবং 'visited' (V2) দ্বারা অতীতে কাজ শেষ হওয়া নির্দেশ করে।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pi_071",
+      "tenseType": "Past Indefinite",
+      "question": "Choose the correct verb: 'The baby ____ all night.'",
+      "options": ["slept", "sleep", "sleeps", "sleeping"],
+      "correctAnswer": "slept",
+      "explanation": "Quick: 'all night' অতীতের সমাপ্ত ঘুম নির্দেশ করে। Irregular verb 'sleep' এর past form হলো 'slept'।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pi_072",
+      "tenseType": "Past Indefinite",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "I did not see him yesterday.",
+        "I did not saw him yesterday.",
+        "I did not seen him yesterday.",
+        "I am not see him yesterday."
+      ],
+      "correctAnswer": "I did not see him yesterday.",
+      "explanation": "Quick: Negative বাক্যে 'did not' এর পর সর্বদা মূল verb-এর present form (V1) বসে। 'did not saw' ভুল, 'did not see' সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pi_073",
+      "tenseType": "Past Indefinite",
+      "question": "Choose the correct negative sentence:",
+      "options": [
+        "He did not write the letter.",
+        "He did not wrote the letter.",
+        "He does not wrote the letter.",
+        "He did not writing the letter."
+      ],
+      "correctAnswer": "He did not write the letter.",
+      "explanation": "Quick: 'did not' এর পর মূল verb 'write' (V1) বসবে। 'wrote' (V2) ব্যবহার করা ব্যাকরণগতভাবে ভুল।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pi_074",
+      "tenseType": "Past Indefinite",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She swam across the river.",
+        "She swimmed across the river.",
+        "She swum across the river.",
+        "She was swam across the river."
+      ],
+      "correctAnswer": "She swam across the river.",
+      "explanation": "Quick: 'swim' এর past form (V2) হলো 'swam' (swim-swam-swum)। 'swam' সম্বলিত প্রথম বাক্যটিই সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }

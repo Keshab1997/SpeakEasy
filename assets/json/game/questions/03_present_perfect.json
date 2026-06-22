@@ -1,6 +1,897 @@
 {
   "tenseType": "Present Perfect",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "pp_001",
+      "tenseType": "Present Perfect",
+      "question": "She ____ her homework.",
+      "options": ["finished", "has finished", "have finished", "is finishing"],
+      "correctAnswer": "has finished",
+      "explanation": "কাজটি এইমাত্র শেষ হয়েছে বোঝাতে Present Perfect Tense হয়। 'She' third person singular, তাই 'has' এবং verb-এর V3 'finished' বসেছে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_002",
+      "tenseType": "Present Perfect",
+      "question": "They ____ to London.",
+      "options": ["have gone", "has gone", "went", "going"],
+      "correctAnswer": "have gone",
+      "explanation": "তারা লন্ডন গিয়েছে (ফলাফল এখনও আছে) — Present Perfect। Plural subject 'They' এর সাথে 'have' এবং V3 'gone' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_003",
+      "tenseType": "Present Perfect",
+      "question": "I ____ my keys. I can't find them.",
+      "options": ["lost", "has lost", "have lost", "am losing"],
+      "correctAnswer": "have lost",
+      "explanation": "চাবি হারিয়ে গেছে এবং তার ফল এখনও বর্তমান (খুঁজে পাচ্ছি না) — Present Perfect। 'I' এর সাথে 'have lost' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_004",
+      "tenseType": "Present Perfect",
+      "question": "He ____ a new car recently.",
+      "options": ["bought", "has bought", "have bought", "buys"],
+      "correctAnswer": "has bought",
+      "explanation": "'Recently' বা সম্প্রতি কোনো কাজ সম্পন্ন হওয়া বোঝাতে Present Perfect হয়। 'He' এর সাথে 'has bought' (has + V3) বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_005",
+      "tenseType": "Present Perfect",
+      "question": "We ____ this movie already.",
+      "options": ["saw", "has seen", "have seen", "seeing"],
+      "correctAnswer": "have seen",
+      "explanation": "'Already' থাকলে সাধারণত Present Perfect Tense হয়। 'We' plural subject, তাই 'have' + V3 'seen' বসেছে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_006",
+      "tenseType": "Present Perfect",
+      "question": "The train ____ just arrived.",
+      "options": ["has", "have", "is", "was"],
+      "correctAnswer": "has",
+      "explanation": "'Just' থাকলে এইমাত্র শেষ হওয়া কাজ বোঝায় (Present Perfect)। 'The train' singular subject, তাই 'has' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_007",
+      "tenseType": "Present Perfect",
+      "question": "You ____ a great job on this project.",
+      "options": ["did", "has done", "have done", "doing"],
+      "correctAnswer": "have done",
+      "explanation": "তুমি চমৎকার কাজ করেছ — Present Perfect। 'You' এর সাথে 'have' বসে এবং verb-এর V3 'done' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_008",
+      "tenseType": "Present Perfect",
+      "question": "It ____ raining now.",
+      "options": ["stopped", "has stopped", "have stopped", "is stopping"],
+      "correctAnswer": "has stopped",
+      "explanation": "বৃষ্টি এইমাত্র থেমেছে — Present Perfect। 'It' third person singular, তাই 'has stopped' (has + V3) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_009",
+      "tenseType": "Present Perfect",
+      "question": "My sister ____ a beautiful song.",
+      "options": ["sang", "has sung", "have sung", "singing"],
+      "correctAnswer": "has sung",
+      "explanation": "'My sister' third person singular, তাই 'has' এবং sing-এর past participle 'sung' (sing-sang-sung) বসেছে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_010",
+      "tenseType": "Present Perfect",
+      "question": "They ____ their dinner.",
+      "options": ["ate", "has eaten", "have eaten", "eating"],
+      "correctAnswer": "have eaten",
+      "explanation": "তারা রাতের খাবার খেয়েছে — Present Perfect। Plural subject 'They' এর সাথে 'have eaten' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_011",
+      "tenseType": "Present Perfect",
+      "question": "The students ____ the exam.",
+      "options": ["took", "has taken", "have taken", "taking"],
+      "correctAnswer": "have taken",
+      "explanation": "ছাত্ররা পরীক্ষা দিয়েছে। 'The students' plural subject, তাই Present Perfect-এ 'have taken' (have + V3) হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_012",
+      "tenseType": "Present Perfect",
+      "question": "He ____ a letter to his friend.",
+      "options": ["wrote", "has written", "have written", "writing"],
+      "correctAnswer": "has written",
+      "explanation": "চিঠিটি লেখা শেষ হয়েছে — Present Perfect। 'He' এর সাথে 'has' এবং write-এর V3 'written' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_013",
+      "tenseType": "Present Perfect",
+      "question": "They ____ a new house.",
+      "options": ["built", "have built", "has built", "building"],
+      "correctAnswer": "have built",
+      "explanation": "তারা একটি নতুন বাড়ি তৈরি করেছে। 'They' plural, তাই Present Perfect গঠনে 'have built' (have + V3) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_014",
+      "tenseType": "Present Perfect",
+      "question": "I ____ for my exams.",
+      "options": ["prepared", "has prepared", "have prepared", "preparing"],
+      "correctAnswer": "have prepared",
+      "explanation": "আমি পরীক্ষার প্রস্তুতি নিয়েছি। 'I' এর সাথে Present Perfect-এ 'have prepared' (have + V3) ব্যবহৃত হয়।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_015",
+      "tenseType": "Present Perfect",
+      "question": "She ____ a red dress today.",
+      "options": ["wore", "has worn", "have worn", "wearing"],
+      "correctAnswer": "has worn",
+      "explanation": "সে আজ লাল জামা পরেছে (এখনও পরে আছে) — Present Perfect। 'She' এর সাথে 'has worn' (wear-wore-worn)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_016",
+      "tenseType": "Present Perfect",
+      "question": "The birds ____ away.",
+      "options": ["flew", "has flown", "have flown", "flying"],
+      "correctAnswer": "have flown",
+      "explanation": "পাখিগুলো উড়ে গেছে — Present Perfect। Plural subject 'The birds' এর সাথে 'have' এবং fly-এর V3 'flown' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_017",
+      "tenseType": "Present Perfect",
+      "question": "We ____ for the bus for an hour.",
+      "options": ["waited", "have waited", "has waited", "waiting"],
+      "correctAnswer": "have waited",
+      "explanation": "আমরা এক ঘণ্টা যাবত বাসের জন্য অপেক্ষা করেছি (অপেক্ষা মাত্র শেষ হয়েছে বা ফল আছে) — Present Perfect। 'We have waited'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_018",
+      "tenseType": "Present Perfect",
+      "question": "He ____ his room.",
+      "options": ["cleaned", "has cleaned", "have cleaned", "cleaning"],
+      "correctAnswer": "has cleaned",
+      "explanation": "সে তার ঘর পরিষ্কার করেছে — Present Perfect। 'He' singular subject, তাই 'has cleaned' (has + V3) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_019",
+      "tenseType": "Present Perfect",
+      "question": "The dog ____ all the food.",
+      "options": ["ate", "has eaten", "have eaten", "eating"],
+      "correctAnswer": "has eaten",
+      "explanation": "কুকুরটি সব খাবার খেয়ে ফেলেছে। 'The dog' singular subject, তাই 'has eaten' (has + eaten) বসেছে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_020",
+      "tenseType": "Present Perfect",
+      "question": "I ____ in this city since 2010.",
+      "options": ["lived", "has lived", "have lived", "am living"],
+      "correctAnswer": "have lived",
+      "explanation": "'Since' বা নির্দিষ্ট সময় থেকে কোনো অবস্থা বোঝাতে Present Perfect ব্যবহৃত হয়। 'I have lived in this city since 2010'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_021",
+      "tenseType": "Present Perfect",
+      "question": "She ____ to Paris three times.",
+      "options": ["travelled", "has travelled", "have travelled", "is travelling"],
+      "correctAnswer": "has travelled",
+      "explanation": "জীবনের অভিজ্ঞতা (কতবার ভ্রমণ করেছে) বোঝাতে Present Perfect হয়। 'She' singular, তাই 'has travelled'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_022",
+      "tenseType": "Present Perfect",
+      "question": "They ____ a party already.",
+      "options": ["had", "have had", "has had", "having"],
+      "correctAnswer": "have had",
+      "explanation": "এখানে auxiliary 'have' এবং মূল verb 'have' (খাওয়া/আয়োজন করা) এর V3 'had' মিলে 'have had' হয়েছে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_023",
+      "tenseType": "Present Perfect",
+      "question": "He ____ sick since last Monday.",
+      "options": ["is", "has been", "was", "have been"],
+      "correctAnswer": "has been",
+      "explanation": "গত সোমবার থেকে সে অসুস্থ — অতীত থেকে বর্তমান অবস্থা বোঝাতে Present Perfect হয়। Be verb-এর V3 হলো 'been'। তাই 'has been'।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_024",
+      "tenseType": "Present Perfect",
+      "question": "You ____ too much noise. Please stop.",
+      "options": ["made", "has made", "have made", "making"],
+      "correctAnswer": "have made",
+      "explanation": "তুমি খুব গোলমাল করেছ — Present Perfect। 'You' এর সাথে 'have made' বসে। এর ফল এখনও বর্তমান।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_025",
+      "tenseType": "Present Perfect",
+      "question": "The company ____ new employees this month.",
+      "options": ["hired", "has hired", "have hired", "hiring"],
+      "correctAnswer": "has hired",
+      "explanation": "'This month' এখনও শেষ হয়নি এমন সময়ের কাজ বোঝাতে Present Perfect হয়। 'The company' singular, তাই 'has hired'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_026",
+      "tenseType": "Present Perfect",
+      "question": "I ____ a lot of progress in English lately.",
+      "options": ["made", "have made", "has made", "making"],
+      "correctAnswer": "have made",
+      "explanation": "'Lately' (সাম্প্রতিক সময়ে) থাকলে Present Perfect Tense হয়। 'I' এর সাথে 'have' + V3 'made' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_027",
+      "tenseType": "Present Perfect",
+      "question": "She ____ for her exams recently.",
+      "options": ["prepared", "has prepared", "have prepared", "preparing"],
+      "correctAnswer": "has prepared",
+      "explanation": "'Recently' নির্দেশ করে কাজটি সম্প্রতি সম্পন্ন হয়েছে। 'She' singular subject, তাই 'has prepared' হবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_028",
+      "tenseType": "Present Perfect",
+      "question": "The climate ____ rapidly this decade.",
+      "options": ["changed", "has changed", "have changed", "is changing"],
+      "correctAnswer": "has changed",
+      "explanation": "'This decade' শেষ হয়নি এমন সময়ের পরিবর্তন বোঝাতে Present Perfect হয়। 'The climate' singular, তাই 'has changed'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_029",
+      "tenseType": "Present Perfect",
+      "question": "He ____ more and more impatient.",
+      "options": ["became", "has become", "have become", "becoming"],
+      "correctAnswer": "has become",
+      "explanation": "সে ক্রমশ অধৈর্য হয়ে উঠেছে — Present Perfect। 'He' এর সাথে 'has' এবং become-এর V3 'become' (become-became-become) বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_030",
+      "tenseType": "Present Perfect",
+      "question": "I ____ him yet.",
+      "options": ["did not meet", "have not met", "has not met", "not met"],
+      "correctAnswer": "have not met",
+      "explanation": "নেতিবাচক বাক্যে 'yet' থাকলে সাধারণত Present Perfect হয়। 'I' এর সাথে 'have not met' (meet-met-met) বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pp_031",
+      "tenseType": "Present Perfect",
+      "question": "Identify the tense: 'She has read the book.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Perfect"],
+      "correctAnswer": "Present Perfect",
+      "explanation": "'has' + verb-এর V3 (read-read-read) রয়েছে, যা Present Perfect Tense-এর গঠন নির্দেশ করে।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pp_032",
+      "tenseType": "Present Perfect",
+      "question": "Identify the tense: 'They have played football.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Perfect",
+      "explanation": "'have played' (have + V3) দ্বারা কাজটি শেষ হয়েছে কিন্তু ফল রয়েছে বোঝায় — এটি Present Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pp_033",
+      "tenseType": "Present Perfect",
+      "question": "Identify the tense: 'I have studied for my exam.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Simple"],
+      "correctAnswer": "Present Perfect",
+      "explanation": "'have studied' (have + V3) গঠনটি Present Perfect Tense-এর মূল লক্ষণ।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pp_034",
+      "tenseType": "Present Perfect",
+      "question": "Identify the tense: 'He has gone to the market.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Perfect",
+      "explanation": "'He has gone' নির্দেশ করে সে বাজারে গিয়েছে (এবং এখনও সেখানে আছে)। এটি Present Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pp_035",
+      "tenseType": "Present Perfect",
+      "question": "Identify the tense: 'The baby has cried.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Simple"],
+      "correctAnswer": "Present Perfect",
+      "explanation": "Subject (The baby) + has + V3 (cried) — এটি একটি সম্পূর্ণ Present Perfect বাক্য।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pp_036",
+      "tenseType": "Present Perfect",
+      "question": "Identify the tense: 'We have watched a movie.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Perfect"],
+      "correctAnswer": "Present Perfect",
+      "explanation": "এখানে 'have watched' রয়েছে, যা Present Perfect Tense-এর কাঠামো (subject + have/has + V3)।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pp_037",
+      "tenseType": "Present Perfect",
+      "question": "Identify the tense: 'It has rained outside.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Simple"],
+      "correctAnswer": "Present Perfect",
+      "explanation": "'has rained' (has + V3) দ্বারা বৃষ্টি হওয়া শেষ হওয়া ও তার বর্তমান ফলকে বোঝানো হয়েছে — Present Perfect।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pp_038",
+      "tenseType": "Present Perfect",
+      "question": "Identify the tense: 'The students have listened to the teacher.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Present Perfect",
+      "explanation": "'have listened' নির্দেশ করে ছাত্ররা শিক্ষকের কথা শুনেছে। এটি Present Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pp_039",
+      "tenseType": "Present Perfect",
+      "question": "Identify the tense: 'She has worn a blue dress today.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Simple"],
+      "correctAnswer": "Present Perfect",
+      "explanation": "'has worn' এবং 'today' দ্বারা আজ পরা একটি পোশাকের অবস্থা বোঝানো হচ্ছে যা এখনও চলমান — Present Perfect।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pp_040",
+      "tenseType": "Present Perfect",
+      "question": "Identify the tense: 'I have met him twice.'",
+      "options": ["Present Indefinite", "Present Continuous", "Present Perfect", "Past Perfect"],
+      "correctAnswer": "Present Perfect",
+      "explanation": "জীবনের অভিজ্ঞতা প্রকাশের জন্য ('twice') Present Perfect Tense ব্যবহৃত হয়। গঠন: 'have met'।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pp_041",
+      "tenseType": "Present Perfect",
+      "question": "Arrange: (finished / has / she / her / homework)",
+      "options": [
+        "She has finished her homework.",
+        "She finished has her homework.",
+        "Finished has she her homework.",
+        "She her homework has finished."
+      ],
+      "correctAnswer": "She has finished her homework.",
+      "explanation": "Present Perfect-এর সঠিক গঠন: Subject (She) + has + V3 (finished) + Object (her homework)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pp_042",
+      "tenseType": "Present Perfect",
+      "question": "Arrange: (played / they / have / football)",
+      "options": [
+        "They have played football.",
+        "They played have football.",
+        "Have played they football.",
+        "They football have played."
+      ],
+      "correctAnswer": "They have played football.",
+      "explanation": "Subject (They) + have + V3 (played) + Object (football)। এটি Present Perfect-এর সঠিক ক্রম।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pp_043",
+      "tenseType": "Present Perfect",
+      "question": "Arrange: (waited / I / for / have / the / bus)",
+      "options": [
+        "I have waited for the bus.",
+        "I waited have for the bus.",
+        "Have I waited for the bus.",
+        "I have for the bus waited."
+      ],
+      "correctAnswer": "I have waited for the bus.",
+      "explanation": "Subject (I) + have + V3 (waited) + Prepositional Phrase (for the bus)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pp_044",
+      "tenseType": "Present Perfect",
+      "question": "Arrange: (cooked / has / mother / dinner / my)",
+      "options": [
+        "My mother has cooked dinner.",
+        "My mother cooked has dinner.",
+        "Has cooked my mother dinner.",
+        "My mother dinner has cooked."
+      ],
+      "correctAnswer": "My mother has cooked dinner.",
+      "explanation": "Subject (My mother) + has + V3 (cooked) + Object (dinner)। Present Perfect-এর সঠিক গঠন।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pp_045",
+      "tenseType": "Present Perfect",
+      "question": "Arrange: (had / they / a / party / have)",
+      "options": [
+        "They have had a party.",
+        "They had have a party.",
+        "Have they had a party.",
+        "They have a party had."
+      ],
+      "correctAnswer": "They have had a party.",
+      "explanation": "Subject (They) + have (auxiliary) + had (V3 of 'have') + Object (a party)। Present Perfect-এর সঠিক রূপ।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pp_046",
+      "tenseType": "Present Perfect",
+      "question": "Arrange: (rapidly / changed / climate / has / the)",
+      "options": [
+        "The climate has changed rapidly.",
+        "The climate changed has rapidly.",
+        "Has changed the climate rapidly.",
+        "The climate has rapidly changed."
+      ],
+      "correctAnswer": "The climate has changed rapidly.",
+      "explanation": "Subject (The climate) + has + V3 (changed) + Adverb (rapidly)। পরিবর্তনশীল পরিস্থিতি বোঝাতে Present Perfect।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pp_047",
+      "tenseType": "Present Perfect",
+      "question": "Find the error: 'She have finished her homework.'",
+      "options": [
+        "She has finished her homework.",
+        "She is finished her homework.",
+        "She has finish her homework.",
+        "She finishes her homework."
+      ],
+      "correctAnswer": "She has finished her homework.",
+      "explanation": "'She' third person singular, তাই 'have' নয় — 'has' হবে। সঠিক রূপ: 'She has finished'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pp_048",
+      "tenseType": "Present Perfect",
+      "question": "Find the error: 'They has played football.'",
+      "options": [
+        "They have played football.",
+        "They are played football.",
+        "They has play football.",
+        "They have play football."
+      ],
+      "correctAnswer": "They have played football.",
+      "explanation": "'They' plural subject, তাই 'has' এর জায়গায় 'have' বসবে। সঠিক রূপ: 'They have played'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pp_049",
+      "tenseType": "Present Perfect",
+      "question": "Find the error: 'I has studied for my exam.'",
+      "options": [
+        "I am studied for my exam.",
+        "I have studied for my exam.",
+        "I have study for my exam.",
+        "I studied for my exam."
+      ],
+      "correctAnswer": "I have studied for my exam.",
+      "explanation": "'I' এর সাথে 'has' বসে না, 'have' বসে। সঠিক বাক্য: 'I have studied for my exam.'",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pp_050",
+      "tenseType": "Present Perfect",
+      "question": "Find the error: 'He has went to school.'",
+      "options": [
+        "He has gone to school.",
+        "He is went to school.",
+        "He have gone to school.",
+        "He has go to school."
+      ],
+      "correctAnswer": "He has gone to school.",
+      "explanation": "Present Perfect-এ auxiliary 'has' এর পর verb-এর past participle (V3) বসে। 'went' হলো past form, 'gone' হলো V3। তাই 'has gone' হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pp_051",
+      "tenseType": "Present Perfect",
+      "question": "Find the error: 'The children has cleaned their rooms.'",
+      "options": [
+        "The children are cleaned their rooms.",
+        "The children have cleaned their rooms.",
+        "The children has clean their rooms.",
+        "The children have clean their rooms."
+      ],
+      "correctAnswer": "The children have cleaned their rooms.",
+      "explanation": "'The children' plural subject, তাই 'has' এর জায়গায় 'have' ব্যবহৃত হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pp_052",
+      "tenseType": "Present Perfect",
+      "question": "Find the error: 'We has watched a movie.'",
+      "options": [
+        "We are watched a movie.",
+        "We have watched a movie.",
+        "We has watch a movie.",
+        "We have watch a movie."
+      ],
+      "correctAnswer": "We have watched a movie.",
+      "explanation": "'We' plural subject, তাই 'has' এর স্থলে 'have' বসবে। সঠিক রূপ: 'We have watched'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pp_053",
+      "tenseType": "Present Perfect",
+      "question": "Find the error: 'It have stopped raining.'",
+      "options": [
+        "It is stopped raining.",
+        "It has stopped raining.",
+        "It has stop raining.",
+        "It have stop raining."
+      ],
+      "correctAnswer": "It has stopped raining.",
+      "explanation": "'It' singular subject, তাই 'have' নয় — 'has' হবে। সঠিক রূপ: 'It has stopped'.",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pp_054",
+      "tenseType": "Present Perfect",
+      "question": "Find the error: 'She has swimmed in the pool.'",
+      "options": [
+        "She has swum in the pool.",
+        "She has swam in the pool.",
+        "She have swum in the pool.",
+        "She has swim in the pool."
+      ],
+      "correctAnswer": "She has swum in the pool.",
+      "explanation": "'swim' এর V3 রূপ হলো 'swum' (swim-swam-swum)। 'swimmed' বলে কোনো ইংরেজি শব্দ নেই।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pp_055",
+      "tenseType": "Present Perfect",
+      "question": "Find the error: 'He has writed a letter.'",
+      "options": [
+        "He has written a letter.",
+        "He has wrote a letter.",
+        "He have written a letter.",
+        "He writes a letter."
+      ],
+      "correctAnswer": "He has written a letter.",
+      "explanation": "'write' এর past participle (V3) হলো 'written' (write-wrote-written)। 'writed' ভুল রূপ।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pp_056",
+      "tenseType": "Present Perfect",
+      "question": "Find the error: 'They have maked a lot of noise.'",
+      "options": [
+        "They have made a lot of noise.",
+        "They has made a lot of noise.",
+        "They have make a lot of noise.",
+        "They made a lot of noise."
+      ],
+      "correctAnswer": "They have made a lot of noise.",
+      "explanation": "'make' এর past participle (V3) রূপ হলো 'made' (make-made-made)। 'maked' ভুল।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pp_057",
+      "tenseType": "Present Perfect",
+      "question": "Translate: 'সে একটি বই পড়েছে।'",
+      "options": [
+        "She has read a book.",
+        "She reads a book.",
+        "She is reading a book.",
+        "She read a book."
+      ],
+      "correctAnswer": "She has read a book.",
+      "explanation": "বইটি পড়া শেষ হয়েছে কিন্তু তার ফল এখনও আছে — Present Perfect। 'She has read a book' সঠিক অনুবাদ (read-এর V3 উচ্চারণ 'রেড' কিন্তু বানান একই)।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pp_058",
+      "tenseType": "Present Perfect",
+      "question": "Translate: 'তারা ফুটবল খেলেছে।'",
+      "options": [
+        "They have played football.",
+        "They play football.",
+        "They are playing football.",
+        "They played football."
+      ],
+      "correctAnswer": "They have played football.",
+      "explanation": "তারা ফুটবল খেলেছে — Present Perfect। 'They' এর সাথে 'have played' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pp_059",
+      "tenseType": "Present Perfect",
+      "question": "Translate: 'আমি আমার কাজ শেষ করেছি।'",
+      "options": [
+        "I have finished my work.",
+        "I finish my work.",
+        "I finished my work.",
+        "I am finishing my work."
+      ],
+      "correctAnswer": "I have finished my work.",
+      "explanation": "কাজটি এইমাত্র সম্পন্ন করেছি — Present Perfect। 'I' এর সাথে 'have' এবং V3 'finished' বসে।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pp_060",
+      "tenseType": "Present Perfect",
+      "question": "Translate: 'বৃষ্টি থেমেছে।'",
+      "options": [
+        "The rain has stopped.",
+        "The rain stops.",
+        "The rain stopped.",
+        "It stops raining."
+      ],
+      "correctAnswer": "The rain has stopped.",
+      "explanation": "বৃষ্টি পড়া শেষ হয়েছে বা থেমেছে — Present Perfect। 'The rain' singular subject, তাই 'has stopped' হবে।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pp_061",
+      "tenseType": "Present Perfect",
+      "question": "Translate: 'আমার মা রান্না করেছেন।'",
+      "options": [
+        "My mother has cooked.",
+        "My mother cooks.",
+        "My mother is cooking.",
+        "My mother cooked."
+      ],
+      "correctAnswer": "My mother has cooked.",
+      "explanation": "মা রান্না শেষ করেছেন — Present Perfect। 'My mother' third person singular, তাই 'has cooked' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pp_062",
+      "tenseType": "Present Perfect",
+      "question": "Translate: 'আমরা সিনেমাটি দেখেছি।'",
+      "options": [
+        "We have watched the movie.",
+        "We watch the movie.",
+        "We watched the movie.",
+        "We are watching the movie."
+      ],
+      "correctAnswer": "We have watched the movie.",
+      "explanation": "সিনেমা দেখা সম্পন্ন হয়েছে — Present Perfect। 'We' এর সাথে 'have watched' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pp_063",
+      "tenseType": "Present Perfect",
+      "question": "Translate: 'সে লন্ডন গিয়েছে।'",
+      "options": [
+        "He has gone to London.",
+        "He goes to London.",
+        "He went to London.",
+        "He has been to London."
+      ],
+      "correctAnswer": "He has gone to London.",
+      "explanation": "সে লন্ডন গিয়েছে (এবং এখনও সেখানেই আছে) — Present Perfect। 'He has gone to London' সঠিক। 'has been' দিলে বোঝাত ঘুরে এসেছে।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pp_064",
+      "tenseType": "Present Perfect",
+      "question": "Translate: 'আবহাওয়া পরিবর্তিত হয়েছে।'",
+      "options": [
+        "The weather has changed.",
+        "The weather changes.",
+        "The weather changed.",
+        "The weather is changing."
+      ],
+      "correctAnswer": "The weather has changed.",
+      "explanation": "আবহাওয়ার পরিবর্তন সম্পন্ন হয়েছে ও তার ফল রয়েছে — Present Perfect। 'The weather has changed' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pp_065",
+      "tenseType": "Present Perfect",
+      "question": "Translate: 'আমি তাকে দেখেছি।'",
+      "options": [
+        "I have seen him.",
+        "I see him.",
+        "I saw him.",
+        "I am seeing him."
+      ],
+      "correctAnswer": "I have seen him.",
+      "explanation": "আমি তাকে দেখেছি (আমার দেখার অভিজ্ঞতা আছে) — Present Perfect। 'I' এর সাথে 'have seen' (see-saw-seen) বসে।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pp_066",
+      "tenseType": "Present Perfect",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She has finished the work.",
+        "She have finished the work.",
+        "She has finish the work.",
+        "She finished the work now."
+      ],
+      "correctAnswer": "She has finished the work.",
+      "explanation": "Quick: Present Perfect = subject + have/has + V3। 'She' এর সাথে 'has' বসে এবং 'finish' এর V3 'finished' হয়।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pp_067",
+      "tenseType": "Present Perfect",
+      "question": "Choose the correct form: 'They ____ football.'",
+      "options": ["have played", "has played", "played", "play"],
+      "correctAnswer": "have played",
+      "explanation": "Quick: Plural subject 'They' এর সাথে 'have played' (have + V3) বসে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pp_068",
+      "tenseType": "Present Perfect",
+      "question": "Pick the correct negative: 'She ____ the book.'",
+      "options": ["has not read", "have not read", "does not read", "is not reading"],
+      "correctAnswer": "has not read",
+      "explanation": "Quick: Present Perfect negative = subject + have/has + not + V3। 'She has not read' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pp_069",
+      "tenseType": "Present Perfect",
+      "question": "Pick the correct question form: '____ she finished her work?'",
+      "options": ["Has", "Have", "Is", "Does"],
+      "correctAnswer": "Has",
+      "explanation": "Quick: Present Perfect question = Have/Has + subject + V3? 'She' এর জন্য প্রথমে 'Has' বসবে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pp_070",
+      "tenseType": "Present Perfect",
+      "question": "Which sentence shows a completed action with present relevance?",
+      "options": [
+        "I have lost my key.",
+        "I lost my key yesterday.",
+        "I am losing my key.",
+        "I lose my key."
+      ],
+      "correctAnswer": "I have lost my key.",
+      "explanation": "চাবি হারিয়েছি (এবং বর্তমানে চাবিটি আমার কাছে নেই) — বর্তমানের এই প্রভাব বোঝাতে Present Perfect ('have lost') ব্যবহৃত হয়।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pp_071",
+      "tenseType": "Present Perfect",
+      "question": "Choose the correct verb: 'The baby ____.'",
+      "options": ["has cried", "have cried", "cries", "crying"],
+      "correctAnswer": "has cried",
+      "explanation": "Quick: 'The baby' (singular) → 'has cried'। এটি Present Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pp_072",
+      "tenseType": "Present Perfect",
+      "question": "Which sentence is correct (stative verb)?",
+      "options": [
+        "I have known him for years.",
+        "I am knowing him for years.",
+        "I know him for years.",
+        "I have know him for years."
+      ],
+      "correctAnswer": "I have known him for years.",
+      "explanation": "Quick: 'know' একটি stative verb যা continuous ফর্মে সচরাচর বসে না। তাই দীর্ঘদিনের চেনা বোঝাতে Present Perfect 'have known' সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pp_073",
+      "tenseType": "Present Perfect",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "He has been sick since yesterday.",
+        "He is sick since yesterday.",
+        "He was sick since yesterday.",
+        "He has sick since yesterday."
+      ],
+      "correctAnswer": "He has been sick since yesterday.",
+      "explanation": "গতকাল থেকে অসুস্থ থাকা অর্থে Present Perfect ব্যবহৃত হয়। এখানে 'been' হলো 'be' verb-এর past participle রূপ।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pp_074",
+      "tenseType": "Present Perfect",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She has written a letter.",
+        "She has writed a letter.",
+        "She have written a letter.",
+        "She has write a letter."
+      ],
+      "correctAnswer": "She has written a letter.",
+      "explanation": "Quick: 'write' এর V3 হলো 'written' এবং 'She' এর সাথে বসে 'has'। তাই 'She has written a letter' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }

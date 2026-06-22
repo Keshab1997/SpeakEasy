@@ -1,6 +1,897 @@
 {
   "tenseType": "Present Perfect Continuous",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "ppc_001",
+      "tenseType": "Present Perfect Continuous",
+      "question": "She ____ a book for two hours.",
+      "options": ["is reading", "has been reading", "reads", "has read"],
+      "correctAnswer": "has been reading",
+      "explanation": "'For two hours' (দুই ঘণ্টা ধরে) সময়ের উল্লেখ থাকায় এটি Present Perfect Continuous। 'She' এর পর 'has been' এবং verb-এর সাথে 'ing' যুক্ত হয়।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_002",
+      "tenseType": "Present Perfect Continuous",
+      "question": "They ____ football since morning.",
+      "options": ["are playing", "have been playing", "plays", "played"],
+      "correctAnswer": "have been playing",
+      "explanation": "'Since morning' (সকাল থেকে) নির্দিষ্ট সময়ের উল্লেখ থাকায় Present Perfect Continuous Tense হবে। 'They' plural subject, তাই 'have been playing'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_003",
+      "tenseType": "Present Perfect Continuous",
+      "question": "I ____ for the exam since last night.",
+      "options": ["am studying", "have been studying", "studies", "studied"],
+      "correctAnswer": "have been studying",
+      "explanation": "অতীত থেকে শুরু হয়ে বর্তমানেও চলমান কাজ (since last night) বোঝাতে Present Perfect Continuous হয়। 'I' এর সাথে 'have been studying' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_004",
+      "tenseType": "Present Perfect Continuous",
+      "question": "He ____ in this company for five years.",
+      "options": ["is working", "has been working", "works", "worked"],
+      "correctAnswer": "has been working",
+      "explanation": "পাঁচ বছর ধরে কাজ করছে — দীর্ঘ সময় ধরে চলমান কাজ। 'He' third person singular, তাই 'has been working' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_005",
+      "tenseType": "Present Perfect Continuous",
+      "question": "The children ____ in the rain for an hour.",
+      "options": ["play", "have been playing", "are playing", "played"],
+      "correctAnswer": "have been playing",
+      "explanation": "'The children' plural subject এবং 'for an hour' সময়ের উল্লেখ আছে। তাই Present Perfect Continuous গঠনে 'have been playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_006",
+      "tenseType": "Present Perfect Continuous",
+      "question": "My mother ____ dinner in the kitchen all evening.",
+      "options": ["cooks", "is cooking", "has been cooking", "cooked"],
+      "correctAnswer": "has been cooking",
+      "explanation": "'All evening' (সারা সন্ধ্যা ধরে) দীর্ঘ সময়ের চলমান কাজ নির্দেশ করে। 'My mother' singular, তাই 'has been cooking' হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_007",
+      "tenseType": "Present Perfect Continuous",
+      "question": "We ____ a movie for thirty minutes.",
+      "options": ["watch", "have been watching", "are watching", "watched"],
+      "correctAnswer": "have been watching",
+      "explanation": "'For thirty minutes' নির্দিষ্ট সময়ব্যাপ্তি বোঝায়। 'We' plural subject, তাই 'have been watching' বসেছে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_008",
+      "tenseType": "Present Perfect Continuous",
+      "question": "The baby ____ for an hour.",
+      "options": ["is crying", "has been crying", "cries", "cried"],
+      "correctAnswer": "has been crying",
+      "explanation": "'For an hour' ধরে শিশুটি কাঁদছে — Present Perfect Continuous। 'The baby' singular subject, তাই 'has been crying'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_009",
+      "tenseType": "Present Perfect Continuous",
+      "question": "You ____ on the phone for a long time.",
+      "options": ["talk", "have been talking", "are talking", "talked"],
+      "correctAnswer": "have been talking",
+      "explanation": "দীর্ঘ সময় ধরে কথা বলা বোঝাচ্ছে (for a long time)। 'You' এর সাথে 'have been talking' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_010",
+      "tenseType": "Present Perfect Continuous",
+      "question": "It ____ since yesterday.",
+      "options": ["is raining", "has been raining", "rains", "rained"],
+      "correctAnswer": "has been raining",
+      "explanation": "গতকাল থেকে বৃষ্টি হচ্ছে — Present Perfect Continuous। 'It' এর সাথে 'has been' এবং 'rain-ing' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_011",
+      "tenseType": "Present Perfect Continuous",
+      "question": "The students ____ to the lecture since 10 AM.",
+      "options": ["are listening", "have been listening", "listen", "listened"],
+      "correctAnswer": "have been listening",
+      "explanation": "সকাল ১০টা থেকে ছাত্ররা লেকচার শুনছে। 'The students' plural, তাই 'have been listening' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_012",
+      "tenseType": "Present Perfect Continuous",
+      "question": "He ____ a letter for thirty minutes.",
+      "options": ["is writing", "has been writing", "writes", "wrote"],
+      "correctAnswer": "has been writing",
+      "explanation": "৩০ মিনিট ধরে চিঠি লিখছে। 'He' singular subject, তাই 'has been writing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_013",
+      "tenseType": "Present Perfect Continuous",
+      "question": "They ____ this bridge for two years.",
+      "options": ["are building", "have been building", "build", "built"],
+      "correctAnswer": "have been building",
+      "explanation": "দুই বছর ধরে ব্রিজটি তৈরি করছে। 'They' plural, তাই Present Perfect Continuous গঠনে 'have been building' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_014",
+      "tenseType": "Present Perfect Continuous",
+      "question": "I ____ for my keys all morning.",
+      "options": ["am looking", "have been looking", "looks", "looked"],
+      "correctAnswer": "have been looking",
+      "explanation": "সারা সকাল ধরে চাবি খুঁজছি। দীর্ঘস্থায়ী কাজ বোঝাতে 'I' এর সাথে 'have been looking' ব্যবহৃত হয়।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_015",
+      "tenseType": "Present Perfect Continuous",
+      "question": "She ____ a red dress lately.",
+      "options": ["wears", "has been wearing", "is wearing", "wore"],
+      "correctAnswer": "has been wearing",
+      "explanation": "'Lately' (সাম্প্রতিক সময়ে) চলমান অভ্যাস বা কাজ বোঝাতে সাধারণত Present Perfect Continuous Tense হয়। 'She has been wearing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_016",
+      "tenseType": "Present Perfect Continuous",
+      "question": "The birds ____ in the trees since sunrise.",
+      "options": ["sing", "have been singing", "are singing", "sang"],
+      "correctAnswer": "have been singing",
+      "explanation": "সূর্যোদয় থেকে পাখিগুলো ডাকছে। Plural subject 'The birds' এর সাথে 'have been singing' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_017",
+      "tenseType": "Present Perfect Continuous",
+      "question": "We ____ for the bus since 9 o'clock.",
+      "options": ["wait", "have been waiting", "are waiting", "waited"],
+      "correctAnswer": "have been waiting",
+      "explanation": "৯টা থেকে আমরা বাসের জন্য অপেক্ষা করছি। 'Since' নির্দিষ্ট শুরু নির্দেশ করে। 'We' এর সাথে 'have been waiting' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_018",
+      "tenseType": "Present Perfect Continuous",
+      "question": "He ____ his room all day.",
+      "options": ["cleans", "has been cleaning", "is cleaning", "cleaned"],
+      "correctAnswer": "has been cleaning",
+      "explanation": "'All day' (সারা দিন ধরে) কাজ চলা বোঝাচ্ছে — Present Perfect Continuous। 'He' singular, তাই 'has been cleaning'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_019",
+      "tenseType": "Present Perfect Continuous",
+      "question": "The dog ____ in the garden for hours.",
+      "options": ["runs", "has been running", "is running", "ran"],
+      "correctAnswer": "has been running",
+      "explanation": "কয়েক ঘণ্টা ধরে কুকুরটি বাগানে দৌড়াচ্ছে। 'The dog' singular, তাই 'has been running' (run-এর n ডাবল হবে)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_020",
+      "tenseType": "Present Perfect Continuous",
+      "question": "I ____ dinner for our guests since afternoon.",
+      "options": ["prepare", "have been preparing", "am preparing", "prepared"],
+      "correctAnswer": "have been preparing",
+      "explanation": "বিকাল থেকে মেহমানদের জন্য রাতের খাবার তৈরি করছি। 'Since afternoon' নির্দেশ করে কাজটি আগে শুরু হয়ে এখনও চলছে। 'I have been preparing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_021",
+      "tenseType": "Present Perfect Continuous",
+      "question": "She ____ to different cities recently.",
+      "options": ["travels", "has been travelling", "is travelling", "travelled"],
+      "correctAnswer": "has been travelling",
+      "explanation": "'Recently' বা সাম্প্রতিককালে বারবার বা চলমান কাজ বোঝাতে Present Perfect Continuous ব্যবহৃত হয়। 'She has been travelling'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_022",
+      "tenseType": "Present Perfect Continuous",
+      "question": "They ____ a surprise party for days.",
+      "options": ["plan", "have been planning", "are planning", "planned"],
+      "correctAnswer": "have been planning",
+      "explanation": "বেশ কয়েক দিন ধরে সারপ্রাইজ পার্টির পরিকল্পনা করছে। 'They' plural এবং সময়ের স্থায়ী ভাব বোঝাতে 'have been planning' হবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_023",
+      "tenseType": "Present Perfect Continuous",
+      "question": "He ____ hard to improve his grades lately.",
+      "options": ["works", "has been working", "is working", "worked"],
+      "correctAnswer": "has been working",
+      "explanation": "'Lately' সাম্প্রতিক সময়ের কোনো দীর্ঘস্থায়ী প্রয়াস বোঝায়। 'He' singular subject, তাই 'has been working' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_024",
+      "tenseType": "Present Perfect Continuous",
+      "question": "You ____ too much noise all day. Please stop.",
+      "options": ["make", "have been making", "are making", "made"],
+      "correctAnswer": "have been making",
+      "explanation": "সারা দিন ধরে গোলমাল করছ — বিরক্তিকর চলমান কাজ বোঝাতে 'have been making' (Present Perfect Continuous) ব্যবহৃত হয়।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_025",
+      "tenseType": "Present Perfect Continuous",
+      "question": "The company ____ new employees for months.",
+      "options": ["hires", "has been hiring", "is hiring", "hired"],
+      "correctAnswer": "has been hiring",
+      "explanation": "কয়েক মাস ধরে কোম্পানি নতুন কর্মী নিয়োগ দিচ্ছে। 'The company' singular subject, তাই 'has been hiring' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_026",
+      "tenseType": "Present Perfect Continuous",
+      "question": "I ____ progress in English since I joined this class.",
+      "options": ["make", "have been making", "am making", "made"],
+      "correctAnswer": "have been making",
+      "explanation": "'Since I joined' অতীত সময়ের সূচনা নির্দেশ করে। তখন থেকে উন্নতি হচ্ছে বোঝাতে 'I have been making' ব্যবহৃত হয়।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_027",
+      "tenseType": "Present Perfect Continuous",
+      "question": "She ____ for her exams all week.",
+      "options": ["prepares", "has been preparing", "is preparing", "prepared"],
+      "correctAnswer": "has been preparing",
+      "explanation": "সারা সপ্তাহ ধরে পরীক্ষার প্রস্তুতি নিচ্ছে — দীর্ঘ সময় চলমান প্রক্রিয়া। 'She has been preparing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_028",
+      "tenseType": "Present Perfect Continuous",
+      "question": "The world's climate ____ rapidly for decades.",
+      "options": ["changes", "has been changing", "is changing", "changed"],
+      "correctAnswer": "has been changing",
+      "explanation": "দশক ধরে জলবায়ু দ্রুত পরিবর্তিত হচ্ছে। ধারাবাহিক ও দীর্ঘমেয়াদী পরিবর্তন বোঝাতে Present Perfect Continuous 'has been changing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_029",
+      "tenseType": "Present Perfect Continuous",
+      "question": "He ____ more and more impatient lately.",
+      "options": ["gets", "has been getting", "is getting", "got"],
+      "correctAnswer": "has been getting",
+      "explanation": "সাম্প্রতিক সময়ে ক্রমান্বয়ে অধৈর্য হয়ে উঠছে। 'He has been getting' ক্রমাগত ও ক্রমান্বয়িক পরিবর্তন নির্দেশ করে।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_030",
+      "tenseType": "Present Perfect Continuous",
+      "question": "I ____ this book since yesterday.",
+      "options": ["read", "have been reading", "am reading", "reads"],
+      "correctAnswer": "have been reading",
+      "explanation": "গতকাল থেকে আমি বইটি পড়ছি (পড়া এখনও শেষ হয়নি)। 'I' এর সাথে 'have been reading' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_031",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Identify the tense: 'She has been reading a book for an hour.'",
+      "options": ["Present Perfect", "Present Continuous", "Present Perfect Continuous", "Past Continuous"],
+      "correctAnswer": "Present Perfect Continuous",
+      "explanation": "'has been reading' এবং 'for an hour' — এটি Present Perfect Continuous Tense-এর নিখুঁত গঠন।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_032",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Identify the tense: 'They have been playing football since 4 PM.'",
+      "options": ["Present Perfect", "Present Continuous", "Present Perfect Continuous", "Past Continuous"],
+      "correctAnswer": "Present Perfect Continuous",
+      "explanation": "'have been playing' এবং শুরুর সময়ের উল্লেখ ('since 4 PM') — এটি Present Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_033",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Identify the tense: 'I have been studying for my exam all morning.'",
+      "options": ["Present Perfect", "Present Continuous", "Present Perfect Continuous", "Past Simple"],
+      "correctAnswer": "Present Perfect Continuous",
+      "explanation": "'have been studying' ও দীর্ঘ সময়সূচক বাক্য 'all morning' — এটি Present Perfect Continuous নির্দেশ করে।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_034",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Identify the tense: 'He has been going to the gym lately.'",
+      "options": ["Present Perfect", "Present Continuous", "Present Perfect Continuous", "Past Perfect"],
+      "correctAnswer": "Present Perfect Continuous",
+      "explanation": "'has been going' এবং 'lately' সাম্প্রতিক সময়ের চলমান অভ্যাস বোঝায়। এটি Present Perfect Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_035",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Identify the tense: 'The baby has been crying for thirty minutes.'",
+      "options": ["Present Perfect", "Present Continuous", "Present Perfect Continuous", "Past Continuous"],
+      "correctAnswer": "Present Perfect Continuous",
+      "explanation": "'has been crying' এবং সময়ব্যাপ্তি 'for thirty minutes' — এটি Present Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_036",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Identify the tense: 'We have been watching a movie since afternoon.'",
+      "options": ["Present Perfect", "Present Continuous", "Present Perfect Continuous", "Past Perfect Continuous"],
+      "correctAnswer": "Present Perfect Continuous",
+      "explanation": "'have been watching' এবং 'since afternoon' অতীতের শুরু থেকে বর্তমান পর্যন্ত চলমান কাজ নির্দেশ করায় এটি Present Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_037",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Identify the tense: 'It has been raining outside all day.'",
+      "options": ["Present Perfect", "Present Continuous", "Present Perfect Continuous", "Past Simple"],
+      "correctAnswer": "Present Perfect Continuous",
+      "explanation": "সারা দিন ধরে বাইরে বৃষ্টি হচ্ছে — 'has been raining' (subject + has been + verb-ing) দ্বারা এটি Present Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_038",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Identify the tense: 'The students have been listening to the teacher since morning.'",
+      "options": ["Present Perfect", "Present Continuous", "Present Perfect Continuous", "Past Continuous"],
+      "correctAnswer": "Present Perfect Continuous",
+      "explanation": "'have been listening' এবং 'since morning' — সকাল থেকে ছাত্ররা শিক্ষকের কথা শুনছে, তাই এটি Present Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_039",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Identify the tense: 'She has been wearing this dress since morning.'",
+      "options": ["Present Perfect", "Present Continuous", "Present Perfect Continuous", "Past Simple"],
+      "correctAnswer": "Present Perfect Continuous",
+      "explanation": "পোশাকটি সকাল থেকে পরা হয়েছে এবং এখনও পরে আছে। 'has been wearing' দ্বারা এটি Present Perfect Continuous Tense।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_040",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Identify the tense: 'I have been meeting new people lately.'",
+      "options": ["Present Perfect", "Present Continuous", "Present Perfect Continuous", "Past Perfect Continuous"],
+      "correctAnswer": "Present Perfect Continuous",
+      "explanation": "সাম্প্রতিক সময়ে চলমান অভিজ্ঞতা বা আচরণ বোঝাতে 'have been meeting' ব্যবহৃত হয়েছে — এটি Present Perfect Continuous।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_041",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Arrange: (for / has / she / been / reading / hours / two)",
+      "options": [
+        "She has been reading for two hours.",
+        "She reading has been for two hours.",
+        "She has been for two hours reading.",
+        "She has reading been for two hours."
+      ],
+      "correctAnswer": "She has been reading for two hours.",
+      "explanation": "সঠিক ক্রম: Subject (She) + has + been + verb-ing (reading) + time duration (for two hours)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_042",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Arrange: (playing / they / have / football / since / been / morning)",
+      "options": [
+        "They have been playing football since morning.",
+        "They playing have been football since morning.",
+        "They have playing been football since morning.",
+        "They have been football playing since morning."
+      ],
+      "correctAnswer": "They have been playing football since morning.",
+      "explanation": "সঠিক গঠন: Subject (They) + have been + verb-ing (playing) + Object (football) + time (since morning)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_043",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Arrange: (waiting / I / for / have / been / the / bus / since / 10 AM)",
+      "options": [
+        "I have been waiting for the bus since 10 AM.",
+        "I waiting have been for the bus since 10 AM.",
+        "Have I been waiting for the bus since 10 AM.",
+        "I have been for the bus waiting since 10 AM."
+      ],
+      "correctAnswer": "I have been waiting for the bus since 10 AM.",
+      "explanation": "সঠিক ক্রম: Subject (I) + have been + verb-ing (waiting) + prepositional object (for the bus) + starting time (since 10 AM)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_044",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Arrange: (kitchen / has / mother / been / cooking / in / the / my / all morning)",
+      "options": [
+        "My mother has been cooking in the kitchen all morning.",
+        "My mother cooking has been in the kitchen all morning.",
+        "My mother has been in the kitchen cooking all morning.",
+        "Has my mother been cooking in the kitchen all morning."
+      ],
+      "correctAnswer": "My mother has been cooking in the kitchen all morning.",
+      "explanation": "সঠিক গঠন: Subject (My mother) + has been + verb-ing (cooking) + place (in the kitchen) + duration (all morning)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_045",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Arrange: (all day / they / a / planning / party / been / have)",
+      "options": [
+        "They have been planning a party all day.",
+        "They planning have been a party all day.",
+        "They have planning been a party all day.",
+        "All day they planning have been a party."
+      ],
+      "correctAnswer": "They have been planning a party all day.",
+      "explanation": "সঠিক ক্রম: Subject (They) + have been + verb-ing (planning) + Object (a party) + duration (all day)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_046",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Arrange: (changing / climate / has / the / been / rapidly / for decades)",
+      "options": [
+        "The climate has been changing rapidly for decades.",
+        "The climate changing has been rapidly for decades.",
+        "The climate has been rapidly changing for decades.",
+        "Has the climate been changing rapidly for decades."
+      ],
+      "correctAnswer": "The climate has been changing rapidly for decades.",
+      "explanation": "সঠিক ক্রম: Subject (The climate) + has been + verb-ing (changing) + adverb (rapidly) + duration (for decades)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_047",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Find the error: 'She have been reading a book.'",
+      "options": [
+        "She has been reading a book.",
+        "She is been reading a book.",
+        "She has reading a book.",
+        "She has been read a book."
+      ],
+      "correctAnswer": "She has been reading a book.",
+      "explanation": "'She' third person singular subject, তাই 'have' নয় — 'has' হবে। সঠিক রূপ: 'She has been reading'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_048",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Find the error: 'They has been playing football.'",
+      "options": [
+        "They have been playing football.",
+        "They are been playing football.",
+        "They has playing football.",
+        "They have playing football."
+      ],
+      "correctAnswer": "They have been playing football.",
+      "explanation": "'They' plural subject, তাই 'has' এর জায়গায় 'have' ব্যবহৃত হবে। সঠিক বাক্য: 'They have been playing football.'",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_049",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Find the error: 'I is been studying for my exam.'",
+      "options": [
+        "I have been studying for my exam.",
+        "I am studying for my exam.",
+        "I have studying for my exam.",
+        "I has been studying for my exam."
+      ],
+      "correctAnswer": "I have been studying for my exam.",
+      "explanation": "'I' এর সাথে Present Perfect Continuous-এ 'have been' ব্যবহৃত হয়, 'is been' নয়।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_050",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Find the error: 'He has been go to school since Monday.'",
+      "options": [
+        "He has been going to school since Monday.",
+        "He is going to school since Monday.",
+        "He has go to school since Monday.",
+        "He goes to school since Monday."
+      ],
+      "correctAnswer": "He has been going to school since Monday.",
+      "explanation": "Present Perfect Continuous-এ auxiliary 'been' এর পর verb-এর সাথে 'ing' যুক্ত করা আবশ্যক। 'go' → 'going' হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_051",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Find the error: 'The children has been playing in the park.'",
+      "options": [
+        "The children have been playing in the park.",
+        "The children are playing in the park.",
+        "The children has playing in the park.",
+        "The children have playing in the park."
+      ],
+      "correctAnswer": "The children have been playing in the park.",
+      "explanation": "'The children' একটি plural noun, তাই singular 'has' এর জায়গায় plural auxiliary 'have' বসবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_052",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Find the error: 'We is been watching a movie.'",
+      "options": [
+        "We have been watching a movie.",
+        "We are watching a movie.",
+        "We has been watching a movie.",
+        "We watching a movie."
+      ],
+      "correctAnswer": "We have been watching a movie.",
+      "explanation": "'We' plural subject এর সাথে 'is been' হয় না, সঠিক রূপ হলো 'have been watching'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_053",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Find the error: 'It has being raining all day.'",
+      "options": [
+        "It has been raining all day.",
+        "It is raining all day.",
+        "It has raining all day.",
+        "It have been raining all day."
+      ],
+      "correctAnswer": "It has been raining all day.",
+      "explanation": "গঠন অনুযায়ী 'has' এর পরে 'being' নয়, 'been' বসবে (subject + have/has + been + verb-ing)।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_054",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Find the error: 'She has been swiming for an hour.'",
+      "options": [
+        "She has been swimming for an hour.",
+        "She has been swim for an hour.",
+        "She is swimming for an hour.",
+        "She have been swimming for an hour."
+      ],
+      "correctAnswer": "She has been swimming for an hour.",
+      "explanation": "বানানগত ভুল: 'swim' এর শেষে consonant-vowel-consonant (CVC) থাকায় 'ing' যোগ করার সময় m ডাবল হয়ে 'swimming' হবে। 'swiming' ভুল।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_055",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Find the error: 'He has been writeing a letter.'",
+      "options": [
+        "He has been writing a letter.",
+        "He is writing a letter.",
+        "He has been write a letter.",
+        "He have been writing a letter."
+      ],
+      "correctAnswer": "He has been writing a letter.",
+      "explanation": "বানানগত ভুল: 'write' এর শেষে silent 'e' আছে, তাই 'ing' যুক্ত করার সময় 'e' বাদ গিয়ে 'writing' হবে। 'writeing' ভুল বানান।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_056",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Find the error: 'They are been making a lot of noise.'",
+      "options": [
+        "They have been making a lot of noise.",
+        "They has been making a lot of noise.",
+        "They are making a lot of noise.",
+        "They been making a lot of noise."
+      ],
+      "correctAnswer": "They have been making a lot of noise.",
+      "explanation": "'are been' বলে কোনো ব্যাকরণগত গঠন নেই। দীর্ঘ সময় ধরে গোলমাল করা বোঝাতে Present Perfect Continuous-এ 'have been making' হবে।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_057",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Translate: 'সে দুই ঘণ্টা ধরে একটি বই পড়ছে।'",
+      "options": [
+        "She has been reading a book for two hours.",
+        "She is reading a book for two hours.",
+        "She reads a book for two hours.",
+        "She has read a book for two hours."
+      ],
+      "correctAnswer": "She has been reading a book for two hours.",
+      "explanation": "'দুই ঘণ্টা ধরে' সময়ের ব্যাপ্তি (for two hours) বোঝায়, তাই Present Perfect Continuous হবে। 'She has been reading' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_058",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Translate: 'তারা সকাল থেকে ফুটবল খেলছে।'",
+      "options": [
+        "They have been playing football since morning.",
+        "They are playing football since morning.",
+        "They play football since morning.",
+        "They have played football since morning."
+      ],
+      "correctAnswer": "They have been playing football since morning.",
+      "explanation": "'সকাল থেকে' শুরুর সময় নির্দিষ্ট করে বলা হয়েছে (since morning)। তাই Present Perfect Continuous-এ 'They have been playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_059",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Translate: 'আমি সকাল থেকে পড়াশোনা করছি।'",
+      "options": [
+        "I have been studying since morning.",
+        "I am studying since morning.",
+        "I study since morning.",
+        "I have studied since morning."
+      ],
+      "correctAnswer": "I have been studying since morning.",
+      "explanation": "সকাল থেকে চলমান কাজ — Present Perfect Continuous। 'I' এর সাথে 'have been studying since morning' বসবে।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_060",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Translate: 'সকাল থেকে বৃষ্টি হচ্ছে।'",
+      "options": [
+        "It has been raining since morning.",
+        "It is raining since morning.",
+        "It rains since morning.",
+        "It has rained since morning."
+      ],
+      "correctAnswer": "It has been raining since morning.",
+      "explanation": "আবহাওয়ার দীর্ঘস্থায়ী চলমান অবস্থা (সকাল থেকে শুরু) বোঝাতে Present Perfect Continuous ব্যবহৃত হয়। সঠিক রূপ: 'It has been raining since morning.'",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_061",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Translate: 'আমার মা সকাল থেকে রান্না করছেন।'",
+      "options": [
+        "My mother has been cooking since morning.",
+        "My mother is cooking since morning.",
+        "My mother cooks since morning.",
+        "My mother has cooked since morning."
+      ],
+      "correctAnswer": "My mother has been cooking since morning.",
+      "explanation": "অতীত থেকে শুরু হয়ে এখনও রান্না চলছে — Present Perfect Continuous। 'My mother' singular, তাই 'has been cooking' হবে।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_062",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Translate: 'আমরা এক ঘণ্টা ধরে সিনেমা দেখছি।'",
+      "options": [
+        "We have been watching a movie for an hour.",
+        "We are watching a movie for an hour.",
+        "We watch a movie for an hour.",
+        "We have watched a movie for an hour."
+      ],
+      "correctAnswer": "We have been watching a movie for an hour.",
+      "explanation": "এক ঘণ্টা ধরে (for an hour) সিনেমা দেখার চলমান প্রক্রিয়া। 'We' plural, তাই 'have been watching' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_063",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Translate: 'সে কয়েক দিন ধরে পরীক্ষার প্রস্তুতি নিচ্ছে।'",
+      "options": [
+        "She has been preparing for exams for a few days.",
+        "She is preparing for exams for a few days.",
+        "She prepares for exams for a few days.",
+        "She has prepared for exams for a few days."
+      ],
+      "correctAnswer": "She has been preparing for exams for a few days.",
+      "explanation": "'কয়েক দিন ধরে' (for a few days) চলমান প্রস্তুতি — Present Perfect Continuous। 'She has been preparing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_064",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Translate: 'আবহাওয়া অনেক বছর ধরে পরিবর্তিত হচ্ছে।'",
+      "options": [
+        "The weather has been changing for many years.",
+        "The weather is changing for many years.",
+        "The weather changes for many years.",
+        "The weather has changed for many years."
+      ],
+      "correctAnswer": "The weather has been changing for many years.",
+      "explanation": "দীর্ঘ বছর ধরে ঘটে চলা আবহাওয়ার পরিবর্তন — Present Perfect Continuous। 'The weather' singular, তাই 'has been changing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_065",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Translate: 'আমি এক মাস ধরে ইংরেজি শিখছি।'",
+      "options": [
+        "I have been learning English for a month.",
+        "I am learning English for a month.",
+        "I learn English for a month.",
+        "I have learned English for a month."
+      ],
+      "correctAnswer": "I have been learning English for a month.",
+      "explanation": "এক মাস ধরে চলমান কাজ — Present Perfect Continuous। 'I' এর সাথে 'have been learning' বসবে।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_066",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She has been reading a book since 2 PM.",
+        "She is reading a book since 2 PM.",
+        "She has reading a book since 2 PM.",
+        "She reading a book since 2 PM."
+      ],
+      "correctAnswer": "She has been reading a book since 2 PM.",
+      "explanation": "Quick: Present Perfect Continuous = subject + have/has + been + verb-ing। 'since' এর সাথে নির্দিষ্ট সময় বসে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_067",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Choose the correct form: 'They ____ football for hours.'",
+      "options": ["have been playing", "has been playing", "are playing", "played"],
+      "correctAnswer": "have been playing",
+      "explanation": "Quick: 'They' plural, তাই 'have been' এবং 'for hours' এর সাথে verb-ing 'playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_068",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Pick the correct negative: 'She ____ her homework for an hour.'",
+      "options": ["has not been doing", "have not been doing", "is not doing", "not has been doing"],
+      "correctAnswer": "has not been doing",
+      "explanation": "Quick: Present Perfect Continuous negative = subject + have/has + not + been + verb-ing। 'She has not been doing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_069",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Pick the correct question form: '____ he been writing for an hour?'",
+      "options": ["Has", "Have", "Is", "Does"],
+      "correctAnswer": "Has",
+      "explanation": "Quick: Present Perfect Continuous question = Have/Has + subject + been + verb-ing? 'He' এর সাথে 'Has' বসে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_070",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Which sentence shows an action continuing from the past?",
+      "options": [
+        "I have been living here for ten years.",
+        "I lived here ten years ago.",
+        "I am living here now.",
+        "I live here."
+      ],
+      "correctAnswer": "I have been living here for ten years.",
+      "explanation": "Quick: 'for ten years' এবং 'have been living' নির্দেশ করে অতীতে শুরু হওয়া বসবাস এখনও চলছে।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_071",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Choose the correct verb: 'The baby ____ since morning.'",
+      "options": ["has been crying", "have been crying", "is crying", "cries"],
+      "correctAnswer": "has been crying",
+      "explanation": "Quick: 'The baby' singular + 'since morning' সময় নির্দেশক → 'has been crying' (Present Perfect Continuous)।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_072",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Which sentence is grammatically correct (for vs since)?",
+      "options": [
+        "I have been waiting for two hours.",
+        "I have been waiting since two hours.",
+        "I am waiting since two hours.",
+        "I have waiting for two hours."
+      ],
+      "correctAnswer": "I have been waiting for two hours.",
+      "explanation": "Quick: সময়ের পরিমাপ বা ব্যাপ্তির পূর্বে 'for' বসে, 'since' নয়। তাই 'for two hours' সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_073",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Choose the correct sentence with 'since':",
+      "options": [
+        "He has been working since Monday.",
+        "He has been working for Monday.",
+        "He is working since Monday.",
+        "He has working since Monday."
+      ],
+      "correctAnswer": "He has been working since Monday.",
+      "explanation": "নির্দিষ্ট শুরুর দিন বা সময়ের আগে 'since' বসে। 'since Monday' এবং Present Perfect Continuous গঠন অনুযায়ী প্রথম বাক্যটি সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_074",
+      "tenseType": "Present Perfect Continuous",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She has been swimming in the pool.",
+        "She has been swiming in the pool.",
+        "She have been swimming in the pool.",
+        "She has been swim in the pool."
+      ],
+      "correctAnswer": "She has been swimming in the pool.",
+      "explanation": "Quick: 'swim' এর সঠিক V-ing রূপ হলো 'swimming' (double m)। 'She' এর সাথে 'has been swimming' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }

@@ -1,6 +1,897 @@
 {
   "tenseType": "Past Perfect Continuous",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "ppc_001",
+      "tenseType": "Past Perfect Continuous",
+      "question": "She ____ a book for two hours before her mother came.",
+      "options": ["was reading", "had been reading", "reads", "has been reading"],
+      "correctAnswer": "had been reading",
+      "explanation": "অতীতে একটি কাজ দীর্ঘ সময় ধরে চলছিল এবং অতীতেই অন্য একটি কাজের আগে শেষ হয়েছিল বোঝাতে Past Perfect Continuous হয়। 'She' এর পর 'had been' + verb-ing বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_002",
+      "tenseType": "Past Perfect Continuous",
+      "question": "They ____ football since morning when the storm broke.",
+      "options": ["were playing", "had been playing", "plays", "have been playing"],
+      "correctAnswer": "had been playing",
+      "explanation": "ঝড় শুরু হওয়ার পূর্ব পর্যন্ত তারা সকাল থেকে খেলছিল। দীর্ঘ চলমান অতীত কাজের ক্ষেত্রে Past Perfect Continuous 'had been playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_003",
+      "tenseType": "Past Perfect Continuous",
+      "question": "I ____ for the exam since last night before I finally slept.",
+      "options": ["was studying", "had been studying", "studied", "have been studying"],
+      "correctAnswer": "had been studying",
+      "explanation": "ঘুমিয়ে পড়ার আগে গত রাত থেকে আমি পড়াশোনা করছিলাম। অতীতের নির্দিষ্ট সীমার আগের দীর্ঘ চলমান কাজ বোঝাতে 'had been studying' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_004",
+      "tenseType": "Past Perfect Continuous",
+      "question": "He ____ in this company for five years before he resigned.",
+      "options": ["was working", "had been working", "worked", "has been working"],
+      "correctAnswer": "had been working",
+      "explanation": "পদত্যাগ করার আগে সে পাঁচ বছর ধরে এই কোম্পানিতে কাজ করছিল। অতীতে নির্দিষ্ট বিন্দুর আগের চলমান অবস্থা বোঝাতে 'had been working' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_005",
+      "tenseType": "Past Perfect Continuous",
+      "question": "The children ____ in the rain for an hour when they caught cold.",
+      "options": ["played", "had been playing", "were playing", "have been playing"],
+      "correctAnswer": "had been playing",
+      "explanation": "ঠান্ডা লাগার আগে শিশুরা এক ঘণ্টা ধরে বৃষ্টিতে খেলছিল। অতীতে শুরু হয়ে বেশ কিছুক্ষণ চলা কাজের জন্য Past Perfect Continuous 'had been playing' হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_006",
+      "tenseType": "Past Perfect Continuous",
+      "question": "My mother ____ dinner all evening before the guests arrived.",
+      "options": ["cooked", "was cooking", "had been cooking", "has been cooking"],
+      "correctAnswer": "had been cooking",
+      "explanation": "অতিথিরা আসার আগে মা সারা সন্ধ্যা ধরে রান্না করছিলেন। 'all evening' এবং 'before' থাকায় এখানে 'had been cooking' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_007",
+      "tenseType": "Past Perfect Continuous",
+      "question": "We ____ the movie for thirty minutes when the electricity went out.",
+      "options": ["watched", "had been watching", "were watching", "have been watching"],
+      "correctAnswer": "had been watching",
+      "explanation": "বিদ্যুৎ চলে যাওয়ার আগে আমরা ৩০ মিনিট ধরে সিনেমাটি দেখছিলাম। অতীতের ঘটনার পূর্বের ধারাবাহিক কাজ বোঝাতে 'had been watching' হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_008",
+      "tenseType": "Past Perfect Continuous",
+      "question": "The baby ____ for an hour before the mother woke up.",
+      "options": ["was crying", "had been crying", "cries", "has been crying"],
+      "correctAnswer": "had been crying",
+      "explanation": "মা জেগে ওঠার পূর্ব পর্যন্ত শিশুটি এক ঘণ্টা ধরে কাঁদছিল। অতীতের চলমান অবস্থা বোঝাতে Past Perfect Continuous 'had been crying' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_009",
+      "tenseType": "Past Perfect Continuous",
+      "question": "You ____ on the phone for a long time when I knocked on the door.",
+      "options": ["talked", "had been talking", "were talking", "have been talking"],
+      "correctAnswer": "had been talking",
+      "explanation": "আমি দরজায় নক করার আগে তুমি দীর্ঘ সময় ফোনে কথা বলছিলে। অতীতের ঘটনার আগের দীর্ঘ চলমান কাজের জন্য 'had been talking' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_010",
+      "tenseType": "Past Perfect Continuous",
+      "question": "It ____ since yesterday when it finally cleared up.",
+      "options": ["was raining", "had been raining", "rained", "has been raining"],
+      "correctAnswer": "had been raining",
+      "explanation": "আকাশ পরিষ্কার হওয়ার আগে গতকাল থেকে বৃষ্টি হচ্ছিল। অতীতে নির্দিষ্ট সময়ের আগের আবহাওয়ার দীর্ঘ চলমান অবস্থা বোঝাতে 'had been raining' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_011",
+      "tenseType": "Past Perfect Continuous",
+      "question": "The students ____ to the lecture since 10 AM before the power failed.",
+      "options": ["were listening", "had been listening", "listen", "have been listening"],
+      "correctAnswer": "had been listening",
+      "explanation": "বিদ্যুৎ যাওয়ার আগে সকাল ১০টা থেকে ছাত্ররা লেকচার শুনছিল। অতীতের ধারাবাহিক চলমান কাজ বোঝাতে 'had been listening' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_012",
+      "tenseType": "Past Perfect Continuous",
+      "question": "He ____ a letter for thirty minutes before his pen broke.",
+      "options": ["was writing", "had been writing", "writes", "has been writing"],
+      "correctAnswer": "had been writing",
+      "explanation": "কলম ভেঙে যাওয়ার আগে সে ৩০ মিনিট ধরে চিঠি লিখছিল। অতীতের পূর্বের দীর্ঘ কাজ বোঝাতে 'had been writing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_013",
+      "tenseType": "Past Perfect Continuous",
+      "question": "They ____ this bridge for two years before the fund ran out.",
+      "options": ["were building", "had been building", "build", "have been building"],
+      "correctAnswer": "had been building",
+      "explanation": "তহবিল শেষ হওয়ার আগে তারা দুই বছর ধরে এই সেতুটি তৈরি করছিল। অতীতে নির্দিষ্ট সময়ের আগে চলমান দীর্ঘ কাজ — 'had been building'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_014",
+      "tenseType": "Past Perfect Continuous",
+      "question": "I ____ for my keys all morning before I found them.",
+      "options": ["am looking", "had been looking", "looked", "have been looking"],
+      "correctAnswer": "had been looking",
+      "explanation": "চাবি পাওয়ার আগে আমি সারা সকাল ধরে খুঁজছিলাম। অতীতের দীর্ঘ ও পরিশ্রমসাধ্য চলমান কাজ বোঝাতে 'had been looking' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_015",
+      "tenseType": "Past Perfect Continuous",
+      "question": "She ____ a red dress for days before she changed it.",
+      "options": ["wears", "had been wearing", "was wearing", "has been wearing"],
+      "correctAnswer": "had been wearing",
+      "explanation": "বদলানোর আগে সে কয়েক দিন ধরে লাল পোশাকটি পরছিল। অতীতে দীর্ঘ সময়ের অভ্যাস বা অবস্থা বোঝাতে 'had been wearing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_016",
+      "tenseType": "Past Perfect Continuous",
+      "question": "The birds ____ since sunrise before the storm came.",
+      "options": ["sang", "had been singing", "were singing", "have been singing"],
+      "correctAnswer": "had been singing",
+      "explanation": "ঝড় আসার আগে সূর্যোদয় থেকে পাখিগুলো ডাকছিল। অতীতে একটি কাজের আগে দীর্ঘ সময় ধরে চলা কাজ হওয়ায় 'had been singing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_017",
+      "tenseType": "Past Perfect Continuous",
+      "question": "We ____ for the bus since 9 o'clock before we hired a cab.",
+      "options": ["wait", "had been waiting", "were waiting", "have been waiting"],
+      "correctAnswer": "had been waiting",
+      "explanation": "ট্যাক্সি ভাড়া করার আগে আমরা সকাল ৯টা থেকে বাসের জন্য অপেক্ষা করছিলাম। অপেক্ষার দীর্ঘ কাজ বোঝাতে 'had been waiting' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_018",
+      "tenseType": "Past Perfect Continuous",
+      "question": "He ____ his room all day before his friends arrived.",
+      "options": ["cleaned", "had been cleaning", "was cleaning", "has been cleaning"],
+      "correctAnswer": "had been cleaning",
+      "explanation": "বন্ধুরা আসার আগে সে সারা দিন ধরে তার ঘর পরিষ্কার করছিল। অতীতের দীর্ঘ চলমান কাজ বোঝাতে 'had been cleaning' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_019",
+      "tenseType": "Past Perfect Continuous",
+      "question": "The dog ____ in the garden for hours before it fell asleep.",
+      "options": ["runs", "had been running", "was running", "has been running"],
+      "correctAnswer": "had been running",
+      "explanation": "ঘুমিয়ে পড়ার আগে কুকুরটি বাগানে কয়েক ঘণ্টা ধরে দৌড়াচ্ছিল। 'had been running' (double n সহ ing) সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_020",
+      "tenseType": "Past Perfect Continuous",
+      "question": "I ____ dinner for our guests since afternoon before they canceled.",
+      "options": ["prepare", "had been preparing", "was preparing", "have been preparing"],
+      "correctAnswer": "had been preparing",
+      "explanation": "তারা বাতিল করার আগে বিকেল থেকে আমি তাদের জন্য রাতের খাবার রান্না করছিলাম। অতীতের দীর্ঘ চলমান কাজের প্রস্তুতি — 'had been preparing'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_021",
+      "tenseType": "Past Perfect Continuous",
+      "question": "She ____ to different cities for months before she ran out of money.",
+      "options": ["travels", "had been travelling", "was travelling", "has been travelling"],
+      "correctAnswer": "had been travelling",
+      "explanation": "টাকা ফুরিয়ে যাওয়ার আগে কয়েক মাস ধরে সে বিভিন্ন শহরে ভ্রমণ করছিল। অতীতের দীর্ঘ ভ্রমণ অভ্যাস — 'had been travelling'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_022",
+      "tenseType": "Past Perfect Continuous",
+      "question": "They ____ a surprise party for days before it got leaked.",
+      "options": ["plan", "had been planning", "were planning", "have been planning"],
+      "correctAnswer": "had been planning",
+      "explanation": "ফাঁস হওয়ার আগে তারা বেশ কয়েক দিন ধরে সারপ্রাইজ পার্টির পরিকল্পনা করছিল। অতীতে দীর্ঘ সময় চলমান পরিকল্পনা — 'had been planning'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_023",
+      "tenseType": "Past Perfect Continuous",
+      "question": "He ____ hard to improve his grades before he fell ill.",
+      "options": ["works", "had been working", "was working", "has been working"],
+      "correctAnswer": "had been working",
+      "explanation": "অসুস্থ হওয়ার আগে সে তার গ্রেড উন্নত করতে কঠোর পরিশ্রম করছিল। অতীতে চলমান দীর্ঘ প্রচেষ্টা — 'had been working'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_024",
+      "tenseType": "Past Perfect Continuous",
+      "question": "You ____ too much noise all day before the neighbor complained.",
+      "options": ["make", "had been making", "were making", "have been making"],
+      "correctAnswer": "had been making",
+      "explanation": "প্রতিবেশীর অভিযোগের পূর্ব পর্যন্ত তুমি সারা দিন ধরে প্রচণ্ড গোলমাল করছিলে। বিরক্তি সৃষ্টিকারী অতীত ধারাবাহিক কাজ — 'had been making'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_025",
+      "tenseType": "Past Perfect Continuous",
+      "question": "The company ____ new employees for months before the expansion was halted.",
+      "options": ["hires", "had been hiring", "was hiring", "has been hiring"],
+      "correctAnswer": "had been hiring",
+      "explanation": "সম্প্রসারণ বন্ধ করার আগে কোম্পানি কয়েক মাস ধরে কর্মী নিয়োগ দিচ্ছিল। অতীতের দীর্ঘমেয়াদী ধারাবাহিক কাজ — 'had been hiring'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_026",
+      "tenseType": "Past Perfect Continuous",
+      "question": "I ____ progress in English since I joined this class until I left.",
+      "options": ["make", "had been making", "was making", "have been making"],
+      "correctAnswer": "had been making",
+      "explanation": "ক্লাস ছাড়ার পূর্ব পর্যন্ত যোগদানের সময় থেকে আমি ইংরেজিতে ভালো উন্নতি করছিলাম। অতীতের দুটি সীমার মাঝে চলমান কাজ — 'had been making'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_027",
+      "tenseType": "Past Perfect Continuous",
+      "question": "She ____ for her exams all week before she got tired.",
+      "options": ["prepares", "had been preparing", "was preparing", "has been preparing"],
+      "correctAnswer": "had been preparing",
+      "explanation": "ক্লান্ত হওয়ার আগে সারা সপ্তাহ ধরে সে পরীক্ষার প্রস্তুতি নিচ্ছিল। অতীতে সময়ের সীমার মাঝে চলা প্রস্তুতি — 'had been preparing'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_028",
+      "tenseType": "Past Perfect Continuous",
+      "question": "The world's climate ____ rapidly for decades before governments intervened.",
+      "options": ["changes", "had been changing", "was changing", "has been changing"],
+      "correctAnswer": "had been changing",
+      "explanation": "সরকার পদক্ষেপ নেওয়ার আগে কয়েক দশক ধরে জলবায়ু দ্রুত পরিবর্তিত হচ্ছিল। অতীতের দীর্ঘ ও ধারাবাহিক পরিবর্তন — 'had been changing'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_029",
+      "tenseType": "Past Perfect Continuous",
+      "question": "He ____ more and more impatient as the hour passed by.",
+      "options": ["gets", "had been getting", "was getting", "has been getting"],
+      "correctAnswer": "had been getting",
+      "explanation": "সময় কেটে যাওয়ার সাথে সাথে সে ক্রমশ অধৈর্য হয়ে উঠছিল। অতীতের ধারাবাহিক মানসিক অবস্থার পরিবর্তন বোঝাতে 'had been getting' সঠিক।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_030",
+      "tenseType": "Past Perfect Continuous",
+      "question": "I ____ this book since last Sunday before I lost it yesterday.",
+      "options": ["read", "had been reading", "was reading", "have been reading"],
+      "correctAnswer": "had been reading",
+      "explanation": "গতকাল হারানোর আগে গত রবিবার থেকে আমি বইটি পড়ছিলাম। অতীতের সমাপ্ত বিন্দুর পূর্ব পর্যন্ত চলমান কাজ — 'had been reading'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "ppc_031",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Identify the tense: 'She had been reading a book for an hour when I called.'",
+      "options": ["Past Perfect", "Past Continuous", "Past Perfect Continuous", "Present Perfect Continuous"],
+      "correctAnswer": "Past Perfect Continuous",
+      "explanation": "'had been reading' এবং 'for an hour' ও অতীত ঘটনার উল্লেখ (when I called) — এটি Past Perfect Continuous Tense-এর গঠন।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_032",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Identify the tense: 'They had been playing football since 4 PM before the storm began.'",
+      "options": ["Past Perfect", "Past Perfect Continuous", "Past Continuous", "Present Perfect Continuous"],
+      "correctAnswer": "Past Perfect Continuous",
+      "explanation": "'had been playing' এবং 'since 4 PM' ও অতীতের ঝড় শুরুর আগের কাজের ব্যাপ্তি প্রকাশ করায় এটি Past Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_033",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Identify the tense: 'I had been studying for my exam all morning until she visited.'",
+      "options": ["Past Perfect Continuous", "Past Continuous", "Past Perfect", "Present Perfect Continuous"],
+      "correctAnswer": "Past Perfect Continuous",
+      "explanation": "তাঁর আসার পূর্ব পর্যন্ত সারা সকাল ধরে পড়াশোনা করার দীর্ঘ কাজ বোঝাতে 'had been studying' ব্যবহৃত হয়েছে — Past Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_034",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Identify the tense: 'He had been going to the gym for months before his injury.'",
+      "options": ["Past Perfect Continuous", "Past Perfect", "Past Continuous", "Present Perfect Continuous"],
+      "correctAnswer": "Past Perfect Continuous",
+      "explanation": "আঘাত পাওয়ার আগে সে কয়েক মাস ধরে নিয়মিত জিমে যাচ্ছিল। অতীতের এই দীর্ঘ অভ্যাসটি Past Perfect Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_035",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Identify the tense: 'The baby had been crying for thirty minutes before sleeping.'",
+      "options": ["Past Perfect", "Past Continuous", "Past Perfect Continuous", "Present Perfect Continuous"],
+      "correctAnswer": "Past Perfect Continuous",
+      "explanation": "ঘুমিয়ে পড়ার আগে শিশুটি ৩০ মিনিট ধরে কাঁদছিল। 'had been crying' থাকায় এটি Past Perfect Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_036",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Identify the tense: 'We had been watching a movie since afternoon when the fire broke out.'",
+      "options": ["Past Perfect", "Past Perfect Continuous", "Past Continuous", "Present Perfect Continuous"],
+      "correctAnswer": "Past Perfect Continuous",
+      "explanation": "আগুন লাগার আগে আমরা বিকেল থেকে সিনেমা দেখছিলাম। অতীতের ঘটনার পূর্ব পর্যন্ত চলমান দীর্ঘ কাজ — Past Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_037",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Identify the tense: 'It had been raining outside all day before we finally went out.'",
+      "options": ["Past Perfect Continuous", "Past Continuous", "Past Perfect", "Present Perfect Continuous"],
+      "correctAnswer": "Past Perfect Continuous",
+      "explanation": "অবশেষে বাইরে যাওয়ার পূর্বে সারা দিন ধরে বৃষ্টি হচ্ছিল — 'had been raining' থাকার কারণে এটি Past Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_038",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Identify the tense: 'The students had been listening carefully until the bell rang.'",
+      "options": ["Past Perfect Continuous", "Past Continuous", "Past Perfect", "Present Perfect Continuous"],
+      "correctAnswer": "Past Perfect Continuous",
+      "explanation": "ঘণ্টা বাজার পূর্ব পর্যন্ত ছাত্ররা মনোযোগ দিয়ে শুনছিল। অতীতের নির্দিষ্ট সমাপ্তিবিন্দুর আগের দীর্ঘ কাজ — Past Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_039",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Identify the tense: 'She had been wearing that dress all day before changing.'",
+      "options": ["Past Perfect Continuous", "Past Continuous", "Past Perfect", "Present Perfect Continuous"],
+      "correctAnswer": "Past Perfect Continuous",
+      "explanation": "পোশাকটি বদলানোর পূর্বে সারা দিন ধরে সে সেটি পরেছিল। 'had been wearing' ও 'all day' দ্বারা এটি Past Perfect Continuous।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_040",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Identify the tense: 'They had been planning to travel since 2018 until the pandemic began.'",
+      "options": ["Past Perfect Continuous", "Past Perfect", "Past Continuous", "Future Perfect Continuous"],
+      "correctAnswer": "Past Perfect Continuous",
+      "explanation": "মহামারী শুরুর আগে ২০১৮ সাল থেকে তারা ভ্রমণের পরিকল্পনা করছিল। অতীতের দুটি নির্দিষ্ট সীমার মাঝের দীর্ঘ কাজ — Past Perfect Continuous।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "ppc_041",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Arrange: (for / had / she / been / reading / hours / two / before / left / she)",
+      "options": [
+        "She had been reading for two hours before she left.",
+        "She reading had been for two hours before she left.",
+        "She had been for two hours reading before she left.",
+        "She left before she had been reading for two hours."
+      ],
+      "correctAnswer": "She had been reading for two hours before she left.",
+      "explanation": "সঠিক গঠন: Subject (She) + had been + verb-ing (reading) + duration (for two hours) + before + Subject (she) + V2 (left)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_042",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Arrange: (playing / they / had / football / since / been / morning / when / rained / it)",
+      "options": [
+        "They had been playing football since morning when it rained.",
+        "They playing had been football since morning when it rained.",
+        "They had playing been football since morning when it rained.",
+        "When it rained they had been football playing since morning."
+      ],
+      "correctAnswer": "They had been playing football since morning when it rained.",
+      "explanation": "সঠিক ক্রম: Subject (They) + had been + verb-ing (playing) + Object (football) + since morning + when + it rained (V2)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_043",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Arrange: (waiting / I / for / had / been / the / bus / for hours / before / left / I)",
+      "options": [
+        "I had been waiting for the bus for hours before I left.",
+        "I waiting had been for the bus for hours before I left.",
+        "Before I left I had waiting been for the bus for hours.",
+        "I had been for the bus waiting for hours before I left."
+      ],
+      "correctAnswer": "I had been waiting for the bus for hours before I left.",
+      "explanation": "সঠিক গঠন: Subject (I) + had been + verb-ing (waiting) + for the bus + for hours + before + I left.",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_044",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Arrange: (kitchen / had / mother / been / cooking / in / the / my / all morning / before / guests / came)",
+      "options": [
+        "My mother had been cooking in the kitchen all morning before guests came.",
+        "My mother cooking had been in the kitchen all morning before guests came.",
+        "My mother had been in the kitchen cooking all morning before guests came.",
+        "Before guests came my mother had been cooking in the kitchen all morning."
+      ],
+      "correctAnswer": "My mother had been cooking in the kitchen all morning before guests came.",
+      "explanation": "সঠিক ক্রম: Subject (My mother) + had been + verb-ing (cooking) + place + duration + before + guests came.",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_045",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Arrange: (all day / they / a / planning / party / been / had / when / told / I / them)",
+      "options": [
+        "They had been planning a party all day when I told them.",
+        "They planning had been a party all day when I told them.",
+        "They had planning been a party all day when I told them.",
+        "When I told them they planning had been a party all day."
+      ],
+      "correctAnswer": "They had been planning a party all day when I told them.",
+      "explanation": "সঠিক গঠন: Subject (They) + had been + verb-ing (planning) + Object + duration + when + I told them (Past Indefinite)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_046",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Arrange: (changing / climate / had / the / been / rapidly / for decades / before / signed / treaty / the)",
+      "options": [
+        "The climate had been changing rapidly for decades before the treaty was signed.",
+        "The climate changing had been rapidly for decades before the treaty was signed.",
+        "The climate had been rapidly changing for decades before the treaty was signed.",
+        "Before the treaty was signed the climate had been changing rapidly for decades."
+      ],
+      "correctAnswer": "The climate had been changing rapidly for decades before the treaty was signed.",
+      "explanation": "সঠিক ক্রম: Subject (The climate) + had been + verb-ing (changing) + adverb + duration + before + clause (passive past simple)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "ppc_047",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Find the error: 'She have been reading a book for hours before she slept.'",
+      "options": [
+        "She had been reading a book for hours before she slept.",
+        "She is been reading a book for hours before she slept.",
+        "She has been reading a book for hours before she slept.",
+        "She was reading a book for hours before she slept."
+      ],
+      "correctAnswer": "She had been reading a book for hours before she slept.",
+      "explanation": "অতীতে ঘুমানোর আগের দীর্ঘ কাজ বোঝাতে 'have' নয়, Past Perfect Continuous অনুযায়ী 'had' বসবে। 'She had been reading' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_048",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Find the error: 'They has been playing football since morning when it rained.'",
+      "options": [
+        "They had been playing football since morning when it rained.",
+        "They were been playing football since morning when it rained.",
+        "They have been playing football since morning when it rained.",
+        "They plays football since morning when it rained."
+      ],
+      "correctAnswer": "They had been playing football since morning when it rained.",
+      "explanation": "অতীতের বৃষ্টি শুরুর আগের চলমান দীর্ঘ কাজ বোঝাতে plural হলেও 'has' বা 'have' এর পরিবর্তে 'had' বসবে। 'They had been playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_049",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Find the error: 'I is been studying for hours before you arrived.'",
+      "options": [
+        "I had been studying for hours before you arrived.",
+        "I am studying for hours before you arrived.",
+        "I was studying for hours before you arrived.",
+        "I has been studying for hours before you arrived."
+      ],
+      "correctAnswer": "I had been studying for hours before you arrived.",
+      "explanation": "তোমার পৌঁছানোর আগের দীর্ঘ পড়াশোনা করার কাজ প্রকাশ করতে Past Perfect Continuous অনুযায়ী 'I had been studying' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_050",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Find the error: 'He had been go to school since Monday before he fell ill.'",
+      "options": [
+        "He had been going to school since Monday before he fell ill.",
+        "He is going to school since Monday before he fell ill.",
+        "He had go to school since Monday before he fell ill.",
+        "He goes to school since Monday before he fell ill."
+      ],
+      "correctAnswer": "He had been going to school since Monday before he fell ill.",
+      "explanation": "'had been' এর পরে verb-এর সাথে 'ing' যুক্ত করা আবশ্যক। 'go' → 'going' হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_051",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Find the error: 'The children has been playing in the park for hours when it became dark.'",
+      "options": [
+        "The children had been playing in the park for hours when it became dark.",
+        "The children have been playing in the park for hours when it became dark.",
+        "The children was playing in the park for hours when it became dark.",
+        "The children playing in the park for hours when it became dark."
+      ],
+      "correctAnswer": "The children had been playing in the park for hours when it became dark.",
+      "explanation": "অতীতের কোনো ঘটনার (became dark) আগের দীর্ঘস্থায়ী কাজের জন্য 'has' এর স্থলে 'had' বসবে। 'The children had been playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_052",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Find the error: 'We is been watching a movie for hours when you knocked.'",
+      "options": [
+        "We had been watching a movie for hours when you knocked.",
+        "We were watching a movie for hours when you knocked.",
+        "We have been watching a movie for hours when you knocked.",
+        "We watching a movie for hours when you knocked."
+      ],
+      "correctAnswer": "We had been watching a movie for hours when you knocked.",
+      "explanation": "'We' এর সাথে 'is been' বলে কোনো ব্যাকরণগত রূপ নেই। অতীতের ঘটনার আগের কাজ বোঝাতে 'had been watching' হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_053",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Find the error: 'It had being raining all day before we went out.'",
+      "options": [
+        "It had been raining all day before we went out.",
+        "It is raining all day before we went out.",
+        "It was raining all day before we went out.",
+        "It have been raining all day before we went out."
+      ],
+      "correctAnswer": "It had been raining all day before we went out.",
+      "explanation": "Past Perfect Continuous-এর গঠন অনুযায়ী 'had' এর পর 'being' নয়, 'been' বসে (had + been + verb-ing)।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_054",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Find the error: 'She had been swiming for an hour when it grew cold.'",
+      "options": [
+        "She had been swimming for an hour when it grew cold.",
+        "She has been swimming for an hour when it grew cold.",
+        "She is swimming for an hour when it grew cold.",
+        "She had been swim for an hour when it grew cold."
+      ],
+      "correctAnswer": "She had been swimming for an hour when it grew cold.",
+      "explanation": "বানানগত ভুল: 'swim'-এর সাথে 'ing' যুক্ত করার সময় m ডাবল হবে (swimming)। 'swiming' ভুল বানান।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_055",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Find the error: 'He had been writeing a letter for an hour.'",
+      "options": [
+        "He had been writing a letter for an hour.",
+        "He was writing a letter for an hour.",
+        "He writes a letter for an hour.",
+        "He has been writing a letter for an hour."
+      ],
+      "correctAnswer": "He had been writing a letter for an hour.",
+      "explanation": "বানানগত ভুল: 'write' এর শেষে silent 'e' বাদ দিয়ে 'ing' যোগ করতে হয় (writing)। 'writeing' ভুল।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_056",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Find the error: 'They were been making too much noise all day.'",
+      "options": [
+        "They had been making too much noise all day.",
+        "They have been making too much noise all day.",
+        "They was making too much noise all day.",
+        "They making too much noise all day."
+      ],
+      "correctAnswer": "They had been making too much noise all day.",
+      "explanation": "'were been making' কোনো সঠিক রূপ নয়। সারা দিন ধরে গোলমাল করার অতীত কাজ বোঝাতে 'had been making' বসবে।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "ppc_057",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Translate: 'মা আসার আগে সে দুই ঘণ্টা ধরে একটি বই পড়ছিল।'",
+      "options": [
+        "She had been reading a book for two hours before her mother came.",
+        "She was reading a book for two hours before her mother came.",
+        "She reads a book for two hours before her mother came.",
+        "She has been reading a book for two hours before her mother came."
+      ],
+      "correctAnswer": "She had been reading a book for two hours before her mother came.",
+      "explanation": "মা আসার পূর্বের দীর্ঘ চলমান কাজ — Past Perfect Continuous। 'She had been reading... before her mother came (Past Indefinite)' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_058",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Translate: 'ঝড় শুরু হওয়ার আগে তারা সকাল থেকে ফুটবল খেলছিল।'",
+      "options": [
+        "They had been playing football since morning before the storm began.",
+        "They were playing football since morning before the storm began.",
+        "They played football since morning before the storm began.",
+        "They have been playing football since morning before the storm began."
+      ],
+      "correctAnswer": "They had been playing football since morning before the storm began.",
+      "explanation": "ঝড় শুরু হওয়ার আগের সকাল থেকে চলা কাজ — Past Perfect Continuous। 'They had been playing... since morning' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_059",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Translate: 'আমি ঘুমানোর আগে সকাল থেকে পড়াশোনা করছিলাম।'",
+      "options": [
+        "I had been studying since morning before I slept.",
+        "I was studying since morning before I slept.",
+        "I studied since morning before I slept.",
+        "I have been studying since morning before I slept."
+      ],
+      "correctAnswer": "I had been studying since morning before I slept.",
+      "explanation": "ঘুমানোর আগের সকাল থেকে চলা কাজ — Past Perfect Continuous। 'I had been studying... before I slept (V2)' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_060",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Translate: 'আমাদের বাইরে যাওয়ার আগে সারা দিন ধরে বৃষ্টি হচ্ছিল।'",
+      "options": [
+        "It had been raining all day before we went out.",
+        "It was raining all day before we went out.",
+        "It rained all day before we went out.",
+        "It has been raining all day before we went out."
+      ],
+      "correctAnswer": "It had been raining all day before we went out.",
+      "explanation": "বাইরে যাওয়ার আগের সারা দিনের বৃষ্টি — Past Perfect Continuous। 'It had been raining all day before we went out' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_061",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Translate: 'অতিথিরা আসার আগে মা সারা সন্ধ্যা রান্না করছিলেন।'",
+      "options": [
+        "My mother had been cooking all evening before the guests arrived.",
+        "My mother was cooking all evening before the guests arrived.",
+        "My mother cooked all evening before the guests arrived.",
+        "My mother has been cooking all evening before the guests arrived."
+      ],
+      "correctAnswer": "My mother had been cooking all evening before the guests arrived.",
+      "explanation": "অতিথিদের আসার আগের দীর্ঘ কাজ — Past Perfect Continuous। 'My mother had been cooking' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_062",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Translate: 'বিদ্যুৎ যাওয়ার আগে আমরা এক ঘণ্টা ধরে সিনেমা দেখছিলাম।'",
+      "options": [
+        "We had been watching a movie for an hour before the power went out.",
+        "We were watching a movie for an hour before the power went out.",
+        "We watched a movie for an hour before the power went out.",
+        "We have been watching a movie for an hour before the power went out."
+      ],
+      "correctAnswer": "We had been watching a movie for an hour before the power went out.",
+      "explanation": "বিদ্যুৎ চলে যাওয়ার আগের দীর্ঘ কাজ — Past Perfect Continuous। 'We had been watching' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_063",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Translate: 'অসুস্থ হওয়ার আগে সে কয়েক দিন ধরে পরীক্ষার প্রস্তুতি নিচ্ছিল।'",
+      "options": [
+        "She had been preparing for exams for a few days before she fell ill.",
+        "She was preparing for exams for a few days before she fell ill.",
+        "She prepared for exams for a few days before she fell ill.",
+        "She has been preparing for exams for a few days before she fell ill."
+      ],
+      "correctAnswer": "She had been preparing for exams for a few days before she fell ill.",
+      "explanation": "অসুস্থ হওয়ার আগের কয়েক দিনের দীর্ঘ প্রস্তুতি — Past Perfect Continuous। 'She had been preparing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_064",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Translate: 'বিজ্ঞানীরা সতর্ক করার আগে আবহাওয়া অনেক বছর ধরে পরিবর্তিত হচ্ছিল।'",
+      "options": [
+        "The weather had been changing for many years before scientists warned us.",
+        "The weather was changing for many years before scientists warned us.",
+        "The weather changed for many years before scientists warned us.",
+        "The weather has been changing for many years before scientists warned us."
+      ],
+      "correctAnswer": "The weather had been changing for many years before scientists warned us.",
+      "explanation": "বিজ্ঞানীদের সতর্ক করার পূর্বের দীর্ঘ ধারাবাহিক পরিবর্তন — Past Perfect Continuous। 'The weather had been changing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_065",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Translate: 'আমি চাকরিটি পাওয়ার আগে এক বছর ধরে ইংরেজি শিখছিলাম।'",
+      "options": [
+        "I had been learning English for a year before I got the job.",
+        "I was learning English for a year before I got the job.",
+        "I learned English for a year before I got the job.",
+        "I have been learning English for a year before I got the job."
+      ],
+      "correctAnswer": "I had been learning English for a year before I got the job.",
+      "explanation": "চাকরি পাওয়ার আগের দীর্ঘ এক বছরের ইংরেজি শেখা — Past Perfect Continuous। 'I had been learning' সঠিক অনুবাদ।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "ppc_066",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She had been reading a book since 2 PM before I came.",
+        "She is been reading a book since 2 PM before I came.",
+        "She has been reading a book since 2 PM before I came.",
+        "She was reading a book since 2 PM before I came."
+      ],
+      "correctAnswer": "She had been reading a book since 2 PM before I came.",
+      "explanation": "Quick: Past Perfect Continuous = subject + had been + verb-ing + since + time + before + Past Simple।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_067",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Choose the correct form: 'They ____ football for hours when the bell rang.'",
+      "options": ["had been playing", "have been playing", "were playing", "played"],
+      "correctAnswer": "had been playing",
+      "explanation": "Quick: ঘণ্টা বাজার আগের দীর্ঘ খেলা — Past Perfect Continuous। 'They' এর সাথে 'had been playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_068",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Pick the correct negative: 'She ____ her homework for an hour when it became dark.'",
+      "options": ["had not been doing", "has not been doing", "was not doing", "did not been doing"],
+      "correctAnswer": "had not been doing",
+      "explanation": "Quick: Past Perfect Continuous negative = subject + had not + been + verb-ing। 'She had not been doing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_069",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Pick the correct question form: '____ he been writing for an hour before his pen broke?'",
+      "options": ["Had", "Have", "Is", "Did"],
+      "correctAnswer": "Had",
+      "explanation": "Quick: Past Perfect Continuous question = Had + subject + been + verb-ing? প্রশ্নবোধক করতে শুরুতে 'Had' বসে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_070",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Which sentence shows an action continuing up to another past point?",
+      "options": [
+        "I had been living here for ten years before I moved.",
+        "I lived here ten years ago.",
+        "I am living here for ten years.",
+        "I have been living here for ten years."
+      ],
+      "correctAnswer": "I had been living here for ten years before I moved.",
+      "explanation": "Quick: স্থানান্তরের আগে ১০ বছর বসবাসের দীর্ঘ অতীত ঘটনা বোঝাতে 'had been living' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_071",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Choose the correct verb: 'The baby ____ since morning before she fell asleep.'",
+      "options": ["had been crying", "have been crying", "was crying", "cried"],
+      "correctAnswer": "had been crying",
+      "explanation": "Quick: ঘুমিয়ে পড়ার আগে সকাল থেকে কাঁদার কাজ — 'had been crying' (Past Perfect Continuous)।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_072",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Which sentence is grammatically correct (for vs since)?",
+      "options": [
+        "I had been waiting for two hours before she arrived.",
+        "I had been waiting since two hours before she arrived.",
+        "I was waiting since two hours before she arrived.",
+        "I had waiting for two hours before she arrived."
+      ],
+      "correctAnswer": "I had been waiting for two hours before she arrived.",
+      "explanation": "Quick: সময়ের পরিমাণ (two hours) থাকলে 'for' বসে এবং অতীতের আগের দীর্ঘ কাজ বোঝাতে 'had been waiting' সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_073",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Choose the correct sentence with 'since':",
+      "options": [
+        "He had been working since Monday before he resigned.",
+        "He had been working for Monday before he resigned.",
+        "He was working since Monday before he resigned.",
+        "He has been working since Monday before he resigned."
+      ],
+      "correctAnswer": "He had been working since Monday before he resigned.",
+      "explanation": "নির্দিষ্ট দিনের আগে 'since' বসে এবং পদত্যাগের আগের দীর্ঘ কাজের ধারাবাহিকতা বোঝাতে 'had been working' সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "ppc_074",
+      "tenseType": "Past Perfect Continuous",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She had been swimming in the pool.",
+        "She had been swiming in the pool.",
+        "She have been swimming in the pool.",
+        "She had been swim in the pool."
+      ],
+      "correctAnswer": "She had been swimming in the pool.",
+      "explanation": "Quick: 'swim'-এর সঠিক double 'm' যুক্ত ing রূপ হলো 'swimming'। তাই 'She had been swimming' বাক্যটি সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }

@@ -1,6 +1,897 @@
 {
   "tenseType": "Past Perfect",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "pap_001",
+      "tenseType": "Past Perfect",
+      "question": "She ____ her homework before her mother came.",
+      "options": ["finished", "has finished", "had finished", "was finishing"],
+      "correctAnswer": "had finished",
+      "explanation": "অতীতে দুটি কাজের মধ্যে অপেক্ষাকৃত পূর্বের কাজটি Past Perfect হয়। 'Before'-এর আগের অংশে Past Perfect হয়, তাই 'had finished' সঠিক। Structure: subject + had + V3।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_002",
+      "tenseType": "Past Perfect",
+      "question": "They ____ football before it started to rain.",
+      "options": ["played", "had played", "have played", "playing"],
+      "correctAnswer": "had played",
+      "explanation": "বৃষ্টি শুরু হওয়ার পূর্বেই তারা খেলেছিল। 'Before'-এর পূর্বে Past Perfect Tense বসে, তাই 'had played' (had + V3) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_003",
+      "tenseType": "Past Perfect",
+      "question": "I ____ my dinner when they arrived.",
+      "options": ["had already eaten", "already ate", "have already eaten", "was already eating"],
+      "correctAnswer": "had already eaten",
+      "explanation": "তারা পৌঁছানোর পূর্বেই আমি রাতের খাবার খেয়ে ফেলেছিলাম। অতীতে একটি কাজের পূর্বে আরেকটি কাজ শেষ হওয়া বোঝাতে 'had already eaten' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_004",
+      "tenseType": "Past Perfect",
+      "question": "He ____ to the market before I called him.",
+      "options": ["goes", "went", "had gone", "has gone"],
+      "correctAnswer": "had gone",
+      "explanation": "আমার ফোন করার আগেই সে বাজারে চলে গিয়েছিল। 'Before' এর আগে Past Perfect বসে, তাই 'had gone' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_005",
+      "tenseType": "Past Perfect",
+      "question": "The train ____ before we reached the station.",
+      "options": ["left", "had left", "has left", "was leaving"],
+      "correctAnswer": "had left",
+      "explanation": "আমাদের স্টেশনে পৌঁছানোর আগেই ট্রেনটি ছেড়ে দিয়েছিল। অপেক্ষাকৃত আগের কাজটি Past Perfect হওয়ায় 'had left' (had + left) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_006",
+      "tenseType": "Past Perfect",
+      "question": "My mother ____ dinner before the guests arrived.",
+      "options": ["cooked", "had cooked", "has cooked", "was cooking"],
+      "correctAnswer": "had cooked",
+      "explanation": "মেহমানরা আসার পূর্বেই মা রান্না শেষ করেছিলেন। 'Before' এর আগের অংশ Past Perfect হওয়ায় 'had cooked' হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_007",
+      "tenseType": "Past Perfect",
+      "question": "We ____ the movie before you recommended it.",
+      "options": ["saw", "had seen", "have seen", "watching"],
+      "correctAnswer": "had seen",
+      "explanation": "তোমার সুপারিশ করার আগেই আমরা সিনেমাটি দেখেছিলাম। 'Before'-এর আগের অংশ Past Perfect, তাই 'had seen' (had + V3) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_008",
+      "tenseType": "Past Perfect",
+      "question": "The baby ____ before the loud noise started.",
+      "options": ["slept", "had fallen asleep", "has fallen asleep", "was sleeping"],
+      "correctAnswer": "had fallen asleep",
+      "explanation": "বিকট শব্দ শুরু হওয়ার পূর্বেই শিশুটি ঘুমিয়ে পড়েছিল। পূর্বের কাজটি বোঝাতে Past Perfect অর্থাৎ 'had fallen asleep' ব্যবহৃত হয়েছে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_009",
+      "tenseType": "Past Perfect",
+      "question": "You ____ already left before they called.",
+      "options": ["have", "had", "was", "did"],
+      "correctAnswer": "had",
+      "explanation": "তারা ফোন করার পূর্বেই তুমি চলে গিয়েছিলে। 'already' এর সাথে Past Perfect গঠনে auxiliary verb হিসেবে 'had' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_010",
+      "tenseType": "Past Perfect",
+      "question": "It ____ raining before we stepped outside.",
+      "options": ["stopped", "had stopped", "has stopped", "was stopping"],
+      "correctAnswer": "had stopped",
+      "explanation": "আমাদের বাইরে পা রাখার পূর্বেই বৃষ্টি থেমে গিয়েছিল। 'Before' এর পূর্বের ক্লজটি Past Perfect হয়, তাই 'had stopped' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_011",
+      "tenseType": "Past Perfect",
+      "question": "The students ____ the classroom before the bell rang.",
+      "options": ["entered", "had entered", "have entered", "were entering"],
+      "correctAnswer": "had entered",
+      "explanation": "ঘণ্টা বাজার আগেই ছাত্ররা শ্রেণীকক্ষে প্রবেশ করেছিল। অতীতে ঘণ্টা বাজার পূর্বের কাজ হওয়ায় 'had entered' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_012",
+      "tenseType": "Past Perfect",
+      "question": "He ____ a letter before his friend arrived.",
+      "options": ["wrote", "had written", "has written", "was writing"],
+      "correctAnswer": "had written",
+      "explanation": "বন্ধুর আসার আগেই সে চিঠিটি লিখেছিল। 'Before' এর আগে Past Perfect Tense-এর গঠন অনুযায়ী 'had written' (had + write-এর V3) বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_013",
+      "tenseType": "Past Perfect",
+      "question": "They ____ the bridge before winter set in.",
+      "options": ["built", "had built", "have built", "were building"],
+      "correctAnswer": "had built",
+      "explanation": "শীত শুরু হওয়ার আগেই তারা ব্রিজটি তৈরি করেছিল। 'Before' এর আগের কাজটি Past Perfect, তাই 'had built' (had + build-এর V3) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_014",
+      "tenseType": "Past Perfect",
+      "question": "I ____ my keys before I walked out of the house.",
+      "options": ["found", "had found", "have found", "was finding"],
+      "correctAnswer": "had found",
+      "explanation": "ঘর থেকে বের হওয়ার আগেই আমি চাবি খুঁজে পেয়েছিলাম। 'Before' এর আগে Past Perfect বসে, তাই 'had found' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_015",
+      "tenseType": "Past Perfect",
+      "question": "She ____ her dress before the party started.",
+      "options": ["chose", "had chosen", "has chosen", "was choosing"],
+      "correctAnswer": "had chosen",
+      "explanation": "পার্টি শুরু হওয়ার পূর্বেই সে তার পোশাক নির্বাচন করেছিল। অপেক্ষাকৃত পূর্বের কাজ হওয়ায় Past Perfect অর্থাৎ 'had chosen' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_016",
+      "tenseType": "Past Perfect",
+      "question": "The birds ____ away before the hunter fired.",
+      "options": ["flew", "had flown", "have flown", "were flying"],
+      "correctAnswer": "had flown",
+      "explanation": "শিকারি গুলি করার আগেই পাখিগুলো উড়ে গিয়েছিল। 'Before' এর আগে Past Perfect এবং পরে Past Indefinite (fired) বসে। তাই 'had flown' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_017",
+      "tenseType": "Past Perfect",
+      "question": "We ____ for an hour before the bus finally arrived.",
+      "options": ["waited", "had waited", "have waited", "were waiting"],
+      "correctAnswer": "had waited",
+      "explanation": "বাস আসার পূর্বে আমরা এক ঘণ্টা অপেক্ষা করেছিলাম। অপেক্ষাকৃত আগের দীর্ঘ কাজ বা স্থিতি বোঝাতে 'had waited' (Past Perfect) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_018",
+      "tenseType": "Past Perfect",
+      "question": "He ____ his room before the guests visited.",
+      "options": ["cleaned", "had cleaned", "has cleaned", "was cleaning"],
+      "correctAnswer": "had cleaned",
+      "explanation": "অতিথিরা আসার আগেই সে তার ঘর পরিষ্কার করেছিল। 'Before' এর পূর্বে Past Perfect বসাতে হবে, তাই 'had cleaned' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_019",
+      "tenseType": "Past Perfect",
+      "question": "The dog ____ away before we opened the gate.",
+      "options": ["ran", "had run", "has run", "was running"],
+      "correctAnswer": "had run",
+      "explanation": "গেঁট খোলার পূর্বেই কুকুরটি পালিয়ে গিয়েছিল। 'Before' এর পূর্বের অংশ Past Perfect হওয়ায় 'had run' (run-ran-run) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_020",
+      "tenseType": "Past Perfect",
+      "question": "I ____ my breakfast by the time she woke up.",
+      "options": ["had", "had had", "have had", "was having"],
+      "correctAnswer": "had had",
+      "explanation": "সে ঘুম থেকে ওঠার আগেই আমি সকালের খাবার খেয়ে নিয়েছিলাম। এখানে প্রথম 'had' সাহায্যকারী verb এবং দ্বিতীয় 'had' খাওয়া অর্থে মূল verb-এর V3।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_021",
+      "tenseType": "Past Perfect",
+      "question": "She ____ to London twice before she moved there in 2022.",
+      "options": ["travelled", "had travelled", "has travelled", "was travelling"],
+      "correctAnswer": "had travelled",
+      "explanation": "২০২২ সালে স্থায়ীভাবে চলে যাওয়ার আগেই সে দুবার লন্ডন ভ্রমণ করেছিল। অতীতের একটি নির্দিষ্ট ঘটনার আগের অভিজ্ঞতা বোঝাতে 'had travelled' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_022",
+      "tenseType": "Past Perfect",
+      "question": "They ____ the decision after they had discussed it.",
+      "options": ["made", "had made", "have made", "were making"],
+      "correctAnswer": "made",
+      "explanation": "আলোচনা করার পর তারা সিদ্ধান্ত নিয়েছিল। 'After'-এর পরের অংশ Past Perfect হলে আগের অংশ Past Indefinite হয়, তাই 'made' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_023",
+      "tenseType": "Past Perfect",
+      "question": "He realized he ____ his wallet at home.",
+      "options": ["left", "had left", "has left", "was leaving"],
+      "correctAnswer": "had left",
+      "explanation": "সে বুঝতে পেরেছিল (realized - Past Indefinite) যে সে তার ওয়ালেটটি বাড়িতে রেখে এসেছে (তারও আগের ঘটনা)। তাই এটি Past Perfect 'had left' হবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_024",
+      "tenseType": "Past Perfect",
+      "question": "By the time the police arrived, the thief ____.",
+      "options": ["escaped", "had escaped", "has escaped", "was escaping"],
+      "correctAnswer": "had escaped",
+      "explanation": "'By the time' যুক্ত বাক্যে একপাশে Past Indefinite (arrived) থাকলে অন্য পাশে Past Perfect হয়। চোরটি আগেই পালিয়েছিল, তাই 'had escaped'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_025",
+      "tenseType": "Past Perfect",
+      "question": "The company ____ the targets before the year ended.",
+      "options": ["achieved", "had achieved", "has achieved", "was achieving"],
+      "correctAnswer": "had achieved",
+      "explanation": "বছর শেষ হওয়ার পূর্বেই কোম্পানি লক্ষ্যমাত্রা অর্জন করেছিল। অতীতের নির্দিষ্ট সীমার আগের কাজ প্রকাশ করতে 'had achieved' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_026",
+      "tenseType": "Past Perfect",
+      "question": "I ____ never ____ such a beautiful place before I visited Kashmir.",
+      "options": ["have / seen", "had / seen", "did / see", "was / seeing"],
+      "correctAnswer": "had / seen",
+      "explanation": "কাশ্মীর ভ্রমণের পূর্বে আমি কখনোই এমন সুন্দর জায়গা দেখিনি। অতীত অভিজ্ঞতার অভাব বা পূর্বে কোনো কাজ না করা বোঝাতে 'had never seen' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_027",
+      "tenseType": "Past Perfect",
+      "question": "She ____ her preparation before the exams were announced.",
+      "options": ["completed", "had completed", "has completed", "was completing"],
+      "correctAnswer": "had completed",
+      "explanation": "পরীক্ষার তারিখ ঘোষণার আগেই সে তার প্রস্তুতি শেষ করেছিল। 'Before' এর আগের কাজ প্রকাশ করতে Past Perfect 'had completed' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_028",
+      "tenseType": "Past Perfect",
+      "question": "The climate ____ drastically before the scientists warned us.",
+      "options": ["changed", "had changed", "has changed", "was changing"],
+      "correctAnswer": "had changed",
+      "explanation": "বিজ্ঞানীদের সতর্ক করার পূর্বেই জলবায়ু মারাত্মকভাবে পরিবর্তিত হয়েছিল। 'Before' এর আগে Past Perfect 'had changed' বসবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_029",
+      "tenseType": "Past Perfect",
+      "question": "We realized we ____ the wrong path.",
+      "options": ["took", "had taken", "have taken", "were taking"],
+      "correctAnswer": "had taken",
+      "explanation": "আমরা বুঝতে পেরেছিলাম (realized) যে আমরা ভুল পথ নিয়েছিলাম (বোঝার আগের ঘটনা)। পূর্বের ঘটনাটি Past Perfect 'had taken' হবে।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_030",
+      "tenseType": "Past Perfect",
+      "question": "I ____ him twice before we finally spoke.",
+      "options": ["met", "had met", "have met", "was meeting"],
+      "correctAnswer": "had met",
+      "explanation": "অবশেষে কথা বলার পূর্বে আমি তার সাথে দুবার দেখা করেছিলাম। অতীতে নির্দিষ্ট কোনো কথা বলার আগের পুনরাবৃত্তিমূলক কাজের জন্য 'had met' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "pap_031",
+      "tenseType": "Past Perfect",
+      "question": "Identify the tense: 'She had read the book before I asked.'",
+      "options": ["Present Perfect", "Past Indefinite", "Past Perfect", "Past Continuous"],
+      "correctAnswer": "Past Perfect",
+      "explanation": "'had read' (had + V3) গঠনটি অতীতের নির্দিষ্ট কাজের পূর্বের আরেকটি কাজকে নির্দেশ করে — এটি Past Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pap_032",
+      "tenseType": "Past Perfect",
+      "question": "Identify the tense: 'They had played football before the storm.'",
+      "options": ["Past Indefinite", "Past Perfect", "Past Continuous", "Present Perfect"],
+      "correctAnswer": "Past Perfect",
+      "explanation": "'had played' (had + V3) গঠনটি অতীতের ঝড়ের আগের কাজ নির্দেশ করে, যা Past Perfect Tense-এর উদাহরণ।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pap_033",
+      "tenseType": "Past Perfect",
+      "question": "Identify the tense: 'I had studied my lessons before the exam.'",
+      "options": ["Past Indefinite", "Past Perfect", "Present Perfect", "Past Perfect Continuous"],
+      "correctAnswer": "Past Perfect",
+      "explanation": "Subject + had + V3 (had studied) দ্বারা পরীক্ষার পূর্বের প্রস্তুতিকে প্রকাশ করা হয়েছে — এটি Past Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pap_034",
+      "tenseType": "Past Perfect",
+      "question": "Identify the tense: 'He had gone to market before we reached.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Perfect"],
+      "correctAnswer": "Past Perfect",
+      "explanation": "'had gone' গঠনটি আমাদের পৌঁছানোর আগেই তার চলে যাওয়ার ঘটনা বোঝায়। এটি Past Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pap_035",
+      "tenseType": "Past Perfect",
+      "question": "Identify the tense: 'The baby had cried before sleeping.'",
+      "options": ["Past Indefinite", "Past Perfect", "Present Perfect", "Past Continuous"],
+      "correctAnswer": "Past Perfect",
+      "explanation": "ঘুমিয়ে পড়ার আগেই শিশুটি কেঁদেছিল — 'had cried' থাকার কারণে এটি Past Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pap_036",
+      "tenseType": "Past Perfect",
+      "question": "Identify the tense: 'We had watched the movie before they came.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Past Perfect Continuous"],
+      "correctAnswer": "Past Perfect",
+      "explanation": "তাদের আসার আগের ঘটনা বোঝাতে 'had watched' ব্যবহৃত হয়েছে। এটি Past Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pap_037",
+      "tenseType": "Past Perfect",
+      "question": "Identify the tense: 'It had rained heavily before morning.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Perfect"],
+      "correctAnswer": "Past Perfect",
+      "explanation": "সকালের আগেই ভারী বৃষ্টি হয়েছিল — 'had rained' (had + V3) থাকার কারণে এটি Past Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pap_038",
+      "tenseType": "Past Perfect",
+      "question": "Identify the tense: 'The students had listened to the lecture.'",
+      "options": ["Past Indefinite", "Present Perfect", "Past Perfect", "Past Continuous"],
+      "correctAnswer": "Past Perfect",
+      "explanation": "কোনো নির্দিষ্ট অতীত ঘটনার পূর্বেই ছাত্ররা লেকচারটি শুনেছিল। 'had listened' দ্বারা এটি Past Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pap_039",
+      "tenseType": "Past Perfect",
+      "question": "Identify the tense: 'She had worn the dress before.'",
+      "options": ["Past Indefinite", "Present Perfect", "Past Perfect", "Past Continuous"],
+      "correctAnswer": "Past Perfect",
+      "explanation": "সে পূর্বেও কোনো এক সময়ে পোশাকটি পরেছিল (অতীত অভিজ্ঞতার অভিব্যক্তি)। 'had worn' থাকায় এটি Past Perfect Tense।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pap_040",
+      "tenseType": "Past Perfect",
+      "question": "Identify the tense: 'I had met him prior to that day.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Future Perfect"],
+      "correctAnswer": "Past Perfect",
+      "explanation": "ঐ নির্দিষ্ট দিনের পূর্বে আমি তার সাথে দেখা করেছিলাম। 'had met' নির্দেশ করে এটি Past Perfect Tense।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "pap_041",
+      "tenseType": "Past Perfect",
+      "question": "Arrange: (left / the / train / had / before / arrived / we)",
+      "options": [
+        "The train had left before we arrived.",
+        "We arrived before the train had left.",
+        "The train left before we had arrived.",
+        "We had arrived before the train left."
+      ],
+      "correctAnswer": "The train had left before we arrived.",
+      "explanation": "Past Perfect-এর সঠিক গঠন: Subject (The train) + had left + before + Subject (we) + V2 (arrived)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pap_042",
+      "tenseType": "Past Perfect",
+      "question": "Arrange: (played / they / had / football / before / storm / the)",
+      "options": [
+        "They had played football before the storm.",
+        "They played football had before the storm.",
+        "Before the storm they played had football.",
+        "They had played the storm before football."
+      ],
+      "correctAnswer": "They had played football before the storm.",
+      "explanation": "সঠিক গঠন: Subject (They) + had + V3 (played) + Object (football) + before + Noun Phrase (the storm)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pap_043",
+      "tenseType": "Past Perfect",
+      "question": "Arrange: (I / had / for / waited / bus / the)",
+      "options": [
+        "I had waited for the bus.",
+        "I waited had for the bus.",
+        "I had for the bus waited.",
+        "Had I waited for the bus."
+      ],
+      "correctAnswer": "I had waited for the bus.",
+      "explanation": "সঠিক গঠন: Subject (I) + had + V3 (waited) + Prepositional Object (for the bus)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pap_044",
+      "tenseType": "Past Perfect",
+      "question": "Arrange: (cooked / mother / my / had / dinner)",
+      "options": [
+        "My mother had cooked dinner.",
+        "My mother cooked had dinner.",
+        "Dinner had cooked my mother.",
+        "My mother dinner had cooked."
+      ],
+      "correctAnswer": "My mother had cooked dinner.",
+      "explanation": "সঠিক ক্রম: Subject (My mother) + had + V3 (cooked) + Object (dinner)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pap_045",
+      "tenseType": "Past Perfect",
+      "question": "Arrange: (had / they / a / had / party / before)",
+      "options": [
+        "They had had a party before.",
+        "They had a party had before.",
+        "They party had had before.",
+        "Before they had had a party."
+      ],
+      "correctAnswer": "They had had a party before.",
+      "explanation": "auxiliary 'had' এবং খাওয়া বা অনুষ্ঠান উদ্‌যাপন অর্থে V3 'had' বসে 'They had had a party before' গঠিত হয়।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pap_046",
+      "tenseType": "Past Perfect",
+      "question": "Arrange: (changed / climate / had / the / rapidly)",
+      "options": [
+        "The climate had changed rapidly.",
+        "The climate changed had rapidly.",
+        "Rapidly had changed the climate.",
+        "The climate had rapidly changed."
+      ],
+      "correctAnswer": "The climate had changed rapidly.",
+      "explanation": "সঠিক ক্রম: Subject (The climate) + had + V3 (changed) + Adverb (rapidly)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "pap_047",
+      "tenseType": "Past Perfect",
+      "question": "Find the error: 'She have finished her homework before her mom came.'",
+      "options": [
+        "She had finished her homework before her mom came.",
+        "She has finished her homework before her mom came.",
+        "She was finished her homework before her mom came.",
+        "She finished her homework before her mom came."
+      ],
+      "correctAnswer": "She had finished her homework before her mom came.",
+      "explanation": "অতীতে 'before' এর আগের ক্লজে 'have' নয়, Past Perfect অনুযায়ী 'had' বসবে। 'She had finished' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pap_048",
+      "tenseType": "Past Perfect",
+      "question": "Find the error: 'They was played football before it rained.'",
+      "options": [
+        "They had played football before it rained.",
+        "They were played football before it rained.",
+        "They has played football before it rained.",
+        "They played football before it rained."
+      ],
+      "correctAnswer": "They had played football before it rained.",
+      "explanation": "বৃষ্টি শুরু হওয়ার আগের খেলার কাজ বোঝাতে Past Perfect হবে, তাই 'was' এর জায়গায় 'had' বসবে। 'They had played' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pap_049",
+      "tenseType": "Past Perfect",
+      "question": "Find the error: 'I has studied before the exam.'",
+      "options": [
+        "I had studied before the exam.",
+        "I have studied before the exam.",
+        "I studied before the exam.",
+        "I was studied before the exam."
+      ],
+      "correctAnswer": "I had studied before the exam.",
+      "explanation": "পরীক্ষার পূর্বের কাজ বোঝাতে Past Perfect ব্যবহৃত হবে। 'I' এর সাথে 'has' বসে না এবং অতীত অর্থে 'had studied' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pap_050",
+      "tenseType": "Past Perfect",
+      "question": "Find the error: 'He had went to school before I called.'",
+      "options": [
+        "He had gone to school before I called.",
+        "He went to school before I called.",
+        "He has gone to school before I called.",
+        "He had go to school before I called."
+      ],
+      "correctAnswer": "He had gone to school before I called.",
+      "explanation": "'had' এর পর সর্বদা verb-এর past participle (V3) রূপ বসে। 'went' (V2) ভুল, 'gone' (V3) সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pap_051",
+      "tenseType": "Past Perfect",
+      "question": "Find the error: 'The children had clean the room before guests arrived.'",
+      "options": [
+        "The children had cleaned the room before guests arrived.",
+        "The children cleaned the room before guests arrived.",
+        "The children has cleaned the room before guests arrived.",
+        "The children were cleaned the room before guests arrived."
+      ],
+      "correctAnswer": "The children had cleaned the room before guests arrived.",
+      "explanation": "'had' এর পরে verb-এর V3 রূপ 'cleaned' হবে, 'clean' (V1) ভুল।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pap_052",
+      "tenseType": "Past Perfect",
+      "question": "Find the error: 'We had watch the movie before you came.'",
+      "options": [
+        "We had watched the movie before you came.",
+        "We watched the movie before you came.",
+        "We have watched the movie before you came.",
+        "We was watching the movie before you came."
+      ],
+      "correctAnswer": "We had watched the movie before you came.",
+      "explanation": "Past Perfect গঠনে 'had' এর পর watch-এর V3 রূপ 'watched' বসবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pap_053",
+      "tenseType": "Past Perfect",
+      "question": "Find the error: 'It had rain before we left.'",
+      "options": [
+        "It had rained before we left.",
+        "It rained before we left.",
+        "It has rained before we left.",
+        "It was rain before we left."
+      ],
+      "correctAnswer": "It had rained before we left.",
+      "explanation": "আমাদের রওনা হওয়ার আগেই বৃষ্টি হয়েছিল। 'had' এর পর rain-এর V3 'rained' বসবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pap_054",
+      "tenseType": "Past Perfect",
+      "question": "Find the error: 'She had swimmed in the pool before.'",
+      "options": [
+        "She had swum in the pool before.",
+        "She had swam in the pool before.",
+        "She has swum in the pool before.",
+        "She swum in the pool before."
+      ],
+      "correctAnswer": "She had swum in the pool before.",
+      "explanation": "'swim'-এর past participle (V3) রূপ হলো 'swum' (swim-swam-swum)। 'swimmed' বলে কোনো ইংরেজি শব্দ নেই।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pap_055",
+      "tenseType": "Past Perfect",
+      "question": "Find the error: 'He had wrote a letter before.'",
+      "options": [
+        "He had written a letter before.",
+        "He wrote a letter before.",
+        "He has written a letter before.",
+        "He had write a letter before."
+      ],
+      "correctAnswer": "He had written a letter before.",
+      "explanation": "'had' এর পর past participle বসে। 'wrote' (V2) ভুল, 'written' (V3) সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pap_056",
+      "tenseType": "Past Perfect",
+      "question": "Find the error: 'They had maked a mistake.'",
+      "options": [
+        "They had made a mistake.",
+        "They made a mistake.",
+        "They has made a mistake.",
+        "They was made a mistake."
+      ],
+      "correctAnswer": "They had made a mistake.",
+      "explanation": "'make'-এর past participle রূপ হলো 'made' (make-made-made)। 'maked' রূপটি সম্পূর্ণ ভুল।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "pap_057",
+      "tenseType": "Past Perfect",
+      "question": "Translate: 'আমি আসার পূর্বেই সে বইটি পড়েছিল।'",
+      "options": [
+        "She had read the book before I came.",
+        "She read the book before I came.",
+        "She has read the book before I came.",
+        "She was reading the book before I came."
+      ],
+      "correctAnswer": "She had read the book before I came.",
+      "explanation": "আমার আসার পূর্বেই বইটি পড়া শেষ হয়েছিল — Past Perfect। 'Before' এর আগে 'She had read' এবং পরে 'I came' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pap_058",
+      "tenseType": "Past Perfect",
+      "question": "Translate: 'বৃষ্টি শুরু হওয়ার আগেই তারা ফুটবল খেলেছিল।'",
+      "options": [
+        "They had played football before it rained.",
+        "They played football before it rained.",
+        "They have played football before it rained.",
+        "They were playing football before it rained."
+      ],
+      "correctAnswer": "They had played football before it rained.",
+      "explanation": "বৃষ্টি নামার পূর্বের কাজ Past Perfect হবে। 'They had played football before it rained' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pap_059",
+      "tenseType": "Past Perfect",
+      "question": "Translate: 'পরীক্ষা শুরু হওয়ার আগেই আমি পড়াশোনা শেষ করেছিলাম।'",
+      "options": [
+        "I had studied before the exam started.",
+        "I studied before the exam started.",
+        "I have studied before the exam started.",
+        "I was studying before the exam started."
+      ],
+      "correctAnswer": "I had studied before the exam started.",
+      "explanation": "পরীক্ষা শুরু হওয়ার আগের প্রস্তুতি — Past Perfect। 'I had studied (Past Perfect) before the exam started (Past Indefinite)' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pap_060",
+      "tenseType": "Past Perfect",
+      "question": "Translate: 'আমরা পৌঁছানোর আগেই বৃষ্টি থেমেছিল।'",
+      "options": [
+        "It had stopped raining before we arrived.",
+        "It stopped raining before we arrived.",
+        "It has stopped raining before we arrived.",
+        "It was stopped raining before we arrived."
+      ],
+      "correctAnswer": "It had stopped raining before we arrived.",
+      "explanation": "পৌঁছানোর আগের ঘটনাটি Past Perfect হবে। 'It had stopped raining before we arrived' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pap_061",
+      "tenseType": "Past Perfect",
+      "question": "Translate: 'বাবা আসার আগেই মা রান্না শেষ করেছিলেন।'",
+      "options": [
+        "My mother had cooked before father arrived.",
+        "My mother cooked before father arrived.",
+        "My mother has cooked before father arrived.",
+        "My mother was cooking before father arrived."
+      ],
+      "correctAnswer": "My mother had cooked before father arrived.",
+      "explanation": "বাবার আসার পূর্বেই রান্নার কাজ শেষ হয়েছিল। 'Before'-এর আগের অংশ Past Perfect হওয়ায় 'My mother had cooked' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pap_062",
+      "tenseType": "Past Perfect",
+      "question": "Translate: 'তুমি আসার আগেই আমরা সিনেমাটি দেখেছিলাম।'",
+      "options": [
+        "We had watched the movie before you came.",
+        "We watched the movie before you came.",
+        "We have watched the movie before you came.",
+        "We were watching the movie before you came."
+      ],
+      "correctAnswer": "We had watched the movie before you came.",
+      "explanation": "তোমার আসার পূর্বেই আমাদের সিনেমা দেখা শেষ হয়েছিল। 'We had watched the movie before you came' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pap_063",
+      "tenseType": "Past Perfect",
+      "question": "Translate: 'লন্ডন যাওয়ার আগেই সে ইংরেজি শিখেছিল।'",
+      "options": [
+        "He had learned English before he went to London.",
+        "He learned English before he went to London.",
+        "He has learned English before he went to London.",
+        "He had learn English before he went to London."
+      ],
+      "correctAnswer": "He had learned English before he went to London.",
+      "explanation": "লন্ডন যাওয়ার পূর্বের কাজ Past Perfect হবে। 'He had learned English (Past Perfect) before he went (Past Indefinite) to London' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pap_064",
+      "tenseType": "Past Perfect",
+      "question": "Translate: 'আমি বোঝার আগেই তারা চলে গিয়েছিল।'",
+      "options": [
+        "They had left before I understood.",
+        "They left before I understood.",
+        "They have left before I understood.",
+        "They had leave before I understood."
+      ],
+      "correctAnswer": "They had left before I understood.",
+      "explanation": "আমার বোঝার পূর্বেই তারা চলে গিয়েছিল। চলে যাওয়ার কাজটি আগে ঘটায় Past Perfect 'They had left' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pap_065",
+      "tenseType": "Past Perfect",
+      "question": "Translate: 'ডাক্তার আসার পূর্বে রোগী মারা গেল।'",
+      "options": [
+        "The patient had died before the doctor came.",
+        "The patient died before the doctor came.",
+        "The patient has died before the doctor came.",
+        "The patient had die before the doctor came."
+      ],
+      "correctAnswer": "The patient had died before the doctor came.",
+      "explanation": "এটি একটি ক্লাসিক উদাহরণ। ডাক্তারের আসার পূর্বেই রোগী মারা গিয়েছিল, তাই মৃত্যুর কাজটি Past Perfect 'The patient had died' হবে।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "pap_066",
+      "tenseType": "Past Perfect",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She had finished her work before I arrived.",
+        "She has finished her work before I arrived.",
+        "She finished her work before I had arrived.",
+        "She was finished her work before I arrived."
+      ],
+      "correctAnswer": "She had finished her work before I arrived.",
+      "explanation": "Quick: Past Perfect-এর গঠন অনুযায়ী 'before' এর পূর্বে 'had + V3' এবং পরে 'V2' বসে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pap_067",
+      "tenseType": "Past Perfect",
+      "question": "Choose the correct form: 'They ____ football before.'",
+      "options": ["had played", "has played", "played", "playing"],
+      "correctAnswer": "had played",
+      "explanation": "Quick: পূর্বে খেলেছিল এমন অভিজ্ঞতা প্রকাশ করতে 'They' এর সাথে Past Perfect 'had played' বসবে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pap_068",
+      "tenseType": "Past Perfect",
+      "question": "Pick the correct negative: 'She ____ her work before her mom came.'",
+      "options": ["had not finished", "has not finished", "not had finished", "did not finished"],
+      "correctAnswer": "had not finished",
+      "explanation": "Quick: Past Perfect negative = subject + had not + V3। 'She had not finished' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pap_069",
+      "tenseType": "Past Perfect",
+      "question": "Pick the correct question form: '____ they left before you arrived?'",
+      "options": ["Had", "Have", "Did", "Was"],
+      "correctAnswer": "Had",
+      "explanation": "Quick: Past Perfect question = Had + subject + V3 + before + subject + V2? শুরুতে 'Had' বসবে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pap_070",
+      "tenseType": "Past Perfect",
+      "question": "Which sentence shows an action completed before another past action?",
+      "options": [
+        "The train had left before we arrived.",
+        "The train left when we arrived.",
+        "The train was leaving as we arrived.",
+        "The train has left before we arrived."
+      ],
+      "correctAnswer": "The train had left before we arrived.",
+      "explanation": "Quick: 'had left' (Past Perfect) আমাদের পৌঁছানোর (arrived) পূর্বে কাজটির সমাপ্তি নির্দেশ করে।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pap_071",
+      "tenseType": "Past Perfect",
+      "question": "Choose the correct verb: 'The baby ____ before she woke up.'",
+      "options": ["had cried", "has cried", "cries", "was crying"],
+      "correctAnswer": "had cried",
+      "explanation": "Quick: ঘুম থেকে জাগার পূর্বেই শিশুটি কেঁদেছিল। 'had cried' Past Perfect নির্দেশ করে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pap_072",
+      "tenseType": "Past Perfect",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "He had known the answer before I explained it.",
+        "He has known the answer before I explained it.",
+        "He had know the answer before I explained it.",
+        "He known the answer before I explained it."
+      ],
+      "correctAnswer": "He had known the answer before I explained it.",
+      "explanation": "Quick: 'know'-এর past participle (V3) হলো 'known'। 'had known' সম্বলিত প্রথম বাক্যটি ব্যাকরণগতভাবে সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pap_073",
+      "tenseType": "Past Perfect",
+      "question": "Choose the correct sentence with 'after':",
+      "options": [
+        "She arrived after he had left.",
+        "She had arrived after he left.",
+        "She arrived after he left.",
+        "She had arrived after he had left."
+      ],
+      "correctAnswer": "She arrived after he had left.",
+      "explanation": "Quick: 'after'-এর পরের অংশে Past Perfect (had left) এবং আগের অংশে Past Indefinite (arrived) বসে।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "pap_074",
+      "tenseType": "Past Perfect",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She had swum two laps before she got tired.",
+        "She had swimmed two laps before she got tired.",
+        "She had swam two laps before she got tired.",
+        "She has swum two laps before she got tired."
+      ],
+      "correctAnswer": "She had swum two laps before she got tired.",
+      "explanation": "Quick: 'swim' এর V3 হলো 'swum'। 'before' এর পূর্বে Past Perfect অনুযায়ী 'She had swum' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }

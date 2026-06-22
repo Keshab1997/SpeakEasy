@@ -1,6 +1,897 @@
 {
   "tenseType": "Future Continuous",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "fc_001",
+      "tenseType": "Future Continuous",
+      "question": "She ____ a book tomorrow at this time.",
+      "options": ["will be reading", "reads", "will reading", "readed"],
+      "correctAnswer": "will be reading",
+      "explanation": "ভবিষ্যতে কোনো নির্দিষ্ট সময়ে কোনো কাজ চলতে থাকবে বোঝাতে Future Continuous Tense হয়। গঠন: subject + will be + verb-ing। তাই 'will be reading' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_002",
+      "tenseType": "Future Continuous",
+      "question": "They ____ football next Sunday evening.",
+      "options": ["will be playing", "played", "plays", "will playing"],
+      "correctAnswer": "will be playing",
+      "explanation": "ভবিষ্যতের কোনো সময়ে কোনো কাজ চলমান থাকবে বোঝাতে Future Continuous হয়। 'They' এর পর 'will be' এবং verb-ing 'playing' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_003",
+      "tenseType": "Future Continuous",
+      "question": "I ____ for the exam tomorrow night.",
+      "options": ["will be studying", "studies", "studied", "studying"],
+      "correctAnswer": "will be studying",
+      "explanation": "আগামীকাল রাতে আমি পড়তে থাকব (চলমান কাজ)। Future Continuous গঠনে 'I' এর সাথে 'will be studying' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_004",
+      "tenseType": "Future Continuous",
+      "question": "He ____ to the market when you arrive tomorrow.",
+      "options": ["will be going", "went", "goes", "will going"],
+      "correctAnswer": "will be going",
+      "explanation": "ভবিষ্যতে আপনি যখন পৌঁছাবেন তখন সে বাজারে যেতে থাকবে (চলমান কাজ)। গঠন অনুযায়ী 'will be going' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_005",
+      "tenseType": "Future Continuous",
+      "question": "The children ____ in the park this time tomorrow.",
+      "options": ["play", "will be playing", "plays", "played"],
+      "correctAnswer": "will be playing",
+      "explanation": "আগামীকাল এই সময়ে শিশুরা পার্কে খেলতে থাকবে। Future Continuous-এর গঠন অনুযায়ী 'will be playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_006",
+      "tenseType": "Future Continuous",
+      "question": "My mother ____ dinner in the kitchen when we get home.",
+      "options": ["cooks", "will be cooking", "cooked", "cooking"],
+      "correctAnswer": "will be cooking",
+      "explanation": "আমরা বাড়ি ফেরার সময় মা রান্না করতে থাকবেন (ভবিষ্যতে চলমান কাজ)। 'will be' + verb-ing 'cooking' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_007",
+      "tenseType": "Future Continuous",
+      "question": "We ____ a movie at 9 PM tonight.",
+      "options": ["watch", "will be watching", "watched", "watching"],
+      "correctAnswer": "will be watching",
+      "explanation": "আজ রাত ৯টায় আমরা সিনেমা দেখতে থাকব। ভবিষ্যতের নির্দিষ্ট সময়ে চলমান কাজ প্রকাশ করতে 'will be watching' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_008",
+      "tenseType": "Future Continuous",
+      "question": "The baby ____ when you make that noise.",
+      "options": ["sleeps", "will be sleeping", "slept", "sleeping"],
+      "correctAnswer": "will be sleeping",
+      "explanation": "তুমি শব্দ করার সময় শিশুটি ঘুমাতে থাকবে। Future Continuous-এর কাঠামো অনুযায়ী 'will be sleeping' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_009",
+      "tenseType": "Future Continuous",
+      "question": "At 10 AM tomorrow, you ____ your exam.",
+      "options": ["know", "will be taking", "knows", "knew"],
+      "correctAnswer": "will be taking",
+      "explanation": "আগামীকাল সকাল ১০টায় পরীক্ষা দিতে থাকবে (চলমান কাজ)। Future Continuous অনুযায়ী 'will be taking' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_010",
+      "tenseType": "Future Continuous",
+      "question": "It ____ heavily tomorrow afternoon.",
+      "options": ["rains", "will be raining", "rained", "raining"],
+      "correctAnswer": "will be raining",
+      "explanation": "আগামীকাল বিকেলে মুষলধারে বৃষ্টি হতে থাকবে। ভবিষ্যৎ চলমান কাজ প্রকাশে 'will be raining' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_011",
+      "tenseType": "Future Continuous",
+      "question": "The students ____ to the lecture this time tomorrow.",
+      "options": ["listen", "will be listening", "listened", "listening"],
+      "correctAnswer": "will be listening",
+      "explanation": "আগামীকাল এই সময়ে ছাত্ররা বক্তৃতা শুনতে থাকবে। ভবিষ্যৎ চলমান কাজ হওয়ায় 'will be listening' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_012",
+      "tenseType": "Future Continuous",
+      "question": "He ____ a letter to his friend when you visit.",
+      "options": ["writes", "will be writing", "wrote", "written"],
+      "correctAnswer": "will be writing",
+      "explanation": "তুমি যখন দেখা করবে তখন সে তার বন্ধুকে চিঠি লিখতে থাকবে। Future Continuous অনুযায়ী 'will be writing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_013",
+      "tenseType": "Future Continuous",
+      "question": "They ____ their new house all next year.",
+      "options": ["build", "will be building", "builds", "building"],
+      "correctAnswer": "will be building",
+      "explanation": "আগামী বছর জুড়ে তারা বাড়িটি তৈরি করতে থাকবে (দীর্ঘস্থায়ী ভবিষ্যৎ চলমান কাজ)। 'will be building' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_014",
+      "tenseType": "Future Continuous",
+      "question": "I ____ for my keys when you arrive.",
+      "options": ["find", "will be looking", "finds", "finding"],
+      "correctAnswer": "will be looking",
+      "explanation": "তুমি যখন পৌঁছাবে তখন আমি আমার চাবি খুঁজতে থাকব। Future Continuous-এ 'will be looking' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_015",
+      "tenseType": "Future Continuous",
+      "question": "She ____ a red dress to the party tomorrow.",
+      "options": ["wears", "will be wearing", "wore", "worn"],
+      "correctAnswer": "will be wearing",
+      "explanation": "আগামীকালের পার্টিতে সে লাল পোশাক পরিহিত অবস্থায় থাকবে। Future Continuous গঠনে 'will be wearing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_016",
+      "tenseType": "Future Continuous",
+      "question": "The birds ____ in the trees tomorrow morning.",
+      "options": ["sing", "will be singing", "singing", "sang"],
+      "correctAnswer": "will be singing",
+      "explanation": "আগামীকাল সকালে পাখিগুলো গাছে গান গাইতে থাকবে। 'will be singing' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_017",
+      "tenseType": "Future Continuous",
+      "question": "We ____ for the bus this time tomorrow.",
+      "options": ["wait", "will be waiting", "waits", "waiting"],
+      "correctAnswer": "will be waiting",
+      "explanation": "আগামীকাল এই সময়ে আমরা বাসের জন্য অপেক্ষা করতে থাকব। 'will be waiting' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_018",
+      "tenseType": "Future Continuous",
+      "question": "He ____ his room tomorrow afternoon.",
+      "options": ["cleans", "will be cleaning", "cleaned", "cleaning"],
+      "correctAnswer": "will be cleaning",
+      "explanation": "আগামীকাল বিকেলে সে তার ঘর পরিষ্কার করতে থাকবে। Future Continuous-এ 'will be cleaning' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_019",
+      "tenseType": "Future Continuous",
+      "question": "The dog ____ in the garden when we open the gate tomorrow.",
+      "options": ["run", "will be running", "runs", "running"],
+      "correctAnswer": "will be running",
+      "explanation": "আগামীকাল যখন আমরা গেট খুলব তখন কুকুরটি বাগানে দৌড়াতে থাকবে। 'will be running' (double n সহ) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_020",
+      "tenseType": "Future Continuous",
+      "question": "I ____ dinner at a restaurant this time tonight.",
+      "options": ["have", "will be having", "has", "having"],
+      "correctAnswer": "will be having",
+      "explanation": "আজ রাতে এই সময়ে আমি রেস্তোরাঁয় রাতের খাবার খেতে থাকব। খাওয়া অর্থে 'having' বসে। 'will be having' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_021",
+      "tenseType": "Future Continuous",
+      "question": "She ____ to London this time next week.",
+      "options": ["travel", "will be travelling", "travels", "travelling"],
+      "correctAnswer": "will be travelling",
+      "explanation": "আগামী সপ্তাহে এই সময়ে সে লন্ডন ভ্রমণ করতে থাকবে। ভবিষ্যৎ চলমান সময় নির্দেশ করায় Future Continuous 'will be travelling' (double l) হবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_022",
+      "tenseType": "Future Continuous",
+      "question": "They ____ a party tomorrow at 8 PM.",
+      "options": ["have", "will be having", "has", "having"],
+      "correctAnswer": "will be having",
+      "explanation": "আগামীকাল রাত ৮টায় তারা একটি পার্টির আয়োজন করতে থাকবে। Future Continuous-এ 'will be having' বসবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_023",
+      "tenseType": "Future Continuous",
+      "question": "He ____ working as a teacher next year.",
+      "options": ["is", "will be", "was", "has been"],
+      "correctAnswer": "will be",
+      "explanation": "আগামী বছর সে শিক্ষক হিসেবে কাজ করতে থাকবে। 'working' এর আগে Future Continuous-এর সাহায্যকারী verb 'will be' বসবে।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_024",
+      "tenseType": "Future Continuous",
+      "question": "Don't phone me between 7 and 8 PM because we ____ dinner.",
+      "options": ["have", "will be having", "are having", "will have"],
+      "correctAnswer": "will be having",
+      "explanation": "সন্ধ্যা ৭টা থেকে ৮টার মধ্যে ফোন করো না কারণ তখন আমরা রাতের খাবার খেতে থাকব (ভবিষ্যৎ চলমান কাজ)। 'will be having' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_025",
+      "tenseType": "Future Continuous",
+      "question": "The company ____ new employees all next month.",
+      "options": ["hire", "will be hiring", "hires", "hiring"],
+      "correctAnswer": "will be hiring",
+      "explanation": "আগামী মাস জুড়ে কোম্পানি নতুন কর্মী নিয়োগ দিতে থাকবে। Future Continuous গঠনে 'will be hiring' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_026",
+      "tenseType": "Future Continuous",
+      "question": "I ____ steady progress in English if I continue this course.",
+      "options": ["make", "will be making", "makes", "making"],
+      "correctAnswer": "will be making",
+      "explanation": "আমি যদি এই কোর্সটি চালু রাখি তবে ইংরেজিতে নিয়মত উন্নতি করতে থাকব। ভবিষ্যৎ চলমান অবস্থা প্রকাশে 'will be making' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_027",
+      "tenseType": "Future Continuous",
+      "question": "She ____ for her exams all next week.",
+      "options": ["prepare", "will be preparing", "prepares", "preparing"],
+      "correctAnswer": "will be preparing",
+      "explanation": "আগামী সপ্তাহ জুড়ে সে পরীক্ষার প্রস্তুতি নিতে থাকবে। দীর্ঘস্থায়ী ভবিষ্যৎ চলমান কাজ হিসেবে 'will be preparing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_028",
+      "tenseType": "Future Continuous",
+      "question": "The climate of this region ____ changing rapidly over the next decade.",
+      "options": ["changes", "will be", "changed", "changing"],
+      "correctAnswer": "will be",
+      "explanation": "আগামী দশকে এই অঞ্চলের জলবায়ু দ্রুত পরিবর্তিত হতে থাকবে। 'changing' এর পূর্বে Future Continuous অনুযায়ী 'will be' বসবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_029",
+      "tenseType": "Future Continuous",
+      "question": "He ____ more and more impatient if the train is delayed.",
+      "options": ["become", "will be becoming", "becomes", "becoming"],
+      "correctAnswer": "will be becoming",
+      "explanation": "ট্রেন বিলম্বিত হলে সে ক্রমশ অধৈর্য হয়ে উঠতে থাকবে। ভবিষ্যতের ক্রমান্বয়িক চলমান পরিবর্তন বোঝাতে 'will be becoming' বসে।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_030",
+      "tenseType": "Future Continuous",
+      "question": "I ____ you at the station tomorrow at 5 PM.",
+      "options": ["meet", "will be meeting", "meets", "meeting"],
+      "correctAnswer": "will be meeting",
+      "explanation": "আগামীকাল বিকেল ৫টায় আমি স্টেশনে তোমার সাথে দেখা করতে থাকব। 'will be meeting' সঠিক রূপ।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fc_031",
+      "tenseType": "Future Continuous",
+      "question": "Identify the tense: 'She will be reading a book tomorrow.'",
+      "options": ["Present Indefinite", "Past Indefinite", "Future Indefinite", "Future Continuous"],
+      "correctAnswer": "Future Continuous",
+      "explanation": "'will be reading' ভবিষ্যৎ সময়ের চলমান কাজকে নির্দেশ করে, যা Future Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fc_032",
+      "tenseType": "Future Continuous",
+      "question": "Identify the tense: 'They will be playing football next Sunday.'",
+      "options": ["Future Indefinite", "Present Indefinite", "Past Indefinite", "Future Continuous"],
+      "correctAnswer": "Future Continuous",
+      "explanation": "Subject + will be + verb-ing (playing) থাকার কারণে এটি Future Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fc_033",
+      "tenseType": "Future Continuous",
+      "question": "Identify the tense: 'I will be studying for my exam tonight.'",
+      "options": ["Future Indefinite", "Future Continuous", "Present Perfect", "Past Simple"],
+      "correctAnswer": "Future Continuous",
+      "explanation": "'will be studying' দ্বারা আজ রাতে কোনো একটি কাজ কিছু সময় ধরে চলতে থাকবে বোঝায় — Future Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fc_034",
+      "tenseType": "Future Continuous",
+      "question": "Identify the tense: 'He will be going to the market soon.'",
+      "options": ["Future Indefinite", "Present Continuous", "Future Continuous", "Past Indefinite"],
+      "correctAnswer": "Future Continuous",
+      "explanation": "'will be going' ভবিষ্যতে ঘটতে থাকা কোনো চলমান কাজকে নির্দেশ করে, যা Future Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fc_035",
+      "tenseType": "Future Continuous",
+      "question": "Identify the tense: 'The baby will be crying if you leave.'",
+      "options": ["Future Indefinite", "Future Continuous", "Past Indefinite", "Present Continuous"],
+      "correctAnswer": "Future Continuous",
+      "explanation": "শর্তাধীন বাক্যের চলমান ফলাফল অংশটি ('The baby will be crying') Future Continuous Tense-এ রয়েছে।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fc_036",
+      "tenseType": "Future Continuous",
+      "question": "Identify the tense: 'We will be watching a movie next week.'",
+      "options": ["Future Indefinite", "Future Continuous", "Past Indefinite", "Future Perfect"],
+      "correctAnswer": "Future Continuous",
+      "explanation": "'will be watching' ভবিষ্যৎ সময়ে কোনো কাজ চলতে থাকার নির্দেশ করে — Future Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fc_037",
+      "tenseType": "Future Continuous",
+      "question": "Identify the tense: 'It will be raining tomorrow.'",
+      "options": ["Future Indefinite", "Present Indefinite", "Future Continuous", "Past Indefinite"],
+      "correctAnswer": "Future Continuous",
+      "explanation": "আগামীকালের আবহাওয়ার চলমান অবস্থা বোঝাতে 'will be raining' (Future Continuous) ব্যবহৃত হয়েছে।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fc_038",
+      "tenseType": "Future Continuous",
+      "question": "Identify the tense: 'The students will be listening to the teacher.'",
+      "options": ["Future Indefinite", "Present Indefinite", "Future Continuous", "Past Indefinite"],
+      "correctAnswer": "Future Continuous",
+      "explanation": "সহায়তাকারী 'will be + verb-ing' যুক্ত থাকায় এটি Future Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fc_039",
+      "tenseType": "Future Continuous",
+      "question": "Identify the tense: 'She will be wearing a beautiful dress.'",
+      "options": ["Future Indefinite", "Future Continuous", "Past Indefinite", "Present Continuous"],
+      "correctAnswer": "Future Continuous",
+      "explanation": "ভবিষ্যতে কোনো এক সময়ে সে সুন্দর পোশাক পরে থাকবে (অবস্থা চলমান)। 'will be wearing' হলো Future Continuous।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fc_040",
+      "tenseType": "Future Continuous",
+      "question": "Identify the tense: 'I will be meeting him in 2030.'",
+      "options": ["Future Indefinite", "Present Continuous", "Future Continuous", "Future Perfect"],
+      "correctAnswer": "Future Continuous",
+      "explanation": "ভবিষ্যতের নির্দিষ্ট বছরে দেখা করার চলমান পরিকল্পনা প্রকাশে 'will be meeting' ব্যবহৃত হয়েছে। এটি Future Continuous Tense।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fc_041",
+      "tenseType": "Future Continuous",
+      "question": "Arrange: (tomorrow / reading / she / a / book / will / be)",
+      "options": [
+        "She will be reading a book tomorrow.",
+        "She tomorrow reading will be a book.",
+        "Tomorrow reading she will be a book.",
+        "She will be a book reading tomorrow."
+      ],
+      "correctAnswer": "She will be reading a book tomorrow.",
+      "explanation": "সঠিক গঠন: Subject (She) + will be + verb-ing (reading) + Object (a book) + Time (tomorrow)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fc_042",
+      "tenseType": "Future Continuous",
+      "question": "Arrange: (playing / they / football / will / be / tomorrow)",
+      "options": [
+        "They will be playing football tomorrow.",
+        "They tomorrow playing will be football.",
+        "Tomorrow playing they will be football.",
+        "They football will be playing tomorrow."
+      ],
+      "correctAnswer": "They will be playing football tomorrow.",
+      "explanation": "সঠিক গঠন: Subject (They) + will be + verb-ing (playing) + Object (football) + Time (tomorrow)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fc_043",
+      "tenseType": "Future Continuous",
+      "question": "Arrange: (waiting / I / will / be / for / the / bus / tomorrow)",
+      "options": [
+        "I will be waiting for the bus tomorrow.",
+        "I tomorrow waiting will be for the bus.",
+        "Waiting I will be for the bus tomorrow.",
+        "I will be waiting tomorrow for the bus."
+      ],
+      "correctAnswer": "I will be waiting for the bus tomorrow.",
+      "explanation": "সঠিক গঠন: Subject (I) + will be + verb-ing (waiting) + Prepositional Object (for the bus) + Time (tomorrow)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fc_044",
+      "tenseType": "Future Continuous",
+      "question": "Arrange: (cooking / kitchen / mother / in / the / my / will / be)",
+      "options": [
+        "My mother will be cooking in the kitchen.",
+        "My mother in the kitchen will be cooking.",
+        "Will be cooking my mother in the kitchen.",
+        "My mother kitchen in the will be cooking."
+      ],
+      "correctAnswer": "My mother will be cooking in the kitchen.",
+      "explanation": "সঠিক গঠন: Subject (My mother) + will be + verb-ing (cooking) + Place (in the kitchen)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fc_045",
+      "tenseType": "Future Continuous",
+      "question": "Arrange: (having / party / they / next / Saturday / a / will / be)",
+      "options": [
+        "They will be having a party next Saturday.",
+        "They next Saturday will be having a party.",
+        "Next Saturday will they be having a party.",
+        "They a party will be having next Saturday."
+      ],
+      "correctAnswer": "They will be having a party next Saturday.",
+      "explanation": "সঠিক গঠন: Subject (They) + will be + verb-ing (having) + Object (a party) + Time (next Saturday)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fc_046",
+      "tenseType": "Future Continuous",
+      "question": "Arrange: (rapidly / changing / climate / the / will / be)",
+      "options": [
+        "The climate will be changing rapidly.",
+        "The climate rapidly will be changing.",
+        "Will be changing the climate rapidly.",
+        "The climate will rapidly be changing."
+      ],
+      "correctAnswer": "The climate will be changing rapidly.",
+      "explanation": "সঠিক গঠন: Subject (The climate) + will be + verb-ing (changing) + Adverb (rapidly)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fc_047",
+      "tenseType": "Future Continuous",
+      "question": "Find the error: 'She will be read a book tomorrow.'",
+      "options": [
+        "She will be reading a book tomorrow.",
+        "She reads a book tomorrow.",
+        "She will reads a book tomorrow.",
+        "She is will be reading a book tomorrow."
+      ],
+      "correctAnswer": "She will be reading a book tomorrow.",
+      "explanation": "Future Continuous-এ 'will be' এর পর সর্বদা verb-ing বসে। 'read' ভুল, 'reading' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fc_048",
+      "tenseType": "Future Continuous",
+      "question": "Find the error: 'They will playing football tomorrow.'",
+      "options": [
+        "They will be playing football tomorrow.",
+        "They will played football tomorrow.",
+        "They plays football tomorrow.",
+        "They are will be playing football tomorrow."
+      ],
+      "correctAnswer": "They will be playing football tomorrow.",
+      "explanation": "Future Continuous-এ 'will' এবং verb-ing এর মাঝে 'be' থাকা আবশ্যক। 'They will be playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fc_049",
+      "tenseType": "Future Continuous",
+      "question": "Find the error: 'I will be wrote a letter tomorrow.'",
+      "options": [
+        "I will be writing a letter tomorrow.",
+        "I write a letter tomorrow.",
+        "I will write a letter tomorrow.",
+        "I will be written a letter tomorrow."
+      ],
+      "correctAnswer": "I will be writing a letter tomorrow.",
+      "explanation": "'will be' এর পর past form 'wrote' বা past participle 'written' বসে না। Verb-ing 'writing' বসবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fc_050",
+      "tenseType": "Future Continuous",
+      "question": "Find the error: 'He is will be going to school tomorrow.'",
+      "options": [
+        "He will be going to school tomorrow.",
+        "He goes to school tomorrow.",
+        "He will be go to school tomorrow.",
+        "He is go to school tomorrow."
+      ],
+      "correctAnswer": "He will be going to school tomorrow.",
+      "explanation": "Future Continuous-এর গঠনে auxiliary 'is' এবং 'will be' একসাথে বসে না। 'He will be going' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fc_051",
+      "tenseType": "Future Continuous",
+      "question": "Find the error: 'The children will be played in the park.'",
+      "options": [
+        "The children will be playing in the park.",
+        "The children plays in the park.",
+        "The children playing in the park.",
+        "The children will playing in the park."
+      ],
+      "correctAnswer": "The children will be playing in the park.",
+      "explanation": "'will be' এর পর past form 'played' বসবে না, continuous বোঝাতে 'playing' বসাতে হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fc_052",
+      "tenseType": "Future Continuous",
+      "question": "Find the error: 'We will watching a movie tomorrow.'",
+      "options": [
+        "We will be watching a movie tomorrow.",
+        "We watch a movie tomorrow.",
+        "We are watching a movie tomorrow.",
+        "We will watched a movie tomorrow."
+      ],
+      "correctAnswer": "We will be watching a movie tomorrow.",
+      "explanation": "Future Continuous-এ 'will' এর সাথে সরাসরি 'watching' হয় না, মাঝে 'be' যুক্ত হয়ে 'will be watching' হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fc_053",
+      "tenseType": "Future Continuous",
+      "question": "Find the error: 'It will be rain heavily tomorrow.'",
+      "options": [
+        "It will be raining heavily tomorrow.",
+        "It rains heavily tomorrow.",
+        "It will rain heavily tomorrow.",
+        "It is will rain heavily tomorrow."
+      ],
+      "correctAnswer": "It will be raining heavily tomorrow.",
+      "explanation": "'will be' এর পর base form 'rain' ভুল। Continuous গঠনে 'will be raining' বসবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fc_054",
+      "tenseType": "Future Continuous",
+      "question": "Find the error: 'She will be swiming in the pool.'",
+      "options": [
+        "She will be swimming in the pool.",
+        "She swims in the pool.",
+        "She will swim in the pool.",
+        "She will be swim in the pool."
+      ],
+      "correctAnswer": "She will be swimming in the pool.",
+      "explanation": "বানানগত ভুল: 'swim' এর সাথে 'ing' যুক্ত করার সময় m ডাবল হবে (swimming)। 'swiming' ভুল বানান।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fc_055",
+      "tenseType": "Future Continuous",
+      "question": "Find the error: 'He will be buys a new car.'",
+      "options": [
+        "He will be buying a new car.",
+        "He buys a new car.",
+        "He will buy a new car.",
+        "He is buying a new car next week."
+      ],
+      "correctAnswer": "He will be buying a new car.",
+      "explanation": "'will be' এর পরে s/es যুক্ত verb বসে না। Continuous রূপ 'buying' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fc_056",
+      "tenseType": "Future Continuous",
+      "question": "Find the error: 'They will be makeing a mistake.'",
+      "options": [
+        "They will be making a mistake.",
+        "They make a mistake.",
+        "They will making a mistake.",
+        "They are will make a mistake."
+      ],
+      "correctAnswer": "They will be making a mistake.",
+      "explanation": "বানানগত ভুল: 'make' এর শেষে silent 'e' বাদ দিয়ে 'ing' যোগ করতে হয় (making)। 'makeing' ভুল বানান।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fc_057",
+      "tenseType": "Future Continuous",
+      "question": "Translate: 'সে আগামীকাল একটি বই পড়তে থাকবে।'",
+      "options": [
+        "She will be reading a book tomorrow.",
+        "She reads a book tomorrow.",
+        "She is reading a book tomorrow.",
+        "She will read a book tomorrow."
+      ],
+      "correctAnswer": "She will be reading a book tomorrow.",
+      "explanation": "'পড়তে থাকবে' দ্বারা ভবিষ্যতে কোনো কাজ চলমান থাকা নির্দেশ করে। তাই Future Continuous 'She will be reading a book tomorrow' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fc_058",
+      "tenseType": "Future Continuous",
+      "question": "Translate: 'তারা আগামীকাল ফুটবল খেলতে থাকবে।'",
+      "options": [
+        "They will be playing football tomorrow.",
+        "They play football tomorrow.",
+        "They will play football tomorrow.",
+        "They played football tomorrow."
+      ],
+      "correctAnswer": "They will be playing football tomorrow.",
+      "explanation": "ভবিষ্যতে খেলা চলতে থাকবে — Future Continuous। 'They will be playing football tomorrow' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fc_059",
+      "tenseType": "Future Continuous",
+      "question": "Translate: 'আমি আজ রাতে পড়তে থাকব।'",
+      "options": [
+        "I will be studying tonight.",
+        "I study tonight.",
+        "I am studying tonight.",
+        "I will study tonight."
+      ],
+      "correctAnswer": "I will be studying tonight.",
+      "explanation": "আজ রাতে পড়াশোনার কাজ চলতে থাকবে — Future Continuous। 'I will be studying tonight' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fc_060",
+      "tenseType": "Future Continuous",
+      "question": "Translate: 'আগামীকাল বৃষ্টি হতে থাকবে।'",
+      "options": [
+        "It will be raining tomorrow.",
+        "It rains tomorrow.",
+        "It will rain tomorrow.",
+        "It rained tomorrow."
+      ],
+      "correctAnswer": "It will be raining tomorrow.",
+      "explanation": "আগামীকালের বৃষ্টির চলমান অবস্থা — Future Continuous। সাবজেক্ট 'It' এর সাথে 'will be raining tomorrow' বসবে।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fc_061",
+      "tenseType": "Future Continuous",
+      "question": "Translate: 'আমার মা রান্না করতে থাকবেন।'",
+      "options": [
+        "My mother will be cooking.",
+        "My mother cooks.",
+        "My mother cooking.",
+        "My mother will cook."
+      ],
+      "correctAnswer": "My mother will be cooking.",
+      "explanation": "ভবিষ্যতে মা রান্না করতে থাকবেন — Future Continuous। 'My mother will be cooking' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fc_062",
+      "tenseType": "Future Continuous",
+      "question": "Translate: 'আমরা একটি সিনেমা দেখতে থাকব।'",
+      "options": [
+        "We will be watching a movie.",
+        "We watch a movie.",
+        "We will watch a movie.",
+        "We watched a movie."
+      ],
+      "correctAnswer": "We will be watching a movie.",
+      "explanation": "ভবিষ্যতে সিনেমা দেখার কাজ চলতে থাকবে — Future Continuous। 'We will be watching a movie' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fc_063",
+      "tenseType": "Future Continuous",
+      "question": "Translate: 'সে আগামী বছর এই সময়ে লন্ডনে যেতে থাকবে।'",
+      "options": [
+        "He will be travelling to London this time next year.",
+        "He goes to London next year.",
+        "He will go to London next year.",
+        "He travelled to London next year."
+      ],
+      "correctAnswer": "He will be travelling to London this time next year.",
+      "explanation": "ভবিষ্যতের নির্দিষ্ট সময়ে যাত্রা চলমান থাকবে। তাই Future Continuous 'He will be travelling to London this time next year' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fc_064",
+      "tenseType": "Future Continuous",
+      "question": "Translate: 'আবহাওয়া দ্রুত পরিবর্তিত হতে থাকবে।'",
+      "options": [
+        "The weather will be changing rapidly.",
+        "The weather changes rapidly.",
+        "The weather will change rapidly.",
+        "The weather changed rapidly."
+      ],
+      "correctAnswer": "The weather will be changing rapidly.",
+      "explanation": "ভবিষ্যতে জলবায়ুর ধারাবাহিক পরিবর্তন চলতে থাকবে। 'The weather will be changing rapidly' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fc_065",
+      "tenseType": "Future Continuous",
+      "question": "Translate: 'আমি আগামীকাল তার সাথে দেখা করতে থাকব।'",
+      "options": [
+        "I will be meeting him tomorrow.",
+        "I meet him tomorrow.",
+        "I am meeting him tomorrow.",
+        "I will meet him tomorrow."
+      ],
+      "correctAnswer": "I will be meeting him tomorrow.",
+      "explanation": "আগামীকাল দেখা করার প্রক্রিয়াটি চলতে থাকবে — Future Continuous। 'I will be meeting him tomorrow' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fc_066",
+      "tenseType": "Future Continuous",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She will be reading a book tomorrow.",
+        "She will be reads a book tomorrow.",
+        "She reads a book tomorrow.",
+        "She will reading a book tomorrow."
+      ],
+      "correctAnswer": "She will be reading a book tomorrow.",
+      "explanation": "Quick: Future Continuous-এ auxiliary 'will be' এর সাথে V-ing (reading) বসে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fc_067",
+      "tenseType": "Future Continuous",
+      "question": "Choose the correct form: 'They ____ football tomorrow.'",
+      "options": ["will be playing", "go", "will playing", "playing"],
+      "correctAnswer": "will be playing",
+      "explanation": "Quick: আগামীকালের চলমান কাজ নির্দেশ করায় Future Continuous 'will be playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fc_068",
+      "tenseType": "Future Continuous",
+      "question": "Pick the correct negative form: 'She ____ a book tomorrow.'",
+      "options": ["will not be reading", "does not read", "will not reading", "not will be reading"],
+      "correctAnswer": "will not be reading",
+      "explanation": "Quick: Future Continuous negative = subject + will not + be + verb-ing। তাই 'will not be reading' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fc_069",
+      "tenseType": "Future Continuous",
+      "question": "Pick the correct question form: '____ she be reading a book tomorrow?'",
+      "options": ["Will", "Does", "Do", "Is"],
+      "correctAnswer": "Will",
+      "explanation": "Quick: Future Continuous-এ প্রশ্ন করতে শুরুতে 'Will' বসে (Will + subject + be + verb-ing?)।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fc_070",
+      "tenseType": "Future Continuous",
+      "question": "Which sentence represents a future continuous action?",
+      "options": [
+        "I will be visiting Paris this time next year.",
+        "I visit Paris.",
+        "I visited Paris.",
+        "I will visit Paris."
+      ],
+      "correctAnswer": "I will be visiting Paris this time next year.",
+      "explanation": "Quick: 'will be visiting' এবং 'this time next year' ভবিষ্যতের দীর্ঘস্থায়ী চলমান পরিকল্পনা নির্দেশ করে।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fc_071",
+      "tenseType": "Future Continuous",
+      "question": "Choose the correct verb: 'The baby ____ when you arrive.'",
+      "options": ["will be sleeping", "wakes up", "woke up", "sleeping"],
+      "correctAnswer": "will be sleeping",
+      "explanation": "Quick: তুমি পৌঁছানোর সময় শিশুটি ঘুমাতে থাকবে। 'will be sleeping' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fc_072",
+      "tenseType": "Future Continuous",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "I will not be seeing him tomorrow.",
+        "I will not be saw him tomorrow.",
+        "I am not be seeing him tomorrow.",
+        "I will not be seen him tomorrow."
+      ],
+      "correctAnswer": "I will not be seeing him tomorrow.",
+      "explanation": "Quick: Negative বাক্যে 'will not be' এর পর verb-এর continuous form (seeing) বসে।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fc_073",
+      "tenseType": "Future Continuous",
+      "question": "Choose the correct negative sentence:",
+      "options": [
+        "He will not be writing the letter.",
+        "He will not be wrote the letter.",
+        "He does not be writing the letter.",
+        "He will not writing the letter."
+      ],
+      "correctAnswer": "He will not be writing the letter.",
+      "explanation": "Quick: 'will not be' এর পর continuous verb 'writing' বসে। 'wrote' (V2) বা 'writing' (be ছাড়া) ভুল।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fc_074",
+      "tenseType": "Future Continuous",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She will be swimming across the river tomorrow.",
+        "She will be swims across the river tomorrow.",
+        "She will be swimmed across the river tomorrow.",
+        "She is will be swimming across the river tomorrow."
+      ],
+      "correctAnswer": "She will be swimming across the river tomorrow.",
+      "explanation": "Quick: 'will be' এর সাথে verb-এর continuous form 'swimming' (double m সহ) বসে।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }

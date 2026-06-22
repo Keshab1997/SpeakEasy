@@ -1,6 +1,897 @@
 {
   "tenseType": "Future Perfect Continuous",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "fpc_001",
+      "tenseType": "Future Perfect Continuous",
+      "question": "She ____ a book for two hours by the time her mother arrives tomorrow.",
+      "options": ["will be reading", "will have been reading", "reads", "will have read"],
+      "correctAnswer": "will have been reading",
+      "explanation": "ভবিষ্যতে কোনো নির্দিষ্ট সময়ের পূর্ব পর্যন্ত (by the time her mother arrives) কোনো কাজ দীর্ঘ সময় ধরে চলতে থাকবে বোঝালে Future Perfect Continuous হয়। গঠন: subject + will have been + verb-ing।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_002",
+      "tenseType": "Future Perfect Continuous",
+      "question": "They ____ football for an hour before the storm starts.",
+      "options": ["will be playing", "will have been playing", "played", "will playing"],
+      "correctAnswer": "will have been playing",
+      "explanation": "ঝড় শুরু হওয়ার পূর্ব পর্যন্ত তারা এক ঘণ্টা ধরে খেলতে থাকবে। ভবিষ্যৎ শর্তাধীন সময়ের পূর্বের দীর্ঘ চলমান কাজের জন্য 'will have been playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_003",
+      "tenseType": "Future Perfect Continuous",
+      "question": "I ____ for the exam since morning by the time you wake up tomorrow.",
+      "options": ["will be studying", "will have been studying", "studies", "studied"],
+      "correctAnswer": "will have been studying",
+      "explanation": "আগামীকাল তোমার ঘুম থেকে ওঠার আগে আমি সকাল থেকে পড়তে থাকব। ভবিষ্যতের দীর্ঘ চলমান কাজ বোঝাতে 'will have been studying' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_004",
+      "tenseType": "Future Perfect Continuous",
+      "question": "He ____ in this company for ten years by next month.",
+      "options": ["will be working", "will have been working", "works", "worked"],
+      "correctAnswer": "will have been working",
+      "explanation": "আগামী মাসের মধ্যে এই কোম্পানিতে তার ১০ বছর ধরে কাজ করা হতে থাকবে। সময়ের স্থিতি বোঝাতে Future Perfect Continuous 'will have been working' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_005",
+      "tenseType": "Future Perfect Continuous",
+      "question": "The children ____ in the rain for an hour when we call them back.",
+      "options": ["play", "will have been playing", "will be playing", "played"],
+      "correctAnswer": "will have been playing",
+      "explanation": "আমরা যখন ডেকে নেব তখন শিশুরা এক ঘণ্টা ধরে বৃষ্টিতে খেলতে থাকবে। ভবিষ্যতের সীমার আগের দীর্ঘ চলমান কাজ বোঝাতে 'will have been playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_006",
+      "tenseType": "Future Perfect Continuous",
+      "question": "My mother ____ dinner in the kitchen all evening by the time guests arrive.",
+      "options": ["cooks", "will be cooking", "will have been cooking", "cooked"],
+      "correctAnswer": "will have been cooking",
+      "explanation": "অতিথিরা পৌঁছানোর আগেই মা সারা সন্ধ্যা ধরে রান্না করতে থাকবেন। Future Perfect Continuous গঠনে 'will have been cooking' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_007",
+      "tenseType": "Future Perfect Continuous",
+      "question": "We ____ the movie for thirty minutes before you join us.",
+      "options": ["watch", "will have been watching", "will be watching", "watched"],
+      "correctAnswer": "will have been watching",
+      "explanation": "তুমি আমাদের সাথে যোগ দেওয়ার আগেই আমাদের ৩০ মিনিট ধরে সিনেমাটি দেখা হতে থাকবে। 'will have been watching' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_008",
+      "tenseType": "Future Perfect Continuous",
+      "question": "The baby ____ for an hour before the mother returns tomorrow.",
+      "options": ["will be crying", "will have been crying", "cries", "cried"],
+      "correctAnswer": "will have been crying",
+      "explanation": "আগামীকাল মায়ের ফেরার আগে শিশুটি এক ঘণ্টা ধরে কাঁদতে থাকবে। ভবিষ্যৎ সময় নির্দেশক চলমান কাজ — 'will have been crying'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_009",
+      "tenseType": "Future Perfect Continuous",
+      "question": "You ____ on the phone for a long time by the time I reach.",
+      "options": ["talk", "will have been talking", "will be talking", "talked"],
+      "correctAnswer": "will have been talking",
+      "explanation": "আমি পৌঁছানোর আগেই তুমি দীর্ঘ সময় ধরে ফোনে কথা বলতে থাকবে। ভবিষ্যতের দীর্ঘ চলমান কাজের জন্য 'will have been talking' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_010",
+      "tenseType": "Future Perfect Continuous",
+      "question": "It ____ since morning by the time we leave tomorrow.",
+      "options": ["will be raining", "will have been raining", "rains", "rained"],
+      "correctAnswer": "will have been raining",
+      "explanation": "আগামীকাল আমাদের রওনা দেওয়ার আগে সকাল থেকে বৃষ্টি হতে থাকবে। আবহাওয়ার দীর্ঘ ভবিষ্যৎ চলমান অবস্থা — 'will have been raining'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_011",
+      "tenseType": "Future Perfect Continuous",
+      "question": "The students ____ to the lecture since 10 AM by the time class ends.",
+      "options": ["will be listening", "will have been listening", "listen", "listened"],
+      "correctAnswer": "will have been listening",
+      "explanation": "ক্লাস শেষ হওয়ার আগে সকাল ১০টা থেকে ছাত্ররা লেকচার শুনতে থাকবে। দীর্ঘ ভবিষ্যৎ চলমান কাজ বোঝাতে 'will have been listening' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_012",
+      "tenseType": "Future Perfect Continuous",
+      "question": "He ____ a letter for thirty minutes when his ride arrives.",
+      "options": ["will be writing", "will have been writing", "writes", "wrote"],
+      "correctAnswer": "will have been writing",
+      "explanation": "গাড়ি আসার পূর্ব পর্যন্ত সে ৩০ মিনিট ধরে চিঠিটি লিখতে থাকবে। ভবিষ্যতের পূর্বের চলমান কাজ — 'will have been writing'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_013",
+      "tenseType": "Future Perfect Continuous",
+      "question": "They ____ this bridge for two years by next December.",
+      "options": ["will be building", "will have been building", "build", "built"],
+      "correctAnswer": "will have been building",
+      "explanation": "আগামী ডিসেম্বরের মধ্যে দুই বছর ধরে তারা এই সেতুটি তৈরি করতে থাকবে। Future Perfect Continuous অনুযায়ী 'will have been building' হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_014",
+      "tenseType": "Future Perfect Continuous",
+      "question": "I ____ for my keys all morning by the time you arrive.",
+      "options": ["will be looking", "will have been looking", "looked", "looking"],
+      "correctAnswer": "will have been looking",
+      "explanation": "তুমি যখন পৌঁছাবে তখন আমি সারা সকাল ধরে চাবি খুঁজতে থাকব। দীর্ঘ ভবিষ্যৎ চলমান খোঁজার কাজ — 'will have been looking'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_015",
+      "tenseType": "Future Perfect Continuous",
+      "question": "She ____ a red dress for hours by the time the party ends.",
+      "options": ["wears", "will have been wearing", "will be wearing", "wore"],
+      "correctAnswer": "will have been wearing",
+      "explanation": "পার্টি শেষ হওয়ার আগেই সে কয়েক ঘণ্টা ধরে লাল পোশাকটি পরা অবস্থায় থাকবে। 'will have been wearing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_016",
+      "tenseType": "Future Perfect Continuous",
+      "question": "The birds ____ since sunrise by the time we wake up tomorrow.",
+      "options": ["sing", "will have been singing", "will be singing", "sang"],
+      "correctAnswer": "will have been singing",
+      "explanation": "আগামীকাল আমাদের ঘুম থেকে ওঠার আগেই সূর্যোদয় থেকে পাখিগুলো ডাকতে থাকবে। Future Perfect Continuous 'will have been singing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_017",
+      "tenseType": "Future Perfect Continuous",
+      "question": "We ____ for the bus for an hour by 10 AM tomorrow.",
+      "options": ["wait", "will have been waiting", "will be waiting", "waited"],
+      "correctAnswer": "will have been waiting",
+      "explanation": "আগামীকাল সকাল ১০টার মধ্যে আমাদের এক ঘণ্টা বাসের জন্য অপেক্ষা করা হতে থাকবে। 'will have been waiting' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_018",
+      "tenseType": "Future Perfect Continuous",
+      "question": "He ____ his room all day by the time his parents arrive tonight.",
+      "options": ["cleans", "will have been cleaning", "will be cleaning", "cleaned"],
+      "correctAnswer": "will have been cleaning",
+      "explanation": "আজ রাতে মা-বাবা পৌঁছানোর আগেই সে সারা দিন ধরে তার ঘর পরিষ্কার করতে থাকবে। 'will have been cleaning' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_019",
+      "tenseType": "Future Perfect Continuous",
+      "question": "The dog ____ in the garden for hours by sunset.",
+      "options": ["runs", "will have been running", "will be running", "ran"],
+      "correctAnswer": "will have been running",
+      "explanation": "সূর্যাস্তের আগেই কুকুরটি বাগানে কয়েক ঘণ্টা ধরে দৌড়াতে থাকবে। 'will have been running' (double n) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_020",
+      "tenseType": "Future Perfect Continuous",
+      "question": "I ____ lunch for thirty minutes by the time you join me.",
+      "options": ["have", "will have been having", "will be having", "having"],
+      "correctAnswer": "will have been having",
+      "explanation": "তুমি যখন আমার সাথে যোগ দেবে তখন আমার ৩০ মিনিট ধরে দুপুরের খাবার খাওয়া হতে থাকবে। খাওয়া অর্থে 'will have been having' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_021",
+      "tenseType": "Future Perfect Continuous",
+      "question": "She ____ to different cities for months by next year.",
+      "options": ["travels", "will have been travelling", "will be travelling", "travelled"],
+      "correctAnswer": "will have been travelling",
+      "explanation": "আগামী বছরের মধ্যে সে কয়েক মাস ধরে বিভিন্ন শহরে ভ্রমণ করতে থাকবে। দীর্ঘ ভ্রমণ পরিকল্পনা — 'will have been travelling'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_022",
+      "tenseType": "Future Perfect Continuous",
+      "question": "They ____ a surprise party for days before it happens.",
+      "options": ["plan", "will have been planning", "will be planning", "planned"],
+      "correctAnswer": "will have been planning",
+      "explanation": "অনুষ্ঠানটি ঘটার আগে তারা বেশ কয়েক দিন ধরে সারপ্রাইজ পার্টির পরিকল্পনা করতে থাকবে। 'will have been planning' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_023",
+      "tenseType": "Future Perfect Continuous",
+      "question": "He ____ hard to improve his grades for a semester by next month.",
+      "options": ["works", "will have been working", "will be working", "worked"],
+      "correctAnswer": "will have been working",
+      "explanation": "আগামী মাসের মধ্যে এক সেমিস্টার ধরে সে তার গ্রেড উন্নত করতে কঠোর পরিশ্রম করতে থাকবে। 'will have been working' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_024",
+      "tenseType": "Future Perfect Continuous",
+      "question": "You ____ too much noise all day if you don't stop soon.",
+      "options": ["make", "will have been making", "will be making", "made"],
+      "correctAnswer": "will have been making",
+      "explanation": "তুমি যদি শীঘ্রই না থামো তবে তোমার সারা দিন ধরে প্রচণ্ড গোলমাল করা হতে থাকবে। ভবিষ্যৎ ধারাবাহিক কাজ — 'will have been making'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_025",
+      "tenseType": "Future Perfect Continuous",
+      "question": "The company ____ new employees for months by next winter.",
+      "options": ["hires", "will have been hiring", "will be hiring", "hiring"],
+      "correctAnswer": "will have been hiring",
+      "explanation": "আগামী শীতের মধ্যে কোম্পানিটি কয়েক মাস ধরে কর্মী নিয়োগ করতে থাকবে। ভবিষ্যতের দীর্ঘমেয়াদী ধারাবাহিক কাজ — 'will have been hiring'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_026",
+      "tenseType": "Future Perfect Continuous",
+      "question": "I ____ progress in English since I joined this class by next July.",
+      "options": ["make", "will have been making", "will be making", "made"],
+      "correctAnswer": "will have been making",
+      "explanation": "আগামী জুলাই মাসের মধ্যে যোগদানের সময় থেকে আমি ইংরেজিতে ভালো উন্নতি করতে থাকব। 'will have been making' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_027",
+      "tenseType": "Future Perfect Continuous",
+      "question": "She ____ for her exams all week by tomorrow.",
+      "options": ["prepares", "will have been preparing", "will be preparing", "prepared"],
+      "correctAnswer": "will have been preparing",
+      "explanation": "আগামীকালের মধ্যে সারা সপ্তাহ ধরে সে পরীক্ষার প্রস্তুতি নিতে থাকবে। দীর্ঘ ভবিষ্যৎ প্রস্তুতি — 'will have been preparing'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_028",
+      "tenseType": "Future Perfect Continuous",
+      "question": "The world's climate ____ rapidly for decades by 2050.",
+      "options": ["changes", "will have been changing", "will be changing", "changed"],
+      "correctAnswer": "will have been changing",
+      "explanation": "২০৫০ সালের মধ্যে জলবায়ু কয়েক দশক ধরে দ্রুত পরিবর্তিত হতে থাকবে। দীর্ঘ ও ধারাবাহিক পরিবর্তন — 'will have been changing'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_029",
+      "tenseType": "Future Perfect Continuous",
+      "question": "He ____ more and more impatient as the hours pass by tomorrow.",
+      "options": ["gets", "will have been getting", "will be getting", "got"],
+      "correctAnswer": "will have been getting",
+      "explanation": "আগামীকাল সময় কেটে যাওয়ার সাথে সাথে সে ক্রমশ অধৈর্য হয়ে উঠতে থাকবে। ভবিষ্যতের ক্রমান্বয়িক পরিবর্তন — 'will have been getting' সঠিক।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_030",
+      "tenseType": "Future Perfect Continuous",
+      "question": "I ____ this novel for a month by next Friday.",
+      "options": ["read", "will have been reading", "will be reading", "reads"],
+      "correctAnswer": "will have been reading",
+      "explanation": "আগামী শুক্রবারের মধ্যে এক মাস ধরে আমি এই উপন্যাসটি পড়তে থাকব। ভবিষ্যতের সমাপ্ত বিন্দুর পূর্ব পর্যন্ত চলমান কাজ — 'will have been reading'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fpc_031",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Identify the tense: 'She will have been reading a book for an hour.'",
+      "options": ["Future Perfect", "Future Continuous", "Future Perfect Continuous", "Present Perfect Continuous"],
+      "correctAnswer": "Future Perfect Continuous",
+      "explanation": "'will have been reading' এবং 'for an hour' — এটি Future Perfect Continuous Tense-এর নিখুঁত গঠন।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fpc_032",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Identify the tense: 'They will have been playing football since morning.'",
+      "options": ["Future Perfect", "Future Perfect Continuous", "Future Continuous", "Present Perfect Continuous"],
+      "correctAnswer": "Future Perfect Continuous",
+      "explanation": "'will have been playing' এবং 'since morning' ভবিষ্যতের দীর্ঘ চলমান কাজ নির্দেশ করায় এটি Future Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fpc_033",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Identify the tense: 'I will have been studying for my exam all morning.'",
+      "options": ["Future Perfect Continuous", "Future Continuous", "Future Perfect", "Present Perfect Continuous"],
+      "correctAnswer": "Future Perfect Continuous",
+      "explanation": "ভবিষ্যতে নির্দিষ্ট সীমার পূর্বে সারা সকাল ধরে পড়াশোনা করার দীর্ঘ কাজ বোঝাতে 'will have been studying' ব্যবহৃত হয়েছে — Future Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fpc_034",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Identify the tense: 'He will have been going to the gym for months.'",
+      "options": ["Future Perfect Continuous", "Future Perfect", "Future Continuous", "Present Perfect Continuous"],
+      "correctAnswer": "Future Perfect Continuous",
+      "explanation": "ভবিষ্যতে কোনো এক সময়ের আগে কয়েক মাস ধরে নিয়মিত জিমে যাওয়া নির্দেশ করতে 'will have been going' ব্যবহৃত হয়।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fpc_035",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Identify the tense: 'The baby will have been crying for thirty minutes.'",
+      "options": ["Future Perfect", "Future Continuous", "Future Perfect Continuous", "Present Perfect Continuous"],
+      "correctAnswer": "Future Perfect Continuous",
+      "explanation": "ভবিষ্যতে কোনো নির্দিষ্ট সময়ে শিশুটির ৩০ মিনিট ধরে কাঁদার কাজ চলতে থাকবে। 'will have been crying' থাকায় এটি Future Perfect Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fpc_036",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Identify the tense: 'We will have been watching a movie since afternoon.'",
+      "options": ["Future Perfect", "Future Perfect Continuous", "Future Continuous", "Present Perfect Continuous"],
+      "correctAnswer": "Future Perfect Continuous",
+      "explanation": "ভবিষ্যতে বিকেলের শুরু থেকে আমাদের সিনেমা দেখার কাজ চলতে থাকবে — Future Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fpc_037",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Identify the tense: 'It will have been raining outside all day.'",
+      "options": ["Future Perfect Continuous", "Future Continuous", "Future Perfect", "Present Perfect Continuous"],
+      "correctAnswer": "Future Perfect Continuous",
+      "explanation": "ভবিষ্যতে সারা দিন ধরে বাইরে বৃষ্টি হতে থাকবে — 'had been raining' এর ভবিষ্যৎ রূপ 'will have been raining' থাকার কারণে এটি Future Perfect Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fpc_038",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Identify the tense: 'The students will have been listening carefully.'",
+      "options": ["Future Perfect Continuous", "Future Continuous", "Future Perfect", "Present Perfect Continuous"],
+      "correctAnswer": "Future Perfect Continuous",
+      "explanation": "ভবিষ্যতে কোনো নির্দিষ্ট সময় পর্যন্ত ছাত্ররা মনোযোগ দিয়ে শুনতে থাকবে। 'will have been listening' দ্বারা এটি Future Perfect Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fpc_039",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Identify the tense: 'She will have been wearing that dress all day.'",
+      "options": ["Future Perfect Continuous", "Future Continuous", "Future Perfect", "Present Perfect Continuous"],
+      "correctAnswer": "Future Perfect Continuous",
+      "explanation": "পোশাকটি সারা দিন ধরে পরিহিত অবস্থায় থাকবে। 'will have been wearing' ও 'all day' দ্বারা এটি Future Perfect Continuous।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fpc_040",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Identify the tense: 'They will have been planning to travel since 2028.'",
+      "options": ["Future Perfect Continuous", "Future Perfect", "Future Continuous", "Future Perfect Continuous"],
+      "correctAnswer": "Future Perfect Continuous",
+      "explanation": "২০২৮ সাল থেকে তারা ভ্রমণের পরিকল্পনা করতে থাকবে। ভবিষ্যতের দীর্ঘ কাজ — Future Perfect Continuous।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fpc_041",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Arrange: (for / will / she / been / reading / hours / two / have)",
+      "options": [
+        "She will have been reading for two hours.",
+        "She reading will have been for two hours.",
+        "She will have been for two hours reading.",
+        "She will have reading been for two hours."
+      ],
+      "correctAnswer": "She will have been reading for two hours.",
+      "explanation": "সভিক গঠন: Subject (She) + will have been + verb-ing (reading) + duration (for two hours)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fpc_042",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Arrange: (playing / they / will / football / since / been / morning / have)",
+      "options": [
+        "They will have been playing football since morning.",
+        "They playing will have been football since morning.",
+        "They will have playing been football since morning.",
+        "They will have been football playing since morning."
+      ],
+      "correctAnswer": "They will have been playing football since morning.",
+      "explanation": "সঠিক ক্রম: Subject (They) + will have been + verb-ing (playing) + Object (football) + since morning।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fpc_043",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Arrange: (waiting / I / for / will / been / the / bus / for hours / have)",
+      "options": [
+        "I will have been waiting for the bus for hours.",
+        "I waiting will have been for the bus for hours.",
+        "I will have waiting been for the bus for hours.",
+        "I will have been for the bus waiting for hours."
+      ],
+      "correctAnswer": "I will have been waiting for the bus for hours.",
+      "explanation": "সঠিক গঠন: Subject (I) + will have been + verb-ing (waiting) + for the bus + for hours।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fpc_044",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Arrange: (kitchen / will / mother / been / cooking / in / the / my / all morning / have)",
+      "options": [
+        "My mother will have been cooking in the kitchen all morning.",
+        "My mother cooking will have been in the kitchen all morning.",
+        "My mother will have been in the kitchen cooking all morning.",
+        "My mother will have been cooking in the kitchen all morning."
+      ],
+      "correctAnswer": "My mother will have been cooking in the kitchen all morning.",
+      "explanation": "সঠিক ক্রম: Subject (My mother) + will have been + verb-ing (cooking) + place + duration।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fpc_045",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Arrange: (all day / they / a / planning / party / been / have / will)",
+      "options": [
+        "They will have been planning a party all day.",
+        "They planning will have been a party all day.",
+        "They will have planning been a party all day.",
+        "They will have been planning a party all day."
+      ],
+      "correctAnswer": "They will have been planning a party all day.",
+      "explanation": "সঠিক গঠন: Subject (They) + will have been + verb-ing (planning) + Object + duration (all day)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fpc_046",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Arrange: (changing / climate / will / the / been / rapidly / for decades / have)",
+      "options": [
+        "The climate will have been changing rapidly for decades.",
+        "The climate changing will have been rapidly for decades.",
+        "The climate will have been rapidly changing for decades.",
+        "The climate will have been changing rapidly for decades."
+      ],
+      "correctAnswer": "The climate will have been changing rapidly for decades.",
+      "explanation": "সঠিক ক্রম: Subject (The climate) + will have been + verb-ing (changing) + adverb + duration (for decades)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fpc_047",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Find the error: 'She will has been reading a book for hours.'",
+      "options": [
+        "She will have been reading a book for hours.",
+        "She is been reading a book for hours.",
+        "She has been reading a book for hours.",
+        "She was reading a book for hours."
+      ],
+      "correctAnswer": "She will have been reading a book for hours.",
+      "explanation": "Future Perfect Continuous-এ subject যাই হোক না কেন, 'will' এর সাথে 'have' বসে, 'has' ভুল। 'She will have been reading' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fpc_048",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Find the error: 'They will been playing football since morning.'",
+      "options": [
+        "They will have been playing football since morning.",
+        "They were been playing football since morning.",
+        "They have been playing football since morning.",
+        "They plays football since morning."
+      ],
+      "correctAnswer": "They will have been playing football since morning.",
+      "explanation": "ভবিষ্যতের দীর্ঘ চলমান কাজ বোঝাতে 'will' এর পর 'have been' বসে। 'They will have been playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fpc_049",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Find the error: 'I will has been studying for hours.'",
+      "options": [
+        "I will have been studying for hours.",
+        "I am studying for hours.",
+        "I was studying for hours.",
+        "I has been studying for hours."
+      ],
+      "correctAnswer": "I will have been studying for hours.",
+      "explanation": "ভবিষ্যতে কোনো কাজ দীর্ঘ সময় ধরে চলতে থাকবে বোঝাতে 'I will have been studying' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fpc_050",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Find the error: 'He will have been go to school since Monday.'",
+      "options": [
+        "He will have been going to school since Monday.",
+        "He is going to school since Monday.",
+        "He will have go to school since Monday.",
+        "He goes to school since Monday."
+      ],
+      "correctAnswer": "He will have been going to school since Monday.",
+      "explanation": "'will have been' এর পরে verb-এর সাথে 'ing' যুক্ত করা আবশ্যক। 'go' → 'going' হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fpc_051",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Find the error: 'The children will having been playing in the park.'",
+      "options": [
+        "The children will have been playing in the park.",
+        "The children have been playing in the park.",
+        "The children was playing in the park.",
+        "The children playing in the park."
+      ],
+      "correctAnswer": "The children will have been playing in the park.",
+      "explanation": "সাহায্যকারী verb হিসেবে 'will having' বলে কিছু নেই। সঠিক গঠনটি হলো 'will have been' + V-ing।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fpc_052",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Find the error: 'We will be been watching a movie for hours.'",
+      "options": [
+        "We will have been watching a movie for hours.",
+        "We were watching a movie for hours.",
+        "We have been watching a movie for hours.",
+        "We watching a movie for hours."
+      ],
+      "correctAnswer": "We will have been watching a movie for hours.",
+      "explanation": "'will be been' বলে কোনো ব্যাকরণগত রূপ নেই। ভবিষ্যতের দীর্ঘ চলমান কাজ বোঝাতে 'will have been watching' হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fpc_053",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Find the error: 'It will have being raining all day.'",
+      "options": [
+        "It will have been raining all day.",
+        "It is raining all day.",
+        "It was raining all day.",
+        "It have been raining all day."
+      ],
+      "correctAnswer": "It will have been raining all day.",
+      "explanation": "Future Perfect Continuous-এর গঠন অনুযায়ী 'have' এর পর 'being' নয়, 'been' বসে (will + have + been + verb-ing)।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fpc_054",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Find the error: 'She will have been swiming for an hour.'",
+      "options": [
+        "She will have been swimming for an hour.",
+        "She has been swimming for an hour.",
+        "She is swimming for an hour.",
+        "She will have been swim for an hour."
+      ],
+      "correctAnswer": "She will have been swimming for an hour.",
+      "explanation": "বানানগত ভুল: 'swim'-এর সাথে 'ing' যুক্ত করার সময় m ডাবল হবে (swimming)। 'swiming' ভুল বানান।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fpc_055",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Find the error: 'He will have been writeing a letter for an hour.'",
+      "options": [
+        "He will have been writing a letter for an hour.",
+        "He was writing a letter for an hour.",
+        "He writes a letter for an hour.",
+        "He has been writing a letter for an hour."
+      ],
+      "correctAnswer": "He will have been writing a letter for an hour.",
+      "explanation": "বানানগত ভুল: 'write' এর শেষে silent 'e' বাদ দিয়ে 'ing' যোগ করতে হয় (writing)। 'writeing' ভুল।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fpc_056",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Find the error: 'They will been making too much noise all day.'",
+      "options": [
+        "They will have been making too much noise all day.",
+        "They have been making too much noise all day.",
+        "They was making too much noise all day.",
+        "They making too much noise all day."
+      ],
+      "correctAnswer": "They will have been making too much noise all day.",
+      "explanation": "'will been making' কোনো সঠিক রূপ নয়। সারা দিন ধরে গোলমাল করার ভবিষ্যৎ কাজ বোঝাতে 'will have been making' বসবে।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fpc_057",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Translate: 'মা আসার আগে সে দুই ঘণ্টা ধরে একটি বই পড়তে থাকবে।'",
+      "options": [
+        "She will have been reading a book for two hours before her mother comes.",
+        "She was reading a book for two hours before her mother comes.",
+        "She reads a book for two hours before her mother comes.",
+        "She has been reading a book for two hours before her mother comes."
+      ],
+      "correctAnswer": "She will have been reading a book for two hours before her mother comes.",
+      "explanation": "মা আসার পূর্বের দীর্ঘ চলমান কাজ — Future Perfect Continuous। 'She will have been reading... before her mother comes (Present Indefinite)' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fpc_058",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Translate: 'ঝড় শুরু হওয়ার আগে তারা সকাল থেকে ফুটবল খেলতে থাকবে।'",
+      "options": [
+        "They will have been playing football since morning before the storm begins.",
+        "They were playing football since morning before the storm begins.",
+        "They played football since morning before the storm begins.",
+        "They have been playing football since morning before the storm begins."
+      ],
+      "correctAnswer": "They will have been playing football since morning before the storm begins.",
+      "explanation": "ঝড় শুরু হওয়ার আগের সকাল থেকে চলা কাজ — Future Perfect Continuous। 'They will have been playing... since morning' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fpc_059",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Translate: 'আমি ঘুমানোর আগে সকাল থেকে পড়াশোনা করতে থাকব।'",
+      "options": [
+        "I will have been studying since morning before I sleep.",
+        "I was studying since morning before I sleep.",
+        "I studied since morning before I sleep.",
+        "I have been studying since morning before I sleep."
+      ],
+      "correctAnswer": "I will have been studying since morning before I sleep.",
+      "explanation": "ঘুমানোর আগের সকাল থেকে চলা কাজ — Future Perfect Continuous। 'I will have been studying... before I sleep' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fpc_060",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Translate: 'আমাদের বাইরে যাওয়ার আগে সারা দিন ধরে বৃষ্টি হতে থাকবে।'",
+      "options": [
+        "It will have been raining all day before we go out.",
+        "It was raining all day before we go out.",
+        "It rained all day before we go out.",
+        "It has been raining all day before we go out."
+      ],
+      "correctAnswer": "It will have been raining all day before we go out.",
+      "explanation": "বাইরে যাওয়ার আগের সারা দিনের বৃষ্টি — Future Perfect Continuous। 'It will have been raining all day before we go out' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fpc_061",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Translate: 'অতিথিরা আসার আগে মা সারা সন্ধ্যা রান্না করতে থাকবেন।'",
+      "options": [
+        "My mother will have been cooking all evening before the guests arrive.",
+        "My mother was cooking all evening before the guests arrive.",
+        "My mother cooked all evening before the guests arrive.",
+        "My mother has been cooking all evening before the guests arrive."
+      ],
+      "correctAnswer": "My mother will have been cooking all evening before the guests arrive.",
+      "explanation": "অতিথিদের আসার আগের দীর্ঘ কাজ — Future Perfect Continuous। 'My mother will have been cooking' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fpc_062",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Translate: 'বিদ্যুৎ যাওয়ার আগে আমরা এক ঘণ্টা ধরে সিনেমা দেখতে থাকব।'",
+      "options": [
+        "We will have been watching a movie for an hour before the power goes out.",
+        "We were watching a movie for an hour before the power goes out.",
+        "We watched a movie for an hour before the power goes out.",
+        "We have been watching a movie for an hour before the power goes out."
+      ],
+      "correctAnswer": "We will have been watching a movie for an hour before the power goes out.",
+      "explanation": "বিদ্যুৎ চলে যাওয়ার আগের দীর্ঘ কাজ — Future Perfect Continuous। 'We will have been watching' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fpc_063",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Translate: 'অসুস্থ হওয়ার আগে সে কয়েক দিন ধরে পরীক্ষার প্রস্তুতি নিতে থাকবে।'",
+      "options": [
+        "She will have been preparing for exams for a few days before she falls ill.",
+        "She was preparing for exams for a few days before she falls ill.",
+        "She prepared for exams for a few days before she falls ill.",
+        "She has been preparing for exams for a few days before she falls ill."
+      ],
+      "correctAnswer": "She will have been preparing for exams for a few days before she falls ill.",
+      "explanation": "অসুস্থ হওয়ার আগের কয়েক দিনের দীর্ঘ প্রস্তুতি — Future Perfect Continuous। 'She will have been preparing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fpc_064",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Translate: 'বিজ্ঞানীরা সতর্ক করার আগে আবহাওয়া অনেক বছর ধরে পরিবর্তিত হতে থাকবে।'",
+      "options": [
+        "The weather will have been changing for many years before scientists warn us.",
+        "The weather was changing for many years before scientists warn us.",
+        "The weather changed for many years before scientists warn us.",
+        "The weather has been changing for many years before scientists warn us."
+      ],
+      "correctAnswer": "The weather will have been changing for many years before scientists warn us.",
+      "explanation": "বিজ্ঞানীদের সতর্ক করার পূর্বের দীর্ঘ ধারাবাহিক পরিবর্তন — Future Perfect Continuous। 'The weather will have been changing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fpc_065",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Translate: 'আমি চাকরিটি পাওয়ার আগে এক বছর ধরে ইংরেজি শিখতে থাকব।'",
+      "options": [
+        "I will have been learning English for a year before I get the job.",
+        "I was learning English for a year before I get the job.",
+        "I learned English for a year before I get the job.",
+        "I have been learning English for a year before I get the job."
+      ],
+      "correctAnswer": "I will have been learning English for a year before I get the job.",
+      "explanation": "চাকরি পাওয়ার আগের দীর্ঘ এক বছরের ইংরেজি শেখা — Future Perfect Continuous। 'I will have been learning' সঠিক অনুবাদ।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fpc_066",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She will have been reading a book since 2 PM before I come.",
+        "She is been reading a book since 2 PM before I come.",
+        "She has been reading a book since 2 PM before I come.",
+        "She was reading a book since 2 PM before I come."
+      ],
+      "correctAnswer": "She will have been reading a book since 2 PM before I come.",
+      "explanation": "Quick: Future Perfect Continuous = subject + will have been + verb-ing + since + time + before + Present Simple।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fpc_067",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Choose the correct form: 'They ____ football for hours when the bell rings.'",
+      "options": ["will have been playing", "have been playing", "will be playing", "played"],
+      "correctAnswer": "will have been playing",
+      "explanation": "Quick: ঘণ্টা বাজার আগের দীর্ঘ খেলা — Future Perfect Continuous। 'They' এর সাথে 'will have been playing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fpc_068",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Pick the correct negative: 'She ____ her homework for an hour when it becomes dark.'",
+      "options": ["will not have been doing", "has not been doing", "was not doing", "will not been doing"],
+      "correctAnswer": "will not have been doing",
+      "explanation": "Quick: Future Perfect Continuous negative = subject + will not + have been + verb-ing। 'She will not have been doing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fpc_069",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Pick the correct question form: '____ he been writing for an hour before his pen breaks?'",
+      "options": ["Had", "Have", "Will", "Did"],
+      "correctAnswer": "Will",
+      "explanation": "Quick: Future Perfect Continuous question = Will + subject + have been + verb-ing? প্রশ্নবোধক করতে শুরুতে 'Will' বসে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fpc_070",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Which sentence shows an action continuing up to another future point?",
+      "options": [
+        "I will have been living here for ten years before I move.",
+        "I lived here ten years ago.",
+        "I am living here for ten years.",
+        "I have been living here for ten years."
+      ],
+      "correctAnswer": "I will have been living here for ten years before I move.",
+      "explanation": "Quick: স্থানান্তরের আগে ১০ বছর বসবাসের দীর্ঘ ভবিষ্যৎ ঘটনা বোঝাতে 'will have been living' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fpc_071",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Choose the correct verb: 'The baby ____ since morning before she falls asleep.'",
+      "options": ["will have been crying", "have been crying", "was crying", "cried"],
+      "correctAnswer": "will have been crying",
+      "explanation": "Quick: ঘুমিয়ে পড়ার আগে সকাল থেকে কাঁদার কাজ — 'will have been crying' (Future Perfect Continuous)।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fpc_072",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Which sentence is grammatically correct (for vs since)?",
+      "options": [
+        "I will have been waiting for two hours before she arrives.",
+        "I will have been waiting since two hours before she arrives.",
+        "I was waiting since two hours before she arrives.",
+        "I will have waiting for two hours before she arrives."
+      ],
+      "correctAnswer": "I will have been waiting for two hours before she arrives.",
+      "explanation": "Quick: সময়ের পরিমাণ (two hours) থাকলে 'for' বসে এবং ভবিষ্যতের আগের দীর্ঘ কাজ বোঝাতে 'will have been waiting' সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fpc_073",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Choose the correct sentence with 'since':",
+      "options": [
+        "He will have been working since Monday before he resigns.",
+        "He will have been working for Monday before he resigns.",
+        "He was working since Monday before he resigns.",
+        "He has been working since Monday before he resigns."
+      ],
+      "correctAnswer": "He will have been working since Monday before he resigns.",
+      "explanation": "নির্দিষ্ট দিনের আগে 'since' বসে এবং পদত্যাগের আগের দীর্ঘ কাজের ধারাবাহিকতা বোঝাতে 'will have been working' সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fpc_074",
+      "tenseType": "Future Perfect Continuous",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She will have been swimming in the pool.",
+        "She will have been swiming in the pool.",
+        "She will have been swim in the pool.",
+        "She will have swimming in the pool."
+      ],
+      "correctAnswer": "She will have been swimming in the pool.",
+      "explanation": "Quick: 'swim'-এর সঠিক double 'm' যুক্ত ing রূপ হলো 'swimming'। তাই 'She will have been swimming' বাক্যটি সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }

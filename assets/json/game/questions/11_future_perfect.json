@@ -1,6 +1,897 @@
 {
   "tenseType": "Future Perfect",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "fp_001",
+      "tenseType": "Future Perfect",
+      "question": "She ____ her homework by 8 PM tomorrow.",
+      "options": ["will have finished", "finished", "will finish", "has finished"],
+      "correctAnswer": "will have finished",
+      "explanation": "ভবিষ্যতে কোনো নির্দিষ্ট সময়ে (by 8 PM tomorrow) কোনো কাজ শেষ হয়ে থাকবে বোঝালে Future Perfect Tense হয়। গঠন: subject + will have + past participle (V3)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_002",
+      "tenseType": "Future Perfect",
+      "question": "They ____ football before the sun sets.",
+      "options": ["will play", "will have played", "played", "will playing"],
+      "correctAnswer": "will have played",
+      "explanation": "ভবিষ্যতে দুটি কাজের মধ্যে একটি আগে শেষ হয়ে থাকবে। সূর্যাস্তের পূর্বেই খেলা শেষ হবে, তাই প্রথম কাজটি Future Perfect ('will have played') হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_003",
+      "tenseType": "Future Perfect",
+      "question": "I ____ the letter by tomorrow morning.",
+      "options": ["will have written", "will write", "wrote", "written"],
+      "correctAnswer": "will have written",
+      "explanation": "'By tomorrow morning' সময়ের পূর্বে কাজ সম্পন্ন হওয়া বোঝাতে Future Perfect হয়। 'I' এর সাথে 'will have written' (will have + V3) বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_004",
+      "tenseType": "Future Perfect",
+      "question": "He ____ to the market before you reach home.",
+      "options": ["will go", "went", "will have gone", "goes"],
+      "correctAnswer": "will have gone",
+      "explanation": "আপনার বাড়ি পৌঁছানোর আগেই সে বাজারে চলে গিয়ে থাকবে। 'Before' এর পূর্বের কাজটি Future Perfect 'will have gone' হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_005",
+      "tenseType": "Future Perfect",
+      "question": "The children ____ their dinner by 9 PM.",
+      "options": ["will eat", "will have eaten", "ate", "will eating"],
+      "correctAnswer": "will have eaten",
+      "explanation": "রাত ৯টার মধ্যে শিশুরা রাতের খাবার খেয়ে থাকবে। ভবিষ্যতের নির্দিষ্ট সীমার আগের কাজ প্রকাশে 'will have eaten' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_006",
+      "tenseType": "Future Perfect",
+      "question": "My mother ____ dinner before the guests arrive.",
+      "options": ["will cook", "will have cooked", "cooked", "cooks"],
+      "correctAnswer": "will have cooked",
+      "explanation": "অতিথিরা পৌঁছানোর পূর্বেই মা রান্না শেষ করে থাকবেন। 'Before' যুক্ত ভবিষ্যৎ শর্তের আগের কাজটি Future Perfect 'will have cooked' হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_007",
+      "tenseType": "Future Perfect",
+      "question": "We ____ the movie before you recommend it.",
+      "options": ["will watch", "will have watched", "watched", "watching"],
+      "correctAnswer": "will have watched",
+      "explanation": "তোমার সুপারিশ করার আগেই আমরা সিনেমাটি দেখে ফেলব। অপেক্ষাকৃত পূর্বের ভবিষ্যৎ কাজ বোঝাতে 'will have watched' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_008",
+      "tenseType": "Future Perfect",
+      "question": "The baby ____ by the time we return.",
+      "options": ["will sleep", "will have fallen asleep", "slept", "sleeping"],
+      "correctAnswer": "will have fallen asleep",
+      "explanation": "আমাদের ফেরার আগেই শিশুটি ঘুমিয়ে থাকবে। 'By the time' যুক্ত ভবিষ্যৎ শর্তের প্রথম অংশটি Future Perfect 'will have fallen asleep' হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_009",
+      "tenseType": "Future Perfect",
+      "question": "You ____ the results by next Sunday.",
+      "options": ["will know", "will have known", "knows", "known"],
+      "correctAnswer": "will have known",
+      "explanation": "আগামী রবিবারের মধ্যে তুমি ফলাফল জেনে থাকবে। Future Perfect-এর গঠন অনুযায়ী 'will have known' (know-knew-known) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_010",
+      "tenseType": "Future Perfect",
+      "question": "It ____ raining by the time the match starts tomorrow.",
+      "options": ["will stop", "will have stopped", "stopped", "raining"],
+      "correctAnswer": "will have stopped",
+      "explanation": "আগামীকাল খেলা শুরু হওয়ার আগেই বৃষ্টি থেমে থাকবে। ভবিষ্যতের নির্দিষ্ট বিন্দুর আগের সমাপ্ত কাজ বোঝাতে 'will have stopped' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_011",
+      "tenseType": "Future Perfect",
+      "question": "The students ____ the syllabus before exams begin.",
+      "options": ["will complete", "will have completed", "completed", "completing"],
+      "correctAnswer": "will have completed",
+      "explanation": "পরীক্ষা শুরু হওয়ার আগেই ছাত্ররা সিলেবাস শেষ করে থাকবে। 'Before' এর আগের অংশ Future Perfect 'will have completed' হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_012",
+      "tenseType": "Future Perfect",
+      "question": "He ____ to London by next week.",
+      "options": ["will travel", "will have travelled", "travels", "travelled"],
+      "correctAnswer": "will have travelled",
+      "explanation": "আগামী সপ্তাহের মধ্যে সে লন্ডন ভ্রমণ করে থাকবে। ভবিষ্যতের সময়সীমার উল্লেখ থাকায় 'will have travelled' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_013",
+      "tenseType": "Future Perfect",
+      "question": "They ____ the bridge by next year.",
+      "options": ["will build", "will have built", "builds", "building"],
+      "correctAnswer": "will have built",
+      "explanation": "আগামী বছরের মধ্যে তারা সেতুটি তৈরি করে থাকবে। Future Perfect-এর কাঠামো অনুযায়ী 'will have built' (build-built-built) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_014",
+      "tenseType": "Future Perfect",
+      "question": "I ____ my keys by tonight, hopefully.",
+      "options": ["will find", "will have found", "finds", "finding"],
+      "correctAnswer": "will have found",
+      "explanation": "আশা করি আজ রাতের মধ্যে আমি আমার চাবি খুঁজে পাব। ভবিষ্যতের কাজের সমাপ্তি বোঝাতে 'will have found' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_015",
+      "tenseType": "Future Perfect",
+      "question": "She ____ her dress before the party starts tomorrow.",
+      "options": ["will choose", "will have chosen", "wore", "worn"],
+      "correctAnswer": "will have chosen",
+      "explanation": "আগামীকাল পার্টি শুরুর আগেই সে তার পোশাক বেছে রাখবে। অপেক্ষাকৃত আগের কাজ বোঝাতে Future Perfect 'will have chosen' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_016",
+      "tenseType": "Future Perfect",
+      "question": "The birds ____ away before the storm reaches here.",
+      "options": ["will fly", "will have flown", "flies", "flown"],
+      "correctAnswer": "will have flown",
+      "explanation": "ঝড় এখানে পৌঁছানোর আগেই পাখিগুলো উড়ে গিয়ে থাকবে। 'Before' এর আগের সমাপ্ত কাজ বোঝাতে 'will have flown' (fly-flew-flown) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_017",
+      "tenseType": "Future Perfect",
+      "question": "We ____ for an hour by 10 AM tomorrow.",
+      "options": ["will wait", "will have waited", "waits", "waiting"],
+      "correctAnswer": "will have waited",
+      "explanation": "আগামীকাল সকাল ১০টার মধ্যে আমাদের এক ঘণ্টা অপেক্ষা করা হয়ে থাকবে (কাজের স্থিতি)। তাই 'will have waited' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_018",
+      "tenseType": "Future Perfect",
+      "question": "He ____ his room by the time his parents arrive tonight.",
+      "options": ["will clean", "will have cleaned", "cleaned", "cleaning"],
+      "correctAnswer": "will have cleaned",
+      "explanation": "আজ রাতে মা-বাবা পৌঁছানোর আগেই সে তার ঘর পরিষ্কার করে রাখবে। Future Perfect অনুযায়ী 'will have cleaned' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_019",
+      "tenseType": "Future Perfect",
+      "question": "The dog ____ all the food by the time we open the gate.",
+      "options": ["will eat", "will have eaten", "runs", "running"],
+      "correctAnswer": "will have eaten",
+      "explanation": "গেট খোলার আগেই কুকুরটি সব খাবার খেয়ে ফেলবে। Future Perfect-এর গঠন অনুযায়ী 'will have eaten' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_020",
+      "tenseType": "Future Perfect",
+      "question": "I ____ my breakfast by the time she wakes up tomorrow.",
+      "options": ["will have", "will have had", "have had", "will having"],
+      "correctAnswer": "will have had",
+      "explanation": "আগামীকাল সে ঘুম থেকে ওঠার আগেই আমার সকালের খাবার খাওয়া হয়ে থাকবে। এখানে 'will have' সাহায্যকারী verb এবং 'had' খাওয়া অর্থে V3।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_021",
+      "tenseType": "Future Perfect",
+      "question": "By 2030, scientists ____ a cure for the disease.",
+      "options": ["will find", "will have found", "finds", "found"],
+      "correctAnswer": "will have found",
+      "explanation": "২০৩০ সালের মধ্যে বিজ্ঞানীরা রোগটির নিরাময় আবিষ্কার করে থাকবেন। ভবিষ্যতের সুনির্দিষ্ট সময়ের আগের কাজের সমাপ্তি বোঝাতে 'will have found' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_022",
+      "tenseType": "Future Perfect",
+      "question": "They ____ their project by the deadline next week.",
+      "options": ["will submit", "will have submitted", "submitted", "submitting"],
+      "correctAnswer": "will have submitted",
+      "explanation": "আগামী সপ্তাহের ডেডলাইনের মধ্যে তারা প্রজেক্ট জমা দিয়ে থাকবে। নির্দিষ্ট সময়ের আগে শেষ হওয়া কাজ বোঝাতে 'will have submitted' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_023",
+      "tenseType": "Future Perfect",
+      "question": "By next month, she ____ sick for two weeks.",
+      "options": ["is", "will have been", "has been", "will be"],
+      "correctAnswer": "will have been",
+      "explanation": "আগামী মাসের মধ্যে তার দুই সপ্তাহ ধরে অসুস্থ থাকা হয়ে থাকবে। Be-verb এর V3 হলো 'been'। তাই Future Perfect-এ 'will have been' হবে।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_024",
+      "tenseType": "Future Perfect",
+      "question": "You ____ enough money by next year to buy a car.",
+      "options": ["will save", "will have saved", "saves", "saved"],
+      "correctAnswer": "will have saved",
+      "explanation": "গাড়ি কেনার জন্য আগামী বছরের মধ্যে তুমি পর্যাপ্ত টাকা জমিয়ে থাকবে। ভবিষ্যতের সমাপ্ত কাজ বোঝাতে 'will have saved' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_025",
+      "tenseType": "Future Perfect",
+      "question": "The company ____ 100 new projects by the end of this year.",
+      "options": ["hires", "will have launched", "hires", "hiring"],
+      "correctAnswer": "will have launched",
+      "explanation": "এই বছরের শেষের মধ্যে কোম্পানিটি ১০০টি নতুন প্রজেক্ট চালু করে থাকবে। 'will have launched' সঠিক রূপ।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_026",
+      "tenseType": "Future Perfect",
+      "question": "I ____ in this city for ten years by next July.",
+      "options": ["will live", "will have lived", "am living", "lived"],
+      "correctAnswer": "will have lived",
+      "explanation": "আগামী জুলাই মাসের মধ্যে এই শহরে আমার ১০ বছর ধরে বাস করা হয়ে থাকবে। ভবিষ্যতের নির্দিষ্ট সময়ে কাজের ব্যাপ্তি প্রকাশে 'will have lived' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_027",
+      "tenseType": "Future Perfect",
+      "question": "She ____ her preparation before the schedule is announced.",
+      "options": ["completes", "will have completed", "completed", "preparing"],
+      "correctAnswer": "will have completed",
+      "explanation": "সময়সূচি ঘোষণার আগেই সে তার প্রস্তুতি শেষ করে থাকবে। Future Perfect-এর নিয়ম অনুযায়ী 'will have completed' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_028",
+      "tenseType": "Future Perfect",
+      "question": "The climate of this region ____ significantly by 2050.",
+      "options": ["changes", "will have changed", "changed", "changing"],
+      "correctAnswer": "will have changed",
+      "explanation": "২০৫০ সালের মধ্যে এই অঞ্চলের জলবায়ু উল্লেখযোগ্যভাবে পরিবর্তিত হয়ে থাকবে। 'will have changed' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_029",
+      "tenseType": "Future Perfect",
+      "question": "By tomorrow evening, he ____ more and more impatient.",
+      "options": ["becomes", "will have become", "became", "becoming"],
+      "correctAnswer": "will have become",
+      "explanation": "আগামীকাল সন্ধ্যার মধ্যে সে ক্রমশ আরও অধৈর্য হয়ে উঠবে (কাজের সমাপ্তি বা অবস্থা)। 'will have become' সঠিক।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_030",
+      "tenseType": "Future Perfect",
+      "question": "I ____ him twice by next Monday.",
+      "options": ["meet", "will have met", "meets", "meeting"],
+      "correctAnswer": "will have met",
+      "explanation": "আগামী সোমবারের মধ্যে আমি তার সাথে দুবার দেখা করে থাকব (অভিজ্ঞতার সমাপ্তি)। Future Perfect-এ 'will have met' বসবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fp_031",
+      "tenseType": "Future Perfect",
+      "question": "Identify the tense: 'She will have read the book by tomorrow.'",
+      "options": ["Present Perfect", "Past Perfect", "Future Indefinite", "Future Perfect"],
+      "correctAnswer": "Future Perfect",
+      "explanation": "'will have read' (will have + V3) এবং ভবিষ্যৎ নির্দিষ্ট সময় 'by tomorrow' নির্দেশ করে এটি Future Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fp_032",
+      "tenseType": "Future Perfect",
+      "question": "Identify the tense: 'They will have played football before sunset.'",
+      "options": ["Future Indefinite", "Future Perfect", "Past Perfect", "Future Continuous"],
+      "correctAnswer": "Future Perfect",
+      "explanation": "সূর্যাস্তের আগেই খেলা সম্পন্ন হয়ে থাকবে — 'will have played' থাকার কারণে এটি Future Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fp_033",
+      "tenseType": "Future Perfect",
+      "question": "Identify the tense: 'I will have studied my lessons by 10 PM.'",
+      "options": ["Future Perfect", "Future Continuous", "Present Perfect", "Past Simple"],
+      "correctAnswer": "Future Perfect",
+      "explanation": "রাত ১০টার মধ্যে পড়া শেষ হয়ে থাকবে। 'will have studied' নির্দেশ করে এটি Future Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fp_034",
+      "tenseType": "Future Perfect",
+      "question": "Identify the tense: 'He will have gone to the market before we arrive.'",
+      "options": ["Future Indefinite", "Present Perfect", "Future Perfect", "Past Indefinite"],
+      "correctAnswer": "Future Perfect",
+      "explanation": "আমাদের পৌঁছানোর আগেই তার বাজারে যাওয়ার কাজ শেষ হয়ে থাকবে। 'will have gone' হলো Future Perfect।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fp_035",
+      "tenseType": "Future Perfect",
+      "question": "Identify the tense: 'The baby will have cried before the mother returns.'",
+      "options": ["Future Indefinite", "Future Perfect", "Past Indefinite", "Present Continuous"],
+      "correctAnswer": "Future Perfect",
+      "explanation": "মায়ের ফেরার পূর্বেই শিশুটির কাঁদার কাজ শেষ হয়ে থাকবে। 'will have cried' থাকায় এটি Future Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fp_036",
+      "tenseType": "Future Perfect",
+      "question": "Identify the tense: 'We will have watched the movie by midnight.'",
+      "options": ["Future Indefinite", "Future Continuous", "Past Indefinite", "Future Perfect"],
+      "correctAnswer": "Future Perfect",
+      "explanation": "মধ্যরাতের মধ্যে সিনেমা দেখা শেষ হয়ে থাকবে — 'will have watched' হলো Future Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fp_037",
+      "tenseType": "Future Perfect",
+      "question": "Identify the tense: 'It will have rained heavily by tomorrow morning.'",
+      "options": ["Future Indefinite", "Present Indefinite", "Future Perfect", "Past Indefinite"],
+      "correctAnswer": "Future Perfect",
+      "explanation": "আগামীকাল সকালের মধ্যে ভারী বৃষ্টিপাত হয়ে থাকবে। 'will have rained' দ্বারা এটি Future Perfect।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fp_038",
+      "tenseType": "Future Perfect",
+      "question": "Identify the tense: 'The students will have finished the assignment.'",
+      "options": ["Future Indefinite", "Present Indefinite", "Future Perfect", "Past Indefinite"],
+      "correctAnswer": "Future Perfect",
+      "explanation": "ভবিষ্যতে কোনো এক সময়ে ছাত্রদের অ্যাসাইনমেন্ট শেষ হয়ে থাকবে। 'will have finished' থাকায় এটি Future Perfect Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fp_039",
+      "tenseType": "Future Perfect",
+      "question": "Identify the tense: 'She will have worn the blue dress before the show starts.'",
+      "options": ["Future Indefinite", "Future Perfect", "Past Indefinite", "Present Continuous"],
+      "correctAnswer": "Future Perfect",
+      "explanation": "শো শুরু হওয়ার আগেই সে নীল পোশাকটি পরিধান করে থাকবে (কাজের সমাপ্তি)। 'will have worn' হলো Future Perfect Tense।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fp_040",
+      "tenseType": "Future Perfect",
+      "question": "Identify the tense: 'I will have met him by next year.'",
+      "options": ["Future Indefinite", "Present Continuous", "Future Continuous", "Future Perfect"],
+      "correctAnswer": "Future Perfect",
+      "explanation": "আগামী বছরের মধ্যে আমার তার সাথে দেখা করা হয়ে থাকবে। 'will have met' থাকায় এটি Future Perfect Tense।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fp_041",
+      "tenseType": "Future Perfect",
+      "question": "Arrange: (by / will / finished / she / tomorrow / have / homework / her)",
+      "options": [
+        "She will have finished her homework by tomorrow.",
+        "She tomorrow finished her homework will have.",
+        "Tomorrow she her homework finished will have.",
+        "She her homework will have finished by tomorrow."
+      ],
+      "correctAnswer": "She will have finished her homework by tomorrow.",
+      "explanation": "সভিক গঠন: Subject (She) + will have + V3 (finished) + Object (her homework) + Time (by tomorrow)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fp_042",
+      "tenseType": "Future Perfect",
+      "question": "Arrange: (played / they / football / have / will / before / sunset)",
+      "options": [
+        "They will have played football before sunset.",
+        "They before sunset played will have football.",
+        "Before sunset they played will have football.",
+        "They football will have played before sunset."
+      ],
+      "correctAnswer": "They will have played football before sunset.",
+      "explanation": "সঠিক গঠন: Subject (They) + will have + V3 (played) + Object (football) + Time (before sunset)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fp_043",
+      "tenseType": "Future Perfect",
+      "question": "Arrange: (I / have / will / for / waited / bus / the / by then)",
+      "options": [
+        "I will have waited for the bus by then.",
+        "I by then waited will have for the bus.",
+        "Waited I will have for the bus by then.",
+        "I will have waited by then for the bus."
+      ],
+      "correctAnswer": "I will have waited for the bus by then.",
+      "explanation": "সঠিক গঠন: Subject (I) + will have + V3 (waited) + Prepositional Object (for the bus) + Time (by then)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fp_044",
+      "tenseType": "Future Perfect",
+      "question": "Arrange: (cooked / mother / my / have / dinner / will / by 9 PM)",
+      "options": [
+        "My mother will have cooked dinner by 9 PM.",
+        "My mother dinner will have cooked by 9 PM.",
+        "Will have cooked my mother dinner by 9 PM.",
+        "My mother dinner cooked in the will have by 9 PM."
+      ],
+      "correctAnswer": "My mother will have cooked dinner by 9 PM.",
+      "explanation": "সঠিক গঠন: Subject (My mother) + will have + V3 (cooked) + Object (dinner) + Time (by 9 PM)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fp_045",
+      "tenseType": "Future Perfect",
+      "question": "Arrange: (had / party / they / will / have / by then / a)",
+      "options": [
+        "They will have had a party by then.",
+        "They will have a party by then had.",
+        "By then they had will have a party.",
+        "They a party will have had by then."
+      ],
+      "correctAnswer": "They will have had a party by then.",
+      "explanation": "সঠিক গঠন: Subject (They) + will have + V3 (had) + Object (a party) + Time (by then)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fp_046",
+      "tenseType": "Future Perfect",
+      "question": "Arrange: (rapidly / changed / climate / the / will / have / by 2050)",
+      "options": [
+        "The climate will have changed rapidly by 2050.",
+        "The climate rapidly will have changed by 2050.",
+        "Will have changed the climate rapidly by 2050.",
+        "The climate will rapidly have changed by 2050."
+      ],
+      "correctAnswer": "The climate will have changed rapidly by 2050.",
+      "explanation": "সঠিক গঠন: Subject (The climate) + will have + V3 (changed) + Adverb (rapidly) + Time (by 2050)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fp_047",
+      "tenseType": "Future Perfect",
+      "question": "Find the error: 'She will have finish her work by tomorrow.'",
+      "options": [
+        "She will have finished her work by tomorrow.",
+        "She reads her work by tomorrow.",
+        "She will finish her work by tomorrow.",
+        "She will have finishing her work by tomorrow."
+      ],
+      "correctAnswer": "She will have finished her work by tomorrow.",
+      "explanation": "Future Perfect-এ 'will have' এর পর সর্বদা verb-এর past participle (V3) বসে। 'finish' এর জায়গায় 'finished' হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fp_048",
+      "tenseType": "Future Perfect",
+      "question": "Find the error: 'They will has played football before it rains.'",
+      "options": [
+        "They will have played football before it rains.",
+        "They will played football before it rains.",
+        "They plays football before it rains.",
+        "They will has play football before it rains."
+      ],
+      "correctAnswer": "They will have played football before it rains.",
+      "explanation": "Future Perfect-এ subject singular বা plural যাই হোক না কেন, auxiliary 'will have' বসে, 'will has' ভুল।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fp_049",
+      "tenseType": "Future Perfect",
+      "question": "Find the error: 'I will studying for the exam by 9 PM.'",
+      "options": [
+        "I will have studied for the exam by 9 PM.",
+        "I write a letter by 9 PM.",
+        "I will have studying for the exam by 9 PM.",
+        "I will studied for the exam by 9 PM."
+      ],
+      "correctAnswer": "I will have studied for the exam by 9 PM.",
+      "explanation": "রাত ৯টার মধ্যে কাজ সমাপ্তি বোঝাতে Future Perfect ব্যবহৃত হবে। 'will studying' ভুল, সঠিক রূপ 'will have studied'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fp_050",
+      "tenseType": "Future Perfect",
+      "question": "Find the error: 'He will have went to school before I call.'",
+      "options": [
+        "He will have gone to school before I call.",
+        "He goes to school before I call.",
+        "He will have go to school before I call.",
+        "He is go to school before I call."
+      ],
+      "correctAnswer": "He will have gone to school before I call.",
+      "explanation": "Future Perfect গঠনে 'will have' এর পর verb-এর V3 রূপ বসে। 'went' (V2) ভুল, 'gone' (V3) সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fp_051",
+      "tenseType": "Future Perfect",
+      "question": "Find the error: 'The children will had cleaned the room.'",
+      "options": [
+        "The children will have cleaned the room.",
+        "The children plays in the park.",
+        "The children playing in the park.",
+        "The children will having cleaned the room."
+      ],
+      "correctAnswer": "The children will have cleaned the room.",
+      "explanation": "সাহায্যকারী verb হিসেবে 'will had' বলে কিছু নেই। সঠিক গঠনটি হলো 'will have' + V3।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fp_052",
+      "tenseType": "Future Perfect",
+      "question": "Find the error: 'We will have watch the movie by tomorrow.'",
+      "options": [
+        "We will have watched the movie by tomorrow.",
+        "We watch a movie tomorrow.",
+        "We are watching a movie tomorrow.",
+        "We will have watching the movie by tomorrow."
+      ],
+      "correctAnswer": "We will have watched the movie by tomorrow.",
+      "explanation": "Future Perfect-এ 'will have' এর পর watch-এর past participle 'watched' বসবে, 'watch' ভুল।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fp_053",
+      "tenseType": "Future Perfect",
+      "question": "Find the error: 'It will have rain heavily by tomorrow.'",
+      "options": [
+        "It will have rained heavily by tomorrow.",
+        "It rains heavily tomorrow.",
+        "It will have raining heavily by tomorrow.",
+        "It is will have rained heavily by tomorrow."
+      ],
+      "correctAnswer": "It will have rained heavily by tomorrow.",
+      "explanation": "'will have' এর পরে rain-এর V3 রূপ 'rained' বসবে। 'rain' (V1) ভুল।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fp_054",
+      "tenseType": "Future Perfect",
+      "question": "Find the error: 'She will have swimmed in the pool before noon.'",
+      "options": [
+        "She will have swum in the pool before noon.",
+        "She swims in the pool.",
+        "She will have swam in the pool before noon.",
+        "She will have swimming in the pool before noon."
+      ],
+      "correctAnswer": "She will have swum in the pool before noon.",
+      "explanation": "বানানগত ভুল: 'swim' এর V3 রূপ হলো 'swum' (swim-swam-swum)। 'swimmed' বলে কোনো ইংরেজি শব্দ নেই।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fp_055",
+      "tenseType": "Future Perfect",
+      "question": "Find the error: 'He will have writed a letter by 5 PM.'",
+      "options": [
+        "He will have written a letter by 5 PM.",
+        "He buys a new car.",
+        "He will have writing a letter by 5 PM.",
+        "He will have wrote a letter by 5 PM."
+      ],
+      "correctAnswer": "He will have written a letter by 5 PM.",
+      "explanation": "'write' এর past participle হলো 'written' (write-wrote-written)। 'writed' ভুল রূপ।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fp_056",
+      "tenseType": "Future Perfect",
+      "question": "Find the error: 'They will have maked a mistake.'",
+      "options": [
+        "They will have made a mistake.",
+        "They make a mistake.",
+        "They will have making a mistake.",
+        "They are will have made a mistake."
+      ],
+      "correctAnswer": "They will have made a mistake.",
+      "explanation": "'make' এর past participle (V3) হলো 'made'। 'maked' ভুল বানান।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fp_057",
+      "tenseType": "Future Perfect",
+      "question": "Translate: 'সে আগামীকালকের মধ্যে বইটি পড়ে ফেলবে।'",
+      "options": [
+        "She will have read the book by tomorrow.",
+        "She reads the book tomorrow.",
+        "She is reading the book tomorrow.",
+        "She will read the book tomorrow."
+      ],
+      "correctAnswer": "She will have read the book by tomorrow.",
+      "explanation": "আগামীকালের মধ্যে কাজটি সম্পন্ন হয়ে থাকবে বোঝায় — Future Perfect। 'She will have read the book by tomorrow' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fp_058",
+      "tenseType": "Future Perfect",
+      "question": "Translate: 'সূর্যাস্তের আগেই তারা ফুটবল খেলে ফেলবে।'",
+      "options": [
+        "They will have played football before sunset.",
+        "They play football tomorrow.",
+        "They will play football before sunset.",
+        "They played football before sunset."
+      ],
+      "correctAnswer": "They will have played football before sunset.",
+      "explanation": "সূর্যাস্তের আগেই খেলার কাজ শেষ হয়ে থাকবে — Future Perfect। 'They will have played football before sunset' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fp_059",
+      "tenseType": "Future Perfect",
+      "question": "Translate: 'আমি আজ রাতের মধ্যে পড়াশোনা শেষ করে ফেলব।'",
+      "options": [
+        "I will have finished my studies by tonight.",
+        "I study tonight.",
+        "I am studying tonight.",
+        "I will study tonight."
+      ],
+      "correctAnswer": "I will have finished my studies by tonight.",
+      "explanation": "আজ রাতের মধ্যে কাজ সমাপ্তি বোঝাতে Future Perfect ব্যবহৃত হবে। 'I will have finished my studies by tonight' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fp_060",
+      "tenseType": "Future Perfect",
+      "question": "Translate: 'আমরা পৌঁছানোর আগেই বৃষ্টি থেমে যাবে।'",
+      "options": [
+        "It will have stopped raining before we arrive.",
+        "It rains tomorrow.",
+        "It will rain tomorrow.",
+        "It will have raining before we arrive."
+      ],
+      "correctAnswer": "It will have stopped raining before we arrive.",
+      "explanation": "আমাদের পৌঁছানোর আগে বৃষ্টি শেষ হয়ে থাকবে — Future Perfect। 'It will have stopped raining before we arrive' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fp_061",
+      "tenseType": "Future Perfect",
+      "question": "Translate: 'অতিথিরা আসার আগেই আমার মা রান্না শেষ করে ফেলবেন।'",
+      "options": [
+        "My mother will have cooked before the guests arrive.",
+        "My mother cooks dinner.",
+        "My mother cooking.",
+        "My mother will have cooking before the guests arrive."
+      ],
+      "correctAnswer": "My mother will have cooked before the guests arrive.",
+      "explanation": "অতিথিরা পৌঁছানোর আগে রান্নার কাজ শেষ হয়ে থাকবে। Future Perfect অনুযায়ী 'My mother will have cooked before the guests arrive' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fp_062",
+      "tenseType": "Future Perfect",
+      "question": "Translate: 'আগামীকালের মধ্যে আমরা সিনেমাটি দেখে ফেলব।'",
+      "options": [
+        "We will have watched the movie by tomorrow.",
+        "We watch a movie.",
+        "We will watch a movie.",
+        "We watched a movie."
+      ],
+      "correctAnswer": "We will have watched the movie by tomorrow.",
+      "explanation": "আগামীকালের মধ্যে সিনেমা দেখার কাজটি সম্পন্ন হয়ে থাকবে। 'We will have watched the movie by tomorrow' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fp_063",
+      "tenseType": "Future Perfect",
+      "question": "Translate: 'তুমি যাওয়ার আগেই সে লন্ডন চলে যাবে।'",
+      "options": [
+        "He will have gone to London before you leave.",
+        "He goes to London next year.",
+        "He will go to London next year.",
+        "He travelled to London next year."
+      ],
+      "correctAnswer": "He will have gone to London before you leave.",
+      "explanation": "তোমার প্রস্থান বা যাওয়ার আগেই তার লন্ডন যাওয়ার কাজ সম্পন্ন হয়ে থাকবে। Future Perfect 'He will have gone... before you leave' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fp_064",
+      "tenseType": "Future Perfect",
+      "question": "Translate: 'আগামী বছরের মধ্যে জলবায়ু ব্যাপকভাবে পরিবর্তিত হয়ে যাবে।'",
+      "options": [
+        "The weather will have changed significantly by next year.",
+        "The weather changes rapidly.",
+        "The weather will change rapidly.",
+        "The weather changed rapidly."
+      ],
+      "correctAnswer": "The weather will have changed significantly by next year.",
+      "explanation": "আগামী বছরের মধ্যে জলবায়ুর পরিবর্তন সম্পন্ন হয়ে থাকবে। Future Perfect অনুযায়ী প্রথম বিকল্পটি সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fp_065",
+      "tenseType": "Future Perfect",
+      "question": "Translate: 'ডাক্তার আসার পূর্বে রোগী মারা যাবে।'",
+      "options": [
+        "The patient will have died before the doctor comes.",
+        "The patient dies before the doctor comes.",
+        "The patient will die before the doctor comes.",
+        "The patient has died before the doctor comes."
+      ],
+      "correctAnswer": "The patient will have died before the doctor comes.",
+      "explanation": "ডাক্তার আসার পূর্বেই রোগীর মৃত্যুর কাজ শেষ হয়ে থাকবে। তাই পূর্বের কাজটির জন্য Future Perfect 'The patient will have died' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fp_066",
+      "tenseType": "Future Perfect",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She will have finished her work by tomorrow.",
+        "She will have finish her work by tomorrow.",
+        "She reads her work by tomorrow.",
+        "She will have finishing her work by tomorrow."
+      ],
+      "correctAnswer": "She will have finished her work by tomorrow.",
+      "explanation": "Quick: Future Perfect-এর সঠিক রূপ হলো subject + will have + V3 (finished)।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fp_067",
+      "tenseType": "Future Perfect",
+      "question": "Choose the correct form: 'They ____ football by then.'",
+      "options": ["will have played", "go", "will playing", "playing"],
+      "correctAnswer": "will have played",
+      "explanation": "Quick: 'by then' (ততক্ষণে) থাকার কারণে কাজটি শেষ হয়ে থাকবে বোঝাতে Future Perfect 'will have played' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fp_068",
+      "tenseType": "Future Perfect",
+      "question": "Pick the correct negative form: 'She ____ her work by 8 PM.'",
+      "options": ["will not have finished", "does not read", "will not finishing", "not will have finished"],
+      "correctAnswer": "will not have finished",
+      "explanation": "Quick: Future Perfect negative = subject + will not + have + V3। তাই 'will not have finished' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fp_069",
+      "tenseType": "Future Perfect",
+      "question": "Pick the correct question form: '____ they have left by tomorrow?'",
+      "options": ["Will", "Does", "Do", "Is"],
+      "correctAnswer": "Will",
+      "explanation": "Quick: Future Perfect-এ প্রশ্ন করতে শুরুতে 'Will' বসে (Will + subject + have + V3?)।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fp_070",
+      "tenseType": "Future Perfect",
+      "question": "Which sentence represents a future perfect action?",
+      "options": [
+        "I will have visited Paris by 2030.",
+        "I visit Paris.",
+        "I visited Paris.",
+        "I will visit Paris."
+      ],
+      "correctAnswer": "I will have visited Paris by 2030.",
+      "explanation": "Quick: 'will have visited' এবং 'by 2030' ভবিষ্যতের কোনো কাজ পূর্বে সম্পন্ন হয়ে থাকার পরিকল্পনা নির্দেশ করে।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fp_071",
+      "tenseType": "Future Perfect",
+      "question": "Choose the correct verb: 'The baby ____ before you return.'",
+      "options": ["will have fallen asleep", "wakes up", "woke up", "sleeping"],
+      "correctAnswer": "will have fallen asleep",
+      "explanation": "Quick: তোমার ফেরার পূর্বেই শিশুটি ঘুমিয়ে পড়ে থাকবে। 'will have fallen asleep' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fp_072",
+      "tenseType": "Future Perfect",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "I will have known the answer by tomorrow.",
+        "I will have knowing the answer by tomorrow.",
+        "I am not be knowing him tomorrow.",
+        "I will have knew the answer by tomorrow."
+      ],
+      "correctAnswer": "I will have known the answer by tomorrow.",
+      "explanation": "Quick: 'will have' এর পর know-এর past participle 'known' বসে। 'knew' (V2) বা 'knowing' ভুল।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fp_073",
+      "tenseType": "Future Perfect",
+      "question": "Choose the correct negative sentence:",
+      "options": [
+        "He will not have written the letter.",
+        "He will not have wrote the letter.",
+        "He does not have writing the letter.",
+        "He will not have writing the letter."
+      ],
+      "correctAnswer": "He will not have written the letter.",
+      "explanation": "Quick: 'will not have' এর পর past participle 'written' বসে। 'wrote' (V2) বা 'writing' ভুল।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fp_074",
+      "tenseType": "Future Perfect",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She will have swum across the river by noon.",
+        "She will have swims across the river by noon.",
+        "She will have swimmed across the river by noon.",
+        "She is will have swum across the river by noon."
+      ],
+      "correctAnswer": "She will have swum across the river by noon.",
+      "explanation": "Quick: 'will have' এর সাথে verb-এর V3 রূপ 'swum' (swim-swam-swum) বসে। 'swimmed' ভুল।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }

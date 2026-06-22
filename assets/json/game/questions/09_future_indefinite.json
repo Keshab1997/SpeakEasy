@@ -1,6 +1,897 @@
 {
   "tenseType": "Future Indefinite",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "fi_001",
+      "tenseType": "Future Indefinite",
+      "question": "She ____ a book tomorrow.",
+      "options": ["will read", "reads", "will reading", "readed"],
+      "correctAnswer": "will read",
+      "explanation": "'Tomorrow' (আগামীকাল) ভবিষ্যৎ নির্দেশ করে — Future Indefinite। Structure: subject + shall/will + verb-এর base form (V1)। তাই 'will read' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_002",
+      "tenseType": "Future Indefinite",
+      "question": "They ____ football next Sunday.",
+      "options": ["will play", "played", "plays", "will playing"],
+      "correctAnswer": "will play",
+      "explanation": "'Next Sunday' ভবিষ্যতে ঘটবে এমন কাজ বোঝায়। 'They' এর পর 'will' এবং V1 'play' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_003",
+      "tenseType": "Future Indefinite",
+      "question": "I ____ for the exam tonight.",
+      "options": ["will study", "studies", "studied", "studying"],
+      "correctAnswer": "will study",
+      "explanation": "'Tonight' (আজ রাতে) ভবিষ্যৎ পরিকল্পনা নির্দেশ করছে। 'I' এর সাথে 'will study' (বা shall study) বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_004",
+      "tenseType": "Future Indefinite",
+      "question": "He ____ to the market tomorrow.",
+      "options": ["will go", "went", "goes", "will going"],
+      "correctAnswer": "will go",
+      "explanation": "ভবিষ্যতে কোনো সাধারণ কাজ সম্পন্ন হওয়া বোঝাতে Future Indefinite হয়। 'He' এর সাথে 'will' এবং V1 'go' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_005",
+      "tenseType": "Future Indefinite",
+      "question": "The children ____ in the park tomorrow.",
+      "options": ["play", "will play", "plays", "played"],
+      "correctAnswer": "will play",
+      "explanation": "আগামীকালের কাজ — Future Indefinite। Subject (The children) + will + play (V1)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_006",
+      "tenseType": "Future Indefinite",
+      "question": "My mother ____ dinner in the kitchen tonight.",
+      "options": ["cooks", "will cook", "cooked", "cooking"],
+      "correctAnswer": "will cook",
+      "explanation": "আজ রাতে মা রান্না করবেন — ভবিষ্যতের সাধারণ কাজ। 'will' + base verb 'cook' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_007",
+      "tenseType": "Future Indefinite",
+      "question": "We ____ a movie next week.",
+      "options": ["watch", "will watch", "watched", "watching"],
+      "correctAnswer": "will watch",
+      "explanation": "'Next week' ভবিষ্যৎ নির্দেশক। Future Indefinite-এর গঠন অনুযায়ী 'will watch' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_008",
+      "tenseType": "Future Indefinite",
+      "question": "The baby ____ soon.",
+      "options": ["sleeps", "will sleep", "slept", "sleeping"],
+      "correctAnswer": "will sleep",
+      "explanation": "'Soon' (শীঘ্রই) ভবিষ্যৎ নির্দেশ করে। 'The baby' এর সাথে 'will' এবং sleep-এর V1 রূপ 'will sleep' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_009",
+      "tenseType": "Future Indefinite",
+      "question": "You ____ the results tomorrow.",
+      "options": ["know", "will know", "knows", "knew"],
+      "correctAnswer": "will know",
+      "explanation": "আগামীকাল ফলাফল জানতে পারবে। Future Indefinite অনুযায়ী 'You will know' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_010",
+      "tenseType": "Future Indefinite",
+      "question": "It ____ heavily tomorrow, according to the forecast.",
+      "options": ["rains", "will rain", "rained", "raining"],
+      "correctAnswer": "will rain",
+      "explanation": "পূর্বাভাস অনুযায়ী আগামীকাল ভারী বৃষ্টি হবে। ভবিষ্যৎ সম্ভাবনা বোঝাতে 'It will rain' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_011",
+      "tenseType": "Future Indefinite",
+      "question": "The students ____ to the teacher carefully in the next class.",
+      "options": ["listen", "will listen", "listened", "listening"],
+      "correctAnswer": "will listen",
+      "explanation": "আগামী ক্লাসে ছাত্ররা শিক্ষকের কথা শুনবে। ভবিষ্যৎ কাজ হওয়ায় 'will listen' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_012",
+      "tenseType": "Future Indefinite",
+      "question": "He ____ a letter to his friend next month.",
+      "options": ["writes", "will write", "wrote", "written"],
+      "correctAnswer": "will write",
+      "explanation": "'Next month' (আগামী মাসে) ভবিষ্যৎ সময় নির্দেশ করে। তাই 'will write' (will + V1) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_013",
+      "tenseType": "Future Indefinite",
+      "question": "They ____ a new house next year.",
+      "options": ["build", "will build", "builds", "building"],
+      "correctAnswer": "will build",
+      "explanation": "আগামী বছর তারা বাড়ি তৈরি করবে। Future Indefinite অনুযায়ী 'will build' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_014",
+      "tenseType": "Future Indefinite",
+      "question": "I ____ my keys soon, I hope.",
+      "options": ["find", "will find", "finds", "finding"],
+      "correctAnswer": "will find",
+      "explanation": "আশা করি আমি শীঘ্রই চাবি খুঁজে পাব। ভবিষ্যতের সাধারণ কাজ — 'I will find'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_015",
+      "tenseType": "Future Indefinite",
+      "question": "She ____ a red dress to the party next Saturday.",
+      "options": ["wears", "will wear", "wore", "worn"],
+      "correctAnswer": "will wear",
+      "explanation": "আগামী শনিবার সে লাল পোশাকটি পরিধান করবে। Future Indefinite-এ 'will wear' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_016",
+      "tenseType": "Future Indefinite",
+      "question": "The birds ____ away if you make a noise.",
+      "options": ["fly", "will fly", "flies", "flown"],
+      "correctAnswer": "will fly",
+      "explanation": "তুমি শব্দ করলে পাখিগুলো উড়ে যাবে (শর্তযুক্ত ভবিষ্যৎ)। প্রথম অংশ present simple হলে পরের অংশ future simple 'will fly' হয়।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_017",
+      "tenseType": "Future Indefinite",
+      "question": "We ____ for the bus tomorrow morning.",
+      "options": ["wait", "will wait", "waits", "waiting"],
+      "correctAnswer": "will wait",
+      "explanation": "আগামীকাল সকালে আমরা বাসের জন্য অপেক্ষা করব। 'We will wait' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_018",
+      "tenseType": "Future Indefinite",
+      "question": "He ____ his room tomorrow.",
+      "options": ["cleans", "will clean", "cleaned", "cleaning"],
+      "correctAnswer": "will clean",
+      "explanation": "আগামীকাল সে তার ঘর পরিষ্কার করবে — Future Indefinite। 'He will clean' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_019",
+      "tenseType": "Future Indefinite",
+      "question": "The dog ____ after the cat if it gets loose.",
+      "options": ["run", "will run", "runs", "running"],
+      "correctAnswer": "will run",
+      "explanation": "কুকুরটি ছেড়ে দিলে বিড়ালের পিছে দৌড়াবে (শর্তাধীন ভবিষ্যৎ)। 'will run' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_020",
+      "tenseType": "Future Indefinite",
+      "question": "I ____ dinner at a restaurant tonight.",
+      "options": ["have", "will have", "has", "having"],
+      "correctAnswer": "will have",
+      "explanation": "আজ রাতে আমি রেস্তোরাঁয় রাতের খাবার খাব। 'have' এখানে খাওয়া অর্থে ব্যবহৃত। 'will have' ভবিষ্যৎ নির্দেশ করে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_021",
+      "tenseType": "Future Indefinite",
+      "question": "She ____ to London next year.",
+      "options": ["travel", "will travel", "travels", "travelling"],
+      "correctAnswer": "will travel",
+      "explanation": "'Next year' দ্বারা ভবিষ্যৎ ইন্ডিকেট করায় Future Indefinite 'will travel' হবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_022",
+      "tenseType": "Future Indefinite",
+      "question": "They ____ a party next Saturday.",
+      "options": ["have", "will have", "has", "having"],
+      "correctAnswer": "will have",
+      "explanation": "আগামী শনিবার তারা একটি অনুষ্ঠান করবে। Future Indefinite-এ 'will have' বসবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_023",
+      "tenseType": "Future Indefinite",
+      "question": "He ____ a great leader in the future.",
+      "options": ["is", "will be", "was", "has been"],
+      "correctAnswer": "will be",
+      "explanation": "ভবিষ্যতের অবস্থা বোঝাতে be-verb এর future simple রূপ 'will be' ব্যবহৃত হয়।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_024",
+      "tenseType": "Future Indefinite",
+      "question": "If you study hard, you ____ the exam.",
+      "options": ["pass", "will pass", "passes", "passed"],
+      "correctAnswer": "will pass",
+      "explanation": "প্রথম শর্তাধীন বাক্য (First Conditional): If + Present Indefinite হলে অপর অংশটি Future Indefinite 'will pass' হয়।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_025",
+      "tenseType": "Future Indefinite",
+      "question": "The company ____ fifty new employees next month.",
+      "options": ["hire", "will hire", "hires", "hiring"],
+      "correctAnswer": "will hire",
+      "explanation": "কোম্পানি আগামী মাসে নতুন কর্মী নিয়োগ দেবে। 'will hire' (will + V1) সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_026",
+      "tenseType": "Future Indefinite",
+      "question": "I promise I ____ my best.",
+      "options": ["do", "will do", "does", "doing"],
+      "correctAnswer": "will do",
+      "explanation": "প্রতিশ্রুতি (Promise) দেওয়ার ক্ষেত্রে Future Indefinite Tense 'will do' ব্যবহৃত হয়।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_027",
+      "tenseType": "Future Indefinite",
+      "question": "Perhaps she ____ to the party.",
+      "options": ["come", "will come", "comes", "coming"],
+      "correctAnswer": "will come",
+      "explanation": "সম্ভাবনা বা অনুমান (Perhaps/Maybe) বোঝাতে Future Indefinite 'will come' ব্যবহৃত হয়।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_028",
+      "tenseType": "Future Indefinite",
+      "question": "The climate of this region ____ in the coming years.",
+      "options": ["changes", "will change", "changed", "changing"],
+      "correctAnswer": "will change",
+      "explanation": "আসন্ন বছরগুলোতে জলবায়ু পরিবর্তিত হবে। ভবিষ্যৎ পরিবর্তনের জন্য 'will change' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_029",
+      "tenseType": "Future Indefinite",
+      "question": "I think he ____ angry when he hears the news.",
+      "options": ["become", "will become", "becomes", "becoming"],
+      "correctAnswer": "will become",
+      "explanation": "ব্যক্তিগত মতামত বা অনুমানের ক্ষেত্রে (I think) Future Indefinite 'will become' বসবে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_030",
+      "tenseType": "Future Indefinite",
+      "question": "I ____ you at the station tomorrow.",
+      "options": ["meet", "will meet", "meets", "meeting"],
+      "correctAnswer": "will meet",
+      "explanation": "আগামীকাল স্টেশনে দেখা করব — Future Indefinite। 'will meet' সঠিক রূপ।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "fi_031",
+      "tenseType": "Future Indefinite",
+      "question": "Identify the tense: 'She will read a book tomorrow.'",
+      "options": ["Present Indefinite", "Past Indefinite", "Future Indefinite", "Future Continuous"],
+      "correctAnswer": "Future Indefinite",
+      "explanation": "'will read' এবং 'tomorrow' ভবিষ্যৎ সময়ের সাধারণ কাজকে নির্দেশ করে, যা Future Indefinite Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fi_032",
+      "tenseType": "Future Indefinite",
+      "question": "Identify the tense: 'They will play football next week.'",
+      "options": ["Future Indefinite", "Present Indefinite", "Past Indefinite", "Future Continuous"],
+      "correctAnswer": "Future Indefinite",
+      "explanation": "Subject + will + V1 (play) এবং 'next week' থাকার কারণে এটি Future Indefinite Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fi_033",
+      "tenseType": "Future Indefinite",
+      "question": "Identify the tense: 'I will study for my exam tonight.'",
+      "options": ["Future Indefinite", "Present Continuous", "Present Perfect", "Past Simple"],
+      "correctAnswer": "Future Indefinite",
+      "explanation": "'will study' দ্বারা আজ রাতের একটি ভবিষ্যৎ কাজের সিদ্ধান্ত বা পরিকল্পনা বোঝায় — Future Indefinite Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fi_034",
+      "tenseType": "Future Indefinite",
+      "question": "Identify the tense: 'He will go to the market soon.'",
+      "options": ["Future Indefinite", "Present Continuous", "Present Perfect", "Past Indefinite"],
+      "correctAnswer": "Future Indefinite",
+      "explanation": "'soon' এবং 'will go' ভবিষ্যতে ঘটতে যাওয়া সাধারণ কাজ নির্দেশ করে, যা Future Indefinite।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fi_035",
+      "tenseType": "Future Indefinite",
+      "question": "Identify the tense: 'The baby will cry if you leave.'",
+      "options": ["Future Indefinite", "Present Continuous", "Past Indefinite", "Future Continuous"],
+      "correctAnswer": "Future Indefinite",
+      "explanation": "শর্তাধীন বাক্যের ফলাফল অংশটি ('The baby will cry') Future Indefinite Tense-এ রয়েছে।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fi_036",
+      "tenseType": "Future Indefinite",
+      "question": "Identify the tense: 'We will watch a movie next week.'",
+      "options": ["Future Indefinite", "Present Continuous", "Past Indefinite", "Future Perfect"],
+      "correctAnswer": "Future Indefinite",
+      "explanation": "'will watch' এবং ভবিষ্যৎ সময় 'next week' নির্দেশ করে যে এটি Future Indefinite Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fi_037",
+      "tenseType": "Future Indefinite",
+      "question": "Identify the tense: 'It will rain tomorrow.'",
+      "options": ["Future Indefinite", "Present Indefinite", "Past Indefinite", "Future Continuous"],
+      "correctAnswer": "Future Indefinite",
+      "explanation": "আগামীকালের আবহাওয়ার সাধারণ পূর্বাভাস বোঝাতে 'will rain' (Future Indefinite) ব্যবহৃত হয়েছে।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fi_038",
+      "tenseType": "Future Indefinite",
+      "question": "Identify the tense: 'The students will listen to the teacher.'",
+      "options": ["Future Indefinite", "Present Indefinite", "Past Indefinite", "Future Continuous"],
+      "correctAnswer": "Future Indefinite",
+      "explanation": "কোনো সাহায্যকারী verb ছাড়া সরাসরি 'will + V1' বসায় এটি Future Indefinite Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fi_039",
+      "tenseType": "Future Indefinite",
+      "question": "Identify the tense: 'She will wear a beautiful dress at the party.'",
+      "options": ["Future Indefinite", "Present Continuous", "Past Indefinite", "Future Continuous"],
+      "correctAnswer": "Future Indefinite",
+      "explanation": "পার্টিতে সে একটি সুন্দর পোশাক পরবে। ভবিষ্যৎ কাজ প্রকাশে 'will wear' ব্যবহার করা হয়েছে, যা Future Indefinite।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fi_040",
+      "tenseType": "Future Indefinite",
+      "question": "Identify the tense: 'I will meet him in 2030.'",
+      "options": ["Future Indefinite", "Present Continuous", "Past Indefinite", "Future Perfect"],
+      "correctAnswer": "Future Indefinite",
+      "explanation": "ভবিষ্যতের একটি নির্দিষ্ট বছর 'in 2030' উল্লেখ রয়েছে এবং 'will meet' আছে। এটি Future Indefinite Tense।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "fi_041",
+      "tenseType": "Future Indefinite",
+      "question": "Arrange: (tomorrow / read / she / a / book / will)",
+      "options": [
+        "She will read a book tomorrow.",
+        "She tomorrow read will a book.",
+        "Tomorrow read she will a book.",
+        "She will a book read tomorrow."
+      ],
+      "correctAnswer": "She will read a book tomorrow.",
+      "explanation": "সঠিক গঠন: Subject (She) + will + V1 (read) + Object (a book) + Time (tomorrow)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fi_042",
+      "tenseType": "Future Indefinite",
+      "question": "Arrange: (play / they / football / will / tomorrow)",
+      "options": [
+        "They will play football tomorrow.",
+        "They tomorrow play will football.",
+        "Tomorrow play they will football.",
+        "They football will play tomorrow."
+      ],
+      "correctAnswer": "They will play football tomorrow.",
+      "explanation": "সঠিক গঠন: Subject (They) + will + V1 (play) + Object (football) + Time (tomorrow)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fi_043",
+      "tenseType": "Future Indefinite",
+      "question": "Arrange: (for / I / wait / will / the / bus / tomorrow)",
+      "options": [
+        "I will wait for the bus tomorrow.",
+        "I tomorrow wait will for the bus.",
+        "Wait I will for the bus tomorrow.",
+        "I will wait tomorrow for the bus."
+      ],
+      "correctAnswer": "I will wait for the bus tomorrow.",
+      "explanation": "সঠিক গঠন: Subject (I) + will + V1 (wait) + Prepositional Object (for the bus) + Time (tomorrow)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fi_044",
+      "tenseType": "Future Indefinite",
+      "question": "Arrange: (cook / kitchen / mother / in / the / my / will)",
+      "options": [
+        "My mother will cook in the kitchen.",
+        "My mother in the kitchen will cook.",
+        "Will cook my mother in the kitchen.",
+        "My mother kitchen in the will cook."
+      ],
+      "correctAnswer": "My mother will cook in the kitchen.",
+      "explanation": "সঠিক গঠন: Subject (My mother) + will + V1 (cook) + Place (in the kitchen)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fi_045",
+      "tenseType": "Future Indefinite",
+      "question": "Arrange: (have / party / they / next / Saturday / a / will)",
+      "options": [
+        "They will have a party next Saturday.",
+        "They next Saturday will have a party.",
+        "Next Saturday will they have a party.",
+        "They a party will have next Saturday."
+      ],
+      "correctAnswer": "They will have a party next Saturday.",
+      "explanation": "সঠিক গঠন: Subject (They) + will + V1 (have) + Object (a party) + Time (next Saturday)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fi_046",
+      "tenseType": "Future Indefinite",
+      "question": "Arrange: (rapidly / change / climate / the / will)",
+      "options": [
+        "The climate will change rapidly.",
+        "The climate rapidly will change.",
+        "Will change the climate rapidly.",
+        "The climate will rapidly change."
+      ],
+      "correctAnswer": "The climate will change rapidly.",
+      "explanation": "সঠিক গঠন: Subject (The climate) + will + V1 (change) + Adverb (rapidly)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "fi_047",
+      "tenseType": "Future Indefinite",
+      "question": "Find the error: 'She will reads a book tomorrow.'",
+      "options": [
+        "She will read a book tomorrow.",
+        "She reads a book tomorrow.",
+        "She will reading a book tomorrow.",
+        "She is will read a book tomorrow."
+      ],
+      "correctAnswer": "She will read a book tomorrow.",
+      "explanation": "'will'-এর পর সর্বদা verb-এর base form (V1) বসে। s/es যুক্ত হবে না। তাই 'will read' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fi_048",
+      "tenseType": "Future Indefinite",
+      "question": "Find the error: 'They will playing football tomorrow.'",
+      "options": [
+        "They will play football tomorrow.",
+        "They will played football tomorrow.",
+        "They plays football tomorrow.",
+        "They are will play football tomorrow."
+      ],
+      "correctAnswer": "They will play football tomorrow.",
+      "explanation": "Future Indefinite-এ 'will' এর পর সরাসরি verb-ing বসে না। 'They will play' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fi_049",
+      "tenseType": "Future Indefinite",
+      "question": "Find the error: 'I will wrote a letter tomorrow.'",
+      "options": [
+        "I will write a letter tomorrow.",
+        "I write a letter tomorrow.",
+        "I will writing a letter tomorrow.",
+        "I will written a letter tomorrow."
+      ],
+      "correctAnswer": "I will write a letter tomorrow.",
+      "explanation": "'will'-এর পর past form 'wrote' বা past participle 'written' বসে না। Base form 'write' বসবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fi_050",
+      "tenseType": "Future Indefinite",
+      "question": "Find the error: 'He is will go to school tomorrow.'",
+      "options": [
+        "He will go to school tomorrow.",
+        "He goes to school tomorrow.",
+        "He will going to school tomorrow.",
+        "He is go to school tomorrow."
+      ],
+      "correctAnswer": "He will go to school tomorrow.",
+      "explanation": "Future Indefinite-এর active গঠনে auxiliary 'is' এবং 'will' একসাথে বসে না। 'He will go' সঠিক।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fi_051",
+      "tenseType": "Future Indefinite",
+      "question": "Find the error: 'The children will played in the park.'",
+      "options": [
+        "The children will play in the park.",
+        "The children plays in the park.",
+        "The children playing in the park.",
+        "The children will playing in the park."
+      ],
+      "correctAnswer": "The children will play in the park.",
+      "explanation": "'will'-এর পর past form 'played' বসবে না, base form 'play' বসাতে হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fi_052",
+      "tenseType": "Future Indefinite",
+      "question": "Find the error: 'We will watching a movie tomorrow.'",
+      "options": [
+        "We will watch a movie tomorrow.",
+        "We watch a movie tomorrow.",
+        "We are watching a movie tomorrow.",
+        "We will watched a movie tomorrow."
+      ],
+      "correctAnswer": "We will watch a movie tomorrow.",
+      "explanation": "Future Indefinite-এ 'will' এর সাথে সরাসরি 'watching' হয় না, 'will watch' সঠিক রূপ।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fi_053",
+      "tenseType": "Future Indefinite",
+      "question": "Find the error: 'It will raining heavily tomorrow.'",
+      "options": [
+        "It will rain heavily tomorrow.",
+        "It rains heavily tomorrow.",
+        "It will rained heavily tomorrow.",
+        "It is will rain heavily tomorrow."
+      ],
+      "correctAnswer": "It will rain heavily tomorrow.",
+      "explanation": "'will' এর পর directly 'raining' ভুল। Future Indefinite গঠনে 'will rain' (will + V1) বসবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fi_054",
+      "tenseType": "Future Indefinite",
+      "question": "Find the error: 'She will swimming in the pool.'",
+      "options": [
+        "She will swim in the pool.",
+        "She swims in the pool.",
+        "She will be swim in the pool.",
+        "She will swimmed in the pool."
+      ],
+      "correctAnswer": "She will swim in the pool.",
+      "explanation": "'will' এর পর সরাসরি V-ing 'swimming' ভুল। Future Indefinite অনুযায়ী 'She will swim' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fi_055",
+      "tenseType": "Future Indefinite",
+      "question": "Find the error: 'He will buys a new car.'",
+      "options": [
+        "He will buy a new car.",
+        "He buys a new car.",
+        "He will buying a new car.",
+        "He is buy a new car next week."
+      ],
+      "correctAnswer": "He will buy a new car.",
+      "explanation": "'will' এর পরে verb-এর সাথে s/es যুক্ত করা যাবে না। 'He will buy' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fi_056",
+      "tenseType": "Future Indefinite",
+      "question": "Find the error: 'They will maked a mistake.'",
+      "options": [
+        "They will make a mistake.",
+        "They make a mistake.",
+        "They will making a mistake.",
+        "They are will make a mistake."
+      ],
+      "correctAnswer": "They will make a mistake.",
+      "explanation": "'will'-এর পর past form 'maked' (যা মূলত ভুল রূপ, সঠিকটি 'made') বসবে না, 'make' বসবে।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "fi_057",
+      "tenseType": "Future Indefinite",
+      "question": "Translate: 'সে আগামীকাল একটি বই পড়বে।'",
+      "options": [
+        "She will read a book tomorrow.",
+        "She reads a book tomorrow.",
+        "She is reading a book tomorrow.",
+        "She read a book tomorrow."
+      ],
+      "correctAnswer": "She will read a book tomorrow.",
+      "explanation": "'পড়বে' দ্বারা ভবিষ্যৎ নির্দেশ করছে এবং 'আগামীকাল' থাকায় এটি Future Indefinite। 'She will read a book tomorrow' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fi_058",
+      "tenseType": "Future Indefinite",
+      "question": "Translate: 'তারা আগামীকাল ফুটবল খেলবে।'",
+      "options": [
+        "They will play football tomorrow.",
+        "They play football tomorrow.",
+        "They will playing football tomorrow.",
+        "They played football tomorrow."
+      ],
+      "correctAnswer": "They will play football tomorrow.",
+      "explanation": "ভবিষ্যতে খেলা সম্পন্ন হবে — Future Indefinite। 'They will play football tomorrow' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fi_059",
+      "tenseType": "Future Indefinite",
+      "question": "Translate: 'আমি আজ রাতে পড়াশোনা করব।'",
+      "options": [
+        "I will study tonight.",
+        "I study tonight.",
+        "I am studying tonight.",
+        "I studied tonight."
+      ],
+      "correctAnswer": "I will study tonight.",
+      "explanation": "আজ রাতের ভবিষ্যৎ কাজ — Future Indefinite। 'I will study tonight' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fi_060",
+      "tenseType": "Future Indefinite",
+      "question": "Translate: 'আগামীকাল বৃষ্টি হবে।'",
+      "options": [
+        "It will rain tomorrow.",
+        "It rains tomorrow.",
+        "It will raining tomorrow.",
+        "It rained tomorrow."
+      ],
+      "correctAnswer": "It will rain tomorrow.",
+      "explanation": "আগামীকালের আবহাওয়ার সাধারণ অনুমান — Future Indefinite। সাবজেক্ট 'It' এর সাথে 'will rain tomorrow' বসবে।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fi_061",
+      "tenseType": "Future Indefinite",
+      "question": "Translate: 'আমার মা রান্না করবেন।'",
+      "options": [
+        "My mother will cook.",
+        "My mother cooks.",
+        "My mother cooking.",
+        "My mother will cooking."
+      ],
+      "correctAnswer": "My mother will cook.",
+      "explanation": "ভবিষ্যতের সাধারণ কাজ — Future Indefinite। 'My mother will cook (will + V1)' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fi_062",
+      "tenseType": "Future Indefinite",
+      "question": "Translate: 'আমরা একটি সিনেমা দেখব।'",
+      "options": [
+        "We will watch a movie.",
+        "We watch a movie.",
+        "We are going to watch a movie.",
+        "We watched a movie."
+      ],
+      "correctAnswer": "We will watch a movie.",
+      "explanation": "ভবিষ্যতে সিনেমাটি দেখব — Future Indefinite। 'We will watch a movie' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fi_063",
+      "tenseType": "Future Indefinite",
+      "question": "Translate: 'সে আগামী বছর লন্ডন যাবে।'",
+      "options": [
+        "He will go to London next year.",
+        "He goes to London next year.",
+        "He will going to London next year.",
+        "He went to London next year."
+      ],
+      "correctAnswer": "He will go to London next year.",
+      "explanation": "'আগামী বছর' (next year) ভবিষ্যৎ সময় এবং 'যাবে' নির্দেশ করে Future Indefinite। 'He will go to London next year' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fi_064",
+      "tenseType": "Future Indefinite",
+      "question": "Translate: 'আবহাওয়া দ্রুত পরিবর্তিত হবে।'",
+      "options": [
+        "The weather will change rapidly.",
+        "The weather changes rapidly.",
+        "The weather will changing rapidly.",
+        "The weather changed rapidly."
+      ],
+      "correctAnswer": "The weather will change rapidly.",
+      "explanation": "ভবিষ্যতের পরিবর্তন প্রকাশ করতে Future Indefinite ব্যবহৃত হয়েছে। 'The weather will change rapidly' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fi_065",
+      "tenseType": "Future Indefinite",
+      "question": "Translate: 'আমি আগামীকাল তার সাথে দেখা করব।'",
+      "options": [
+        "I will meet him tomorrow.",
+        "I meet him tomorrow.",
+        "I am meeting him tomorrow.",
+        "I met him tomorrow."
+      ],
+      "correctAnswer": "I will meet him tomorrow.",
+      "explanation": "আগামীকাল দেখা করার সিদ্ধান্ত — Future Indefinite। 'I will meet him tomorrow' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "fi_066",
+      "tenseType": "Future Indefinite",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She will read a book tomorrow.",
+        "She will reads a book tomorrow.",
+        "She reads a book tomorrow.",
+        "She will reading a book tomorrow."
+      ],
+      "correctAnswer": "She will read a book tomorrow.",
+      "explanation": "Quick: Future Indefinite-এ auxiliary 'will' এর সাথে V1 (read) বসে। s/es যুক্ত হয় না।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fi_067",
+      "tenseType": "Future Indefinite",
+      "question": "Choose the correct form: 'They ____ to the party next night.'",
+      "options": ["will go", "go", "will going", "goes"],
+      "correctAnswer": "will go",
+      "explanation": "Quick: 'next night' ভবিষ্যৎ নির্দেশ করায় Future Indefinite 'will go' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fi_068",
+      "tenseType": "Future Indefinite",
+      "question": "Pick the correct negative form: 'She ____ a book tomorrow.'",
+      "options": ["will not read", "does not read", "will not reading", "not will read"],
+      "correctAnswer": "will not read",
+      "explanation": "Quick: Future Indefinite negative = subject + will not + V1। তাই 'will not read' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fi_069",
+      "tenseType": "Future Indefinite",
+      "question": "Pick the correct question form: '____ she read a book tomorrow?'",
+      "options": ["Will", "Does", "Do", "Is"],
+      "correctAnswer": "Will",
+      "explanation": "Quick: Future Indefinite-এ প্রশ্ন করতে শুরুতে 'Will' বসে (Will + subject + V1?)।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fi_070",
+      "tenseType": "Future Indefinite",
+      "question": "Which sentence represents a future decision?",
+      "options": [
+        "I will visit Paris in 2030.",
+        "I visit Paris.",
+        "I visited Paris.",
+        "I am visiting Paris now."
+      ],
+      "correctAnswer": "I will visit Paris in 2030.",
+      "explanation": "Quick: 'will visit' এবং 'in 2030' ভবিষ্যতের সিদ্ধান্ত বা পরিকল্পনা নির্দেশ করে।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fi_071",
+      "tenseType": "Future Indefinite",
+      "question": "Choose the correct verb: 'The baby ____ if you make noise.'",
+      "options": ["will wake up", "wakes up", "woke up", "waking up"],
+      "correctAnswer": "will wake up",
+      "explanation": "Quick: শর্তাধীন ভবিষ্যৎ। শব্দ করলে শিশুটি জেগে উঠবে। 'will wake up' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fi_072",
+      "tenseType": "Future Indefinite",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "I will not see him tomorrow.",
+        "I will not saw him tomorrow.",
+        "I am not see him tomorrow.",
+        "I will not seen him tomorrow."
+      ],
+      "correctAnswer": "I will not see him tomorrow.",
+      "explanation": "Quick: Negative বাক্যে 'will not' এর পর verb-এর base form (V1) বসে। 'will not see' সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fi_073",
+      "tenseType": "Future Indefinite",
+      "question": "Choose the correct negative sentence:",
+      "options": [
+        "He will not write the letter.",
+        "He will not wrote the letter.",
+        "He does not wrote the letter.",
+        "He will not writing the letter."
+      ],
+      "correctAnswer": "He will not write the letter.",
+      "explanation": "Quick: 'will not' এর পর base verb 'write' বসে। 'wrote' (V2) বা 'writing' (V-ing) ভুল।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "fi_074",
+      "tenseType": "Future Indefinite",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She will swim across the river tomorrow.",
+        "She will swims across the river tomorrow.",
+        "She will swimmed across the river tomorrow.",
+        "She is will swim across the river tomorrow."
+      ],
+      "correctAnswer": "She will swim across the river tomorrow.",
+      "explanation": "Quick: 'will' এর সাথে verb-এর base form (V1) 'swim' বসে। s/es বা ed যোগ করা ভুল।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }

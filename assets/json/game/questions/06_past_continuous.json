@@ -1,6 +1,897 @@
 {
   "tenseType": "Past Continuous",
   "version": "1.0.0",
-  "lastUpdated": "",
-  "questions": []
+  "lastUpdated": "2026-06-21",
+  "questions": [
+    {
+      "id": "paco_001",
+      "tenseType": "Past Continuous",
+      "question": "She ____ a book when I arrived.",
+      "options": ["read", "was reading", "reads", "were reading"],
+      "correctAnswer": "was reading",
+      "explanation": "অতীতে একটি কাজ চলার সময় আরেকটি কাজ ঘটলে চলমান কাজটি Past Continuous হয়। 'She' singular, তাই 'was reading'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_002",
+      "tenseType": "Past Continuous",
+      "question": "They ____ football at 5 PM yesterday.",
+      "options": ["played", "were playing", "was playing", "playing"],
+      "correctAnswer": "were playing",
+      "explanation": "গতকালের কোনো নির্দিষ্ট সময়ে চলমান কাজ বোঝাতে Past Continuous হয়। 'They' plural subject, তাই 'were playing'।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_003",
+      "tenseType": "Past Continuous",
+      "question": "I ____ for the exam while my brother was sleeping.",
+      "options": ["studied", "was studying", "were studying", "am studying"],
+      "correctAnswer": "was studying",
+      "explanation": "অতীতে দুটি কাজ একসাথে চলছিল (while) বোঝাতে Past Continuous হয়। 'I' এর সাথে 'was studying' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_004",
+      "tenseType": "Past Continuous",
+      "question": "He ____ to the market when it started to rain.",
+      "options": ["goes", "was going", "were going", "went"],
+      "correctAnswer": "was going",
+      "explanation": "বৃষ্টি শুরু হওয়ার সময় সে বাজারে যাচ্ছিল (চলমান কাজ)। 'He' singular, তাই 'was going' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_005",
+      "tenseType": "Past Continuous",
+      "question": "The children ____ in the garden all afternoon.",
+      "options": ["played", "were playing", "was playing", "play"],
+      "correctAnswer": "were playing",
+      "explanation": "সারা বিকেল ধরে শিশুরা বাগানে খেলছিল। Plural subject 'The children' এর সাথে 'were playing' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_006",
+      "tenseType": "Past Continuous",
+      "question": "My mother ____ dinner when the phone rang.",
+      "options": ["cooked", "was cooking", "were cooking", "cooks"],
+      "correctAnswer": "was cooking",
+      "explanation": "ফোন বাজার মুহূর্তে মা রান্না করছিলেন। অতীতে চলমান কাজ বোঝাতে 'My mother' এর সাথে 'was cooking' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_007",
+      "tenseType": "Past Continuous",
+      "question": "We ____ a movie when the lights went out.",
+      "options": ["watched", "were watching", "was watching", "watch"],
+      "correctAnswer": "were watching",
+      "explanation": "বিদ্যুৎ চলে যাওয়ার সময় আমরা সিনেমা দেখছিলাম। Plural subject 'We' এর সাথে 'were watching' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_008",
+      "tenseType": "Past Continuous",
+      "question": "The baby ____ when the mother walked in.",
+      "options": ["cried", "was crying", "were crying", "is crying"],
+      "correctAnswer": "was crying",
+      "explanation": "মা ঘরে ঢোকার সময় শিশুটি কাঁদছিল। 'The baby' singular, তাই 'was crying' (was + verb-ing) সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_009",
+      "tenseType": "Past Continuous",
+      "question": "You ____ in your sleep last night.",
+      "options": ["talked", "were talking", "was talking", "are talking"],
+      "correctAnswer": "were talking",
+      "explanation": "গত রাতে ঘুমানোর সময় তুমি কথা বলছিলে। 'You' এর সাথে past continuous-এ 'were talking' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_010",
+      "tenseType": "Past Continuous",
+      "question": "It ____ heavily when we left the house.",
+      "options": ["rained", "was raining", "were raining", "rains"],
+      "correctAnswer": "was raining",
+      "explanation": "আমরা যখন বাড়ি থেকে বের হলাম তখন মুষলধারে বৃষ্টি হচ্ছিল। 'It' এর সাথে 'was raining' বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_011",
+      "tenseType": "Past Continuous",
+      "question": "The students ____ to the lecture carefully.",
+      "options": ["listened", "were listening", "was listening", "listen"],
+      "correctAnswer": "were listening",
+      "explanation": "ছাত্ররা মনোযোগ দিয়ে বক্তৃতা শুনছিল (চলমান কাজ)। Plural subject 'The students' এর সাথে 'were listening' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_012",
+      "tenseType": "Past Continuous",
+      "question": "He ____ a letter when I visited him.",
+      "options": ["wrote", "was writing", "were writing", "writes"],
+      "correctAnswer": "was writing",
+      "explanation": "আমি দেখা করতে যাওয়ার সময় সে চিঠি লিখছিল। 'He' singular, তাই 'was writing' বসবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_013",
+      "tenseType": "Past Continuous",
+      "question": "They ____ a new house this time last year.",
+      "options": ["built", "were building", "was building", "building"],
+      "correctAnswer": "were building",
+      "explanation": "গত বছর এই সময়ে তারা একটি নতুন বাড়ি তৈরি করছিল। 'They' plural, তাই 'were building' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_014",
+      "tenseType": "Past Continuous",
+      "question": "I ____ for my keys when you called me.",
+      "options": ["looked", "was looking", "were looking", "am looking"],
+      "correctAnswer": "was looking",
+      "explanation": "তুমি যখন ফোন করেছিলে তখন আমি আমার চাবি খুঁজছিলাম। 'I' এর সাথে 'was looking' (was + verb-ing) বসে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_015",
+      "tenseType": "Past Continuous",
+      "question": "She ____ a red dress at the party last night.",
+      "options": ["wore", "was wearing", "were wearing", "wearing"],
+      "correctAnswer": "was wearing",
+      "explanation": "গত রাতের পার্টিতে সে লাল পোশাক পরেছিল (পোশাক পরিহিত অবস্থায় ছিল)। 'She was wearing' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_016",
+      "tenseType": "Past Continuous",
+      "question": "The birds ____ when the sun rose.",
+      "options": ["sang", "were singing", "was singing", "singing"],
+      "correctAnswer": "were singing",
+      "explanation": "সূর্য ওঠার সময় পাখিগুলো গান গাইছিল। Plural subject 'The birds' এর সাথে 'were singing' হবে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_017",
+      "tenseType": "Past Continuous",
+      "question": "We ____ for the bus when the accident happened.",
+      "options": ["waited", "were waiting", "was waiting", "waiting"],
+      "correctAnswer": "were waiting",
+      "explanation": "দুর্ঘটনা ঘটার সময় আমরা বাসের জন্য অপেক্ষা করছিলাম। 'We' plural, তাই 'were waiting' বসেছে।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_018",
+      "tenseType": "Past Continuous",
+      "question": "He ____ his room while I was washing dishes.",
+      "options": ["cleaned", "was cleaning", "were cleaning", "cleans"],
+      "correctAnswer": "was cleaning",
+      "explanation": "আমি যখন থালাবাসন মাজছিলাম তখন সে তার ঘর পরিষ্কার করছিল (দুটি সমান্তরাল কাজ)। 'He was cleaning' সঠিক।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_019",
+      "tenseType": "Past Continuous",
+      "question": "The dog ____ in the garden when it saw a cat.",
+      "options": ["ran", "was running", "were running", "running"],
+      "correctAnswer": "was running",
+      "explanation": "বিড়ালটি দেখার সময় কুকুরটি বাগানে দৌড়াচ্ছিল। 'The dog' singular, তাই 'was running' (run-এর n ডাবল হবে)।",
+      "difficulty": "easy",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_020",
+      "tenseType": "Past Continuous",
+      "question": "I ____ dinner when the doorbell rang.",
+      "options": ["had", "was having", "were having", "am having"],
+      "correctAnswer": "was having",
+      "explanation": "কলিংবেল বাজার সময় আমি রাতের খাবার খাচ্ছিলাম ('having' খাওয়া অর্থে ব্যবহৃত)। 'I' এর সাথে 'was having' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_021",
+      "tenseType": "Past Continuous",
+      "question": "She ____ in Europe this time last month.",
+      "options": ["travelled", "was travelling", "were travelling", "travels"],
+      "correctAnswer": "was travelling",
+      "explanation": "গত মাসের এই সময়ে সে ইউরোপ ভ্রমণ করছিল। নির্দিষ্ট অতীত সময়ের চলমান কাজ বোঝাতে 'was travelling' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_022",
+      "tenseType": "Past Continuous",
+      "question": "They ____ a loud argument when I entered the room.",
+      "options": ["had", "were having", "was having", "having"],
+      "correctAnswer": "were having",
+      "explanation": "আমি যখন ঘরে ঢুকলাম তারা তখন চিৎকার করে তর্ক করছিল। Plural subject-এর সাথে 'were having' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_023",
+      "tenseType": "Past Continuous",
+      "question": "He ____ rude to everyone during that period.",
+      "options": ["was", "was being", "were being", "has been"],
+      "correctAnswer": "was being",
+      "explanation": "'was being + adjective' দ্বারা অতীতে সাময়িক আচরণ বোঝায়। সে ওই সময় সবার সাথে খারাপ আচরণ করছিল।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_024",
+      "tenseType": "Past Continuous",
+      "question": "You ____ too much noise while I was trying to study.",
+      "options": ["made", "were making", "was making", "making"],
+      "correctAnswer": "were making",
+      "explanation": "আমি যখন পড়ার চেষ্টা করছিলাম তুমি তখন খুব গোলমাল করছিলে। 'You' এর সাথে 'were making' বসে।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_025",
+      "tenseType": "Past Continuous",
+      "question": "The company ____ new workers during the expansion.",
+      "options": ["hired", "was hiring", "were hiring", "hires"],
+      "correctAnswer": "was hiring",
+      "explanation": "সম্প্রসারণের সময়ে কোম্পানি নতুন কর্মী নিয়োগ দিচ্ছিল (দীর্ঘ সময় ধরে চলা অতীত কাজ)। 'The company' singular, তাই 'was hiring'।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_026",
+      "tenseType": "Past Continuous",
+      "question": "I ____ steady progress while studying at university.",
+      "options": ["made", "was making", "were making", "makes"],
+      "correctAnswer": "was making",
+      "explanation": "বিশ্ববিদ্যালয়ে পড়ার সময় আমি নিয়মিত উন্নতি করছিলাম। অতীত সময়ের চলমান প্রক্রিয়া বোঝাতে 'was making' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_027",
+      "tenseType": "Past Continuous",
+      "question": "She ____ for her exams all day yesterday.",
+      "options": ["prepared", "was preparing", "were preparing", "preparing"],
+      "correctAnswer": "was preparing",
+      "explanation": "গতকাল সারা দিন ধরে সে পরীক্ষার প্রস্তুতি নিচ্ছিল। দীর্ঘক্ষণ চলমান অতীত কাজ বোঝাতে 'was preparing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_028",
+      "tenseType": "Past Continuous",
+      "question": "The world's economy ____ rapidly before the crisis.",
+      "options": ["grew", "was growing", "were growing", "is growing"],
+      "correctAnswer": "was growing",
+      "explanation": "সংকট শুরুর আগে বিশ্ব অর্থনীতি দ্রুত বৃদ্ধি পাচ্ছিল। অতীতের ধারাবাহিক পরিবর্তন বোঝাতে 'was growing' ব্যবহৃত হয়।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_029",
+      "tenseType": "Past Continuous",
+      "question": "He ____ more and more anxious as the deadline approached.",
+      "options": ["became", "was becoming", "were becoming", "becomes"],
+      "correctAnswer": "was becoming",
+      "explanation": "ডেডলাইন এগিয়ে আসার সাথে সাথে সে ক্রমান্বয়ে উদ্বিগ্ন হয়ে উঠছিল। অতীতের ধারাবাহিক পরিবর্তন বোঝাতে 'was becoming' বসে।",
+      "difficulty": "hard",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_030",
+      "tenseType": "Past Continuous",
+      "question": "I ____ many clients while working on that project.",
+      "options": ["met", "was meeting", "were meeting", "meets"],
+      "correctAnswer": "was meeting",
+      "explanation": "ঐ প্রজেক্টে কাজ করার সময় আমি অনেক ক্লায়েন্টের সাথে দেখা করছিলাম। 'I' এর সাথে 'was meeting' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "fill_blank"
+    },
+    {
+      "id": "paco_031",
+      "tenseType": "Past Continuous",
+      "question": "Identify the tense: 'She was reading a book when I called.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Continuous"],
+      "correctAnswer": "Past Continuous",
+      "explanation": "'was reading' (was/were + verb-ing) অতীতের চলমান কাজ নির্দেশ করে। এটি Past Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "paco_032",
+      "tenseType": "Past Continuous",
+      "question": "Identify the tense: 'They were playing football at that time.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Continuous"],
+      "correctAnswer": "Past Continuous",
+      "explanation": "'were playing' এবং নির্দিষ্ট অতীত সময় 'at that time' নির্দেশ করে এটি Past Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "paco_033",
+      "tenseType": "Past Continuous",
+      "question": "Identify the tense: 'I was studying all night yesterday.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Perfect Continuous"],
+      "correctAnswer": "Past Continuous",
+      "explanation": "'was studying' এবং 'all night yesterday' অতীত সময়ের দীর্ঘস্থায়ী কাজ নির্দেশ করায় এটি Past Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "paco_034",
+      "tenseType": "Past Continuous",
+      "question": "Identify the tense: 'He was going to the store when we met.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Past Perfect Continuous"],
+      "correctAnswer": "Past Continuous",
+      "explanation": "সাক্ষাতের মুহূর্তে বাজারে যাওয়ার কাজটি চলছিল। 'was going' থাকার কারণে এটি Past Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "paco_035",
+      "tenseType": "Past Continuous",
+      "question": "Identify the tense: 'The baby was crying while I was cooking.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Continuous"],
+      "correctAnswer": "Past Continuous",
+      "explanation": "'was crying' এবং 'was cooking' সমান্তরালভাবে ঘটা দুটি অতীত কাজ বোঝায়। এটি Past Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "paco_036",
+      "tenseType": "Past Continuous",
+      "question": "Identify the tense: 'We were watching a movie when the power failed.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Continuous"],
+      "correctAnswer": "Past Continuous",
+      "explanation": "'were watching' নির্দেশ করে বিদ্যুৎ যাওয়ার পূর্বে সিনেমা দেখার কাজ চলছিল — Past Continuous Tense।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "paco_037",
+      "tenseType": "Past Continuous",
+      "question": "Identify the tense: 'It was raining when the match started.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Continuous"],
+      "correctAnswer": "Past Continuous",
+      "explanation": "'was raining' (was + verb-ing) খেলা শুরু হওয়ার সময়ের আবহাওয়ার চলমান অবস্থা প্রকাশ করে — Past Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "paco_038",
+      "tenseType": "Past Continuous",
+      "question": "Identify the tense: 'The students were listening carefully during the lecture.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Continuous"],
+      "correctAnswer": "Past Continuous",
+      "explanation": "লেকচার চলাকালে ছাত্ররা শুনছিল। 'were listening' (were + verb-ing) থাকার কারণে এটি Past Continuous।",
+      "difficulty": "easy",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "paco_039",
+      "tenseType": "Past Continuous",
+      "question": "Identify the tense: 'She was wearing a beautiful dress at the gala.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Continuous"],
+      "correctAnswer": "Past Continuous",
+      "explanation": "অতীতের কোনো উৎসবে পোশাক পরা অবস্থায় থাকা প্রকাশ করতে 'was wearing' ব্যবহৃত হয়েছে, যা Past Continuous।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "paco_040",
+      "tenseType": "Past Continuous",
+      "question": "Identify the tense: 'They were always complaining about their jobs.'",
+      "options": ["Past Indefinite", "Past Continuous", "Past Perfect", "Present Continuous"],
+      "correctAnswer": "Past Continuous",
+      "explanation": "অতীতে বিরক্তি বা বারবার হওয়া কোনো অভ্যাস বোঝাতে 'always' এর সাথে Past Continuous ('were complaining') ব্যবহৃত হয়।",
+      "difficulty": "intermediate",
+      "mode": "choose_tense"
+    },
+    {
+      "id": "paco_041",
+      "tenseType": "Past Continuous",
+      "question": "Arrange: (reading / she / book / a / was)",
+      "options": [
+        "She was reading a book.",
+        "She reading was a book.",
+        "Was she reading a book.",
+        "She was a book reading."
+      ],
+      "correctAnswer": "She was reading a book.",
+      "explanation": "Past Continuous-এর সাধারণ গঠন: Subject (She) + was + verb-ing (reading) + Object (a book)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "paco_042",
+      "tenseType": "Past Continuous",
+      "question": "Arrange: (football / playing / they / were / yesterday)",
+      "options": [
+        "They were playing football yesterday.",
+        "They playing were football yesterday.",
+        "They were yesterday playing football.",
+        "Yesterday playing they were football."
+      ],
+      "correctAnswer": "They were playing football yesterday.",
+      "explanation": "সঠিক গঠন: Subject (They) + were + verb-ing (playing) + Object (football) + Time (yesterday)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "paco_043",
+      "tenseType": "Past Continuous",
+      "question": "Arrange: (waiting / was / I / the / bus / for)",
+      "options": [
+        "I was waiting for the bus.",
+        "I waiting was for the bus.",
+        "Was I waiting for the bus.",
+        "I was for the bus waiting."
+      ],
+      "correctAnswer": "I was waiting for the bus.",
+      "explanation": "সঠিক গঠন: Subject (I) + was + verb-ing (waiting) + Prepositional Object (for the bus)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "paco_044",
+      "tenseType": "Past Continuous",
+      "question": "Arrange: (cooking / my / in / was / mother / kitchen / the)",
+      "options": [
+        "My mother was cooking in the kitchen.",
+        "My mother cooking was in the kitchen.",
+        "My mother was in the kitchen cooking.",
+        "Was my mother cooking in the kitchen."
+      ],
+      "correctAnswer": "My mother was cooking in the kitchen.",
+      "explanation": "সঠিক গঠন: Subject (My mother) + was + verb-ing (cooking) + Place (in the kitchen)।",
+      "difficulty": "easy",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "paco_045",
+      "tenseType": "Past Continuous",
+      "question": "Arrange: (having / they / a / party / were / yesterday)",
+      "options": [
+        "They were having a party yesterday.",
+        "They having were a party yesterday.",
+        "They were yesterday having a party.",
+        "Yesterday they having were a party."
+      ],
+      "correctAnswer": "They were having a party yesterday.",
+      "explanation": "সঠিক ক্রম: Subject (They) + were + verb-ing (having) + Object (a party) + Time (yesterday)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "paco_046",
+      "tenseType": "Past Continuous",
+      "question": "Arrange: (rapidly / changing / climate / was / the)",
+      "options": [
+        "The climate was changing rapidly.",
+        "The climate changing was rapidly.",
+        "The climate was rapidly changing.",
+        "Was the climate changing rapidly."
+      ],
+      "correctAnswer": "The climate was changing rapidly.",
+      "explanation": "সঠিক ক্রম: Subject (The climate) + was + verb-ing (changing) + Adverb (rapidly)।",
+      "difficulty": "intermediate",
+      "mode": "sentence_builder"
+    },
+    {
+      "id": "paco_047",
+      "tenseType": "Past Continuous",
+      "question": "Find the error: 'She were reading a book when I came.'",
+      "options": [
+        "She was reading a book when I came.",
+        "She are reading a book when I came.",
+        "She reading a book when I came.",
+        "She was read a book when I came."
+      ],
+      "correctAnswer": "She was reading a book when I came.",
+      "explanation": "'She' singular subject, তাই 'were' নয় — 'was' বসবে। সঠিক রূপ: 'She was reading'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "paco_048",
+      "tenseType": "Past Continuous",
+      "question": "Find the error: 'They was playing football yesterday.'",
+      "options": [
+        "They were playing football yesterday.",
+        "They am playing football yesterday.",
+        "They playing football yesterday.",
+        "They was play football yesterday."
+      ],
+      "correctAnswer": "They were playing football yesterday.",
+      "explanation": "'They' plural subject, তাই 'was' এর জায়গায় 'were' বসবে। সঠিক রূপ: 'They were playing'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "paco_049",
+      "tenseType": "Past Continuous",
+      "question": "Find the error: 'I were studying when you called.'",
+      "options": [
+        "I was studying when you called.",
+        "I are studying when you called.",
+        "I studying when you called.",
+        "I was study when you called."
+      ],
+      "correctAnswer": "I was studying when you called.",
+      "explanation": "'I' এর সাথে past continuous-এ 'was' ব্যবহৃত হয়, 'were' নয়। সঠিক রূপ: 'I was studying'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "paco_050",
+      "tenseType": "Past Continuous",
+      "question": "Find the error: 'He was go to school when it rained.'",
+      "options": [
+        "He was going to school when it rained.",
+        "He goes to school when it rained.",
+        "He is going to school when it rained.",
+        "He was went to school when it rained."
+      ],
+      "correctAnswer": "He was going to school when it rained.",
+      "explanation": "Past Continuous-এ auxiliary 'was/were' এর সাথে verb-ing বসে। 'go' → 'going' হবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "paco_051",
+      "tenseType": "Past Continuous",
+      "question": "Find the error: 'The children was playing in the park.'",
+      "options": [
+        "The children were playing in the park.",
+        "The children is playing in the park.",
+        "The children playing in the park.",
+        "The children was play in the park."
+      ],
+      "correctAnswer": "The children were playing in the park.",
+      "explanation": "'The children' plural, তাই auxiliary verb হিসেবে 'was' এর জায়গায় 'were' বসবে।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "paco_052",
+      "tenseType": "Past Continuous",
+      "question": "Find the error: 'We was watching a movie at that time.'",
+      "options": [
+        "We were watching a movie at that time.",
+        "We am watching a movie at that time.",
+        "We watching a movie at that time.",
+        "We was watch a movie at that time."
+      ],
+      "correctAnswer": "We were watching a movie at that time.",
+      "explanation": "'We' plural, তাই সাহায্যকারী verb 'was' না হয়ে 'were' হবে। সঠিক রূপ: 'We were watching'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "paco_053",
+      "tenseType": "Past Continuous",
+      "question": "Find the error: 'It were raining heavily when I left.'",
+      "options": [
+        "It was raining heavily when I left.",
+        "It are raining heavily when I left.",
+        "It raining heavily when I left.",
+        "It was rain heavily when I left."
+      ],
+      "correctAnswer": "It was raining heavily when I left.",
+      "explanation": "'It' singular subject, তাই 'were' এর জায়গায় 'was' হবে। সঠিক বাক্য: 'It was raining'।",
+      "difficulty": "easy",
+      "mode": "error_detection"
+    },
+    {
+      "id": "paco_054",
+      "tenseType": "Past Continuous",
+      "question": "Find the error: 'She was swiming in the pool yesterday afternoon.'",
+      "options": [
+        "She was swimming in the pool yesterday afternoon.",
+        "She was swim in the pool yesterday afternoon.",
+        "She swims in the pool yesterday afternoon.",
+        "She was swimmed in the pool yesterday afternoon."
+      ],
+      "correctAnswer": "She was swimming in the pool yesterday afternoon.",
+      "explanation": "বানানগত ভুল: CVC pattern থাকায় 'swim'-এর সাথে 'ing' যোগ করার সময় m ডাবল হবে (swimming)। 'swiming' ভুল।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "paco_055",
+      "tenseType": "Past Continuous",
+      "question": "Find the error: 'He was writeing a letter when I walked in.'",
+      "options": [
+        "He was writing a letter when I walked in.",
+        "He writes a letter when I walked in.",
+        "He was write a letter when I walked in.",
+        "He was wrote a letter when I walked in."
+      ],
+      "correctAnswer": "He was writing a letter when I walked in.",
+      "explanation": "বানানগত ভুল: 'write' এর শেষে silent 'e' থাকায় 'ing' যোগ করতে 'e' বাদ দিতে হবে (writing)। 'writeing' ভুল।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "paco_056",
+      "tenseType": "Past Continuous",
+      "question": "Find the error: 'They were makeing too much noise.'",
+      "options": [
+        "They were making too much noise.",
+        "They was making too much noise.",
+        "They making too much noise.",
+        "They was makeing too much noise."
+      ],
+      "correctAnswer": "They were making too much noise.",
+      "explanation": "বানানগত ভুল: 'make' এর শেষে silent 'e' বাদ দিয়ে 'ing' যোগ করতে হবে (making)। 'makeing' ভুল বানান।",
+      "difficulty": "intermediate",
+      "mode": "error_detection"
+    },
+    {
+      "id": "paco_057",
+      "tenseType": "Past Continuous",
+      "question": "Translate: 'আমি যখন এসেছিলাম সে তখন একটি বই পড়ছিল।'",
+      "options": [
+        "She was reading a book when I arrived.",
+        "She read a book when I arrived.",
+        "She is reading a book when I arrived.",
+        "She has read a book when I arrived."
+      ],
+      "correctAnswer": "She was reading a book when I arrived.",
+      "explanation": "আমি আসার সময়ে তার বই পড়ার কাজটি চলছিল। তাই চলমান অংশটি Past Continuous-এ 'She was reading' হবে।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "paco_058",
+      "tenseType": "Past Continuous",
+      "question": "Translate: 'তারা গতকাল বিকেলে ফুটবল খেলছিল।'",
+      "options": [
+        "They were playing football yesterday afternoon.",
+        "They played football yesterday afternoon.",
+        "They was playing football yesterday afternoon.",
+        "They are playing football yesterday afternoon."
+      ],
+      "correctAnswer": "They were playing football yesterday afternoon.",
+      "explanation": "গতকাল বিকেলে চলমান কাজ — Past Continuous। 'They' plural subject এর সাথে 'were playing' বসে।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "paco_059",
+      "tenseType": "Past Continuous",
+      "question": "Translate: 'আমি যখন পড়ছিলাম সে তখন ঘুমাচ্ছিল।'",
+      "options": [
+        "I was studying while he was sleeping.",
+        "I studied while he slept.",
+        "I am studying while he is sleeping.",
+        "I was study while he was sleep."
+      ],
+      "correctAnswer": "I was studying while he was sleeping.",
+      "explanation": "অতীতে একই সাথে চলা দুটি কাজ (while দ্বারা যুক্ত) বোঝাতে উভয় অংশেই Past Continuous হয়। 'I was studying... he was sleeping' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "paco_060",
+      "tenseType": "Past Continuous",
+      "question": "Translate: 'তখন বৃষ্টি হচ্ছিল।'",
+      "options": [
+        "It was raining at that time.",
+        "It rained at that time.",
+        "It is raining at that time.",
+        "It was rain at that time."
+      ],
+      "correctAnswer": "It was raining at that time.",
+      "explanation": "অতীতে নির্দিষ্ট সময়ে বৃষ্টি হচ্ছিল — Past Continuous। সাবজেক্ট 'It' এর সাথে 'was raining' এবং 'তখন' এর জন্য 'at that time' বসে।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "paco_061",
+      "tenseType": "Past Continuous",
+      "question": "Translate: 'আমার মা রান্নাঘরে রান্না করছিলেন যখন আমি ডাকলাম।'",
+      "options": [
+        "My mother was cooking in the kitchen when I called.",
+        "My mother cooked in the kitchen when I called.",
+        "My mother is cooking in the kitchen when I called.",
+        "My mother was cook in the kitchen when I called."
+      ],
+      "correctAnswer": "My mother was cooking in the kitchen when I called.",
+      "explanation": "আমি যখন ডাকলাম মা তখন রান্না করছিলেন (চলমান অতীত কাজ)। 'My mother was cooking' সঠিক অনুবাদ।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "paco_062",
+      "tenseType": "Past Continuous",
+      "question": "Translate: 'আমরা সিনেমাটি দেখছিলাম যখন বিদ্যুৎ চলে গেল।'",
+      "options": [
+        "We were watching the movie when the power went out.",
+        "We watched the movie when the power went out.",
+        "We was watching the movie when the power went out.",
+        "We are watching the movie when the power went out."
+      ],
+      "correctAnswer": "We were watching the movie when the power went out.",
+      "explanation": "বিদ্যুৎ যাওয়ার সময় আমাদের সিনেমা দেখার কাজ চলছিল। 'We' এর সাথে 'were watching' সঠিক।",
+      "difficulty": "easy",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "paco_063",
+      "tenseType": "Past Continuous",
+      "question": "Translate: 'সে গত বছর এই সময়ে লন্ডনে ভ্রমণ করছিল।'",
+      "options": [
+        "She was travelling to London this time last year.",
+        "She travelled to London this time last year.",
+        "She was travel to London this time last year.",
+        "She is travelling to London this time last year."
+      ],
+      "correctAnswer": "She was travelling to London this time last year.",
+      "explanation": "অতীতের নির্দিষ্ট সময়ে চলমান কাজ — Past Continuous। 'She' এর সাথে 'was travelling' বসে।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "paco_064",
+      "tenseType": "Past Continuous",
+      "question": "Translate: 'জলবায়ু দ্রুত পরিবর্তন হচ্ছিল।'",
+      "options": [
+        "The climate was changing rapidly.",
+        "The climate changed rapidly.",
+        "The climate is changing rapidly.",
+        "The climate was change rapidly."
+      ],
+      "correctAnswer": "The climate was changing rapidly.",
+      "explanation": "অতীতে ঘটে চলা ধারাবাহিক পরিবর্তন — Past Continuous। 'The climate' singular, তাই 'was changing' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "paco_065",
+      "tenseType": "Past Continuous",
+      "question": "Translate: 'আমি গতকাল তার সাথে দেখা করার জন্য অপেক্ষা করছিলাম।'",
+      "options": [
+        "I was waiting to meet him yesterday.",
+        "I waited to meet him yesterday.",
+        "I was wait to meet him yesterday.",
+        "I am waiting to meet him yesterday."
+      ],
+      "correctAnswer": "I was waiting to meet him yesterday.",
+      "explanation": "গতকাল অপেক্ষার কাজটি চলছিল — Past Continuous। 'I' এর সাথে 'was waiting' সঠিক অনুবাদ।",
+      "difficulty": "intermediate",
+      "mode": "translation_challenge"
+    },
+    {
+      "id": "paco_066",
+      "tenseType": "Past Continuous",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "She was reading a book.",
+        "She were reading a book.",
+        "She was read a book.",
+        "She reading a book."
+      ],
+      "correctAnswer": "She was reading a book.",
+      "explanation": "Quick: Past Continuous-এর সাধারণ রূপ হলো subject (singular) + was + verb-ing। 'She was reading' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "paco_067",
+      "tenseType": "Past Continuous",
+      "question": "Choose the correct form: 'They ____ football.'",
+      "options": ["were playing", "was playing", "played", "play"],
+      "correctAnswer": "were playing",
+      "explanation": "Quick: Subject plural 'They' এর সাথে 'were' এবং verb-ing 'playing' বসে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "paco_068",
+      "tenseType": "Past Continuous",
+      "question": "Pick the correct negative: 'She ____ a book.'",
+      "options": ["was not reading", "were not reading", "not was reading", "did not reading"],
+      "correctAnswer": "was not reading",
+      "explanation": "Quick: Past Continuous negative = subject + was/were + not + verb-ing। 'She was not reading' সঠিক।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "paco_069",
+      "tenseType": "Past Continuous",
+      "question": "Pick the correct question form: '____ she reading a book?'",
+      "options": ["Was", "Were", "Did", "Does"],
+      "correctAnswer": "Was",
+      "explanation": "Quick: Past Continuous question = Was/Were + subject + verb-ing? 'She' এর জন্য শুরুতে 'Was' বসবে।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "paco_070",
+      "tenseType": "Past Continuous",
+      "question": "Which sentence shows parallel past actions?",
+      "options": [
+        "I was studying while he was cooking.",
+        "I studied while he cooked.",
+        "I was studying when he cooked.",
+        "I studied when he was cooking."
+      ],
+      "correctAnswer": "I was studying while he was cooking.",
+      "explanation": "Quick: অতীতে একসাথে চলা দুটি কাজ বোঝাতে 'while' এর উভয় পাশেই Past Continuous ব্যবহৃত হয়।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "paco_071",
+      "tenseType": "Past Continuous",
+      "question": "Choose the correct verb: 'The baby ____ when I woke up.'",
+      "options": ["was crying", "were crying", "cried", "crying"],
+      "correctAnswer": "was crying",
+      "explanation": "Quick: আমি জেগে ওঠার সময় শিশুটি কাঁদছিল। 'The baby' (singular) → 'was crying'।",
+      "difficulty": "easy",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "paco_072",
+      "tenseType": "Past Continuous",
+      "question": "Which sentence is correct (stative verb)?",
+      "options": [
+        "I knew the answer yesterday.",
+        "I was knowing the answer yesterday.",
+        "I knowing the answer yesterday.",
+        "I was known the answer yesterday."
+      ],
+      "correctAnswer": "I knew the answer yesterday.",
+      "explanation": "Quick: 'know' একটি stative verb যা continuous ফর্মে ব্যবহৃত হয় না। তাই 'was knowing' ভুল, Past Indefinite-এ 'I knew' সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "paco_073",
+      "tenseType": "Past Continuous",
+      "question": "Choose the correct sentence:",
+      "options": [
+        "He was being very helpful yesterday.",
+        "He was very helpful yesterday.",
+        "He were being very helpful yesterday.",
+        "He was been very helpful yesterday."
+      ],
+      "correctAnswer": "He was being very helpful yesterday.",
+      "explanation": "'was being + adjective' দ্বারা অতীতে সাময়িক আচরণ নির্দেশ করা হয়। বাক্যটি ব্যাকরণগতভাবে সঠিক।",
+      "difficulty": "hard",
+      "mode": "speed_quiz"
+    },
+    {
+      "id": "paco_074",
+      "tenseType": "Past Continuous",
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "She was swimming in the pool.",
+        "She was swiming in the pool.",
+        "She was swim in the pool.",
+        "She were swimming in the pool."
+      ],
+      "correctAnswer": "She was swimming in the pool.",
+      "explanation": "Quick: 'swim' এর V-ing রূপ হলো 'swimming' (double m)। 'She' এর সাথে 'was swimming' সঠিক।",
+      "difficulty": "intermediate",
+      "mode": "speed_quiz"
+    }
+  ]
 }
