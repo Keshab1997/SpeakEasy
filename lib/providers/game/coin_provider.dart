@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../services/coin_service.dart';
+import '../../repositories/statistics_repository.dart';
 import 'game_provider.dart';
 
 // ── Coin State ──
@@ -42,12 +43,16 @@ class CoinNotifier extends StateNotifier<CoinState> {
   final CoinService _coinService;
 
   CoinNotifier(this._coinService) : super(const CoinState()) {
-    _refresh();
+    _init();
   }
 
-  void _refresh() {
+  Future<void> _init() async {
+    await _refresh();
+  }
+
+  Future<void> _refresh() async {
     state = CoinState(
-      currentCoins: _coinService.getCurrentCoins(),
+      currentCoins: await _coinService.getCurrentCoins(),
     );
   }
 
@@ -64,8 +69,9 @@ class CoinNotifier extends StateNotifier<CoinState> {
   Future<bool> spendCoins(int amount) async {
     final success = await _coinService.spendCoins(amount);
     if (success) {
+      final currentCoins = await _coinService.getCurrentCoins();
       state = state.copyWith(
-        currentCoins: _coinService.getCurrentCoins(),
+        currentCoins: currentCoins,
         spentThisGame: state.spentThisGame + amount,
         totalSpent: state.totalSpent + amount,
       );
@@ -73,7 +79,7 @@ class CoinNotifier extends StateNotifier<CoinState> {
     return success;
   }
 
-  bool canAfford(int cost) {
+  Future<bool> canAfford(int cost) {
     return _coinService.canAfford(cost);
   }
 
@@ -130,9 +136,9 @@ class CoinNotifier extends StateNotifier<CoinState> {
     );
   }
 
-  void resetGameCoins() {
+  Future<void> resetGameCoins() async {
     state = CoinState(
-      currentCoins: _coinService.getCurrentCoins(),
+      currentCoins: await _coinService.getCurrentCoins(),
     );
   }
 
@@ -144,6 +150,7 @@ class CoinNotifier extends StateNotifier<CoinState> {
 final coinServiceProvider = Provider<CoinService>((ref) {
   return CoinService(
     progressRepository: ref.watch(progressRepositoryProvider),
+    statisticsRepository: StatisticsRepository(),
   );
 });
 

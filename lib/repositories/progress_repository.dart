@@ -59,29 +59,29 @@ class ProgressRepository {
   }
 
   Future<void> addXP(int xp) async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated = progress.copyWith(currentXP: progress.currentXP + xp);
     await saveProgress(updated);
   }
 
   Future<void> addCoins(int coins) async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated = progress.copyWith(totalCoins: progress.totalCoins + coins);
     await saveProgress(updated);
   }
 
   Future<void> incrementStreak() async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated = progress.copyWith(streak: progress.streak + 1);
     await saveProgress(updated);
   }
 
   Future<void> resetStreak() async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated = progress.copyWith(streak: 0);
     await saveProgress(updated);
   }
@@ -89,16 +89,16 @@ class ProgressRepository {
   // ── Weekly Streak ──
 
   Future<void> incrementWeeklyStreak() async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated =
         progress.copyWith(weeklyStreak: progress.weeklyStreak + 1);
     await saveProgress(updated);
   }
 
   Future<void> resetWeeklyStreak() async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated = progress.copyWith(weeklyStreak: 0);
     await saveProgress(updated);
   }
@@ -106,8 +106,8 @@ class ProgressRepository {
   // ── Longest Streak ──
 
   Future<void> updateLongestStreak(int currentStreak) async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     if (currentStreak > progress.longestStreak) {
       final updated = progress.copyWith(longestStreak: currentStreak);
       await saveProgress(updated);
@@ -117,15 +117,15 @@ class ProgressRepository {
   // ── Missed Days ──
 
   Future<void> incrementMissedDays() async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated = progress.copyWith(missedDays: progress.missedDays + 1);
     await saveProgress(updated);
   }
 
   Future<void> resetMissedDays() async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated = progress.copyWith(missedDays: 0);
     await saveProgress(updated);
   }
@@ -133,8 +133,8 @@ class ProgressRepository {
   // ── Total Active Days ──
 
   Future<void> incrementTotalActiveDays() async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated =
         progress.copyWith(totalActiveDays: progress.totalActiveDays + 1);
     await saveProgress(updated);
@@ -143,8 +143,8 @@ class ProgressRepository {
   // ── Last Active Date ──
 
   Future<void> updateLastActiveDate(DateTime date) async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated = progress.copyWith(lastActiveDate: date);
     await saveProgress(updated);
   }
@@ -152,8 +152,8 @@ class ProgressRepository {
   // ── Coins ──
 
   Future<bool> spendCoins(int amount) async {
-    final progress = getProgress();
-    if (progress == null) return false;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     if (progress.totalCoins < amount) return false;
     final updated = progress.copyWith(totalCoins: progress.totalCoins - amount);
     await saveProgress(updated);
@@ -161,15 +161,15 @@ class ProgressRepository {
   }
 
   Future<void> advanceLevel() async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     final updated = progress.copyWith(currentLevel: progress.currentLevel + 1);
     await saveProgress(updated);
   }
 
   Future<void> unlockMode(String mode) async {
-    final progress = getProgress();
-    if (progress == null) return;
+    var progress = getProgress();
+    progress ??= GameProgressModel(userId: '');
     if (progress.unlockedModes.contains(mode)) return;
     final updatedModes = List<String>.from(progress.unlockedModes)..add(mode);
     final updated = progress.copyWith(unlockedModes: updatedModes);

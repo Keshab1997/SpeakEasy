@@ -63,7 +63,7 @@ class AchievementService {
     final newlyUnlocked = <AchievementModel>[];
 
     // First Win — finished a game
-    final totalGames = _statisticsRepository.getTotalGamesPlayed();
+    final totalGames = await _statisticsRepository.getTotalGamesPlayed();
     if (totalGames >= 1) {
       final a = await checkAndUnlock('first_win');
       if (a != null) newlyUnlocked.add(a);
@@ -71,7 +71,7 @@ class AchievementService {
 
     // 10 Correct Answers — cumulative
     final totalCorrect =
-        _statisticsRepository.getTotalCorrectAnswers() + correctAnswers;
+        (await _statisticsRepository.getTotalCorrectAnswers()) + correctAnswers;
     if (totalCorrect >= 10) {
       final a = await checkAndUnlock('ten_correct');
       if (a != null) newlyUnlocked.add(a);

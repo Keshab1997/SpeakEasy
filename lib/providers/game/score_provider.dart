@@ -51,11 +51,15 @@ class ScoreNotifier extends StateNotifier<ScoreState> {
   final StatisticsRepository _statisticsRepository;
 
   ScoreNotifier(this._statisticsRepository) : super(const ScoreState()) {
-    _loadBestScore();
+    _init();
   }
 
-  void _loadBestScore() {
-    final best = _statisticsRepository.getBestResult();
+  Future<void> _init() async {
+    await _loadBestScore();
+  }
+
+  Future<void> _loadBestScore() async {
+    final best = await _statisticsRepository.getBestResult();
     if (best != null) {
       state = state.copyWith(bestScore: best.score);
     }

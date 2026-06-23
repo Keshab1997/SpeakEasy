@@ -14,16 +14,39 @@ import 'daily_challenge_screen.dart';
 import 'boss_battle_screen.dart';
 import 'tense_categories_screen.dart';
 
-class GameHomeScreen extends ConsumerWidget {
+class GameHomeScreen extends ConsumerStatefulWidget {
   const GameHomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<GameHomeScreen> createState() => _GameHomeScreenState();
+}
+
+class _GameHomeScreenState extends ConsumerState<GameHomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Refresh providers so the header shows the latest accumulated values
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(xpProvider.notifier).refresh();
+      ref.read(coinProvider.notifier).refresh();
+      ref.read(streakProvider.notifier).refresh();
+      ref.read(statisticsProvider.notifier).refresh();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final xpState = ref.watch(xpProvider);
     final coinState = ref.watch(coinProvider);
     final streakState = ref.watch(streakProvider);
     final statsState = ref.watch(statisticsProvider);
     final theme = Theme.of(context);
+
+    // Use total earned XP/Coins from statistics (the persistent cumulative
+    // counters) when the per-box ProgressRepository values are still 0.
+    final int displayXP = statsState.totalEarnedXP > 0 ? statsState.totalEarnedXP : xpState.currentXP;
+    final int displayCoins = statsState.totalEarnedCoins > 0 ? statsState.totalEarnedCoins : coinState.currentCoins;
+    final int displayLevel = xpState.currentLevel > 0 ? xpState.currentLevel : 1;
 
     return Scaffold(
       appBar: AppBar(
@@ -56,7 +79,7 @@ class GameHomeScreen extends ConsumerWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Level ${xpState.currentLevel}', style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
+                          Text('Level $displayLevel', style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
                           Text(xpState.levelTitle, style: const TextStyle(color: Colors.white70, fontSize: 14)),
                         ],
                       ),
@@ -66,7 +89,7 @@ class GameHomeScreen extends ConsumerWidget {
                             children: [
                               const Icon(Icons.monetization_on, color: Colors.amber, size: 20),
                               const SizedBox(width: 4),
-                              Text('${coinState.currentCoins}', style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                              Text('$displayCoins', style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
                             ],
                           ),
                           const SizedBox(height: 4),
@@ -92,7 +115,7 @@ class GameHomeScreen extends ConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: 4),
-                  Text('${xpState.currentXP} / ${xpState.xpForNextLevel} XP', style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                  Text('$displayXP XP earned', style: const TextStyle(color: Colors.white70, fontSize: 12)),
                 ],
               ),
             ),

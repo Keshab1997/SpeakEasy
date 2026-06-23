@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../services/xp_service.dart';
+import '../../repositories/statistics_repository.dart';
 import 'game_provider.dart';
 
 // ── XP State ──
@@ -40,22 +41,30 @@ class XpNotifier extends StateNotifier<XpState> {
   final XpService _xpService;
 
   XpNotifier(this._xpService) : super(const XpState()) {
-    _refresh();
+    _init();
   }
 
-  void _refresh() {
+  Future<void> _init() async {
+    await _refresh();
+  }
+
+  Future<void> _refresh() async {
+    final currentXP = await _xpService.getCurrentXP();
+    final currentLevel = await _xpService.getCurrentLevel();
+    final levelProgress = await _xpService.getLevelProgress();
+    final levelTitle = await _xpService.getCurrentLevelTitle();
     state = XpState(
-      currentXP: _xpService.getCurrentXP(),
-      currentLevel: _xpService.getCurrentLevel(),
-      xpForNextLevel: _xpService.getXPForNextLevel(_xpService.getCurrentLevel()),
-      levelProgress: _xpService.getLevelProgress(),
-      levelTitle: _xpService.getCurrentLevelTitle(),
+      currentXP: currentXP,
+      currentLevel: currentLevel,
+      xpForNextLevel: _xpService.getXPForNextLevel(currentLevel),
+      levelProgress: levelProgress,
+      levelTitle: levelTitle,
     );
   }
 
   Future<void> addXP(int xp) async {
     await _xpService.addXP(xp);
-    _refresh();
+    await _refresh();
   }
 
   int calculateCorrectAnswerXP({int streak = 0}) {
@@ -106,6 +115,7 @@ class XpNotifier extends StateNotifier<XpState> {
 final xpServiceProvider = Provider<XpService>((ref) {
   return XpService(
     progressRepository: ref.watch(progressRepositoryProvider),
+    statisticsRepository: StatisticsRepository(),
   );
 });
 

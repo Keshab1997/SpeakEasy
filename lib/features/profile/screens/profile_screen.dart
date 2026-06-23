@@ -3,6 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/progress_provider.dart';
+import '../../../providers/todo_list_provider.dart';
+import '../../../providers/game/statistics_provider.dart';
+import '../../../providers/game/xp_provider.dart';
+import '../../../providers/game/coin_provider.dart';
+import '../../../providers/game/streak_provider.dart';
 import '../../../services/hive_service.dart';
 import '../../auth/screens/login_screen.dart';
 import '../../settings/screens/settings_screen.dart';
@@ -20,7 +25,12 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() => ref.read(progressProvider.notifier).fetchProgress());
+    Future.microtask(() {
+      ref.read(progressProvider.notifier).fetchProgress();
+      ref.read(statisticsProvider.notifier).refresh();
+      ref.read(xpProvider.notifier).refresh();
+      ref.read(coinProvider.notifier).refresh();
+    });
   }
 
   void _handleSignOut() async {
@@ -47,6 +57,11 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final isDark = theme.brightness == Brightness.dark;
     final authState = ref.watch(authProvider);
     final progressAsync = ref.watch(progressProvider);
+    final studyState = ref.watch(todoListProvider);
+    final statisticsState = ref.watch(statisticsProvider);
+    final xpState = ref.watch(xpProvider);
+    final coinState = ref.watch(coinProvider);
+    final streakState = ref.watch(streakProvider);
 
     final user = authState.asData?.value;
     final progress = progressAsync.asData?.value;
@@ -55,13 +70,32 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final email = user?.email ?? 'user@email.com';
     final initial = name.isNotEmpty ? name[0].toUpperCase() : 'U';
 
-    final String streakValue =
-        progressAsync.isLoading || progress == null ? '—' : '${progress.streakDays}';
-    final String lessonsDoneValue = progressAsync.isLoading || progress == null
-        ? '—'
-        : '${progress.lessonsCompleted}';
-    final String vocabCountValue = '—'; // No vocab learned metric in ProgressModel currently
-    final String xpValue = progressAsync.isLoading || progress == null ? '—' : '${progress.totalXP}';
+    // ── Real streak: prefer game streak (live), fall back to Firebase progress ──
+    final int currentStreak = streakState.currentStreak > 0
+        ? streakState.currentStreak
+        : (progress?.streakDays ?? 0);
+
+    // ── Lessons completed from Study Plan (todo list) ──
+    final int lessonsCompleted = studyState.completedCount;
+
+    // ── Vocabulary learned: count of unique read chapters from Hive ──
+    final int vocabLearned = HiveService.getReadChapters().length;
+
+    // ── XP: live from XpNotifier (reads ProgressRepository / Hive) ──
+    final int currentXP = xpState.currentXP;
+
+    // ── Coins: live from CoinNotifier (reads ProgressRepository / Hive) ──
+    final int currentCoins = coinState.currentCoins;
+
+    // ── Game stats from StatisticsProvider ──
+    final int totalGames = statisticsState.totalGamesPlayed;
+    final double accuracy = statisticsState.overallAccuracy;
+    final int bestStreak = statisticsState.bestStreak;
+
+    final String streakValue = '$currentStreak';
+    final String lessonsDoneValue = '$lessonsCompleted';
+    final String vocabCountValue = '$vocabLearned';
+    final String xpValue = '$currentXP';
 
     return Scaffold(
       appBar: AppBar(
@@ -140,8 +174,40 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     children: [
                       _buildMetricTile(theme, '$streakValue Days', 'Current Streak', '🔥', Colors.deepOrange),
                       _buildMetricTile(theme, '$lessonsDoneValue Lessons', 'Completed', '📚', Colors.blue),
-                      _buildMetricTile(theme, '$vocabCountValue Words', 'Vocabulary Learned', '📖', Colors.teal),
-                      _buildMetricTile(theme, '$xpValue XP', 'Total Points', '✨', Colors.amber),
+                      _buildMetricTile(theme, '$vocabCountValue Chapters', 'Vocab Read', '📖', Colors.teal),
+                      _buildMetricTile(theme, '$xpValue XP', 'Total XP', '✨', Colors.amber),
+                      _buildMetricTile(theme, '$currentCoins', 'Total Coins', '🪙', Colors.orange),
+                      _buildMetricTile(theme, '$totalGames Games', 'Games Played', '🎮', Colors.indigo),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  // Accuracy bar
+                  Row(
+                    children: [
+                      const Text('🎯 ', style: TextStyle(fontSize: 14)),
+                      Text(
+                        'Accuracy: ${(accuracy * 100).toStringAsFixed(1)}%',
+                        style: TextStyle(
+                          color: isDark ? Colors.white70 : Colors.black87,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 13,
+                        ),
+                      ),
+                      const Spacer(),
+                      if (bestStreak > 0)
+                        Row(
+                          children: [
+                            const Text('🏆 ', style: TextStyle(fontSize: 12)),
+                            Text(
+                              'Best Streak: $bestStreak',
+                              style: TextStyle(
+                                color: isDark ? Colors.white54 : Colors.black54,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
                     ],
                   ),
                 ],

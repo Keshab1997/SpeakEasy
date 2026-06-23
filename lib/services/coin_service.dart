@@ -1,10 +1,15 @@
 import '../repositories/progress_repository.dart';
+import '../repositories/statistics_repository.dart';
 
 class CoinService {
   final ProgressRepository _progressRepository;
+  final StatisticsRepository _statisticsRepository;
 
-  CoinService({required ProgressRepository progressRepository})
-      : _progressRepository = progressRepository;
+  CoinService({
+    required ProgressRepository progressRepository,
+    StatisticsRepository? statisticsRepository,
+  })  : _progressRepository = progressRepository,
+        _statisticsRepository = statisticsRepository ?? StatisticsRepository();
 
   // ── Coin Calculation ──
 
@@ -68,18 +73,22 @@ class CoinService {
 
   // ── Coin Management ──
 
-  int getCurrentCoins() {
+  Future<int> getCurrentCoins() async {
+    // Prefer cumulative total from statistics (game_statistics box)
+    final totalEarned = await _statisticsRepository.getTotalEarnedCoins();
+    if (totalEarned > 0) return totalEarned;
+    // Fall back to progress box
     final progress = _progressRepository.getProgress();
     return progress?.totalCoins ?? 0;
   }
 
   Future<int> addCoins(int coins) async {
     await _progressRepository.addCoins(coins);
-    return getCurrentCoins();
+    return await getCurrentCoins();
   }
 
   Future<bool> spendCoins(int amount) async {
-    final current = getCurrentCoins();
+    final current = await getCurrentCoins();
     if (current < amount) return false;
 
     final newBalance = current - amount;
@@ -93,8 +102,8 @@ class CoinService {
 
   // ── Shop Items ──
 
-  bool canAfford(int cost) {
-    return getCurrentCoins() >= cost;
+  Future<bool> canAfford(int cost) async {
+    return (await getCurrentCoins()) >= cost;
   }
 
   int getHintCost() => 20;

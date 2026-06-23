@@ -9,6 +9,8 @@ class HiveService {
   static const String _masterGuideHistoryBox = 'master_guide_history';
   static const String _studyPlanBox = 'study_plan';
   static const String _translatorHistoryBox = 'translator_history';
+  static const String _gameProgressBox = 'game_progress';
+  static const String _gameStatisticsBox = 'game_statistics';
 
   static Future<void> initialize() async {
     await Hive.initFlutter();
@@ -20,6 +22,8 @@ class HiveService {
     await Hive.openBox(_masterGuideHistoryBox);
     await Hive.openBox(_studyPlanBox);
     await Hive.openBox(_translatorHistoryBox);
+    await Hive.openBox(_gameProgressBox);
+    await Hive.openBox(_gameStatisticsBox);
   }
 
   static Box get _vocabProgress => Hive.box(_vocabProgressBox);

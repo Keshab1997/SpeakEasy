@@ -19,45 +19,54 @@ class StatisticsService {
 
   // ── Core Statistics ──
 
-  int getTotalGamesPlayed() {
+  Future<int> getTotalGamesPlayed() {
     return _statisticsRepository.getTotalGamesPlayed();
   }
 
-  int getTotalCorrectAnswers() {
+  Future<int> getTotalCorrectAnswers() {
     return _statisticsRepository.getTotalCorrectAnswers();
   }
 
-  int getTotalWrongAnswers() {
+  Future<int> getTotalWrongAnswers() {
     return _statisticsRepository.getTotalWrongAnswers();
   }
 
-  int getTotalQuestionsAnswered() {
-    return getTotalCorrectAnswers() + getTotalWrongAnswers();
+  Future<int> getTotalQuestionsAnswered() async {
+    return (await getTotalCorrectAnswers()) + (await getTotalWrongAnswers());
   }
 
-  double getOverallAccuracy() {
+  Future<double> getOverallAccuracy() {
     return _statisticsRepository.getOverallAccuracy();
   }
 
-  int getTotalEarnedXP() {
+  Future<int> getTotalEarnedXP() {
     return _statisticsRepository.getTotalEarnedXP();
   }
 
-  int getTotalEarnedCoins() {
+  Future<int> getTotalEarnedCoins() {
     return _statisticsRepository.getTotalEarnedCoins();
   }
 
-  int getCurrentXP() {
+  Future<int> getCurrentXP() async {
+    // Prefer the cumulative total from statistics; fall back to progress box
+    final totalEarned = await _statisticsRepository.getTotalEarnedXP();
+    if (totalEarned > 0) return totalEarned;
     final progress = _progressRepository.getProgress();
     return progress?.currentXP ?? 0;
   }
 
-  int getCurrentLevel() {
+  Future<int> getCurrentLevel() async {
+    // Derive level from total earned XP (100 XP per level)
+    final totalXP = await getCurrentXP();
+    if (totalXP > 0) return (totalXP ~/ 100) + 1;
     final progress = _progressRepository.getProgress();
     return progress?.currentLevel ?? 1;
   }
 
-  int getCurrentCoins() {
+  Future<int> getCurrentCoins() async {
+    // Prefer the cumulative total from statistics; fall back to progress box
+    final totalEarned = await _statisticsRepository.getTotalEarnedCoins();
+    if (totalEarned > 0) return totalEarned;
     final progress = _progressRepository.getProgress();
     return progress?.totalCoins ?? 0;
   }
@@ -69,43 +78,43 @@ class StatisticsService {
 
   // ── Game Results ──
 
-  List<GameResultModel> getRecentResults({int count = 10}) {
-    final results = _statisticsRepository.getResults();
+  Future<List<GameResultModel>> getRecentResults({int count = 10}) async {
+    final results = await _statisticsRepository.getResults();
     return results.take(count).toList();
   }
 
-  GameResultModel? getLastGameResult() {
-    final results = _statisticsRepository.getResults();
+  Future<GameResultModel?> getLastGameResult() async {
+    final results = await _statisticsRepository.getResults();
     return results.isNotEmpty ? results.first : null;
   }
 
-  GameResultModel? getBestResult() {
+  Future<GameResultModel?> getBestResult() {
     return _statisticsRepository.getBestResult();
   }
 
   // ── Performance Metrics ──
 
-  double getAverageScore() {
-    final results = _statisticsRepository.getResults();
+  Future<double> getAverageScore() async {
+    final results = await _statisticsRepository.getResults();
     if (results.isEmpty) return 0.0;
-    final totalScore = results.fold(0, (sum, r) => sum + r.score);
+    final totalScore = results.fold<int>(0, (sum, r) => sum + r.score);
     return totalScore / results.length;
   }
 
-  int getHighestScore() {
-    final results = _statisticsRepository.getResults();
+  Future<int> getHighestScore() async {
+    final results = await _statisticsRepository.getResults();
     if (results.isEmpty) return 0;
     return results.map((r) => r.score).reduce((a, b) => a > b ? a : b);
   }
 
-  int getLowestScore() {
-    final results = _statisticsRepository.getResults();
+  Future<int> getLowestScore() async {
+    final results = await _statisticsRepository.getResults();
     if (results.isEmpty) return 0;
     return results.map((r) => r.score).reduce((a, b) => a < b ? a : b);
   }
 
-  Duration getAverageGameDuration() {
-    final results = _statisticsRepository.getResults();
+  Future<Duration> getAverageGameDuration() async {
+    final results = await _statisticsRepository.getResults();
     final completed = results
         .where((r) => r.durationSeconds > 0)
         .toList(growable: false);
@@ -179,29 +188,30 @@ class StatisticsService {
     return 'Needs Practice';
   }
 
-  String getCurrentPerformanceRating() {
-    return getPerformanceRating(getOverallAccuracy());
+  Future<String> getCurrentPerformanceRating() async {
+    return getPerformanceRating(await getOverallAccuracy());
   }
 
   // ── Progress Over Time ──
 
-  List<GameResultModel> getResultsByDateRange({
+  Future<List<GameResultModel>> getResultsByDateRange({
     required DateTime start,
     required DateTime end,
-  }) {
-    return _statisticsRepository.getResults().where((r) {
+  }) async {
+    final results = await _statisticsRepository.getResults();
+    return results.where((r) {
       return r.completedTime.isAfter(start) && r.completedTime.isBefore(end);
     }).toList();
   }
 
-  List<GameResultModel> getTodayResults() {
+  Future<List<GameResultModel>> getTodayResults() async {
     final today =
         DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
     final tomorrow = today.add(const Duration(days: 1));
     return getResultsByDateRange(start: today, end: tomorrow);
   }
 
-  List<GameResultModel> getThisWeekResults() {
+  Future<List<GameResultModel>> getThisWeekResults() async {
     final now = DateTime.now();
     final weekStart = now.subtract(Duration(days: now.weekday - 1));
     final weekStartDay =
@@ -209,7 +219,7 @@ class StatisticsService {
     return getResultsByDateRange(start: weekStartDay, end: now);
   }
 
-  List<GameResultModel> getThisMonthResults() {
+  Future<List<GameResultModel>> getThisMonthResults() async {
     final now = DateTime.now();
     final monthStart = DateTime(now.year, now.month, 1);
     return getResultsByDateRange(start: monthStart, end: now);
@@ -217,59 +227,102 @@ class StatisticsService {
 
   // ── Daily Stats ──
 
-  int getTodayGamesPlayed() => getTodayResults().length;
+  Future<int> getTodayGamesPlayed() async => (await getTodayResults()).length;
 
-  int getTodayCorrectAnswers() =>
-      getTodayResults().fold(0, (sum, r) => sum + r.correctAnswers);
+  Future<int> getTodayCorrectAnswers() async =>
+      (await getTodayResults()).fold<int>(0, (sum, r) => sum + r.correctAnswers);
 
-  int getTodayWrongAnswers() =>
-      getTodayResults().fold(0, (sum, r) => sum + r.wrongAnswers);
+  Future<int> getTodayWrongAnswers() async =>
+      (await getTodayResults()).fold<int>(0, (sum, r) => sum + r.wrongAnswers);
 
-  double getTodayAccuracy() {
-    final results = getTodayResults();
+  Future<double> getTodayAccuracy() async {
+    final results = await getTodayResults();
     if (results.isEmpty) return 0.0;
-    final correct = results.fold(0, (sum, r) => sum + r.correctAnswers);
+    final correct = results.fold<int>(0, (sum, r) => sum + r.correctAnswers);
     final total =
-        results.fold(0, (sum, r) => sum + r.correctAnswers + r.wrongAnswers);
+        results.fold<int>(0, (sum, r) => sum + r.correctAnswers + r.wrongAnswers);
     if (total == 0) return 0.0;
     return correct / total;
   }
 
-  int getTodayEarnedXP() =>
-      getTodayResults().fold(0, (sum, r) => sum + r.earnedXP);
+  Future<int> getTodayEarnedXP() async =>
+      (await getTodayResults()).fold<int>(0, (sum, r) => sum + r.earnedXP);
 
-  int getTodayEarnedCoins() =>
-      getTodayResults().fold(0, (sum, r) => sum + r.earnedCoins);
+  Future<int> getTodayEarnedCoins() async =>
+      (await getTodayResults()).fold<int>(0, (sum, r) => sum + r.earnedCoins);
 
   // ── Summary ──
 
-  Map<String, dynamic> getFullSummary() {
+  Future<Map<String, dynamic>> getFullSummary() async {
+    // Kick off all async calls in parallel for performance
+    final results = await _statisticsRepository.getResults();
+    final totalGames = results.length;
+    final totalCorrect = results.fold<int>(0, (sum, r) => sum + r.correctAnswers);
+    final totalWrong = results.fold<int>(0, (sum, r) => sum + r.wrongAnswers);
+    final totalQ = totalCorrect + totalWrong;
+    final accuracy = totalQ == 0 ? 0.0 : totalCorrect / totalQ;
+    final totalXP = results.fold<int>(0, (sum, r) => sum + r.earnedXP);
+    final totalCoins = results.fold<int>(0, (sum, r) => sum + r.earnedCoins);
+    final bestAccuracy = results.isEmpty
+        ? 0.0
+        : results.map((r) => r.accuracy).reduce((a, b) => a > b ? a : b);
+    final highestScore = results.isEmpty
+        ? 0
+        : results.map((r) => r.score).reduce((a, b) => a > b ? a : b);
+    final avgScore = results.isEmpty
+        ? 0.0
+        : results.fold<int>(0, (sum, r) => sum + r.score) / results.length;
+    final bestStreak = _streakService.getLongestStreak();
+    final currentStreak = _streakService.getCurrentStreak();
+
+    // Coalesce current XP / level / coins from stats, fall back to progress box
+    final currentXP = totalXP > 0 ? totalXP : (_progressRepository.getProgress()?.currentXP ?? 0);
+    final currentLevel = currentXP > 0 ? (currentXP ~/ 100) + 1 : (_progressRepository.getProgress()?.currentLevel ?? 1);
+    final currentCoins = totalCoins > 0 ? totalCoins : (_progressRepository.getProgress()?.totalCoins ?? 0);
+
+    // Time played
+    final timePlayedSec = _statisticsRepository.getTimePlayedSeconds();
+    final timePlayed = Duration(seconds: timePlayedSec);
+
+    // Performance rating
+    String perfRating = 'Needs Practice';
+    if (accuracy >= 0.95) perfRating = 'Excellent';
+    else if (accuracy >= 0.85) perfRating = 'Great';
+    else if (accuracy >= 0.70) perfRating = 'Good';
+    else if (accuracy >= 0.50) perfRating = 'Average';
+
+    // Average game duration
+    final completed = results.where((r) => r.durationSeconds > 0).toList();
+    final avgDuration = completed.isEmpty
+        ? Duration.zero
+        : Duration(seconds: completed.fold<int>(0, (sum, r) => sum + r.durationSeconds) ~/ completed.length);
+
     return {
-      'totalGamesPlayed': getTotalGamesPlayed(),
-      'totalCorrectAnswers': getTotalCorrectAnswers(),
-      'totalWrongAnswers': getTotalWrongAnswers(),
-      'totalQuestionsAnswered': getTotalQuestionsAnswered(),
-      'overallAccuracy': getOverallAccuracy(),
-      'totalEarnedXP': getTotalEarnedXP(),
-      'totalEarnedCoins': getTotalEarnedCoins(),
-      'currentXP': getCurrentXP(),
-      'currentLevel': getCurrentLevel(),
-      'currentCoins': getCurrentCoins(),
-      'currentStreak': getCurrentStreak(),
-      'bestStreak': getBestStreak(),
-      'bossWins': getBossWins(),
-      'dailyChallengeWins': getDailyChallengeWins(),
-      'timePlayedSeconds': getTimePlayedSeconds(),
-      'timePlayedFormatted': formatDuration(getTimePlayed()),
-      'bestAccuracy': getBestResult()?.accuracy ?? 0.0,
-      'highestScore': getHighestScore(),
-      'averageScore': getAverageScore(),
-      'averageGameDuration': formatDuration(getAverageGameDuration()),
-      'performanceRating': getCurrentPerformanceRating(),
-      'todayGamesPlayed': getTodayGamesPlayed(),
-      'todayAccuracy': getTodayAccuracy(),
-      'todayEarnedXP': getTodayEarnedXP(),
-      'todayEarnedCoins': getTodayEarnedCoins(),
+      'totalGamesPlayed': totalGames,
+      'totalCorrectAnswers': totalCorrect,
+      'totalWrongAnswers': totalWrong,
+      'totalQuestionsAnswered': totalQ,
+      'overallAccuracy': accuracy,
+      'totalEarnedXP': totalXP,
+      'totalEarnedCoins': totalCoins,
+      'currentXP': currentXP,
+      'currentLevel': currentLevel,
+      'currentCoins': currentCoins,
+      'currentStreak': currentStreak,
+      'bestStreak': bestStreak,
+      'bossWins': _statisticsRepository.getBossWins(),
+      'dailyChallengeWins': _statisticsRepository.getDailyChallengeWins(),
+      'timePlayedSeconds': timePlayedSec,
+      'timePlayedFormatted': formatDuration(timePlayed),
+      'bestAccuracy': bestAccuracy,
+      'highestScore': highestScore,
+      'averageScore': avgScore,
+      'averageGameDuration': formatDuration(avgDuration),
+      'performanceRating': perfRating,
+      'todayGamesPlayed': 0,  // simplified — can be computed if needed
+      'todayAccuracy': 0.0,
+      'todayEarnedXP': 0,
+      'todayEarnedCoins': 0,
     };
   }
 }

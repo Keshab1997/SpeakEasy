@@ -116,8 +116,8 @@ class StatisticsNotifier extends StateNotifier<StatisticsState> {
     _refresh();
   }
 
-  void _refresh() {
-    final summary = _statisticsService.getFullSummary();
+  Future<void> _refresh() async {
+    final summary = await _statisticsService.getFullSummary();
     state = StatisticsState(
       totalGamesPlayed: summary['totalGamesPlayed'] as int,
       totalCorrectAnswers: summary['totalCorrectAnswers'] as int,

@@ -14,6 +14,10 @@ import '../../../providers/last_opened_chapter_provider.dart';
 import '../../../models/vocabulary_chapter_model.dart';
 import '../../../models/grammar_chapter_model.dart';
 import '../../../providers/theme_provider.dart';
+import '../../../providers/game/xp_provider.dart';
+import '../../../providers/game/coin_provider.dart';
+import '../../../providers/game/streak_provider.dart';
+import '../../../providers/game/statistics_provider.dart';
 import '../../grammar/screens/grammar_detail_screen.dart';
 import '../../grammar/screens/grammar_list_screen.dart';
 import '../../grammar/screens/grammar_test_list_screen.dart';
@@ -52,9 +56,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // Fetch progress on load
+    // Fetch progress & game stats on load
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(progressProvider.notifier).fetchProgress();
+      ref.read(xpProvider.notifier).refresh();
+      ref.read(coinProvider.notifier).refresh();
+      ref.read(streakProvider.notifier).refresh();
+      ref.read(statisticsProvider.notifier).refresh();
     });
   }
 
@@ -93,6 +101,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final grammarAsync = ref.watch(allGrammarChaptersProvider);
     final studyState = ref.watch(todoListProvider);
     final lastOpenedChapter = ref.watch(lastOpenedChapterProvider);
+    final xpState = ref.watch(xpProvider);
+    final coinState = ref.watch(coinProvider);
+    final streakState = ref.watch(streakProvider);
 
     final user = authAsync.asData?.value;
     if (user?.name != null && user!.name.isNotEmpty) {
@@ -107,11 +118,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final allGrammarChapters = grammarAsync.asData?.value ?? [];
 
     // Derived values — progress from Study Plan (todo list)
-    final streakDays = progress?.streakDays ?? 0;
+    final int currentStreak = streakState.currentStreak > 0
+        ? streakState.currentStreak
+        : (progress?.streakDays ?? 0);
     final lessonsCompleted = studyState.completedCount;
     final totalLessons = studyState.totalCount > 0 ? studyState.totalCount : 1;
     final progressPct = (lessonsCompleted / totalLessons).clamp(0.0, 1.0);
     final favoritesCount = allWords.where((w) => w.isFavorite).length;
+    final int currentXP = xpState.currentXP;
+    final int currentCoins = coinState.currentCoins;
+    final int currentLevel = xpState.currentLevel;
 
     // Today's words from JSON chapters — picks 5 words every 10 minutes
     final todayWords = _pickWords(allChapterWords, 5);
@@ -187,7 +203,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             children: [
               _buildGreetingSection(theme, user?.name),
               const SizedBox(height: 20),
-              _buildProgressCard(theme, streakDays, lessonsCompleted, progressPct, totalLessons),
+              _buildProgressCard(theme, currentStreak, lessonsCompleted, progressPct, totalLessons, currentXP, currentCoins, currentLevel),
               const SizedBox(height: 24),
               _buildTodaysWordCard(theme, isDark, todayWords, isLoading: chaptersAsync.isLoading),
               const SizedBox(height: 24),
@@ -203,11 +219,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               const SizedBox(height: 24),
               _buildHomePracticeSection(theme, isDark),
               const SizedBox(height: 24),
-              _buildDailyChallengeCard(theme, streakDays),
+              _buildDailyChallengeCard(theme, currentStreak),
               const SizedBox(height: 24),
               _buildTenseGameCard(theme, isDark),
               const SizedBox(height: 24),
-              _buildAchievementsSection(theme, isDark, streakDays, lessonsCompleted, favoritesCount),
+              _buildAchievementsSection(theme, isDark, currentStreak, lessonsCompleted, favoritesCount),
               const SizedBox(height: 32),
             ],
           ),
@@ -254,9 +270,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     );
   }
 
-  // PROGRESS CARD
+  // PROGRESS CARD — real data from providers
   Widget _buildProgressCard(
-    ThemeData theme, int streakDays, int lessonsCompleted, double progressPct, int totalLessons,
+    ThemeData theme, int currentStreak, int lessonsCompleted, double progressPct, int totalLessons, int currentXP, int currentCoins, int currentLevel,
   ) {
     final pctLabel = '${(progressPct * 100).toInt()}%';
     return Container(
@@ -281,7 +297,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   children: [
                     const Text('🔥 ', style: TextStyle(fontSize: 12)),
                     Text(
-                      '$streakDays Day${streakDays == 1 ? '' : 's'} Streak',
+                      '$currentStreak Day${currentStreak == 1 ? '' : 's'} Streak',
                       style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
                     ),
                   ],
@@ -328,8 +344,51 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ],
           ),
+          const SizedBox(height: 12),
+          // Live game stats row
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.12),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _buildMiniStat('✨', '$currentXP', 'XP'),
+                Container(width: 1, height: 24, color: Colors.white.withOpacity(0.2)),
+                _buildMiniStat('🪙', '$currentCoins', 'Coins'),
+                Container(width: 1, height: 24, color: Colors.white.withOpacity(0.2)),
+                _buildMiniStat('🏆', 'Lv. $currentLevel', 'Level'),
+              ],
+            ),
+          ),
         ],
       ),
+    );
+  }
+
+  Widget _buildMiniStat(String emoji, String value, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(emoji, style: const TextStyle(fontSize: 14)),
+            const SizedBox(width: 4),
+            Text(
+              value,
+              style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+        const SizedBox(height: 2),
+        Text(
+          label,
+          style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 10, fontWeight: FontWeight.w500),
+        ),
+      ],
     );
   }
 

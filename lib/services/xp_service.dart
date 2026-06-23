@@ -1,10 +1,15 @@
 import '../repositories/progress_repository.dart';
+import '../repositories/statistics_repository.dart';
 
 class XpService {
   final ProgressRepository _progressRepository;
+  final StatisticsRepository _statisticsRepository;
 
-  XpService({required ProgressRepository progressRepository})
-      : _progressRepository = progressRepository;
+  XpService({
+    required ProgressRepository progressRepository,
+    StatisticsRepository? statisticsRepository,
+  })  : _progressRepository = progressRepository,
+        _statisticsRepository = statisticsRepository ?? StatisticsRepository();
 
   // ── XP Calculation ──
 
@@ -84,12 +89,18 @@ class XpService {
 
   // ── XP Management ──
 
-  int getCurrentXP() {
+  Future<int> getCurrentXP() async {
+    // Prefer cumulative total from statistics (game_statistics box)
+    final totalEarned = await _statisticsRepository.getTotalEarnedXP();
+    if (totalEarned > 0) return totalEarned;
+    // Fall back to progress box
     final progress = _progressRepository.getProgress();
     return progress?.currentXP ?? 0;
   }
 
-  int getCurrentLevel() {
+  Future<int> getCurrentLevel() async {
+    final xp = await getCurrentXP();
+    if (xp > 0) return (xp ~/ 100) + 1;
     final progress = _progressRepository.getProgress();
     return progress?.currentLevel ?? 1;
   }
@@ -98,9 +109,9 @@ class XpService {
     return currentLevel * 100; // Level 1 = 100 XP, Level 2 = 200 XP, etc.
   }
 
-  double getLevelProgress() {
-    final xp = getCurrentXP();
-    final level = getCurrentLevel();
+  Future<double> getLevelProgress() async {
+    final xp = await getCurrentXP();
+    final level = await getCurrentLevel();
     final xpForNext = getXPForNextLevel(level);
     final xpForCurrent = getXPForNextLevel(level - 1);
     final xpInCurrentLevel = xp - xpForCurrent;
@@ -111,8 +122,8 @@ class XpService {
   }
 
   Future<bool> checkLevelUp() async {
-    final xp = getCurrentXP();
-    final level = getCurrentLevel();
+    final xp = await getCurrentXP();
+    final level = await getCurrentLevel();
     final xpNeeded = getXPForNextLevel(level);
 
     if (xp >= xpNeeded) {
@@ -126,9 +137,9 @@ class XpService {
     await _progressRepository.addXP(xp);
     final leveledUp = await checkLevelUp();
     if (leveledUp) {
-      return getCurrentLevel();
+      return await getCurrentLevel();
     }
-    return getCurrentLevel();
+    return await getCurrentLevel();
   }
 
   // ── Level Titles ──
@@ -143,8 +154,8 @@ class XpService {
     return 'Grandmaster';
   }
 
-  String getCurrentLevelTitle() {
-    return getLevelTitle(getCurrentLevel());
+  Future<String> getCurrentLevelTitle() async {
+    return getLevelTitle(await getCurrentLevel());
   }
 
   // ── Streak XP ──

@@ -13,14 +13,30 @@ import '../../../providers/game/streak_provider.dart';
 /// performance rating, headline numbers, rewards, Phase-18 win /
 /// streak / time counters, today's progress, and a "current status"
 /// section that mirrors the live progress providers.
-class StatisticsScreen extends ConsumerWidget {
+class StatisticsScreen extends ConsumerStatefulWidget {
   const StatisticsScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<StatisticsScreen> createState() => _StatisticsScreenState();
+}
+
+class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Refresh all providers so the screen shows the latest data
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(statisticsProvider.notifier).refresh();
+      ref.read(xpProvider.notifier).refresh();
+      ref.read(coinProvider.notifier).refresh();
+      ref.read(streakProvider.notifier).refresh();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final stats = ref.watch(statisticsProvider);
     final xpState = ref.watch(xpProvider);
-    final coinState = ref.watch(coinProvider);
     final streakState = ref.watch(streakProvider);
     final theme = Theme.of(context);
 
@@ -190,22 +206,21 @@ class StatisticsScreen extends ConsumerWidget {
                   _StatusRowData(
                     label: 'Current Level',
                     value:
-                        '${xpState.currentLevel} - ${xpState.levelTitle}',
+                        '${stats.currentLevel} - ${xpState.levelTitle}',
                   ),
                   _StatusRowData(
-                    label: 'Level XP',
+                    label: 'Total XP Earned',
                     value:
-                        '${xpState.currentXP} / ${xpState.xpForNextLevel} '
-                        '(${(xpState.levelProgress * 100).toStringAsFixed(1)}%)',
+                        '${stats.totalEarnedXP} XP',
                   ),
                   _StatusRowData(
                     label: 'Coins Balance',
-                    value: '${coinState.currentCoins}',
+                    value: '${stats.totalEarnedCoins}',
                   ),
                   _StatusRowData(
                     label: 'Current Streak',
                     value:
-                        '${streakState.currentStreak} days ${streakState.emoji}',
+                        '${stats.currentStreak} days ${streakState.emoji}',
                   ),
                 ],
               ),

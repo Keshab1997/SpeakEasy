@@ -37,14 +37,13 @@ class StatisticsRepository {
 
   Future<void> saveResult(GameResultModel result) async {
     final box = await _ensureBox();
-    final results = getResults();
+    final results = await getResults();
     results.insert(0, result);
     await box.put(_resultsKey, results.map((r) => r.toMap()).toList());
   }
 
-  List<GameResultModel> getResults() {
-    if (!Hive.isBoxOpen(_boxName)) return [];
-    final box = Hive.box(_boxName);
+  Future<List<GameResultModel>> getResults() async {
+    final box = await _ensureBox();
     final raw = box.get(_resultsKey, defaultValue: <Map<String, dynamic>>[]) as List;
     return raw
         .map((e) => GameResultModel.fromMap(Map<String, dynamic>.from(e as Map)))
@@ -58,38 +57,43 @@ class StatisticsRepository {
 
   // Computed statistics from Hive
 
-  int getTotalGamesPlayed() {
-    return getResults().length;
+  Future<int> getTotalGamesPlayed() async {
+    final results = await getResults();
+    return results.length;
   }
 
-  int getTotalCorrectAnswers() {
-    return getResults().fold(0, (sum, r) => sum + r.correctAnswers);
+  Future<int> getTotalCorrectAnswers() async {
+    final results = await getResults();
+    return results.fold<int>(0, (sum, r) => sum + r.correctAnswers);
   }
 
-  int getTotalWrongAnswers() {
-    return getResults().fold(0, (sum, r) => sum + r.wrongAnswers);
+  Future<int> getTotalWrongAnswers() async {
+    final results = await getResults();
+    return results.fold<int>(0, (sum, r) => sum + r.wrongAnswers);
   }
 
-  double getOverallAccuracy() {
-    final results = getResults();
+  Future<double> getOverallAccuracy() async {
+    final results = await getResults();
     if (results.isEmpty) return 0.0;
-    final totalCorrect = results.fold(0, (sum, r) => sum + r.correctAnswers);
+    final totalCorrect = results.fold<int>(0, (sum, r) => sum + r.correctAnswers);
     final totalQuestions =
-        results.fold(0, (sum, r) => sum + r.correctAnswers + r.wrongAnswers);
+        results.fold<int>(0, (sum, r) => sum + r.correctAnswers + r.wrongAnswers);
     if (totalQuestions == 0) return 0.0;
     return totalCorrect / totalQuestions;
   }
 
-  int getTotalEarnedXP() {
-    return getResults().fold(0, (sum, r) => sum + r.earnedXP);
+  Future<int> getTotalEarnedXP() async {
+    final results = await getResults();
+    return results.fold<int>(0, (sum, r) => sum + r.earnedXP);
   }
 
-  int getTotalEarnedCoins() {
-    return getResults().fold(0, (sum, r) => sum + r.earnedCoins);
+  Future<int> getTotalEarnedCoins() async {
+    final results = await getResults();
+    return results.fold<int>(0, (sum, r) => sum + r.earnedCoins);
   }
 
-  GameResultModel? getBestResult() {
-    final results = getResults();
+  Future<GameResultModel?> getBestResult() async {
+    final results = await getResults();
     if (results.isEmpty) return null;
     return results.reduce((a, b) => a.accuracy >= b.accuracy ? a : b);
   }

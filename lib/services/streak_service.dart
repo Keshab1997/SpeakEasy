@@ -244,20 +244,13 @@ class StreakService {
   }
 
   Future<void> recordActiveDay() async {
-    final progress = _progressRepository.getProgress();
-    if (progress == null) return;
-
     final now = DateTime.now();
-    final lastActive = progress.lastActiveDate;
-    final difference = now.difference(lastActive);
+
+    // Update last active date first so subsequent streak checks use fresh data
+    await _progressRepository.updateLastActiveDate(now);
 
     // Update total active days
     await _progressRepository.incrementTotalActiveDays();
-
-    // Check for missed days
-    if (difference.inHours > 24 && difference.inHours <= 48) {
-      await incrementMissedDays();
-    }
 
     // Update longest streak if current streak is higher
     final currentStreak = getCurrentStreak();

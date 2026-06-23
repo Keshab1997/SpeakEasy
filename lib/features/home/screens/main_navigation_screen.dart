@@ -1,19 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../learning/screens/learning_screen.dart';
 import '../../practice/screens/practice_screen.dart';
 import '../../ai_teacher/screens/ai_chat_screen.dart';
 import '../../profile/screens/profile_screen.dart';
+import '../../../providers/game/streak_provider.dart';
 import 'home_screen.dart';
 
-class MainNavigationScreen extends StatefulWidget {
+class MainNavigationScreen extends ConsumerStatefulWidget {
   const MainNavigationScreen({super.key});
 
   @override
-  State<MainNavigationScreen> createState() => _MainNavigationScreenState();
+  ConsumerState<MainNavigationScreen> createState() =>
+      _MainNavigationScreenState();
 }
 
-class _MainNavigationScreenState extends State<MainNavigationScreen> {
+class _MainNavigationScreenState extends ConsumerState<MainNavigationScreen> {
   int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // Check and update daily streak on app open so the streak counter
+    // reflects consecutive login days without requiring a game to be played.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(streakProvider.notifier).checkAndUpdateStreak();
+    });
+  }
 
   void _onTabChanged(int index) {
     setState(() {
