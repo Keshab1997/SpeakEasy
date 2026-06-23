@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../core/constants/tense_constants.dart';
 import '../models/game/game_question_model.dart';
@@ -79,13 +80,51 @@ class GameService {
       questions = questions.where((q) => q.difficulty == effectiveDifficulty).toList();
     }
 
-    // Shuffle and limit
+    // Shuffle questions themselves
     questions.shuffle();
+
+    // Shuffle options within each question so the correct answer
+    // appears at a different position every time.
+    final rng = Random();
+    questions = questions.map((q) => _shuffleOptions(q, rng)).toList();
+
     if (limit != null && limit > 0 && limit < questions.length) {
       questions = questions.take(limit).toList();
     }
 
     return questions;
+  }
+
+  /// Returns a copy of [question] whose [options] (and [optionBangla])
+  /// have been shuffled together, with [correctAnswer] updated to match
+  /// the new position of the original correct option.
+  GameQuestionModel _shuffleOptions(GameQuestionModel question, Random rng) {
+    final opts = question.options;
+    if (opts.length <= 1) return question;
+
+    // Build index list [0, 1, 2, …] and shuffle it.
+    final indices = List<int>.generate(opts.length, (i) => i)..shuffle(rng);
+
+    final shuffledOptions = indices.map((i) => opts[i]).toList();
+    final shuffledBangla = question.optionBangla.isNotEmpty
+        ? indices.map((i) => i < question.optionBangla.length ? question.optionBangla[i] : '').toList()
+        : <String>[];
+
+    // Find where the original correct answer landed.
+    final newCorrect = question.correctAnswer.trim().toLowerCase();
+    int newCorrectIdx = 0;
+    for (int i = 0; i < shuffledOptions.length; i++) {
+      if (shuffledOptions[i].trim().toLowerCase() == newCorrect) {
+        newCorrectIdx = i;
+        break;
+      }
+    }
+
+    return question.copyWith(
+      options: shuffledOptions,
+      optionBangla: shuffledBangla,
+      correctAnswer: shuffledOptions[newCorrectIdx],
+    );
   }
 
   /// Special categories that mix questions across tenses instead of filtering

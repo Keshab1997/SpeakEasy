@@ -34,6 +34,9 @@ class GameQuestionModel {
   @HiveField(9)
   final int coinReward;
 
+  @HiveField(10)
+  final List<String> optionBangla;
+
   GameQuestionModel({
     required this.id,
     required this.tenseType,
@@ -45,6 +48,7 @@ class GameQuestionModel {
     required this.mode,
     this.xpReward = 10,
     this.coinReward = 5,
+    this.optionBangla = const [],
   });
 
   factory GameQuestionModel.fromMap(Map<String, dynamic> map, String docId) {
@@ -59,6 +63,7 @@ class GameQuestionModel {
       mode: map['mode'] as String? ?? 'practice',
       xpReward: map['xpReward'] as int? ?? 10,
       coinReward: map['coinReward'] as int? ?? 5,
+      optionBangla: List<String>.from(map['optionBangla'] as List? ?? []),
     );
   }
 
@@ -73,6 +78,7 @@ class GameQuestionModel {
       'mode': mode,
       'xpReward': xpReward,
       'coinReward': coinReward,
+      'optionBangla': optionBangla,
     };
   }
 
@@ -87,6 +93,7 @@ class GameQuestionModel {
     String? mode,
     int? xpReward,
     int? coinReward,
+    List<String>? optionBangla,
   }) {
     return GameQuestionModel(
       id: id ?? this.id,
@@ -99,6 +106,7 @@ class GameQuestionModel {
       mode: mode ?? this.mode,
       xpReward: xpReward ?? this.xpReward,
       coinReward: coinReward ?? this.coinReward,
+      optionBangla: optionBangla ?? this.optionBangla,
     );
   }
 

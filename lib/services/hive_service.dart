@@ -9,6 +9,7 @@ class HiveService {
   static const String _masterGuideHistoryBox = 'master_guide_history';
   static const String _studyPlanBox = 'study_plan';
   static const String _translatorHistoryBox = 'translator_history';
+  static const String _homeworkHistoryBox = 'homework_history';
   static const String _gameProgressBox = 'game_progress';
   static const String _gameStatisticsBox = 'game_statistics';
 
@@ -22,6 +23,7 @@ class HiveService {
     await Hive.openBox(_masterGuideHistoryBox);
     await Hive.openBox(_studyPlanBox);
     await Hive.openBox(_translatorHistoryBox);
+    await Hive.openBox(_homeworkHistoryBox);
     await Hive.openBox(_gameProgressBox);
     await Hive.openBox(_gameStatisticsBox);
   }
@@ -163,6 +165,40 @@ class HiveService {
 
   static bool isNotificationEnabled() {
     return _settings.get('notifications', defaultValue: true) as bool;
+  }
+
+  // ── Homework History ──
+
+  static Future<void> saveHomeworkSession(Map<String, dynamic> session) async {
+    if (!Hive.isBoxOpen(_homeworkHistoryBox)) {
+      await Hive.openBox(_homeworkHistoryBox);
+    }
+    final box = Hive.box(_homeworkHistoryBox);
+    final history = getHomeworkHistory();
+    history.insert(0, session);
+    if (history.length > 50) history.removeLast();
+    await box.put('sessions', history);
+  }
+
+  static List<Map<String, dynamic>> getHomeworkHistory() {
+    if (!Hive.isBoxOpen(_homeworkHistoryBox)) return [];
+    final box = Hive.box(_homeworkHistoryBox);
+    final raw = box.get('sessions', defaultValue: []) as List;
+    return raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
+  }
+
+  static Future<void> deleteHomeworkSession(int index) async {
+    if (!Hive.isBoxOpen(_homeworkHistoryBox)) return;
+    final box = Hive.box(_homeworkHistoryBox);
+    final history = getHomeworkHistory();
+    if (index < 0 || index >= history.length) return;
+    history.removeAt(index);
+    await box.put('sessions', history);
+  }
+
+  static Future<void> clearAllHomeworkSessions() async {
+    if (!Hive.isBoxOpen(_homeworkHistoryBox)) return;
+    await Hive.box(_homeworkHistoryBox).put('sessions', <Map<String, dynamic>>[]);
   }
 
   // ── Game Settings ──
@@ -471,6 +507,11 @@ class HiveService {
     // Translator history
     if (Hive.isBoxOpen(_translatorHistoryBox)) {
       await Hive.box(_translatorHistoryBox).clear();
+    }
+
+    // Homework history
+    if (Hive.isBoxOpen(_homeworkHistoryBox)) {
+      await Hive.box(_homeworkHistoryBox).clear();
     }
 
     // Vocabulary test history

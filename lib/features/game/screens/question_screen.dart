@@ -161,6 +161,7 @@ class QuestionScreen extends ConsumerWidget {
                   ...question.options.asMap().entries.map((entry) {
                     final idx = entry.key;
                     final option = entry.value;
+                    final bangla = idx < question.optionBangla.length ? question.optionBangla[idx] : '';
 
                     final isAnswerChecked = gameState.isAnswerChecked;
                     final isCorrect = option.trim().toLowerCase() == question.correctAnswer.trim().toLowerCase();
@@ -170,6 +171,7 @@ class QuestionScreen extends ConsumerWidget {
                       padding: const EdgeInsets.only(bottom: 12),
                       child: _AnswerOption(
                         option: option,
+                        banglaMeaning: bangla,
                         index: idx,
                         isAnswerChecked: isAnswerChecked,
                         isCorrect: isCorrect,
@@ -227,6 +229,7 @@ class QuestionScreen extends ConsumerWidget {
 
 class _AnswerOption extends StatelessWidget {
   final String option;
+  final String banglaMeaning;
   final int index;
   final bool isAnswerChecked;
   final bool isCorrect;
@@ -235,6 +238,7 @@ class _AnswerOption extends StatelessWidget {
 
   const _AnswerOption({
     required this.option,
+    this.banglaMeaning = '',
     required this.index,
     required this.isAnswerChecked,
     required this.isCorrect,
@@ -287,7 +291,7 @@ class _AnswerOption extends StatelessWidget {
                   color: (isCorrect ? Colors.green : Colors.red).withOpacity(0.1),
                   blurRadius: 8,
                   offset: const Offset(0, 4),
-                )
+                ),
               ]
             : null,
       ),
@@ -297,8 +301,9 @@ class _AnswerOption extends StatelessWidget {
           onTap: isAnswerChecked ? null : onTap,
           borderRadius: BorderRadius.circular(16),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
@@ -317,15 +322,31 @@ class _AnswerOption extends StatelessWidget {
                 ),
                 const SizedBox(width: 16),
                 Expanded(
-                  child: Text(
-                    option,
-                    style: theme.textTheme.bodyLarge?.copyWith(
-                      fontSize: 16,
-                      fontWeight: isAnswerChecked && (isCorrect || isSelected) ? FontWeight.w600 : FontWeight.normal,
-                      color: isAnswerChecked && !isCorrect && !isSelected
-                          ? theme.textTheme.bodyLarge?.color?.withOpacity(0.5)
-                          : null,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        option,
+                        style: theme.textTheme.bodyLarge?.copyWith(
+                          fontSize: 16,
+                          fontWeight: isAnswerChecked && (isCorrect || isSelected) ? FontWeight.w600 : FontWeight.normal,
+                          color: isAnswerChecked && !isCorrect && !isSelected
+                              ? theme.textTheme.bodyLarge?.color?.withOpacity(0.5)
+                              : null,
+                        ),
+                      ),
+                      if (banglaMeaning.isNotEmpty) ...[
+                        const SizedBox(height: 4),
+                        Text(
+                          banglaMeaning,
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: isDark ? Colors.white54 : Colors.black45,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                 ),
                 if (suffixIcon != null) ...[

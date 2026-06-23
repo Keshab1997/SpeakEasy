@@ -34,6 +34,7 @@ import '../widgets/spoken_rules_screen.dart';
 import '../../verb_forms/screens/verb_forms_screen.dart';
 import '../../verb_forms/screens/verb_form_practice_screen.dart';
 import '../../practice/screens/bangla_english_practice_screen.dart';
+import '../../homework/screens/homework_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   final Function(int)? onNavigateToTab;
@@ -208,6 +209,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               _buildTodaysWordCard(theme, isDark, todayWords, isLoading: chaptersAsync.isLoading),
               const SizedBox(height: 24),
               _buildAiTeacherBanner(theme),
+              const SizedBox(height: 24),
+              _buildHomeworkCard(theme),
               const SizedBox(height: 24),
               _buildContinueLearningSection(
                 theme, isDark, studyState, allGrammarChapters, allVocabChapters, lastOpenedChapter,
@@ -1042,6 +1045,99 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             child: const Icon(Icons.face_retouching_natural_rounded, color: AppColors.primary, size: 40),
           ),
         ],
+      ),
+    );
+  }
+
+  // HOMEWORK CARD — AI-generated translation practice
+  Widget _buildHomeworkCard(ThemeData theme) {
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const HomeworkScreen()),
+      ),
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF6366F1).withOpacity(0.3),
+              blurRadius: 16,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              right: -16,
+              bottom: -16,
+              child: Icon(Icons.home_work_rounded, size: 120, color: Colors.white.withOpacity(0.1)),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Text(
+                        'HOMEWORK',
+                        style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1.0),
+                      ),
+                    ),
+                    const Spacer(),
+                    Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: const Icon(Icons.auto_awesome_rounded, color: Colors.white, size: 16),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                const Text(
+                  'AI Homework',
+                  style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Pick a topic. AI creates 10 Bangla sentences.\nTranslate them and get instant corrections.',
+                  style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 13),
+                ),
+                const SizedBox(height: 16),
+                ElevatedButton.icon(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const HomeworkScreen()),
+                  ),
+                  icon: const Icon(Icons.auto_awesome_rounded, size: 18),
+                  label: const Text('Start Homework', style: TextStyle(fontWeight: FontWeight.bold)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: const Color(0xFF6366F1),
+                    elevation: 0,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

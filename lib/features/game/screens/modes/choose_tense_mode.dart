@@ -79,6 +79,7 @@ class ChooseTenseMode extends ConsumerWidget {
       itemCount: question.options.length,
       itemBuilder: (context, index) {
         final option = question.options[index];
+        final bangla = index < question.optionBangla.length ? question.optionBangla[index] : '';
         final isSelected = ref.watch(gameProvider).selectedAnswer == option;
         final isCorrect = question.correctAnswer == option;
         final isWrong = isSelected && !isCorrect;
@@ -106,6 +107,7 @@ class ChooseTenseMode extends ConsumerWidget {
                 ),
               ),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     width: 36,
@@ -137,9 +139,25 @@ class ChooseTenseMode extends ConsumerWidget {
                   ),
                   const SizedBox(width: 16),
                   Expanded(
-                    child: Text(
-                      option,
-                      style: const TextStyle(fontSize: 16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          option,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                        if (bangla.isNotEmpty) ...[
+                          const SizedBox(height: 4),
+                          Text(
+                            bangla,
+                            style: const TextStyle(
+                              fontSize: 13,
+                              color: Colors.black45,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                        ],
+                      ],
                     ),
                   ),
                   if (showResult && isCorrect)
