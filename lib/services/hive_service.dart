@@ -184,7 +184,13 @@ class HiveService {
     if (!Hive.isBoxOpen(_homeworkHistoryBox)) return [];
     final box = Hive.box(_homeworkHistoryBox);
     final raw = box.get('sessions', defaultValue: []) as List;
-    return raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
+    return raw.map((e) {
+      final map = Map<String, dynamic>.from(e as Map);
+      if (map['questions'] is List) {
+        map['questions'] = (map['questions'] as List).map((q) => Map<String, dynamic>.from(q as Map)).toList();
+      }
+      return map;
+    }).toList();
   }
 
   static Future<void> deleteHomeworkSession(int index) async {

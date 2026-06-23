@@ -76,9 +76,12 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
     try {
       final response = await AIService().sendMessageWithSystem(
         'Generate exactly 10 simple Bengali sentences on the topic "$topic" for English translation practice. '
-        'Return ONLY a valid JSON array of strings. Example: ["বাক্য ১", "বাক্য ২"]',
+        'Return ONLY a valid JSON array of strings. Example: ["বাক্য ১", "বাক্য ২"]\n'
+        'IMPORTANT: Do NOT wrap the JSON in markdown code blocks. Return ONLY the raw JSON array.',
         systemPrompt: 'You are a helpful English teacher. Always respond in valid JSON format only. '
-            'Generate natural, everyday Bengali sentences that are useful for real-life conversation.',
+            'Generate natural, everyday Bengali sentences that are useful for real-life conversation. '
+            'Never use markdown code blocks.',
+        maxTokens: 2048,
       );
 
       final cleaned = _extractJson(response);
@@ -130,9 +133,11 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
         'whether the user was correct, and feedback in Bangla explaining the mistake if any.\n\n'
         'Input: $inputJson\n\n'
         'Return ONLY a valid JSON array of objects with keys: correctTranslation (string), isCorrect (bool), feedback (string in Bangla).\n'
-        'Example: [{"correctTranslation":"...","isCorrect":true,"feedback":""}]',
+        'Example: [{"correctTranslation":"...","isCorrect":true,"feedback":""}]\n'
+        'IMPORTANT: Do NOT wrap the JSON in markdown code blocks. Return ONLY the raw JSON array.',
         systemPrompt: 'You are an English teacher. Review translations carefully considering grammar, meaning, and natural expression. '
-            'Be encouraging but honest. Respond in valid JSON only.',
+            'Be encouraging but honest. Respond in valid JSON only. Never use markdown code blocks.',
+        maxTokens: 2048,
       );
 
       final cleaned = _extractJson(response);
@@ -198,10 +203,14 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
   }
 
   String _extractJson(String text) {
-    final start = text.indexOf('[');
-    final end = text.lastIndexOf(']');
-    if (start != -1 && end != -1 && end > start) {
-      return text.substring(start, end + 1);
+    text = text.trim();
+    if (text.startsWith('```')) {
+      text = text.replaceAll(RegExp(r'```(json)?'), '').trim();
+    }
+    final braceStart = text.indexOf('[');
+    final braceEnd = text.lastIndexOf(']');
+    if (braceStart != -1 && braceEnd != -1 && braceEnd > braceStart) {
+      return text.substring(braceStart, braceEnd + 1);
     }
     return text;
   }

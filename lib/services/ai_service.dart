@@ -90,18 +90,18 @@ class AIService {
     }
   }
 
-  Future<String> sendMessageWithSystem(String message, {String? systemPrompt, List<Map<String, String>>? history}) async {
+  Future<String> sendMessageWithSystem(String message, {String? systemPrompt, List<Map<String, String>>? history, int? maxTokens}) async {
     if (_apiKey.isEmpty) throw Exception('API_KEY_MISSING');
 
     try {
-      return await _callOpenAI(message, systemPrompt: systemPrompt, history: history);
+      return await _callOpenAI(message, systemPrompt: systemPrompt, history: history, maxTokens: maxTokens);
     } catch (e) {
       if (e.toString().contains('API_KEY_MISSING')) rethrow;
       throw Exception('API_CALL_FAILED');
     }
   }
 
-  Future<String> _callOpenAI(String message, {String? systemPrompt, List<Map<String, String>>? history}) async {
+  Future<String> _callOpenAI(String message, {String? systemPrompt, List<Map<String, String>>? history, int? maxTokens}) async {
     final url = Uri.parse('$_baseUrl/chat/completions');
     final userName = HiveService.getUserName();
 
@@ -139,7 +139,7 @@ class AIService {
       body: jsonEncode({
         'model': _model,
         'messages': messages,
-        'max_tokens': 1024,
+        'max_tokens': maxTokens ?? 1024,
       }),
     );
 

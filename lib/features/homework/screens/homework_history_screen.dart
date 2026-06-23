@@ -133,7 +133,9 @@ class _HomeworkHistoryScreenState extends ConsumerState<HomeworkHistoryScreen> {
     final score = s['score'] as int? ?? 0;
     final total = s['total'] as int? ?? 10;
     final percentage = total > 0 ? score / total : 0.0;
-    final questions = s['questions'] as List<dynamic>? ?? [];
+    final questions = (s['questions'] as List<dynamic>?)
+        ?.map((q) => q is Map<String, dynamic> ? q : Map<String, dynamic>.from(q as Map))
+        .toList() ?? [];
 
     return Dismissible(
       key: Key('homework_$index'),
@@ -268,7 +270,10 @@ class _HomeworkDetailScreen extends StatelessWidget {
     final score = session['score'] as int? ?? 0;
     final total = session['total'] as int? ?? 10;
     final percentage = total > 0 ? score / total : 0.0;
-    final questions = session['questions'] as List<dynamic>? ?? [];
+    final rawQuestions = session['questions'] as List<dynamic>? ?? [];
+    final questions = rawQuestions
+        .map((q) => q is Map<String, dynamic> ? q : Map<String, dynamic>.from(q as Map))
+        .toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -346,7 +351,8 @@ class _HomeworkDetailScreen extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
             const SizedBox(height: 16),
             ...List.generate(questions.length, (i) {
-              final q = questions[i] as Map<String, dynamic>;
+              final rawQ = questions[i];
+              final q = rawQ is Map<String, dynamic> ? rawQ : Map<String, dynamic>.from(rawQ as Map);
               return _buildResultCard(theme, isDark, q, i);
             }),
             const SizedBox(height: 32),

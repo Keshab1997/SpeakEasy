@@ -174,7 +174,7 @@ class _PodiumCard extends StatelessWidget {
               CircleAvatar(
                 radius: isFirst ? 24 : 20,
                 backgroundColor: Colors.white,
-                child: Text(entry.userName[0].toUpperCase(),
+                child: Text(entry.userName.isNotEmpty ? entry.userName[0].toUpperCase() : '?',
                     style: TextStyle(
                         color: medalColor, fontWeight: FontWeight.bold)),
               ),
@@ -182,7 +182,7 @@ class _PodiumCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: Text(
-                  entry.userName,
+                  entry.userName.isNotEmpty ? entry.userName : 'Anonymous',
                   style: const TextStyle(
                       color: Colors.white,
                       fontSize: 11,
@@ -255,7 +255,7 @@ class _LeaderboardTile extends StatelessWidget {
           CircleAvatar(
             radius: 20,
             backgroundColor: AppColors.primary,
-            child: Text(userName[0].toUpperCase(),
+            child: Text(userName.isNotEmpty ? userName[0].toUpperCase() : '?',
                 style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
           ),
           const SizedBox(width: 12),
@@ -263,7 +263,7 @@ class _LeaderboardTile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(userName,
+                Text(userName.isNotEmpty ? userName : 'Anonymous',
                     style: theme.textTheme.titleMedium
                         ?.copyWith(fontWeight: FontWeight.w600)),
                 Text('Level $level', style: theme.textTheme.bodySmall),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../providers/game/game_provider.dart';
 import '../../../providers/game/timer_provider.dart';
@@ -8,11 +9,12 @@ import '../../../services/game_service.dart';
 import '../../../providers/game/xp_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../../../providers/game/sound_provider.dart';
+import '../../../providers/game/leaderboard_provider.dart';
 import 'game_home_screen.dart';
 import 'answer_review_screen.dart';
 import 'question_screen.dart';
 
-class ResultScreen extends ConsumerWidget {
+class ResultScreen extends ConsumerStatefulWidget {
   final int score;
   final int correctAnswers;
   final int wrongAnswers;
@@ -29,7 +31,43 @@ class ResultScreen extends ConsumerWidget {
   });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ResultScreen> createState() => _ResultScreenState();
+}
+
+class _ResultScreenState extends ConsumerState<ResultScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _updateLeaderboard();
+  }
+
+  Future<void> _updateLeaderboard() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+
+    final userName = user.displayName ?? user.email?.split('@').first ?? 'User';
+    final xpState = ref.read(xpProvider);
+
+    await ref.read(leaderboardProvider.notifier).updateUserStats(
+      userId: user.uid,
+      userName: userName,
+      xp: xpState.currentXP,
+      score: widget.score,
+      level: xpState.currentLevel,
+    );
+
+    // Refresh XP & coin providers so stats are up-to-date
+    if (mounted) {
+      ref.read(xpProvider.notifier).refresh();
+      ref.read(coinProvider.notifier).refresh();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final score = widget.score;
+    final correctAnswers = widget.correctAnswers;
+    final wrongAnswers = widget.wrongAnswers;
     final total = correctAnswers + wrongAnswers;
     final accuracy = total > 0 ? correctAnswers / total : 0.0;
     final rating = _getRating(accuracy);
@@ -98,8 +136,8 @@ class ResultScreen extends ConsumerWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      _RewardItem(icon: Icons.star, label: 'XP', value: '+$earnedXP', color: Colors.amber),
-                      _RewardItem(icon: Icons.monetization_on, label: 'Coins', value: '+$earnedCoins', color: Colors.amberAccent),
+                      _RewardItem(icon: Icons.star, label: 'XP', value: '+${widget.earnedXP}', color: Colors.amber),
+                      _RewardItem(icon: Icons.monetization_on, label: 'Coins', value: '+${widget.earnedCoins}', color: Colors.amberAccent),
                     ],
                   ),
                 ),
