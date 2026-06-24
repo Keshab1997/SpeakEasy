@@ -67,6 +67,14 @@ class WrongQuestionRepository {
         .toList();
   }
 
+  /// Get most recent wrong questions (sorted by savedAt timestamp)
+  List<WrongQuestionModel> getRecentWrongQuestions({int limit = 50}) {
+    final all = getAllWrongQuestions();
+    // Sort by savedAt descending (newest first)
+    all.sort((a, b) => b.savedAt.compareTo(a.savedAt));
+    return all.take(limit).toList();
+  }
+
   // ── Review tracking ──
 
   Future<void> markAsReviewed(String questionId) async {

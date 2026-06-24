@@ -1,13 +1,17 @@
-name: Validate Vocabulary JSON
+name: Validate JSON Files
 
 on:
   push:
     paths:
       - 'assets/json/vocabulary/**/*.json'
+      - 'assets/json/game/**/*.json'
+      - 'assets/json/grammar/**/*.json'
     branches: [main]
   pull_request:
     paths:
       - 'assets/json/vocabulary/**/*.json'
+      - 'assets/json/game/**/*.json'
+      - 'assets/json/grammar/**/*.json'
     branches: [main]
 
 jobs:
@@ -16,8 +20,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate all JSON files
+      - name: Validate Vocabulary JSON files
         run: |
+          echo "=== Validating Vocabulary JSON ==="
           failed=0
           while IFS= read -r -d '' f; do
             if python3 -m json.tool "$f" > /dev/null 2>&1; then
@@ -27,4 +32,41 @@ jobs:
               failed=1
             fi
           done < <(find assets/json/vocabulary -name '*.json' -print0)
+          if [ $failed -eq 0 ]; then
+            echo "✅ All vocabulary JSON files are valid!"
+          fi
+          exit $failed
+
+      - name: Validate Game JSON files
+        run: |
+          echo "=== Validating Game JSON ==="
+          failed=0
+          while IFS= read -r -d '' f; do
+            if python3 -m json.tool "$f" > /dev/null 2>&1; then
+              echo "✓ $f"
+            else
+              echo "✗ INVALID: $f"
+              failed=1
+            fi
+          done < <(find assets/json/game -name '*.json' -print0)
+          if [ $failed -eq 0 ]; then
+            echo "✅ All game JSON files are valid!"
+          fi
+          exit $failed
+
+      - name: Validate Grammar JSON files
+        run: |
+          echo "=== Validating Grammar JSON ==="
+          failed=0
+          while IFS= read -r -d '' f; do
+            if python3 -m json.tool "$f" > /dev/null 2>&1; then
+              echo "✓ $f"
+            else
+              echo "✗ INVALID: $f"
+              failed=1
+            fi
+          done < <(find assets/json/grammar -name '*.json' -print0)
+          if [ $failed -eq 0 ]; then
+            echo "✅ All grammar JSON files are valid!"
+          fi
           exit $failed

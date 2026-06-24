@@ -1,0 +1,305 @@
+{
+  "description": "Fill in the Blanks — Grammar-focused questions (verbs, prepositions, articles)",
+  "questions": [
+    {
+      "id": "fb_001",
+      "sentence": "She ___ to school every day.",
+      "blank": "goes",
+      "options": ["go", "goes", "going", "went"],
+      "type": "verb",
+      "tense": "present_simple",
+      "explanation": "'She' হলো 3rd person singular, তাই verb-এর সাথে 's' যুক্ত হয় → 'goes'",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_002",
+      "sentence": "I ___ a book right now.",
+      "blank": "am reading",
+      "options": ["read", "reads", "am reading", "reading"],
+      "type": "verb",
+      "tense": "present_continuous",
+      "explanation": "'right now' মানে এখন চলছে → Present Continuous (am/is/are + verb-ing)",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_003",
+      "sentence": "They ___ football yesterday.",
+      "blank": "played",
+      "options": ["play", "plays", "playing", "played"],
+      "type": "verb",
+      "tense": "past_simple",
+      "explanation": "'yesterday' অতীত নির্দেশক → Past Simple (verb-এর V2 form)",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_004",
+      "sentence": "He ___ finished his homework.",
+      "blank": "has",
+      "options": ["have", "has", "had", "is"],
+      "type": "verb",
+      "tense": "present_perfect",
+      "explanation": "'He' singular + কাজ সম্পন্ন → Present Perfect (has + V3)",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_005",
+      "sentence": "We ___ go to the park tomorrow.",
+      "blank": "will",
+      "options": ["will", "shall", "are", "is"],
+      "type": "verb",
+      "tense": "future_simple",
+      "explanation": "'tomorrow' ভবিষ্যৎ নির্দেশক → Future Simple (will/shall + V1)",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_006",
+      "sentence": "The cat is sitting ___ the table.",
+      "blank": "on",
+      "options": ["on", "in", "at", "under"],
+      "type": "preposition",
+      "tense": "preposition_place",
+      "explanation": "টেবিলের উপরে = 'on' the table",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_007",
+      "sentence": "She goes to school ___ bus.",
+      "blank": "by",
+      "options": ["by", "in", "with", "on"],
+      "type": "preposition",
+      "tense": "preposition_transport",
+      "explanation": "যানবাহন নির্দেশ করতে 'by' ব্যবহার হয় → by bus, by car, by train",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_008",
+      "sentence": "I have ___ apple in my bag.",
+      "blank": "an",
+      "options": ["a", "an", "the", "some"],
+      "type": "article",
+      "tense": "article",
+      "explanation": "'apple' শুরু হয় vowel sound (a, e, i, o, u) দিয়ে → 'an' বসবে",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_009",
+      "sentence": "He is ___ honest boy.",
+      "blank": "an",
+      "options": ["a", "an", "the", "one"],
+      "type": "article",
+      "tense": "article",
+      "explanation": "'honest'-এর 'h' নীরব, vowel sound → 'an honest'",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_010",
+      "sentence": "___ sun rises in the east.",
+      "blank": "The",
+      "options": ["A", "An", "The", "Some"],
+      "type": "article",
+      "tense": "article",
+      "explanation": "একমাত্র/নির্দিষ্ট বস্তু (sun, moon, earth) → 'The' বসে",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_011",
+      "sentence": "My brother ___ working since morning.",
+      "blank": "has been",
+      "options": ["is", "has been", "have been", "was"],
+      "type": "verb",
+      "tense": "present_perfect_continuous",
+      "explanation": "সকাল থেকে কাজ চলছে → Present Perfect Continuous (has/have been + V-ing)",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_012",
+      "sentence": "I live ___ Kolkata.",
+      "blank": "in",
+      "options": ["in", "at", "on", "to"],
+      "type": "preposition",
+      "tense": "preposition_place",
+      "explanation": "শহর/দেশের নাম → 'in' ব্যবহার হয় (in Kolkata, in India)",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_013",
+      "sentence": "The meeting is ___ 3 PM.",
+      "blank": "at",
+      "options": ["at", "in", "on", "by"],
+      "type": "preposition",
+      "tense": "preposition_time",
+      "explanation": "নির্দিষ্ট সময় → 'at' বসে (at 3 PM, at noon)",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_014",
+      "sentence": "She was born ___ 1995.",
+      "blank": "in",
+      "options": ["in", "on", "at", "by"],
+      "type": "preposition",
+      "tense": "preposition_time",
+      "explanation": "বছর/মাস/ঋতু → 'in' বসে (in 1995, in January, in summer)",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_015",
+      "sentence": "My birthday is ___ 25th December.",
+      "blank": "on",
+      "options": ["on", "in", "at", "by"],
+      "type": "preposition",
+      "tense": "preposition_time",
+      "explanation": "তারিখ/দিন → 'on' বসে (on 25th December, on Monday)",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_016",
+      "sentence": "They ___ playing when I arrived.",
+      "blank": "were",
+      "options": ["are", "were", "is", "was"],
+      "type": "verb",
+      "tense": "past_continuous",
+      "explanation": "অতীতে চলমান কাজ → Past Continuous (was/were + V-ing)",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_017",
+      "sentence": "If it rains, we ___ stay home.",
+      "blank": "will",
+      "options": ["will", "would", "shall", "can"],
+      "type": "verb",
+      "tense": "conditional",
+      "explanation": "First Conditional: If + Present, will + V1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_018",
+      "sentence": "I ___ visited Delhi last year.",
+      "blank": "had",
+      "options": ["have", "has", "had", "was"],
+      "type": "verb",
+      "tense": "past_perfect",
+      "explanation": "'last year' অতীত + আগের কাজ → Past Perfect (had + V3)",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_019",
+      "sentence": "She can ___ English very well.",
+      "blank": "speak",
+      "options": ["speak", "speaks", "speaking", "spoke"],
+      "type": "verb",
+      "tense": "modal_verb",
+      "explanation": "Modal verb (can, could, should, must) এর পর Base form (V1) বসে",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_020",
+      "sentence": "The book is ___ the table.",
+      "blank": "on",
+      "options": ["on", "in", "at", "over"],
+      "type": "preposition",
+      "tense": "preposition_place",
+      "explanation": "সমতল পৃষ্ঠের উপর → 'on' (on the table, on the floor)",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_021",
+      "sentence": "I am looking ___ my keys.",
+      "blank": "for",
+      "options": ["for", "at", "after", "into"],
+      "type": "preposition",
+      "tense": "phrasal_verb",
+      "explanation": "'look for' = খোঁজা (phrasal verb)",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_022",
+      "sentence": "He is good ___ mathematics.",
+      "blank": "at",
+      "options": ["at", "in", "on", "for"],
+      "type": "preposition",
+      "tense": "preposition_adjective",
+      "explanation": "'good at' = কোনো কিছুতে দক্ষ (fixed preposition)",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_023",
+      "sentence": "I am afraid ___ dogs.",
+      "blank": "of",
+      "options": ["of", "from", "with", "by"],
+      "type": "preposition",
+      "tense": "preposition_adjective",
+      "explanation": "'afraid of' = ভয় পাওয়া (fixed preposition)",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_024",
+      "sentence": "She is interested ___ music.",
+      "blank": "in",
+      "options": ["in", "on", "at", "with"],
+      "type": "preposition",
+      "tense": "preposition_adjective",
+      "explanation": "'interested in' = আগ্রহী (fixed preposition)",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_025",
+      "sentence": "We have been waiting ___ an hour.",
+      "blank": "for",
+      "options": ["for", "since", "from", "till"],
+      "type": "preposition",
+      "tense": "preposition_time",
+      "explanation": "সময়ের পরিমাণ (duration) → 'for' (for an hour, for 2 years)",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_026",
+      "sentence": "They have been here ___ Monday.",
+      "blank": "since",
+      "options": ["since", "for", "from", "by"],
+      "type": "preposition",
+      "tense": "preposition_time",
+      "explanation": "নির্দিষ্ট সময় থেকে (starting point) → 'since' (since Monday, since 2020)",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_027",
+      "sentence": "Neither he ___ his brother came.",
+      "blank": "nor",
+      "options": ["nor", "or", "and", "but"],
+      "type": "conjunction",
+      "tense": "conjunction",
+      "explanation": "'Neither...nor' = দুটোই নয় (correlative conjunction)",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_028",
+      "sentence": "I will go ___ you come with me.",
+      "blank": "if",
+      "options": ["if", "unless", "until", "when"],
+      "type": "conjunction",
+      "tense": "conditional",
+      "explanation": "শর্ত বোঝাতে 'if' = যদি",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fb_029",
+      "sentence": "This is ___ best book I have read.",
+      "blank": "the",
+      "options": ["a", "an", "the", "one"],
+      "type": "article",
+      "tense": "article",
+      "explanation": "Superlative (best, worst, most) এর আগে সবসময় 'the' বসে",
+      "difficulty": "medium"
+    },
+    {
+      "id": "fb_030",
+      "sentence": "___ rich should help ___ poor.",
+      "blank": "The",
+      "options": ["A", "An", "The", "Some"],
+      "type": "article",
+      "tense": "article",
+      "explanation": "সমগ্র শ্রেণী বোঝাতে 'The' + adjective (The rich = ধনীরা, The poor = গরিবরা)",
+      "difficulty": "hard"
+    }
+  ]
+}

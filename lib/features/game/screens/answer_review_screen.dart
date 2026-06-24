@@ -22,8 +22,8 @@ class _AnswerReviewScreenState extends ConsumerState<AnswerReviewScreen> {
     final gameState = ref.watch(gameProvider);
     final theme = Theme.of(context);
 
-    // Collect only the WRONG questions
-    final wrongEntries = <_WrongEntry>[];
+    // Collect only the WRONG questions from gameProvider
+    final wrongEntriesFromGame = <_WrongEntry>[];
     for (int i = 0; i < gameState.questions.length; i++) {
       if (i >= gameState.userAnswers.length) break;
       final question = gameState.questions[i];
@@ -31,7 +31,7 @@ class _AnswerReviewScreenState extends ConsumerState<AnswerReviewScreen> {
       final isCorrect = question.correctAnswer.trim().toLowerCase() ==
           userAnswer.trim().toLowerCase();
       if (!isCorrect) {
-        wrongEntries.add(_WrongEntry(
+        wrongEntriesFromGame.add(_WrongEntry(
           index: i,
           question: question,
           userAnswer: userAnswer,
@@ -39,7 +39,32 @@ class _AnswerReviewScreenState extends ConsumerState<AnswerReviewScreen> {
       }
     }
 
-    final totalQuestions = gameState.questions.length;
+    // Also check WrongQuestionRepository for special game modes
+    final repo = WrongQuestionRepository();
+    final recentWrongs = repo.getRecentWrongQuestions(limit: 50);
+    
+    // If gameProvider is empty but we have recent wrongs, use those
+    final wrongEntries = wrongEntriesFromGame.isEmpty && recentWrongs.isNotEmpty
+        ? recentWrongs.map((wq) => _WrongEntry(
+              index: 0,
+              question: GameQuestionModel(
+                id: wq.id,
+                question: wq.question,
+                options: wq.decodedOptions,
+                correctAnswer: wq.correctAnswer,
+                explanation: wq.explanation,
+                tenseType: wq.tenseType,
+                difficulty: wq.difficulty,
+                mode: wq.mode,
+              ),
+              userAnswer: wq.userAnswer,
+            ))
+            .toList()
+        : wrongEntriesFromGame;
+
+    final totalQuestions = gameState.questions.isNotEmpty 
+        ? gameState.questions.length 
+        : wrongEntries.length;
     final totalWrong = wrongEntries.length;
     final totalCorrect = totalQuestions - totalWrong;
 

@@ -15,6 +15,7 @@ import 'answer_review_screen.dart';
 import 'question_screen.dart';
 import 'modes/word_match_mode.dart';
 import 'modes/quick_quiz_mode.dart';
+import 'modes/fill_in_blanks_mode.dart';
 
 class ResultScreen extends ConsumerStatefulWidget {
   final int score;
@@ -239,6 +240,13 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (_) => const QuickQuizModeScreen()),
+      );
+      return;
+    }
+    if (widget.gameMode == 'fill_in_blanks') {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const FillInBlanksModeScreen()),
       );
       return;
     }
