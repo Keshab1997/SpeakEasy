@@ -13,6 +13,8 @@ import 'settings_screen.dart';
 import 'daily_challenge_screen.dart';
 import 'boss_battle_screen.dart';
 import 'tense_categories_screen.dart';
+import 'modes/word_match_mode.dart';
+import 'modes/quick_quiz_mode.dart';
 
 class GameHomeScreen extends ConsumerStatefulWidget {
   const GameHomeScreen({super.key});
@@ -259,6 +261,153 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen> {
             ),
 
             const SizedBox(height: 24),
+
+            // ── Word Match Duolingo-style Game ──
+            InkWell(
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const WordMatchModeScreen())),
+              borderRadius: BorderRadius.circular(20),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF6366F1).withOpacity(0.3),
+                      blurRadius: 12,
+                      offset: const Offset(0, 6),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 56,
+                      height: 56,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: const Icon(Icons.compare_arrows_rounded, color: Colors.white, size: 28),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              const Text(
+                                'Word Match',
+                                style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(width: 8),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                decoration: BoxDecoration(
+                                  color: Colors.amber.withOpacity(0.3),
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                child: const Text(
+                                  'NEW',
+                                  style: TextStyle(color: Colors.amberAccent, fontSize: 9, fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 4),
+                          const Text(
+                            'Match বাংলা → English pairs • 6 rounds • Score + Streak',
+                            style: TextStyle(color: Colors.white70, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Icon(Icons.arrow_forward_ios, color: Colors.white54, size: 16),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            // ── Quick Quiz ──
+            InkWell(
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const QuickQuizModeScreen())),
+              borderRadius: BorderRadius.circular(20),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFFFF6B35), Color(0xFFF7C948)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFFFF6B35).withOpacity(0.3),
+                      blurRadius: 12,
+                      offset: const Offset(0, 6),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 56,
+                      height: 56,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: const Icon(Icons.quiz_rounded, color: Colors.white, size: 28),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              const Text(
+                                'Quick Quiz',
+                                style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(width: 8),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.25),
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                child: const Text(
+                                  'NEW',
+                                  style: TextStyle(color: Colors.white, fontSize: 9, fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 4),
+                          const Text(
+                            'বাংলা দেখে correct English বেছে নিন • ৫ sec timer • Streak bonus',
+                            style: TextStyle(color: Colors.white70, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Icon(Icons.arrow_forward_ios, color: Colors.white54, size: 16),
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
 
             // ── Game Modes ──
             Text('Game Modes', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),

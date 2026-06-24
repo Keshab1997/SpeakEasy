@@ -203,6 +203,78 @@ class HiveService {
     return _settings.get('notification_streak', defaultValue: 0) as int;
   }
 
+  // ── Duolingo-style Streak Freeze ──
+
+  static Future<void> setStreakFreezeCount(int count) async {
+    await _settings.put('streak_freezes', count);
+  }
+
+  static int getStreakFreezeCount() {
+    return _settings.get('streak_freezes', defaultValue: 0) as int;
+  }
+
+  static Future<void> addStreakFreeze() async {
+    final current = getStreakFreezeCount();
+    await setStreakFreezeCount(current + 1);
+  }
+
+  static Future<bool> useStreakFreeze() async {
+    final current = getStreakFreezeCount();
+    if (current <= 0) return false;
+    await setStreakFreezeCount(current - 1);
+    return true;
+  }
+
+  // ── Weekly Activity Calendar (7 days) ──
+  // Tracks which days this week the user practiced
+  // Keys: '0'=Monday ... '6'=Sunday, value=true if practiced
+
+  static Future<void> markDayActive(int weekday) async {
+    // weekday: 1=Monday ... 7=Sunday (DateTime convention)
+    final map = getWeeklyActivity();
+    map[weekday.toString()] = true;
+    await _settings.put('weekly_activity', map);
+  }
+
+  static Map<String, dynamic> getWeeklyActivity() {
+    final raw = _settings.get('weekly_activity', defaultValue: <String, dynamic>{}) as Map;
+    return Map<String, dynamic>.from(raw);
+  }
+
+  static bool isDayActive(int weekday) {
+    final map = getWeeklyActivity();
+    return map[weekday.toString()] == true;
+  }
+
+  /// Returns active days for current week (used for calendar grid)
+  static List<bool> getWeekActivityList() {
+    final raw = _settings.get('weekly_activity', defaultValue: <String, dynamic>{}) as Map;
+    final map = Map<String, dynamic>.from(raw);
+    return List.generate(7, (i) => map[(i + 1).toString()] == true);
+  }
+
+  /// Reset weekly activity (call at start of new week)
+  static Future<void> resetWeeklyActivity() async {
+    await _settings.put('weekly_activity', <String, dynamic>{});
+  }
+
+  // ── Streak Freeze Shop / Cost ──
+
+  static int getStreakFreezeCost() {
+    return 100; // coins per freeze
+  }
+
+  /// Last practiced date (separate from game progress date)
+  static Future<void> setLastPracticeDate(DateTime date) async {
+    await _settings.put('last_practice_date', date.toIso8601String());
+  }
+
+  static DateTime? getLastPracticeDate() {
+    final raw = _settings.get('last_practice_date');
+    if (raw == null) return null;
+    return DateTime.tryParse(raw as String);
+  }
+
   // ── Homework History ──
 
   static Future<void> saveHomeworkSession(Map<String, dynamic> session) async {

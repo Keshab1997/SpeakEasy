@@ -13,6 +13,8 @@ import '../../../providers/game/leaderboard_provider.dart';
 import 'game_home_screen.dart';
 import 'answer_review_screen.dart';
 import 'question_screen.dart';
+import 'modes/word_match_mode.dart';
+import 'modes/quick_quiz_mode.dart';
 
 class ResultScreen extends ConsumerStatefulWidget {
   final int score;
@@ -20,6 +22,7 @@ class ResultScreen extends ConsumerStatefulWidget {
   final int wrongAnswers;
   final int earnedXP;
   final int earnedCoins;
+  final String gameMode;
 
   const ResultScreen({
     super.key,
@@ -28,6 +31,7 @@ class ResultScreen extends ConsumerStatefulWidget {
     required this.wrongAnswers,
     required this.earnedXP,
     required this.earnedCoins,
+    this.gameMode = 'normal',
   });
 
   @override
@@ -223,6 +227,23 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
   }
 
   void _retryGame(BuildContext context, WidgetRef ref) {
+    // If coming from a special game mode, go back to it
+    if (widget.gameMode == 'word_match') {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const WordMatchModeScreen()),
+      );
+      return;
+    }
+    if (widget.gameMode == 'quick_quiz') {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const QuickQuizModeScreen()),
+      );
+      return;
+    }
+
+    // Otherwise retry the regular quiz game
     final gameState = ref.read(gameProvider);
     final mode = gameState.gameMode;
     ref.read(gameProvider.notifier).reset();

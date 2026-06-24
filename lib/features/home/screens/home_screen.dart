@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/streak_widget.dart';
 import '../../../services/hive_service.dart';
 import '../../../services/tts_service.dart';
 import '../../../providers/auth_provider.dart';
@@ -59,12 +60,41 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   void initState() {
     super.initState();
     // Fetch progress & game stats on load
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       ref.read(progressProvider.notifier).fetchProgress();
       ref.read(xpProvider.notifier).refresh();
       ref.read(coinProvider.notifier).refresh();
-      ref.read(streakProvider.notifier).refresh();
       ref.read(statisticsProvider.notifier).refresh();
+
+      // 🔥 STREAK CALCULATION — called every time the app opens:
+      // 1. Check if streak should increment (new day) or reset (missed >48h)
+      final streakNotifier = ref.read(streakProvider.notifier);
+      final newStreak = await streakNotifier.checkAndUpdateStreak();
+
+      // 2. Record today as active (updates lastActiveDate, totalActiveDays)
+      await streakNotifier.recordActiveDay();
+
+      // 3. Update HiveService weekly activity + last practice date
+      final now = DateTime.now();
+      await HiveService.markDayActive(now.weekday);
+      await HiveService.setLastPracticeDate(now);
+
+      // 4. Handle streak freeze — if streak was reset to 1 and we have a freeze, restore it
+      if (newStreak == 1) {
+        final hadFreeze = await HiveService.useStreakFreeze();
+        if (hadFreeze) {
+          // Restore the streak from before the reset
+          final progress = ref.read(progressProvider).asData?.value;
+          final oldStreak = progress?.streakDays ?? 1;
+          // Increment back to old value + 1
+          for (int i = 1; i < oldStreak; i++) {
+            await streakNotifier.incrementStreak();
+          }
+        }
+      }
+
+      // Refresh streak state after all updates
+      streakNotifier.refresh();
     });
   }
 
@@ -81,6 +111,121 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     if (hour < 12) return 'Good Morning';
     if (hour < 17) return 'Good Afternoon';
     return 'Good Evening';
+  }
+
+  /// Returns true if user practiced today (checked via last active date)
+  bool _hasPracticedToday() {
+    final lastActive = HiveService.getLastPracticeDate();
+    if (lastActive == null) return false;
+    final now = DateTime.now();
+    return lastActive.year == now.year &&
+        lastActive.month == now.month &&
+        lastActive.day == now.day;
+  }
+
+  /// Shows streak info dialog (Duolingo-style)
+  void _showStreakInfoDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Row(
+          children: [
+            Text('🔥 ', style: TextStyle(fontSize: 24)),
+            Text('My Streak'),
+          ],
+        ),
+        content: const Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              '• Practice daily to keep your streak alive.\n'
+              '• Complete at least one lesson each day.\n'
+              '• Buy a Streak Freeze (🛡️) to protect your streak '
+              'if you miss a day.\n'
+              '• Longer streaks unlock special badges & rewards!',
+              style: TextStyle(fontSize: 14, height: 1.5),
+            ),
+            SizedBox(height: 16),
+            Text(
+              '💡 Tip: Set a daily reminder in Settings '
+              'to never miss a practice day!',
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: Colors.orange),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Got it!'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Buy streak freeze (100 coins per freeze)
+  void _buyStreakFreeze(BuildContext context, WidgetRef ref, int currentCoins) {
+    final cost = HiveService.getStreakFreezeCost();
+    if (currentCoins < cost) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text('Not enough coins! Play games to earn more.'),
+          backgroundColor: Colors.red.shade400,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('🛡️ Buy Streak Freeze'),
+        content: Text('Spend $cost coins to buy a Streak Freeze?\n'
+            'You can protect your streak if you miss a day.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () async {
+              await ref.read(coinProvider.notifier).spendCoins(cost);
+              await HiveService.addStreakFreeze();
+              if (context.mounted) {
+                Navigator.pop(ctx);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('🛡️ Streak Freeze purchased!'),
+                    behavior: SnackBarBehavior.floating,
+                  ),
+                );
+              }
+            },
+            child: const Text('Buy', style: TextStyle(fontWeight: FontWeight.bold)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Share streak on social media
+  void _shareStreak(BuildContext context, int streak) {
+    final message = streak > 0
+        ? "🔥 I'm on a $streak-day streak on SpeakEasy! Practicing English every day. Join me! 🚀"
+        : "Start your English learning journey with SpeakEasy! 🚀";
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('📤 Share: "$message"'),
+        behavior: SnackBarBehavior.floating,
+        action: SnackBarAction(
+          label: 'Copy',
+          onPressed: () {
+            // In a real app, use share_plus package
+          },
+        ),
+      ),
+    );
   }
 
   /// Changes every 10 minutes: index = tenMinSlot % total
@@ -205,6 +350,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             children: [
               _buildGreetingSection(theme, user?.name),
               const SizedBox(height: 20),
+              // Duolingo-style Streak Widget with weekly calendar
+              StreakWidget(
+                currentStreak: currentStreak,
+                todayXP: currentXP,
+                dailyXPTarget: 50,
+                hasPracticeToday: _hasPracticedToday(),
+                isStreakFrozen: HiveService.getStreakFreezeCount() > 0,
+                streakFreezeCount: HiveService.getStreakFreezeCount(),
+                onTap: () => _showStreakInfoDialog(context),
+                onBuyFreeze: () => _buyStreakFreeze(context, ref, currentCoins),
+                onShare: () => _shareStreak(context, currentStreak),
+              ),
+              const SizedBox(height: 24),
               _buildProgressCard(theme, currentStreak, lessonsCompleted, progressPct, totalLessons, currentXP, currentCoins, currentLevel),
               const SizedBox(height: 24),
               _buildTodaysWordCard(theme, isDark, todayWords, isLoading: chaptersAsync.isLoading),

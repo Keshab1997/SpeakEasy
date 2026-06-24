@@ -6,6 +6,7 @@ import '../../../providers/game/timer_provider.dart';
 import '../../../providers/game/score_provider.dart';
 import '../../../providers/game/sound_provider.dart';
 import 'mode_game_screen.dart';
+import 'modes/word_match_mode.dart';
 
 class GameModeSelectionScreen extends ConsumerWidget {
   const GameModeSelectionScreen({super.key});
@@ -25,6 +26,9 @@ class GameModeSelectionScreen extends ConsumerWidget {
           children: [
             Text('Choose a game mode', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
             const SizedBox(height: 16),
+            // Word Match — Duolingo-style game
+            _buildWordMatchCard(context, ref),
+            const SizedBox(height: 8),
             ...GameModeType.values.map((modeType) {
               final config = GameModeConfig.fromType(modeType);
               return _ModeCard(
@@ -48,6 +52,105 @@ class GameModeSelectionScreen extends ConsumerWidget {
       ),
     );
   }
+
+  Widget _buildWordMatchCard(BuildContext context, WidgetRef ref) {
+    return InkWell(
+      onTap: () {
+        ref.read(soundProvider.notifier).playButtonTap();
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const WordMatchModeScreen()),
+        );
+      },
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF6366F1).withOpacity(0.3),
+              blurRadius: 12,
+              offset: const Offset(0, 6),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 64,
+              height: 64,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: const Icon(Icons.compare_arrows_rounded, color: Colors.white, size: 32),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      const Text(
+                        'Word Match',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: Colors.amber.withOpacity(0.3),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: const Text(
+                          'NEW',
+                          style: TextStyle(
+                            color: Colors.amberAccent,
+                            fontSize: 9,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'Match Bengali words with their English translations',
+                    style: TextStyle(color: Colors.white70, fontSize: 13),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      const Icon(Icons.compare_arrows_rounded, color: Colors.white70, size: 14),
+                      const SizedBox(width: 4),
+                      const Text('6 pairs', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                      const SizedBox(width: 12),
+                      const Icon(Icons.star_rounded, color: Colors.amber, size: 14),
+                      const SizedBox(width: 4),
+                      const Text('Score + Streak', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const Icon(Icons.arrow_forward_ios, color: Colors.white70, size: 20),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class _ModeCard extends StatelessWidget {
@@ -58,8 +161,6 @@ class _ModeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(20),

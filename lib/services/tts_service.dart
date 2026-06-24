@@ -28,6 +28,24 @@ class TtsService {
     await _tts.speak(text);
   }
 
+  /// Speak a Bangla (Bengali) word using bn-BD locale
+  Future<void> speakBangla(String text) async {
+    if (_muted) return;
+    if (!_isInitialized) await initialize();
+    try {
+      await _tts.setLanguage('bn-BD');
+      await _tts.speak(text);
+      await _tts.setLanguage('en-US'); // reset to English
+    } catch (_) {
+      // If Bangla TTS fails, try Hindi or reset to English
+      try {
+        await _tts.setLanguage('hi-IN');
+        await _tts.speak(text);
+      } catch (_) {}
+      await _tts.setLanguage('en-US');
+    }
+  }
+
   Future<void> setSpeechRate(double rate) async {
     await _tts.setSpeechRate(rate);
   }
