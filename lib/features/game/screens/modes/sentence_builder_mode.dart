@@ -1,247 +1,679 @@
+import 'dart:async';
+import 'dart:convert';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../providers/game/game_provider.dart';
-import '../../../../providers/game/sound_provider.dart';
-import '../../../../models/game/game_question_model.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../../../repositories/wrong_question_repository.dart';
+import '../../../../models/game/wrong_question_model.dart';
 import '../result_screen.dart';
 
-class SentenceBuilderMode extends ConsumerWidget {
-  const SentenceBuilderMode({super.key});
+class SentenceBuilderModeScreen extends ConsumerStatefulWidget {
+  const SentenceBuilderModeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final gameState = ref.watch(gameProvider);
+  ConsumerState<SentenceBuilderModeScreen> createState() => _SentenceBuilderModeScreenState();
+}
 
-    if (gameState.isLoading) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeScreen> with SingleTickerProviderStateMixin {
+  List<Map<String, dynamic>> _allQuestions = [];
+  List<Map<String, dynamic>> _selectedQuestions = [];
+  
+  int _currentQuestionIndex = 0;
+  List<String> _selectedWords = [];
+  List<String> _availableWords = [];
+  
+  int _score = 0;
+  int _correctCount = 0;
+  int _wrongCount = 0;
+  int _streak = 0;
+  
+  Timer? _timer;
+  int _timeLeft = 15; // 15 seconds per question
+  
+  bool _isLoading = true;
+  bool _showHint = false;
+  bool _isAnswerSubmitted = false;
+  bool _isCorrect = false;
+  
+  late AnimationController _shakeController;
+  late Animation<double> _shakeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _shakeController = AnimationController(
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    );
+    _shakeAnimation = Tween<double>(begin: 0, end: 10).animate(
+      CurvedAnimation(parent: _shakeController, curve: Curves.elasticIn),
+    );
+    _loadQuestions();
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    _shakeController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _loadQuestions() async {
+    try {
+      final String response = await rootBundle.loadString('assets/json/game/sentence_builder_data.json');
+      final data = json.decode(response);
+      _allQuestions = List<Map<String, dynamic>>.from(data['questions']);
+      
+      // Select 10 random questions
+      _allQuestions.shuffle(Random());
+      _selectedQuestions = _allQuestions.take(10).toList();
+      
+      setState(() {
+        _isLoading = false;
+      });
+      _setupQuestion();
+      _startTimer();
+    } catch (e) {
+      debugPrint('Error loading questions: $e');
+      setState(() => _isLoading = false);
     }
+  }
 
-    if (gameState.error != null) {
+  void _setupQuestion() {
+    if (_currentQuestionIndex >= _selectedQuestions.length) return;
+    
+    final question = _selectedQuestions[_currentQuestionIndex];
+    final scrambled = List<String>.from(question['scrambled']);
+    scrambled.shuffle(Random());
+    
+    setState(() {
+      _availableWords = scrambled;
+      _selectedWords = [];
+      _showHint = false;
+      _isAnswerSubmitted = false;
+      _isCorrect = false;
+      _timeLeft = 15;
+    });
+  }
+
+  void _startTimer() {
+    _timer?.cancel();
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (_timeLeft > 0) {
+        setState(() => _timeLeft--);
+      } else {
+        _submitAnswer(timeout: true);
+      }
+    });
+  }
+
+  void _onWordTapped(String word) {
+    if (_isAnswerSubmitted) return;
+    
+    setState(() {
+      _availableWords.remove(word);
+      _selectedWords.add(word);
+    });
+  }
+
+  void _onSelectedWordTapped(String word) {
+    if (_isAnswerSubmitted) return;
+    
+    setState(() {
+      _selectedWords.remove(word);
+      _availableWords.add(word);
+    });
+  }
+
+  void _submitAnswer({bool timeout = false}) {
+    _timer?.cancel();
+    
+    final question = _selectedQuestions[_currentQuestionIndex];
+    final correctAnswer = question['correct'] as String;
+    final userAnswer = _selectedWords.join(' ');
+    
+    final isCorrect = userAnswer.trim().toLowerCase() == correctAnswer.trim().toLowerCase();
+    
+    setState(() {
+      _isAnswerSubmitted = true;
+      _isCorrect = isCorrect;
+    });
+    
+    if (isCorrect) {
+      _correctCount++;
+      _streak++;
+      
+      // Calculate score
+      int baseScore = 20;
+      int timeBonus = (_timeLeft * 2).clamp(0, 10);
+      int streakBonus = min(_streak * 5, 25);
+      
+      setState(() {
+        _score += baseScore + timeBonus + streakBonus;
+      });
+      
+      HapticFeedback.lightImpact();
+    } else {
+      _wrongCount++;
+      _streak = 0;
+      _shakeController.forward().then((_) => _shakeController.reverse());
+      HapticFeedback.heavyImpact();
+      
+      // Save wrong answer
+      _saveWrongAnswer(question, userAnswer, correctAnswer);
+    }
+    
+    // Move to next question after delay
+    Future.delayed(const Duration(milliseconds: 2500), () {
+      if (mounted) {
+        if (_currentQuestionIndex < _selectedQuestions.length - 1) {
+          setState(() {
+            _currentQuestionIndex++;
+          });
+          _setupQuestion();
+          _startTimer();
+        } else {
+          _showResults();
+        }
+      }
+    });
+  }
+
+  Future<void> _saveWrongAnswer(Map<String, dynamic> question, String userAnswer, String correctAnswer) async {
+    final wrongQuestion = WrongQuestionModel.fromGameQuestion(
+      questionId: question['id'],
+      tenseType: question['tense'] ?? 'sentence_builder',
+      question: 'Arrange: ${(question['scrambled'] as List).join(', ')}',
+      options: [correctAnswer, userAnswer, '', ''],
+      correctAnswer: correctAnswer,
+      explanation: question['explanation'] ?? '',
+      userAnswer: userAnswer,
+      difficulty: question['difficulty'] ?? 'medium',
+      mode: 'sentence_builder',
+    );
+    
+    await WrongQuestionRepository().saveWrongQuestions([wrongQuestion]);
+  }
+
+  void _showResults() {
+    _timer?.cancel();
+    
+    final earnedXP = _score * 2;
+    final earnedCoins = _score + min(_streak * 5, 50).toInt();
+    
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ResultScreen(
+          score: _score,
+          correctAnswers: _correctCount,
+          wrongAnswers: _wrongCount,
+          earnedXP: earnedXP,
+          earnedCoins: earnedCoins,
+          gameMode: 'sentence_builder',
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_isLoading) {
       return Scaffold(
-        body: Center(child: Text('Error: ${gameState.error}')),
+        appBar: AppBar(title: const Text('Sentence Builder')),
+        body: const Center(child: CircularProgressIndicator()),
       );
     }
 
-    if (gameState.questions.isEmpty || gameState.currentQuestion == null) {
-      return const Scaffold(body: Center(child: Text('No questions available')));
+    if (_selectedQuestions.isEmpty) {
+      return Scaffold(
+        appBar: AppBar(title: const Text('Sentence Builder')),
+        body: const Center(child: Text('No questions available')),
+      );
     }
 
-    final question = gameState.currentQuestion!;
+    final question = _selectedQuestions[_currentQuestionIndex];
+    final progress = (_currentQuestionIndex + 1) / _selectedQuestions.length;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sentence Builder', style: TextStyle(fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.orange,
-      ),
-      body: Column(
-        children: [
-          // Question
-          Container(
-            padding: const EdgeInsets.all(24),
-            margin: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(colors: [Colors.orange, Colors.deepOrange]),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Arrange the words to form a correct sentence:',
-                  style: TextStyle(color: Colors.white70, fontSize: 14),
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  question.question,
-                  style: const TextStyle(color: Colors.white, fontSize: 18, height: 1.5),
-                ),
-              ],
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFF1565C0), Color(0xFF42A5F5)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              // Header
+              _buildHeader(progress),
+              
+              Expanded(
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      // Question Card
+                      _buildQuestionCard(question),
+                      
+                      const SizedBox(height: 24),
+                      
+                      // Selected Words Area
+                      _buildSelectedWordsArea(),
+                      
+                      const SizedBox(height: 24),
+                      
+                      // Available Words
+                      _buildAvailableWords(),
+                      
+                      const SizedBox(height: 24),
+                      
+                      // Hint Button
+                      if (!_isAnswerSubmitted && !_showHint)
+                        _buildHintButton(),
+                      
+                      // Hint Display
+                      if (_showHint && !_isAnswerSubmitted)
+                        _buildHintDisplay(question),
+                      
+                      const SizedBox(height: 16),
+                      
+                      // Submit Button
+                      if (!_isAnswerSubmitted && _selectedWords.isNotEmpty)
+                        _buildSubmitButton(),
+                      
+                      // Feedback
+                      if (_isAnswerSubmitted)
+                        _buildFeedback(question),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
-          // Answer options or explanation
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: gameState.showExplanation
-                  ? _buildExplanation(context, ref, question)
-                  : _buildAnswerOptions(context, ref, question),
-            ),
+  Widget _buildHeader(double progress) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.1),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.close, color: Colors.white),
+                onPressed: () => Navigator.pop(context),
+              ),
+              Expanded(
+                child: Column(
+                  children: [
+                    Text(
+                      'Question ${_currentQuestionIndex + 1}/${_selectedQuestions.length}',
+                      style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: LinearProgressIndicator(
+                        value: progress,
+                        backgroundColor: Colors.white30,
+                        valueColor: const AlwaysStoppedAnimation<Color>(Colors.amber),
+                        minHeight: 8,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              _buildTimerCircle(),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _buildStatChip(Icons.stars, 'Score', '$_score', Colors.amber),
+              _buildStatChip(Icons.local_fire_department, 'Streak', '$_streak', Colors.orange),
+              _buildStatChip(Icons.check_circle, 'Correct', '$_correctCount', Colors.green),
+            ],
           ),
         ],
       ),
     );
   }
 
-  Widget _buildAnswerOptions(BuildContext context, WidgetRef ref, GameQuestionModel question) {
-    return ListView.builder(
-      itemCount: question.options.length,
-      itemBuilder: (context, index) {
-        final option = question.options[index];
-        final isSelected = ref.watch(gameProvider).selectedAnswer == option;
-        final isCorrect = question.correctAnswer == option;
-        final isWrong = isSelected && !isCorrect;
-        final showResult = ref.watch(gameProvider).showExplanation;
-
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 12),
-          child: InkWell(
-            onTap: showResult ? null : () => _selectAnswer(context, ref, option),
-            borderRadius: BorderRadius.circular(16),
-            child: Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(
-                  color: showResult && isCorrect
-                      ? Colors.green
-                      : showResult && isWrong
-                          ? Colors.red
-                          : isSelected
-                              ? Colors.orange
-                              : Colors.orange.withOpacity(0.3),
-                  width: showResult && (isCorrect || isWrong) ? 3 : 2,
-                ),
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      color: showResult && isCorrect
-                          ? Colors.green
-                          : showResult && isWrong
-                              ? Colors.red
-                              : isSelected
-                                  ? Colors.orange
-                                  : Colors.orange.withOpacity(0.2),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(
-                      child: showResult && isCorrect
-                          ? const Icon(Icons.check, color: Colors.white)
-                          : showResult && isWrong
-                              ? const Icon(Icons.close, color: Colors.white)
-                              : Text(
-                                  String.fromCharCode(65 + index),
-                                  style: TextStyle(
-                                    color: isSelected ? Colors.white : Colors.orange,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: Text(
-                      option,
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                  ),
-                  if (showResult && isCorrect)
-                    const Icon(Icons.check_circle, color: Colors.green, size: 24)
-                  else if (showResult && isWrong)
-                    const Icon(Icons.cancel, color: Colors.red, size: 24),
-                ],
-              ),
-            ),
+  Widget _buildTimerCircle() {
+    final color = _timeLeft > 5 ? Colors.green : Colors.red;
+    
+    return Container(
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: color.withOpacity(0.5),
+            blurRadius: 8,
+            spreadRadius: 2,
           ),
-        );
-      },
+        ],
+      ),
+      child: Center(
+        child: Text(
+          '$_timeLeft',
+          style: TextStyle(
+            color: color,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 
-  Widget _buildExplanation(BuildContext context, WidgetRef ref, GameQuestionModel question) {
-    final gameState = ref.watch(gameProvider);
-    final isCorrect = gameState.isCurrentAnswerCorrect ?? false;
-
+  Widget _buildStatChip(IconData icon, String label, String value, Color color) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: isCorrect ? [Colors.green, Colors.green.withOpacity(0.8)] : [Colors.red, Colors.red.withOpacity(0.8)],
-        ),
+        color: Colors.white.withOpacity(0.2),
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
         mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, color: color, size: 16),
+          const SizedBox(width: 4),
+          Text(
+            value,
+            style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildQuestionCard(Map<String, dynamic> question) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
         children: [
           Row(
             children: [
-              Icon(
-                isCorrect ? Icons.check_circle : Icons.cancel,
-                color: Colors.white,
-                size: 28,
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                decoration: BoxDecoration(
+                  color: AppColors.primary.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: AppColors.primary),
+                ),
+                child: Text(
+                  question['tense'].toString().replaceAll('_', ' ').toUpperCase(),
+                  style: const TextStyle(
+                    color: AppColors.primary,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-              const SizedBox(width: 12),
-              Text(
-                isCorrect ? 'Correct!' : 'Incorrect',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+              const Spacer(),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: _getDifficultyColor(question['difficulty']).withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  question['difficulty'].toString().toUpperCase(),
+                  style: TextStyle(
+                    color: _getDifficultyColor(question['difficulty']),
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 16),
           const Text(
-            'Explanation:',
+            '🔨 Arrange the words to form a correct sentence:',
             style: TextStyle(
-              color: Colors.white,
               fontSize: 16,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
             ),
+            textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 8),
-          Text(
-            question.explanation ?? 'No explanation available.',
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 15,
-              height: 1.5,
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSelectedWordsArea() {
+    return AnimatedBuilder(
+      animation: _shakeAnimation,
+      builder: (context, child) {
+        return Transform.translate(
+          offset: Offset(_shakeAnimation.value, 0),
+          child: child,
+        );
+      },
+      child: Container(
+        width: double.infinity,
+        constraints: const BoxConstraints(minHeight: 120),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: _isAnswerSubmitted
+              ? (_isCorrect ? Colors.green.withOpacity(0.2) : Colors.red.withOpacity(0.2))
+              : Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: _isAnswerSubmitted
+                ? (_isCorrect ? Colors.green : Colors.red)
+                : Colors.blue.shade200,
+            width: 2,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
             ),
-          ),
-          const SizedBox(height: 20),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {
-                ref.read(gameProvider.notifier).continueToNext();
-                ref.read(soundServiceProvider).playButtonTap();
-                
-                if (ref.read(gameProvider).isGameOver) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const ResultScreen(
-                        score: 0,
-                        correctAnswers: 0,
-                        wrongAnswers: 0,
-                        earnedXP: 0,
-                        earnedCoins: 0,
-                      ),
-                    ),
-                  );
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: isCorrect ? Colors.green : Colors.red,
-                padding: const EdgeInsets.symmetric(vertical: 14),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  _isAnswerSubmitted
+                      ? (_isCorrect ? Icons.check_circle : Icons.cancel)
+                      : Icons.edit,
+                  color: _isAnswerSubmitted
+                      ? (_isCorrect ? Colors.green : Colors.red)
+                      : Colors.blue,
+                  size: 20,
                 ),
-              ),
-              child: const Text(
-                'Continue',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
+                const SizedBox(width: 8),
+                Text(
+                  _isAnswerSubmitted
+                      ? (_isCorrect ? '✅ Correct!' : '❌ Wrong!')
+                      : 'Your Sentence:',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: _isAnswerSubmitted
+                        ? (_isCorrect ? Colors.green : Colors.red)
+                        : Colors.black87,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            _selectedWords.isEmpty
+                ? const Center(
+                    child: Text(
+                      'Tap words below to build your sentence',
+                      style: TextStyle(color: Colors.grey, fontSize: 14),
+                    ),
+                  )
+                : Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: _selectedWords.map((word) {
+                      return GestureDetector(
+                        onTap: () => _onSelectedWordTapped(word),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.shade50,
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: Colors.blue.shade300),
+                          ),
+                          child: Text(
+                            word,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black87,
+                            ),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAvailableWords() {
+    if (_availableWords.isEmpty) return const SizedBox.shrink();
+    
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.9),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Available Words:',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: _availableWords.map((word) {
+              return GestureDetector(
+                onTap: () => _onWordTapped(word),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF1565C0), Color(0xFF42A5F5)],
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.blue.withOpacity(0.3),
+                        blurRadius: 4,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    word,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildHintButton() {
+    return OutlinedButton.icon(
+      onPressed: () => setState(() => _showHint = true),
+      icon: const Icon(Icons.lightbulb_outline, color: Colors.amber),
+      label: const Text('Show Hint', style: TextStyle(color: Colors.white)),
+      style: OutlinedButton.styleFrom(
+        side: const BorderSide(color: Colors.amber),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      ),
+    );
+  }
+
+  Widget _buildHintDisplay(Map<String, dynamic> question) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.amber.shade50,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.amber.shade300),
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.lightbulb, color: Colors.amber, size: 24),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              question['hint'] ?? '',
+              style: const TextStyle(fontSize: 14, color: Colors.black87),
             ),
           ),
         ],
@@ -249,8 +681,96 @@ class SentenceBuilderMode extends ConsumerWidget {
     );
   }
 
-  void _selectAnswer(BuildContext context, WidgetRef ref, String answer) {
-    ref.read(gameProvider.notifier).selectAnswer(answer);
-    ref.read(soundServiceProvider).playButtonTap();
+  Widget _buildSubmitButton() {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: () => _submitAnswer(),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.green,
+          foregroundColor: Colors.white,
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          elevation: 4,
+        ),
+        child: const Text(
+          '✓ Submit Answer',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFeedback(Map<String, dynamic> question) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (!_isCorrect) ...[
+            const Row(
+              children: [
+                Icon(Icons.check_circle, color: Colors.green, size: 20),
+                SizedBox(width: 8),
+                Text(
+                  'Correct Answer:',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              question['correct'],
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: Colors.green,
+              ),
+            ),
+            const SizedBox(height: 16),
+          ],
+          const Row(
+            children: [
+              Icon(Icons.info_outline, color: AppColors.primary, size: 20),
+              SizedBox(width: 8),
+              Text(
+                'Explanation:',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Text(
+            question['explanation'] ?? '',
+            style: const TextStyle(fontSize: 14, color: Colors.black87, height: 1.5),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Color _getDifficultyColor(String difficulty) {
+    switch (difficulty.toLowerCase()) {
+      case 'easy':
+        return Colors.green;
+      case 'medium':
+        return Colors.orange;
+      case 'hard':
+        return Colors.red;
+      default:
+        return Colors.grey;
+    }
   }
 }

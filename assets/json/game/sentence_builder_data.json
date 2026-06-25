@@ -1,0 +1,2505 @@
+{
+  "questions": [
+    {
+      "id": "sb_001",
+      "scrambled": [
+        "is",
+        "This",
+        "book",
+        "a"
+      ],
+      "correct": "This is a book",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Subject + be verb + article + noun",
+      "explanation": "Simple Present: This/That + is/are দিয়ে কিছু চিহ্নিত করা হয়"
+    },
+    {
+      "id": "sb_002",
+      "scrambled": [
+        "goes",
+        "He",
+        "school",
+        "to",
+        "every",
+        "day"
+      ],
+      "correct": "He goes to school every day",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Subject + verb + preposition + place + time",
+      "explanation": "3rd person singular (He/She) এর সাথে verb এ 's/es' যুক্ত হয়"
+    },
+    {
+      "id": "sb_003",
+      "scrambled": [
+        "reading",
+        "am",
+        "I",
+        "book",
+        "a"
+      ],
+      "correct": "I am reading a book",
+      "tense": "present_continuous",
+      "difficulty": "easy",
+      "hint": "Subject + am/is/are + verb+ing + object",
+      "explanation": "Present Continuous: এখন চলছে এমন কাজ বোঝায়"
+    },
+    {
+      "id": "sb_004",
+      "scrambled": [
+        "played",
+        "yesterday",
+        "football",
+        "We"
+      ],
+      "correct": "We played football yesterday",
+      "tense": "past_simple",
+      "difficulty": "easy",
+      "hint": "Subject + past verb + object + time",
+      "explanation": "Past Simple: গতকাল/আগে হয়ে গেছে এমন কাজ"
+    },
+    {
+      "id": "sb_005",
+      "scrambled": [
+        "will",
+        "tomorrow",
+        "go",
+        "I",
+        "market",
+        "to",
+        "the"
+      ],
+      "correct": "I will go to the market tomorrow",
+      "tense": "future_simple",
+      "difficulty": "medium",
+      "hint": "Subject + will + verb + preposition + place + time",
+      "explanation": "Future Simple: ভবিষ্যতে হবে এমন কাজ"
+    },
+    {
+      "id": "sb_006",
+      "scrambled": [
+        "She",
+        "watching",
+        "is",
+        "TV",
+        "now"
+      ],
+      "correct": "She is watching TV now",
+      "tense": "present_continuous",
+      "difficulty": "easy",
+      "hint": "Subject + is + verb+ing + object + time",
+      "explanation": "এখন চলছে এমন কাজ বোঝাতে Present Continuous ব্যবহার হয়"
+    },
+    {
+      "id": "sb_007",
+      "scrambled": [
+        "has",
+        "finished",
+        "homework",
+        "his",
+        "He"
+      ],
+      "correct": "He has finished his homework",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + has/have + past participle + object",
+      "explanation": "Present Perfect: সবে শেষ হয়েছে বা এখনও প্রভাব আছে"
+    },
+    {
+      "id": "sb_008",
+      "scrambled": [
+        "They",
+        "playing",
+        "are",
+        "the",
+        "in",
+        "garden"
+      ],
+      "correct": "They are playing in the garden",
+      "tense": "present_continuous",
+      "difficulty": "medium",
+      "hint": "Subject + are + verb+ing + preposition + place",
+      "explanation": "Multiple words এর ক্ষেত্রে 'the garden' একসাথে থাকে"
+    },
+    {
+      "id": "sb_009",
+      "scrambled": [
+        "do",
+        "not",
+        "I",
+        "like",
+        "coffee"
+      ],
+      "correct": "I do not like coffee",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Subject + do/does + not + verb + object",
+      "explanation": "Negative বাক্যে do/does not ব্যবহার হয়"
+    },
+    {
+      "id": "sb_010",
+      "scrambled": [
+        "Was",
+        "happy",
+        "she",
+        "yesterday"
+      ],
+      "correct": "Was she happy yesterday",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Was/Were + subject + adjective + time",
+      "explanation": "Question এ be verb (was/were) সামনে আসে"
+    },
+    {
+      "id": "sb_011",
+      "scrambled": [
+        "eating",
+        "They",
+        "were",
+        "dinner",
+        "at",
+        "8",
+        "PM"
+      ],
+      "correct": "They were eating dinner at 8 PM",
+      "tense": "past_continuous",
+      "difficulty": "medium",
+      "hint": "Subject + were + verb+ing + object + time",
+      "explanation": "অতীতে কোনো নির্দিষ্ট সময়ে চলছিল এমন কাজ"
+    },
+    {
+      "id": "sb_012",
+      "scrambled": [
+        "have",
+        "I",
+        "seen",
+        "movie",
+        "this",
+        "already"
+      ],
+      "correct": "I have already seen this movie",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + have + adverb + past participle + object",
+      "explanation": "Already সাধারণত have/has এবং past participle এর মাঝে বসে"
+    },
+    {
+      "id": "sb_013",
+      "scrambled": [
+        "Does",
+        "he",
+        "play",
+        "cricket?"
+      ],
+      "correct": "Does he play cricket?",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Does/Do + subject + verb + object + ?",
+      "explanation": "Yes/No question এ does/do সামনে আসে"
+    },
+    {
+      "id": "sb_014",
+      "scrambled": [
+        "The",
+        "sun",
+        "is",
+        "shining",
+        "brightly"
+      ],
+      "correct": "The sun is shining brightly",
+      "tense": "present_continuous",
+      "difficulty": "medium",
+      "hint": "Article + subject + is + verb+ing + adverb",
+      "explanation": "'The sun' একটি নির্দিষ্ট বস্তু, তাই 'the' ব্যবহার হয়"
+    },
+    {
+      "id": "sb_015",
+      "scrambled": [
+        "been",
+        "have",
+        "waiting",
+        "We",
+        "for",
+        "hours",
+        "two"
+      ],
+      "correct": "We have been waiting for two hours",
+      "tense": "present_perfect_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + have been + verb+ing + preposition + time",
+      "explanation": "অতীত থেকে এখন পর্যন্ত চলছে এমন কাজ"
+    },
+    {
+      "id": "sb_016",
+      "scrambled": [
+        "My",
+        "works",
+        "father",
+        "in",
+        "bank",
+        "a"
+      ],
+      "correct": "My father works in a bank",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Possessive + subject + verb + preposition + article + noun",
+      "explanation": "Habitual action এর জন্য Present Simple ব্যবহার হয়"
+    },
+    {
+      "id": "sb_017",
+      "scrambled": [
+        "didn't",
+        "They",
+        "come",
+        "party",
+        "to",
+        "the"
+      ],
+      "correct": "They didn't come to the party",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Subject + didn't + verb + preposition + article + noun",
+      "explanation": "Past Negative: didn't + base form of verb"
+    },
+    {
+      "id": "sb_018",
+      "scrambled": [
+        "will",
+        "rain",
+        "It",
+        "tomorrow",
+        "probably"
+      ],
+      "correct": "It will probably rain tomorrow",
+      "tense": "future_simple",
+      "difficulty": "medium",
+      "hint": "Subject + will + adverb + verb + time",
+      "explanation": "Adverb of probability (probably) সাধারণত will এর পরে বসে"
+    },
+    {
+      "id": "sb_019",
+      "scrambled": [
+        "studying",
+        "has",
+        "She",
+        "been",
+        "since",
+        "morning"
+      ],
+      "correct": "She has been studying since morning",
+      "tense": "present_perfect_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + has been + verb+ing + preposition + time",
+      "explanation": "Since দিয়ে শুরুর সময় বোঝানো হয় Present Perfect Continuous এ"
+    },
+    {
+      "id": "sb_020",
+      "scrambled": [
+        "Can",
+        "you",
+        "swim?"
+      ],
+      "correct": "Can you swim?",
+      "tense": "modal",
+      "difficulty": "easy",
+      "hint": "Modal + subject + verb + ?",
+      "explanation": "Modal verb (can/could/will) দিয়ে question শুরু হয়"
+    },
+    {
+      "id": "sb_021",
+      "scrambled": [
+        "wrote",
+        "She",
+        "letter",
+        "a",
+        "to",
+        "friend",
+        "her"
+      ],
+      "correct": "She wrote a letter to her friend",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Subject + past verb + article + object + preposition + possessive + noun",
+      "explanation": "'to' preposition ব্যবহার করে recipient (প্রাপক) বোঝানো হয়"
+    },
+    {
+      "id": "sb_022",
+      "scrambled": [
+        "What",
+        "are",
+        "you",
+        "doing?"
+      ],
+      "correct": "What are you doing?",
+      "tense": "present_continuous",
+      "difficulty": "easy",
+      "hint": "Wh-word + are + subject + verb+ing + ?",
+      "explanation": "Wh-question এ wh-word সবার আগে বসে"
+    },
+    {
+      "id": "sb_023",
+      "scrambled": [
+        "had",
+        "Before",
+        "dinner",
+        "he",
+        "eaten"
+      ],
+      "correct": "Before he had eaten dinner",
+      "tense": "past_perfect",
+      "difficulty": "hard",
+      "hint": "Time word + subject + had + past participle + object",
+      "explanation": "Past Perfect: অতীতের দুটি কাজের মধ্যে আগে ঘটা কাজ"
+    },
+    {
+      "id": "sb_024",
+      "scrambled": [
+        "going",
+        "to",
+        "are",
+        "We",
+        "visit",
+        "grandparents",
+        "our"
+      ],
+      "correct": "We are going to visit our grandparents",
+      "tense": "future_going_to",
+      "difficulty": "medium",
+      "hint": "Subject + am/is/are + going to + verb + possessive + noun",
+      "explanation": "'be going to' পরিকল্পিত ভবিষ্যত কাজ বোঝায়"
+    },
+    {
+      "id": "sb_025",
+      "scrambled": [
+        "faster",
+        "runs",
+        "He",
+        "than",
+        "me"
+      ],
+      "correct": "He runs faster than me",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + verb + comparative adverb + than + object",
+      "explanation": "Comparative (তুলনা) করার সময় 'than' ব্যবহার হয়"
+    },
+    {
+      "id": "sb_026",
+      "scrambled": [
+        "must",
+        "You",
+        "homework",
+        "your",
+        "finish"
+      ],
+      "correct": "You must finish your homework",
+      "tense": "modal",
+      "difficulty": "easy",
+      "hint": "Subject + modal + verb + possessive + noun",
+      "explanation": "'Must' obligation (বাধ্যতা) বোঝায়"
+    },
+    {
+      "id": "sb_027",
+      "scrambled": [
+        "never",
+        "I",
+        "been",
+        "have",
+        "to",
+        "Delhi"
+      ],
+      "correct": "I have never been to Delhi",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + have + adverb + past participle + preposition + place",
+      "explanation": "Negative adverb (never) have/has এর পরে বসে"
+    },
+    {
+      "id": "sb_028",
+      "scrambled": [
+        "Would",
+        "you",
+        "like",
+        "some",
+        "tea?"
+      ],
+      "correct": "Would you like some tea?",
+      "tense": "modal",
+      "difficulty": "easy",
+      "hint": "Modal + subject + verb + determiner + noun + ?",
+      "explanation": "'Some' offer করার সময় question এ ব্যবহার হয়"
+    },
+    {
+      "id": "sb_029",
+      "scrambled": [
+        "sleeping",
+        "was",
+        "baby",
+        "The",
+        "peacefully"
+      ],
+      "correct": "The baby was sleeping peacefully",
+      "tense": "past_continuous",
+      "difficulty": "medium",
+      "hint": "Article + subject + was + verb+ing + adverb",
+      "explanation": "অতীতে কোনো সময়ে চলছিল এমন কাজ"
+    },
+    {
+      "id": "sb_030",
+      "scrambled": [
+        "tallest",
+        "is",
+        "He",
+        "the",
+        "boy",
+        "in",
+        "class",
+        "the"
+      ],
+      "correct": "He is the tallest boy in the class",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + article + superlative adj + noun + preposition + article + noun",
+      "explanation": "Superlative (সর্বোচ্চ) adjective এর আগে 'the' ব্যবহার হয়"
+    },
+    {
+      "id": "sb_031",
+      "scrambled": [
+        "She",
+        "does",
+        "not",
+        "eat",
+        "meat"
+      ],
+      "correct": "She does not eat meat",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Subject + does + not + verb + object",
+      "explanation": "3rd person singular negative এ 'does not' + base verb ব্যবহার হয়"
+    },
+    {
+      "id": "sb_032",
+      "scrambled": [
+        "Where",
+        "do",
+        "you",
+        "live?"
+      ],
+      "correct": "Where do you live?",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Wh-word + do + subject + verb + ?",
+      "explanation": "Wh-question এ do/does subject এর আগে বসে"
+    },
+    {
+      "id": "sb_033",
+      "scrambled": [
+        "They",
+        "are",
+        "building",
+        "a",
+        "new",
+        "house"
+      ],
+      "correct": "They are building a new house",
+      "tense": "present_continuous",
+      "difficulty": "medium",
+      "hint": "Subject + are + verb+ing + article + adjective + noun",
+      "explanation": "বর্তমানে চলছে এমন কাজ বোঝাতে Present Continuous"
+    },
+    {
+      "id": "sb_034",
+      "scrambled": [
+        "visited",
+        "We",
+        "museum",
+        "the",
+        "last",
+        "week"
+      ],
+      "correct": "We visited the museum last week",
+      "tense": "past_simple",
+      "difficulty": "easy",
+      "hint": "Subject + past verb + article + noun + time phrase",
+      "explanation": "Past Simple: নির্দিষ্ট অতীত সময়ে ঘটেছে এমন কাজ"
+    },
+    {
+      "id": "sb_035",
+      "scrambled": [
+        "When",
+        "will",
+        "they",
+        "arrive?"
+      ],
+      "correct": "When will they arrive?",
+      "tense": "future_simple",
+      "difficulty": "medium",
+      "hint": "Wh-word + will + subject + verb + ?",
+      "explanation": "Future Wh-question এ wh-word + will + subject + verb"
+    },
+    {
+      "id": "sb_036",
+      "scrambled": [
+        "has",
+        "She",
+        "already",
+        "left",
+        "for",
+        "work"
+      ],
+      "correct": "She has already left for work",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + has + adverb + past participle + preposition + noun",
+      "explanation": "Present Perfect: recently completed action"
+    },
+    {
+      "id": "sb_037",
+      "scrambled": [
+        "were",
+        "The",
+        "children",
+        "playing",
+        "outside",
+        "when",
+        "it",
+        "rained"
+      ],
+      "correct": "The children were playing outside when it rained",
+      "tense": "past_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + were + verb+ing + adverb + when + clause",
+      "explanation": "Past Continuous + Past Simple: একটি কাজ চলছিল আর তখন অন্য কাজ হলো"
+    },
+    {
+      "id": "sb_038",
+      "scrambled": [
+        "should",
+        "You",
+        "doctor",
+        "see",
+        "a"
+      ],
+      "correct": "You should see a doctor",
+      "tense": "modal",
+      "difficulty": "easy",
+      "hint": "Subject + modal + verb + article + noun",
+      "explanation": "'Should' advice (পরামর্শ) বোঝাতে ব্যবহার হয়"
+    },
+    {
+      "id": "sb_039",
+      "scrambled": [
+        "How",
+        "much",
+        "does",
+        "this",
+        "bag",
+        "cost?"
+      ],
+      "correct": "How much does this bag cost?",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Wh-phrase + does + subject + verb + ?",
+      "explanation": "'How much' দিয়ে মূল্য জানতে চাওয়া হয়"
+    },
+    {
+      "id": "sb_040",
+      "scrambled": [
+        "is",
+        "cooking",
+        "My",
+        "mother",
+        "in",
+        "kitchen",
+        "the"
+      ],
+      "correct": "My mother is cooking in the kitchen",
+      "tense": "present_continuous",
+      "difficulty": "medium",
+      "hint": "Possessive + subject + is + verb+ing + preposition + place",
+      "explanation": "বর্তমানে মা রান্নাঘরে রান্না করছেন"
+    },
+    {
+      "id": "sb_041",
+      "scrambled": [
+        "had",
+        "They",
+        "already",
+        "finished",
+        "the",
+        "project"
+      ],
+      "correct": "They had already finished the project",
+      "tense": "past_perfect",
+      "difficulty": "hard",
+      "hint": "Subject + had + adverb + past participle + article + noun",
+      "explanation": "Past Perfect: অন্য একটি অতীত কাজের আগে শেষ হয়েছিল"
+    },
+    {
+      "id": "sb_042",
+      "scrambled": [
+        "going",
+        "is",
+        "She",
+        "to",
+        "buy",
+        "a",
+        "new",
+        "car"
+      ],
+      "correct": "She is going to buy a new car",
+      "tense": "future_going_to",
+      "difficulty": "medium",
+      "hint": "Subject + is + going to + verb + article + adjective + noun",
+      "explanation": "'be going to' ভবিষ্যতের পরিকল্পিত কাজ বোঝায়"
+    },
+    {
+      "id": "sb_043",
+      "scrambled": [
+        "can",
+        "speak",
+        "I",
+        "three",
+        "languages"
+      ],
+      "correct": "I can speak three languages",
+      "tense": "modal",
+      "difficulty": "easy",
+      "hint": "Subject + modal + verb + quantifier + noun",
+      "explanation": "'Can' ability (ক্ষমতা) বোঝাতে ব্যবহার হয়"
+    },
+    {
+      "id": "sb_044",
+      "scrambled": [
+        "doesn't",
+        "He",
+        "like",
+        "waking",
+        "up",
+        "early"
+      ],
+      "correct": "He doesn't like waking up early",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + doesn't + verb + gerund + adverb",
+      "explanation": "3rd person singular negative: doesn't + base verb"
+    },
+    {
+      "id": "sb_045",
+      "scrambled": [
+        "were",
+        "listening",
+        "The",
+        "students",
+        "to",
+        "the",
+        "teacher"
+      ],
+      "correct": "The students were listening to the teacher",
+      "tense": "past_continuous",
+      "difficulty": "medium",
+      "hint": "Article + subject + were + verb+ing + preposition + article + noun",
+      "explanation": "অতীতে শিক্ষার্থীরা শিক্ষকের কথা শুনছিল"
+    },
+    {
+      "id": "sb_046",
+      "scrambled": [
+        "Have",
+        "you",
+        "ever",
+        "been",
+        "to",
+        "London?"
+      ],
+      "correct": "Have you ever been to London?",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Have + subject + adverb + past participle + preposition + place + ?",
+      "explanation": "'Ever' দিয়ে জীবনের কোনো অভিজ্ঞতা সম্পর্কে জানতে চাওয়া হয়"
+    },
+    {
+      "id": "sb_047",
+      "scrambled": [
+        "will",
+        "be",
+        "working",
+        "I",
+        "at",
+        "this",
+        "time",
+        "tomorrow"
+      ],
+      "correct": "I will be working at this time tomorrow",
+      "tense": "future_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + will be + verb+ing + preposition + time phrase",
+      "explanation": "Future Continuous: ভবিষ্যতে কোনো নির্দিষ্ট সময়ে চলবে এমন কাজ"
+    },
+    {
+      "id": "sb_048",
+      "scrambled": [
+        "more",
+        "beautiful",
+        "than",
+        "This",
+        "flower",
+        "is",
+        "that",
+        "one"
+      ],
+      "correct": "This flower is more beautiful than that one",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + more + adjective + than + object",
+      "explanation": "Long adjectives এর comparative form 'more + adjective' দিয়ে হয়"
+    },
+    {
+      "id": "sb_049",
+      "scrambled": [
+        "Could",
+        "you",
+        "help",
+        "me",
+        "please?"
+      ],
+      "correct": "Could you help me please?",
+      "tense": "modal",
+      "difficulty": "easy",
+      "hint": "Modal + subject + verb + object + adverb + ?",
+      "explanation": "'Could' polite request (বিনীত অনুরোধ) বোঝাতে ব্যবহার হয়"
+    },
+    {
+      "id": "sb_050",
+      "scrambled": [
+        "has",
+        "been",
+        "raining",
+        "It",
+        "for",
+        "three",
+        "hours"
+      ],
+      "correct": "It has been raining for three hours",
+      "tense": "present_perfect_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + has been + verb+ing + preposition + time duration",
+      "explanation": "Present Perfect Continuous: তিন ঘণ্টা ধরে বৃষ্টি হচ্ছে"
+    },
+    {
+      "id": "sb_051",
+      "scrambled": [
+        "did",
+        "not",
+        "go",
+        "She",
+        "to",
+        "school",
+        "yesterday"
+      ],
+      "correct": "She did not go to school yesterday",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Subject + did + not + verb + preposition + noun + time",
+      "explanation": "Past Simple Negative: did not + base form of verb"
+    },
+    {
+      "id": "sb_052",
+      "scrambled": [
+        "What",
+        "is",
+        "your",
+        "favorite",
+        "color?"
+      ],
+      "correct": "What is your favorite color?",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Wh-word + is + possessive + adjective + noun + ?",
+      "explanation": "Wh-question দিয়ে পছন্দ জানতে চাওয়া"
+    },
+    {
+      "id": "sb_053",
+      "scrambled": [
+        "was",
+        "reading",
+        "He",
+        "a",
+        "newspaper",
+        "when",
+        "I",
+        "called"
+      ],
+      "correct": "He was reading a newspaper when I called",
+      "tense": "past_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + was + verb+ing + article + noun + when + clause",
+      "explanation": "একটি কাজ চলছিল (was reading) আর তখন অন্য কাজ হলো (called)"
+    },
+    {
+      "id": "sb_054",
+      "scrambled": [
+        "will",
+        "not",
+        "They",
+        "attend",
+        "the",
+        "meeting"
+      ],
+      "correct": "They will not attend the meeting",
+      "tense": "future_simple",
+      "difficulty": "medium",
+      "hint": "Subject + will + not + verb + article + noun",
+      "explanation": "Future Negative: will not (won't) + base verb"
+    },
+    {
+      "id": "sb_055",
+      "scrambled": [
+        "the",
+        "most",
+        "intelligent",
+        "student",
+        "She",
+        "is",
+        "in",
+        "class"
+      ],
+      "correct": "She is the most intelligent student in class",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + article + most + adjective + noun + preposition + noun",
+      "explanation": "Superlative: 'the most + adjective' দিয়ে সর্বোচ্চ গুণ বোঝায়"
+    },
+    {
+      "id": "sb_056",
+      "scrambled": [
+        "May",
+        "I",
+        "come",
+        "in?"
+      ],
+      "correct": "May I come in?",
+      "tense": "modal",
+      "difficulty": "easy",
+      "hint": "Modal + subject + verb + preposition + ?",
+      "explanation": "'May' formal permission (আনুষ্ঠানিক অনুমতি) বোঝাতে ব্যবহার হয়"
+    },
+    {
+      "id": "sb_057",
+      "scrambled": [
+        "They",
+        "have",
+        "been",
+        "living",
+        "here",
+        "since",
+        "2010"
+      ],
+      "correct": "They have been living here since 2010",
+      "tense": "present_perfect_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + have been + verb+ing + adverb + since + time",
+      "explanation": "2010 থেকে এখন পর্যন্ত এখানে বসবাস করছে"
+    },
+    {
+      "id": "sb_058",
+      "scrambled": [
+        "How",
+        "often",
+        "do",
+        "you",
+        "exercise?"
+      ],
+      "correct": "How often do you exercise?",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Wh-phrase + do + subject + verb + ?",
+      "explanation": "'How often' দিয়ে কতবার/কত ঘন ঘন জানতে চাওয়া হয়"
+    },
+    {
+      "id": "sb_059",
+      "scrambled": [
+        "was",
+        "born",
+        "I",
+        "in",
+        "1995"
+      ],
+      "correct": "I was born in 1995",
+      "tense": "past_simple",
+      "difficulty": "easy",
+      "hint": "Subject + was + past participle + preposition + year",
+      "explanation": "Passive voice: 'was born' দিয়ে জন্মের সময় বোঝানো হয়"
+    },
+    {
+      "id": "sb_060",
+      "scrambled": [
+        "will",
+        "have",
+        "finished",
+        "I",
+        "this",
+        "book",
+        "by",
+        "tomorrow"
+      ],
+      "correct": "I will have finished this book by tomorrow",
+      "tense": "future_perfect",
+      "difficulty": "hard",
+      "hint": "Subject + will have + past participle + determiner + noun + preposition + time",
+      "explanation": "Future Perfect: ভবিষ্যতে কোনো সময়ের মধ্যে শেষ হবে এমন কাজ"
+    },
+    {
+      "id": "sb_061",
+      "scrambled": [
+        "There",
+        "are",
+        "many",
+        "books",
+        "on",
+        "the",
+        "shelf"
+      ],
+      "correct": "There are many books on the shelf",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "There + are + quantifier + noun + preposition + article + noun",
+      "explanation": "'There are' দিয়ে বহুবচন বস্তুর অস্তিত্ব বোঝানো হয়"
+    },
+    {
+      "id": "sb_062",
+      "scrambled": [
+        "is",
+        "The",
+        "dog",
+        "barking",
+        "loudly",
+        "at",
+        "night"
+      ],
+      "correct": "The dog is barking loudly at night",
+      "tense": "present_continuous",
+      "difficulty": "medium",
+      "hint": "Article + subject + is + verb+ing + adverb + preposition + time",
+      "explanation": "রাতে কুকুর জোরে ঘেউ ঘেউ করছে"
+    },
+    {
+      "id": "sb_063",
+      "scrambled": [
+        "had",
+        "been",
+        "waiting",
+        "They",
+        "for",
+        "an",
+        "hour",
+        "before",
+        "she",
+        "arrived"
+      ],
+      "correct": "They had been waiting for an hour before she arrived",
+      "tense": "past_perfect_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + had been + verb+ing + preposition + time + before + clause",
+      "explanation": "Past Perfect Continuous: আগে চলছিল এবং পরে অন্য কাজ হলো"
+    },
+    {
+      "id": "sb_064",
+      "scrambled": [
+        "Would",
+        "you",
+        "like",
+        "to",
+        "join",
+        "us?"
+      ],
+      "correct": "Would you like to join us?",
+      "tense": "modal",
+      "difficulty": "easy",
+      "hint": "Modal + subject + like + to + verb + object + ?",
+      "explanation": "'Would you like to' দিয়ে বিনীত আমন্ত্রণ জানানো হয়"
+    },
+    {
+      "id": "sb_065",
+      "scrambled": [
+        "She",
+        "wakes",
+        "up",
+        "at",
+        "6",
+        "o'clock",
+        "every",
+        "day"
+      ],
+      "correct": "She wakes up at 6 o'clock every day",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + verb + adverb + preposition + time + frequency",
+      "explanation": "Daily routine বোঝাতে Present Simple ব্যবহার হয়"
+    },
+    {
+      "id": "sb_066",
+      "scrambled": [
+        "is",
+        "made",
+        "This",
+        "of",
+        "glass"
+      ],
+      "correct": "This is made of glass",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + past participle + preposition + material",
+      "explanation": "Passive: কোনো জিনিস কী দিয়ে তৈরি তা বোঝাতে 'made of' ব্যবহার হয়"
+    },
+    {
+      "id": "sb_067",
+      "scrambled": [
+        "were",
+        "They",
+        "not",
+        "at",
+        "home",
+        "last",
+        "night"
+      ],
+      "correct": "They were not at home last night",
+      "tense": "past_simple",
+      "difficulty": "easy",
+      "hint": "Subject + were + not + preposition + place + time",
+      "explanation": "Past Simple Negative with 'be': was/were + not"
+    },
+    {
+      "id": "sb_068",
+      "scrambled": [
+        "What",
+        "time",
+        "does",
+        "the",
+        "train",
+        "leave?"
+      ],
+      "correct": "What time does the train leave?",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Wh-phrase + does + article + noun + verb + ?",
+      "explanation": "Schedule সম্পর্কে জানতে Present Simple ব্যবহার হয়"
+    },
+    {
+      "id": "sb_069",
+      "scrambled": [
+        "is",
+        "going",
+        "to",
+        "rain",
+        "It",
+        "soon"
+      ],
+      "correct": "It is going to rain soon",
+      "tense": "future_going_to",
+      "difficulty": "medium",
+      "hint": "Subject + is + going to + verb + adverb",
+      "explanation": "ভবিষ্যতে ঘটবে এমন ঘটনার পূর্বাভাস দিতে 'be going to' ব্যবহার হয়"
+    },
+    {
+      "id": "sb_070",
+      "scrambled": [
+        "must",
+        "not",
+        "You",
+        "smoke",
+        "here"
+      ],
+      "correct": "You must not smoke here",
+      "tense": "modal",
+      "difficulty": "medium",
+      "hint": "Subject + must + not + verb + adverb",
+      "explanation": "'Must not' prohibition (নিষেধাজ্ঞা) বোঝাতে ব্যবহার হয়"
+    },
+    {
+      "id": "sb_071",
+      "scrambled": [
+        "has",
+        "been",
+        "working",
+        "He",
+        "for",
+        "this",
+        "company",
+        "since",
+        "2018"
+      ],
+      "correct": "He has been working for this company since 2018",
+      "tense": "present_perfect_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + has been + verb+ing + preposition + determiner + noun + since + year",
+      "explanation": "2018 থেকে এখন পর্যন্ত একই কোম্পানিতে কাজ করছে"
+    },
+    {
+      "id": "sb_072",
+      "scrambled": [
+        "Did",
+        "you",
+        "enjoy",
+        "the",
+        "movie?"
+      ],
+      "correct": "Did you enjoy the movie?",
+      "tense": "past_simple",
+      "difficulty": "easy",
+      "hint": "Did + subject + verb + article + noun + ?",
+      "explanation": "Past Simple Question: Did + subject + base verb"
+    },
+    {
+      "id": "sb_073",
+      "scrambled": [
+        "the",
+        "best",
+        "This",
+        "is",
+        "restaurant",
+        "in",
+        "town"
+      ],
+      "correct": "This is the best restaurant in town",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + article + superlative + noun + preposition + place",
+      "explanation": "Superlative: 'the best' দিয়ে সর্বোত্তম বোঝানো হয়"
+    },
+    {
+      "id": "sb_074",
+      "scrambled": [
+        "will",
+        "be",
+        "traveling",
+        "They",
+        "to",
+        "Japan",
+        "next",
+        "month"
+      ],
+      "correct": "They will be traveling to Japan next month",
+      "tense": "future_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + will be + verb+ing + preposition + place + time",
+      "explanation": "Future Continuous: পরের মাসে জাপান ভ্রমণ করবে"
+    },
+    {
+      "id": "sb_075",
+      "scrambled": [
+        "I",
+        "have",
+        "known",
+        "him",
+        "for",
+        "ten",
+        "years"
+      ],
+      "correct": "I have known him for ten years",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + have + past participle + object + preposition + time duration",
+      "explanation": "Present Perfect: দশ বছর ধরে জানে (stative verb)"
+    },
+    {
+      "id": "sb_076",
+      "scrambled": [
+        "not",
+        "allowed",
+        "is",
+        "Smoking",
+        "here"
+      ],
+      "correct": "Smoking is not allowed here",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Gerund + is + not + past participle + adverb",
+      "explanation": "Passive: ধূমপান এখানে নিষিদ্ধ"
+    },
+    {
+      "id": "sb_077",
+      "scrambled": [
+        "could",
+        "not",
+        "He",
+        "find",
+        "his",
+        "keys",
+        "anywhere"
+      ],
+      "correct": "He could not find his keys anywhere",
+      "tense": "modal",
+      "difficulty": "medium",
+      "hint": "Subject + could + not + verb + possessive + noun + adverb",
+      "explanation": "'Could not' inability (অক্ষমতা) বোঝাতে ব্যবহার হয়"
+    },
+    {
+      "id": "sb_078",
+      "scrambled": [
+        "How",
+        "many",
+        "people",
+        "were",
+        "there",
+        "at",
+        "the",
+        "party?"
+      ],
+      "correct": "How many people were there at the party?",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Wh-phrase + were + there + preposition + article + noun + ?",
+      "explanation": "'How many' দিয়ে সংখ্যা জানতে চাওয়া হয়"
+    },
+    {
+      "id": "sb_079",
+      "scrambled": [
+        "is",
+        "being",
+        "repaired",
+        "The",
+        "road",
+        "right",
+        "now"
+      ],
+      "correct": "The road is being repaired right now",
+      "tense": "present_continuous",
+      "difficulty": "hard",
+      "hint": "Article + subject + is being + past participle + time phrase",
+      "explanation": "Passive Present Continuous: এখন মেরামত করা হচ্ছে"
+    },
+    {
+      "id": "sb_080",
+      "scrambled": [
+        "If",
+        "it",
+        "rains",
+        "I",
+        "will",
+        "stay",
+        "home"
+      ],
+      "correct": "If it rains I will stay home",
+      "tense": "conditional",
+      "difficulty": "medium",
+      "hint": "If + clause + subject + will + verb + adverb",
+      "explanation": "First Conditional: সম্ভাব্য শর্ত ও তার ফলাফল"
+    },
+    {
+      "id": "sb_081",
+      "scrambled": [
+        "She",
+        "has",
+        "to",
+        "wear",
+        "a",
+        "uniform",
+        "at",
+        "work"
+      ],
+      "correct": "She has to wear a uniform at work",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + has to + verb + article + noun + preposition + place",
+      "explanation": "'Has to' obligation (বাধ্যবাধকতা) বোঝাতে ব্যবহার হয়"
+    },
+    {
+      "id": "sb_082",
+      "scrambled": [
+        "were",
+        "The",
+        "birds",
+        "flying",
+        "in",
+        "the",
+        "sky"
+      ],
+      "correct": "The birds were flying in the sky",
+      "tense": "past_continuous",
+      "difficulty": "medium",
+      "hint": "Article + subject + were + verb+ing + preposition + article + noun",
+      "explanation": "অতীতে পাখিরা আকাশে উড়ছিল"
+    },
+    {
+      "id": "sb_083",
+      "scrambled": [
+        "will",
+        "have",
+        "been",
+        "living",
+        "We",
+        "here",
+        "for",
+        "five",
+        "years",
+        "by",
+        "2027"
+      ],
+      "correct": "We will have been living here for five years by 2027",
+      "tense": "future_perfect_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + will have been + verb+ing + adverb + preposition + time + by + year",
+      "explanation": "Future Perfect Continuous: 2027 এর মধ্যে পাঁচ বছর হবে"
+    },
+    {
+      "id": "sb_084",
+      "scrambled": [
+        "Neither",
+        "he",
+        "nor",
+        "his",
+        "friends",
+        "came"
+      ],
+      "correct": "Neither he nor his friends came",
+      "tense": "past_simple",
+      "difficulty": "hard",
+      "hint": "Neither + noun + nor + possessive + noun + past verb",
+      "explanation": "'Neither...nor' দিয়ে দুটিই নয় বোঝানো হয়"
+    },
+    {
+      "id": "sb_085",
+      "scrambled": [
+        "used",
+        "to",
+        "live",
+        "I",
+        "in",
+        "a",
+        "village"
+      ],
+      "correct": "I used to live in a village",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Subject + used to + verb + preposition + article + noun",
+      "explanation": "'Used to' অতীতের অভ্যাস বা অবস্থা বোঝাতে ব্যবহার হয়"
+    },
+    {
+      "id": "sb_086",
+      "scrambled": [
+        "Why",
+        "are",
+        "you",
+        "late",
+        "today?"
+      ],
+      "correct": "Why are you late today?",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Wh-word + are + subject + adjective + time + ?",
+      "explanation": "'Why' দিয়ে কারণ জানতে চাওয়া হয়"
+    },
+    {
+      "id": "sb_087",
+      "scrambled": [
+        "The",
+        "meeting",
+        "has",
+        "been",
+        "cancelled"
+      ],
+      "correct": "The meeting has been cancelled",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Article + subject + has been + past participle",
+      "explanation": "Passive Present Perfect: মিটিং বাতিল করা হয়েছে"
+    },
+    {
+      "id": "sb_088",
+      "scrambled": [
+        "He",
+        "is",
+        "not",
+        "as",
+        "tall",
+        "as",
+        "I",
+        "am"
+      ],
+      "correct": "He is not as tall as I am",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + not + as + adjective + as + subject + verb",
+      "explanation": "'Not as...as' দিয়ে সমান নয় বোঝানো হয়"
+    },
+    {
+      "id": "sb_089",
+      "scrambled": [
+        "had",
+        "better",
+        "You",
+        "see",
+        "a",
+        "doctor"
+      ],
+      "correct": "You had better see a doctor",
+      "tense": "modal",
+      "difficulty": "medium",
+      "hint": "Subject + had better + verb + article + noun",
+      "explanation": "'Had better' শক্তিশালী পরামর্শ বোঝাতে ব্যবহার হয়"
+    },
+    {
+      "id": "sb_090",
+      "scrambled": [
+        "No",
+        "sooner",
+        "had",
+        "he",
+        "arrived",
+        "than",
+        "it",
+        "started",
+        "raining"
+      ],
+      "correct": "No sooner had he arrived than it started raining",
+      "tense": "past_perfect",
+      "difficulty": "hard",
+      "hint": "No sooner + had + subject + past participle + than + clause",
+      "explanation": "'No sooner...than' দিয়ে একটির পর অন্যটি ঘটেছে বোঝায়"
+    },
+    {
+      "id": "sb_091",
+      "scrambled": [
+        "She",
+        "is",
+        "interested",
+        "in",
+        "learning",
+        "Spanish"
+      ],
+      "correct": "She is interested in learning Spanish",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + adjective + preposition + gerund + noun",
+      "explanation": "'Interested in' দিয়ে আগ্রহ বোঝানো হয়"
+    },
+    {
+      "id": "sb_092",
+      "scrambled": [
+        "The",
+        "more",
+        "you",
+        "practice",
+        "the",
+        "better",
+        "you",
+        "become"
+      ],
+      "correct": "The more you practice the better you become",
+      "tense": "present_simple",
+      "difficulty": "hard",
+      "hint": "The + comparative + clause + the + comparative + clause",
+      "explanation": "'The more...the better' দিয়ে সমানুপাতিক বৃদ্ধি বোঝায়"
+    },
+    {
+      "id": "sb_093",
+      "scrambled": [
+        "I",
+        "wish",
+        "I",
+        "could",
+        "fly"
+      ],
+      "correct": "I wish I could fly",
+      "tense": "modal",
+      "difficulty": "medium",
+      "hint": "Subject + wish + subject + modal + verb",
+      "explanation": "'I wish' দিয়ে অসম্ভব ইচ্ছা প্রকাশ করা হয়"
+    },
+    {
+      "id": "sb_094",
+      "scrambled": [
+        "By",
+        "the",
+        "time",
+        "we",
+        "arrived",
+        "the",
+        "movie",
+        "had",
+        "started"
+      ],
+      "correct": "By the time we arrived the movie had started",
+      "tense": "past_perfect",
+      "difficulty": "hard",
+      "hint": "By the time + clause + article + noun + had + past participle",
+      "explanation": "Past Perfect: আমরা পৌঁছানোর আগেই সিনেমা শুরু হয়েছিল"
+    },
+    {
+      "id": "sb_095",
+      "scrambled": [
+        "He",
+        "is",
+        "known",
+        "for",
+        "his",
+        "honesty"
+      ],
+      "correct": "He is known for his honesty",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + past participle + preposition + possessive + noun",
+      "explanation": "Passive: তার সততার জন্য পরিচিত"
+    },
+    {
+      "id": "sb_096",
+      "scrambled": [
+        "I",
+        "would",
+        "rather",
+        "stay",
+        "home",
+        "than",
+        "go",
+        "out"
+      ],
+      "correct": "I would rather stay home than go out",
+      "tense": "modal",
+      "difficulty": "hard",
+      "hint": "Subject + would rather + verb + adverb + than + verb + adverb",
+      "explanation": "'Would rather...than' দিয়ে পছন্দের তুলনা করা হয়"
+    },
+    {
+      "id": "sb_097",
+      "scrambled": [
+        "The",
+        "letter",
+        "was",
+        "written",
+        "by",
+        "John"
+      ],
+      "correct": "The letter was written by John",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Article + subject + was + past participle + by + agent",
+      "explanation": "Passive Voice: চিঠিটি জন লিখেছিল"
+    },
+    {
+      "id": "sb_098",
+      "scrambled": [
+        "Not",
+        "only",
+        "did",
+        "he",
+        "pass",
+        "the",
+        "exam",
+        "but",
+        "also",
+        "got",
+        "a",
+        "scholarship"
+      ],
+      "correct": "Not only did he pass the exam but also got a scholarship",
+      "tense": "past_simple",
+      "difficulty": "hard",
+      "hint": "Not only + did + subject + verb + article + noun + but also + verb + article + noun",
+      "explanation": "'Not only...but also' দিয়ে দুটি তথ্য জোর দিয়ে বলা হয়"
+    },
+    {
+      "id": "sb_099",
+      "scrambled": [
+        "It",
+        "is",
+        "important",
+        "to",
+        "drink",
+        "water",
+        "every",
+        "day"
+      ],
+      "correct": "It is important to drink water every day",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "It + is + adjective + to + verb + noun + frequency",
+      "explanation": "'It is important to' দিয়ে গুরুত্ব বোঝানো হয়"
+    },
+    {
+      "id": "sb_100",
+      "scrambled": [
+        "Despite",
+        "the",
+        "rain",
+        "they",
+        "went",
+        "for",
+        "a",
+        "walk"
+      ],
+      "correct": "Despite the rain they went for a walk",
+      "tense": "past_simple",
+      "difficulty": "hard",
+      "hint": "Despite + article + noun + subject + past verb + preposition + article + noun",
+      "explanation": "'Despite' সত্ত্বেও অর্থে ব্যবহার হয় (contrast দেখাতে)"
+    },
+    {
+      "id": "sb_101",
+      "scrambled": [
+        "She",
+        "can",
+        "not",
+        "only",
+        "sing",
+        "but",
+        "also",
+        "dance"
+      ],
+      "correct": "She can not only sing but also dance",
+      "tense": "modal",
+      "difficulty": "hard",
+      "hint": "Subject + can + not only + verb + but also + verb",
+      "explanation": "'Not only...but also' দিয়ে দুটি ক্ষমতা একসাথে বলা হয়"
+    },
+    {
+      "id": "sb_102",
+      "scrambled": [
+        "I",
+        "am",
+        "looking",
+        "forward",
+        "to",
+        "meeting",
+        "you"
+      ],
+      "correct": "I am looking forward to meeting you",
+      "tense": "present_continuous",
+      "difficulty": "medium",
+      "hint": "Subject + am + looking forward to + gerund + object",
+      "explanation": "'Looking forward to' দিয়ে উন্মুখতা প্রকাশ করা হয়"
+    },
+    {
+      "id": "sb_103",
+      "scrambled": [
+        "Had",
+        "I",
+        "known",
+        "I",
+        "would",
+        "have",
+        "come",
+        "earlier"
+      ],
+      "correct": "Had I known I would have come earlier",
+      "tense": "conditional",
+      "difficulty": "hard",
+      "hint": "Had + subject + past participle + subject + would have + past participle + adverb",
+      "explanation": "Third Conditional (inversion): যদি জানতাম তাহলে আগে আসতাম"
+    },
+    {
+      "id": "sb_104",
+      "scrambled": [
+        "The",
+        "book",
+        "which",
+        "I",
+        "read",
+        "was",
+        "interesting"
+      ],
+      "correct": "The book which I read was interesting",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Article + noun + relative pronoun + subject + verb + was + adjective",
+      "explanation": "Relative clause: 'which' দিয়ে একটি বাক্যের সাথে আরেকটি বাক্য যুক্ত করা হয়"
+    },
+    {
+      "id": "sb_105",
+      "scrambled": [
+        "You",
+        "don't",
+        "have",
+        "to",
+        "come",
+        "if",
+        "you",
+        "are",
+        "busy"
+      ],
+      "correct": "You don't have to come if you are busy",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + don't have to + verb + if + clause",
+      "explanation": "'Don't have to' দিয়ে কোনো বাধ্যবাধকতা নেই বোঝানো হয়"
+    },
+    {
+      "id": "sb_106",
+      "scrambled": [
+        "He",
+        "is",
+        "used",
+        "to",
+        "getting",
+        "up",
+        "early"
+      ],
+      "correct": "He is used to getting up early",
+      "tense": "present_simple",
+      "difficulty": "hard",
+      "hint": "Subject + is + used to + gerund + adverb",
+      "explanation": "'Be used to' দিয়ে অভ্যস্ত বোঝানো হয় (gerund নেয়)"
+    },
+    {
+      "id": "sb_107",
+      "scrambled": [
+        "What",
+        "a",
+        "beautiful",
+        "sunset",
+        "this",
+        "is!"
+      ],
+      "correct": "What a beautiful sunset this is!",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "What + article + adjective + noun + subject + verb + !",
+      "explanation": "Exclamatory sentence: 'What a' দিয়ে বিস্ময় প্রকাশ করা হয়"
+    },
+    {
+      "id": "sb_108",
+      "scrambled": [
+        "I",
+        "have",
+        "been",
+        "trying",
+        "to",
+        "reach",
+        "you",
+        "all",
+        "day"
+      ],
+      "correct": "I have been trying to reach you all day",
+      "tense": "present_perfect_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + have been + verb+ing + to + verb + object + time phrase",
+      "explanation": "সারাদিন ধরে চেষ্টা করছি (Present Perfect Continuous)"
+    },
+    {
+      "id": "sb_109",
+      "scrambled": [
+        "The",
+        "man",
+        "who",
+        "helped",
+        "me",
+        "was",
+        "kind"
+      ],
+      "correct": "The man who helped me was kind",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Article + noun + relative pronoun + verb + object + was + adjective",
+      "explanation": "Relative clause: 'who' দিয়ে ব্যক্তি সম্পর্কে তথ্য যোগ করা হয়"
+    },
+    {
+      "id": "sb_110",
+      "scrambled": [
+        "I",
+        "would",
+        "have",
+        "helped",
+        "you",
+        "if",
+        "I",
+        "had",
+        "known"
+      ],
+      "correct": "I would have helped you if I had known",
+      "tense": "conditional",
+      "difficulty": "hard",
+      "hint": "Subject + would have + past participle + object + if + clause",
+      "explanation": "Third Conditional: অতীতের অসম্ভব শর্ত ও তার ফলাফল"
+    },
+    {
+      "id": "sb_111",
+      "scrambled": [
+        "She",
+        "apologized",
+        "for",
+        "being",
+        "late"
+      ],
+      "correct": "She apologized for being late",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Subject + past verb + preposition + gerund + adjective",
+      "explanation": "'Apologize for' + gerund দিয়ে দেরি করার জন্য ক্ষমা চাওয়া"
+    },
+    {
+      "id": "sb_112",
+      "scrambled": [
+        "It",
+        "was",
+        "the",
+        "most",
+        "exciting",
+        "match",
+        "I",
+        "had",
+        "ever",
+        "seen"
+      ],
+      "correct": "It was the most exciting match I had ever seen",
+      "tense": "past_perfect",
+      "difficulty": "hard",
+      "hint": "Subject + was + article + most + adjective + noun + clause",
+      "explanation": "Superlative + Past Perfect: এ পর্যন্ত দেখা সবচেয়ে উত্তেজক ম্যাচ"
+    },
+    {
+      "id": "sb_113",
+      "scrambled": [
+        "He",
+        "asked",
+        "me",
+        "where",
+        "I",
+        "lived"
+      ],
+      "correct": "He asked me where I lived",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Subject + past verb + object + wh-word + subject + past verb",
+      "explanation": "Reported Speech: প্রশ্নটি past tense এ রিপোর্ট করা হয়েছে"
+    },
+    {
+      "id": "sb_114",
+      "scrambled": [
+        "I",
+        "am",
+        "not",
+        "allowed",
+        "to",
+        "stay",
+        "out",
+        "late"
+      ],
+      "correct": "I am not allowed to stay out late",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + am + not + past participle + to + verb + adverb + adjective",
+      "explanation": "Passive: দেরি করে বাইরে থাকার অনুমতি নেই"
+    },
+    {
+      "id": "sb_115",
+      "scrambled": [
+        "She",
+        "told",
+        "me",
+        "that",
+        "she",
+        "would",
+        "come"
+      ],
+      "correct": "She told me that she would come",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Subject + past verb + object + that + clause",
+      "explanation": "Reported Speech: 'will' পরিবর্তিত হয়ে 'would' হয়েছে"
+    },
+    {
+      "id": "sb_116",
+      "scrambled": [
+        "If",
+        "I",
+        "were",
+        "you",
+        "I",
+        "would",
+        "accept",
+        "the",
+        "job"
+      ],
+      "correct": "If I were you I would accept the job",
+      "tense": "conditional",
+      "difficulty": "hard",
+      "hint": "If + subject + were + object + subject + would + verb + article + noun",
+      "explanation": "Second Conditional: বাস্তবতার বিপরীত শর্ত (আমি যদি তুমি হতাম)"
+    },
+    {
+      "id": "sb_117",
+      "scrambled": [
+        "The",
+        "more",
+        "he",
+        "earns",
+        "the",
+        "more",
+        "he",
+        "spends"
+      ],
+      "correct": "The more he earns the more he spends",
+      "tense": "present_simple",
+      "difficulty": "hard",
+      "hint": "The + comparative + clause + the + comparative + clause",
+      "explanation": "যত বেশি আয় করে তত বেশি খরচ করে (সমান্তরাল বৃদ্ধি)"
+    },
+    {
+      "id": "sb_118",
+      "scrambled": [
+        "I",
+        "am",
+        "fond",
+        "of",
+        "reading",
+        "novels"
+      ],
+      "correct": "I am fond of reading novels",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + am + adjective + preposition + gerund + noun",
+      "explanation": "'Fond of' + gerund দিয়ে পছন্দ বোঝানো হয়"
+    },
+    {
+      "id": "sb_119",
+      "scrambled": [
+        "He",
+        "is",
+        "too",
+        "tired",
+        "to",
+        "walk",
+        "any",
+        "further"
+      ],
+      "correct": "He is too tired to walk any further",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + too + adjective + to + verb + adverb",
+      "explanation": "'Too...to' দিয়ে এত বেশি যে...না বোঝানো হয়"
+    },
+    {
+      "id": "sb_120",
+      "scrambled": [
+        "I",
+        "prefer",
+        "tea",
+        "to",
+        "coffee"
+      ],
+      "correct": "I prefer tea to coffee",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Subject + prefer + noun + to + noun",
+      "explanation": "'Prefer...to' দিয়ে দুটির মধ্যে পছন্দ বোঝানো হয়"
+    },
+    {
+      "id": "sb_121",
+      "scrambled": [
+        "She",
+        "has",
+        "a",
+        "lot",
+        "of",
+        "experience",
+        "in",
+        "teaching"
+      ],
+      "correct": "She has a lot of experience in teaching",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + has + quantifier + noun + preposition + gerund",
+      "explanation": "'A lot of' দিয়ে প্রচুর পরিমাণ বোঝানো হয়"
+    },
+    {
+      "id": "sb_122",
+      "scrambled": [
+        "We",
+        "are",
+        "looking",
+        "for",
+        "a",
+        "new",
+        "apartment"
+      ],
+      "correct": "We are looking for a new apartment",
+      "tense": "present_continuous",
+      "difficulty": "medium",
+      "hint": "Subject + are + verb+ing + preposition + article + adjective + noun",
+      "explanation": "বর্তমানে নতুন অ্যাপার্টমেন্ট খুঁজছেন"
+    },
+    {
+      "id": "sb_123",
+      "scrambled": [
+        "He",
+        "succeeded",
+        "in",
+        "solving",
+        "the",
+        "problem"
+      ],
+      "correct": "He succeeded in solving the problem",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Subject + past verb + preposition + gerund + article + noun",
+      "explanation": "'Succeed in' + gerund দিয়ে সফল হওয়া বোঝানো হয়"
+    },
+    {
+      "id": "sb_124",
+      "scrambled": [
+        "I",
+        "am",
+        "thinking",
+        "of",
+        "changing",
+        "my",
+        "job"
+      ],
+      "correct": "I am thinking of changing my job",
+      "tense": "present_continuous",
+      "difficulty": "medium",
+      "hint": "Subject + am + verb+ing + preposition + gerund + possessive + noun",
+      "explanation": "'Thinking of' দিয়ে চিন্তাভাবনা করা বোঝানো হয়"
+    },
+    {
+      "id": "sb_125",
+      "scrambled": [
+        "The",
+        "harder",
+        "you",
+        "work",
+        "the",
+        "more",
+        "you",
+        "achieve"
+      ],
+      "correct": "The harder you work the more you achieve",
+      "tense": "present_simple",
+      "difficulty": "hard",
+      "hint": "The + comparative + clause + the + comparative + clause",
+      "explanation": "যত কঠোর পরিশ্রম করবে তত বেশি অর্জন করবে"
+    },
+    {
+      "id": "sb_126",
+      "scrambled": [
+        "I",
+        "am",
+        "sorry",
+        "for",
+        "disturbing",
+        "you"
+      ],
+      "correct": "I am sorry for disturbing you",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Subject + am + adjective + preposition + gerund + object",
+      "explanation": "'Sorry for' + gerund দিয়ে দুঃখ প্রকাশ করা হয়"
+    },
+    {
+      "id": "sb_127",
+      "scrambled": [
+        "He",
+        "was",
+        "accused",
+        "of",
+        "stealing",
+        "money"
+      ],
+      "correct": "He was accused of stealing money",
+      "tense": "past_simple",
+      "difficulty": "hard",
+      "hint": "Subject + was + past participle + preposition + gerund + noun",
+      "explanation": "Passive: 'Accused of' দিয়ে অভিযুক্ত বোঝানো হয়"
+    },
+    {
+      "id": "sb_128",
+      "scrambled": [
+        "I",
+        "look",
+        "forward",
+        "to",
+        "hearing",
+        "from",
+        "you"
+      ],
+      "correct": "I look forward to hearing from you",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + look forward to + gerund + preposition + object",
+      "explanation": "'Look forward to' দিয়ে অপেক্ষায় থাকা বোঝানো হয়"
+    },
+    {
+      "id": "sb_129",
+      "scrambled": [
+        "She",
+        "is",
+        "capable",
+        "of",
+        "doing",
+        "this",
+        "work"
+      ],
+      "correct": "She is capable of doing this work",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + adjective + preposition + gerund + determiner + noun",
+      "explanation": "'Capable of' + gerund দিয়ে সক্ষমতা বোঝানো হয়"
+    },
+    {
+      "id": "sb_130",
+      "scrambled": [
+        "We",
+        "must",
+        "put",
+        "an",
+        "end",
+        "to",
+        "this",
+        "practice"
+      ],
+      "correct": "We must put an end to this practice",
+      "tense": "modal",
+      "difficulty": "medium",
+      "hint": "Subject + modal + verb + article + noun + preposition + determiner + noun",
+      "explanation": "'Put an end to' দিয়ে শেষ করা বোঝানো হয়"
+    },
+    {
+      "id": "sb_131",
+      "scrambled": [
+        "He",
+        "is",
+        "good",
+        "at",
+        "playing",
+        "guitar"
+      ],
+      "correct": "He is good at playing guitar",
+      "tense": "present_simple",
+      "difficulty": "easy",
+      "hint": "Subject + is + adjective + preposition + gerund + noun",
+      "explanation": "'Good at' + gerund দিয়ে দক্ষতা বোঝানো হয়"
+    },
+    {
+      "id": "sb_132",
+      "scrambled": [
+        "I",
+        "am",
+        "tired",
+        "of",
+        "waiting",
+        "for",
+        "him"
+      ],
+      "correct": "I am tired of waiting for him",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + am + adjective + preposition + gerund + preposition + object",
+      "explanation": "'Tired of' + gerund দিয়ে বিরক্ত বোঝানো হয়"
+    },
+    {
+      "id": "sb_133",
+      "scrambled": [
+        "She",
+        "insisted",
+        "on",
+        "paying",
+        "the",
+        "bill"
+      ],
+      "correct": "She insisted on paying the bill",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Subject + past verb + preposition + gerund + article + noun",
+      "explanation": "'Insist on' + gerund দিয়ে জোর দেওয়া বোঝানো হয়"
+    },
+    {
+      "id": "sb_134",
+      "scrambled": [
+        "I",
+        "am",
+        "interested",
+        "in",
+        "applying",
+        "for",
+        "this",
+        "job"
+      ],
+      "correct": "I am interested in applying for this job",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + am + adjective + preposition + gerund + preposition + determiner + noun",
+      "explanation": "'Interested in' + gerund দিয়ে আগ্রহ বোঝানো হয়"
+    },
+    {
+      "id": "sb_135",
+      "scrambled": [
+        "He",
+        "is",
+        "known",
+        "to",
+        "be",
+        "a",
+        "great",
+        "leader"
+      ],
+      "correct": "He is known to be a great leader",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + past participle + to + verb + article + adjective + noun",
+      "explanation": "Passive: 'Known to be' দিয়ে পরিচিতি বোঝানো হয়"
+    },
+    {
+      "id": "sb_136",
+      "scrambled": [
+        "I",
+        "used",
+        "to",
+        "play",
+        "cricket",
+        "when",
+        "I",
+        "was",
+        "young"
+      ],
+      "correct": "I used to play cricket when I was young",
+      "tense": "past_simple",
+      "difficulty": "medium",
+      "hint": "Subject + used to + verb + noun + when + clause",
+      "explanation": "'Used to' অতীতের অভ্যাস বোঝাতে"
+    },
+    {
+      "id": "sb_137",
+      "scrambled": [
+        "She",
+        "would",
+        "often",
+        "visit",
+        "us",
+        "when",
+        "she",
+        "was",
+        "in",
+        "town"
+      ],
+      "correct": "She would often visit us when she was in town",
+      "tense": "past_simple",
+      "difficulty": "hard",
+      "hint": "Subject + would + adverb + verb + object + when + clause",
+      "explanation": "'Would' দিয়ে অতীতের পুনরাবৃত্তিমূলক অভ্যাস বোঝানো হয়"
+    },
+    {
+      "id": "sb_138",
+      "scrambled": [
+        "I",
+        "had",
+        "my",
+        "car",
+        "repaired",
+        "yesterday"
+      ],
+      "correct": "I had my car repaired yesterday",
+      "tense": "past_simple",
+      "difficulty": "hard",
+      "hint": "Subject + had + possessive + noun + past participle + time",
+      "explanation": "Causative: 'have something done' দিয়ে অন্যকে দিয়ে করানো বোঝায়"
+    },
+    {
+      "id": "sb_139",
+      "scrambled": [
+        "Let",
+        "us",
+        "go",
+        "for",
+        "a",
+        "walk"
+      ],
+      "correct": "Let us go for a walk",
+      "tense": "imperative",
+      "difficulty": "easy",
+      "hint": "Let + object + verb + preposition + article + noun",
+      "explanation": "'Let us' দিয়ে প্রস্তাব দেওয়া হয়"
+    },
+    {
+      "id": "sb_140",
+      "scrambled": [
+        "Please",
+        "turn",
+        "off",
+        "the",
+        "lights",
+        "when",
+        "you",
+        "leave"
+      ],
+      "correct": "Please turn off the lights when you leave",
+      "tense": "imperative",
+      "difficulty": "medium",
+      "hint": "Adverb + phrasal verb + article + noun + when + clause",
+      "explanation": "Imperative: অনুরোধ বা আদেশ বোঝাতে"
+    },
+    {
+      "id": "sb_141",
+      "scrambled": [
+        "He",
+        "is",
+        "so",
+        "tired",
+        "that",
+        "he",
+        "cannot",
+        "work"
+      ],
+      "correct": "He is so tired that he cannot work",
+      "tense": "present_simple",
+      "difficulty": "medium",
+      "hint": "Subject + is + so + adjective + that + clause",
+      "explanation": "'So...that' দিয়ে কারণ ও ফলাফল বোঝানো হয়"
+    },
+    {
+      "id": "sb_142",
+      "scrambled": [
+        "It",
+        "was",
+        "such",
+        "a",
+        "hot",
+        "day",
+        "that",
+        "we",
+        "stayed",
+        "home"
+      ],
+      "correct": "It was such a hot day that we stayed home",
+      "tense": "past_simple",
+      "difficulty": "hard",
+      "hint": "Subject + was + such + article + adjective + noun + that + clause",
+      "explanation": "'Such...that' দিয়ে এত বেশি যে...বোঝানো হয়"
+    },
+    {
+      "id": "sb_143",
+      "scrambled": [
+        "I",
+        "have",
+        "been",
+        "to",
+        "the",
+        "US",
+        "twice"
+      ],
+      "correct": "I have been to the US twice",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + have + been + preposition + article + noun + frequency",
+      "explanation": "Present Perfect: জীবনের অভিজ্ঞতা বোঝাতে"
+    },
+    {
+      "id": "sb_144",
+      "scrambled": [
+        "He",
+        "has",
+        "not",
+        "come",
+        "home",
+        "yet"
+      ],
+      "correct": "He has not come home yet",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + has + not + past participle + noun + adverb",
+      "explanation": "'Yet' সাধারণত negative sentence এর শেষে বসে"
+    },
+    {
+      "id": "sb_145",
+      "scrambled": [
+        "I",
+        "have",
+        "just",
+        "finished",
+        "my",
+        "lunch"
+      ],
+      "correct": "I have just finished my lunch",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + have + adverb + past participle + possessive + noun",
+      "explanation": "'Just' দিয়ে এইমাত্র শেষ হয়েছে বোঝানো হয়"
+    },
+    {
+      "id": "sb_146",
+      "scrambled": [
+        "She",
+        "has",
+        "been",
+        "to",
+        "Paris",
+        "three",
+        "times"
+      ],
+      "correct": "She has been to Paris three times",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + has + been + preposition + place + frequency",
+      "explanation": "Present Perfect: জীবনের অভিজ্ঞতা (কতবার)"
+    },
+    {
+      "id": "sb_147",
+      "scrambled": [
+        "I",
+        "have",
+        "not",
+        "seen",
+        "him",
+        "since",
+        "Monday"
+      ],
+      "correct": "I have not seen him since Monday",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + have + not + past participle + object + since + time",
+      "explanation": "'Since' দিয়ে নির্দিষ্ট সময় থেকে বোঝানো হয়"
+    },
+    {
+      "id": "sb_148",
+      "scrambled": [
+        "We",
+        "have",
+        "known",
+        "each",
+        "other",
+        "for",
+        "a",
+        "long",
+        "time"
+      ],
+      "correct": "We have known each other for a long time",
+      "tense": "present_perfect",
+      "difficulty": "medium",
+      "hint": "Subject + have + past participle + reciprocal pronoun + preposition + time",
+      "explanation": "Present Perfect: দীর্ঘ সময় ধরে পরিচিত"
+    },
+    {
+      "id": "sb_149",
+      "scrambled": [
+        "He",
+        "has",
+        "gone",
+        "to",
+        "the",
+        "bank"
+      ],
+      "correct": "He has gone to the bank",
+      "tense": "present_perfect",
+      "difficulty": "easy",
+      "hint": "Subject + has + past participle + preposition + article + noun",
+      "explanation": "'Has gone' দিয়ে গেছে এবং এখনও ফিরে আসেনি বোঝায়"
+    },
+    {
+      "id": "sb_150",
+      "scrambled": [
+        "I",
+        "have",
+        "been",
+        "learning",
+        "English",
+        "for",
+        "two",
+        "years"
+      ],
+      "correct": "I have been learning English for two years",
+      "tense": "present_perfect_continuous",
+      "difficulty": "hard",
+      "hint": "Subject + have been + verb+ing + noun + preposition + time",
+      "explanation": "Present Perfect Continuous: দুই বছর ধরে ইংরেজি শিখছে"
+    }
+  ]
+}
