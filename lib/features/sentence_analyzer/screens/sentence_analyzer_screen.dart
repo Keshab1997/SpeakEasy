@@ -65,19 +65,27 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
 
     try {
       final response = await AIService().sendMessageWithSystem(
-        'Create one natural Bangla sentence in "$tense" tense and analyze it completely.\n'
-        'Return ONLY valid JSON with these keys:\n'
-        '- banglaSentence: the Bangla sentence in $tense tense\n'
-        '- tense: "$tense" with a brief Bangla explanation of this tense\n'
-        '- subject: who is the subject (কর্তা)\n'
-        '- object: what is the object (কর্ম), if any. If no object, write "None"\n'
-        '- wordBreakdown: word-by-word analysis in Bangla\n'
-        '- englishTranslation: English translation\n'
-        '- explanation: simple Bangla explanation of the sentence grammar\n'
-        'IMPORTANT: Do NOT wrap the JSON in markdown code blocks. Return ONLY the raw JSON object.',
-        systemPrompt: 'You are a Bengali grammar teacher. Always respond in valid JSON format only. '
-            'Explain grammar concepts simply in Bangla so a beginner can understand. '
-            'Never include markdown formatting like ```json in your response.',
+        'Create one natural Bangla sentence in "$tense" tense and analyze it.\n\n'
+        'Example format (for "$tense"):\n'
+        '{\n'
+        '  "banglaSentence": "আমি প্রতিদিন ভাত খাই।",\n'
+        '  "tense": "Present Simple — নিয়মিত কাজ বা অভ্যাস বোঝাতে ব্যবহার হয়।",\n'
+        '  "subject": "আমি (I)",\n'
+        '  "object": "ভাত (rice)",\n'
+        '  "wordBreakdown": "আমি = Subject\\nপ্রতিদিন = Time expression\\nভাত = Object\\nখাই = Present simple verb",\n'
+        '  "englishTranslation": "I eat rice every day.",\n'
+        '  "explanation": "এই বাক্যে কাজটি নিয়মিত হয়। English-এ Subject + base verb + object + time ব্যবহার করা হয়েছে।"\n'
+        '}\n\n'
+        'Now create a similar Bangla sentence for "$tense" tense following this EXACT structure.\n'
+        'IMPORTANT:\n'
+        '- Return ONLY valid JSON (no markdown, no code blocks, no extra text)\n'
+        '- Use \\n for line breaks in wordBreakdown\n'
+        '- Keep tense explanation in Bangla\n'
+        '- If no object exists, use empty string "" for object field\n'
+        '- Make the sentence natural and easy to understand',
+        systemPrompt: 'You are a Bengali grammar expert. Return ONLY valid JSON. '
+            'Never use markdown code blocks or extra formatting. '
+            'Explain grammar in simple Bangla that beginners can understand easily.',
         maxTokens: 2048,
       );
 
@@ -114,18 +122,21 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
 
     try {
       final response = await AIService().sendMessageWithSystem(
-        'Based on this sentence analysis, create a practice task:\n\n'
-        'Bangla: ${_analysis!.banglaSentence}\n'
-        'Tense: ${_analysis!.tense}\n'
-        'Subject: ${_analysis!.subject}\n'
-        'Object: ${_analysis!.object}\n\n'
-        'The task should test the same grammar concept. '
-        'Return ONLY valid JSON with keys:\n'
-        '- instruction: task description in Bangla (e.g. "এখন তুমি চেষ্টা করো: নিচের বাক্যটি ইংরেজিতে অনুবাদ করো")\n'
-        '- correctAnswer: the expected correct answer\n'
-        'IMPORTANT: Do NOT wrap the JSON in markdown. Return ONLY the raw JSON object.',
-        systemPrompt: 'You are a Bengali grammar teacher. Create simple, clear practice tasks. '
-            'Respond in valid JSON only. Never use markdown code blocks.',
+        'Based on this Bangla sentence: "${_analysis!.banglaSentence}"\n'
+        'English: "${_analysis!.englishTranslation}"\n\n'
+        'Create a translation practice task.\n\n'
+        'Example format:\n'
+        '{\n'
+        '  "instruction": "এখন তুমি চেষ্টা করো: \\"${_analysis!.banglaSentence}\\" বাক্যটি ইংরেজিতে অনুবাদ করো।",\n'
+        '  "correctAnswer": "${_analysis!.englishTranslation}"\n'
+        '}\n\n'
+        'Return ONLY this JSON structure with the task.\n'
+        'IMPORTANT:\n'
+        '- Use the EXACT Bangla sentence in instruction\n'
+        '- Use the EXACT English translation as correctAnswer\n'
+        '- No markdown, no code blocks, just pure JSON',
+        systemPrompt: 'You are a Bengali grammar teacher. Return ONLY valid JSON. '
+            'Never add extra formatting or markdown blocks.',
         maxTokens: 1024,
       );
 

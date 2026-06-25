@@ -67,34 +67,37 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ref.read(statisticsProvider.notifier).refresh();
 
       // 🔥 STREAK CALCULATION — called every time the app opens:
-      // 1. Check if streak should increment (new day) or reset (missed >48h)
+      final now = DateTime.now();
+      
+      // 1. Update HiveService weekly activity + last practice date FIRST
+      await HiveService.markDayActive(now.weekday);
+      await HiveService.setLastPracticeDate(now);
+      
+      // 2. Check if streak should increment (new day) or reset (missed >48h)
       final streakNotifier = ref.read(streakProvider.notifier);
       final newStreak = await streakNotifier.checkAndUpdateStreak();
 
-      // 2. Record today as active (updates lastActiveDate, totalActiveDays)
+      // 3. Record today as active (updates lastActiveDate, totalActiveDays)
       await streakNotifier.recordActiveDay();
-
-      // 3. Update HiveService weekly activity + last practice date
-      final now = DateTime.now();
-      await HiveService.markDayActive(now.weekday);
-      await HiveService.setLastPracticeDate(now);
 
       // 4. Handle streak freeze — if streak was reset to 1 and we have a freeze, restore it
       if (newStreak == 1) {
-        final hadFreeze = await HiveService.useStreakFreeze();
-        if (hadFreeze) {
-          // Restore the streak from before the reset
-          final progress = ref.read(progressProvider).asData?.value;
-          final oldStreak = progress?.streakDays ?? 1;
-          // Increment back to old value + 1
-          for (int i = 1; i < oldStreak; i++) {
-            await streakNotifier.incrementStreak();
+        final progress = ref.read(progressProvider).asData?.value;
+        final oldStreak = progress?.streakDays ?? 0;
+        if (oldStreak > 1) {
+          final hadFreeze = await HiveService.useStreakFreeze();
+          if (hadFreeze) {
+            // Restore the streak from before the reset
+            for (int i = 1; i < oldStreak; i++) {
+              await streakNotifier.incrementStreak();
+            }
           }
         }
       }
 
-      // Refresh streak state after all updates
+      // 5. Refresh ALL providers after streak updates
       streakNotifier.refresh();
+      ref.read(progressProvider.notifier).fetchProgress();
     });
   }
 
@@ -348,9 +351,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // 1. Greeting
               _buildGreetingSection(theme, user?.name),
               const SizedBox(height: 20),
-              // Duolingo-style Streak Widget with weekly calendar
+              
+              // 2. Streak & Progress
               StreakWidget(
                 currentStreak: currentStreak,
                 todayXP: currentXP,
@@ -362,32 +367,38 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 onBuyFreeze: () => _buyStreakFreeze(context, ref, currentCoins),
                 onShare: () => _shareStreak(context, currentStreak),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 16),
               _buildProgressCard(theme, currentStreak, lessonsCompleted, progressPct, totalLessons, currentXP, currentCoins, currentLevel),
               const SizedBox(height: 24),
-              _buildTodaysWordCard(theme, isDark, todayWords, isLoading: chaptersAsync.isLoading),
-              const SizedBox(height: 24),
-              _buildAiTeacherBanner(theme),
-              const SizedBox(height: 24),
-              _buildHomeworkCard(theme),
-              const SizedBox(height: 24),
-              _buildSentenceAnalyzerCard(theme),
-              const SizedBox(height: 24),
+              
+              // 3. Continue Learning (Most Important)
               _buildContinueLearningSection(
                 theme, isDark, studyState, allGrammarChapters, allVocabChapters, lastOpenedChapter,
               ),
               const SizedBox(height: 24),
-              const StudyPlanSection(),
+              
+              // 4. Today's Word
+              _buildTodaysWordCard(theme, isDark, todayWords, isLoading: chaptersAsync.isLoading),
               const SizedBox(height: 24),
+              
+              // 6. Learning Modules
               _buildHomeLearningSection(theme, isDark),
               const SizedBox(height: 24),
+              
+              // 7. Practice Section
               _buildHomePracticeSection(theme, isDark),
               const SizedBox(height: 24),
-              _buildDailyChallengeCard(theme, currentStreak),
+              
+              // 8. Game Section
+              _buildGameCard(theme, isDark),
               const SizedBox(height: 24),
-              _buildTenseGameCard(theme, isDark),
+              
+              // 9. AI Features (Combined)
+              _buildAIFeaturesSection(theme, isDark),
               const SizedBox(height: 24),
-              _buildAchievementsSection(theme, isDark, currentStreak, lessonsCompleted, favoritesCount),
+              
+              // 10. Study Plan
+              const StudyPlanSection(),
               const SizedBox(height: 32),
             ],
           ),
@@ -1560,8 +1571,101 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     );
   }
 
-  // TENSE GAME CARD
-  Widget _buildTenseGameCard(ThemeData theme, bool isDark) {
+  // AI FEATURES SECTION - Combined AI Teacher, Homework, Sentence Analyzer
+  Widget _buildAIFeaturesSection(ThemeData theme, bool isDark) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            const Icon(Icons.auto_awesome_rounded, color: AppColors.primary, size: 22),
+            const SizedBox(width: 8),
+            Text('AI-Powered Learning', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800)),
+          ],
+        ),
+        const SizedBox(height: 12),
+        SizedBox(
+          height: 160,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            itemCount: 3,
+            separatorBuilder: (_, __) => const SizedBox(width: 16),
+            itemBuilder: (_, i) {
+              final items = [
+                {
+                  'title': 'AI Teacher',
+                  'subtitle': 'Chat & get feedback',
+                  'icon': Icons.smart_toy_rounded,
+                  'gradient': [const Color(0xFF667EEA), const Color(0xFF764BA2)],
+                  'onTap': () => widget.onNavigateToTab?.call(3),
+                },
+                {
+                  'title': 'AI Homework',
+                  'subtitle': 'Translation practice',
+                  'icon': Icons.home_work_rounded,
+                  'gradient': [const Color(0xFF6366F1), const Color(0xFF8B5CF6)],
+                  'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HomeworkScreen())),
+                },
+                {
+                  'title': 'Sentence Analyzer',
+                  'subtitle': 'Learn grammar deeply',
+                  'icon': Icons.auto_stories_rounded,
+                  'gradient': [const Color(0xFF8B5CF6), const Color(0xFF6366F1)],
+                  'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SentenceAnalyzerScreen())),
+                },
+              ];
+              final item = items[i];
+              final grad = item['gradient'] as List<Color>;
+              return GestureDetector(
+                onTap: item['onTap'] as VoidCallback,
+                child: Container(
+                  width: 200,
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: grad, begin: Alignment.topLeft, end: Alignment.bottomRight),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [BoxShadow(color: grad[0].withOpacity(0.3), blurRadius: 12, offset: const Offset(0, 6))],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Icon(item['icon'] as IconData, color: Colors.white, size: 28),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            item['title'] as String,
+                            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSize: 16),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            item['subtitle'] as String,
+                            style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  // GAME CARD
+  Widget _buildGameCard(ThemeData theme, bool isDark) {
     return GestureDetector(
       onTap: () => Navigator.push(
         context,
@@ -1600,7 +1704,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: const Text(
-                        'TENSE GAME',
+                        'GAME',
                         style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1.0),
                       ),
                     ),
@@ -1610,12 +1714,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ),
                 const SizedBox(height: 12),
                 const Text(
-                  'Tense Mastery',
+                  'Learning Games',
                   style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Practice tenses with fun game modes, earn XP & coins!',
+                  'Play fun learning games, practice English & earn rewards!',
                   style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 13),
                 ),
                 const SizedBox(height: 16),

@@ -76,15 +76,26 @@ class _StreakWidgetState extends State<StreakWidget>
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: widget.currentStreak > 0
-              ? [
-                  Colors.orange.shade700,
-                  Colors.deepOrange.shade600,
-                  Colors.red.shade700,
-                ]
-              : [
-                  Colors.grey.shade400,
-                  Colors.grey.shade600,
-                ],
+              ? isDark
+                  ? [
+                      const Color(0xFFFF6B35),
+                      const Color(0xFFF7931E),
+                      const Color(0xFFE85D04),
+                    ]
+                  : [
+                      const Color(0xFFFF6F00),
+                      const Color(0xFFFF8F00),
+                      const Color(0xFFFF5722),
+                    ]
+              : isDark
+                  ? [
+                      const Color(0xFF4A4A4A),
+                      const Color(0xFF2D2D2D),
+                    ]
+                  : [
+                      const Color(0xFFBDBDBD),
+                      const Color(0xFF9E9E9E),
+                    ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -92,8 +103,8 @@ class _StreakWidgetState extends State<StreakWidget>
         boxShadow: [
           BoxShadow(
             color: widget.currentStreak > 0
-                ? Colors.orange.withOpacity(0.3)
-                : Colors.grey.withOpacity(0.2),
+                ? (isDark ? const Color(0xFFFF6B35).withOpacity(0.4) : Colors.orange.withOpacity(0.3))
+                : (isDark ? Colors.black.withOpacity(0.3) : Colors.grey.withOpacity(0.2)),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
