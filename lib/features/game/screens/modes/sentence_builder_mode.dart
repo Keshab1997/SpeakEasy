@@ -321,7 +321,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
 
   Widget _buildHeader(double progress) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.1),
         boxShadow: [
@@ -332,46 +332,48 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
           ),
         ],
       ),
-      child: Column(
+      child: Row(
         children: [
-          Row(
-            children: [
-              IconButton(
-                icon: const Icon(Icons.close, color: Colors.white),
-                onPressed: () => Navigator.pop(context),
-              ),
-              Expanded(
-                child: Column(
+          IconButton(
+            icon: const Icon(Icons.close, color: Colors.white, size: 20),
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(),
+            onPressed: () => Navigator.pop(context),
+          ),
+          const SizedBox(width: 8),
+          _buildTimerCircle(),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
                   children: [
                     Text(
-                      'Question ${_currentQuestionIndex + 1}/${_selectedQuestions.length}',
-                      style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                      'Q${_currentQuestionIndex + 1}/${_selectedQuestions.length}',
+                      style: const TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 8),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        backgroundColor: Colors.white30,
-                        valueColor: const AlwaysStoppedAnimation<Color>(Colors.amber),
-                        minHeight: 8,
-                      ),
-                    ),
+                    const SizedBox(width: 8),
+                    _buildCompactStatChip(Icons.stars, '$_score', Colors.amber),
+                    const SizedBox(width: 6),
+                    _buildCompactStatChip(Icons.local_fire_department, '$_streak', Colors.orange),
+                    const SizedBox(width: 6),
+                    _buildCompactStatChip(Icons.check_circle, '$_correctCount', Colors.green),
                   ],
                 ),
-              ),
-              const SizedBox(width: 8),
-              _buildTimerCircle(),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildStatChip(Icons.stars, 'Score', '$_score', Colors.amber),
-              _buildStatChip(Icons.local_fire_department, 'Streak', '$_streak', Colors.orange),
-              _buildStatChip(Icons.check_circle, 'Correct', '$_correctCount', Colors.green),
-            ],
+                const SizedBox(height: 6),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: LinearProgressIndicator(
+                    value: progress,
+                    backgroundColor: Colors.white30,
+                    valueColor: const AlwaysStoppedAnimation<Color>(Colors.amber),
+                    minHeight: 4,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -408,21 +410,21 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
     );
   }
 
-  Widget _buildStatChip(IconData icon, String label, String value, Color color) {
+  Widget _buildCompactStatChip(IconData icon, String value, Color color) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.2),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, color: color, size: 16),
-          const SizedBox(width: 4),
+          Icon(icon, color: color, size: 12),
+          const SizedBox(width: 3),
           Text(
             value,
-            style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+            style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
           ),
         ],
       ),

@@ -1,0 +1,1007 @@
+{
+  "game": "Grammar Detective",
+  "description": "Find and correct grammar mistakes in English sentences",
+  "version": "2.0.0",
+  "questions": [
+    {
+      "id": "gd_001",
+      "incorrect": "He go to school every day.",
+      "highlighted": "go",
+      "correct": "goes",
+      "options": ["go", "goes", "went", "going"],
+      "rule": "Present Simple: 3rd person singular subject (He/She/It) এর সাথে verb-এ 's' বা 'es' যোগ করতে হবে",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_002",
+      "incorrect": "She don't like coffee.",
+      "highlighted": "don't",
+      "correct": "doesn't",
+      "options": ["don't", "doesn't", "didn't", "isn't"],
+      "rule": "Present Simple Negative: He/She/It subject এর সাথে 'doesn't' ব্যবহার করতে হবে, 'don't' নয়",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_003",
+      "incorrect": "I have went to the market.",
+      "highlighted": "went",
+      "correct": "gone",
+      "options": ["went", "gone", "go", "going"],
+      "rule": "Present Perfect: 'have/has' এর পরে verb-এর Past Participle (V3) ব্যবহার করতে হবে। go → went (past) → gone (past participle)",
+      "error_type": "verb_form",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_004",
+      "incorrect": "He is go to school now.",
+      "highlighted": "go",
+      "correct": "going",
+      "options": ["go", "going", "went", "gone"],
+      "rule": "Present Continuous: 'be verb (am/is/are)' এর পরে verb-এর '-ing' form ব্যবহার করতে হবে",
+      "error_type": "verb_form",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_005",
+      "incorrect": "They was playing football.",
+      "highlighted": "was",
+      "correct": "were",
+      "options": ["was", "were", "are", "is"],
+      "rule": "Past Continuous: Plural subject (They/We/You) এর সাথে 'were' ব্যবহার করতে হবে, 'was' নয়",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_006",
+      "incorrect": "I bought a apple.",
+      "highlighted": "a",
+      "correct": "an",
+      "options": ["a", "an", "the", "some"],
+      "rule": "Article: vowel sound (a, e, i, o, u) দিয়ে শুরু word এর আগে 'an' ব্যবহার করতে হবে",
+      "error_type": "article",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_007",
+      "incorrect": "She can sings very well.",
+      "highlighted": "sings",
+      "correct": "sing",
+      "options": ["sings", "sing", "sang", "sung"],
+      "rule": "Modal Verb: 'can/could/will/should' ইত্যাদি modal verb-এর পরে base form of verb ব্যবহার করতে হবে",
+      "error_type": "modal_verb",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_008",
+      "incorrect": "He didn't went to school yesterday.",
+      "highlighted": "went",
+      "correct": "go",
+      "options": ["went", "go", "gone", "going"],
+      "rule": "Past Simple Negative: 'didn't' ব্যবহার করার পর verb-এর base form ব্যবহার করতে হবে, past form নয়",
+      "error_type": "verb_form",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_009",
+      "incorrect": "This books are very interesting.",
+      "highlighted": "This",
+      "correct": "These",
+      "options": ["This", "These", "Those", "That"],
+      "rule": "Demonstrative: Plural noun (books) এর সাথে 'These' ব্যবহার করতে হবে, 'This' singular এর জন্য",
+      "error_type": "demonstrative",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_010",
+      "incorrect": "I am agree with you.",
+      "highlighted": "am agree",
+      "correct": "agree",
+      "options": ["am agree", "agree", "agreed", "am agreeing"],
+      "rule": "State Verb: 'agree' একটি state verb, এটি continuous form এ ব্যবহার করা হয় না। 'I agree' বলা সঠিক",
+      "error_type": "state_verb",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_011",
+      "incorrect": "She has many money.",
+      "highlighted": "many",
+      "correct": "much",
+      "options": ["many", "much", "a lot", "more"],
+      "rule": "Quantifier: Uncountable noun (money) এর সাথে 'much' ব্যবহার করতে হবে, 'many' countable noun এর জন্য",
+      "error_type": "quantifier",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_012",
+      "incorrect": "He is taller then me.",
+      "highlighted": "then",
+      "correct": "than",
+      "options": ["then", "than", "that", "this"],
+      "rule": "Comparison: তুলনা করার সময় 'than' ব্যবহার করতে হবে, 'then' সময় বোঝাতে ব্যবহৃত হয়",
+      "error_type": "confusing_words",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_013",
+      "incorrect": "I enjoy to swim in the river.",
+      "highlighted": "to swim",
+      "correct": "swimming",
+      "options": ["to swim", "swimming", "swim", "swam"],
+      "rule": "Gerund vs Infinitive: 'enjoy' verb-এর পরে gerund (-ing form) ব্যবহার করতে হবে",
+      "error_type": "gerund_infinitive",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_014",
+      "incorrect": "Neither the students nor the teacher were present.",
+      "highlighted": "were",
+      "correct": "was",
+      "options": ["were", "was", "is", "are"],
+      "rule": "Subject-Verb Agreement: 'neither...nor' এর পরের noun (teacher - singular) অনুযায়ী verb হবে",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_015",
+      "incorrect": "I have visited the USA last year.",
+      "highlighted": "have visited",
+      "correct": "visited",
+      "options": ["have visited", "visited", "was visiting", "visit"],
+      "rule": "Past Simple: নির্দিষ্ট সময় (last year) উল্লেখ থাকলে Past Simple ব্যবহার করতে হবে, Present Perfect নয়",
+      "error_type": "tense",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_016",
+      "incorrect": "She is more smarter than her brother.",
+      "highlighted": "more smarter",
+      "correct": "smarter",
+      "options": ["more smarter", "smarter", "more smart", "smartest"],
+      "rule": "Double Comparative: 'smarter' ইতিমধ্যেই comparative, এর সাথে 'more' ব্যবহার করা যাবে না",
+      "error_type": "comparative",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_017",
+      "incorrect": "He told me that he will come tomorrow.",
+      "highlighted": "will come",
+      "correct": "would come",
+      "options": ["will come", "would come", "came", "comes"],
+      "rule": "Reported Speech: Main clause past tense হলে reported clause-এ 'will' → 'would' হবে",
+      "error_type": "reported_speech",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_018",
+      "incorrect": "I prefer coffee than tea.",
+      "highlighted": "than",
+      "correct": "to",
+      "options": ["than", "to", "over", "from"],
+      "rule": "Preposition: 'prefer' verb-এর পরে 'to' preposition ব্যবহার করতে হবে (prefer A to B)",
+      "error_type": "preposition",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_019",
+      "incorrect": "If I will go there, I will meet him.",
+      "highlighted": "will go",
+      "correct": "go",
+      "options": ["will go", "go", "went", "would go"],
+      "rule": "Conditional Sentence: 'if' clause-এ Present Simple ব্যবহার করতে হবে, 'will' নয়",
+      "error_type": "conditional",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_020",
+      "incorrect": "I am used to get up early.",
+      "highlighted": "get",
+      "correct": "getting",
+      "options": ["get", "getting", "got", "gets"],
+      "rule": "Fixed Expression: 'be used to' এর পরে gerund (-ing form) ব্যবহার করতে হবে",
+      "error_type": "gerund_infinitive",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_021",
+      "incorrect": "He has been working here since two years.",
+      "highlighted": "since",
+      "correct": "for",
+      "options": ["since", "for", "from", "by"],
+      "rule": "Preposition of Time: নির্দিষ্ট সময়কাল (two years) বোঝাতে 'for' ব্যবহার করতে হবে, 'since' নির্দিষ্ট পয়েন্টের জন্য",
+      "error_type": "preposition",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_022",
+      "incorrect": "The news are very shocking.",
+      "highlighted": "are",
+      "correct": "is",
+      "options": ["are", "is", "were", "have"],
+      "rule": "Uncountable Noun: 'news' uncountable এবং singular, তাই singular verb 'is' ব্যবহার করতে হবে",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_023",
+      "incorrect": "Would you mind to close the door?",
+      "highlighted": "to close",
+      "correct": "closing",
+      "options": ["to close", "closing", "close", "closed"],
+      "rule": "Fixed Expression: 'Would you mind' এর পরে gerund (-ing form) ব্যবহার করতে হবে",
+      "error_type": "gerund_infinitive",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_024",
+      "incorrect": "She said me that she was tired.",
+      "highlighted": "said me",
+      "correct": "told me",
+      "options": ["said me", "told me", "said to me", "told"],
+      "rule": "Verb Usage: 'said' এর পরে indirect object থাকলে 'to' প্রয়োজন ('said to me'), অথবা 'told me' ব্যবহার করুন",
+      "error_type": "verb_usage",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_025",
+      "incorrect": "I have less friends than him.",
+      "highlighted": "less",
+      "correct": "fewer",
+      "options": ["less", "fewer", "more", "much"],
+      "rule": "Quantifier: Countable noun (friends) এর সাথে 'fewer' ব্যবহার করতে হবে, 'less' uncountable noun এর জন্য",
+      "error_type": "quantifier",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_026",
+      "incorrect": "Every student must bring their book.",
+      "highlighted": "their",
+      "correct": "his/her",
+      "options": ["their", "his/her", "its", "our"],
+      "rule": "Pronoun Agreement: 'Every student' singular, তাই singular possessive pronoun 'his/her' ব্যবহার করতে হবে",
+      "error_type": "pronoun_agreement",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_027",
+      "incorrect": "I look forward to meet you.",
+      "highlighted": "meet",
+      "correct": "meeting",
+      "options": ["meet", "meeting", "met", "meets"],
+      "rule": "Fixed Expression: 'look forward to' এর পরে gerund (-ing form) ব্যবহার করতে হবে",
+      "error_type": "gerund_infinitive",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_028",
+      "incorrect": "He was very tired because he was working all day.",
+      "highlighted": "was working",
+      "correct": "had been working",
+      "options": ["was working", "had been working", "worked", "has been working"],
+      "rule": "Past Perfect Continuous: অতীতের দুটি কাজের মধ্যে আগের কাজটি কিছু সময় ধরে চলছিল বোঝাতে Past Perfect Continuous ব্যবহার করতে হবে",
+      "error_type": "tense",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_029",
+      "incorrect": "The woman which lives next door is a doctor.",
+      "highlighted": "which",
+      "correct": "who",
+      "options": ["which", "who", "that", "whom"],
+      "rule": "Relative Pronoun: Person (woman) এর জন্য 'who' ব্যবহার করতে হবে, 'which' বস্তু/প্রাণীর জন্য",
+      "error_type": "relative_pronoun",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_030",
+      "incorrect": "I wish I am a bird.",
+      "highlighted": "am",
+      "correct": "were",
+      "options": ["am", "were", "was", "be"],
+      "rule": "Subjunctive Mood: 'wish' এর পরে unreal situation বোঝাতে 'were' ব্যবহার করতে হবে (সব subject এর জন্য)",
+      "error_type": "subjunctive",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_031",
+      "incorrect": "She speak English very fluently.",
+      "highlighted": "speak",
+      "correct": "speaks",
+      "options": ["speak", "speaks", "spoke", "spoken"],
+      "rule": "Present Simple: 3rd person singular (She) এর সাথে verb-এ 's' যোগ করতে হবে",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_032",
+      "incorrect": "I has finished my homework.",
+      "highlighted": "has",
+      "correct": "have",
+      "options": ["has", "have", "had", "having"],
+      "rule": "Present Perfect: 'I' subject এর সাথে 'have' ব্যবহার করতে হবে, 'has' নয় (has = He/She/It)",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_033",
+      "incorrect": "He don't have any money.",
+      "highlighted": "don't",
+      "correct": "doesn't",
+      "options": ["don't", "doesn't", "didn't", "hasn't"],
+      "rule": "Present Simple Negative: 'He' subject এর সাথে 'doesn't' ব্যবহার করতে হবে",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_034",
+      "incorrect": "I need a umbrella. It's raining.",
+      "highlighted": "a",
+      "correct": "an",
+      "options": ["a", "an", "the", "no article"],
+      "rule": "Article: 'umbrella' vowel sound (u) দিয়ে শুরু, তাই 'an' ব্যবহার করতে হবে",
+      "error_type": "article",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_035",
+      "incorrect": "He is the best student of the class.",
+      "highlighted": "of",
+      "correct": "in",
+      "options": ["of", "in", "at", "from"],
+      "rule": "Preposition: Superlative degree-এর সাথে 'in' ব্যবহার করতে হবে (the best student in the class)",
+      "error_type": "preposition",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_036",
+      "incorrect": "I have seen her yesterday.",
+      "highlighted": "have seen",
+      "correct": "saw",
+      "options": ["have seen", "saw", "see", "had seen"],
+      "rule": "Past Simple: নির্দিষ্ট অতীত সময় (yesterday) উল্লেখ থাকলে Present Perfect না লাগিয়ে Past Simple ব্যবহার করতে হবে",
+      "error_type": "tense",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_037",
+      "incorrect": "She didn't ate anything.",
+      "highlighted": "ate",
+      "correct": "eat",
+      "options": ["ate", "eat", "eaten", "eating"],
+      "rule": "Past Negative: 'didn't' ব্যবহার করলে verb-এর base form ব্যবহার করতে হবে (eat), past form (ate) নয়",
+      "error_type": "verb_form",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_038",
+      "incorrect": "You should to study hard.",
+      "highlighted": "to study",
+      "correct": "study",
+      "options": ["to study", "study", "studied", "studying"],
+      "rule": "Modal Verb: 'should' modal verb-এর পরে 'to' ছাড়া base form of verb ব্যবহার করতে হবে",
+      "error_type": "modal_verb",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_039",
+      "incorrect": "He works here from 2018.",
+      "highlighted": "works",
+      "correct": "has been working",
+      "options": ["works", "has been working", "worked", "is working"],
+      "rule": "Present Perfect Continuous: অতীত থেকে শুরু হয়ে এখনও চলছে এমন কাজ বোঝাতে Present Perfect Continuous ব্যবহার করতে হবে",
+      "error_type": "tense",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_040",
+      "incorrect": "He went to the market yesterday, isn't it?",
+      "highlighted": "isn't it",
+      "correct": "didn't he",
+      "options": ["isn't it", "didn't he", "wasn't he", "doesn't he"],
+      "rule": "Question Tag: Past Simple 'went' এর tag 'didn't he?' হবে। 'isn't it?' ভুল কারণ main verb present tense নয়",
+      "error_type": "verb_usage",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_041",
+      "incorrect": "I am looking for my keys since morning.",
+      "highlighted": "am looking",
+      "correct": "have been looking",
+      "options": ["am looking", "have been looking", "looked", "look"],
+      "rule": "Present Perfect Continuous: 'since morning' নির্দেশ করে কাজ শুরু হয়েছে অতীতে এবং এখনও চলছে",
+      "error_type": "tense",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_042",
+      "incorrect": "He is very rich so that he can buy anything.",
+      "highlighted": "so that",
+      "correct": "so",
+      "options": ["so that", "so", "such that", "because"],
+      "rule": "Conjunction: ফলাফল বোঝাতে 'so' ব্যবহার করতে হবে, 'so that' উদ্দেশ্য বোঝাতে ব্যবহৃত হয়",
+      "error_type": "confusing_words",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_043",
+      "incorrect": "Neither Rina nor her friends is coming.",
+      "highlighted": "is",
+      "correct": "are",
+      "options": ["is", "are", "was", "has"],
+      "rule": "Subject-Verb Agreement: 'neither...nor' এর পরের noun (friends - plural) অনুযায়ী plural verb 'are' হবে",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_044",
+      "incorrect": "Before I arrived, he already left.",
+      "highlighted": "left",
+      "correct": "had left",
+      "options": ["left", "had left", "has left", "was leaving"],
+      "rule": "Past Perfect: দুটি অতীত কাজের মধ্যে আগের কাজটি শেষ ছিল বোঝাতে Past Perfect ব্যবহার করতে হবে",
+      "error_type": "tense",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_045",
+      "incorrect": "I insisted him to come with us.",
+      "highlighted": "insisted him to come",
+      "correct": "insisted that he come",
+      "options": ["insisted him to come", "insisted that he come", "insisted him coming", "insisted for him to come"],
+      "rule": "Subjunctive: 'insist' verb-এর পরে 'that + subject + base verb' structure ব্যবহার করতে হবে",
+      "error_type": "subjunctive",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_046",
+      "incorrect": "The sceneries of this place are beautiful.",
+      "highlighted": "sceneries",
+      "correct": "scenery",
+      "options": ["sceneries", "scenery", "scenic", "sceneries's"],
+      "rule": "Uncountable Noun: 'scenery' uncountable noun, এর plural form 'sceneries' হয় না",
+      "error_type": "verb_usage",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_047",
+      "incorrect": "If I was you, I would accept the offer.",
+      "highlighted": "was",
+      "correct": "were",
+      "options": ["was", "were", "am", "be"],
+      "rule": "Subjunctive Mood: unreal conditional (If I were you) সবসময় 'were' ব্যবহার করতে হবে, 'was' নয়",
+      "error_type": "subjunctive",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_048",
+      "incorrect": "I have three childs.",
+      "highlighted": "childs",
+      "correct": "children",
+      "options": ["childs", "children", "childes", "child"],
+      "rule": "Irregular Plural: 'child' এর plural 'children' হয়, 'childs' নয়। কিছু noun এর irregular plural আছে",
+      "error_type": "verb_usage",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_049",
+      "incorrect": "Each of the students were given a prize.",
+      "highlighted": "were",
+      "correct": "was",
+      "options": ["were", "was", "are", "have"],
+      "rule": "Subject-Verb Agreement: 'Each of the students' singular, তাই singular verb 'was' ব্যবহার করতে হবে",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_050",
+      "incorrect": "I bought a furniture for my room.",
+      "highlighted": "a furniture",
+      "correct": "a piece of furniture",
+      "options": ["a furniture", "a piece of furniture", "some furnitures", "furnitures"],
+      "rule": "Uncountable Noun: 'furniture' uncountable noun। একটি furniture বোঝাতে 'a piece of furniture' বলতে হবে",
+      "error_type": "quantifier",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_051",
+      "incorrect": "He is my older brother.",
+      "highlighted": "older",
+      "correct": "elder",
+      "options": ["older", "elder", "oldest", "eldest"],
+      "rule": "Elder vs Older: পরিবারের সদস্যদের জন্য 'elder' ব্যবহার হয় ('elder brother'), বয়সের তুলনায় 'older'",
+      "error_type": "confusing_words",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_052",
+      "incorrect": "We discussed about the matter.",
+      "highlighted": "discussed about",
+      "correct": "discussed",
+      "options": ["discussed about", "discussed", "talked about", "discussed on"],
+      "rule": "Verb Usage: 'discuss' একটি transitive verb, এর পরে সরাসরি object আসে, 'about' লাগে না",
+      "error_type": "verb_usage",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_053",
+      "incorrect": "This is the man which I saw yesterday.",
+      "highlighted": "which",
+      "correct": "whom",
+      "options": ["which", "whom", "who", "that"],
+      "rule": "Relative Pronoun: Object হিসেবে person-এর জন্য 'whom' ব্যবহার করতে হবে ('whom I saw')",
+      "error_type": "relative_pronoun",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_054",
+      "incorrect": "He asked that what my name was.",
+      "highlighted": "that what",
+      "correct": "what",
+      "options": ["that what", "what", "that", "if"],
+      "rule": "Reported Speech: Question word (what/where/when) থাকলে 'that' ব্যবহার করা যাবে না",
+      "error_type": "reported_speech",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_055",
+      "incorrect": "I did nothing but to wait.",
+      "highlighted": "to wait",
+      "correct": "wait",
+      "options": ["to wait", "wait", "waiting", "waited"],
+      "rule": "Fixed Expression: 'do nothing but' এর পরে 'to' ছাড়া base form of verb ব্যবহার করতে হবে",
+      "error_type": "gerund_infinitive",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_056",
+      "incorrect": "He is enough strong to lift it.",
+      "highlighted": "enough strong",
+      "correct": "strong enough",
+      "options": ["enough strong", "strong enough", "enough stronger", "stronger enough"],
+      "rule": "Word Order: 'enough' adjective-এর পরে বসে (adjective + enough), আগে নয়",
+      "error_type": "comparative",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_057",
+      "incorrect": "I passed the exam because of I studied hard.",
+      "highlighted": "because of",
+      "correct": "because",
+      "options": ["because of", "because", "due to", "since"],
+      "rule": "Conjunction vs Preposition: 'because of' এর পরে noun phrase আসে, 'because' এর পরে clause আসে",
+      "error_type": "confusing_words",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_058",
+      "incorrect": "You had better to see a doctor.",
+      "highlighted": "to see",
+      "correct": "see",
+      "options": ["to see", "see", "saw", "seen"],
+      "rule": "Fixed Expression: 'had better' এর পরে 'to' ছাড়া base form of verb ব্যবহার করতে হবে",
+      "error_type": "modal_verb",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_059",
+      "incorrect": "The police has arrested the thief.",
+      "highlighted": "has",
+      "correct": "have",
+      "options": ["has", "have", "had", "is"],
+      "rule": "Collective Noun: 'police' plural হিসাবে গণ্য হয়, তাই 'have' ব্যবহার করতে হবে ('the police have')",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_060",
+      "incorrect": "I am knowing the answer.",
+      "highlighted": "am knowing",
+      "correct": "know",
+      "options": ["am knowing", "know", "knew", "known"],
+      "rule": "State Verb: 'know' একটি state verb, এটি continuous form এ ব্যবহার করা হয় না। 'I know' বলা সঠিক",
+      "error_type": "state_verb",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_061",
+      "incorrect": "She doesn't likes reading books.",
+      "highlighted": "likes",
+      "correct": "like",
+      "options": ["likes", "like", "liked", "liking"],
+      "rule": "Auxiliary Verb: 'doesn't' ব্যবহার করলে main verb-এর base form ব্যবহার করতে হবে (like), 's' যোগ করা যাবে না",
+      "error_type": "verb_form",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_062",
+      "incorrect": "I and he are friends.",
+      "highlighted": "I and he",
+      "correct": "He and I",
+      "options": ["I and he", "He and I", "He and me", "Me and him"],
+      "rule": "Pronoun Order: একাধিক person উল্লেখ করলে 2nd person → 3rd person → 1st person (you, he/she, I)顺序ে বসে",
+      "error_type": "verb_usage",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_063",
+      "incorrect": "The team are playing well.",
+      "highlighted": "are",
+      "correct": "is",
+      "options": ["are", "is", "were", "have"],
+      "rule": "Collective Noun: 'team' singular collective noun, তাই singular verb 'is' ব্যবহার করতে হবে (BrE তে plural হতে পারে)",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_064",
+      "incorrect": "I am thinking to start a business.",
+      "highlighted": "am thinking to start",
+      "correct": "am thinking of starting",
+      "options": ["am thinking to start", "am thinking of starting", "think to start", "thought to start"],
+      "rule": "Fixed Expression: 'think' এর পরে 'of + gerund' ব্যবহার করতে হবে, 'to + infinitive' নয়",
+      "error_type": "gerund_infinitive",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_065",
+      "incorrect": "He is suffering from fever since Monday.",
+      "highlighted": "is suffering",
+      "correct": "has been suffering",
+      "options": ["is suffering", "has been suffering", "suffered", "was suffering"],
+      "rule": "Present Perfect Continuous: 'since Monday' নির্দেশ করে কাজ শুরু হয়েছে অতীতে এবং এখনও চলছে",
+      "error_type": "tense",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_066",
+      "incorrect": "She as well as her sisters are coming.",
+      "highlighted": "are",
+      "correct": "is",
+      "options": ["are", "is", "were", "have"],
+      "rule": "Subject-Verb Agreement: 'as well as' মূল subject-এর পরে আসে, verb প্রথম subject (She) অনুযায়ী হবে",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_067",
+      "incorrect": "I have visited the USA when I was 20.",
+      "highlighted": "have visited",
+      "correct": "visited",
+      "options": ["have visited", "visited", "visit", "was visiting"],
+      "rule": "Past Simple: নির্দিষ্ট অতীত সময় (when I was 20) নির্দেশ করলে Present Perfect নয়, Past Simple ব্যবহার করতে হবে",
+      "error_type": "tense",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_068",
+      "incorrect": "He said that he is busy yesterday.",
+      "highlighted": "is",
+      "correct": "was",
+      "options": ["is", "was", "were", "has been"],
+      "rule": "Reported Speech: Main verb 'said' past tense, তাই reported clause-এ 'is' → 'was' হবে",
+      "error_type": "reported_speech",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_069",
+      "incorrect": "He explained me the lesson.",
+      "highlighted": "explained me",
+      "correct": "explained to me",
+      "options": ["explained me", "explained to me", "explained me about", "told to me"],
+      "rule": "Verb Usage: 'explain' transitive verb, indirect object-এর আগে 'to' প্রয়োজন ('explain to me')",
+      "error_type": "verb_usage",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_070",
+      "incorrect": "Hardly had he reached the station when the train leaves.",
+      "highlighted": "leaves",
+      "correct": "left",
+      "options": ["leaves", "left", "had left", "was leaving"],
+      "rule": "Tense Consistency: 'Hardly had...when' structure-এ দুটোই past tense হবে (had reached...left)",
+      "error_type": "tense",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_071",
+      "incorrect": "I am understanding English well.",
+      "highlighted": "am understanding",
+      "correct": "understand",
+      "options": ["am understanding", "understand", "understood", "understanding"],
+      "rule": "State Verb: 'understand' একটি state verb, continuous form ব্যবহার করা যায় না। 'I understand' বলা সঠিক",
+      "error_type": "state_verb",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_072",
+      "incorrect": "He told that he is happy.",
+      "highlighted": "told that",
+      "correct": "said that",
+      "options": ["told that", "said that", "told to me that", "said to me that"],
+      "rule": "Verb Usage: 'tell' এর পরে indirect object প্রয়োজন ('told me that'), 'said' এর প্রয়োজন নেই",
+      "error_type": "verb_usage",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_073",
+      "incorrect": "If he would have studied, he would have passed.",
+      "highlighted": "would have studied",
+      "correct": "had studied",
+      "options": ["would have studied", "had studied", "studied", "has studied"],
+      "rule": "Third Conditional: 'if' clause-এ Past Perfect (had + V3) ব্যবহার করতে হবে, 'would have' নয়",
+      "error_type": "conditional",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_074",
+      "incorrect": "I prefer to stay at home than to go out.",
+      "highlighted": "than to go",
+      "correct": "rather than go",
+      "options": ["than to go", "rather than go", "than going", "to going"],
+      "rule": "Fixed Expression: 'prefer to do X rather than do Y' structure ব্যবহার করতে হবে",
+      "error_type": "comparative",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_075",
+      "incorrect": "The man who I met him is a doctor.",
+      "highlighted": "met him",
+      "correct": "met",
+      "options": ["met him", "met", "meet", "meeting"],
+      "rule": "Relative Clause: 'who' ইতিমধ্যে object, তাই 'him' পুনরায় ব্যবহার করা যাবে না (no pronoun repetition)",
+      "error_type": "relative_pronoun",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_076",
+      "incorrect": "You are the same person which I saw.",
+      "highlighted": "which",
+      "correct": "that",
+      "options": ["which", "that", "who", "whom"],
+      "rule": "Relative Pronoun: 'the same' এর পরে 'that' ব্যবহার করতে হবে, 'which' নয়",
+      "error_type": "relative_pronoun",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_077",
+      "incorrect": "I wish I could passed the exam.",
+      "highlighted": "passed",
+      "correct": "pass",
+      "options": ["passed", "pass", "passes", "passing"],
+      "rule": "Subjunctive: 'wish' এর পরে unreal present/future বোঝাতে 'could + base verb' ব্যবহার করতে হবে",
+      "error_type": "subjunctive",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_078",
+      "incorrect": "He advised me to not go there.",
+      "highlighted": "to not go",
+      "correct": "not to go",
+      "options": ["to not go", "not to go", "don't go", "to go not"],
+      "rule": "Infinitive Negative: infinitive-এর negative form 'not to + verb' হয়, 'to not + verb' নয়",
+      "error_type": "verb_form",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_079",
+      "incorrect": "I have a work to do.",
+      "highlighted": "a work",
+      "correct": "work",
+      "options": ["a work", "work", "works", "a piece of work"],
+      "rule": "Uncountable Noun: 'work' uncountable noun, এর আগে 'a' ব্যবহার করা যাবে না",
+      "error_type": "article",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_080",
+      "incorrect": "He only not passed but also got first prize.",
+      "highlighted": "only not",
+      "correct": "not only",
+      "options": ["only not", "not only", "only", "not"],
+      "rule": "Correlative Conjunction: 'not only...but also' fixed structure, 'only not' ভুল",
+      "error_type": "confusing_words",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_081",
+      "incorrect": "Can you give me a few water?",
+      "highlighted": "a few",
+      "correct": "a little",
+      "options": ["a few", "a little", "few", "little"],
+      "rule": "Quantifier: Uncountable noun (water) এর সাথে 'a little' ব্যবহার করতে হবে, 'a few' countable noun এর জন্য",
+      "error_type": "quantifier",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_082",
+      "incorrect": "No sooner we reached the station than it started raining.",
+      "highlighted": "we reached",
+      "correct": "had we reached",
+      "options": ["we reached", "had we reached", "did we reach", "we had reached"],
+      "rule": "Inversion: 'No sooner' দিয়ে sentence শুরু করলে subject-auxiliary inversion করতে হবে (No sooner had we reached...)",
+      "error_type": "verb_usage",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_083",
+      "incorrect": "I have been knowing him for 10 years.",
+      "highlighted": "have been knowing",
+      "correct": "have known",
+      "options": ["have been knowing", "have known", "knew", "know"],
+      "rule": "State Verb: 'know' state verb, এর Present Perfect Continuous হয় না। 'have known' ব্যবহার করতে হবে",
+      "error_type": "state_verb",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_084",
+      "incorrect": "The teacher as well as the students has arrived.",
+      "highlighted": "has",
+      "correct": "have",
+      "options": ["has", "have", "had", "is"],
+      "rule": "Subject-Verb Agreement: 'as well as the students' মূল subject (teacher) singular, কিন্তু 'as well as' যোগ করলে verb singular থাকে → has is correct here",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_085",
+      "incorrect": "He is the most unique person.",
+      "highlighted": "most unique",
+      "correct": "unique",
+      "options": ["most unique", "unique", "more unique", "very unique"],
+      "rule": "Absolute Adjective: 'unique' absolute adjective, এর comparative/superlative হয় না। শুধু 'unique' বলতে হবে",
+      "error_type": "comparative",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_086",
+      "incorrect": "I look forward to hear from you.",
+      "highlighted": "hear",
+      "correct": "hearing",
+      "options": ["hear", "hearing", "heard", "hears"],
+      "rule": "Fixed Expression: 'look forward to' এর পরে gerund (-ing form) ব্যবহার করতে হবে",
+      "error_type": "gerund_infinitive",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_087",
+      "incorrect": "It is raining since 5 o'clock.",
+      "highlighted": "is raining",
+      "correct": "has been raining",
+      "options": ["is raining", "has been raining", "rains", "rained"],
+      "rule": "Present Perfect Continuous: 'since 5 o'clock' নির্দেশ করে কাজ শুরু হয়েছে অতীতে এবং এখনও চলছে",
+      "error_type": "tense",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_088",
+      "incorrect": "He went to bed until he finished his homework.",
+      "highlighted": "until",
+      "correct": "after",
+      "options": ["until", "after", "before", "when"],
+      "rule": "Conjunction: 'until' এর অর্থ 'যতক্ষণ না', এখানে 'homework শেষ করার পর bed-এ যাওয়া' বোঝাতে 'after' সঠিক",
+      "error_type": "confusing_words",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_089",
+      "incorrect": "She has white a beautiful dress.",
+      "highlighted": "white a",
+      "correct": "a white",
+      "options": ["white a", "a white", "the white", "white"],
+      "rule": "Word Order: Adjective noun-এর আগে বসে (a white dress)। 'white a dress' word order ভুল",
+      "error_type": "comparative",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_090",
+      "incorrect": "I cannot help to laugh when I see him.",
+      "highlighted": "to laugh",
+      "correct": "laughing",
+      "options": ["to laugh", "laughing", "laugh", "laughed"],
+      "rule": "Fixed Expression: 'cannot help' এর পরে gerund (-ing form) ব্যবহার করতে হবে ('cannot help laughing')",
+      "error_type": "gerund_infinitive",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_091",
+      "incorrect": "Each boy and each girl were given a prize.",
+      "highlighted": "were",
+      "correct": "was",
+      "options": ["were", "was", "are", "have"],
+      "rule": "Subject-Verb Agreement: 'Each...and each' singular subject, তাই singular verb 'was' ব্যবহার করতে হবে",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_092",
+      "incorrect": "He has been to the bank yesterday, so he can't answer the phone.",
+      "highlighted": "has been",
+      "correct": "went",
+      "options": ["has been", "went", "was going", "goes"],
+      "rule": "Past Simple: নির্দিষ্ট সময় (yesterday) উল্লেখ থাকলে Present Perfect ব্যবহার না করে Past Simple ব্যবহার করতে হবে",
+      "error_type": "tense",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_093",
+      "incorrect": "He is one of the boy who won the prize.",
+      "highlighted": "boy",
+      "correct": "boys",
+      "options": ["boy", "boys", "boy's", "the boy"],
+      "rule": "Plural Noun: 'one of the' এর পরে plural noun ব্যবহার করতে হবে ('one of the boys')",
+      "error_type": "verb_usage",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_094",
+      "incorrect": "You had better not to go there.",
+      "highlighted": "to go",
+      "correct": "go",
+      "options": ["to go", "go", "gone", "going"],
+      "rule": "Fixed Expression: 'had better' negative → 'had better not + base verb', 'to' ব্যবহার করা যাবে না",
+      "error_type": "modal_verb",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_095",
+      "incorrect": "Neither of the two answers are correct.",
+      "highlighted": "are",
+      "correct": "is",
+      "options": ["are", "is", "were", "have"],
+      "rule": "Subject-Verb Agreement: 'Neither of the two' singular, তাই singular verb 'is' ব্যবহার করতে হবে",
+      "error_type": "subject_verb_agreement",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_096",
+      "incorrect": "I am belonging to a middle class family.",
+      "highlighted": "am belonging",
+      "correct": "belong",
+      "options": ["am belonging", "belong", "belonged", "belongs"],
+      "rule": "State Verb: 'belong' একটি state verb, continuous form ব্যবহার করা যায় না। 'I belong' বলা সঠিক",
+      "error_type": "state_verb",
+      "difficulty": "easy"
+    },
+    {
+      "id": "gd_097",
+      "incorrect": "Unless you do not work hard, you will fail.",
+      "highlighted": "do not",
+      "correct": "do",
+      "options": ["do not", "do", "did not", "will not"],
+      "rule": "Negative Conjunction: 'unless' এর অর্থ 'if not', তাই এর পরে negative ব্যবহার করা যাবে না",
+      "error_type": "confusing_words",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_098",
+      "incorrect": "Myself I will complete the work.",
+      "highlighted": "Myself I",
+      "correct": "I myself",
+      "options": ["Myself I", "I myself", "Myself", "Me myself"],
+      "rule": "Reflexive Pronoun: 'myself' reflexive pronoun, subject হিসেবে ব্যবহার করা যাবে না। 'I myself' বলা সঠিক",
+      "error_type": "pronoun_agreement",
+      "difficulty": "medium"
+    },
+    {
+      "id": "gd_099",
+      "incorrect": "The reason why he failed is because he was lazy.",
+      "highlighted": "because",
+      "correct": "that",
+      "options": ["because", "that", "due to", "for"],
+      "rule": "Redundancy: 'The reason...is because' ভুল। 'The reason...is that' ব্যবহার করতে হবে",
+      "error_type": "confusing_words",
+      "difficulty": "hard"
+    },
+    {
+      "id": "gd_100",
+      "incorrect": "Its a beautiful day today.",
+      "highlighted": "Its",
+      "correct": "It's",
+      "options": ["Its", "It's", "Its'", "It is"],
+      "rule": "Apostrophe: 'It's = It is (contraction) vs Its (possessive)। এখানে 'It is' বোঝাতে 'It's' ব্যবহার করতে হবে",
+      "error_type": "confusing_words",
+      "difficulty": "easy"
+    }
+  ]
+}

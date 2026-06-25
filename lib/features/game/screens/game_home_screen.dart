@@ -17,6 +17,7 @@ import 'modes/word_match_mode.dart';
 import 'modes/quick_quiz_mode.dart';
 import 'modes/fill_in_blanks_mode.dart';
 import 'modes/sentence_builder_mode.dart';
+import 'modes/grammar_detective_mode.dart';
 
 class GameHomeScreen extends ConsumerStatefulWidget {
   const GameHomeScreen({super.key});
@@ -546,6 +547,83 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen> {
                           const SizedBox(height: 4),
                           const Text(
                             'শব্দগুলো সাজিয়ে সঠিক sentence তৈরি করুন • Tap to arrange • 15 sec timer',
+                            style: TextStyle(color: Colors.white70, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Icon(Icons.arrow_forward_ios, color: Colors.white54, size: 16),
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            // ── Grammar Detective ──
+            InkWell(
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const GrammarDetectiveModeScreen())),
+              borderRadius: BorderRadius.circular(20),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF8B0000), Color(0xFFCC0000)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF8B0000).withOpacity(0.3),
+                      blurRadius: 12,
+                      offset: const Offset(0, 6),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 56,
+                      height: 56,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: const Icon(Icons.search_rounded, color: Colors.white, size: 28),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  'Grammar Detective',
+                                  style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                decoration: BoxDecoration(
+                                  color: Colors.amber.withOpacity(0.3),
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                child: const Text(
+                                  'NEW',
+                                  style: TextStyle(color: Colors.amberAccent, fontSize: 9, fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 4),
+                          const Text(
+                            'বাক্যে ভুল খুঁজে সঠিকটি বেছে নিন • Grammar rule explanation • 15 sec timer',
                             style: TextStyle(color: Colors.white70, fontSize: 12),
                           ),
                         ],
