@@ -1,0 +1,623 @@
+{
+  "game": "Bangla to English",
+  "description": "বাংলা বাক্য দেখে সঠিক English translation বেছে নিন",
+  "version": "1.0.0",
+  "topics": [
+    {
+      "id": "greetings",
+      "name": "Greetings & Introductions",
+      "name_bn": "শুভেচ্ছা ও পরিচয়",
+      "icon": "handshake",
+      "questions": [
+        {
+          "id": "be_001",
+          "bangla": "আপনার নাম কি?",
+          "correct": "What is your name?",
+          "options": ["What is your name?", "What are your name?", "What your name?", "Your name what?"],
+          "explanation": "\"What is your name?\" - WH question এ 'is' ব্যবহার করতে হবে। আপনার নাম = your name",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_002",
+          "bangla": "আমার নাম রাহুল।",
+          "correct": "My name is Rahul.",
+          "options": ["My name is Rahul.", "I name is Rahul.", "My name Rahul.", "I am name Rahul."],
+          "explanation": "\"My name is Rahul\" - 'My name is + name' structure ব্যবহার করতে হবে",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_003",
+          "bangla": "আপনি কেমন আছেন?",
+          "correct": "How are you?",
+          "options": ["How are you?", "How is you?", "What are you?", "How you are?"],
+          "explanation": "\"How are you?\" - 'you' subject এর সাথে 'are' ব্যবহার করতে হবে",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_004",
+          "bangla": "আমি ভালো আছি, ধন্যবাদ।",
+          "correct": "I am fine, thank you.",
+          "options": ["I am fine, thank you.", "I fine, thank you.", "I am good, thanks you.", "Me fine, thank you."],
+          "explanation": "\"I am fine, thank you\" - 'am' verb ব্যবহার করতে হবে। thank you = ধন্যবাদ",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_005",
+          "bangla": "তোমার বাড়ি কোথায়?",
+          "correct": "Where is your home?",
+          "options": ["Where is your home?", "Where your home?", "Where are your home?", "Your home where?"],
+          "rule": "\"Where is your home?\" - 'where' question-এ 'is' + singular noun ব্যবহার করতে হবে",
+          "error_type": "question_word",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_006",
+          "bangla": "আমি কলকাতায় থাকি।",
+          "correct": "I live in Kolkata.",
+          "options": ["I live in Kolkata.", "I live Kolkata.", "I am live in Kolkata.", "I lives in Kolkata."],
+          "rule": "Present Simple: 'I' subject এর সাথে 'live' ব্যবহার করতে হবে (live in + place)",
+          "error_type": "verb_form",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "name": "Food & Drinks",
+      "name_bn": "খাবার ও পানীয়",
+      "icon": "food",
+      "questions": [
+        {
+          "id": "be_007",
+          "bangla": "আমি ভাত খাই।",
+          "correct": "I eat rice.",
+          "options": ["I eat rice.", "I eats rice.", "I am eat rice.", "I eating rice."],
+          "rule": "Present Simple: 'I' subject এর সাথে base form 'eat' ব্যবহার করতে হবে",
+          "error_type": "verb_form",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_008",
+          "bangla": "তুমি কি চা খাবে?",
+          "correct": "Will you have tea?",
+          "options": ["Will you have tea?", "Do you have tea?", "Are you have tea?", "You will tea?"],
+          "rule": "Future: 'Will you + verb' structure ব্যবহার করে invitation বোঝায়",
+          "error_type": "tense",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_009",
+          "bangla": "আমার ক্ষুধা লেগেছে।",
+          "correct": "I am hungry.",
+          "options": ["I am hungry.", "I have hungry.", "I hungry.", "I am hunger."],
+          "rule": "\"I am hungry\" - 'hungry' adjective, এর সাথে 'am' verb ব্যবহার করতে হবে",
+          "error_type": "verb_usage",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_010",
+          "bangla": "জল খেতে ইচ্ছে করছে।",
+          "correct": "I feel like drinking water.",
+          "options": ["I feel like drinking water.", "I want drink water.", "I like drink water.", "I feel to drink water."],
+          "rule": "\"feel like + gerund\" structure: feel like drinking = খেতে ইচ্ছে করা",
+          "error_type": "gerund_infinitive",
+          "difficulty": "hard"
+        },
+        {
+          "id": "be_011",
+          "bangla": "এটা খুব মিষ্টি।",
+          "correct": "This is very sweet.",
+          "options": ["This is very sweet.", "This are very sweet.", "It very sweet.", "This is much sweet."],
+          "rule": "\"This is + adjective\" - singular demonstrative 'this' এর সাথে 'is' ব্যবহার করতে হবে",
+          "error_type": "demonstrative",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_012",
+          "bangla": "আমার জন্য এক গ্লাস জল এনে দাও।",
+          "correct": "Bring me a glass of water.",
+          "options": ["Bring me a glass of water.", "Give me a glass water.", "Bring a glass water for me.", "Bring one glass water."],
+          "rule": "\"a glass of water\" - পরিমাণ বোঝাতে 'a glass of + noun' structure ব্যবহার করতে হবে",
+          "error_type": "quantifier",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "name": "Family & Relationships",
+      "name_bn": "পরিবার ও সম্পর্ক",
+      "icon": "family",
+      "questions": [
+        {
+          "id": "be_013",
+          "bangla": "আমার দুই ভাই আছে।",
+          "correct": "I have two brothers.",
+          "options": ["I have two brothers.", "I has two brothers.", "My two brothers.", "I have two brother."],
+          "rule": "Present Simple: 'I' subject এর সাথে 'have' ব্যবহার করতে হবে। 'brothers' plural",
+          "error_type": "subject_verb_agreement",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_014",
+          "bangla": "সে আমার বড় বোন।",
+          "correct": "She is my elder sister.",
+          "options": ["She is my elder sister.", "She is my older sister.", "She my elder sister.", "She is my big sister."],
+          "rule": "পরিবারের সদস্যদের জন্য 'elder' ব্যবহার হয় (elder sister), বয়সের জন্য 'older'",
+          "error_type": "confusing_words",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_015",
+          "bangla": "তোমার বাবা কী করেন?",
+          "correct": "What does your father do?",
+          "options": ["What does your father do?", "What do your father do?", "What is your father do?", "What your father does?"],
+          "rule": "Present Simple: 3rd person (father) এর জন্য 'does' ব্যবহার করতে হবে",
+          "error_type": "subject_verb_agreement",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_016",
+          "bangla": "আমার মা একজন শিক্ষিকা।",
+          "correct": "My mother is a teacher.",
+          "options": ["My mother is a teacher.", "My mother a teacher.", "My mother are a teacher.", "My mother is teacher."],
+          "rule": "\"My mother is a teacher\" - singular noun এর আগে 'a/an' article ব্যবহার করতে হবে",
+          "error_type": "article",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_017",
+          "bangla": "তোমার কি কোনো বোন আছে?",
+          "correct": "Do you have any sisters?",
+          "options": ["Do you have any sisters?", "Are you have any sisters?", "Have you any sisters?", "Do you has any sisters?"],
+          "rule": "Question: 'Do you have...?' structure ব্যবহার করতে হবে",
+          "error_type": "verb_usage",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_018",
+          "bangla": "আমরা একটি সুখী পরিবার।",
+          "correct": "We are a happy family.",
+          "options": ["We are a happy family.", "We is a happy family.", "We are happy family.", "Our a happy family."],
+          "rule": "Plural subject 'We' এর সাথে 'are' ব্যবহার করতে হবে",
+          "error_type": "subject_verb_agreement",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "market",
+      "name": "Shopping & Market",
+      "name_bn": "বাজার ও কেনাকাটা",
+      "icon": "shopping",
+      "questions": [
+        {
+          "id": "be_019",
+          "bangla": "এটার দাম কত?",
+          "correct": "How much is this?",
+          "options": ["How much is this?", "How many is this?", "What price this?", "How cost this?"],
+          "rule": "দাম জানতে 'How much' ব্যবহার করতে হবে (uncountable)",
+          "error_type": "quantifier",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_020",
+          "bangla": "আমি একটা শার্ট কিনতে চাই।",
+          "correct": "I want to buy a shirt.",
+          "options": ["I want to buy a shirt.", "I want buy a shirt.", "I want buying a shirt.", "I want to buying a shirt."],
+          "rule": "'want' এর পরে 'to + verb' (infinitive) ব্যবহার করতে হবে: want to buy",
+          "error_type": "gerund_infinitive",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_021",
+          "bangla": "এটা কি কম দামে পাওয়া যাবে?",
+          "correct": "Can I get it at a lower price?",
+          "options": ["Can I get it at a lower price?", "Can I get it low price?", "I can get it low price?", "Can I getting it lower price?"],
+          "rule": "Modal verb 'Can' দিয়ে অনুমতি/সম্ভাবনা বোঝায়, এর পরে base verb ব্যবহার করতে হবে",
+          "error_type": "modal_verb",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_022",
+          "bangla": "আমি শুধু দেখছি।",
+          "correct": "I am just looking.",
+          "options": ["I am just looking.", "I just look.", "I am just look.", "I just looking."],
+          "rule": "Present Continuous: এখন ঘটছে এমন কাজ বোঝাতে 'am + verb-ing' ব্যবহার করতে হবে",
+          "error_type": "tense",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_023",
+          "bangla": "আমার কাছে পর্যাপ্ত টাকা নেই।",
+          "correct": "I don't have enough money.",
+          "options": ["I don't have enough money.", "I have not enough money.", "I don't have money enough.", "I haven't enough money."],
+          "rule": "Negative: 'I don't have' structure। 'enough' noun-এর আগে বসে (enough money)",
+          "error_type": "comparative",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_024",
+          "bangla": "আপনি কি কিছু discount দিতে পারবেন?",
+          "correct": "Can you give me a discount?",
+          "options": ["Can you give me a discount?", "Can you give discount?", "You can give discount?", "Do you can give discount?"],
+          "rule": "Modal verb 'Can' দিয়ে polite request। 'a discount' - countable noun",
+          "error_type": "modal_verb",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "name": "Travel & Directions",
+      "name_bn": "ভ্রমণ ও দিকনির্দেশ",
+      "icon": "travel",
+      "questions": [
+        {
+          "id": "be_025",
+          "bangla": "স্টেশনটা কোথায়?",
+          "correct": "Where is the station?",
+          "options": ["Where is the station?", "Where the station?", "Where are the station?", "Station where is?"],
+          "rule": "WH question: 'Where is the + noun?' structure ব্যবহার করতে হবে",
+          "error_type": "verb_usage",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_026",
+          "bangla": "আমি কিভাবে বাসস্ট্যান্ডে যাব?",
+          "correct": "How do I get to the bus stand?",
+          "options": ["How do I get to the bus stand?", "How I go to bus stand?", "How can I go bus stand?", "How I will go to bus stand?"],
+          "rule": "'How do I get to + place?' - পথ জানতে চাওয়ার standard question structure",
+          "error_type": "preposition",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_027",
+          "bangla": "এটা কি এই রাস্তা?",
+          "correct": "Is this the right road?",
+          "options": ["Is this the right road?", "This is right road?", "Is this right road?", "Are this right road?"],
+          "rule": "Yes/No question: 'Is this...?' structure ব্যবহার করতে হবে। 'the' নির্দিষ্টতা বোঝায়",
+          "error_type": "article",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_028",
+          "bangla": "আমি কলকাতা যেতে চাই।",
+          "correct": "I want to go to Kolkata.",
+          "options": ["I want to go to Kolkata.", "I want go Kolkata.", "I want to go Kolkata.", "I want going to Kolkata."],
+          "rule": "'want to go to + place' - 'to' preposition দিয়ে গন্তব্য নির্দেশ করে",
+          "error_type": "preposition",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_029",
+          "bangla": "আমি আগামীকাল রওনা দেব।",
+          "correct": "I will leave tomorrow.",
+          "options": ["I will leave tomorrow.", "I leave tomorrow.", "I am leave tomorrow.", "I will leaving tomorrow."],
+          "rule": "Future: 'will + base verb' ব্যবহার করে ভবিষ্যতের পরিকল্পনা বোঝায়",
+          "error_type": "tense",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_030",
+          "bangla": "এখান থেকে কত দূর?",
+          "correct": "How far is it from here?",
+          "options": ["How far is it from here?", "How long is it from here?", "How distance from here?", "How far from here?"],
+          "rule": "দূরত্ব জানতে 'How far' ব্যবহার করতে হবে",
+          "error_type": "confusing_words",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "daily",
+      "name": "Daily Activities",
+      "name_bn": "দৈনন্দিন কাজ",
+      "icon": "daily",
+      "questions": [
+        {
+          "id": "be_031",
+          "bangla": "আমি প্রতিদিন সকালে উঠি।",
+          "correct": "I wake up every morning.",
+          "options": ["I wake up every morning.", "I wakes up every morning.", "I am wake up every morning.", "I wake up every day morning."],
+          "rule": "Present Simple: অভ্যাস বোঝাতে 'I + base verb' ব্যবহার করতে হবে",
+          "error_type": "verb_form",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_032",
+          "bangla": "সে এখন ঘুমাচ্ছে।",
+          "correct": "He is sleeping now.",
+          "options": ["He is sleeping now.", "He sleeps now.", "He sleeping now.", "He is sleep now."],
+          "rule": "Present Continuous: 'now' নির্দেশ করে কাজ এখন ঘটছে, তাই 'is + verb-ing' ব্যবহার করতে হবে",
+          "error_type": "tense",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_033",
+          "bangla": "আমি গতকাল সিনেমা দেখেছি।",
+          "correct": "I watched a movie yesterday.",
+          "options": ["I watched a movie yesterday.", "I watch a movie yesterday.", "I have watched a movie yesterday.", "I was watch a movie yesterday."],
+          "rule": "Past Simple: নির্দিষ্ট অতীত সময় (yesterday) এর জন্য Past Simple ব্যবহার করতে হবে",
+          "error_type": "tense",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_034",
+          "bangla": "সে এখনও আসেনি।",
+          "correct": "He has not come yet.",
+          "options": ["He has not come yet.", "He did not come yet.", "He not come yet.", "He has not came yet."],
+          "rule": "Present Perfect: 'yet' (এখনও) Present Perfect-এর সাথে ব্যবহৃত হয়। 'has not + V3'",
+          "error_type": "tense",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_035",
+          "bangla": "আমি রোজ অফিসে যাই।",
+          "correct": "I go to office every day.",
+          "options": ["I go to office every day.", "I goes to office every day.", "I go office every day.", "I am go to office every day."],
+          "rule": "Present Simple: নিয়মিত অভ্যাস বোঝাতে 'I + base verb'",
+          "error_type": "verb_form",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_036",
+          "bangla": "সে আজ স্কুলে যায়নি।",
+          "correct": "He did not go to school today.",
+          "options": ["He did not go to school today.", "He did not went to school today.", "He not go to school today.", "He doesn't go to school today."],
+          "rule": "Past Simple Negative: 'did not + base verb' ব্যবহার করতে হবে",
+          "error_type": "verb_form",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "weather",
+      "name": "Weather & Nature",
+      "name_bn": "আবহাওয়া ও প্রকৃতি",
+      "icon": "weather",
+      "questions": [
+        {
+          "id": "be_037",
+          "bangla": "আজ আবহাওয়া কেমন?",
+          "correct": "How is the weather today?",
+          "options": ["How is the weather today?", "What is the weather today?", "How the weather today?", "How is weather today?"],
+          "rule": "আবহাওয়া জিজ্ঞাসা করতে 'How is the weather?' structure ব্যবহার করতে হবে",
+          "error_type": "verb_usage",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_038",
+          "bangla": "আজ খুব গরম।",
+          "correct": "It is very hot today.",
+          "options": ["It is very hot today.", "It very hot today.", "Today very hot.", "It is much hot today."],
+          "rule": "আবহাওয়া বোঝাতে 'It is + adjective' structure ব্যবহার করতে হবে",
+          "error_type": "verb_usage",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_039",
+          "bangla": "বৃষ্টি পড়ছে।",
+          "correct": "It is raining.",
+          "options": ["It is raining.", "It rains.", "It rain.", "It is rain."],
+          "rule": "Present Continuous: এখন ঘটছে এমন কাজ বোঝাতে 'is + verb-ing'",
+          "error_type": "tense",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_040",
+          "bangla": "আকাশ পরিষ্কার।",
+          "correct": "The sky is clear.",
+          "options": ["The sky is clear.", "Sky is clear.", "A sky is clear.", "The sky clear."],
+          "rule": "'The sky' - নির্দিষ্ট জিনিস বোঝাতে 'the' article ব্যবহার করতে হবে",
+          "error_type": "article",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_041",
+          "bangla": "গতকাল সারাদিন বৃষ্টি হয়েছিল।",
+          "correct": "It rained all day yesterday.",
+          "options": ["It rained all day yesterday.", "It rains all day yesterday.", "It is raining all day yesterday.", "It was rain all day yesterday."],
+          "rule": "Past Simple: নির্দিষ্ট অতীত সময় (yesterday) এর জন্য Past Simple ব্যবহার করতে হবে",
+          "error_type": "tense",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_042",
+          "bangla": "শীতকালে আবহাওয়া ঠান্ডা থাকে।",
+          "correct": "The weather is cold in winter.",
+          "options": ["The weather is cold in winter.", "Weather is cold in winter.", "The weather cold in winter.", "In winter weather is cold."],
+          "rule": "General truth: Present Simple 'is' ব্যবহার। 'in winter' - ঋতুর পূর্বে 'in' preposition",
+          "error_type": "preposition",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "name": "Health & Feelings",
+      "name_bn": "স্বাস্থ্য ও অনুভূতি",
+      "icon": "health",
+      "questions": [
+        {
+          "id": "be_043",
+          "bangla": "আমার মাথা ধরেছে।",
+          "correct": "I have a headache.",
+          "options": ["I have a headache.", "I am headache.", "I having headache.", "My head is pain."],
+          "rule": "অসুস্থতা বোঝাতে 'I have a + ailment' structure (have a headache)",
+          "error_type": "verb_usage",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_044",
+          "bangla": "আপনার কি জ্বর হয়েছে?",
+          "correct": "Do you have a fever?",
+          "options": ["Do you have a fever?", "Are you have fever?", "Do you have fever?", "Have you fever?"],
+          "rule": "Question: 'Do you have...?' structure। 'a fever' - countable noun",
+          "error_type": "article",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_045",
+          "bangla": "আমার খুব ক্লান্ত লাগছে।",
+          "correct": "I am feeling very tired.",
+          "options": ["I am feeling very tired.", "I feel very tired.", "I am feel very tired.", "I feeling very tired."],
+          "rule": "Present Continuous: 'feel' এখানে state verb কিন্তু অনুভূতি বোঝাতে continuous ব্যবহার করা চলে",
+          "error_type": "verb_form",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_046",
+          "bangla": "ডাক্তার দেখাতে হবে।",
+          "correct": "I need to see a doctor.",
+          "options": ["I need to see a doctor.", "I need see doctor.", "I need to see doctor.", "Need to see a doctor."],
+          "rule": "'need to + verb' structure। 'a doctor' - সাধারণ উল্লেখে 'a' article",
+          "error_type": "article",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_047",
+          "bangla": "তোমার শরীর ভালো আছে?",
+          "correct": "Are you feeling well?",
+          "options": ["Are you feeling well?", "Do you feeling well?", "Are you feel well?", "You feeling well?"],
+          "rule": "Present Continuous question: 'Are you + verb-ing?' structure",
+          "error_type": "verb_form",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_048",
+          "bangla": "আমার ঠাণ্ডা লেগেছে।",
+          "correct": "I have caught a cold.",
+          "options": ["I have caught a cold.", "I have catch a cold.", "I caught cold.", "I have a cold."],
+          "rule": "Present Perfect: 'have + V3 (caught)'। 'catch a cold' = ঠাণ্ডা লাগা",
+          "error_type": "verb_form",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "name": "Education & Learning",
+      "name_bn": "শিক্ষা ও শেখা",
+      "icon": "education",
+      "questions": [
+        {
+          "id": "be_049",
+          "bangla": "তুমি কোন ক্লাসে পড়?",
+          "correct": "Which class are you in?",
+          "options": ["Which class are you in?", "What class you read?", "Which class do you read?", "Which class are you?"],
+          "rule": "ক্লাস জানতে 'Which class are you in?' structure ব্যবহার করতে হবে",
+          "error_type": "preposition",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_050",
+          "bangla": "আমি ইংরেজি শিখছি।",
+          "correct": "I am learning English.",
+          "options": ["I am learning English.", "I learn English.", "I am learn English.", "I learning English."],
+          "rule": "Present Continuous: এখন শেখার কাজ চলছে বোঝাতে 'am + verb-ing'",
+          "error_type": "verb_form",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_051",
+          "bangla": "সে খুব ভালো ইংরেজি বলে।",
+          "correct": "She speaks English very well.",
+          "options": ["She speaks English very well.", "She speak English very well.", "She is speak English very well.", "She speaks English very good."],
+          "rule": "Present Simple: 3rd person (She) এর সাথে 'speaks' - 's' যোগ করতে হবে",
+          "error_type": "subject_verb_agreement",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_052",
+          "bangla": "আমি বই পড়তে পছন্দ করি।",
+          "correct": "I like to read books.",
+          "options": ["I like to read books.", "I like read books.", "I like reading books.", "I liking to read books."],
+          "rule": "'like' এর পরে 'to + verb' (infinitive) অথবা gerund (-ing) দুটোই চলে",
+          "error_type": "gerund_infinitive",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_053",
+          "bangla": "আমি কি আপনার কলম ধার নিতে পারি?",
+          "correct": "May I borrow your pen?",
+          "options": ["May I borrow your pen?", "Can I borrow your pen?", "May I borrow your pen please?", "I may borrow your pen?"],
+          "rule": "অনুমতি চাইতে 'May I...?' বেশি polite। 'borrow' = ধার নেওয়া",
+          "error_type": "modal_verb",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_054",
+          "bangla": "শিক্ষক আমাদের পড়াচ্ছেন।",
+          "correct": "The teacher is teaching us.",
+          "options": ["The teacher is teaching us.", "Teacher is teaching us.", "The teacher teaches us.", "The teacher teaching us."],
+          "rule": "Present Continuous: এখন ঘটছে বোঝাতে 'is + verb-ing'। 'the teacher' - নির্দিষ্ট",
+          "error_type": "tense",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "name": "Time & Date",
+      "name_bn": "সময় ও তারিখ",
+      "icon": "time",
+      "questions": [
+        {
+          "id": "be_055",
+          "bangla": "এখন ক'টা বাজে?",
+          "correct": "What time is it?",
+          "options": ["What time is it?", "How time is it?", "What time it is?", "What is the time?"],
+          "rule": "সময় জানতে 'What time is it?' অথবা 'What is the time?' ব্যবহার করতে হবে",
+          "error_type": "verb_usage",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_056",
+          "bangla": "আজ কত তারিখ?",
+          "correct": "What is the date today?",
+          "options": ["What is the date today?", "What date today?", "How many date today?", "What day is today?"],
+          "rule": "তারিখ জানতে 'What is the date?' ব্যবহার করতে হবে",
+          "error_type": "confusing_words",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_057",
+          "bangla": "আজ শুক্রবার।",
+          "correct": "Today is Friday.",
+          "options": ["Today is Friday.", "Today Friday.", "Today are Friday.", "It Friday today."],
+          "rule": "'Today is + day' structure। Days-এর আগে 'on' preposition বসে না",
+          "error_type": "verb_usage",
+          "difficulty": "easy"
+        },
+        {
+          "id": "be_058",
+          "bangla": "আমি ১০ মিনিটের মধ্যে আসছি।",
+          "correct": "I will come in 10 minutes.",
+          "options": ["I will come in 10 minutes.", "I come in 10 minutes.", "I will come after 10 minutes.", "I am coming in 10 minutes."],
+          "rule": "Future: 'will + verb'। 'in 10 minutes' = ১০ মিনিটের মধ্যে",
+          "error_type": "preposition",
+          "difficulty": "medium"
+        },
+        {
+          "id": "be_059",
+          "bangla": "আমি ২০১০ সাল থেকে এখানে আছি।",
+          "correct": "I have been here since 2010.",
+          "options": ["I have been here since 2010.", "I am here since 2010.", "I was here since 2010.", "I have been here from 2010."],
+          "rule": "Present Perfect Continuous / 'have been': নির্দিষ্ট সময় বিন্দুর জন্য 'since' ব্যবহার করতে হবে",
+          "error_type": "tense",
+          "difficulty": "hard"
+        },
+        {
+          "id": "be_060",
+          "bangla": "সে ২ ঘণ্টা ধরে অপেক্ষা করছে।",
+          "correct": "He has been waiting for 2 hours.",
+          "options": ["He has been waiting for 2 hours.", "He is waiting for 2 hours.", "He waits for 2 hours.", "He has waited for 2 hours."],
+          "rule": "Present Perfect Continuous: অতীতে শুরু হয়ে এখনও চলছে বোঝাতে। সময়কালের জন্য 'for'",
+          "error_type": "tense",
+          "difficulty": "hard"
+        }
+      ]
+    }
+  ]
+}
