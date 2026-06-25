@@ -6,6 +6,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../models/user_model.dart';
+import '../services/hive_service.dart';
+import '../services/game_data_sync_service.dart';
 
 final authProvider = StateNotifierProvider<AuthNotifier, AsyncValue<UserModel?>>((ref) {
   return AuthNotifier();
@@ -55,6 +57,10 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
         }
 
         state = AsyncValue.data(userModel);
+        
+        // Load user's game data from Firebase after successful auth
+        final syncService = GameDataSyncService();
+        await syncService.loadUserDataFromFirebase();
       } else {
         // Fallback or if document doesn't exist yet
         state = AsyncValue.data(UserModel(
@@ -64,6 +70,10 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
           photoUrl: _auth.currentUser?.photoURL ?? '',
           joinedAt: DateTime.now(),
         ));
+        
+        // Load game data for new user too
+        final syncService = GameDataSyncService();
+        await syncService.loadUserDataFromFirebase();
       }
     } catch (e, stack) {
       state = AsyncValue.error(e, stack);
@@ -247,8 +257,13 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
   Future<void> signOut() async {
     state = const AsyncValue.loading();
     try {
+      // Clear all local Hive data before signing out
+      await HiveService.clearAllCaches();
+      
+      // Sign out from Firebase and Google
       await _auth.signOut();
       await _googleSignIn.signOut();
+      
       state = const AsyncValue.data(null);
     } catch (e, stack) {
       state = AsyncValue.error(e, stack);

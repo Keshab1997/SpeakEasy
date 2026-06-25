@@ -140,11 +140,15 @@ class StatisticsRepository {
     final snapshot = await FirebaseFirestore.instance
         .collection(_firestoreCollection)
         .where('userId', isEqualTo: userId)
-        .orderBy('completedTime', descending: true)
-        .get();
-    return snapshot.docs
+        .get(); // Remove orderBy to avoid index requirement
+    
+    // Sort in memory after fetching
+    final results = snapshot.docs
         .map((doc) => GameResultModel.fromMap(doc.data()))
         .toList();
+    
+    results.sort((a, b) => b.completedTime.compareTo(a.completedTime));
+    return results;
   }
 
   Future<void> uploadResultToFirestore(String userId, GameResultModel result) async {

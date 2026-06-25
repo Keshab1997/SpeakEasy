@@ -137,33 +137,64 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final themeState = ref.watch(themeProvider);
     final soundState = ref.watch(soundProvider);
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text('Game Settings', style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // Appearance Section
-          _SettingsSection(
-            title: 'Appearance',
-            children: [
-              SwitchListTile(
-                title: const Text('Dark Mode'),
-                subtitle: const Text('Enable dark theme'),
-                value: themeState.isDark,
-                onChanged: (value) => ref.read(themeProvider.notifier).setThemeMode(
-                  value ? ThemeMode.dark : ThemeMode.light,
+          // Info Banner
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: AppColors.primary.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: AppColors.primary.withOpacity(0.3)),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary.withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Icon(Icons.settings, color: AppColors.primary, size: 24),
                 ),
-                secondary: Icon(themeState.isDark ? Icons.dark_mode : Icons.light_mode, color: AppColors.primary),
-              ),
-            ],
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Game Preferences',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          color: isDark ? AppColors.onSurfaceDark : AppColors.onSurfaceLight,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        'Customize your gaming experience',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
 
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
 
           // Sound Section
           _SettingsSection(
@@ -171,7 +202,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             children: [
               SwitchListTile(
                 title: const Text('Sound Effects'),
-                subtitle: const Text('Enable game sounds'),
+                subtitle: const Text('Enable game sounds & music'),
                 value: !soundState.isMuted,
                 onChanged: (value) {
                   ref.read(soundProvider.notifier).setMuted(!value);
@@ -195,6 +226,11 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                         ),
                       ),
                       const Icon(Icons.volume_up, size: 20),
+                      const SizedBox(width: 12),
+                      Text(
+                        '${(soundState.volume * 100).toInt()}%',
+                        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                      ),
                     ],
                   ),
                 ),
@@ -205,7 +241,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
           // Game Settings Section
           _SettingsSection(
-            title: 'Game Settings',
+            title: 'Game Preferences',
             children: [
               ListTile(
                 leading: const Icon(Icons.timer, color: AppColors.primary),
@@ -233,127 +269,34 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ],
           ),
 
-          const SizedBox(height: 16),
+          const SizedBox(height: 24),
 
-          // Account Section
-          _SettingsSection(
-            title: 'Account',
-            children: [
-              ListTile(
-                leading: const Icon(Icons.sync, color: AppColors.primary),
-                title: const Text('Sync Data'),
-                subtitle: const Text('Sync with Firebase'),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Sync feature coming soon!')),
-                  );
-                },
-              ),
-              const Divider(),
-              ListTile(
-                leading: const Icon(Icons.delete_forever, color: AppColors.error),
-                title: const Text('Clear Local Data'),
-                subtitle: const Text('Delete all cached data'),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () => _showClearDataDialog(context),
-              ),
-            ],
-          ),
-
-          const SizedBox(height: 16),
-
-          // About Section
-          _SettingsSection(
-            title: 'About',
-            children: [
-              const ListTile(
-                leading: Icon(Icons.info, color: AppColors.primary),
-                title: Text('Version'),
-                subtitle: Text('1.0.0'),
-              ),
-              const Divider(),
-              ListTile(
-                leading: const Icon(Icons.help, color: AppColors.primary),
-                title: const Text('Help & Support'),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Help page coming soon!')),
-                  );
-                },
-              ),
-            ],
-          ),
-
-          const SizedBox(height: 32),
-
-          // Reset Progress Button
-          SizedBox(
-            width: double.infinity,
-            child: OutlinedButton(
-              onPressed: () => _showResetProgressDialog(context),
-              style: OutlinedButton.styleFrom(
-                foregroundColor: AppColors.error,
-                side: const BorderSide(color: AppColors.error),
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-              ),
-              child: const Text('Reset All Progress', style: TextStyle(fontWeight: FontWeight.bold)),
+          // Tip Card
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.orange.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: Colors.orange.withOpacity(0.3)),
+            ),
+            child: Row(
+              children: [
+                const Icon(Icons.lightbulb_outline, color: Colors.orange, size: 24),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    'Tip: For general app settings like theme, notifications, and account, use the main Settings from your profile.',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
 
           const SizedBox(height: 16),
-        ],
-      ),
-    );
-  }
-
-  void _showClearDataDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Clear Local Data?'),
-        content: const Text('This will delete all cached data. Your progress will be preserved if synced.'),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
-          TextButton(
-            onPressed: () async {
-              await HiveService.clearAllCaches();
-              if (context.mounted) Navigator.pop(context);
-              if (context.mounted) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Local data cleared')),
-                );
-              }
-            },
-            child: const Text('Clear', style: TextStyle(color: AppColors.error)),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _showResetProgressDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Reset All Progress?'),
-        content: const Text('This will permanently delete all your progress, XP, coins, and achievements. This action cannot be undone.'),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
-          TextButton(
-            onPressed: () async {
-              await HiveService.clearAllCaches();
-              if (context.mounted) Navigator.pop(context);
-              if (context.mounted) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Progress reset')),
-                );
-              }
-            },
-            child: const Text('Reset', style: TextStyle(color: AppColors.error)),
-          ),
         ],
       ),
     );

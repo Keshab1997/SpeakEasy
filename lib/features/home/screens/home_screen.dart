@@ -30,6 +30,7 @@ import '../../listening/screens/listening_screen.dart';
 import '../../speaking/screens/speaking_screen.dart';
 import '../../translator/screens/banglish_translator_screen.dart';
 import '../../game/screens/game_home_screen.dart';
+import '../../game/screens/tense_categories_screen.dart';
 import '../widgets/study_plan_section.dart';
 import '../widgets/spoken_rules_screen.dart';
 import '../widgets/notification_dialog.dart';
@@ -1456,7 +1457,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     );
   }
 
-  // HOME LEARNING SECTION — Spoken Rules, Vocabulary, Grammar
+  // HOME LEARNING SECTION — Spoken Rules, Vocabulary, Grammar, Tense Rules
   Widget _buildHomeLearningSection(ThemeData theme, bool isDark) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1479,13 +1480,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
-            itemCount: 4,
+            itemCount: 5,
             separatorBuilder: (_, __) => const SizedBox(width: 14),
             itemBuilder: (_, i) {
               final items = [
                 {
+                  'title': 'Tense Rules',
+                  'icon': Icons.auto_stories,
+                  'gradient': [Color(0xFFE94057), Color(0xFFF27121)],
+                  'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const TenseCategoriesScreen())),
+                },
+                {
                   'title': 'Spoken Rules',
-                  'icon': Icons.auto_stories_rounded,
+                  'icon': Icons.record_voice_over_rounded,
                   'gradient': [Color(0xFF6366F1), Color(0xFF8B5CF6)],
                   'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SpokenRulesScreen())),
                 },

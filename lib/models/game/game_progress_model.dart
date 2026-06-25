@@ -86,7 +86,23 @@ class GameProgressModel {
       'longestStreak': longestStreak,
       'missedDays': missedDays,
       'totalActiveDays': totalActiveDays,
-      'lastActiveDate': Timestamp.fromDate(lastActiveDate),
+      'lastActiveDate': lastActiveDate.toIso8601String(), // Use ISO string for Hive
+    };
+  }
+  
+  /// Convert to Firestore map (with Timestamp)
+  Map<String, dynamic> toFirestoreMap() {
+    return {
+      'currentLevel': currentLevel,
+      'currentXP': currentXP,
+      'totalCoins': totalCoins,
+      'streak': streak,
+      'unlockedModes': unlockedModes,
+      'weeklyStreak': weeklyStreak,
+      'longestStreak': longestStreak,
+      'missedDays': missedDays,
+      'totalActiveDays': totalActiveDays,
+      'lastActiveDate': Timestamp.fromDate(lastActiveDate), // Firestore Timestamp
     };
   }
 

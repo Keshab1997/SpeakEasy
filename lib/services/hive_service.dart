@@ -737,5 +737,18 @@ class HiveService {
     if (Hive.isBoxOpen(_notificationHistoryBox)) {
       await Hive.box(_notificationHistoryBox).clear();
     }
+
+    // 🔥 GAME DATA - Clear game progress and statistics
+    if (Hive.isBoxOpen(_gameProgressBox)) {
+      await Hive.box(_gameProgressBox).clear();
+    }
+    if (Hive.isBoxOpen(_gameStatisticsBox)) {
+      await Hive.box(_gameStatisticsBox).clear();
+    }
+    
+    // Clear game achievements box (if exists)
+    if (Hive.isBoxOpen('game_achievements')) {
+      await Hive.box('game_achievements').clear();
+    }
   }
 }

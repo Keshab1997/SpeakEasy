@@ -249,7 +249,7 @@ class ProgressRepository {
     await FirebaseFirestore.instance
         .collection(_firestoreCollection)
         .doc(progress.userId)
-        .set(progress.toMap());
+        .set(progress.toFirestoreMap()); // Use toFirestoreMap for Firestore
   }
 
   Future<List<GameLevelModel>> fetchLevelsFromFirestore(String userId) async {

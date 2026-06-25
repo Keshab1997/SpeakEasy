@@ -60,26 +60,47 @@ class LeaderboardScreen extends ConsumerWidget {
                             .take(3)
                             .toList()),
 
-                  const SizedBox(height: 20),
+                  if (leaderboardState.entries.length >= 3)
+                    const SizedBox(height: 20),
 
                   // Rest of the list
-                  Expanded(
-                    child: ListView.builder(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      itemCount: leaderboardState.entries.length - 3,
-                      itemBuilder: (context, index) {
-                        final entry =
-                            leaderboardState.entries[index + 3];
-                        return _LeaderboardTile(
-                          rank: entry.rank,
-                          userName: entry.userName,
-                          score: entry.score,
-                          xp: entry.xp,
-                          level: entry.level,
-                        );
-                      },
+                  if (leaderboardState.entries.length > 3)
+                    Expanded(
+                      child: ListView.builder(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        itemCount: leaderboardState.entries.length - 3,
+                        itemBuilder: (context, index) {
+                          final entry =
+                              leaderboardState.entries[index + 3];
+                          return _LeaderboardTile(
+                            rank: entry.rank,
+                            userName: entry.userName,
+                            score: entry.score,
+                            xp: entry.xp,
+                            level: entry.level,
+                          );
+                        },
+                      ),
                     ),
-                  ),
+                  
+                  // If less than 3 entries, show them in a list
+                  if (leaderboardState.entries.length > 0 && leaderboardState.entries.length < 3)
+                    Expanded(
+                      child: ListView.builder(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        itemCount: leaderboardState.entries.length,
+                        itemBuilder: (context, index) {
+                          final entry = leaderboardState.entries[index];
+                          return _LeaderboardTile(
+                            rank: entry.rank,
+                            userName: entry.userName,
+                            score: entry.score,
+                            xp: entry.xp,
+                            level: entry.level,
+                          );
+                        },
+                      ),
+                    ),
                 ],
               ),
       ),

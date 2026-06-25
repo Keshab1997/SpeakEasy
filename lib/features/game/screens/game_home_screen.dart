@@ -9,7 +9,6 @@ import 'mode_selection_screen.dart';
 import 'leaderboard_screen.dart';
 import 'statistics_screen.dart';
 import 'achievements_screen.dart';
-import 'settings_screen.dart';
 import 'daily_challenge_screen.dart';
 import 'boss_battle_screen.dart';
 import 'tense_categories_screen.dart';
@@ -57,12 +56,6 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tense Mastery', style: TextStyle(fontWeight: FontWeight.bold)),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SettingsScreen())),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -151,120 +144,11 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen> {
               ],
             ),
 
-            const SizedBox(height: 24),
+            const SizedBox(height: 16),
 
-            // ── Tense Rules Quick Access Banner ──
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xFF8A2387), Color(0xFFE94057), Color(0xFFF27121)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(24),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFFE94057).withOpacity(0.3),
-                    blurRadius: 12,
-                    offset: const Offset(0, 6),
-                  ),
-                ],
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(24),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      right: -10,
-                      bottom: -10,
-                      child: Icon(
-                        Icons.auto_stories,
-                        size: 110,
-                        color: Colors.white.withOpacity(0.12),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.2),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: const Text(
-                                  'TENSE FORMULAS',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1.0,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 8),
-                              const Icon(Icons.star, color: Colors.amber, size: 16),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-                          const Text(
-                            'Tense-এর সব নিয়ম ও সূত্র',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 4),
-                          const Text(
-                            '১২টি Tense-এর গঠন ও বিস্তারিত নিয়ম বাংলায় শিখুন',
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 13,
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-                          ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) => const TenseCategoriesScreen(),
-                                ),
-                              );
-                            },
-                            icon: const Icon(Icons.menu_book, size: 18),
-                            label: const Text(
-                              '📖 Rules দেখুন',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white,
-                              foregroundColor: const Color(0xFFE94057),
-                              elevation: 0,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 10,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 24),
+            // ── Featured Game Section Title ──
+            Text('🎯 Featured Games', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold, fontSize: 20)),
+            const SizedBox(height: 12),
 
             // ── Word Match Duolingo-style Game ──
             InkWell(
