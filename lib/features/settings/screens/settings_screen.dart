@@ -184,7 +184,14 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 leading: const Icon(Icons.person_outline_rounded, color: AppColors.primary),
                 title: const Text('Edit Profile'),
                 trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
-                onTap: () {},
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Edit profile feature - Update your name, email, and photo'),
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                },
               ),
               const Divider(height: 1),
               ListTile(

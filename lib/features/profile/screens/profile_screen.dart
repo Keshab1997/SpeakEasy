@@ -22,7 +22,6 @@ class ProfileScreen extends ConsumerStatefulWidget {
 }
 
 class _ProfileScreenState extends ConsumerState<ProfileScreen> {
-  bool _notificationsEnabled = true;
   bool _isUploadingPhoto = false;
 
   @override
@@ -314,25 +313,6 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               ),
               child: Column(
                 children: [
-                  ListTile(
-                    leading: const Icon(Icons.notifications_none_rounded, color: Colors.blue),
-                    title: const Text('Notifications'),
-                    subtitle: const Text('Get word-of-the-day alerts'),
-                    trailing: Switch.adaptive(
-                      value: _notificationsEnabled,
-                      activeColor: AppColors.primary,
-                      onChanged: (val) => setState(() => _notificationsEnabled = val),
-                    ),
-                  ),
-                  const Divider(height: 1),
-                  ListTile(
-                    leading: const Icon(Icons.language_rounded, color: Colors.green),
-                    title: const Text('Target Language'),
-                    subtitle: const Text('English (US)'),
-                    trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
-                    onTap: () {},
-                  ),
-                  const Divider(height: 1),
                   ListTile(
                     leading: const Icon(Icons.delete_sweep_rounded, color: Colors.redAccent),
                     title: const Text('Clear All Cache'),

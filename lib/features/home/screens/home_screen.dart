@@ -32,6 +32,9 @@ import '../../translator/screens/banglish_translator_screen.dart';
 import '../../game/screens/game_home_screen.dart';
 import '../widgets/study_plan_section.dart';
 import '../widgets/spoken_rules_screen.dart';
+import '../widgets/notification_dialog.dart';
+import '../widgets/notification_history_screen.dart';
+import '../../settings/screens/settings_screen.dart';
 import '../../verb_forms/screens/verb_forms_screen.dart';
 import '../../verb_forms/screens/verb_form_practice_screen.dart';
 import '../../practice/screens/bangla_english_practice_screen.dart';
@@ -55,10 +58,12 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   final _tts = TtsService();
   bool _isSpeaking = false;
+  int _unreadNotificationCount = 0;
 
   @override
   void initState() {
     super.initState();
+    _updateNotificationCount();
     // Fetch progress & game stats on load
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       ref.read(progressProvider.notifier).fetchProgress();
@@ -98,6 +103,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       // 5. Refresh ALL providers after streak updates
       streakNotifier.refresh();
       ref.read(progressProvider.notifier).fetchProgress();
+    });
+  }
+
+  void _updateNotificationCount() {
+    setState(() {
+      _unreadNotificationCount = HiveService.getUnreadNotificationCount();
     });
   }
 
@@ -285,11 +296,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     // Group lessons by level for Continue Learning
     return Scaffold(
       appBar: AppBar(
-        title: const Row(
+        title: Row(
           children: [
-            Icon(Icons.translate_rounded, color: AppColors.primary, size: 28),
-            SizedBox(width: 8),
-            Text('SpeakEasy', style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 0.5)),
+            const Icon(Icons.translate_rounded, color: AppColors.primary, size: 28),
+            const SizedBox(width: 8),
+            Flexible(
+              child: const Text(
+                'SpeakEasy',
+                style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 0.5),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
           ],
         ),
         actions: [
@@ -306,22 +323,60 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             },
           ),
           IconButton(
-            onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('No new notifications'), behavior: SnackBarBehavior.floating),
-            ),
+            onPressed: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const NotificationHistoryScreen(),
+                ),
+              );
+              // Update notification count when returning from history screen
+              _updateNotificationCount();
+            },
             icon: Stack(
               children: [
                 const Icon(Icons.notifications_outlined, size: 28),
-                Positioned(
-                  right: 2, top: 2,
-                  child: Container(
-                    padding: const EdgeInsets.all(4),
-                    decoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
-                    constraints: const BoxConstraints(minWidth: 8, minHeight: 8),
+                if (_unreadNotificationCount > 0)
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    child: Container(
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: theme.scaffoldBackgroundColor, width: 1.5),
+                      ),
+                      constraints: const BoxConstraints(
+                        minWidth: 18,
+                        minHeight: 18,
+                      ),
+                      child: Center(
+                        child: Text(
+                          '$_unreadNotificationCount',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
               ],
             ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SettingsScreen(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.settings_outlined, size: 26),
           ),
           const SizedBox(width: 8),
           GestureDetector(
@@ -355,7 +410,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               _buildGreetingSection(theme, user?.name),
               const SizedBox(height: 20),
               
-              // 2. Streak & Progress
+              // 2. Streak & Progress (Combined in one widget)
               StreakWidget(
                 currentStreak: currentStreak,
                 todayXP: currentXP,
@@ -367,11 +422,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 onBuyFreeze: () => _buyStreakFreeze(context, ref, currentCoins),
                 onShare: () => _shareStreak(context, currentStreak),
               ),
-              const SizedBox(height: 16),
-              _buildProgressCard(theme, currentStreak, lessonsCompleted, progressPct, totalLessons, currentXP, currentCoins, currentLevel),
               const SizedBox(height: 24),
               
-              // 3. Continue Learning (Most Important)
+              // 3. Continue Learning (Most Important - Keep at top)
               _buildContinueLearningSection(
                 theme, isDark, studyState, allGrammarChapters, allVocabChapters, lastOpenedChapter,
               ),
@@ -379,6 +432,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               
               // 4. Today's Word
               _buildTodaysWordCard(theme, isDark, todayWords, isLoading: chaptersAsync.isLoading),
+              const SizedBox(height: 24),
+              
+              // 5. AI Features (Important for modern learning)
+              _buildAIFeaturesSection(theme, isDark),
               const SizedBox(height: 24),
               
               // 6. Learning Modules
@@ -391,14 +448,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               
               // 8. Game Section
               _buildGameCard(theme, isDark),
-              const SizedBox(height: 24),
-              
-              // 9. AI Features (Combined)
-              _buildAIFeaturesSection(theme, isDark),
-              const SizedBox(height: 24),
-              
-              // 10. Study Plan
-              const StudyPlanSection(),
               const SizedBox(height: 32),
             ],
           ),

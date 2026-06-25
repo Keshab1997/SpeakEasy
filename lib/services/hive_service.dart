@@ -13,6 +13,7 @@ class HiveService {
   static const String _sentenceAnalysisHistoryBox = 'sentence_analysis_history';
   static const String _gameProgressBox = 'game_progress';
   static const String _gameStatisticsBox = 'game_statistics';
+  static const String _notificationHistoryBox = 'notification_history';
 
   static Future<void> initialize() async {
     await Hive.initFlutter();
@@ -28,6 +29,7 @@ class HiveService {
     await Hive.openBox(_sentenceAnalysisHistoryBox);
     await Hive.openBox(_gameProgressBox);
     await Hive.openBox(_gameStatisticsBox);
+    await Hive.openBox(_notificationHistoryBox);
   }
 
   static Box get _vocabProgress => Hive.box(_vocabProgressBox);
@@ -616,6 +618,65 @@ class HiveService {
     return _settings.get(key, defaultValue: 0.0) as double;
   }
 
+  // ── Notification History ──
+
+  static Future<void> saveNotificationToHistory(Map<String, dynamic> notification) async {
+    if (!Hive.isBoxOpen(_notificationHistoryBox)) {
+      await Hive.openBox(_notificationHistoryBox);
+    }
+    final box = Hive.box(_notificationHistoryBox);
+    final history = getNotificationHistory();
+    history.insert(0, notification);
+    if (history.length > 100) history.removeLast(); // Keep last 100 notifications
+    await box.put('notifications', history);
+  }
+
+  static List<Map<String, dynamic>> getNotificationHistory() {
+    if (!Hive.isBoxOpen(_notificationHistoryBox)) return [];
+    final box = Hive.box(_notificationHistoryBox);
+    final raw = box.get('notifications', defaultValue: []) as List;
+    return raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
+  }
+
+  static Future<void> markNotificationAsRead(String notificationId) async {
+    if (!Hive.isBoxOpen(_notificationHistoryBox)) return;
+    final box = Hive.box(_notificationHistoryBox);
+    final history = getNotificationHistory();
+    final index = history.indexWhere((n) => n['id'] == notificationId);
+    if (index >= 0) {
+      history[index]['isRead'] = true;
+      await box.put('notifications', history);
+    }
+  }
+
+  static Future<void> markAllNotificationsAsRead() async {
+    if (!Hive.isBoxOpen(_notificationHistoryBox)) return;
+    final box = Hive.box(_notificationHistoryBox);
+    final history = getNotificationHistory();
+    for (final notification in history) {
+      notification['isRead'] = true;
+    }
+    await box.put('notifications', history);
+  }
+
+  static int getUnreadNotificationCount() {
+    final history = getNotificationHistory();
+    return history.where((n) => n['isRead'] != true).length;
+  }
+
+  static Future<void> deleteNotification(String notificationId) async {
+    if (!Hive.isBoxOpen(_notificationHistoryBox)) return;
+    final box = Hive.box(_notificationHistoryBox);
+    final history = getNotificationHistory();
+    history.removeWhere((n) => n['id'] == notificationId);
+    await box.put('notifications', history);
+  }
+
+  static Future<void> clearNotificationHistory() async {
+    if (!Hive.isBoxOpen(_notificationHistoryBox)) return;
+    await Hive.box(_notificationHistoryBox).put('notifications', <Map<String, dynamic>>[]);
+  }
+
   /// Clears all locally cached/stored data used by the app (Hive boxes).
   /// Note: Firebase-backed progress will reload/sync again on next fetch/login.
   static Future<void> clearAllCaches() async {
@@ -670,6 +731,11 @@ class HiveService {
     // Vocabulary test history
     if (Hive.isBoxOpen(_vocabTestHistoryBox)) {
       await Hive.box(_vocabTestHistoryBox).clear();
+    }
+
+    // Notification history
+    if (Hive.isBoxOpen(_notificationHistoryBox)) {
+      await Hive.box(_notificationHistoryBox).clear();
     }
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz_data;
 import 'hive_service.dart';
+import 'dart:math';
 
 class NotificationService {
   static final NotificationService _instance = NotificationService._();
@@ -73,6 +74,9 @@ class NotificationService {
 
     _initialized = true;
 
+    // Request permissions on first launch (for Android 13+ and iOS)
+    await requestPermissions();
+
     // Schedule daily repeating notifications using native scheduler
     if (HiveService.isNotificationEnabled()) {
       _scheduleAll();
@@ -83,33 +87,78 @@ class NotificationService {
     // Handle notification tap - could navigate to specific screen
     final payload = response.payload;
     if (payload == null) return;
+    
+    // Mark notification as read when tapped
+    _markNotificationAsReadByPayload(payload);
     // Future: Navigate based on payload
   }
 
-  /// Request notification permissions (iOS)
-  Future<bool> requestPermissions() async {
-    final androidPlatform = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
-    if (androidPlatform != null) {
-      await androidPlatform.requestNotificationsPermission();
+  void _markNotificationAsReadByPayload(String payload) {
+    final history = HiveService.getNotificationHistory();
+    for (final notification in history) {
+      if (notification['payload'] == payload && notification['isRead'] != true) {
+        HiveService.markNotificationAsRead(notification['id']);
+        break;
+      }
     }
+  }
 
-    final iosPlatform = _plugin.resolvePlatformSpecificImplementation<
-        IOSFlutterLocalNotificationsPlugin>();
-    if (iosPlatform != null) {
-      await iosPlatform.requestPermissions(
-        alert: true,
-        badge: true,
-        sound: true,
-      );
+  /// Save notification to history
+  Future<void> _saveNotificationToHistory({
+    required String title,
+    required String body,
+    required String type,
+    String? payload,
+  }) async {
+    final notification = {
+      'id': '${DateTime.now().millisecondsSinceEpoch}_${Random().nextInt(10000)}',
+      'title': title,
+      'body': body,
+      'type': type,
+      'receivedAt': DateTime.now().toIso8601String(),
+      'isRead': false,
+      'payload': payload,
+    };
+    await HiveService.saveNotificationToHistory(notification);
+  }
+
+  /// Request notification permissions (Android 13+ and iOS)
+  Future<bool> requestPermissions() async {
+    try {
+      final androidPlatform = _plugin.resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>();
+      if (androidPlatform != null) {
+        final granted = await androidPlatform.requestNotificationsPermission();
+        if (granted != true) {
+          return false;
+        }
+      }
+
+      final iosPlatform = _plugin.resolvePlatformSpecificImplementation<
+          IOSFlutterLocalNotificationsPlugin>();
+      if (iosPlatform != null) {
+        final granted = await iosPlatform.requestPermissions(
+          alert: true,
+          badge: true,
+          sound: true,
+        );
+        if (granted != true) {
+          return false;
+        }
+      }
+      return true;
+    } catch (e) {
+      return false;
     }
-    return true;
   }
 
   // ─── Show Immediate Notifications (for in-app use while streak) ───
 
   Future<void> showStreakMilestoneNotification(int streak) async {
     try {
+      final title = '🔥 $streak Day Streak!';
+      final body = 'Amazing! Keep up your daily practice to maintain your streak.';
+      
       final androidDetails = AndroidNotificationDetails(
         'streak_milestone',
         'Streak Milestone',
@@ -121,9 +170,17 @@ class NotificationService {
       final details = NotificationDetails(android: androidDetails);
       await _plugin.show(
         _streakMilestoneId,
-        '🔥 $streak Day Streak!',
-        'Amazing! Keep up your daily practice to maintain your streak.',
+        title,
+        body,
         details,
+        payload: 'streak_milestone',
+      );
+      
+      // Save to history
+      await _saveNotificationToHistory(
+        title: title,
+        body: body,
+        type: 'streak_milestone',
         payload: 'streak_milestone',
       );
     } catch (_) {}
@@ -213,7 +270,16 @@ class NotificationService {
       icon: '@mipmap/ic_launcher',
     );
 
-    final details = NotificationDetails(android: androidDetails);
+    final iosDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    );
+
+    final details = NotificationDetails(
+      android: androidDetails,
+      iOS: iosDetails,
+    );
 
     _plugin.zonedSchedule(
       id,
@@ -228,6 +294,9 @@ class NotificationService {
           UILocalNotificationDateInterpretation.absoluteTime,
       payload: payload,
     );
+    
+    // Note: Scheduled notifications will be added to history when they are actually delivered
+    // Not when they are scheduled, to avoid cluttering history with future notifications
   }
 
   /// Pick a random word for today's notification (called at schedule time)
@@ -252,6 +321,8 @@ class NotificationService {
   /// Schedule notification on next app launch (called from main)
   Future<void> rescheduleOnAppOpen() async {
     if (!HiveService.isNotificationEnabled()) return;
+    // Request permissions again if needed (in case user revoked)
+    await requestPermissions();
     _scheduleAll();
   }
 
@@ -273,6 +344,24 @@ class NotificationService {
       );
       final details = NotificationDetails(android: androidDetails);
       await _plugin.show(id, title, body, details, payload: payload);
+      
+      // Save to history
+      await _saveNotificationToHistory(
+        title: title,
+        body: body,
+        type: 'custom',
+        payload: payload,
+      );
     } catch (_) {}
+  }
+
+  /// Get notification history
+  List<Map<String, dynamic>> getNotificationHistory() {
+    return HiveService.getNotificationHistory();
+  }
+
+  /// Get unread notification count
+  int getUnreadNotificationCount() {
+    return HiveService.getUnreadNotificationCount();
   }
 }
