@@ -17,6 +17,8 @@ import 'modes/fill_in_blanks_mode.dart';
 import 'modes/sentence_builder_mode.dart';
 import 'modes/grammar_detective_mode.dart';
 import 'modes/bangla_to_english_mode.dart';
+import 'modes/flashcard_mode.dart';
+import 'modes/story_completion_mode.dart';
 
 class GameHomeScreen extends ConsumerStatefulWidget {
   const GameHomeScreen({super.key});
@@ -317,6 +319,46 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen> with TickerProv
                           ),
                         ),
                       ],
+                    ),
+                    const SizedBox(height: 16),
+
+                    // Story Completion - NEW enhanced card
+                    _EnhancedGameCard(
+                      title: 'Story Completion',
+                      description: 'গল্পে ফাঁকা জায়গায় সঠিক শব্দ বসান',
+                      details: '10 stories • Bengali translation + explanation',
+                      icon: Icons.auto_stories_rounded,
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF0D9488), Color(0xFF14B8A6)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      badge: 'NEW',
+                      badgeColor: const Color(0xFF0D9488),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const StoryCompletionModeScreen()),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+
+                    // Flashcards - NEW enhanced card
+                    _EnhancedGameCard(
+                      title: 'Flashcards',
+                      description: 'Swipe & memorize বাংলা → English',
+                      details: '8 categories • 100+ words with pronunciation',
+                      icon: Icons.style_rounded,
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      badge: 'NEW',
+                      badgeColor: const Color(0xFF6366F1),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const FlashcardsModeScreen()),
+                      ),
                     ),
                   ],
                 ),

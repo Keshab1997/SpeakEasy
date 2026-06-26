@@ -18,6 +18,7 @@ import 'modes/quick_quiz_mode.dart';
 import 'modes/fill_in_blanks_mode.dart';
 import 'modes/sentence_builder_mode.dart';
 import 'modes/grammar_detective_mode.dart';
+import 'modes/flashcard_mode.dart';
 
 class ResultScreen extends ConsumerStatefulWidget {
   final int score;
@@ -263,6 +264,13 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (_) => const GrammarDetectiveModeScreen()),
+      );
+      return;
+    }
+    if (widget.gameMode == 'flashcard') {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const FlashcardsModeScreen()),
       );
       return;
     }

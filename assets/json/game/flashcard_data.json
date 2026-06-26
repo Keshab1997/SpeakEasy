@@ -1,0 +1,175 @@
+{
+  "game": "Flashcards",
+  "description": "Swipe through Bengali→English flashcards with spaced repetition",
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "family",
+      "name": "Family Members",
+      "icon": "people",
+      "cards": [
+        {"bn": "বাবা / পিতা", "en": "Father", "pronunciation": "/ˈfɑːðər/", "bn_example": "আমার বাবা একজন ডাক্তার।", "en_example": "My father is a doctor."},
+        {"bn": "মা / মাতা", "en": "Mother", "pronunciation": "/ˈmʌðər/", "bn_example": "আমার মা সুস্বাদু খাবার রান্না করেন।", "en_example": "My mother cooks delicious food."},
+        {"bn": "ভাই", "en": "Brother", "pronunciation": "/ˈbrʌðər/", "bn_example": "আমার দুই ভাই আছে।", "en_example": "I have two brothers."},
+        {"bn": "বোন", "en": "Sister", "pronunciation": "/ˈsɪstər/", "bn_example": "আমার বোন খুব দয়ালু।", "en_example": "My sister is very kind."},
+        {"bn": "চাচা / মামা", "en": "Uncle", "pronunciation": "/ˈʌŋkəl/", "bn_example": "আমার চাচা ঢাকায় থাকেন।", "en_example": "My uncle lives in Dhaka."},
+        {"bn": "চাচী / মাসি", "en": "Aunt", "pronunciation": "/ænt/", "bn_example": "আমার চাচী আমার জন্য উপহার এনেছেন।", "en_example": "My aunt brought me gifts."},
+        {"bn": "দাদা / পিতামহ", "en": "Grandfather", "pronunciation": "/ˈɡrænfɑːðər/", "bn_example": "আমার দাদা গল্প বলেন।", "en_example": "My grandfather tells stories."},
+        {"bn": "দাদী / ঠাকুরমা", "en": "Grandmother", "pronunciation": "/ˈɡrænmʌðər/", "bn_example": "আমার দাদী মিষ্টি বানান।", "en_example": "My grandmother makes sweets."},
+        {"bn": "চাচাত ভাই / বোন", "en": "Cousin", "pronunciation": "/ˈkʌzən/", "bn_example": "আমার চাচাত ভাই আমেরিকায় থাকে।", "en_example": "My cousin lives in America."},
+        {"bn": "ছেলে", "en": "Son", "pronunciation": "/sʌn/", "bn_example": "তার ছেলে একজন ছাত্র।", "en_example": "His son is a student."},
+        {"bn": "মেয়ে", "en": "Daughter", "pronunciation": "/ˈdɔːtər/", "bn_example": "তার মেয়ে খুব ভাল গান গায়।", "en_example": "Her daughter sings well."},
+        {"bn": "স্বামী", "en": "Husband", "pronunciation": "/ˈhʌzbənd/", "bn_example": "আমার স্বামী একজন শিক্ষক।", "en_example": "My husband is a teacher."},
+        {"bn": "স্ত্রী", "en": "Wife", "pronunciation": "/waɪf/", "bn_example": "তার স্ত্রী একজন নার্স।", "en_example": "His wife is a nurse."},
+        {"bn": "ভাইপো / ভাগ্নে", "en": "Nephew", "pronunciation": "/ˈnefjuː/", "bn_example": "আমার ভাইপো খুব দুষ্টু।", "en_example": "My nephew is very naughty."},
+        {"bn": "ভাইঝি / ভাগ্নী", "en": "Niece", "pronunciation": "/niːs/", "bn_example": "আমার ভাইঝির বয়স পাঁচ বছর।", "en_example": "My niece is five years old."}
+      ]
+    },
+    {
+      "id": "food",
+      "name": "Food & Drinks",
+      "icon": "restaurant",
+      "cards": [
+        {"bn": "ভাত / চাল", "en": "Rice", "pronunciation": "/raɪs/", "bn_example": "আমরা প্রতিদিন ভাত খাই।", "en_example": "We eat rice every day."},
+        {"bn": "পানি / জল", "en": "Water", "pronunciation": "/ˈwɔːtər/", "bn_example": "নিয়মিত পানি পান করুন।", "en_example": "Drink water regularly."},
+        {"bn": "দুধ", "en": "Milk", "pronunciation": "/mɪlk/", "bn_example": "শিশুরা প্রতিদিন দুধ খায়।", "en_example": "Children drink milk daily."},
+        {"bn": "চা", "en": "Tea", "pronunciation": "/tiː/", "bn_example": "আমি সকালে চা খাই।", "en_example": "I drink tea in the morning."},
+        {"bn": "কফি", "en": "Coffee", "pronunciation": "/ˈkɒfi/", "bn_example": "সে প্রতিদিন সকালে কফি খায়।", "en_example": "He drinks coffee every morning."},
+        {"bn": "ডিম", "en": "Egg", "pronunciation": "/eɡ/", "bn_example": "আমি সকালের নাস্তায় ডিম খাই।", "en_example": "I eat an egg for breakfast."},
+        {"bn": "রুটি", "en": "Bread", "pronunciation": "/bred/", "bn_example": "তুমি কি কিছু রুটি কিনতে পারো?", "en_example": "Can you buy some bread?"},
+        {"bn": "মাছ", "en": "Fish", "pronunciation": "/fɪʃ/", "bn_example": "সে মাছ খেতে পছন্দ করে।", "en_example": "She likes to eat fish."},
+        {"bn": "মাংস", "en": "Meat", "pronunciation": "/miːt/", "bn_example": "আমরা সপ্তাহে একবার মাংস খাই।", "en_example": "We eat meat once a week."},
+        {"bn": "সবজি", "en": "Vegetable", "pronunciation": "/ˈvedʒtəbəl/", "bn_example": "স্বাস্থ্যের জন্য সবজি খান।", "en_example": "Eat vegetables for good health."},
+        {"bn": "ফল", "en": "Fruit", "pronunciation": "/fruːt/", "bn_example": "আমি সব রকম ফল পছন্দ করি।", "en_example": "I like all kinds of fruit."},
+        {"bn": "আপেল", "en": "Apple", "pronunciation": "/ˈæpəl/", "bn_example": "প্রতিদিন একটি আপেল ডাক্তার দূরে রাখে।", "en_example": "An apple a day keeps the doctor away."},
+        {"bn": "কলা", "en": "Banana", "pronunciation": "/bəˈnænə/", "bn_example": "বানররা কলা পছন্দ করে।", "en_example": "Monkeys love bananas."},
+        {"bn": "কমলা", "en": "Orange", "pronunciation": "/ˈɒrɪndʒ/", "bn_example": "সে একটি কমলা খোসা ছাড়িয়েছে।", "en_example": "She peeled an orange."},
+        {"bn": "আম", "en": "Mango", "pronunciation": "/ˈmæŋɡoʊ/", "bn_example": "আম ফলদের রাজা।", "en_example": "Mango is the king of fruits."}
+      ]
+    },
+    {
+      "id": "animals",
+      "name": "Animals & Birds",
+      "icon": "pets",
+      "cards": [
+        {"bn": "কুকুর", "en": "Dog", "pronunciation": "/dɒɡ/", "bn_example": "কুকুরটি ঘেউ ঘেউ করছে।", "en_example": "The dog is barking."},
+        {"bn": "বিড়াল", "en": "Cat", "pronunciation": "/kæt/", "bn_example": "বিড়ালটি ঘুমাচ্ছে।", "en_example": "The cat is sleeping."},
+        {"bn": "হাতি", "en": "Elephant", "pronunciation": "/ˈelɪfənt/", "bn_example": "হাতিটি খুব বড়।", "en_example": "The elephant is very big."},
+        {"bn": "সিংহ", "en": "Lion", "pronunciation": "/ˈlaɪən/", "bn_example": "সিংহ জঙ্গলের রাজা।", "en_example": "The lion is the king of the jungle."},
+        {"bn": "বাঘ", "en": "Tiger", "pronunciation": "/ˈtaɪɡər/", "bn_example": "বাঘ একটি বন্য প্রাণী।", "en_example": "The tiger is a wild animal."},
+        {"bn": "পাখি", "en": "Bird", "pronunciation": "/bɜːrd/", "bn_example": "পাখিটি উড়ছে।", "en_example": "The bird is flying."},
+        {"bn": "গরু", "en": "Cow", "pronunciation": "/kaʊ/", "bn_example": "গরু আমাদের দুধ দেয়।", "en_example": "The cow gives us milk."},
+        {"bn": "ঘোড়া", "en": "Horse", "pronunciation": "/hɔːrs/", "bn_example": "সে ঘোড়ায় চড়ে।", "en_example": "He rides a horse."},
+        {"bn": "ছাগল", "en": "Goat", "pronunciation": "/ɡoʊt/", "bn_example": "ছাগলটি ঘাস খাচ্ছে।", "en_example": "The goat is eating grass."},
+        {"bn": "মুরগি", "en": "Chicken", "pronunciation": "/ˈtʃɪkɪn/", "bn_example": "মুরগিটি একটি ডিম পেড়েছে।", "en_example": "The chicken laid an egg."},
+        {"bn": "মাছি", "en": "Fly", "pronunciation": "/flaɪ/", "bn_example": "মাছিটি দেয়ালে বসে আছে।", "en_example": "The fly is on the wall."},
+        {"bn": "মশা", "en": "Mosquito", "pronunciation": "/məˈskiːtoʊ/", "bn_example": "মশাটি আমাকে কামড় দিয়েছে।", "en_example": "The mosquito bit me."},
+        {"bn": "বানর", "en": "Monkey", "pronunciation": "/ˈmʌŋki/", "bn_example": "বানরটি গাছে উঠেছে।", "en_example": "The monkey climbed the tree."},
+        {"bn": "সাপ", "en": "Snake", "pronunciation": "/sneɪk/", "bn_example": "সাপটি বিষধর।", "en_example": "The snake is poisonous."},
+        {"bn": "ভেড়া", "en": "Sheep", "pronunciation": "/ʃiːp/", "bn_example": "ভেড়াগুলো চরছে।", "en_example": "The sheep are grazing."}
+      ]
+    },
+    {
+      "id": "colors",
+      "name": "Colors",
+      "icon": "palette",
+      "cards": [
+        {"bn": "লাল", "en": "Red", "pronunciation": "/red/", "bn_example": "সে একটি লাল জামা পরেছে।", "en_example": "She wore a red dress."},
+        {"bn": "নীল", "en": "Blue", "pronunciation": "/bluː/", "bn_example": "আকাশ নীল।", "en_example": "The sky is blue."},
+        {"bn": "সবুজ", "en": "Green", "pronunciation": "/ɡriːn/", "bn_example": "ঘাস সবুজ।", "en_example": "The grass is green."},
+        {"bn": "হলুদ", "en": "Yellow", "pronunciation": "/ˈjeloʊ/", "bn_example": "কলা হলুদ।", "en_example": "Bananas are yellow."},
+        {"bn": "কালো", "en": "Black", "pronunciation": "/blæk/", "bn_example": "তার একটি কালো গাড়ি আছে।", "en_example": "He has a black car."},
+        {"bn": "সাদা", "en": "White", "pronunciation": "/waɪt/", "bn_example": "বরফ সাদা।", "en_example": "Snow is white."},
+        {"bn": "কমলা", "en": "Orange", "pronunciation": "/ˈɒrɪndʒ/", "bn_example": "সূর্যাস্ত কমলা।", "en_example": "The sunset is orange."},
+        {"bn": "গোলাপী", "en": "Pink", "pronunciation": "/pɪŋk/", "bn_example": "ফুলটি গোলাপী।", "en_example": "The flower is pink."},
+        {"bn": "বেগুনী", "en": "Purple", "pronunciation": "/ˈpɜːrpəl/", "bn_example": "সে বেগুনী রং পছন্দ করে।", "en_example": "She likes purple color."},
+        {"bn": "ধূসর", "en": "Gray", "pronunciation": "/ɡreɪ/", "bn_example": "আজ আকাশ ধূসর।", "en_example": "The sky is gray today."},
+        {"bn": "বাদামী", "en": "Brown", "pronunciation": "/braʊn/", "bn_example": "টেবিলটি বাদামী।", "en_example": "The table is brown."},
+        {"bn": "সোনালী", "en": "Golden", "pronunciation": "/ˈɡoʊldən/", "bn_example": "তার সোনালী চুল আছে।", "en_example": "She has golden hair."}
+      ]
+    },
+    {
+      "id": "body",
+      "name": "Body Parts",
+      "icon": "accessibility",
+      "cards": [
+        {"bn": "মাথা", "en": "Head", "pronunciation": "/hed/", "bn_example": "আমার মাথা ব্যথা করছে।", "en_example": "I have a headache."},
+        {"bn": "চোখ", "en": "Eye", "pronunciation": "/aɪ/", "bn_example": "তার সুন্দর চোখ আছে।", "en_example": "She has beautiful eyes."},
+        {"bn": "নাক", "en": "Nose", "pronunciation": "/noʊz/", "bn_example": "তার বড় নাক।", "en_example": "He has a big nose."},
+        {"bn": "মুখ", "en": "Mouth", "pronunciation": "/maʊθ/", "bn_example": "তোমার মুখ খোলো।", "en_example": "Open your mouth."},
+        {"bn": "কান", "en": "Ear", "pronunciation": "/ɪər/", "bn_example": "খরগোশের লম্বা কান আছে।", "en_example": "The rabbit has long ears."},
+        {"bn": "হাত", "en": "Hand", "pronunciation": "/hænd/", "bn_example": "তোমার হাত ধোও।", "en_example": "Wash your hands."},
+        {"bn": "পা", "en": "Leg", "pronunciation": "/leɡ/", "bn_example": "সে তার পা ভেঙেছে।", "en_example": "He broke his leg."},
+        {"bn": "পায়ের পাতা", "en": "Foot", "pronunciation": "/fʊt/", "bn_example": "আমার পায়ে ব্যথা।", "en_example": "My foot hurts."},
+        {"bn": "আঙুল", "en": "Finger", "pronunciation": "/ˈfɪŋɡər/", "bn_example": "সে তার আঙুলে গুনেছে।", "en_example": "She counted on her fingers."},
+        {"bn": "দাঁত", "en": "Tooth", "pronunciation": "/tuːθ/", "bn_example": "তোমার দাঁত ব্রাশ করো।", "en_example": "Brush your teeth."},
+        {"bn": "জিহ্বা", "en": "Tongue", "pronunciation": "/tʌŋ/", "bn_example": "বিড়ালের জিহ্বা খসখসে।", "en_example": "The cat has a rough tongue."},
+        {"bn": "পেট", "en": "Stomach", "pronunciation": "/ˈstʌmək/", "bn_example": "আমার পেট ব্যথা করছে।", "en_example": "I have a stomach ache."},
+        {"bn": "হৃদয়", "en": "Heart", "pronunciation": "/hɑːrt/", "bn_example": "হৃদয় অক্লান্তভাবে স্পন্দিত হয়।", "en_example": "The heart beats nonstop."}
+      ]
+    },
+    {
+      "id": "verbs",
+      "name": "Common Verbs",
+      "icon": "directions_run",
+      "cards": [
+        {"bn": "খাওয়া", "en": "Eat", "pronunciation": "/iːt/", "bn_example": "আমি প্রতিদিন ভাত খাই।", "en_example": "I eat rice every day."},
+        {"bn": "পান করা", "en": "Drink", "pronunciation": "/drɪŋk/", "bn_example": "নিয়মিত পানি পান করুন।", "en_example": "Drink water regularly."},
+        {"bn": "যাওয়া", "en": "Go", "pronunciation": "/ɡoʊ/", "bn_example": "আমি স্কুলে যাই।", "en_example": "I go to school."},
+        {"bn": "আসা", "en": "Come", "pronunciation": "/kʌm/", "bn_example": "এখানে আসো দয়া করে।", "en_example": "Come here please."},
+        {"bn": "দেখা", "en": "See", "pronunciation": "/siː/", "bn_example": "আমি পাহাড় দেখতে পাচ্ছি।", "en_example": "I can see the mountain."},
+        {"bn": "শোনা", "en": "Hear", "pronunciation": "/hɪər/", "bn_example": "আমি গান শুনতে পাচ্ছি।", "en_example": "I can hear music."},
+        {"bn": "বলা", "en": "Speak", "pronunciation": "/spiːk/", "bn_example": "দয়া করে ইংরেজি বলুন।", "en_example": "Speak English please."},
+        {"bn": "পড়া", "en": "Read", "pronunciation": "/riːd/", "bn_example": "আমি বই পড়ি।", "en_example": "I read books."},
+        {"bn": "লেখা", "en": "Write", "pronunciation": "/raɪt/", "bn_example": "তোমার নাম লেখো।", "en_example": "Write your name."},
+        {"bn": "দৌড়ানো", "en": "Run", "pronunciation": "/rʌn/", "bn_example": "সে দ্রুত দৌঁড়ায়।", "en_example": "He runs fast."},
+        {"bn": "ঘুমানো", "en": "Sleep", "pronunciation": "/sliːp/", "bn_example": "এখন ঘুমাতে যাও।", "en_example": "Go to sleep now."},
+        {"bn": "গাওয়া", "en": "Sing", "pronunciation": "/sɪŋ/", "bn_example": "সে সুন্দর গান গায়।", "en_example": "She sings beautifully."},
+        {"bn": "নাচা", "en": "Dance", "pronunciation": "/dæns/", "bn_example": "তারা একসাথে নাচে।", "en_example": "They dance together."},
+        {"bn": "কেনা", "en": "Buy", "pronunciation": "/baɪ/", "bn_example": "আমি একটি গাড়ি কিনতে চাই।", "en_example": "I want to buy a car."},
+        {"bn": "রান্না করা", "en": "Cook", "pronunciation": "/kʊk/", "bn_example": "আমার মা ভাল রান্না করেন।", "en_example": "My mother cooks well."}
+      ]
+    },
+    {
+      "id": "occupations",
+      "name": "Occupations",
+      "icon": "work",
+      "cards": [
+        {"bn": "ডাক্তার", "en": "Doctor", "pronunciation": "/ˈdɒktər/", "bn_example": "ডাক্তার আমার স্বাস্থ্য পরীক্ষা করলেন।", "en_example": "The doctor checked my health."},
+        {"bn": "শিক্ষক", "en": "Teacher", "pronunciation": "/ˈtiːtʃər/", "bn_example": "আমার শিক্ষক খুব সহায়ক।", "en_example": "My teacher is very helpful."},
+        {"bn": "ইঞ্জিনিয়ার", "en": "Engineer", "pronunciation": "/ˌendʒɪˈnɪər/", "bn_example": "আমার ভাই একজন ইঞ্জিনিয়ার।", "en_example": "My brother is an engineer."},
+        {"bn": "নার্স", "en": "Nurse", "pronunciation": "/nɜːrs/", "bn_example": "নার্স আমার যত্ন নিলেন।", "en_example": "The nurse took care of me."},
+        {"bn": "পুলিশ", "en": "Police", "pronunciation": "/pəˈliːs/", "bn_example": "পুলিশ চোরকে ধরল।", "en_example": "The police caught the thief."},
+        {"bn": "কৃষক", "en": "Farmer", "pronunciation": "/ˈfɑːrmər/", "bn_example": "কৃষক ফসল ফলায়।", "en_example": "The farmer grows crops."},
+        {"bn": "রাঁধুনি", "en": "Cook", "pronunciation": "/kʊk/", "bn_example": "রাঁধুনি রাতের খাবার প্রস্তুত করল।", "en_example": "The cook prepared dinner."},
+        {"bn": "চালক", "en": "Driver", "pronunciation": "/ˈdraɪvər/", "bn_example": "চালক নিরাপদে গাড়ি চালালেন।", "en_example": "The driver drove safely."},
+        {"bn": "ব্যবসায়ী", "en": "Businessman", "pronunciation": "/ˈbɪznɪsmæn/", "bn_example": "তিনি একজন সফল ব্যবসায়ী।", "en_example": "He is a successful businessman."},
+        {"bn": "ছাত্র", "en": "Student", "pronunciation": "/ˈstjuːdənt/", "bn_example": "ছাত্রটি কঠোর পড়াশোনা করে।", "en_example": "The student studies hard."},
+        {"bn": "গায়ক", "en": "Singer", "pronunciation": "/ˈsɪŋər/", "bn_example": "গায়ক মঞ্চে গান পরিবেশন করলেন।", "en_example": "The singer performed on stage."},
+        {"bn": "পাইলট", "en": "Pilot", "pronunciation": "/ˈpaɪlət/", "bn_example": "পাইলট বিমান উড়ালেন।", "en_example": "The pilot flew the plane."}
+      ]
+    },
+    {
+      "id": "weather",
+      "name": "Weather & Seasons",
+      "icon": "wb_sunny",
+      "cards": [
+        {"bn": "রোদ / সূর্য", "en": "Sun", "pronunciation": "/sʌn/", "bn_example": "সূর্য উজ্জ্বলভাবে আলো দিচ্ছে।", "en_example": "The sun is shining."},
+        {"bn": "চাঁদ", "en": "Moon", "pronunciation": "/muːn/", "bn_example": "আজ রাতে চাঁদ সুন্দর।", "en_example": "The moon is beautiful tonight."},
+        {"bn": "তারা", "en": "Star", "pronunciation": "/stɑːr/", "bn_example": "তারা টিমটিম করছে।", "en_example": "The stars are twinkling."},
+        {"bn": "আকাশ", "en": "Sky", "pronunciation": "/skaɪ/", "bn_example": "আকাশ পরিষ্কার।", "en_example": "The sky is clear."},
+        {"bn": "মেঘ", "en": "Cloud", "pronunciation": "/klaʊd/", "bn_example": "আকাশে মেঘ আছে।", "en_example": "There are clouds in the sky."},
+        {"bn": "বৃষ্টি", "en": "Rain", "pronunciation": "/reɪn/", "bn_example": "বাইরে বৃষ্টি পড়ছে।", "en_example": "It is raining outside."},
+        {"bn": "বাতাস", "en": "Wind", "pronunciation": "/wɪnd/", "bn_example": "বাতাস বইছে।", "en_example": "The wind is blowing."},
+        {"bn": "বজ্রপাত", "en": "Thunder", "pronunciation": "/ˈθʌndər/", "bn_example": "গত রাতে বজ্রপাত শুনেছি।", "en_example": "I heard thunder last night."},
+        {"bn": "বিদ্যুৎ", "en": "Lightning", "pronunciation": "/ˈlaɪtnɪŋ/", "bn_example": "বিদ্যুৎ গাছটিতে পড়ল।", "en_example": "Lightning struck the tree."},
+        {"bn": "গরম", "en": "Hot", "pronunciation": "/hɒt/", "bn_example": "আজ খুব গরম।", "en_example": "It is very hot today."},
+        {"bn": "ঠান্ডা", "en": "Cold", "pronunciation": "/koʊld/", "bn_example": "পানিটি ঠান্ডা।", "en_example": "The water is cold."},
+        {"bn": "শীত", "en": "Winter", "pronunciation": "/ˈwɪntər/", "bn_example": "শীত আমার প্রিয় ঋতু।", "en_example": "Winter is my favorite season."},
+        {"bn": "গ্রীষ্ম", "en": "Summer", "pronunciation": "/ˈsʌmər/", "bn_example": "গ্রীষ্ম খুব গরম।", "en_example": "Summer is very hot."},
+        {"bn": "বসন্ত", "en": "Spring", "pronunciation": "/sprɪŋ/", "bn_example": "বসন্তে ফুল ফোটে।", "en_example": "Flowers bloom in spring."},
+        {"bn": "শরৎ", "en": "Autumn", "pronunciation": "/ˈɔːtəm/", "bn_example": "শরতে পাতা ঝরে।", "en_example": "Leaves fall in autumn."}
+      ]
+    }
+  ]
+}
