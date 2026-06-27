@@ -1,0 +1,23 @@
+# ByteRover MCP Integration — Mandatory Rules
+
+## ⚠️ CRITICAL RULE: Always Check ByteRover First
+
+**আগে ByteRover context tree check করো, তারপর কিছু করো।**
+
+Before answering any user query, writing any code, or making any changes:
+
+1. **ALWAYS** first use `brv-query` tool (from `github.com/campfirein/cipher` MCP server) with `cwd: "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App"` to check if relevant context exists in the ByteRover context tree.
+2. Only read source files if the context tree doesn't have the answer.
+3. After gaining new knowledge from reading files, ALWAYS use `brv-curate` to save that knowledge into the context tree so future queries don't need to re-read files.
+
+## Why?
+
+- **ByteRover is this project's persistent memory layer.**
+- It saves context about project structure, decisions, patterns, and code locations.
+- Once knowledge is curated, it eliminates the need to re-read the same files in new chat sessions.
+- This makes responses instant and saves context window.
+
+## Provider Info (for brv-query to work)
+- OpenAI-compatible endpoint configured
+- Model: oc/deepseek-v4-flash-free
+- Base URL: http://localhost:20128/v1
