@@ -6,10 +6,16 @@ import '../../../providers/game/game_provider.dart';
 import '../../../providers/game/timer_provider.dart';
 import '../../../providers/game/score_provider.dart';
 import '../../../services/game_service.dart';
+import '../../../services/game_data_sync_service.dart';
 import '../../../providers/game/xp_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../../../providers/game/sound_provider.dart';
 import '../../../providers/game/leaderboard_provider.dart';
+import '../../../providers/game/achievement_provider.dart';
+import '../../../repositories/progress_repository.dart';
+import '../../../repositories/statistics_repository.dart';
+import '../../../repositories/achievement_repository.dart';
+import '../../../models/game/game_result_model.dart';
 import 'game_home_screen.dart';
 import 'answer_review_screen.dart';
 import 'question_screen.dart';
@@ -47,23 +53,125 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
   void initState() {
     super.initState();
     _updateLeaderboard();
+    _checkAchievements();
+    _syncGameDataToFirebase();
   }
 
-  Future<void> _updateLeaderboard() async {
+  Future<void> _checkAchievements() async {
+    final total = widget.correctAnswers + widget.wrongAnswers;
+    final accuracy = total > 0 ? widget.correctAnswers / total : 0.0;
+    final isBossBattle = widget.gameMode == 'boss';
+    
+    Future.microtask(() async {
+      try {
+        final newlyUnlocked = await ref.read(achievementProvider.notifier).checkGameAchievements(
+          score: widget.score,
+          correctAnswers: widget.correctAnswers,
+          accuracy: accuracy,
+          isBossBattle: isBossBattle,
+        );
+        if (newlyUnlocked.isNotEmpty && mounted) {
+          _showAchievementNotification(newlyUnlocked);
+        }
+      } catch (_) {
+        // Silently fail - achievement check is best-effort
+      }
+    });
+  }
+
+  void _showAchievementNotification(List<dynamic> achievements) {
+    for (final achievement in achievements) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Row(
+            children: [
+              Text(achievement.icon ?? '🏆'),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Achievement Unlocked!', style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text(achievement.title),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          backgroundColor: AppColors.success,
+          behavior: SnackBarBehavior.floating,
+          duration: const Duration(seconds: 3),
+        ),
+      );
+    }
+  }
+
+  /// Syncs all locally-saved game data to Firestore so everything
+  /// (progress, statistics, achievements, leaderboard) is consistent
+  /// across devices and the Firestore real-time listeners show the
+  /// correct values.
+  Future<void> _syncGameDataToFirebase() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) return;
 
+    final userId = user.uid;
     final userName = user.displayName ?? user.email?.split('@').first ?? 'User';
-    final xpState = ref.read(xpProvider);
 
-    await ref.read(leaderboardProvider.notifier).updateUserStats(
-      userId: user.uid,
-      userName: userName,
-      xp: xpState.currentXP,
-      score: widget.score,
-      level: xpState.currentLevel,
-    );
+    try {
+      // ── 1. Save game result to game_statistics ──
+      final statisticsRepo = StatisticsRepository();
+      final result = GameResultModel(
+        score: widget.score,
+        correctAnswers: widget.correctAnswers,
+        wrongAnswers: widget.wrongAnswers,
+        accuracy: widget.correctAnswers + widget.wrongAnswers > 0
+            ? widget.correctAnswers / (widget.correctAnswers + widget.wrongAnswers)
+            : 0.0,
+        earnedXP: widget.earnedXP,
+        earnedCoins: widget.earnedCoins,
+        gameType: widget.gameMode.isNotEmpty ? widget.gameMode : 'normal',
+        completedTime: DateTime.now(),
+      );
+      await statisticsRepo.uploadResultToFirestore(userId, result);
+      await statisticsRepo.uploadMetaToFirestore(userId);
 
+      // ── 2. Save game_progress (XP, coins, level, streak) ──
+      final progressRepo = ProgressRepository();
+      final localProgress = progressRepo.getProgress();
+      if (localProgress != null) {
+        final updatedProgress = localProgress.copyWith(userId: userId);
+        await progressRepo.uploadProgressToFirestore(updatedProgress);
+      }
+
+      // ── 3. Save achievements to Firestore ──
+      final achievementRepo = AchievementRepository();
+      final localAchievements = achievementRepo.getCachedAchievements();
+      if (localAchievements.isNotEmpty) {
+        await achievementRepo.batchUploadToFirestore(userId, localAchievements);
+      }
+
+      // ── 4. Update leaderboard ──
+      final xpState = ref.read(xpProvider);
+      await ref.read(leaderboardProvider.notifier).updateUserStats(
+            userId: userId,
+            userName: userName,
+            xp: xpState.currentXP,
+            score: widget.score,
+            level: xpState.currentLevel,
+          );
+
+      // ── 5. Also run the full GameDataSyncService upload as backup ──
+      final syncService = GameDataSyncService();
+      await syncService.saveUserDataToFirebase();
+
+      print('✅ Game data synced to Firebase after game completion');
+    } catch (e) {
+      print('❌ Error syncing game data to Firebase: $e');
+    }
+  }
+
+  void _updateLeaderboard() async {
     // Refresh XP & coin providers so stats are up-to-date
     if (mounted) {
       ref.read(xpProvider.notifier).refresh();

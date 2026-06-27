@@ -57,10 +57,10 @@ class _AchievementsBody extends StatelessWidget {
         children: [
           // Progress Header with Real-time Stats
           _buildProgressHeader(context, state),
-          
+
           // Real-time Stats Cards
           _buildRealtimeStatsSection(context, state),
-          
+
           // Achievement Tabs
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.5,
@@ -456,7 +456,7 @@ class _AchievementsBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          
+
           // Achievement Progress
           Container(
             width: double.infinity,

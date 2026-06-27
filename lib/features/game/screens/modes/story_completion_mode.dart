@@ -298,10 +298,10 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
       await ref.read(coinProvider.notifier).addCoins(coins);
     } catch (_) {}
     try {
-      await ref.read(streakProvider.notifier).recordActiveDay();
+      await ref.read(streakProvider.notifier).checkAndUpdateStreak();
     } catch (_) {}
     try {
-      await ref.read(streakProvider.notifier).checkAndUpdateStreak();
+      await ref.read(streakProvider.notifier).recordActiveDay();
     } catch (_) {}
     try {
       await ref.read(achievementProvider.notifier).checkGameAchievements(

@@ -124,7 +124,36 @@ class AchievementRepository {
   }
 
   Future<void> syncFromFirestoreToHive(String userId) async {
-    final achievements = await fetchFromFirestore(userId);
-    await cacheAchievements(achievements);
+    // 1. First get the combined list from JSON (definitions) + Hive (unlock status)
+    var localAchievements = getCachedAchievements();
+    if (localAchievements.isEmpty) {
+      // If Hive is empty, load base definitions from JSON
+      localAchievements = await loadFromJson();
+      await cacheAchievements(localAchievements);
+    }
+    
+    // 2. Fetch achievements from Firestore (may have unlock status from other devices)
+    final firestoreAchievements = await fetchFromFirestore(userId);
+    if (firestoreAchievements.isEmpty) return; // Nothing to merge
+    
+    // 3. MERGE: For each Firestore achievement, update local copy's unlock status
+    for (final fa in firestoreAchievements) {
+      final index = localAchievements.indexWhere((la) => la.id == fa.id);
+      if (index >= 0) {
+        // Only update `unlocked` status from Firestore (keep local definitions)
+        if (fa.unlocked) {
+          localAchievements[index] = localAchievements[index].copyWith(
+            unlocked: true,
+            unlockDate: fa.unlockDate,
+          );
+        }
+      } else {
+        // New achievement from Firestore that doesn't exist locally — add it
+        localAchievements.add(fa);
+      }
+    }
+    
+    // 4. Save merged result back to Hive
+    await cacheAchievements(localAchievements);
   }
 }

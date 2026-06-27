@@ -115,6 +115,7 @@ class AchievementState {
 
 class AchievementNotifier extends AsyncNotifier<AchievementState> {
   late final AchievementService _achievementService;
+  late final AchievementRepository _achievementRepository;
   
   // Real-time stream subscriptions
   StreamSubscription<DocumentSnapshot>? _progressSubscription;
@@ -125,8 +126,9 @@ class AchievementNotifier extends AsyncNotifier<AchievementState> {
   @override
   Future<AchievementState> build() async {
     final progressRepo = ProgressRepository();
+    _achievementRepository = AchievementRepository();
     _achievementService = AchievementService(
-      achievementRepository: AchievementRepository(),
+      achievementRepository: _achievementRepository,
       progressRepository: progressRepo,
       statisticsRepository: StatisticsRepository(),
     );
@@ -210,6 +212,19 @@ class AchievementNotifier extends AsyncNotifier<AchievementState> {
     // ── Fetch initial data from Firestore to override Hive cache ──
     if (_currentUserId != null && _currentUserId!.isNotEmpty) {
       try {
+        // 0. Fetch achievements from Firestore and sync to Hive
+        await _achievementRepository.syncFromFirestoreToHive(_currentUserId!);
+        // Reload from Hive (now updated with Firestore data)
+        final firestoreAchievements = await _achievementService.loadAchievements();
+        final firestoreUnlocked = _achievementService.getUnlockedAchievements();
+        final firestoreLocked = _achievementService.getLockedAchievements();
+        // Update initialState with Firestore-synced achievement data
+        final syncedInitialState = initialState.copyWith(
+          allAchievements: firestoreAchievements,
+          unlockedAchievements: firestoreUnlocked,
+          lockedAchievements: firestoreLocked,
+        );
+
         // 1. Fetch progress (Level, XP, Coins, Streaks)
         final progressDoc = await FirebaseFirestore.instance
             .collection('game_progress')
@@ -220,7 +235,7 @@ class AchievementNotifier extends AsyncNotifier<AchievementState> {
           // Sync to Hive so AchievementService reads correct values
           await _achievementService.syncProgressFromFirestore(_currentUserId!);
           // Build updated state
-          state = AsyncValue.data(initialState.copyWith(
+          state = AsyncValue.data(syncedInitialState.copyWith(
             currentLevel: data['currentLevel'] as int? ?? 1,
             currentXP: data['currentXP'] as int? ?? 0,
             totalCoins: data['totalCoins'] as int? ?? 0,
@@ -450,6 +465,8 @@ class AchievementNotifier extends AsyncNotifier<AchievementState> {
 
     if (newlyUnlocked.isNotEmpty) {
       _refreshState();
+      // Upload updated achievements to Firestore
+      await _syncAchievementsToFirestore();
     }
 
     return newlyUnlocked;
@@ -461,6 +478,8 @@ class AchievementNotifier extends AsyncNotifier<AchievementState> {
 
     if (newlyUnlocked.isNotEmpty) {
       _refreshState();
+      // Upload updated achievements to Firestore
+      await _syncAchievementsToFirestore();
     }
 
     return newlyUnlocked;
@@ -479,6 +498,8 @@ class AchievementNotifier extends AsyncNotifier<AchievementState> {
 
     if (newlyUnlocked.isNotEmpty) {
       _refreshState();
+      // Upload updated achievements to Firestore
+      await _syncAchievementsToFirestore();
     }
 
     return newlyUnlocked;
@@ -489,9 +510,24 @@ class AchievementNotifier extends AsyncNotifier<AchievementState> {
 
     if (achievement != null) {
       _refreshState();
+      // Upload updated achievements to Firestore
+      await _syncAchievementsToFirestore();
     }
 
     return achievement;
+  }
+
+  /// Upload all cached achievements to Firestore so they persist across devices
+  Future<void> _syncAchievementsToFirestore() async {
+    if (_currentUserId == null || _currentUserId!.isEmpty) return;
+    try {
+      final achievements = _achievementService.getAllAchievements();
+      if (achievements.isNotEmpty) {
+        await _achievementRepository.batchUploadToFirestore(_currentUserId!, achievements);
+      }
+    } catch (_) {
+      // Silently fail - Firestore upload is best-effort
+    }
   }
 
   void _refreshState() {

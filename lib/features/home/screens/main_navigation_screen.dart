@@ -21,11 +21,9 @@ class _MainNavigationScreenState extends ConsumerState<MainNavigationScreen> {
   @override
   void initState() {
     super.initState();
-    // Check and update daily streak on app open so the streak counter
-    // reflects consecutive login days without requiring a game to be played.
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref.read(streakProvider.notifier).checkAndUpdateStreak();
-    });
+    // Streak is handled by HomeScreen's full initState flow (6 steps)
+    // which includes checkAndUpdateStreak, recordActiveDay, and Firestore upload.
+    // No need for a redundant call here.
   }
 
   void _onTabChanged(int index) {

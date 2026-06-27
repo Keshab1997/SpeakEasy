@@ -289,10 +289,11 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
       await ref.read(coinProvider.notifier).addCoins(coins);
     } catch (_) {}
     try {
-      await ref.read(streakProvider.notifier).recordActiveDay();
+      // First check/update streak (increment if new day), then record active day
+      await ref.read(streakProvider.notifier).checkAndUpdateStreak();
     } catch (_) {}
     try {
-      await ref.read(streakProvider.notifier).checkAndUpdateStreak();
+      await ref.read(streakProvider.notifier).recordActiveDay();
     } catch (_) {}
     try {
       await ref.read(achievementProvider.notifier).checkGameAchievements(

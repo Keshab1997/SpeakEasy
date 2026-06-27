@@ -155,22 +155,18 @@ class StatisticsNotifier extends StateNotifier<StatisticsState> {
     _currentUserId = FirebaseAuth.instance.currentUser?.uid;
     if (_currentUserId == null || _currentUserId!.isEmpty) return;
 
-    // Listen to progress updates
+    // Listen to progress updates — use _refresh() which reads from local Hive
+    // (the source of truth). Firestore snapshots only trigger a re-read of
+    // local data, they never directly overwrite state with potentially stale
+    // Firestore values.
     _progressSubscription = FirebaseFirestore.instance
         .collection('game_progress')
         .doc(_currentUserId!)
         .snapshots()
         .listen((snapshot) {
-      if (snapshot.exists && snapshot.data() != null) {
-        final data = snapshot.data() as Map<String, dynamic>;
-        state = state.copyWith(
-          currentLevel: data['currentLevel'] as int? ?? state.currentLevel,
-          currentXP: data['currentXP'] as int? ?? state.currentXP,
-          currentCoins: data['totalCoins'] as int? ?? state.currentCoins,
-          currentStreak: data['streak'] as int? ?? state.currentStreak,
-          bestStreak: data['longestStreak'] as int? ?? state.bestStreak,
-        );
-      }
+      // Firestore data may be stale if local updates haven't synced yet.
+      // Always prefer local Hive data via _refresh().
+      _refresh();
     });
 
     // Listen to meta statistics updates
@@ -179,17 +175,8 @@ class StatisticsNotifier extends StateNotifier<StatisticsState> {
         .doc(_currentUserId!)
         .snapshots()
         .listen((snapshot) {
-      if (snapshot.exists && snapshot.data() != null) {
-        final data = snapshot.data() as Map<String, dynamic>;
-        final timePlayedSec = data['timePlayedSeconds'] as int? ?? 0;
-        
-        state = state.copyWith(
-          bossWins: data['bossWins'] as int? ?? 0,
-          dailyChallengeWins: data['dailyChallengeWins'] as int? ?? 0,
-          timePlayedSeconds: timePlayedSec,
-          timePlayedFormatted: _formatDuration(timePlayedSec),
-        );
-      }
+      // Refresh from local Hive (source of truth)
+      _refresh();
     });
 
     // Listen to new game results
@@ -202,16 +189,6 @@ class StatisticsNotifier extends StateNotifier<StatisticsState> {
       // all aggregated stats (accuracy, total games, etc.) are correct.
       _refresh();
     });
-  }
-
-  String _formatDuration(int seconds) {
-    if (seconds <= 0) return '0m';
-    final hours = seconds ~/ 3600;
-    final minutes = (seconds % 3600) ~/ 60;
-    if (hours > 0) {
-      return '${hours}h ${minutes}m';
-    }
-    return '${minutes}m';
   }
 
   /// Public refresh hook so providers that mutate progress (XP, coins,

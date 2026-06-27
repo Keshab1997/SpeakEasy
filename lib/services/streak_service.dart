@@ -63,7 +63,14 @@ class StreakService {
 
   Future<int> checkAndUpdateStreak() async {
     final progress = _progressRepository.getProgress();
-    if (progress == null) return 0;
+    
+    // 🐛 FIX: First-time user — initialize streak to 1
+    if (progress == null) {
+      await _progressRepository.incrementStreak(); // 0 -> 1
+      await _progressRepository.updateLastActiveDate(DateTime.now());
+      await _progressRepository.incrementTotalActiveDays();
+      return 1;
+    }
 
     final now = DateTime.now();
     final lastActive = progress.lastActiveDate;
