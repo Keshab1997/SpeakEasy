@@ -5,6 +5,7 @@ import '../../../core/constants/app_colors.dart';
 import '../../../models/user_model.dart';
 import '../../../services/admin_notification_sync_service.dart';
 import '../../../services/ai_service.dart';
+import 'admin_notifications_screen.dart';
 
 class AdminDashboardScreen extends StatefulWidget {
   const AdminDashboardScreen({super.key});
@@ -18,6 +19,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
   final _ideaController = TextEditingController();
   final _titleController = TextEditingController();
   final _bodyController = TextEditingController();
+  final _linkController = TextEditingController();
   bool _sending = false;
   bool _generating = false;
 
@@ -26,6 +28,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
     _ideaController.dispose();
     _titleController.dispose();
     _bodyController.dispose();
+    _linkController.dispose();
     super.dispose();
   }
 
@@ -37,6 +40,16 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       appBar: AppBar(
         title: const Text('Admin Panel'),
         actions: [
+          IconButton(
+            tooltip: 'Sent Notifications',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const AdminNotificationsScreen(),
+              ),
+            ),
+            icon: const Icon(Icons.history_rounded),
+          ),
           IconButton(
             tooltip: 'Info',
             onPressed: _showInfo,
@@ -199,6 +212,16 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
             ),
           ),
+          const SizedBox(height: 12),
+          TextField(
+            controller: _linkController,
+            decoration: InputDecoration(
+              labelText: 'Link (optional)',
+              hintText: 'e.g. https://play.google.com/store/apps/details?id=...',
+              prefixIcon: const Icon(Icons.link_rounded),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+            ),
+          ),
           const SizedBox(height: 14),
           SizedBox(
             width: double.infinity,
@@ -268,6 +291,9 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       return;
     }
 
+    final link = _linkController.text.trim();
+    final actionUrl = link.isNotEmpty ? link : null;
+
     setState(() => _sending = true);
     try {
       await _firestore.collection('admin_notifications').add({
@@ -277,10 +303,12 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         'targetCount': studentCount,
         'status': 'queued',
         'createdAt': FieldValue.serverTimestamp(),
+        if (actionUrl != null) 'actionUrl': actionUrl,
       });
 
       _titleController.clear();
       _bodyController.clear();
+      _linkController.clear();
       await AdminNotificationSyncService.syncLatest();
       _showSnack('Announcement queued for $studentCount students.');
     } catch (e) {

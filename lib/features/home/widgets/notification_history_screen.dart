@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../services/admin_notification_sync_service.dart';
 import '../../../services/hive_service.dart';
@@ -24,8 +25,8 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
 
   Future<void> _syncAdminNotifications() async {
     try {
-      final added = await AdminNotificationSyncService.syncLatest();
-      if (mounted && added > 0) _loadNotifications();
+      await AdminNotificationSyncService.syncLatest();
+      if (mounted) _loadNotifications();
     } catch (_) {}
   }
 
@@ -102,6 +103,22 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
     if (!notification.isRead) {
       await HiveService.markNotificationAsRead(notification.id);
       _loadNotifications();
+    }
+  }
+
+  Future<void> _openNotificationAction(NotificationHistoryItem notification) async {
+    // Mark as read first
+    if (!notification.isRead) {
+      await HiveService.markNotificationAsRead(notification.id);
+      _loadNotifications();
+    }
+
+    // Open action URL if present
+    if (notification.actionUrl != null && notification.actionUrl!.isNotEmpty) {
+      final uri = Uri.tryParse(notification.actionUrl!);
+      if (uri != null && await canLaunchUrl(uri)) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      }
     }
   }
 
@@ -277,7 +294,7 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
       ),
       onDismissed: (_) => _deleteNotification(notification),
       child: GestureDetector(
-        onTap: () => _markAsRead(notification),
+        onTap: () => _openNotificationAction(notification),
         child: Container(
           margin: const EdgeInsets.only(bottom: 12),
           decoration: BoxDecoration(

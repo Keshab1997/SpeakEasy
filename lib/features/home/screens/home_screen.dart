@@ -117,8 +117,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   Future<void> _syncAdminNotifications() async {
     try {
-      final added = await AdminNotificationSyncService.syncLatest();
-      if (mounted && added > 0) _updateNotificationCount();
+      await AdminNotificationSyncService.syncLatest();
+      if (mounted) _updateNotificationCount();
     } catch (_) {}
   }
 

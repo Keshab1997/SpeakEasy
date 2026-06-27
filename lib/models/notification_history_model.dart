@@ -2,10 +2,11 @@ class NotificationHistoryItem {
   final String id;
   final String title;
   final String body;
-  final String type; // 'daily_word', 'practice_reminder', 'streak_milestone', 'custom'
+  final String type; // 'daily_word', 'practice_reminder', 'streak_milestone', 'custom', 'admin_announcement'
   final DateTime receivedAt;
   final bool isRead;
   final String? payload;
+  final String? actionUrl; // Optional URL to open when tapped (e.g. Play Store link)
 
   NotificationHistoryItem({
     required this.id,
@@ -15,6 +16,7 @@ class NotificationHistoryItem {
     required this.receivedAt,
     this.isRead = false,
     this.payload,
+    this.actionUrl,
   });
 
   Map<String, dynamic> toJson() {
@@ -26,6 +28,7 @@ class NotificationHistoryItem {
       'receivedAt': receivedAt.toIso8601String(),
       'isRead': isRead,
       'payload': payload,
+      'actionUrl': actionUrl,
     };
   }
 
@@ -38,6 +41,7 @@ class NotificationHistoryItem {
       receivedAt: DateTime.parse(json['receivedAt'] as String),
       isRead: json['isRead'] as bool? ?? false,
       payload: json['payload'] as String?,
+      actionUrl: json['actionUrl'] as String?,
     );
   }
 
@@ -49,6 +53,7 @@ class NotificationHistoryItem {
     DateTime? receivedAt,
     bool? isRead,
     String? payload,
+    String? actionUrl,
   }) {
     return NotificationHistoryItem(
       id: id ?? this.id,
@@ -58,6 +63,7 @@ class NotificationHistoryItem {
       receivedAt: receivedAt ?? this.receivedAt,
       isRead: isRead ?? this.isRead,
       payload: payload ?? this.payload,
+      actionUrl: actionUrl ?? this.actionUrl,
     );
   }
 
