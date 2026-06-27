@@ -3,6 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../models/user_model.dart';
+import '../../../services/remote_config_service.dart';
+import '../../admin/screens/maintenance_screen.dart';
+import '../../admin/screens/force_update_screen.dart';
 import '../../home/screens/main_navigation_screen.dart';
 import 'login_screen.dart';
 
@@ -60,16 +63,55 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
     }, fireImmediately: true);
   }
 
-  void _navigateToNext(UserModel? user) {
+  Future<void> _navigateToNext(UserModel? user) async {
     if (_navigated) return;
     _navigated = true;
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (_) => user != null
-            ? const MainNavigationScreen()
-            : const LoginScreen(),
-      ),
-    );
+
+    // Fetch remote config to check maintenance/force-update status
+    try {
+      final config = await RemoteConfigService.getConfig();
+
+      // Check maintenance mode first
+      if (config.maintenanceMode.enabled) {
+        if (mounted) {
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (_) => MaintenanceScreen(
+                message: config.maintenanceMode.message,
+              ),
+            ),
+          );
+        }
+        return;
+      }
+
+      // Check force update
+      if (config.forceUpdate.enabled) {
+        if (mounted) {
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (_) => ForceUpdateScreen(
+                updateInfo: config.forceUpdate,
+              ),
+            ),
+          );
+        }
+        return;
+      }
+    } catch (_) {
+      // If remote config fails, proceed with normal flow
+    }
+
+    // Normal navigation
+    if (mounted) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (_) => user != null
+              ? const MainNavigationScreen()
+              : const LoginScreen(),
+        ),
+      );
+    }
   }
 
   void _navigateToLogin() {

@@ -6,6 +6,7 @@ import 'core/theme/light_theme.dart';
 import 'core/theme/dark_theme.dart';
 import 'services/hive_service.dart';
 import 'services/notification_service.dart';
+import 'services/remote_config_service.dart';
 import 'providers/theme_provider.dart';
 import 'features/auth/screens/splash_screen.dart';
 
@@ -32,6 +33,10 @@ void main() async {
   await NotificationService().initialize();
   // Reschedule daily notifications on app open
   await NotificationService().rescheduleOnAppOpen();
+
+  // Pre-warm remote config cache on app start
+  RemoteConfigService.seedDefaultConfig();
+
   runApp(
     const ProviderScope(
       child: MyApp(),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/widgets/streak_widget.dart';
+import '../../../core/widgets/feature_gate_widget.dart';
 import '../../../services/hive_service.dart';
 import '../../../services/admin_notification_sync_service.dart';
 import '../../../services/tts_service.dart';
@@ -459,7 +460,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               const SizedBox(height: 24),
               
               // 8. Game Section
-              _buildGameCard(theme, isDark),
+              FeatureGateWidget(
+                featureKey: 'games',
+                child: _buildGameCard(theme, isDark),
+              ),
               const SizedBox(height: 32),
             ],
           ),
