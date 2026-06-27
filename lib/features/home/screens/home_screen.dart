@@ -21,6 +21,7 @@ import '../../../providers/game/xp_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../../../providers/game/streak_provider.dart';
 import '../../../providers/game/statistics_provider.dart';
+import '../../../providers/game/game_provider.dart';
 import '../../grammar/screens/grammar_detail_screen.dart';
 import '../../grammar/screens/grammar_list_screen.dart';
 import '../../grammar/screens/grammar_test_list_screen.dart';
@@ -77,13 +78,31 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
       // 🔥 STREAK CALCULATION — called every time the app opens:
       final now = DateTime.now();
+      final authUser = ref.read(authProvider).asData?.value;
+      
+      // 0. If user is authenticated, first try to sync progress FROM Firestore
+      //    so streak persists across reinstalls
+      final streakNotifier = ref.read(streakProvider.notifier);
+      if (authUser?.id.isNotEmpty == true) {
+        try {
+          final progressRepo = ref.read(progressRepositoryProvider);
+          final hiveProgress = progressRepo.getProgress();
+          // If Hive is empty or has no userId, fetch from Firestore
+          if (hiveProgress == null || hiveProgress.userId.isEmpty) {
+            await progressRepo.syncProgressFromFirestoreToHive(authUser!.id);
+            // Refresh the streak provider with restored data
+            streakNotifier.refresh();
+          }
+        } catch (_) {
+          // Silently handle Firestore fetch failure
+        }
+      }
       
       // 1. Update HiveService weekly activity + last practice date FIRST
       await HiveService.markDayActive(now.weekday);
       await HiveService.setLastPracticeDate(now);
       
       // 2. Check if streak should increment (new day) or reset (missed >48h)
-      final streakNotifier = ref.read(streakProvider.notifier);
       final newStreak = await streakNotifier.checkAndUpdateStreak();
 
       // 3. Record today as active (updates lastActiveDate, totalActiveDays)
@@ -104,7 +123,24 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         }
       }
 
-      // 5. Refresh ALL providers after streak updates
+      // 5. Upload streak data to Firestore for persistent storage
+      if (authUser?.id.isNotEmpty == true) {
+        try {
+          final progressRepo = ref.read(progressRepositoryProvider);
+          var gameProgress = progressRepo.getProgress();
+          if (gameProgress != null) {
+            // Ensure progress has the correct userId before uploading
+            final uploadProgress = gameProgress.userId.isEmpty
+                ? gameProgress.copyWith(userId: authUser!.id)
+                : gameProgress;
+            await progressRepo.uploadProgressToFirestore(uploadProgress);
+          }
+        } catch (_) {
+          // Silently handle Firestore upload failure
+        }
+      }
+
+      // 6. Refresh ALL providers after streak updates
       streakNotifier.refresh();
       ref.read(progressProvider.notifier).fetchProgress();
     });
