@@ -5,6 +5,7 @@ import '../../../core/constants/app_colors.dart';
 import '../../../models/user_model.dart';
 import '../../../services/admin_notification_sync_service.dart';
 import '../../../services/ai_service.dart';
+import 'admin_analytics_screen.dart';
 import 'admin_notifications_screen.dart';
 
 class AdminDashboardScreen extends StatefulWidget {
@@ -40,6 +41,16 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       appBar: AppBar(
         title: const Text('Admin Panel'),
         actions: [
+          IconButton(
+            tooltip: 'Analytics',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const AdminAnalyticsScreen(),
+              ),
+            ),
+            icon: const Icon(Icons.analytics_rounded),
+          ),
           IconButton(
             tooltip: 'Sent Notifications',
             onPressed: () => Navigator.push(
