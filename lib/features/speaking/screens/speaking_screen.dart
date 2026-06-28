@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+import 'pronunciation_screen.dart';
+
+/// Mode enum for the different speaking practice types
+enum SpeakingMode {
+  readAloud,
+  listenAndRepeat,
+  banglaToEnglish,
+  freeSpeaking,
+}
 
 class SpeakingScreen extends StatelessWidget {
   const SpeakingScreen({super.key});
@@ -9,45 +18,49 @@ class SpeakingScreen extends StatelessWidget {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    final practiceModes = [
+    final practiceModes = <Map<String, dynamic>>[
       {
-        'title': 'Pronunciation Practice',
-        'subtitle': 'Read aloud and check your accuracy score.',
-        'icon': Icons.mic_rounded,
-        'badge': 'Hot',
+        'title': 'Read Aloud',
+        'subtitle': 'Read English sentences aloud and check your accuracy.',
+        'icon': Icons.record_voice_over_rounded,
+        'badge': 'Popular',
         'color': AppColors.primary,
         'bgGradient': AppColors.primaryGradient,
+        'mode': SpeakingMode.readAloud,
       },
       {
-        'title': 'Listening Comprehension',
-        'subtitle': 'Listen to short native dialogues and answers.',
+        'title': 'Listen & Repeat',
+        'subtitle': 'Hear native pronunciation and repeat after it.',
         'icon': Icons.hearing_rounded,
         'badge': 'Recommended',
         'color': AppColors.secondary,
         'bgGradient': AppColors.secondaryGradient,
+        'mode': SpeakingMode.listenAndRepeat,
       },
       {
-        'title': 'Daily Vocabulary Quiz',
-        'subtitle': 'Expand your active word pool with quick MCQs.',
-        'icon': Icons.quiz_rounded,
+        'title': 'Bangla → English',
+        'subtitle': 'See Bangla text, speak the English translation.',
+        'icon': Icons.translate_rounded,
         'badge': 'New',
         'color': AppColors.accent,
         'bgGradient': AppColors.accentGradient,
+        'mode': SpeakingMode.banglaToEnglish,
       },
       {
-        'title': 'Grammar Drills',
-        'subtitle': 'Solve sentences fill-in-the-blanks.',
-        'icon': Icons.rule_rounded,
+        'title': 'Free Speaking',
+        'subtitle': 'Open microphone practice with live transcription.',
+        'icon': Icons.mic_none_rounded,
         'badge': '',
         'color': Colors.purple,
         'bgGradient': AppColors.purpleGradient,
+        'mode': SpeakingMode.freeSpeaking,
       },
     ];
 
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Practice Center',
+          'Speaking Practice',
           style: TextStyle(fontWeight: FontWeight.w900),
         ),
       ),
@@ -71,18 +84,18 @@ class SpeakingScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _buildStatItem(context, 'Average Score', '84%', Icons.insights_rounded, Colors.blue),
+                  _buildStatItem(context, 'Read Aloud', '🎯', Icons.record_voice_over_rounded, AppColors.primary),
                   Container(height: 30, width: 1, color: isDark ? AppColors.borderDark : AppColors.borderLight),
-                  _buildStatItem(context, 'Speech Minutes', '38m', Icons.timer_outlined, Colors.green),
+                  _buildStatItem(context, 'Listening', '🎧', Icons.hearing_rounded, AppColors.secondary),
                   Container(height: 30, width: 1, color: isDark ? AppColors.borderDark : AppColors.borderLight),
-                  _buildStatItem(context, 'Accuracy', '91%', Icons.check_circle_outline, Colors.orange),
+                  _buildStatItem(context, 'Speaking', '🎤', Icons.mic_rounded, Colors.orange),
                 ],
               ),
             ),
             const SizedBox(height: 24),
 
             Text(
-              'Select Practice Mode',
+              'Choose Practice Mode',
               style: theme.textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w800,
               ),
@@ -98,19 +111,19 @@ class SpeakingScreen extends StatelessWidget {
                 final mode = practiceModes[index];
                 final grad = mode['bgGradient'] as List<Color>;
                 final modeBadge = mode['badge'] as String;
+                final m = mode['mode'] as SpeakingMode;
 
-                return InkWell(
+                return GestureDetector(
                   onTap: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text('Opening ${mode['title']}...'),
-                        behavior: SnackBarBehavior.floating,
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => PronunciationScreen(mode: m),
                       ),
                     );
                   },
-                  borderRadius: BorderRadius.circular(20),
                   child: Container(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
                       borderRadius: BorderRadius.circular(20),
@@ -140,11 +153,14 @@ class SpeakingScreen extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  Text(
-                                    mode['title'] as String,
-                                    style: theme.textTheme.titleMedium?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
+                                  Flexible(
+                                    child: Text(
+                                      mode['title'] as String,
+                                      style: theme.textTheme.titleMedium?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
                                   if (modeBadge.isNotEmpty) ...[
