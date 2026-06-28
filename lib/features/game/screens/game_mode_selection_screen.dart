@@ -7,6 +7,7 @@ import '../../../providers/game/score_provider.dart';
 import '../../../providers/game/sound_provider.dart';
 import 'mode_game_screen.dart';
 import 'modes/word_match_mode.dart';
+import 'modes/verb_learning_mode.dart';
 
 class GameModeSelectionScreen extends ConsumerWidget {
   const GameModeSelectionScreen({super.key});
@@ -28,6 +29,8 @@ class GameModeSelectionScreen extends ConsumerWidget {
             const SizedBox(height: 16),
             // Word Match — Duolingo-style game
             _buildWordMatchCard(context, ref),
+            const SizedBox(height: 8),
+            _buildVerbLearningCard(context, ref),
             const SizedBox(height: 8),
             ...GameModeType.values.map((modeType) {
               final config = GameModeConfig.fromType(modeType);
@@ -140,6 +143,105 @@ class GameModeSelectionScreen extends ConsumerWidget {
                       const Icon(Icons.star_rounded, color: Colors.amber, size: 14),
                       const SizedBox(width: 4),
                       const Text('Score + Streak', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                    ],
+                  ),
+                ],
+              ),
+	    ),
+	    const Icon(Icons.arrow_forward_ios, color: Colors.white70, size: 20),
+	  ],
+	),
+      ),
+    );
+  }
+
+  Widget _buildVerbLearningCard(BuildContext context, WidgetRef ref) {
+    return InkWell(
+      onTap: () {
+        ref.read(soundProvider.notifier).playButtonTap();
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const VerbLearningModeScreen()),
+        );
+      },
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFF58CC02), Color(0xFF3DA302)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF58CC02).withOpacity(0.3),
+              blurRadius: 12,
+              offset: const Offset(0, 6),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 64,
+              height: 64,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: const Icon(Icons.directions_run_rounded, color: Colors.white, size: 32),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      const Text(
+                        'Verb Learning',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: Colors.amber.withOpacity(0.3),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: const Text(
+                          'NEW',
+                          style: TextStyle(
+                            color: Colors.amberAccent,
+                            fontSize: 9,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'Learn verb forms with Bengali meanings & examples',
+                    style: TextStyle(color: Colors.white70, fontSize: 13),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      const Icon(Icons.abc_rounded, color: Colors.white70, size: 14),
+                      const SizedBox(width: 4),
+                      const Text('V1-V5 Forms', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                      const SizedBox(width: 12),
+                      const Icon(Icons.quiz_rounded, color: Colors.amber, size: 14),
+                      const SizedBox(width: 4),
+                      const Text('Quick Quiz', style: TextStyle(color: Colors.white70, fontSize: 12)),
                     ],
                   ),
                 ],

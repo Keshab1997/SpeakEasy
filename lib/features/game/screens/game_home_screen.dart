@@ -20,6 +20,7 @@ import 'modes/grammar_detective_mode.dart';
 import 'modes/bangla_to_english_mode.dart';
 import 'modes/flashcard_mode.dart';
 import 'modes/story_completion_mode.dart';
+import 'modes/verb_learning_mode.dart';
 
 class GameHomeScreen extends ConsumerStatefulWidget {
   const GameHomeScreen({super.key});
@@ -288,6 +289,25 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
                         context,
                         MaterialPageRoute(
                             builder: (_) => const QuickQuizModeScreen()),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    _EnhancedGameCard(
+                      title: 'Verb Learning',
+                      description: 'Verb forms, Bangla meaning & example sentences',
+                      details: 'V1-V5 • Explanation • Quick Quiz',
+                      icon: Icons.directions_run_rounded,
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF58CC02), Color(0xFF3DA302)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      badge: 'NEW',
+                      badgeColor: Colors.orange,
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const VerbLearningModeScreen()),
                       ),
                     ),
                     const SizedBox(height: 16),

@@ -1,0 +1,221 @@
+{
+  "verbs": [
+    {
+      "v1": "begin", "v2": "began", "v3": "begun", "v4": "beginning", "v5": "begins",
+      "bangla": "শুরু করা", "meaning": "to start",
+      "bn_sentence": "আমি আজকে আমার পড়াশোনা শুরু করলাম।",
+      "en_sentence": "I began my studies today.",
+      "explanation": "'Begin' means to start something. V2 'began' is used for past events. V3 'begun' is used with 'have/has/had' (e.g., I have begun the work)."
+    },
+    {
+      "v1": "break", "v2": "broke", "v3": "broken", "v4": "breaking", "v5": "breaks",
+      "bangla": "ভাঙ্গা", "meaning": "to separate into pieces",
+      "bn_sentence": "সে জানালাটি ভেঙে ফেলল।",
+      "en_sentence": "He broke the window.",
+      "explanation": "'Break' means to damage something so it separates. V2 'broke' is past tense. V3 'broken' is past participle (e.g., It is broken)."
+    },
+    {
+      "v1": "bring", "v2": "brought", "v3": "brought", "v4": "bringing", "v5": "brings",
+      "bangla": "আনা", "meaning": "to carry or convey",
+      "bn_sentence": "দয়া করে আমার জন্য কিছু জল নিয়ে এসো।",
+      "en_sentence": "Please bring some water for me.",
+      "explanation": "'Bring' means to carry something toward the speaker. V2 and V3 are both 'brought'. It is an irregular verb."
+    },
+    {
+      "v1": "build", "v2": "built", "v3": "built", "v4": "building", "v5": "builds",
+      "bangla": "নির্মাণ করা", "meaning": "to construct",
+      "bn_sentence": "তারা একটি সুন্দর বাড়ি তৈরি করল।",
+      "en_sentence": "They built a beautiful house.",
+      "explanation": "'Build' means to make something by putting pieces together. V2 and V3 are both 'built'. Can be used literally (build a house) or figuratively (build a relationship)."
+    },
+    {
+      "v1": "buy", "v2": "bought", "v3": "bought", "v4": "buying", "v5": "buys",
+      "bangla": "কেনা", "meaning": "to purchase",
+      "bn_sentence": "আমি গতকাল একটি বই কিনলাম।",
+      "en_sentence": "I bought a book yesterday.",
+      "explanation": "'Buy' means to get something by paying money. V2 and V3 are 'bought'. Example: I bought this phone last year."
+    },
+    {
+      "v1": "catch", "v2": "caught", "v3": "caught", "v4": "catching", "v5": "catches",
+      "bangla": "ধরা", "meaning": "to capture or seize",
+      "bn_sentence": "বিড়ালটি একটি ইঁদুর ধরল।",
+      "en_sentence": "The cat caught a mouse.",
+      "explanation": "'Catch' means to grab something moving. V2 and V3 are 'caught'. Also used for illnesses (catch a cold) or understanding (catch a meaning)."
+    },
+    {
+      "v1": "choose", "v2": "chose", "v3": "chosen", "v4": "choosing", "v5": "chooses",
+      "bangla": "বেছে নেওয়া", "meaning": "to select",
+      "bn_sentence": "তুমি কোন পথটি বেছে নিলে?",
+      "en_sentence": "Which path did you choose?",
+      "explanation": "'Choose' means to pick one from many options. V2 'chose' is past tense. V3 'chosen' is past participle (e.g., I have chosen the blue one)."
+    },
+    {
+      "v1": "come", "v2": "came", "v3": "come", "v4": "coming", "v5": "comes",
+      "bangla": "আসা", "meaning": "to move toward",
+      "bn_sentence": "সে গতকাল আমার বাড়িতে এসেছিল।",
+      "en_sentence": "She came to my house yesterday.",
+      "explanation": "'Come' means to move toward the speaker. V2 'came' is past tense. V3 is same as V1 'come'. Common phrase: 'Come here please.'"
+    },
+    {
+      "v1": "do", "v2": "did", "v3": "done", "v4": "doing", "v5": "does",
+      "bangla": "করা", "meaning": "to perform an action",
+      "bn_sentence": "আমি আমার বাড়ির কাজ করলাম।",
+      "en_sentence": "I did my homework.",
+      "explanation": "'Do' is one of the most common English verbs. V2 'did' is past tense. V3 'done' is past participle. Used for general actions and also as a helping verb."
+    },
+    {
+      "v1": "drink", "v2": "drank", "v3": "drunk", "v4": "drinking", "v5": "drinks",
+      "bangla": "পান করা", "meaning": "to consume liquid",
+      "bn_sentence": "সে প্রতিদিন সকালে দুধ পান করে।",
+      "en_sentence": "She drinks milk every morning.",
+      "explanation": "'Drink' means to take liquid into the body. V2 'drank' is past tense. V3 'drunk' is past participle (e.g., He has drunk all the water)."
+    },
+    {
+      "v1": "eat", "v2": "ate", "v3": "eaten", "v4": "eating", "v5": "eats",
+      "bangla": "খাওয়া", "meaning": "to consume food",
+      "bn_sentence": "আমি গতরাতে পিজ্জা খেয়েছিলাম।",
+      "en_sentence": "I ate pizza last night.",
+      "explanation": "'Eat' means to take food into the body. V2 'ate' is past tense. V3 'eaten' is past participle (e.g., I have already eaten)."
+    },
+    {
+      "v1": "feel", "v2": "felt", "v3": "felt", "v4": "feeling", "v5": "feels",
+      "bangla": "অনুভব করা", "meaning": "to experience emotion",
+      "bn_sentence": "আমি আজ খুব খুশি অনুভব করছি।",
+      "en_sentence": "I feel very happy today.",
+      "explanation": "'Feel' describes emotions or physical sensations. V2 and V3 are both 'felt'. Example: I felt tired after work. She felt sad."
+    },
+    {
+      "v1": "find", "v2": "found", "v3": "found", "v4": "finding", "v5": "finds",
+      "bangla": "খুঁজে পাওয়া", "meaning": "to discover",
+      "bn_sentence": "আমি আমার হারানো চাবিগুলো খুঁজে পেয়েছি।",
+      "en_sentence": "I found my lost keys.",
+      "explanation": "'Find' means to discover something or someone. V2 and V3 are both 'found'. Opposite of 'lose'. Example: Did you find what you were looking for?"
+    },
+    {
+      "v1": "give", "v2": "gave", "v3": "given", "v4": "giving", "v5": "gives",
+      "bangla": "দেওয়া", "meaning": "to hand over to someone",
+      "bn_sentence": "ও আমাকে একটি উপহার দিয়েছে।",
+      "en_sentence": "She gave me a gift.",
+      "explanation": "'Give' means to freely transfer something to someone. V2 'gave' is past tense. V3 'given' is past participle. Structure: give [someone] [something]."
+    },
+    {
+      "v1": "go", "v2": "went", "v3": "gone", "v4": "going", "v5": "goes",
+      "bangla": "যাওয়া", "meaning": "to move from one place to another",
+      "bn_sentence": "তারা গতকাল বাজারে গিয়েছিল।",
+      "en_sentence": "They went to the market yesterday.",
+      "explanation": "'Go' means to move away from the speaker. V2 'went' is completely different. V3 'gone' is past participle. One of the most irregular verbs."
+    },
+    {
+      "v1": "have", "v2": "had", "v3": "had", "v4": "having", "v5": "has",
+      "bangla": "থাকা / পাওয়া", "meaning": "to possess or own",
+      "bn_sentence": "আমার একটি গাড়ি আছে।",
+      "en_sentence": "I have a car.",
+      "explanation": "'Have' shows possession or ownership. V2 and V3 are both 'had'. Also used as a helping verb for perfect tenses (I have finished)."
+    },
+    {
+      "v1": "know", "v2": "knew", "v3": "known", "v4": "knowing", "v5": "knows",
+      "bangla": "জানা", "meaning": "to be aware of something",
+      "bn_sentence": "আমি উত্তরটি জানি।",
+      "en_sentence": "I know the answer.",
+      "explanation": "'Know' means to have information in your mind. V2 'knew' is past tense. V3 'known' is past participle. Example: I knew him from school."
+    },
+    {
+      "v1": "learn", "v2": "learned", "v3": "learned", "v4": "learning", "v5": "learns",
+      "bangla": "শেখা", "meaning": "to gain knowledge or skill",
+      "bn_sentence": "আমি ইংরেজি শিখছি।",
+      "en_sentence": "I am learning English.",
+      "explanation": "'Learn' means to get knowledge or skill through study. V2 and V3 are 'learned' (or 'learnt' in British English). Practice makes perfect!"
+    },
+    {
+      "v1": "make", "v2": "made", "v3": "made", "v4": "making", "v5": "makes",
+      "bangla": "তৈরি করা / বানানো", "meaning": "to create or produce",
+      "bn_sentence": "মা সুস্বাদু খাবার বানিয়েছেন।",
+      "en_sentence": "Mom made delicious food.",
+      "explanation": "'Make' means to create something new. V2 and V3 are both 'made'. Different from 'do' — 'make' is for creating (make a cake), 'do' is for actions (do work)."
+    },
+    {
+      "v1": "read", "v2": "read", "v3": "read", "v4": "reading", "v5": "reads",
+      "bangla": "পড়া", "meaning": "to look at and understand written words",
+      "bn_sentence": "আমি প্রতিদিন খবরের কাগজ পড়ি।",
+      "en_sentence": "I read the newspaper every day.",
+      "explanation": "'Read' means to understand written text. ALL three forms are spelled the same 'read', but V2/V3 are pronounced 'red' (past). Fascinating, right?"
+    },
+    {
+      "v1": "run", "v2": "ran", "v3": "run", "v4": "running", "v5": "runs",
+      "bangla": "দৌড়ানো", "meaning": "to move fast on foot",
+      "bn_sentence": "সে প্রতিদিন সকালে দৌড়ায়।",
+      "en_sentence": "He runs every morning.",
+      "explanation": "'Run' means to move faster than walking. V2 'ran' is past tense. V3 is same as V1 'run'. Also used for machines (The engine is running)."
+    },
+    {
+      "v1": "see", "v2": "saw", "v3": "seen", "v4": "seeing", "v5": "sees",
+      "bangla": "দেখা", "meaning": "to perceive with eyes",
+      "bn_sentence": "আমি গতকাল একটি সুন্দর পাখি দেখলাম।",
+      "en_sentence": "I saw a beautiful bird yesterday.",
+      "explanation": "'See' means to notice with your eyes. V2 'saw' is past tense. V3 'seen' is past participle. Example: Have you seen my phone?"
+    },
+    {
+      "v1": "speak", "v2": "spoke", "v3": "spoken", "v4": "speaking", "v5": "speaks",
+      "bangla": "কথা বলা", "meaning": "to talk or say words",
+      "bn_sentence": "সে ইংরেজিতে খুব ভালো কথা বলে।",
+      "en_sentence": "She speaks English very well.",
+      "explanation": "'Speak' means to talk or express in words. V2 'spoke' is past tense. V3 'spoken' is past participle. 'Speak' is more formal than 'talk'."
+    },
+    {
+      "v1": "take", "v2": "took", "v3": "taken", "v4": "taking", "v5": "takes",
+      "bangla": "নেওয়া", "meaning": "to get hold of something",
+      "bn_sentence": "দয়া করে একটি কলম নাও।",
+      "en_sentence": "Please take a pen.",
+      "explanation": "'Take' means to get something into your hands. V2 'took' is past tense. V3 'taken' is past participle. Opposite of 'give'."
+    },
+    {
+      "v1": "think", "v2": "thought", "v3": "thought", "v4": "thinking", "v5": "thinks",
+      "bangla": "চিন্তা করা", "meaning": "to have an opinion or idea",
+      "bn_sentence": "আমি মনে করি এটা সঠিক।",
+      "en_sentence": "I think this is correct.",
+      "explanation": "'Think' means to use your mind to have ideas or opinions. V2 and V3 are both 'thought'. Example: I thought about your suggestion."
+    },
+    {
+      "v1": "understand", "v2": "understood", "v3": "understood", "v4": "understanding", "v5": "understands",
+      "bangla": "বোঝা", "meaning": "to comprehend",
+      "bn_sentence": "আমি বিষয়টি বুঝতে পেরেছি।",
+      "en_sentence": "I understood the topic.",
+      "explanation": "'Understand' means to grasp the meaning of something. V2 and V3 are both 'understood'. It's a compound word: 'under' + 'stand'."
+    },
+    {
+      "v1": "write", "v2": "wrote", "v3": "written", "v4": "writing", "v5": "writes",
+      "bangla": "লেখা", "meaning": "to put words on paper",
+      "bn_sentence": "সে একটি চিঠি লিখেছে।",
+      "en_sentence": "She wrote a letter.",
+      "explanation": "'Write' means to form letters/words on a surface. V2 'wrote' is past tense. V3 'written' is past participle. Practice writing daily!"
+    },
+    {
+      "v1": "tell", "v2": "told", "v3": "told", "v4": "telling", "v5": "tells",
+      "bangla": "বলা", "meaning": "to inform or narrate",
+      "bn_sentence": "আমাকে সত্যি কথাটি বলো।",
+      "en_sentence": "Tell me the truth.",
+      "explanation": "'Tell' means to give information. V2 and V3 are both 'told'. Structure: tell [someone] [something]. Different from 'say' — 'tell' needs a listener."
+    },
+    {
+      "v1": "show", "v2": "showed", "v3": "shown", "v4": "showing", "v5": "shows",
+      "bangla": "দেখানো", "meaning": "to display or demonstrate",
+      "bn_sentence": "আমাকে তোমার ছবিটি দেখাও।",
+      "en_sentence": "Show me your picture.",
+      "explanation": "'Show' means to let someone see something. V2 'showed' is past tense. V3 'shown' is past participle. Example: He showed me his new bike."
+    },
+    {
+      "v1": "help", "v2": "helped", "v3": "helped", "v4": "helping", "v5": "helps",
+      "bangla": "সাহায্য করা", "meaning": "to assist",
+      "bn_sentence": "তুমি কি আমাকে সাহায্য করতে পারো?",
+      "en_sentence": "Can you help me?",
+      "explanation": "'Help' means to make something easier for someone. It's a regular verb — V2 and V3 are both 'helped'. A very useful word for daily conversations!"
+    },
+    {
+      "v1": "teach", "v2": "taught", "v3": "taught", "v4": "teaching", "v5": "teaches",
+      "bangla": "শেখানো", "meaning": "to give knowledge or instruction",
+      "bn_sentence": "শিক্ষক ছাত্রদের পড়ান।",
+      "en_sentence": "The teacher teaches the students.",
+      "explanation": "'Teach' means to give knowledge to someone. V2 and V3 are both 'taught'. Structure: teach [someone] [something]. Example: She taught me English."
+    }
+  ]
+}
