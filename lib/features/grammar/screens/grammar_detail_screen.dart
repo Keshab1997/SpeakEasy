@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/utils/grammar_text_parser.dart';
 import '../../../models/grammar_chapter_model.dart';
 import '../../../providers/last_opened_chapter_provider.dart';
 import '../../../services/vocab_remote_service.dart';
@@ -160,17 +161,21 @@ class _DescriptionHero extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(description,
-              style: theme.textTheme.bodyLarge?.copyWith(
-                fontWeight: FontWeight.w500,
-                height: 1.6,
-              )),
+          GrammarRichText(
+            text: description,
+            style: theme.textTheme.bodyLarge?.copyWith(
+              fontWeight: FontWeight.w500,
+              height: 1.6,
+            ),
+          ),
           const SizedBox(height: 12),
-          Text(banglaDescription,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: Colors.grey[600],
-                height: 1.7,
-              )),
+          GrammarRichText(
+            text: banglaDescription,
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: Colors.grey[600],
+              height: 1.7,
+            ),
+          ),
         ],
       ),
     );
@@ -265,9 +270,11 @@ class _TopicCard extends StatelessWidget {
           ),
           if (topic.definition.isNotEmpty) ...[
             const _SectionLabel(bangla: 'সংজ্ঞা', english: 'Definition'),
-            Text(topic.definition,
-                style: theme.textTheme.bodyMedium
-                    ?.copyWith(height: 1.7, fontWeight: FontWeight.w500)),
+            GrammarRichText(
+              text: topic.definition,
+              style: theme.textTheme.bodyMedium
+                  ?.copyWith(height: 1.7, fontWeight: FontWeight.w500),
+            ),
           ],
           if (topic.banglaDefinition.isNotEmpty) ...[
             const SizedBox(height: 8),
@@ -279,9 +286,11 @@ class _TopicCard extends StatelessWidget {
                 border:
                     Border.all(color: AppColors.primary.withOpacity(0.08)),
               ),
-              child: Text(topic.banglaDefinition,
-                  style: theme.textTheme.bodyMedium
-                      ?.copyWith(color: Colors.grey[700], height: 1.7)),
+              child: GrammarRichText(
+                text: topic.banglaDefinition,
+                style: theme.textTheme.bodyMedium
+                    ?.copyWith(color: Colors.grey[700], height: 1.7),
+              ),
             ),
           ],
           if (topic.formula.isNotEmpty) ...[
@@ -295,46 +304,24 @@ class _TopicCard extends StatelessWidget {
                 border:
                     Border.all(color: AppColors.accent.withOpacity(0.15)),
               ),
-              child: Text(topic.formula,
-                  style: const TextStyle(
-                      fontFamily: 'monospace',
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.accent,
-                      height: 1.5)),
+              child: FormulaRichText(
+                formula: topic.formula,
+                style: const TextStyle(
+                    fontFamily: 'monospace',
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.accent,
+                    height: 1.5),
+              ),
             ),
           ],
           if (topic.rules.isNotEmpty) ...[
             const _SectionLabel(bangla: 'নিয়মসমূহ', english: 'Rules'),
-            ...topic.rules.asMap().entries.map((e) => Padding(
-                  padding: const EdgeInsets.only(bottom: 6),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 1, right: 10),
-                        width: 22,
-                        height: 22,
-                        decoration: BoxDecoration(
-                          color: AppColors.primary.withOpacity(0.1),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Center(
-                          child: Text('${e.key + 1}',
-                              style: const TextStyle(
-                                  color: AppColors.primary,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w700)),
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(e.value,
-                            style: theme.textTheme.bodyMedium
-                                ?.copyWith(height: 1.5)),
-                      ),
-                    ],
-                  ),
-                )),
+            ...GrammarTextParser.buildRuleWidgets(
+              topic.rules,
+              context: context,
+              isDark: isDark,
+            ),
           ],
           if (topic.examples.isNotEmpty) ...[
             const _SectionLabel(bangla: 'উদাহরণ', english: 'Examples'),
@@ -362,11 +349,13 @@ class _TopicCard extends StatelessWidget {
                                   color: AppColors.primary)),
                           const SizedBox(width: 4),
                           Expanded(
-                            child: Text(ex.en,
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FontStyle.italic,
-                                    height: 1.4)),
+                            child: GrammarRichText(
+                              text: ex.en,
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  fontStyle: FontStyle.italic,
+                                  height: 1.4),
+                            ),
                           ),
                         ],
                       ),
@@ -381,11 +370,13 @@ class _TopicCard extends StatelessWidget {
                                   color: AppColors.accent)),
                           const SizedBox(width: 4),
                           Expanded(
-                            child: Text(ex.bn,
-                                style: theme.textTheme.bodySmall
-                                    ?.copyWith(
-                                        color: Colors.grey[600],
-                                        height: 1.4)),
+                            child: GrammarRichText(
+                              text: ex.bn,
+                              style: theme.textTheme.bodySmall
+                                  ?.copyWith(
+                                      color: Colors.grey[600],
+                                      height: 1.4),
+                            ),
                           ),
                         ],
                       ),
@@ -416,9 +407,11 @@ class _TopicCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 12),
                   Expanded(
-                    child: Text(topic.tips,
-                        style: theme.textTheme.bodySmall
-                            ?.copyWith(height: 1.6)),
+                    child: GrammarRichText(
+                      text: topic.tips,
+                      style: theme.textTheme.bodySmall
+                          ?.copyWith(height: 1.6),
+                    ),
                   ),
                 ],
               ),
@@ -579,12 +572,14 @@ class _CommonMistakesSection extends StatelessWidget {
                         ),
                         const SizedBox(width: 8),
                         Expanded(
-                          child: Text(m.wrong,
-                              style: TextStyle(
-                                  color: Colors.red.shade700,
-                                  decoration: TextDecoration.lineThrough,
-                                  fontWeight: FontWeight.w500,
-                                  height: 1.3)),
+                          child: GrammarRichText(
+                            text: m.wrong,
+                            style: TextStyle(
+                                color: Colors.red.shade700,
+                                decoration: TextDecoration.lineThrough,
+                                fontWeight: FontWeight.w500,
+                                height: 1.3),
+                          ),
                         ),
                       ],
                     ),
@@ -603,11 +598,13 @@ class _CommonMistakesSection extends StatelessWidget {
                         ),
                         const SizedBox(width: 8),
                         Expanded(
-                          child: Text(m.correct,
-                              style: TextStyle(
-                                  color: Colors.green.shade700,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.3)),
+                          child: GrammarRichText(
+                            text: m.correct,
+                            style: TextStyle(
+                                color: Colors.green.shade700,
+                                fontWeight: FontWeight.w600,
+                                height: 1.3),
+                          ),
                         ),
                       ],
                     ),
@@ -626,9 +623,11 @@ class _CommonMistakesSection extends StatelessWidget {
                                 size: 14, color: Colors.grey[400]),
                             const SizedBox(width: 6),
                             Expanded(
-                              child: Text(m.explanation,
-                                  style: theme.textTheme.bodySmall?.copyWith(
-                                      color: Colors.grey[600], height: 1.5)),
+                              child: GrammarRichText(
+                                text: m.explanation,
+                                style: theme.textTheme.bodySmall?.copyWith(
+                                    color: Colors.grey[600], height: 1.5),
+                              ),
                             ),
                           ],
                         ),
