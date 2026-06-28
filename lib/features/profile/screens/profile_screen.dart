@@ -14,6 +14,7 @@ import '../../../services/hive_service.dart';
 import '../../auth/screens/login_screen.dart';
 import '../../settings/screens/settings_screen.dart';
 import '../../feedback/screens/feedback_screen.dart';
+import '../../feedback/screens/my_feedback_screen.dart';
 
 class ProfileScreen extends ConsumerStatefulWidget {
   const ProfileScreen({super.key});
@@ -376,6 +377,19 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (_) => const SettingsScreen()),
+                      );
+                    },
+                  ),
+                  const Divider(height: 1),
+                  ListTile(
+                    leading: const Icon(Icons.history_rounded, color: Colors.teal),
+                    title: const Text('My Feedback'),
+                    subtitle: const Text('View your submitted feedback and replies'),
+                    trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const MyFeedbackScreen()),
                       );
                     },
                   ),

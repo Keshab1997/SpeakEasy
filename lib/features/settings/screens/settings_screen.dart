@@ -7,6 +7,7 @@ import '../../../services/notification_service.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/theme_provider.dart';
 import '../../admin/screens/admin_dashboard_screen.dart';
+import '../../feedback/screens/feedback_screen.dart';
 import 'api_setup_guide_screen.dart';
 import 'privacy_security_screen.dart';
 
@@ -146,13 +147,16 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 ),
               ],
             ]),
-            if (!_notifications && !isDark) ...[
+            if (!_notifications) ...[
               const SizedBox(height: 4),
               Padding(
                 padding: const EdgeInsets.only(left: 16),
                 child: Text(
                   'Enable notifications to get daily vocabulary words and practice reminders.',
-                  style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: isDark ? Colors.white38 : Colors.grey.shade500,
+                  ),
                 ),
               ),
             ],
@@ -204,15 +208,14 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             const SizedBox(height: 8),
             _buildSettingsCard([
               ListTile(
-                leading: const Icon(Icons.person_outline_rounded, color: AppColors.primary),
-                title: const Text('Edit Profile'),
+                leading: const Icon(Icons.feedback_rounded, color: AppColors.primary),
+                title: const Text('Send Feedback'),
+                subtitle: const Text('Help us improve the app'),
                 trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Edit profile feature - Update your name, email, and photo'),
-                      behavior: SnackBarBehavior.floating,
-                    ),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const FeedbackScreen()),
                   );
                 },
               ),

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/feedback_model.dart';
+import '../../../services/ai_service.dart';
 
 class AdminFeedbackScreen extends StatefulWidget {
   const AdminFeedbackScreen({super.key});
@@ -223,6 +224,7 @@ class _FeedbackCardState extends State<_FeedbackCard> {
   bool _expanded = false;
   final _replyController = TextEditingController();
   bool _isSending = false;
+  bool _isGeneratingReply = false;
 
   @override
   void dispose() {
@@ -504,13 +506,58 @@ class _FeedbackCardState extends State<_FeedbackCard> {
 
                   // Reply input (only if not already replied or still editable)
                   if (feedback.status == 'pending') ...[
-                    Text(
-                      'Write a Reply',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.bold,
-                        color: isDark ? Colors.white60 : Colors.black54,
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          'Write a Reply',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            color: isDark ? Colors.white60 : Colors.black54,
+                          ),
+                        ),
+                        const Spacer(),
+                        _isGeneratingReply
+                            ? const SizedBox(
+                                width: 16,
+                                height: 16,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      AppColors.primary),
+                                ),
+                              )
+                            : GestureDetector(
+                                onTap: _generateAiReply,
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 5),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.primary.withOpacity(0.1),
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: AppColors.primary.withOpacity(0.3),
+                                    ),
+                                  ),
+                                  child: const Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(Icons.auto_awesome_rounded,
+                                          size: 14, color: AppColors.primary),
+                                      SizedBox(width: 4),
+                                      Text(
+                                        'AI Reply',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w600,
+                                          color: AppColors.primary,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                      ],
                     ),
                     const SizedBox(height: 8),
                     Container(
@@ -638,6 +685,66 @@ class _FeedbackCardState extends State<_FeedbackCard> {
       if (mounted) {
         setState(() => _isSending = false);
       }
+    }
+  }
+
+  Future<void> _generateAiReply() async {
+    final feedback = widget.feedback;
+    if (_isGeneratingReply) return;
+
+    setState(() => _isGeneratingReply = true);
+
+    try {
+      final response = await AIService().sendMessageWithSystem(
+        'User feedback category: ${feedback.category}\nUser message: ${feedback.message}',
+        maxTokens: 250,
+        systemPrompt: 'You are a professional customer support agent for a "Spoken English Learning App". '
+            'Write a kind, empathetic, and encouraging reply to a user\'s feedback. '
+            'Keep it concise (2-4 sentences). Use friendly English with occasional Bangla/Banglish words. '
+            'Always thank the user for their feedback.\n\n'
+            'Guidelines by category:\n'
+            '- Bug Report: Apologize sincerely and mention the team will look into it.\n'
+            '- Feature Request: Appreciate the suggestion and say it will be considered.\n'
+            '- Complaint: Be very apologetic and reassuring.\n'
+            '- Suggestion: Acknowledge positively and thank them.\n'
+            '- Other: Respond warmly and acknowledge their input.\n\n'
+            'Return ONLY the reply text. No quotes, no prefixes, no labels.',
+      );
+
+      if (mounted && response.isNotEmpty) {
+        // Clean up any markdown or quotes from the response
+        String cleanReply = response.trim();
+        cleanReply = cleanReply.replaceAll(RegExp("^[\"'*]+"), '');
+        cleanReply = cleanReply.replaceAll(RegExp("[\"'*]+\$"), '');
+        cleanReply = cleanReply.trim();
+        _replyController.text = cleanReply;
+      }
+    } catch (e) {
+      // AI unavailable - use a fallback reply based on category
+      if (mounted) {
+        final fallback = _buildFallbackAiReply(feedback.category, feedback.userName);
+        _replyController.text = fallback;
+      }
+    } finally {
+      if (mounted) {
+        setState(() => _isGeneratingReply = false);
+      }
+    }
+  }
+
+  String _buildFallbackAiReply(String category, String userName) {
+    final greeting = userName.isNotEmpty ? 'Dear $userName' : 'Dear User';
+    switch (category) {
+      case 'Bug Report':
+        return '$greeting,\n\nThank you for reporting this issue. We sincerely apologize for the inconvenience. Our team will look into this and fix it as soon as possible. Thank you for your patience! 🙏';
+      case 'Feature Request':
+        return '$greeting,\n\nThank you for your wonderful suggestion! We really appreciate your input and will definitely consider adding this feature in future updates. Keep learning! 🚀';
+      case 'Complaint':
+        return '$greeting,\n\nWe are truly sorry for your experience. Your feedback is very important to us, and we will work hard to improve. Please give us another chance to serve you better. 🙏';
+      case 'Suggestion':
+        return '$greeting,\n\nThank you for your thoughtful suggestion! We always love hearing from our learners. Your idea has been noted and will be reviewed by our team. Keep practicing! 📚';
+      default:
+        return '$greeting,\n\nThank you for reaching out to us! We really value your feedback as it helps us improve the app for everyone. Keep learning English with us! 🎉';
     }
   }
 
