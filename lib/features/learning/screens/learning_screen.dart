@@ -4,6 +4,7 @@ import '../../home/widgets/spoken_rules_screen.dart';
 import '../../vocabulary/screens/vocabulary_screen.dart';
 import '../../verb_forms/screens/verb_forms_screen.dart';
 import '../../grammar/screens/grammar_list_screen.dart';
+import '../../game/screens/tense_categories_screen.dart';
 
 class LearningScreen extends StatelessWidget {
   const LearningScreen({super.key});
@@ -37,6 +38,15 @@ class LearningScreen extends StatelessWidget {
                   style: theme.textTheme.bodyMedium?.copyWith(color: Colors.grey)),
               const SizedBox(height: 24),
 
+              _buildLearningCard(
+                context: context,
+                title: 'Tense Rules',
+                subtitle: 'Master all 12 tenses with rules and examples',
+                icon: Icons.auto_stories_rounded,
+                gradient: [const Color(0xFFE94057), const Color(0xFFF27121)],
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const TenseCategoriesScreen())),
+              ),
+              const SizedBox(height: 16),
               _buildLearningCard(
                 context: context,
                 title: 'Spoken Rules',
