@@ -45,6 +45,30 @@ class AchievementsScreen extends ConsumerWidget {
   }
 }
 
+/// Sliver delegate to keep the TabBar pinned while scrolling the header.
+class _SliverTabBarDelegate extends SliverPersistentHeaderDelegate {
+  final TabBar tabBar;
+
+  const _SliverTabBarDelegate(this.tabBar);
+
+  @override
+  double get minExtent => tabBar.preferredSize.height;
+  @override
+  double get maxExtent => tabBar.preferredSize.height;
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Container(
+      color: Theme.of(context).scaffoldBackgroundColor,
+      child: tabBar,
+    );
+  }
+
+  @override
+  bool shouldRebuild(_SliverTabBarDelegate oldDelegate) => false;
+}
+
 class _AchievementsBody extends StatelessWidget {
   final AchievementState state;
 
@@ -52,47 +76,44 @@ class _AchievementsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          // Progress Header with Real-time Stats
-          _buildProgressHeader(context, state),
-
-          // Real-time Stats Cards
-          _buildRealtimeStatsSection(context, state),
-
-          // Achievement Tabs
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.5,
-            child: DefaultTabController(
-              length: 3,
-              child: Column(
-                children: [
-                  const TabBar(
-                    tabs: [
-                      Tab(text: 'Overview'),
-                      Tab(text: 'Unlocked'),
-                      Tab(text: 'Locked'),
-                    ],
-                  ),
-                  Expanded(
-                    child: TabBarView(
-                      children: [
-                        _buildOverviewTab(context, state),
-                        _AchievementList(
-                            achievements: state.unlockedAchievements,
-                            isUnlocked: true),
-                        _AchievementList(
-                            achievements: state.lockedAchievements,
-                            isUnlocked: false),
-                      ],
-                    ),
-                  ),
+    return DefaultTabController(
+      length: 3,
+      child: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          // ── Header + Live Stats ──
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                _buildProgressHeader(context, state),
+                _buildRealtimeStatsSection(context, state),
+              ],
+            ),
+          ),
+          // ── Pinned TabBar ──
+          const SliverPersistentHeader(
+            pinned: true,
+            delegate: _SliverTabBarDelegate(
+              TabBar(
+                tabs: [
+                  Tab(text: 'Overview'),
+                  Tab(text: 'Unlocked'),
+                  Tab(text: 'Locked'),
                 ],
               ),
             ),
           ),
         ],
+        body: TabBarView(
+          children: [
+            _buildOverviewTab(context, state),
+            _AchievementList(
+                achievements: state.unlockedAchievements,
+                isUnlocked: true),
+            _AchievementList(
+                achievements: state.lockedAchievements,
+                isUnlocked: false),
+          ],
+        ),
       ),
     );
   }

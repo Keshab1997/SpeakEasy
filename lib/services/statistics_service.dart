@@ -251,6 +251,23 @@ class StatisticsService {
   Future<int> getTodayEarnedCoins() async =>
       (await getTodayResults()).fold<int>(0, (sum, r) => sum + r.earnedCoins);
 
+  // ── Cross-device Sync ──
+
+  /// Sync game progress (XP, coins, level, streak) from Firestore → Hive
+  Future<void> syncProgressFromFirestoreToHive(String userId) async {
+    await _progressRepository.syncProgressFromFirestoreToHive(userId);
+  }
+
+  /// Sync statistics meta (boss wins, daily wins, time played) from Firestore → Hive
+  Future<void> syncMetaFromFirestoreToHive(String userId) async {
+    await _statisticsRepository.syncMetaFromFirestoreToHive(userId);
+  }
+
+  /// Sync game results from Firestore → Hive
+  Future<void> syncResultsFromFirestoreToHive(String userId) async {
+    await _statisticsRepository.syncFromFirestoreToHive(userId);
+  }
+
   // ── Summary ──
 
   Future<Map<String, dynamic>> getFullSummary() async {

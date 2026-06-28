@@ -179,4 +179,31 @@ class StatisticsRepository {
     final box = await _ensureBox();
     await box.put(_resultsKey, results.map((r) => r.toMap()).toList());
   }
+
+  /// Sync meta counters (boss wins, daily wins, time played) from Firestore → Hive.
+  /// This is needed for cross-device sync — when another device writes to Firestore,
+  /// this method updates the local Hive values.
+  Future<void> syncMetaFromFirestoreToHive(String userId) async {
+    try {
+      final doc = await FirebaseFirestore.instance
+          .collection('${_firestoreCollection}_meta')
+          .doc(userId)
+          .get();
+      if (!doc.exists) return;
+
+      final data = doc.data()!;
+      final box = await _ensureBox();
+      if (data.containsKey('bossWins')) {
+        await box.put(_bossWinsKey, data['bossWins'] as int);
+      }
+      if (data.containsKey('dailyChallengeWins')) {
+        await box.put(_dailyWinsKey, data['dailyChallengeWins'] as int);
+      }
+      if (data.containsKey('timePlayedSeconds')) {
+        await box.put(_timePlayedKey, data['timePlayedSeconds'] as int);
+      }
+    } catch (e) {
+      print('❌ syncMetaFromFirestoreToHive error: $e');
+    }
+  }
 }

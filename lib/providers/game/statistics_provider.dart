@@ -155,40 +155,75 @@ class StatisticsNotifier extends StateNotifier<StatisticsState> {
     _currentUserId = FirebaseAuth.instance.currentUser?.uid;
     if (_currentUserId == null || _currentUserId!.isEmpty) return;
 
-    // Listen to progress updates — use _refresh() which reads from local Hive
-    // (the source of truth). Firestore snapshots only trigger a re-read of
-    // local data, they never directly overwrite state with potentially stale
-    // Firestore values.
+    // Listen to progress updates from Firestore.
+    // When remote data changes (e.g. from another device or admin panel),
+    // we sync it into Hive and THEN refresh the UI.
     _progressSubscription = FirebaseFirestore.instance
         .collection('game_progress')
         .doc(_currentUserId!)
         .snapshots()
         .listen((snapshot) {
-      // Firestore data may be stale if local updates haven't synced yet.
-      // Always prefer local Hive data via _refresh().
-      _refresh();
+      if (!snapshot.exists) {
+        // No remote data yet — that's fine, stay with local
+        _refresh();
+        return;
+      }
+      // Remote data arrived — sync it to Hive, then refresh UI from Hive
+      _syncAndRefresh();
     });
 
-    // Listen to meta statistics updates
+    // Listen to meta statistics updates from Firestore
     _metaSubscription = FirebaseFirestore.instance
         .collection('game_statistics_meta')
         .doc(_currentUserId!)
         .snapshots()
         .listen((snapshot) {
-      // Refresh from local Hive (source of truth)
-      _refresh();
+      if (!snapshot.exists) {
+        _refresh();
+        return;
+      }
+      _syncAndRefresh();
     });
 
-    // Listen to new game results
+    // Listen to new game results from Firestore
     _resultsSubscription = FirebaseFirestore.instance
         .collection('game_statistics')
         .where('userId', isEqualTo: _currentUserId!)
         .snapshots()
         .listen((snapshot) {
-      // When a new result is added, we refresh the whole summary to ensure
-      // all aggregated stats (accuracy, total games, etc.) are correct.
-      _refresh();
+      if (snapshot.docChanges.isEmpty) {
+        _refresh();
+        return;
+      }
+      // A new result was added remotely — sync then refresh
+      _syncAndRefresh();
     });
+  }
+
+  /// Syncs remote Firestore data into local Hive storage, then refreshes
+  /// the UI state from Hive. This enables cross-device sync: when another
+  /// device uploads data to Firestore, the listener picks it up and
+  /// persists it locally.
+  Future<void> _syncAndRefresh() async {
+    final userId = _currentUserId;
+    if (userId == null || userId.isEmpty) {
+      _refresh();
+      return;
+    }
+
+    try {
+      // Sync progress (XP, coins, level, streak) from Firestore → Hive
+      await _statisticsService.syncProgressFromFirestoreToHive(userId);
+      // Sync statistics meta (boss wins, daily wins, time played) from Firestore → Hive
+      await _statisticsService.syncMetaFromFirestoreToHive(userId);
+      // Sync game results (aggregated stats) from Firestore → Hive
+      await _statisticsService.syncResultsFromFirestoreToHive(userId);
+    } catch (e) {
+      print('❌ Error syncing Firestore → Hive in listener: $e');
+    }
+
+    // Now read from Hive (which has the latest data) and update UI
+    _refresh();
   }
 
   /// Public refresh hook so providers that mutate progress (XP, coins,

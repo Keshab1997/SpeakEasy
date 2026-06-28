@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'package:firebase_auth/firebase_auth.dart';
 import '../core/constants/tense_constants.dart';
 import '../models/game/game_question_model.dart';
 import '../models/game/game_result_model.dart';
@@ -211,22 +210,11 @@ class GameService {
     await _progressRepository.addXP(result.earnedXP);
     await _progressRepository.addCoins(result.earnedCoins);
 
-    // Upload to Firestore (user-specific)
-    final userId = FirebaseAuth.instance.currentUser?.uid;
-    if (userId != null) {
-      try {
-        await _statisticsRepository.uploadResultToFirestore(userId, resultWithDuration);
-        await _statisticsRepository.uploadMetaToFirestore(userId);
-        final progress = _progressRepository.getProgress();
-        if (progress != null) {
-          await _progressRepository.uploadProgressToFirestore(
-            progress.copyWith(userId: userId),
-          );
-        }
-      } catch (e) {
-        print('Failed to upload result to Firestore: $e');
-      }
-    }
+    // ⚠️ Firebase upload removed from here to eliminate duplicate uploads.
+    // ResultScreen._syncGameDataToFirebase() handles ALL Firebase uploads
+    // (Hive → Firestore) for every game flow — main game, mode screens, etc.
+    // This ensures a single source of truth: Hive → Firebase, and ALL fields
+    // (durationSeconds, isBossWin, isDailyChallengeWin, gameType) are preserved.
   }
 
   // ── Level Progression ──

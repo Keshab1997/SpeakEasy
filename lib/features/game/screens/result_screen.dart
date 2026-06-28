@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../providers/game/game_provider.dart';
 import '../../../providers/game/timer_provider.dart';
 import '../../../providers/game/score_provider.dart';
 import '../../../services/game_service.dart';
-import '../../../services/game_data_sync_service.dart';
 import '../../../providers/game/xp_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../../../providers/game/sound_provider.dart';
@@ -15,7 +15,6 @@ import '../../../providers/game/achievement_provider.dart';
 import '../../../repositories/progress_repository.dart';
 import '../../../repositories/statistics_repository.dart';
 import '../../../repositories/achievement_repository.dart';
-import '../../../models/game/game_result_model.dart';
 import 'game_home_screen.dart';
 import 'answer_review_screen.dart';
 import 'question_screen.dart';
@@ -111,6 +110,10 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
   /// (progress, statistics, achievements, leaderboard) is consistent
   /// across devices and the Firestore real-time listeners show the
   /// correct values.
+  ///
+  /// Uses the LAST saved GameResultModel from Hive (which contains ALL
+  /// fields: durationSeconds, isBossWin, isDailyChallengeWin, gameType, etc.)
+  /// instead of creating a new incomplete model from widget parameters.
   Future<void> _syncGameDataToFirebase() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) return;
@@ -119,24 +122,34 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
     final userName = user.displayName ?? user.email?.split('@').first ?? 'User';
 
     try {
-      // ── 1. Save game result to game_statistics ──
       final statisticsRepo = StatisticsRepository();
-      final result = GameResultModel(
-        score: widget.score,
-        correctAnswers: widget.correctAnswers,
-        wrongAnswers: widget.wrongAnswers,
-        accuracy: widget.correctAnswers + widget.wrongAnswers > 0
-            ? widget.correctAnswers / (widget.correctAnswers + widget.wrongAnswers)
-            : 0.0,
-        earnedXP: widget.earnedXP,
-        earnedCoins: widget.earnedCoins,
-        gameType: widget.gameMode.isNotEmpty ? widget.gameMode : 'normal',
-        completedTime: DateTime.now(),
-      );
-      await statisticsRepo.uploadResultToFirestore(userId, result);
+
+      // ── 1. Read the FULL result from Hive (saved by GameService or mode screens) ──
+      // This preserves ALL fields: durationSeconds, isBossWin, isDailyChallengeWin,
+      // gameType, difficulty, etc. — unlike the old approach that created a new
+      // incomplete GameResultModel from widget params.
+      final results = await statisticsRepo.getResults();
+      final result = results.isNotEmpty ? results.first : null;
+
+      if (result != null) {
+        // Upload complete result with ALL 11 fields preserved
+        final data = result.toFirestoreMap();
+        data['userId'] = userId;
+        await FirebaseFirestore.instance
+            .collection('game_statistics')
+            .add(data);
+
+        print('✅ Game result uploaded to Firebase (score: ${result.score}, '
+            'correct: ${result.correctAnswers}, wrong: ${result.wrongAnswers}, '
+            'xp: ${result.earnedXP}, coins: ${result.earnedCoins}, '
+            'gameType: ${result.gameType}, duration: ${result.durationSeconds}s, '
+            'isBossWin: ${result.isBossWin}, isDailyChallengeWin: ${result.isDailyChallengeWin})');
+      }
+
+      // ── 2. Upload meta statistics (boss wins, daily wins, time played) ──
       await statisticsRepo.uploadMetaToFirestore(userId);
 
-      // ── 2. Save game_progress (XP, coins, level, streak) ──
+      // ── 3. Save game_progress (XP, coins, level, streak) ──
       final progressRepo = ProgressRepository();
       final localProgress = progressRepo.getProgress();
       if (localProgress != null) {
@@ -144,14 +157,14 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
         await progressRepo.uploadProgressToFirestore(updatedProgress);
       }
 
-      // ── 3. Save achievements to Firestore ──
+      // ── 4. Save achievements to Firestore ──
       final achievementRepo = AchievementRepository();
       final localAchievements = achievementRepo.getCachedAchievements();
       if (localAchievements.isNotEmpty) {
         await achievementRepo.batchUploadToFirestore(userId, localAchievements);
       }
 
-      // ── 4. Update leaderboard ──
+      // ── 5. Update leaderboard ──
       final xpState = ref.read(xpProvider);
       await ref.read(leaderboardProvider.notifier).updateUserStats(
             userId: userId,
@@ -160,10 +173,6 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
             score: widget.score,
             level: xpState.currentLevel,
           );
-
-      // ── 5. Also run the full GameDataSyncService upload as backup ──
-      final syncService = GameDataSyncService();
-      await syncService.saveUserDataToFirebase();
 
       print('✅ Game data synced to Firebase after game completion');
     } catch (e) {

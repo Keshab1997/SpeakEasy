@@ -71,14 +71,20 @@ class GameDataSyncService {
         await _achievementRepository.batchUploadToFirestore(userId, achievements);
       }
 
+      // Save levels (was previously missing — levels were only saved to Hive!)
+      final levels = _progressRepository.getLevels();
+      if (levels.isNotEmpty) {
+        await _progressRepository.batchUploadLevelsToFirestore(userId, levels);
+      }
+
       print('✅ Game data saved to Firebase for user: $userId');
     } catch (e) {
       print('❌ Error saving game data to Firebase: $e');
     }
   }
 
-  /// Auto-sync after game completion (call this after each game)
-  Future<void> autoSyncAfterGame() async {
+  /// Sync all local data to Firebase after a game (called by ResultScreen).
+  Future<void> syncAfterGame() async {
     await saveUserDataToFirebase();
   }
 
