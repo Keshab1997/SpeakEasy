@@ -13,6 +13,8 @@ import '../features/conversation/screens/interview_conversation_screen.dart';
 import '../features/listening/screens/listening_screen.dart';
 import '../features/settings/screens/settings_screen.dart';
 import '../features/translator/screens/banglish_translator_screen.dart';
+import '../features/feedback/screens/feedback_screen.dart';
+import '../features/admin/screens/admin_feedback_screen.dart';
 import 'route_names.dart';
 
 class AppRoutes {
@@ -46,6 +48,10 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const ListeningScreen());
       case RouteNames.banglishTranslator:
         return MaterialPageRoute(builder: (_) => const BanglishTranslatorScreen());
+      case RouteNames.feedback:
+        return MaterialPageRoute(builder: (_) => const FeedbackScreen());
+      case RouteNames.adminFeedback:
+        return MaterialPageRoute(builder: (_) => const AdminFeedbackScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

@@ -13,6 +13,7 @@ import '../../../providers/game/streak_provider.dart';
 import '../../../services/hive_service.dart';
 import '../../auth/screens/login_screen.dart';
 import '../../settings/screens/settings_screen.dart';
+import '../../feedback/screens/feedback_screen.dart';
 
 class ProfileScreen extends ConsumerStatefulWidget {
   const ProfileScreen({super.key});
@@ -375,6 +376,19 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (_) => const SettingsScreen()),
+                      );
+                    },
+                  ),
+                  const Divider(height: 1),
+                  ListTile(
+                    leading: const Icon(Icons.feedback_rounded, color: Colors.amber),
+                    title: const Text('Send Feedback'),
+                    subtitle: const Text('Help us improve the app'),
+                    trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const FeedbackScreen()),
                       );
                     },
                   ),

@@ -1,23 +1,44 @@
-# ByteRover MCP Integration — Mandatory Rules
+# ⚡ Token-Saving Rules — এইগুলো FOLLOW করা MUST
 
-## ⚠️ CRITICAL RULE: Always Check ByteRover First
+## ১. ByteRover First (token save er main key)
 
-**আগে ByteRover context tree check করো, তারপর কিছু করো।**
+**আগে ByteRover query করো, file read কখনোই আগে না।**
 
-Before answering any user query, writing any code, or making any changes:
+- `brv-query(cwd: "project-path")` → check context tree
+- File read **only** if brv-query fails
+- `brv-curate` → new knowledge save koro (file re-read prevent)
+- Provider: oc/deepseek-v4-flash-free @ http://localhost:20128/v1
 
-1. **ALWAYS** first use `brv-query` tool (from `github.com/campfirein/cipher` MCP server) with `cwd: "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App"` to check if relevant context exists in the ByteRover context tree.
-2. Only read source files if the context tree doesn't have the answer.
-3. After gaining new knowledge from reading files, ALWAYS use `brv-curate` to save that knowledge into the context tree so future queries don't need to re-read files.
+## ২. File Read → Token Minimize
 
-## Why?
+| Situation | Do This Instead |
+|-----------|----------------|
+| Full file read | `read_lines(start:1, end:50)` — first 50 lines enough usually |
+| Many files | `read_files([a,b,c])` — ekbar e shob |
+| Search code | `search_codebase` regex — fastest, lowest token |
+| Check changes | `git diff` — full file na, shudu changes |
+| Structure | `tree` or `ls -R` — full content na |
 
-- **ByteRover is this project's persistent memory layer.**
-- It saves context about project structure, decisions, patterns, and code locations.
-- Once knowledge is curated, it eliminates the need to re-read the same files in new chat sessions.
-- This makes responses instant and saves context window.
+## ৩. Prompt → Bangla + Short
 
-## Provider Info (for brv-query to work)
-- OpenAI-compatible endpoint configured
-- Model: oc/deepseek-v4-flash-free
-- Base URL: http://localhost:20128/v1
+- **Bangla use koro** — 30-40% kom token lage
+- **Combined task** — 5 alada prompt na, 1 prompt e 5 task
+- **Specific hote hobe** — "X file e Y change koro" (no fluff)
+- **Parallel call** — independent tool gulo ek shathe call koro
+
+## ৪. Analysis → Partial
+
+- `flutter analyze` full project → **expensive**. Use `dart analyze file1.dart`
+- `flutter build` → **expensive**. Use `dart compile` or skip
+- Large file tree → specific folder e `tree`, never root
+
+## ৫. Workflow Pattern
+
+```
+User query → brv-query → found? → answer from context
+                         → not found? → read_lines(1:50) → do task → brv-curate
+```
+
+---
+
+**Motto:** File read = token loss. ByteRover = token save. Bangla prompt = extra save.

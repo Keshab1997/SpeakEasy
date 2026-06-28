@@ -20,4 +20,6 @@ class RouteNames {
   static const String settings = '/settings';
   static const String profile = '/profile';
   static const String banglishTranslator = '/banglish-translator';
+  static const String feedback = '/feedback';
+  static const String adminFeedback = '/admin-feedback';
 }

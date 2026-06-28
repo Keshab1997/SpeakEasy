@@ -9,6 +9,7 @@ import '../../../services/firestore_seed_service.dart';
 import 'admin_analytics_screen.dart';
 import 'admin_config_screen.dart';
 import 'admin_notifications_screen.dart';
+import 'admin_feedback_screen.dart';
 
 class AdminDashboardScreen extends StatefulWidget {
   const AdminDashboardScreen({super.key});
@@ -44,6 +45,16 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       appBar: AppBar(
         title: const Text('Admin Panel'),
         actions: [
+          IconButton(
+            tooltip: 'Feedback',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const AdminFeedbackScreen(),
+              ),
+            ),
+            icon: const Icon(Icons.feedback_rounded),
+          ),
           IconButton(
             tooltip: 'Analytics',
             onPressed: () => Navigator.push(
