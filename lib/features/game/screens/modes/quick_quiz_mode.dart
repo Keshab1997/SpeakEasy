@@ -8,12 +8,10 @@ import '../../../../providers/game/xp_provider.dart';
 import '../../../../providers/game/coin_provider.dart';
 import '../../../../providers/game/streak_provider.dart';
 import '../../../../providers/game/achievement_provider.dart';
-import '../../../../providers/game/sound_provider.dart';
 import '../../../../services/tts_service.dart';
 import '../../../../repositories/statistics_repository.dart';
-import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/game_result_model.dart';
-import '../../../../models/game/wrong_question_model.dart';
+import '../../../../providers/game/game_provider.dart';
 import '../result_screen.dart';
 
 class _WordEntry {
@@ -51,32 +49,30 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
   int _wrongCount = 0;
   int _streak = 0;
   int _bestStreak = 0;
-  bool _isLoading = true;
+  String _selectedAnswer = '';
   bool _isAnswered = false;
-  String? _selectedAnswer;
-  bool? _isAnswerCorrect;
-
-  // Timer
+  bool _isGameOver = false;
+  int _timeLeft = 10;
   Timer? _questionTimer;
-  int _timeLeft = 5;
-  late AnimationController _timerAnimCtrl;
+  Timer? _autoAdvanceTimer;
+  int _totalQuestions = 10;
+  final Set<int> _usedIndices = {};
+  Map<int, String> _userAnswers = {};
 
   // Animations
+  late AnimationController _timerAnimCtrl;
+  late Animation<double> _timerAnim;
   late AnimationController _scoreAnimCtrl;
   late Animation<double> _scoreAnim;
-  late AnimationController _slideAnimCtrl;
-  late Animation<Offset> _slideAnim;
-
-  final Random _random = Random();
-  final int _totalQuestions = 10;
 
   @override
   void initState() {
     super.initState();
     _timerAnimCtrl = AnimationController(
-      duration: const Duration(seconds: 5),
       vsync: this,
+      duration: const Duration(seconds: 10),
     );
+    _timerAnim = Tween(begin: 0.0, end: 1.0).animate(_timerAnimCtrl);
     _scoreAnimCtrl = AnimationController(
       duration: const Duration(milliseconds: 300),
       vsync: this,
@@ -84,76 +80,68 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
     _scoreAnim = Tween<double>(begin: 1.0, end: 1.3).animate(
       CurvedAnimation(parent: _scoreAnimCtrl, curve: Curves.easeInOut),
     );
-    _slideAnimCtrl = AnimationController(
-      duration: const Duration(milliseconds: 400),
-      vsync: this,
-    );
-    _slideAnim = Tween<Offset>(
-      begin: const Offset(1.0, 0.0),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(parent: _slideAnimCtrl, curve: Curves.easeOutCubic));
-    _loadWords();
+    _loadQuestions();
   }
 
   @override
   void dispose() {
     _questionTimer?.cancel();
+    _autoAdvanceTimer?.cancel();
     _timerAnimCtrl.dispose();
     _scoreAnimCtrl.dispose();
-    _slideAnimCtrl.dispose();
     super.dispose();
   }
 
-  Future<void> _loadWords() async {
-    final jsonStr =
-        await rootBundle.loadString('assets/json/game/verb_quiz_data.json');
-    final data = json.decode(jsonStr) as Map<String, dynamic>;
-    final allWords = (data['pairs'] as List)
-        .map((p) => _WordEntry(bn: p['bn'] as String, en: p['en'] as String))
-        .toList();
+  Future<void> _loadQuestions() async {
+    try {
+      final jsonString =
+          await rootBundle.loadString('assets/json/vocabulary/english_to_bangla.json');
+      final List<dynamic> data = json.decode(jsonString) as List<dynamic>;
+      final allEntries = data
+          .map((e) => _WordEntry(
+                bn: e['bn'] as String? ?? '',
+                en: e['en'] as String? ?? '',
+              ))
+          .where((e) => e.bn.isNotEmpty && e.en.isNotEmpty)
+          .toList();
 
-    allWords.shuffle(_random);
-    final selected = allWords.take(_totalQuestions).toList();
+      if (allEntries.length < _totalQuestions) {
+        _totalQuestions = allEntries.length;
+      }
 
-    final questions = <_Question>[];
-    for (final word in selected) {
-      // Get 3 random wrong options
-      final wrongOptions = allWords
-          .where((w) => w.en != word.en)
-          .toList()
-        ..shuffle(_random);
-      final options = [
-        word.en,
-        ...wrongOptions.take(3).map((w) => w.en),
-      ]..shuffle(_random);
+      allEntries.shuffle(Random());
+      final selectedEntries = allEntries.take(_totalQuestions).toList();
 
-      questions.add(_Question(
-        banglaWord: word.bn,
-        correctEnglish: word.en,
-        options: options,
-      ));
+      _questions = selectedEntries.map((entry) {
+        // Generate distractors
+        final distractors = (allEntries
+                .where((e) => e.en != entry.en)
+                .toList()
+              ..shuffle(Random()))
+            .take(3)
+            .map((e) => e.en)
+            .toList();
+
+        final options = [entry.en, ...distractors]..shuffle(Random());
+        return _Question(
+          banglaWord: entry.bn,
+          correctEnglish: entry.en,
+          options: options,
+        );
+      }).toList();
+
+      if (mounted) setState(() {});
+      _startTimer();
+    } catch (e) {
+      debugPrint('Error loading questions: $e');
     }
-
-    setState(() {
-      _questions = questions;
-      _isLoading = false;
-    });
-    _startTimer();
-    // Play Bangla voice when question appears
-    _tts.speakBangla(questions[0].banglaWord);
   }
 
   void _startTimer() {
     _questionTimer?.cancel();
-    // Play Bangla voice for the current question
-    if (_currentIndex < _questions.length) {
-      _tts.speakBangla(_questions[_currentIndex].banglaWord);
-    }
-    _timeLeft = 5;
+    _timeLeft = 10;
     _timerAnimCtrl.reset();
     _timerAnimCtrl.forward();
-    _slideAnimCtrl.forward(from: 0.0);
-
     _questionTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (!mounted) {
         timer.cancel();
@@ -164,128 +152,92 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
       });
       if (_timeLeft <= 0) {
         timer.cancel();
-        // Time's up — mark as wrong
-        if (!_isAnswered) {
-          _handleTimeUp();
-        }
+        _handleTimeout();
       }
     });
   }
 
-  void _handleTimeUp() {
-    _isAnswered = true;
-    _isAnswerCorrect = false;
-    _selectedAnswer = null;
-    _wrongCount++;
-    _streak = 0;
-
-    ref.read(soundServiceProvider).playWrong();
-    _saveWrongAnswer(null); // no answer selected
-
-    setState(() {});
-
-    Future.delayed(const Duration(milliseconds: 1200), () {
-      if (!mounted) return;
-      _nextQuestion();
+  void _handleTimeout() {
+    if (_isAnswered || _isGameOver) return;
+    setState(() {
+      _isAnswered = true;
+      _wrongCount++;
+      _userAnswers[_currentIndex] = '';
     });
+    _autoAdvance();
   }
 
   void _selectAnswer(String answer) {
-    if (_isAnswered) return;
+    if (_isAnswered || _isGameOver) return;
     _questionTimer?.cancel();
-    _timerAnimCtrl.stop();
-
-    _isAnswered = true;
-    _selectedAnswer = answer;
-    _isAnswerCorrect = answer == _questions[_currentIndex].correctEnglish;
-
-    if (_isAnswerCorrect!) {
-      _correctCount++;
-      _streak++;
-      if (_streak > _bestStreak) _bestStreak = _streak;
-
-      // Score: base 10 + streak bonus (up to +8)
-      final streakBonus = min((_streak - 1) * 2, 8);
-      _score += 10 + streakBonus;
-
-      ref.read(soundServiceProvider).playCorrect();
-      _scoreAnimCtrl.forward().then((_) => _scoreAnimCtrl.reverse());
-      _tts.speak(answer);
-    } else {
-      _wrongCount++;
-      _streak = 0;
-      ref.read(soundServiceProvider).playWrong();
-      _saveWrongAnswer(answer);
-    }
-
-    setState(() {});
-
-    Future.delayed(const Duration(milliseconds: 1200), () {
-      if (!mounted) return;
-      _nextQuestion();
-    });
-  }
-
-  void _saveWrongAnswer(String? userAnswer) {
-    final q = _questions[_currentIndex];
-    try {
-      WrongQuestionRepository().saveWrongQuestions([
-        WrongQuestionModel.fromGameQuestion(
-          questionId: 'quick_quiz_${DateTime.now().millisecondsSinceEpoch}',
-          tenseType: 'verb_v1',
-          question: 'Meaning of: ${q.banglaWord}',
-          options: q.options,
-          correctAnswer: q.correctEnglish,
-          explanation: '${q.banglaWord} → ${q.correctEnglish}',
-          userAnswer: userAnswer ?? '(timeout)',
-          difficulty: 'easy',
-          mode: 'quick_quiz',
-        ),
-      ]);
-    } catch (_) {}
-  }
-
-  void _nextQuestion() {
-    if (_currentIndex + 1 >= _totalQuestions) {
-      _endGame();
-      return;
-    }
 
     setState(() {
-      _currentIndex++;
-      _isAnswered = false;
-      _selectedAnswer = null;
-      _isAnswerCorrect = null;
+      _isAnswered = true;
+      _selectedAnswer = answer;
+      _userAnswers[_currentIndex] = answer;
+
+      if (answer == _questions[_currentIndex].correctEnglish) {
+        _correctCount++;
+        _score += _calculateScore();
+        _streak++;
+        if (_streak > _bestStreak) _bestStreak = _streak;
+      } else {
+        _wrongCount++;
+        _streak = 0;
+      }
     });
-    _startTimer();
+
+    _autoAdvance();
   }
 
-  Future<void> _endGame() async {
-    _questionTimer?.cancel();
+  int _calculateScore() {
+    return 100 + (_streak > 1 ? (_streak - 1) * 10 : 0) + (_timeLeft * 5);
+  }
 
-    final total = _correctCount + _wrongCount;
-    final accuracy = total > 0 ? _correctCount / total : 0.0;
-    final int xpEarned = _score * 2 + (_bestStreak >= 5 ? 30 : _bestStreak >= 3 ? 15 : 0);
-    final int coinsEarned = _score + (_bestStreak >= 5 ? 20 : _bestStreak >= 3 ? 10 : 0);
+  void _autoAdvance() {
+    _autoAdvanceTimer?.cancel();
+    _autoAdvanceTimer = Timer(const Duration(milliseconds: 800), () {
+      if (!mounted) return;
+
+      if (_currentIndex + 1 < _totalQuestions) {
+        setState(() {
+          _currentIndex++;
+          _isAnswered = false;
+          _selectedAnswer = '';
+        });
+        _startTimer();
+      } else {
+        _endGame();
+      }
+    });
+  }
+
+  void _endGame() {
+    _questionTimer?.cancel();
+    _autoAdvanceTimer?.cancel();
+
+    final accuracy = _totalQuestions > 0 ? _correctCount / _totalQuestions : 0.0;
+
+    // Calculate XP and coins
+    final xpEarned = (_correctCount * 20) + (_streak * 5);
+    final coinsEarned = (_correctCount * 5) + (_streak * 2);
 
     _saveProgress(xpEarned, coinsEarned, accuracy);
 
-    await Future.delayed(const Duration(milliseconds: 600));
-    if (mounted) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (_) => ResultScreen(
-            score: _score,
-            correctAnswers: _correctCount,
-            wrongAnswers: _wrongCount,
-            earnedXP: xpEarned,
-            earnedCoins: coinsEarned,
-            gameMode: 'quick_quiz',
-          ),
+    if (!mounted) return;
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ResultScreen(
+          score: _score,
+          correctAnswers: _correctCount,
+          wrongAnswers: _wrongCount,
+          earnedXP: xpEarned,
+          earnedCoins: coinsEarned,
+          gameMode: 'quick_quiz',
         ),
-      );
-    }
+      ),
+    );
   }
 
   Future<void> _saveProgress(int xp, int coins, double accuracy) async {
@@ -315,18 +267,25 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
         earnedCoins: coins,
         correctAnswers: _correctCount,
         wrongAnswers: _wrongCount,
-        accuracy: accuracy,
         score: _score,
-        gameType: 'quick_quiz',
-        completedTime: DateTime.now(),
       ));
+    } catch (_) {}
+
+    // 🔥 Upload updated streak/progress to Firestore
+    try {
+      final progressRepo = ref.read(progressRepositoryProvider);
+      final gameProgress = progressRepo.getProgress();
+      if (gameProgress != null) {
+        await progressRepo.uploadProgressToFirestore(gameProgress);
+      }
     } catch (_) {}
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_isLoading) {
-      return const Scaffold(
+    if (_questions.isEmpty) {
+      return Scaffold(
+        backgroundColor: Colors.orange.shade50,
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -398,75 +357,75 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
                   // Question card with slide animation
                   Expanded(
                     child: SlideTransition(
-                      position: _slideAnim,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
-                        child: Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 28, vertical: 32),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(24),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.deepOrange.withOpacity(0.15),
-                                blurRadius: 24,
-                                offset: const Offset(0, 8),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Choose the correct English word',
-                                style: TextStyle(
-                                  color: Colors.grey.shade500,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: 0.5,
-                                ),
-                              ),
-                              const SizedBox(height: 16),
-                              Text(
+                      position: Tween<Offset>(
+                        begin: const Offset(0.5, 0),
+                        end: Offset.zero,
+                      ).animate(CurvedAnimation(
+                        parent: _timerAnimCtrl,
+                        curve: Curves.easeOutCubic,
+                      )),
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 16),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(24),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.deepOrange.withOpacity(0.12),
+                              blurRadius: 20,
+                              offset: const Offset(0, 6),
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Translate this word',
+                              style: TextStyle(
+                                  fontSize: 14, color: Colors.grey.shade500),
+                            ),
+                            const SizedBox(height: 12),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
                                 question.banglaWord,
-                                style: const TextStyle(
-                                  fontSize: 36,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.deepOrange,
-                                  height: 1.2,
-                                ),
                                 textAlign: TextAlign.center,
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                'বাংলা শব্দ',
-                                style: TextStyle(
-                                  color: Colors.grey.shade400,
-                                  fontSize: 12,
+                                style: const TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black87,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                            const SizedBox(height: 8),
+                            IconButton(
+                              icon: Icon(Icons.volume_up,
+                                  color: Colors.deepOrange.shade300, size: 28),
+                              onPressed: () => _tts.speak(question.banglaWord),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ),
 
-                  // Options
+                  const SizedBox(height: 16),
+
+                  // Option buttons
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(24, 8, 24, 16),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Column(
-                      children: List.generate(question.options.length, (i) {
-                        final option = question.options[i];
+                      children: question.options.map((option) {
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 10),
                           child: _buildOptionButton(option, question.correctEnglish),
                         );
-                      }),
+                      }).toList(),
                     ),
                   ),
+
+                  const SizedBox(height: 24),
                 ],
               ),
             ),
@@ -480,25 +439,19 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
     return Container(
       padding: EdgeInsets.only(
         top: MediaQuery.of(context).padding.top + 8,
-        left: 16,
-        right: 16,
-        bottom: 16,
+        left: 8,
+        right: 8,
+        bottom: 8,
       ),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [Color(0xFFFF6B35), Color(0xFFF7C948)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(28),
-          bottomRight: Radius.circular(28),
+        gradient: LinearGradient(
+          colors: [Colors.deepOrange, Colors.orange.shade400],
         ),
         boxShadow: [
           BoxShadow(
             color: Colors.deepOrange.withOpacity(0.3),
-            blurRadius: 16,
-            offset: const Offset(0, 6),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
           ),
         ],
       ),

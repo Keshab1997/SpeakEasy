@@ -9,6 +9,7 @@ import '../../../../providers/game/coin_provider.dart';
 import '../../../../providers/game/streak_provider.dart';
 import '../../../../providers/game/achievement_provider.dart';
 import '../../../../providers/game/sound_provider.dart';
+import '../../../../providers/game/game_provider.dart';
 import '../../../../services/tts_service.dart';
 import '../../../../repositories/statistics_repository.dart';
 import '../../../../repositories/wrong_question_repository.dart';
@@ -322,6 +323,15 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
         gameType: 'story_completion',
         completedTime: DateTime.now(),
       ));
+    } catch (_) {}
+
+    // 🔥 Upload updated streak/progress to Firestore
+    try {
+      final progressRepo = ref.read(progressRepositoryProvider);
+      final gameProgress = progressRepo.getProgress();
+      if (gameProgress != null) {
+        await progressRepo.uploadProgressToFirestore(gameProgress);
+      }
     } catch (_) {}
   }
 
