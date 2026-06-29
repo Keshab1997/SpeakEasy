@@ -15,6 +15,7 @@ import '../../../providers/game/achievement_provider.dart';
 import '../../../repositories/progress_repository.dart';
 import '../../../repositories/statistics_repository.dart';
 import '../../../repositories/achievement_repository.dart';
+import '../../../models/game/game_result_model.dart';
 import 'game_home_screen.dart';
 import 'answer_review_screen.dart';
 import 'question_screen.dart';
