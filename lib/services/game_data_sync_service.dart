@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../repositories/progress_repository.dart';
 import '../repositories/statistics_repository.dart';
@@ -42,9 +43,9 @@ class GameDataSyncService {
       // Load achievements
       await _achievementRepository.syncFromFirestoreToHive(userId);
 
-      print('✅ Game data loaded from Firebase for user: $userId');
+      debugPrint('✅ Game data loaded from Firebase for user: $userId');
     } catch (e) {
-      print('❌ Error loading game data from Firebase: $e');
+      debugPrint('❌ Error loading game data from Firebase: $e');
       // If no data exists in Firebase, that's okay - new user
     }
   }
@@ -77,9 +78,9 @@ class GameDataSyncService {
         await _progressRepository.batchUploadLevelsToFirestore(userId, levels);
       }
 
-      print('✅ Game data saved to Firebase for user: $userId');
+      debugPrint('✅ Game data saved to Firebase for user: $userId');
     } catch (e) {
-      print('❌ Error saving game data to Firebase: $e');
+      debugPrint('❌ Error saving game data to Firebase: $e');
     }
   }
 

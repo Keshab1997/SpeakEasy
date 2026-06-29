@@ -178,7 +178,7 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
             .collection('game_statistics')
             .add(data);
 
-        print('✅ Game result uploaded to Firebase (score: ${result.score}, '
+	        debugPrint('✅ Game result uploaded to Firebase (score: ${result.score}, '
             'correct: ${result.correctAnswers}, wrong: ${result.wrongAnswers}, '
             'xp: ${result.earnedXP}, coins: ${result.earnedCoins}, '
             'gameType: ${result.gameType}, duration: ${result.durationSeconds}s, '
@@ -214,9 +214,9 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
             photoUrl: user.photoURL ?? '',
           );
 
-      print('✅ Game data synced to Firebase after game completion');
+      debugPrint('✅ Game data synced to Firebase after game completion');
     } catch (e) {
-      print('❌ Error syncing game data to Firebase: $e');
+      debugPrint('❌ Error syncing game data to Firebase: $e');
     }
   }
 

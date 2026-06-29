@@ -1,44 +1,26 @@
 {
   "project_info": {
-    "project_number": "858001624614",
-    "project_id": "flutter-spoken-english-app",
-    "storage_bucket": "flutter-spoken-english-app.firebasestorage.app"
+    "project_number": "316553555884",
+    "project_id": "flutter-spoken-english-a-c660b",
+    "storage_bucket": "flutter-spoken-english-a-c660b.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:858001624614:android:c078d267d0bc75af16e0e7",
+        "mobilesdk_app_id": "1:316553555884:android:8f885d50e95ec2457ad409",
         "android_client_info": {
-          "package_name": "com.example.spokenenglish.flutter_spoken_english_app"
+          "package_name": "com.speakeasy.english"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "858001624614-d7tgu4pif0b2jru1jsi642r6h724lq01.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.spokenenglish.flutter_spoken_english_app",
-            "certificate_hash": "e96a48efb7802c1b6ec5cb99e6ef702a5b9c18b5"
-          }
-        },
-        {
-          "client_id": "858001624614-to6ppj7vpn4mef3qnjvuv5cuhqkt49r0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAeP3NpaLe2vN44HYKRdKgUw-RFepH0SG8"
+          "current_key": "AIzaSyA0q2lT7iZMEG6VghfKjxron9I-ibcCX_k"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "858001624614-to6ppj7vpn4mef3qnjvuv5cuhqkt49r0.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

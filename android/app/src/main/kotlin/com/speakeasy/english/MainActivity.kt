@@ -1,4 +1,4 @@
-package com.example.spokenenglish.flutter_spoken_english_app
+package com.speakeasy.english
 
 import io.flutter.embedding.android.FlutterActivity
 

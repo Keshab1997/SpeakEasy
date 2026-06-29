@@ -1,5 +1,5 @@
 name: flutter_spoken_english_app
-description: "A new Flutter project."
+description: "SpeakEasy - Your AI English Speaking Partner. Learn English through Bengali with 70+ grammar lessons, vocabulary, games, AI chat, speaking practice, and listening exercises."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev

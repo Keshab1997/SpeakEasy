@@ -46,7 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1234567890',
     projectId: 'spoken-english-app-dummy',
     storageBucket: 'spoken-english-app-dummy.appspot.com',
-    iosBundleId: 'com.example.spokenEnglishApp',
+    iosBundleId: 'com.speakeasy.english',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1234567890',
     projectId: 'spoken-english-app-dummy',
     storageBucket: 'spoken-english-app-dummy.appspot.com',
-    iosBundleId: 'com.example.spokenEnglishApp.RunnerTests',
+    iosBundleId: 'com.speakeasy.english.RunnerTests',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(

@@ -9,6 +9,7 @@ import 'services/notification_service.dart';
 import 'services/remote_config_service.dart';
 import 'providers/theme_provider.dart';
 import 'features/auth/screens/splash_screen.dart';
+import 'routes/app_routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -57,6 +58,7 @@ class MyApp extends ConsumerWidget {
       darkTheme: darkTheme,
       themeMode: themeMode,
       home: const SplashScreen(),
+      onGenerateRoute: AppRoutes.generateRoute,
     );
   }
 }

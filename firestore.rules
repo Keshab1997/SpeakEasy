@@ -1,0 +1,173 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ═══════════════════════════════════════════════
+    //  HELPER FUNCTIONS
+    // ═══════════════════════════════════════════════
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated()
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // ═══════════════════════════════════════════════
+    //  USERS COLLECTION
+    //  - Owners can read/write their own profile
+    //  - Admins can read/write any user
+    // ═══════════════════════════════════════════════
+
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId) || isAdmin();
+      allow delete: if isAdmin();
+
+      // Validate user data on create/update
+      allow write: if request.resource.data.keys().hasAll(['name', 'email', 'joinedAt'])
+                    && request.resource.data.name is string
+                    && request.resource.data.email is string
+                    && request.resource.data.joinedAt is timestamp;
+    }
+
+    // ═══════════════════════════════════════════════
+    //  PROGRESS COLLECTION
+    //  - Owners can read/write their own progress
+    //  - Admins can read all progress
+    // ═══════════════════════════════════════════════
+
+    match /progress/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isOwner(userId);
+    }
+
+    // ═══════════════════════════════════════════════
+    //  GAME PROGRESS COLLECTION
+    //  - Owners can read/write their own game progress
+    // ═══════════════════════════════════════════════
+
+    match /game_progress/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isOwner(userId);
+    }
+
+    // ═══════════════════════════════════════════════
+    //  GAME STATISTICS COLLECTION
+    //  - Owners can read/write their own stats
+    //  - Admins can read for analytics
+    // ═══════════════════════════════════════════════
+
+    match /game_statistics/{document} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update: if request.resource.data.userId == request.auth.uid;
+      allow delete: if false;
+    }
+
+    // ═══════════════════════════════════════════════
+    //  GAME ACHIEVEMENTS COLLECTION
+    //  - Owners can read/write their own achievements
+    // ═══════════════════════════════════════════════
+
+    match /game_achievements/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isOwner(userId);
+    }
+
+    // ═══════════════════════════════════════════════
+    //  GAME LEVELS COLLECTION
+    //  - Owners can read/write their own levels
+    // ═══════════════════════════════════════════════
+
+    match /game_levels/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isOwner(userId);
+    }
+
+    // ═══════════════════════════════════════════════
+    //  CONTENT COLLECTIONS (Read-only for users)
+    //  - Anyone authenticated can read content
+    //  - Only admins can write content
+    // ═══════════════════════════════════════════════
+
+    match /content_vocabulary_chapters/{document} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    match /content_vocabulary_words/{document} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    match /content_grammar_chapters/{document} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
+    //  CONFIG COLLECTION
+    //  - Remote app config: everyone can read, only admins write
+    // ═══════════════════════════════════════════════
+
+    match /config/{document} {
+      allow read: if true;  // Public read for app config/feature toggles
+      allow write: if isAdmin();
+    }
+
+    match /app_config/{document} {
+      allow read: if true;  // Public read
+      allow write: if isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
+    //  ADMIN NOTIFICATIONS COLLECTION
+    //  - All authenticated users can read notifications
+    //  - Only admins can create/update/delete
+    // ═══════════════════════════════════════════════
+
+    match /admin_notifications/{document} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+
+      // Validate notification data
+      allow create: if isAdmin()
+                    && request.resource.data.keys().hasAll(['title', 'body', 'createdAt'])
+                    && request.resource.data.title is string
+                    && request.resource.data.body is string
+                    && request.resource.data.createdAt is timestamp;
+    }
+
+    // ═══════════════════════════════════════════════
+    //  FEEDBACK COLLECTION
+    //  - Users can create feedback
+    //  - Users can read their own feedback
+    //  - Admins can read/update all feedback
+    // ═══════════════════════════════════════════════
+
+    match /feedback/{document} {
+      allow read: if request.resource.data.userId == request.auth.uid || isAdmin();
+      allow create: if isAuthenticated()
+                    && request.resource.data.keys().hasAll(['userId', 'message', 'createdAt'])
+                    && request.resource.data.userId == request.auth.uid;
+      allow update: if isAdmin();  // Only admins can reply/mark resolved
+      allow delete: if isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
+    //  DENY ALL OTHER COLLECTIONS
+    // ═══════════════════════════════════════════════
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

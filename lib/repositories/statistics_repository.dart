@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -212,7 +213,7 @@ class StatisticsRepository {
         await box.put(_timePlayedKey, data['timePlayedSeconds'] as int);
       }
     } catch (e) {
-      print('❌ syncMetaFromFirestoreToHive error: $e');
+      debugPrint('❌ syncMetaFromFirestoreToHive error: $e');
     }
   }
 }

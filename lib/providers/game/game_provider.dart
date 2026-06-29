@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../models/game/game_question_model.dart';
 import '../../models/game/game_result_model.dart';
@@ -258,7 +259,7 @@ class GameNotifier extends StateNotifier<GameState> {
     try {
       await _gameService.saveResult(tagged, duration: duration);
     } catch (e) {
-      print('Failed to save game result: $e');
+      debugPrint('Failed to save game result: $e');
     }
 
     state = state.copyWith(
