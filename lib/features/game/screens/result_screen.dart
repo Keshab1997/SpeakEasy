@@ -61,6 +61,7 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
       await _addRewards();
       _updateLeaderboard();
       await _checkAchievements();
+      _updateLeaderboard(); // Refresh XP/coin providers after achievement rewards are added
       await _syncGameDataToFirebase();
     });
   }
@@ -244,13 +245,12 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
       }
 
       // ── 5. Update leaderboard ──
-      final xpState = ref.read(xpProvider);
       await ref.read(leaderboardProvider.notifier).updateUserStats(
             userId: userId,
             userName: userName,
-            xp: xpState.currentXP,
+            xp: localProgress?.currentXP ?? widget.earnedXP,
             score: widget.score,
-            level: xpState.currentLevel,
+            level: localProgress?.currentLevel ?? 1,
             photoUrl: user.photoURL ?? '',
           );
 
