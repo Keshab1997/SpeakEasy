@@ -66,6 +66,14 @@ class AdminNotificationSyncService {
       if (actionUrl != null && actionUrl.isNotEmpty) {
         notificationMap['actionUrl'] = actionUrl;
       }
+      final actionType = data['actionType'] as String?;
+      final actionPayload = data['actionPayload'] as String?;
+      if (actionType != null && actionType.isNotEmpty) {
+        notificationMap['actionType'] = actionType;
+      }
+      if (actionPayload != null && actionPayload.isNotEmpty) {
+        notificationMap['actionPayload'] = actionPayload;
+      }
 
       final didSave = await HiveService.saveNotificationToHistoryIfNew(notificationMap);
 
