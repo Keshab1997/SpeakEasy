@@ -360,4 +360,26 @@ class AchievementService {
   GameProgressModel? getCachedProgress() {
     return _progressRepository.getProgress();
   }
+
+  /// Rarity tier ordering (higher = more rare / higher display priority).
+  static const Map<String, int> _rarityOrder = {
+    'Common': 0,
+    'Uncommon': 1,
+    'Rare': 2,
+    'Epic': 3,
+    'Legendary': 4,
+  };
+
+  /// Given a list of achievements, returns the one with the highest rarity.
+  /// If multiple share the same rarity, returns the one with the lowest
+  /// [order] field (i.e., highest display priority within that tier).
+  static AchievementModel? getRarestAchievement(List<AchievementModel> achievements) {
+    if (achievements.isEmpty) return null;
+    return achievements.reduce((a, b) {
+      final aOrder = _rarityOrder[a.rarity] ?? 0;
+      final bOrder = _rarityOrder[b.rarity] ?? 0;
+      if (aOrder != bOrder) return aOrder > bOrder ? a : b;
+      return a.order <= b.order ? a : b;
+    });
+  }
 }
