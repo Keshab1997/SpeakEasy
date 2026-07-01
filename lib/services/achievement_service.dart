@@ -346,21 +346,6 @@ class AchievementService {
     return getUnlockedCount() / total;
   }
 
-  /// Sync statistics from Firestore to Hive so local reads are up-to-date.
-  Future<void> syncStatisticsFromFirestore(String userId) async {
-    await _statisticsRepository.syncFromFirestoreToHive(userId);
-  }
-
-  /// Sync progress from Firestore to Hive so local reads are up-to-date.
-  Future<void> syncProgressFromFirestore(String userId) async {
-    await _progressRepository.syncProgressFromFirestoreToHive(userId);
-  }
-
-  /// Get cached progress from Hive (may be null if never saved).
-  GameProgressModel? getCachedProgress() {
-    return _progressRepository.getProgress();
-  }
-
   /// Rarity tier ordering (higher = more rare / higher display priority).
   static const Map<String, int> _rarityOrder = {
     'Common': 0,
@@ -381,5 +366,20 @@ class AchievementService {
       if (aOrder != bOrder) return aOrder > bOrder ? a : b;
       return a.order <= b.order ? a : b;
     });
+  }
+
+  /// Sync statistics from Firestore to Hive so local reads are up-to-date.
+  Future<void> syncStatisticsFromFirestore(String userId) async {
+    await _statisticsRepository.syncFromFirestoreToHive(userId);
+  }
+
+  /// Sync progress from Firestore to Hive so local reads are up-to-date.
+  Future<void> syncProgressFromFirestore(String userId) async {
+    await _progressRepository.syncProgressFromFirestoreToHive(userId);
+  }
+
+  /// Get cached progress from Hive (may be null if never saved).
+  GameProgressModel? getCachedProgress() {
+    return _progressRepository.getProgress();
   }
 }
