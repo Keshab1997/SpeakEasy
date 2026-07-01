@@ -101,17 +101,21 @@ class NotificationService {
   }
 
   void _navigateFromPayload(String payload) {
-    final history = HiveService.getNotificationHistory();
-    for (final json in history) {
-      if (json['payload'] == payload) {
-        final item = NotificationHistoryItem.fromJson(json);
-        // Navigation from system tray requires a global navigator key.
-        // Since the app doesn't have one, navigation is handled when the user
-        // opens the notification from the in-app history screen.
-        // Log the intent for debugging.
-        debugPrint('NotificationRouter would navigate to: ${item.actionType}');
-        break;
+    try {
+      final history = HiveService.getNotificationHistory();
+      for (final json in history) {
+        if (json['payload'] == payload) {
+          final item = NotificationHistoryItem.fromJson(json);
+          // Navigation from system tray requires a global navigator key.
+          // Since the app doesn't have one, navigation is handled when the user
+          // opens the notification from the in-app history screen.
+          // Log the intent for debugging.
+          debugPrint('NotificationRouter would navigate to: ${item.actionType}');
+          break;
+        }
       }
+    } catch (_) {
+      // Silently handle — navigation from background is best-effort
     }
   }
 
