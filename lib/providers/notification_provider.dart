@@ -78,6 +78,18 @@ class NotificationStateNotifier extends StateNotifier<NotificationState> {
     await HiveService.clearNotificationHistory();
     load();
   }
+
+  /// Reloads state from Hive without triggering a Firestore sync.
+  /// Used after WorkManager background tasks add notifications.
+  Future<void> refreshFromHive() async {
+    load();
+  }
+
+  /// Signals that external code (e.g., WorkManager tasks) has added
+  /// notifications to Hive. Reloads state to reflect the changes.
+  void notifyExternalUpdate() {
+    load();
+  }
 }
 
 final notificationProvider = StateNotifierProvider<NotificationStateNotifier, NotificationState>((ref) {
