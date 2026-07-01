@@ -4,7 +4,6 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/widgets/streak_widget.dart';
 import '../../../core/widgets/feature_gate_widget.dart';
 import '../../../services/hive_service.dart';
-import '../../../services/admin_notification_sync_service.dart';
 import '../../../services/tts_service.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/progress_provider.dart';

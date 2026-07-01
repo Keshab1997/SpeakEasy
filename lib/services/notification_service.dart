@@ -5,7 +5,6 @@ import 'package:timezone/data/latest.dart' as tz_data;
 import 'hive_service.dart';
 import 'dart:math';
 import '../models/notification_history_model.dart';
-import '../features/home/widgets/notification_router.dart'; // ignore: unused_import
 
 class NotificationService {
   static final NotificationService _instance = NotificationService._();
