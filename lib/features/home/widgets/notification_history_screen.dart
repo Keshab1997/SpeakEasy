@@ -1,47 +1,75 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../services/admin_notification_sync_service.dart';
-import '../../../services/hive_service.dart';
-import '../../../models/notification_history_model.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import '../../../core/constants/app_colors.dart';
+import '../../../models/notification_history_model.dart';
+import '../../../providers/notification_provider.dart';
+import 'notification_router.dart';
 
-class NotificationHistoryScreen extends StatefulWidget {
+class NotificationHistoryScreen extends ConsumerStatefulWidget {
   const NotificationHistoryScreen({super.key});
 
   @override
-  State<NotificationHistoryScreen> createState() => _NotificationHistoryScreenState();
+  ConsumerState<NotificationHistoryScreen> createState() => _NotificationHistoryScreenState();
 }
 
-class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
-  List<NotificationHistoryItem> _notifications = [];
-
+class _NotificationHistoryScreenState extends ConsumerState<NotificationHistoryScreen> {
   @override
   void initState() {
     super.initState();
-    _loadNotifications();
-    _syncAdminNotifications();
-  }
-
-  Future<void> _syncAdminNotifications() async {
-    try {
-      await AdminNotificationSyncService.syncLatest();
-      if (mounted) _loadNotifications();
-    } catch (_) {}
-  }
-
-  void _loadNotifications() {
-    final history = HiveService.getNotificationHistory();
-    setState(() {
-      _notifications = history
-          .map((json) => NotificationHistoryItem.fromJson(json))
-          .toList();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(notificationProvider.notifier).refresh();
     });
   }
 
+  String _formatTime(DateTime dateTime) {
+    final now = DateTime.now();
+    final difference = now.difference(dateTime);
+    if (difference.inMinutes < 1) return 'Just now';
+    if (difference.inHours < 1) return '${difference.inMinutes}m ago';
+    if (difference.inHours < 24) return '${difference.inHours}h ago';
+    if (difference.inDays < 7) return '${difference.inDays}d ago';
+    return DateFormat('MMM dd, yyyy').format(dateTime);
+  }
+
+  /// Group notifications into Today, Yesterday, This Week, Earlier
+  Map<String, List<NotificationHistoryItem>> _groupByDate(List<NotificationHistoryItem> items) {
+    final now = DateTime.now();
+    final todayStart = DateTime(now.year, now.month, now.day);
+    final yesterdayStart = todayStart.subtract(const Duration(days: 1));
+    final weekStart = todayStart.subtract(const Duration(days: 7));
+
+    final grouped = <String, List<NotificationHistoryItem>>{
+      'Today': [],
+      'Yesterday': [],
+      'This Week': [],
+      'Earlier': [],
+    };
+
+    for (final item in items) {
+      final date = item.receivedAt;
+      if (date.isAfter(todayStart) || date.isAtSameMomentAs(todayStart)) {
+        grouped['Today']!.add(item);
+      } else if (date.isAfter(yesterdayStart)) {
+        grouped['Yesterday']!.add(item);
+      } else if (date.isAfter(weekStart)) {
+        grouped['This Week']!.add(item);
+      } else {
+        grouped['Earlier']!.add(item);
+      }
+    }
+
+    grouped.removeWhere((_, list) => list.isEmpty);
+    return grouped;
+  }
+
+  Future<void> _onRefresh() async {
+    await ref.read(notificationProvider.notifier).refresh();
+  }
+
   Future<void> _markAllAsRead() async {
-    await HiveService.markAllNotificationsAsRead();
-    _loadNotifications();
+    await ref.read(notificationProvider.notifier).markAllAsRead();
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -71,10 +99,8 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
         ],
       ),
     );
-
     if (confirmed == true) {
-      await HiveService.clearNotificationHistory();
-      _loadNotifications();
+      await ref.read(notificationProvider.notifier).clearAll();
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -87,8 +113,7 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
   }
 
   Future<void> _deleteNotification(NotificationHistoryItem notification) async {
-    await HiveService.deleteNotification(notification.id);
-    _loadNotifications();
+    await ref.read(notificationProvider.notifier).deleteNotification(notification.id);
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -99,57 +124,40 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
     }
   }
 
-  Future<void> _markAsRead(NotificationHistoryItem notification) async {
-    if (!notification.isRead) {
-      await HiveService.markNotificationAsRead(notification.id);
-      _loadNotifications();
-    }
-  }
-
   Future<void> _openNotificationAction(NotificationHistoryItem notification) async {
     // Mark as read first
     if (!notification.isRead) {
-      await HiveService.markNotificationAsRead(notification.id);
-      _loadNotifications();
+      await ref.read(notificationProvider.notifier).markAsRead(notification.id);
     }
 
-    // Open action URL if present
+    // Try action URL first, then actionType navigation
     if (notification.actionUrl != null && notification.actionUrl!.isNotEmpty) {
       final uri = Uri.tryParse(notification.actionUrl!);
       if (uri != null && await canLaunchUrl(uri)) {
         await launchUrl(uri, mode: LaunchMode.externalApplication);
+        return;
       }
     }
-  }
 
-  String _formatTime(DateTime dateTime) {
-    final now = DateTime.now();
-    final difference = now.difference(dateTime);
-
-    if (difference.inMinutes < 1) {
-      return 'Just now';
-    } else if (difference.inHours < 1) {
-      return '${difference.inMinutes}m ago';
-    } else if (difference.inHours < 24) {
-      return '${difference.inHours}h ago';
-    } else if (difference.inDays < 7) {
-      return '${difference.inDays}d ago';
-    } else {
-      return DateFormat('MMM dd, yyyy').format(dateTime);
-    }
+    // Navigate using router
+    if (!mounted) return;
+    NotificationRouter.navigate(context, notification);
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final unreadCount = _notifications.where((n) => !n.isRead).length;
+    final state = ref.watch(notificationProvider);
+    final notifications = state.notifications;
+    final unreadCount = state.unreadCount;
+    final grouped = _groupByDate(notifications);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Notifications', style: TextStyle(fontWeight: FontWeight.w700)),
         actions: [
-          if (_notifications.isNotEmpty) ...[
+          if (notifications.isNotEmpty) ...[
             if (unreadCount > 0)
               IconButton(
                 onPressed: _markAllAsRead,
@@ -160,9 +168,7 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
             PopupMenuButton<String>(
               icon: const Icon(Icons.more_vert_rounded),
               onSelected: (value) {
-                if (value == 'clear') {
-                  _clearAll();
-                }
+                if (value == 'clear') _clearAll();
               },
               itemBuilder: (context) => [
                 const PopupMenuItem(
@@ -180,7 +186,7 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
           ],
         ],
       ),
-      body: _notifications.isEmpty
+      body: notifications.isEmpty
           ? _buildEmptyState(theme, isDark)
           : Column(
               children: [
@@ -200,32 +206,65 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
                           child: Text(
                             '$unreadCount',
                             style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
+                              color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
                         const SizedBox(width: 8),
                         Text(
                           unreadCount == 1 ? 'unread notification' : 'unread notifications',
-                          style: TextStyle(
-                            color: AppColors.primary,
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
+                          style: const TextStyle(
+                            color: AppColors.primary, fontSize: 13, fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],
                     ),
                   ),
                 Expanded(
-                  child: ListView.builder(
-                    padding: const EdgeInsets.all(16),
-                    itemCount: _notifications.length,
-                    itemBuilder: (context, index) {
-                      final notification = _notifications[index];
-                      return _buildNotificationCard(notification, theme, isDark);
-                    },
+                  child: RefreshIndicator(
+                    onRefresh: _onRefresh,
+                    color: AppColors.primary,
+                    child: ListView(
+                      padding: const EdgeInsets.all(16),
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      children: [
+                        for (final entry in grouped.entries) ...[
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8, bottom: 12),
+                            child: Row(
+                              children: [
+                                Text(
+                                  entry.key,
+                                  style: theme.textTheme.titleSmall?.copyWith(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                  decoration: BoxDecoration(
+                                    color: isDark ? Colors.grey[800] : Colors.grey[200],
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Text(
+                                    '${entry.value.length}',
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w600,
+                                      color: isDark ? Colors.white60 : Colors.black54,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          for (final notification in entry.value)
+                            _buildNotificationCard(notification, theme, isDark),
+                        ],
+                        const SizedBox(height: 24),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -234,51 +273,56 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
   }
 
   Widget _buildEmptyState(ThemeData theme, bool isDark) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(32),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: isDark ? Colors.grey[800] : Colors.grey[100],
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.notifications_off_outlined,
-                size: 64,
-                color: isDark ? Colors.grey[600] : Colors.grey[400],
+    return RefreshIndicator(
+      onRefresh: _onRefresh,
+      color: AppColors.primary,
+      child: ListView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.6,
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(32),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(24),
+                      decoration: BoxDecoration(
+                        color: isDark ? Colors.grey[800] : Colors.grey[100],
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        Icons.notifications_off_outlined,
+                        size: 64,
+                        color: isDark ? Colors.grey[600] : Colors.grey[400],
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    Text(
+                      'No Notifications',
+                      style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'You don\'t have any notifications yet.\nThey will appear here when you receive them.\n\nPull down to check for new notifications.',
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: Colors.grey, height: 1.5,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            const SizedBox(height: 24),
-            Text(
-              'No Notifications',
-              style: theme.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'You don\'t have any notifications yet.\nThey will appear here when you receive them.',
-              textAlign: TextAlign.center,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: Colors.grey,
-                height: 1.5,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildNotificationCard(
-    NotificationHistoryItem notification,
-    ThemeData theme,
-    bool isDark,
-  ) {
+  Widget _buildNotificationCard(NotificationHistoryItem notification, ThemeData theme, bool isDark) {
     return Dismissible(
       key: Key(notification.id),
       direction: DismissDirection.endToStart,
@@ -316,23 +360,17 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Icon
                 Container(
-                  width: 44,
-                  height: 44,
+                  width: 44, height: 44,
                   decoration: BoxDecoration(
                     color: _getTypeColor(notification.type).withOpacity(0.15),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Center(
-                    child: Text(
-                      notification.typeIcon,
-                      style: const TextStyle(fontSize: 20),
-                    ),
+                    child: Text(notification.typeIcon, style: const TextStyle(fontSize: 20)),
                   ),
                 ),
                 const SizedBox(width: 12),
-                // Content
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -343,18 +381,15 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
                             child: Text(
                               notification.title,
                               style: theme.textTheme.titleSmall?.copyWith(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 15,
+                                fontWeight: FontWeight.w700, fontSize: 15,
                               ),
                             ),
                           ),
                           if (!notification.isRead)
                             Container(
-                              width: 8,
-                              height: 8,
+                              width: 8, height: 8,
                               decoration: const BoxDecoration(
-                                color: AppColors.primary,
-                                shape: BoxShape.circle,
+                                color: AppColors.primary, shape: BoxShape.circle,
                               ),
                             ),
                         ],
@@ -362,19 +397,13 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
                       const SizedBox(height: 4),
                       Text(
                         notification.body,
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                          fontSize: 13,
-                          height: 1.4,
-                        ),
+                        style: theme.textTheme.bodyMedium?.copyWith(fontSize: 13, height: 1.4),
                       ),
                       const SizedBox(height: 8),
                       Row(
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 3,
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                             decoration: BoxDecoration(
                               color: _getTypeColor(notification.type).withOpacity(0.15),
                               borderRadius: BorderRadius.circular(6),
@@ -412,16 +441,11 @@ class _NotificationHistoryScreenState extends State<NotificationHistoryScreen> {
 
   Color _getTypeColor(String type) {
     switch (type) {
-      case 'daily_word':
-        return Colors.blue;
-      case 'practice_reminder':
-        return Colors.orange;
-      case 'streak_milestone':
-        return Colors.red;
-      case 'admin_announcement':
-        return AppColors.primary;
-      default:
-        return Colors.grey;
+      case 'daily_word': return Colors.blue;
+      case 'practice_reminder': return Colors.orange;
+      case 'streak_milestone': return Colors.red;
+      case 'admin_announcement': return AppColors.primary;
+      default: return Colors.grey;
     }
   }
 }
