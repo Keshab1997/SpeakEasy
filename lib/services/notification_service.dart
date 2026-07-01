@@ -3,6 +3,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz_data;
 import 'hive_service.dart';
+import 'daily_word_service.dart';
 import 'dart:math';
 import '../models/notification_history_model.dart';
 
@@ -18,6 +19,8 @@ class NotificationService {
   static const int _dailyWordId = 1000;
   static const int _practiceReminderId = 1001;
   static const int _streakMilestoneId = 1002;
+  static const int _adminBgNotifId = 2000; // matches workmanager_tasks
+  static const int _reEngagementNotifId = 2001;
 
   // Sample vocabulary words for daily notifications
   static const List<Map<String, String>> _sampleWords = [
@@ -235,16 +238,35 @@ class NotificationService {
 
     // Schedule Word of the Day at 9:00 AM (if enabled)
     if (HiveService.isDailyWordNotification()) {
+      // Fetch today's word for the rich notification content
+      final todayWord = await DailyWordService.getTodayWord();
+      final richTitle = '📚 Word of the Day';
+      final richBody = '${todayWord.word} → ${todayWord.banglaMeaning}';
+
       await _scheduleDailyAt(
         id: _dailyWordId,
         hour: 9,
         minute: 0,
         channelId: 'daily_word',
         channelName: 'Word of the Day',
-        title: _getRandomWordTitle(),
-        body: 'Tap to learn today\'s vocabulary word!',
+        title: richTitle,
+        body: richBody,
         payload: 'daily_word',
         isHighPriority: true,
+        bigTextStyle: BigTextStyleInformation(
+          '''
+📖 *${todayWord.word}*${todayWord.pronunciation != null ? ' (${todayWord.pronunciation})' : ''}
+━━━━━━━━━━━━━━━━
+🔤 বাংলা অর্থ: ${todayWord.banglaMeaning}
+
+📝 উদাহরণ:
+${todayWord.exampleSentence}
+━━━━━━━━━━━━━━━━
+ℹ️ বিস্তারিত জানতে Tap করুন
+          ''',
+          contentTitle: richTitle,
+          summaryText: richBody,
+        ),
       );
     }
 
@@ -264,7 +286,8 @@ class NotificationService {
     }
   }
 
-  /// Schedule a notification that repeats daily at a specific time
+  /// Schedule a notification that repeats daily at a specific time.
+  /// [bigTextStyle] when provided renders an expandable rich notification.
   Future<void> _scheduleDailyAt({
     required int id,
     required int hour,
@@ -275,6 +298,7 @@ class NotificationService {
     required String body,
     required bool isHighPriority,
     String? payload,
+    BigTextStyleInformation? bigTextStyle,
   }) async {
     final now = tz.TZDateTime.now(tz.local);
     var scheduledDate = tz.TZDateTime(
@@ -298,6 +322,7 @@ class NotificationService {
       importance: isHighPriority ? Importance.high : Importance.defaultImportance,
       priority: isHighPriority ? Priority.high : Priority.defaultPriority,
       icon: '@mipmap/ic_launcher',
+      styleInformation: bigTextStyle, // null → default small style
     );
 
     const iosDetails = DarwinNotificationDetails(
@@ -317,16 +342,13 @@ class NotificationService {
       body,
       scheduledDate,
       details,
-      // AndroidAlarmClock uses native AlarmManager (works when app closed)
-      androidScheduleMode: AndroidScheduleMode.alarmClock,
-      matchDateTimeComponents: DateTimeComponents.time, // Repeat daily at same time
+      // Use inexactAllowWhileIdle for Doze mode compatibility
+      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+      matchDateTimeComponents: DateTimeComponents.time,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       payload: payload,
     );
-    
-    // Note: Scheduled notifications will be added to history when they are actually delivered
-    // Not when they are scheduled, to avoid cluttering history with future notifications
   }
 
   /// Pick a random word for today's notification (called at schedule time)
@@ -383,6 +405,42 @@ class NotificationService {
         payload: payload,
       );
     } catch (_) {}
+  }
+
+  /// Shows a local notification immediately. Used by background tasks
+  /// (WorkManager) and in-app re-engagement triggers.
+  Future<void> showLocalNotification({
+    required int id,
+    required String title,
+    required String body,
+    String? payload,
+  }) async {
+    try {
+      const androidDetails = AndroidNotificationDetails(
+        'background_alerts',
+        'Background Alerts',
+        channelDescription: 'Notifications delivered in background',
+        importance: Importance.high,
+        priority: Priority.high,
+        icon: '@mipmap/ic_launcher',
+      );
+      const details = NotificationDetails(android: androidDetails);
+      await _plugin.show(id, title, body, details, payload: payload);
+
+      // Save to history
+      await _saveNotificationToHistory(
+        title: title,
+        body: body,
+        type: payload?.startsWith('type=re_engagement') == true
+            ? 're_engagement'
+            : payload?.startsWith('type=admin_announcement') == true
+                ? 'admin_announcement'
+                : 'custom',
+        payload: payload,
+      );
+    } catch (_) {
+      // Silently handle — background notification delivery is best-effort
+    }
   }
 
   /// Get notification history
