@@ -19,8 +19,6 @@ class NotificationService {
   static const int _dailyWordId = 1000;
   static const int _practiceReminderId = 1001;
   static const int _streakMilestoneId = 1002;
-  static const int _adminBgNotifId = 2000; // matches workmanager_tasks
-  static const int _reEngagementNotifId = 2001;
 
   // Sample vocabulary words for daily notifications
   static const List<Map<String, String>> _sampleWords = [
