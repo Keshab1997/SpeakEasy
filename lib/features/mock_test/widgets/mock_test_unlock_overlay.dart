@@ -3,8 +3,8 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
 
-/// Full-screen celebration overlay shown when a student scores 20/20
-/// on a mock test and unlocks the next test.
+/// Full-screen celebration overlay shown when a student scores a perfect score
+/// (score == total) on a mock test and unlocks the next test.
 ///
 /// Displays a gold-themed animated card over a semi-transparent backdrop
 /// with confetti particles. The card scales and fades in with a spring
@@ -12,6 +12,8 @@ import '../../../core/constants/app_colors.dart';
 class MockTestUnlockOverlay extends StatefulWidget {
   final int completedTestNumber;
   final String completedTestTitle;
+  final int score;
+  final int total;
   final int nextTestNumber;
   final int totalCompleted;
   final int totalTests;
@@ -24,6 +26,8 @@ class MockTestUnlockOverlay extends StatefulWidget {
     super.key,
     required this.completedTestNumber,
     required this.completedTestTitle,
+    required this.score,
+    required this.total,
     required this.nextTestNumber,
     required this.totalCompleted,
     required this.totalTests,
@@ -266,10 +270,10 @@ class _MockTestUnlockOverlayState extends State<MockTestUnlockOverlay>
             const SizedBox(height: 8),
 
             // Score
-            const Text(
-              '🎉 You scored 20/20!',
+            Text(
+              '🎉 You scored ${widget.score}/${widget.total}!',
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
                 color: AppColors.secondary,

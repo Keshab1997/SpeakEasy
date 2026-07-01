@@ -453,6 +453,8 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
           MockTestUnlockOverlay(
             completedTestNumber: widget.testNumber,
             completedTestTitle: widget.testTitle,
+            score: widget.score,
+            total: widget.total,
             nextTestNumber: nextTestNumber,
             totalCompleted: totalCompleted,
             totalTests: 70,
