@@ -25,7 +25,7 @@ class AchievementUnlockOverlay extends StatefulWidget {
 }
 
 class _AchievementUnlockOverlayState extends State<AchievementUnlockOverlay>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late final AnimationController _entryController;
   late final Animation<double> _scaleAnimation;
   late final Animation<double> _fadeAnimation;
