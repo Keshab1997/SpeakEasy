@@ -1,8 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
 import '../models/mock_test_model.dart';
-import '../services/hive_service.dart';
+import '../repositories/mock_test_repository.dart';
+
+// ── Repository Provider ──
+
+final mockTestRepositoryProvider = Provider<MockTestRepository>((ref) {
+  return MockTestRepository();
+});
 
 // ── Progress Model ──
 
@@ -63,14 +70,16 @@ class MockTestState {
 // ── Notifier ──
 
 class MockTestNotifier extends StateNotifier<MockTestState> {
-  MockTestNotifier() : super(const MockTestState());
+  final MockTestRepository _repository;
+
+  MockTestNotifier(this._repository) : super(const MockTestState());
 
   Future<void> loadTests() async {
     state = state.copyWith(isLoading: true, error: null);
 
     try {
-      // Load progress from Hive
-      final savedProgress = HiveService.getMockTestProgress();
+      // Load progress from Hive (synced from Firebase on startup by GameDataSyncService)
+      final savedProgress = _repository.getFromHive();
       Map<int, int> bestScores = {};
       Map<int, bool> unlockedTests = {};
       int highestUnlocked = 1;
@@ -93,7 +102,8 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
       // Load all 70 test files
       final List<MockTestModel> allTests = [];
       for (int i = 1; i <= 70; i++) {
-        final fileName = 'assets/json/mock_tests/mock_test_${i.toString().padLeft(2, '0')}.json';
+        final fileName =
+            'assets/json/mock_tests/mock_test_${i.toString().padLeft(2, '0')}.json';
         try {
           final raw = await rootBundle.loadString(fileName);
           final json = jsonDecode(raw) as Map<String, dynamic>;
@@ -183,12 +193,37 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
 
     state = state.copyWith(progress: newProgress);
 
-    // Save to Hive
-    await HiveService.saveMockTestProgress({
+    // Save to Hive (local cache)
+    await _repository.saveToHive({
       'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
       'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
       'highestUnlockedTest': newHighestUnlocked,
     });
+
+    // Also save to Firestore if user is logged in
+    final userId = FirebaseAuth.instance.currentUser?.uid;
+    if (userId != null) {
+      await _repository.uploadToFirestore(userId, {
+        'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
+        'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
+        'highestUnlockedTest': newHighestUnlocked,
+      });
+    }
+  }
+
+  /// Clear all progress (both Hive and Firestore).
+  Future<void> clearProgress() async {
+    await _repository.clearHive();
+
+    final userId = FirebaseAuth.instance.currentUser?.uid;
+    if (userId != null) {
+      await _repository.deleteFromFirestore(userId);
+    }
+
+    // Reset state to default
+    state = state.copyWith(
+      progress: const MockTestProgress(),
+    );
   }
 
   int getTotalCompleted() {
@@ -202,8 +237,10 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
 
 // ── Providers ──
 
-final mockTestProvider = StateNotifierProvider<MockTestNotifier, MockTestState>((ref) {
-  return MockTestNotifier();
+final mockTestProvider =
+    StateNotifierProvider<MockTestNotifier, MockTestState>((ref) {
+  final repository = ref.watch(mockTestRepositoryProvider);
+  return MockTestNotifier(repository);
 });
 
 final mockTestListProvider = Provider<List<MockTestModel>>((ref) {
