@@ -22,6 +22,7 @@ import '../../../providers/game/coin_provider.dart';
 import '../../../providers/game/streak_provider.dart';
 import '../../../providers/game/statistics_provider.dart';
 import '../../../providers/game/game_provider.dart';
+import '../../../providers/notification_provider.dart';
 import '../../grammar/screens/grammar_detail_screen.dart';
 import '../../grammar/screens/grammar_list_screen.dart';
 import '../../grammar/screens/grammar_test_list_screen.dart';
@@ -64,19 +65,17 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   final _tts = TtsService();
   bool _isSpeaking = false;
-  int _unreadNotificationCount = 0;
 
   @override
   void initState() {
     super.initState();
-    _updateNotificationCount();
     // Fetch progress & game stats on load
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      ref.read(notificationProvider.notifier).refresh();
       ref.read(progressProvider.notifier).fetchProgress();
       ref.read(xpProvider.notifier).refresh();
       ref.read(coinProvider.notifier).refresh();
       ref.read(statisticsProvider.notifier).refresh();
-      await _syncAdminNotifications();
 
       // 🔥 STREAK CALCULATION — called every time the app opens:
       final now = DateTime.now();
@@ -155,19 +154,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       streakNotifier.refresh();
       ref.read(progressProvider.notifier).fetchProgress();
     });
-  }
-
-  void _updateNotificationCount() {
-    setState(() {
-      _unreadNotificationCount = HiveService.getUnreadNotificationCount();
-    });
-  }
-
-  Future<void> _syncAdminNotifications() async {
-    try {
-      await AdminNotificationSyncService.syncLatest();
-      if (mounted) _updateNotificationCount();
-    } catch (_) {}
   }
 
   void _speakWord(String word) {
@@ -323,6 +309,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final xpState = ref.watch(xpProvider);
     final coinState = ref.watch(coinProvider);
     final streakState = ref.watch(streakProvider);
+    final notificationState = ref.watch(notificationProvider);
 
     final user = authAsync.asData?.value;
     if (user?.name != null && user!.name.isNotEmpty) {
@@ -389,12 +376,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ),
               );
               // Update notification count when returning from history screen
-              _updateNotificationCount();
+              ref.read(notificationProvider.notifier).refresh();
             },
             icon: Stack(
               children: [
                 const Icon(Icons.notifications_outlined, size: 28),
-                if (_unreadNotificationCount > 0)
+                if (notificationState.unreadCount > 0)
                   Positioned(
                     right: 0,
                     top: 0,
@@ -411,7 +398,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          '$_unreadNotificationCount',
+                          '${notificationState.unreadCount}',
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 10,
@@ -433,8 +420,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   builder: (context) => const SettingsScreen(),
                 ),
               );
-              await _syncAdminNotifications();
-              _updateNotificationCount();
+              ref.read(notificationProvider.notifier).refresh();
             },
             icon: const Icon(Icons.settings_outlined, size: 26),
           ),
