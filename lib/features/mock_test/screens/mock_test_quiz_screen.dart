@@ -104,8 +104,6 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     final questions = test.questions;
-    final question = questions[_currentQuestion];
-    final shuffled = _shuffledQuestions[_currentQuestion];
     final progress = (_currentQuestion + 1) / questions.length;
 
     return Scaffold(
@@ -182,114 +180,129 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
 
           // ── Question ──
           Expanded(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Question number badge
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      'Q${_currentQuestion + 1}',
-                      style: const TextStyle(
-                        color: AppColors.primary,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 12),
+            child: PageView.builder(
+              controller: _pageController,
+              itemCount: questions.length,
+              onPageChanged: (index) {
+                setState(() {
+                  _currentQuestion = index;
+                  _selectedAnswer = _answers[index];
+                });
+              },
+              itemBuilder: (context, index) {
+                final question = questions[index];
+                final shuffled = _shuffledQuestions[index];
 
-                  // Question text
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(colors: AppColors.primaryGradient),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      question.question,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                        height: 1.4,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-
-                  // Shuffled Options
-                  ...shuffled.shuffledOptions.asMap().entries.map((entry) {
-                    final idx = entry.key;
-                    final option = entry.value;
-                    final isSelected = _selectedAnswer == idx;
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 12),
-                      child: InkWell(
-                        onTap: _isSubmitting ? null : () => setState(() => _selectedAnswer = idx),
-                        borderRadius: BorderRadius.circular(16),
-                        child: Container(
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: isSelected
-                                ? AppColors.primary.withOpacity(0.1)
-                                : (isDark ? AppColors.surfaceDark : AppColors.surfaceLight),
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(
-                              color: isSelected
-                                  ? AppColors.primary
-                                  : (isDark ? AppColors.borderDark : AppColors.borderLight),
-                              width: isSelected ? 2.5 : 1,
-                            ),
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                width: 32,
-                                height: 32,
-                                decoration: BoxDecoration(
-                                  color: isSelected ? AppColors.primary : Colors.transparent,
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: isSelected ? AppColors.primary : Colors.grey,
-                                    width: 1.5,
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    String.fromCharCode(65 + idx),
-                                    style: TextStyle(
-                                      color: isSelected ? Colors.white : Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 14),
-                              Expanded(
-                                child: Text(
-                                  option,
-                                  style: theme.textTheme.bodyLarge?.copyWith(fontSize: 15),
-                                ),
-                              ),
-                            ],
+                return SingleChildScrollView(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Question number badge
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: AppColors.primary.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Text(
+                          'Q${index + 1}',
+                          style: const TextStyle(
+                            color: AppColors.primary,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 13,
                           ),
                         ),
                       ),
-                    );
-                  }),
+                      const SizedBox(height: 12),
 
-                  const SizedBox(height: 8),
-                ],
-              ),
+                      // Question text
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(colors: AppColors.primaryGradient),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Text(
+                          question.question,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                            height: 1.4,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 24),
+
+                      // Shuffled Options
+                      ...shuffled.shuffledOptions.asMap().entries.map((entry) {
+                        final idx = entry.key;
+                        final option = entry.value;
+                        final isSelected = _selectedAnswer == idx;
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 12),
+                          child: InkWell(
+                            onTap: _isSubmitting ? null : () => setState(() => _selectedAnswer = idx),
+                            borderRadius: BorderRadius.circular(16),
+                            child: Container(
+                              padding: const EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                color: isSelected
+                                    ? AppColors.primary.withOpacity(0.1)
+                                    : (isDark ? AppColors.surfaceDark : AppColors.surfaceLight),
+                                borderRadius: BorderRadius.circular(16),
+                                border: Border.all(
+                                  color: isSelected
+                                      ? AppColors.primary
+                                      : (isDark ? AppColors.borderDark : AppColors.borderLight),
+                                  width: isSelected ? 2.5 : 1,
+                                ),
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 32,
+                                    height: 32,
+                                    decoration: BoxDecoration(
+                                      color: isSelected ? AppColors.primary : Colors.transparent,
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: isSelected ? AppColors.primary : Colors.grey,
+                                        width: 1.5,
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        String.fromCharCode(65 + idx),
+                                        style: TextStyle(
+                                          color: isSelected ? Colors.white : Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 14),
+                                  Expanded(
+                                    child: Text(
+                                      option,
+                                      style: theme.textTheme.bodyLarge?.copyWith(fontSize: 15),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
+
+                      const SizedBox(height: 8),
+                    ],
+                  ),
+                );
+              },
             ),
           ),
 
@@ -313,10 +326,10 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
                             if (_selectedAnswer != null) {
                               _answers[_currentQuestion] = _selectedAnswer!;
                             }
-                            setState(() {
-                              _currentQuestion--;
-                              _selectedAnswer = _answers[_currentQuestion];
-                            });
+                            _pageController.previousPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeInOut,
+                            );
                           },
                     child: const Text('Previous'),
                   )
@@ -334,10 +347,10 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
                         ? () {
                             _answers[_currentQuestion] = _selectedAnswer!;
                             if (_currentQuestion < questions.length - 1) {
-                              setState(() {
-                                _currentQuestion++;
-                                _selectedAnswer = _answers[_currentQuestion];
-                              });
+                              _pageController.nextPage(
+                                duration: const Duration(milliseconds: 300),
+                                curve: Curves.easeInOut,
+                              );
                             } else {
                               _submitQuiz();
                             }
