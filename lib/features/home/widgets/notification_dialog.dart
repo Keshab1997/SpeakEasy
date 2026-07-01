@@ -4,7 +4,9 @@ import '../../../services/notification_service.dart';
 import '../../../services/hive_service.dart';
 
 class NotificationDialog extends StatefulWidget {
-  const NotificationDialog({super.key});
+  final VoidCallback? onNavigateToSettings;
+
+  const NotificationDialog({super.key, this.onNavigateToSettings});
 
   @override
   State<NotificationDialog> createState() => _NotificationDialogState();
@@ -224,8 +226,7 @@ class _NotificationDialogState extends State<NotificationDialog> {
                 child: OutlinedButton.icon(
                   onPressed: () {
                     Navigator.pop(context);
-                    // Navigate to settings (assuming settings is tab 4)
-                    // You may need to pass a callback to navigate to settings
+                    widget.onNavigateToSettings?.call();
                   },
                   icon: const Icon(Icons.settings_rounded),
                   label: const Text(
