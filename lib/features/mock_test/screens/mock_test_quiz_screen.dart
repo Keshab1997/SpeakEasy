@@ -507,7 +507,9 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
 		    // Build shuffled info maps for result screen
 		    final Map<int, List<String>> shuffledOptionsMap = {};
 		    final Map<int, int> shuffledCorrectIndexMap = {};
-		
+
+		    // Transform _answers to use original question indices for result screen
+		    final Map<int, int> answersForResult = {};
 		    if (widget.wrongQuestionIndices != null) {
 		      // Map back to original question indices for result display
 		      for (int i = 0; i < _shuffledQuestions.length; i++) {
@@ -515,11 +517,16 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
 		        shuffledOptionsMap[originalIndex] = _shuffledQuestions[i].shuffledOptions;
 		        shuffledCorrectIndexMap[originalIndex] = _shuffledQuestions[i].shuffledCorrectIndex;
 		      }
+		      // Convert relative indices in _answers to original indices
+		      for (final entry in _answers.entries) {
+		        answersForResult[widget.wrongQuestionIndices![entry.key]] = entry.value;
+		      }
 		    } else {
 		      for (int i = 0; i < _shuffledQuestions.length; i++) {
 		        shuffledOptionsMap[i] = _shuffledQuestions[i].shuffledOptions;
 		        shuffledCorrectIndexMap[i] = _shuffledQuestions[i].shuffledCorrectIndex;
 		      }
+		      answersForResult.addAll(_answers);
 		    }
 		
 		    if (!mounted) return;
@@ -531,8 +538,8 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
 		          testTitle: widget.testTitle,
 		          score: scoreOutOf20,
 		          total: 20,
-			          questions: test.questions,
-		          answers: _answers,
+		          questions: test.questions,
+		          answers: answersForResult,
 		          shuffledOptionsMap: shuffledOptionsMap,
 		          shuffledCorrectIndexMap: shuffledCorrectIndexMap,
 		        ),
