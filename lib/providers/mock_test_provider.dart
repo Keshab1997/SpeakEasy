@@ -101,7 +101,7 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
         highestUnlocked = savedProgress['highestUnlockedTest'] as int? ?? 1;
         wrongQuestions = Map<int, List<int>>.from(
           (savedProgress['wrongQuestions'] as Map? ?? {})
-              .map((k, v) => MapEntry(int.parse(k), List<int>.from(v as List))),
+              .map((k, v) => MapEntry(int.parse(k), List<int>.from(v as List? ?? []))),
         );
       }
 
