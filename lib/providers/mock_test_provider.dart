@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
@@ -202,9 +203,9 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
 
     newUnlockedTests[1] = true; // Test 1 always unlocked
 
-    // A test is considered "passed" if bestScore == 20 OR if wrongQuestions are empty
+    // A test is considered "passed" only if bestScore == 20 AND no wrong questions remain
     final bool testPassed = newBestScore == 20 &&
-        (!newWrongQuestions.containsKey(testNumber));
+        (!newWrongQuestions.containsKey(testNumber) || newWrongQuestions[testNumber]!.isEmpty);
 
     if (testPassed && testNumber < 70) {
       final nextTest = testNumber + 1;
@@ -234,25 +235,29 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
 
     state = state.copyWith(progress: newProgress);
 
-    // Save to Hive (local cache)
-    await _repository.saveToHive({
-      'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
-      'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
-      'highestUnlockedTest': newHighestUnlocked,
-      'wrongQuestions':
-          newWrongQuestions.map((k, v) => MapEntry(k.toString(), v)),
-    });
-
-    // Also save to Firestore if user is logged in
-    final userId = FirebaseAuth.instance.currentUser?.uid;
-    if (userId != null) {
-      await _repository.uploadToFirestore(userId, {
+    // Persist to Hive and Firestore (best-effort; in-memory state already updated)
+    try {
+      await _repository.saveToHive({
         'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
         'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
         'highestUnlockedTest': newHighestUnlocked,
         'wrongQuestions':
             newWrongQuestions.map((k, v) => MapEntry(k.toString(), v)),
       });
+
+      // Also save to Firestore if user is logged in
+      final userId = FirebaseAuth.instance.currentUser?.uid;
+      if (userId != null) {
+        await _repository.uploadToFirestore(userId, {
+          'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
+          'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
+          'highestUnlockedTest': newHighestUnlocked,
+          'wrongQuestions':
+              newWrongQuestions.map((k, v) => MapEntry(k.toString(), v)),
+        });
+      }
+    } catch (e) {
+      debugPrint('❌ Failed to persist mock test progress: $e');
     }
   }
 
