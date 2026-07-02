@@ -21,11 +21,13 @@ class _ShuffledQuestion {
 class MockTestQuizScreen extends ConsumerStatefulWidget {
   final int testNumber;
   final String testTitle;
+  final List<int>? wrongQuestionIndices;
 
   const MockTestQuizScreen({
     super.key,
     required this.testNumber,
     required this.testTitle,
+    this.wrongQuestionIndices,
   });
 
   @override
@@ -42,13 +44,23 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
   late List<_ShuffledQuestion> _shuffledQuestions;
   late final PageController _pageController;
 
-  MockTestModel? get _test {
+	MockTestModel? get _test {
     final tests = ref.read(mockTestListProvider);
     try {
       return tests.firstWhere((t) => t.testNumber == widget.testNumber);
     } catch (_) {
       return null;
     }
+  }
+
+  /// Questions to display — either all or only wrong ones
+  List<MockTestQuestion> get _activeQuestions {
+    final test = _test;
+    if (test == null || test.questions.isEmpty) return [];
+    if (widget.wrongQuestionIndices == null) return test.questions;
+    return widget.wrongQuestionIndices!
+        .map((i) => test.questions[i])
+        .toList();
   }
 
   @override
@@ -60,12 +72,12 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
   }
 
   /// প্রতিটি প্রশ্নের options shuffle করে এবং নতুন correctIndex ট্র্যাক করে
-  void _shuffleAllQuestions() {
-    final test = _test;
-    if (test == null || test.questions.isEmpty) return;
+	void _shuffleAllQuestions() {
+    final questions = _activeQuestions;
+    if (questions.isEmpty) return;
 
     final random = Random();
-    _shuffledQuestions = test.questions.map((q) {
+    _shuffledQuestions = questions.map((q) {
       // options ও correctIndex নিয়ে একটি তালিকা তৈরি করি
       final List<_IndexedOption> indexedOptions = [];
       for (int i = 0; i < q.options.length; i++) {
@@ -104,7 +116,7 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
 
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final questions = test.questions;
+	    final questions = _activeQuestions;
     final progress = (_currentQuestion + 1) / questions.length;
 
     return Scaffold(
@@ -142,7 +154,7 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
                       isScrollControlled: true,
                       backgroundColor: Colors.transparent,
                       builder: (_) => QuestionPaletteBottomSheet(
-                        totalQuestions: test.questions.length,
+	                      totalQuestions: _activeQuestions.length,
                         currentQuestion: _currentQuestion,
                         answers: _answers,
                         onQuestionSelected: (index) {
@@ -181,11 +193,25 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
                           style: TextStyle(color: isDark ? Colors.white38 : Colors.black38, fontSize: 12),
                         ),
                         const SizedBox(width: 12),
-                        Text(
-                          '${_answers.length} answered',
-                          style: TextStyle(color: isDark ? Colors.white38 : Colors.black38, fontSize: 13),
-                        ),
-                      ],
+		                        Text(
+		                          '${_answers.length} answered',
+		                          style: TextStyle(color: isDark ? Colors.white38 : Colors.black38, fontSize: 13),
+		                        ),
+		                        if (widget.wrongQuestionIndices != null) ...[
+		                          const SizedBox(width: 8),
+		                          Container(
+		                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+		                            decoration: BoxDecoration(
+		                              color: Colors.orange.withOpacity(0.2),
+		                              borderRadius: BorderRadius.circular(10),
+		                            ),
+		                            child: Text(
+		                              'Retrying ${widget.wrongQuestionIndices!.length}',
+		                              style: const TextStyle(color: Colors.orange, fontSize: 11, fontWeight: FontWeight.w600),
+		                            ),
+		                          ),
+		                        ],
+		                      ],
                     ),
                   ],
                 ),
@@ -412,53 +438,88 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
     super.dispose();
   }
 
-	  Future<void> _submitQuiz() async {
-	    setState(() => _isSubmitting = true);
-	
-	    final test = _test!;
-	    int correct = 0;
-	    for (final entry in _answers.entries) {
-	      final questionIndex = entry.key;
-	      final selectedShuffledIndex = entry.value;
-	      // shuffle-এর পরের correctIndex-এর সাথে compare করি
-	      if (selectedShuffledIndex == _shuffledQuestions[questionIndex].shuffledCorrectIndex) {
-	        correct++;
-	      }
-	    }
-	
-	    // Hive ও Firestore-এ score save করি (await — যাতে save নিশ্চিত হয়)
-	    try {
-	      await ref.read(mockTestProvider.notifier).saveResult(widget.testNumber, correct);
-	    } catch (e) {
-	      debugPrint('❌ saveResult failed: $e');
-	      // Error হলেও navigation ব্লক করি না
-	    }
-	
-	    // shuffle info maps তৈরি করে result screen-এ পাঠাই
-	    final Map<int, List<String>> shuffledOptionsMap = {};
-	    final Map<int, int> shuffledCorrectIndexMap = {};
-	    for (int i = 0; i < _shuffledQuestions.length; i++) {
-	      shuffledOptionsMap[i] = _shuffledQuestions[i].shuffledOptions;
-	      shuffledCorrectIndexMap[i] = _shuffledQuestions[i].shuffledCorrectIndex;
-	    }
-	
-	    if (!mounted) return;
-	    Navigator.pushReplacement(
-	      context,
-	      MaterialPageRoute(
-	        builder: (_) => MockTestResultScreen(
-	          testNumber: widget.testNumber,
-	          testTitle: widget.testTitle,
-	          score: correct,
-	          total: test.questions.length,
-	          questions: test.questions,
-	          answers: _answers,
-	          shuffledOptionsMap: shuffledOptionsMap,
-	          shuffledCorrectIndexMap: shuffledCorrectIndexMap,
-	        ),
-	      ),
-	    );
-	  }
+		  Future<void> _submitQuiz() async {
+		    setState(() => _isSubmitting = true);
+		
+		    final questions = _activeQuestions;
+		    int correct = 0;
+		    final List<int> currentWrongIndices = [];
+		    for (final entry in _answers.entries) {
+		      final questionIndex = entry.key;
+		      final selectedShuffledIndex = entry.value;
+		      if (selectedShuffledIndex == _shuffledQuestions[questionIndex].shuffledCorrectIndex) {
+		        correct++;
+		      } else {
+		        // Track which question index (in original test) was wrong
+		        if (widget.wrongQuestionIndices != null) {
+		          currentWrongIndices.add(widget.wrongQuestionIndices![questionIndex]);
+		        } else {
+		          currentWrongIndices.add(questionIndex);
+		        }
+		      }
+		    }
+		
+		    // Calculate score out of 20 and wrong indices to save
+		    int scoreOutOf20;
+		    List<int>? wrongIndicesToSave;
+		    if (widget.wrongQuestionIndices != null) {
+		      // Wrong-only retry: calculate effective total
+		      final previousWrong = ref.read(mockTestProvider.notifier).getWrongQuestions(widget.testNumber) ?? [];
+		      final previousCorrect = 20 - previousWrong.length;
+		      scoreOutOf20 = previousCorrect + correct;
+		      wrongIndicesToSave = currentWrongIndices.isNotEmpty ? currentWrongIndices : [];
+		    } else {
+		      // Full attempt: score is directly out of 20
+		      scoreOutOf20 = correct;
+		      wrongIndicesToSave = currentWrongIndices.isNotEmpty ? currentWrongIndices : [];
+		    }
+		
+		    // Save result
+		    try {
+		      await ref.read(mockTestProvider.notifier).saveResult(
+		        widget.testNumber,
+		        scoreOutOf20,
+		        wrongIndices: wrongIndicesToSave,
+		      );
+		    } catch (e) {
+		      debugPrint('❌ saveResult failed: $e');
+		    }
+		
+		    // Build shuffled info maps for result screen
+		    final Map<int, List<String>> shuffledOptionsMap = {};
+		    final Map<int, int> shuffledCorrectIndexMap = {};
+		
+		    if (widget.wrongQuestionIndices != null) {
+		      // Map back to original question indices for result display
+		      for (int i = 0; i < _shuffledQuestions.length; i++) {
+		        final originalIndex = widget.wrongQuestionIndices![i];
+		        shuffledOptionsMap[originalIndex] = _shuffledQuestions[i].shuffledOptions;
+		        shuffledCorrectIndexMap[originalIndex] = _shuffledQuestions[i].shuffledCorrectIndex;
+		      }
+		    } else {
+		      for (int i = 0; i < _shuffledQuestions.length; i++) {
+		        shuffledOptionsMap[i] = _shuffledQuestions[i].shuffledOptions;
+		        shuffledCorrectIndexMap[i] = _shuffledQuestions[i].shuffledCorrectIndex;
+		      }
+		    }
+		
+		    if (!mounted) return;
+		    Navigator.pushReplacement(
+		      context,
+		      MaterialPageRoute(
+		        builder: (_) => MockTestResultScreen(
+		          testNumber: widget.testNumber,
+		          testTitle: widget.testTitle,
+		          score: scoreOutOf20,
+		          total: 20,
+		          questions: _test!.questions,
+		          answers: _answers,
+		          shuffledOptionsMap: shuffledOptionsMap,
+		          shuffledCorrectIndexMap: shuffledCorrectIndexMap,
+		        ),
+		      ),
+		    );
+		  }
 }
 
 /// shuffle-এর সময় originalIndex ট্র্যাক রাখার জন্য ক্ষণস্থায়ী হেলপার
