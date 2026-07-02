@@ -167,6 +167,11 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
     return getBestScore(testNumber) == 20;
   }
 
+  List<int>? getWrongQuestions(int testNumber) {
+    final wrong = state.progress.wrongQuestions[testNumber];
+    return (wrong != null && wrong.isNotEmpty) ? wrong : null;
+  }
+
   Future<void> saveResult(int testNumber, int score,
       {List<int>? wrongIndices}) async {
     // Calculate effective score for wrong-only retry
