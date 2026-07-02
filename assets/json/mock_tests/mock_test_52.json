@@ -1,228 +1,228 @@
 {
   "id": "mock_test_52",
   "testNumber": 52,
-  "title": "Mock Test 52",
-  "description": "Comprehensive test covering Nouns & Pronouns and Adjectives for spoken English practice.",
+  "title": "Mock Test 52 - Causative Verbs (have/get something done)",
+  "description": "Causative Verbs নিয়ে ২০টি প্রশ্ন। Have/get something done, Have/let/make someone do something, Get someone to do something — গঠন ও ব্যবহার।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "Causative 'have something done' structure কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Have + someone + V1",
+        "Have + something + V3",
+        "Have + V1 + something",
+        "Have + Ving"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Have + object + V3' = অন্যকে দিয়ে কাজ করানো। যেমন: I had my hair cut."
     },
     {
-      "question": "Question 2: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "'I had my car repaired.' — এর অর্থ কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "আমি নিজে গাড়ি মেরামত করলাম",
+        "আমি অন্যকে দিয়ে গাড়ি মেরামত করালাম",
+        "গাড়ি নিজেই মেরামত হলো",
+        "গাড়ি মেরামত হচ্ছে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Had my car repaired' = causative (অন্যকে দিয়ে করানো)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "'Get something done' structure কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "Get + V3 + something",
+        "Get + something + V3",
+        "Get + someone + V1",
+        "Get + V1 + something"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Get + object + V3' = have something done-এর মতো কিন্তু less formal।"
     },
     {
-      "question": "Question 4: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "'Make someone do something' অর্থ কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "কাউকে কিছু করতে বাধ্য করা",
+        "কাউকে কিছু করতে দেওয়া",
+        "কাউকে কিছু করতে সাহায্য করা",
+        "কাউকে কিছু করতে বলা"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "explanation": "'Make + someone + V1' = force/bang kora। যেমন: She made me cry."
     },
     {
-      "question": "Question 5: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "'Let someone do something' অর্থ কী?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "বাধ্য করা",
+        "অনুমতি দেওয়া",
+        "চাওয়া",
+        "পড়া"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Let + someone + V1' = allow/permit। যেমন: Let him go."
     },
     {
-      "question": "Question 6: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "I need to ___ my hair cut.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "have",
+        "make",
+        "let",
+        "get"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "'Have something done' — 'have my hair cut'।"
     },
     {
-      "question": "Question 7: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "She ___ him clean the whole house.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "made",
+        "let",
+        "had",
+        "got"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "'Made him clean' = তাকে পরিষ্কার করতে বাধ্য করল।"
     },
     {
-      "question": "Question 8: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "My father ___ me use his car.",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "let",
+        "made",
+        "had",
+        "got"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'Let me use' = অনুমতি দিল।"
     },
     {
-      "question": "Question 9: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "I ___ my watch repaired yesterday.",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "had",
+        "made",
+        "let",
+        "got"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "'Had my watch repaired' — causative (past)।"
     },
     {
-      "question": "Question 10: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "Can you ___ someone to help us?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "get",
+        "make",
+        "let",
+        "have"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "'Get someone to do' = arrange for someone to help।"
     },
     {
-      "question": "Question 11: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "Error: 'I had my hair cutted.' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "I had",
+        "my hair",
+        "cutted",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Cut' → V3 = 'cut' (irregular)। 'cutted' ভুল। সঠিক: I had my hair cut."
     },
     {
-      "question": "Question 12: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "Error: 'She made him to go.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "She made",
+        "him",
+        "to go",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Make + someone + V1' (to ছাড়া)। 'She made him go.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "Error: 'Let him to speak.' — ভুল?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "Let him",
+        "to speak",
+        "—",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Let + someone + V1' (to ছাড়া)। 'Let him speak.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "Error: 'I got my car repair.' — ভুল?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "I got",
+        "my car",
+        "repair",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Get something done' → V3 লাগবে। 'I got my car repaired.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "Fill: 'I need to get my computer ___ (fix).'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "fix",
+        "fixed",
+        "fixing",
+        "fixes"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Get + object + V3' → 'get my computer fixed'।"
     },
     {
-      "question": "Question 16: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "Fill: 'The teacher ___ the students stay after class.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "made",
+        "let",
+        "had",
+        "got"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'Made them stay' = বাধ্য করলেন।"
     },
     {
-      "question": "Question 17: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "Fill: 'I ___ my house painted last month.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "had",
+        "made",
+        "let",
+        "got"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Had my house painted' — causative।"
     },
     {
-      "question": "Question 18: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "Fill: 'She ___ her son play outside.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "let",
+        "made",
+        "had",
+        "got"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Let her son play' = অনুমতি দিল।"
     },
     {
-      "question": "Question 19: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "অনুবাদ: 'আমি আমার চুল কাটিয়েছি।' (causative)",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "I cut my hair.",
+        "I had my hair cut.",
+        "I made my hair cut.",
+        "I let my hair cut."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Had my hair cut' = causative ( অন্যকে দিয়ে কাটানো)।"
     },
     {
-      "question": "Question 20: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 52.",
+      "question": "অনুবাদ: 'সে তাকে যেতে বাধ্য করল।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "She let him go.",
+        "She made him go.",
+        "She had him go.",
+        "She got him go."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Made him go' = বাধ্য করল।"
     }
   ]
 }

@@ -1,228 +1,228 @@
 {
   "id": "mock_test_38",
   "testNumber": 38,
-  "title": "Mock Test 38",
-  "description": "Comprehensive test covering Sentence Structure and Vocabulary for spoken English practice.",
+  "title": "Mock Test 38 - Relative Clauses (who, which, that)",
+  "description": "এই টেস্টে Relative Clauses (who, which, that, whom, whose) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Relative Clause কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "একটি independent clause",
+        "একটি clause যা noun-কে modify করে এবং relative pronoun দিয়ে শুরু হয়",
+        "একটি phrase যা verb-কে modify করে",
+        "একটি conjunction"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Relative clause একটি dependent clause যা noun বা pronoun-কে modify করে এবং who, which, that, whom, whose ইত্যাদি relative pronoun দিয়ে শুরু হয়। যেমন: The man who lives next door is a doctor."
     },
     {
-      "question": "Question 2: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "ব্যক্তি (person)-এর জন্য কোন relative pronoun ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Which",
+        "Who",
+        "Where",
+        "When"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Person-এর জন্য 'who' বা 'that' ব্যবহার করা হয়। 'Who' specifically person-এর জন্য। যেমন: The woman who called you is my sister."
     },
     {
-      "question": "Question 3: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "বস্তু (thing) বা প্রাণী (animal)-এর জন্য কোন relative pronoun ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "Who",
+        "Whom",
+        "Which",
+        "Whose"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Thing/animal-এর জন্য 'which' বা 'that' ব্যবহার করা হয়। যেমন: The book which I read was interesting."
     },
     {
-      "question": "Question 4: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Possession (মালিকানা) বোঝাতে কোন relative pronoun ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Who",
+        "Which",
+        "That",
+        "Whose"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "Possession বোঝাতে 'whose' ব্যবহার করা হয়। যেমন: The girl whose bag was stolen is crying. (যে মেয়েটির ব্যাগ চুরি হয়েছে)"
     },
     {
-      "question": "Question 5: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Defining এবং Non-defining Relative Clause-এর পার্থক্য কী?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "কোনো পার্থক্য নেই",
+        "Defining clause ছাড়া বাক্যের অর্থ অসম্পূর্ণ, non-defining clause অতিরিক্ত তথ্য দেয়",
+        "Non-defining clause comma দিয়ে আলাদা করা হয় না",
+        "Defining clause-এ 'which' ব্যবহার হয় না"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Defining (essential): The man who lives next door is my uncle. (কোন man? → specific) — comma নেই। Non-defining (extra): My uncle, who lives next door, is a doctor. (অতিরিক্ত তথ্য) — comma দিয়ে আলাদা।"
     },
     {
-      "question": "Question 6: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "The woman ___ lives next door is a doctor.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "which",
+        "who",
+        "whom",
+        "where"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Person + subject → 'who'। 'The woman who lives next door is a doctor.' (Who = subject of 'lives')"
     },
     {
-      "question": "Question 7: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "The car ___ I bought is very expensive.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "who",
+        "whom",
+        "which",
+        "whose"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Thing (car) → 'which' বা 'that'। 'The car which I bought is very expensive.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "The man ___ car was stolen is my neighbor.",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "who",
+        "which",
+        "whom",
+        "whose"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "Possession (car belongs to the man) → 'whose'। 'The man whose car was stolen is my neighbor.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "The person to ___ you spoke is the manager.",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "who",
+        "whom",
+        "which",
+        "that"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Preposition (to) + object → 'whom'। 'The person to whom you spoke is the manager.' (Formal)। কথ্যভাষায় 'who'ও চলে।"
     },
     {
-      "question": "Question 10: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Do you know the reason ___ he is angry?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "who",
+        "which",
+        "why",
+        "where"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Reason → 'why'। 'Do you know the reason why he is angry?' (Relative adverb)"
     },
     {
-      "question": "Question 11: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Error Detection: 'The book who I read is good.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "The book",
+        "who",
+        "I read",
+        "is good"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Book (thing) → 'which' বা 'that' হবে, 'who' নয়। সঠিক: 'The book which I read is good.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Error Detection: 'The man which lives here is friendly.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "The man",
+        "which",
+        "lives here",
+        "is friendly"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Man (person) → 'who', 'which' নয়। সঠিক: 'The man who lives here is friendly.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Error Detection: 'The girl who's bag was stolen is crying.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "The girl",
+        "who's",
+        "bag was stolen",
+        "is crying"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Who's' = who is/has। Possessive বোঝাতে 'whose' হবে। সঠিক: 'The girl whose bag was stolen is crying.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Error Detection: 'My mother, that loves cooking, made this dish.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "My mother",
+        "that",
+        "loves cooking",
+        "made this dish"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Non-defining relative clause-এ 'that' ব্যবহার করা যায় না। 'Who' হবে। সঠিক: 'My mother, who loves cooking, made this dish.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Fill in the blank: This is the hospital ___ I was born.",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "who",
+        "which",
+        "where",
+        "whose"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Place (hospital) → 'where' (relative adverb)। 'This is the hospital where I was born.'"
     },
     {
-      "question": "Question 16: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Fill in the blank: I still remember the day ___ we first met.",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "who",
+        "which",
+        "where",
+        "when"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "Time (the day) → 'when' (relative adverb)। 'I still remember the day when we first met.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Fill in the blank: She is the teacher ___ taught me English.",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "who",
+        "which",
+        "whom",
+        "whose"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "Person + subject of 'taught' → 'who'। 'She is the teacher who taught me English.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "Fill in the blank: The house ___ roof is red belongs to my uncle.",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "who",
+        "which",
+        "that",
+        "whose"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "Possession (house's roof) → 'whose'। 'The house whose roof is red belongs to my uncle.'"
     },
     {
-      "question": "Question 19: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'যে লোকটি এখানে থাকে সে আমার চাচা।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "The man which lives here is my uncle.",
+        "The man who lives here is my uncle.",
+        "The man whose lives here is my uncle.",
+        "The man whom lives here is my uncle."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Person + subject → 'who'। 'The man who lives here is my uncle.'"
     },
     {
-      "question": "Question 20: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 38.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আমি যে বইটি পড়েছি তা খুবই মজার।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "The book who I read is very interesting.",
+        "The book which I read is very interesting.",
+        "The book whom I read is very interesting.",
+        "The book whose I read is very interesting."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Thing (book) → 'which'। 'The book which I read is very interesting.' (Alternatively: 'The book that I read...')"
     }
   ]
 }

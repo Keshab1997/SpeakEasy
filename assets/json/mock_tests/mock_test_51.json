@@ -1,228 +1,228 @@
 {
   "id": "mock_test_51",
   "testNumber": 51,
-  "title": "Mock Test 51",
-  "description": "Comprehensive test covering Subject-Verb Agreement and Nouns & Pronouns for spoken English practice.",
+  "title": "Mock Test 51 - Advanced Modals (needn't, used to, ought to, dare)",
+  "description": "Advanced Modal Verbs নিয়ে ২০টি প্রশ্ন। Needn't, Used to, Ought to, Dare, Had better, Would rather, Needn't have + V3, Didn't need to ইত্যাদি।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "'Needn't' modal-টির অর্থ কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "প্রয়োজন",
+        "প্রয়োজন নেই",
+        "অবশ্যই",
+        "হতে পারে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Needn't' = need not = প্রয়োজন নেই। যেমন: You needn't worry."
     },
     {
-      "question": "Question 2: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "'Used to' modal-টির অর্থ কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "বর্তমানে করি",
+        "অতীতে করতাম (এখন করি না)",
+        "ভবিষ্যতে করব",
+        "সবসময় করি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Used to' = past habit (অতীত অভ্যাস যা এখন নেই)। যেমন: I used to smoke."
     },
     {
-      "question": "Question 3: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "'Ought to' modal-টির অর্থ কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "উচিত (should-এর মতো কিন্তু stronger)",
+        "পারে",
+        "চায়",
+        "ঘটতে পারে"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "'Ought to' = moral duty/obligation। যেমন: You ought to respect your parents."
     },
     {
-      "question": "Question 4: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "'Dare' modal-টির অর্থ কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "যত্ন নেওয়া",
+        "সাহস করা",
+        "দৌড়ানো",
+        "পড়া"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Dare' = have the courage to। যেমন: I dare not go there alone."
     },
     {
-      "question": "Question 5: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "'Had better' modal-টির অর্থ কী?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "ভালো ছিল/উচিত (strong advice)",
+        "আগে ছিল",
+        "পারে না",
+        "চায় না"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "explanation": "'Had better' = should/উচিত (strong advice, with consequences)। যেমন: You had better see a doctor."
     },
     {
-      "question": "Question 6: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "You ___ to buy so many things. We already have enough.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "needn't",
+        "needn't have bought",
+        "don't need",
+        "didn't need"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "Present necessity নেই → 'needn't'।"
     },
     {
-      "question": "Question 7: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "He ___ smoke heavily, but now he has quit.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "used to",
+        "would",
+        "could",
+        "might"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "অতীত অভ্যাস (এখন নেই) → 'used to'।"
     },
     {
-      "question": "Question 8: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "You ___ pay the bill by tomorrow. It's your duty.",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "ought to",
+        "used to",
+        "dare",
+        "needn't"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "Moral duty → 'ought to'।"
     },
     {
-      "question": "Question 9: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "How ___ you speak to your mother like that!",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "dare",
+        "need",
+        "used",
+        "ought"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "'How dare you!' = সাহস করে কীভাবে! (anger/disbelief)"
     },
     {
-      "question": "Question 10: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "I ___ go now or I'll miss the bus.",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "had better",
+        "used to",
+        "dare",
+        "needn't"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "Strong advice → 'had better' (না গেলে বাস মিস)।"
     },
     {
-      "question": "Question 11: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "Error: 'You needn't to go there.' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "You",
+        "needn't to",
+        "go there",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Needn't' modal → এর পরে 'to' লাগে না। 'You needn't go there.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "Error: 'She used to smoked a lot.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "She",
+        "used to",
+        "smoked",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Used to' → এর পরে V1 (base form)। 'used to smoke' হবে, 'smoked' নয়।"
     },
     {
-      "question": "Question 13: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "Error: 'He ought not go there.' — ভুল?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "He",
+        "ought not go",
+        "there",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Ought to' negative = 'ought not to'। 'He ought not to go there.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "Error: 'You had better to see a doctor.' — ভুল?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "You",
+        "had better to",
+        "see",
+        "a doctor"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Had better' → এর পরে 'to' ছাড়া V1। 'You had better see a doctor.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "Fill: 'You ___ have bought so many. It was unnecessary.' (ক্রয় করেছ, কিন্তু দরকার ছিল না)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "needn't",
+        "needn't have",
+        "don't need",
+        "mustn't"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "অপ্রয়োজনীয় past action → 'needn't have + V3'।"
     },
     {
-      "question": "Question 16: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "Fill: 'I ___ to play cricket when I was young.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "used",
+        "would",
+        "will",
+        "shall"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'Used to' = past habit। 'I used to play cricket.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "Fill: 'You ___ finish your homework before playing.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "ought to",
+        "used to",
+        "dare",
+        "needn't"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Ought to' = উচিত।"
     },
     {
-      "question": "Question 18: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "Fill: 'I ___ rather stay home than go out.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "would",
+        "used",
+        "had better",
+        "ought"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Would rather' = বরং পছন্দ।"
     },
     {
-      "question": "Question 19: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "অনুবাদ: 'তোমার চিন্তা করার প্রয়োজন নেই।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "You needn't worry.",
+        "You used to worry.",
+        "You dare not worry.",
+        "You had better worry."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "explanation": "'Needn't' = প্রয়োজন নেই।"
     },
     {
-      "question": "Question 20: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 51.",
+      "question": "অনুবাদ: 'সে আগে ধূমপান করত, কিন্তু এখন ছেড়ে দিয়েছে।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "He used to smoke, but now he quit.",
+        "He smokes now.",
+        "He never smoked.",
+        "He will smoke."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "explanation": "'Used to' = past habit (এখন নেই)।"
     }
   ]
 }

@@ -1,228 +1,229 @@
 {
   "id": "mock_test_68",
   "testNumber": 68,
-  "title": "Mock Test 68",
-  "description": "Comprehensive test covering Active & Passive Voice and Direct & Indirect Speech for spoken English practice.",
+  "title": "Mock Test 68 - Telling Stories (Past Narrative)",
+  "description": "Storytelling/Past Narrative নিয়ে ২০টি প্রশ্ন। Past tenses, Sequence words (First, Then, After that, Finally), Time expressions (Suddenly, Eventually, In the end) — সঠিক ব্যবহার।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Storytelling-এ সবচেয়ে বেশি কোন tense ব্যবহার হয়?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Present Indefinite",
+        "Past Indefinite (Simple Past)",
+        "Future Indefinite",
+        "Present Continuous"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Past Indefinite (Simple Past) is the main tense for storytelling।"
     },
     {
-      "question": "Question 2: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "গল্পের শুরুতে কোন শব্দ ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Once upon a time...",
+        "First...",
+        "Long ago...",
+        "সবগুলোই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'Once upon a time / First / Long ago / In the beginning' — সবগুলোই story শুরুতে।"
     },
     {
-      "question": "Question 3: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "ঘটনার ক্রম বোঝাতে কোন sequence word ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "First",
+        "Then",
+        "After that",
+        "Finally",
+        "সবগুলোই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 4,
+      "explanation": "'First, Then, After that, Finally' — সবগুলোই events sequence বোঝায়।"
     },
     {
-      "question": "Question 4: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "হঠাৎ কোনো ঘটনা বোঝাতে কোন word ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Suddenly",
+        "Gradually",
+        "Always",
+        "Never"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "explanation": "'Suddenly' = unexpected event বোঝাতে।"
     },
     {
-      "question": "Question 5: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "গল্পের শেষ বোঝাতে কোন phrase ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "In the end",
+        "Finally",
+        "Eventually",
+        "সবগুলোই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'In the end / Finally / Eventually' — সবগুলোই ending বোঝায়।"
     },
     {
-      "question": "Question 6: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Past Continuous (was/were + Ving) কখন ব্যবহার হয়?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "সম্পূর্ণ অতীত কাজ",
+        "অতীতে চলমান কাজ (background action)",
+        "বর্তমান কাজ",
+        "ভবিষ্যৎ কাজ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Past Continuous = ongoing action in the past (background)। যেমন: I was walking when it rained।"
     },
     {
-      "question": "Question 7: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Past Perfect (had + V3) কখন ব্যবহার হয়?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "দুটি past event-এর মধ্যে আগেরটি বোঝাতে",
+        "পরেরটি বোঝাতে",
+        "বর্তমান কাজ",
+        "ভবিষ্যৎ কাজ"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "Past Perfect = earlier of two past events। 'I had eaten before he arrived.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "'While I was sleeping, the phone rang.' — এখানে 'While' কী বোঝাচ্ছে?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "দুটি ঘটনা একসাথে",
+        "ঘটনার ক্রম",
+        "কারণ",
+        "শর্ত"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'While + past continuous' = something happened during an ongoing action।"
     },
     {
-      "question": "Question 9: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "'First, we went to Cox's Bazar. Then, we visited Saint Martin.' — 'Then' কী বোঝাচ্ছে?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "একই সময়",
+        "পরবর্তী ঘটনা",
+        "কারণ",
+        "শর্ত"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Then' = next event in sequence।"
     },
     {
-      "question": "Question 10: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "'It was a dark and stormy night.' — এটি গল্পের কোন অংশ?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "মধ্য",
+        "শুরু (setting the scene)",
+        "শেষ",
+        "কোনটাই না"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'It was a dark and stormy night.' = scene-setting opening line (famous story opening)।"
     },
     {
-      "question": "Question 11: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Error: 'Yesterday I go to the market.' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Yesterday",
+        "go",
+        "to the market",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Yesterday' → Past needed: 'I went to the market.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Error: 'I was walk when it started raining.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "I was walk",
+        "when",
+        "it started raining",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'I was walking' — Past Continuous: was/were + Ving।"
     },
     {
-      "question": "Question 13: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Error: 'After I had ate dinner, I went out.' — ভুল?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "After",
+        "I had ate",
+        "dinner",
+        "I went out"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Had + V3' → 'had eaten' (ate → eaten)।"
     },
     {
-      "question": "Question 14: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Error: 'He was going to market when he was meeting his friend.' — ভুল?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "was going",
+        "when he was meeting",
+        "—",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'When' + Simple Past (met) for short action। 'When he met his friend.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Fill: 'First, we ___ (reach) the station. Then, we bought tickets.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "reached",
+        "reach",
+        "had reached",
+        "were reaching"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "Simple Past for completed actions in sequence: 'reached'।"
     },
     {
-      "question": "Question 16: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Fill: 'While I ___ (watch) TV, the light went out.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "watched",
+        "was watching",
+        "had watched",
+        "am watching"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'While + past continuous (was watching)' for background action।"
     },
     {
-      "question": "Question 17: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Fill: 'She ___ (finish) her homework before she went to bed.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "finished",
+        "had finished",
+        "was finishing",
+        "finishes"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Before she went' → earlier action: 'had finished' (Past Perfect)।"
     },
     {
-      "question": "Question 18: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "Fill: '___ (অবশেষে), they arrived at the destination.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "Finally",
+        "At last",
+        "Eventually",
+        "সবগুলোই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'Finally / At last / Eventually' — সবগুলোই 'অবশেষে' অর্থে।"
     },
     {
-      "question": "Question 19: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "অনুবাদ: 'প্রথমে, আমরা নাস্তা করলাম। তারপর, আমরা বের হলাম।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "First we ate breakfast. Then we left.",
+        "First we eat breakfast. Then we leave.",
+        "First we had ate. Then left.",
+        "First we were eating. Then we left."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "explanation": "'First...Then...' + Past Simple (ate, left) — sequence of past events।"
     },
     {
-      "question": "Question 20: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 68.",
+      "question": "অনুবাদ: 'আমি যখন পড়ছিলাম, তখন আমার বন্ধু এলো।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "I read when my friend came.",
+        "I was reading when my friend came.",
+        "I am reading when friend came.",
+        "I had read when friend came."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Was reading (ongoing action) when friend came (short action)' = Past Continuous + Simple Past।"
     }
   ]
 }

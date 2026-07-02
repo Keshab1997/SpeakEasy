@@ -1,228 +1,228 @@
 {
   "id": "mock_test_46",
   "testNumber": 46,
-  "title": "Mock Test 46",
-  "description": "Comprehensive test covering Conjunctions and Modals for spoken English practice.",
+  "title": "Mock Test 46 - Formal vs Informal English",
+  "description": "Formal ও Informal English-এর পার্থক্য নিয়ে ২০টি প্রশ্ন। কোন context-এ কোন ধরনের language ব্যবহার করতে হয়, formal synonyms, email/letter vs casual conversation।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Informal English কখন ব্যবহার করা উচিত?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Job interview-এ",
+        "বন্ধু/পরিবারের সাথে কথা বলার সময়",
+        "Academic essay-এ",
+        "Official email-এ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Informal = casual conversation, friends/family। Formal = official/work/academic।"
     },
     {
-      "question": "Question 2: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "'Please inform me' — এটি কী ধরনের English?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Formal",
+        "Informal",
+        "Slang",
+        "Colloquial"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "explanation": "'Please inform me' = formal। Informal = 'Let me know'।"
     },
     {
-      "question": "Question 3: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "'Can you help me out?' — এটি কী ধরনের English?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "Formal",
+        "Informal",
+        "Very formal",
+        "Academic"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Help me out' = informal phrasal verb। Formal = 'Could you kindly assist me?'"
     },
     {
-      "question": "Question 4: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Formal writing-এ 'I'll' না লিখে কী লেখা উচিত?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "I will",
+        "I shall",
+        "I am going to",
+        "I'm going to"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "explanation": "Contraction (I'll, don't, can't) formal-এ avoid করুন। Full form: I will, do not, cannot।"
     },
     {
-      "question": "Question 5: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "'Dear Sir or Madam' — এটি কী ধরনের salutation?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "Informal",
+        "Formal",
+        "Slang",
+        "Casual"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Dear Sir or Madam' = formal (যখন recipient-এর নাম জানা নেই)।"
     },
     {
-      "question": "Question 6: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Which is more formal? 'Please let me know' vs 'Please inform me'",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "Please let me know",
+        "Please inform me",
+        "একই level",
+        "দুটোই informal"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Inform' = 'let know'-এর চেয়ে formal।"
     },
     {
-      "question": "Question 7: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Which is more formal? 'I think' vs 'In my opinion'",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "I think",
+        "In my opinion",
+        "একই",
+        "কোনোটাই formal নয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'In my opinion' = more formal than 'I think'।"
     },
     {
-      "question": "Question 8: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Which sentence is more informal?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "I would like to request assistance.",
+        "I need your help.",
+        "Could you kindly assist me?",
+        "I would appreciate your help."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I need your help' = straightforward and informal।"
     },
     {
-      "question": "Question 9: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Formal email-এ 'Thanks' না লিখে কী লেখা উচিত?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "Thx",
+        "Thank you",
+        "Thanks a lot",
+        "Cheers"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Formal context-এ 'Thank you' full form ব্যবহার করুন।"
     },
     {
-      "question": "Question 10: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Which closing is formal?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "Yours faithfully",
+        "Cheers",
+        "Later",
+        "See ya"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "'Yours faithfully' = formal ('Dear Sir/Madam' দিয়ে শুরু করলে)।"
     },
     {
-      "question": "Question 11: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Error: 'Dear Sir, I wanna apply for the job.' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Dear Sir",
+        "wanna",
+        "apply for",
+        "the job"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Wanna' = informal। Formal letter-এ 'want to' বা 'wish to' হবে।"
     },
     {
-      "question": "Question 12: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Error: 'I am writing to let u know about the meeting.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "am writing",
+        "u",
+        "let know",
+        "the meeting"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'u' = SMS abbreviation। Formal-এ 'you' full form হবে।"
     },
     {
-      "question": "Question 13: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Error: 'Hello folks!' — formal email শুরু?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "হ্যাঁ",
+        "না, 'Dear Sir/Madam' হবে",
+        "হ্যাঁ, খুব formal",
+        "মাঝারি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Hello folks!' খুবই informal। Formal = 'Dear Sir/Madam'।"
     },
     {
-      "question": "Question 14: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Error: 'We regret to inform you that your application has been unsuccessful.' — 'regret to inform'?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "খুব formal এবং সঠিক",
+        "খুব informal",
+        "ভুল phrase",
+        "academic-এ চলে না"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'We regret to inform you' = formal এবং polite rejection-এর জন্য সঠিক।"
     },
     {
-      "question": "Question 15: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Fill (formal): 'I am writing to ___ about the vacancy.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "ask",
+        "inquire",
+        "know",
+        "tell"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Inquire' = formal। 'Ask' = less formal।"
     },
     {
-      "question": "Question 16: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Fill (formal): 'Please do not ___ to contact me.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "hesitate",
+        "stop",
+        "wait",
+        "pause"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'Do not hesitate to contact me' = formal and polite।"
     },
     {
-      "question": "Question 17: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Fill (informal): '___ me know if you need anything.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "Inform",
+        "Let",
+        "Notify",
+        "Tell"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Let me know' = informal। 'Inform/Notify' = formal।"
     },
     {
-      "question": "Question 18: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "Fill (formal): 'I would ___ your earliest response.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "appreciate",
+        "like",
+        "want",
+        "need"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'I would appreciate your earliest response' = formal।"
     },
     {
-      "question": "Question 19: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "অনুবাদ (formal): 'আমি আবেদন সম্পর্কে জানতে চাইছি।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "I want to know about the application.",
+        "I am writing to inquire about the application.",
+        "Tell me about the application.",
+        "Let me know about the application."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I am writing to inquire' = formal।"
     },
     {
-      "question": "Question 20: Replace this with your actual Conjunctions / Modals question for Mock Test 46.",
+      "question": "অনুবাদ (informal): 'তোমার সাহায্য দরকার।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "I require your assistance.",
+        "I need your help.",
+        "I would appreciate your support.",
+        "Could you kindly assist me?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I need your help' = informal এবং natural।"
     }
   ]
 }

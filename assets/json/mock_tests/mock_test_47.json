@@ -1,228 +1,228 @@
 {
   "id": "mock_test_47",
   "testNumber": 47,
-  "title": "Mock Test 47",
-  "description": "Comprehensive test covering Modals and Active & Passive Voice for spoken English practice.",
+  "title": "Mock Test 47 - Common Grammar Mistakes",
+  "description": "Common Grammar Mistakes নিয়ে ২০টি প্রশ্ন। Your vs You're, Its vs It's, There vs Their vs They're, Then vs Than, Affect vs Effect, Practice vs Practise, Advice vs Advise ইত্যাদি সাধারণ ভুল।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "'Your' এবং 'You're'-এর পার্থক্য কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "একই অর্থ",
+        "Your = possessive, You're = You are",
+        "Your = You are, You're = possessive",
+        "কোনো পার্থক্য নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Your = তোমার/আপনার (possessive)। You're = You are (contraction)।"
     },
     {
-      "question": "Question 2: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "___ going to love this movie!",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Your",
+        "You're",
+        "Yours",
+        "Your're"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'You are' → 'You're' (contraction)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "The dog wagged ___ tail.",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "its",
+        "it's",
+        "its'",
+        "its's"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "'Its' = possessive of 'it'। 'It's' = it is।"
     },
     {
-      "question": "Question 4: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "___ are many reasons to learn English.",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "There",
+        "Their",
+        "They're",
+        "The're"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "explanation": "'There are' = exists। 'Their' = possessive। 'They're' = they are।"
     },
     {
-      "question": "Question 5: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "This book is better ___ that one.",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "then",
+        "than",
+        "from",
+        "as"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Comparison → 'than'। 'Then' = তখন।"
     },
     {
-      "question": "Question 6: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "The weather will ___ our plans.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "affect",
+        "effect",
+        "affect (verb)",
+        "effect (noun)"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "'Affect' = verb (প্রভাব ফেলা)। 'Effect' = noun (প্রভাব)।"
     },
     {
-      "question": "Question 7: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "I need some ___ before the trip.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "advice",
+        "advise",
+        "adviced",
+        "advicing"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "'Advice' = noun (পরামর্শ)। 'Advise' = verb (পরামর্শ দেওয়া)।"
     },
     {
-      "question": "Question 8: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Error: 'Its a beautiful day outside.' — ভুল?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "Its",
+        "beautiful",
+        "day",
+        "outside"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'Its' → 'It's' (It is)।"
     },
     {
-      "question": "Question 9: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Error: 'Their going to the market.' — ভুল?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "Their",
+        "going",
+        "to",
+        "the market"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "'Their' → 'They're' (They are)।"
     },
     {
-      "question": "Question 10: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Error: 'I have less friends than her.' — ভুল?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "I have",
+        "less",
+        "friends",
+        "than her"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Less' uncountable-এর জন্য। Countable (friends) → 'fewer'।"
     },
     {
-      "question": "Question 11: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Error: 'Each of the students have passed.' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Each",
+        "of the students",
+        "have",
+        "passed"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Each of' + singular verb → 'has'।"
     },
     {
-      "question": "Question 12: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Error: 'She don't like coffee.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "She",
+        "don't",
+        "like",
+        "coffee"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "She (3rd person) → 'doesn't'।"
     },
     {
-      "question": "Question 13: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Fill: '___ a long time since we met.'",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "Its",
+        "It's",
+        "Its'",
+        "It is"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'It's' = It has / It is। 'It's been a long time'।"
     },
     {
-      "question": "Question 14: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Fill: 'The company has ___ own rules.'",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "its",
+        "it's",
+        "its'",
+        "it is"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "Company (its) → possessive।"
     },
     {
-      "question": "Question 15: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Fill: 'He ran fast, ___ he missed the bus.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "then",
+        "than",
+        "but",
+        "so"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Then' = তারপর / তখন (sequence)।"
     },
     {
-      "question": "Question 16: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Fill: 'Can you ___ me on this matter?'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "advice",
+        "advise",
+        "adviced",
+        "advicing"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Advise' = verb (পরামর্শ দেওয়া)।"
     },
     {
-      "question": "Question 17: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Fill: 'He gave me some good ___.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "advice",
+        "advise",
+        "advices",
+        "advised"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Advice' = noun (uncountable) → 'some advice' (not advices)।"
     },
     {
-      "question": "Question 18: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "Fill: 'The new policy will ___ everyone.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "affect",
+        "effect",
+        "affects",
+        "effects"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Will affect' = verb (প্রভাব ফেলবে)।"
     },
     {
-      "question": "Question 19: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "অনুবাদ: 'তোমার ব্যাগটা সুন্দর।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "You're bag is nice.",
+        "Your bag is nice.",
+        "Yours bag is nice.",
+        "Your're bag is nice."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Your' = possessive → Your bag।"
     },
     {
-      "question": "Question 20: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 47.",
+      "question": "অনুবাদ: 'তারা খুব খুশি।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "Their very happy.",
+        "There very happy.",
+        "They're very happy.",
+        "The're very happy."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'They're' = They are।"
     }
   ]
 }

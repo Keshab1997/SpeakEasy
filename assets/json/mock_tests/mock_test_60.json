@@ -1,228 +1,228 @@
 {
   "id": "mock_test_60",
   "testNumber": 60,
-  "title": "Mock Test 60",
-  "description": "Comprehensive test covering Spoken English Phrases and Articles for spoken English practice.",
+  "title": "Mock Test 60 - Telephone Conversations",
+  "description": "Telephone Conversation নিয়ে ২০টি প্রশ্ন। ফোনে নিজের পরিচয় দেওয়া, message রাখা/নেওয়া, call transfer, appointment scheduling, problem explaining — প্রয়োজনীয় phrase।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "ফোন ধরে নিজের পরিচয় দেওয়ার সঠিক উপায়?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Hello, I am Rahim.",
+        "Hello, this is Rahim speaking.",
+        "Hello, Rahim here.",
+        "Hello, it's Rahim."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'This is...speaking' = formal phone self-introduction। 'This is Rahim speaking.'"
     },
     {
-      "question": "Question 2: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "কাউকে ফোনে চাইলে কী বলবেন?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "I want Rahim.",
+        "Could I speak to Rahim, please?",
+        "Rahim here?",
+        "Give me Rahim."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Could I speak to...please?' = polite phone request।"
     },
     {
-      "question": "Question 3: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "ভুল নাম্বারে কল করলে কী বলবেন?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "Wrong number!",
+        "I'm sorry, I think I have the wrong number.",
+        "You wrong.",
+        "Mistake."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I'm sorry, I think I have the wrong number.' = polite apology।"
     },
     {
-      "question": "Question 4: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "কেউ কে জিজ্ঞেস করলে 'Who's calling?' — এর উত্তর কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "I am Rahim.",
+        "This is Rahim.",
+        "It's Rahim.",
+        "Rahim is here."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'This is Rahim.' বা 'This is Rahim calling.' = সঠিক উত্তর।"
     },
     {
-      "question": "Question 5: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "কাউকে Hold-এ রাখতে চাইলে কী বলবেন?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "Wait.",
+        "Please hold the line. I'll connect you.",
+        "Stop.",
+        "Don't go."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Please hold the line.' বা 'Can you hold, please?' = polite hold request।"
     },
     {
-      "question": "Question 6: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Message নেওয়ার সঠিক উপায়?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "Can I take a message?",
+        "Tell me message.",
+        "Write message here.",
+        "Say message."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "'Can I take a message?' / 'Would you like to leave a message?' = polite।"
     },
     {
-      "question": "Question 7: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Call transfer করার সঠিক বাক্য?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "I'm transferring you to the department.",
+        "Go to other phone.",
+        "Talk to him.",
+        "Call other."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "'I'm transferring you to...' বা 'I'll put you through to...' = transfer phrase।"
     },
     {
-      "question": "Question 8: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "'I'll call you back later.' — এর অর্থ কী?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "আমি পরে কল করব",
+        "আমি কল কেটে দিচ্ছি",
+        "আমি কল রিসিভ করছি",
+        "আমি এখন কল করছি"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'Call back' = আবার কল করা। 'I'll call you back later.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "কেউ absent থাকলে কী বলবেন?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "He is not here.",
+        "I'm sorry, he's not available at the moment.",
+        "He is gone.",
+        "He not present."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'He's not available at the moment.' = polite way to say someone is absent।"
     },
     {
-      "question": "Question 10: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Appointment scheduling করার সঠিক উপায়?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "I want to fix an appointment.",
+        "I'd like to schedule an appointment.",
+        "I need appointment.",
+        "Appointment book."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I'd like to schedule an appointment for...' = polite appointment request।"
     },
     {
-      "question": "Question 11: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Error: 'I want to talk with Rahim.' — ফোনে আরও polite variant কী?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "I want",
+        "to talk with",
+        "Rahim",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "'I want' → 'Could I speak to Rahim, please?' বেশি polite।"
     },
     {
-      "question": "Question 12: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Error: 'Who is on the phone?' — সঠিক?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "সঠিক",
+        "'Who is calling?' হবে",
+        "ভুল",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Who is calling?' বা 'May I ask who's calling?' — বেশি polite এবং phone-appropriate।"
     },
     {
-      "question": "Question 13: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Error: 'Please tell him that I called.' — সঠিক?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "সঠিক",
+        "'Please tell him I called.' হবে",
+        "'that' unnecessary",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "'Please tell him that I called.' — 'that' optional, বাক্যটি সঠিক।"
     },
     {
-      "question": "Question 14: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Error: 'I will ring you off.' — সঠিক phrasal verb?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "ring off",
+        "ring up",
+        "hang up",
+        "call off"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Hang up' = কল কেটে দেওয়া (telephone)। 'Ring off' = BrE but less common। 'Hang up' বেশি common।"
     },
     {
-      "question": "Question 15: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Fill: 'Could I ___ (speak) to Mr. Rahman?'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "speak",
+        "speaking",
+        "spoken",
+        "speaks"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Could I speak to...?' — Modals এর পরে V1 (base form)।"
     },
     {
-      "question": "Question 16: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Fill: 'I'm sorry, he's ___ (বাইরে) at the moment.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "out",
+        "outside",
+        "out of office",
+        "away"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'He's out' = he's not in the office (most common)।"
     },
     {
-      "question": "Question 17: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Fill: 'I'll ___ (যোগাযোগ) you by email.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "contact",
+        "call",
+        "connect",
+        "reach"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Contact you by email' = ইমেইলে যোগাযোগ করা।"
     },
     {
-      "question": "Question 18: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "Fill: 'Could you ___ (পুনরাবৃত্তি) that, please?'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "repeat",
+        "say again",
+        "tell again",
+        "reply"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Could you repeat that, please?' = polite way to ask for repetition।"
     },
     {
-      "question": "Question 19: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "অনুবাদ: 'আমি কি রহিমের সাথে কথা বলতে পারি?'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "Can I speak Rahim?",
+        "Could I speak to Rahim, please?",
+        "I want Rahim.",
+        "Tell Rahim."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Could I speak to Rahim, please?' = polite phone request।"
     },
     {
-      "question": "Question 20: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 60.",
+      "question": "অনুবাদ: 'তাকে বলবেন যে আমি ফোন দিয়েছিলাম?'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "Tell him I called.",
+        "Please tell him that I called.",
+        "Say to him I call.",
+        "Tell him I phone."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Please tell him that I called.' = polite message request।"
     }
   ]
 }

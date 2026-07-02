@@ -1,228 +1,228 @@
 {
   "id": "mock_test_61",
   "testNumber": 61,
-  "title": "Mock Test 61",
-  "description": "Comprehensive test covering Articles and Tenses - Present for spoken English practice.",
+  "title": "Mock Test 61 - Job Interview Questions",
+  "description": "Job Interview নিয়ে ২০টি প্রশ্ন। Tell me about yourself, strengths/weaknesses, Why should we hire you, Do you have any questions — এবং interview vocabulary।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "\"Tell me about yourself\" — এই প্রশ্নের উত্তর কীভাবে শুরু করবেন?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "My name is... and I am...",
+        "I am...",
+        "I will...",
+        "সবগুলোই সঠিক"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "explanation": "Tell me about yourself → 'My name is...I am from...' — structured introduction।"
     },
     {
-      "question": "Question 2: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "'I am a quick learner.' — এটি interview-এ কী বোঝায়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "আমি তাড়াতাড়ি শিখি",
+        "আমি ধীরে শিখি",
+        "আমি পড়াই",
+        "আমি লিখি"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "explanation": "'Quick learner' = someone who learns fast — positive quality।"
     },
     {
-      "question": "Question 3: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "'What are your strengths?' — উত্তরে কী বলবেন?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "I am hardworking and punctual.",
+        "I have no strengths.",
+        "I don't know.",
+        "I am bad at work."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "Strengths → positive qualities: hardworking, punctual, team player etc।"
     },
     {
-      "question": "Question 4: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "'What are your weaknesses?' — উত্তরের সঠিক উপায়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "I have no weaknesses.",
+        "I work too hard and sometimes I forget to take breaks.",
+        "I am lazy.",
+        "I don't know."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Weakeness বলার সময় একটি real weakness বলুন + how you manage it।"
     },
     {
-      "question": "Question 5: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "'Why should we hire you?' — উত্তরের সঠিক উপায়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "I need job.",
+        "I have the skills and experience you need.",
+        "Because I am good.",
+        "Hire me."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I have the skills and experience required for this role.' = confident and relevant।"
     },
     {
-      "question": "Question 6: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "'Where do you see yourself in 5 years?' — উত্তর?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "I want to grow professionally in this company.",
+        "I don't know.",
+        "I will leave.",
+        "I want money."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "'I see myself growing in this organization' — ambitious and committed।"
     },
     {
-      "question": "Question 7: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "'Thank you for the opportunity' — interview-এর শেষে এটি বলা কেমন?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "Polite and professional",
+        "Unnecessary",
+        "Rude",
+        "Too formal"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "'Thank you for the opportunity to interview.' = polite closing।"
     },
     {
-      "question": "Question 8: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "Salary expectation জিজ্ঞেস করলে কী বলবেন?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "I expect 50000.",
+        "I am open to negotiation based on the market rate.",
+        "Give me maximum.",
+        "I don't know."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I am open to negotiation.' বা 'My expected range is...' = professional answer।"
     },
     {
-      "question": "Question 9: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "'I look forward to hearing from you.' — এর অর্থ কী?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "আমি তোমার কাছ থেকে শুনতে চাই",
+        "আমি উত্তরের অপেক্ষায় থাকলাম",
+        "আমি এখন শুনছি",
+        "আমি বলছি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I look forward to hearing from you.' = formal closings in emails/interviews।"
     },
     {
-      "question": "Question 10: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "'Do you have any questions for us?' — উত্তরে কী বলবেন?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "Yes, what is the company culture like?",
+        "Questions? No.",
+        "No questions.",
+        "I have no doubts."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "Questions ask করা = interest দেখায়। 'What is the company culture like?' — ভালো question।"
     },
     {
-      "question": "Question 11: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "Error: 'My name is Rahim and I am from Bangladesh.' — interview-এ সঠিক?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "সঠিক introduction",
+        "'I am from' → 'I come from' হবে",
+        "'My name is' → 'Myself' হবে",
+        "ভুল"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "'My name is... I am from...' — standard and correct।"
     },
     {
-      "question": "Question 12: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "Error: 'I am very interested for this job.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "I am",
+        "interested for",
+        "this job",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Interested in' (not 'for')। 'I am very interested in this job.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "Error: 'I have one year experience.' — ভুল?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "I have",
+        "one year experience",
+        "—",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'One year of experience' - 'of' preposition needed। 'I have one year of experience.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "Error: 'I will try my best for this job.' — বাক্যটি কেমন?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "Acceptable",
+        "'I will do my best' — standard phrase",
+        "'Try my best' ভুল",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Do my best' বেশি common। 'I will do my best for the company.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "Fill: 'I ___ from Dhaka University.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "graduated",
+        "study",
+        "am",
+        "work"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'I graduated from...' — educational background বলার জন্য।"
     },
     {
-      "question": "Question 16: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "Fill: 'I am ___ (আবেদনকারী) for this position.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "applicant",
+        "applying",
+        "applicator",
+        "applicable"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'I am an applicant for this position.' বা 'I am applying for this position.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "Fill: 'I have good ___ skills.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "communication",
+        "communicate",
+        "communicating",
+        "communicative"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Communication skills' = যোগাযোগ দক্ষতা — fixed phrase।"
     },
     {
-      "question": "Question 18: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "Fill: 'I am comfortable working in a ___ environment.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "team",
+        "teamwork",
+        "teamworking",
+        "team player"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Team environment' = দলগত পরিবেশ।"
     },
     {
-      "question": "Question 19: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "অনুবাদ: 'আমি এই চাকরির জন্য খুবই আগ্রহী।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "I am very interested in this job.",
+        "I am very interested for this job.",
+        "I very interest this job.",
+        "I interesting this job."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "explanation": "'Interested in this job' — সঠিক preposition 'in'।"
     },
     {
-      "question": "Question 20: Replace this with your actual Articles / Tenses - Present question for Mock Test 61.",
+      "question": "অনুবাদ: 'আমার দুর্বলতা হল আমি নিখুঁত হতে চাই।' (Weakness হিসেবে)",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "My weakness is that I am lazy.",
+        "My weakness is that I strive for perfection.",
+        "My weakness is nothing.",
+        "My weakness is sleeping."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I strive for perfection' = weakness হিসেবে বলা যায় (আসল weakness নয় — strategic answer)।"
     }
   ]
 }

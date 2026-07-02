@@ -1,228 +1,228 @@
 {
   "id": "mock_test_70",
   "testNumber": 70,
-  "title": "Mock Test 70",
-  "description": "Comprehensive test covering Conditional Sentences and Subject-Verb Agreement for spoken English practice.",
+  "title": "Mock Test 70 - Final Grand Review",
+  "description": "Level 1-4 (সমস্ত ৬৯টি টেস্ট) মিশ্র ২০টি চ্যালেঞ্জিং প্রশ্ন। Beginner Foundation, Intermediate Grammar, Advanced Grammar, Real-Life English — সব লেভেল থেকে। সবচেয়ে চ্যালেঞ্জিং টেস্ট।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Which is correct?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "He don't like tea.",
+        "He doesn't likes tea.",
+        "He doesn't like tea.",
+        "He not like tea."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "He (3rd person) → 'doesn't + V1'। 'He doesn't like tea.'"
     },
     {
-      "question": "Question 2: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Present Perfect: 'I ___ (live) here since 2019.'",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "live",
+        "am living",
+        "have lived",
+        "lived"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Since 2019 → Present Perfect: 'have lived' (started in past, continues now)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Passive: 'The letter ___ (write) by her yesterday.'",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "wrote",
+        "was written",
+        "is written",
+        "has been written"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Yesterday (Past) + Passive → 'was written'।"
     },
     {
-      "question": "Question 4: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Type 3 Conditional: 'If he ___ (study), he would have passed.'",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "studies",
+        "studied",
+        "had studied",
+        "would study"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: If + had + V3 (had studied) → would have + V3।"
     },
     {
-      "question": "Question 5: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Indirect Speech: 'She said, \"I am busy.\"' → She said that ___",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "she is busy",
+        "she was busy",
+        "I am busy",
+        "I was busy"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I' → 'she', 'am' (Present) → 'was' (Past)।"
     },
     {
-      "question": "Question 6: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Relative Clause: 'The man ___ car was stolen is my neighbor.'",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "who",
+        "which",
+        "whose",
+        "whom"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Possession → 'whose'। 'The man whose car was stolen'।"
     },
     {
-      "question": "Question 7: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Gerund vs Infinitive: 'I enjoy ___ (swim).'",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "swim",
+        "to swim",
+        "swimming",
+        "swam"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Enjoy + Ving' → 'enjoy swimming'।"
     },
     {
-      "question": "Question 8: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Phrasal Verb: 'She ___ up smoking last year.'",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "gave",
+        "took",
+        "put",
+        "made"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'Give up' = quit। 'She gave up smoking.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Idiom: 'The exam was a piece of cake.' — অর্থ কী?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "খুব কঠিন",
+        "খুব সহজ",
+        "খুব মজার",
+        "খুব লম্বা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Piece of cake' = very easy।"
     },
     {
-      "question": "Question 10: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Collocation: 'Please ___ attention to the lesson.'",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "make",
+        "do",
+        "pay",
+        "take"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Pay attention' = মনোযোগ দেওয়া।"
     },
     {
-      "question": "Question 11: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Formal/Informal: Which is formal?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "I need your help.",
+        "I would like to request your assistance.",
+        "Help me!",
+        "I want help."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I would like to request your assistance' = formal।"
     },
     {
-      "question": "Question 12: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Common Mistake: 'The dog wagged ___ (its/it's) tail.'",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "its",
+        "it's",
+        "its'",
+        "it is"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'Its' = possessive (tail belongs to the dog)।"
     },
     {
-      "question": "Question 13: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Advanced Modal: 'You ___ have told me earlier.' (past regret)",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "should",
+        "should have",
+        "must have",
+        "could have"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Should have + V3' = past regret/criticism (উচিত ছিল কিন্তু করেনি)।"
     },
     {
-      "question": "Question 14: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Causative: 'I ___ my hair cut yesterday.'",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "had",
+        "made",
+        "let",
+        "got"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'Had my hair cut' — have something done (causative)।"
     },
     {
-      "question": "Question 15: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Inversion: 'Never ___ such a beautiful sunset.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "I have seen",
+        "have I seen",
+        "I saw",
+        "saw I"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Never' → inversion: 'have I seen'।"
     },
     {
-      "question": "Question 16: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Subjunctive: 'I suggest that he ___ a doctor.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "sees",
+        "see",
+        "saw",
+        "seeing"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Suggest that + V1 (base)' → 'that he see'।"
     },
     {
-      "question": "Question 17: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Restaurant: 'Could I have the ___ (বিল), please?'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "bill",
+        "menu",
+        "food",
+        "water"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'The bill' = বিল।"
     },
     {
-      "question": "Question 18: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Job Interview: 'What are your ___ (শক্তি)?'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "strengths",
+        "weaknesses",
+        "habits",
+        "hobbies"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Strengths' = শক্তি / গুণাবলী।"
     },
     {
-      "question": "Question 19: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Opinion: 'In my ___, this is a good idea.'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "opinion",
+        "mind",
+        "thought",
+        "view"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "explanation": "'In my opinion' = আমার মতে।"
     },
     {
-      "question": "Question 20: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 70.",
+      "question": "Direction: 'Take the first ___ on the left.'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "turning",
+        "turn",
+        "corner",
+        "road"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "explanation": "'Take the first turning / take the first left' = সঠিক।"
     }
   ]
 }

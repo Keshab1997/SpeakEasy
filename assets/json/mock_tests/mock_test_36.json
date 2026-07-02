@@ -1,228 +1,228 @@
 {
   "id": "mock_test_36",
   "testNumber": 36,
-  "title": "Mock Test 36",
-  "description": "Comprehensive test covering Question Tags and Punctuation for spoken English practice.",
+  "title": "Mock Test 36 - Direct Speech",
+  "description": "এই টেস্টে Direct Speech (প্রত্যক্ষ উক্তি) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Direct Speech-এ বক্তার কথা কীভাবে লেখা হয়?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "কোনো চিহ্ন ছাড়া",
+        "উদ্ধৃতি চিহ্নের ভিতরে (quotation marks)",
+        "শুধু কমা দিয়ে",
+        "বন্ধনীর ভিতরে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Direct Speech-এ বক্তার কথা হুবহু quotation marks (\"...\")-এর ভিতরে লেখা হয়। যেমন: He said, \"I am busy.\""
     },
     {
-      "question": "Question 2: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Direct Speech-এ reporting verb হিসেবে কোনটি ব্যবহৃত হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "সবসময় 'said' হয়",
+        "said, told, asked, replied ইত্যাদি",
+        "শুধু 'told' হয়",
+        "শুধু 'asked' হয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Direct Speech-এ বিভিন্ন reporting verb ব্যবহার করা যায়: said, told, asked, replied, exclaimed, shouted ইত্যাদি — বক্তার ভাব অনুযায়ী।"
     },
     {
-      "question": "Question 3: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Direct Speech-এ reporting verb এবং quoted speech-এর মধ্যে কী বসে?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "একটি period (.)",
+        "একটি comma (,)",
+        "একটি semicolon (;)",
+        "কিছুই না"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Reporting verb-এর পর সাধারণত comma (,) বসে, তারপর quotation marks-এর ভিতরে বক্তার কথা। যেমন: He said, \"I am going.\""
     },
     {
-      "question": "Question 4: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Direct Speech-এ quotation-এর ভিতরে punctuation কোথায় বসে?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "quotation-এর বাইরে",
+        "quotation-এর ভিতরে (inside the quotes)",
+        "শুধু reporting verb-এর পরে",
+        "কোনো punctuation লাগে না"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Direct Speech-এ period, comma, question mark ইত্যাদি quotation marks-এর ভিতরে বসে। যেমন: He said, \"I am tired.\""
     },
     {
-      "question": "Question 5: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Direct Speech-এ 'said' এবং 'told'-এর মধ্যে পার্থক্য কী?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "একই অর্থ",
+        "'Said'-এর পরে object লাগে না, 'told'-এর পরে object লাগে",
+        "'Told'-এর পরে object লাগে না",
+        "'Said' শুধু past tense-এ হয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Said' এর পরে object লাগে না (He said, \"Hi\")। 'Told' এর পরে object লাগে (He told me, \"Hi\")। Said to = told-এর সমান।"
     },
     {
-      "question": "Question 6: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "He said, \"___\" — বাক্যটিতে কোনটি সঠিক?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "I am happy",
+        "I am happy.",
+        "I am happy\"",
+        "\"I am happy"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Direct Speech: reporting verb + comma + quotation + period inside quotes। 'He said, \"I am happy.\"' — সবচেয়ে সঠিক।"
     },
     {
-      "question": "Question 7: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "\"I will call you tomorrow,\" she ___ .",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "said",
+        "told",
+        "asked",
+        "replied"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "এখানে 'said' সঠিক কারণ 'she said' — এর পরে object লাগে না। 'She said, \"I will call you tomorrow.\"'"
     },
     {
-      "question": "Question 8: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "She ___ me, \"Please help me.\"",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "said",
+        "told",
+        "told to",
+        "say"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Told' এর পরে object (me) লাগে। 'She told me, \"Please help me.\"' Said এখানে ভুল কারণ said-এর পরে object লাগে না।"
     },
     {
-      "question": "Question 9: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "\"Where are you going?\" he ___ .",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "said",
+        "told",
+        "asked",
+        "told to"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "প্রশ্নবোধক বাক্যের জন্য 'asked' সবচেয়ে উপযুক্ত। 'He asked, \"Where are you going?\"'"
     },
     {
-      "question": "Question 10: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "He said, \"I live in Dhaka.\" — এখানে reported speech অংশ কোনটি?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "He said",
+        "\"I live in Dhaka.\"",
+        "said",
+        "He"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Reported speech = quotation marks-এর ভিতরের অংশ। 'He said' = reporting verb, '\"I live in Dhaka.\"' = reported speech।"
     },
     {
-      "question": "Question 11: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Error Detection: 'He said, I am happy.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "He said",
+        "I am happy",
+        "উদ্ধৃতি চিহ্ন নেই",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Direct Speech-এ quotation marks আবশ্যক। সঠিক: 'He said, \"I am happy.\"'"
     },
     {
-      "question": "Question 12: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Error Detection: 'She told, \"I am coming.\"' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "She told",
+        "I am coming",
+        "\"I am coming.\"",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'Told' এর পরে object লাগে। 'She told me' বা 'She said' হবে। সঠিক: 'She said, \"I am coming.\"' বা 'She told me, \"I am coming.\"'"
     },
     {
-      "question": "Question 13: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Error Detection: 'He asked that \"Are you ready?\"' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "He asked",
+        "that",
+        "\"Are you ready?\"",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Direct Speech-এ 'that' ব্যবহার করা হয় না। 'That' ব্যবহৃত হয় Indirect Speech-এ। সঠিক: 'He asked, \"Are you ready?\"'"
     },
     {
-      "question": "Question 14: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Error Detection: '\"I love this city\" he said.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "\"I love this city\"",
+        "he said",
+        "কমা ও period quotation-এর ভিতরে নেই",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Quotation-এর ভিতরে comma ও period বসবে। সঠিক: '\"I love this city,\" he said.' বা 'He said, \"I love this city.\"'"
     },
     {
-      "question": "Question 15: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Fill in the blank: He said, \"I ___ a student.\"",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "am",
+        "is",
+        "are",
+        "was"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "Direct Speech-এ বক্তার নিজের কথা যেমন, তেমনই থাকে। 'I am a student' — 'am' সঠিক। (Indirect হলে backshift হতো)"
     },
     {
-      "question": "Question 16: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Fill in the blank: \"___ you help me?\" she asked.",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "Can",
+        "May",
+        "Will",
+        "All of the above"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "প্রশ্নবোধক Direct Speech-এ Can/May/Will — সবগুলোই সম্ভব। 'Can you help me?', 'Will you help me?', 'May I ask you?'"
     },
     {
-      "question": "Question 17: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Fill in the blank: \"Please ___ quiet,\" the teacher said.",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "be",
+        "is",
+        "are",
+        "was"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Please' দিয়ে অনুরোধ বোঝালে verb-এর base form (be) হয়। 'Please be quiet' — imperative।"
     },
     {
-      "question": "Question 18: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "Fill in the blank: He exclaimed, \"What a beautiful ___ !\"",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "day",
+        "days",
+        "daily",
+        "dailies"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "Exclamatory sentence: 'What a + adjective + noun!'। 'What a beautiful day!' — singular noun 'day'।"
     },
     {
-      "question": "Question 19: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "বাংলা বাক্যটির সঠিক Direct Speech কোনটি? 'সে বলল, আমি খুশি।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "He said I am happy.",
+        "He said, \"I am happy.\"",
+        "He said, I am happy.",
+        "He said that I am happy."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Direct Speech-এ comma + quotation marks + period inside quotes। 'He said, \"I am happy.\"' — complete direct speech।"
     },
     {
-      "question": "Question 20: Replace this with your actual Question Tags / Punctuation question for Mock Test 36.",
+      "question": "বাংলা বাক্যটির সঠিক Direct Speech কোনটি? 'সে আমাকে জিজ্ঞেস করল, তুমি কোথায় যাচ্ছ?'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "She asked me, \"Where are you going?\"",
+        "She asked me where are you going.",
+        "She asked me, where are you going?",
+        "She said, \"Where are you going?\""
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "explanation": "প্রশ্নবোধক + object (me) সহ → 'She asked me, \"Where are you going?\"' — 'asked me' সঠিক, 'said' নয়।"
     }
   ]
 }

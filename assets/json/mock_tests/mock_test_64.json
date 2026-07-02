@@ -1,228 +1,228 @@
 {
   "id": "mock_test_64",
   "testNumber": 64,
-  "title": "Mock Test 64",
-  "description": "Comprehensive test covering Tenses - Future and Prepositions for spoken English practice.",
+  "title": "Mock Test 64 - Agreeing & Disagreeing",
+  "description": "Agreeing ও Disagreeing Expression নিয়ে ২০টি প্রশ্ন। I agree, I disagree, I'm afraid I disagree, You're right, That's true, I see your point but, I'm not sure about that — সঠিক ব্যবহার।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "সম্পূর্ণ সম্মতি জানানোর সঠিক phrase?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "I completely agree.",
+        "I agree with you.",
+        "You're right.",
+        "That's true."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "explanation": "'I completely/absolutely agree.' = strong agreement।"
     },
     {
-      "question": "Question 2: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "বিনয়ের সাথে অসম্মতি জানানোর উপায়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "I'm afraid I disagree.",
+        "You are wrong.",
+        "No.",
+        "Not correct."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "explanation": "'I'm afraid I disagree.' = polite disagreement। 'I'm afraid = দুঃখিত।"
     },
     {
-      "question": "Question 3: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "'I see your point, but...' — এটি কী বোঝায়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "সম্পূর্ণ অসম্মতি",
+        "Partial agreement + different view",
+        "কোনো মন্তব্য নেই",
+        "সম্পূর্ণ সম্মতি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I see your point, but...' = I understand but I have a different opinion।"
     },
     {
-      "question": "Question 4: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "'That's a good point.' — এটি কী বোঝায়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "অসম্মতি",
+        "অন্যের argument স্বীকার করা/সমর্থন",
+        "প্রশ্ন",
+        "আদেশ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'That's a good point.' = I acknowledge/accept your argument as valid।"
     },
     {
-      "question": "Question 5: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "'I couldn't agree more.' — এর অর্থ কী?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "আমি একটুও একমত নই",
+        "আমি পুরোপুরি একমত (cannot agree more)",
+        "আমি কিছু বলতে পারছি না",
+        "আমি শুধু শুনছি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I couldn't agree more.' = I completely agree (আমি এর চেয়ে বেশি একমত হতে পারি না = পুরোপুরি একমত)।"
     },
     {
-      "question": "Question 6: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "'I'm not sure about that.' — এটি কী ধরনের উত্তর?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "Polite doubt/disagreement",
+        "Strong agreement",
+        "Full confidence",
+        "Ignorance"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "'I'm not sure about that.' = polite/soft disagreement or doubt।"
     },
     {
-      "question": "Question 7: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "'You have a point there.' — এর অর্থ কী?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "তোমার একটা point ঠিক আছে",
+        "তুমি ভুল",
+        "আমি সঠিক",
+        "কিছুই না"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "'You have a point there.' = I agree partly/আপনার যুক্তি গ্রহণযোগ্য।"
     },
     {
-      "question": "Question 8: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "'I beg to differ.' — এটি কী ধরনের expression?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "Formal disagreement",
+        "Informal agreement",
+        "Question",
+        "Sorry"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'I beg to differ.' = formal way to say 'I disagree'।"
     },
     {
-      "question": "Question 9: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "'That's exactly what I think.' — এটি কী বোঝায়?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "সম্পূর্ণ অসম্মতি",
+        "সম্পূর্ণ সম্মতি",
+        "সন্দেহ",
+        "অজ্ঞতা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'That's exactly what I think.' = strong agreement / exactly my opinion।"
     },
     {
-      "question": "Question 10: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "'We are on the same page.' — এর অর্থ কী?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "আমরা একমত",
+        "আমরা ভিন্ন পৃষ্ঠায় আছি",
+        "আমরা পড়ছি",
+        "আমরা লিখছি"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "'We are on the same page.' = we agree / share the same understanding।"
     },
     {
-      "question": "Question 11: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "Error: 'I am agree with you.' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "I am agree",
+        "with you",
+        "—",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "'I agree with you.' — 'agree' verb, 'am' লাগে না।"
     },
     {
-      "question": "Question 12: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "Error: 'I don't agree you.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "I don't agree",
+        "you",
+        "—",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I don't agree with you.' — 'agree' এর পরে 'with' needed।"
     },
     {
-      "question": "Question 13: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "Error: 'According to me, this is wrong.' — গ্রহণযোগ্য?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "'In my opinion' বা 'To me' বেশি common",
+        "'According to me' is less natural",
+        "ভুল না, কিন্তু in my opinion ভালো",
+        "সবগুলো"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'According to me' — some argue it's incorrect; 'In my opinion' বেশি natural এবং grammatically accepted।"
     },
     {
-      "question": "Question 14: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "Error: 'I totally disagree. You are completely wrong.' — কেমন?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "Direct/rude",
+        "Polite",
+        "Formal",
+        "Soft"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'You are completely wrong' = very direct and could be rude। 'I'm afraid I disagree' — বেশি polite।"
     },
     {
-      "question": "Question 15: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "Fill: 'I completely ___ with your opinion.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "agree",
+        "disagree",
+        "concur",
+        "সবগুলো"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'I completely agree/disagree/concur' — সবগুলোই সঠিক verb।"
     },
     {
-      "question": "Question 16: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "Fill: 'I'm afraid I have to ___ (অসম্মতি জানাই).'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "disagree",
+        "agree",
+        "say",
+        "tell"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'I'm afraid I have to disagree.' — polite disagreement।"
     },
     {
-      "question": "Question 17: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "Fill: 'You've ___ a very good point.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "made",
+        "said",
+        "told",
+        "given"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Make a point' — 'You've made a very good point.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "Fill: 'I couldn't ___ more. You're absolutely right.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "agree",
+        "disagree",
+        "say",
+        "think"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'I couldn't agree more.' = I completely agree।"
     },
     {
-      "question": "Question 19: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "অনুবাদ: 'আমি আপনার সাথে একমত।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "I am agree with you.",
+        "I agree with you.",
+        "I agreeing with you.",
+        "I agreed with you."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I agree with you.' — Present Indefinite, 'am' লাগে না।"
     },
     {
-      "question": "Question 20: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 64.",
+      "question": "অনুবাদ: 'আমি দুঃখিত, আমি আপনার সাথে একমত নই।' (polite)",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "I disagree.",
+        "I am sorry, I don't agree.",
+        "I'm afraid I disagree with you.",
+        "Not agree."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'I'm afraid I disagree with you.' = most polite।"
     }
   ]
 }

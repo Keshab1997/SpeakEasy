@@ -1,228 +1,228 @@
 {
   "id": "mock_test_48",
   "testNumber": 48,
-  "title": "Mock Test 48",
-  "description": "Comprehensive test covering Active & Passive Voice and Direct & Indirect Speech for spoken English practice.",
+  "title": "Mock Test 48 - Confusing Words",
+  "description": "Confusing Words নিয়ে ২০টি প্রশ্ন। Borrow vs Lend, Accept vs Except, Principal vs Principle, Stationary vs Stationery, Complement vs Compliment, Economic vs Economical, Historic vs Historical ইত্যাদি।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Can I ___ your pen?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "borrow",
+        "lend",
+        "take",
+        "give"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "explanation": "'Borrow' = নিজে নেওয়া (কারো কাছ থেকে)। 'Lend' = অন্যকে দেওয়া।"
     },
     {
-      "question": "Question 2: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Could you ___ me your car?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "borrow",
+        "lend",
+        "take",
+        "give"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Lend' = দেওয়া (অন্যকে)। 'Lend me your car'।"
     },
     {
-      "question": "Question 3: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Please ___ my apology.",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "accept",
+        "except",
+        "expect",
+        "aspect"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "'Accept' = গ্রহণ করা। 'Except' = ছাড়া।"
     },
     {
-      "question": "Question 4: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Everyone came ___ John.",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "accept",
+        "except",
+        "expect",
+        "aspect"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Except' = ছাড়া / বাদে।"
     },
     {
-      "question": "Question 5: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "The ___ of this school is Mr. Khan.",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "principal",
+        "principle",
+        "principale",
+        "prince"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "explanation": "'Principal' = প্রধান শিক্ষক। 'Principle' = নীতি।"
     },
     {
-      "question": "Question 6: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Honesty is an important ___.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "principal",
+        "principle",
+        "principale",
+        "prince"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Principle' = নীতি / আদর্শ।"
     },
     {
-      "question": "Question 7: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "I bought some ___ for the office.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "stationary",
+        "stationery",
+        "station",
+        "stationer"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Stationery' = লেখার উপকরণ। 'Stationary' = স্থির।"
     },
     {
-      "question": "Question 8: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "The car remained ___ at the light.",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "stationary",
+        "stationery",
+        "station",
+        "stationer"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'Stationary' = স্থির/অচল।"
     },
     {
-      "question": "Question 9: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "The red shirt ___ the blue one.",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "complements",
+        "compliments",
+        "completes",
+        "competes"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "'Complement' = পরিপূরক/সুসংগত। 'Compliment' = প্রশংসা।"
     },
     {
-      "question": "Question 10: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "She ___ me on my new haircut.",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "complemented",
+        "complimented",
+        "completed",
+        "competed"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Compliment' = প্রশংসা করা।"
     },
     {
-      "question": "Question 11: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Error: 'Can you borrow me your book?' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Can you",
+        "borrow me",
+        "your book",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Borrow me' → 'Lend me'। Borrow = নেওয়া, Lend = দেওয়া।"
     },
     {
-      "question": "Question 12: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Error: 'Everyone accept John passed.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "Everyone",
+        "accept",
+        "John",
+        "passed"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Accept' → 'Except' (বাদে)।"
     },
     {
-      "question": "Question 13: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Error: 'The principle of the school is strict.' — ভুল?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "The",
+        "principle",
+        "of the school",
+        "is strict"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "School-এর head = 'Principal'। 'Principle' = নীতি।"
     },
     {
-      "question": "Question 14: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Error: 'I need to bye some stationary.' — দুটি ভুল?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "bye → buy",
+        "stationary → stationery",
+        "দুটোই",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Bye' = goodbye → 'Buy' (কেনা)। 'Stationary' = স্থির → 'Stationery'।"
     },
     {
-      "question": "Question 15: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Fill: 'Can I ___ your bicycle for a day?'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "borrow",
+        "lend",
+        "loan",
+        "rent"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "Bicycle নেওয়া = 'borrow'।"
     },
     {
-      "question": "Question 16: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Fill: 'The hotel was nice, ___ for the noise.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "accept",
+        "except",
+        "expect",
+        "aspect"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Except for' = ছাড়া / বাদে।"
     },
     {
-      "question": "Question 17: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Fill: 'He ___ me on my success.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "complemented",
+        "complimented",
+        "completed",
+        "competed"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "সাফল্যে প্রশংসা = 'complimented'।"
     },
     {
-      "question": "Question 18: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "Fill: 'The colors ___ each other perfectly.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "complement",
+        "compliment",
+        "complete",
+        "compete"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "রং পরস্পরকে complement করে (পরিপূরক)।"
     },
     {
-      "question": "Question 19: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "অনুবাদ: 'আমি কি তোমার কলম ধার নিতে পারি?'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "Can I lend your pen?",
+        "Can I borrow your pen?",
+        "Can I take your pen?",
+        "Can I give your pen?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "নিজে নেওয়া = 'borrow'।"
     },
     {
-      "question": "Question 20: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 48.",
+      "question": "অনুবাদ: 'সবাই আসবে রহিম ছাড়া।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "accept Rahim",
+        "except Rahim",
+        "expect Rahim",
+        "aspect Rahim"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Except' = ছাড়া / বাদে।"
     }
   ]
 }

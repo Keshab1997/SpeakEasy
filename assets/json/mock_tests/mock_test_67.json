@@ -1,228 +1,228 @@
 {
   "id": "mock_test_67",
   "testNumber": 67,
-  "title": "Mock Test 67",
-  "description": "Comprehensive test covering Modals and Active & Passive Voice for spoken English practice.",
+  "title": "Mock Test 67 - Describing People & Places",
+  "description": "People ও Places বর্ণনার Vocabulary নিয়ে ২০টি প্রশ্ন। Appearance, Personality, Places — There is/are, It has/It's known for — correct describing vocabulary।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "কোনো ব্যক্তির উচ্চতা বর্ণনা করবেন কীভাবে?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "He is tall.",
+        "He has tall.",
+        "He is height tall.",
+        "He height is tall."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "explanation": "'He is tall.' = adjective after 'be' verb। 'He has a tall height.' also possible।"
     },
     {
-      "question": "Question 2: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "কারো চুলের বর্ণনার সঠিক উপায়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "He has black hair.",
+        "He is black hair.",
+        "His hair black.",
+        "He have black hair."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "explanation": "'He has + (adjective) hair' — 'He has black/ long/ curly hair.'"
     },
     {
-      "question": "Question 3: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "কারো চোখের বর্ণনা করবেন কীভাবে?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "She has blue eyes.",
+        "She is blue eyes.",
+        "Her eyes is blue.",
+        "She have blue eyes."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "'She has + (color) eyes' — 'She has blue eyes.'"
     },
     {
-      "question": "Question 4: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "ব্যক্তিত্বের বৈশিষ্ট্য বর্ণনা করবেন কীভাবে?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "She is very kind.",
+        "She has kindness.",
+        "She kindness.",
+        "She is kindness."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "explanation": "'She is + adjective (kind/honest/friendly).'"
     },
     {
-      "question": "Question 5: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "কোনো জায়গার বর্ণনা দিতে 'There is/are' ব্যবহার করবেন কীভাবে?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "There is a beautiful lake.",
+        "There are a beautiful lake.",
+        "The lake is there.",
+        "There beautiful lake."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "explanation": "'There is + singular noun', 'There are + plural noun'।"
     },
     {
-      "question": "Question 6: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "জায়গার অবস্থান বলার সঠিক উপায়?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "It is located near the river.",
+        "It located near river.",
+        "It near the river.",
+        "It is near to river."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "'It is located in/on/near...' — 'is located' + preposition।"
     },
     {
-      "question": "Question 7: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "'It is known for its beauty.' — এর অর্থ কী?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "এটি তার সৌন্দর্যের জন্য বিখ্যাত",
+        "এটি সৌন্দর্য জানে",
+        "এটি সুন্দর হবে",
+        "এটি সৌন্দর্য শেখে"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "'Known for' = জন্য বিখ্যাত।"
     },
     {
-      "question": "Question 8: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "কোনো জায়গার পরিবেশ বর্ণনা করবেন কীভাবে?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "It is peaceful and quiet.",
+        "It has peace and quiet.",
+        "It peace and quiet.",
+        "It is peace."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'It is + adjective (peaceful/quiet/noisy/crowded)' বা 'It has + noun (peace/quiet)'"
     },
     {
-      "question": "Question 9: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "'He is tall and slim.' — এটি কী ধরনের বর্ণনা?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "Appearance (Physical)",
+        "Personality",
+        "Profession",
+        "Education"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "'Tall and slim' = physical appearance description।"
     },
     {
-      "question": "Question 10: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "'She is outgoing and friendly.' — এটি কী ধরনের বর্ণনা?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "Appearance",
+        "Personality",
+        "Height",
+        "Weight"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Outgoing and friendly' = personality traits।"
     },
     {
-      "question": "Question 11: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "Error: 'He is a tall man with black hair.' — সঠিক?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "সঠিক",
+        "'with' ব্যবহার ভুল",
+        "'a tall man' → 'a tall and black hair man'",
+        "ভুল"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "'He is a tall man with black hair.' = correct structure for describing।"
     },
     {
-      "question": "Question 12: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "Error: 'She has long hairs.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "She has",
+        "long hairs",
+        "—",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Hair' is uncountable (no 's')। 'She has long hair.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "Error: 'He is a dark skin man.' — সঠিক?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "'Dark-skinned' → hyphen + ed",
+        "He is a dark skin man",
+        "'Skin' not correct",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "'He is dark-skinned.' বা 'He has dark skin.' — adjective form = dark-skinned।"
     },
     {
-      "question": "Question 14: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "Error: 'There is many parks in the city.' — ভুল?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "There is",
+        "many parks",
+        "in the city",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'Many parks' plural → 'There are many parks' হবে।"
     },
     {
-      "question": "Question 15: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "Fill: 'She has ___ (কোঁকড়ানো) hair.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "curly",
+        "straight",
+        "long",
+        "short"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Curly hair' = কোঁকড়ানো চুল। 'Straight' = সোজা।"
     },
     {
-      "question": "Question 16: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "Fill: 'He is very ___ (বন্ধুত্বপূর্ণ) and kind.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "friendly",
+        "friendful",
+        "friendless",
+        "friendish"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'Friendly' = বন্ধুত্বপূর্ণ (adjective)।"
     },
     {
-      "question": "Question 17: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "Fill: 'The city is ___ for its historical sites.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "famous",
+        "known",
+        "popular",
+        "সবগুলোই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'Famous/known/popular for' — সবগুলোই সঠিক।"
     },
     {
-      "question": "Question 18: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "Fill: 'It is a ___ (শান্ত) place.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "peaceful",
+        "peace",
+        "peaceless",
+        "peaceable"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Peaceful' = শান্ত (adjective)। 'Peace' = noun।"
     },
     {
-      "question": "Question 19: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "অনুবাদ: 'সে একজন লম্বা, সরু ও সুদর্শন লোক।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "He is tall, slim and handsome.",
+        "He tall, slim, handsome.",
+        "He is tall slim handsome.",
+        "He is tall and slim and handsome."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "explanation": "'He is tall, slim and handsome.' — comma + 'and' — correct enumeration।"
     },
     {
-      "question": "Question 20: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 67.",
+      "question": "অনুবাদ: 'ঢাকা তার জনসংখ্যার জন্য পরিচিত।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "Dhaka is known for its population.",
+        "Dhaka knows its population.",
+        "Dhaka is known by its population.",
+        "Dhaka famous its population."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "explanation": "'Dhaka is known for its population.' — 'known for' = জন্য পরিচিত।"
     }
   ]
 }

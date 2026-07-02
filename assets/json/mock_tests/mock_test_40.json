@@ -1,228 +1,228 @@
 {
   "id": "mock_test_40",
   "testNumber": 40,
-  "title": "Mock Test 40",
-  "description": "Comprehensive test covering Spoken English Phrases and Articles for spoken English practice.",
+  "title": "Mock Test 40 - Intermediate Mixed Review",
+  "description": "Level 2 (Test 21-39) মিশ্র ২০টি প্রশ্ন। Subject-Verb Agreement, Pronouns, Adjectives, Adverbs, Question Tags, Wh-Questions, Voice, Modals, Conditionals, Direct/Indirect Speech, Relative Clauses, Gerund/Infinitive — সব টপিক থেকে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "Which sentence has correct subject-verb agreement?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "The list of items are on the table.",
+        "The list of items is on the table.",
+        "The list of items were on the table.",
+        "The list of items have been on the table."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Subject = 'The list' (singular), তাই 'is' হবে। 'of items' — prepositional phrase, এটি subject নয়।"
     },
     {
-      "question": "Question 2: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "He is ___ than his brother.",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "tall",
+        "taller",
+        "tallest",
+        "more tall"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Comparative degree: tall → taller (দুজনের মধ্যে তুলনা)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "___ does the train arrive? — At 6 PM.",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "What",
+        "Where",
+        "When",
+        "Why"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "উত্তর 'At 6 PM' সময় নির্দেশ করছে, তাই 'When'।"
     },
     {
-      "question": "Question 4: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "She sings ___. Everyone loves her voice.",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "beautiful",
+        "beautifully",
+        "more beautiful",
+        "most beautiful"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Sings' verb কে modify করছে → adverb 'beautifully'।"
     },
     {
-      "question": "Question 5: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "Find the error: 'She don't like coffee.'",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "She",
+        "don't",
+        "like",
+        "coffee"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "She (3rd person) → 'doesn't' হবে, 'don't' নয়।"
     },
     {
-      "question": "Question 6: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "You are coming to the party, ___?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "are you",
+        "aren't you",
+        "isn't you",
+        "don't you"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Affirmative sentence → Negative tag। 'You are' → 'aren't you?'"
     },
     {
-      "question": "Question 7: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "This book is ___, not yours.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "my",
+        "mine",
+        "me",
+        "I"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Possessive Pronoun (noun ছাড়া) → 'mine'। 'my' এর পরে noun লাগে।"
     },
     {
-      "question": "Question 8: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "The letter ___ by her yesterday.",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "wrote",
+        "was written",
+        "is written",
+        "has written"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Yesterday → Past, Passive → was/were + V3। 'was written'।"
     },
     {
-      "question": "Question 9: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "You ___ see a doctor. You look very sick.",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "can",
+        "may",
+        "should",
+        "might"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "পরামর্শ → 'should' (উচিত)।"
     },
     {
-      "question": "Question 10: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "If I were you, I ___ the job.",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "accept",
+        "will accept",
+        "would accept",
+        "accepted"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 2 Conditional: If + Past Simple → would + V1।"
     },
     {
-      "question": "Question 11: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "Error Detection: 'There is many books on the table.'",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "There is",
+        "many books",
+        "on the table",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "'Many books' plural, so 'There are' হবে।"
     },
     {
-      "question": "Question 12: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "She said that she ___ the project already.",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "finishes",
+        "finished",
+        "had finished",
+        "has finished"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Indirect Speech backshift: Present Perfect → Past Perfect। 'had finished'।"
     },
     {
-      "question": "Question 13: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "The woman ___ lives next door is a doctor.",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "which",
+        "who",
+        "whom",
+        "whose"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Person (woman) → 'who'।"
     },
     {
-      "question": "Question 14: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "I enjoy ___ new people.",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "meet",
+        "to meet",
+        "meeting",
+        "met"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Enjoy' verb → Gerund (meeting)।"
     },
     {
-      "question": "Question 15: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "Fill: 'I have never ___ to London.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "be",
+        "been",
+        "being",
+        "was"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Present Perfect: have/has + V3 (been)।"
     },
     {
-      "question": "Question 16: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "Fill: 'There isn't ___ milk in the fridge.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "some",
+        "any",
+        "no",
+        "none"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Negative sentence → 'any'।"
     },
     {
-      "question": "Question 17: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "Fill: 'Neither of the answers ___ correct.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "is",
+        "are",
+        "were",
+        "have been"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Neither' singular, তাই 'is'।"
     },
     {
-      "question": "Question 18: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "Fill: 'He would have passed if he ___ harder.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "studies",
+        "studied",
+        "had studied",
+        "would study"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: If + had + V3 → would have + V3। 'had studied'।"
     },
     {
-      "question": "Question 19: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "অনুবাদ: 'সে প্রতিদিন স্কুলে যায়।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "He go to school every day.",
+        "He goes to school every day.",
+        "He is going to school every day.",
+        "He went to school every day."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Present Indefinite (habit): He + V+s (goes)।"
     },
     {
-      "question": "Question 20: Replace this with your actual Spoken English Phrases / Articles question for Mock Test 40.",
+      "question": "অনুবাদ: 'আমি যদি পাখি হতাম, তাহলে উড়ে বেড়াতাম।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "If I am a bird, I will fly.",
+        "If I were a bird, I would fly.",
+        "If I was a bird, I would fly.",
+        "If I am a bird, I would fly."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Unreal present → Type 2: If + were, would + V1।"
     }
   ]
 }

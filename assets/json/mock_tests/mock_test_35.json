@@ -1,228 +1,228 @@
 {
   "id": "mock_test_35",
   "testNumber": 35,
-  "title": "Mock Test 35",
-  "description": "Comprehensive test covering Verbs and Question Tags for spoken English practice.",
+  "title": "Mock Test 35 - Conditional 3 (If + had + V3, would have + V3)",
+  "description": "এই টেস্টে Conditional Sentence Type 3 (Past Unreal Conditional) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Conditional Type 3 (Past Unreal Conditional)-এর গঠন কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "If + Present Simple, will + V1",
+        "If + Past Simple, would + V1",
+        "If + Past Perfect, would have + V3",
+        "If + V1, will + V1"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3 (Past Unreal): If + Past Perfect (had + V3), would have + V3। যেমন: If I had studied, I would have passed. (পড়িনি, তাই পাস করিনি — অতীতের অসম্ভব)"
     },
     {
-      "question": "Question 2: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Conditional Type 3 কী বোঝায়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "বর্তমানের বাস্তব সম্ভাবনা",
+        "ভবিষ্যতের অবাস্তব কল্পনা",
+        "অতীতের অসম্ভব/অবাস্তব কল্পনা (past unreal condition)",
+        "সর্বদা সত্য বিষয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3 = past unreal condition। অতীতে যা ঘটেনি বা সম্ভব ছিল না সেটার কল্পনা। যেমন: If I had woken up early, I would have caught the bus. (ঘুম থেকে উঠিনি, তাই bus ধরিনি)"
     },
     {
-      "question": "Question 3: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Conditional Type 3-এর 'would have' এর পরে verb-এর কী রূপ হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "V1 (base form)",
+        "V2 (past form)",
+        "V3 (past participle)",
+        "V+ing"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'would have' এর পরে সবসময় V3 (past participle) হয়। যেমন: would have gone, would have eaten, would have seen।"
     },
     {
-      "question": "Question 4: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "If-clause-এ Conditional Type 3-এ কোন tense ব্যবহার হয়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Present Simple",
+        "Past Simple",
+        "Past Perfect (had + V3)",
+        "Future Simple"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3-এর if-clause-এ Past Perfect (had + V3) ব্যবহৃত হয়। যেমন: If I had known, If she had come, If we had seen।"
     },
     {
-      "question": "Question 5: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "'If I had studied medicine, I ___ a doctor.' — বাক্যটি কোন ধরনের Conditional?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "Type 1 (Real)",
+        "Type 2 (Unreal Present)",
+        "Type 3 (Past Unreal)",
+        "Type 0 (Universal Truth)"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'If I had studied' = Past Perfect, তাই Type 3 (Past Unreal)। অতীতে studied করিনি, তাই doctor হতে পারিনি।"
     },
     {
-      "question": "Question 6: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "If I had known your number, I ___ you. (যদি তোমার নাম্বার জানতাম, তাহলে কল করতাম)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "called",
+        "would call",
+        "would have called",
+        "will call"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: If + had + V3 → would have + V3। 'If I had known your number, I would have called you.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "If she ___ earlier, she would have caught the train. (সে যদি আগে আসত, ট্রেন ধরতে পারত)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "comes",
+        "came",
+        "had come",
+        "would come"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: If-clause-এ Past Perfect (had + come)। 'If she had come earlier, she would have caught the train.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "If we ___ the map, we wouldn't have gotten lost. (যদি আমরা ম্যাপ নিতাম, তাহলে হারাতাম না)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "take",
+        "took",
+        "had taken",
+        "would take"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: If + had taken। 'If we had taken the map, we wouldn't have gotten lost.' (ম্যাপ নেইনি, তাই হারিয়েছি)"
     },
     {
-      "question": "Question 9: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "If he had driven carefully, the accident ___ . (সে যদি সাবধানে গাড়ি চালাত, তাহলে দুর্ঘটনা ঘটত না)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "would happen",
+        "would not happen",
+        "would not have happened",
+        "would have happened"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: would not + have + V3 (happened)। 'If he had driven carefully, the accident would not have happened.'"
     },
     {
-      "question": "Question 10: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "If I had saved money, I ___ a new phone. (যদি টাকা জমাতাম, নতুন ফোন কিনতাম)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "buy",
+        "would buy",
+        "would have bought",
+        "will buy"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: would have + V3 (bought)। 'If I had saved money, I would have bought a new phone.'"
     },
     {
-      "question": "Question 11: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Error Detection: 'If I had knew, I would have come.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "If I had knew",
+        "I would have come",
+        "কোনো ভুল নেই",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "'Had' এর পরে V3 (known) হবে, knew (V2) নয়। সঠিক: 'If I had known, I would have come.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Error Detection: 'If I would have seen him, I would have told him.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "If I would have seen him",
+        "I would have told him",
+        "কোনো ভুল নেই",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "If-clause-এ 'would have' ব্যবহার হয় না। 'If I had seen him' হবে। সঠিক: 'If I had seen him, I would have told him.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Error Detection: 'If she had studied, she would passed the exam.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "If she had studied",
+        "she would passed",
+        "the exam",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Would' এর পরে 'have + V3' লাগবে। 'She would passed' না হয়ে 'she would have passed' হবে। সঠিক: 'If she had studied, she would have passed the exam.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Error Detection: 'If I had money, I would have bought the car.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "If I had money",
+        "I would have bought",
+        "the car",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "Conditional 3-এ if-clause-এ Past Perfect (had + V3) লাগে। 'If I had had money' হবে (had-এর V3 = had)। কিন্তু বক্তা Type 2 বোঝাতে চাইলে 'If I had money, I would buy the car.' — সঠিক। এখানে Type 3 হলে 'If I had had money, I would have bought the car.' হবে।"
     },
     {
-      "question": "Question 15: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Fill in the blank: 'If I ___ that she was sick, I would have visited her.' (যদি জানতাম সে অসুস্থ, তাহলে দেখতে যেতাম)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "know",
+        "knew",
+        "had known",
+        "would know"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: If + had known। 'If I had known that she was sick, I would have visited her.'"
     },
     {
-      "question": "Question 16: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Fill in the blank: 'If the weather ___ good, we would have gone to the beach.' (যদি আবহাওয়া ভালো থাকত, আমরা সৈকতে যেতাম)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "is",
+        "was",
+        "had been",
+        "would be"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: If + had been। 'If the weather had been good, we would have gone to the beach.' (আবহাওয়া ভালো ছিল না)"
     },
     {
-      "question": "Question 17: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Fill in the blank: 'They would have won the match if they ___ better.' (তারা ভালো খেললে ম্যাচ জিতত)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "play",
+        "played",
+        "had played",
+        "would play"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: If + had played। 'They would have won the match if they had played better.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "Fill in the blank: 'If I ___ the alarm, I wouldn't have been late.' (যদি অ্যালার্ম দিতাম, তাহলে দেরি হতো না)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "set",
+        "sets",
+        "had set",
+        "would set"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 3: If + had set। 'If I had set the alarm, I wouldn't have been late.'"
     },
     {
-      "question": "Question 19: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'যদি আমি আগে থেকে জানতাম, তাহলে আসতাম।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "If I know earlier, I will come.",
+        "If I knew earlier, I would come.",
+        "If I had known earlier, I would have come.",
+        "If I have known earlier, I would have come."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "অতীতে জানিনি, তাই আসিনি → Type 3: 'If I had known earlier, I would have come.'"
     },
     {
-      "question": "Question 20: Replace this with your actual Verbs / Question Tags question for Mock Test 35.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'সে যদি ট্যাক্সি নিত, তাহলে সময়মতো পৌঁছে যেত।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "If she takes a taxi, she will arrive on time.",
+        "If she took a taxi, she would arrive on time.",
+        "If she had taken a taxi, she would have arrived on time.",
+        "If she would take a taxi, she would arrive on time."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "অতীতে taxi নেয়নি, তাই সময়মতো পৌঁছায়নি → Type 3: 'If she had taken a taxi, she would have arrived on time.'"
     }
   ]
 }

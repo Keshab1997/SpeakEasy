@@ -1,228 +1,228 @@
 {
   "id": "mock_test_58",
   "testNumber": 58,
-  "title": "Mock Test 58",
-  "description": "Comprehensive test covering Sentence Structure and Vocabulary for spoken English practice.",
+  "title": "Mock Test 58 - At the Restaurant",
+  "description": "Restaurant Scenario নিয়ে ২০টি প্রশ্ন। Order দেওয়া, Bill চাওয়া, Complaint করা, Reservation করা — প্রয়োজনীয় English expression।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "রেস্টুরেন্টে Food order দেওয়ার আগে কী বলবেন?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "I want food.",
+        "I would like to order.",
+        "Give me food.",
+        "Food please."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I would like to order.' = polite way to start ordering."
     },
     {
-      "question": "Question 2: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "ভাত অর্ডার করতে চাইলে কী বলবেন?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "I want rice.",
+        "I'd like some rice, please.",
+        "Give me rice.",
+        "Rice now."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I'd like some rice, please.' = polite order."
     },
     {
-      "question": "Question 3: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "'Could I have the menu, please?' — এটি কী ধরনের request?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "Polite/Formal",
+        "Rude",
+        "Informal",
+        "Slang"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "'Could I...' = polite request।"
     },
     {
-      "question": "Question 4: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "বিল চাওয়ার সঠিক উপায় কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Give me bill.",
+        "I want bill.",
+        "Could I have the bill, please?",
+        "Bill here."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Could I have the bill, please?' = polite way to ask for check."
     },
     {
-      "question": "Question 5: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "কোনো dish সম্পর্কে জানতে চাইলে কী বলবেন?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "What is this?",
+        "Can you tell me what's in this dish?",
+        "I want to know.",
+        "Explain this."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Can you tell me what's in this dish?' = polite inquiry."
     },
     {
-      "question": "Question 6: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "ওয়েটারকে ডাকার সঠিক উপায় কী?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "Hey!",
+        "Excuse me!",
+        "Waiter!",
+        "Come here!"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Excuse me!' = polite way to get server's attention."
     },
     {
-      "question": "Question 7: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "'I'll have the chicken curry.' — এটি কী বোঝাচ্ছে?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "আমি মুরগির তরকারি খাব",
+        "আমি মুরগির তরকারি অর্ডার দিচ্ছি",
+        "আমি মুরগির তরকারি রান্না করব",
+        "আমি মুরগির তরকারি পছন্দ করি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I'll have...' = I will order and eat it — restaurant-এ order দেওয়ার common phrase।"
     },
     {
-      "question": "Question 8: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "Reservation করার সঠিক বাক্য কোনটি?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "I want to book a table.",
+        "I'd like to reserve a table for two.",
+        "Give me table.",
+        "Table for me."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I'd like to reserve a table for two.' = polite reservation request।"
     },
     {
-      "question": "Question 9: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "খাবার ভালো না হলে complaint করার সঠিক উপায়?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "This food is bad!",
+        "I'm sorry, but this dish is not what I expected.",
+        "Bad food!",
+        "I don't like."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Polite complaint: 'I'm sorry, but...' + explain the problem."
     },
     {
-      "question": "Question 10: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "'The food was delicious!' — এর অর্থ কী?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "খাবারটা ভয়ংকর ছিল",
+        "খাবারটা সুস্বাদু ছিল",
+        "খাবারটা নষ্ট ছিল",
+        "খাবারটা ঠান্ডা ছিল"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Delicious' = সুস্বাদু। 'The food was delicious!'"
     },
     {
-      "question": "Question 11: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "Error: 'Give me a glass of water.' — বাক্যটি কেমন?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Polite",
+        "Too direct/rude for formal setting",
+        "Very formal",
+        "নর্মাল"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Give me' খুব direct/rude। 'Could I have a glass of water, please?' বেশি polite।"
     },
     {
-      "question": "Question 12: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "Error: 'I am wanting to order.' — ভুল কেন?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "I am wanting → I want (stative verb)",
+        "want-এ ing হয় না",
+        "দুটোই",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'Want' stative verb → Continuous হয় না। 'I want to order.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "Error: 'I have a reservation name is Karim.' — ভুল?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "I have a reservation",
+        "name is Karim",
+        "—",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I have a reservation under the name Karim.' — 'under the name' phrase ব্যবহার করা উচিত।"
     },
     {
-      "question": "Question 14: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "Error: 'The food is very spicy for me.' — সঠিক?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "সঠিক",
+        "'Too spicy for me' হবে",
+        "'Very spicy' ভুল",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'The food is too spicy for me.' = অতিরিক্ত ঝাল। 'Very spicy' = খুব ঝাল, কিন্তু complaint-এর জন্য 'too' বেশি উপযুক্ত।"
     },
     {
-      "question": "Question 15: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "Fill: 'I'd like to ___ a table for two.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "book",
+        "take",
+        "keep",
+        "have"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Book/Reserve a table' = টেবিল বুক করা।"
     },
     {
-      "question": "Question 16: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "Fill: 'Could I have the ___ (বিল), please?'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "bill",
+        "menu",
+        "food",
+        "water"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'The bill/check' = বিল।"
     },
     {
-      "question": "Question 17: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "Fill: 'I'll ___ the fish curry.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "take",
+        "have",
+        "eat",
+        "get"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I'll have the...' = order দেওয়ার standard phrase।"
     },
     {
-      "question": "Question 18: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "Fill: 'The service was ___ (ধীর).'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "slow",
+        "fast",
+        "good",
+        "bad"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Slow service' = ধীর সেবা — complaint-এ ব্যবহার হয়।"
     },
     {
-      "question": "Question 19: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "অনুবাদ: 'আমি কি মেনু দেখতে পারি?'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "I want to see menu.",
+        "Could I see the menu, please?",
+        "Give me menu.",
+        "Menu please."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Could I see the menu, please?' = polite request।"
     },
     {
-      "question": "Question 20: Replace this with your actual Sentence Structure / Vocabulary question for Mock Test 58.",
+      "question": "অনুবাদ: 'আপনার স্পেশালিটি কী?'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "What is special?",
+        "What is your specialty?",
+        "Special food?",
+        "Tell specialty."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'What is your specialty?' = restaurant-এর বিশেষ খাবার জানতে চাওয়া।"
     }
   ]
 }

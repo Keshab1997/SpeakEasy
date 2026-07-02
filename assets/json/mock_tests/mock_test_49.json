@@ -1,228 +1,228 @@
 {
   "id": "mock_test_49",
   "testNumber": 49,
-  "title": "Mock Test 49",
-  "description": "Comprehensive test covering Direct & Indirect Speech and Conditional Sentences for spoken English practice.",
+  "title": "Mock Test 49 - Punctuation & Capitalization",
+  "description": "Punctuation ও Capitalization নিয়ে ২০টি প্রশ্ন। Period, Comma, Question Mark, Exclamation Mark, Apostrophe, Quotation Marks, Capital Letters, Proper Nouns — সঠিক ব্যবহার।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Which sentence is correctly capitalized?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "i live in dhaka.",
+        "I live in Dhaka.",
+        "I Live In Dhaka.",
+        "i Live in dhaka."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Sentence শুরু capital I, proper noun 'Dhaka' capital।"
     },
     {
-      "question": "Question 2: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Which punctuation shows possession?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Comma",
+        "Apostrophe",
+        "Question mark",
+        "Period"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Apostrophe (') possession দেখায়: 'John's book'।"
     },
     {
-      "question": "Question 3: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Choose the correctly punctuated:",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "He said, I am happy.",
+        "He said, \"I am happy.\"",
+        "He said \"I am happy.\"",
+        "He said, \"I am happy\""
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Comma + quotation marks + period inside quotes — সঠিক।"
     },
     {
-      "question": "Question 4: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "What comes at the end of a question?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Period",
+        "Question mark",
+        "Exclamation mark",
+        "Comma"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Question → ? (Question mark)।"
     },
     {
-      "question": "Question 5: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Which word should always be capitalized?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "table",
+        "apple",
+        "Bangladesh",
+        "running"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Proper noun (Bangladesh) সবসময় capital।"
     },
     {
-      "question": "Question 6: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "'I'm' — apostrophe কী বোঝাচ্ছে?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "কিছুই না",
+        "'m' = am-এর সংক্ষিপ্ত রূপ",
+        "পজেশন",
+        "বিরাম"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I'm' = I am। Apostrophe = missing letter (a) দেখায়।"
     },
     {
-      "question": "Question 7: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Error: 'i go to school everyday.' — ভুল?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "i → I",
+        "no period",
+        "সব ভুল",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "'I' সবসময় capital। Sentence end-এ period প্রয়োজন।"
     },
     {
-      "question": "Question 8: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Error: 'Hello how are you?' — ভুল?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "Hello → capital",
+        "comma after Hello missing",
+        "question mark ঠিক",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Hello,' — comma needed before 'how are you?'।"
     },
     {
-      "question": "Question 9: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Error: 'She said, I am tired.' — ভুল?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "quotation marks নেই",
+        "comma উচিত নয়",
+        "She capital ঠিক",
+        "period ঠিক নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "Direct Speech-এ quotation marks ('\"') লাগবে।"
     },
     {
-      "question": "Question 10: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Error: 'Its a lovely day.' — ভুল?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "Its → It's",
+        "Its ঠিক আছে",
+        "day → Day",
+        "a → an"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "'Its' = possessive, 'It's' = It is। এখানে 'It's' হবে।"
     },
     {
-      "question": "Question 11: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Fill: '___ you coming to the party?'",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Is",
+        "Are",
+        "Am",
+        "Be"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Question start → 'Are you coming?'"
     },
     {
-      "question": "Question 12: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Fill: 'Please close the door___'",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        ".",
+        "?",
+        "!",
+        ":"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "Request/command → period (.)।"
     },
     {
-      "question": "Question 13: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Fill: 'What a beautiful view___'",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        ".",
+        "?",
+        "!",
+        ":"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Exclamatory → ! (Exclamation mark)।"
     },
     {
-      "question": "Question 14: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Fill: '___ Monday is the first day.'",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "monday",
+        "Monday",
+        "MONDAY",
+        "Mondays"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Day name (Monday) → capital letter।"
     },
     {
-      "question": "Question 15: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Fill: 'She said ___I am happy___' — সঠিক punctuation?",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "she said, \"I am happy.\"",
+        "She said, ,I am happy.",
+        "she said: I am happy",
+        "She said I am happy"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "Capital S + comma + quotation marks — সঠিক।"
     },
     {
-      "question": "Question 16: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Fill: 'Johns car is new' — সঠিক possessive?",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "Johns car",
+        "John's car",
+        "Johns' car",
+        "John car"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "John's car — apostrophe + s for possession।"
     },
     {
-      "question": "Question 17: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Fill: 'The childrens toys' — সঠিক?",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "childrens toys",
+        "children's toys",
+        "childrens' toys",
+        "children toys"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Children' plural (irregular) → 's যোগ: children's toys।"
     },
     {
-      "question": "Question 18: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Which needs capital?: 'My uncle lives in paris.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "My",
+        "uncle",
+        "lives",
+        "paris"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "Paris — proper noun, capital P।"
     },
     {
-      "question": "Question 19: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "অনুবাদ: 'সে বলল, আমি খুশি।' (correct punctuation)",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "She said, i am happy.",
+        "She said, \"I am happy.\"",
+        "she said I am happy.",
+        "She said: I am happy"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Capital S + comma + quotation marks + capital I + period।"
     },
     {
-      "question": "Question 20: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 49.",
+      "question": "Error: 'I am from chittagong.' — ভুল?",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "I → capital ঠিক আছে",
+        "chittagong → Chittagong (proper noun)",
+        "period নেই",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Chittagong — proper noun, capital C হবে।"
     }
   ]
 }

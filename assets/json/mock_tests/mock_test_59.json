@@ -1,228 +1,228 @@
 {
   "id": "mock_test_59",
   "testNumber": 59,
-  "title": "Mock Test 59",
-  "description": "Comprehensive test covering Vocabulary and Spoken English Phrases for spoken English practice.",
+  "title": "Mock Test 59 - At the Airport / Hotel",
+  "description": "Airport ও Hotel Scenario নিয়ে ২০টি প্রশ্ন। Check-in, Reservation, Boarding pass, Luggage, Room booking, Check-out ইত্যাদি expression।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "এয়ারপোর্টে Check-in করার সময় কী বলবেন?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "I want to check in.",
+        "I'd like to check in for my flight.",
+        "Check in me.",
+        "I check in."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I'd like to check in for my flight to...' = polite check-in request।"
     },
     {
-      "question": "Question 2: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "Boarding pass কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "এক ধরনের পাসপোর্ট",
+        "বিমানে ওঠার অনুমতি পত্র",
+        "ভিসা",
+        "টিকিট"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Boarding pass = বিমানে ওঠার জন্য প্রয়োজনীয় pass।"
     },
     {
-      "question": "Question 3: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "'How much luggage am I allowed?' — এটা কী বোঝাচ্ছে?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "কত লাগেজ নেওয়া যাবে",
+        "লাগেজ কত বড়",
+        "লাগেজ কোথায়",
+        "লাগেজ কত দামি"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "'How much luggage am I allowed?' = luggage allowance সম্পর্কে জানতে চাওয়া।"
     },
     {
-      "question": "Question 4: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "হোটেলে Check-in করার সঠিক বাক্য?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "I want to check in.",
+        "I'd like to check in, please. I have a reservation.",
+        "Give me room.",
+        "I check in now."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I'd like to check in, please. I have a reservation under...' = polite check-in।"
     },
     {
-      "question": "Question 5: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "রুম বুকিং করার সঠিক উপায়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "I'd like to book a room.",
+        "I want room.",
+        "Give me room.",
+        "Room please."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "explanation": "'I'd like to book/reserve a room.' = polite booking।"
     },
     {
-      "question": "Question 6: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "'Is breakfast included?' — এটা কী বোঝাচ্ছে?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "নাস্তা তৈরি আছে?",
+        "নাস্তা কি মূল্যের মধ্যে আছে?",
+        "নাস্তা কোথায়?",
+        "নাস্তায় কী আছে?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Is breakfast included?' = নাস্তা কি মূল্যের সাথে অন্তর্ভুক্ত?"
     },
     {
-      "question": "Question 7: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "রুম নিয়ে problem থাকলে কী বলবেন?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "Room is bad.",
+        "There seems to be a problem with my room.",
+        "Bad room.",
+        "Fix room."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'There seems to be a problem...' = polite way to complain।"
     },
     {
-      "question": "Question 8: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "Check-out করার সঠিক সময় জানতে চাইলে?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "What is check out time?",
+        "When is check-out?",
+        "Check-out time please?",
+        "সবগুলোই সঠিক"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'What is check-out time?' বা 'When is check-out?' — সকল variant সঠিক।"
     },
     {
-      "question": "Question 9: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "'Could I have an extra towel?' — এটি কী ধরনের request?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "Rude",
+        "Polite request",
+        "Complaint",
+        "Order"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Could I have...?' = polite request for an extra towel।"
     },
     {
-      "question": "Question 10: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "লাগেজ নিয়ে সাহায্য চাইতে কী বলবেন?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "Help me.",
+        "Could I get some help with my luggage?",
+        "Luggage help.",
+        "Help luggage."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Could I get some help with my luggage?' = polite request for porter/help।"
     },
     {
-      "question": "Question 11: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "Error: 'I want check in.' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "I want",
+        "check in",
+        "—",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Check in' noun/gerund? 'I want to check in.' বা 'I'd like to check in.' হবে।"
     },
     {
-      "question": "Question 12: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "Error: 'I have a reservation for name of Rahman.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "I have a reservation",
+        "for name of",
+        "Rahman",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I have a reservation under the name of Rahman.' — 'under the name of' হবে।"
     },
     {
-      "question": "Question 13: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "Error: 'Can I check out late?' — সঠিক?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "সঠিক",
+        "'May I' বেশি formal",
+        "দুটোই",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "'Can I check out late?' — চলে (informal)। Formal = 'May I check out late?'"
     },
     {
-      "question": "Question 14: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "Error: 'I need to cancel my booking.' — সঠিক?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "সঠিক",
+        "'Cancel my reservation' বেশি formal",
+        "দুটোই সঠিক",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Cancel my booking/reservation' — দুটোই সঠিক।"
     },
     {
-      "question": "Question 15: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "Fill: 'I'd like to ___ a double room.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "book",
+        "take",
+        "keep",
+        "have"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Book/Reserve a room' — রুম বুক করা।"
     },
     {
-      "question": "Question 16: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "Fill: 'How much is it ___ night?'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "per",
+        "for",
+        "in",
+        "by"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'Per night' = প্রতি রাতে।"
     },
     {
-      "question": "Question 17: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "Fill: 'The flight has been ___ (বিলম্বিত).'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "delayed",
+        "canceled",
+        "booked",
+        "checked"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Delayed' = বিলম্বিত। 'The flight has been delayed.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "Fill: 'What is the ___ (গেট) number?'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "gate",
+        "door",
+        "entrance",
+        "exit"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Gate number' = বিমান ওঠার গেট।"
     },
     {
-      "question": "Question 19: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "অনুবাদ: 'আমার কি একটি সিঙ্গেল রুম আছে?'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "I want single room.",
+        "Do you have a single room available?",
+        "Single room please.",
+        "Give single room."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Do you have a single room available?' = polite inquiry।"
     },
     {
-      "question": "Question 20: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 59.",
+      "question": "অনুবাদ: 'আমার ফ্লাইট কখন ছাড়বে?'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "When my flight leave?",
+        "When does my flight depart?",
+        "My flight depart when?",
+        "When my flight will go?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'When does my flight depart?' = সঠিক interrogative structure।"
     }
   ]
 }

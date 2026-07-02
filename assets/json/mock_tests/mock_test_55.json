@@ -1,228 +1,228 @@
 {
   "id": "mock_test_55",
   "testNumber": 55,
-  "title": "Mock Test 55",
-  "description": "Comprehensive test covering Verbs and Question Tags for spoken English practice.",
+  "title": "Mock Test 55 - Advanced Mixed Review",
+  "description": "Level 3 (Test 41-54) মিশ্র ২০টি প্রশ্ন। Phrasal Verbs, Idioms, Collocations, Formal/Informal, Common Mistakes, Confusing Words, Punctuation, Sentence Transformation, Advanced Modals, Causative, Inversion, Subjunctive — সব টপিক থেকে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Which is correct collocation?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "I did a decision.",
+        "I made a decision.",
+        "I took a decision.",
+        "I had a decision."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Make a decision' — সঠিক collocation।"
     },
     {
-      "question": "Question 2: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "'Piece of cake' অর্থ কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "খুব কঠিন",
+        "খুব সহজ",
+        "খুব সুন্দর",
+        "খুব মজার"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Piece of cake' = very easy।"
     },
     {
-      "question": "Question 3: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "'He gave up smoking' — 'gave up' অর্থ কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "ছেড়ে দিয়েছে",
+        "নিয়েছে",
+        "করেছে",
+        "দেখেছে"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "'Give up' = quit = ছেড়ে দেওয়া।"
     },
     {
-      "question": "Question 4: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Which is formal?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "I need your help.",
+        "I would like to request your assistance.",
+        "Help me!",
+        "I want help."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I would like to request your assistance' = formal।"
     },
     {
-      "question": "Question 5: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "'Your' vs 'You're' — কোনটি সঠিক?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "___ a genius! (You're/Your)",
+        "___ bag is here. (You're/Your)",
+        "You're = possessive, Your = You are",
+        "একই অর্থ"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "explanation": "'You're a genius!' = You are a genius."
     },
     {
-      "question": "Question 6: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "'Its' vs 'It's' — কোনটি সঠিক?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "___ raining outside. (Its/It's)",
+        "The dog wagged ___ tail. (its/it's)",
+        "It's = possessive, Its = It is",
+        "একই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'It's raining' = It is raining. 'its tail' = possessive।"
     },
     {
-      "question": "Question 7: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "'Can I borrow your pen?' — 'borrow' অর্থ কী?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "দেওয়া",
+        "ধার নেওয়া",
+        "কেনা",
+        "বিক্রি করা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Borrow' = ধার নেওয়া (নিজে নেওয়া)।"
     },
     {
-      "question": "Question 8: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Error Detection: 'She don't like tea.' — ভুল কী?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "She",
+        "don't",
+        "like",
+        "tea"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "She (3rd person) → 'doesn't'। 'She doesn't like tea.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Inversion: 'Never ___ such a beautiful place.'",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "I have seen",
+        "have I seen",
+        "I saw",
+        "saw I"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Never' → inversion: 'have I seen'।"
     },
     {
-      "question": "Question 10: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Causative: 'I ___ my car repaired yesterday.'",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "had",
+        "made",
+        "let",
+        "got"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "'Had my car repaired' — causative (past)।"
     },
     {
-      "question": "Question 11: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Subjunctive: 'I suggest that he ___ a doctor.'",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "sees",
+        "see",
+        "saw",
+        "seeing"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Suggest that + V1 (base)' → 'see'।"
     },
     {
-      "question": "Question 12: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Phrasal Verb: 'The meeting was ___ off due to rain.'",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "called",
+        "put",
+        "turned",
+        "given"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'Called off' = বাতিল করা।"
     },
     {
-      "question": "Question 13: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Idiom: 'I'm feeling ___ the weather.'",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "under",
+        "over",
+        "on",
+        "in"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "'Under the weather' = অসুস্থ বোধ করা।"
     },
     {
-      "question": "Question 14: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Advanced Modal: 'You ___ have told me earlier. I was worried.'",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "should",
+        "ought to",
+        "needn't",
+        "dare"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'Should have + V3' = regret/criticism about past।"
     },
     {
-      "question": "Question 15: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Collocation: 'Please ___ attention to the lesson.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "make",
+        "do",
+        "pay",
+        "take"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Pay attention' = মনোযোগ দেওয়া।"
     },
     {
-      "question": "Question 16: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Transformation: Active: 'She wrote a letter.' → Passive?",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "A letter is written.",
+        "A letter was written by her.",
+        "A letter has been written.",
+        "A letter had been written."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Past → was/were + V3। 'was written'।"
     },
     {
-      "question": "Question 17: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Formal/Informal: Which is formal?",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "Thanks",
+        "Thank you",
+        "Thx",
+        "Thanks a lot"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Thank you' = formal। 'Thanks' = less formal।"
     },
     {
-      "question": "Question 18: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Confusing Words: 'The ___ of the school is Mr. Khan.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "principal",
+        "principle",
+        "principale",
+        "prince"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Principal' = প্রধান শিক্ষক। 'Principle' = নীতি।"
     },
     {
-      "question": "Question 19: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "Punctuation: Correctly punctuated?",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "He said I am happy.",
+        "He said, I am happy.",
+        "He said, \"I am happy.\"",
+        "He said \"I am happy.\""
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Direct Speech → comma + quotation marks।"
     },
     {
-      "question": "Question 20: Replace this with your actual Verbs / Question Tags question for Mock Test 55.",
+      "question": "অনুবাদ: 'সে আগে এখানে থাকত, কিন্তু এখন থাকে না।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "She used to live here.",
+        "She lives here.",
+        "She will live here.",
+        "She never lived here."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "explanation": "'Used to' = past habit (now gone)।"
     }
   ]
 }

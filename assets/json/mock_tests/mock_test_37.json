@@ -1,228 +1,228 @@
 {
   "id": "mock_test_37",
   "testNumber": 37,
-  "title": "Mock Test 37",
-  "description": "Comprehensive test covering Punctuation and Sentence Structure for spoken English practice.",
+  "title": "Mock Test 37 - Indirect Speech (Reported Speech)",
+  "description": "এই টেস্টে Indirect Speech (পরোক্ষ উক্তি/Reported Speech) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Indirect Speech-এ সাধারণত কী পরিবর্তন হয়?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "শুধু punctuation পরিবর্তন হয়",
+        "Tense backshift, pronoun change, adverb change — সবই হয়",
+        "কিছুই পরিবর্তন হয় না",
+        "শুধু verb পরিবর্তন হয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Indirect Speech-এ তিনটি প্রধান পরিবর্তন হয়: (1) Tense backshift (Present → Past), (2) Pronoun change (I → he/she), (3) Adverb change (now → then, here → there)।"
     },
     {
-      "question": "Question 2: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Direct Speech-কে Indirect Speech-এ রূপান্তর করলে 'said'-এর পরে কী বসে?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "কমা (,)",
+        "উদ্ধৃতি চিহ্ন",
+        "'that'",
+        "কিছুই না"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Indirect Speech-এ 'said' বা 'told'-এর পরে সাধারণত 'that' বসে। যেমন: He said that he was busy। (কথ্য ভাষায় 'that' বাদ দেওয়া যায়)"
     },
     {
-      "question": "Question 3: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Indirect Speech-এ Present Indefinite কোন tense-এ রূপান্তরিত হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "Past Indefinite",
+        "Present Continuous",
+        "Past Perfect",
+        "Future Indefinite"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "Backshift rule: Present Indefinite → Past Indefinite। 'He said, \"I eat rice.\"' → 'He said that he ate rice.'"
     },
     {
-      "question": "Question 4: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Indirect Speech-এ 'will'-এর কী পরিবর্তন হয়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Will-ই থাকে",
+        "'Would' হয়",
+        "'Should' হয়",
+        "'Could' হয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Backshift-এ 'will' → 'would' হয়। 'He said, \"I will come.\"' → 'He said that he would come.'"
     },
     {
-      "question": "Question 5: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Indirect Speech-এ 'now' কী হয়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "Now-ই থাকে",
+        "'Then' হয়",
+        "'Today' হয়",
+        "'Tonight' হয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "সময়সূচক adverb পরিবর্তন: now → then, today → that day, tomorrow → the next day, yesterday → the previous day।"
     },
     {
-      "question": "Question 6: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Direct: He said, \"I am tired.\" → Indirect: He said that ___ tired.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "I am",
+        "he is",
+        "he was",
+        "I was"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'I' → 'he', 'am' (Present) → 'was' (Past)। 'He said that he was tired.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Direct: She said, \"I have finished my work.\" → Indirect: She said that ___.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "she has finished her work",
+        "she had finished her work",
+        "I have finished my work",
+        "she finished her work"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Present Perfect (have finished) → Past Perfect (had finished)। 'I' → 'she', 'my' → 'her'। 'She said that she had finished her work.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Direct: He said, \"I will call you.\" → Indirect: He said that ___.",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "he will call me",
+        "he would call me",
+        "I will call you",
+        "he would call you"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Will' → 'would', 'I' → 'he', 'you' → 'me'। 'He said that he would call me.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Direct: \"Are you coming?\" he asked. → Indirect: He asked ___.",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "if I am coming",
+        "if I was coming",
+        "that I was coming",
+        "whether am I coming"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Yes/no question → 'if/whether' + statement word order। Tense backshift: 'are coming' → 'was coming'। 'He asked if I was coming.'"
     },
     {
-      "question": "Question 10: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Direct: \"Where do you live?\" she asked. → Indirect: She asked ___.",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "where do I live",
+        "where I lived",
+        "where did I live",
+        "that where I lived"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Wh-question → wh-word + statement word order + backshift। 'do you live' → 'I lived'। 'She asked where I lived.'"
     },
     {
-      "question": "Question 11: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Error Detection: 'He said that I am happy.' — যদি Reporting Verb past tense-এ হয়, তাহলে ভুল কী?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "He said",
+        "I am happy (tense backshift হয়নি)",
+        "that",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Reporting verb 'said' past tense-এ, তাই 'am' → 'was' হবে। সঠিক: 'He said that he was happy.' (universal truth হলে am থাকতে পারে)"
     },
     {
-      "question": "Question 12: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Error Detection: 'She told that she was coming.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "She told",
+        "that",
+        "she was coming",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'Told' এর পরে object লাগে। 'She told me' বা 'She said' হবে। সঠিক: 'She said that she was coming.' বা 'She told me that she was coming.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Error Detection: 'He asked that where I lived.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "He asked",
+        "that",
+        "where I lived",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Wh-question-এ Indirect Speech-এ 'that' ব্যবহার হয় না। সঠিক: 'He asked where I lived.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Error Detection: 'She said, that she was tired.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "She said",
+        "that",
+        "comma (,) before that",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Indirect Speech-এ comma ব্যবহার হয় না। সঠিক: 'She said that she was tired.' (কমা বাদ)"
     },
     {
-      "question": "Question 15: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Fill in the blank: He said that he ___ (go) to school every day.",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "goes",
+        "went",
+        "had gone",
+        "is going"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Direct: \"I go to school every day.\" → Indirect: He said that he went to school every day. (Present → Past)"
     },
     {
-      "question": "Question 16: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Fill in the blank: She told me that she ___ (finish) the project already.",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "finishes",
+        "finished",
+        "had finished",
+        "has finished"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Direct: \"I have finished the project.\" → Present Perfect → Past Perfect (had finished)। 'She told me that she had finished the project already.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Fill in the blank: He said that he ___ (can) swim.",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "can",
+        "could",
+        "caned",
+        "is able to"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Modal backshift: can → could। 'He said that he could swim.' (May → might, Will → would)"
     },
     {
-      "question": "Question 18: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "Fill in the blank: The teacher said that the earth ___ (go) around the sun.",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "goes",
+        "went",
+        "had gone",
+        "is going"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "Universal truth/fact → tense backshift হয় না। 'The earth goes around the sun' — সর্বদা সত্য, তাই 'goes'। 'The teacher said that the earth goes around the sun.'"
     },
     {
-      "question": "Question 19: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "বাংলা বাক্যটির সঠিক Indirect Speech কোনটি? 'সে বলল, আমি ভাত খাই।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "He said that I eat rice.",
+        "He said that he ate rice.",
+        "He said, \"He eats rice.\"",
+        "He said that he eats rice."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Direct: \"I eat rice.\" → Indirect: He said that he ate rice. ('I' → 'he', Present 'eat' → Past 'ate')"
     },
     {
-      "question": "Question 20: Replace this with your actual Punctuation / Sentence Structure question for Mock Test 37.",
+      "question": "বাংলা বাক্যটির সঠিক Indirect Speech কোনটি? 'সে বলল, আমি আগামীকাল আসব।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "He said that he will come tomorrow.",
+        "He said that he would come the next day.",
+        "He said, \"I would come tomorrow.\"",
+        "He said that he would come tomorrow."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Direct: \"I will come tomorrow.\" → Indirect: He said that he would come the next day. ('will' → 'would', 'tomorrow' → 'the next day')"
     }
   ]
 }

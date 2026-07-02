@@ -1,228 +1,228 @@
 {
   "id": "mock_test_45",
   "testNumber": 45,
-  "title": "Mock Test 45",
-  "description": "Comprehensive test covering Prepositions and Conjunctions for spoken English practice.",
+  "title": "Mock Test 45 - Idioms (Set 2)",
+  "description": "Idioms (Set 2) নিয়ে ২০টি প্রশ্ন। Let the cat out of the bag, Burn the midnight oil, When pigs fly, Spill the beans, Hit the sack, Bite the bullet, The ball is in your court, Call it a day ইত্যাদি।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "'Let the cat out of the bag' অর্থ কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "বেড়াল বের করা",
+        "গোপন ফাঁস করা",
+        "খেলা করা",
+        "কথা বলা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Let the cat out of the bag' = reveal a secret accidentally।"
     },
     {
-      "question": "Question 2: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "'Burn the midnight oil' অর্থ কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "রাতে তেল পোড়ানো",
+        "রাত জেগে পড়া/কাজ করা",
+        "আগুন জ্বালানো",
+        "রান্না করা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Burn the midnight oil' = study/work late into the night।"
     },
     {
-      "question": "Question 3: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "'When pigs fly' অর্থ কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "শূকর উড়লে",
+        "অসম্ভব ঘটনা",
+        "বিরল ঘটনা",
+        "মজার ঘটনা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'When pigs fly' = something that will never happen (অসম্ভব)।"
     },
     {
-      "question": "Question 4: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "'Spill the beans' অর্থ কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "বিন ছড়ানো",
+        "গোপন তথ্য ফাঁস করা",
+        "খাবার ফেলা",
+        "পরিষ্কার করা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Spill the beans' = reveal a secret।"
     },
     {
-      "question": "Question 5: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "'Bite the bullet' অর্থ কী?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "গুলি কামড়ানো",
+        "কঠিন কিছু সাহসের সাথে মোকাবিলা করা",
+        "যুদ্ধ করা",
+        "খেলা করা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Bite the bullet' = face a difficult situation with courage।"
     },
     {
-      "question": "Question 6: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "She ___ and everyone knew about the party.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "let the cat out",
+        "burned the midnight oil",
+        "bit the bullet",
+        "hit the sack"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "গোপন ফাঁস → 'let the cat out'।"
     },
     {
-      "question": "Question 7: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "He ___ to pass the final exam.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "let the cat out",
+        "burned the midnight oil",
+        "spilled the beans",
+        "bit the bullet"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "রাত জেগে পড়া → 'burned the midnight oil'।"
     },
     {
-      "question": "Question 8: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "I'll clean my room ___ — meaning never!",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "when pigs fly",
+        "once in a blue moon",
+        "now and then",
+        "every day"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'When pigs fly' = never।"
     },
     {
-      "question": "Question 9: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "Come on, ___! Tell me what happened.",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "spill the beans",
+        "burn the midnight oil",
+        "hit the sack",
+        "bite the bullet"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "'Spill the beans' = গোপন বলো।"
     },
     {
-      "question": "Question 10: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "I decided to ___ and tell him the truth.",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "bite the bullet",
+        "spill the beans",
+        "let the cat out",
+        "hit the sack"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "সাহস করে সত্য বলা → 'bite the bullet'।"
     },
     {
-      "question": "Question 11: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "Error: 'He burned the midnight oil by sleeping early.' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "বিরোধ (burn oil = রাত জেগে কাজ, sleeping = তাড়াতাড়ি ঘুম)",
+        "গঠন ভুল",
+        "—",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "'Burn the midnight oil' = রাত জেগে কাজ, 'sleeping early' = তাড়াতাড়ি ঘুম — বিপরীত।"
     },
     {
-      "question": "Question 12: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "Error: 'She let the cat out by keeping the secret.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "let out = ফাঁস, keeping = রাখা — বিরোধ",
+        "—",
+        "—",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'Let the cat out' = গোপন ফাঁস, 'keeping the secret' = গোপন রাখা — বিপরীত।"
     },
     {
-      "question": "Question 13: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "Error: 'I'll do it when pigs fly' — বক্তা কী বোঝাচ্ছেন?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "শীঘ্রই করবেন",
+        "কখনোই করবেন না",
+        "নিয়মিত করেন",
+        "ইতিমধ্যে করেছেন"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'When pigs fly' = never / অসম্ভব।"
     },
     {
-      "question": "Question 14: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "Error: 'He spilled the beans and kept the surprise a secret.' — ভুল?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "spilled = ফাঁস, kept secret = গোপন রাখা — বিরোধ",
+        "—",
+        "—",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'Spilled the beans' = গোপন ফাঁস → surprise আর secret থাকে না! বিরোধ।"
     },
     {
-      "question": "Question 15: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "Fill: 'She ___ the bullet and told her parents the accident.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "bit",
+        "ate",
+        "took",
+        "had"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Bite the bullet' — past = bit।"
     },
     {
-      "question": "Question 16: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "Fill: 'Don't ___ the beans! It's a surprise.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "spill",
+        "eat",
+        "cook",
+        "drop"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'Spill the beans' = গোপন ফাঁস করা।"
     },
     {
-      "question": "Question 17: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "Fill: 'I need to ___ the midnight oil tonight.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "burn",
+        "light",
+        "fire",
+        "cook"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Burn the midnight oil' = রাত জেগে কাজ করা।"
     },
     {
-      "question": "Question 18: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "Fill: 'He'll apologize when ___ fly.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "pigs",
+        "birds",
+        "planes",
+        "kites"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'When pigs fly' = কখনোই না।"
     },
     {
-      "question": "Question 19: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "অনুবাদ: 'সে গোপন কথাটা ফাঁস করে দিয়েছে।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "She let the cat out.",
+        "She burned the midnight oil.",
+        "She bit the bullet.",
+        "She hit the sack."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "explanation": "'Let the cat out' = গোপন ফাঁস।"
     },
     {
-      "question": "Question 20: Replace this with your actual Prepositions / Conjunctions question for Mock Test 45.",
+      "question": "অনুবাদ: 'কঠিন কাজটা সাহসের সাথে মোকাবিলা করলাম।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "I let the cat out.",
+        "I burned the midnight oil.",
+        "I bit the bullet.",
+        "I spilled the beans."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Bite the bullet' = সাহসের সাথে কঠিন পরিস্থিতি মোকাবিলা।"
     }
   ]
 }

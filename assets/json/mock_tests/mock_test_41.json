@@ -1,228 +1,228 @@
 {
   "id": "mock_test_41",
   "testNumber": 41,
-  "title": "Mock Test 41",
-  "description": "Comprehensive test covering Articles and Tenses - Present for spoken English practice.",
+  "title": "Mock Test 41 - Phrasal Verbs (Set 1)",
+  "description": "Phrasal Verbs (Set 1) নিয়ে ২০টি প্রশ্ন। give up, look after, turn on/off, put on, take off, look for, get up, sit down, stand up, come back ইত্যাদি phrasal verbs-এর অর্থ ও ব্যবহার।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Phrasal Verb কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "একটি single word verb",
+        "Verb + Preposition/Adverb যা একত্রে ভিন্ন অর্থ দেয়",
+        "শুধু একটি preposition",
+        "একটি noun phrase"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Phrasal verb = verb + particle যা একত্রে ভিন্ন অর্থ তৈরি করে। যেমন: give up = ছেড়ে দেওয়া।"
     },
     {
-      "question": "Question 2: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "'Give up' phrase-টির অর্থ কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "দেওয়া",
+        "উপরে তোলা",
+        "ছেড়ে দেওয়া / হাল ছেড়ে দেওয়া",
+        "নিচে রাখা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Give up' = quit / stop trying। যেমন: Don't give up on your dreams."
     },
     {
-      "question": "Question 3: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "'Look after' phrase-টির অর্থ কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "খোঁজা",
+        "যত্ন নেওয়া",
+        "দেখা",
+        "অপেক্ষা করা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Look after' = take care of। যেমন: She looks after her younger brother."
     },
     {
-      "question": "Question 4: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Please ___ the lights when you leave.",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "turn on",
+        "turn off",
+        "turn up",
+        "turn down"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "রুম ছেড়ে যাওয়ার সময় lights বন্ধ করা → 'turn off'।"
     },
     {
-      "question": "Question 5: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "She ___ her coat before going out.",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "put on",
+        "put off",
+        "put up",
+        "put down"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "explanation": "কোট পরা → 'put on'।"
     },
     {
-      "question": "Question 6: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "When he saw the police, he began ___.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "run out",
+        "run away",
+        "run after",
+        "run into"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "পুলিশ দেখে পালানো → 'run away'।"
     },
     {
-      "question": "Question 7: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "I need to ___ my keys. I can't find them.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "look at",
+        "look for",
+        "look after",
+        "look up"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "চাবি খোঁজা → 'look for'।"
     },
     {
-      "question": "Question 8: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "The meeting has been ___ until next week.",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "put on",
+        "put off",
+        "put up",
+        "put down"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "মিটিং পিছিয়ে দেওয়া → 'put off' (postpone)।"
     },
     {
-      "question": "Question 9: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "He ___ very early every morning.",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "gets on",
+        "gets up",
+        "gets off",
+        "gets in"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "সকালে ঘুম থেকে ওঠা → 'get up'।"
     },
     {
-      "question": "Question 10: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Please ___ and take a seat.",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "sit down",
+        "sit up",
+        "sit in",
+        "sit on"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "বসতে বলা → 'sit down'।"
     },
     {
-      "question": "Question 11: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Error: 'She turned on the invitation because she was busy.' — ভুল phrasal verb?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "turned on",
+        "the invitation",
+        "she was busy",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "'Turned on' = চালু করা। এখানে 'turned down' (প্রত্যাখ্যান) হবে।"
     },
     {
-      "question": "Question 12: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Error: 'He gave up smoking last year.' — বাক্যটি সঠিক?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "সঠিক",
+        "ভুল, give up smoking হয় না",
+        "গঠন ভুল",
+        "give up-এর পরে Gerund হয় না"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'Give up' = quit। Give up smoking = ধূমপান ছেড়ে দেওয়া — সঠিক।"
     },
     {
-      "question": "Question 13: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Error: 'Please put on your shoes before entering the mosque.' — সঠিক?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "সঠিক",
+        "ভুল, take off হবে",
+        "ভুল, put off হবে",
+        "ভুল, put up হবে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "মসজিদে প্রবেশের আগে জুতা খুলতে হয় → 'take off'। 'Put on' = পরা — ভুল।"
     },
     {
-      "question": "Question 14: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Error: 'Look after my bag, please' — 'look after' এর ব্যবহার সঠিক?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "সঠিক",
+        "ভুল, look for হবে",
+        "ভুল, look at হবে",
+        "ভুল, look up হবে"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "Look after = যত্ন নেওয়া — সঠিক।"
     },
     {
-      "question": "Question 15: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Fill: 'I am ___ forward to meeting you.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "looking",
+        "looking for",
+        "looking after",
+        "looking up"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Look forward to' = অপেক্ষা করা (উত্তেজনার সাথে)।"
     },
     {
-      "question": "Question 16: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Fill: 'She ___ up a new hobby.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "took",
+        "turned",
+        "gave",
+        "put"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'Take up' = শুরু করা (hobby)।"
     },
     {
-      "question": "Question 17: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Fill: 'Can you ___ me up at 6 AM?'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "wake",
+        "get",
+        "pick",
+        "call"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Wake up' = জাগানো।"
     },
     {
-      "question": "Question 18: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "Fill: 'He ___ out that he had won.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "found",
+        "came",
+        "went",
+        "ran"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Find out' = জানতে পারা / discover।"
     },
     {
-      "question": "Question 19: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "অনুবাদ: 'দয়া করে আলো জ্বালাও।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "Please turn off the light.",
+        "Please turn on the light.",
+        "Please turn up the light.",
+        "Please turn down the light."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "আলো জ্বালানো = 'turn on the light'।"
     },
     {
-      "question": "Question 20: Replace this with your actual Articles / Tenses - Present question for Mock Test 41.",
+      "question": "অনুবাদ: 'সে তার বাবার যত্ন নেয়।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "She looks for her father.",
+        "She looks after her father.",
+        "She looks at her father.",
+        "She looks up her father."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "যত্ন নেওয়া = 'look after'।"
     }
   ]
 }

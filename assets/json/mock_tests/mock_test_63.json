@@ -1,228 +1,228 @@
 {
   "id": "mock_test_63",
   "testNumber": 63,
-  "title": "Mock Test 63",
-  "description": "Comprehensive test covering Tenses - Past and Tenses - Future for spoken English practice.",
+  "title": "Mock Test 63 - Opinion & Discussion",
+  "description": "Opinion ও Discussion Expression নিয়ে ২০টি প্রশ্ন। In my opinion, I believe, From my point of view, As far as I'm concerned, It seems to me, I strongly feel — সঠিক ব্যবহার।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "'In my opinion' phrase-টির ব্যবহার কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "মতামত প্রকাশ করা",
+        "তথ্য দেওয়া",
+        "প্রশ্ন করা",
+        "আদেশ দেওয়া"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "explanation": "'In my opinion' = নিজের মতামত প্রকাশ করার formal phrase।"
     },
     {
-      "question": "Question 2: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "'I believe that...' — এটি কী বোঝায়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "আমি জানি",
+        "আমি বিশ্বাস করি (মতামত)",
+        "আমি নিশ্চিত",
+        "আমি করি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I believe that...' = personal belief/opinion প্রকাশ করে।"
     },
     {
-      "question": "Question 3: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "'From my perspective' — এটি কী প্রকাশ করে?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "তথ্য",
+        "দৃষ্টিকোণ থেকে মতামত",
+        "প্রশ্ন",
+        "আদেশ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'From my perspective' = আমার দৃষ্টিকোণ থেকে। 'My perspective' = my point of view।"
     },
     {
-      "question": "Question 4: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "'As far as I'm concerned' — এর অর্থ কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "যতদূর আমি জানি",
+        "আমার মতে / আমার দৃষ্টিতে",
+        "যদি আমি জানতাম",
+        "আমি যতদূর পারি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'As far as I'm concerned' = as for me / in my opinion।"
     },
     {
-      "question": "Question 5: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "'It seems to me that...' — এটি কী বোঝায়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "নিশ্চিত সত্য",
+        "আমার ধারণা (certain নয়)",
+        "প্রশ্ন",
+        "আদেশ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'It seems to me' = appears to be/আমার মনে হয় (opinion with less certainty)।"
     },
     {
-      "question": "Question 6: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "Which is the most formal opinion phrase?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "I think",
+        "In my opinion",
+        "I guess",
+        "I feel"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'In my opinion' (formal) > 'I think' (neutral) > 'I guess' (informal) > 'I feel' (personal)"
     },
     {
-      "question": "Question 7: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "'I strongly believe that...' — 'strongly' যোগ করার অর্থ কী?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "মতামত জোরালো করা",
+        "মতামত দুর্বল করা",
+        "প্রশ্ন করা",
+        "নিশ্চিত হওয়া"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "'Strongly believe' = জোরালো মতামত প্রকাশ (I firmly believe)"
     },
     {
-      "question": "Question 8: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "'I am convinced that...' — এর অর্থ কী?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "আমি সন্দেহ করি",
+        "আমি নিশ্চিত (convinced)",
+        "আমি জানি না",
+        "আমি ভাবি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I am convinced that...' = I believe strongly (নিশ্চিতভাবে বিশ্বাস)"
     },
     {
-      "question": "Question 9: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "অন্যের opinion চাইতে কী বলবেন?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "What do you think?",
+        "Tell your opinion.",
+        "You think what?",
+        "Opinion please."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "'What do you think?' / 'What is your opinion on this?' = polite opinion inquiry।"
     },
     {
-      "question": "Question 10: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "'I see your point, but...' — এটি কী বোঝায়?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "সম্পূর্ণ অসম্মতি",
+        "আংশিক সম্মতির পর অসম্মতি",
+        "সম্পূর্ণ সম্মতি",
+        "কোনো মন্তব্য নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I see your point, but...' = I partly agree, but I have a different view।"
     },
     {
-      "question": "Question 11: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "Error: 'In my opinion, I think that...' — সমস্যা?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Redundant (দুটো phrase একই অর্থ)",
+        "'In my opinion' বা 'I think' — একটি যথেষ্ট",
+        "ভুল না, কিন্তু repetitive",
+        "সবগুলো"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'In my opinion' এবং 'I think' একই অর্থ → একটিই যথেষ্ট।"
     },
     {
-      "question": "Question 12: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "Error: 'From my point of view, I believe that...' — সমস্যা?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "একটু formal কিন্তু গ্রহণযোগ্য",
+        "'From my point of view' + 'I believe' = redundant",
+        "ভুল",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'From my point of view' এবং 'I believe' → একটিই যথেষ্ট।"
     },
     {
-      "question": "Question 13: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "Error: 'As far as I'm concerned, I don't think this is correct.' — সঠিক?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "সঠিক",
+        "Double negative?",
+        "'Don't think is correct' → 'think this is incorrect' ভালো",
+        "ভুল"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "গঠনগতভাবে সঠিক। কিন্তু 'I think this is incorrect' বেশি direct।"
     },
     {
-      "question": "Question 14: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "Error: 'I am agree with you.' — ভুল?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "I am agree",
+        "with you",
+        "—",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'I agree with you.' — 'agree' verb, এর সাথে 'am' লাগে না।"
     },
     {
-      "question": "Question 15: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "Fill: '___ my opinion, this plan is good.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "In",
+        "To",
+        "From",
+        "By"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'In my opinion' — fixed preposition 'in'।"
     },
     {
-      "question": "Question 16: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "Fill: 'What is your ___ (মতামত) on this issue?'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "opinion",
+        "thought",
+        "view",
+        "সবগুলোই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'Opinion / thought / view' — সবগুলোই সঠিক।"
     },
     {
-      "question": "Question 17: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "Fill: 'I ___ that we should try again.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "think",
+        "believe",
+        "feel",
+        "সবগুলোই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'I think/believe/feel' — সবগুলোই মতামত প্রকাশ করে।"
     },
     {
-      "question": "Question 18: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "Fill: '___ far as I'm concerned, it's a good idea.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "As",
+        "So",
+        "By",
+        "For"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'As far as I'm concerned' — fixed phrase।"
     },
     {
-      "question": "Question 19: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "অনুবাদ: 'আমার মতে, ইংরেজি শেখা খুব গুরুত্বপূর্ণ।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "In my opinion, learning English is very important.",
+        "I think learning English is important.",
+        "To me, English is important.",
+        "সবগুলোই সঠিক"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "সব কয়টি variant সঠিক এবং natural।"
     },
     {
-      "question": "Question 20: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 63.",
+      "question": "অনুবাদ: 'আমি দৃঢ়ভাবে বিশ্বাস করি যে শিক্ষা অপরিহার্য।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "I strongly believe that education is essential.",
+        "I think education is essential.",
+        "Education is important.",
+        "Strongly I believe education essential."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "explanation": "'I strongly believe that...' = জোরালো মতামত প্রকাশ।"
     }
   ]
 }

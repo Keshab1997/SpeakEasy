@@ -1,228 +1,228 @@
 {
   "id": "mock_test_43",
   "testNumber": 43,
-  "title": "Mock Test 43",
-  "description": "Comprehensive test covering Tenses - Past and Tenses - Future for spoken English practice.",
+  "title": "Mock Test 43 - Collocations",
+  "description": "Collocations (স্বাভাবিক শব্দ জোড়া) নিয়ে ২০টি প্রশ্ন। Make/Do/Take/Have/Catch/Break ইত্যাদি verb-এর সাথে noun-এর সঠিক collocation।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Collocation কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "একটি long sentence",
+        "শব্দের স্বাভাবিক জোড়া যা একসাথে ব্যবহৃত হয়",
+        "একটি grammar rule",
+        "একটি punctuation rule"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Collocation = words that naturally go together। যেমন: make a decision (not 'do a decision')।"
     },
     {
-      "question": "Question 2: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "'Make' verb-টির সাথে কোন noun-টি collocate হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "homework",
+        "a decision",
+        "a shower",
+        "business"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Make a decision' = সিদ্ধান্ত (correct collocation)। Do homework, take a shower, do business।"
     },
     {
-      "question": "Question 3: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "'Do' verb-টির সাথে কোন noun-টি collocate হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "a mistake",
+        "a decision",
+        "homework",
+        "a promise"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Do homework' = বাড়ির কাজ করা।"
     },
     {
-      "question": "Question 4: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "'Take' verb-টির সাথে কোন noun-টি collocate হয়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "a decision",
+        "a break",
+        "business",
+        "a promise"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Take a break' = বিশ্রাম নেওয়া।"
     },
     {
-      "question": "Question 5: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "'Have' verb-টির সাথে কোন noun-টি collocate হয়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "a mistake",
+        "fun",
+        "a decision",
+        "homework"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Have fun' = মজা করা।"
     },
     {
-      "question": "Question 6: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "I need to ___ a decision by tomorrow.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "do",
+        "make",
+        "take",
+        "have"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Make a decision' — সঠিক collocation।"
     },
     {
-      "question": "Question 7: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "She ___ a mistake in calculation.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "did",
+        "made",
+        "took",
+        "had"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Make a mistake' — সঠিক collocation।"
     },
     {
-      "question": "Question 8: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "He always ___ his homework on time.",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "makes",
+        "does",
+        "takes",
+        "has"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Do homework' — সঠিক collocation।"
     },
     {
-      "question": "Question 9: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Let's ___ a break for 10 minutes.",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "make",
+        "do",
+        "take",
+        "have"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Take a break' — সঠিক collocation।"
     },
     {
-      "question": "Question 10: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Did you ___ fun at the party?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "make",
+        "do",
+        "take",
+        "have"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'Have fun' — সঠিক collocation।"
     },
     {
-      "question": "Question 11: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Error: 'I need to do a decision.' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "I need",
+        "to do",
+        "a decision",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Make a decision' হবে, 'do a decision' নয়।"
     },
     {
-      "question": "Question 12: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Error: 'She made her homework quickly.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "She made",
+        "her homework",
+        "quickly",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'Do homework' হবে, 'make homework' নয়।"
     },
     {
-      "question": "Question 13: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Error: 'Take a shower' — সঠিক?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "সঠিক",
+        "ভুল, have a shower হবে",
+        "ভুল, make a shower হবে",
+        "ভুল, do a shower হবে"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "'Take a shower' / 'Have a shower' — দুটোই সঠিক।"
     },
     {
-      "question": "Question 14: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Error: 'He had a promise to keep.' — সঠিক?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "সঠিক",
+        "ভুল, make a promise হবে",
+        "ভুল, do a promise হবে",
+        "ভুল, take a promise হবে"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'Make a promise' = প্রতিশ্রুতি দেওয়া। 'Have a promise' = প্রতিশ্রুতি রাখা। দুটোই collocation।"
     },
     {
-      "question": "Question 15: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Fill: 'She ___ a great job on the presentation.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "made",
+        "did",
+        "took",
+        "had"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Do a good/great job' = ভালো কাজ করা।"
     },
     {
-      "question": "Question 16: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Fill: 'I need to ___ a phone call.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "make",
+        "do",
+        "take",
+        "have"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'Make a phone call' = ফোন করা।"
     },
     {
-      "question": "Question 17: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Fill: 'He ___ attention to the teacher.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "made",
+        "did",
+        "paid",
+        "took"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Pay attention' = মনোযোগ দেওয়া।"
     },
     {
-      "question": "Question 18: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "Fill: 'She ___ a photograph of the sunset.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "made",
+        "did",
+        "took",
+        "had"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Take a photograph' = ছবি তোলা।"
     },
     {
-      "question": "Question 19: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "অনুবাদ: 'আমি একটি ভুল করেছি।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "I did a mistake.",
+        "I made a mistake.",
+        "I took a mistake.",
+        "I had a mistake."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Make a mistake' — সঠিক collocation।"
     },
     {
-      "question": "Question 20: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 43.",
+      "question": "অনুবাদ: 'তোমার কি নাস্তা হয়েছে?'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "Did you make breakfast?",
+        "Did you do breakfast?",
+        "Did you have breakfast?",
+        "Did you take breakfast?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Have breakfast' = নাস্তা করা — সঠিক collocation।"
     }
   ]
 }

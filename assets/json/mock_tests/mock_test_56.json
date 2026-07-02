@@ -1,228 +1,228 @@
 {
   "id": "mock_test_56",
   "testNumber": 56,
-  "title": "Mock Test 56",
-  "description": "Comprehensive test covering Question Tags and Punctuation for spoken English practice.",
+  "title": "Mock Test 56 - Self Introduction",
+  "description": "Self Introduction নিয়ে ২০টি প্রশ্ন। নিজের নাম, পেশা, শখ, পরিবার, শিক্ষা, দক্ষতা ইত্যাদি সম্পর্কে বলার সঠিক ইংরেজি expression।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "Self introduction শুরু করার সঠিক উপায় কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "My name is...",
+        "I am called...",
+        "Myself...",
+        "I name is..."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "explanation": "'My name is...' বা 'I am...' — সবচেয়ে সাধারণ এবং সঠিক।"
     },
     {
-      "question": "Question 2: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "নিজের পেশা বলার সঠিক উপায় কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "I am a doctor.",
+        "I am doctor.",
+        "My profession is doctor.",
+        "I work doctor."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "explanation": "'I am a/an + profession' — article 'a/an' লাগবে।"
     },
     {
-      "question": "Question 3: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "নিজের শখ (hobby) বলার সঠিক উপায় কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "I hobby is reading.",
+        "My hobby is reading.",
+        "I am hobby reading.",
+        "My hobby reading."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'My hobby is + Ving' — 'My hobby is reading.'"
     },
     {
-      "question": "Question 4: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "নিজের বয়স বলার সঠিক উপায় কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "I have 25 years.",
+        "I am 25 years old.",
+        "My age is 25 years.",
+        "I 25 years."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I am + age + years old' — 'I am 25 years old.'"
     },
     {
-      "question": "Question 5: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "নিজের শহর বলার সঠিক উপায় কী?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "I live in Dhaka.",
+        "I live at Dhaka.",
+        "I am live in Dhaka.",
+        "I living in Dhaka."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "explanation": "'I live in + city' — 'I live in Dhaka.'"
     },
     {
-      "question": "Question 6: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "ভাই/বোন আছে জানাতে বলবেন কীভাবে?",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "I have one brother.",
+        "I am one brother.",
+        "My brother is one.",
+        "There brother one."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "'I have + number + sibling(s)' — 'I have one brother.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "নিজের শিক্ষা সম্পর্কে বলার সঠিক উপায়?",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "I studied at Dhaka University.",
+        "I am study at DU.",
+        "My study in DU.",
+        "I study at DU."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "'I studied (Past) / I am studying (Present) at/from...'"
     },
     {
-      "question": "Question 8: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "'Nice to meet you' — এর সঠিক উত্তর কী?",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "Nice to meet you too.",
+        "Thank you.",
+        "Yes, nice.",
+        "I am fine."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'Nice to meet you too' — সঠিক reply।"
     },
     {
-      "question": "Question 9: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "পড়ার অভ্যাস সম্পর্কে বলবেন কীভাবে?",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "I enjoy reading books.",
+        "I like read books.",
+        "I reading books.",
+        "My hobby read books."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "'Enjoy + Ving' বা 'Like to + V1' — 'I enjoy reading books.'"
     },
     {
-      "question": "Question 10: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "ভাষার দক্ষতা বলার সঠিক উপায়?",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "I can speak English and Bengali.",
+        "I speak English and Bengali.",
+        "Both",
+        "I can speaking English."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "'I can speak + languages' বা 'I speak + languages' — উভয়ই সঠিক।"
     },
     {
-      "question": "Question 11: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "Error: 'My name is Rahman. I am student.' — ভুল?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "My name is",
+        "I am student",
+        "—",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I am a student' হবে (article 'a' লাগবে)।"
     },
     {
-      "question": "Question 12: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "Error: 'I am 20 years old. I am from Bangladesh.' — সঠিক?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "সঠিক",
+        "ভুল, I am from Bangladesh ঠিক না",
+        "ভুল, years old ঠিক না",
+        "উভয়ই ভুল"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'I am 20 years old. I am from Bangladesh.' — সম্পূর্ণ সঠিক।"
     },
     {
-      "question": "Question 13: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "Error: 'My hobby is to reading books.' — ভুল?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "My hobby is",
+        "to reading",
+        "books",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'My hobby is reading' (Gerund) বা 'My hobby is to read' (Inf)। 'to reading' ভুল।"
     },
     {
-      "question": "Question 14: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "Error: 'I have one sister and one brother.' — সঠিক?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "সঠিক",
+        "ভুল, sister brother before number",
+        "ভুল, have not correct",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'I have one sister and one brother.' — সম্পূর্ণ সঠিক।"
     },
     {
-      "question": "Question 15: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "Fill: 'I am a student ___ Dhaka College.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "in",
+        "at",
+        "of",
+        "from"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'At' = institution-এ। 'At Dhaka College' (BrE) বা 'in' (AmE) দুই চলে।"
     },
     {
-      "question": "Question 16: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "Fill: 'I want to be a ___ in the future.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "doctor",
+        "doctorate",
+        "doctoring",
+        "doctors"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'A doctor' — 'Be + a/an + profession'।"
     },
     {
-      "question": "Question 17: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "Fill: 'I am good ___ playing football.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "in",
+        "at",
+        "on",
+        "with"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Good at + Ving' — নিজের দক্ষতা বোঝাতে।"
     },
     {
-      "question": "Question 18: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "Fill: 'I come ___ a small family.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "from",
+        "in",
+        "of",
+        "at"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Come from' = থেকে আসা। 'I come from a small family.'"
     },
     {
-      "question": "Question 19: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "অনুবাদ: 'আমার নাম রহিম। আমি একজন ছাত্র।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "My name Rahim. I am student.",
+        "My name is Rahim. I am a student.",
+        "I name is Rahim. I student.",
+        "Myself Rahim. I am student."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'My name is Rahim. I am a student.' — সঠিক introduction।"
     },
     {
-      "question": "Question 20: Replace this with your actual Question Tags / Punctuation question for Mock Test 56.",
+      "question": "অনুবাদ: 'আমি ইংরেজি এবং বাংলা উভয় ভাষায় কথা বলতে পারি।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "I speak English and Bengali.",
+        "I can speak both English and Bengali.",
+        "I speak both language.",
+        "I can speaking English and Bengali."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I can speak both...and...' = উভয় ভাষায় কথা বলতে পারি।"
     }
   ]
 }

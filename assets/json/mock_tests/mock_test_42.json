@@ -1,228 +1,228 @@
 {
   "id": "mock_test_42",
   "testNumber": 42,
-  "title": "Mock Test 42",
-  "description": "Comprehensive test covering Tenses - Present and Tenses - Past for spoken English practice.",
+  "title": "Mock Test 42 - Phrasal Verbs (Set 2)",
+  "description": "Phrasal Verbs (Set 2) নিয়ে ২০টি প্রশ্ন। run out of, put off, break down, come across, call off, bring up, carry on, find out, give in, turn down ইত্যাদি।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "'Run out of' phrase-টির অর্থ কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "ছুটে যাওয়া",
+        "ফুরিয়ে যাওয়া",
+        "পড়ে যাওয়া",
+        "ভিতরে যাওয়া"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Run out of' = শেষ হয়ে যাওয়া / exhausted। যেমন: We have run out of milk."
     },
     {
-      "question": "Question 2: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "'Put off' phrase-টির অর্থ কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "রাখা",
+        "পরে দেওয়া / পিছিয়ে দেওয়া",
+        "উপরে রাখা",
+        "বন্ধ করা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Put off' = postpone / delay। যেমন: Don't put off your homework."
     },
     {
-      "question": "Question 3: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "'Break down' phrase-টির অর্থ কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "ভেঙে ফেলা",
+        "ভেঙে পড়া (গাড়ি/মেশিন)",
+        "ভিতরে যাওয়া",
+        "উপরে যাওয়া"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Break down' = stop working (car, machine) বা emotionally collapse।"
     },
     {
-      "question": "Question 4: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "'Come across' phrase-টির অর্থ কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "পারে আসা",
+        "হঠাৎ দেখা পাওয়া",
+        "পিছনে আসা",
+        "উপরে আসা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Come across' = unexpectedly find/meet। যেমন: I came across an old friend."
     },
     {
-      "question": "Question 5: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "'Call off' phrase-টির অর্থ কী?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "ডাকা",
+        "বাতিল করা",
+        "উপরে ডাকা",
+        "নিচে ডাকা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Call off' = cancel। যেমন: The match was called off due to rain."
     },
     {
-      "question": "Question 6: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "The car ___ on the highway yesterday.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "broke down",
+        "broke up",
+        "broke into",
+        "broke out"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "গাড়ি নষ্ট → 'broke down'।"
     },
     {
-      "question": "Question 7: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "I ___ an interesting article in the newspaper.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "came across",
+        "came after",
+        "came up",
+        "came in"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "আকস্মিকভাবে পাওয়া → 'came across'।"
     },
     {
-      "question": "Question 8: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "The wedding was ___ because of the storm.",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "called up",
+        "called off",
+        "called on",
+        "called in"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "বিয়ে বাতিল → 'called off'।"
     },
     {
-      "question": "Question 9: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "He ___ a very interesting topic during the meeting.",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "brought up",
+        "brought in",
+        "brought out",
+        "brought down"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "আলোচনায় topic তোলা → 'brought up'।"
     },
     {
-      "question": "Question 10: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "Please ___ with your good work.",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "carry on",
+        "carry out",
+        "carry in",
+        "carry up"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "'Carry on' = continue।"
     },
     {
-      "question": "Question 11: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "Error: 'She turned down the job offer.' — সঠিক?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "সঠিক",
+        "ভুল, turn off হবে",
+        "ভুল, turn up হবে",
+        "ভুল, turn on হবে"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "'Turn down' = reject — সঠিক।"
     },
     {
-      "question": "Question 12: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "Error: 'We need to cut out on expenses.' — ভুল?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "cut out",
+        "on expenses",
+        "We need to",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'Cut down on' = কমানো। 'Cut out' = বাদ দেওয়া। 'Cut down on expenses' হবে।"
     },
     {
-      "question": "Question 13: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "Error: 'He dropped out of school at age 16.' — সঠিক?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "সঠিক",
+        "ভুল, drop off হবে",
+        "ভুল, drop in হবে",
+        "ভুল, drop by হবে"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "'Drop out' = স্কুল ছেড়ে দেওয়া — সঠিক।"
     },
     {
-      "question": "Question 14: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "Error: 'She got along with her new colleagues.' — সঠিক?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "সঠিক",
+        "ভুল, get on হবে",
+        "ভুল, get over হবে",
+        "ভুল, get through হবে"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'Get along with' = ভালো সম্পর্ক থাকা — সঠিক।"
     },
     {
-      "question": "Question 15: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "Fill: 'I need to ___ out who broke the window.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "find",
+        "look",
+        "point",
+        "work"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Find out' = discover / জানতে পারা।"
     },
     {
-      "question": "Question 16: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "Fill: 'She ___ up smoking for her health.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "gave",
+        "took",
+        "put",
+        "made"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'Give up' = quit।"
     },
     {
-      "question": "Question 17: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "Fill: 'The fire ___ out in the middle of the night.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "broke",
+        "came",
+        "went",
+        "ran"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "'Break out' = শুরু হওয়া (fire, war, disease)।"
     },
     {
-      "question": "Question 18: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "Fill: 'He ___ out the truth at last.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "found",
+        "spoke",
+        "talked",
+        "said"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Find out' = জানতে পারা।"
     },
     {
-      "question": "Question 19: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "অনুবাদ: 'দুধ ফুরিয়ে গেছে।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "The milk has run out of.",
+        "We have run out of milk.",
+        "The milk has run away.",
+        "The milk has run after."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Run out of milk' = দুধ ফুরিয়ে যাওয়া।"
     },
     {
-      "question": "Question 20: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 42.",
+      "question": "অনুবাদ: 'সে একটি পুরনো বন্ধুর দেখা পেয়ে গেল।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "She came across an old friend.",
+        "She came after an old friend.",
+        "She came up an old friend.",
+        "She came in an old friend."
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "explanation": "'Come across' = হঠাৎ দেখা পাওয়া।"
     }
   ]
 }

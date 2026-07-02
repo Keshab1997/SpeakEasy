@@ -1,228 +1,228 @@
 {
   "id": "mock_test_39",
   "testNumber": 39,
-  "title": "Mock Test 39",
-  "description": "Comprehensive test covering Vocabulary and Spoken English Phrases for spoken English practice.",
+  "title": "Mock Test 39 - Gerund vs Infinitive",
+  "description": "এই টেস্টে Gerund (V+ing) ও Infinitive (to + V1) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "Gerund কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Verb-এর base form",
+        "Verb + ing যা noun হিসেবে কাজ করে",
+        "Verb + ed যা adjective হিসেবে কাজ করে",
+        "Verb + s/es"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Gerund = Verb + ing যা noun হিসেবে কাজ করে। যেমন: Swimming is fun. (এখানে 'Swimming' = subject, noun-এর মতো)"
     },
     {
-      "question": "Question 2: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "Infinitive কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Verb + ing",
+        "To + Verb-এর base form",
+        "Verb + ed",
+        "Modal + Verb"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Infinitive = to + V1 (base form)। যেমন: I want to swim. (to + swim)"
     },
     {
-      "question": "Question 3: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "কোন verb-এর পরে Gerund (V+ing) বসে?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "Want, decide, hope",
+        "Enjoy, avoid, suggest, mind",
+        "Must, can, will",
+        "Be, have, do"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Enjoy, avoid, suggest, mind, finish, practice, consider, admit, deny — এদের পরে Gerund (V+ing) হয়। যেমন: I enjoy swimming।"
     },
     {
-      "question": "Question 4: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "কোন verb-এর পরে Infinitive (to + V1) বসে?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Enjoy, avoid, mind",
+        "Want, decide, hope, promise, agree",
+        "Finish, practice",
+        "Suggest, admit"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Want, decide, hope, promise, agree, plan, refuse, learn, fail — এদের পরে Infinitive (to + V1) হয়। যেমন: I want to learn English।"
     },
     {
-      "question": "Question 5: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "'Stop' verb-টির পরে Gerund ও Infinitive দিলে অর্থের কী পরিবর্তন হয়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "কোনো পরিবর্তন হয় না",
+        "Stop + Ving = কিছু করা বন্ধ করা, Stop + to V1 = কিছু করার জন্য থামা",
+        "উল্টো অর্থ হয়",
+        "Stop শুধু Gerund নেয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Stop smoking = ধূমপান বন্ধ করা। Stop to smoke = ধূমপান করার জন্য থামা (অন্য কাজ বন্ধ করে)। অর্থ পুরোপুরি বদলে যায়।"
     },
     {
-      "question": "Question 6: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "I enjoy ___ new people.",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "meet",
+        "to meet",
+        "meeting",
+        "met"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Enjoy' verb-এর পরে Gerund (V+ing) হয়। 'I enjoy meeting new people.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "She decided ___ a doctor.",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "become",
+        "to become",
+        "becoming",
+        "became"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Decide' verb-এর পরে Infinitive (to + V1) হয়। 'She decided to become a doctor.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "He suggested ___ to the park.",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "go",
+        "to go",
+        "going",
+        "went"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Suggest' verb-এর পরে Gerund (V+ing) হয়। 'He suggested going to the park.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "They promised ___ on time.",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "be",
+        "to be",
+        "being",
+        "been"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Promise' verb-এর পরে Infinitive (to + V1) হয়। 'They promised to be on time.'"
     },
     {
-      "question": "Question 10: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "___ is good for health.",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "Swim",
+        "Swims",
+        "Swimming",
+        "Swam"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Subject position-এ Gerund (V+ing) ব্যবহৃত হয়। 'Swimming is good for health.' (একটি activity হিসেবে)"
     },
     {
-      "question": "Question 11: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "Error Detection: 'I enjoy to swim in the river.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "I enjoy",
+        "to swim",
+        "in the river",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Enjoy' verb-এর পরে Gerund হয়, Infinitive নয়। সঠিক: 'I enjoy swimming in the river.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "Error Detection: 'She wants learning English.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "She wants",
+        "learning",
+        "English",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Want' verb-এর পরে Infinitive হয়, Gerund নয়। সঠিক: 'She wants to learn English.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "Error Detection: 'He stopped to smoke last year.' (অর্থ: ধূমপান বন্ধ করেছে) — বাক্যটি কি সঠিক?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "ঠিক আছে, stop to smoke = ধূমপান বন্ধ করা",
+        "ভুল, 'stopped smoking' হবে",
+        "ঠিক আছে, কোন পরিবর্তন নেই",
+        "'Stopped to smoke' মানে 'ধূমপান শুরু করেছে'"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Stopped to smoke' = ধূমপান করার জন্য থামা (অর্থ অন্যরকম)। ধূমপান বন্ধ বোঝাতে 'stopped smoking' — Gerund লাগবে।"
     },
     {
-      "question": "Question 14: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "Error Detection: 'I look forward to meet you.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "I look forward",
+        "to meet",
+        "you",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Look forward to' একটি fixed phrase যেখানে 'to' preposition, তাই Gerund লাগে। সঠিক: 'I look forward to meeting you.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "Fill in the blank: I can't help ___ (laugh) at his jokes.",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "laugh",
+        "to laugh",
+        "laughing",
+        "laughed"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Can't help' = না পেরে পারা → Gerund লাগে। 'I can't help laughing at his jokes.'"
     },
     {
-      "question": "Question 16: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "Fill in the blank: She is used to ___ (get) up early.",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "get",
+        "to get",
+        "getting",
+        "got"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Be used to' = অভ্যস্ত হওয়া → এর পরে Gerund (V+ing) হয়। 'She is used to getting up early.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "Fill in the blank: I need ___ (buy) some groceries.",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "buy",
+        "to buy",
+        "buying",
+        "bought"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Need' verb-এর পরে Infinitive (to + V1) হয়। 'I need to buy some groceries.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "Fill in the blank: ___ (travel) broadens the mind.",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "Travel",
+        "To travel",
+        "Travelling",
+        "Traveled"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Subject position-এ Gerund (Travelling) বা Infinitive (To travel) — দুটোই সম্ভব। কিন্তু সাধারণত Gerund বেশি ব্যবহৃত হয়। 'Travelling broadens the mind.'"
     },
     {
-      "question": "Question 19: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'সাঁতার কাটা মজার।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "Swim is fun.",
+        "Swimming is fun.",
+        "To swimming is fun.",
+        "Swam is fun."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Gerund as subject: 'Swimming is fun.' (V+ing form)"
     },
     {
-      "question": "Question 20: Replace this with your actual Vocabulary / Spoken English Phrases question for Mock Test 39.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আমি তোমাকে সাহায্য করতে চাই।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "I want helping you.",
+        "I want to help you.",
+        "I want help you.",
+        "I want helped you."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Want' + Infinitive: 'I want to help you.'"
     }
   ]
 }
