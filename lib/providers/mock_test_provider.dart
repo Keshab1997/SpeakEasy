@@ -17,22 +17,26 @@ class MockTestProgress {
   final Map<int, int> bestScores; // testNumber -> bestScore (0-20)
   final Map<int, bool> unlockedTests; // testNumber -> isUnlocked
   final int highestUnlockedTest; // highest test number that is unlocked
+  final Map<int, List<int>> wrongQuestions; // testNumber -> list of wrong question indices
 
   const MockTestProgress({
     this.bestScores = const {},
     this.unlockedTests = const {},
     this.highestUnlockedTest = 1,
+    this.wrongQuestions = const {},
   });
 
   MockTestProgress copyWith({
     Map<int, int>? bestScores,
     Map<int, bool>? unlockedTests,
     int? highestUnlockedTest,
+    Map<int, List<int>>? wrongQuestions,
   }) {
     return MockTestProgress(
       bestScores: bestScores ?? this.bestScores,
       unlockedTests: unlockedTests ?? this.unlockedTests,
       highestUnlockedTest: highestUnlockedTest ?? this.highestUnlockedTest,
+      wrongQuestions: wrongQuestions ?? this.wrongQuestions,
     );
   }
 }
@@ -83,6 +87,7 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
       Map<int, int> bestScores = {};
       Map<int, bool> unlockedTests = {};
       int highestUnlocked = 1;
+      Map<int, List<int>> wrongQuestions = {};
 
       if (savedProgress != null) {
         bestScores = Map<int, int>.from(
@@ -94,6 +99,10 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
               .map((k, v) => MapEntry(int.parse(k), v as bool)),
         );
         highestUnlocked = savedProgress['highestUnlockedTest'] as int? ?? 1;
+        wrongQuestions = Map<int, List<int>>.from(
+          (savedProgress['wrongQuestions'] as Map? ?? {})
+              .map((k, v) => MapEntry(int.parse(k), List<int>.from(v as List))),
+        );
       }
 
       // Test 1 is always unlocked
@@ -128,6 +137,7 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
           bestScores: bestScores,
           unlockedTests: unlockedTests,
           highestUnlockedTest: highestUnlocked,
+          wrongQuestions: wrongQuestions,
         ),
         isLoading: false,
       );
@@ -189,6 +199,7 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
       bestScores: newBestScores,
       unlockedTests: newUnlockedTests,
       highestUnlockedTest: newHighestUnlocked,
+      wrongQuestions: state.progress.wrongQuestions,
     );
 
     state = state.copyWith(progress: newProgress);
@@ -198,6 +209,8 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
       'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
       'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
       'highestUnlockedTest': newHighestUnlocked,
+      'wrongQuestions': state.progress.wrongQuestions
+          .map((k, v) => MapEntry(k.toString(), v)),
     });
 
     // Also save to Firestore if user is logged in
@@ -207,6 +220,8 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
         'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
         'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
         'highestUnlockedTest': newHighestUnlocked,
+        'wrongQuestions': state.progress.wrongQuestions
+            .map((k, v) => MapEntry(k.toString(), v)),
       });
     }
   }
