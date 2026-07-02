@@ -17,6 +17,7 @@ class HiveService {
   static const String _gameAchievementsBox = 'game_achievements';
   static const String _notificationHistoryBox = 'notification_history';
   static const String _mockTestProgressBox = 'mock_test_progress';
+  static const String _aiSavedVocabBox = 'ai_saved_vocab';
 
   static Future<void> initialize() async {
     await Hive.initFlutter();
@@ -35,6 +36,7 @@ class HiveService {
     await Hive.openBox(_gameAchievementsBox);
     await Hive.openBox(_notificationHistoryBox);
     await Hive.openBox(_mockTestProgressBox);
+    await Hive.openBox(_aiSavedVocabBox);
   }
 
   static Box get _vocabProgress => Hive.box(_vocabProgressBox);
@@ -793,6 +795,29 @@ class HiveService {
   static Future<void> clearMockTestProgress() async {
     if (!Hive.isBoxOpen(_mockTestProgressBox)) return;
     await Hive.box(_mockTestProgressBox).clear();
+  }
+
+  // ── AI Teacher Saved Vocabulary ──
+
+  static Future<void> saveAiVocabWord(Map<String, dynamic> word) async {
+    final box = Hive.box(_aiSavedVocabBox);
+    final words = getAiSavedVocabWords();
+    // Avoid duplicates by word text
+    words.removeWhere((w) => w['word'] == word['word']);
+    words.insert(0, word);
+    await box.put('words', words);
+  }
+
+  static List<Map<String, dynamic>> getAiSavedVocabWords() {
+    return (Hive.box(_aiSavedVocabBox).get('words', defaultValue: <Map<String, dynamic>>[]) as List)
+        .map((e) => Map<String, dynamic>.from(e as Map))
+        .toList();
+  }
+
+  static Future<void> deleteAiVocabWord(String word) async {
+    final words = getAiSavedVocabWords();
+    words.removeWhere((w) => w['word'] == word);
+    await Hive.box(_aiSavedVocabBox).put('words', words);
   }
 
   /// Clears all locally cached/stored data used by the app (Hive boxes).
