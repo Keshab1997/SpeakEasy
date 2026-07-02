@@ -1,16 +1,16 @@
 # Graph Report - Flutter-Spoken-English-App  (2026-07-02)
 
 ## Corpus Check
-- 521 files · ~724,881 words
+- 526 files · ~733,764 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5390 nodes · 7230 edges · 272 communities (257 shown, 15 thin omitted)
+- 5485 nodes · 7343 edges · 275 communities (261 shown, 14 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `67096c2d`
+- Built from commit: `fa86ed11`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -271,6 +271,9 @@
 - [[_COMMUNITY_Community 254|Community 254]]
 - [[_COMMUNITY_Community 255|Community 255]]
 - [[_COMMUNITY_Community 256|Community 256]]
+- [[_COMMUNITY_Community 272|Community 272]]
+- [[_COMMUNITY_Community 273|Community 273]]
+- [[_COMMUNITY_Community 274|Community 274]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `gameProvider` - 64 edges
@@ -285,21 +288,21 @@
 10. `Beginner Grammar` - 21 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `_submitFeedback` --references--> `authProvider`  [EXTRACTED]
-  lib/features/feedback/screens/feedback_screen.dart → lib/providers/auth_provider.dart
-- `build` --references--> `achievementProvider`  [EXTRACTED]
-  lib/features/game/screens/achievements_screen.dart → lib/providers/game/achievement_provider.dart
+- `build` --references--> `authProvider`  [EXTRACTED]
+  lib/features/feedback/screens/my_feedback_screen.dart → lib/providers/auth_provider.dart
 - `build` --references--> `gameProvider`  [EXTRACTED]
   lib/features/game/screens/answer_review_screen.dart → lib/providers/game/game_provider.dart
 - `_saveAndGoHome` --references--> `gameProvider`  [EXTRACTED]
   lib/features/game/screens/answer_review_screen.dart → lib/providers/game/game_provider.dart
-- `_buildAchievementsSubtitle` --references--> `achievementProvider`  [EXTRACTED]
-  lib/features/game/screens/game_home_screen.dart → lib/providers/game/achievement_provider.dart
+- `_loadQuestions` --references--> `gameProvider`  [EXTRACTED]
+  lib/features/game/screens/mode_game_screen.dart → lib/providers/game/game_provider.dart
+- `dispose` --references--> `timerProvider`  [EXTRACTED]
+  lib/features/game/screens/mode_game_screen.dart → lib/providers/game/timer_provider.dart
 
 ## Import Cycles
 - None detected.
 
-## Communities (272 total, 15 thin omitted)
+## Communities (275 total, 14 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.01
@@ -315,7 +318,7 @@ Nodes (59): _allQuestions, _bestStreak, build, _buildAnswerOptions, _buildCompac
 
 ### Community 3 - "Community 3"
 Cohesion: 0.04
-Nodes (53): _activeQuestions, _allQuestions, bangla, build, _buildCountdownWithNext, _buildFeedback, _buildGameScreen, _buildOptionButton (+45 more)
+Nodes (58): ttsServiceProvider, _activeQuestions, _allQuestions, bangla, BanglaToEnglishModeScreen, _BanglaToEnglishModeScreenState, build, _buildCountdownWithNext (+50 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.04
@@ -326,12 +329,12 @@ Cohesion: 0.04
 Nodes (53): AchievementService?, AchievementNotifier, _achievementRepository, _achievementService, achievementServiceProvider, AchievementState, allAchievements, bossWins (+45 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.04
-Nodes (54): _AchievementsPreview, _ActionButton, _ContinuePlayingCard, _StreakCard, accuracy, averageScore, best, bestScore (+46 more)
+Cohesion: 0.05
+Nodes (50): accuracy, averageScore, best, bestScore, color, createState, current, data (+42 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.04
-Nodes (50): _Category?, _ActionButton, bn, bnExample, build, _buildCardBack, _buildCardFront, _buildCategoryGrid (+42 more)
+Nodes (48): _Category?, _ActionButton, bn, bnExample, build, _buildCardBack, _buildCardFront, _buildCategoryGrid (+40 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.04
@@ -350,8 +353,8 @@ Cohesion: 0.04
 Nodes (46): _aiService, _banglaExplanation, banglaMeaning, BanglishTranslatorScreen, _BanglishTranslatorScreenState, build, _buildActionButtons, _buildDetailRow (+38 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.12
-Nodes (46): ConsumerState, achievementProvider, coinProvider, progressRepositoryProvider, statisticsProvider, streakProvider, streakServiceProvider, xpProvider (+38 more)
+Cohesion: 0.09
+Nodes (52): achievementProvider, coinProvider, progressRepositoryProvider, statisticsProvider, streakProvider, streakServiceProvider, xpProvider, HomeScreen (+44 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.04
@@ -366,8 +369,8 @@ Cohesion: 0.04
 Nodes (45): _allExercises, build, _buildAnimatedMic, _buildFreeSpeakingMode, _buildMicSection, _buildSourceCard, _buildTranscriptionResult, createState (+37 more)
 
 ### Community 16 - "Community 16"
-Cohesion: 0.06
-Nodes (29): boss_battle_screen.dart, category_selection_screen.dart, ../../../models/game/level_model.dart, ../../../providers/game/xp_provider.dart, question_screen.dart, _BossLevelCard, build, category (+21 more)
+Cohesion: 0.14
+Nodes (13): boss_battle_screen.dart, question_screen.dart, _BossLevelCard, build, category, _CategoryCard, CategorySelectionScreen, _getCategoryColors (+5 more)
 
 ### Community 17 - "Community 17"
 Cohesion: 0.05
@@ -379,7 +382,7 @@ Nodes (44): _bestStreak, bn, build, _buildDuolingoCardColumn, _buildDuolingoHead
 
 ### Community 19 - "Community 19"
 Cohesion: 0.06
-Nodes (43): soundServiceProvider, ../models/game/game_question_model.dart, _selectAnswer, build, _buildAnswerOptions, _buildExplanation, ChooseTenseMode, _selectAnswer (+35 more)
+Nodes (42): soundServiceProvider, ../models/game/game_question_model.dart, _selectAnswer, build, _buildAnswerOptions, _buildExplanation, _selectAnswer, build (+34 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.05
@@ -387,15 +390,15 @@ Nodes (43): banglaName, banglaTitle, build, _buildContent, _buildErrorState, _bu
 
 ### Community 21 - "Community 21"
 Cohesion: 0.05
-Nodes (40): ../../admin/screens/admin_dashboard_screen.dart, api_setup_guide_screen.dart, createState, initState, privacy_security_screen.dart, _aiKeys, _buildAiKeysList, _buildChipRow (+32 more)
+Nodes (44): ../../admin/screens/admin_dashboard_screen.dart, api_setup_guide_screen.dart, createState, initState, privacy_security_screen.dart, _aiKeys, _ApiKeyForm, _ApiKeyFormState (+36 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.05
 Nodes (42): addCoins, addXP, advanceLevel, batchUploadLevelsToFirestore, _boxName, clearLevels, clearProgress, completeLevel (+34 more)
 
 ### Community 23 - "Community 23"
-Cohesion: 0.05
-Nodes (40): ../../../core/widgets/feature_gate_widget.dart, ../../../core/widgets/streak_widget.dart, ../../game/screens/tense_categories_screen.dart, ../../grammar/screens/grammar_list_screen.dart, ../../guides/screens/guides_screen.dart, ../../home/widgets/spoken_rules_screen.dart, createState, ../../practice/screens/bangla_english_practice_screen.dart (+32 more)
+Cohesion: 0.06
+Nodes (31): ../../../core/widgets/feature_gate_widget.dart, ../../../core/widgets/streak_widget.dart, ../../guides/screens/guides_screen.dart, createState, ../../practice/screens/bangla_english_practice_screen.dart, _buildAchievementsSection, _buildAiTeacherBanner, _buildCompactWordCard (+23 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.05
@@ -430,8 +433,8 @@ Cohesion: 0.05
 Nodes (36): answeredCount, checkAnswer, clearError, continueToNext, copyWith, currentQuestionIndex, error, _finishGame (+28 more)
 
 ### Community 32 - "Community 32"
-Cohesion: 0.15
-Nodes (33): ConsumerWidget, gameProvider, scoreProvider, soundProvider, timerProvider, ErrorDetectionMode, BossBattleScreen, build (+25 more)
+Cohesion: 0.13
+Nodes (37): ConsumerWidget, gameProvider, scoreProvider, soundProvider, timerProvider, ChooseTenseMode, ErrorDetectionMode, _markKnown (+29 more)
 
 ### Community 33 - "Community 33"
 Cohesion: 0.06
@@ -447,15 +450,15 @@ Nodes (34): daily_word_service.dart, FlutterLocalNotificationsPlugin, FlutterLoc
 
 ### Community 36 - "Community 36"
 Cohesion: 0.06
-Nodes (34): ../models/sentence_analysis_model.dart, _analysis, _analyzeSentence, _answerController, build, _buildBody, _buildExplanationStep, _buildInfoCard (+26 more)
+Nodes (33): ../models/sentence_analysis_model.dart, _analysis, _analyzeSentence, _answerController, build, _buildBody, _buildExplanationStep, _buildInfoCard (+25 more)
 
 ### Community 37 - "Community 37"
 Cohesion: 0.06
 Nodes (33): CoinService, addCoins, buyFiftyFifty, buyHint, buySkip, buyTimeBoost, calculateBossBattleCoins, calculateCorrectAnswerCoins (+25 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.06
-Nodes (32): achievements_screen.dart, daily_challenge_screen.dart, Gradient, leaderboard_screen.dart, mode_selection_screen.dart, modes/bangla_to_english_mode.dart, modes/story_completion_mode.dart, Offset (+24 more)
+Cohesion: 0.04
+Nodes (55): achievements_screen.dart, answer_review_screen.dart, daily_challenge_screen.dart, Gradient, leaderboard_screen.dart, score, mode_selection_screen.dart, modes/bangla_to_english_mode.dart (+47 more)
 
 ### Community 39 - "Community 39"
 Cohesion: 0.06
@@ -466,12 +469,12 @@ Cohesion: 0.06
 Nodes (31): GameNotifier, GameState, ../../../providers/game/statistics_provider.dart, _BossAnswerOption, _BossStat, color, explanation, _ExplanationPanel (+23 more)
 
 ### Community 41 - "Community 41"
-Cohesion: 0.06
-Nodes (31): bangla, banglaTitle, categories, color, ../../../models/spoken_rule_model.dart, explanation, fromJson, icon (+23 more)
+Cohesion: 0.12
+Nodes (16): ../../../models/spoken_rule_model.dart, build, _buildCategoryCard, _buildContent, _buildErrorState, _buildRuleCard, createState, _getIconData (+8 more)
 
 ### Community 42 - "Community 42"
-Cohesion: 0.06
-Nodes (35): createState, initState, action, _animationController, coins, currentXP, _DailyChallengeCard, difficulty (+27 more)
+Cohesion: 0.05
+Nodes (39): createState, initState, _AchievementsPreview, action, _ActionButton, _animationController, coins, _ContinuePlayingCard (+31 more)
 
 ### Community 43 - "Community 43"
 Cohesion: 0.06
@@ -499,7 +502,7 @@ Nodes (35): calculateMissedDays, canRecoverStreak, checkAndUpdateStreak, checkAn
 
 ### Community 49 - "Community 49"
 Cohesion: 0.07
-Nodes (29): ../../grammar/screens/grammar_detail_screen.dart, ../../vocabulary/screens/chapter_words_screen.dart, _AllDoneCard, _buildLoadingSkeleton, _ChapterCard, _checkWeeklyTest, color, _CompactCompletedRow (+21 more)
+Nodes (28): ../../grammar/screens/grammar_detail_screen.dart, ../../vocabulary/screens/chapter_words_screen.dart, _AllDoneCard, _buildLoadingSkeleton, _ChapterCard, _checkWeeklyTest, color, _CompactCompletedRow (+20 more)
 
 ### Community 50 - "Community 50"
 Cohesion: 0.06
@@ -507,11 +510,11 @@ Nodes (32): Animations, Answer Area, Coin Calculation, Color Scheme, ✨ Core Ga
 
 ### Community 51 - "Community 51"
 Cohesion: 0.07
-Nodes (29): ../../../providers/game/achievement_provider.dart, achievement, _AchievementCard, _AchievementList, achievements, _AchievementsBody, AchievementsScreen, build (+21 more)
+Nodes (27): ../../../providers/game/achievement_provider.dart, achievement, _AchievementCard, _AchievementList, achievements, _AchievementsBody, _buildOverviewTab, _buildPerformanceRow (+19 more)
 
 ### Community 52 - "Community 52"
-Cohesion: 0.09
-Nodes (29): ConsumerStatefulWidget, HomeScreen, ResultScreen, HomeScreen, SettingsScreen, BanglaToEnglishModeScreen, _BanglaToEnglishModeScreenState, FillInBlanksModeScreen (+21 more)
+Cohesion: 0.08
+Nodes (36): ConsumerState, ConsumerStatefulWidget, HomeScreen, ResultScreen, _SettingsScreenState, HomeScreen, SettingsScreen, _SettingsScreenState (+28 more)
 
 ### Community 53 - "Community 53"
 Cohesion: 0.07
@@ -535,15 +538,15 @@ Nodes (26): auth_provider.dart, chapter_vocabulary_provider.dart, grammar_provid
 
 ### Community 58 - "Community 58"
 Cohesion: 0.08
-Nodes (26): ../../../core/utils/grammar_text_parser.dart, grammar_master_screen.dart, bangla, banglaDescription, build, chapter, _CommonMistakesSection, createState (+18 more)
+Nodes (24): ../../../core/utils/grammar_text_parser.dart, grammar_master_screen.dart, bangla, banglaDescription, build, chapter, _CommonMistakesSection, createState (+16 more)
 
 ### Community 59 - "Community 59"
 Cohesion: 0.06
 Nodes (31): Development Order, ORIGINAL PHASE SPECIFICATIONS (kept for reference), Phase 10 : Tense Categories, Phase 12 : Widgets, Phase 13 : Question Flow, Phase 14 : XP System, Phase 15 : Coin System, Phase 16 : Streak System (+23 more)
 
 ### Community 60 - "Community 60"
-Cohesion: 0.06
-Nodes (30): _answered, build, _buildQuestions, _buildResult, _clearAll, correctAnswer, createState, _current (+22 more)
+Cohesion: 0.04
+Nodes (46): FlutterTts, package:flutter_tts/flutter_tts.dart, _answered, build, _buildQuestions, _buildResult, _clearAll, correctAnswer (+38 more)
 
 ### Community 61 - "Community 61"
 Cohesion: 0.07
@@ -558,8 +561,8 @@ Cohesion: 0.07
 Nodes (29): Admin Panel Implementation Guide, AI Prompts, AI Prompts, AI Prompts, AI Prompts, AI Prompts, AI Prompts, AI Prompts (+21 more)
 
 ### Community 64 - "Community 64"
-Cohesion: 0.04
-Nodes (48): answer_review_screen.dart, GameMode?, score, mode_game_screen.dart, modes/fill_in_blanks_mode.dart, modes/flashcard_mode.dart, modes/grammar_detective_mode.dart, modes/quick_quiz_mode.dart (+40 more)
+Cohesion: 0.05
+Nodes (43): GameMode?, mode_game_screen.dart, modes/verb_learning_mode.dart, modes/word_match_mode.dart, ../../../providers/game/score_provider.dart, ../../../providers/game/timer_provider.dart, _buildVerbLearningCard, _buildWordMatchCard (+35 more)
 
 ### Community 65 - "Community 65"
 Cohesion: 0.07
@@ -571,7 +574,7 @@ Nodes (24): grammar_detail_screen.dart, _cardHeight, chapter, chapters, _clearCa
 
 ### Community 67 - "Community 67"
 Cohesion: 0.08
-Nodes (23): package:fl_chart/fl_chart.dart, _analytics, _BarData, build, _buildBody, _buildDailySignupsChart, _buildEmptyChart, _buildPieChart (+15 more)
+Nodes (25): package:fl_chart/fl_chart.dart, AdminAnalyticsScreen, _AdminAnalyticsScreenState, _analytics, _BarData, build, _buildBody, _buildDailySignupsChart (+17 more)
 
 ### Community 68 - "Community 68"
 Cohesion: 0.08
@@ -583,15 +586,15 @@ Nodes (25): aiTeacher, allKeys, dailyGoalXP, displayName, enabled, forceUpdate, 
 
 ### Community 70 - "Community 70"
 Cohesion: 0.07
-Nodes (29): AdminConfigScreen, _AdminConfigScreenState, build, _buildFeatureToggle, _buildForceUpdateSection, _buildForm, _buildGameSettingsSection, _buildMaintenanceSection (+21 more)
+Nodes (27): build, _buildFeatureToggle, _buildForceUpdateSection, _buildForm, _buildGameSettingsSection, _buildMaintenanceSection, _buildSectionCard, _buildSectionHeader (+19 more)
 
 ### Community 71 - "Community 71"
 Cohesion: 0.07
 Nodes (27): addCoins, buyFiftyFifty, buyHint, buySkip, buyTimeBoost, calculateAccuracyBonusCoins, calculateBossBattleCoins, calculateCorrectAnswerCoins (+19 more)
 
 ### Community 72 - "Community 72"
-Cohesion: 0.10
-Nodes (18): ForceUpdateInfo, ../models/config/app_config_model.dart, package:url_launcher/url_launcher.dart, build, ForceUpdateScreen, _openPlayStore, updateInfo, build (+10 more)
+Cohesion: 0.08
+Nodes (22): IconData, ApiSetupGuideScreen, build, code, description, icon, _infoRow, isDark (+14 more)
 
 ### Community 73 - "Community 73"
 Cohesion: 0.08
@@ -618,8 +621,8 @@ Cohesion: 0.08
 Nodes (24): AsyncNotifier, build, copyWith, currentUser, entries, error, fetchUserRank, _globalSubscription (+16 more)
 
 ### Community 79 - "Community 79"
-Cohesion: 0.08
-Nodes (25): allTests, bestScores, clearProgress, copyWith, error, getBestScore, getTotalCompleted, getTotalPerfectScores (+17 more)
+Cohesion: 0.07
+Nodes (27): allTests, bestScores, clearProgress, copyWith, error, getBestScore, getTotalCompleted, getTotalPerfectScores (+19 more)
 
 ### Community 80 - "Community 80"
 Cohesion: 0.08
@@ -659,7 +662,7 @@ Nodes (22): _cachedConfig, _cacheDuration, _configRef, _firestore, getConfig, ge
 
 ### Community 89 - "Community 89"
 Cohesion: 0.08
-Nodes (34): ../../../core/widgets/custom_button.dart, ../../../core/widgets/custom_textfield.dart, FormState, ../../home/screens/main_navigation_screen.dart, authProvider, ../../../providers/auth_provider.dart, didChangeDependencies, build (+26 more)
+Nodes (32): ../../../core/widgets/custom_button.dart, ../../../core/widgets/custom_textfield.dart, FormState, ../../home/screens/main_navigation_screen.dart, authProvider, ../../../providers/auth_provider.dart, didChangeDependencies, _submitFeedback (+24 more)
 
 ### Community 90 - "Community 90"
 Cohesion: 0.10
@@ -667,7 +670,7 @@ Nodes (20): grammar_rules_screen.dart, _buildInfoBanner, color, description, exa
 
 ### Community 91 - "Community 91"
 Cohesion: 0.08
-Nodes (24): mock_test_result_screen.dart, mockTestListProvider, _answers, build, createState, _currentQuestion, dispose, _IndexedOption (+16 more)
+Nodes (25): mock_test_result_screen.dart, mockTestListProvider, _answers, build, createState, _currentQuestion, dispose, _IndexedOption (+17 more)
 
 ### Community 92 - "Community 92"
 Cohesion: 0.10
@@ -702,16 +705,16 @@ Cohesion: 0.10
 Nodes (19): ../features/admin/screens/admin_feedback_screen.dart, ../features/auth/screens/login_screen.dart, ../features/auth/screens/signup_screen.dart, ../features/conversation/screens/daily_conversation_screen.dart, ../features/conversation/screens/interview_conversation_screen.dart, ../features/conversation/screens/restaurant_conversation_screen.dart, ../features/feedback/screens/feedback_screen.dart, ../features/feedback/screens/my_feedback_screen.dart (+11 more)
 
 ### Community 100 - "Community 100"
-Cohesion: 0.08
-Nodes (24): FirebaseFirestore, ../models/vocabulary_model.dart, VocabularyModel, package:flutter_riverpod/flutter_riverpod.dart, fetchLessons, _firestore, getLessonsByLevel, lessonProvider (+16 more)
+Cohesion: 0.11
+Nodes (17): FirebaseFirestore, ../models/quiz_model.dart, package:cloud_firestore/cloud_firestore.dart, fetchLessons, _firestore, getLessonsByLevel, lessonProvider, lessons (+9 more)
 
 ### Community 101 - "Community 101"
-Cohesion: 0.05
-Nodes (37): bullets, content, footer, fromJson, GuideData, GuideSection, GuideSubSection, GuideTable (+29 more)
+Cohesion: 0.10
+Nodes (21): ../models/guide_model.dart, build, _buildBody, _buildHeaderCard, _buildSectionCard, _buildSubSection, _buildTable, createState (+13 more)
 
 ### Community 102 - "Community 102"
-Cohesion: 0.22
-Nodes (8): ../models/guide_model.dart, package:flutter/services.dart, GuideService, loadStudentGuide, loadStudyRoutine, _studentGuidePath, _studyRoutinePath, static const String
+Cohesion: 0.25
+Nodes (7): package:flutter/services.dart, GuideService, loadStudentGuide, loadStudyRoutine, _studentGuidePath, _studyRoutinePath, static const String
 
 ### Community 103 - "Community 103"
 Cohesion: 0.14
@@ -730,24 +733,24 @@ Cohesion: 0.09
 Nodes (22): Important Rule, Phase 10: Listening Module, Phase 11: Speaking Module, Phase 12: Quiz Module, Phase 13: Progress Tracking, Phase 14: AI Teacher, Phase 15: Notifications, Phase 16: Local Storage (+14 more)
 
 ### Community 107 - "Community 107"
-Cohesion: 0.11
-Nodes (18): game_home_screen.dart, ../../../../repositories/wrong_question_repository.dart, build, color, createState, entry, _generateWhyWrong, index (+10 more)
+Cohesion: 0.10
+Nodes (20): game_home_screen.dart, ../../../../repositories/wrong_question_repository.dart, AnswerReviewScreen, _AnswerReviewScreenState, build, color, createState, entry (+12 more)
 
 ### Community 108 - "Community 108"
-Cohesion: 0.14
-Nodes (20): AdminAnalyticsScreen, _AdminAnalyticsScreenState, AdminContentScreen, _AdminContentScreenState, _DailyWordTab, _DailyWordTabState, _GrammarEditorScreen, _GrammarEditorScreenState (+12 more)
+Cohesion: 0.11
+Nodes (22): AdminConfigScreen, _AdminConfigScreenState, AdminContentScreen, _AdminContentScreenState, _DailyWordTab, _DailyWordTabState, _GrammarEditorScreen, _GrammarEditorScreenState (+14 more)
 
 ### Community 109 - "Community 109"
 Cohesion: 0.12
-Nodes (15): dart:async, _answers, build, createState, _currentQuestion, dispose, _finishQuiz, initState (+7 more)
+Nodes (17): dart:async, _answers, build, createState, _currentQuestion, dispose, _finishQuiz, initState (+9 more)
 
 ### Community 110 - "Community 110"
-Cohesion: 0.11
-Nodes (18): MaterialPageRoute, _finishSession, _editGrammarContent, _openWordList, build, _showSetupDialog, _openHistory, _buildAIFeaturesSection (+10 more)
+Cohesion: 0.12
+Nodes (17): MaterialPageRoute, _finishSession, _editGrammarContent, _openWordList, build, _showSetupDialog, _openHistory, _buildAIFeaturesSection (+9 more)
 
 ### Community 111 - "Community 111"
 Cohesion: 0.12
-Nodes (17): ../../../models/feedback_model.dart, _buildEmptyState, _buildFeedbackList, _buildSignedOutState, _categoryColor, _categoryIcon, createState, _expanded (+9 more)
+Nodes (18): ../../../models/feedback_model.dart, build, _buildEmptyState, _buildFeedbackList, _buildSignedOutState, _categoryColor, _categoryIcon, createState (+10 more)
 
 ### Community 112 - "Community 112"
 Cohesion: 0.09
@@ -762,16 +765,16 @@ Cohesion: 0.09
 Nodes (21): copyWith, currentLevel, currentXP, fromMap, hashCode, lastActiveDate, longestStreak, missedDays (+13 more)
 
 ### Community 115 - "Community 115"
-Cohesion: 0.10
-Nodes (21): package:confetti/confetti.dart, achievement, AchievementUnlockOverlay, _AchievementUnlockOverlayState, _bounceAnimation, _bounceController, build, _buildCard (+13 more)
+Cohesion: 0.09
+Nodes (22): ConfettiController, package:confetti/confetti.dart, achievement, AchievementUnlockOverlay, _AchievementUnlockOverlayState, _bounceAnimation, _bounceController, build (+14 more)
 
 ### Community 116 - "Community 116"
 Cohesion: 0.09
 Nodes (21): 1. Problem Statement, 2. Goals, 3.1 Achievement filtering, 3.2 Affected files, 3. Logic Change, 4.1 New widget: `AchievementUnlockOverlay`, 4.2 Layout structure, 4.3 Rarity-based effects (+13 more)
 
 ### Community 117 - "Community 117"
-Cohesion: 0.12
-Nodes (16): ../../auth/screens/login_screen.dart, ../../feedback/screens/feedback_screen.dart, ../../feedback/screens/my_feedback_screen.dart, ImageSource, package:image_picker/image_picker.dart, ../../../providers/game/coin_provider.dart, ../../../providers/progress_provider.dart, ../../../providers/todo_list_provider.dart (+8 more)
+Cohesion: 0.07
+Nodes (28): ../../ai_teacher/screens/ai_chat_screen.dart, ../../auth/screens/login_screen.dart, ../../feedback/screens/feedback_screen.dart, ../../feedback/screens/my_feedback_screen.dart, home_screen.dart, ImageSource, ../../learning/screens/learning_screen.dart, package:image_picker/image_picker.dart (+20 more)
 
 ### Community 118 - "Community 118"
 Cohesion: 0.12
@@ -787,7 +790,7 @@ Nodes (20): 1. Data Flow Summary, 2. Sync Working Status, 3. CRITICAL ISSUES FOU
 
 ### Community 121 - "Community 121"
 Cohesion: 0.12
-Nodes (16): chapterAssetPathsProvider, chapters, chaptersByLevelProvider, chaptersSnapshot, firestore, firestoreChapters, fromJson, _loadChapter (+8 more)
+Nodes (15): chapterAssetPathsProvider, chapters, chaptersByLevelProvider, chaptersSnapshot, firestore, firestoreChapters, fromJson, _loadChapter (+7 more)
 
 ### Community 122 - "Community 122"
 Cohesion: 0.12
@@ -798,24 +801,24 @@ Cohesion: 0.12
 Nodes (14): dart:io, Directory, package:flutter_spoken_english_app/core/constants/app_colors.dart, package:flutter_spoken_english_app/models/game/game_result_model.dart, package:flutter_spoken_english_app/models/user_model.dart, package:flutter_spoken_english_app/providers/last_opened_chapter_provider.dart, package:flutter_test/flutter_test.dart, package:hive/hive.dart (+6 more)
 
 ### Community 124 - "Community 124"
-Cohesion: 0.12
-Nodes (15): FlutterTts, package:flutter_tts/flutter_tts.dart, dispose, initialize, _isInitialized, isMuted, _muted, setMuted (+7 more)
+Cohesion: 0.06
+Nodes (31): _bounceAnimation, _bounceController, build, _buildCard, coinReward, color, completedTestNumber, completedTestTitle (+23 more)
 
 ### Community 125 - "Community 125"
 Cohesion: 0.10
 Nodes (21): Advanced Grammar, Chapter 51: Advanced Modals, Chapter 52: Causative Verbs, Chapter 53: Inversion, Chapter 54: Emphasis, Chapter 55: Ellipsis, Chapter 56: Relative Pronouns, Chapter 57: Relative Clauses (+13 more)
 
 ### Community 126 - "Community 126"
-Cohesion: 0.15
-Nodes (15): ../models/vocabulary_chapter_model.dart, ../../../providers/last_opened_chapter_provider.dart, lastOpenedChapterProvider, build, chapter, ChapterWordsScreen, _ChapterWordsScreenState, createState (+7 more)
+Cohesion: 0.14
+Nodes (16): ../models/vocabulary_chapter_model.dart, VocabularyChapter, ../../../providers/last_opened_chapter_provider.dart, lastOpenedChapterProvider, build, chapter, ChapterWordsScreen, _ChapterWordsScreenState (+8 more)
 
 ### Community 127 - "Community 127"
 Cohesion: 0.10
 Nodes (21): Beginner Grammar, Chapter 10: Preposition, Chapter 11: Conjunction, Chapter 12: Article, Chapter 13: Determiners, Chapter 14: Quantifiers, Chapter 15: Numbers, Chapter 16: Gender (+13 more)
 
 ### Community 128 - "Community 128"
-Cohesion: 0.14
-Nodes (13): ../../../models/verb_form_model.dart, build, _buildCategoryCard, _buildGuideCard, _buildPracticeCard, _categories, createState, initState (+5 more)
+Cohesion: 0.13
+Nodes (15): ../../../models/verb_form_model.dart, build, _buildCategoryCard, _buildGuideCard, _buildPracticeCard, _categories, createState, initState (+7 more)
 
 ### Community 129 - "Community 129"
 Cohesion: 0.12
@@ -823,19 +826,19 @@ Nodes (15): ../models/game/wrong_question_model.dart, _boxName, clearAll, _ensur
 
 ### Community 130 - "Community 130"
 Cohesion: 0.12
-Nodes (15): admin_notification_sync_service.dart, @pragma, notification_service.dart, re_engagement_service.dart, return, _adminBgNotifId, adminSyncTaskName, _handleAdminSync (+7 more)
+Nodes (16): admin_notification_sync_service.dart, @pragma, notification_service.dart, re_engagement_service.dart, return, _adminBgNotifId, adminSyncTaskName, _handleAdminSync (+8 more)
 
 ### Community 131 - "Community 131"
-Cohesion: 0.38
-Nodes (5): ../constants/app_colors.dart, package:google_fonts/google_fonts.dart, darkTheme, lightTheme, ThemeData
+Cohesion: 0.10
+Nodes (19): Behavior, Data Model, Files to Modify, Logic, Message, Mock Test Smart Retry Design, MockTestProgress — new field, New signature (+11 more)
 
 ### Community 132 - "Community 132"
-Cohesion: 0.14
-Nodes (14): build, _buildCategorySelector, _categories, _categoryIcons, createState, dispose, FeedbackScreen, _FeedbackScreenState (+6 more)
+Cohesion: 0.15
+Nodes (13): build, _buildCategorySelector, _categories, _categoryIcons, createState, dispose, FeedbackScreen, _FeedbackScreenState (+5 more)
 
 ### Community 133 - "Community 133"
-Cohesion: 0.17
-Nodes (14): mock_test_quiz_screen.dart, ../../../providers/mock_test_provider.dart, mockTestProvider, build, _buildContent, _buildStat, _buildTestCard, createState (+6 more)
+Cohesion: 0.21
+Nodes (12): mock_test_quiz_screen.dart, ../../../providers/mock_test_provider.dart, mockTestProvider, build, _buildContent, _buildStat, _buildTestCard, createState (+4 more)
 
 ### Community 134 - "Community 134"
 Cohesion: 0.10
@@ -850,8 +853,8 @@ Cohesion: 0.10
 Nodes (19): copyWith, correctAnswer, _decode, decodedOptions, difficulty, _encode, explanation, fromGameQuestion (+11 more)
 
 ### Community 137 - "Community 137"
-Cohesion: 0.15
-Nodes (13): ../../ai_teacher/screens/ai_chat_screen.dart, home_screen.dart, ../../learning/screens/learning_screen.dart, ../../practice/screens/practice_screen.dart, ../../profile/screens/profile_screen.dart, ../../../providers/game/streak_provider.dart, build, createState (+5 more)
+Cohesion: 0.11
+Nodes (17): bullets, content, footer, fromJson, GuideData, GuideSection, GuideSubSection, GuideTable (+9 more)
 
 ### Community 138 - "Community 138"
 Cohesion: 0.16
@@ -866,8 +869,8 @@ Cohesion: 0.10
 Nodes (19): completedLessonIds, copyWith, currentLevel, fromMap, lastActiveDate, lessonsCompleted, longestStreak, missedDays (+11 more)
 
 ### Community 141 - "Community 141"
-Cohesion: 0.14
-Nodes (13): DateTime, chapterNumber, completedAt, copyWith, fromJson, id, level, status (+5 more)
+Cohesion: 0.15
+Nodes (12): chapterNumber, completedAt, copyWith, fromJson, id, level, status, title (+4 more)
 
 ### Community 142 - "Community 142"
 Cohesion: 0.15
@@ -898,16 +901,16 @@ Cohesion: 0.15
 Nodes (11): hive_service.dart, AdminNotificationSyncService, _firestore, syncLatest, checkInactivity, daysInactive, getMessage, InactivityResult (+3 more)
 
 ### Community 149 - "Community 149"
-Cohesion: 0.11
-Nodes (17): GrammarChapter, _bustOldCache, chapters, chaptersByLevelProvider, _currentGrammarVersion, fromJson, grammarAssetPathsProvider, _grammarVersionKey (+9 more)
+Cohesion: 0.12
+Nodes (16): GrammarChapter, _bustOldCache, chapters, chaptersByLevelProvider, _currentGrammarVersion, fromJson, grammarAssetPathsProvider, _grammarVersionKey (+8 more)
 
 ### Community 150 - "Community 150"
 Cohesion: 0.11
 Nodes (17): bangla, color, fromJson, icon, id, loadAll, meaning, _parseColor (+9 more)
 
 ### Community 151 - "Community 151"
-Cohesion: 0.08
-Nodes (24): @HiveType, AchievementModel, GameLevelModel, GameProgressModel, GameQuestionModel, GameResultModel, categories, completed (+16 more)
+Cohesion: 0.12
+Nodes (15): categories, completed, copyWith, description, fromMap, id, name, order (+7 more)
 
 ### Community 152 - "Community 152"
 Cohesion: 0.09
@@ -922,12 +925,12 @@ Cohesion: 0.17
 Nodes (11): ../../game/screens/game_home_screen.dart, ../../homework/screens/homework_screen.dart, ../models/notification_history_model.dart, RouteNames.grammarList, RouteNames.settings, RouteNames.vocabulary, ../../../routes/route_names.dart, navigate (+3 more)
 
 ### Community 155 - "Community 155"
-Cohesion: 0.17
-Nodes (11): IconData, ApiSetupGuideScreen, build, code, description, icon, _infoRow, isDark (+3 more)
+Cohesion: 0.12
+Nodes (16): 1. Problem Statement, 2. Approach, 2. Goals, 3.1 Location, 3.2 Props / Constructor, 3.3 Layout Structure, 3.4 Animation Timeline, 3.5 Color Scheme (+8 more)
 
 ### Community 156 - "Community 156"
-Cohesion: 0.10
-Nodes (19): services/remote_config_service.dart, TextEditingController, TextInputType, Widget?, build, controller, CustomTextField, hintText (+11 more)
+Cohesion: 0.08
+Nodes (24): ../constants/app_colors.dart, package:google_fonts/google_fonts.dart, services/remote_config_service.dart, TextEditingController, TextInputType, darkTheme, lightTheme, ThemeData (+16 more)
 
 ### Community 157 - "Community 157"
 Cohesion: 0.11
@@ -943,15 +946,15 @@ Nodes (11): banglaMeaning, DailyWordData, DailyWordService, exampleSentence, _fa
 
 ### Community 160 - "Community 160"
 Cohesion: 0.17
-Nodes (11): core/theme/dark_theme.dart, core/theme/light_theme.dart, ../features/auth/screens/splash_screen.dart, firebase_options.dart, initialize, main, setLastAppOpenDate, package:workmanager/workmanager.dart (+3 more)
+Nodes (11): core/theme/dark_theme.dart, core/theme/light_theme.dart, ../features/auth/screens/splash_screen.dart, ../firebase_options.dart, initialize, main, setLastAppOpenDate, package:workmanager/workmanager.dart (+3 more)
 
 ### Community 161 - "Community 161"
 Cohesion: 0.12
 Nodes (16): bangla, BanglaEnglishCategory, BanglaEnglishExercise, color, english, exercises, fromJson, grammarFocus (+8 more)
 
 ### Community 162 - "Community 162"
-Cohesion: 0.18
-Nodes (10): mock_test_list_screen.dart, ../models/mock_test_model.dart, answers, questions, score, shuffledCorrectIndexMap, shuffledOptionsMap, testNumber (+2 more)
+Cohesion: 0.12
+Nodes (16): mock_test_list_screen.dart, ../models/mock_test_model.dart, answers, createState, initState, MockTestResultScreen, _MockTestResultScreenState, questions (+8 more)
 
 ### Community 163 - "Community 163"
 Cohesion: 0.18
@@ -978,8 +981,8 @@ Cohesion: 0.12
 Nodes (15): 1️⃣ **Word Match Game**, 2️⃣ **Quick Quiz (Verb Quiz)**, 3️⃣ **Fill in the Blanks**, 🆕 Adding a New Game Mode, 📁 Current Game Modes, ✅ DO:, ❌ DON'T:, 🎮 Game JSON Files (+7 more)
 
 ### Community 169 - "Community 169"
-Cohesion: 0.14
-Nodes (12): bool?, banglaSentence, correctTranslation, feedback, HomeworkQuestion, HomeworkStep, isCorrect, userTranslation (+4 more)
+Cohesion: 0.22
+Nodes (8): bool?, banglaSentence, correctTranslation, feedback, HomeworkQuestion, HomeworkStep, isCorrect, userTranslation
 
 ### Community 170 - "Community 170"
 Cohesion: 0.12
@@ -995,7 +998,7 @@ Nodes (16): 🟠 LEVEL 4: Real-Life English (Test 56–70), Test 56: Self Introd
 
 ### Community 173 - "Community 173"
 Cohesion: 0.12
-Nodes (15): VerbFormCategory, build, _buildVerbCard, category, color, createState, dispose, _filtered (+7 more)
+Nodes (17): VerbFormCategory, build, _buildVerbCard, category, color, createState, dispose, _filtered (+9 more)
 
 ### Community 174 - "Community 174"
 Cohesion: 0.48
@@ -1014,20 +1017,20 @@ Cohesion: 0.13
 Nodes (14): adminReply, category, copyWith, createdAt, FeedbackModel, fromMap, id, message (+6 more)
 
 ### Community 178 - "Community 178"
-Cohesion: 0.20
-Nodes (10): chapter, copyWith, fromHive, LastOpenedChapter, LastOpenedChapterNotifier, progress, setOpened, type (+2 more)
+Cohesion: 0.22
+Nodes (9): chapter, copyWith, fromHive, LastOpenedChapter, LastOpenedChapterNotifier, progress, setOpened, type (+1 more)
 
 ### Community 179 - "Community 179"
 Cohesion: 0.11
 Nodes (16): category, content, ../models/lesson_model.dart, description, duration, examples, fromMap, id (+8 more)
 
 ### Community 180 - "Community 180"
-Cohesion: 0.09
-Nodes (21): ../../../core/constants/app_colors.dart, List, package:flutter/material.dart, pronunciation_screen.dart, articles, ArticleScreen, build, build (+13 more)
+Cohesion: 0.07
+Nodes (29): ForceUpdateInfo, ../../../core/constants/app_colors.dart, List, ../models/config/app_config_model.dart, package:flutter/material.dart, package:url_launcher/url_launcher.dart, articles, ArticleScreen (+21 more)
 
 ### Community 181 - "Community 181"
-Cohesion: 0.11
-Nodes (17): copyWith, currentLevel, email, fromMap, id, joinedAt, name, photoUrl (+9 more)
+Cohesion: 0.14
+Nodes (13): DateTime, copyWith, currentLevel, email, fromMap, id, joinedAt, name (+5 more)
 
 ### Community 182 - "Community 182"
 Cohesion: 0.13
@@ -1046,12 +1049,12 @@ Cohesion: 0.14
 Nodes (13): correctIndex, explanation, fromMap, id, level, options, question, QuestionModel (+5 more)
 
 ### Community 186 - "Community 186"
-Cohesion: 0.14
-Nodes (13): banglaMeaning, chapter, ChapterWord, exampleSentence, fromJson, level, loadAsset, meaning (+5 more)
+Cohesion: 0.15
+Nodes (12): banglaMeaning, chapter, ChapterWord, exampleSentence, fromJson, level, loadAsset, meaning (+4 more)
 
 ### Community 187 - "Community 187"
-Cohesion: 0.14
-Nodes (13): _AnswerOption, banglaMeaning, explanation, _ExplanationPanel, _handleContinue, index, isAnswerChecked, isCorrect (+5 more)
+Cohesion: 0.12
+Nodes (15): bangla, banglaTitle, categories, color, explanation, fromJson, icon, id (+7 more)
 
 ### Community 188 - "Community 188"
 Cohesion: 0.14
@@ -1070,8 +1073,8 @@ Cohesion: 0.17
 Nodes (11): Chapter 21: Introduction to Tense, English Grammar Module - Complete Syllabus, Final Goal, Future Tense, Grammar Exercises, Level Structure, Mock Tests, Past Tense (+3 more)
 
 ### Community 192 - "Community 192"
-Cohesion: 0.17
-Nodes (11): banglaMeaning, category, copyWith, exampleSentence, fromMap, id, isFavorite, meaning (+3 more)
+Cohesion: 0.15
+Nodes (12): banglaMeaning, category, copyWith, exampleSentence, fromMap, id, isFavorite, meaning (+4 more)
 
 ### Community 193 - "Community 193"
 Cohesion: 0.17
@@ -1086,8 +1089,8 @@ Cohesion: 0.18
 Nodes (10): 🏗️ Architecture, 📞 Contact, ✨ Features, Firebase Setup, 🚀 Getting Started, Installation, 📄 License, Prerequisites (+2 more)
 
 ### Community 196 - "Community 196"
-Cohesion: 0.22
-Nodes (9): copyWith, isDark, isDarkMode, _loadTheme, setThemeMode, themeMode, ThemeNotifier, ThemeState (+1 more)
+Cohesion: 0.20
+Nodes (10): copyWith, isDark, isDarkMode, _loadTheme, setThemeMode, themeMode, ThemeNotifier, ThemeState (+2 more)
 
 ### Community 197 - "Community 197"
 Cohesion: 0.20
@@ -1098,8 +1101,8 @@ Cohesion: 0.22
 Nodes (8): Existing Game Modes:, 🎮 Future Game Mode Ideas for Flutter Spoken English App, 📋 Implementation Checklist Template, 📊 Legend, 📞 Need Help?, Project Structure:, 💡 Quick Tips for New Game Modes, 📎 Related Files
 
 ### Community 199 - "Community 199"
-Cohesion: 0.22
-Nodes (8): build, ResultScreen, score, ../models/quiz_model.dart, QuizModel, answers, quiz, total
+Cohesion: 0.25
+Nodes (7): build, ResultScreen, score, QuizModel, answers, quiz, total
 
 ### Community 200 - "Community 200"
 Cohesion: 0.22
@@ -1130,16 +1133,16 @@ Cohesion: 0.29
 Nodes (6): Achievement Unlock Experience Enhancement — Implementation Plan, Task 1: Add `confetti` package + achievement sound file, Task 2: Add rarest-achievement filter to AchievementService, Task 3: Create AchievementUnlockOverlay widget, Task 4: Update ResultScreen to use overlay + sound, Task 5: Quick verification
 
 ### Community 207 - "Community 207"
-Cohesion: 0.33
-Nodes (6): build, createState, DailyConversationScreen, _DailyConversationScreenState, scenarios, _selectedScenario
+Cohesion: 0.17
+Nodes (11): category_selection_screen.dart, ../../../models/game/level_model.dart, ../../../providers/game/xp_provider.dart, build, currentXP, _getLevelColors, _getLevelIcon, level (+3 more)
 
 ### Community 208 - "Community 208"
-Cohesion: 0.33
-Nodes (6): build, categories, createState, PrepositionScreen, _PrepositionScreenState, _selectedIndex
+Cohesion: 0.18
+Nodes (10): ../models/vocabulary_model.dart, package:flutter_riverpod/flutter_riverpod.dart, ../../../providers/vocabulary_provider.dart, fetchVocabulary, _firestore, searchWords, toggleFavorite, _buildSection (+2 more)
 
 ### Community 209 - "Community 209"
-Cohesion: 0.29
-Nodes (6): build, _example, _header, _point, _section, VerbFormsGuideScreen
+Cohesion: 0.22
+Nodes (9): @HiveType, AchievementModel, GameLevelModel, GameProgressModel, GameQuestionModel, GameResultModel, LevelModel, TenseCategory (+1 more)
 
 ### Community 210 - "Community 210"
 Cohesion: 0.29
@@ -1262,25 +1265,41 @@ Cohesion: 0.50
 Nodes (4): ⛔ 1. `game_questions.json` is EMPTY — `questions: []`, ⛔ 2. Hive TypeAdapters are generated but NEVER registered, ⛔ 3. No initial `GameProgressModel` seed, CRITICAL ISSUES (fix first — these block a working game)
 
 ### Community 240 - "Community 240"
-Cohesion: 0.67
-Nodes (3): ttsServiceProvider, _speakCorrectAnswer, _speakCurrentQuestion
+Cohesion: 0.22
+Nodes (8): ../../game/screens/tense_categories_screen.dart, ../../grammar/screens/grammar_list_screen.dart, ../../home/widgets/spoken_rules_screen.dart, build, _buildLearningCard, LearningScreen, ../../verb_forms/screens/verb_forms_screen.dart, ../../vocabulary/screens/vocabulary_screen.dart
+
+### Community 252 - "Community 252"
+Cohesion: 0.22
+Nodes (8): Mock Test Smart Retry Implementation Plan, Summary of Changes, Task 1: Add `wrongQuestions` to MockTestProgress, Task 2: Update `saveResult` to Track Wrong Questions, Task 3: Add `getWrongQuestions` Getter Method, Task 4: Update Quiz Screen to Support Wrong-Questions-Only Mode, Task 5: Update Result Screen with "Retry Wrong" Button, Task 6: Update `getTotalPerfectScores` to Account for Cleared Wrong Questions
+
+### Community 253 - "Community 253"
+Cohesion: 0.33
+Nodes (5): File Structure, Mock Test Unlock Celebration Implementation Plan, Self-Review, Task 1: Create `MockTestUnlockOverlay` widget, Task 2: Integrate overlay into `MockTestResultScreen`
+
+### Community 272 - "Community 272"
+Cohesion: 0.33
+Nodes (5): pronunciation_screen.dart, build, _buildStatItem, SpeakingMode, SpeakingScreen
+
+### Community 273 - "Community 273"
+Cohesion: 0.40
+Nodes (4): String?, build, LoadingWidget, message
 
 ## Knowledge Gaps
-- **4077 isolated node(s):** `fix_modes.sh script`, `AppColors`, `primary`, `secondary`, `accent` (+4072 more)
+- **4151 isolated node(s):** `fix_modes.sh script`, `AppColors`, `primary`, `secondary`, `accent` (+4146 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `VocabularyModel` connect `Community 100` to `Community 192`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+- **Why does `TtsService` connect `Community 163` to `Community 4`, `Community 7`, `Community 9`, `Community 10`, `Community 13`, `Community 15`, `Community 18`, `Community 60`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Why does `map` connect `Community 202` to `Community 96`, `Community 66`, `Community 162`, `Community 199`, `Community 167`, `Community 10`, `Community 91`, `Community 109`, `Community 79`, `Community 176`, `Community 114`, `Community 20`, `Community 21`, `Community 26`, `Community 27`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
-- **Why does `TtsService` connect `Community 163` to `Community 4`, `Community 7`, `Community 9`, `Community 10`, `Community 13`, `Community 15`, `Community 18`, `Community 124`?**
+  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+- **Why does `TodoItem` connect `Community 141` to `Community 49`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **What connects `fix_modes.sh script`, `AppColors`, `primary` to the rest of the system?**
-  _4077 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _4151 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.014925373134328358 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**

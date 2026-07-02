@@ -1830,13 +1830,13 @@
     "semantic_hash": ""
   },
   "lib/features/mock_test/screens/mock_test_quiz_screen.dart": {
-    "mtime": 1782928899.2399926,
-    "ast_hash": "70f11d8447caf0df5c5cafdf2e5fb9ce",
+    "mtime": 1782973891.271421,
+    "ast_hash": "a3f4e996d30ff78b469cf784841a1803",
     "semantic_hash": ""
   },
   "lib/features/mock_test/screens/mock_test_result_screen.dart": {
-    "mtime": 1782754627.7179682,
-    "ast_hash": "1b4dc16d0a07545d06d067a1342f7580",
+    "mtime": 1782974135.818029,
+    "ast_hash": "c610a08fdf8d1d0e17f74f6fd10044a8",
     "semantic_hash": ""
   },
   "lib/features/mock_test/widgets/question_palette_bottom_sheet.dart": {
@@ -2170,8 +2170,8 @@
     "semantic_hash": ""
   },
   "lib/providers/mock_test_provider.dart": {
-    "mtime": 1782931296.514519,
-    "ast_hash": "460d5ef3d99c63a5498334df49f63d0d",
+    "mtime": 1782973590.958097,
+    "ast_hash": "363744d285526037b999aa60b7bccfd7",
     "semantic_hash": ""
   },
   "lib/providers/notification_provider.dart": {
@@ -2365,8 +2365,8 @@
     "semantic_hash": ""
   },
   "lib/services/workmanager_tasks.dart": {
-    "mtime": 1782914611.8786478,
-    "ast_hash": "5df67e44adda48a71f92b2f997949578",
+    "mtime": 1782970990.6720955,
+    "ast_hash": "b3458004ea3525acafdee1e1c2b36610",
     "semantic_hash": ""
   },
   "lib/services/xp_service.dart": {
@@ -2642,6 +2642,31 @@
   "assets/audio/game_achievement.mp3": {
     "mtime": 1782886411.3222883,
     "ast_hash": "c0babd7d5809649f0ae58cf88a108445",
+    "semantic_hash": ""
+  },
+  "lib/features/mock_test/widgets/mock_test_unlock_overlay.dart": {
+    "mtime": 1782934501.2769966,
+    "ast_hash": "d37178c8d3df44f41b879cd0ef134807",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-02-mock-test-smart-retry.md": {
+    "mtime": 1782972703.2035315,
+    "ast_hash": "ebde8e07380e3a7f35c5ba692e2f71eb",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-02-mock-test-unlock-celebration.md": {
+    "mtime": 1782933316.2472823,
+    "ast_hash": "5a365131a49a564cfd5293a38873d286",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md": {
+    "mtime": 1782972539.1291685,
+    "ast_hash": "8143cc78cafd33678bfbc1c6a5c9721e",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md": {
+    "mtime": 1782933144.3208325,
+    "ast_hash": "e1ac1e51c1ed305d948ece78937067b8",
     "semantic_hash": ""
   }
 }
