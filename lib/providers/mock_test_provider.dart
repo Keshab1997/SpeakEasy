@@ -203,7 +203,7 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
     newUnlockedTests[1] = true; // Test 1 always unlocked
 
     // A test is considered "passed" if bestScore == 20 OR if wrongQuestions are empty
-    final bool testPassed = newBestScore == 20 ||
+    final bool testPassed = newBestScore == 20 &&
         (!newWrongQuestions.containsKey(testNumber));
 
     if (testPassed && testNumber < 70) {
