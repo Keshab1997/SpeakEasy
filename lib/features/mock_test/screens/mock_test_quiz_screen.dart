@@ -117,7 +117,13 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 	    final questions = _activeQuestions;
-    final progress = (_currentQuestion + 1) / questions.length;
+	    if (questions.isEmpty) {
+	      return Scaffold(
+	        appBar: AppBar(title: Text(widget.testTitle)),
+	        body: const Center(child: Text('No questions to retry.')),
+	      );
+	    }
+	    final progress = (_currentQuestion + 1) / questions.length;
 
     return Scaffold(
       appBar: AppBar(
@@ -438,8 +444,14 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
     super.dispose();
   }
 
-		  Future<void> _submitQuiz() async {
-		    setState(() => _isSubmitting = true);
+			  Future<void> _submitQuiz() async {
+			    final test = _test;
+			    if (test == null) {
+			      if (!mounted) return;
+			      Navigator.pop(context);
+			      return;
+			    }
+			    setState(() => _isSubmitting = true);
 		
 		    final questions = _activeQuestions;
 		    int correct = 0;
@@ -512,7 +524,7 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
 		          testTitle: widget.testTitle,
 		          score: scoreOutOf20,
 		          total: 20,
-		          questions: _test!.questions,
+			          questions: test.questions,
 		          answers: _answers,
 		          shuffledOptionsMap: shuffledOptionsMap,
 		          shuffledCorrectIndexMap: shuffledCorrectIndexMap,
