@@ -208,70 +208,101 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
                 const SizedBox(height: 24),
 
                 // ── Action Buttons ──
-                Row(
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Expanded(
-                      child: OutlinedButton.icon(
+                    if (!isPerfect) ...[
+                      // Retry Wrong button (only if there are wrong questions)
+                      ElevatedButton.icon(
                         onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (_) => MockTestQuizScreen(
                               testNumber: widget.testNumber,
                               testTitle: widget.testTitle,
+                              wrongQuestionIndices: ref
+                                  .read(mockTestProvider.notifier)
+                                  .getWrongQuestions(widget.testNumber),
                             ),
                           ),
                         ),
                         icon: const Icon(Icons.replay_rounded),
-                        label: const Text('Retry'),
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: AppColors.primary,
-                          side: const BorderSide(color: AppColors.primary),
+                        label: Text(
+                          'Retry Wrong (${20 - widget.score})',
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange,
+                          foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 14),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                         ),
                       ),
-                    ),
-                    if (isPerfect && nextTestUnlocked && nextTestNumber <= 70) ...[
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: ElevatedButton.icon(
-                          onPressed: () => Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => MockTestQuizScreen(
-                                testNumber: nextTestNumber,
-                                testTitle: 'Mock Test $nextTestNumber',
+                      const SizedBox(height: 10),
+                    ],
+                    Row(
+                      children: [
+                        Expanded(
+                          child: OutlinedButton.icon(
+                            onPressed: () => Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => MockTestQuizScreen(
+                                  testNumber: widget.testNumber,
+                                  testTitle: widget.testTitle,
+                                ),
+                              ),
+                            ),
+                            icon: const Icon(Icons.replay_rounded),
+                            label: Text(!isPerfect ? 'Retry All' : 'Retry'),
+                            style: OutlinedButton.styleFrom(
+                              foregroundColor: AppColors.primary,
+                              side: const BorderSide(color: AppColors.primary),
+                              padding: const EdgeInsets.symmetric(vertical: 14),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                            ),
+                          ),
+                        ),
+                        if (isPerfect && nextTestUnlocked && nextTestNumber <= 70) ...[
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: ElevatedButton.icon(
+                              onPressed: () => Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => MockTestQuizScreen(
+                                    testNumber: nextTestNumber,
+                                    testTitle: 'Mock Test $nextTestNumber',
+                                  ),
+                                ),
+                              ),
+                              icon: const Icon(Icons.arrow_forward_rounded),
+                              label: const Text('Next Test'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.secondary,
+                                foregroundColor: Colors.white,
+                                padding: const EdgeInsets.symmetric(vertical: 14),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                               ),
                             ),
                           ),
-                          icon: const Icon(Icons.arrow_forward_rounded),
-                          label: const Text('Next Test'),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.secondary,
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(vertical: 14),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                          ),
+                        ],
+                      ],
+                    ),
+                    if (!isPerfect) ...[
+                      const SizedBox(height: 12),
+                      TextButton.icon(
+                        onPressed: () => Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (_) => const MockTestListScreen()),
+                          (route) => false,
                         ),
+                        icon: const Icon(Icons.list_rounded),
+                        label: const Text('Back to Test List'),
                       ),
                     ],
                   ],
                 ),
-                if (!isPerfect) ...[
-                  const SizedBox(height: 12),
-                  SizedBox(
-                    width: double.infinity,
-                    child: TextButton.icon(
-                      onPressed: () => Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(builder: (_) => const MockTestListScreen()),
-                        (route) => false,
-                      ),
-                      icon: const Icon(Icons.list_rounded),
-                      label: const Text('Back to Test List'),
-                    ),
-                  ),
-                ],
                 const SizedBox(height: 24),
 
                 // ── Answer Review ──
