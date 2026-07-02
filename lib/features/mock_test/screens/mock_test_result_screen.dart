@@ -228,7 +228,7 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
                         ),
                         icon: const Icon(Icons.replay_rounded),
                         label: Text(
-                          'Retry Wrong (${20 - widget.score})',
+                          'Retry Wrong (${widget.total - widget.score})',
                           style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                         style: ElevatedButton.styleFrom(
@@ -323,10 +323,10 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
 
                   // Shuffle info থাকলে সেটা ব্যবহার করি, না হলে original use করি
                   final displayOptions = widget.shuffledOptionsMap != null
-                      ? widget.shuffledOptionsMap![idx]!
+                      ? (widget.shuffledOptionsMap![idx] ?? q.options)
                       : q.options;
                   final correctIdx = widget.shuffledCorrectIndexMap != null
-                      ? widget.shuffledCorrectIndexMap![idx]!
+                      ? (widget.shuffledCorrectIndexMap![idx] ?? q.correctIndex)
                       : q.correctIndex;
 
                   final userAnswer = widget.answers[idx];
