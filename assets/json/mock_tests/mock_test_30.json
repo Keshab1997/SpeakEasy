@@ -1,228 +1,228 @@
 {
   "id": "mock_test_30",
   "testNumber": 30,
-  "title": "Mock Test 30",
-  "description": "Comprehensive test covering Conditional Sentences and Subject-Verb Agreement for spoken English practice.",
+  "title": "Mock Test 30 - Would/Could/Shall",
+  "description": "এই টেস্টে Would, Could, Shall নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "'Would' modal verb-এর প্রধান ব্যবহার কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "ক্ষমতা বোঝাতে",
+        "Polite request, past habit, desire/ইচ্ছা বোঝাতে",
+        "বাধ্যবাধকতা বোঝাতে",
+        "সম্ভাবনা বোঝাতে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Would' ব্যবহার হয়: (1) Polite request: Would you please help me? (2) Past habit: When I was young, I would play cricket. (3) Desire: I would like some tea. (4) Conditional: If I were you, I would go।"
     },
     {
-      "question": "Question 2: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "'Could' modal verb-এর প্রধান ব্যবহার কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Past ability, polite request, possibility বোঝাতে",
+        "Future intention বোঝাতে",
+        "বাধ্যবাধকতা বোঝাতে",
+        "পরামর্শ বোঝাতে"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "explanation": "'Could' ব্যবহার হয়: (1) Past ability: I could swim when I was five. (2) Polite request: Could you open the door? (3) Possibility: It could rain today. (4) Suggestion: You could try this restaurant।"
     },
     {
-      "question": "Question 3: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "'Shall' সাধারণত কী অর্থে ব্যবহার হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "সবার জন্যই (He/She/They-এর সাথে)",
+        "I/We-এর সাথে suggestion, offer, future বোঝাতে",
+        "Past tense-এ",
+        "Negative sentences-এ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Shall' প্রধানত I/We-এর সাথে ব্যবহৃত হয়। (1) Suggestion: Shall we go? (2) Offer: Shall I open the door? (3) Future (formal): I shall return tomorrow। আধুনিক ইংরেজিতে 'will' বেশি common, কিন্তু suggestion-এ 'shall' এখনও ব্যবহৃত হয়।"
     },
     {
-      "question": "Question 4: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "'Would you mind + Ving'-এর অর্থ কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "আপনি কি কিছু মনে করবেন? (Polite request)",
+        "আপনি কি বাধ্য?",
+        "আপনি কি পারবেন?",
+        "আপনি কি উচিত?"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "explanation": "'Would you mind + Ving?' = polite request। যেমন: Would you mind opening the window? (আপনি কি জানালাটা খুলতে আপত্তি করবেন? = দয়া করে খুলবেন?)। উত্তর: No, not at all. (না, আপত্তি নেই) অথবা I'm sorry, I can't."
     },
     {
-      "question": "Question 5: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "'Would like' আর 'Want'-এর মধ্যে পার্থক্য কী?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "Would like = বেশি polite/formal, Want = less formal",
+        "দুটোর মানে একই",
+        "Would like = past, Want = present",
+        "Want = polite, Would like = impolite"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "explanation": "'Would like' = want-এর polite version। যেমন: I want a coffee. (direct)। I would like a coffee, please. (more polite/formal)। Would you like some tea? (offer করার সময় polite)"
     },
     {
-      "question": "Question 6: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "___ you please open the window? (আপনি কি দয়া করে জানালাটা খুলবেন?)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "Will",
+        "Would",
+        "Shall",
+        "Must"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Please' সহ polite request → 'Would' সবচেয়ে suitable। 'Would you please open the window?' (Could = also polite, Would = slightly more formal)"
     },
     {
-      "question": "Question 7: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "___ we go for a walk? (আমরা কি বেড়াতে যাব?)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "Will",
+        "Would",
+        "Shall",
+        "Can"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Suggestion দেওয়ার জন্য 'Shall we...?' ব্যবহার হয়। 'Shall we go for a walk?' (Shall + I/We = suggestion)"
     },
     {
-      "question": "Question 8: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "When I was young, I ___ play for hours. (ছোটবেলায় আমি ঘণ্টার পর ঘণ্টা খেলতাম)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "will",
+        "would",
+        "shall",
+        "can"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Past habit → 'would' (used to-এর মতো)। 'When I was young, I would play for hours.' (Past-এ habitual action)"
     },
     {
-      "question": "Question 9: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "___ I help you carry the bags? (আমি কি ব্যাগগুলো বহন করতে সাহায্য করব?)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "Will",
+        "Would",
+        "Shall",
+        "Should"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Offer করার জন্য 'Shall I...?' ব্যবহার হয়। 'Shall I help you carry the bags?' (I/We-এর সাথে shall = offer)"
     },
     {
-      "question": "Question 10: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "You ___ try this new restaurant. The food is amazing. (তুমি এই নতুন রেস্টুরেন্টটা ট্রাই করতে পারো। খাবার অসাধারণ)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "would",
+        "could",
+        "shall",
+        "must"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Suggestion/polite advice → 'could'। 'You could try this new restaurant.' (Must = too strong, Could = suggestion)"
     },
     {
-      "question": "Question 11: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "Error Detection: 'Would you mind to open the door?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Would you mind",
+        "to open",
+        "the door",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Would you mind'-এর পরে Gerund (V+ing) হয়, 'to + V1' নয়। সঠিক: 'Would you mind opening the door?'"
     },
     {
-      "question": "Question 12: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "Error Detection: 'I would like drink a coffee.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "I would like",
+        "drink",
+        "a coffee",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Would like'-এর পরে 'to + V1' হয় (infinitive)। 'Would like to drink' হবে। সঠিক: 'I would like to drink a coffee.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "Error Detection: 'Shall he come with us?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "Shall he",
+        "come",
+        "with us",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "'Shall' শুধু I/We-এর সাথে ব্যবহার হয়। 'He' → 'Will' হবে। সঠিক: 'Will he come with us?' অথবা 'Shall we go with him?'"
     },
     {
-      "question": "Question 14: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "Error Detection: 'I could swims when I was five.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "I could",
+        "swims",
+        "when I was five",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Modal (could)-এর পরে V1 (base form) হয়। 'Swims' → 'swim' হবে। সঠিক: 'I could swim when I was five.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "Fill in the blank: '___ you like some tea?' (আপনি কি কিছু চা পছন্দ করবেন?)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "Do",
+        "Would",
+        "Will",
+        "Shall"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Polite offer → 'Would you like...?'। 'Would you like some tea?' (Do you want = less formal, Would you like = polite)"
     },
     {
-      "question": "Question 16: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "Fill in the blank: 'If I were rich, I ___ travel the world.' (আমি যদি ধনী হতাম, তাহলে বিশ্ব ভ্রমণ করতাম)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "will",
+        "would",
+        "shall",
+        "can"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Conditional Type 2 (unreal present) → would + V1। 'If I were rich, I would travel the world.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "Fill in the blank: '___ I borrow your pen?' (আমি কি আপনার কলম ধার নিতে পারি?)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "Shall",
+        "Would",
+        "Could",
+        "Must"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Polite request → 'Could I...?'। 'Could I borrow your pen?' (Can I = informal, Could I = polite, May I = formal)"
     },
     {
-      "question": "Question 18: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "Fill in the blank: 'You ___ have told me earlier. I could have helped.' (তোমার আগে বলা উচিত ছিল। আমি সাহায্য করতে পারতাম)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "would",
+        "could",
+        "should",
+        "shall"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Should have + V3' = অতীতে করা উচিত ছিল কিন্তু করিনি। 'You should have told me earlier.' (Would have = would করতাম, Could have = পারতাম, Should have = উচিত ছিল)"
     },
     {
-      "question": "Question 19: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আমরা কি সিনেমা দেখতে যাব?'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "Will we go to watch a movie?",
+        "Shall we go to watch a movie?",
+        "Would we go to watch a movie?",
+        "Could we go to watch a movie?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Suggestion → 'Shall we...?' (আমরা যাব? = suggestion)। 'Shall we go to watch a movie?'"
     },
     {
-      "question": "Question 20: Replace this with your actual Conditional Sentences / Subject-Verb Agreement question for Mock Test 30.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আপনি কি দয়া করে একটু অপেক্ষা করবেন?'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "Please you wait a moment?",
+        "Would you please wait a moment?",
+        "Shall you please wait a moment?",
+        "Must you please wait a moment?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Polite request → 'Would you please...?'। 'Would you please wait a moment?'"
     }
   ]
 }

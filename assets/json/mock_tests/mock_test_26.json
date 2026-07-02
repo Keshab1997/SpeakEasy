@@ -1,228 +1,228 @@
 {
   "id": "mock_test_26",
   "testNumber": 26,
-  "title": "Mock Test 26",
-  "description": "Comprehensive test covering Conjunctions and Modals for spoken English practice.",
+  "title": "Mock Test 26 - Question Tags",
+  "description": "এই টেস্টে Question Tags নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Question Tag-এর মূল নিয়ম কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Affirmative sentence → Affirmative tag",
+        "Affirmative sentence → Negative tag, Negative sentence → Affirmative tag",
+        "Tag সবসময় negative হয়",
+        "Tag সবসময় affirmative হয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "মূল নিয়ম: Affirmative (positive) sentence → Negative tag। Negative sentence → Affirmative tag। যেমন: You are coming, aren't you? (aff → neg)। You aren't coming, are you? (neg → aff)।"
     },
     {
-      "question": "Question 2: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Question Tag-এ auxiliary verb না থাকলে কী ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Tag ব্যবহার করা যায় না",
+        "Do/Does/Did ব্যবহার করা হয়",
+        "সবসময় 'isn't it' ব্যবহার করা হয়",
+        "সবসময় 'aren't they' ব্যবহার করা হয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "সেন্টেন্সে auxiliary verb না থাকলে tense অনুযায়ী do/does/did ব্যবহার করা হয়। যেমন: You like coffee, don't you? (Present)। He went home, didn't he? (Past)। She plays tennis, doesn't she? (3rd person)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "'I am'-এর Question Tag কী হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "am not I?",
+        "amn't I?",
+        "aren't I?",
+        "isn't I?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'I am'-এর tag = 'aren't I?' (exception)। যেমন: I am right, aren't I? ('Amn't I' = archaic, এখন ব্যবহার হয় না)।"
     },
     {
-      "question": "Question 4: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Imperative sentence-এর Question Tag কী হয়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "don't you?",
+        "will you? / won't you?",
+        "isn't it?",
+        " aren't they?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Imperative sentence (order/request)-এর tag = 'will you?' বা 'won't you?'। যেমন: Open the door, will you? (request)। Don't be late, will you? (negative imperative → শুধু 'will you?')।"
     },
     {
-      "question": "Question 5: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "'Let's' দিয়ে শুরু sentence-এর Question Tag কী হয়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "will you?",
+        "shall we?",
+        "don't we?",
+        "isn't it?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Let's' (Let us) → tag = 'shall we?'। যেমন: Let's go for a walk, shall we? Let's start the class, shall we?"
     },
     {
-      "question": "Question 6: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "You are coming to the party, ___ ? (তুমি পার্টিতে আসছ, তাই না?)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "are you",
+        "aren't you",
+        "do you",
+        "don't you"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Affirmative sentence (are) → negative tag (aren't you?)। 'You are coming to the party, aren't you?'"
     },
     {
-      "question": "Question 7: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "She doesn't like coffee, ___ ? (সে কফি পছন্দ করে না, তাই না?)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "does she",
+        "doesn't she",
+        "is she",
+        "isn't she"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "Negative sentence (doesn't) → affirmative tag (does she?)। 'She doesn't like coffee, does she?'"
     },
     {
-      "question": "Question 8: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "He went to school yesterday, ___ ? (সে গতকাল স্কুলে গিয়েছিল, তাই না?)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "went he",
+        "didn't he",
+        "did he",
+        "doesn't he"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Affirmative Past (went = did go) → negative tag (didn't he?)। 'He went to school yesterday, didn't he?'"
     },
     {
-      "question": "Question 9: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "You can swim, ___ ? (তুমি সাঁতার পারো, তাই না?)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "can you",
+        "can't you",
+        "do you",
+        "don't you"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Affirmative (can) → negative tag (can't you?)। 'You can swim, can't you?'"
     },
     {
-      "question": "Question 10: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "They have finished the work, ___ ? (তারা কাজ শেষ করেছে, তাই না?)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "have they",
+        "haven't they",
+        "did they",
+        "do they"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Affirmative Present Perfect (have finished) → negative tag (haven't they?)। 'They have finished the work, haven't they?'"
     },
     {
-      "question": "Question 11: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Error Detection: 'You are tired, are you?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "You are tired",
+        "are you?",
+        "কোনো ভুল নেই",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Affirmative sentence → negative tag হওয়া উচিত। সঠিক: 'You are tired, aren't you?'"
     },
     {
-      "question": "Question 12: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Error Detection: 'She doesn't like tea, doesn't she?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "She doesn't like tea",
+        "doesn't she?",
+        "কোনো ভুল নেই",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Negative sentence → affirmative tag হওয়া উচিত। সঠিক: 'She doesn't like tea, does she?'"
     },
     {
-      "question": "Question 13: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Error Detection: 'I am right, amn't I?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "I am right",
+        "amn't I?",
+        "কোনো ভুল নেই",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'I am'-এর tag = 'aren't I?'। 'Amn't I?' = পুরনো/ভুল। সঠিক: 'I am right, aren't I?'"
     },
     {
-      "question": "Question 14: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Error Detection: 'Let's go, don't we?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "Let's go",
+        "don't we?",
+        "কোনো ভুল নেই",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Let's'-এর tag = 'shall we?'। সঠিক: 'Let's go, shall we?'"
     },
     {
-      "question": "Question 15: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Fill in the blank: 'You like ice cream, ___ ?' (তুমি আইসক্রিম পছন্দ করো, তাই না?)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "do you",
+        "don't you",
+        "like you",
+        "aren't you"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Affirmative Present (like) → auxiliary verb নেই → do/does। 'You like ice cream, don't you?'"
     },
     {
-      "question": "Question 16: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Fill in the blank: 'He didn't call you, ___ ?' (সে তোমাকে কল করেনি, তাই না?)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "did he",
+        "didn't he",
+        "does he",
+        "was he"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "Negative Past (didn't) → affirmative tag (did he?)। 'He didn't call you, did he?'"
     },
     {
-      "question": "Question 17: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Fill in the blank: 'Open the door, ___ ?' (দরজাটা খোলো, তাই না?)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "open you",
+        "will you",
+        "don't you",
+        "shall we"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Imperative sentence → tag = 'will you?'। 'Open the door, will you?'"
     },
     {
-      "question": "Question 18: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "Fill in the blank: 'Nobody was there, ___ ?' (সেখানে কেউ ছিল না, তাই না?)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "was they",
+        "were they",
+        "wasn't they",
+        "weren't they"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Nobody' = negative word → sentence টি effectively negative। তাই tag = affirmative 'were they?'। 'Nobody was there, were they?'"
     },
     {
-      "question": "Question 19: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'তুমি কি পড়াশোনা করছো, তাই না?'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "You are studying, are you?",
+        "You are studying, aren't you?",
+        "You are studying, don't you?",
+        "You are studying, isn't it?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Are studying' = affirmative → negative tag 'aren't you?'। 'You are studying, aren't you?'"
     },
     {
-      "question": "Question 20: Replace this with your actual Conjunctions / Modals question for Mock Test 26.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'সে একজন ডাক্তার, তাই না?'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "He is a doctor, is he?",
+        "He is a doctor, isn't he?",
+        "He is doctor, doesn't he?",
+        "He is a doctor, wasn't he?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'He is' = affirmative present → negative tag 'isn't he?'। 'He is a doctor, isn't he?'"
     }
   ]
 }

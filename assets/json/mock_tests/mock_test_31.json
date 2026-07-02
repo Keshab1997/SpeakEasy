@@ -1,228 +1,228 @@
 {
   "id": "mock_test_31",
   "testNumber": 31,
-  "title": "Mock Test 31",
-  "description": "Comprehensive test covering Subject-Verb Agreement and Nouns & Pronouns for spoken English practice.",
+  "title": "Mock Test 31 - There is/There are",
+  "description": "এই টেস্টে There is/There are নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "'There is' কখন ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Plural noun-এর সাথে",
+        "Singular noun ও uncountable noun-এর সাথে",
+        "Past tense-এ",
+        "Future tense-এ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'There is' ব্যবহার হয় singular noun (There is a book) এবং uncountable noun (There is some water) এর সাথে। 'There are' = plural noun-এর জন্য।"
     },
     {
-      "question": "Question 2: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "'There are' কখন ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Singular noun-এর সাথে",
+        "Plural noun-এর সাথে",
+        "Uncountable noun-এর সাথে",
+        "নামবাচক noun-এর সাথে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'There are' = plural noun-এর সাথে ব্যবহৃত হয়। যেমন: There are many books. There are five students. There are some apples."
     },
     {
-      "question": "Question 3: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "'There is' এর negative form কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "There is not / There isn't",
+        "There are not",
+        "There do not",
+        "There does not"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "'There is' এর negative = There is not / There isn't। যেমন: There isn't any water. / There is not a single star in the sky."
     },
     {
-      "question": "Question 4: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "'There is/There are'-এর interrogative (প্রশ্নবোধক) form কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Is there...? / Are there...?",
+        "Do there...? / Does there...?",
+        "Has there...? / Have there...?",
+        "Was there...? / Were there...?"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "explanation": "Question: Is there + singular? / Are there + plural? যেমন: Is there a bank near here? Are there any restaurants nearby?"
     },
     {
-      "question": "Question 5: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "'There is/There are' দিয়ে কী বোঝায়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "কোনো কিছুর মালিকানা",
+        "কোনো কিছুর অস্তিত্ব/উপস্থিতি (existence/presence)",
+        "কোনো কাজ করা",
+        "কোনো গুণ বর্ণনা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'There is/There are' = কোনো কিছুর অস্তিত্ব (existence) বা উপস্থিতি (presence) বোঝাতে ব্যবহৃত হয়। যেমন: There is a book on the table. (টেবিলে একটি বই আছে - টেবিলে বইটির উপস্থিতি বোঝাচ্ছে)"
     },
     {
-      "question": "Question 6: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "___ a beautiful garden in front of our house. (আমাদের বাড়ির সামনে একটি সুন্দর বাগান আছে)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "There is",
+        "There are",
+        "It is",
+        "They are"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "'A garden' = singular noun → 'There is'। 'There is a beautiful garden in front of our house.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "___ many students in the classroom. (ক্লাসরুমে অনেক ছাত্র আছে)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "There is",
+        "There are",
+        "It is",
+        "They are"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Many students' = plural noun → 'There are'। 'There are many students in the classroom.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "___ some milk in the fridge. (ফ্রিজে কিছু দুধ আছে)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "There is",
+        "There are",
+        "There have",
+        "There has"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "explanation": "'Milk' = uncountable noun → 'There is'। 'There is some milk in the fridge.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "___ a book on the table? (টেবিলে কি একটা বই আছে?)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "Is there",
+        "Are there",
+        "There is",
+        "There are"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "Question → 'Is there + singular noun?' 'Is there a book on the table?'"
     },
     {
-      "question": "Question 10: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "___ any restaurants near here? (এখানকার কাছে কোনো রেস্টুরেন্ট আছে কি?)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "Is there",
+        "Are there",
+        "There is",
+        "There are"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Any restaurants' = plural → 'Are there'। 'Are there any restaurants near here?'"
     },
     {
-      "question": "Question 11: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "Error Detection: 'There is many books on the shelf.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "There is",
+        "many books",
+        "on the shelf",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "'Many books' = plural → 'There are' হবে, 'There is' নয়। সঠিক: 'There are many books on the shelf.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "Error Detection: 'There are a cat in the garden.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "There are",
+        "a cat",
+        "in the garden",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "'A cat' = singular → 'There is' হবে, 'There are' নয়। সঠিক: 'There is a cat in the garden.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "Error Detection: 'Is there any apples in the basket?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "Is there",
+        "any apples",
+        "in the basket",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "'Any apples' = plural → 'Are there' হবে। সঠিক: 'Are there any apples in the basket?'"
     },
     {
-      "question": "Question 14: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "Error Detection: 'There is some books on my desk.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "There is",
+        "some books",
+        "on my desk",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'Some books' = plural → 'There are' হবে। সঠিক: 'There are some books on my desk.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "Fill in the blank: 'There ___ no water in the bottle.' (বোতলে কোনো পানি নেই)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "is",
+        "are",
+        "have",
+        "has"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Water' = uncountable → 'There is no water.' (No = not any)"
     },
     {
-      "question": "Question 16: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "Fill in the blank: 'There ___ a hospital and two schools in this area.' (এই এলাকায় একটি হাসপাতাল ও দুটি স্কুল আছে)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "is",
+        "are",
+        "have",
+        "has"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "যখন 'There is/are'-এর পরে প্রথম noun singular হয়, তখন 'There is' ব্যবহার হয়। 'There is a hospital and two schools.' (Proximity rule)"
     },
     {
-      "question": "Question 17: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "Fill in the blank: 'There ___ two schools and a hospital in this area.' (এই এলাকায় দুটি স্কুল ও একটি হাসপাতাল আছে)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "is",
+        "are",
+        "have",
+        "has"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "প্রথম noun plural (two schools) → 'There are'। 'There are two schools and a hospital.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "Fill in the blank: 'There ___ anyone in the room.' (রুমে কেউ নেই)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "isn't",
+        "aren't",
+        "haven't",
+        "hasn't"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Anyone' = singular → 'There isn't anyone.' (There is not anyone / There is no one)"
     },
     {
-      "question": "Question 19: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আমার ব্যাগে একটা কলম আছে।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "There are a pen in my bag.",
+        "There is a pen in my bag.",
+        "It is a pen in my bag.",
+        "My bag has a pen there."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'A pen' = singular → 'There is'। 'There is a pen in my bag.'"
     },
     {
-      "question": "Question 20: Replace this with your actual Subject-Verb Agreement / Nouns & Pronouns question for Mock Test 31.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'এলাকায় কি কোনো ভালো স্কুল আছে?'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "Is there any good school in the area?",
+        "Are there any good school in the area?",
+        "There is any good school in the area?",
+        "Has there any good school in the area?"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "explanation": "'Any good school' = singular → 'Is there'। 'Is there any good school in the area?'"
     }
   ]
 }

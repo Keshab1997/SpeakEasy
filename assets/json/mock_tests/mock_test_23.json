@@ -1,228 +1,228 @@
 {
   "id": "mock_test_23",
   "testNumber": 23,
-  "title": "Mock Test 23",
-  "description": "Comprehensive test covering Tenses - Past and Tenses - Future for spoken English practice.",
+  "title": "Mock Test 23 - Personal Pronouns (I, me, my, mine)",
+  "description": "এই টেস্টে Personal Pronouns (I, me, my, mine, you, your, yours, he, him, his, she, her, hers, it, its, we, us, our, ours, they, them, their, theirs) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Subject Pronoun কী? উদাহরণ দাও।",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "বাক্যের object-এর জায়গায় বসে (me, him, her)",
+        "বাক্যের subject-এর জায়গায় বসে (I, you, he, she, it, we, they)",
+        "possessive বোঝায় (my, your, his, her)",
+        "কোনোটিই নয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Subject Pronoun = বাক্যের subject (কর্তা) হিসেবে কাজ করে। Example: I eat rice. He plays cricket. They are coming. Subject pronouns: I, you, he, she, it, we, they।"
     },
     {
-      "question": "Question 2: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Object Pronoun কী? উদাহরণ দাও।",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "বাক্যের subject-এর জায়গায় বসে",
+        "বাক্যের object-এর জায়গায় বসে (me, him, her, us, them)",
+        "possessive বোঝায়",
+        "pronoun নয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Object Pronoun = verb বা preposition-এর পরে object হিসেবে বসে। Example: I called him. She gave me a book. Object pronouns: me, you, him, her, it, us, them।"
     },
     {
-      "question": "Question 3: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Possessive Adjective আর Possessive Pronoun-এর পার্থক্য কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "একই জিনিস",
+        "Possessive Adj-এর পরে noun লাগে (my book), Possessive Pronoun একা বসে (mine)",
+        "Possessive Pronoun-এর পরে noun লাগে",
+        "কোনোটিই নয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Possessive Adjective (my, your, his, her, its, our, their) = noun-এর আগে বসে: my book, your pen। Possessive Pronoun (mine, yours, his, hers, its, ours, theirs) = noun ছাড়া একা বসে: This book is mine।"
     },
     {
-      "question": "Question 4: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "নিচের কোনটি Possessive Pronoun?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "my",
+        "your",
+        "mine",
+        "her"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Possessive Pronoun: mine, yours, his, hers, its, ours, theirs। 'Mine' = 'my + noun' এর পরিবর্তে ব্যবহৃত হয়। যেমন: This is my book → This book is mine।"
     },
     {
-      "question": "Question 5: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "'It' pronoun কিসের জন্য ব্যবহৃত হয়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "শুধু মানুষের জন্য",
+        "শুধু বস্তুর জন্য",
+        "প্রাণী, বস্তু, আবহাওয়া, সময়, ইত্যাদির জন্য",
+        "শুধু স্থানের জন্য"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'It' = 3rd person singular neuter pronoun। প্রাণী (The cat is sleeping. It is cute), বস্তু (The book is mine. It is new), আবহাওয়া (It is raining), সময় (It is 5 PM), দূরত্ব (It is 10 km) — সব কিছুর জন্য ব্যবহৃত হয়।"
     },
     {
-      "question": "Question 6: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "___ is my friend, Rahim. (ইনি আমার বন্ধু রহিম)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "This",
+        "These",
+        "He",
+        "Him"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "কাউকে introduce/পরিচয় করানোর সময় 'This is...' বলা হয়। 'This is my friend, Rahim.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Please give ___ the book. (অনুগ্রহ করে আমাকে বইটি দাও)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "I",
+        "me",
+        "my",
+        "mine"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Verb 'give' এর পরে object লাগে → object pronoun 'me'। 'Please give me the book.' (I = subject, my = possessive adj, mine = possessive pronoun)"
     },
     {
-      "question": "Question 8: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "This book is ___, not yours. (এই বইটি আমার, তোমার নয়)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "my",
+        "mine",
+        "me",
+        "I"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "এখানে noun ছাড়া possession বোঝাচ্ছে → possessive pronoun 'mine'। 'This book is mine.' (my = my book → noun লাগে, mine = একা বসে)"
     },
     {
-      "question": "Question 9: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "___ are going to the market. (আমরা বাজারে যাচ্ছি)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "We",
+        "Us",
+        "Our",
+        "Ours"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "Subject-এর জায়গায় → subject pronoun 'We'। 'We are going to the market.' (Us = object, Our = possessive adj, Ours = possessive pronoun)"
     },
     {
-      "question": "Question 10: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "I saw ___ at the station yesterday. (আমি গতকাল স্টেশনে তাকে দেখেছি)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "he",
+        "him",
+        "his",
+        "himself"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Verb 'saw' এর পরে object → 'him'। 'I saw him at the station yesterday.' (He = subject, His = possessive)"
     },
     {
-      "question": "Question 11: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Error Detection: 'Me went to school yesterday.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Me",
+        "went",
+        "to school",
+        "yesterday"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "Subject-এ 'Me' (object pronoun) ব্যবহার করা যাবে না। 'I' (subject pronoun) হবে। সঠিক: 'I went to school yesterday.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Error Detection: 'This book is my.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "This book",
+        "is",
+        "my",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'My' = possessive adjective → এর পরে noun লাগে (my book)। Noun ছাড়া possessive বোঝাতে 'mine' হবে। সঠিক: 'This book is mine.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Error Detection: 'Her is a teacher.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "Her",
+        "is",
+        "a teacher",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "Subject-এ 'Her' (object pronoun) ব্যবহার করা যাবে না। 'She' (subject pronoun) হবে। সঠিক: 'She is a teacher.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Error Detection: 'I gave he a present.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "I gave",
+        "he",
+        "a present",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Verb 'gave' এর পরে object লাগে → 'him' হবে, 'he' (subject pronoun) নয়। সঠিক: 'I gave him a present.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Fill in the blank: 'Please help ___ .' (অনুগ্রহ করে আমাকে সাহায্য করুন)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "I",
+        "me",
+        "my",
+        "mine"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Help' verb-এর পরে object → 'me'। 'Please help me.'"
     },
     {
-      "question": "Question 16: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Fill in the blank: 'That car is ___ .' (ওই গাড়িটা আমাদের)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "our",
+        "ours",
+        "we",
+        "us"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Noun ছাড়া possession → possessive pronoun 'ours'। 'That car is ours.' (Our = our car → noun লাগে)"
     },
     {
-      "question": "Question 17: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Fill in the blank: '___ mother is a doctor.' (তার মা একজন ডাক্তার)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "He",
+        "Him",
+        "His",
+        "He's"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Mother' (noun) এর আগে possessive adjective 'His'। 'His mother is a doctor.' (He = subject, Him = object)"
     },
     {
-      "question": "Question 18: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "Fill in the blank: 'The cat is playing with ___ tail.' (বিড়ালটা তার লেজ নিয়ে খেলছে)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "it",
+        "its",
+        "it's",
+        "itself"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Tail' (noun) এর আগে possessive adjective 'its'। 'The cat is playing with its tail.' (It's = it is, Its = possessive)"
     },
     {
-      "question": "Question 19: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'এটা আমার বই, ওটা তোমার।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "This is my book, that is your.",
+        "This is mine book, that is yours.",
+        "This is my book, that is yours.",
+        "This is me book, that is you."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'My book' (possessive adj + noun) → 'my book'। দ্বিতীয় অংশে noun ছাড়া → 'yours' (possessive pronoun)। 'This is my book, that is yours.'"
     },
     {
-      "question": "Question 20: Replace this with your actual Tenses - Past / Tenses - Future question for Mock Test 23.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আমরা তাদের সাহায্য করেছি।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "We helped they.",
+        "Us helped them.",
+        "We helped them.",
+        "Our helped they."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'আমরা' = subject → 'We'। 'তাদের' = object → 'them'। 'We helped them.'"
     }
   ]
 }

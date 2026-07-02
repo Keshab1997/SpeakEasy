@@ -1,228 +1,228 @@
 {
   "id": "mock_test_28",
   "testNumber": 28,
-  "title": "Mock Test 28",
-  "description": "Comprehensive test covering Active & Passive Voice and Direct & Indirect Speech for spoken English practice.",
+  "title": "Mock Test 28 - Active vs Passive Voice",
+  "description": "এই টেস্টে Active vs Passive Voice নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Active Voice-এ বাক্যের গঠন কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Object + Verb + Subject",
+        "Subject + Verb + Object",
+        "Subject + Object + Verb",
+        "Verb + Subject + Object"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Active Voice: Subject নিজে কাজ করে। Structure: Subject + Verb + Object। যেমন: I write a letter. (আমি চিঠি লিখি)। এখানে Subject (I) কাজটি করছে।"
     },
     {
-      "question": "Question 2: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Passive Voice-এ বাক্যের গঠন কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Subject + Verb + Object",
+        "Object + be + V3 + by + Subject",
+        "Subject + be + V3 + Object",
+        "Object + Verb + Subject"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Passive Voice: Object-এর উপর কাজটি happening হয়। Structure: Object + be + V3 + by + Subject। যেমন: A letter is written by me. (একটি চিঠি আমার দ্বারা লেখা হয়)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Active থেকে Passive করার সময় tense অনুযায়ী কী পরিবর্তন হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "শুধু V3 যোগ করা হয়",
+        "'Be' verb-এর রূপ tense অনুযায়ী পরিবর্তিত হয় + V3",
+        "শুধু Subject-Object উল্টানো হয়",
+        "কোনো পরিবর্তন হয় না"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Passive-এ 'be' verb-এর রূপ main verb-এর tense অনুযায়ী হয়। Present Indefinite → am/is/are + V3। Past Indefinite → was/were + V3। Present Continuous → am/is/are + being + V3। Present Perfect → have/has + been + V3।"
     },
     {
-      "question": "Question 4: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Passive Voice-এ 'by' phrase না থাকলে কী বুঝায়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Subject জানা নেই বা গুরুত্বপূর্ণ নয়",
+        "Passive হবে না",
+        "Active হবে",
+        "ভুল বাক্য"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "explanation": "'By' phrase না থাকলে বোঝায় যে doer (কর্তা) unknown/অজানা, unimportant/গুরুত্বপূর্ণ নয়, বা obvious/স্পষ্ট। যেমন: The window was broken. (কে ভাঙলো জানি না/বলার প্রয়োজন নেই)।"
     },
     {
-      "question": "Question 5: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "নিচের কোনটি Active Voice?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "The book was written by him.",
+        "A letter is being written.",
+        "She sings a song.",
+        "The food was cooked."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'She sings a song' = Active Voice (Subject + Verb + Object)। বাকিগুলো Passive Voice (object + be + V3)।"
     },
     {
-      "question": "Question 6: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "The letter ___ by her yesterday. (চিঠিটি গতকাল তার দ্বারা লেখা হয়েছিল)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "wrote",
+        "was written",
+        "is written",
+        "has written"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Active: She wrote the letter yesterday. Passive: The letter was written by her yesterday. (Past Indefinite → was/were + V3)"
     },
     {
-      "question": "Question 7: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Rice ___ in Bangladesh. (বাংলাদেশে চাল উৎপাদিত হয়)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "grows",
+        "is grown",
+        "grew",
+        "has grown"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Active: People grow rice in Bangladesh. Passive: Rice is grown in Bangladesh. (Present Indefinite Passive → is/are + V3)"
     },
     {
-      "question": "Question 8: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "The work ___ by the students now. (কাজটি এখন ছাত্রদের দ্বারা করা হচ্ছে)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "is doing",
+        "is being done",
+        "has done",
+        "was done"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Active: The students are doing the work now. Passive: The work is being done by the students now. (Present Continuous Passive → am/is/are + being + V3)"
     },
     {
-      "question": "Question 9: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "The project ___ by next month. (প্রকল্পটি আগামী মাসের মধ্যে শেষ করা হবে)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "will finish",
+        "will be finished",
+        "is finished",
+        "has been finished"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Active: They will finish the project by next month. Passive: The project will be finished by next month. (Future Passive → will be + V3)"
     },
     {
-      "question": "Question 10: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "The homework ___ already. (হোমওয়ার্ক ইতিমধ্যে করা হয়েছে)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "has done",
+        "has been done",
+        "is done",
+        "was done"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Active: They have already done the homework. Passive: The homework has already been done. (Present Perfect Passive → have/has + been + V3)"
     },
     {
-      "question": "Question 11: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Error Detection: 'The book was wrote by Rahim.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "The book",
+        "was wrote",
+        "by Rahim",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Passive-এ সবসময় V3 (past participle) ব্যবহার হয়। 'Wrote' = V2, 'Written' = V3। সঠিক: 'The book was written by Rahim.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Error Detection: 'English is speak all over the world.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "English",
+        "is speak",
+        "all over the world",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Passive-এ 'be + V3' হয়। 'Is speak' → 'is spoken' হবে। সঠিক: 'English is spoken all over the world.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Error Detection: 'The letter is being write now.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "The letter",
+        "is being write",
+        "now",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Present Continuous Passive = am/is/are + being + V3। 'Write' → 'written' হবে। সঠিক: 'The letter is being written now.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Error Detection: 'The building was build in 1990.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "The building",
+        "was build",
+        "in 1990",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Passive = was/were + V3। 'Build' = V1, 'Built' = V3। সঠিক: 'The building was built in 1990.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Fill in the blank: 'Active: The cat ___ the mouse.' → 'Passive: The mouse was caught by the cat.'",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "catch",
+        "caught",
+        "catches",
+        "catching"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Active Past Indefinite (caught) → Passive: was/were + V3 (caught)। 'The cat caught the mouse.' → 'The mouse was caught by the cat.'"
     },
     {
-      "question": "Question 16: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Fill in the blank: 'Active: She ___ a letter.' → 'Passive: A letter is written by her.'",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "writes",
+        "wrote",
+        "written",
+        "is writing"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "Passive 'is written' = Present Indefinite Passive। Active Present Indefinite (writes)। 'She writes a letter.' → 'A letter is written by her.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Fill in the blank: 'Active: They ___ the bridge.' → 'Passive: The bridge is being built by them.'",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "build",
+        "built",
+        "are building",
+        "have built"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Passive 'is being built' = Present Continuous Passive। Active Present Continuous (are building)। 'They are building the bridge.' → 'The bridge is being built by them.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "Fill in the blank: 'Active: Someone ___ my wallet.' → 'Passive: My wallet has been stolen.'",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "steals",
+        "stole",
+        "has stolen",
+        "is stealing"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Passive 'has been stolen' = Present Perfect Passive। Active Present Perfect (has stolen)। 'Someone has stolen my wallet.'"
     },
     {
-      "question": "Question 19: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'চিঠিটি আমার দ্বারা লেখা হয়েছিল।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "The letter wrote by me.",
+        "The letter was written by me.",
+        "The letter is written by me.",
+        "The letter was wrote by me."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Passive Past Indefinite → was/were + V3। 'The letter was written by me.' (By me' = আমার দ্বারা)"
     },
     {
-      "question": "Question 20: Replace this with your actual Active & Passive Voice / Direct & Indirect Speech question for Mock Test 28.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'ইংরেজি সারা বিশ্বে বলা হয়।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "English speaks all over the world.",
+        "English is speak all over the world.",
+        "English is spoken all over the world.",
+        "English was spoken all over the world."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Present Indefinite Passive → is/are + V3। 'English is spoken all over the world.' (Spoken = V3 of speak)"
     }
   ]
 }

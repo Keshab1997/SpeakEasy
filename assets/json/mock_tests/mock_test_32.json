@@ -1,228 +1,228 @@
 {
   "id": "mock_test_32",
   "testNumber": 32,
-  "title": "Mock Test 32",
-  "description": "Comprehensive test covering Nouns & Pronouns and Adjectives for spoken English practice.",
+  "title": "Mock Test 32 - Some/Any/No/None",
+  "description": "এই টেস্টে Some, Any, No, None নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "'Some' সাধারণত কী ধরনের sentence-এ ব্যবহার হয়?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Negative sentence-এ",
+        "Question-এ",
+        "Affirmative sentence-এ",
+        "Imperative sentence-এ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Some' সাধারণত affirmative/positive sentence-এ ব্যবহৃত হয়। যেমন: I have some books. There is some water. She needs some help. (Negative বা question-এ usually 'any' হয়।)"
     },
     {
-      "question": "Question 2: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "'Any' সাধারণত কী ধরনের sentence-এ ব্যবহার হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "Affirmative sentence-এ",
+        "Negative sentence ও question-এ",
+        "শুধু question-এ",
+        "শুধু affirmative-এ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Any' = negative sentence (I don't have any money) এবং question (Do you have any books?) এ ব্যবহৃত হয়। Affirmative-এ 'any' = যে কোনো (Any student can join = যে কোনো ছাত্র যোগ দিতে পারে)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "'No' আর 'None'-এর মধ্যে পার্থক্য কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "No = adjective (noun-এর আগে), None = pronoun (একা বসে)",
+        "No = pronoun, None = adjective",
+        "দুটো একই",
+        "No = plural, None = singular"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "'No' = determiner/adjective → noun-এর আগে বসে (No water, No books)। 'None' = pronoun → noun ছাড়া একা বসে (How many? → None। None of the students came।)"
     },
     {
-      "question": "Question 4: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "সঠিক উত্তর কী? 'How many books do you have?' — ___",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "No",
+        "None",
+        "Any",
+        "Some"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'How many?' প্রশ্নের উত্তর 'None' (কোনোটিই নয়) হবে। 'None' pronoun, noun ছাড়া বসে। 'No' এর পরে noun লাগে (No books)।"
     },
     {
-      "question": "Question 5: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "'Some'-এর বিশেষ ব্যবহার কোনগুলো?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "শুধু affirmative-এ",
+        "Offer/request-এ question-এও (Would you like some tea?)",
+        "শুধু negative-এ",
+        "শুধু past tense-এ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Some' offer (Would you like some tea?) এবং request (Can I have some water?) বোঝাতে question-এও ব্যবহার হয়। কারণ আমরা positive response আশা করি।"
     },
     {
-      "question": "Question 6: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "I have ___ books on the shelf. (আমার শেলফে কিছু বই আছে)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "some",
+        "any",
+        "no",
+        "none"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "Affirmative sentence → 'some'। 'I have some books on the shelf.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "I don't have ___ money with me right now. (আমার কাছে এখন কোনো টাকা নেই)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "some",
+        "any",
+        "no",
+        "none"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Negative sentence (don't have) → 'any'। 'I don't have any money.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "There is ___ water in the glass. (গ্লাসে কোনো পানি নেই)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "some",
+        "any",
+        "no",
+        "none"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'No' = not any → noun-এর আগে। 'There is no water in the glass.' (No water = zero quantity)"
     },
     {
-      "question": "Question 9: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "Would you like ___ coffee? (আপনি কি কিছু কফি পছন্দ করবেন?)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "some",
+        "any",
+        "no",
+        "none"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "Offer (প্রস্তাব) → 'some'। 'Would you like some coffee?' (আমরা yes আশা করি)"
     },
     {
-      "question": "Question 10: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "___ of the answers were correct. (কোনো উত্তরই সঠিক ছিল না)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "Some",
+        "Any",
+        "No",
+        "None"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'None of + noun' = কোনোটি নয়। 'None of the answers were correct.' (None = not one)"
     },
     {
-      "question": "Question 11: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "Error Detection: 'I don't have some money.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "I don't have",
+        "some money",
+        "কোনো ভুল নেই",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Negative sentence-এ 'some' → 'any' হবে। সঠিক: 'I don't have any money.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "Error Detection: 'Do you have some books?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "Do you have",
+        "some books",
+        "কোনো ভুল নেই",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "General question-এ 'some' → 'any' হবে। 'Do you have any books?' (তবে offer/request-এ some ঠিক আছে: 'Would you like some books?')"
     },
     {
-      "question": "Question 13: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "Error Detection: 'There isn't no water in the bottle.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "There isn't",
+        "no water",
+        "in the bottle",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "Double negative → ভুল। 'Isn't' (= is not) already negative, so 'no' → 'any' হবে। সঠিক: 'There isn't any water.' অথবা 'There is no water.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "Error Detection: 'No of the students were late.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "No",
+        "of the students",
+        "were late",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "'No' noun-এর আগে বসে (No students)। 'None of' → phrase। সঠিক: 'None of the students were late.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "Fill in the blank: 'She has ___ close friends.' (তার কিছু ঘনিষ্ঠ বন্ধু আছে)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "some",
+        "any",
+        "no",
+        "none"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "Affirmative → 'some close friends'। 'She has some close friends.'"
     },
     {
-      "question": "Question 16: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "Fill in the blank: 'I can't find my keys ___ .' (আমি আমার চাবি কোথাও খুঁজে পাচ্ছি না)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "somewhere",
+        "anywhere",
+        "nowhere",
+        "everywhere"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Negative sentence → 'anywhere' (কোথাও)। 'I can't find my keys anywhere.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "Fill in the blank: '___ one knows the answer.' (কেউ উত্তর জানে না)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "Some",
+        "Any",
+        "No",
+        "None"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'No one' = nobody (কেউ না)। 'No one knows the answer.' (No one = একসাথে একটি word)"
     },
     {
-      "question": "Question 18: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "Fill in the blank: 'There are ___ apples left. We need to buy more.' (কোনো আপেল বাকি নেই। আমাদের আরও কিনতে হবে)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "some",
+        "any",
+        "no",
+        "none"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'No apples' = zero quantity। 'There are no apples left.' (কেননা পরের বাক্যে buy more বলছে)"
     },
     {
-      "question": "Question 19: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'তোমার কি কোনো প্রশ্ন আছে?'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "Do you have some questions?",
+        "Do you have any questions?",
+        "You have some questions?",
+        "Have you some questions?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Question → 'any'। 'Do you have any questions?' (Some = affirmative, Any = question)"
     },
     {
-      "question": "Question 20: Replace this with your actual Nouns & Pronouns / Adjectives question for Mock Test 32.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'তিনি কিছু ফল কিনেছেন।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "He bought any fruits.",
+        "He bought some fruits.",
+        "He bought no fruits.",
+        "He bought none fruits."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Affirmative sentence → 'some'। 'He bought some fruits.'"
     }
   ]
 }

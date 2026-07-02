@@ -1,228 +1,228 @@
 {
   "id": "mock_test_24",
   "testNumber": 24,
-  "title": "Mock Test 24",
-  "description": "Comprehensive test covering Tenses - Future and Prepositions for spoken English practice.",
+  "title": "Mock Test 24 - Adjectives (Comparative & Superlative)",
+  "description": "এই টেস্টে Adjectives (Comparative & Superlative) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Comparative Degree কী বোঝাতে ব্যবহার হয়?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "দুইজনের মধ্যে সবচেয়ে বেশি গুণ বোঝাতে",
+        "দুইজনের মধ্যে তুলনা বোঝাতে",
+        "সাধারণ গুণ বোঝাতে",
+        "তিন বা ততোধিকের মধ্যে তুলনা বোঝাতে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Comparative Degree = দুই ব্যক্তি/বস্তুর মধ্যে তুলনা বোঝাতে ব্যবহৃত হয়। যেমন: Rahim is taller than Karim. (রহিম করিমের চেয়ে লম্বা)। সাধারণত 'than' ব্যবহার হয়।"
     },
     {
-      "question": "Question 2: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Superlative Degree কী বোঝাতে ব্যবহার হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "দুইজনের মধ্যে তুলনা বোঝাতে",
+        "তিন বা ততোধিকের মধ্যে সবচেয়ে বেশি/সর্বোচ্চ গুণ বোঝাতে",
+        "সাধারণ গুণ বোঝাতে",
+        "নেতিবাচক তুলনা বোঝাতে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Superlative Degree = তিন বা ততোধিকের মধ্যে সবচেয়ে বেশি/সর্বোচ্চ গুণ বোঝাতে ব্যবহৃত হয়। যেমন: Rahim is the tallest boy in the class. Superlative-এর আগে 'the' বসে এবং শেষে '-est' যোগ হয় বা 'most' বসে।"
     },
     {
-      "question": "Question 3: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "একটি syllable-যুক্ত adjective-এর comparative ও superlative কীভাবে হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "more/most + adjective",
+        "adjective + er/est",
+        "better/best",
+        "কোনো পরিবর্তন হয় না"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "এক syllable-যুক্ত adjective → comparative: -er, superlative: -est যোগ হয়। যেমন: tall → taller → tallest, fast → faster → fastest, big → bigger → biggest।"
     },
     {
-      "question": "Question 4: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "দুই বা ততোধিক syllable-যুক্ত adjective-এর comparative ও superlative কীভাবে হয়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "adjective + er/est",
+        "more/most + adjective",
+        "better/best",
+        "শুধু -er যোগ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "দুই বা ততোধিক syllable-যুক্ত adjective → comparative: more + adj, superlative: most + adj। যেমন: beautiful → more beautiful → most beautiful, expensive → more expensive → most expensive।"
     },
     {
-      "question": "Question 5: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "নিচের কোনটি Irregular Adjective?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "tall → taller → tallest",
+        "big → bigger → biggest",
+        "good → better → best",
+        "fast → faster → fastest"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Irregular Adjective: এর comparative/superlative নিয়মিত -er/-est বা more/most দিয়ে হয় না। Good → better → best, Bad → worse → worst, Far → farther/further → farthest/furthest, Many/much → more → most, Little → less → least।"
     },
     {
-      "question": "Question 6: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "This is ___ movie I have ever seen. (এটা আমার দেখা সেরা সিনেমা)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "good",
+        "better",
+        "best",
+        "the best"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "'Ever seen' = সারাজীবনে দেখা → Superlative। Superlative-এর আগে 'the' বসে। 'This is the best movie I have ever seen.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Rahim is ___ than Karim. (রহিম করিমের চেয়ে লম্বা)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "tall",
+        "taller",
+        "tallest",
+        "more tall"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Than' = তুলনা → Comparative Degree। Tall → taller। 'Rahim is taller than Karim.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "She is the ___ girl in the class. (সে ক্লাসের সবচেয়ে স্মার্ট মেয়ে)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "smart",
+        "smarter",
+        "smartest",
+        "most smart"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'The' + 'in the class' = Superlative। এক syllable → -est। 'She is the smartest girl in the class.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "This book is ___ than that one. (এই বইটি ওটার চেয়ে বেশি দামি)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "expensive",
+        "more expensive",
+        "most expensive",
+        "expensiver"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "তিন syllable (expensive) → comparative: more + expensive। 'This book is more expensive than that one.'"
     },
     {
-      "question": "Question 10: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "He is the ___ player on the team. (সে দলের সবচেয়ে ভালো খেলোয়াড়)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "good",
+        "better",
+        "best",
+        "most good"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Irregular: good → better → best। Superlative → 'the best'। 'He is the best player on the team.'"
     },
     {
-      "question": "Question 11: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Error Detection: 'She is more taller than her sister.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "She is",
+        "more taller",
+        "than",
+        "her sister"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Taller' নিজেই comparative। 'More taller' = double comparative → ভুল। সঠিক: 'She is taller than her sister.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Error Detection: 'This is the most fastest car.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "This is",
+        "the",
+        "most fastest",
+        "car"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Fastest' নিজেই superlative। 'Most fastest' = double superlative → ভুল। সঠিক: 'This is the fastest car.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Error Detection: 'He is the more intelligent student in the class.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "He is",
+        "the more intelligent",
+        "student in the class",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'In the class' → সুপারলেটিভ হবে। 'More intelligent' = comparative। Superlative: 'the most intelligent'। সঠিক: 'He is the most intelligent student in the class.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Error Detection: 'My car is better than my friend car.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "My car",
+        "is better",
+        "than my friend car",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "তুলনা করার সময় সমান জিনিস তুলনা করতে হয়। 'My car' ↔ 'my friend's car' (friend's = possessive)। সঠিক: 'My car is better than my friend's car.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Fill in the blank: 'Mount Everest is the ___ mountain in the world.' (এভারেস্ট বিশ্বের সবচেয়ে উঁচু পর্বত)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "high",
+        "higher",
+        "highest",
+        "most high"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'The' + 'in the world' → Superlative। High → highest। 'Mount Everest is the highest mountain in the world.'"
     },
     {
-      "question": "Question 16: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Fill in the blank: 'This road is ___ than the other one.' (এই রাস্তাটি অন্যটির চেয়ে সরু)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "narrow",
+        "narrower",
+        "narrowest",
+        "more narrow"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Than' → Comparative। Narrow → narrower। 'This road is narrower than the other one.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Fill in the blank: 'This is the ___ day of my life.' (এটা আমার জীবনের সবচেয়ে খারাপ দিন)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "bad",
+        "worse",
+        "worst",
+        "most bad"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Irregular: bad → worse → worst। 'The worst' = Superlative। 'This is the worst day of my life.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "Fill in the blank: 'She speaks English ___ than I do.' (সে আমার চেয়ে ভালো ইংরেজি বলে)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "good",
+        "better",
+        "best",
+        "well"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Than' → Comparative। 'Well'-এর comparative = 'better'। 'She speaks English better than I do.'"
     },
     {
-      "question": "Question 19: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'এই ঘরটি ওই ঘরটির চেয়ে বড়।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "This room is big than that room.",
+        "This room is bigger than that room.",
+        "This room is biggest than that room.",
+        "This room is more big than that room."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Than' = comparative। Big → bigger (গ doubling + er)। 'This room is bigger than that room.'"
     },
     {
-      "question": "Question 20: Replace this with your actual Tenses - Future / Prepositions question for Mock Test 24.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'সে আমার সবচেয়ে ভালো বন্ধু।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "She is my good friend.",
+        "She is my better friend.",
+        "She is my best friend.",
+        "She is my most good friend."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'সবচেয়ে ভালো' = Superlative। Good → better → best। 'She is my best friend.'"
     }
   ]
 }

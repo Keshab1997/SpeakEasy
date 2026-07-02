@@ -1,228 +1,228 @@
 {
   "id": "mock_test_21",
   "testNumber": 21,
-  "title": "Mock Test 21",
-  "description": "Comprehensive test covering Articles and Tenses - Present for spoken English practice.",
+  "title": "Mock Test 21 - Subject-Verb Agreement",
+  "description": "এই টেস্টে Subject-Verb Agreement (Subject-এর সাথে Verb-এর সঠিক মিল) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Subject-Verb Agreement-এর মূল নিয়ম কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Subject singular হলে verb plural হয়",
+        "Subject plural হলে verb plural হয়, subject singular হলে verb singular হয়",
+        "Verb সবসময় plural হয়",
+        "Subject-এর সাথে verb-এর কোনো সম্পর্ক নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Subject-Verb Agreement-এর মূল নিয়ম: Subject singular হলে verb singular হয় (The boy plays), Subject plural হলে verb plural হয় (The boys play)। অর্থাৎ Singular Subject → Singular Verb, Plural Subject → Plural Verb।"
     },
     {
-      "question": "Question 2: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Present Indefinite-এ He/She/It-এর সাথে verb-এর কী রূপ হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "V1 (base form)",
+        "V1 + s/es",
+        "V2",
+        "V+ing"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Present Indefinite-এ He/She/It (3rd person singular) এর সাথে verb-এর সাথে s/es যোগ হয়। যেমন: He plays, She goes, It works। I/You/We/They → V1 (play, go, work)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Two or更多人/বস্তু `and` দ্বারা যুক্ত হলে verb কী হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "Singular verb",
+        "Plural verb",
+        "verb বসে না",
+        "V+ing হয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Two or more subjects `and` দ্বারা যুক্ত হলে verb plural হয়। যেমন: Rahim and Karim are friends. The pen and the book are on the table. (দুটো মিলে plural subject)"
     },
     {
-      "question": "Question 4: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Either/or, Neither/nor-এ verb কেমন হয়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "সবসময় plural verb",
+        "সবসময় singular verb",
+        "নিকটবর্তী subject-এর অনুযায়ী verb হয়",
+        "verb বসে না"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Either/or, Neither/nor-এ verb nearest subject (নিকটবর্তী subject)-এর অনুযায়ী হয়। যেমন: Either the boys or the girl is coming. (girl = singular → is)। Neither the girl nor the boys are coming. (boys = plural → are)"
     },
     {
-      "question": "Question 5: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Collective noun (team, family, crowd) এর সাথে verb কেমন হয়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "সবসময় singular verb",
+        "সবসময় plural verb",
+        "একক গ্রুপ বোঝালে singular, সদস্যদের বোঝালে plural",
+        "verb বসে না"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Collective noun (team, family, crowd, committee) গ্রুপ হিসেবে এককভাবে কাজ করলে singular verb হয় (The team is winning)। পৃথক সদস্যদের বোঝালে plural verb হয় (The team are wearing their uniforms)।"
     },
     {
-      "question": "Question 6: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "The price of these books ___ very high. (এই বইগুলোর দাম খুব বেশি)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "is",
+        "are",
+        "were",
+        "have"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "Subject = 'The price' (singular), 'of these books' prepositional phrase। মূল subject 'price' singular, তাই verb 'is' হবে। 'The price of these books is very high.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Rahim and Karim ___ friends. (রহিম ও করিম বন্ধু)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "is",
+        "are",
+        "was",
+        "has"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Rahim and Karim = দুই ব্যক্তি, 'and' দ্বারা যুক্ত → plural subject → 'are'। 'Rahim and Karim are friends.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Either the teacher or the students ___ responsible. (হয় শিক্ষক নয়তো ছাত্ররা দায়ী)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "is",
+        "are",
+        "was",
+        "has"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Either/or-এ nearest subject অনুযায়ী। এখানে 'the students' (plural) nearest → 'are'। 'Either the teacher or the students are responsible.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "The team ___ winning the match. (দলটি ম্যাচ জিতছে)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "is",
+        "are",
+        "were",
+        "have"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "'The team' = collective noun, একক গ্রুপ হিসেবে → singular verb 'is'। 'The team is winning the match.'"
     },
     {
-      "question": "Question 10: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Everyone in the class ___ the exam. (ক্লাসের সবাই পরীক্ষা পাস করেছে)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "has passed",
+        "have passed",
+        "are passing",
+        "were passing"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "explanation": "'Everyone' = indefinite pronoun → সবসময় singular verb। 'Everyone has passed the exam.' (Everyone have → ভুল)"
     },
     {
-      "question": "Question 11: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Error Detection: 'The boys plays football every day.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "The boys",
+        "plays",
+        "football",
+        "every day"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'The boys' = plural subject → 'play' হবে (plural verb), 'plays' (singular verb) নয়। সঠিক: 'The boys play football every day.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Error Detection: 'She go to school every day.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "She",
+        "go",
+        "to school",
+        "every day"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "She (3rd person singular) → 'goes' হবে, 'go' নয়। সঠিক: 'She goes to school every day.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Error Detection: 'The price of these books are very high.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "The price",
+        "of these books",
+        "are",
+        "very high"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Subject = 'The price' (singular)। 'Are' → 'is' হবে। Prepositional phrase ('of these books') মূল subject নির্ধারণ করে না। সঠিক: 'The price of these books is very high.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Error Detection: 'Neither the students nor the teacher are coming.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "Neither the students",
+        "nor the teacher",
+        "are",
+        "coming"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Neither/nor-এ nearest subject = 'the teacher' (singular) → 'is' হবে, 'are' নয়। সঠিক: 'Neither the students nor the teacher is coming.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Fill in the blank: 'Mathematics ___ my favorite subject.' (গণিত আমার প্রিয় বিষয়)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "is",
+        "are",
+        "were",
+        "have"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Mathematics' = singular noun (s-এ শেষ হলেও singular)। 'Mathematics is my favorite subject.'"
     },
     {
-      "question": "Question 16: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Fill in the blank: 'The news ___ very shocking.' (খবরটি খুব shocking)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "is",
+        "are",
+        "were",
+        "have"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "explanation": "'The news' = uncountable singular noun → 'is'। 'The news is very shocking.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Fill in the blank: 'A number of students ___ present.' (অনেক ছাত্র উপস্থিত ছিল)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "is",
+        "was",
+        "were",
+        "has"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'A number of + plural noun' = plural verb হয়। 'A number of students were present.' ('The number of' = singular)"
     },
     {
-      "question": "Question 18: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "Fill in the blank: 'The pair of shoes ___ very expensive.' (জুতার জোড়াটি খুব দামি)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "is",
+        "are",
+        "were",
+        "have"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "Subject = 'The pair' (singular), 'of shoes' prepositional phrase। 'The pair of shoes is very expensive.'"
     },
     {
-      "question": "Question 19: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'সে এবং তার বন্ধু প্রতিদিন ফুটবল খেলে।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "He and his friend plays football every day.",
+        "He and his friend play football every day.",
+        "He and his friend is playing football every day.",
+        "He and his friend are play football every day."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'He and his friend' = দুই ব্যক্তি 'and' দ্বারা যুক্ত → plural subject → 'play' (plays নয়)। 'He and his friend play football every day.'"
     },
     {
-      "question": "Question 20: Replace this with your actual Articles / Tenses - Present question for Mock Test 21.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'প্রতিটি ছাত্রেরই একটি করে বই আছে।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "Every student have a book.",
+        "Every student has a book.",
+        "Every student are having a book.",
+        "Every student were having a book."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Every student' = singular → 'has'। 'Every student has a book.' ('Every' সবসময় singular noun ও singular verb নেয়।)"
     }
   ]
 }

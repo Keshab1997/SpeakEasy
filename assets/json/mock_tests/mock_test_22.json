@@ -1,228 +1,228 @@
 {
   "id": "mock_test_22",
   "testNumber": 22,
-  "title": "Mock Test 22",
-  "description": "Comprehensive test covering Tenses - Present and Tenses - Past for spoken English practice.",
+  "title": "Mock Test 22 - Singular vs Plural",
+  "description": "এই টেস্টে Singular vs Plural (একবচন ও বহুবচন) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "বেশিরভাগ singular noun-কে plural করতে কী যোগ করা হয়?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "-es",
+        "-s",
+        "-ies",
+        "-ves"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "বেশিরভাগ singular noun-কে plural করতে শেষে '-s' যোগ করা হয়। যেমন: book → books, cat → cats, pen → pens, table → tables।"
     },
     {
-      "question": "Question 2: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "-s, -ss, -sh, -ch, -x, -o-এ শেষ হওয়া noun-কে plural করতে কী যোগ করা হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "-s",
+        "-es",
+        "-ies",
+        "-ves"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "-s, -ss, -sh, -ch, -x, -o-এ শেষ হওয়া noun-কে plural করতে '-es' যোগ করা হয়। যেমন: bus → buses, class → classes, brush → brushes, watch → watches, box → boxes, mango → mangoes।"
     },
     {
-      "question": "Question 3: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "Consonant + y-এ শেষ হওয়া noun-কে plural করতে কী নিয়ম?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "শুধু -s যোগ",
+        "y → i + es",
+        "y → ies",
+        "শুধু -es যোগ"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Consonant + y-এ শেষ হওয়া noun → y-কে i করে -es যোগ করা হয়। যেমন: baby → babies, city → cities, lady → ladies। কিন্তু vowel + y (boy → boys) → শুধু -s যোগ।"
     },
     {
-      "question": "Question 4: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "-f/-fe-এ শেষ হওয়া কিছু noun-কে plural করতে কী নিয়ম?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "শুধু -s যোগ",
+        "f/fe → v + es",
+        "শুধু -es যোগ",
+        "কোনো পরিবর্তন নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "-f/-fe-এ শেষ হওয়া কিছু noun-কে plural করতে f/fe → v করে -es যোগ করা হয়। যেমন: leaf → leaves, knife → knives, wife → wives, wolf → wolves। কিন্তু roof → roofs (শুধু -s)।"
     },
     {
-      "question": "Question 5: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "নিচের কোনটি Irregular Plural-এর উদাহরণ?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "books",
+        "tables",
+        "children",
+        "pens"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Irregular plural: যে noun-গুলোর plural form নিয়মিত -s/-es দিয়ে হয় না। যেমন: child → children, man → men, woman → women, foot → feet, tooth → teeth, mouse → mice, person → people।"
     },
     {
-      "question": "Question 6: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "I saw two ___ in the forest. (আমি জঙ্গলে দুটি হরিণ দেখলাম)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "deer",
+        "deers",
+        "deeres",
+        "deer's"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "'Deer' = zero plural noun — singular ও plural একই থাকে। যেমন: one deer, two deer। Sheep, fish, furniture, information-ও একই নিয়মে।"
     },
     {
-      "question": "Question 7: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "She has three ___ . (তার তিনটি সন্তান আছে)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "child",
+        "childs",
+        "children",
+        "childes"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Child → Children (irregular plural)। 'She has three children.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "There are five ___ in the room. (রুমে পাঁচটি মহিলা আছে)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "woman",
+        "womans",
+        "women",
+        "womens"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Woman (singular) → Women (irregular plural)। 'There are five women in the room.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "I need two ___ of bread. (আমার দুই টুকরো রুটি দরকার)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "bread",
+        "breads",
+        "pieces of bread",
+        "breades"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Bread = uncountable noun → 'two breads' বলা যায় না। 'Two pieces of bread' বা 'two loaves of bread' বলতে হয়।"
     },
     {
-      "question": "Question 10: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "How many ___ do you have? (তোমার কয়টি দাঁত আছে?)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "tooth",
+        "tooths",
+        "teeth",
+        "teethes"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Tooth → Teeth (irregular plural)। 'How many teeth do you have?'"
     },
     {
-      "question": "Question 11: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "Error Detection: 'She bought five apples and two mango.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "five apples",
+        "and",
+        "two mango",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Two' এর পরে plural noun হয়। 'Mango' → 'mangoes' হবে। সঠিক: 'She bought five apples and two mangoes.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "Error Detection: 'The childs are playing in the garden.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "The",
+        "childs",
+        "are playing",
+        "in the garden"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Child → Children (irregular)। 'Childs' → ভুল। সঠিক: 'The children are playing in the garden.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "Error Detection: 'I have two sister and one brother.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "I have",
+        "two sister",
+        "and",
+        "one brother"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Two' এর পরে plural noun হয়। 'Sister' → 'sisters' হবে। সঠিক: 'I have two sisters and one brother.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "Error Detection: 'She gave me some informations.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "She gave",
+        "me",
+        "some informations",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Information' = uncountable noun → এর plural 'informations' হয় না। 'Some information' বা 'pieces of information' বলতে হয়।"
     },
     {
-      "question": "Question 15: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "Fill in the blank: 'There are many ___ in the river.' (নদীতে অনেক মাছ আছে)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "fish",
+        "fishes",
+        "fishs",
+        "fisher"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Fish' singular ও plural একই (zero plural)। 'Many fish in the river.' (Fishes = বিভিন্ন প্রজাতির মাছ বোঝাতে ব্যবহৃত হয়)"
     },
     {
-      "question": "Question 16: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "Fill in the blank: 'The ___ are playing football.' (ছেলেরা ফুটবল খেলছে)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "boy",
+        "boies",
+        "boys",
+        "boyes"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Boy → Boys (vowel + y → শুধু -s)। 'The boys are playing football.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "Fill in the blank: 'All the ___ are wearing uniforms.' (সব মহিলা ইউনিফর্ম পরছে)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "woman",
+        "womans",
+        "women",
+        "womens"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Woman → Women (irregular plural)। 'All the women are wearing uniforms.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "Fill in the blank: 'He brushed his ___ before going to bed.' (ঘুমাতে যাওয়ার আগে সে দাঁত ব্রাশ করল)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "tooth",
+        "tooths",
+        "teeth",
+        "teethes"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Brushed his teeth' — teeth (plural)। সাধারণত everyone brushes all teeth, not just one tooth।"
     },
     {
-      "question": "Question 19: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আমি তিনটি কলম কিনেছি।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "I bought three pen.",
+        "I bought three pens.",
+        "I bought three penny.",
+        "I bought three pences."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Three' = plural → 'pens'। 'I bought three pens.'"
     },
     {
-      "question": "Question 20: Replace this with your actual Tenses - Present / Tenses - Past question for Mock Test 22.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'তাদের দুটি পা ও দুটি হাত আছে।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "They have two foot and two hand.",
+        "They have two foots and two hands.",
+        "They have two feet and two hands.",
+        "They have two feet and two hand."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Foot → Feet (irregular), Hand → Hands (regular)। 'They have two feet and two hands.'"
     }
   ]
 }

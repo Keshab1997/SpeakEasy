@@ -1,228 +1,228 @@
 {
   "id": "mock_test_34",
   "testNumber": 34,
-  "title": "Mock Test 34",
-  "description": "Comprehensive test covering Adverbs and Verbs for spoken English practice.",
+  "title": "Mock Test 34 - If-Clauses (Conditional 1 & 2)",
+  "description": "এই টেস্টে Conditional Sentences Type 1 (Real) ও Type 2 (Unreal) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Conditional Type 1 (Real Conditional)-এর গঠন কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "If + Present Simple, will + V1",
+        "If + Past Simple, would + V1",
+        "If + Past Perfect, would have + V3",
+        "If + V1, will + V1"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "explanation": "Type 1 (Real/বাস্তব সম্ভাবনা): If + Present Simple, will + V1। যেমন: If it rains, I will stay home. (বৃষ্টি হলে বাসায় থাকব — real possibility)"
     },
     {
-      "question": "Question 2: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Conditional Type 2 (Unreal Conditional)-এর গঠন কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "If + Present Simple, will + V1",
+        "If + Past Simple, would + V1",
+        "If + Past Perfect, would have + V3",
+        "If + V1, will + V1"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Type 2 (Unreal/অবাস্তব বর্তমান বা ভবিষ্যৎ): If + Past Simple, would + V1। যেমন: If I were rich, I would travel. (বর্তমানে ধনী না — unreal)"
     },
     {
-      "question": "Question 3: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Conditional Type 2-এ 'were' ব্যবহার করা হয় কেন?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "সবসময় 'was' হয়",
+        "'If I were' একটি fixed expression (subjunctive mood)",
+        "'Were' শুধু plural-এর জন্য",
+        "অতীত বোঝাতে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Conditional Type 2-এ 'If I were' = subjunctive mood। 'If I were you' (fixed expression)। Was না হয়ে সবসময় were হয় — এমনকি I/he/she-এর সাথেও।"
     },
     {
-      "question": "Question 4: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Conditional Type 1 কী বোঝায়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "অসম্ভব/অবাস্তব কল্পনা",
+        "বাস্তব সম্ভাবনা (real possibility)",
+        "অতীতের অসম্ভব কল্পনা",
+        "সর্বদা সত্য বিষয়"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Type 1 = real/possible condition। ভবিষ্যতে ঘটার real possibility থাকে। যেমন: If you study, you will pass. (পড়লে পাস করবে — possible)"
     },
     {
-      "question": "Question 5: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Conditional Type 2 কী বোঝায়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "বাস্তব সম্ভাবনা",
+        "বর্তমানে অবাস্তব/অসম্ভব কল্পনা (unreal present)",
+        "সর্বদা সত্য",
+        "অতীতের বাস্তব ঘটনা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Type 2 = unreal present/future। বর্তমানে যা সত্য নয় বা অসম্ভব সেটা কল্পনা। যেমন: If I were a bird, I would fly. (আমি পাখি নই — unreal)"
     },
     {
-      "question": "Question 6: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "If it rains, I ___ stay home. (যদি বৃষ্টি হয়, আমি বাসায় থাকব)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "will",
+        "would",
+        "would have",
+        "am"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "explanation": "Type 1 (real): If + Present Simple → will + V1। 'If it rains, I will stay home.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "If I ___ you, I would accept the offer. (আমি যদি তুমি হতাম, তাহলে অফারটা accept করতাম)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "am",
+        "was",
+        "were",
+        "will be"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'If I were you' = Type 2 fixed expression। 'If I were you, I would accept the offer.' (Subjunctive mood)"
     },
     {
-      "question": "Question 8: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "If you heat ice, it ___. (যদি বরফ গরম করো, তবে তা গলে — universal truth)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "will melt",
+        "would melt",
+        "melts",
+        "melted"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Universal truth/zero conditional: If + Present Simple → Present Simple। 'If you heat ice, it melts.' (সর্বদা সত্য)"
     },
     {
-      "question": "Question 9: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "If she studies hard, she ___ the exam. (সে যদি কঠোর পড়ে, তাহলে পরীক্ষায় পাস করবে)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "passes",
+        "will pass",
+        "would pass",
+        "passed"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Type 1 (real possibility): If + Present Simple → will + V1। 'If she studies hard, she will pass the exam.'"
     },
     {
-      "question": "Question 10: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "If I had a car, I ___ drive to work. (আমার যদি গাড়ি থাকত, আমি গাড়ি চালিয়ে অফিস যেতাম)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "will",
+        "would",
+        "would have",
+        "can"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Type 2 (unreal present): If + Past Simple → would + V1। 'If I had a car, I would drive to work.' (বর্তমানে গাড়ি নেই)"
     },
     {
-      "question": "Question 11: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Error Detection: 'If it will rain, I will stay home.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "If it will rain",
+        "I will stay home",
+        "কোনো ভুল নেই",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "explanation": "If-clause-এ 'will' ব্যবহার হয় না। 'If it rains' হবে (Present Simple)। সঠিক: 'If it rains, I will stay home.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Error Detection: 'If I was you, I would go.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "If I was you",
+        "I would go",
+        "কোনো ভুল নেই",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "explanation": "Type 2-এ 'If I were you' (subjunctive mood) — 'was' নয়। সঠিক: 'If I were you, I would go.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Error Detection: 'If he would study, he would pass.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "If he would study",
+        "he would pass",
+        "কোনো ভুল নেই",
+        "—"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "If-clause-এ 'would' ব্যবহার হয় না। 'If he studied' হবে (Past Simple for Type 2)। সঠিক: 'If he studied, he would pass.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Error Detection: 'If I am rich, I would travel the world.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "If I am rich",
+        "I would travel",
+        "the world",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "explanation": "যদি বর্তমানে ধনী না হওয়ার কথা (unreal), তাহলে Type 2: If + Past Simple। সঠিক: 'If I were rich, I would travel the world.' অথবা Type 1 real possibility: 'If I am rich, I will travel.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Fill in the blank: 'If you ___ early, you will catch the train.' (যদি তাড়াতাড়ি যাও, ট্রেন ধরবে)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "leave",
+        "left",
+        "will leave",
+        "would leave"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "Type 1: If + Present Simple → will + V1। 'If you leave early, you will catch the train.'"
     },
     {
-      "question": "Question 16: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Fill in the blank: 'If I ___ a million dollars, I would buy a house.' (আমার যদি ১ মিলিয়ন ডলার থাকত, আমি বাড়ি কিনতাম)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "have",
+        "had",
+        "will have",
+        "would have"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Type 2 (unreal present): If + Past Simple (had)। 'If I had a million dollars, I would buy a house.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Fill in the blank: 'If it ___ , we will cancel the picnic.' (যদি বৃষ্টি হয়, আমরা পিকনিক বাতিল করব)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "rains",
+        "rained",
+        "will rain",
+        "would rain"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "explanation": "Type 1 (real future possibility): If + Present Simple → will + V1। 'If it rains, we will cancel the picnic.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "Fill in the blank: 'If she ___ here, she would help us.' (সে যদি এখানে থাকত, তাহলে আমাদের সাহায্য করত)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "is",
+        "was",
+        "were",
+        "will be"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Type 2 (unreal present): If + were (subjunctive)। 'If she were here, she would help us.' (সে এখন এখানে নেই)"
     },
     {
-      "question": "Question 19: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'যদি পড়াশোনা করো, তাহলে সফল হবে।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "If you studied, you would succeed.",
+        "If you study, you will succeed.",
+        "If you will study, you will succeed.",
+        "If you would study, you would succeed."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "বাস্তব সম্ভাবনা → Type 1: If + Present Simple, will + V1। 'If you study, you will succeed.'"
     },
     {
-      "question": "Question 20: Replace this with your actual Adverbs / Verbs question for Mock Test 34.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আমি যদি পাখি হতাম, তাহলে উড়ে বেড়াতাম।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "If I am a bird, I will fly.",
+        "If I were a bird, I would fly.",
+        "If I was a bird, I would fly.",
+        "If I am a bird, I would fly."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "অবাস্তব কল্পনা → Type 2: If + were (subjunctive), would + V1। 'If I were a bird, I would fly.'"
     }
   ]
 }

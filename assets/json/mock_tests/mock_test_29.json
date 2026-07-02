@@ -1,228 +1,228 @@
 {
   "id": "mock_test_29",
   "testNumber": 29,
-  "title": "Mock Test 29",
-  "description": "Comprehensive test covering Direct & Indirect Speech and Conditional Sentences for spoken English practice.",
+  "title": "Mock Test 29 - Modal Verbs (must, should, may, might)",
+  "description": "এই টেস্টে Modal Verbs (must, should, may, might, can, could, will, would, shall) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Modal Verb-এর পরে verb-এর কী form হয়?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "V+ing",
+        "V3 (past participle)",
+        "V1 (base form)",
+        "to + V1"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Modal verb-এর পরে সবসময় V1 (base form/base verb) হয়। যেমন: I can swim. You must go. She should study. He may come. (কখনও V+ing, V3 বা to+V1 হয় না)"
     },
     {
-      "question": "Question 2: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "'Must' modal verb কী বোঝাতে ব্যবহার হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "পরামর্শ (advice)",
+        "বাধ্যবাধকতা/অবশ্যই (necessity/obligation)",
+        "সম্ভাবনা (possibility)",
+        "অনুমতি (permission)"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Must' = অবশ্যই/বাধ্যতামূলক (strong obligation/necessity)। যেমন: You must wear a helmet. (হেলমেট পরা বাধ্যতামূলক)। Students must complete homework. (ছাত্রদের হোমওয়ার্ক করা বাধ্যতামূলক)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "'Should' modal verb কী বোঝাতে ব্যবহার হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "বাধ্যবাধকতা",
+        "পরামর্শ/উচিত (advice/recommendation)",
+        "ক্ষমতা",
+        "নিষেধাজ্ঞা"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Should' = উচিত (advice/recommendation)। Must-এর চেয়ে দুর্বল। যেমন: You should see a doctor. (তোমার ডাক্তার দেখা উচিত)। You should eat healthy food. (তোমার স্বাস্থ্যকর খাবার খাওয়া উচিত)।"
     },
     {
-      "question": "Question 4: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "'May' আর 'Might'-এর মধ্যে পার্থক্য কী?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "May = বেশি সম্ভাবনা, Might = কম সম্ভাবনা",
+        "May = অতীত, Might = বর্তমান",
+        "May = বাধ্যবাধকতা, Might = পরামর্শ",
+        "কোনো পার্থক্য নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "explanation": "'May' = 50% সম্ভাবনা (It may rain = maybe rain হবে)। 'Might' = 30% সম্ভাবনা/কম নিশ্চিত (It might rain = very less chance)। Might = May-এর past form, কিন্তু possibility বোঝাতে দুটোই present/future-এ ব্যবহার হয়।"
     },
     {
-      "question": "Question 5: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Modal Verb-এর negative form কীভাবে হয়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "do/does/did + not + modal",
+        "modal + not + V1",
+        "modal + not + V3",
+        "not + modal + V1"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Modal-এর negative: modal + not + V1। যেমন: cannot (can't), must not (mustn't), should not (shouldn't), may not, might not। Example: You must not smoke here. (তুমি এখানে ধূমপান করতে পারবে না)"
     },
     {
-      "question": "Question 6: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "You ___ see a doctor. You look very sick. (তোমার ডাক্তার দেখা উচিত। তুমি খুব অসুস্থ দেখাচ্ছে)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "can",
+        "may",
+        "should",
+        "might"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "পরামর্শ দেওয়ার জন্য 'should' (উচিত)। 'You should see a doctor.' (Must = খুব শক্ত, Should = পরামর্শ)"
     },
     {
-      "question": "Question 7: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Students ___ complete their homework on time. (ছাত্রদের সময়মতো হোমওয়ার্ক করা বাধ্যতামূলক)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "should",
+        "must",
+        "may",
+        "can"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Must' = বাধ্যতামূলক/obligation। 'Students must complete their homework on time.' (Should = advice, Must = strong obligation)"
     },
     {
-      "question": "Question 8: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "It ___ rain today. Take an umbrella. (আজ বৃষ্টি হতে পারে। একটা ছাতা নাও)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "must",
+        "should",
+        "may",
+        "can"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'May' = possibility (হতে পারে/সম্ভাবনা)। 'It may rain today.' (Might = কম সম্ভাবনা, but may = বেশি natural)"
     },
     {
-      "question": "Question 9: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "You ___ enter without permission. (অনুমতি ছাড়া তোমার প্রবেশ করা উচিত নয়)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "must not",
+        "may not",
+        "should not",
+        "cannot"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Should not' = উচিত নয় (advice against)। 'You should not enter without permission.' (Must not = কঠোর নিষেধাজ্ঞা, Should not = advice)"
     },
     {
-      "question": "Question 10: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "___ I come in? — Yes, please. (আমি কি ভিতরে আসতে পারি? — হ্যাঁ, আসুন)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "Must",
+        "Should",
+        "May",
+        "Need"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'May I?' = অনুমতি চাওয়ার জন্য polite way। 'May I come in?' (Can I = less formal, May I = more formal/polite)"
     },
     {
-      "question": "Question 11: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Error Detection: 'You must to go now.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "You",
+        "must to go",
+        "now",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Modal verb-এর পরে 'to' ছাড়া V1 হয়। 'Must to go' → 'must go' হবে। সঠিক: 'You must go now.' (Modal + V1)"
     },
     {
-      "question": "Question 12: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Error Detection: 'He should studies hard.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "He",
+        "should studies",
+        "hard",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Modal-এর পরে সবসময় V1 (base form) হয়। 'Studies' → 'study' হবে। সঠিক: 'He should study hard.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Error Detection: 'She can sings very well.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "She",
+        "can sings",
+        "very well",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Modals (can) পরে V1 হয়। 'Sings' → 'sing' হবে। সঠিক: 'She can sing very well.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Error Detection: 'You must not to smoke here.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "You",
+        "must not to smoke",
+        "here",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Modal negative-ও V1 নেয়। 'Must not to smoke' → 'must not smoke' হবে। সঠিক: 'You must not smoke here.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Fill in the blank: 'You ___ be careful. The road is dangerous.' (তোমার সাবধান হওয়া উচিত। রাস্তা বিপজ্জনক)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "can",
+        "may",
+        "should",
+        "might"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "পরামর্শ/উপদেশ → 'should'। 'You should be careful.' (উচিত)"
     },
     {
-      "question": "Question 16: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Fill in the blank: 'I ___ swim when I was five.' (আমি পাঁচ বছর বয়সে সাঁতার পারতাম)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "can",
+        "could",
+        "may",
+        "must"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Past ability → 'could' (could = can-এর past form)। 'I could swim when I was five.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Fill in the blank: 'You ___ finish the work today. Tomorrow is the deadline.' (তোমাকে আজকেই কাজ শেষ করতেই হবে। আগামীকাল শেষ তারিখ)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "should",
+        "may",
+        "must",
+        "can"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "বাধ্যতামূলক/obligation → 'must'। 'You must finish the work today.' (Deadline-এর আগে শেষ করা compulsory)"
     },
     {
-      "question": "Question 18: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "Fill in the blank: 'She ___ be at home. I saw her car outside.' (সে বাসায় থাকতে পারে। আমি তার গাড়ি বাইরে দেখেছি)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "must",
+        "should",
+        "can",
+        "might"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "Strong probability/logical deduction → 'must' (নিশ্চিত প্রায়)। 'She must be at home.' (গাড়ি দেখে নিশ্চিত)"
     },
     {
-      "question": "Question 19: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আমাদের পরিবেশ রক্ষা করা উচিত।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "We must protect the environment.",
+        "We should protect the environment.",
+        "We can protect the environment.",
+        "We may protect the environment."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'উচিত' = 'should' (advice/recommendation)। 'We should protect the environment.' (Must = too strong for this context)"
     },
     {
-      "question": "Question 20: Replace this with your actual Direct & Indirect Speech / Conditional Sentences question for Mock Test 29.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আমি কি আপনার কলম ব্যবহার করতে পারি?'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "Must I use your pen?",
+        "Should I use your pen?",
+        "May I use your pen?",
+        "Can't I use your pen?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "অনুমতি চাওয়ার polite way → 'May I...?'। 'May I use your pen?' (Can I = less formal, May I = more polite)"
     }
   ]
 }

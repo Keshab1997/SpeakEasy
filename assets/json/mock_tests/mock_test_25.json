@@ -1,228 +1,228 @@
 {
   "id": "mock_test_25",
   "testNumber": 25,
-  "title": "Mock Test 25",
-  "description": "Comprehensive test covering Prepositions and Conjunctions for spoken English practice.",
+  "title": "Mock Test 25 - Adverbs (quickly, always, never, etc.)",
+  "description": "এই টেস্টে Adverbs (quickly, always, never, sometimes, usually, slowly, carefully, etc.) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Adverb কী? (What is an adverb?)",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Adverb noun-কে modify করে",
+        "Adverb verb, adjective বা অন্য adverb-কে modify করে",
+        "Adverb শুধু verb-কে modify করে",
+        "Adverb sentence-এর subject নির্ধারণ করে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Adverb = verb, adjective বা অন্য adverb-কে modify করে। যেমন: She sings beautifully (verb modify). It is very hot (adjective modify). He runs quite fast (adverb modify)। Adverb tells us how, when, where, how often something happens।"
     },
     {
-      "question": "Question 2: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Adverb of Manner কী বোঝায়? (What does Adverb of Manner describe?)",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "কতবার ঘটে (frequency)",
+        "কখন ঘটে (time)",
+        "কিভাবে ঘটে (manner)",
+        "কোথায় ঘটে (place)"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Adverb of Manner = কিভাবে (how) কাজটি করা হয় তা বোঝায়। যেমন: quickly (দ্রুত), slowly (ধীরে), carefully (সাবধানে), beautifully (সুন্দরভাবে)। সাধারণত adjective + ly = adverb: quick → quickly, careful → carefully।"
     },
     {
-      "question": "Question 3: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Adverb of Frequency কী বোঝায়? (What does Adverb of Frequency describe?)",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "কিভাবে ঘটে",
+        "কোথায় ঘটে",
+        "কতবার/কত ঘন ঘন ঘটে",
+        "কখন ঘটে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Adverb of Frequency = কতবার বা কত ঘন ঘন কাজটি হয় তা বোঝায়। যেমন: always (সবসময়), never (কখনও না), sometimes (কখনও কখনও), usually (সাধারণত), often (প্রায়ই), rarely (খুব কমই)।"
     },
     {
-      "question": "Question 4: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Adverb-এর সঠিক অবস্থান সাধারণত কোথায়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "সবসময় বাক্যের শুরুতে",
+        "Adverb of Frequency = subject-এর পরে, main verb-এর আগে। Adverb of Manner = verb-এর পরে",
+        "সবসময় বাক্যের শেষে",
+        "Adverb শুধু object-এর পরে বসে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Adverb of Frequency → subject-এর পরে, main verb-এর আগে: He always comes on time। Adverb of Manner → verb-এর পরে: She sings beautifully। কিন্তু 'to be' verb-এর পরে বসে: He is always late।"
     },
     {
-      "question": "Question 5: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Adjective আর Adverb-এর মধ্যে পার্থক্য কী?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "Adjective = noun modify করে, Adverb = verb/adjective/adverb modify করে",
+        "Adjective = verb modify করে, Adverb = noun modify করে",
+        "দুটো একই জিনিস",
+        "Adjective = how বোঝায়, Adverb = what বোঝায়"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "explanation": "Adjective → noun/pronoun modify করে: She is a beautiful girl (beautiful = adjective describing 'girl')। Adverb → verb/adjective/other adverb modify করে: She sings beautifully (beautifully = adverb describing 'sings')।"
     },
     {
-      "question": "Question 6: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "She sings ___ . Everyone loves her voice. (সে সুন্দর গান গায়। সবাই তার গলার স্বর পছন্দ করে)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "beautiful",
+        "beautifully",
+        "more beautiful",
+        "most beautiful"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Sings' verb-কে modify করছে → adverb 'beautifully' হবে। 'She sings beautifully.' (Beautiful = adjective → noun modify করে)"
     },
     {
-      "question": "Question 7: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "He ___ comes to school on time. (সে সবসময় সময়মতো স্কুলে আসে)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "always",
+        "slowly",
+        "carefully",
+        "beautifully"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "explanation": "'Always' = adverb of frequency (সবসময়)। He always comes to school on time. (Subject + always + main verb)"
     },
     {
-      "question": "Question 8: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "I have ___ been to London. (আমি কখনও লন্ডন যাইনি)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "always",
+        "never",
+        "sometimes",
+        "usually"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Never' = কখনও না (negative adverb of frequency)। 'I have never been to London.' (Present Perfect-এ have/has + never + V3)"
     },
     {
-      "question": "Question 9: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Please drive ___ . It's raining outside. (অনুগ্রহ করে সাবধানে গাড়ি চালাও। বাইরে বৃষ্টি হচ্ছে)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "careful",
+        "carefully",
+        "careless",
+        "more careful"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Drive' verb-কে modify → adverb 'carefully'। 'Please drive carefully.' (Careful = adjective)"
     },
     {
-      "question": "Question 10: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "I ___ get up at 6 AM. (আমি সাধারণত সকাল ৬টায় উঠি)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "always",
+        "never",
+        "usually",
+        "rarely"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'সাধারণত' = 'usually'। Adverb of Frequency। 'I usually get up at 6 AM.'"
     },
     {
-      "question": "Question 11: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Error Detection: 'She sings beautiful.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "She",
+        "sings",
+        "beautiful",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Sings' verb-কে modify করছে → adverb 'beautifully' হবে, 'beautiful' (adjective) নয়। সঠিক: 'She sings beautifully.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Error Detection: 'He drives very careful.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "He",
+        "drives",
+        "very careful",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Drives' verb-কে modify করছে → adverb 'carefully' হবে। সঠিক: 'He drives very carefully.' ('Very' adverb 'carefully'-কে modify করছে)"
     },
     {
-      "question": "Question 13: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Error Detection: 'I always am late for school.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "I always am",
+        "late",
+        "for school",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "'To be' verb-এর সাথে adverb of frequency 'be' verb-এর পরে বসে। 'I am always late' হবে, 'I always am late' নয়। সঠিক: 'I am always late for school.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Error Detection: 'She speaks English very good.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "She speaks",
+        "English",
+        "very good",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Speaks' verb-কে modify → adverb 'well' হবে, 'good' (adjective) নয়। সঠিক: 'She speaks English very well.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Fill in the blank: 'He ran ___ to catch the bus.' (সে বাস ধরতে দ্রুত দৌড়াল)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "fast",
+        "fastly",
+        "faster",
+        "fastest"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Fast' = adjective ও adverb উভয়ই। 'Ran fast' (adverb)। 'He ran fast to catch the bus.' ('Fastly' কোনো word নয়)"
     },
     {
-      "question": "Question 16: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Fill in the blank: 'I have ___ seen such a beautiful place.' (আমি এরকম সুন্দর জায়গা খুব কমই দেখেছি)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "always",
+        "never",
+        "rarely",
+        "often"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Rarely' = খুব কমই (negative frequency)। 'I have rarely seen such a beautiful place.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Fill in the blank: 'Please speak ___ . I can't hear you.' (অনুগ্রহ করে জোরে বলো। আমি শুনতে পাচ্ছি না)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "loud",
+        "loudly",
+        "louder",
+        "more loud"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Speak' verb-কে modify → adverb 'loudly'। 'Please speak loudly.' (Loud = adjective)"
     },
     {
-      "question": "Question 18: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "Fill in the blank: '___ do you visit your hometown?' (তুমি কতবার তোমার hometown-এ যাও?)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "How often",
+        "How many",
+        "How much",
+        "How long"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'How often' = কতবার/কত ঘন ঘন (frequency সম্পর্কে প্রশ্ন)। 'How often do you visit your hometown?'"
     },
     {
-      "question": "Question 19: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'সে খুব দ্রুত দৌড়াতে পারে।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "She can run very quick.",
+        "She can run very quickly.",
+        "She can run very more quick.",
+        "She can quick run."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'দ্রুত' = 'quickly' (adverb modifying 'run')। 'She can run very quickly.' (সঠিক position = verb-এর পরে)"
     },
     {
-      "question": "Question 20: Replace this with your actual Prepositions / Conjunctions question for Mock Test 25.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'আমি কখনও মিথ্যা বলি না।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "I tell never lies.",
+        "I never tell lies.",
+        "Never I tell lies.",
+        "I tell lies never."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Adverb of frequency (never) → subject-এর পরে, main verb-এর আগে। 'I never tell lies.'"
     }
   ]
 }

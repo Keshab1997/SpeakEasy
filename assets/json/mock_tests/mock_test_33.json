@@ -1,228 +1,228 @@
 {
   "id": "mock_test_33",
   "testNumber": 33,
-  "title": "Mock Test 33",
-  "description": "Comprehensive test covering Adjectives and Adverbs for spoken English practice.",
+  "title": "Mock Test 33 - Either/Neither/Both",
+  "description": "এই টেস্টে Either, Neither, Both নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "'Both' কী বোঝাতে ব্যবহার হয়?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "দুটির মধ্যে যেকোনো একটি",
+        "দুটির কোনোটিই নয়",
+        "দুটিই (উভয়)",
+        "তিনটির সবকটি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Both' = দুইটিই/উভয় (দুটি জিনিসকেই বোঝায়)। যেমন: Both answers are correct. (দুটি উত্তরই সঠিক)। I like both tea and coffee. (আমি চা ও কফি দুটোই পছন্দ করি)।"
     },
     {
-      "question": "Question 2: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "'Either' কী বোঝাতে ব্যবহার হয়?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "দুটোর কোনোটিই নয়",
+        "দুটোর মধ্যে যেকোনো একটি",
+        "দুটিই",
+        "তিনটির সবকটি"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Either' = দুটির মধ্যে যেকোনো একটি (one or the other)। Either...or = structure। যেমন: Either John or Mary will come. Either color is fine. (দুটি রঙের যেকোনো একটি ঠিক আছে)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "'Neither' কী বোঝাতে ব্যবহার হয়?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "দুটির মধ্যে যেকোনো একটি",
+        "দুটির কোনোটিই নয়",
+        "দুটিই",
+        "সবগুলো"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Neither' = দুটির কোনোটিই নয় (not one and not the other)। Neither...nor = structure। যেমন: Neither answer is correct. (কোনো উত্তরই সঠিক নয়)। Neither John nor Mary came. (জনও আসেনি, মেরিও আসেনি)।"
     },
     {
-      "question": "Question 4: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "'Both...and'-এর পরে verb কী হয়?",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Singular verb",
+        "Plural verb",
+        "Singular ও plural দুটোই",
+        "Verb-এর কোনো পরিবর্তন হয় না"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Both A and B'-এর পরে plural verb হয়। যেমন: Both Rahim and Karim are students. Both the cat and the dog are pets। (দুটি subject একসাথে = plural)"
     },
     {
-      "question": "Question 5: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "'Either...or' / 'Neither...nor'-এর পরে verb কী হয়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "সবসময় plural verb",
+        "সবসময় singular verb",
+        "Verb-টি ближайший/nearest subject-এর অনুযায়ী হয় (proximity rule)",
+        "Verb-এর কোনো প্রয়োজন নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "Proximity rule: verb-টি second subject (or/nor-এর পরে যেটি) অনুযায়ী হয়। যেমন: Either the boys or the girl is coming. (girl = singular → is)। Neither the girl nor the boys are coming. (boys = plural → are)"
     },
     {
-      "question": "Question 6: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "You can take ___ the red shirt or the blue one. (তুমি লাল শার্ট বা নীল শার্ট — যেকোনো একটি নিতে পারো)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "both",
+        "either",
+        "neither",
+        "none"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Or' = দুটির মধ্যে যেকোনো একটি → 'either'। 'You can take either the red shirt or the blue one.'"
     },
     {
-      "question": "Question 7: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "___ of the answers are correct. (দুটি উত্তরই সঠিক)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "Either",
+        "Neither",
+        "Both",
+        "None"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Both of + plural noun + plural verb'। 'Both of the answers are correct.'"
     },
     {
-      "question": "Question 8: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "___ Rahim nor Karim came to the party. (রহিমও আসেনি, করিমও আসেনি)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "Both",
+        "Either",
+        "Neither",
+        "None"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Neither...nor' = দুটোর কোনোটিই নয়। 'Neither Rahim nor Karim came to the party.'"
     },
     {
-      "question": "Question 9: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "I like ___ tea and coffee. (আমি চা ও কফি দুটোই পছন্দ করি)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "both",
+        "either",
+        "neither",
+        "none"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "'Both...and' = দুটোই। 'I like both tea and coffee.'"
     },
     {
-      "question": "Question 10: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "___ of them is correct. (তাদের মধ্যে যেকোনো একটি সঠিক)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "Both",
+        "Either",
+        "Neither",
+        "None"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Either of + plural noun' = যেকোনো একটি। 'Either of them is correct.' (Singular verb)"
     },
     {
-      "question": "Question 11: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "Error Detection: 'Both of the boy is playing.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Both of",
+        "the boy",
+        "is playing",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Both'-এর পরে plural noun ও plural verb হয়। 'Boy' → 'boys', 'is' → 'are'। সঠিক: 'Both of the boys are playing.'"
     },
     {
-      "question": "Question 12: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "Error Detection: 'Neither the students nor the teacher are coming.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "Neither the students nor the teacher",
+        "are coming",
+        "কোনো ভুল নেই",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Proximity rule: 'the teacher' (singular) → 'is' হবে, 'are' নয়। সঠিক: 'Neither the students nor the teacher is coming.'"
     },
     {
-      "question": "Question 13: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "Error Detection: 'Either Rahim or Karim are going.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "Either Rahim or Karim",
+        "are going",
+        "কোনো ভুল নেই",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Karim' (singular) → 'is' হবে। সঠিক: 'Either Rahim or Karim is going.'"
     },
     {
-      "question": "Question 14: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "Error Detection: 'I like neither tea or coffee.' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "I like",
+        "neither tea or coffee",
+        "কোনো ভুল নেই",
+        "—"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Neither'-এর সাথে 'nor' হয়, 'or' নয়। সঠিক: 'I like neither tea nor coffee.'"
     },
     {
-      "question": "Question 15: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "Fill in the blank: '___ my parents are teachers.' (আমার বাবা-মা দুজনেই শিক্ষক)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "Both",
+        "Either",
+        "Neither",
+        "None"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "explanation": "'Both my parents' = বাবা-মা দুজনেই। 'Both my parents are teachers.'"
     },
     {
-      "question": "Question 16: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "Fill in the blank: 'You can choose ___ of the two books.' (তুমি দুটি বইয়ের যেকোনো একটি বেছে নিতে পারো)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "both",
+        "either",
+        "neither",
+        "none"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Either of the two' = দুটির যেকোনো একটি। 'You can choose either of the two books.'"
     },
     {
-      "question": "Question 17: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "Fill in the blank: 'I have ___ a car nor a bike.' (আমার গাড়িও নেই, বাইকও নেই)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "both",
+        "either",
+        "neither",
+        "none"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'Neither...nor' = দুটোর কোনোটিই নয়। 'I have neither a car nor a bike.'"
     },
     {
-      "question": "Question 18: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "Fill in the blank: 'There are shops on ___ sides of the street.' (রাস্তার দুই পাশেই দোকান আছে)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "both",
+        "either",
+        "neither",
+        "none"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "explanation": "'Both sides' = দুই পাশেই। 'There are shops on both sides of the street.'"
     },
     {
-      "question": "Question 19: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'রহিম ও করিম দুজনেই ভালো ছাত্র।'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "Either Rahim and Karim are good students.",
+        "Both Rahim and Karim are good students.",
+        "Neither Rahim nor Karim is a good student.",
+        "Both Rahim or Karim are good students."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Both...and' = দুজনেই। 'Both Rahim and Karim are good students.'"
     },
     {
-      "question": "Question 20: Replace this with your actual Adjectives / Adverbs question for Mock Test 33.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'তাদের কেউই আসেনি।'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "Both of them came.",
+        "Either of them came.",
+        "Neither of them came.",
+        "None of them came."
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "'কেউই আসেনি' (দুই ব্যক্তি) = 'Neither of them came.' (তিন বা ততোধিক = None of them came)"
     }
   ]
 }

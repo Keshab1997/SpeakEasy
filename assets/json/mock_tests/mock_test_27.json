@@ -1,228 +1,228 @@
 {
   "id": "mock_test_27",
   "testNumber": 27,
-  "title": "Mock Test 27",
-  "description": "Comprehensive test covering Modals and Active & Passive Voice for spoken English practice.",
+  "title": "Mock Test 27 - Wh-Questions",
+  "description": "এই টেস্টে Wh-Questions (What, Where, When, Why, Who, Whom, Whose, Which, How) নিয়ে ২০টি প্রশ্ন রয়েছে। প্রথম কয়েকটি প্রশ্নে জানবো নিয়ম ও গঠন, তারপর fill in the blanks, error detection ও অনুবাদ দিয়ে উদাহরণ সহ শেখা। প্রতিটি প্রশ্নের বাংলা অর্থ ও বিস্তারিত ব্যাখ্যা দেওয়া আছে।",
   "questions": [
     {
-      "question": "Question 1: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "'Who' আর 'Whom'-এর মধ্যে পার্থক্য কী?",
       "options": [
-        "Option A for Q1",
-        "Option B for Q1",
-        "Option C for Q1",
-        "Option D for Q1"
+        "Who = subject-এর জন্য, Whom = object-এর জন্য",
+        "Who = object-এর জন্য, Whom = subject-এর জন্য",
+        "দুটোর মানে একই",
+        "Who = plural, Whom = singular"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 1. Correct answer is Option A."
+      "explanation": "'Who' = subject হিসেবে ব্যবহৃত হয় (Who is coming? — He is coming)। 'Whom' = object হিসেবে ব্যবহৃত হয় (Whom did you see? — I saw him)। আধুনিক ইংরেজিতে 'Whom' কম ব্যবহার হয়, অনেক সময় 'Who' উভয়ের জন্যই ব্যবহৃত হয়।"
     },
     {
-      "question": "Question 2: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "'Which' আর 'What'-এর মধ্যে পার্থক্য কী?",
       "options": [
-        "Option A for Q2",
-        "Option B for Q2",
-        "Option C for Q2",
-        "Option D for Q2"
+        "দুটোর মানে একই",
+        "Which = সীমিত পছন্দের মধ্যে, What = খোলা/অসীম পছন্দের জন্য",
+        "Which = বস্তুর জন্য, What = মানুষের জন্য",
+        "Which = singular, What = plural"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 2. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Which' ব্যবহার হয় যখন সীমিত/নির্দিষ্ট সংখ্যক অপশন থাকে (Which color do you want — red, blue or green?)। 'What' ব্যবহার হয় যখন কোনো সীমাবদ্ধতা নেই (What do you want to eat?)।"
     },
     {
-      "question": "Question 3: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "'How many' আর 'How much'-এর মধ্যে পার্থক্য কী?",
       "options": [
-        "Option A for Q3",
-        "Option B for Q3",
-        "Option C for Q3",
-        "Option D for Q3"
+        "How many = countable noun-এর সাথে, How much = uncountable noun-এর সাথে",
+        "How many = uncountable noun-এর সাথে, How much = countable noun-এর সাথে",
+        "দুটোর মানে একই",
+        "How many = past tense, How much = present tense"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 3. Correct answer is Option A."
+      "explanation": "'How many' = countable noun-এর সাথে (How many books? How many people?)। 'How much' = uncountable noun-এর সাথে (How much water? How much money? How much time?)।"
     },
     {
-      "question": "Question 4: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "Wh-questions-এ বাক্যের গঠন কী? (Structure of Wh-questions?)",
       "options": [
-        "Option A for Q4",
-        "Option B for Q4",
-        "Option C for Q4",
-        "Option D for Q4"
+        "Wh-word + subject + verb + ?",
+        "Wh-word + auxiliary verb + subject + main verb + ?",
+        "Wh-word + main verb + subject + ?",
+        "Subject + wh-word + verb + ?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 4. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Wh-question structure: Wh-word + auxiliary verb (do/does/did/is/are/have) + subject + main verb + ? যেমন: Where do you live? What is your name? Why did you go there?"
     },
     {
-      "question": "Question 5: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "'Whose' প্রশ্ন কিসের জন্য ব্যবহার করা হয়?",
       "options": [
-        "Option A for Q5",
-        "Option B for Q5",
-        "Option C for Q5",
-        "Option D for Q5"
+        "কোথায় বোঝাতে",
+        "কার (possession) বোঝাতে",
+        "কখন বোঝাতে",
+        "কেন বোঝাতে"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 5. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Whose' = কার (possession/malikana) বোঝাতে ব্যবহৃত হয়। যেমন: Whose book is this? (এটা কার বই?)। Whose car is parked outside? (বাইরে কার গাড়ি পার্ক করা?)"
     },
     {
-      "question": "Question 6: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "___ does the bus arrive? — At 5 PM. (বাস কখন আসে? — বিকেল ৫টায়)",
       "options": [
-        "Option A for Q6",
-        "Option B for Q6",
-        "Option C for Q6",
-        "Option D for Q6"
+        "What",
+        "Where",
+        "When",
+        "Why"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 6. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "উত্তর 'At 5 PM' = সময় নির্দেশ করছে → প্রশ্ন 'When' (কখন)। 'When does the bus arrive?'"
     },
     {
-      "question": "Question 7: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "___ do you live? — I live in Dhaka. (তুমি কোথায় থাকো? — আমি ঢাকায় থাকি)",
       "options": [
-        "Option A for Q7",
-        "Option B for Q7",
-        "Option C for Q7",
-        "Option D for Q7"
+        "What",
+        "Where",
+        "When",
+        "Why"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 7. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "উত্তর 'In Dhaka' = স্থান নির্দেশ করছে → প্রশ্ন 'Where' (কোথায়)। 'Where do you live?'"
     },
     {
-      "question": "Question 8: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "___ are you late? — Because I missed the bus. (তুমি কেন দেরি করেছ? — কারণ বাস মিস করেছি)",
       "options": [
-        "Option A for Q8",
-        "Option B for Q8",
-        "Option C for Q8",
-        "Option D for Q8"
+        "What",
+        "Where",
+        "When",
+        "Why"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 8. Correct answer is Option A."
+      "correctIndex": 3,
+      "explanation": "উত্তর 'Because...' = কারণ নির্দেশ করছে → প্রশ্ন 'Why' (কেন)। 'Why are you late?'"
     },
     {
-      "question": "Question 9: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "___ is your name? — My name is Rahim. (তোমার নাম কী? — আমার নাম রহিম)",
       "options": [
-        "Option A for Q9",
-        "Option B for Q9",
-        "Option C for Q9",
-        "Option D for Q9"
+        "What",
+        "Where",
+        "Who",
+        "How"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 9. Correct answer is Option A."
+      "explanation": "নাম সম্পর্কে জিজ্ঞাসা → 'What' (কী)। 'What is your name?'"
     },
     {
-      "question": "Question 10: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "___ books do you have? — I have ten books. (তোমার কতগুলো বই আছে? — আমার দশটি বই আছে)",
       "options": [
-        "Option A for Q10",
-        "Option B for Q10",
-        "Option C for Q10",
-        "Option D for Q10"
+        "How much",
+        "How many",
+        "How long",
+        "How often"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 10. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Books' = countable noun → 'How many'। উত্তর 'ten books' = সংখ্যা নির্দেশ করছে। 'How many books do you have?'"
     },
     {
-      "question": "Question 11: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "Error Detection: 'Where you live?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q11",
-        "Option B for Q11",
-        "Option C for Q11",
-        "Option D for Q11"
+        "Where",
+        "you live",
+        "?",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 11. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Wh-question-এ auxiliary verb 'do' প্রয়োজন। সঠিক: 'Where do you live?' (Present Simple question-এ do/does ব্যবহার করতে হয়।)"
     },
     {
-      "question": "Question 12: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "Error Detection: 'Who did you met yesterday?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q12",
-        "Option B for Q12",
-        "Option C for Q12",
-        "Option D for Q12"
+        "Who",
+        "did you met",
+        "yesterday",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 12. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "Did-এর পরে main verb-এর V1 form হয় (met না, meet)। সঠিক: 'Who did you meet yesterday?'"
     },
     {
-      "question": "Question 13: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "Error Detection: 'How much books do you have?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q13",
-        "Option B for Q13",
-        "Option C for Q13",
-        "Option D for Q13"
+        "How much",
+        "books",
+        "do you have",
+        "কোনো ভুল নেই"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 13. Correct answer is Option A."
+      "explanation": "'Books' = countable → 'How many' হবে, 'How much' নয়। 'How much' = uncountable noun-এর জন্য। সঠিক: 'How many books do you have?'"
     },
     {
-      "question": "Question 14: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "Error Detection: 'Whose he is?' — ভুল অংশ কোনটি?",
       "options": [
-        "Option A for Q14",
-        "Option B for Q14",
-        "Option C for Q14",
-        "Option D for Q14"
+        "Whose",
+        "he is",
+        "?",
+        "কোনো ভুল নেই"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 14. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "'Whose' = possession বোঝাতে। সঠিক প্রশ্ন হবে 'Who is he?' (সে কে?) অথবা 'Whose is that?' (ওটা কার?)। 'Whose he is' → ভুল গঠন।"
     },
     {
-      "question": "Question 15: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "Fill in the blank: '___ do you go to school?' — By bus. (তুমি কিভাবে স্কুলে যাও? — বাসে করে)",
       "options": [
-        "Option A for Q15",
-        "Option B for Q15",
-        "Option C for Q15",
-        "Option D for Q15"
+        "What",
+        "Where",
+        "How",
+        "Why"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 15. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "উত্তর 'By bus' = পদ্ধতি/উপায় নির্দেশ করছে → 'How' (কিভাবে)। 'How do you go to school?'"
     },
     {
-      "question": "Question 16: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "Fill in the blank: '___ pen is this?' — It's my pen. (এটা কার কলম? — এটা আমার কলম)",
       "options": [
-        "Option A for Q16",
-        "Option B for Q16",
-        "Option C for Q16",
-        "Option D for Q16"
+        "Who",
+        "Whose",
+        "Which",
+        "What"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 16. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "উত্তর 'My pen' = possession নির্দেশ করছে → 'Whose' (কার)। 'Whose pen is this?'"
     },
     {
-      "question": "Question 17: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "Fill in the blank: '___ color do you like — red or blue?' (তুমি কোন রং পছন্দ করো — লাল নাকি নীল?)",
       "options": [
-        "Option A for Q17",
-        "Option B for Q17",
-        "Option C for Q17",
-        "Option D for Q17"
+        "What",
+        "Which",
+        "Whose",
+        "How"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 17. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "সীমিত অপশন (red or blue) → 'Which'। 'Which color do you like — red or blue?'"
     },
     {
-      "question": "Question 18: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "Fill in the blank: '___ do you visit your grandparents?' — Once a week. (তুমি কতবার দাদা-দাদিকে দেখতে যাও? — সপ্তাহে একবার)",
       "options": [
-        "Option A for Q18",
-        "Option B for Q18",
-        "Option C for Q18",
-        "Option D for Q18"
+        "How long",
+        "How often",
+        "How many",
+        "How much"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 18. Correct answer is Option A."
+      "correctIndex": 1,
+      "explanation": "উত্তর 'Once a week' = frequency (কত ঘন ঘন) → 'How often'। 'How often do you visit your grandparents?'"
     },
     {
-      "question": "Question 19: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'তোমার বয়স কত?'",
       "options": [
-        "Option A for Q19",
-        "Option B for Q19",
-        "Option C for Q19",
-        "Option D for Q19"
+        "What your age?",
+        "How many years you have?",
+        "How old are you?",
+        "What old are you?"
       ],
-      "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 19. Correct answer is Option A."
+      "correctIndex": 2,
+      "explanation": "বয়স জানতে 'How old' ব্যবহার করা হয়। সঠিক: 'How old are you?' ('How old' = fixed expression for age)"
     },
     {
-      "question": "Question 20: Replace this with your actual Modals / Active & Passive Voice question for Mock Test 27.",
+      "question": "বাংলা বাক্যটির সঠিক ইংরেজি অনুবাদ কোনটি? 'তুমি কতদিন ধরে ইংরেজি শিখছ?'",
       "options": [
-        "Option A for Q20",
-        "Option B for Q20",
-        "Option C for Q20",
-        "Option D for Q20"
+        "How long have you been learning English?",
+        "How much you learning English?",
+        "How many time you learn English?",
+        "What long you learn English?"
       ],
       "correctIndex": 0,
-      "explanation": "Replace this with explanation for Question 20. Correct answer is Option A."
+      "explanation": "সময়কাল (duration) জানতে 'How long' ব্যবহার হয়। Present Perfect Continuous: 'How long have you been learning English?'"
     }
   ]
 }
