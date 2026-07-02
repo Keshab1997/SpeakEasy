@@ -18,3 +18,5 @@ web/
 
 # Package files
 pubspec.lock
+# Scripts (one-time use, already applied)
+scripts/
