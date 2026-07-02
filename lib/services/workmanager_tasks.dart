@@ -1,5 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:workmanager/workmanager.dart';
+import '../firebase_options.dart';
 import 'admin_notification_sync_service.dart';
+import 'hive_service.dart';
 import 'notification_service.dart';
 import 're_engagement_service.dart';
 
@@ -12,6 +16,34 @@ const String reEngagementTaskName = 'reEngagementTask';
 const int _adminBgNotifId = 2000;
 const int _reEngagementNotifId = 2001;
 
+/// Initializes all required services when WorkManager runs in a background
+/// isolate (i.e., after the app has been killed). In that scenario [main] is
+/// never called, so Firebase, Hive, and the notification plugin must be set
+/// up before any task handler runs.
+Future<void> _initializeBackgroundServices() async {
+  try {
+    if (Firebase.apps.isEmpty) {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+    }
+  } catch (e) {
+    debugPrint('WorkManager: Firebase init failed — $e');
+  }
+
+  try {
+    await HiveService.initialize();
+  } catch (e) {
+    debugPrint('WorkManager: Hive init failed — $e');
+  }
+
+  try {
+    await NotificationService().initialize();
+  } catch (e) {
+    debugPrint('WorkManager: NotificationService init failed — $e');
+  }
+}
+
 /// Entry point called by WorkManager for all background tasks.
 /// Must be tagged with @pragma('vm:entry-point') so the Dart VM
 /// keeps it during tree-shaking.
@@ -19,6 +51,9 @@ const int _reEngagementNotifId = 2001;
 void workmanagerCallbackDispatcher() {
   Workmanager().executeTask((task, inputData) async {
     try {
+      // Critical: initialise all services before handling any task
+      await _initializeBackgroundServices();
+
       switch (task) {
         case adminSyncTaskName:
           return await _handleAdminSync();
@@ -27,7 +62,8 @@ void workmanagerCallbackDispatcher() {
         default:
           return false;
       }
-    } catch (_) {
+    } catch (e) {
+      debugPrint('WorkManager: task "$task" failed — $e');
       return false;
     }
   });
