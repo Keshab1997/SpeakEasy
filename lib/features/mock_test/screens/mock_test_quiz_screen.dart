@@ -191,6 +191,7 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
                       style: TextStyle(fontWeight: FontWeight.bold, color: isDark ? Colors.white70 : Colors.black54),
                     ),
                     Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         const Icon(Icons.shuffle_rounded, size: 14, color: Colors.grey),
                         const SizedBox(width: 4),
@@ -198,29 +199,35 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
                           'Options shuffled',
                           style: TextStyle(color: isDark ? Colors.white38 : Colors.black38, fontSize: 12),
                         ),
-                        const SizedBox(width: 12),
-		                        Text(
-		                          '${_answers.length} answered',
-		                          style: TextStyle(color: isDark ? Colors.white38 : Colors.black38, fontSize: 13),
-		                        ),
-		                        if (widget.wrongQuestionIndices != null) ...[
-		                          const SizedBox(width: 8),
-		                          Container(
-		                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-		                            decoration: BoxDecoration(
-		                              color: Colors.orange.withOpacity(0.2),
-		                              borderRadius: BorderRadius.circular(10),
-		                            ),
-		                            child: Text(
-		                              'Retrying ${widget.wrongQuestionIndices!.length}',
-		                              style: const TextStyle(color: Colors.orange, fontSize: 11, fontWeight: FontWeight.w600),
-		                            ),
-		                          ),
-		                        ],
-		                      ],
+                        const SizedBox(width: 8),
+                        Text(
+                          '${_answers.length} answered',
+                          style: TextStyle(color: isDark ? Colors.white38 : Colors.black38, fontSize: 12),
+                        ),
+                      ],
                     ),
                   ],
                 ),
+                if (widget.wrongQuestionIndices != null)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 6),
+                    child: Row(
+                      children: [
+                        const Spacer(),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                          decoration: BoxDecoration(
+                            color: Colors.orange.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text(
+                            'Retrying ${widget.wrongQuestionIndices!.length} wrong questions',
+                            style: const TextStyle(color: Colors.orange, fontSize: 12, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 const SizedBox(height: 8),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(4),
