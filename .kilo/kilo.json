@@ -1,4 +1,5 @@
 {
+  "$schema": "https://app.kilo.ai/config.json",
   "plugin": [
     "file:///Users/keshabsarkar/Vs%20Code%20Apps/Flutter-Spoken-English-App/.kilo/plugins/graphify.js"
   ]
