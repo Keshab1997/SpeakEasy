@@ -166,12 +166,35 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
     return getBestScore(testNumber) == 20;
   }
 
-  Future<void> saveResult(int testNumber, int score) async {
+  Future<void> saveResult(int testNumber, int score,
+      {List<int>? wrongIndices}) async {
+    // Calculate effective score for wrong-only retry
+    int effectiveScore = score;
+    if (wrongIndices != null) {
+      final previousWrong = state.progress.wrongQuestions[testNumber] ?? [];
+      if (previousWrong.isNotEmpty) {
+        // Wrong-only retry: effectiveScore = (20 - previousWrongCount) + newlyCorrected
+        final previousWrongCount = previousWrong.length;
+        final newlyCorrected = previousWrongCount - wrongIndices.length;
+        effectiveScore = (20 - previousWrongCount) + newlyCorrected;
+      }
+    }
+
     final currentBest = getBestScore(testNumber);
-    final newBestScore = score > currentBest ? score : currentBest;
+    final newBestScore =
+        effectiveScore > currentBest ? effectiveScore : currentBest;
 
     final newBestScores = Map<int, int>.from(state.progress.bestScores);
     newBestScores[testNumber] = newBestScore;
+
+    // Update wrongQuestions
+    final newWrongQuestions =
+        Map<int, List<int>>.from(state.progress.wrongQuestions);
+    if (wrongIndices != null && wrongIndices.isNotEmpty) {
+      newWrongQuestions[testNumber] = wrongIndices;
+    } else {
+      newWrongQuestions.remove(testNumber); // all cleared
+    }
 
     // Check if we should unlock the next test
     int newHighestUnlocked = state.progress.highestUnlockedTest;
@@ -179,7 +202,11 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
 
     newUnlockedTests[1] = true; // Test 1 always unlocked
 
-    if (newBestScore == 20 && testNumber < 70) {
+    // A test is considered "passed" if bestScore == 20 OR if wrongQuestions are empty
+    final bool testPassed = newBestScore == 20 ||
+        (!newWrongQuestions.containsKey(testNumber));
+
+    if (testPassed && testNumber < 70) {
       final nextTest = testNumber + 1;
       newUnlockedTests[nextTest] = true;
       if (nextTest > newHighestUnlocked) {
@@ -189,7 +216,10 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
 
     // Ensure sequential unlock: a test is unlocked only if previous has 20/20
     for (int i = 2; i <= 70; i++) {
-      if (newBestScores[i - 1] == 20) {
+      final prevPassed = newBestScores[i - 1] == 20 &&
+          (!newWrongQuestions.containsKey(i - 1) ||
+              newWrongQuestions[i - 1]!.isEmpty);
+      if (prevPassed) {
         newUnlockedTests[i] = true;
         if (i > newHighestUnlocked) newHighestUnlocked = i;
       }
@@ -199,7 +229,7 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
       bestScores: newBestScores,
       unlockedTests: newUnlockedTests,
       highestUnlockedTest: newHighestUnlocked,
-      wrongQuestions: state.progress.wrongQuestions,
+      wrongQuestions: newWrongQuestions,
     );
 
     state = state.copyWith(progress: newProgress);
@@ -209,8 +239,8 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
       'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
       'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
       'highestUnlockedTest': newHighestUnlocked,
-      'wrongQuestions': state.progress.wrongQuestions
-          .map((k, v) => MapEntry(k.toString(), v)),
+      'wrongQuestions':
+          newWrongQuestions.map((k, v) => MapEntry(k.toString(), v)),
     });
 
     // Also save to Firestore if user is logged in
@@ -220,8 +250,8 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
         'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
         'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
         'highestUnlockedTest': newHighestUnlocked,
-        'wrongQuestions': state.progress.wrongQuestions
-            .map((k, v) => MapEntry(k.toString(), v)),
+        'wrongQuestions':
+            newWrongQuestions.map((k, v) => MapEntry(k.toString(), v)),
       });
     }
   }
