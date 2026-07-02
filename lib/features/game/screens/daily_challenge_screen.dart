@@ -124,6 +124,7 @@ class DailyChallengeScreen extends ConsumerWidget {
 
     final question = gameState.currentQuestion!;
     final progress = gameState.answeredCount / gameState.totalQuestions;
+    final isDark = theme.brightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
@@ -214,7 +215,7 @@ class DailyChallengeScreen extends ConsumerWidget {
                         const SizedBox(height: 12),
                         Text(
                           question.question,
-                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, height: 1.35, color: Colors.black87),
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, height: 1.35, color: isDark ? Colors.white : Colors.black87),
                         ),
                       ],
                     ),

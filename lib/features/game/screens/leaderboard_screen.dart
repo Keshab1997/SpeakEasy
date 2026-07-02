@@ -120,16 +120,16 @@ class _Podium extends StatelessWidget {
     final ordered = [entries[1], entries[0], entries[2]];
 
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.fromLTRB(12, 24, 12, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          _PodiumCard(entry: ordered[0], rank: 2, height: 120),
-          const SizedBox(width: 12),
-          _PodiumCard(entry: ordered[1], rank: 1, height: 150, isFirst: true),
-          const SizedBox(width: 12),
-          _PodiumCard(entry: ordered[2], rank: 3, height: 100),
+          _PodiumCard(entry: ordered[0], rank: 2, standHeight: 100),
+          const SizedBox(width: 8),
+          _PodiumCard(entry: ordered[1], rank: 1, standHeight: 140, isFirst: true),
+          const SizedBox(width: 8),
+          _PodiumCard(entry: ordered[2], rank: 3, standHeight: 80),
         ],
       ),
     );
@@ -139,32 +139,36 @@ class _Podium extends StatelessWidget {
 class _PodiumCard extends StatelessWidget {
   final LeaderboardEntry entry;
   final int rank;
-  final double height;
+  final double standHeight;
   final bool isFirst;
 
   const _PodiumCard({
     required this.entry,
     required this.rank,
-    required this.height,
+    required this.standHeight,
     this.isFirst = false,
   });
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     Color medalColor;
     String medalEmoji;
+    String crown = '';
 
     switch (rank) {
       case 1:
         medalColor = Colors.amber;
         medalEmoji = '🥇';
+        crown = '👑';
         break;
       case 2:
-        medalColor = Colors.grey[300]!;
+        medalColor = const Color(0xFFA0A0A0);
         medalEmoji = '🥈';
         break;
       case 3:
-        medalColor = Colors.brown[300]!;
+        medalColor = const Color(0xFFCD7F32);
         medalEmoji = '🥉';
         break;
       default:
@@ -172,71 +176,196 @@ class _PodiumCard extends StatelessWidget {
         medalEmoji = '';
     }
 
-    return Column(
-      children: [
-        Text(medalEmoji, style: const TextStyle(fontSize: 32)),
-        const SizedBox(height: 8),
-        Container(
-          width: 70,
-          height: height,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [medalColor, medalColor.withOpacity(0.7)]),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('#$rank',
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold)),
-              const SizedBox(height: 8),
-              // Profile picture with fallback to initial letter
-              CircleAvatar(
-                radius: isFirst ? 24 : 20,
-                backgroundColor: Colors.white,
-                backgroundImage: entry.photoUrl.trim().isNotEmpty
-                    ? CachedNetworkImageProvider(entry.photoUrl)
-                    : null,
-                child: entry.photoUrl.trim().isEmpty
-                    ? Text(
-                        entry.userName.isNotEmpty
-                            ? entry.userName[0].toUpperCase()
-                            : '?',
-                        style: TextStyle(
-                            color: medalColor, fontWeight: FontWeight.bold),
-                      )
-                    : null,
+    return SizedBox(
+      width: 80,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // Crown for rank 1
+          if (isFirst)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: TweenAnimationBuilder<double>(
+                tween: Tween(begin: 0.0, end: 1.0),
+                duration: const Duration(milliseconds: 600),
+                builder: (context, value, child) {
+                  return Transform.translate(
+                    offset: Offset(0, -8 * (1 - value)),
+                    child: Opacity(
+                      opacity: value,
+                      child: Text(crown, style: const TextStyle(fontSize: 28)),
+                    ),
+                  );
+                },
               ),
-              const SizedBox(height: 8),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: Text(
-                  entry.userName.isNotEmpty ? entry.userName : 'Anonymous',
-                  style: const TextStyle(
+            ),
+
+          // Medal
+          Text(medalEmoji, style: const TextStyle(fontSize: 32)),
+          const SizedBox(height: 6),
+
+          // Avatar
+          Container(
+            width: 48,
+            height: 48,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: medalColor, width: 2.5),
+              boxShadow: [
+                BoxShadow(
+                  color: medalColor.withOpacity(0.4),
+                  blurRadius: 8,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: CircleAvatar(
+              radius: 22,
+              backgroundColor: Colors.white,
+              backgroundImage: entry.photoUrl.trim().isNotEmpty
+                  ? CachedNetworkImageProvider(entry.photoUrl)
+                  : null,
+              child: entry.photoUrl.trim().isEmpty
+                  ? Text(
+                      entry.userName.isNotEmpty
+                          ? entry.userName[0].toUpperCase()
+                          : '?',
+                      style: TextStyle(
+                          color: medalColor, fontWeight: FontWeight.bold, fontSize: 18),
+                    )
+                  : null,
+            ),
+          ),
+
+          const SizedBox(height: 6),
+
+          // Name
+          SizedBox(
+            width: 76,
+            child: Text(
+              entry.userName.isNotEmpty ? entry.userName : 'Anonymous',
+              style: TextStyle(
+                color: isDark ? Colors.white : Colors.black87,
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
+            ),
+          ),
+
+          const SizedBox(height: 2),
+
+          // Level & XP
+          Text(
+            'Lv.${entry.level} • ${entry.xp} XP',
+            style: TextStyle(
+              color: medalColor,
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
+          ),
+
+          const SizedBox(height: 8),
+
+          // Podium Stand
+          Container(
+            width: 72,
+            height: standHeight,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  medalColor,
+                  medalColor.withOpacity(0.6),
+                ],
+              ),
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(8),
+                topRight: Radius.circular(8),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: medalColor.withOpacity(0.3),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(8),
+                topRight: Radius.circular(8),
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 4),
+                    // Trophy icon
+                    Icon(
+                      rank == 1 ? Icons.emoji_events : Icons.star,
                       color: Colors.white,
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.center,
+                      size: 20,
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      '$rank',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w900,
+                        height: 1.1,
+                        shadows: [
+                          Shadow(
+                            color: Colors.black26,
+                            blurRadius: 4,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 1),
+                    Text(
+                      rank == 1 ? 'ST' : rank == 2 ? 'ND' : 'RD',
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 9,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5,
+                        height: 1.0,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 4),
-              Text('Lv.${entry.level}',
-                  style:
-                      const TextStyle(color: Colors.white70, fontSize: 10)),
-              Text('${entry.xp} XP',
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold)),
-            ],
+            ),
           ),
-        ),
-      ],
+
+          // Podium base
+          Container(
+            width: 80,
+            height: 12,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  medalColor.withOpacity(0.4),
+                  medalColor.withOpacity(0.6),
+                ],
+              ),
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(4),
+                bottomRight: Radius.circular(4),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

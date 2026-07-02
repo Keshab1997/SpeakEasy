@@ -22,10 +22,20 @@ const int _reEngagementNotifId = 2001;
 /// up before any task handler runs.
 Future<void> _initializeBackgroundServices() async {
   try {
-    if (Firebase.apps.isEmpty) {
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
+    // On some Android versions the background isolate may inherit the
+    // Firebase app from the main isolate, causing a duplicate-app error.
+    // Check both apps.isEmpty and catch duplicate-app gracefully.
+    try {
+      if (Firebase.apps.isEmpty) {
+        await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+        );
+      }
+    } catch (e) {
+      if (!e.toString().contains('[core/duplicate-app]')) {
+        rethrow;
+      }
+      debugPrint('WorkManager: Firebase already initialized (duplicate-app ignored)');
     }
   } catch (e) {
     debugPrint('WorkManager: Firebase init failed — $e');

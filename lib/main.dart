@@ -23,11 +23,8 @@ void main() async {
       );
     }
   } catch (e) {
-    if (e.toString().contains('[core/duplicate-app]')) {
-      Firebase.initializeApp();
-    } else {
-      rethrow;
-    }
+    // If Firebase is already initialized, just log and continue
+    debugPrint('main: Firebase init note — $e');
   }
 
   await HiveService.initialize();

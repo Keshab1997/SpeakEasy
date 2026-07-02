@@ -142,16 +142,74 @@ class BossBattleScreen extends ConsumerWidget {
             ),
           ),
 
-          // Score Display
+          // Boss Battle Header
           Container(
-            padding: const EdgeInsets.all(12),
-            color: themeColor.withOpacity(0.1),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(colors: themeGradient),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.deepPurple.withOpacity(0.3),
+                  blurRadius: 8,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _BossStat(label: 'Score', value: '${scoreState.currentScore}', icon: Icons.star, themeColor: themeColor),
-                _BossStat(label: 'Correct', value: '${scoreState.correctCount}', icon: Icons.check_circle, color: AppColors.success, themeColor: themeColor),
-                _BossStat(label: 'Wrong', value: '${scoreState.wrongCount}', icon: Icons.cancel, color: AppColors.error, themeColor: themeColor),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Icon(Icons.emoji_events, color: Colors.amber, size: 28),
+                ),
+                const SizedBox(width: 14),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Boss Battle',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      'Question ${gameState.currentQuestionIndex + 1} of ${gameState.totalQuestions}',
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.8),
+                        fontSize: 13,
+                      ),
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.star, color: Colors.amber, size: 16),
+                      const SizedBox(width: 4),
+                      Text(
+                        '${scoreState.currentScore}',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -275,28 +333,6 @@ class BossBattleScreen extends ConsumerWidget {
         earnedCoins: gameState.lastResult?.earnedCoins ?? 0,
       )));
     }
-  }
-}
-
-class _BossStat extends StatelessWidget {
-  final String label;
-  final String value;
-  final IconData icon;
-  final Color? color;
-  final Color themeColor;
-
-  const _BossStat({required this.label, required this.value, required this.icon, this.color, required this.themeColor});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Icon(icon, color: color ?? themeColor, size: 24),
-        const SizedBox(height: 4),
-        Text(value, style: TextStyle(color: color ?? themeColor, fontSize: 18, fontWeight: FontWeight.bold)),
-        Text(label, style: TextStyle(color: color != null ? color!.withOpacity(0.7) : themeColor.withOpacity(0.7), fontSize: 12)),
-      ],
-    );
   }
 }
 
