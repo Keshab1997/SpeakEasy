@@ -30,6 +30,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
   final stt.SpeechToText _speech = stt.SpeechToText();
   bool _isListening = false;
   bool _speechAvailable = false;
+  double _voiceConfidence = 0.0;
   bool _isAiConfigured = false;
   String _aiModel = '';
   List<String> _suggestedQuestions = [];
@@ -56,11 +57,11 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
   // --- Lesson Templates ---
   String? _selectedLesson;
   final List<Map<String, String>> _lessons = [
-    {'id': 'intro', 'icon': '👋', 'label': 'Introduce Yourself', 'desc': '5 min', 'prompt': 'Guide me through introducing myself in English. Ask me questions one by one about my name, where I am from, my hobbies, and what I do. Give feedback on my answers.'},
-    {'id': 'food', 'icon': '🍽️', 'label': 'Ordering Food', 'desc': '5 min', 'prompt': 'Let\'s practice a restaurant conversation. You are the waiter, I am the customer. Start with "Welcome to our restaurant! What would you like to order?" and guide me through ordering food.'},
-    {'id': 'interview', 'icon': '💼', 'label': 'Job Interview', 'desc': '10 min', 'prompt': 'Let\'s do a mock job interview in English. Ask me common interview questions one at a time. After each answer, give feedback on my grammar and vocabulary, then ask the next question.'},
-    {'id': 'routine', 'icon': '🌅', 'label': 'Daily Routine', 'desc': '5 min', 'prompt': 'Help me describe my daily routine in English. Ask me what I do from morning to night, correct my sentences, and teach me better ways to express daily activities.'},
-    {'id': 'past', 'icon': '📖', 'label': 'Past Events', 'desc': '5 min', 'prompt': 'Let\'s practice talking about past events. Ask me what I did yesterday or last weekend. Help me use past tense correctly and teach me irregular verbs.'},
+    {'id': 'intro', 'icon': '👋', 'label': 'Introduce Yourself', 'desc': '5 min', 'prompt': 'We are starting an "Introduce Yourself" lesson. Follow this EXACT format: Ask ONE question. Wait for my answer. If I make mistakes, gently correct me and show the right way. Give brief feedback (1-2 sentences). Then ask the NEXT question. Never answer for me. Never skip ahead. Be patient and encouraging.'},
+    {'id': 'food', 'icon': '🍽️', 'label': 'Ordering Food', 'desc': '5 min', 'prompt': 'We are starting an "Ordering Food" lesson. You play the waiter, I play the customer. Ask ONE question about my order. Wait for my answer. If my English is wrong, correct me gently and show the proper phrase. Then ask the next question. Never answer for me. Stay in character.'},
+    {'id': 'interview', 'icon': '💼', 'label': 'Job Interview', 'desc': '10 min', 'prompt': 'We are starting a "Job Interview" lesson. You are the interviewer. Ask ONE question at a time. Wait for my answer. If I make grammar mistakes, give 1 sentence of feedback. Suggest a better way to say it. Then ask the next question. Keep going for at least 5 questions. Be encouraging.'},
+    {'id': 'routine', 'icon': '🌅', 'label': 'Daily Routine', 'desc': '5 min', 'prompt': 'We are starting a "Daily Routine" lesson. Ask ONE question at a time about my day. Wait for my answer. If I make mistakes, correct me gently and teach better expressions. If I cannot answer, give me the words I need. Then ask the next question. Cover morning, afternoon, evening.'},
+    {'id': 'past', 'icon': '📖', 'label': 'Past Events', 'desc': '5 min', 'prompt': 'We are starting a "Past Events" lesson. Ask ONE question about my yesterday/weekend. Wait for my answer. If I use wrong tense, say "Good try! We say: [correct sentence]". Explain briefly. Then ask the next question. Do not correct every single mistake, just the important ones.'},
   ];
   
   // --- Pronunciation Practice ---
@@ -85,6 +86,12 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
   // --- Daily Challenge ---
   int _challengeStreak = 0;
   bool _challengeCompleted = false;
+  
+  // --- UI State ---
+  bool _showQuickActions = false;
+  
+  // --- Translation ---
+  bool _isTranslating = false;
   
   String _locale = 'en_US';
   final List<String> _locales = ['en_US', 'bn_BD'];
@@ -132,6 +139,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       _isTyping = false;
       _isStreaming = false;
       _streamingText = '';
+      _showQuickActions = false;
     });
     _addGreeting();
   }
@@ -186,6 +194,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
         'timestamp': DateTime.now().millisecondsSinceEpoch,
       });
       _messageController.clear();
+      FocusManager.instance.primaryFocus?.unfocus();
       _isTyping = true;
       _suggestedQuestions = [];
     });
@@ -217,30 +226,49 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
           'If there are multiple errors, list each one in the format above. '
           'If the sentence is correct, say: ✅ "Your sentence is grammatically correct!" '
           'and give a small tip. '
-          'Always include Bangla translation of the rule. '
           'Do NOT suggest follow-up questions. '
           'Do NOT add extra conversation. Stay focused on grammar correction.';
     } else if (_userName.isNotEmpty) {
-      systemPrompt = 'You are a friendly AI English teacher named Keshab. '
+      String basePrompt = 'You are a friendly AI English teacher named Keshab. '
           "Your student's name is $_userName. "
           'Your job is to help the student learn and practice English in a natural, fun way. '
           'The student can ask questions in English or Bangla (Bengali). '
-          'IMPORTANT: Always respond in English first, then immediately provide the Bangla translation below. '
-          'Format your response like this:\n'
-          '[Your English response here]\n\n'
-          'বাংলা: [Bangla translation]\n'
-          '---\n'
-          'When correcting grammar, first show the correction in English, then explain in Bangla. '
-          'When introducing new vocabulary, give the English word with meaning and example in English, '
-          'then translate the example to Bangla. '
-          'Keep responses friendly, concise, and encouraging. '
-          'Always address the student by name when possible. '
-          'IMPORTANT: At the end of your response, suggest 2-4 related follow-up questions that the student might ask. '
-          'Format them as a numbered or bulleted list, each ending with a question mark. '
-          'Example:\n'
-          '- What is present perfect tense?\n'
-          '- How do I use past tense?\n'
-          '- Can you explain future tense?';
+          'IMPORTANT RULES:\n'
+          '1. Always respond in English only by default.\n'
+          '2. If the student asks "what does X mean?" or "X এর অর্থ কি?" in Bangla, '
+          'then explain the meaning in Bangla with example.\n'
+          '3. Do NOT repeat the student\'s name in every response. Use it occasionally, not in every sentence.\n'
+          '4. Keep responses friendly, concise, and encouraging.\n';
+
+      // Lesson Mode: Enforce structured Q&A flow
+      if (_selectedLesson != null) {
+        basePrompt += '5. LESSON MODE ACTIVE: You are conducting a structured lesson. '
+            'Follow these rules STRICTLY:\n'
+            '   - Ask ONE question at a time. Never ask multiple questions in one message.\n'
+            '   - Wait for my answer. Never answer on my behalf.\n'
+            '   - After I answer, give brief feedback (1-2 sentences).\n'
+            '   - Then ask the NEXT question. Keep the lesson moving forward.\n'
+            '   - NEVER skip ahead or complete the lesson early.\n'
+            '   - If I ask something off-topic, politely steer back to the lesson.\n'
+            '   - Do NOT suggest follow-up questions at the end. Just continue the lesson.\n\n'
+            'WHEN STUDENT MAKES A MISTAKE:\n'
+            '   - Be VERY encouraging and patient. Never scold.\n'
+            '   - Say "Good try!" or "Almost correct!" first.\n'
+            '   - Then gently show the correct answer.\n'
+            '   - Explain the mistake in 1 simple sentence.\n'
+            '   - If the student cannot answer, give them the correct answer and ask them to repeat it.\n'
+            '   - Then move to the next question. Do not dwell on mistakes.\n'
+            '   - The goal is confidence building, not perfection.';
+      } else {
+        basePrompt += '5. At the end of your response, suggest 2-4 related follow-up questions. '
+            'Format them as a numbered or bulleted list, each ending with a question mark. '
+            'Example:\n'
+            '- What is present perfect tense?\n'
+            '- How do I use past tense?\n'
+            '- Can you explain future tense?';
+      }
+
+      systemPrompt = basePrompt;
     } else {
       systemPrompt = null;
     }
@@ -473,6 +501,56 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
         duration: Duration(seconds: 2),
         behavior: SnackBarBehavior.floating,
         margin: EdgeInsets.all(16),
+      ),
+    );
+  }
+
+  // --- Translate to Bangla ---
+  Future<void> _translateToBangla(String text) async {
+    if (_isTranslating) return;
+    setState(() => _isTranslating = true);
+    try {
+      final translation = await AIService().sendMessage(
+        'Translate this English text to Bengali (Bangla). Return ONLY the translation, nothing else:\n\n$text',
+      );
+      if (!mounted) return;
+      final cleanTranslation = translation.replaceAll('বাংলা:', '').replaceAll('---', '').trim();
+      _showTranslationDialog(cleanTranslation);
+    } catch (_) {
+      if (!mounted) return;
+      _showTranslationDialog('(Could not translate. Please try again.)');
+    } finally {
+      if (mounted) setState(() => _isTranslating = false);
+    }
+  }
+
+  void _showTranslationDialog(String translation) {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: const Row(
+          children: [
+            Icon(Icons.translate_rounded, size: 20, color: AppColors.primary),
+            SizedBox(width: 8),
+            Text('বাংলা অনুবাদ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+          ],
+        ),
+        content: Container(
+          constraints: const BoxConstraints(maxHeight: 300),
+          child: SingleChildScrollView(
+            child: SelectableText(
+              translation,
+              style: const TextStyle(fontSize: 15, height: 1.6),
+            ),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Close'),
+          ),
+        ],
       ),
     );
   }
@@ -886,33 +964,36 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
     );
   }
 
-  void _startListening() async {
-    if (!_speechAvailable) {
-      _speechAvailable = await _speech.initialize();
-      if (!_speechAvailable) return;
-    }
-    final existingText = _messageController.text.trim();
-    _isListening = true;
-    setState(() {});
-    await _speech.listen(
-      onResult: (result) {
-        final words = result.recognizedWords;
-        setState(() {
-          if (existingText.isNotEmpty) {
-            _messageController.text = '$existingText $words';
-          } else {
-            _messageController.text = words;
-          }
-        });
-      },
-      localeId: _locale,
-    );
-  }
+	  void _startListening() async {
+	    if (!_speechAvailable) {
+	      _speechAvailable = await _speech.initialize();
+	      if (!_speechAvailable) return;
+	    }
+	    final existingText = _messageController.text.trim();
+	    _isListening = true;
+	    _voiceConfidence = 0.0;
+	    setState(() {});
+	    await _speech.listen(
+	      onResult: (result) {
+	        final words = result.recognizedWords;
+	        setState(() {
+	          if (existingText.isNotEmpty) {
+	            _messageController.text = '$existingText $words';
+	          } else {
+	            _messageController.text = words;
+	          }
+	          _voiceConfidence = result.confidence;
+	        });
+	      },
+	      localeId: _locale,
+	    );
+	  }
 
-  void _stopListening() async {
-    await _speech.stop();
-    setState(() => _isListening = false);
-  }
+	  void _stopListening() async {
+	    await _speech.stop();
+	    setState(() => _isListening = false);
+	    // Text stays in field — user can edit or tap send manually
+	  }
 
   List<String> _extractSuggestions(String text) {
     final suggestions = <String>[];
@@ -1049,31 +1130,58 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                 MaterialPageRoute(builder: (_) => const SettingsScreen()),
               ),
             ),
-          // Grammar Mode Toggle
-          IconButton(
+          // Tools Popup Menu (Grammar Mode, Voice Mode)
+          PopupMenuButton<String>(
             icon: Icon(
-              Icons.spellcheck_rounded,
+              Icons.tune_rounded,
               size: 24,
-              color: _grammarMode ? AppColors.primary : null,
+              color: (_grammarMode || _voiceMode) ? AppColors.primary : null,
             ),
-            tooltip: _grammarMode ? 'Grammar Mode: ON' : 'Grammar Mode: OFF',
-            onPressed: () => setState(() => _grammarMode = !_grammarMode),
-          ),
-          // Voice Mode Toggle
-          IconButton(
-            icon: Icon(
-              Icons.headset_mic_rounded,
-              size: 24,
-              color: _voiceMode ? AppColors.primary : null,
-            ),
-            tooltip: _voiceMode ? 'Voice Mode: ON' : 'Voice Mode: OFF',
-            onPressed: () {
-              if (_voiceMode) {
-                _stopVoiceMode();
-              } else {
-                setState(() => _voiceMode = true);
+            tooltip: 'Tools',
+            onSelected: (value) {
+              switch (value) {
+                case 'grammar':
+                  setState(() => _grammarMode = !_grammarMode);
+                  break;
+                case 'voice':
+                  if (_voiceMode) {
+                    _stopVoiceMode();
+                  } else {
+                    setState(() => _voiceMode = true);
+                  }
+                  break;
               }
             },
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: 'grammar',
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.spellcheck_rounded,
+                      size: 20,
+                      color: _grammarMode ? AppColors.primary : null,
+                    ),
+                    const SizedBox(width: 10),
+                    Text(_grammarMode ? 'Grammar Mode: ON' : 'Grammar Mode: OFF'),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 'voice',
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.headset_mic_rounded,
+                      size: 20,
+                      color: _voiceMode ? AppColors.primary : null,
+                    ),
+                    const SizedBox(width: 10),
+                    Text(_voiceMode ? 'Voice Mode: ON' : 'Voice Mode: OFF'),
+                  ],
+                ),
+              ),
+            ],
           ),
           IconButton(
             icon: const Icon(Icons.history_rounded, size: 24),
@@ -1097,8 +1205,8 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  // --- Lesson Templates Carousel ---
-                  if (_messages.length <= 2 && !_isTyping && !_isStreaming)
+                  // --- Lesson Templates Carousel (only on empty chat) ---
+                  if (_messages.length <= 1 && !_isTyping && !_isStreaming)
                     Padding(
                       padding: const EdgeInsets.only(bottom: 16),
                       child: Column(
@@ -1369,19 +1477,35 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                           ),
                                         ),
                                       ),
+                                    // --- Translate to Bangla Button ---
+                                    if (!isMe)
+                                      Padding(
+                                        padding: const EdgeInsets.only(right: 4),
+                                        child: InkWell(
+                                          onTap: () => _translateToBangla(msg['text'] as String),
+                                          child: Container(
+                                            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                                            decoration: BoxDecoration(
+                                              color: AppColors.primary.withOpacity(0.1),
+                                              borderRadius: BorderRadius.circular(8),
+                                              border: Border.all(color: AppColors.primary.withOpacity(0.3)),
+                                            ),
+                                            child: const Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Icon(Icons.translate_rounded, size: 11, color: AppColors.primary),
+                                                SizedBox(width: 2),
+                                                Text(
+                                                  'BN',
+                                                  style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold, color: AppColors.primary),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
                                     const Spacer(),
                                     InkWell(
-                                      onTap: () {
-                                        Clipboard.setData(ClipboardData(text: msg['text'] as String));
-                                        ScaffoldMessenger.of(context).showSnackBar(
-                                          const SnackBar(
-                                            content: Text('Message copied'),
-                                            duration: Duration(seconds: 2),
-                                            behavior: SnackBarBehavior.floating,
-                                            margin: EdgeInsets.all(16),
-                                          ),
-                                        );
-                                      },
                                       child: Icon(
                                         Icons.copy_rounded,
                                         size: 14,
@@ -1500,104 +1624,140 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
             ),
           ),
 
-          // Voice Mode Status Indicator
+          // Voice Mode Status Indicator (Compact)
           if (_voiceMode)
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-              color: AppColors.primary.withOpacity(0.1),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+              color: AppColors.primary.withOpacity(0.08),
               child: Row(
                 children: [
                   Icon(
                     _voiceModeSpeaking ? Icons.volume_up_rounded : Icons.mic_rounded,
-                    size: 16,
+                    size: 14,
                     color: AppColors.primary,
                   ),
-                  const SizedBox(width: 8),
-                  Text(
-                    _voiceModeSpeaking
-                        ? 'Keshab is speaking...'
-                        : _isListening
-                            ? 'Listening... Speak now'
-                            : 'Voice Mode Active',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: AppColors.primary,
-                      fontWeight: FontWeight.w500,
+                  const SizedBox(width: 6),
+                  Expanded(
+                    child: Text(
+                      _voiceModeSpeaking
+                          ? 'Keshab is speaking...'
+                          : _isListening
+                              ? 'Listening... Speak now'
+                              : 'Voice Mode Active',
+                      style: TextStyle(fontSize: 11, color: AppColors.primary, fontWeight: FontWeight.w500),
                     ),
                   ),
-                  const Spacer(),
                   InkWell(
                     onTap: _stopVoiceMode,
-                    child: const Icon(Icons.close_rounded, size: 16, color: Colors.grey),
+                    child: const Icon(Icons.close_rounded, size: 14, color: Colors.grey),
                   ),
                 ],
               ),
             ),
 
-          // Quick Action Buttons
+          // Quick Action Buttons (Collapsible)
           if (!_isStreaming && !_isTyping && _messages.isNotEmpty)
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              child: SizedBox(
-                height: 36,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: _quickActions.length,
-                  separatorBuilder: (_, __) => const SizedBox(width: 8),
-                  itemBuilder: (context, index) {
-                    final action = _quickActions[index];
-                    final isPronunciation = action['label'] == '🔊 Pronunciation';
-                    final isEvaluate = action['label'] == '📊 Evaluate';
-                    return ActionChip(
-                      avatar: Text(action['label']!.substring(0, 2)),
-                      label: Text(
-                        action['label']!.substring(3),
-                        style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Toggle row
+                  InkWell(
+                    onTap: () => setState(() => _showQuickActions = !_showQuickActions),
+                    borderRadius: BorderRadius.circular(8),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.auto_fix_high_rounded,
+                            size: 14,
+                            color: isDark ? Colors.white38 : Colors.grey[500],
+                          ),
+                          const SizedBox(width: 6),
+                          Text(
+                            'Quick Actions',
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: isDark ? Colors.white38 : Colors.grey[500],
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const Spacer(),
+                          Icon(
+                            _showQuickActions ? Icons.expand_less_rounded : Icons.expand_more_rounded,
+                            size: 18,
+                            color: isDark ? Colors.white38 : Colors.grey[500],
+                          ),
+                        ],
                       ),
-                      backgroundColor: isPronunciation && _pronunciationMode
-                          ? AppColors.primary.withOpacity(0.15)
-                          : (isEvaluate && _writingEvalMode
-                              ? AppColors.primary.withOpacity(0.15)
-                              : (isDark ? AppColors.surfaceDark : Colors.white)),
-                      side: BorderSide(
-                        color: isPronunciation && _pronunciationMode
-                            ? AppColors.primary
-                            : (isEvaluate && _writingEvalMode
-                                ? AppColors.primary
-                                : AppColors.primary.withOpacity(0.2)),
+                    ),
+                  ),
+                  // Action chips
+                  if (_showQuickActions)
+                    SizedBox(
+                      height: 36,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        physics: const BouncingScrollPhysics(),
+                        itemCount: _quickActions.length,
+                        separatorBuilder: (_, __) => const SizedBox(width: 8),
+                        itemBuilder: (context, index) {
+                          final action = _quickActions[index];
+                          final isPronunciation = action['label'] == '🔊 Pronunciation';
+                          final isEvaluate = action['label'] == '📊 Evaluate';
+                          return ActionChip(
+                            avatar: Text(action['label']!.substring(0, 2)),
+                            label: Text(
+                              action['label']!.substring(3),
+                              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                            ),
+                            backgroundColor: isPronunciation && _pronunciationMode
+                                ? AppColors.primary.withOpacity(0.15)
+                                : (isEvaluate && _writingEvalMode
+                                    ? AppColors.primary.withOpacity(0.15)
+                                    : (isDark ? AppColors.surfaceDark : Colors.white)),
+                            side: BorderSide(
+                              color: isPronunciation && _pronunciationMode
+                                  ? AppColors.primary
+                                  : (isEvaluate && _writingEvalMode
+                                      ? AppColors.primary
+                                      : AppColors.primary.withOpacity(0.2)),
+                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            onPressed: () {
+                              if (isPronunciation && _pronunciationMode) {
+                                _stopPronunciationPractice();
+                                return;
+                              }
+                              _messageController.text = action['prompt']!;
+                              setState(() {
+                                _suggestedQuestions = [];
+                                if (isPronunciation) _pronunciationMode = true;
+                                if (isEvaluate) _writingEvalMode = true;
+                              });
+                              _sendMessage();
+                            },
+                          );
+                        },
                       ),
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      onPressed: () {
-                        if (isPronunciation && _pronunciationMode) {
-                          _stopPronunciationPractice();
-                          return;
-                        }
-                        _messageController.text = action['prompt']!;
-                        setState(() {
-                          _suggestedQuestions = [];
-                          if (isPronunciation) _pronunciationMode = true;
-                          if (isEvaluate) _writingEvalMode = true;
-                        });
-                        _sendMessage();
-                      },
-                    );
-                  },
-                ),
+                    ),
+                ],
               ),
             ),
 
-          // Pronunciation Practice Card
+          // Pronunciation Practice Card (Compact)
           if (_pronunciationMode && _pronunciationSentence.isNotEmpty)
             Container(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+              padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
               decoration: BoxDecoration(
                 color: isDark ? AppColors.surfaceDark : Colors.white,
                 border: Border(
                   top: BorderSide(
                     color: isDark ? AppColors.borderDark : Colors.grey[100]!,
-                    width: 1.5,
+                    width: 1,
                   ),
                 ),
               ),
@@ -1607,102 +1767,80 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                 children: [
                   Row(
                     children: [
-                      const Icon(Icons.record_voice_over_rounded, size: 18, color: AppColors.primary),
-                      const SizedBox(width: 6),
-                      const Text(
-                        'Pronunciation Practice',
-                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
-                      ),
+                      const Icon(Icons.record_voice_over_rounded, size: 16, color: AppColors.primary),
+                      const SizedBox(width: 4),
+                      const Text('Practice', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
                       const Spacer(),
                       InkWell(
                         onTap: _stopPronunciationPractice,
-                        child: Icon(Icons.close_rounded, size: 18, color: Colors.grey[400]),
+                        child: Icon(Icons.close_rounded, size: 16, color: Colors.grey[400]),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 6),
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: isDark ? Colors.white10 : Colors.grey[50],
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(8),
                       border: Border.all(color: AppColors.primary.withOpacity(0.2)),
                     ),
                     child: Text(
                       _pronunciationSentence,
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 13,
                         fontWeight: FontWeight.w500,
                         color: isDark ? Colors.white : Colors.black87,
-                        height: 1.4,
                       ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 6),
                   Row(
                     children: [
-                      // Play Button
-                      Expanded(
-                        child: _buildPronButton(
-                          icon: _isPlaying ? Icons.stop_rounded : Icons.play_arrow_rounded,
-                          label: _isPlaying ? 'Stop' : 'Listen',
-                          color: AppColors.primary,
-                          onTap: () {
-                            if (_isPlaying) {
-                              _stopSpeaking();
-                            } else {
-                              _speakSentence(_pronunciationSentence);
-                            }
-                          },
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      // Record Button
-                      Expanded(
-                        child: _buildPronButton(
-                          icon: _userSpeechResult.isNotEmpty ? Icons.check_circle_rounded : Icons.mic_rounded,
-                          label: _userSpeechResult.isNotEmpty ? 'Done' : 'Speak',
-                          color: _userSpeechResult.isNotEmpty ? Colors.green : Colors.orange,
-                          onTap: () {
-                            if (_userSpeechResult.isNotEmpty) {
-                              setState(() => _userSpeechResult = '');
-                            } else {
-                              _startPronunciationListening();
-                            }
-                          },
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      // Accuracy Display
-                      if (_pronunciationAccuracy != null)
-                        Expanded(
-                          child: _buildPronButton(
-                            icon: _pronunciationAccuracy! >= 70 ? Icons.emoji_events_rounded : Icons.trending_up_rounded,
-                            label: '${_pronunciationAccuracy!.toInt()}%',
-                            color: _pronunciationAccuracy! >= 70 ? Colors.green : Colors.orange,
-                            onTap: null,
-                          ),
-                        ),
+                      Expanded(child: _buildPronButton(
+                        icon: _isPlaying ? Icons.stop_rounded : Icons.play_arrow_rounded,
+                        label: _isPlaying ? 'Stop' : 'Listen',
+                        color: AppColors.primary,
+                        onTap: () => _isPlaying ? _stopSpeaking() : _speakSentence(_pronunciationSentence),
+                      )),
+                      const SizedBox(width: 6),
+                      Expanded(child: _buildPronButton(
+                        icon: _userSpeechResult.isNotEmpty ? Icons.check_circle_rounded : Icons.mic_rounded,
+                        label: _userSpeechResult.isNotEmpty ? 'Done' : 'Speak',
+                        color: _userSpeechResult.isNotEmpty ? Colors.green : Colors.orange,
+                        onTap: () => _userSpeechResult.isNotEmpty ? setState(() => _userSpeechResult = '') : _startPronunciationListening(),
+                      )),
+                      if (_pronunciationAccuracy != null) ...[
+                        const SizedBox(width: 6),
+                        Expanded(child: _buildPronButton(
+                          icon: _pronunciationAccuracy! >= 70 ? Icons.emoji_events_rounded : Icons.trending_up_rounded,
+                          label: '${_pronunciationAccuracy!.toInt()}%',
+                          color: _pronunciationAccuracy! >= 70 ? Colors.green : Colors.orange,
+                          onTap: null,
+                        )),
+                      ],
                     ],
                   ),
                   if (_userSpeechResult.isNotEmpty && _pronunciationAccuracy == null)
                     Padding(
-                      padding: const EdgeInsets.only(top: 6),
+                      padding: const EdgeInsets.only(top: 4),
                       child: SizedBox(
                         width: double.infinity,
-                        child: ElevatedButton(
+                        child: TextButton(
                           onPressed: _stopPronunciationListening,
-                          style: ElevatedButton.styleFrom(
+                          style: TextButton.styleFrom(
                             backgroundColor: AppColors.primary,
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                            padding: const EdgeInsets.symmetric(vertical: 4),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                           ),
-                          child: const Text('Check Accuracy', style: TextStyle(color: Colors.white, fontSize: 12)),
+                          child: const Text('Check Accuracy', style: TextStyle(color: Colors.white, fontSize: 11)),
                         ),
                       ),
                     ),
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 4),
                 ],
               ),
             ),
@@ -1712,7 +1850,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                 decoration: BoxDecoration(
                   color: isDark ? AppColors.backgroundDark : Colors.white,
                   border: Border(
@@ -1742,18 +1880,71 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                       ),
                     ),
                     const SizedBox(width: 8),
-                    CircleAvatar(
-                    backgroundColor: _isListening ? Colors.red : (isDark ? Colors.white12 : Colors.grey[300]),
-                    radius: 22,
-                    child: IconButton(
-                      onPressed: _isListening ? _stopListening : _startListening,
-                      icon: Icon(
-                        _isListening ? Icons.mic_rounded : Icons.mic_none_rounded,
-                        color: _isListening ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
-                        size: 20,
+                    // Voice Input - Hold to Talk
+                    GestureDetector(
+                      onTapDown: (_) {
+                        if (!_isListening) _startListening();
+                      },
+                      onTapUp: (_) {
+                        if (_isListening) _stopListening();
+                      },
+                      onTapCancel: () {
+                        if (_isListening) _stopListening();
+                      },
+                      child: Container(
+                        width: 44,
+                        height: 44,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: _isListening
+                              ? Colors.red
+                              : (isDark ? Colors.white12 : Colors.grey[300]),
+                          border: _isListening
+                              ? Border.all(color: Colors.redAccent, width: 2)
+                              : null,
+                          boxShadow: _isListening
+                              ? [
+                                  BoxShadow(
+                                    color: Colors.red.withOpacity(0.3),
+                                    blurRadius: 8,
+                                    spreadRadius: 1,
+                                  ),
+                                ]
+                              : null,
+                        ),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Icon(
+                              _isListening
+                                  ? Icons.mic_rounded
+                                  : Icons.mic_none_rounded,
+                              color: _isListening
+                                  ? Colors.white
+                                  : (isDark ? Colors.white54 : Colors.black54),
+                              size: 20,
+                            ),
+                            // Confidence indicator ring
+                            if (_isListening)
+                              Positioned(
+                                bottom: 6,
+                                child: Container(
+                                  width: 16,
+                                  height: 3,
+                                  decoration: BoxDecoration(
+                                    color: _voiceConfidence > 0.7
+                                        ? Colors.green
+                                        : _voiceConfidence > 0.4
+                                            ? Colors.orange
+                                            : Colors.red,
+                                    borderRadius: BorderRadius.circular(2),
+                                  ),
+                                ),
+                              ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
                 const SizedBox(width: 4),
                 GestureDetector(
                   onTap: () {
