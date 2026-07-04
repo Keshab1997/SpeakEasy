@@ -249,7 +249,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
       slivers: [
         // ── AppBar ───────────────────────────────────────────────
         SliverAppBar(
-	          expandedHeight: 210,
+	          expandedHeight: 220,
           pinned: true,
           backgroundColor: themeColor,
           leading: IconButton(
@@ -270,7 +270,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
               ),
               child: SafeArea(
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
+                  padding: const EdgeInsets.fromLTRB(20, 44, 20, 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.end,
