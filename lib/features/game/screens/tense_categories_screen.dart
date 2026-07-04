@@ -167,15 +167,17 @@ class TenseCategoriesScreen extends ConsumerWidget {
 
             // Special Categories
             _SpecialCategoriesSection(
-              onCategoryTap: (categoryId) {
+              onCategoryTap: (categoryId, categoryName, rulesPath) {
                 ref.read(soundProvider.notifier).playButtonTap();
-                ref.read(gameProvider.notifier).loadQuestions(
-                  tenseType: categoryId,
-                  limit: 15,
-                );
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (_) => const QuestionScreen()),
+                  MaterialPageRoute(
+                    builder: (_) => GrammarRulesScreen(
+                      tenseId: categoryId,
+                      tenseName: categoryName,
+                      rulesAssetPath: rulesPath,
+                    ),
+                  ),
                 );
               },
             ),
@@ -475,7 +477,7 @@ class _TenseCard extends StatelessWidget {
 // ─── Special Categories ──────────────────────────────────────────────────────
 
 class _SpecialCategoriesSection extends StatelessWidget {
-  final Function(String) onCategoryTap;
+  final void Function(String categoryId, String categoryName, String rulesPath) onCategoryTap;
 
   const _SpecialCategoriesSection({required this.onCategoryTap});
 
@@ -512,20 +514,28 @@ class _SpecialCategoriesSection extends StatelessWidget {
             Expanded(
               child: _SpecialCategoryCard(
                 title: 'Comparison',
-                description: 'Compare tenses',
+                description: 'Compare tenses side by side',
                 icon: Icons.compare,
                 color: Colors.orange,
-                onTap: () => onCategoryTap('comparison'),
+                onTap: () => onCategoryTap(
+                  'comparison',
+                  'Tense Comparison',
+                  'assets/json/game/rules/13_comparison_rules.json',
+                ),
               ),
             ),
             const SizedBox(width: 12),
             Expanded(
               child: _SpecialCategoryCard(
                 title: 'Special Usage',
-                description: 'Common mistakes',
+                description: 'Common mistakes & tips',
                 icon: Icons.warning,
                 color: Colors.deepOrange,
-                onTap: () => onCategoryTap('special_usage'),
+                onTap: () => onCategoryTap(
+                  'special_usage',
+                  'Special Usage & Common Mistakes',
+                  'assets/json/game/rules/14_special_usage_rules.json',
+                ),
               ),
             ),
           ],

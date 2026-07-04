@@ -1,0 +1,160 @@
+{
+  "tenseId": "special_usage",
+  "tenseName": "Special Usage & Common Mistakes",
+  "banglaName": "বিশেষ ব্যবহার ও সাধারণ ভুল",
+  "color": "#EA580C",
+  "icon": "warning",
+  "shortDescription": "Tense ব্যবহার করার সময় বাংলাভাষীরা যে ভুলগুলো প্রায়ই করে এবং বিশেষ নিয়মগুলো জেনে নাও।",
+  "structure": {
+    "affirmative": "Subject + Correct Tense Form + Object",
+    "negative": "Subject + Correct Auxiliary + not + Verb + Object",
+    "interrogative": "Correct Auxiliary + Subject + Verb + Object?"
+  },
+  "rules": [
+    {
+      "step": 1,
+      "title": "Auxiliary Verb-এর ভুল ব্যবহার",
+      "banglaTitle": "Auxiliary Verb নিয়ে সাধারণ ভুল",
+      "icon": "error_outline",
+      "color": "#EF4444",
+      "explanation": "বাংলাভাষীরা প্রায়ই auxiliary verb (am, is, are, was, were, do, does, did) ভুলভাবে ব্যবহার করে। নিচের নিয়মগুলো মনে রাখো।",
+      "points": [
+        "❌ I am go to school. → ✅ I go to school. (am আর go একসাথে হয় না)",
+        "❌ I am agree with you. → ✅ I agree with you. (agree এর সাথে am বসে না)",
+        "❌ He don't like tea. → ✅ He doesn't like tea. (He/She/It → does not)",
+        "❌ She didn't went. → ✅ She didn't go. (did-এর পর base form)",
+        "❌ I am not go there. → ✅ I do not go there. / I am not going there.",
+        "মনে রাখো: am/is/are/was/were + V-ing (Continuous), have/has/had + V3 (Perfect), do/does/did + V1 (Simple)"
+      ],
+      "examples": [
+        { "english": "❌ I am not know → ✅ I don't know", "bangla": "আমি জানি না" },
+        { "english": "❌ She is not believe → ✅ She doesn't believe", "bangla": "সে বিশ্বাস করে না" },
+        { "english": "❌ They are not want → ✅ They don't want", "bangla": "তারা চায় না" },
+        { "english": "❌ He was not go → ✅ He did not go", "bangla": "সে যায়নি" }
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Subject-Verb Agreement",
+      "banglaTitle": "Subject আর Verb-এর সামঞ্জস্য",
+      "icon": "error_outline",
+      "color": "#DC2626",
+      "explanation": "Present Indefinite-এ Subject-এর সাথে Verb-এর রূপ মেলানো খুব গুরুত্বপূর্ণ। He/She/It দিয়ে Verb-এর শেষে s/es যোগ হয়।",
+      "points": [
+        "He/She/It/Singular → Verb + s/es ❌ He go → ✅ He goes",
+        "I/We/You/They/Plural → Verb (base form) ❌ They goes → ✅ They go",
+        "❌ She speak English well. → ✅ She speaks English well.",
+        "❌ The boy play cricket. → ✅ The boy plays cricket.",
+        "❌ The children plays here. → ✅ The children play here. (children = plural)",
+        "Either/Neither/Each/Everyone → Singular verb: Everyone is (not are) here."
+      ],
+      "examples": [
+        { "english": "❌ He write a letter. → ✅ He writes a letter.", "bangla": "সে একটি চিঠি লেখে।" },
+        { "english": "❌ She go to market. → ✅ She goes to market.", "bangla": "সে বাজারে যায়।" },
+        { "english": "❌ The dog run fast. → ✅ The dog runs fast.", "bangla": "কুকুরটি দ্রুত দৌড়ায়।" },
+        { "english": "❌ My parents likes me. → ✅ My parents like me.", "bangla": "আমার বাবা-মা আমাকে ভালোবাসেন।" }
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Since vs For vs Ago",
+      "banglaTitle": "Since, For, Ago-এর সঠিক ব্যবহার",
+      "icon": "error_outline",
+      "color": "#F59E0B",
+      "explanation": "Since, For, এবং Ago তিনটিই সময় বোঝায় কিন্তু ব্যবহার ভিন্ন। এদের সঠিক ব্যবহার না জানলে বাক্যের অর্থ বদলে যেতে পারে।",
+      "points": [
+        "Since: নির্দিষ্ট সময়/পয়েন্ট (since 2020, since Monday, since 5 PM, since childhood)",
+        "For: সময়ের দৈর্ঘ্য (for 2 hours, for 5 years, for a long time, for a week)",
+        "Ago: অতীতে নির্দিষ্ট সময় আগে (2 years ago, 5 minutes ago, a long time ago)",
+        "Since/For → Present Perfect বা Present Perfect Continuous দিয়ে ব্যবহার হয়।",
+        "Ago → Past Indefinite দিয়ে ব্যবহার হয়।",
+        "❌ I am living here since 2020. → ✅ I have been living here since 2020.",
+        "❌ I know him for 3 years. → ✅ I have known him for 3 years."
+      ],
+      "examples": [
+        { "english": "I have studied here since 2020. (since + point)", "bangla": "আমি ২০২০ সাল থেকে এখানে পড়ছি।" },
+        { "english": "I have studied here for 4 years. (for + duration)", "bangla": "আমি ৪ বছর ধরে এখানে পড়ছি।" },
+        { "english": "I started studying here 4 years ago. (ago + past)", "bangla": "আমি ৪ বছর আগে এখানে পড়া শুরু করি।" },
+        { "english": "She has been waiting since 10 AM.", "bangla": "সে সকাল ১০টা থেকে অপেক্ষা করছে।" }
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Conditional Sentences",
+      "banglaTitle": "Conditional Sentence (যদি-তবে) এর নিয়ম",
+      "icon": "error_outline",
+      "color": "#8B5CF6",
+      "explanation": "Conditional sentence এ 'if' ব্যবহার করে শর্ত প্রকাশ করা হয়। তিন ধরনের conditional আছে এবং প্রতিটির tense নিয়ম আলাদা।",
+      "points": [
+        "Type 0 (General Truth): If + Present Indefinite, Present Indefinite। যেমন: If you heat ice, it melts.",
+        "Type 1 (Real Future): If + Present Indefinite, will + V1। যেমন: If it rains, I will stay home.",
+        "Type 2 (Unreal Present): If + Past Indefinite, would + V1। যেমন: If I were you, I would go.",
+        "Type 3 (Unreal Past): If + Past Perfect, would have + V3। যেমন: If I had known, I would have come.",
+        "❌ If I will see him, I will tell him. → ✅ If I see him, I will tell him. (if-এ will হয় না)",
+        "❌ If I was you → ✅ If I were you (was না, were বসে)"
+      ],
+      "examples": [
+        { "english": "If it rains, I will stay home. (Type 1 - real possibility)", "bangla": "যদি বৃষ্টি হয়, আমি বাড়িতে থাকব।" },
+        { "english": "If I had money, I would buy a car. (Type 2 - unreal present)", "bangla": "যদি আমার টাকা থাকত, আমি গাড়ি কিনতাম।" },
+        { "english": "If I had studied more, I would have passed. (Type 3 - unreal past)", "bangla": "যদি আমি বেশি পড়তাম, আমি পাস করতাম।" },
+        { "english": "If you heat water to 100°C, it boils. (Type 0 - fact)", "bangla": "যদি তুমি পানি ১০০°C তে গরম করো, এটি ফুটে।" }
+      ]
+    },
+    {
+      "step": 5,
+      "title": "Passive Voice in Spoken English",
+      "banglaTitle": "কথোপকথনে Passive Voice-এর ব্যবহার",
+      "icon": "error_outline",
+      "color": "#06B6D4",
+      "explanation": "Passive Voice তখন ব্যবহার করা হয় যখন কাজটি গুরুত্বপূর্ণ, কাজটি কে করেছে তা গুরুত্বপূর্ণ নয়। বাংলাভাষীরা passive voice এ প্রায়ই ভুল করে।",
+      "points": [
+        "Active: Subject + Verb + Object। যেমন: I write a letter.",
+        "Passive: Object + am/is/are/was/were/been + V3 + by Subject। যেমন: A letter is written by me.",
+        "Present Indefinite Passive: am/is/are + V3। ❌ It is make → ✅ It is made",
+        "Past Indefinite Passive: was/were + V3। ❌ It was make → ✅ It was made",
+        "Present Perfect Passive: have/has been + V3। ❌ It has been do → ✅ It has been done",
+        "মনে রাখো: Passive সবসময় V3 (Past Participle) ব্যবহার হয়।"
+      ],
+      "examples": [
+        { "english": "❌ The work is do by him. → ✅ The work is done by him.", "bangla": "কাজটি তার দ্বারা করা হয়।" },
+        { "english": "❌ The book was write by her. → ✅ The book was written by her.", "bangla": "বইটি তার দ্বারা লেখা হয়েছিল।" },
+        { "english": "Rice is eaten in Bangladesh. (Passive - fact)", "bangla": "বাংলাদেশে ভাত খাওয়া হয়।" },
+        { "english": "English is spoken all over the world.", "bangla": "সারা বিশ্বে ইংরেজি বলা হয়।" }
+      ]
+    },
+    {
+      "step": 6,
+      "title": "Common Tense Confusions in Questions",
+      "banglaTitle": "প্রশ্ন করার সময় সাধারণ ভুল",
+      "icon": "error_outline",
+      "color": "#7C3AED",
+      "explanation": "প্রশ্ন করতে গিয়ে বাংলাভাষীরা প্রায়ই helping verb এবং word order নিয়ে ভুল করে। নিচের নিয়মগুলো মনে রাখো।",
+      "points": [
+        "Yes/No Question: Auxiliary + Subject + Verb + ? ❌ You like tea? → ✅ Do you like tea?",
+        "WH Question: Wh + Aux + Subject + Verb + ? ❌ Where you live? → ✅ Where do you live?",
+        "কথোপকথনে কখনও কখনও auxiliary বাদ দেওয়া যায় (informal): 'You coming?' কিন্তু formal হলে সবসময় লাগে।",
+        "Embedded Question: Word Order পরিবর্তন হয়। ❌ Can you tell me where is the station? → ✅ Can you tell me where the station is?",
+        "Indirect Question-এ question mark/auxiliary inversion থাকে না।",
+        "Tag Question: ✅ You like tea, don't you? ❌ You like tea, isn't it?"
+      ],
+      "examples": [
+        { "english": "❌ Why you are crying? → ✅ Why are you crying?", "bangla": "তুমি কেন কাঁদছ?" },
+        { "english": "❌ What he wants? → ✅ What does he want?", "bangla": "সে কী চায়?" },
+        { "english": "❌ Tell me where is the shop. → ✅ Tell me where the shop is.", "bangla": "বলো দোকানটা কোথায়।" },
+        { "english": "❌ He went home, isn't it? → ✅ He went home, didn't he?", "bangla": "সে বাড়ি গিয়েছিল, তাই না?" }
+      ]
+    }
+  ],
+  "quickSummary": {
+    "formula": "Common Mistakes = Wrong Auxiliary + Wrong Verb Form + Wrong Time Expression",
+    "keyPoints": [
+      "কখনই am/is/are + V1 (base form) করবে না — am/is/are দিয়ে V-ing বা Passive ব্যবহার করো",
+      "He/She/It-এর সাথে Present Indefinite-এ verb-এর শেষে s/es যোগ হবে",
+      "did-এর পর সবসময় base form (V1) — did এর পর V2 হয় না",
+      "Since = point (2020, Monday), For = duration (2 years, 3 hours), Ago = past time (2 years ago)",
+      "Conditional-এ if-এর পর will হয় না — if + Present Indefinite + will",
+      "Passive সবসময় V3 (Past Participle) দিয়ে হয়",
+      "Question-এ Auxiliary + Subject + Verb — এই order মনে রাখো"
+    ]
+  }
+}

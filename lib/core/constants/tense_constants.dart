@@ -80,6 +80,10 @@ class TenseConstants {
         return 'assets/json/game/rules/11_future_perfect_rules.json';
       case 'future_perfect_continuous':
         return 'assets/json/game/rules/12_future_perfect_continuous_rules.json';
+      case 'comparison':
+        return 'assets/json/game/rules/13_comparison_rules.json';
+      case 'special_usage':
+        return 'assets/json/game/rules/14_special_usage_rules.json';
       default:
         return '';
     }

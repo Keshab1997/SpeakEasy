@@ -1,0 +1,158 @@
+{
+  "tenseId": "comparison",
+  "tenseName": "Tense Comparison",
+  "banglaName": "টেন্স তুলনা",
+  "color": "#F97316",
+  "icon": "compare",
+  "shortDescription": "বিভিন্ন tense-এর মধ্যে পার্থক্য বুঝতে শেখো এবং সঠিক tense ব্যবহার করো।",
+  "structure": {
+    "affirmative": "Compare the structure of two tenses side by side",
+    "negative": "Notice how negative forms differ across tenses",
+    "interrogative": "Question patterns change with tense and helping verb"
+  },
+  "rules": [
+    {
+      "step": 1,
+      "title": "Present Indefinite vs Present Continuous",
+      "banglaTitle": "Present Indefinite আর Present Continuous-এর পার্থক্য",
+      "icon": "compare_arrows",
+      "color": "#F97316",
+      "explanation": "Present Indefinite অভ্যাস বা সাধারণ সত্য বোঝায়, আর Present Continuous এখন ঘটছে এমন কাজ বোঝায়। এই দুটো প্রায়ই混淆 হয়।",
+      "points": [
+        "Present Indefinite: অভ্যাস, রুটিন, সাধারণ সত্য। Signal words: always, usually, every day, sometimes",
+        "Present Continuous: এখন ঘটছে, অস্থায়ী অবস্থা। Signal words: now, right now, at the moment, currently",
+        "👉 I read books. (অভ্যাস - আমি বই পড়ি)",
+        "👉 I am reading a book. (এই মুহূর্তে - আমি একটি বই পড়ছি)",
+        "State verbs (know, believe, love, hate, want) সাধারণত Continuous হয় না।",
+        "❌ I am knowing the answer → ✅ I know the answer"
+      ],
+      "examples": [
+        { "english": "She works in a bank. (Present Indefinite - job/habit)", "bangla": "সে একটি ব্যাংকে কাজ করে। (চাকরি/অভ্যাস)" },
+        { "english": "She is working on a project now. (Present Continuous - current action)", "bangla": "সে এখন একটি প্রজেক্টে কাজ করছে। (বর্তমান কাজ)" },
+        { "english": "It rains a lot in June. (general truth)", "bangla": "জুনে অনেক বৃষ্টি হয়। (সাধারণ সত্য)" },
+        { "english": "It is raining right now. (at this moment)", "bangla": "এই মুহূর্তে বৃষ্টি পড়ছে। (এখন)" }
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Present Perfect vs Past Indefinite",
+      "banglaTitle": "Present Perfect আর Past Indefinite-এর পার্থক্য",
+      "icon": "compare_arrows",
+      "color": "#EA580C",
+      "explanation": "এটাই সবচেয়ে বেশি confused হয়। Past Indefinite নির্দিষ্ট অতীত সময়ে ঘটে যাওয়া কাজ বোঝায়। Present Perfect অতীতের ঘটনার সাথে বর্তমানের সম্পর্ক বোঝায়।",
+      "points": [
+        "Past Indefinite: নির্দিষ্ট সময় উল্লেখ থাকে (yesterday, last week, in 2020, ago)",
+        "Present Perfect: সময় উল্লেখ নেই, ফলাফল এখনও visible (just, already, ever, never, since, for)",
+        "👉 I visited London in 2019. (কখন বলছি - Past Indefinite)",
+        "👉 I have visited London. (কখন বলছি না, অভিজ্ঞতা - Present Perfect)",
+        "Present Perfect-এ নির্দিষ্ট সময় (yesterday, last year, 2 days ago) ব্যবহার করা যাবে না।",
+        "❌ I have visited London yesterday. → ✅ I visited London yesterday."
+      ],
+      "examples": [
+        { "english": "I lost my keys yesterday. (Past Indefinite - specific time)", "bangla": "আমি গতকাল আমার চাবি হারিয়েছি। (নির্দিষ্ট সময়)" },
+        { "english": "I have lost my keys. (Present Perfect - keys still missing)", "bangla": "আমি আমার চাবি হারিয়েছি। (চাবি এখনও নেই)" },
+        { "english": "She lived in Dhaka for 5 years. (Past - she no longer lives there)", "bangla": "সে ৫ বছর ঢাকায় থেকেছে। (আর থাকে না)" },
+        { "english": "She has lived in Dhaka for 5 years. (Present Perfect - still lives there)", "bangla": "সে ৫ বছর ধরে ঢাকায় বসবাস করছে। (এখনও থাকে)" }
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Present Perfect vs Present Perfect Continuous",
+      "banglaTitle": "Present Perfect আর Present Perfect Continuous-এর পার্থক্য",
+      "icon": "compare_arrows",
+      "color": "#D97706",
+      "explanation": "Present Perfect কাজটি সম্পূর্ণ হয়েছে বোঝায় (ফলাফল গুরুত্বপূর্ণ), আর Present Perfect Continuous কাজটি এখনও চলছে বা এইমাত্র শেষ হয়েছে (সময়কাল গুরুত্বপূর্ণ)।",
+      "points": [
+        "Present Perfect: কাজ সম্পূর্ণ হয়েছে, ফলাফল/সংখ্যা গুরুত্বপূর্ণ। Signal: already, just, yet, ever, never, times",
+        "Present Perfect Continuous: কাজ চলছে, কতক্ষণ ধরে গুরুত্বপূর্ণ। Signal: how long, for, since, all day",
+        "👉 I have written 5 pages. (সম্পূর্ণ - ফলাফল গুরুত্বপূর্ণ)",
+        "👉 I have been writing for 2 hours. (চলছে - সময় গুরুত্বপূর্ণ)",
+        "Continuous হয় না এমন verb (know, like, belong) দিয়ে Present Perfect Continuous ব্যবহার হয় না।",
+        "❌ I have been knowing him → ✅ I have known him"
+      ],
+      "examples": [
+        { "english": "I have read the book. (finished - I know the story)", "bangla": "আমি বইটি পড়েছি। (শেষ করেছি)" },
+        { "english": "I have been reading the book all week. (still reading)", "bangla": "আমি সারা সপ্তাহ ধরে বইটি পড়ছি। (এখনও পড়ছি)" },
+        { "english": "She has cooked dinner. (dinner is ready)", "bangla": "সে রান্না শেষ করেছে। (ডিনার রেডি)" },
+        { "english": "She has been cooking for 2 hours. (still cooking)", "bangla": "সে ২ ঘন্টা ধরে রান্না করছে। (এখনও করছে)" }
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Past Indefinite vs Past Continuous",
+      "banglaTitle": "Past Indefinite আর Past Continuous-এর পার্থক্য",
+      "icon": "compare_arrows",
+      "color": "#2563EB",
+      "explanation": "Past Indefinite একটি সম্পূর্ণ অতীত ঘটনা বোঝায় (ছোট খাটো কাজ), আর Past Continuous অতীতে চলমান একটি কাজ বোঝায় (যা কিছুক্ষণ ধরে চলছিল)।",
+      "points": [
+        "Past Indefinite: সম্পূর্ণ, একবার ঘটেছে। I ate dinner. (পুরো কাজ শেষ)",
+        "Past Continuous: চলছিল, নির্দিষ্ট সময় ধরে। I was eating dinner at 8 PM. (সে সময় খাচ্ছিলাম)",
+        "Past Continuous দিয়ে background scene সেট করা হয় যখন হঠাৎ কিছু ঘটে (Past Indefinite দিয়ে):",
+        "👉 I was watching TV when the power went out. (TV দেখছিলাম → বিদ্যুৎ চলে গেল)",
+        "Past Indefinite-এ দুটো কাজ পাশাপাশি: I ate dinner and watched TV.",
+        "Past Continuous-এ দুটো কাজ একসাথে চলছিল: I was eating dinner while watching TV."
+      ],
+      "examples": [
+        { "english": "I walked to the office yesterday. (completed action)", "bangla": "আমি গতকাল অফিসে হেঁটে গিয়েছিলাম। (সম্পূর্ণ)" },
+        { "english": "I was walking to the office when it started raining. (ongoing + interruption)", "bangla": "আমি অফিসে যাচ্ছিলাম যখন বৃষ্টি শুরু হলো। (চলছিল + বাধা)" },
+        { "english": "She called me at 10 PM. (specific time - simple action)", "bangla": "সে রাত ১০টায় আমাকে ফোন করেছিল। (নির্দিষ্ট সময়)" },
+        { "english": "She was sleeping at 10 PM. (in progress at that time)", "bangla": "সে রাত ১০টায় ঘুমাচ্ছিল। (সে সময় চলছিল)" }
+      ]
+    },
+    {
+      "step": 5,
+      "title": "Future: Will vs Going to",
+      "banglaTitle": "Will আর Going to-এর পার্থক্য",
+      "icon": "compare_arrows",
+      "color": "#7C3AED",
+      "explanation": "দুটোই ভবিষ্যৎ বোঝায় কিন্তু ব্যবহার ভিন্ন। Will হঠাৎ সিদ্ধান্ত, প্রতিশ্রুতি, পূর্বাভাস। Going to পরিকল্পনা বা নিশ্চিত ভবিষ্যৎ ঘটনা বোঝায়।",
+      "points": [
+        "Will: হঠাৎ সিদ্ধান্ত (spontaneous decision), প্রতিশ্রুতি (promise), Offer, Prediction (think, believe দিয়ে)",
+        "Going to: আগে থেকে পরিকল্পনা (plan), নিশ্চিত ঘটনা (evidence-based prediction)",
+        "👉 Phone rings: 'I'll get it!' (হঠাৎ সিদ্ধান্ত)",
+        "👉 'I am going to visit my parents next week.' (আগে থেকে পরিকল্পনা)",
+        "👉 'I think it will rain.' (মতামত)",
+        "👉 'Look at the clouds! It is going to rain.' (প্রমাণ দেখে নিশ্চিত)"
+      ],
+      "examples": [
+        { "english": "I will help you with your homework. (promise/offer)", "bangla": "আমি তোমাকে হোমওয়ার্কে সাহায্য করব। (প্রতিশ্রুতি)" },
+        { "english": "I am going to start a new job next month. (plan)", "bangla": "আমি আগামী মাসে নতুন চাকরি শুরু করব। (পরিকল্পনা)" },
+        { "english": "It's cold - I will close the window. (spontaneous decision)", "bangla": "ঠান্ডা - আমি জানালা বন্ধ করব। (হঠাৎ সিদ্ধান্ত)" },
+        { "english": "She is going to have a baby. (evidence-based - she is pregnant)", "bangla": "সে মা হতে যাচ্ছে। (প্রমাণ-ভিত্তিক)" }
+      ]
+    },
+    {
+      "step": 6,
+      "title": "Past Perfect vs Past Indefinite (Sequence)",
+      "banglaTitle": "Past Perfect আর Past Indefinite-এর ক্রম বুঝা",
+      "icon": "compare_arrows",
+      "color": "#059669",
+      "explanation": "যখন দুটো অতীত ঘটনার ক্রম বোঝাতে চাও, Past Perfect দিয়ে আগের ঘটনা এবং Past Indefinite দিয়ে পরের ঘটনা বোঝানো হয়।",
+      "points": [
+        "Past Perfect (had + V3): আগে ঘটেছে (the earlier action)",
+        "Past Indefinite (V2): পরে ঘটেছে (the later action)",
+        "👉 When I reached the station, the train had left. (ট্রেন আগে ছেড়েছিল, আমি পরে পৌঁছাই)",
+        "👉 After I had finished dinner, I went to bed. (ডিনার শেষ করার পর বিছানায় গেলাম)",
+        "Before/After ব্যবহার করলে Past Perfect নাও লাগতে পারে, কারণ ক্রম স্পষ্ট:",
+        "👉 After I finished dinner, I went to bed. (এটাও ঠিক আছে, because 'after' shows sequence)"
+      ],
+      "examples": [
+        { "english": "I had already eaten when she arrived.", "bangla": "সে আসার আগেই আমি খেয়ে ফেলেছিলাম।" },
+        { "english": "She had never flown before she went to London.", "bangla": "লন্ডন যাওয়ার আগে সে কখনও উড়েনি।" },
+        { "english": "He realized he had lost his keys.", "bangla": "সে বুঝতে পারলো যে সে তার চাবি হারিয়ে ফেলেছে।" },
+        { "english": "By the time we arrived, the movie had started.", "bangla": "আমরা পৌঁছানোর আগেই সিনেমা শুরু হয়ে গিয়েছিল।" }
+      ]
+    }
+  ],
+  "quickSummary": {
+    "formula": "Compare the TIME (when?) + ASPECT (complete? ongoing? habitual?) = Choose the right tense",
+    "keyPoints": [
+      "Tense বাছাই করার আগে জিজ্ঞেস করো: কাজটি কখন হচ্ছে? (Present/Past/Future) এবং কেমনভাবে হচ্ছে? (Simple/Continuous/Perfect/Perfect Continuous)",
+      "Present Indefinite ≠ Present Continuous: Habit vs Now",
+      "Past Indefinite ≠ Present Perfect: Finished (specific time) vs Connection to now (no time)",
+      "Present Perfect ≠ Present Perfect Continuous: Result vs Duration",
+      "Will ≠ Going to: Spontaneous vs Planned",
+      "Past Perfect দেখায় কোন ঘটনা আগে ঘটেছিল"
+    ]
+  }
+}
