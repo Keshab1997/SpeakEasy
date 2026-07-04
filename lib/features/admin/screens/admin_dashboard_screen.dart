@@ -1,16 +1,15 @@
-import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 import '../../../core/constants/app_colors.dart';
 import '../../../models/user_model.dart';
-import '../../../services/ai_service.dart';
 import '../../../services/firestore_seed_service.dart';
+import '../repository/admin_repository.dart';
 import 'admin_analytics_screen.dart';
 import 'admin_config_screen.dart';
 import 'admin_notifications_screen.dart';
 import 'admin_feedback_screen.dart';
+import 'admin_user_detail_screen.dart';
 
 class AdminDashboardScreen extends StatefulWidget {
   const AdminDashboardScreen({super.key});
@@ -20,11 +19,13 @@ class AdminDashboardScreen extends StatefulWidget {
 }
 
 class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
-  final _firestore = FirebaseFirestore.instance;
+  final _repository = AdminRepository();
   final _ideaController = TextEditingController();
   final _titleController = TextEditingController();
   final _bodyController = TextEditingController();
   final _linkController = TextEditingController();
+  final _searchController = TextEditingController();
+  String _searchQuery = '';
   bool _sending = false;
   bool _generating = false;
   bool _seeding = false;
@@ -35,6 +36,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
     _titleController.dispose();
     _bodyController.dispose();
     _linkController.dispose();
+    _searchController.dispose();
     super.dispose();
   }
 
@@ -105,16 +107,13 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         ],
       ),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: _firestore
-            .collection('users')
-            .orderBy('joinedAt', descending: true)
-            .snapshots(),
+        stream: _repository.usersStream(limit: 200),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return Center(child: Text('Failed to load students: ${snapshot.error}'));
           }
           if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
+            return const _AdminSkeleton();
           }
 
           final users = snapshot.data!.docs
@@ -123,6 +122,14 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
           final students = users.where((user) => user.role != 'admin').toList();
           final admins = users.where((user) => user.role == 'admin').toList();
 
+          final filteredUsers = _searchQuery.isEmpty
+              ? users
+              : users.where((u) {
+                  final q = _searchQuery.toLowerCase();
+                  return u.name.toLowerCase().contains(q) ||
+                      u.email.toLowerCase().contains(q);
+                }).toList();
+
           return ListView(
             padding: const EdgeInsets.all(16),
             children: [
@@ -130,18 +137,40 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
               const SizedBox(height: 16),
               _buildNotificationComposer(isDark, students.length),
               const SizedBox(height: 20),
+              TextField(
+                controller: _searchController,
+                decoration: InputDecoration(
+                  hintText: 'Search by name or email...',
+                  prefixIcon: const Icon(Icons.search_rounded),
+                  suffixIcon: _searchQuery.isNotEmpty
+                      ? IconButton(
+                          icon: const Icon(Icons.clear_rounded),
+                          onPressed: () {
+                            _searchController.clear();
+                            setState(() => _searchQuery = '');
+                          },
+                        )
+                      : null,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 12),
+                ),
+                onChanged: (v) => setState(() => _searchQuery = v),
+              ),
+              const SizedBox(height: 12),
               Row(
                 children: [
                   const Icon(Icons.people_alt_rounded, color: AppColors.primary),
                   const SizedBox(width: 8),
                   Text(
-                    'Students (${users.length})',
+                    'Users (${filteredUsers.length})',
                     style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
                   ),
                 ],
               ),
               const SizedBox(height: 12),
-              ...users.map((user) => _buildUserTile(user, isDark)),
+              ...filteredUsers.map((user) => _buildUserTile(user, isDark)),
             ],
           );
         },
@@ -312,6 +341,12 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         title: Text(user.name.isEmpty ? 'Unnamed User' : user.name, style: const TextStyle(fontWeight: FontWeight.w700)),
         subtitle: Text('${user.email}\nJoined: ${_formatDate(user.joinedAt)} | Level: ${user.currentLevel}'),
         isThreeLine: true,
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => AdminUserDetailScreen(user: user),
+          ),
+        ),
         trailing: PopupMenuButton<String>(
           initialValue: user.role,
           onSelected: (role) => _changeRole(user, role),
@@ -341,28 +376,66 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
     final link = _linkController.text.trim();
     final actionUrl = link.isNotEmpty ? link : null;
 
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Send Notification'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Send to $studentCount students?',
+                style: const TextStyle(fontWeight: FontWeight.w600)),
+            const SizedBox(height: 12),
+            _previewField('Title', title),
+            const SizedBox(height: 6),
+            _previewField('Message', body),
+            if (actionUrl != null) ...[
+              const SizedBox(height: 6),
+              _previewField('Link', actionUrl),
+            ],
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary),
+            child: const Text('Send Now',
+                style: TextStyle(color: Colors.white)),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed != true) return;
+
     setState(() => _sending = true);
 
-    // Try to save to Firestore, but don't block OneSignal if it fails
+    // Save to Firestore
     var firestoreDocId = '';
     try {
-      final docRef = await _firestore.collection('admin_notifications').add({
-        'title': title,
-        'body': body,
-        'targetRole': 'student',
-        'targetCount': studentCount,
-        'status': 'sent',
-        'createdAt': FieldValue.serverTimestamp(),
-        if (actionUrl != null) 'actionUrl': actionUrl,
-      });
-      firestoreDocId = docRef.id;
+      firestoreDocId = await _repository.sendNotification(
+        title: title,
+        body: body,
+        link: actionUrl,
+        targetRole: 'student',
+        targetCount: studentCount,
+      );
     } catch (e) {
       debugPrint('Firestore save failed (non-critical): $e');
-      firestoreDocId = 'offline_${DateTime.now().millisecondsSinceEpoch}';
     }
 
     // Send push via OneSignal API
-    final pushResult = await _sendOneSignalPush(title, body, actionUrl, firestoreDocId);
+    final pushResult = await _repository.sendPushNotification(
+      title: title,
+      body: body,
+      link: actionUrl,
+      firestoreDocId: firestoreDocId.isNotEmpty ? firestoreDocId : null,
+    );
 
     _titleController.clear();
     _bodyController.clear();
@@ -381,81 +454,6 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
     if (mounted) setState(() => _sending = false);
   }
 
-  /// Sends a push notification through the OneSignal REST API.
-  /// Returns `true` on success, `false` on failure.
-  Future<bool> _sendOneSignalPush(
-    String title,
-    String body,
-    String? actionUrl,
-    String firestoreDocId,
-  ) async {
-    // Load OneSignal credentials from Firestore config
-    try {
-      final configDoc = await _firestore
-          .collection('config')
-          .doc('app_settings')
-          .get();
-      final onesignalConfig =
-          configDoc.data()?['onesignal'] as Map<String, dynamic>?;
-      final appId = onesignalConfig?['appId'] as String? ?? '';
-      final apiKey = onesignalConfig?['apiKey'] as String? ?? '';
-
-      if (appId.isEmpty || apiKey.isEmpty) {
-        _showSnack(
-          '⚠️ OneSignal not configured. Set onesignal.appId and onesignal.apiKey '
-          'in Firestore config/app_settings.',
-          isError: true,
-        );
-        return false;
-      }
-
-      final payload = <String, dynamic>{
-        'app_id': appId,
-        'included_segments': ['Total Subscriptions'],
-        'headings': {'en': title},
-        'contents': {'en': body},
-        'data': {
-          'notification_id': 'admin_$firestoreDocId',
-          'type': 'admin_announcement',
-          'payload': firestoreDocId,
-          if (actionUrl != null) 'actionUrl': actionUrl,
-        },
-        'priority': 10,
-        // Ensure notification appears in system tray even when app is closed.
-        // OneSignal v5 registers its own 'OneSignal_default' channel on Android.
-        // Without android_channel_id, Android 13+ may suppress the notification
-        // in background/closed state.
-        'android_channel_id': 'OneSignal_default',
-        'small_icon': 'ic_stat_onesignal_default',
-        'large_icon': 'ic_stat_onesignal_default',
-        // Send immediately — omit send_after so no delay/timezone logic fires
-      };
-
-      final response = await http.post(
-        Uri.parse('https://onesignal.com/api/v1/notifications'),
-        headers: {
-          'Content-Type': 'application/json; charset=utf-8',
-          'Authorization': 'Key $apiKey',
-        },
-        body: jsonEncode(payload),
-      );
-
-      debugPrint(
-        'OneSignal API response (${response.statusCode}): ${response.body}',
-      );
-
-      if (response.statusCode == 200) {
-        return true;
-      } else {
-        debugPrint('OneSignal API error: ${response.body}');
-        return false;
-      }
-    } catch (e) {
-      debugPrint('OneSignal API call failed: $e');
-      return false;
-    }
-  }
-
   Future<void> _generateNotificationWithAi() async {
     final idea = _ideaController.text.trim();
     if (idea.isEmpty) {
@@ -465,16 +463,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
 
     setState(() => _generating = true);
     try {
-      final response = await AIService().sendMessageWithSystem(
-        'Idea/topic: $idea',
-        maxTokens: 180,
-        systemPrompt: 'You write short, beautiful in-app notifications for a spoken English learning app. '
-            'Use friendly Bangla/Banglish tone, useful emojis, and motivating language. '
-            'Return only this exact format with no markdown:\n'
-            'TITLE: <max 55 chars>\n'
-            'BODY: <max 180 chars>',
-      );
-
+      final response = await _repository.generateNotificationContent(idea);
       final generated = _parseAiNotification(response);
       _titleController.text = generated.$1;
       _bodyController.text = generated.$2;
@@ -610,10 +599,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
     if (user.role == role) return;
 
     try {
-      await _firestore.collection('users').doc(user.id).set(
-        {'role': role, 'roleUpdatedAt': FieldValue.serverTimestamp()},
-        SetOptions(merge: true),
-      );
+      await _repository.updateUserRole(user.id, role);
       _showSnack('${user.name.isEmpty ? user.email : user.name} is now $role.');
     } catch (e) {
       _showSnack('Failed to update role: $e', isError: true);
@@ -633,6 +619,21 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
           TextButton(onPressed: () => Navigator.pop(context), child: const Text('OK')),
         ],
       ),
+    );
+  }
+
+  Widget _previewField(String label, String value) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label,
+            style: const TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+                color: AppColors.primary)),
+        const SizedBox(height: 2),
+        Text(value, style: const TextStyle(fontSize: 14)),
+      ],
     );
   }
 
@@ -656,5 +657,55 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
 
   String _formatDate(DateTime date) {
     return '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year}';
+  }
+}
+
+class _AdminSkeleton extends StatelessWidget {
+  const _AdminSkeleton();
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: const EdgeInsets.all(16),
+      children: [
+        Row(
+          children: [
+            Expanded(child: _Skel(height: 90)),
+            const SizedBox(width: 10),
+            Expanded(child: _Skel(height: 90)),
+            const SizedBox(width: 10),
+            Expanded(child: _Skel(height: 90)),
+          ],
+        ),
+        const SizedBox(height: 16),
+        _Skel(height: 200),
+        const SizedBox(height: 20),
+        _Skel(height: 14, width: 150),
+        const SizedBox(height: 12),
+        ...List.generate(5, (_) => Padding(
+          padding: const EdgeInsets.only(bottom: 8),
+          child: _Skel(height: 72),
+        )),
+      ],
+    );
+  }
+}
+
+class _Skel extends StatelessWidget {
+  final double height;
+  final double width;
+  const _Skel({this.height = 16, this.width = double.infinity});
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: (isDark ? Colors.white : Colors.black).withOpacity(0.08),
+        borderRadius: BorderRadius.circular(14),
+      ),
+    );
   }
 }

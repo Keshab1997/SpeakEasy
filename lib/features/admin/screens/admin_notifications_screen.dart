@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_colors.dart';
+import '../repository/admin_repository.dart';
 
 class AdminNotificationsScreen extends StatefulWidget {
   const AdminNotificationsScreen({super.key});
@@ -12,7 +13,7 @@ class AdminNotificationsScreen extends StatefulWidget {
 }
 
 class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
-  final _firestore = FirebaseFirestore.instance;
+  final _repository = AdminRepository();
   bool _deletingAll = false;
 
   @override
@@ -41,10 +42,7 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
         ],
       ),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: _firestore
-            .collection('admin_notifications')
-            .orderBy('createdAt', descending: true)
-            .snapshots(),
+        stream: _repository.notificationsStream(limit: 100),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return Center(
@@ -59,7 +57,20 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
           }
 
           if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
+            return ListView.builder(
+              padding: const EdgeInsets.all(12),
+              itemCount: 5,
+              itemBuilder: (_, __) => Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white.withOpacity(0.05)
+                      : Colors.black.withOpacity(0.05),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+            );
           }
 
           final docs = snapshot.data!.docs;
@@ -361,7 +372,7 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
     if (confirmed != true) return;
 
     try {
-      await _firestore.collection('admin_notifications').doc(docId).delete();
+      await _repository.deleteNotification(docId);
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -408,20 +419,11 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
 
     setState(() => _deletingAll = true);
     try {
-      final snapshot = await _firestore
-          .collection('admin_notifications')
-          .get();
-
-      final batch = _firestore.batch();
-      for (final doc in snapshot.docs) {
-        batch.delete(doc.reference);
-      }
-      await batch.commit();
-
+      await _repository.clearAllNotifications();
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('All ${snapshot.docs.length} notifications deleted.'),
+        const SnackBar(
+          content: Text('All notifications deleted.'),
           behavior: SnackBarBehavior.floating,
           backgroundColor: AppColors.success,
         ),

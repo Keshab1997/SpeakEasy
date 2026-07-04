@@ -71,7 +71,26 @@ class _AdminAnalyticsScreenState extends State<AdminAnalyticsScreen> {
 
   Widget _buildBody(bool isDark, ThemeData theme) {
     if (_loading) {
-      return const Center(child: CircularProgressIndicator());
+      return ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          Row(children: [
+            Expanded(child: _skel(isDark, 80)),
+            const SizedBox(width: 10),
+            Expanded(child: _skel(isDark, 80)),
+            const SizedBox(width: 10),
+            Expanded(child: _skel(isDark, 80)),
+            const SizedBox(width: 10),
+            Expanded(child: _skel(isDark, 80)),
+          ]),
+          const SizedBox(height: 20),
+          _skel(isDark, 200),
+          const SizedBox(height: 20),
+          _skel(isDark, 180),
+          const SizedBox(height: 20),
+          _skel(isDark, 160),
+        ],
+      );
     }
     if (_error != null) {
       return Center(
@@ -621,6 +640,17 @@ class _AdminAnalyticsScreenState extends State<AdminAnalyticsScreen> {
                 color: Colors.grey.shade500,
                 fontSize: 13,
                 fontWeight: FontWeight.w500)),
+      ),
+    );
+  }
+
+  Widget _skel(bool isDark, double height) {
+    return Container(
+      width: double.infinity,
+      height: height,
+      decoration: BoxDecoration(
+        color: (isDark ? Colors.white : Colors.black).withOpacity(0.06),
+        borderRadius: BorderRadius.circular(14),
       ),
     );
   }

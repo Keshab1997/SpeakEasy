@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/config/app_config_model.dart';
-import '../../../services/remote_config_service.dart';
+import '../repository/admin_repository.dart';
 
 class AdminConfigScreen extends StatefulWidget {
   const AdminConfigScreen({super.key});
@@ -12,6 +12,7 @@ class AdminConfigScreen extends StatefulWidget {
 }
 
 class _AdminConfigScreenState extends State<AdminConfigScreen> {
+  final _repository = AdminRepository();
   AppConfig? _config;
   bool _loading = true;
   bool _saving = false;
@@ -50,7 +51,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
       _error = null;
     });
     try {
-      final config = await RemoteConfigService.getConfig();
+      final config = await _repository.getConfig();
       _config = config;
       _populateControllers(config);
     } catch (e) {
@@ -102,8 +103,8 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
         },
       };
 
-      await RemoteConfigService.updateConfig(updates);
-      await _loadConfig(); // Reload to refresh state
+      await _repository.updateConfig(updates);
+      await _loadConfig();
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -146,7 +147,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
         ],
       ),
       body: _loading
-          ? const Center(child: CircularProgressIndicator())
+          ? _SkelForm()
           : _error != null
               ? Center(
                   child: Column(
@@ -501,5 +502,22 @@ extension _FeatureTogglesModify on FeatureToggles {
       default:
         return this;
     }
+  }
+}
+
+class _SkelForm extends StatelessWidget {
+  const _SkelForm();
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final c = (isDark ? Colors.white : Colors.black).withOpacity(0.06);
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
+      children: List.generate(8, (i) => Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: Container(height: 60, decoration: BoxDecoration(color: c, borderRadius: BorderRadius.circular(14))),
+      )),
+    );
   }
 }

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/feedback_model.dart';
-import '../../../services/ai_service.dart';
+import '../repository/admin_repository.dart';
 
 class AdminFeedbackScreen extends StatefulWidget {
   const AdminFeedbackScreen({super.key});
@@ -13,7 +13,7 @@ class AdminFeedbackScreen extends StatefulWidget {
 
 class _AdminFeedbackScreenState extends State<AdminFeedbackScreen>
     with SingleTickerProviderStateMixin {
-  final _firestore = FirebaseFirestore.instance;
+  final _repository = AdminRepository();
   late TabController _tabController;
 
   @override
@@ -63,16 +63,7 @@ class _AdminFeedbackScreenState extends State<AdminFeedbackScreen>
 
   Widget _buildFeedbackList(String? statusFilter) {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-      stream: statusFilter != null
-          ? _firestore
-              .collection('feedback')
-              .where('status', isEqualTo: statusFilter)
-              .orderBy('createdAt', descending: true)
-              .snapshots()
-          : _firestore
-              .collection('feedback')
-              .orderBy('createdAt', descending: true)
-              .snapshots(),
+      stream: _repository.feedbackStream(statusFilter: statusFilter, limit: 100),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Center(
@@ -87,7 +78,20 @@ class _AdminFeedbackScreenState extends State<AdminFeedbackScreen>
         }
 
         if (!snapshot.hasData) {
-          return const Center(child: CircularProgressIndicator());
+          return ListView.builder(
+            padding: const EdgeInsets.all(12),
+            itemCount: 6,
+            itemBuilder: (_, __) => Container(
+              margin: const EdgeInsets.only(bottom: 12),
+              height: 120,
+              decoration: BoxDecoration(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white.withOpacity(0.05)
+                    : Colors.black.withOpacity(0.05),
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+          );
         }
 
         final docs = snapshot.data!.docs;
@@ -153,10 +157,7 @@ class _AdminFeedbackScreenState extends State<AdminFeedbackScreen>
 
   Future<void> _markAsResolved(String docId) async {
     try {
-      await _firestore.collection('feedback').doc(docId).update({
-        'status': 'resolved',
-        'updatedAt': FieldValue.serverTimestamp(),
-      });
+      await _repository.markFeedbackResolved(docId);
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -179,11 +180,7 @@ class _AdminFeedbackScreenState extends State<AdminFeedbackScreen>
 
   Future<void> _submitReply(String docId, String reply) async {
     try {
-      await _firestore.collection('feedback').doc(docId).update({
-        'adminReply': reply,
-        'status': 'resolved',
-        'updatedAt': FieldValue.serverTimestamp(),
-      });
+      await _repository.submitFeedbackReply(docId, reply);
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -695,24 +692,12 @@ class _FeedbackCardState extends State<_FeedbackCard> {
     setState(() => _isGeneratingReply = true);
 
     try {
-      final response = await AIService().sendMessageWithSystem(
-        'User feedback category: ${feedback.category}\nUser message: ${feedback.message}',
-        maxTokens: 250,
-        systemPrompt: 'You are a professional customer support agent for a "Spoken English Learning App". '
-            'Write a kind, empathetic, and encouraging reply to a user\'s feedback. '
-            'Keep it concise (2-4 sentences). Use friendly English with occasional Bangla/Banglish words. '
-            'Always thank the user for their feedback.\n\n'
-            'Guidelines by category:\n'
-            '- Bug Report: Apologize sincerely and mention the team will look into it.\n'
-            '- Feature Request: Appreciate the suggestion and say it will be considered.\n'
-            '- Complaint: Be very apologetic and reassuring.\n'
-            '- Suggestion: Acknowledge positively and thank them.\n'
-            '- Other: Respond warmly and acknowledge their input.\n\n'
-            'Return ONLY the reply text. No quotes, no prefixes, no labels.',
+      final response = await AdminRepository().generateAiReply(
+        feedback.category,
+        feedback.message,
       );
 
       if (mounted && response.isNotEmpty) {
-        // Clean up any markdown or quotes from the response
         String cleanReply = response.trim();
         cleanReply = cleanReply.replaceAll(RegExp("^[\"'*]+"), '');
         cleanReply = cleanReply.replaceAll(RegExp("[\"'*]+\$"), '');
@@ -720,7 +705,6 @@ class _FeedbackCardState extends State<_FeedbackCard> {
         _replyController.text = cleanReply;
       }
     } catch (e) {
-      // AI unavailable - use a fallback reply based on category
       if (mounted) {
         final fallback = _buildFallbackAiReply(feedback.category, feedback.userName);
         _replyController.text = fallback;

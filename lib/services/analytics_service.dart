@@ -184,10 +184,10 @@ class AnalyticsService {
 
   /// 6. Module completion stats
   static Future<List<ModuleStat>> getModuleStats() async {
-    // We estimate module usage by counting progress docs with non-zero
-    // values in each field. A more accurate approach would use a dedicated
-    // activity log collection, but this gives reasonable estimates.
-    final snapshot = await _firestore.collection('progress').get();
+    final snapshot = await _firestore
+        .collection('progress')
+        .limit(5000)
+        .get();
 
     int grammarCount = 0;
     int vocabCount = 0;
@@ -207,8 +207,6 @@ class AnalyticsService {
           (data['speakingScore'] as int) > 0) {
         speakingCount++;
       }
-      // Vocabulary count: look at vocab_progress in Hive? For now,
-      // fallback to completedLessonIds length.
       if (((data['lessonsCompleted'] as int?) ?? 0) > 0) {
         vocabCount++;
       }
@@ -224,27 +222,29 @@ class AnalyticsService {
 
   /// 7. Streak distribution
   static Future<StreakDistribution> getStreakDistribution() async {
-    final snapshot = await _firestore.collection('users').get();
-
-    int active = 0; // streak >= 3
-    int atRisk = 0; // streak 1-2
-    int inactive = 0; // streak == 0
-
-    for (final doc in snapshot.docs) {
-      final streak = doc.data()['streak'] as int? ?? 0;
-      if (streak >= 3) {
-        active++;
-      } else if (streak >= 1) {
-        atRisk++;
-      } else {
-        inactive++;
-      }
-    }
+    final results = await Future.wait([
+      _firestore
+          .collection('users')
+          .where('streak', isGreaterThanOrEqualTo: 3)
+          .count()
+          .get(),
+      _firestore
+          .collection('users')
+          .where('streak', isGreaterThanOrEqualTo: 1)
+          .where('streak', isLessThan: 3)
+          .count()
+          .get(),
+      _firestore
+          .collection('users')
+          .where('streak', isEqualTo: 0)
+          .count()
+          .get(),
+    ]);
 
     return StreakDistribution(
-      activeUsers: active,
-      atRiskUsers: atRisk,
-      inactiveUsers: inactive,
+      activeUsers: results[0].count ?? 0,
+      atRiskUsers: results[1].count ?? 0,
+      inactiveUsers: results[2].count ?? 0,
     );
   }
 
