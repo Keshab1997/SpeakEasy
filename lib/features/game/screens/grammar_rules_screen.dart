@@ -249,7 +249,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
       slivers: [
         // ── AppBar ───────────────────────────────────────────────
         SliverAppBar(
-          expandedHeight: 180,
+	          expandedHeight: 210,
           pinned: true,
           backgroundColor: themeColor,
           leading: IconButton(
