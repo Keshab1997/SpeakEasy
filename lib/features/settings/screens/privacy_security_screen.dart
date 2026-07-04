@@ -142,7 +142,9 @@ class PrivacySecurityScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 24),
-            _buildNoteCard(isDark),
+            _buildNoteCard(isDark, 'Full Privacy Policy', 'View our complete privacy policy online', 'https://keshab1997.github.io/Flutter-Spoken-English-App/privacy_policy.html'),
+            const SizedBox(height: 12),
+            _buildNoteCard(isDark, 'Privacy Policy (Live)', 'View privacy policy hosted on GitHub Pages', 'https://keshab1997.github.io/Flutter-Spoken-English-App/'),
             const SizedBox(height: 32),
           ],
         ),
@@ -211,7 +213,7 @@ class PrivacySecurityScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildNoteCard(bool isDark) {
+  Widget _buildNoteCard(bool isDark, String title, String subtitle, String url) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
@@ -222,12 +224,7 @@ class PrivacySecurityScreen extends StatelessWidget {
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(18),
-        onTap: () async {
-          final uri = Uri.parse('https://keshab1997.github.io/Flutter-Spoken-English-App/privacy_policy.html');
-          if (await canLaunchUrl(uri)) {
-            await launchUrl(uri);
-          }
-        },
+        onTap: () => launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -238,7 +235,7 @@ class PrivacySecurityScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Full Privacy Policy',
+                    title,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: isDark ? Colors.white70 : Colors.black87,
@@ -247,7 +244,7 @@ class PrivacySecurityScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    'View our complete privacy policy online',
+                    subtitle,
                     style: TextStyle(
                       color: isDark ? Colors.white38 : Colors.black45,
                       fontSize: 12,

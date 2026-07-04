@@ -55,6 +55,108 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     }
   }
 
+  Future<void> _handleDeleteAccount(BuildContext context) async {
+    // Step 1: Show warning confirmation
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Row(
+          children: [
+            const Icon(Icons.warning_amber_rounded, color: Colors.red, size: 28),
+            const SizedBox(width: 8),
+            const Text('Delete Account?'),
+          ],
+        ),
+        content: const Text(
+          '⚠️ This action is IRREVERSIBLE!\n\n'
+          'All your data will be permanently deleted:\n'
+          '• Profile & personal info\n'
+          '• Learning progress & streaks\n'
+          '• Game scores, XP & coins\n'
+          '• Study plans & homework\n'
+          '• Saved vocabulary & AI chats\n\n'
+          'You will NOT be able to recover anything.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('Delete Everything',
+              style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold)),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed != true) return;
+    if (!mounted) return;
+
+    // Step 2: Show loading
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => const Center(
+        child: Card(
+          margin: EdgeInsets.all(40),
+          child: Padding(
+            padding: EdgeInsets.all(24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CircularProgressIndicator(),
+                SizedBox(height: 16),
+                Text('Deleting your account...\nPlease wait', textAlign: TextAlign.center),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+
+    // Step 3: Execute deletion
+    final result = await ref.read(authProvider.notifier).deleteAccount();
+
+    if (!mounted) return;
+    Navigator.of(context).pop(); // dismiss loading dialog
+
+    if (result == null) {
+      // Success
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Account deleted successfully.'),
+          backgroundColor: Colors.red,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (_) => const LoginScreen()),
+        (route) => false,
+      );
+    } else if (result == 'requires-recent-login') {
+      // Need re-authentication
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please sign out and sign in again, then try deleting your account.'),
+          backgroundColor: Colors.orange,
+          behavior: SnackBarBehavior.floating,
+          duration: Duration(seconds: 4),
+        ),
+      );
+    } else {
+      // Error
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(result),
+          backgroundColor: Colors.red,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
+  }
+
   Future<void> _showPhotoSourceSheet() async {
     if (_isUploadingPhoto) return;
 
@@ -411,6 +513,14 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     leading: const Icon(Icons.logout_rounded, color: Colors.redAccent),
                     title: const Text('Sign Out'),
                     onTap: _handleSignOut,
+                  ),
+                  const Divider(height: 1),
+                  ListTile(
+                    leading: const Icon(Icons.delete_forever_rounded, color: Colors.redAccent),
+                    title: const Text('Delete Account',
+                      style: TextStyle(color: Colors.redAccent)),
+                    subtitle: const Text('Permanently delete all data', style: TextStyle(fontSize: 11)),
+                    onTap: () => _handleDeleteAccount(context),
                   ),
                 ],
               ),

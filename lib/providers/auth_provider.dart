@@ -319,4 +319,77 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
       state = AsyncValue.error(e, stack);
     }
   }
+
+  /// Permanently delete the user's account and all associated data.
+  /// Returns a descriptive error string on failure, or null on success.
+  Future<String?> deleteAccount() async {
+    final firebaseUser = _auth.currentUser;
+    if (firebaseUser == null) return 'No signed-in user found.';
+
+    final uid = firebaseUser.uid;
+
+    try {
+      state = const AsyncValue.loading();
+
+      // 1. Delete Firestore documents
+      try {
+        await _firestore.collection('users').doc(uid).delete();
+      } catch (_) {
+        // ignore if doc doesn't exist
+      }
+      try {
+        await _firestore.collection('game_progress').doc(uid).delete();
+      } catch (_) {}
+      try {
+        await _firestore.collection('game_statistics').doc(uid).delete();
+      } catch (_) {}
+      try {
+        await _firestore.collection('progress').doc(uid).delete();
+      } catch (_) {}
+      try {
+        await _firestore.collection('study_plan').doc(uid).delete();
+      } catch (_) {}
+
+      // 2. Delete profile photo from Storage
+      try {
+        await _storage.ref().child('profile_photos').child(uid).listAll().then(
+          (result) => Future.wait(result.items.map((ref) => ref.delete())),
+        );
+      } catch (_) {}
+
+      // 3. Delete Firebase Auth account
+      await firebaseUser.delete();
+
+      // 4. Clear all local Hive data
+      await HiveService.clearAllCaches();
+
+      state = const AsyncValue.data(null);
+      return null; // success
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'requires-recent-login') {
+        state = AsyncValue.data(UserModel(
+          id: uid,
+          name: firebaseUser.displayName ?? 'User',
+          email: firebaseUser.email ?? '',
+          joinedAt: DateTime.now(),
+        ));
+        return 'requires-recent-login';
+      }
+      state = AsyncValue.data(UserModel(
+        id: uid,
+        name: firebaseUser.displayName ?? 'User',
+        email: firebaseUser.email ?? '',
+        joinedAt: DateTime.now(),
+      ));
+      return 'Failed to delete account: ${e.message}';
+    } catch (e) {
+      state = AsyncValue.data(UserModel(
+        id: uid,
+        name: firebaseUser.displayName ?? 'User',
+        email: firebaseUser.email ?? '',
+        joinedAt: DateTime.now(),
+      ));
+      return 'Failed to delete account: $e';
+    }
+  }
 }
