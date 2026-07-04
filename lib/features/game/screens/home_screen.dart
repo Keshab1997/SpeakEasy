@@ -97,7 +97,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
                     backgroundColor: Colors.transparent,
                     flexibleSpace: const FlexibleSpaceBar(
                       title: Text(
-                        'Tense Mastery',
+                        'Learning Games',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                       ),
                       centerTitle: false,

@@ -102,7 +102,7 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tense Mastery',
+        title: const Text('Learning Games',
             style: TextStyle(fontWeight: FontWeight.bold)),
         elevation: 0,
       ),
