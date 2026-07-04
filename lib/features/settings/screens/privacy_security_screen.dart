@@ -142,8 +142,6 @@ class PrivacySecurityScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 24),
-            _buildNoteCard(isDark, 'Full Privacy Policy', 'View our complete privacy policy online', 'https://keshab1997.github.io/Flutter-Spoken-English-App/privacy_policy.html'),
-            const SizedBox(height: 12),
             _buildNoteCard(isDark, 'Privacy Policy (Live)', 'View privacy policy hosted on GitHub Pages', 'https://keshab1997.github.io/Flutter-Spoken-English-App/'),
             const SizedBox(height: 32),
           ],
