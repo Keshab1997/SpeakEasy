@@ -76,3 +76,18 @@
 
 # Keep flutter_local_notifications
 -keep class com.dexterous.flutterlocalnotifications.** { *; }
+
+# OneSignal - Keep all native SDK classes for background notification delivery
+-keep class com.onesignal.** { *; }
+-keep class com.onesignal.common.** { *; }
+-keep class com.onesignal.notifications.** { *; }
+-keep class com.onesignal.user.** { *; }
+-keep class com.onesignal.session.** { *; }
+-keep class com.onesignal.osinternal.** { *; }
+-keep class com.onesignal.language.** { *; }
+-keep class com.onesignal.location.** { *; }
+-keep class com.onesignal.inAppMessages.** { *; }
+-keep class com.onesignal.outcomes.** { *; }
+-keep class com.onesignal.debug.** { *; }
+-keep class com.huawei.hms.** { *; }
+-keep class com.huawei.agconnect.** { *; }

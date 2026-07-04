@@ -1,9 +1,10 @@
+import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 import '../../../core/constants/app_colors.dart';
 import '../../../models/user_model.dart';
-import '../../../services/admin_notification_sync_service.dart';
 import '../../../services/ai_service.dart';
 import '../../../services/firestore_seed_service.dart';
 import 'admin_analytics_screen.dart';
@@ -341,26 +342,117 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
     final actionUrl = link.isNotEmpty ? link : null;
 
     setState(() => _sending = true);
+
+    // Try to save to Firestore, but don't block OneSignal if it fails
+    var firestoreDocId = '';
     try {
-      await _firestore.collection('admin_notifications').add({
+      final docRef = await _firestore.collection('admin_notifications').add({
         'title': title,
         'body': body,
         'targetRole': 'student',
         'targetCount': studentCount,
-        'status': 'queued',
+        'status': 'sent',
         'createdAt': FieldValue.serverTimestamp(),
         if (actionUrl != null) 'actionUrl': actionUrl,
       });
-
-      _titleController.clear();
-      _bodyController.clear();
-      _linkController.clear();
-      await AdminNotificationSyncService.syncLatest();
-      _showSnack('Announcement queued for $studentCount students.');
+      firestoreDocId = docRef.id;
     } catch (e) {
-      _showSnack('Failed to send announcement: $e', isError: true);
-    } finally {
-      if (mounted) setState(() => _sending = false);
+      debugPrint('Firestore save failed (non-critical): $e');
+      firestoreDocId = 'offline_${DateTime.now().millisecondsSinceEpoch}';
+    }
+
+    // Send push via OneSignal API
+    final pushResult = await _sendOneSignalPush(title, body, actionUrl, firestoreDocId);
+
+    _titleController.clear();
+    _bodyController.clear();
+    _linkController.clear();
+
+    if (pushResult) {
+      _showSnack('✅ Push notification sent to $studentCount students!');
+    } else {
+      _showSnack(
+        '⚠️ Notification saved but push delivery failed. '
+        'Send from OneSignal Dashboard instead.',
+        isError: true,
+      );
+    }
+
+    if (mounted) setState(() => _sending = false);
+  }
+
+  /// Sends a push notification through the OneSignal REST API.
+  /// Returns `true` on success, `false` on failure.
+  Future<bool> _sendOneSignalPush(
+    String title,
+    String body,
+    String? actionUrl,
+    String firestoreDocId,
+  ) async {
+    // Load OneSignal credentials from Firestore config
+    try {
+      final configDoc = await _firestore
+          .collection('config')
+          .doc('app_settings')
+          .get();
+      final onesignalConfig =
+          configDoc.data()?['onesignal'] as Map<String, dynamic>?;
+      final appId = onesignalConfig?['appId'] as String? ?? '';
+      final apiKey = onesignalConfig?['apiKey'] as String? ?? '';
+
+      if (appId.isEmpty || apiKey.isEmpty) {
+        _showSnack(
+          '⚠️ OneSignal not configured. Set onesignal.appId and onesignal.apiKey '
+          'in Firestore config/app_settings.',
+          isError: true,
+        );
+        return false;
+      }
+
+      final payload = <String, dynamic>{
+        'app_id': appId,
+        'included_segments': ['Total Subscriptions'],
+        'headings': {'en': title},
+        'contents': {'en': body},
+        'data': {
+          'notification_id': 'admin_$firestoreDocId',
+          'type': 'admin_announcement',
+          'payload': firestoreDocId,
+          if (actionUrl != null) 'actionUrl': actionUrl,
+        },
+        'priority': 10,
+        // Ensure notification appears in system tray even when app is closed.
+        // OneSignal v5 registers its own 'OneSignal_default' channel on Android.
+        // Without android_channel_id, Android 13+ may suppress the notification
+        // in background/closed state.
+        'android_channel_id': 'OneSignal_default',
+        'small_icon': 'ic_stat_onesignal_default',
+        'large_icon': 'ic_stat_onesignal_default',
+        // Send immediately — omit send_after so no delay/timezone logic fires
+      };
+
+      final response = await http.post(
+        Uri.parse('https://onesignal.com/api/v1/notifications'),
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Authorization': 'Key $apiKey',
+        },
+        body: jsonEncode(payload),
+      );
+
+      debugPrint(
+        'OneSignal API response (${response.statusCode}): ${response.body}',
+      );
+
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        debugPrint('OneSignal API error: ${response.body}');
+        return false;
+      }
+    } catch (e) {
+      debugPrint('OneSignal API call failed: $e');
+      return false;
     }
   }
 

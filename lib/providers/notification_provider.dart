@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/notification_history_model.dart';
 import '../services/hive_service.dart';
-import '../services/admin_notification_sync_service.dart';
 
 class NotificationState {
   final int unreadCount;
@@ -49,14 +48,10 @@ class NotificationStateNotifier extends StateNotifier<NotificationState> {
 
   Future<void> refresh() async {
     state = state.copyWith(isLoading: true);
-    int? added;
-    try {
-      added = await AdminNotificationSyncService.syncLatest();
-    } catch (_) {
-      // Firestore sync failure — notifications still load from Hive below
-    }
+    // Push notifications are now delivered in real-time via OneSignal.
+    // Just reload from Hive to pick up any newly saved notifications.
     load();
-    state = state.copyWith(isLoading: false, newSyncCount: added);
+    state = state.copyWith(isLoading: false);
   }
 
   Future<void> markAsRead(String id) async {

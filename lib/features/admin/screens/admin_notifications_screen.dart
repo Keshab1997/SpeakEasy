@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_colors.dart';
-import '../../../services/admin_notification_sync_service.dart';
 
 class AdminNotificationsScreen extends StatefulWidget {
   const AdminNotificationsScreen({super.key});
@@ -26,17 +25,18 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
         actions: [
           IconButton(
             tooltip: 'Refresh',
-            onPressed: () async {
-              await AdminNotificationSyncService.syncLatest();
-              if (!mounted) return;
+            icon: const Icon(Icons.refresh_rounded),
+            onPressed: () {
+              // Notifications are now delivered in real-time via OneSignal push
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
-                  content: Text('Synced latest notifications.'),
+                  content: Text(
+                    'Push notifications are delivered in real-time via OneSignal.',
+                  ),
                   behavior: SnackBarBehavior.floating,
                 ),
               );
             },
-            icon: const Icon(Icons.refresh_rounded),
           ),
         ],
       ),
