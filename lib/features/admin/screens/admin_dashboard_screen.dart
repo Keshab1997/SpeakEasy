@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_colors.dart';
 import '../../../models/user_model.dart';
-import '../../../services/firestore_seed_service.dart';
 import '../repository/admin_repository.dart';
 import 'admin_analytics_screen.dart';
 import 'admin_config_screen.dart';
@@ -28,8 +27,6 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
   String _searchQuery = '';
   bool _sending = false;
   bool _generating = false;
-  bool _seeding = false;
-
   @override
   void dispose() {
     _ideaController.dispose();
@@ -87,17 +84,6 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
               ),
             ),
             icon: const Icon(Icons.settings_applications_rounded),
-          ),
-          IconButton(
-            tooltip: 'Seed Firestore',
-            onPressed: _seeding ? null : _seedFirestore,
-            icon: _seeding
-                ? const SizedBox(
-                    width: 20,
-                    height: 20,
-                    child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                  )
-                : const Icon(Icons.cloud_upload_rounded),
           ),
           IconButton(
             tooltip: 'Info',
@@ -512,87 +498,6 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       '📢 Important Update!',
       '$cleanIdea ✨ Keep practicing English today. Cholo, aajker learning complete kori! 🚀',
     );
-  }
-
-  Future<void> _seedFirestore() async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('🔥 Seed Firestore?'),
-        content: const Text(
-          'This will upload all vocabulary chapters, words, grammar chapters, '
-          'and app config from local assets to Firestore.\n\n'
-          'Existing data with the same auto-generated IDs will NOT be overwritten. '
-          'Running this multiple times will create duplicate entries.\n\n'
-          'Continue?',
-        ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')),
-          ElevatedButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Seed Now')),
-        ],
-      ),
-    );
-
-    if (confirmed != true) return;
-
-    setState(() => _seeding = true);
-
-    final progressMessages = <String>[];
-    final service = FirestoreSeedService();
-
-    // Show progress in a bottom sheet
-    showModalBottomSheet(
-      context: context,
-      enableDrag: false,
-      isDismissible: false,
-      builder: (ctx) {
-        return StatefulBuilder(
-          builder: (context, setSheetState) {
-            return Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Row(
-                    children: [
-                      Icon(Icons.cloud_upload_rounded, color: AppColors.primary),
-                      SizedBox(width: 8),
-                      Text('Seeding Progress', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
-                  ...progressMessages.map(
-                    (msg) => Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 2),
-                      child: Text(msg, style: const TextStyle(fontSize: 13)),
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  if (!progressMessages.any((m) => m.contains('✅') || m.contains('❌')))
-                    const LinearProgressIndicator(),
-                ],
-              ),
-            );
-          },
-        );
-      },
-    );
-
-    final result = await service.seedAll(
-      onProgress: (msg) {
-        progressMessages.add(msg);
-        if (mounted) setState(() {});
-      },
-    );
-
-    if (mounted) {
-      setState(() => _seeding = false);
-      Navigator.pop(context); // close bottom sheet
-      _showSnack(result.isSuccess
-          ? '✅ $result'
-          : '❌ Seed failed: ${result.error}');
-    }
   }
 
   Future<void> _changeRole(UserModel user, String role) async {

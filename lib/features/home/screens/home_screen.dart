@@ -5,6 +5,7 @@ import '../../../core/widgets/streak_widget.dart';
 import '../../../core/widgets/feature_gate_widget.dart';
 import '../../../services/hive_service.dart';
 import '../../../services/tts_service.dart';
+import '../../../services/remote_config_service.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/progress_provider.dart';
 import '../../../providers/todo_list_provider.dart';
@@ -221,9 +222,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     );
   }
 
-  /// Buy streak freeze (100 coins per freeze)
-  void _buyStreakFreeze(BuildContext context, WidgetRef ref, int currentCoins) {
-    final cost = HiveService.getStreakFreezeCost();
+  /// Buy streak freeze (cost from remote config)
+  Future<void> _buyStreakFreeze(BuildContext context, WidgetRef ref, int currentCoins) async {
+    final cost = await RemoteConfigService.getStreakFreezeCost();
+    if (!context.mounted) return;
     if (currentCoins < cost) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

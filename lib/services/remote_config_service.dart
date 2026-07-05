@@ -3,7 +3,7 @@ import '../models/config/app_config_model.dart';
 
 /// Service to fetch and cache remote app configuration from Firestore.
 ///
-/// The config is stored at `config/app_settings` and allows:
+/// The config is stored at `Config/app_settings` and allows:
 /// - Feature toggle control
 /// - Force update announcements
 /// - Maintenance mode
@@ -16,7 +16,7 @@ class RemoteConfigService {
 
   /// Reference to the config document
   static DocumentReference get _configRef =>
-      _firestore.collection('config').doc('app_settings');
+      _firestore.collection('Config').doc('app_settings');
 
   /// Fetches the app config from Firestore with caching.
   ///

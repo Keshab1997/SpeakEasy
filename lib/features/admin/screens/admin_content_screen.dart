@@ -707,7 +707,7 @@ class _GrammarTab extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 16, color: Colors.grey.shade500)),
                 const SizedBox(height: 8),
-                Text('Use the Seed button on the dashboard to import.',
+                Text('Grammar content is loaded from local JSON assets.',
                     style: TextStyle(
                         fontSize: 13, color: Colors.grey.shade400)),
               ],

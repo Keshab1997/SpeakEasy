@@ -90,18 +90,29 @@ class MyApp extends ConsumerWidget {
 /// Initializes OneSignal push notifications.
 ///
 /// Reads the OneSignal App ID from the Firestore config document
-/// (`config/app_settings → onesignal.appId`). If the config is missing or the
+/// (`Config/app_settings → onesignal.AppId`). If the config is missing or the
 /// App ID is empty, OneSignal initialization is skipped gracefully.
 Future<void> _initOneSignal() async {
   try {
     final doc = await FirebaseFirestore.instance
-        .collection('config')
+        .collection('Config')
         .doc('app_settings')
         .get();
 
-    final onesignalConfig =
-        doc.data()?['onesignal'] as Map<String, dynamic>?;
-    final appId = onesignalConfig?['appId'] as String? ?? '';
+    if (!doc.exists) {
+      debugPrint('main: app_settings doc not found in Config collection');
+      return;
+    }
+
+    final data = doc.data();
+    debugPrint(
+      'main: found at Config/app_settings, keys=${data?.keys.toList()}',
+    );
+
+    final onesignalRaw = data?['onesignal'];
+    final onesignalConfig = onesignalRaw as Map<String, dynamic>?;
+    final appId = onesignalConfig?['AppId'] as String? ?? '';
+    debugPrint('main: resolved appId="$appId"');
 
     await OneSignalService().initialize(appId);
   } catch (e) {

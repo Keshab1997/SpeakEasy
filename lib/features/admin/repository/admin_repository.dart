@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import '../../../models/config/app_config_model.dart';
 import '../../../services/remote_config_service.dart';
 import '../../../services/ai_service.dart';
@@ -207,10 +208,14 @@ class AdminRepository {
   }
 
   Future<Map<String, dynamic>?> _getOneSignalConfig() async {
-    final doc =
-        await _firestore.collection('config').doc('app_settings').get();
-    if (!doc.exists) return null;
-    return doc.data()?['onesignal'] as Map<String, dynamic>?;
+    try {
+      final doc =
+          await _firestore.collection('Config').doc('app_settings').get();
+      if (!doc.exists) return null;
+      return doc.data()?['onesignal'] as Map<String, dynamic>?;
+    } catch (_) {
+      return null;
+    }
   }
 
   Future<bool> sendPushNotification({
@@ -221,17 +226,24 @@ class AdminRepository {
   }) async {
     try {
       final oneSignalConfig = await _getOneSignalConfig();
-      final appId = oneSignalConfig?['appId'] as String? ?? '';
-      final apiKey = oneSignalConfig?['apiKey'] as String? ?? '';
-      if (appId.isEmpty || apiKey.isEmpty) return false;
+      final appId = oneSignalConfig?['AppId'] as String? ?? '';
+      final apiKey = oneSignalConfig?['ApiKey'] as String? ?? '';
+      if (appId.isEmpty || apiKey.isEmpty) {
+        debugPrint(
+          'OneSignal sendPushNotification: appId or apiKey is empty. '
+          'Set them in Firestore config/app_settings → onesignal.',
+        );
+        return false;
+      }
 
       final payload = <String, dynamic>{
         'app_id': appId,
-        'included_segments': ['Total Subscriptions'],
+        // Use 'All' — OneSignal's default segment for all active subscriptions.
+        // If you renamed it in the dashboard, update this value accordingly.
+        'included_segments': ['All'],
         'headings': {'en': title},
         'contents': {'en': body},
         'priority': 10,
-        'android_channel_id': 'OneSignal_default',
         'small_icon': 'ic_stat_onesignal_default',
         'large_icon': 'ic_stat_onesignal_default',
       };
@@ -254,8 +266,35 @@ class AdminRepository {
         body: jsonEncode(payload),
       );
 
-      return response.statusCode == 200;
-    } catch (_) {
+      // Parse response body for diagnostics
+      final responseBody = response.body;
+      if (response.statusCode == 200) {
+        try {
+          final decoded = jsonDecode(responseBody) as Map<String, dynamic>;
+          final errors = decoded['errors'] as List<dynamic>?;
+          if (errors != null && errors.isNotEmpty) {
+            debugPrint(
+              'OneSignal API returned errors: $errors',
+            );
+            return false;
+          }
+          debugPrint(
+            'OneSignal: notification sent! id=${decoded['id']} '
+            'recipients=${decoded['recipients']}',
+          );
+          return true;
+        } catch (_) {
+          // Response body not JSON — treat as success since status is 200
+          return true;
+        }
+      } else {
+        debugPrint(
+          'OneSignal API error (${response.statusCode}): $responseBody',
+        );
+        return false;
+      }
+    } catch (e) {
+      debugPrint('OneSignal sendPushNotification exception: $e');
       return false;
     }
   }
@@ -329,12 +368,12 @@ class AdminRepository {
   // ── Content: Daily Word ──
 
   Future<DocumentSnapshot<Map<String, dynamic>>> getDailyWordConfig() {
-    return _firestore.collection('config').doc('daily_word').get();
+    return _firestore.collection('Config').doc('daily_word').get();
   }
 
   Future<void> updateDailyWordConfig(Map<String, dynamic> data) async {
     await _firestore
-        .collection('config')
+        .collection('Config')
         .doc('daily_word')
         .set(data, SetOptions(merge: true));
   }

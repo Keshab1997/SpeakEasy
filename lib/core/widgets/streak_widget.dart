@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../services/hive_service.dart';
+import '../../services/remote_config_service.dart';
 
 class StreakWidget extends StatefulWidget {
   final int currentStreak;
@@ -33,6 +34,7 @@ class _StreakWidgetState extends State<StreakWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _pulseController;
   late Animation<double> _pulseAnimation;
+  int _freezeCost = 100; // default, updated from remote config
 
   @override
   void initState() {
@@ -49,6 +51,13 @@ class _StreakWidgetState extends State<StreakWidget>
     if (widget.currentStreak > 0) {
       _pulseController.forward();
     }
+
+    _loadFreezeCost();
+  }
+
+  Future<void> _loadFreezeCost() async {
+    final cost = await RemoteConfigService.getStreakFreezeCost();
+    if (mounted) setState(() => _freezeCost = cost);
   }
 
   @override
@@ -288,7 +297,7 @@ class _StreakWidgetState extends State<StreakWidget>
                       _buildActionChip(
                         icon: Icons.shield_rounded,
                         label: 'Buy Freeze',
-                        subtitle: '${HiveService.getStreakFreezeCost()}',
+                        subtitle: '$_freezeCost',
                         color: Colors.cyanAccent,
                         onTap: widget.onBuyFreeze,
                       ),

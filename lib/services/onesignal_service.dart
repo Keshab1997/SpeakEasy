@@ -14,7 +14,7 @@ import 'hive_service.dart';
 /// - Listen for notification taps and route appropriately
 ///
 /// OneSignal App ID is loaded from Firestore config (config/app_settings →
-/// onesignal.appId) so it can be updated remotely without an app release.
+/// onesignal.AppId) so it can be updated remotely without an app release.
 class OneSignalService {
   static final OneSignalService _instance = OneSignalService._();
   factory OneSignalService() => _instance;
