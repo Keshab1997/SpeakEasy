@@ -19,6 +19,7 @@ class NotificationService {
   static const int _dailyWordId = 1000;
   static const int _practiceReminderId = 1001;
   static const int _streakMilestoneId = 1002;
+  static const int _streakAtRiskId = 1003;
 
   // Sample vocabulary words for daily notifications
   static const List<Map<String, String>> _sampleWords = [
@@ -225,6 +226,7 @@ class NotificationService {
     await _plugin.cancel(_dailyWordId);
     await _plugin.cancel(_practiceReminderId);
     await _plugin.cancel(_streakMilestoneId);
+    await _plugin.cancel(_streakAtRiskId);
   }
 
   /// Schedule all notifications (respects sub-toggles from Hive)
@@ -280,6 +282,25 @@ ${todayWord.exampleSentence}
         body: "Don't break your streak! Practice English for 5 minutes.",
         payload: 'practice_reminder',
         isHighPriority: false,
+      );
+    }
+
+    // Schedule Streak Saver at 8:00 PM (if streak notifications enabled)
+    if (HiveService.isStreakNotification()) {
+      final currentStreak = HiveService.getStreak();
+      final streakMessage = currentStreak > 0
+          ? "🔥 আপনার $currentStreak দিনের স্ট্রিক ভাঙার পথে! এখনই প্র্যাকটিস শুরু করুন!"
+          : "🔥 আজকে কি প্র্যাকটিস করেছেন? স্ট্রিক ধরে রাখুন!";
+      await _scheduleDailyAt(
+        id: _streakAtRiskId,
+        hour: 20,
+        minute: 0,
+        channelId: 'streak_saver',
+        channelName: 'Streak Saver',
+        title: '⚠️ Streak at Risk!',
+        body: streakMessage,
+        payload: 'streak_saver',
+        isHighPriority: true,
       );
     }
   }

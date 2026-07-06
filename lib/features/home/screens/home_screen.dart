@@ -36,6 +36,8 @@ import '../../translator/screens/banglish_translator_screen.dart';
 import '../../game/screens/game_home_screen.dart';
 import '../../game/screens/tense_categories_screen.dart';
 import '../widgets/study_plan_section.dart';
+import '../widgets/mini_leaderboard_widget.dart';
+import '../../../core/widgets/banner_ad_widget.dart';
 import '../widgets/spoken_rules_screen.dart';
 import '../widgets/notification_dialog.dart';
 import '../widgets/notification_history_screen.dart';
@@ -471,42 +473,50 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
               const SizedBox(height: 24),
 
-              // 3. Guides & Resources (Student Guide & Study Routine)
+              // 3. Leaderboard (Mini)
+              const MiniLeaderboardWidget(),
+              const SizedBox(height: 24),
+
+              // 4. Guides & Resources (Student Guide & Study Routine)
               _buildGuidesSection(theme, isDark),
               const SizedBox(height: 24),
 
-              // 4. Continue Learning (Most Important - Keep at top)
+              // 5. Continue Learning (Most Important - Keep at top)
               _buildContinueLearningSection(
                 theme, isDark, studyState, allGrammarChapters, allVocabChapters, lastOpenedChapter,
               ),
               const SizedBox(height: 24),
 
-              // 5. Study Plan (To-Do)
+              // 6. Study Plan (To-Do)
               const StudyPlanSection(),
               const SizedBox(height: 24),
 
-              // 6. Today's Word
+              // 7. Today's Word
               _buildTodaysWordCard(theme, isDark, todayWords, isLoading: chaptersAsync.isLoading),
               const SizedBox(height: 24),
 
-              // 7. AI Features (Important for modern learning)
+              // 8. AI Features (Important for modern learning)
               _buildAIFeaturesSection(theme, isDark),
               const SizedBox(height: 24),
 
-              // 8. Learning Modules
+              // 9. Learning Modules
               _buildHomeLearningSection(theme, isDark),
               const SizedBox(height: 24),
 
-              // 9. Practice Section
+              // 10. Practice Section
               _buildHomePracticeSection(theme, isDark),
               const SizedBox(height: 24),
 
-              // 10. Game Section
+              // 11. Game Section
               FeatureGateWidget(
                 featureKey: 'games',
                 child: _buildGameCard(theme, isDark),
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 24),
+
+              // 12. Banner Ad
+              const BannerAdWidget(),
+              const SizedBox(height: 16),
             ],
           ),
         ),

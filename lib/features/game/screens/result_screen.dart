@@ -8,6 +8,7 @@ import '../../../providers/game/timer_provider.dart';
 import '../../../providers/game/score_provider.dart';
 import '../../../services/game_service.dart';
 import '../../../services/achievement_service.dart';
+import '../../../services/ad_service.dart';
 import '../../../providers/game/xp_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../../../providers/game/streak_provider.dart';
@@ -54,6 +55,9 @@ class ResultScreen extends ConsumerStatefulWidget {
 }
 
 class _ResultScreenState extends ConsumerState<ResultScreen> {
+  bool _adWatched = false;
+  bool _isLoadingAd = false;
+
   @override
   void initState() {
     super.initState();
@@ -346,7 +350,65 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
                   ),
                 ),
 
-                const SizedBox(height: 32),
+                const SizedBox(height: 24),
+
+                // Watch Ad → Double Coins Button
+                if (!_adWatched && widget.earnedCoins > 0)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 12),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton.icon(
+                        onPressed: _isLoadingAd
+                            ? null
+                            : () async {
+                                setState(() => _isLoadingAd = true);
+                                final shown = await AdService().showRewardedAd(
+                                  onRewardEarned: () {
+                                    // Double the coins
+                                    ref.read(coinProvider.notifier).addCoins(widget.earnedCoins);
+                                    if (mounted) {
+                                      ScaffoldMessenger.of(context).showSnackBar(
+                                        const SnackBar(
+                                          content: Row(
+                                            children: [
+                                              Icon(Icons.monetization_on, color: Colors.amber),
+                                              SizedBox(width: 8),
+                                              Text('🎉 Coins Doubled!', style: TextStyle(fontWeight: FontWeight.bold)),
+                                            ],
+                                          ),
+                                          behavior: SnackBarBehavior.floating,
+                                          duration: Duration(seconds: 3),
+                                        ),
+                                      );
+                                    }
+                                  },
+                                );
+                                if (mounted) {
+                                  setState(() {
+                                    _adWatched = shown;
+                                    _isLoadingAd = false;
+                                  });
+                                }
+                              },
+                        icon: Icon(_isLoadingAd ? Icons.hourglass_empty : Icons.play_circle_filled),
+                        label: Text(
+                          _isLoadingAd
+                              ? 'Loading Ad...'
+                              : '🎬 Watch Ad → Double Coins!',
+                          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.amberAccent,
+                          side: const BorderSide(color: Colors.amberAccent),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                const SizedBox(height: 8),
 
                 // Review Answers Button (only if there are wrong answers)
                 if (wrongAnswers > 0)

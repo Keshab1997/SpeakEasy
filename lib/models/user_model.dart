@@ -9,6 +9,9 @@ class UserModel {
   final int streak;
   final String currentLevel; // 'Beginner', 'Intermediate', 'Advanced'
   final String role; // 'student', 'admin'
+  final String referralCode;
+  final String? referredBy;
+  final int referralCount;
 
   UserModel({
     required this.id,
@@ -19,6 +22,9 @@ class UserModel {
     this.streak = 0,
     this.currentLevel = 'Beginner',
     this.role = 'student',
+    this.referralCode = '',
+    this.referredBy,
+    this.referralCount = 0,
   });
 
   factory UserModel.fromMap(Map<String, dynamic> map, String docId) {
@@ -31,6 +37,9 @@ class UserModel {
       streak: map['streak'] ?? 0,
       currentLevel: map['currentLevel'] ?? 'Beginner',
       role: map['role'] ?? 'student',
+      referralCode: map['referralCode'] ?? '',
+      referredBy: map['referredBy'] as String?,
+      referralCount: map['referralCount'] ?? 0,
     );
   }
 
@@ -43,6 +52,9 @@ class UserModel {
       'streak': streak,
       'currentLevel': currentLevel,
       'role': role,
+      'referralCode': referralCode,
+      if (referredBy != null) 'referredBy': referredBy,
+      'referralCount': referralCount,
     };
   }
 
@@ -55,6 +67,9 @@ class UserModel {
     int? streak,
     String? currentLevel,
     String? role,
+    String? referralCode,
+    String? referredBy,
+    int? referralCount,
   }) {
     return UserModel(
       id: id ?? this.id,
@@ -65,6 +80,9 @@ class UserModel {
       streak: streak ?? this.streak,
       currentLevel: currentLevel ?? this.currentLevel,
       role: role ?? this.role,
+      referralCode: referralCode ?? this.referralCode,
+      referredBy: referredBy ?? this.referredBy,
+      referralCount: referralCount ?? this.referralCount,
     );
   }
 }

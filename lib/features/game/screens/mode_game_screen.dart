@@ -12,6 +12,7 @@ import '../../../../providers/game/sound_provider.dart';
 import '../../../../providers/game/streak_provider.dart';
 import '../../../../repositories/statistics_repository.dart';
 import '../../../../models/game/game_result_model.dart';
+import '../../../../services/ad_service.dart';
 import '../../../../core/widgets/explanation_widget.dart';
 import '../../../../core/widgets/game_widgets.dart';
 import '../../../../models/game/game_question_model.dart';
@@ -242,6 +243,13 @@ class _ModeGameScreenState extends ConsumerState<ModeGameScreen> with TickerProv
       accuracy: accuracy,
       gameMode: gameMode,
     );
+
+    // Show interstitial ad before navigating to result
+    try {
+      await AdService().showInterstitialAd();
+    } catch (_) {
+      // Silently fail if ad fails to load/show
+    }
 
     // Navigate to result screen
     if (mounted) {

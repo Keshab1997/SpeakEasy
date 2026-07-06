@@ -4,6 +4,8 @@ import '../../../core/constants/app_colors.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../models/user_model.dart';
 import '../../../services/remote_config_service.dart';
+import '../../../services/hive_service.dart';
+import '../../intro/screens/intro_screen.dart';
 import '../../admin/screens/maintenance_screen.dart';
 import '../../admin/screens/force_update_screen.dart';
 import '../../home/screens/main_navigation_screen.dart';
@@ -66,6 +68,16 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
   Future<void> _navigateToNext(UserModel? user) async {
     if (_navigated) return;
     _navigated = true;
+
+    // Check if onboarding has been completed
+    if (!HiveService.isOnboardingCompleted()) {
+      if (mounted) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (_) => const IntroScreen()),
+        );
+      }
+      return;
+    }
 
     // Fetch remote config to check maintenance/force-update status
     try {

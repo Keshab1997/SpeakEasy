@@ -18,12 +18,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _referralController = TextEditingController();
   bool _obscurePassword = true;
 
   @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
+    _referralController.dispose();
     super.dispose();
   }
 
@@ -56,7 +58,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   void _handleGoogleLogin() async {
     try {
-      await ref.read(authProvider.notifier).signInWithGoogle();
+      final referralCode = _referralController.text.trim();
+      await ref.read(authProvider.notifier).signInWithGoogle(
+        referralCode: referralCode.isNotEmpty ? referralCode : null,
+      );
       
       if (mounted) {
         Navigator.of(context).pushReplacement(
@@ -285,6 +290,54 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         ),
                       ),
                     ],
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Referral Code (for Google Sign-In users)
+                  Container(
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withOpacity(0.05)
+                          : const Color(0xFFF5F7FA),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: isDark ? Colors.white12 : Colors.grey.withOpacity(0.2),
+                      ),
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.card_giftcard_rounded,
+                          color: AppColors.primary.withOpacity(0.7),
+                          size: 20,
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: TextField(
+                            controller: _referralController,
+                            style: TextStyle(
+                              color: isDark ? Colors.white : Colors.black87,
+                            ),
+                            decoration: InputDecoration(
+                              labelText: 'Referral Code (optional)',
+                              hintText: 'Enter code from friend',
+                              labelStyle: TextStyle(
+                                color: isDark ? Colors.white60 : Colors.grey,
+                                fontSize: 14,
+                              ),
+                              hintStyle: TextStyle(
+                                color: isDark ? Colors.white38 : Colors.grey[400],
+                                fontSize: 13,
+                              ),
+                              border: InputBorder.none,
+                              contentPadding: EdgeInsets.zero,
+                            ),
+                            textCapitalization: TextCapitalization.characters,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 20),
 

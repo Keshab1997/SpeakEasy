@@ -10,6 +10,7 @@ import '../models/user_model.dart';
 import '../models/game/game_progress_model.dart';
 import '../services/hive_service.dart';
 import '../services/game_data_sync_service.dart';
+import '../services/referral_service.dart';
 
 final authProvider = StateNotifierProvider<AuthNotifier, AsyncValue<UserModel?>>((ref) {
   return AuthNotifier();
@@ -58,6 +59,16 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
           );
         }
 
+        // Auto-generate referral code for existing users who don't have one
+        if (userModel.referralCode.isEmpty) {
+          final code = ReferralService.generateReferralCode(uid);
+          await _firestore.collection('users').doc(uid).set(
+            {'referralCode': code},
+            SetOptions(merge: true),
+          );
+          userModel = userModel.copyWith(referralCode: code);
+        }
+
         state = AsyncValue.data(userModel);
         
         // Load user's game data from Firebase after successful auth
@@ -88,6 +99,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
     required String name,
     required String email,
     required String password,
+    String? referralCode, // Optional referral code from inviting friend
   }) async {
     state = const AsyncValue.loading();
     try {
@@ -101,17 +113,22 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
         // Update Firebase display name
         await firebaseUser.updateDisplayName(name);
 
+        // Generate unique referral code for this user
+        final userReferralCode = ReferralService.generateReferralCode(firebaseUser.uid);
+
         final newUser = UserModel(
           id: firebaseUser.uid,
           name: name,
           email: email,
           photoUrl: '',
           joinedAt: DateTime.now(),
-          streak: 1, // Start with 1 day streak
+          streak: 1,
           currentLevel: 'Beginner',
+          referralCode: userReferralCode,
+          referredBy: referralCode, // Store who referred this user
         );
 
-        // Store user in Firestore
+        // Store user in Firestore (with referral code)
         await _firestore.collection('users').doc(firebaseUser.uid).set(newUser.toMap());
         
         // 🔥 Create initial game progress for new user
@@ -120,7 +137,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
           currentLevel: 1,
           currentXP: 0,
           totalCoins: 0,
-          streak: 1, // Start with 1-day streak!
+          streak: 1,
           unlockedModes: const [],
           weeklyStreak: 1,
           longestStreak: 1,
@@ -134,6 +151,12 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
             .collection('game_progress')
             .doc(firebaseUser.uid)
             .set(initialProgress.toFirestoreMap());
+        
+        // Process referral if code was provided
+        if (referralCode != null && referralCode.isNotEmpty) {
+          final referralService = ReferralService();
+          await referralService.applyReferralCode(referralCode, firebaseUser.uid);
+        }
         
         debugPrint('✅ Initial game progress created for new user: $name');
         
@@ -169,7 +192,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
     }
   }
 
-  Future<void> signInWithGoogle() async {
+  Future<void> signInWithGoogle({String? referralCode}) async {
     state = const AsyncValue.loading();
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
@@ -193,6 +216,9 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
         UserModel userModel;
         
         if (!doc.exists) {
+          // Generate referral code for new user
+          final userReferralCode = ReferralService.generateReferralCode(firebaseUser.uid);
+
           // Create new user profile if first time Google login
           userModel = UserModel(
             id: firebaseUser.uid,
@@ -202,6 +228,8 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
             joinedAt: DateTime.now(),
             streak: 1,
             currentLevel: 'Beginner',
+            referralCode: userReferralCode,
+            referredBy: referralCode, // Store who referred this user
           );
           await _firestore.collection('users').doc(firebaseUser.uid).set(userModel.toMap());
           
@@ -225,6 +253,12 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
               .collection('game_progress')
               .doc(firebaseUser.uid)
               .set(initialProgress.toFirestoreMap());
+          
+          // Process referral if code was provided
+          if (referralCode != null && referralCode.isNotEmpty) {
+            final referralService = ReferralService();
+            await referralService.applyReferralCode(referralCode, firebaseUser.uid);
+          }
           
           debugPrint('✅ Initial game progress created for new Google user: ${userModel.name}');
         } else {

@@ -256,6 +256,18 @@ class HiveService {
     return _settings.get('re_engagement_notifications', defaultValue: true) as bool;
   }
 
+  // ── Onboarding Completion ──
+
+  static const String _onboardingCompletedKey = 'onboarding_completed';
+
+  static Future<void> setOnboardingCompleted() async {
+    await _settings.put(_onboardingCompletedKey, true);
+  }
+
+  static bool isOnboardingCompleted() {
+    return _settings.get(_onboardingCompletedKey, defaultValue: false) as bool;
+  }
+
   // ── Weekly Activity Calendar (7 days) ──
   // Tracks which days this week the user practiced
   // Keys: '0'=Monday ... '6'=Sunday, value=true if practiced
