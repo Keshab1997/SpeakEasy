@@ -51,7 +51,10 @@
 		<string>This app needs camera access to let you take a profile photo.</string>
 		<key>NSMicrophoneUsageDescription</key>
 		<string>This app needs microphone access for speaking practice and pronunciation exercises.</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-			<string>This app needs speech recognition access to evaluate your pronunciation during speaking practice.</string>
-	</dict>
+		<key>NSSpeechRecognitionUsageDescription</key>
+				<string>This app needs speech recognition access to evaluate your pronunciation during speaking practice.</string>
+		<!-- AdMob App ID (test ID — replace with real one before Play Store release) -->
+		<key>GADApplicationIdentifier</key>
+		<string>ca-app-pub-3940256099942544~3347511713</string>
+		</dict>
 </plist>

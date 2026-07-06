@@ -22,6 +22,10 @@
         <meta-data
             android:name="firebase_automatic_resource_management_enabled"
             android:value="false" />
+        <!-- AdMob App ID (test ID — replace with real one before Play Store release) -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
