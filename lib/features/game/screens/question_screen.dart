@@ -6,6 +6,7 @@ import '../../../providers/game/timer_provider.dart';
 import '../../../providers/game/score_provider.dart';
 import '../../../providers/game/sound_provider.dart';
 import '../../../providers/game/statistics_provider.dart';
+import '../../daily_quest/providers/daily_quest_provider.dart';
 import 'result_screen.dart';
 
 class QuestionScreen extends ConsumerWidget {
@@ -222,6 +223,7 @@ class QuestionScreen extends ConsumerWidget {
         wrongAnswers: gameState.lastResult?.wrongAnswers ?? 0,
         earnedXP: gameState.lastResult?.earnedXP ?? 0,
         earnedCoins: gameState.lastResult?.earnedCoins ?? 0,
+        dailyQuestTaskId: DailyQuestTaskTracker.pendingTaskId,
       )));
     }
   }

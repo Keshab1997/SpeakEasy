@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../routes/route_names.dart';
+import '../../game/screens/game_home_screen.dart';
+import '../../game/screens/mode_game_screen.dart';
+import '../../game/screens/mode_selection_screen.dart';
+import '../../../services/game_mode_service.dart';
+import '../../speaking/screens/speaking_screen.dart';
 import '../providers/daily_quest_provider.dart';
 import '../models/daily_quest_model.dart';
 import '../models/daily_quest_task_model.dart';
@@ -461,41 +467,108 @@ class DailyQuestScreen extends ConsumerWidget {
 
   void _navigateToTask(
       BuildContext context, WidgetRef ref, DailyQuestTaskModel task) {
-    // Map each task type to its screen route
-    // All routes use Navigator.push with MaterialPageRoute since
-    // this project doesn't use named routes
-    switch (task.taskType) {
-      case 'grammar':
-        Navigator.pushNamed(context, '/game/mode');
-        break;
-      case 'vocabulary':
-        Navigator.pushNamed(context, '/vocabulary');
-        break;
-      case 'speaking':
-        Navigator.pushNamed(context, '/practice');
-        break;
+    // Track this task so ResultScreen can mark it complete when the game ends
+    DailyQuestTaskTracker.startTask(task.id);
+
+    // Use linkedScreen from the task template to decide where to go
+    switch (task.linkedScreen) {
+      case 'mode_game':
+        // Generic mode game — use navigationData for mode hint
+        final mode = task.navigationData?['mode'] as String?;
+        final gameModeType = _mapModeToGameModeType(mode);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => ModeGameScreen(modeType: gameModeType),
+          ),
+        );
+      case 'error_detection':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => ModeGameScreen(
+                modeType: GameModeType.errorDetection),
+          ),
+        );
+      case 'word_match':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (_) => const ModeSelectionScreen()),
+        );
+      case 'flashcard_review':
+        Navigator.pushNamed(context, RouteNames.vocabulary);
+      case 'pronunciation':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (_) => const SpeakingScreen()),
+        );
       case 'listening':
-        Navigator.pushNamed(context, '/practice',
-            arguments: {'mode': 'listening'});
-        break;
-      case 'translation':
-        Navigator.pushNamed(context, '/translator');
-        break;
-      case 'mixed':
-        Navigator.pushNamed(context, '/game/mode',
-            arguments: {'mode': 'mixed_challenge'});
-        break;
+        Navigator.pushNamed(context, RouteNames.listening);
+      case 'translator':
+        Navigator.pushNamed(context, RouteNames.banglishTranslator);
+      case 'fill_blank':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => ModeGameScreen(
+                modeType: GameModeType.fillInBlank),
+          ),
+        );
+      case 'quick_quiz':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) =>
+                ModeGameScreen(modeType: GameModeType.speedQuiz),
+          ),
+        );
+      case 'sentence_builder':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => ModeGameScreen(
+                modeType: GameModeType.sentenceBuilder),
+          ),
+        );
+      case 'mixed_challenge':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (_) => const GameHomeScreen()),
+        );
       case 'conversation':
-        Navigator.pushNamed(context, '/ai_teacher');
-        break;
+        Navigator.pushNamed(context, RouteNames.conversationDaily);
       default:
         // Fallback: open game home
-        Navigator.pushNamed(context, '/game');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (_) => const GameHomeScreen()),
+        );
     }
+  }
 
-    // Note: The task will be marked complete when the user returns from
-    // the game screen and the game provider detects completion.
-    // For now we rely on the game provider callback mechanism.
+  /// Map a mode string from navigationData to GameModeType.
+  GameModeType _mapModeToGameModeType(String? mode) {
+    switch (mode) {
+      case 'fill_blank':
+        return GameModeType.fillInBlank;
+      case 'tense':
+        return GameModeType.chooseCorrectTense;
+      case 'sentence_builder':
+        return GameModeType.sentenceBuilder;
+      case 'error_detection':
+        return GameModeType.errorDetection;
+      case 'translation':
+        return GameModeType.translationChallenge;
+      case 'quick_quiz':
+      case 'speed':
+        return GameModeType.speedQuiz;
+      default:
+        return GameModeType.fillInBlank;
+    }
   }
 
   String _monthName(int month) {

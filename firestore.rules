@@ -19,12 +19,12 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == userId;
     }
 
-    function hasUserIdField(data) {
-      return data.userId == request.auth.uid;
+    function hasUserIdField() {
+      return resource.data.userId == request.auth.uid;
     }
 
     // ═══════════════════════════════════════════════
-    //  USER COLLECTION
+    //  USERS
     //  Document ID = userId
     // ═══════════════════════════════════════════════
 
@@ -36,112 +36,30 @@ service cloud.firestore {
     }
 
     // ═══════════════════════════════════════════════
-    //  PROGRESS COLLECTION
-    //  Document ID = userId
+    //  CONFIG / APP SETTINGS (Public read)
     // ═══════════════════════════════════════════════
 
-    match /progress/{userId} {
-      allow read: if isOwner(userId) || isAdmin();
-      allow write: if isOwner(userId);
+    // Uppercase C — used by remote_config_service & admin_repository
+    match /Config/{document} {
+      allow read: if true;
+      allow write: if isAdmin();
     }
 
-    // ═══════════════════════════════════════════════
-    //  GAME PROGRESS
-    //  Document ID = userId
-    // ═══════════════════════════════════════════════
-
-    match /game_progress/{userId} {
-      allow read: if isOwner(userId) || isAdmin();
-      allow write: if isOwner(userId);
-      allow delete: if false;
+    // Lowercase fallback
+    match /config/{document} {
+      allow read: if true;
+      allow write: if isAdmin();
     }
 
-    // ═══════════════════════════════════════════════
-    //  GAME STATISTICS
-    //  Has userId field (not document ID)
-    // ═══════════════════════════════════════════════
-
-    match /game_statistics/{document} {
-      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
-      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
-      allow update: if isAuthenticated() && resource.data.userId == request.auth.uid;
-      allow delete: if false;
-    }
-
-    // ═══════════════════════════════════════════════
-    //  GAME STATISTICS META
-    //  Document ID = userId
-    // ═══════════════════════════════════════════════
-
-    match /game_statistics_meta/{userId} {
-      allow read: if isOwner(userId) || isAdmin();
-      allow write: if isOwner(userId);
-      allow delete: if false;
-    }
-
-    // ═══════════════════════════════════════════════
-    //  GAME ACHIEVEMENTS
-    //  Has userId field (queried by where userId == ...)
-    // ═══════════════════════════════════════════════
-
-    match /game_achievements/{document} {
-      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
-      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
-      allow update: if isAuthenticated() && resource.data.userId == request.auth.uid;
-      allow delete: if false;
-    }
-
-    // ═══════════════════════════════════════════════
-    //  GAME LEVELS
-    //  Has userId field (queried by where userId == ...)
-    // ═══════════════════════════════════════════════
-
-    match /game_levels/{document} {
-      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
-      allow write: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
-    }
-
-    // ═══════════════════════════════════════════════
-    //  GAME QUESTIONS
-    //  Read-only content for all authenticated users
-    // ═══════════════════════════════════════════════
-
-    match /game_questions/{document} {
-      allow read: if isAuthenticated();
+    // App-level config (e.g. daily_word_config)
+    match /app_config/{document} {
+      allow read: if true;
       allow write: if isAdmin();
     }
 
     // ═══════════════════════════════════════════════
-    //  LEADERBOARD
-    // ═══════════════════════════════════════════════
-
-    match /leaderboard/{document} {
-      allow read: if isAuthenticated();
-      allow write: if isAuthenticated();
-    }
-
-    // ═══════════════════════════════════════════════
-    //  CONTENT COLLECTIONS (Read-only for all authenticated users)
-    // ═══════════════════════════════════════════════
-
-    match /content_vocabulary_chapters/{document} {
-      allow read: if isAuthenticated();
-      allow write: if isAdmin();
-    }
-
-    match /content_vocabulary_words/{document} {
-      allow read: if isAuthenticated();
-      allow write: if isAdmin();
-    }
-
-    match /content_grammar_chapters/{document} {
-      allow read: if isAuthenticated();
-      allow write: if isAdmin();
-    }
-
-    // ═══════════════════════════════════════════════
-    //  VOCABULARY
-    //  General vocabulary list
+    //  CONTENT COLLECTIONS  (Public read, admin write)
+    //  Curriculum data: vocabulary, grammar, lessons, quizzes
     // ═══════════════════════════════════════════════
 
     match /vocabulary/{document} {
@@ -149,47 +67,41 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
 
-    // ═══════════════════════════════════════════════
-    //  LESSONS
-    //  Lesson content
-    // ═══════════════════════════════════════════════
-
     match /lessons/{document} {
       allow read: if isAuthenticated();
       allow write: if isAdmin();
     }
-
-    // ═══════════════════════════════════════════════
-    //  QUIZZES
-    //  Quiz content
-    // ═══════════════════════════════════════════════
 
     match /quizzes/{document} {
       allow read: if isAuthenticated();
       allow write: if isAdmin();
     }
 
-    // ═══════════════════════════════════════════════
-    //  STUDY PLAN
-    //  Document ID = userId
-    // ═══════════════════════════════════════════════
-
-    match /study_plan/{userId} {
-      allow read: if isOwner(userId) || isAdmin();
-      allow write: if isOwner(userId);
-    }
-
-    // ═══════════════════════════════════════════════
-    //  CONFIG / APP CONFIG (Public read)
-    // ═══════════════════════════════════════════════
-
-    match /config/{document} {
-      allow read: if true;
+    match /daily_words/{document} {
+      allow read: if isAuthenticated();
       allow write: if isAdmin();
     }
 
-    match /app_config/{document} {
-      allow read: if true;
+    // ═══════════════════════════════════════════════
+    //  GAME DATA  (Public read — question bank)
+    // ═══════════════════════════════════════════════
+
+    match /game_questions/{document} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    match /game_achievements/{document} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
+    //  LEADERBOARD  (Public read)
+    // ═══════════════════════════════════════════════
+
+    match /leaderboard/{document} {
+      allow read: if isAuthenticated();
       allow write: if isAdmin();
     }
 
@@ -207,11 +119,69 @@ service cloud.firestore {
     // ═══════════════════════════════════════════════
 
     match /feedback/{document} {
-      allow read: if request.resource.data.userId == request.auth.uid || isAdmin();
+      allow read: if resource.data.userId == request.auth.uid || isAdmin();
       allow create: if isAuthenticated()
                     && request.resource.data.userId == request.auth.uid;
       allow update: if isAdmin();
       allow delete: if isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
+    //  USER-OWNED PROGRESS COLLECTIONS
+    //  Document ID = userId
+    // ═══════════════════════════════════════════════
+
+    match /progress/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    match /game_progress/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    match /game_levels/{document} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow delete: if false;
+    }
+
+    match /game_statistics/{document} {
+      allow read, write: if isAuthenticated();
+    }
+
+    match /game_statistics_meta/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    match /study_plan/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    match /mock_test_progress/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isOwner(userId);
+      allow delete: if false;
+    }
+
+    // ═══════════════════════════════════════════════
+    //  ADMIN-ONLY CONTENT COLLECTIONS
+    //  Managed through the admin panel
+    // ═══════════════════════════════════════════════
+
+    match /content_vocabulary_chapters/{document} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    match /content_vocabulary_words/{document} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    match /content_grammar_chapters/{document} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
 
     // ═══════════════════════════════════════════════

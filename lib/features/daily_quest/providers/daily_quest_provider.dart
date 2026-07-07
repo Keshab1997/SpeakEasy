@@ -5,6 +5,32 @@ import '../../../providers/game/coin_provider.dart';
 import '../../daily_quest/services/daily_quest_service.dart';
 import '../models/daily_quest_model.dart';
 
+/// Simple tracker that connects Daily Quest navigation to game completion.
+/// Set when navigating from a Daily Quest task; consumed by ResultScreen
+/// when the game finishes so the task gets marked complete.
+class DailyQuestTaskTracker {
+  static String? _pendingTaskId;
+
+  static String? get pendingTaskId => _pendingTaskId;
+
+  /// Call before navigating from a daily quest task.
+  static void startTask(String taskId) {
+    _pendingTaskId = taskId;
+  }
+
+  /// Call after a game completes. Returns the tracked task id and clears it.
+  static String? consumePendingTask() {
+    final id = _pendingTaskId;
+    _pendingTaskId = null;
+    return id;
+  }
+
+  /// Clear without consuming (e.g. user cancelled).
+  static void clear() {
+    _pendingTaskId = null;
+  }
+}
+
 // ── Providers ──
 
 final dailyQuestServiceProvider = Provider<DailyQuestService>((ref) {
@@ -77,19 +103,18 @@ class DailyQuestNotifier extends StateNotifier<DailyQuestState> {
     final current = state.quest;
     if (current == null) return;
 
+    // Find the task in the current quest
+    final taskIndex = current.tasks.indexWhere((t) => t.id == taskId);
+    if (taskIndex == -1) return; // Task not found
+
+    final task = current.tasks[taskIndex];
+    final wasAlreadyCompleted = task.isCompleted;
+
     final updated = _service.completeTask(current, taskId);
     _service.saveQuest(updated);
 
-    // Find what this task was worth
-    final task = current.tasks.cast<dynamic>().firstWhere(
-      (t) => t.id == taskId,
-      orElse: () => current.tasks.first,
-    ) as dynamic;
-
-    // Award XP & coins
-    if (!current.tasks.firstWhere((t) => t.id == taskId,
-            orElse: () => current.tasks.first)
-        .isCompleted) {
+    // Award XP & coins only if not already completed
+    if (!wasAlreadyCompleted) {
       await _xpNotifier.addXP(task.xpReward);
       await _coinNotifier.addCoins(task.coinReward);
     }

@@ -20,6 +20,7 @@ import '../../../repositories/statistics_repository.dart';
 import '../../../repositories/achievement_repository.dart';
 import '../../../models/game/game_result_model.dart';
 import '../../../models/game/achievement_model.dart';
+import '../../daily_quest/providers/daily_quest_provider.dart';
 import 'game_home_screen.dart';
 import 'answer_review_screen.dart';
 import 'question_screen.dart';
@@ -40,6 +41,10 @@ class ResultScreen extends ConsumerStatefulWidget {
   final int earnedCoins;
   final String gameMode;
 
+  /// Optional: when this game was started from a Daily Quest task,
+  /// this task ID will be marked as complete.
+  final String? dailyQuestTaskId;
+
   const ResultScreen({
     super.key,
     required this.score,
@@ -48,6 +53,7 @@ class ResultScreen extends ConsumerStatefulWidget {
     required this.earnedXP,
     required this.earnedCoins,
     this.gameMode = 'normal',
+    this.dailyQuestTaskId,
   });
 
   @override
@@ -65,12 +71,32 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
     // We save the result FIRST so achievement checks can read the current game's data.
     Future.microtask(() async {
       await _saveLocalResult();
+
+      // Complete any pending Daily Quest task
+      _completeDailyQuestTask();
+
       await _addRewards();
       _updateLeaderboard();
       await _checkAchievements();
       _updateLeaderboard(); // Refresh XP/coin providers after achievement rewards are added
       await _syncGameDataToFirebase();
     });
+  }
+
+  /// Marks a Daily Quest task as complete if this game was started
+  /// from the Daily Quest flow.
+  void _completeDailyQuestTask() {
+    // First try the explicit constructor parameter
+    final taskId = widget.dailyQuestTaskId
+        // Fall back to the static tracker (set by DailyQuestScreen before navigation)
+        ?? DailyQuestTaskTracker.consumePendingTask();
+    if (taskId != null) {
+      try {
+        ref.read(dailyQuestProvider.notifier).completeTask(taskId);
+      } catch (e) {
+        debugPrint('❌ Error completing daily quest task: $e');
+      }
+    }
   }
 
   /// Saves the current game result to Hive (StatisticsRepository) before

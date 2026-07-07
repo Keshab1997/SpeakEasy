@@ -16,6 +16,7 @@ import '../../../../services/ad_service.dart';
 import '../../../../core/widgets/explanation_widget.dart';
 import '../../../../core/widgets/game_widgets.dart';
 import '../../../../models/game/game_question_model.dart';
+import '../../daily_quest/providers/daily_quest_provider.dart';
 import 'result_screen.dart';
 
 // Remove unused import
@@ -263,6 +264,7 @@ class _ModeGameScreenState extends ConsumerState<ModeGameScreen> with TickerProv
             earnedXP: xpEarned,
             earnedCoins: coinsEarned,
             gameMode: gameMode,
+            dailyQuestTaskId: DailyQuestTaskTracker.pendingTaskId,
           ),
         ),
       );
