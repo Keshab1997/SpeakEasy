@@ -87,9 +87,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  assets:
-    - assets/json/vocabulary/
-    - assets/json/vocabulary/Beginner/
+assets:
+  - assets/json/daily_quiz/
+  - assets/json/vocabulary/
+  - assets/json/vocabulary/Beginner/
     - assets/json/vocabulary/Intermediate/
     - assets/json/vocabulary/Advanced/
     - assets/json/vocabulary_manifest.json

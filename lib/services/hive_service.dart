@@ -19,6 +19,7 @@ class HiveService {
   static const String _mockTestProgressBox = 'mock_test_progress';
   static const String _aiSavedVocabBox = 'ai_saved_vocab';
   static const String _dailyQuestCacheBox = 'daily_quest_cache';
+  static const String _dailyQuizCacheBox = 'daily_quiz_cache';
 
   static Future<void> initialize() async {
     await Hive.initFlutter();
@@ -39,6 +40,7 @@ class HiveService {
     await Hive.openBox(_mockTestProgressBox);
     await Hive.openBox(_aiSavedVocabBox);
     await Hive.openBox(_dailyQuestCacheBox);
+    await Hive.openBox(_dailyQuizCacheBox);
   }
 
   static Box get _vocabProgress => Hive.box(_vocabProgressBox);
