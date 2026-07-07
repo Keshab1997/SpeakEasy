@@ -18,6 +18,7 @@ class HiveService {
   static const String _notificationHistoryBox = 'notification_history';
   static const String _mockTestProgressBox = 'mock_test_progress';
   static const String _aiSavedVocabBox = 'ai_saved_vocab';
+  static const String _dailyQuestCacheBox = 'daily_quest_cache';
 
   static Future<void> initialize() async {
     await Hive.initFlutter();
@@ -37,6 +38,7 @@ class HiveService {
     await Hive.openBox(_notificationHistoryBox);
     await Hive.openBox(_mockTestProgressBox);
     await Hive.openBox(_aiSavedVocabBox);
+    await Hive.openBox(_dailyQuestCacheBox);
   }
 
   static Box get _vocabProgress => Hive.box(_vocabProgressBox);
@@ -807,6 +809,11 @@ class HiveService {
   static Future<void> clearMockTestProgress() async {
     if (!Hive.isBoxOpen(_mockTestProgressBox)) return;
     await Hive.box(_mockTestProgressBox).clear();
+  }
+
+  // ─── Daily Quest Cache ───
+  static Box<dynamic> getDailyQuestBox() {
+    return Hive.box(_dailyQuestCacheBox);
   }
 
   // ── AI Teacher Saved Vocabulary ──

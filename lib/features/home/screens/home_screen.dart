@@ -38,6 +38,8 @@ import '../../game/screens/tense_categories_screen.dart';
 import '../widgets/study_plan_section.dart';
 import '../widgets/mini_leaderboard_widget.dart';
 import '../../../core/widgets/banner_ad_widget.dart';
+import '../../daily_quest/screens/daily_quest_screen.dart';
+import '../../daily_quest/providers/daily_quest_provider.dart';
 import '../widgets/spoken_rules_screen.dart';
 import '../widgets/notification_dialog.dart';
 import '../widgets/notification_history_screen.dart';
@@ -78,6 +80,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ref.read(xpProvider.notifier).refresh();
       ref.read(coinProvider.notifier).refresh();
       ref.read(statisticsProvider.notifier).refresh();
+      // 🏆 Refresh daily quest (auto-regenerates if new day)
+      ref.read(dailyQuestProvider.notifier).refresh();
 
       // 🔥 STREAK CALCULATION — called every time the app opens:
       final now = DateTime.now();
@@ -458,7 +462,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               // 1. Greeting
               _buildGreetingSection(theme, user?.name),
               const SizedBox(height: 20),
-              
+              // 🏆 Daily Quest
+              _buildDailyQuestCard(context, theme, isDark),
+              const SizedBox(height: 20),
               // 2. Streak & Progress (Combined in one widget)
               StreakWidget(
                 currentStreak: currentStreak,
@@ -1243,6 +1249,144 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             ),
           ),
       ],
+    );
+  }
+
+  // ── Daily Quest Card (Duolingo-style, drives daily engagement) ──
+  Widget _buildDailyQuestCard(BuildContext context, ThemeData theme, bool isDark) {
+    final questState = ref.watch(dailyQuestProvider);
+    final quest = questState.quest;
+    final isQuestCompleted = quest?.isCompleted ?? false;
+    final progress = quest != null && quest.totalTasks > 0
+        ? quest.completedTasks / quest.totalTasks
+        : 0.0;
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const DailyQuestScreen()),
+      ),
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFF6C63FF), Color(0xFF3F51B5)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF6C63FF).withOpacity(0.35),
+              blurRadius: 16,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              right: -16,
+              bottom: -16,
+              child: Icon(Icons.explore_rounded,
+                  size: 100, color: Colors.white.withOpacity(0.1)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Text(
+                          'DAILY QUEST',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1.0,
+                          ),
+                        ),
+                      ),
+                      const Spacer(),
+                      if (isQuestCompleted)
+                        const Icon(Icons.check_circle, color: Colors.greenAccent, size: 22)
+                      else
+                        const Text('🌟', style: TextStyle(fontSize: 20)),
+                    ],
+                  ),
+                  const SizedBox(height: 14),
+                  const Text(
+                    "Today's Learning Quest",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    isQuestCompleted
+                        ? 'Quest complete! Great work today! 🎉'
+                        : quest != null
+                            ? '${quest.completedTasks} of ${quest.totalTasks} tasks done'
+                            : 'Complete daily challenges & earn rewards!',
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.85),
+                      fontSize: 13,
+                    ),
+                  ),
+                  if (quest != null && quest.totalTasks > 0) ...[
+                    const SizedBox(height: 14),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: LinearProgressIndicator(
+                        value: progress,
+                        minHeight: 6,
+                        backgroundColor: Colors.white.withOpacity(0.3),
+                        color: isQuestCompleted
+                            ? Colors.greenAccent
+                            : Colors.amberAccent,
+                      ),
+                    ),
+                  ],
+                  const SizedBox(height: 14),
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => const DailyQuestScreen()),
+                    ),
+                    icon: Icon(
+                      isQuestCompleted ? Icons.celebration : Icons.arrow_forward,
+                      size: 18,
+                    ),
+                    label: Text(
+                      isQuestCompleted ? 'View Results' : 'Start Quest',
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: const Color(0xFF3F51B5),
+                      elevation: 0,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
