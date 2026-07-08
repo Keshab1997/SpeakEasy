@@ -22,37 +22,58 @@ class DailyQuizService {
   /// Generate today's quiz deterministically from seed.
   /// Loads the full question bank, splits into vocab/grammar, shuffles each
   /// with seed-based RNG, picks first 5 of each, interleaves.
+  /// At least 2 new-type questions (fill_blanks, match_pairs, rearrange)
+  /// are guaranteed each day for variety.
   Future<DailyQuiz> generateTodayQuiz({int? seed}) async {
     final dateStr = _todayDateString();
     seed ??= _dateSeed(dateStr);
     final rng = Random(seed);
 
     final allQuestions = await _loadQuestionBank();
-    final vocabPool =
-        allQuestions.where((q) => q.type == 'vocabulary').toList();
-    final grammarPool =
-        allQuestions.where((q) => q.type == 'grammar').toList();
 
-    vocabPool.shuffle(rng);
-    grammarPool.shuffle(rng);
+    // Separate into standard MCQ and new-type questions.
+    final newType = allQuestions
+        .where((q) => q.questionType != QuestionType.multipleChoice)
+        .toList();
+    final standard =
+        allQuestions
+            .where((q) => q.questionType == QuestionType.multipleChoice)
+            .toList();
 
-    final selectedVocab = vocabPool.take(5).toList();
-    final selectedGrammar = grammarPool.take(5).toList();
+    newType.shuffle(rng);
+    standard.shuffle(rng);
 
-    // Interleave: V, G, V, G, V, G, V, G, V, G
-    final questions = <DailyQuizQuestion>[];
-    for (int i = 0; i < 5; i++) {
-      questions.add(selectedVocab[i]);
-      questions.add(selectedGrammar[i]);
-    }
+    final selected = <DailyQuizQuestion>[];
+
+    // Pick 2 new-type questions (if available).
+    selected.addAll(newType.take(2));
+
+    // Fill remaining 8 from standard, keeping ~equal vocab/grammar.
+    final vocabPool = standard.where((q) => q.type == 'vocabulary').toList();
+    final grammarPool = standard.where((q) => q.type == 'grammar').toList();
+
+    // How many of each we still need (target 5 each).
+    final vocabNeeded = 5 - selected.where((q) => q.type == 'vocabulary').length;
+    final grammarNeeded =
+        5 - selected.where((q) => q.type == 'grammar').length;
+
+    selected.addAll(vocabPool.take(vocabNeeded.clamp(0, 8)));
+    selected.addAll(grammarPool.take(grammarNeeded.clamp(0, 8)));
+
+    // Final shuffle so new types aren't always first.
+    selected.shuffle(rng);
+
+    // Trim to exactly 10.
+    final finalQuestions = selected.take(10).toList();
 
     // Assign fresh IDs with date prefix
-    final indexedQuestions = questions.asMap().entries.map((e) {
+    final indexedQuestions = finalQuestions.asMap().entries.map((e) {
       final idx = e.key;
       final q = e.value;
       return DailyQuizQuestion(
         id: '${dateStr}_q_$idx',
         type: q.type,
+        questionType: q.questionType,
         question: q.question,
         options: q.options,
         correctAnswer: q.correctAnswer,
@@ -60,6 +81,8 @@ class DailyQuizService {
         timeLimit: q.timeLimit,
         difficulty: q.difficulty,
         category: q.category,
+        pairs: q.pairs,
+        jumbledWords: q.jumbledWords,
       );
     }).toList();
 
@@ -97,11 +120,21 @@ class DailyQuizService {
     try {
       final box = _hiveBox;
       final data = box.get('current_quiz');
-      if (data == null) return null;
-      final saved = DailyQuiz.fromJson(data as Map<String, dynamic>);
-      if (saved.date != _todayDateString()) return null;
+      if (data == null) {
+        debugPrint('📅 [DailyQuiz] loadSavedQuiz: no data in Hive');
+        return null;
+      }
+      final saved = DailyQuiz.fromJson(Map<String, dynamic>.from(data));
+      if (saved.date != _todayDateString()) {
+        debugPrint('📅 [DailyQuiz] loadSavedQuiz: stale date '
+            '(saved=${saved.date}, today=${_todayDateString()})');
+        return null;
+      }
+      debugPrint('📅 [DailyQuiz] loadSavedQuiz: loaded '
+          '(completed=${saved.isCompleted}, answers=${saved.answers.length})');
       return saved;
-    } catch (_) {
+    } catch (e) {
+      debugPrint('📅 [DailyQuiz] loadSavedQuiz: ERROR $e');
       return null;
     }
   }
@@ -114,7 +147,11 @@ class DailyQuizService {
   /// Complete the quiz: calculate final results, award XP/coins.
   DailyQuiz completeQuiz(DailyQuiz quiz) {
     final scoredAnswers = quiz.answers.map((a) {
-      final question = quiz.questions.firstWhere((q) => q.id == a.questionId);
+      // Score is derived purely from the stored answer, so no question lookup
+      // is required here. Avoid `firstWhere` on purpose: if an answer ever
+      // references a question that is no longer present (e.g. after a
+      // question-bank update or a resume across a regenerate) we must NOT
+      // throw — otherwise completion would silently fail to persist.
       return DailyQuizAnswer(
         questionId: a.questionId,
         selectedAnswer: a.selectedAnswer,

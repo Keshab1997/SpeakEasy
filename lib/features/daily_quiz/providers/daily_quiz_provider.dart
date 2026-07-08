@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/game/xp_provider.dart';
@@ -93,12 +94,15 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
 
   /// Called once from the constructor.
   ///
-  /// Tries to load a saved quiz (only kept if it's still today's quiz).
-  /// If nothing is saved the async generation helper is kicked off so the
-  /// quiz is ready when the UI first reads the provider.
+  /// Tries to load a saved quiz from Hive (only kept if still today's quiz).
+  /// Does NOT generate a new quiz here — that's handled by [loadTodayQuiz].
+  /// This avoids the race condition where a freshly generated in-memory quiz
+  /// would shadow a persisted completed quiz in Hive.
   void _init() {
     final saved = _service.loadSavedQuiz();
     if (saved != null) {
+      debugPrint('📅 [DailyQuiz] _init: loaded from Hive '
+          '(completed=${saved.isCompleted}, answers=${saved.answers.length})');
       state = DailyQuizState(
         quiz: saved,
         isPlaying: saved.startedAt != null && !saved.isCompleted,
@@ -114,11 +118,10 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
         });
       }
     } else {
-      // No saved quiz for today → generate one asynchronously.
-      // We intentionally avoid setting [isLoading] here so the initial
-      // synchronous read returns a clean default state.
-      _generateQuizAsync();
+      debugPrint('📅 [DailyQuiz] _init: Hive empty — waiting for loadTodayQuiz()');
     }
+    // No fallback generation here — loadTodayQuiz() (called from home screen)
+    // will handle that with proper isLoading state.
   }
 
   /// Private async helper that generates a fresh quiz in the background.
@@ -139,27 +142,16 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   /// Force-load (or reload) today's quiz.
   ///
   /// Unlike [_init] this sets [isLoading] so the UI can show a spinner.
+  /// Always tries Hive FIRST (source of truth for persistence), then falls
+  /// back to the in-memory quiz, and only generates fresh if both are empty.
   Future<void> loadTodayQuiz() async {
     state = state.copyWith(isLoading: true, clearError: true);
     try {
-      // 1. If state already has today's quiz, just refresh leaderboard and bail.
-      final current = state.quiz;
-      if (current != null && current.date == _todayDateString()) {
-        state = state.copyWith(isLoading: false);
-        if (current.isCompleted) {
-          _fetchLeaderboard(current).then((data) {
-            state = state.copyWith(
-              topEntries: data.$1,
-              leaderboardRank: data.$2,
-            );
-          });
-        }
-        return;
-      }
-
-      // 2. Try loading from Hive cache.
+      // 1. Always try Hive cache first — this is the persisted source of truth.
       final cached = _service.loadSavedQuiz();
       if (cached != null) {
+        debugPrint('📅 [DailyQuiz] loadTodayQuiz: restored from Hive '
+            '(completed=${cached.isCompleted}, answers=${cached.answers.length})');
         _service.saveQuiz(cached);
         final isPlaying = cached.startedAt != null && !cached.isCompleted;
         state = DailyQuizState(
@@ -178,11 +170,31 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
         return;
       }
 
-      // 3. Nothing cached → generate a fresh quiz for today.
+      // 2. Hive empty — use in-memory quiz if it's for today
+      //    (e.g. generated earlier in this session by [_generateQuizAsync]).
+      final current = state.quiz;
+      if (current != null && current.date == _todayDateString()) {
+        debugPrint('📅 [DailyQuiz] loadTodayQuiz: using in-memory quiz '
+            '(completed=${current.isCompleted})');
+        state = state.copyWith(isLoading: false);
+        if (current.isCompleted) {
+          _fetchLeaderboard(current).then((data) {
+            state = state.copyWith(
+              topEntries: data.$1,
+              leaderboardRank: data.$2,
+            );
+          });
+        }
+        return;
+      }
+
+      // 3. Nothing cached or in memory → generate a fresh quiz for today.
+      debugPrint('📅 [DailyQuiz] loadTodayQuiz: generating fresh quiz');
       final quiz = await _service.generateTodayQuiz();
       _service.saveQuiz(quiz);
       state = DailyQuizState(quiz: quiz, isPlaying: false);
     } catch (e) {
+      debugPrint('📅 [DailyQuiz] loadTodayQuiz: ERROR $e');
       state = state.copyWith(isLoading: false, error: e.toString());
     }
   }
@@ -196,10 +208,11 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   /// Mark the quiz as started so the timer / progress tracking begins.
   ///
   /// If the quiz was already started (e.g. resumed from a saved state) the
-  /// original [startedAt] is preserved.
+  /// original [startedAt] is preserved. A quiz that has already been
+  /// completed today can never be restarted.
   void startQuiz() {
     final quiz = state.quiz;
-    if (quiz == null) return;
+    if (quiz == null || quiz.isCompleted) return;
 
     final started = quiz.copyWith(startedAt: quiz.startedAt ?? DateTime.now());
     _service.saveQuiz(started);
@@ -215,7 +228,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   /// If this was the last question, [completeQuiz] is called automatically.
   void answerQuestion(int selectedIndex, int timeTaken) {
     final quiz = state.quiz;
-    if (quiz == null || !state.isPlaying) return;
+    if (quiz == null || !state.isPlaying || quiz.isCompleted) return;
 
     final question = quiz.questions[state.currentQuestionIndex];
     final isCorrect = selectedIndex == question.correctAnswer;
@@ -232,13 +245,35 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     _commitAnswer(quiz, answer);
   }
 
+  /// Record an answer for complex question types (match_pairs, rearrange).
+  ///
+  /// [isCorrect] is determined by the widget based on the specific logic.
+  void answerComplexQuestion(Map<String, dynamic> responseData, bool isCorrect,
+      int timeTaken) {
+    final quiz = state.quiz;
+    if (quiz == null || !state.isPlaying || quiz.isCompleted) return;
+
+    final question = quiz.questions[state.currentQuestionIndex];
+    final points = _service.calculatePoints(isCorrect, timeTaken);
+
+    final answer = DailyQuizAnswer(
+      questionId: question.id,
+      isCorrect: isCorrect,
+      timeTaken: timeTaken,
+      pointsEarned: points,
+      responseData: responseData,
+    );
+
+    _commitAnswer(quiz, answer);
+  }
+
   /// Record that the current question timed out (no answer selected).
   ///
   /// Behaves the same as [answerQuestion] but marks the answer as incorrect
   /// with [selectedAnswer] set to `null`.
   void timeoutQuestion(int timeTaken) {
     final quiz = state.quiz;
-    if (quiz == null || !state.isPlaying) return;
+    if (quiz == null || !state.isPlaying || quiz.isCompleted) return;
 
     final question = quiz.questions[state.currentQuestionIndex];
     final points = _service.calculatePoints(false, timeTaken);
@@ -287,21 +322,36 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     if (quiz == null || quiz.isCompleted) return;
 
     final completed = _service.completeQuiz(quiz);
+
+    // Persist completion IMMEDIATELY and update state before any network /
+    // reward calls. This guarantees that, even if the XP/coin/leaderboard
+    // requests below fail (offline, permissions, etc.), today's quiz stays
+    // marked as completed and is restored as "already done" on the next app
+    // launch — so the user is never offered the quiz again.
     _service.saveQuiz(completed);
-
-    // Award XP and coins via their providers.
-    await _ref.read(xpProvider.notifier).addXP(completed.earnedXP);
-    await _ref.read(coinProvider.notifier).addCoins(completed.earnedCoins);
-
-    // Upload to leaderboard and fetch updated rankings.
-    final leaderboardData = await _fetchLeaderboard(completed);
-
     state = DailyQuizState(
       quiz: completed,
       isPlaying: false,
-      topEntries: leaderboardData.$1,
-      leaderboardRank: leaderboardData.$2,
     );
+
+    // Award XP and coins (best-effort — must not undo completion).
+    try {
+      await _ref.read(xpProvider.notifier).addXP(completed.earnedXP);
+      await _ref.read(coinProvider.notifier).addCoins(completed.earnedCoins);
+    } catch (_) {
+      // Rewards are non-critical; completion is already persisted.
+    }
+
+    // Upload to leaderboard and fetch updated rankings.
+    try {
+      final leaderboardData = await _fetchLeaderboard(completed);
+      state = state.copyWith(
+        topEntries: leaderboardData.$1,
+        leaderboardRank: leaderboardData.$2,
+      );
+    } catch (_) {
+      // Leaderboard is non-critical; completion is already persisted.
+    }
   }
 
   /// Upload today's result to the daily leaderboard, then fetch top entries

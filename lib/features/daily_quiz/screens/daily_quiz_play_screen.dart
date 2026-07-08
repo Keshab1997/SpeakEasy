@@ -4,6 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../models/daily_quiz_model.dart';
+import '../widgets/fill_blanks_widget.dart';
+import '../widgets/match_pairs_widget.dart';
+import '../widgets/sentence_rearrange_widget.dart';
 import 'daily_quiz_result_screen.dart';
 
 /// Play screen for Daily Quiz.
@@ -130,6 +133,39 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
     });
 
     // Wait 2 s so the user can see the feedback, then auto-advance
+    Future.delayed(const Duration(seconds: 2), _autoAdvance);
+  }
+
+  /// Called by FillBlanksWidget when the user taps an option.
+  void _handleFillBlankAnswer(int index) => _handleAnswerTap(index);
+
+  /// Called by MatchPairsWidget / SentenceRearrangeWidget when done.
+  void _handleComplexAnswer(Map<String, dynamic> data) {
+    if (_isAnswerChecked || _isAutoAdvancing) return;
+
+    _countdownTimer?.cancel();
+    _stopwatch.stop();
+    final elapsed = _stopwatch.elapsed.inSeconds;
+
+    final quiz = ref.read(dailyQuizProvider).quiz;
+    if (quiz == null) return;
+    final question =
+        quiz.questions[ref.read(dailyQuizProvider).currentQuestionIndex];
+
+    final isCorrect = (data['isCorrect'] as bool?) ?? false;
+
+    _answeredQuestion = question;
+
+    ref
+        .read(dailyQuizProvider.notifier)
+        .answerComplexQuestion(data, isCorrect, elapsed);
+
+    setState(() {
+      _isCorrect = isCorrect;
+      _isAnswerChecked = true;
+      _isAutoAdvancing = true;
+    });
+
     Future.delayed(const Duration(seconds: 2), _autoAdvance);
   }
 
@@ -294,24 +330,8 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
                     _buildQuestionCard(question, theme),
                     const SizedBox(height: 24),
 
-                    // Option cards
-                    ...question.options.asMap().entries.map((entry) {
-                      return _buildOptionCard(
-                        entry.key,
-                        entry.value,
-                        question,
-                        theme,
-                        isDark,
-                      );
-                    }),
-
-                    // Timeout message
-                    if (_isTimeOut) _buildTimeoutMessage(theme),
-
-                    // Explanation panel (not shown for timeouts – the timeout
-                    // message is shown instead)
-                    if (_isAnswerChecked && !_isTimeOut)
-                      _buildExplanationPanel(question, theme, isDark),
+                    // Interactive answer area (differs by questionType)
+                    _buildAnswerArea(question, theme, isDark),
                   ],
                 ),
               ),
@@ -394,8 +414,26 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
 
   /// Row with the question-type badge on the left.
   Widget _buildHeaderRow(DailyQuizQuestion question) {
-    final typeLabel =
-        question.type == 'vocabulary' ? '📖 Vocabulary' : '📝 Grammar';
+    String icon;
+    String label;
+    switch (question.questionType) {
+      case QuestionType.fillBlanks:
+        icon = '✍️';
+        label = 'Fill Blanks';
+        break;
+      case QuestionType.matchPairs:
+        icon = '🔗';
+        label = 'Match Pairs';
+        break;
+      case QuestionType.sentenceRearrange:
+        icon = '🔄';
+        label = 'Rearrange';
+        break;
+      case QuestionType.multipleChoice:
+      default:
+        icon = question.type == 'vocabulary' ? '📖' : '📝';
+        label = question.type == 'vocabulary' ? 'Vocabulary' : 'Grammar';
+    }
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -407,7 +445,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
             border: Border.all(color: AppColors.primary),
           ),
           child: Text(
-            typeLabel,
+            '$icon $label',
             style: const TextStyle(
               color: AppColors.primary,
               fontWeight: FontWeight.w600,
@@ -441,6 +479,81 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
         textAlign: TextAlign.center,
       ),
     );
+  }
+
+  /// Route to the correct answer-area widget based on [questionType].
+  Widget _buildAnswerArea(
+      DailyQuizQuestion question, ThemeData theme, bool isDark) {
+    switch (question.questionType) {
+      case QuestionType.fillBlanks:
+        return Column(
+          children: [
+            FillBlanksWidget(
+              question: question,
+              selectedAnswer: _selectedAnswer,
+              isAnswered: _isAnswerChecked,
+              onAnswer: _handleFillBlankAnswer,
+            ),
+            if (_isTimeOut) _buildTimeoutMessage(theme),
+            if (_isAnswerChecked && !_isTimeOut)
+              _buildExplanationPanel(question, theme, isDark),
+          ],
+        );
+
+      case QuestionType.matchPairs:
+        return Column(
+          children: [
+            SizedBox(
+              height: 320,
+              child: MatchPairsWidget(
+                question: question,
+                isAnswered: _isAnswerChecked,
+                onAnswer: _handleComplexAnswer,
+              ),
+            ),
+            if (_isTimeOut) _buildTimeoutMessage(theme),
+            if (_isAnswerChecked && !_isTimeOut)
+              _buildExplanationPanel(question, theme, isDark),
+          ],
+        );
+
+      case QuestionType.sentenceRearrange:
+        return Column(
+          children: [
+            SentenceRearrangeWidget(
+              question: question,
+              isAnswered: _isAnswerChecked,
+              onAnswer: _handleComplexAnswer,
+            ),
+            if (_isTimeOut) _buildTimeoutMessage(theme),
+            if (_isAnswerChecked && !_isTimeOut)
+              _buildExplanationPanel(question, theme, isDark),
+          ],
+        );
+
+      case QuestionType.multipleChoice:
+      default:
+        return Column(
+          children: [
+            const SizedBox(height: 24),
+            // MCQ option cards
+            ...question.options.asMap().entries.map((entry) {
+              return _buildOptionCard(
+                entry.key,
+                entry.value,
+                question,
+                theme,
+                isDark,
+              );
+            }),
+            // Timeout message
+            if (_isTimeOut) _buildTimeoutMessage(theme),
+            // Explanation panel
+            if (_isAnswerChecked && !_isTimeOut)
+              _buildExplanationPanel(question, theme, isDark),
+          ],
+        );
+    }
   }
 
   /// An interactive option card (A/B/C/D).
