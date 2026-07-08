@@ -6,10 +6,8 @@ import '../models/daily_quiz_model.dart';
 import 'daily_quiz_play_screen.dart';
 import 'daily_quiz_result_screen.dart';
 
-/// Daily Quiz landing screen — shows today's quiz status,
+/// Daily Quiz landing screen - shows today's quiz status,
 /// leaderboard preview, and action buttons.
-///
-/// Replaces the legacy DailyQuestScreen for the quiz feature.
 class DailyQuizScreen extends ConsumerWidget {
   const DailyQuizScreen({super.key});
 
@@ -43,12 +41,10 @@ class DailyQuizScreen extends ConsumerWidget {
     DailyQuiz? quiz,
     DailyQuizState quizState,
   ) {
-    // Loading state
     if (quizState.isLoading) {
       return const Center(child: CircularProgressIndicator());
     }
 
-    // Error state
     if (quizState.error != null) {
       return Center(
         child: Padding(
@@ -81,38 +77,25 @@ class DailyQuizScreen extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // 1. Header with date
           _buildHeader(quiz, theme),
           const SizedBox(height: 20),
-
-          // 2. Gradient quiz card — Start / Resume / View Results
           _buildQuizCard(context, ref, quiz, quizState, theme, isDark),
           const SizedBox(height: 24),
-
-          // 3. Progress bar (only when quiz is in progress)
           if (quiz != null && !quiz.isCompleted && quizState.isPlaying)
             _buildProgressSection(quiz, theme),
           if (quiz != null && !quiz.isCompleted && quizState.isPlaying)
             const SizedBox(height: 24),
-
-          // 4. Leaderboard preview
           _buildLeaderboardPreview(quizState, theme, isDark),
           const SizedBox(height: 24),
-
-          // 5. Tip about speed scoring
           if (quiz == null || !quiz.isCompleted) _buildTipSection(theme),
         ],
       ),
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Header — date + question count
-  // ---------------------------------------------------------------------------
   Widget _buildHeader(DailyQuiz? quiz, ThemeData theme) {
     final now = DateTime.now();
-    final dateStr =
-        '${now.day} ${_monthName(now.month)} ${now.year}';
+    final dateStr = '${now.day} ${_monthName(now.month)} ${now.year}';
     return Row(
       children: [
         Container(
@@ -144,9 +127,6 @@ class DailyQuizScreen extends ConsumerWidget {
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Main quiz card — gradient container with action button
-  // ---------------------------------------------------------------------------
   Widget _buildQuizCard(
     BuildContext context,
     WidgetRef ref,
@@ -167,13 +147,14 @@ class DailyQuizScreen extends ConsumerWidget {
 
     if (quiz == null) {
       title = 'No Quiz Yet';
-      subtitle = 'Load today\'s quiz to get started';
+      subtitle = "Load today's quiz to get started";
       icon = Icons.quiz_outlined;
       buttonLabel = 'Generate Quiz';
       onPressed = () => ref.read(dailyQuizProvider.notifier).loadTodayQuiz();
     } else if (isComplete) {
       title = 'Quiz Complete! 🎉';
-      subtitle = 'You scored ${quiz.score} pts · ${quiz.correctCount}/${quiz.totalQuestions} correct';
+      subtitle =
+          'You scored ${quiz.score} pts · ${quiz.correctCount}/${quiz.totalQuestions} correct';
       icon = Icons.celebration;
       buttonLabel = 'View Results';
       onPressed = () => Navigator.push(
@@ -182,7 +163,8 @@ class DailyQuizScreen extends ConsumerWidget {
           );
     } else if (canResume) {
       title = 'Quiz in Progress';
-      subtitle = 'Question ${quiz.answeredCount + 1} of ${quiz.totalQuestions}';
+      subtitle =
+          'Question ${quiz.answeredCount + 1} of ${quiz.totalQuestions}';
       icon = Icons.play_circle_filled;
       buttonLabel = 'Resume Quiz';
       onPressed = () => Navigator.push(
@@ -190,8 +172,7 @@ class DailyQuizScreen extends ConsumerWidget {
             MaterialPageRoute(builder: (_) => const DailyQuizPlayScreen()),
           );
     } else {
-      // canStart
-      title = 'Today\'s Quiz';
+      title = "Today's Quiz";
       subtitle = '${quiz.totalQuestions} questions · Speed scoring';
       icon = Icons.quiz_outlined;
       buttonLabel = 'Start Quiz';
@@ -231,7 +212,6 @@ class DailyQuizScreen extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Icon + title row
           Row(
             children: [
               Icon(icon, color: Colors.white, size: 32),
@@ -253,8 +233,6 @@ class DailyQuizScreen extends ConsumerWidget {
             subtitle,
             style: const TextStyle(color: Colors.white70, fontSize: 14),
           ),
-
-          // Action button (hidden for completed state — use View Results)
           if (quiz != null && !isComplete) ...[
             const SizedBox(height: 20),
             SizedBox(
@@ -285,9 +263,6 @@ class DailyQuizScreen extends ConsumerWidget {
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Progress bar — shown while quiz is in progress
-  // ---------------------------------------------------------------------------
   Widget _buildProgressSection(DailyQuiz quiz, ThemeData theme) {
     final progress = quiz.totalQuestions > 0
         ? quiz.answeredCount / quiz.totalQuestions
@@ -326,9 +301,6 @@ class DailyQuizScreen extends ConsumerWidget {
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Leaderboard preview
-  // ---------------------------------------------------------------------------
   Widget _buildLeaderboardPreview(
     DailyQuizState quizState,
     ThemeData theme,
@@ -402,7 +374,6 @@ class DailyQuizScreen extends ConsumerWidget {
                 padding: const EdgeInsets.symmetric(vertical: 4),
                 child: Row(
                   children: [
-                    // Rank badge
                     Container(
                       width: 28,
                       height: 28,
@@ -422,7 +393,6 @@ class DailyQuizScreen extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    // Name
                     Expanded(
                       child: Text(
                         entry.userName,
@@ -430,7 +400,6 @@ class DailyQuizScreen extends ConsumerWidget {
                             ?.copyWith(fontWeight: FontWeight.w500),
                       ),
                     ),
-                    // Score
                     Text(
                       '${entry.score} pts',
                       style: theme.textTheme.bodySmall?.copyWith(
@@ -447,9 +416,6 @@ class DailyQuizScreen extends ConsumerWidget {
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Tip section — speed scoring explanation
-  // ---------------------------------------------------------------------------
   Widget _buildTipSection(ThemeData theme) {
     return Container(
       width: double.infinity,
@@ -492,9 +458,6 @@ class DailyQuizScreen extends ConsumerWidget {
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Helpers
-  // ---------------------------------------------------------------------------
   String _monthName(int month) {
     const names = [
       'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
