@@ -36,6 +36,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
   bool _isCorrect = false;
   bool _isTimeOut = false;
   bool _isAutoAdvancing = false;
+  DailyQuizQuestion? _answeredQuestion; // freeze question during feedback
 
   // ---------------------------------------------------------------------------
   // Lifecycle
@@ -71,6 +72,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
     _isCorrect = false;
     _isTimeOut = false;
     _isAutoAdvancing = false;
+    _answeredQuestion = null;
     _remainingSeconds = _timeLimit;
 
     _stopwatch..reset()..start();
@@ -240,7 +242,11 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
       );
     }
 
-    final question = quiz.questions[quizState.currentQuestionIndex];
+    // Use answered question for feedback display (provider advances index)
+  final displayQuestion = _isAnswerChecked && _answeredQuestion != null
+      ? _answeredQuestion!
+      : quiz.questions[quizState.currentQuestionIndex];
+  final question = displayQuestion;
 
     // --- Main scaffold -------------------------------------------------------
     return PopScope(
