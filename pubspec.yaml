@@ -87,10 +87,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-assets:
-  - assets/json/daily_quiz/
-  - assets/json/vocabulary/
-  - assets/json/vocabulary/Beginner/
+  assets:
+    - assets/json/daily_quiz/
+    - assets/json/vocabulary/
+    - assets/json/vocabulary/Beginner/
     - assets/json/vocabulary/Intermediate/
     - assets/json/vocabulary/Advanced/
     - assets/json/vocabulary_manifest.json
@@ -176,7 +176,6 @@ assets:
     - assets/audio/
     - assets/icon/
     - assets/pdfs/
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -211,3 +210,4 @@ flutter_launcher_icons:
   min_sdk_android: 21
   adaptive_icon_background: "#1A237E"
   adaptive_icon_foreground: "assets/icon/app_icon.png"
+
