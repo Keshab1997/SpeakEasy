@@ -1,0 +1,724 @@
+{
+  "questions": [
+    {
+      "id": "dq_001",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the meaning of 'Abundant'?",
+      "bangla": "'Abundant' শব্দটির অর্থ কী?",
+      "options": [
+        "সীমিত (Limited)",
+        "প্রচুর (Plentiful)",
+        "দুর্লভ (Rare)",
+        "ক্ষীণ (Weak)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Abundant' means 'প্রচুর' or 'plentiful' — something available in large quantity.",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_002",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the English word for 'সহানুভূতি'?",
+      "bangla": "'সহানুভূতি'-এর ইংরেজি শব্দ কী?",
+      "options": [
+        "Sympathy",
+        "Apathy",
+        "Empathy",
+        "Antipathy"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'সহানুভূতি' is 'Sympathy' — feelings of pity and sorrow for someone else's misfortune.",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_003",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Choose the correct sentence:",
+      "bangla": "সঠিক বাক্যটি নির্বাচন করুন:",
+      "options": [
+        "He go to school everyday.",
+        "He goes to school everyday.",
+        "He going to school everyday.",
+        "He gone to school everyday."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Third-person singular subject 'He' takes 'goes' (verb + es) in Present Indefinite Tense.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_004",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Which one is the Past Tense of 'Write'?",
+      "bangla": "'Write'-এর Past Tense কোনটি?",
+      "options": [
+        "Wrote",
+        "Written",
+        "Writing",
+        "Writes"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Write → Wrote (Past Tense) → Written (Past Participle).",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_005",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask 'আপনি কেমন আছেন?' in English?",
+      "bangla": "'আপনি কেমন আছেন?' ইংরেজিতে কীভাবে জিজ্ঞাসা করবেন?",
+      "options": [
+        "What are you?",
+        "How are you?",
+        "Where are you?",
+        "Who are you?"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'How are you?' is the standard English greeting to ask about someone's well-being.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_006",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "What is the English translation of 'আমি ক্ষুধার্ত'?",
+      "bangla": "'আমি ক্ষুধার্ত'-এর ইংরেজি অনুবাদ কী?",
+      "options": [
+        "I am thirsty.",
+        "I am hungry.",
+        "I am tired.",
+        "I am sleepy."
+      ],
+      "correctAnswer": 1,
+      "explanation": "'আমি ক্ষুধার্ত' = 'I am hungry'. 'ক্ষুধা' means hunger.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_007",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Resilient' mean?",
+      "bangla": "'Resilient' শব্দটির অর্থ কী?",
+      "options": [
+        "কোমল (Soft)",
+        "সহনশীল (Tough / Adaptable)",
+        "ভঙ্গুর (Fragile)",
+        "স্থির (Static)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Resilient' means able to recover quickly from difficulties — 'সহনশীল' বা 'প্রতিকূলতা কাটিয়ে ওঠার ক্ষমতা'।",
+      "timeLimit": 30,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_008",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'She ___ a beautiful song right now.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'She ___ a beautiful song right now.'",
+      "options": [
+        "sings",
+        "is singing",
+        "sang",
+        "will sing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Right now' indicates Present Continuous Tense → 'is singing'.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_009",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you say 'এটা কত টাকা?' in English?",
+      "bangla": "'এটা কত টাকা?' ইংরেজিতে কীভাবে বলবেন?",
+      "options": [
+        "How much is this?",
+        "How many is this?",
+        "What price this?",
+        "This cost how much?"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'How much is this?' is the correct way to ask the price of something.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_010",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the Bangla meaning of 'Extraordinary'?",
+      "bangla": "'Extraordinary'-এর বাংলা অর্থ কী?",
+      "options": [
+        "সাধারণ (Ordinary)",
+        "অসাধারণ (Remarkable)",
+        "মধ্যম (Average)",
+        "নিকৃষ্ট (Inferior)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Extraordinary' means very unusual or remarkable → 'অসাধারণ'। Extra (বাইরে) + Ordinary (সাধারণ) = সাধারণের বাইরে।",
+      "timeLimit": 25,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_011",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Which preposition fits? 'I will meet you ___ Monday.'",
+      "bangla": "কোন preposition বসবে? 'I will meet you ___ Monday.'",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "by"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Days of the week take the preposition 'on' — 'on Monday', 'on Friday', etc.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_012",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the opposite of 'Optimistic'?",
+      "bangla": "'Optimistic'-এর বিপরীত শব্দ কী?",
+      "options": [
+        "Positive",
+        "Cheerful",
+        "Pessimistic",
+        "Hopeful"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Optimistic' (আশাবাদী) এর বিপরীত 'Pessimistic' (হতাশাবাদী)।",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_013",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Choose the correct passive form: 'The cat ___ by the dog.'",
+      "bangla": "সঠিক passive form নির্বাচন করুন: 'The cat ___ by the dog.'",
+      "options": [
+        "was chased",
+        "was chasing",
+        "is chase",
+        "were chased"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Passive voice: Subject (cat) + was + past participle (chased) + by agent.",
+      "timeLimit": 30,
+      "difficulty": "hard",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_014",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "What is 'আমি হারিয়ে গেছি' in English?",
+      "bangla": "'আমি হারিয়ে গেছি'-এর ইংরেজি কী?",
+      "options": [
+        "I am lost.",
+        "I am missing.",
+        "I am gone.",
+        "I am confused."
+      ],
+      "correctAnswer": 0,
+      "explanation": "'I am lost' is the correct expression for 'আমি হারিয়ে গেছি'.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_015",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Innovative' mean?",
+      "bangla": "'Innovative' শব্দটির অর্থ কী?",
+      "options": [
+        "প্রচলিত (Traditional)",
+        "অভিনব (Creative / New)",
+        "পুরাতন (Old)",
+        "সাধারণ (Common)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Innovative' means featuring new methods or ideas — 'অভিনব' বা 'নতুনত্বপূর্ণ'।",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_016",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Identify the correct sentence:",
+      "bangla": "সঠিক বাক্যটি চিহ্নিত করুন:",
+      "options": [
+        "If I was you, I would go.",
+        "If I were you, I would go.",
+        "If I am you, I would go.",
+        "If I be you, I would go."
+      ],
+      "correctAnswer": 1,
+      "explanation": "In 'If I were you' (subjunctive mood), 'were' is used instead of 'was' for unreal situations.",
+      "timeLimit": 30,
+      "difficulty": "hard",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_017",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you say 'আমি তোমাকে মিস করছি' in English?",
+      "bangla": "'আমি তোমাকে মিস করছি'-এর ইংরেজি কী?",
+      "options": [
+        "I miss you.",
+        "I am missing you.",
+        "I missed you.",
+        "Both A and B"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'I miss you' (Present) and 'I am missing you' (Present Continuous) both are correct for 'আমি তোমাকে মিস করছি'।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_018",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the English word for 'সুযোগ'?",
+      "bangla": "'সুযোগ'-এর ইংরেজি শব্দ কী?",
+      "options": [
+        "Opportunity",
+        "Ability",
+        "Capacity",
+        "Possibility"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'সুযোগ' = 'Opportunity' — a set of circumstances making something possible.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_019",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Choose the correct article: '___ sun rises in the east.'",
+      "bangla": "সঠিক article নির্বাচন করুন: '___ sun rises in the east.'",
+      "options": [
+        "A",
+        "An",
+        "The",
+        "No article"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Unique celestial bodies take 'The' — The sun, The moon, The earth.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_020",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "What is 'আমার জ্বর হয়েছে' in English?",
+      "bangla": "'আমার জ্বর হয়েছে'-এর ইংরেজি কী?",
+      "options": [
+        "I have cold.",
+        "I have fever.",
+        "I have cough.",
+        "I have headache."
+      ],
+      "correctAnswer": 1,
+      "explanation": "'আমার জ্বর হয়েছে' = 'I have fever' or 'I have a fever'.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_021",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the synonym of 'Brave'?",
+      "bangla": "'Brave'-এর সমার্থক শব্দ কী?",
+      "options": [
+        "Cowardly",
+        "Timid",
+        "Courageous",
+        "Fearful"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Brave' and 'Courageous' both mean 'সাহসী' — ready to face danger or pain.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_022",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Which is correct? 'Neither the teacher nor the students ___ present.'",
+      "bangla": "কোনটি সঠিক? 'Neither the teacher nor the students ___ present.'",
+      "options": [
+        "was",
+        "were",
+        "is",
+        "has been"
+      ],
+      "correctAnswer": 1,
+      "explanation": "With 'neither...nor', the verb agrees with the nearest subject — 'students' (plural) → 'were'.",
+      "timeLimit": 30,
+      "difficulty": "hard",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_023",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you invite someone saying 'আমার সাথে চলো' in English?",
+      "bangla": "'আমার সাথে চলো'-এর ইংরেজি কী?",
+      "options": [
+        "Come with me.",
+        "Go with me.",
+        "Walk with me.",
+        "Run with me."
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Come with me' = 'আমার সাথে এসো/চলো' — a friendly invitation.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_024",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is 'Determination' in Bangla?",
+      "bangla": "'Determination'-এর বাংলা অর্থ কী?",
+      "options": [
+        "দ্বিধা (Hesitation)",
+        "সংকল্প (Resolve)",
+        "উদাসীনতা (Indifference)",
+        "অলসতা (Laziness)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Determination' means firmness of purpose → 'সংকল্প' বা 'দৃঢ় প্রতিজ্ঞা'।",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_025",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'I have been studying English ___ 3 years.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'I have been studying English ___ 3 years.'",
+      "options": [
+        "since",
+        "for",
+        "from",
+        "during"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'For' is used with a duration of time (3 years). 'Since' is used with a starting point.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_026",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Procrastinate' mean?",
+      "bangla": "'Procrastinate' শব্দটির অর্থ কী?",
+      "options": [
+        "তাড়াতাড়ি করা (Hurry)",
+        "বিলম্ব করা (Delay)",
+        "পরিকল্পনা করা (Plan)",
+        "সম্পন্ন করা (Complete)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Procrastinate' means to delay or postpone action — 'বিলম্ব করা' বা 'কাজ ফেলনা'।",
+      "timeLimit": 30,
+      "difficulty": "hard",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_027",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "What is the English for 'আমি দুঃখিত' when expressing sympathy?",
+      "bangla": "সহানুভূতি জানাতে 'আমি দুঃখিত'-এর ইংরেজি কী?",
+      "options": [
+        "I am sorry.",
+        "I apologize.",
+        "I regret.",
+        "Excuse me."
+      ],
+      "correctAnswer": 0,
+      "explanation": "'I am sorry' is used both for apologizing and expressing sympathy.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_028",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Identify the adverb: 'She speaks English very fluently.'",
+      "bangla": "Adverb চিহ্নিত করুন: 'She speaks English very fluently.'",
+      "options": [
+        "Speaks",
+        "English",
+        "Very",
+        "Fluently"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Fluently' is the adverb — it describes HOW she speaks. 'Very' is also an adverb (of degree) but 'fluently' is the main adverb here.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_029",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the English word for 'পরিশ্রমী'?",
+      "bangla": "'পরিশ্রমী'-এর ইংরেজি শব্দ কী?",
+      "options": [
+        "Lazy",
+        "Hardworking",
+        "Careless",
+        "Thoughtful"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'পরিশ্রমী' = 'Hardworking' or 'Diligent' — someone who works with energy and commitment.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_030",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you say 'আমি তোমার সাথে একমত' in English?",
+      "bangla": "'আমি তোমার সাথে একমত'-এর ইংরেজি কী?",
+      "options": [
+        "I disagree with you.",
+        "I agree with you.",
+        "I argue with you.",
+        "I discuss with you."
+      ],
+      "correctAnswer": 1,
+      "explanation": "'I agree with you' = 'আমি তোমার সাথে একমত' — expressing agreement.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_031",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the meaning of 'Gratitude'?",
+      "bangla": "'Gratitude'-এর অর্থ কী?",
+      "options": [
+        "অভিমান (Resentment)",
+        "কৃতজ্ঞতা (Thankfulness)",
+        "অহংকার (Pride)",
+        "হিংসা (Jealousy)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Gratitude' = 'কৃতজ্ঞতা' — the quality of being thankful.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_032",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Which is the correct superlative form? 'She is the ___ girl in the class.'",
+      "bangla": "সঠিক superlative form কোনটি? 'She is the ___ girl in the class.'",
+      "options": [
+        "more intelligent",
+        "most intelligent",
+        "intelligentest",
+        "much intelligent"
+      ],
+      "correctAnswer": 1,
+      "explanation": "For multi-syllable adjectives, 'most' + adjective forms the superlative: 'most intelligent'.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_033",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "What does 'আমি জানি না' mean in English?",
+      "bangla": "'আমি জানি না'-এর ইংরেজি কী?",
+      "options": [
+        "I don't care.",
+        "I don't know.",
+        "I don't understand.",
+        "I don't remember."
+      ],
+      "correctAnswer": 1,
+      "explanation": "'I don't know' = 'আমি জানি না'।",
+      "timeLimit": 10,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_034",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the antonym of 'Generous'?",
+      "bangla": "'Generous'-এর বিপরীত শব্দ কী?",
+      "options": [
+        "Kind",
+        "Selfish",
+        "Charitable",
+        "Liberal"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Generous' (উদার) এর বিপরীত 'Selfish' (স্বার্থপর)।",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_035",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Choose the correct conditional: 'If it rains, I ___ stay home.'",
+      "bangla": "সঠিক conditional নির্বাচন করুন: 'If it rains, I ___ stay home.'",
+      "options": [
+        "will",
+        "would",
+        "would have",
+        "am"
+      ],
+      "correctAnswer": 0,
+      "explanation": "First Conditional: If + Present Simple → will + base verb. 'If it rains, I will stay home.'",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_036",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Reluctant' mean?",
+      "bangla": "'Reluctant' শব্দটির অর্থ কী?",
+      "options": [
+        "উৎসুক (Eager)",
+        "অনিচ্ছুক (Unwilling)",
+        "খুশি (Happy)",
+        "প্রস্তুত (Ready)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Reluctant' means hesitating or unwilling → 'অনিচ্ছুক'।",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_037",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you say 'ধন্যবাদ' in a formal way in English?",
+      "bangla": "'ধন্যবাদ'-কে ইংরেজিতে formal উপায়ে কীভাবে বলবেন?",
+      "options": [
+        "Thanks (Informal)",
+        "Thank you (Formal)",
+        "Cheers",
+        "Appreciate it"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Thank you' is the standard formal expression. 'Thanks' is more casual.",
+      "timeLimit": 10,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_038",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Which sentence uses 'since' correctly?",
+      "bangla": "কোন বাক্যে 'since' সঠিকভাবে ব্যবহৃত হয়েছে?",
+      "options": [
+        "I am working here since 2020.",
+        "I have been working here since 2020.",
+        "I worked here since 2020.",
+        "I work here since 2020."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Present Perfect Continuous (have been working) + since + starting point (2020) is the correct structure.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_039",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the English word for 'নম্র'?",
+      "bangla": "'নম্র'-এর ইংরেজি শব্দ কী?",
+      "options": [
+        "Rude",
+        "Proud",
+        "Humble",
+        "Arrogant"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'নম্র' = 'Humble' or 'Polite' — having a modest view of one's importance.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_040",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "What is 'আপনার নাম কী?' in English?",
+      "bangla": "'আপনার নাম কী?'-এর ইংরেজি কী?",
+      "options": [
+        "What is your name?",
+        "What are you?",
+        "Who are you?",
+        "How is your name?"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'What is your name?' is the correct translation of 'আপনার নাম কী?'",
+      "timeLimit": 10,
+      "difficulty": "easy",
+      "category": "conversation"
+    }
+  ]
+}
