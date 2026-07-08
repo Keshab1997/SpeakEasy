@@ -1,8 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../providers/auth_provider.dart';
 import '../../../providers/game/xp_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../models/daily_quiz_model.dart';
 import '../services/daily_quiz_service.dart';
+import '../services/daily_quiz_leaderboard_service.dart';
 
 // ---------------------------------------------------------------------------
 // DailyQuizLeaderboardEntry
@@ -77,9 +79,10 @@ class DailyQuizState {
 
 class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   final DailyQuizService _service;
+  final DailyQuizLeaderboardService _leaderboardService;
   final Ref _ref;
 
-  DailyQuizNotifier(this._service, this._ref)
+  DailyQuizNotifier(this._service, this._leaderboardService, this._ref)
       : super(const DailyQuizState()) {
     _init();
   }
@@ -101,6 +104,15 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
         isPlaying: saved.startedAt != null && !saved.isCompleted,
         currentQuestionIndex: saved.answers.length,
       );
+      // If already completed, fetch leaderboard data in the background.
+      if (saved.isCompleted) {
+        _fetchLeaderboard(saved).then((data) {
+          state = state.copyWith(
+            topEntries: data.$1,
+            leaderboardRank: data.$2,
+          );
+        });
+      }
     } else {
       // No saved quiz for today → generate one asynchronously.
       // We intentionally avoid setting [isLoading] here so the initial
@@ -130,12 +142,55 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   Future<void> loadTodayQuiz() async {
     state = state.copyWith(isLoading: true, clearError: true);
     try {
+      // 1. If state already has today's quiz, just refresh leaderboard and bail.
+      final current = state.quiz;
+      if (current != null && current.date == _todayDateString()) {
+        state = state.copyWith(isLoading: false);
+        if (current.isCompleted) {
+          _fetchLeaderboard(current).then((data) {
+            state = state.copyWith(
+              topEntries: data.$1,
+              leaderboardRank: data.$2,
+            );
+          });
+        }
+        return;
+      }
+
+      // 2. Try loading from Hive cache.
+      final cached = _service.loadSavedQuiz();
+      if (cached != null) {
+        _service.saveQuiz(cached);
+        final isPlaying = cached.startedAt != null && !cached.isCompleted;
+        state = DailyQuizState(
+          quiz: cached,
+          isPlaying: isPlaying,
+          currentQuestionIndex: cached.answers.length,
+        );
+        if (cached.isCompleted) {
+          _fetchLeaderboard(cached).then((data) {
+            state = state.copyWith(
+              topEntries: data.$1,
+              leaderboardRank: data.$2,
+            );
+          });
+        }
+        return;
+      }
+
+      // 3. Nothing cached → generate a fresh quiz for today.
       final quiz = await _service.generateTodayQuiz();
       _service.saveQuiz(quiz);
-      state = DailyQuizState(quiz: quiz);
+      state = DailyQuizState(quiz: quiz, isPlaying: false);
     } catch (e) {
       state = state.copyWith(isLoading: false, error: e.toString());
     }
+  }
+
+  /// Returns today's date string in the same format used by the service.
+  String _todayDateString() {
+    final now = DateTime.now();
+    return '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
   }
 
   /// Mark the quiz as started so the timer / progress tracking begins.
@@ -222,7 +277,8 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     }
   }
 
-  /// Finalise the quiz: calculate the score, award XP/coins, and persist.
+  /// Finalise the quiz: calculate the score, award XP/coins, persist,
+  /// upload to leaderboard, and fetch top entries.
   ///
   /// This is called internally when the last question is answered, but can
   /// also be invoked manually (e.g. if the user prematurely ends the quiz).
@@ -237,10 +293,69 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     await _ref.read(xpProvider.notifier).addXP(completed.earnedXP);
     await _ref.read(coinProvider.notifier).addCoins(completed.earnedCoins);
 
+    // Upload to leaderboard and fetch updated rankings.
+    final leaderboardData = await _fetchLeaderboard(completed);
+
     state = DailyQuizState(
       quiz: completed,
       isPlaying: false,
+      topEntries: leaderboardData.$1,
+      leaderboardRank: leaderboardData.$2,
     );
+  }
+
+  /// Upload today's result to the daily leaderboard, then fetch top entries
+  /// and the current user's rank.
+  ///
+  /// Returns a record of (topEntries, leaderboardRank).
+	  Future<(List<DailyQuizLeaderboardEntry>, int?)> _fetchLeaderboard(
+	      DailyQuiz quiz) async {
+	    try {
+	      final authUser = _ref.read(authProvider).asData?.value;
+	      if (authUser == null) {
+        return (<DailyQuizLeaderboardEntry>[], null);
+      }
+
+      await _leaderboardService.uploadResult(
+        userId: authUser.id,
+        userName: authUser.name.isNotEmpty ? authUser.name : 'User',
+        date: quiz.date,
+        score: quiz.score,
+        totalTime: quiz.totalTime,
+        correctCount: quiz.correctCount,
+      );
+
+      final top =
+          await _leaderboardService.fetchTopEntries(quiz.date, limit: 10);
+      final rank =
+          await _leaderboardService.getUserRank(authUser.id, quiz.date);
+
+      return (top, rank);
+	    } catch (_) {
+      return (<DailyQuizLeaderboardEntry>[], null);
+    }
+  }
+
+  /// Restore quiz state from the Hive cache (if available).
+  ///
+  /// Useful when the provider state was cleared but the quiz is still cached.
+  void restoreFromCache() {
+    final saved = _service.loadSavedQuiz();
+    if (saved != null) {
+      state = DailyQuizState(
+        quiz: saved,
+        isPlaying: saved.startedAt != null && !saved.isCompleted,
+        currentQuestionIndex: saved.answers.length,
+      );
+      if (saved.isCompleted) {
+        _fetchLeaderboard(saved).then((data) {
+          state = state.copyWith(
+            topEntries: data.$1,
+            leaderboardRank: data.$2,
+          );
+        });
+      }
+    }
   }
 
   /// Reset the provider back to the default (empty) state.
@@ -255,5 +370,9 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
 
 final dailyQuizProvider =
     StateNotifierProvider<DailyQuizNotifier, DailyQuizState>((ref) {
-  return DailyQuizNotifier(DailyQuizService(), ref);
+  return DailyQuizNotifier(
+    DailyQuizService(),
+    DailyQuizLeaderboardService(),
+    ref,
+  );
 });

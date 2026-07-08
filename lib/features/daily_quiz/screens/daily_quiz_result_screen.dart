@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
-import '../../game/screens/leaderboard_screen.dart';
 import '../providers/daily_quiz_provider.dart';
+import 'daily_quiz_leaderboard_screen.dart';
 
 class DailyQuizResultScreen extends ConsumerWidget {
   const DailyQuizResultScreen({super.key});
@@ -200,7 +200,8 @@ class DailyQuizResultScreen extends ConsumerWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const LeaderboardScreen(),
+                          builder: (_) =>
+                              const DailyQuizLeaderboardScreen(),
                         ),
                       );
                     },
@@ -227,8 +228,8 @@ class DailyQuizResultScreen extends ConsumerWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      ref.read(dailyQuizProvider.notifier).reset();
-                      Navigator.of(context).popUntil((route) => route.isFirst);
+                      Navigator.of(context)
+                          .popUntil((route) => route.isFirst);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,

@@ -116,7 +116,10 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
         quiz.questions[ref.read(dailyQuizProvider).currentQuestionIndex];
     final isCorrect = index == question.correctAnswer;
 
-    // Record the answer via provider
+    // Freeze the current question BEFORE provider advances the index
+    _answeredQuestion = question;
+
+    // Record the answer via provider (this advances currentQuestionIndex)
     ref.read(dailyQuizProvider.notifier).answerQuestion(index, elapsed);
 
     setState(() {
@@ -136,6 +139,13 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
 
     _stopwatch.stop();
     final elapsed = _stopwatch.elapsed.inSeconds;
+
+    // Freeze the current question BEFORE provider advances the index
+    final quiz = ref.read(dailyQuizProvider).quiz;
+    if (quiz != null) {
+      _answeredQuestion =
+          quiz.questions[ref.read(dailyQuizProvider).currentQuestionIndex];
+    }
 
     // Record the timeout answer via provider
     ref.read(dailyQuizProvider.notifier).timeoutQuestion(elapsed);

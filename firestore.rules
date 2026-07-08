@@ -185,6 +185,18 @@ service cloud.firestore {
     }
 
     // ═══════════════════════════════════════════════
+    //  DAILY QUIZ LEADERBOARD
+    //  Structure: daily_quiz_leaderboard/{date}/entries/{userId}
+    // ═══════════════════════════════════════════════
+
+    match /daily_quiz_leaderboard/{date}/entries/{userId} {
+      allow read: if isAuthenticated();
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId);
+      allow delete: if isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
     //  DENY ALL OTHER COLLECTIONS
     // ═══════════════════════════════════════════════
 
