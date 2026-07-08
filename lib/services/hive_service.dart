@@ -18,7 +18,7 @@ class HiveService {
   static const String _notificationHistoryBox = 'notification_history';
   static const String _mockTestProgressBox = 'mock_test_progress';
   static const String _aiSavedVocabBox = 'ai_saved_vocab';
-  static const String _dailyQuestCacheBox = 'daily_quest_cache';
+  
   static const String _dailyQuizCacheBox = 'daily_quiz_cache';
 
   static Future<void> initialize() async {
@@ -39,7 +39,7 @@ class HiveService {
     await Hive.openBox(_notificationHistoryBox);
     await Hive.openBox(_mockTestProgressBox);
     await Hive.openBox(_aiSavedVocabBox);
-    await Hive.openBox(_dailyQuestCacheBox);
+    
     await Hive.openBox(_dailyQuizCacheBox);
   }
 
@@ -814,9 +814,6 @@ class HiveService {
   }
 
   // ─── Daily Quest Cache ───
-  static Box<dynamic> getDailyQuestBox() {
-    return Hive.box(_dailyQuestCacheBox);
-  }
 
   // ── AI Teacher Saved Vocabulary ──
 
