@@ -2,7 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../providers/daily_quiz_provider.dart';
 
 class DailyQuizLeaderboardService {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseFirestore? _firestore;
+
+  FirebaseFirestore get _db => _firestore ??= FirebaseFirestore.instance;
 
   String get _collectionPath => 'daily_quiz_leaderboard';
 
@@ -14,7 +16,7 @@ class DailyQuizLeaderboardService {
     required int totalTime,
     required int correctCount,
   }) async {
-    await _firestore.collection(_collectionPath).doc(date).collection('entries').doc(userId).set({
+    await _db.collection(_collectionPath).doc(date).collection('entries').doc(userId).set({
       'userId': userId,
       'userName': userName,
       'score': score,
@@ -25,7 +27,7 @@ class DailyQuizLeaderboardService {
   }
 
   Future<List<DailyQuizLeaderboardEntry>> fetchTopEntries(String date, {int limit = 10}) async {
-    final snapshot = await _firestore
+    final snapshot = await _db
         .collection(_collectionPath)
         .doc(date)
         .collection('entries')
@@ -47,7 +49,7 @@ class DailyQuizLeaderboardService {
   }
 
   Future<int?> getUserRank(String userId, String date) async {
-    final snapshot = await _firestore
+    final snapshot = await _db
         .collection(_collectionPath)
         .doc(date)
         .collection('entries')
