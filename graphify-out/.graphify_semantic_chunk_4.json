@@ -1,0 +1,758 @@
+{
+  "nodes": [
+    {
+      "id": "docs_tense_mastery_workflow",
+      "label": "Tense Mastery Module Workflow",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_grammar_module_pattern",
+      "label": "Grammar module JSON-Model-Provider-Screen pattern",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_chapter_model",
+      "label": "TenseChapter.fromJson() model",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_provider",
+      "label": "TenseProvider from grammar_provider pattern",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_module_screens",
+      "label": "Tense list/detail/test screens",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_formula_card_feature",
+      "label": "Formula cards with positive/negative/question variants",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_signal_words_chip_feature",
+      "label": "Signal words chips",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_exercise_tab_feature",
+      "label": "Exercise tabs (Fill/MCQ/Translation/Correction)",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_score_tracking_feature",
+      "label": "Score tracking",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_weak_area_detection_feature",
+      "label": "Weak area detection in final test",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_home_dynamic_todo",
+      "label": "HomeScreen dynamic wiring TODO",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TODO_HOME_DYNAMIC.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_home_screen_wiring",
+      "label": "HomeScreen wired to progress/vocabulary/lesson/achievement providers",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TODO_HOME_DYNAMIC.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_favorite_toggle_fix",
+      "label": "Favorite toggle wired to vocabularyProvider",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TODO_HOME_DYNAMIC.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_mastery_syllabus",
+      "label": "Tense Mastery Module Syllabus - 12 English tenses",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Tense_Mastery_Module_Syllabus.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_learning_goals",
+      "label": "Master 12 English tenses for spoken/writing/interview/daily communication",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Tense_Mastery_Module_Syllabus.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_ai_teacher_improvement_plan",
+      "label": "AI Teacher improvement plan",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ai_teacher_improvement_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_ai_chat_screen",
+      "label": "AiChatScreen with Hive chat history, markdown, STT, API key setup",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ai_teacher_improvement_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_grammar_check_feature",
+      "label": "Grammar check action chip for AI Teacher",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ai_teacher_improvement_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_grammar_correction_mode",
+      "label": "Grammar Correction Mode with stricter system prompt",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ai_teacher_improvement_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_analysis_sync_report",
+      "label": "Hive-Firebase sync analysis report",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_game_sync_dual_upload",
+      "label": "Dual Firebase upload: GameService.saveResult() and ResultScreen._syncGameDataToFirebase()",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_result_screen_incomplete_model",
+      "label": "ResultScreen creates incomplete GameResultModel missing fields",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": "line 66-76",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_mode_screens_hive_only",
+      "label": "Mode screens save to Hive only, no Firebase upload",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_firestore_listeners_stale",
+      "label": "Firestore listeners re-read stale Hive data",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_levels_not_synced",
+      "label": "Game levels never uploaded to Firestore",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_autosync_after_game_dead",
+      "label": "autoSyncAfterGame() defined but never called",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_xp_coin_double_count",
+      "label": "XP/coin double-counting risk for mode screens",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_project_plan",
+      "label": "Project plan for Spoken English Learning App",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tech_stack",
+      "label": "Tech Stack: Flutter, Firebase, Riverpod, Hive, OpenAI/Gemini",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/feature_file.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_app_architecture_principle",
+      "label": "Clean architecture with null safety, responsive UI, modular code",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_future_features",
+      "label": "Future features: AI Speaking Partner, IELTS, Leaderboard, Premium",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_section_status_analysis",
+      "label": "App section status analysis report",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/section_status_analysis.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_fully_functional_game",
+      "label": "Game module with 14 game modes fully functional",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/section_status_analysis.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_duplicate_screens",
+      "label": "Duplicate screens: Game has 2 home screens, Lessons has 2 detail screens",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/section_status_analysis.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_missing_provider_sections",
+      "label": "Missing providers: Mock Test, Homework, Quiz screens exist but no state",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/section_status_analysis.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_route_usage_issue",
+      "label": "19 named routes registered but most screens use direct Navigator.push",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/section_status_analysis.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_achievement_unlock_experience",
+      "label": "Achievement unlock experience enhancement plan",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/plans/2026-07-01-achievement-unlock-experience.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_achievement_unlock_overlay",
+      "label": "AchievementUnlockOverlay widget with confetti + scale animations",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/plans/2026-07-01-achievement-unlock-experience.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_get_rarest_achievement_helper",
+      "label": "getRarestAchievement helper in AchievementService",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/plans/2026-07-01-achievement-unlock-experience.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_confetti_package",
+      "label": "confetti package added for animation",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/plans/2026-07-01-achievement-unlock-experience.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_result_screen_snackbar_replacement",
+      "label": "Replace ResultScreen SnackBar with animated overlay + sound",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/plans/2026-07-01-achievement-unlock-experience.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "docs_tense_chapter_model",
+      "target": "docs_grammar_module_pattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tense_provider",
+      "target": "docs_grammar_module_pattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tense_module_screens",
+      "target": "docs_grammar_module_pattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_formula_card_feature",
+      "target": "docs_tense_mastery_workflow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_signal_words_chip_feature",
+      "target": "docs_tense_mastery_workflow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_exercise_tab_feature",
+      "target": "docs_tense_mastery_workflow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_score_tracking_feature",
+      "target": "docs_tense_mastery_workflow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_weak_area_detection_feature",
+      "target": "docs_tense_mastery_workflow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tense_learning_goals",
+      "target": "docs_tense_mastery_syllabus",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Tense_Mastery_Module_Syllabus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_grammar_check_feature",
+      "target": "docs_ai_chat_screen",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ai_teacher_improvement_plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_grammar_correction_mode",
+      "target": "docs_ai_chat_screen",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ai_teacher_improvement_plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_game_save_dual_upload",
+      "target": "docs_result_screen_incomplete_model",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_mode_screens_hive_only",
+      "target": "docs_game_save_dual_upload",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_firestore_listeners_stale",
+      "target": "docs_analysis_sync_report",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_levels_not_synced",
+      "target": "docs_analysis_sync_report",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_autosync_after_game_dead",
+      "target": "docs_analysis_sync_report",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_result_screen_incomplete_model",
+      "target": "docs_analysis_sync_report",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_line": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_xp_coin_double_count",
+      "target": "docs_analysis_sync_report",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tech_stack",
+      "target": "docs_project_plan",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_future_features",
+      "target": "docs_project_plan",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "docs_tense_module_pattern_hyperedge",
+      "label": "Tense module follows Grammar module pattern",
+      "nodes": [
+        "docs_grammar_module_pattern",
+        "docs_tense_chapter_model",
+        "docs_tense_provider",
+        "docs_tense_module_screens"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md"
+    },
+    {
+      "id": "docs_tense_features_hyperedge",
+      "label": "Tense module new features",
+      "nodes": [
+        "docs_formula_card_feature",
+        "docs_signal_words_chip_feature",
+        "docs_exercise_tab_feature",
+        "docs_score_tracking_feature",
+        "docs_weak_area_detection_feature"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_MASTERY_WORKFLOW.md"
+    },
+    {
+      "id": "docs_sync_issues_hyperedge",
+      "label": "Critical Hive-Firebase sync issues",
+      "nodes": [
+        "docs_result_screen_incomplete_model",
+        "docs_mode_screens_hive_only",
+        "docs_firestore_listeners_stale",
+        "docs_levels_not_synced",
+        "docs_autosync_after_game_dead",
+        "docs_xp_coin_double_count"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/analysis_sync_report.md"
+    },
+    {
+      "id": "docs_achievement_unlock_hyperedge",
+      "label": "Achievement unlock experience enhancement",
+      "nodes": [
+        "docs_achievement_unlock_overlay",
+        "docs_get_rarest_achievement_helper",
+        "docs_confetti_package",
+        "docs_result_screen_snackbar_replacement"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/plans/2026-07-01-achievement-unlock-experience.md"
+    },
+    {
+      "id": "docs_home_dynamic_wiring_hyperedge",
+      "label": "HomeScreen dynamic provider wiring",
+      "nodes": [
+        "docs_home_screen_wiring",
+        "docs_favorite_toggle_fix"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TODO_HOME_DYNAMIC.md"
+    },
+    {
+      "id": "docs_section_status_summary_hyperedge",
+      "label": "Section status analysis: duplication, missing providers, routing",
+      "nodes": [
+        "docs_duplicate_screens",
+        "docs_missing_provider_sections",
+        "docs_route_usage_issue"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/section_status_analysis.md"
+    },
+    {
+      "id": "docs_future_roadmap_hyperedge",
+      "label": "Future features and architecture",
+      "nodes": [
+        "docs_tech_stack",
+        "docs_future_features",
+        "docs_app_architecture_principle",
+        "docs_fully_functional_game"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/plan.md"
+    }
+  ],
+  "input_tokens": 17400,
+  "output_tokens": 5200
+}

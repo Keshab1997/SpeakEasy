@@ -1,0 +1,763 @@
+{
+  "nodes": [
+    {
+      "id": "assets_json_game_readme_game_json_files",
+      "label": "Game JSON Files",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_game_readme_word_match_game",
+      "label": "Word Match Game",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_game_readme_quick_quiz",
+      "label": "Quick Quiz",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_game_readme_fill_in_the_blanks",
+      "label": "Fill in the Blanks",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_game_readme_github_action_workflow",
+      "label": "GitHub Action Workflow",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_game_sentence_builder_readme_sentence_builder",
+      "label": "Sentence Builder",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/SENTENCE_BUILDER_README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_game_sentence_builder_readme_scoring_system",
+      "label": "Scoring System",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/SENTENCE_BUILDER_README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_game_sentence_builder_readme_tense_coverage",
+      "label": "Tense Coverage",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/SENTENCE_BUILDER_README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_game_questions_content_guide_question_content_authoring",
+      "label": "Question Content Authoring Guide",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/questions/CONTENT_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_game_questions_content_guide_game_modes",
+      "label": "Game Modes (fill_blank, choose_tense, sentence_builder, error_detection, translation_challenge, speed_quiz)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/questions/CONTENT_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_game_questions_content_guide_tense_files",
+      "label": "Tense Question Files (12 tense JSON files)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/questions/CONTENT_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_vocabulary_vocabulary_vocabulary_module",
+      "label": "Vocabulary Module Syllabus",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/vocabulary/vocabulary.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_vocabulary_vocabulary_3000_essential_words",
+      "label": "3000 Essential English Words",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/vocabulary/vocabulary.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_vocabulary_vocabulary_beginner_intermediate_advanced",
+      "label": "Beginner, Intermediate, Advanced Levels",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/vocabulary/vocabulary.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_json_vocabulary_vocabulary_vocabulary_targets",
+      "label": "Vocabulary Targets (3000+ Words, 500+ Phrases, 300+ Verbs, 250+ Phrasal Verbs, 200+ Idioms)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/vocabulary/vocabulary.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_pdfs_originals_student_guide_speakeasy_student_guide",
+      "label": "SpeakEasy Student Guide",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_pdfs_originals_student_guide_speakeasy_app",
+      "label": "SpeakEasy App — Your AI English Speaking Partner",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_pdfs_originals_student_guide_study_plan_system",
+      "label": "Study Plan System",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_pdfs_originals_student_guide_gamification_system",
+      "label": "Gamification System (XP, Coins, Streak, Achievements, Leaderboard)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_pdfs_originals_student_guide_game_modes_list",
+      "label": "Game Modes (Word Match, Quick Quiz, Fill Blanks, Error Detection, Flashcard, Sentence Builder, Boss Battle, Daily Challenge)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_pdfs_originals_study_routine_speakeasy_study_routine",
+      "label": "SpeakEasy Study Routine",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDY_ROUTINE.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_pdfs_originals_study_routine_weekly_study_plan",
+      "label": "Weekly Study Plan",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDY_ROUTINE.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_pdfs_originals_study_routine_progress_tracking",
+      "label": "Progress Tracking (Streak, XP, Coins, Achievements, Level)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDY_ROUTINE.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_admin_panel_implementation_guide_admin_panel",
+      "label": "Admin Panel Implementation Guide",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_admin_panel_implementation_guide_dashboard_analytics",
+      "label": "Dashboard Analytics (Active Users, Signups, Lessons, Charts)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_admin_panel_implementation_guide_fl_chart_dependency",
+      "label": "fl_chart dependency",
+      "file_type": "code",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_admin_panel_implementation_guide_admin_features",
+      "label": "Admin Features (User Management, Content, Notifications, Gamification Settings)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_advertisement_screenshots_guide_speakeasy_ad_screenshots",
+      "label": "SpeakEasy App Advertisement Screenshot Guide",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADVERTISEMENT_SCREENSHOTS_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_advertisement_screenshots_guide_app_tagline",
+      "label": "App Tagline: Speak English with Confidence",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADVERTISEMENT_SCREENSHOTS_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_advertisement_screenshots_guide_screenshot_sequence",
+      "label": "16 Screenshot Sequence for Advertisement",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADVERTISEMENT_SCREENSHOTS_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_pdfs_originals_student_guide_learning_tabs",
+      "label": "Learning Tab, Home Tab, Profile Tab",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "assets_json_game_readme_word_match_game",
+      "target": "assets_json_game_readme_game_json_files",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_game_readme_quick_quiz",
+      "target": "assets_json_game_readme_game_json_files",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_game_readme_fill_in_the_blanks",
+      "target": "assets_json_game_readme_game_json_files",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_game_readme_github_action_workflow",
+      "target": "assets_json_game_readme_game_json_files",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_game_sentence_builder_readme_sentence_builder",
+      "target": "assets_json_game_readme_game_json_files",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/SENTENCE_BUILDER_README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_game_sentence_builder_readme_scoring_system",
+      "target": "assets_json_game_sentence_builder_readme_sentence_builder",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/SENTENCE_BUILDER_README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_game_sentence_builder_readme_tense_coverage",
+      "target": "assets_json_game_sentence_builder_readme_sentence_builder",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/SENTENCE_BUILDER_README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_game_questions_content_guide_game_modes",
+      "target": "assets_json_game_questions_content_guide_question_content_authoring",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/questions/CONTENT_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_game_questions_content_guide_tense_files",
+      "target": "assets_json_game_questions_content_guide_question_content_authoring",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/questions/CONTENT_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_game_questions_content_guide_tense_files",
+      "target": "assets_json_game_sentence_builder_readme_tense_coverage",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/questions/CONTENT_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_vocabulary_vocabulary_vocabulary_module",
+      "target": "assets_json_vocabulary_vocabulary_3000_essential_words",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/vocabulary/vocabulary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_vocabulary_vocabulary_beginner_intermediate_advanced",
+      "target": "assets_json_vocabulary_vocabulary_vocabulary_module",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/vocabulary/vocabulary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_vocabulary_vocabulary_vocabulary_targets",
+      "target": "assets_json_vocabulary_vocabulary_vocabulary_module",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/vocabulary/vocabulary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_student_guide_speakeasy_student_guide",
+      "target": "assets_pdfs_originals_student_guide_speakeasy_app",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_student_guide_gamification_system",
+      "target": "assets_pdfs_originals_student_guide_speakeasy_app",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_student_guide_study_plan_system",
+      "target": "assets_pdfs_originals_student_guide_speakeasy_app",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_student_guide_game_modes_list",
+      "target": "assets_pdfs_originals_student_guide_speakeasy_app",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_student_guide_learning_tabs",
+      "target": "assets_pdfs_originals_student_guide_speakeasy_app",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_study_routine_speakeasy_study_routine",
+      "target": "assets_pdfs_originals_student_guide_speakeasy_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDY_ROUTINE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_study_routine_weekly_study_plan",
+      "target": "assets_pdfs_originals_study_routine_speakeasy_study_routine",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDY_ROUTINE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_study_routine_progress_tracking",
+      "target": "assets_pdfs_originals_study_routine_speakeasy_study_routine",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDY_ROUTINE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_study_routine_progress_tracking",
+      "target": "assets_pdfs_originals_student_guide_gamification_system",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDY_ROUTINE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_admin_panel_implementation_guide_admin_panel",
+      "target": "assets_pdfs_originals_student_guide_speakeasy_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_admin_panel_implementation_guide_dashboard_analytics",
+      "target": "docs_admin_panel_implementation_guide_admin_panel",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_admin_panel_implementation_guide_fl_chart_dependency",
+      "target": "docs_admin_panel_implementation_guide_dashboard_analytics",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_admin_panel_implementation_guide_admin_features",
+      "target": "docs_admin_panel_implementation_guide_admin_panel",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_advertisement_screenshots_guide_speakeasy_ad_screenshots",
+      "target": "assets_pdfs_originals_student_guide_speakeasy_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADVERTISEMENT_SCREENSHOTS_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_advertisement_screenshots_guide_app_tagline",
+      "target": "docs_advertisement_screenshots_guide_speakeasy_ad_screenshots",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADVERTISEMENT_SCREENSHOTS_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_advertisement_screenshots_guide_screenshot_sequence",
+      "target": "docs_advertisement_screenshots_guide_speakeasy_ad_screenshots",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADVERTISEMENT_SCREENSHOTS_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_student_guide_game_modes_list",
+      "target": "assets_json_game_readme_word_match_game",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_student_guide_game_modes_list",
+      "target": "assets_json_game_readme_fill_in_the_blanks",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_student_guide_game_modes_list",
+      "target": "assets_json_game_sentence_builder_readme_sentence_builder",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_pdfs_originals_student_guide_game_modes_list",
+      "target": "assets_json_game_questions_content_guide_game_modes",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_game_readme_game_json_files",
+      "target": "assets_json_game_questions_content_guide_question_content_authoring",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_json_vocabulary_vocabulary_vocabulary_module",
+      "target": "assets_pdfs_originals_student_guide_speakeasy_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/vocabulary/vocabulary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_advertisement_screenshots_guide_screenshot_sequence",
+      "target": "assets_pdfs_originals_student_guide_game_modes_list",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADVERTISEMENT_SCREENSHOTS_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "game_content_ecosystem",
+      "label": "Game Content Ecosystem",
+      "nodes": [
+        "assets_json_game_readme_game_json_files",
+        "assets_json_game_readme_word_match_game",
+        "assets_json_game_readme_quick_quiz",
+        "assets_json_game_readme_fill_in_the_blanks",
+        "assets_json_game_sentence_builder_readme_sentence_builder",
+        "assets_json_game_questions_content_guide_question_content_authoring",
+        "assets_json_game_questions_content_guide_game_modes",
+        "assets_json_game_questions_content_guide_tense_files"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/json/game/README.md"
+    },
+    {
+      "id": "speakeasy_learning_system",
+      "label": "SpeakEasy Learning System",
+      "nodes": [
+        "assets_pdfs_originals_student_guide_speakeasy_app",
+        "assets_pdfs_originals_student_guide_study_plan_system",
+        "assets_pdfs_originals_student_guide_gamification_system",
+        "assets_pdfs_originals_student_guide_game_modes_list",
+        "assets_pdfs_originals_student_guide_learning_tabs",
+        "assets_json_vocabulary_vocabulary_vocabulary_module",
+        "assets_pdfs_originals_study_routine_weekly_study_plan",
+        "assets_pdfs_originals_study_routine_progress_tracking"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/assets/pdfs/originals/STUDENT_GUIDE.pdf"
+    },
+    {
+      "id": "admin_and_marketing_support",
+      "label": "Admin and Marketing Support for SpeakEasy",
+      "nodes": [
+        "docs_admin_panel_implementation_guide_admin_panel",
+        "docs_admin_panel_implementation_guide_dashboard_analytics",
+        "docs_admin_panel_implementation_guide_admin_features",
+        "docs_advertisement_screenshots_guide_speakeasy_ad_screenshots",
+        "docs_advertisement_screenshots_guide_screenshot_sequence",
+        "docs_advertisement_screenshots_guide_app_tagline"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -1,0 +1,972 @@
+{
+  "nodes": [
+    {
+      "id": "specs_notification_background_improvement_design",
+      "label": "Notification Background Delivery Improvement Design",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "specs_notification_system_improvement_design",
+      "label": "Notification System Improvement Design",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "specs_mock_test_smart_retry_design",
+      "label": "Mock Test Smart Retry Design",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "specs_mock_test_unlock_celebration_design",
+      "label": "Mock Test Unlock Celebration Design",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "specs_daily_quiz_design",
+      "label": "Daily Quiz Design — Full Replacement of Daily Quest",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "services_streak_service_plan",
+      "label": "Streak Service Plan",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/lib/services/streak_service_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_background_notification_without_fcm",
+      "label": "Background Notification Delivery Without FCM",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": "Problem Statement + Architecture",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_workmanager_admin_sync",
+      "label": "WorkManager Periodic Admin Sync",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": "Architecture",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_re_engagement_system",
+      "label": "Re-engagement Notification System for Inactive Users",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": "Architecture: Re-engagement System",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_rich_daily_word_notification",
+      "label": "Rich Daily Word Notification with Bangla Meaning",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": "Architecture: Rich Daily Word",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_scheduling_reliability_doze_reboot",
+      "label": "Scheduling Reliability for Doze Mode and Reboot",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": "Scheduling Reliability",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_workmanager_interval_15min",
+      "label": "WorkManager Minimum 15 Minute Interval Constraint on Android",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": "Self-Review",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_reactive_notification_badge",
+      "label": "Reactive Notification Badge with Riverpod Provider",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": "Badge & UI Reactive",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_notification_deep_linking",
+      "label": "Notification Tap Navigation and Deep Linking",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": "Navigation & Deep Linking",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_notification_history_date_grouping",
+      "label": "Notification History Date Grouping and Pull-to-Refresh",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": "Better UX/UI",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_centralized_notification_provider",
+      "label": "Centralized Notification State with Riverpod",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": "Design: Architecture",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_mock_test_smart_retry",
+      "label": "Mock Test Smart Retry — Wrong Questions Only",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": "Solution",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_mock_test_retry_all",
+      "label": "Mock Test Retry All Option",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": "Result Screen — Two-Button Design",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_wrong_questions_tracking",
+      "label": "Wrong Questions Persistence in Hive and Firestore",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": "Data Model: MockTestProgress wrongQuestions",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_effective_score_calculation",
+      "label": "Effective Score Calculation for Wrong-Only Retry",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": "Save Logic",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_mock_test_unlock_celebration_overlay",
+      "label": "Mock Test Perfect Score Celebration Overlay",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md",
+      "source_location": "Problem Statement + Goals",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_confetti_celebration_particles",
+      "label": "Confetti Particle Animation for Perfect Score",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md",
+      "source_location": "UI Components: ConfettiWidget",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_xp_coin_reward_display",
+      "label": "XP and Coin Rewards Display on Celebration Overlay",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md",
+      "source_location": "Goals: Reward display",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_progress_bar_70_tests",
+      "label": "Progress Bar Showing X/70 Tests Completed",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md",
+      "source_location": "Goals: Progress awareness",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_daily_quiz_replacement",
+      "label": "Daily Quiz Replacement of Daily Quest",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": "Overview",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_date_seeded_question_selection",
+      "label": "Date-Seeded Deterministic Question Selection from 300+ Pool",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": "Key Requirements + Models: DailyQuiz",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_daily_quiz_timed_scoring",
+      "label": "Per-Question Timer and Time-Based Scoring (30s)",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": "Key Requirements: Per-question countdown timer, Time-based scoring",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_daily_quiz_leaderboard",
+      "label": "Daily Leaderboard with Rank, Score, and Time",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": "Key Requirements: Daily leaderboard",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_quiz_streak_integration",
+      "label": "Daily Quiz Counts as Daily Activity for Streak",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": "Key Requirements: Streak stays",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_offline_quiz_capability",
+      "label": "Daily Quiz Works Fully Offline with Hive Persistence",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": "Error Handling",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_quiz_hive_resume_killed",
+      "label": "Mid-Quiz Progress Saved to Hive for Resume After Kill",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": "Error Handling",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_streak_calendar_days_logic",
+      "label": "Streak Service Calendar Days Logic",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/lib/services/streak_service_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_streak_should_reset_check",
+      "label": "shouldResetStreak Based on Calendar Day Difference",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/lib/services/streak_service_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_streak_check_and_update",
+      "label": "checkAndUpdateStreak with Calendar Day Increment or Reset",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/lib/services/streak_service_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "feature_streak_record_active_day",
+      "label": "recordActiveDay Only Increments on Different Calendar Day",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/lib/services/streak_service_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rationale_no_fcm_decision",
+      "label": "Decision to Avoid FCM and Use WorkManager + Local Notifications",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": "Scope",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rationale_big_text_style_rich_notification",
+      "label": "Rich Daily Word Uses BigTextStyle via flutter_local_notifications",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": "Self-Review",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rationale_riverpod_for_notification_state",
+      "label": "Decision to Use Riverpod for Centralized Notification State",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": "Scope: Badge & UI Reactive",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rationale_daily_quiz_replaces_daily_quest",
+      "label": "Design Decision: Full Replacement of Task-Based Daily Quest with Quiz",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": "Overview",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rationale_date_seeded_determinism",
+      "label": "Design Decision: Date-Seeded Deterministic Selection Avoids Server Dependency",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": "Key Requirements + Models",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rationale_daily_quiz_available_6am_to_midnight",
+      "label": "Design Decision: Quiz Available from 6 AM to Midnight Window",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": "Key Requirements",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "specs_notification_background_improvement_design",
+      "target": "concept_background_notification_without_fcm",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_background_improvement_design",
+      "target": "feature_workmanager_admin_sync",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_background_improvement_design",
+      "target": "feature_re_engagement_system",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_background_improvement_design",
+      "target": "feature_rich_daily_word_notification",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_background_improvement_design",
+      "target": "feature_scheduling_reliability_doze_reboot",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_background_improvement_design",
+      "target": "rationale_no_fcm_decision",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_background_improvement_design",
+      "target": "rationale_big_text_style_rich_notification",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "feature_workmanager_admin_sync",
+      "target": "concept_workmanager_interval_15min",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_system_improvement_design",
+      "target": "feature_reactive_notification_badge",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_system_improvement_design",
+      "target": "feature_notification_deep_linking",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_system_improvement_design",
+      "target": "feature_notification_history_date_grouping",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_system_improvement_design",
+      "target": "concept_centralized_notification_provider",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_system_improvement_design",
+      "target": "rationale_riverpod_for_notification_state",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_mock_test_smart_retry_design",
+      "target": "feature_mock_test_smart_retry",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_mock_test_smart_retry_design",
+      "target": "feature_mock_test_retry_all",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_mock_test_smart_retry_design",
+      "target": "concept_wrong_questions_tracking",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_mock_test_smart_retry_design",
+      "target": "concept_effective_score_calculation",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "feature_mock_test_smart_retry",
+      "target": "concept_wrong_questions_tracking",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_effective_score_calculation",
+      "target": "concept_wrong_questions_tracking",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_mock_test_unlock_celebration_design",
+      "target": "feature_mock_test_unlock_celebration_overlay",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_mock_test_unlock_celebration_design",
+      "target": "feature_confetti_celebration_particles",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_mock_test_unlock_celebration_design",
+      "target": "feature_xp_coin_reward_display",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_mock_test_unlock_celebration_design",
+      "target": "concept_progress_bar_70_tests",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "feature_daily_quiz_replacement",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "concept_date_seeded_question_selection",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "feature_daily_quiz_timed_scoring",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "feature_daily_quiz_leaderboard",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "concept_quiz_streak_integration",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "concept_offline_quiz_capability",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "concept_quiz_hive_resume_killed",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "rationale_daily_quiz_replaces_daily_quest",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "rationale_date_seeded_determinism",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "rationale_daily_quiz_available_6am_to_midnight",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "services_streak_service_plan",
+      "target": "concept_streak_calendar_days_logic",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/lib/services/streak_service_plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "services_streak_service_plan",
+      "target": "feature_streak_should_reset_check",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/lib/services/streak_service_plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "services_streak_service_plan",
+      "target": "feature_streak_check_and_update",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/lib/services/streak_service_plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "services_streak_service_plan",
+      "target": "feature_streak_record_active_day",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/lib/services/streak_service_plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_quiz_streak_integration",
+      "target": "concept_streak_calendar_days_logic",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "feature_daily_quiz_replacement",
+      "target": "rationale_daily_quiz_replaces_daily_quest",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_date_seeded_question_selection",
+      "target": "rationale_date_seeded_determinism",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_background_notification_without_fcm",
+      "target": "rationale_no_fcm_decision",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "feature_rich_daily_word_notification",
+      "target": "rationale_big_text_style_rich_notification",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_centralized_notification_provider",
+      "target": "rationale_riverpod_for_notification_state",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "specs_notification_background_improvement_design",
+      "target": "specs_notification_system_improvement_design",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md",
+      "source_location": null,
+      "weight": 0.75
+    },
+    {
+      "source": "specs_mock_test_smart_retry_design",
+      "target": "specs_mock_test_unlock_celebration_design",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "specs_daily_quiz_design",
+      "target": "concept_quiz_streak_integration",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md",
+      "source_location": null,
+      "weight": 0.85
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hyper_notification_background_system",
+      "label": "Notification Improvement Bundle (Background + System)",
+      "nodes": [
+        "specs_notification_background_improvement_design",
+        "specs_notification_system_improvement_design"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md"
+    },
+    {
+      "id": "hyper_mock_test_features",
+      "label": "Mock Test Enhancement Bundle (Smart Retry + Celebration)",
+      "nodes": [
+        "specs_mock_test_smart_retry_design",
+        "specs_mock_test_unlock_celebration_design"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md"
+    },
+    {
+      "id": "hyper_daily_quiz_and_streak",
+      "label": "Daily Quiz and Streak Integration",
+      "nodes": [
+        "specs_daily_quiz_design",
+        "services_streak_service_plan",
+        "concept_quiz_streak_integration",
+        "concept_streak_calendar_days_logic"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md"
+    },
+    {
+      "id": "hyper_daily_quiz_features",
+      "label": "Daily Quiz Feature Set",
+      "nodes": [
+        "feature_daily_quiz_replacement",
+        "concept_date_seeded_question_selection",
+        "feature_daily_quiz_timed_scoring",
+        "feature_daily_quiz_leaderboard",
+        "concept_offline_quiz_capability",
+        "concept_quiz_hive_resume_killed"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/superpowers/specs/2026-07-08-daily-quiz-design.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

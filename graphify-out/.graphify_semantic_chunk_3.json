@@ -1,0 +1,1084 @@
+{
+  "nodes": [
+    {
+      "id": "docs_banglish_translator_plan_banglish_translator_concept",
+      "label": "Banglish to English Translator",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_banglish_translator_plan_input_area",
+      "label": "Input Area with Banglish text field",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_banglish_translator_plan_result_card",
+      "label": "Result Card with three sections",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_banglish_translator_plan_grammar_explanation",
+      "label": "Grammar rule explanation in Bangla",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_banglish_translator_plan_tense_detection",
+      "label": "Tense detection from Banglish input",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_banglish_translator_plan_word_by_word_breakdown",
+      "label": "Word-by-word breakdown feature",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_banglish_translator_plan_real_time_translation",
+      "label": "Real-time or button-press translation",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_banglish_translator_plan_file_location",
+      "label": "banglish_translator_screen.dart",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": "lib/features/translator/screens/banglish_translator_screen.dart",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_grammar_syllabus_beginner_level",
+      "label": "Beginner Grammar Level",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_grammar_syllabus_intermediate_level",
+      "label": "Intermediate Grammar Level",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_grammar_syllabus_advanced_level",
+      "label": "Advanced Grammar Level",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_grammar_syllabus_grammar_topics",
+      "label": "Grammar Topics (Alphabet, Word, Sentence, Parts of Speech, Tense, Articles, Prepositions, Voice, Narration)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_grammar_syllabus_grammar_exercises",
+      "label": "Grammar Exercises (Fill in Blanks, MCQ, Rearrangement, Correction, Transformation)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_grammar_syllabus_mock_tests",
+      "label": "Grammar Mock Tests (Beginner, Intermediate, Advanced)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_grammar_syllabus_final_goal",
+      "label": "Complete English Grammar for Spoken, Writing, Interview, Exams, Daily Communication",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_homepage_speakeasy_app",
+      "label": "SpeakEasy App Brand",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_homepage_material3_design",
+      "label": "Material 3 Design with Light/Dark theme",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_homepage_home_screen_features",
+      "label": "Home Screen Features (Greeting, Daily Streak, Quick Actions, Continue Learning, AI Teacher, Quick Practice)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_homepage_learning_modules",
+      "label": "Learning Modules (Vocabulary, Grammar, Conversation, Listening, Speaking, Quiz, AI Teacher, Daily Challenge)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_homepage_notification_and_profile",
+      "label": "Notification icon and Profile avatar in AppBar",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_homepage_design_principles",
+      "label": "Home Screen Design Principles (smooth scrolling, reusable widgets, rounded corners, proper spacing)",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_mock_test_content_guide_70_mock_tests",
+      "label": "70 Mock Tests with 1400 Questions",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/MOCK_TEST_CONTENT_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_mock_test_content_guide_json_structure",
+      "label": "Mock Test JSON Format (id, testNumber, title, description, questions with options and explanation)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/MOCK_TEST_CONTENT_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_mock_test_content_guide_content_guidelines",
+      "label": "Mock Test Content Guidelines (plausible options, Bangla explanations, realistic examples, variety, spell-check)",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/MOCK_TEST_CONTENT_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_mock_test_content_guide_topics",
+      "label": "Mock Test Topics (Articles, Tense, Prepositions, Voice, Narration, Error Detection, Transformation)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/MOCK_TEST_CONTENT_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_notification_system_guide_notification_model",
+      "label": "Notification History Model (notification_history_model.dart)",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": "lib/models/notification_history_model.dart",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_notification_system_guide_hive_service_methods",
+      "label": "HiveService Notification Methods (7 methods for history CRUD)",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": "lib/services/hive_service.dart",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_notification_system_guide_notification_service",
+      "label": "NotificationService Background Notifications",
+      "file_type": "document",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": "lib/services/notification_service.dart",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_notification_system_guide_daily_word_reminder",
+      "label": "Daily Word of the Day (9:00 AM) and Practice Reminder (7:00 PM)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_notification_system_guide_streak_milestones",
+      "label": "Streak Milestone Notifications",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_notification_system_guide_notification_ui",
+      "label": "Notification History UI (unread badges, swipe gestures, batch operations)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_notification_system_guide_future_enhancements",
+      "label": "Notification Future Enhancements (custom sounds, categories, search, export, rich notifications)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_roadmap_firebase_early_rule",
+      "label": "Connect Firebase at project start - do not postpone",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_roadmap_clean_architecture",
+      "label": "Clean Architecture with Feature-by-Feature Build",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "source_url": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_roadmap_phase1_project_setup",
+      "label": "Phase 1: Project Setup (Flutter, folder structure, theme, routing, widgets, Riverpod)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_roadmap_phase20_testing_release",
+      "label": "Phase 20: Testing and Release (offline mode, leaderboard, achievements, premium, certificates, video lessons)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_roadmap_phases_2_19",
+      "label": "Phases 2-19: Core Features (auth, grammar, vocab, conversation, listening, speaking, quiz, AI teacher, daily challenge, mock tests, games, settings)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_setup_ai_teacher_api",
+      "label": "AI Teacher API via chatanywhere.tech",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/SETUP.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_setup_free_models_list",
+      "label": "Free AI Models (gpt-4o-mini, gpt-4.1-mini, gpt-5-mini, deepseek-v3, deepseek-r1)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/SETUP.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_setup_configuration_flow",
+      "label": "App Configuration Flow (Profile => Settings => AI Teacher => API Key, Base URL, Model)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/SETUP.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_game_development_workflow_tense_game_module",
+      "label": "Tense Game Module (Flutter + Riverpod + Clean Architecture)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_game_development_workflow_architecture_first",
+      "label": "Architecture-First, Content-Last Development Principle",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_game_development_workflow_offline_first",
+      "label": "Offline-First Design with Future Firebase Sync",
+      "file_type": "rationale",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_game_development_workflow_game_modes",
+      "label": "Game Modes (fill_in_the_blank, sentence_builder, error_detection, translation_challenge, speed_quiz)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_game_development_workflow_difficulty_levels",
+      "label": "Three Difficulty Levels",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_game_development_workflow_gaming_systems",
+      "label": "Gaming Systems (XP, Coin, Achievement, Statistics, Daily Challenge, Boss Battle)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_game_development_workflow_component_layers",
+      "label": "Component Layers (repositories, services, providers, navigation, screens, widgets, state management, local storage, game logic)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "docs_tense_game_development_workflow_status_legend",
+      "label": "Status Legend (COMPLETE, PARTIAL, NOT STARTED, BLOCKING)",
+      "file_type": "concept",
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "docs_banglish_translator_plan_input_area",
+      "target": "docs_banglish_translator_plan_banglish_translator_concept",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_banglish_translator_plan_result_card",
+      "target": "docs_banglish_translator_plan_banglish_translator_concept",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_banglish_translator_plan_grammar_explanation",
+      "target": "docs_banglish_translator_plan_result_card",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_banglish_translator_plan_tense_detection",
+      "target": "docs_banglish_translator_plan_grammar_explanation",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_banglish_translator_plan_word_by_word_breakdown",
+      "target": "docs_banglish_translator_plan_result_card",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_banglish_translator_plan_real_time_translation",
+      "target": "docs_banglish_translator_plan_input_area",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_banglish_translator_plan_file_location",
+      "target": "docs_banglish_translator_plan_banglish_translator_concept",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_grammar_syllabus_beginner_level",
+      "target": "docs_grammar_syllabus_grammar_topics",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_grammar_syllabus_intermediate_level",
+      "target": "docs_grammar_syllabus_grammar_topics",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_grammar_syllabus_advanced_level",
+      "target": "docs_grammar_syllabus_grammar_topics",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_grammar_syllabus_grammar_exercises",
+      "target": "docs_grammar_syllabus_grammar_topics",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_grammar_syllabus_mock_tests",
+      "target": "docs_grammar_syllabus_grammar_topics",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_grammar_syllabus_mock_tests",
+      "target": "docs_grammar_syllabus_final_goal",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_homepage_home_screen_features",
+      "target": "docs_homepage_speakeasy_app",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_homepage_learning_modules",
+      "target": "docs_homepage_home_screen_features",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_homepage_material3_design",
+      "target": "docs_homepage_speakeasy_app",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_homepage_design_principles",
+      "target": "docs_homepage_speakeasy_app",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_homepage_notification_and_profile",
+      "target": "docs_homepage_home_screen_features",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_grammar_syllabus_mock_tests",
+      "target": "docs_mock_test_content_guide_70_mock_tests",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/MOCK_TEST_CONTENT_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_mock_test_content_guide_json_structure",
+      "target": "docs_mock_test_content_guide_70_mock_tests",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/MOCK_TEST_CONTENT_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_mock_test_content_guide_topics",
+      "target": "docs_mock_test_content_guide_70_mock_tests",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/MOCK_TEST_CONTENT_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_mock_test_content_guide_content_guidelines",
+      "target": "docs_mock_test_content_guide_70_mock_tests",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/MOCK_TEST_CONTENT_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_notification_system_guide_notification_model",
+      "target": "docs_notification_system_guide_notification_service",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_notification_system_guide_hive_service_methods",
+      "target": "docs_notification_system_guide_notification_service",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_notification_system_guide_notification_service",
+      "target": "docs_notification_system_guide_daily_word_reminder",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_notification_system_guide_notification_service",
+      "target": "docs_notification_system_guide_streak_milestones",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_notification_system_guide_notification_ui",
+      "target": "docs_notification_system_guide_notification_service",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_notification_system_guide_future_enhancements",
+      "target": "docs_notification_system_guide_notification_service",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_roadmap_firebase_early_rule",
+      "target": "docs_roadmap_phase1_project_setup",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_roadmap_clean_architecture",
+      "target": "docs_roadmap_phase1_project_setup",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_roadmap_clean_architecture",
+      "target": "docs_roadmap_phase20_testing_release",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_roadmap_phase1_project_setup",
+      "target": "docs_roadmap_phases_2_19",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_roadmap_phases_2_19",
+      "target": "docs_roadmap_phase20_testing_release",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_setup_ai_teacher_api",
+      "target": "docs_setup_configuration_flow",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/SETUP.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_setup_free_models_list",
+      "target": "docs_setup_ai_teacher_api",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/SETUP.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tense_game_development_workflow_architecture_first",
+      "target": "docs_tense_game_development_workflow_tense_game_module",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tense_game_development_workflow_offline_first",
+      "target": "docs_tense_game_development_workflow_tense_game_module",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tense_game_development_workflow_game_modes",
+      "target": "docs_tense_game_development_workflow_tense_game_module",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tense_game_development_workflow_difficulty_levels",
+      "target": "docs_tense_game_development_workflow_tense_game_module",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tense_game_development_workflow_gaming_systems",
+      "target": "docs_tense_game_development_workflow_tense_game_module",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tense_game_development_workflow_component_layers",
+      "target": "docs_tense_game_development_workflow_tense_game_module",
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_tense_game_development_workflow_status_legend",
+      "target": "docs_tense_game_development_workflow_tense_game_module",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_roadmap_clean_architecture",
+      "target": "docs_tense_game_development_workflow_architecture_first",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_homepage_learning_modules",
+      "target": "docs_grammar_syllabus_grammar_topics",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/HomePage.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_setup_ai_teacher_api",
+      "target": "docs_homepage_learning_modules",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/SETUP.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_notification_system_guide_notification_service",
+      "target": "docs_homepage_notification_and_profile",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_banglish_translator_plan_tense_detection",
+      "target": "docs_grammar_syllabus_grammar_topics",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/BANGLISH_TRANSLATOR_PLAN.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_roadmap_phase20_testing_release",
+      "target": "docs_mock_test_content_guide_70_mock_tests",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hyper_docs_grammar_syllabus_three_levels",
+      "label": "Grammar Level Hierarchy",
+      "nodes": [
+        "docs_grammar_syllabus_beginner_level",
+        "docs_grammar_syllabus_intermediate_level",
+        "docs_grammar_syllabus_advanced_level"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Grammar_Syllabus.md"
+    },
+    {
+      "id": "hyper_docs_mock_test_content_structure",
+      "label": "Mock Test Content Structure",
+      "nodes": [
+        "docs_mock_test_content_guide_json_structure",
+        "docs_mock_test_content_guide_topics",
+        "docs_mock_test_content_guide_content_guidelines"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/MOCK_TEST_CONTENT_GUIDE.md"
+    },
+    {
+      "id": "hyper_docs_notification_system_components",
+      "label": "Notification System Components",
+      "nodes": [
+        "docs_notification_system_guide_notification_model",
+        "docs_notification_system_guide_hive_service_methods",
+        "docs_notification_system_guide_notification_service",
+        "docs_notification_system_guide_notification_ui"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/NOTIFICATION_SYSTEM_GUIDE.md"
+    },
+    {
+      "id": "hyper_docs_roadmap_phases",
+      "label": "Development Roadmap Phases",
+      "nodes": [
+        "docs_roadmap_phase1_project_setup",
+        "docs_roadmap_phases_2_19",
+        "docs_roadmap_phase20_testing_release"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/Roadmap.md"
+    },
+    {
+      "id": "hyper_docs_tense_game_full_stack",
+      "label": "Tense Game Full Stack Architecture",
+      "nodes": [
+        "docs_tense_game_development_workflow_tense_game_module",
+        "docs_tense_game_development_workflow_game_modes",
+        "docs_tense_game_development_workflow_difficulty_levels",
+        "docs_tense_game_development_workflow_gaming_systems",
+        "docs_tense_game_development_workflow_component_layers"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/keshabsarkar/Vs Code Apps/Flutter-Spoken-English-App/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
