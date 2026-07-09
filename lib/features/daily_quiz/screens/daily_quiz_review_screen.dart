@@ -110,9 +110,7 @@ class _ReviewQuestionCard extends StatelessWidget {
     final answered = answer != null;
 
     final correctText = _optionText(question, question.correctAnswer);
-    final selectedText = answer?.selectedAnswer != null
-        ? _optionText(question, answer!.selectedAnswer!)
-        : 'Not answered';
+    final selectedText = _userAnswerText(question, answer);
 
     // Header colors
     final statusColor = isCorrect ? AppColors.success : AppColors.error;
@@ -271,6 +269,42 @@ class _ReviewQuestionCard extends StatelessWidget {
       return q.options[index];
     }
     return 'Option ${index + 1}';
+  }
+
+  /// Render what the user actually answered for the review card.
+  ///
+  /// For multiple-choice/fill-blanks the answer is an option index; for
+  /// complex types (match_pairs / sentence_rearrange) it lives in
+  /// [DailyQuizAnswer.responseData], since those types have no single
+  /// `selectedAnswer` index. Defaults to "Not answered" only when the user
+  /// genuinely submitted nothing.
+  String _userAnswerText(DailyQuizQuestion q, DailyQuizAnswer? answer) {
+    if (answer == null) return 'Not answered';
+    if (answer.selectedAnswer != null) {
+      return _optionText(q, answer.selectedAnswer!);
+    }
+
+    final data = answer.responseData;
+    if (data == null) return 'Not answered';
+
+    switch (q.questionType) {
+      case QuestionType.matchPairs:
+        final correct = data['correctCount'] as int? ?? 0;
+        final total = data['totalPairs'] as int? ?? 0;
+        return 'Matched $correct/${total == 0 ? "?" : total} pairs correctly';
+      case QuestionType.sentenceRearrange:
+        final order = data['userOrder'];
+        if (order is List) {
+          final words = (q.jumbledWords ?? []);
+          final sentence = order
+              .map((i) => i is int && i >= 0 && i < words.length ? words[i] : '?')
+              .join(' ');
+          return sentence.isNotEmpty ? sentence : 'Reordered sentence';
+        }
+        return 'Reordered sentence';
+      default:
+        return 'Answered';
+    }
   }
 }
 

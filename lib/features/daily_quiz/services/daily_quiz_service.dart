@@ -232,12 +232,15 @@ class DailyQuizService {
       // references a question that is no longer present (e.g. after a
       // question-bank update or a resume across a regenerate) we must NOT
       // throw — otherwise completion would silently fail to persist.
+      // Preserve the user's recorded answer (selectedAnswer + responseData)
+      // so the per-question review screen shows what THEY actually answered.
       return DailyQuizAnswer(
         questionId: a.questionId,
         selectedAnswer: a.selectedAnswer,
         isCorrect: a.isCorrect,
         timeTaken: a.timeTaken,
         pointsEarned: calculatePoints(a.isCorrect, a.timeTaken),
+        responseData: a.responseData,
       );
     }).toList();
 

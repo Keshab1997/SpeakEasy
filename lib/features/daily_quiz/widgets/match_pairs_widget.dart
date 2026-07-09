@@ -76,6 +76,9 @@ class _MatchPairsWidgetState extends State<MatchPairsWidget> {
       if (entry.value == entry.key) correct++;
     }
 
+    // The user's answer is "correct" only when every pair is matched right.
+    final isCorrect = pairs.isNotEmpty && correct == pairs.length;
+
     // Build response data.
     final matchList = _matchedPairs.entries
         .map((e) => {'leftIndex': e.key, 'userRightIndex': e.value})
@@ -86,6 +89,7 @@ class _MatchPairsWidgetState extends State<MatchPairsWidget> {
       'matches': matchList,
       'correctCount': correct,
       'totalPairs': pairs.length,
+      'isCorrect': isCorrect,
     });
 
     // After a brief delay we could auto-advance — the parent controls that via
