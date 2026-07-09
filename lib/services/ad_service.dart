@@ -10,21 +10,40 @@ class AdService {
   InterstitialAd? _interstitialAd;
   RewardedAd? _rewardedAd;
 
-  // ── Test Ad Unit IDs (Android) ──
-  // Replace with YOUR real Ad Unit IDs before publishing to Play Store.
+  // ── Ad Unit IDs ──
+  // Debug → test ads, Release → real ads (safe from accidental bans)
   static const String _testBannerAdUnitId = 'ca-app-pub-3940256099942544/6300978111';
   static const String _testInterstitialAdUnitId = 'ca-app-pub-3940256099942544/1033173712';
   static const String _testRewardedAdUnitId = 'ca-app-pub-3940256099942544/5224354917';
 
-  // Real Ad Unit IDs (replace these with yours from AdMob console)
-  static const String _bannerAdUnitId = _testBannerAdUnitId;
-  static const String _interstitialAdUnitId = _testInterstitialAdUnitId;
-  static const String _rewardedAdUnitId = _testRewardedAdUnitId;
+  static const String _realBannerAdUnitId = 'ca-app-pub-4216917764852377/2336103429';
+  static const String _realInterstitialAdUnitId = 'ca-app-pub-4216917764852377/5836364739';
+  static const String _realRewardedAdUnitId = 'ca-app-pub-4216917764852377/1259624233';
+
+  /// Returns appropriate ad unit IDs based on build mode.
+  static String get _bannerAdUnitId =>
+      kReleaseMode ? _realBannerAdUnitId : _testBannerAdUnitId;
+  static String get _interstitialAdUnitId =>
+      kReleaseMode ? _realInterstitialAdUnitId : _testInterstitialAdUnitId;
+  static String get _rewardedAdUnitId =>
+      kReleaseMode ? _realRewardedAdUnitId : _testRewardedAdUnitId;
 
   /// Initialize AdMob SDK
   Future<void> initialize() async {
     if (_initialized) return;
     await MobileAds.instance.initialize();
+
+    // Register test devices so they always receive test ads
+    // (even with real ad unit IDs — safe for testing)
+    if (!kReleaseMode) {
+      final config = RequestConfiguration(
+        testDeviceIds: [
+          '3C27A9DBAE4BE566F6362A1D2DEC00A1', // Realme RMX3870
+        ],
+      );
+      MobileAds.instance.updateRequestConfiguration(config);
+    }
+
     _initialized = true;
   }
 

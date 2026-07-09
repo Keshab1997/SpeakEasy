@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/banner_ad_widget.dart';
 import '../../../models/bangla_english_model.dart';
 
 
@@ -668,11 +669,10 @@ class _BanglaEnglishExerciseScreenState
         ),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+          child: Padding(
+            padding: const EdgeInsets.all(32),
+            child: Column(
+              children: [
               Icon(
                 pct >= 80
                     ? Icons.emoji_events_rounded
@@ -733,6 +733,8 @@ class _BanglaEnglishExerciseScreenState
                   ),
                 ),
               ),
+              const Spacer(),
+              const BannerAdWidget(),
             ],
           ),
         ),

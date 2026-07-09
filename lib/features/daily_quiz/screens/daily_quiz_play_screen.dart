@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../services/ad_service.dart';
+import '../../../services/sound_service.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../models/daily_quiz_model.dart';
 import '../widgets/fill_blanks_widget.dart';
@@ -23,6 +25,8 @@ class DailyQuizPlayScreen extends ConsumerStatefulWidget {
 
 class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
     with TickerProviderStateMixin {
+  final SoundService _soundService = SoundService();
+
   // ---------------------------------------------------------------------------
   // Timer & stopwatch
   // ---------------------------------------------------------------------------
@@ -144,6 +148,13 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
       _isAutoAdvancing = true;
     });
 
+    // Play sound effect for correct/wrong answer
+    if (isCorrect) {
+      _soundService.playCorrect();
+    } else {
+      _soundService.playWrong();
+    }
+
     // Wait 2 s so the user can see the feedback, then auto-advance
     Future.delayed(const Duration(seconds: 2), _autoAdvance);
   }
@@ -178,6 +189,13 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
       _isAutoAdvancing = true;
     });
 
+    // Play sound effect for correct/wrong answer
+    if (isCorrect) {
+      _soundService.playCorrect();
+    } else {
+      _soundService.playWrong();
+    }
+
     Future.delayed(const Duration(seconds: 2), _autoAdvance);
   }
 
@@ -204,17 +222,30 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
       _isAutoAdvancing = true;
     });
 
+    // Play timeout sound
+    _soundService.playGameOver();
+
     // Brief delay so the user sees the "Time's up!" message
     Future.delayed(const Duration(milliseconds: 1500), _autoAdvance);
   }
 
   /// Advance to the next question, or navigate to the result screen if the quiz
   /// is complete.
-  void _autoAdvance() {
+  void _autoAdvance() async {
     if (!mounted) return;
 
     final state = ref.read(dailyQuizProvider);
     if (!state.isPlaying || state.quiz?.isCompleted == true) {
+      _soundService.playLevelUp();
+
+      // Show interstitial ad before navigating to result
+      try {
+        await AdService().showInterstitialAd();
+      } catch (_) {
+        // Silently fail if ad fails to load/show
+      }
+
+      if (!mounted) return;
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (_) => const DailyQuizResultScreen()),

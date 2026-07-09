@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/banner_ad_widget.dart';
 import '../../../models/vocabulary_chapter_model.dart';
 import '../../../providers/chapter_vocabulary_provider.dart';
 import '../../../services/hive_service.dart';
@@ -307,15 +308,14 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
         actions: [IconButton(icon: const Icon(Icons.history_rounded), onPressed: _showHistory)],
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(emoji, style: const TextStyle(fontSize: 64)),
-              const SizedBox(height: 16),
-              Text(msg, style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800)),
-              const SizedBox(height: 20),
+          child: Padding(
+            padding: const EdgeInsets.all(32),
+            child: Column(
+              children: [
+                Text(emoji, style: const TextStyle(fontSize: 64)),
+                const SizedBox(height: 16),
+                Text(msg, style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800)),
+                const SizedBox(height: 20),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
                 decoration: BoxDecoration(
@@ -353,6 +353,8 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
               ),
               const SizedBox(height: 10),
               TextButton(onPressed: () => Navigator.pop(context), child: const Text('Back')),
+              const Spacer(),
+              const BannerAdWidget(),
             ],
           ),
         ),

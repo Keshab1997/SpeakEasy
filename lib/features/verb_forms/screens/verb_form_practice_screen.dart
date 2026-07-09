@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/banner_ad_widget.dart';
 import '../../../models/verb_form_model.dart';
 
 class VerbFormPracticeScreen extends StatefulWidget {
@@ -406,11 +407,10 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
             style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 0.5)),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+          child: Padding(
+            padding: const EdgeInsets.all(32),
+            child: Column(
+              children: [
               Icon(
                 pct >= 80
                     ? Icons.emoji_events_rounded
@@ -461,6 +461,8 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
                   ),
                 ),
               ),
+              const Spacer(),
+              const BannerAdWidget(),
             ],
           ),
         ),
