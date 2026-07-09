@@ -1,0 +1,14 @@
+AdMob Ad Units for SpeakEasy (Android)
+=====================================
+
+Banner_HomeScreen
+Ad Type: Banner
+Ad Unit ID: ca-app-pub-4216917764852377/2336103429
+
+Interstitial_Game
+Ad Type: Interstitial
+Ad Unit ID: ca-app-pub-4216917764852377/5836364739
+
+Rewarded_ExtraHint
+Ad Type: Rewarded
+Ad Unit ID: ca-app-pub-4216917764852377/1259624233
