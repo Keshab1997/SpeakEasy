@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/banner_ad_widget.dart';
+import '../../../services/ad_service.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../models/daily_quiz_model.dart';
 import 'daily_quiz_play_screen.dart';
@@ -105,6 +107,9 @@ class DailyQuizScreen extends ConsumerWidget {
           _buildLeaderboardPreview(context, quizState, theme, isDark),
           const SizedBox(height: 24),
           if (quiz == null || !quiz.isCompleted) _buildTipSection(theme),
+          const SizedBox(height: 16),
+          const BannerAdWidget(),
+          const SizedBox(height: 16),
         ],
       ),
     );
@@ -163,12 +168,17 @@ class DailyQuizScreen extends ConsumerWidget {
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) => const DailyQuizReviewScreen(),
-          ),
-        ),
+        onTap: () async {
+          await AdService().showInterstitialAd();
+          if (context.mounted) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const DailyQuizReviewScreen(),
+              ),
+            );
+          }
+        },
         child: Row(
           children: [
             Container(

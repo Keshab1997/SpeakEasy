@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../providers/game/coin_provider.dart';
+import '../../../services/ad_service.dart';
+import '../models/daily_quiz_model.dart';
 import '../providers/daily_quiz_provider.dart';
 import 'daily_quiz_leaderboard_screen.dart';
 import 'daily_quiz_review_screen.dart';
@@ -213,20 +216,27 @@ class DailyQuizResultScreen extends ConsumerWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 32),
+                const SizedBox(height: 20),
 
-                // Review & Learn button
+                // 🎥 Bonus Points button (Rewarded Ad)
+                _BonusAdButton(quiz: quiz, ref: ref),
+                const SizedBox(height: 12),
+
+                // Review & Learn button (with interstitial ad)
                 if (quiz.isCompleted && quiz.answers.isNotEmpty)
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton.icon(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => const DailyQuizReviewScreen(),
-                          ),
-                        );
+                      onPressed: () async {
+                        await AdService().showInterstitialAd();
+                        if (context.mounted) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const DailyQuizReviewScreen(),
+                            ),
+                          );
+                        }
                       },
                       icon: const Icon(Icons.menu_book_rounded),
                       label: const Text(
@@ -397,6 +407,109 @@ class _RewardItem extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// Bonus Points button that shows a Rewarded Ad.
+///
+/// Uses local state to track whether the bonus has been claimed so the button
+/// can be disabled after the user watches the ad.
+class _BonusAdButton extends ConsumerStatefulWidget {
+  final DailyQuiz quiz;
+  final WidgetRef ref;
+
+  const _BonusAdButton({required this.quiz, required this.ref});
+
+  @override
+  ConsumerState<_BonusAdButton> createState() => _BonusAdButtonState();
+}
+
+class _BonusAdButtonState extends ConsumerState<_BonusAdButton> {
+  bool _bonusClaimed = false;
+  bool _isLoading = false;
+
+  @override
+  Widget build(BuildContext context) {
+    if (_bonusClaimed) {
+      return Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+        decoration: BoxDecoration(
+          color: Colors.green.withOpacity(0.2),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Colors.greenAccent.withOpacity(0.5)),
+        ),
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.check_circle, color: Colors.greenAccent, size: 22),
+            SizedBox(width: 8),
+            Text(
+              '✅ Bonus Claimed!',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return SizedBox(
+      width: double.infinity,
+      child: OutlinedButton.icon(
+        onPressed: _isLoading
+            ? null
+            : () async {
+                final messenger = ScaffoldMessenger.of(context);
+                setState(() => _isLoading = true);
+                final shown = await AdService().showRewardedAd(
+                  onRewardEarned: () {
+                    widget.ref
+                        .read(coinProvider.notifier)
+                        .addCoins(5);
+                    setState(() => _bonusClaimed = true);
+                  },
+                );
+                if (mounted) setState(() => _isLoading = false);
+                if (!shown && mounted) {
+                  messenger.showSnackBar(
+                    const SnackBar(
+                      content: Text('No ad available right now. Try again later.'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                }
+              },
+        icon: _isLoading
+            ? const SizedBox(
+                width: 18,
+                height: 18,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  color: Colors.white,
+                ),
+              )
+            : const Icon(Icons.play_circle_fill, color: Colors.amber, size: 22),
+        label: Text(
+          _isLoading ? 'Loading ad...' : '🎥 +5 Bonus Coins',
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        style: OutlinedButton.styleFrom(
+          foregroundColor: Colors.white,
+          side: BorderSide(color: Colors.amber.withOpacity(0.6)),
+          padding: const EdgeInsets.symmetric(vertical: 14),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+      ),
     );
   }
 }
