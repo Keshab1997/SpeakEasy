@@ -292,6 +292,7 @@ class _DailyQuizLeaderboardScreenState
           _PodiumTile(
             rank: 1,
             userName: first.userName,
+            photoUrl: first.photoUrl,
             score: first.score,
             correctCount: first.correctCount,
             color: Colors.amber,
@@ -306,6 +307,7 @@ class _DailyQuizLeaderboardScreenState
                 child: _PodiumTile(
                   rank: 2,
                   userName: second.userName,
+                  photoUrl: second.photoUrl,
                   score: second.score,
                   correctCount: second.correctCount,
                   color: Colors.grey.shade400,
@@ -318,6 +320,7 @@ class _DailyQuizLeaderboardScreenState
                 child: _PodiumTile(
                   rank: 3,
                   userName: third.userName,
+                  photoUrl: third.photoUrl,
                   score: third.score,
                   correctCount: third.correctCount,
                   color: Colors.brown.shade300,
@@ -335,6 +338,7 @@ class _DailyQuizLeaderboardScreenState
 class _PodiumTile extends StatelessWidget {
   final int rank;
   final String userName;
+  final String? photoUrl;
   final int score;
   final int correctCount;
   final Color color;
@@ -343,6 +347,7 @@ class _PodiumTile extends StatelessWidget {
   const _PodiumTile({
     required this.rank,
     required this.userName,
+    this.photoUrl,
     required this.score,
     required this.correctCount,
     required this.color,
@@ -351,6 +356,8 @@ class _PodiumTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final hasPhoto = photoUrl != null && photoUrl!.isNotEmpty;
+    final avatarRadius = rank == 1 ? 26.0 : 20.0;
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
@@ -362,8 +369,22 @@ class _PodiumTile extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.emoji_events, color: color, size: 28),
-          const SizedBox(height: 4),
+          CircleAvatar(
+            radius: avatarRadius,
+            backgroundColor: color.withOpacity(0.2),
+            backgroundImage: hasPhoto ? NetworkImage(photoUrl!) : null,
+            child: hasPhoto
+                ? null
+                : Text(
+                    userName.isNotEmpty ? userName[0].toUpperCase() : '?',
+                    style: TextStyle(
+                      color: color,
+                      fontWeight: FontWeight.bold,
+                      fontSize: avatarRadius * 0.8,
+                    ),
+                  ),
+          ),
+          const SizedBox(height: 6),
           Text(
             '#$rank',
             style: TextStyle(

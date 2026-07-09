@@ -6,6 +6,7 @@ import '../models/daily_quiz_model.dart';
 import 'daily_quiz_play_screen.dart';
 import 'daily_quiz_result_screen.dart';
 import 'daily_quiz_leaderboard_screen.dart';
+import 'daily_quiz_review_screen.dart';
 
 /// Daily Quiz landing screen - shows today's quiz status,
 /// leaderboard preview, and action buttons.
@@ -95,6 +96,8 @@ class DailyQuizScreen extends ConsumerWidget {
           const SizedBox(height: 20),
           _buildQuizCard(context, ref, quiz, quizState, theme, isDark),
           const SizedBox(height: 24),
+          if (quiz != null && quiz.isCompleted)
+            _buildReviewCard(context, quiz, theme),
           if (quiz != null && !quiz.isCompleted && quizState.isPlaying)
             _buildProgressSection(quiz, theme),
           if (quiz != null && !quiz.isCompleted && quizState.isPlaying)
@@ -138,6 +141,69 @@ class DailyQuizScreen extends ConsumerWidget {
           ],
         ),
       ],
+    );
+  }
+
+  /// Compact "Review" card shown under the completed quiz card, linking to the
+  /// per-question learning review screen.
+  Widget _buildReviewCard(
+    BuildContext context,
+    DailyQuiz quiz,
+    ThemeData theme,
+  ) {
+    final correct = quiz.correctCount;
+    final total = quiz.totalQuestions;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppColors.info.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: AppColors.info.withOpacity(0.3)),
+      ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const DailyQuizReviewScreen(),
+          ),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: AppColors.info.withOpacity(0.15),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(Icons.menu_book_rounded,
+                  color: AppColors.info, size: 22),
+            ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Review & Learn',
+                    style: theme.textTheme.titleMedium
+                        ?.copyWith(fontWeight: FontWeight.w700),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    'You got $correct/$total — tap to review each answer',
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: AppColors.textSecondaryLight,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Icon(Icons.chevron_right, color: AppColors.info, size: 22),
+          ],
+        ),
+      ),
     );
   }
 
@@ -450,19 +516,10 @@ class DailyQuizScreen extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    CircleAvatar(
+                    _LeaderboardAvatar(
+                      photoUrl: entry.photoUrl,
+                      name: entry.userName,
                       radius: 14,
-                      backgroundColor: AppColors.primary.withOpacity(0.12),
-                      child: Text(
-                        entry.userName.isNotEmpty
-                            ? entry.userName[0].toUpperCase()
-                            : '?',
-                        style: const TextStyle(
-                          color: AppColors.primary,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                        ),
-                      ),
                     ),
                     const SizedBox(width: 10),
                     Expanded(
@@ -537,6 +594,40 @@ class DailyQuizScreen extends ConsumerWidget {
       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
     ];
     return names[month - 1];
+  }
+}
+
+/// Circular avatar for leaderboard rows: shows the user's profile photo when
+/// available, otherwise falls back to the first initial of their name.
+class _LeaderboardAvatar extends StatelessWidget {
+  final String? photoUrl;
+  final String name;
+  final double radius;
+
+  const _LeaderboardAvatar({
+    required this.photoUrl,
+    required this.name,
+    required this.radius,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final hasPhoto = photoUrl != null && photoUrl!.isNotEmpty;
+    return CircleAvatar(
+      radius: radius,
+      backgroundColor: AppColors.primary.withOpacity(0.12),
+      backgroundImage: hasPhoto ? NetworkImage(photoUrl!) : null,
+      child: hasPhoto
+          ? null
+          : Text(
+              name.isNotEmpty ? name[0].toUpperCase() : '?',
+              style: TextStyle(
+                color: AppColors.primary,
+                fontWeight: FontWeight.bold,
+                fontSize: radius * 0.85,
+              ),
+            ),
+    );
   }
 }
 

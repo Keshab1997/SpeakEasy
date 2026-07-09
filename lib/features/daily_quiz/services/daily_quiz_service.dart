@@ -75,7 +75,9 @@ class DailyQuizService {
 
     final totalAvailable =
         typePools.values.fold<int>(0, (sum, p) => sum + p.length);
-    final slotsRemaining = (10 - selected.length).clamp(0, 8);
+    // Remaining slots to reach 10 (never cap below 10 — e.g. when there are
+    // no new-type questions, the full 10 come from the standard pool).
+    final slotsRemaining = (10 - selected.length).clamp(0, 10);
 
     var allocated = 0;
     for (final entry in typePools.entries) {

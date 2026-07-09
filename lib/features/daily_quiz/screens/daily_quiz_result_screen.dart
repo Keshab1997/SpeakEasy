@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../providers/daily_quiz_provider.dart';
 import 'daily_quiz_leaderboard_screen.dart';
+import 'daily_quiz_review_screen.dart';
 
 class DailyQuizResultScreen extends ConsumerWidget {
   const DailyQuizResultScreen({super.key});
@@ -212,6 +213,39 @@ class DailyQuizResultScreen extends ConsumerWidget {
                     ],
                   ),
                 ),
+                const SizedBox(height: 32),
+
+                // Review & Learn button
+                if (quiz.isCompleted && quiz.answers.isNotEmpty)
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const DailyQuizReviewScreen(),
+                          ),
+                        );
+                      },
+                      icon: const Icon(Icons.menu_book_rounded),
+                      label: const Text(
+                        'Review & Learn',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: AppColors.primary,
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                    ),
+                  ),
                 const SizedBox(height: 32),
 
                 // Leaderboard Section

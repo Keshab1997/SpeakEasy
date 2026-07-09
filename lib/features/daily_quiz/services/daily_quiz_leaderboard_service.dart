@@ -11,6 +11,7 @@ class DailyQuizLeaderboardService {
   Future<void> uploadResult({
     required String userId,
     required String userName,
+    required String photoUrl,
     required String date,
     required int score,
     required int totalTime,
@@ -19,6 +20,7 @@ class DailyQuizLeaderboardService {
     await _db.collection(_collectionPath).doc(date).collection('entries').doc(userId).set({
       'userId': userId,
       'userName': userName,
+      'photoUrl': photoUrl,
       'score': score,
       'totalTime': totalTime,
       'correctCount': correctCount,
@@ -44,6 +46,7 @@ class DailyQuizLeaderboardService {
         score: data['score'] as int,
         totalTime: data['totalTime'] as int,
         correctCount: data['correctCount'] as int,
+        photoUrl: data['photoUrl'] as String?,
       );
     }).toList();
   }

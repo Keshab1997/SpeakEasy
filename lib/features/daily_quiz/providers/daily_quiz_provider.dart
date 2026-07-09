@@ -17,6 +17,7 @@ class DailyQuizLeaderboardEntry {
   final int score;
   final int totalTime;
   final int correctCount;
+  final String? photoUrl;
 
   const DailyQuizLeaderboardEntry({
     required this.userId,
@@ -24,6 +25,7 @@ class DailyQuizLeaderboardEntry {
     required this.score,
     required this.totalTime,
     required this.correctCount,
+    this.photoUrl,
   });
 }
 
@@ -396,6 +398,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
       await _leaderboardService.uploadResult(
         userId: authUser.id,
         userName: authUser.name.isNotEmpty ? authUser.name : 'User',
+        photoUrl: authUser.photoUrl,
         date: quiz.date,
         score: quiz.score,
         totalTime: quiz.totalTime,
