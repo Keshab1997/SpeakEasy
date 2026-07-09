@@ -21,7 +21,8 @@ class DailyQuizPlayScreen extends ConsumerStatefulWidget {
       _DailyQuizPlayScreenState();
 }
 
-class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
+class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
+    with TickerProviderStateMixin {
   // ---------------------------------------------------------------------------
   // Timer & stopwatch
   // ---------------------------------------------------------------------------
@@ -41,6 +42,16 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
   bool _isAutoAdvancing = false;
   DailyQuizQuestion? _answeredQuestion; // freeze question during feedback
 
+  // Pulse animation for the timer badge when time is running out.
+  late final AnimationController _pulseController = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 600),
+  )..repeat(reverse: true);
+  late final Animation<double> _pulseAnimation =
+      Tween<double>(begin: 1.0, end: 1.12).animate(
+    CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
+  );
+
   // ---------------------------------------------------------------------------
   // Lifecycle
   // ---------------------------------------------------------------------------
@@ -54,6 +65,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
   void dispose() {
     _countdownTimer?.cancel();
     _stopwatch.stop();
+    _pulseController.dispose();
     super.dispose();
   }
 
@@ -365,9 +377,9 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
       children: [
         // Visual bar
         ClipRRect(
-          borderRadius: BorderRadius.circular(0),
+          borderRadius: BorderRadius.circular(4),
           child: SizedBox(
-            height: 4,
+            height: 6,
             width: double.infinity,
             child: Stack(
               children: [
@@ -389,19 +401,33 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                decoration: BoxDecoration(
-                  color: barColor.withOpacity(0.15),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  '${_remainingSeconds}s',
-                  style: TextStyle(
-                    color: barColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 13,
+              ScaleTransition(
+                scale: _remainingSeconds <= 5 && !_isAnswerChecked
+                    ? _pulseAnimation
+                    : const AlwaysStoppedAnimation(1.0),
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: barColor.withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: _remainingSeconds <= 5 && !_isAnswerChecked
+                        ? [
+                            BoxShadow(
+                              color: barColor.withOpacity(0.4),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            ),
+                          ]
+                        : null,
+                  ),
+                  child: Text(
+                    '${_remainingSeconds}s',
+                    style: TextStyle(
+                      color: barColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                    ),
                   ),
                 ),
               ),
@@ -467,6 +493,13 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen> {
         gradient:
             const LinearGradient(colors: AppColors.primaryGradient),
         borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primary.withOpacity(0.25),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
+          ),
+        ],
       ),
       child: Text(
         question.question,

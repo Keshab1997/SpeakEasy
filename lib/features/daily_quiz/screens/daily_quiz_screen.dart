@@ -5,6 +5,7 @@ import '../providers/daily_quiz_provider.dart';
 import '../models/daily_quiz_model.dart';
 import 'daily_quiz_play_screen.dart';
 import 'daily_quiz_result_screen.dart';
+import 'daily_quiz_leaderboard_screen.dart';
 
 /// Daily Quiz landing screen - shows today's quiz status,
 /// leaderboard preview, and action buttons.
@@ -29,7 +30,20 @@ class DailyQuizScreen extends ConsumerWidget {
         foregroundColor: Colors.white,
         elevation: 0,
       ),
-      body: _buildBody(context, ref, theme, isDark, quiz, quizState),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: isDark
+                ? [AppColors.backgroundDark, AppColors.surfaceDark]
+                : [AppColors.backgroundLight, Colors.white],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: _buildBody(context, ref, theme, isDark, quiz, quizState),
+      ),
     );
   }
 
@@ -85,7 +99,7 @@ class DailyQuizScreen extends ConsumerWidget {
             _buildProgressSection(quiz, theme),
           if (quiz != null && !quiz.isCompleted && quizState.isPlaying)
             const SizedBox(height: 24),
-          _buildLeaderboardPreview(quizState, theme, isDark),
+          _buildLeaderboardPreview(context, quizState, theme, isDark),
           const SizedBox(height: 24),
           if (quiz == null || !quiz.isCompleted) _buildTipSection(theme),
         ],
@@ -234,7 +248,26 @@ class DailyQuizScreen extends ConsumerWidget {
             style: const TextStyle(color: Colors.white70, fontSize: 14),
           ),
           if (quiz != null && !isComplete) ...[
-            const SizedBox(height: 20),
+            const SizedBox(height: 18),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: [
+                _QuizChip(
+                  icon: Icons.help_outline_rounded,
+                  label: '${quiz.totalQuestions} Qs',
+                ),
+                const _QuizChip(
+                  icon: Icons.timer_outlined,
+                  label: '30s each',
+                ),
+                const _QuizChip(
+                  icon: Icons.flash_on_rounded,
+                  label: 'Speed bonus',
+                ),
+              ],
+            ),
+            const SizedBox(height: 18),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -289,12 +322,17 @@ class DailyQuizScreen extends ConsumerWidget {
         ),
         const SizedBox(height: 8),
         ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: LinearProgressIndicator(
-            value: progress.isNaN ? 0 : progress,
-            minHeight: 10,
-            backgroundColor: Colors.grey.shade200,
-            color: AppColors.primary,
+          borderRadius: BorderRadius.circular(20),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.easeOut,
+            height: 10,
+            child: LinearProgressIndicator(
+              value: progress.isNaN ? 0 : progress,
+              minHeight: 10,
+              backgroundColor: Colors.grey.shade200,
+              color: AppColors.primary,
+            ),
           ),
         ),
       ],
@@ -302,10 +340,12 @@ class DailyQuizScreen extends ConsumerWidget {
   }
 
   Widget _buildLeaderboardPreview(
+    BuildContext context,
     DailyQuizState quizState,
     ThemeData theme,
     bool isDark,
   ) {
+    final medals = ['🥇', '🥈', '🥉'];
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
@@ -321,19 +361,28 @@ class DailyQuizScreen extends ConsumerWidget {
           ),
         ],
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              const Icon(Icons.leaderboard, color: Colors.amber, size: 22),
-              const SizedBox(width: 8),
-              Text(
-                'Leaderboard',
-                style: theme.textTheme.titleMedium
-                    ?.copyWith(fontWeight: FontWeight.w700),
-              ),
-              const Spacer(),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const DailyQuizLeaderboardScreen(),
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const Icon(Icons.leaderboard, color: Colors.amber, size: 22),
+                const SizedBox(width: 8),
+                Text(
+                  'Leaderboard',
+                  style: theme.textTheme.titleMedium
+                      ?.copyWith(fontWeight: FontWeight.w700),
+                ),
+                const Spacer(),
+                const Icon(Icons.chevron_right, color: Colors.grey, size: 20),
               if (quizState.leaderboardRank != null)
                 Container(
                   padding:
@@ -370,25 +419,48 @@ class DailyQuizScreen extends ConsumerWidget {
           else
             ...quizState.topEntries.take(3).map((entry) {
               final rank = quizState.topEntries.indexOf(entry) + 1;
+              final medal = rank <= medals.length ? medals[rank - 1] : null;
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 4),
                 child: Row(
                   children: [
-                    Container(
+                    SizedBox(
                       width: 28,
-                      height: 28,
-                      decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
                       child: Center(
-                        child: Text(
-                          '$rank',
-                          style: const TextStyle(
-                            color: AppColors.primary,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                          ),
+                        child: medal != null
+                            ? Text(medal, style: const TextStyle(fontSize: 20))
+                            : Container(
+                                width: 26,
+                                height: 26,
+                                decoration: BoxDecoration(
+                                  color: AppColors.primary.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    '$rank',
+                                    style: const TextStyle(
+                                      color: AppColors.primary,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    CircleAvatar(
+                      radius: 14,
+                      backgroundColor: AppColors.primary.withOpacity(0.12),
+                      child: Text(
+                        entry.userName.isNotEmpty
+                            ? entry.userName[0].toUpperCase()
+                            : '?',
+                        style: const TextStyle(
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
                         ),
                       ),
                     ),
@@ -412,6 +484,7 @@ class DailyQuizScreen extends ConsumerWidget {
               );
             }),
         ],
+      ),
       ),
     );
   }
@@ -464,5 +537,40 @@ class DailyQuizScreen extends ConsumerWidget {
       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
     ];
     return names[month - 1];
+  }
+}
+
+/// Small translucent chip shown on the quiz hero card.
+class _QuizChip extends StatelessWidget {
+  final IconData icon;
+  final String label;
+
+  const _QuizChip({required this.icon, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.18),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.white.withOpacity(0.3)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, color: Colors.white, size: 16),
+          const SizedBox(width: 6),
+          Text(
+            label,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 13,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

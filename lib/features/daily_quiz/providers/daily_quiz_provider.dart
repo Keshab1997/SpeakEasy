@@ -99,7 +99,14 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   /// This avoids the race condition where a freshly generated in-memory quiz
   /// would shadow a persisted completed quiz in Hive.
   void _init() {
-    final saved = _service.loadSavedQuiz();
+    final userId = _currentUserId;
+    if (userId == null) {
+      // No user yet — nothing account-scoped to restore. loadTodayQuiz()
+      // (called from the home screen after auth resolves) will populate it.
+      debugPrint('📅 [DailyQuiz] _init: no user — waiting for auth');
+      return;
+    }
+    final saved = _service.loadSavedQuiz(userId);
     if (saved != null) {
       debugPrint('📅 [DailyQuiz] _init: loaded from Hive '
           '(completed=${saved.isCompleted}, answers=${saved.answers.length})');
@@ -124,11 +131,16 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     // will handle that with proper isLoading state.
   }
 
+  /// Current authenticated user id, or null if signed out.
+  String? get _currentUserId =>
+      _ref.read(authProvider).asData?.value?.id;
+
   /// Private async helper that generates a fresh quiz in the background.
   Future<void> _generateQuizAsync() async {
     try {
       final quiz = await _service.generateTodayQuiz();
-      _service.saveQuiz(quiz);
+      final userId = _currentUserId;
+      if (userId != null) _service.saveQuiz(quiz, userId);
       state = DailyQuizState(quiz: quiz);
     } catch (e) {
       state = state.copyWith(error: e.toString());
@@ -147,12 +159,24 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   Future<void> loadTodayQuiz() async {
     state = state.copyWith(isLoading: true, clearError: true);
     try {
+      // 0. Ensure question bank is loaded so [loadSavedQuiz] can validate
+      //    the cached quiz hasn't gone stale due to question-bank edits.
+      await _service.ensureQuestionBankLoaded();
+
       // 1. Always try Hive cache first — this is the persisted source of truth.
-      final cached = _service.loadSavedQuiz();
+      final userId = _currentUserId;
+      if (userId == null) {
+        state = state.copyWith(
+          isLoading: false,
+          error: 'Please sign in to access the daily quiz.',
+        );
+        return;
+      }
+      final cached = _service.loadSavedQuiz(userId);
       if (cached != null) {
         debugPrint('📅 [DailyQuiz] loadTodayQuiz: restored from Hive '
             '(completed=${cached.isCompleted}, answers=${cached.answers.length})');
-        _service.saveQuiz(cached);
+        _service.saveQuiz(cached, userId);
         final isPlaying = cached.startedAt != null && !cached.isCompleted;
         state = DailyQuizState(
           quiz: cached,
@@ -191,7 +215,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
       // 3. Nothing cached or in memory → generate a fresh quiz for today.
       debugPrint('📅 [DailyQuiz] loadTodayQuiz: generating fresh quiz');
       final quiz = await _service.generateTodayQuiz();
-      _service.saveQuiz(quiz);
+      _service.saveQuiz(quiz, userId);
       state = DailyQuizState(quiz: quiz, isPlaying: false);
     } catch (e) {
       debugPrint('📅 [DailyQuiz] loadTodayQuiz: ERROR $e');
@@ -215,7 +239,8 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     if (quiz == null || quiz.isCompleted) return;
 
     final started = quiz.copyWith(startedAt: quiz.startedAt ?? DateTime.now());
-    _service.saveQuiz(started);
+    final userId = _currentUserId;
+    if (userId != null) _service.saveQuiz(started, userId);
     state = DailyQuizState(
       quiz: started,
       isPlaying: true,
@@ -294,7 +319,8 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   void _commitAnswer(DailyQuiz quiz, DailyQuizAnswer answer) {
     final updatedAnswers = [...quiz.answers, answer];
     final updatedQuiz = quiz.copyWith(answers: updatedAnswers);
-    _service.saveQuiz(updatedQuiz);
+    final userId = _currentUserId;
+    if (userId != null) _service.saveQuiz(updatedQuiz, userId);
 
     final isLastQuestion =
         state.currentQuestionIndex >= quiz.totalQuestions - 1;
@@ -328,7 +354,8 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     // requests below fail (offline, permissions, etc.), today's quiz stays
     // marked as completed and is restored as "already done" on the next app
     // launch — so the user is never offered the quiz again.
-    _service.saveQuiz(completed);
+    final userId = _currentUserId;
+    if (userId != null) _service.saveQuiz(completed, userId);
     state = DailyQuizState(
       quiz: completed,
       isPlaying: false,
@@ -390,7 +417,9 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   ///
   /// Useful when the provider state was cleared but the quiz is still cached.
   void restoreFromCache() {
-    final saved = _service.loadSavedQuiz();
+    final userId = _currentUserId;
+    if (userId == null) return;
+    final saved = _service.loadSavedQuiz(userId);
     if (saved != null) {
       state = DailyQuizState(
         quiz: saved,

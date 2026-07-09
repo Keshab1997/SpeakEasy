@@ -9,6 +9,13 @@ class DailyQuizService {
   static const String _questionsAssetPath =
       'assets/json/daily_quiz/questions.json';
   static const String _hiveBoxName = 'daily_quiz_cache';
+  static const String _hiveQuestionBankHashKey = 'question_bank_hash';
+
+  /// Cache of loaded question bank to avoid repeated asset I/O.
+  List<DailyQuizQuestion>? _cachedQuestionBank;
+
+  /// Hash of the question bank used to detect stale caches.
+  String? _questionBankHash;
 
   /// Calculate points for a single question.
   int calculatePoints(bool isCorrect, int timeTaken) {
@@ -48,17 +55,47 @@ class DailyQuizService {
     // Pick 2 new-type questions (if available).
     selected.addAll(newType.take(2));
 
-    // Fill remaining 8 from standard, keeping ~equal vocab/grammar.
+    // Fill remaining from standard, supporting vocab/grammar/conversation.
     final vocabPool = standard.where((q) => q.type == 'vocabulary').toList();
     final grammarPool = standard.where((q) => q.type == 'grammar').toList();
+    final conversationPool =
+        standard.where((q) => q.type == 'conversation').toList();
 
-    // How many of each we still need (target 5 each).
-    final vocabNeeded = 5 - selected.where((q) => q.type == 'vocabulary').length;
-    final grammarNeeded =
-        5 - selected.where((q) => q.type == 'grammar').length;
+    // Distribute remaining slots proportionally across available types.
+    final typePools = <String, List<DailyQuizQuestion>>{
+      'vocabulary': vocabPool,
+      'grammar': grammarPool,
+      if (conversationPool.isNotEmpty) 'conversation': conversationPool,
+    };
 
-    selected.addAll(vocabPool.take(vocabNeeded.clamp(0, 8)));
-    selected.addAll(grammarPool.take(grammarNeeded.clamp(0, 8)));
+    // Shuffle each pool.
+    for (final pool in typePools.values) {
+      pool.shuffle(rng);
+    }
+
+    final totalAvailable =
+        typePools.values.fold<int>(0, (sum, p) => sum + p.length);
+    final slotsRemaining = (10 - selected.length).clamp(0, 8);
+
+    var allocated = 0;
+    for (final entry in typePools.entries) {
+      if (allocated >= slotsRemaining) break;
+      final pool = entry.value;
+      final share =
+          (pool.length / totalAvailable * slotsRemaining).round().clamp(
+                0,
+                slotsRemaining - allocated,
+              );
+      selected.addAll(pool.take(share));
+      allocated += share;
+    }
+
+    // Safety net: if any slots remain unfilled, top up from any pool.
+    if (allocated < slotsRemaining) {
+      final allRemaining =
+          typePools.values.expand((p) => p).toList()..shuffle(rng);
+      selected.addAll(allRemaining.take(slotsRemaining - allocated));
+    }
 
     // Final shuffle so new types aren't always first.
     selected.shuffle(rng);
@@ -94,42 +131,81 @@ class DailyQuizService {
     );
   }
 
-  /// Load all questions from the JSON asset.
+  /// Load all questions from the JSON asset (cached after first call).
   Future<List<DailyQuizQuestion>> _loadQuestionBank() async {
+    if (_cachedQuestionBank != null) return _cachedQuestionBank!;
     try {
       final jsonString = await rootBundle.loadString(_questionsAssetPath);
       final data = json.decode(jsonString) as Map<String, dynamic>;
       final questionsList = data['questions'] as List<dynamic>;
-      return questionsList
+      _cachedQuestionBank = questionsList
           .map((q) => DailyQuizQuestion.fromJson(q as Map<String, dynamic>))
           .toList();
+      _questionBankHash = _computeHash(_cachedQuestionBank!);
+      return _cachedQuestionBank!;
     } catch (e) {
       debugPrint('⚠️ Failed to load daily quiz questions: $e');
       return [];
     }
   }
 
-  /// Save quiz state to Hive.
-  void saveQuiz(DailyQuiz quiz) {
-    final box = _hiveBox;
-    box.put('current_quiz', quiz.toJson());
+  /// Ensure the question bank is loaded (for hash comparison before cache reads).
+  Future<void> ensureQuestionBankLoaded() => _loadQuestionBank();
+
+  /// Compute a hash from the question bank to detect content changes.
+  String _computeHash(List<DailyQuizQuestion> questions) {
+    return '${questions.length}:${questions.map((q) => q.id).join(',')}';
   }
 
-  /// Load saved quiz from Hive. Returns null if no quiz or it's from a different day.
-  DailyQuiz? loadSavedQuiz() {
+  /// Save quiz state to Hive (also stores question bank hash for staleness check).
+  ///
+  /// The cache is scoped per user so a completed quiz from one account is
+  /// never restored for a different logged-in account.
+  void saveQuiz(DailyQuiz quiz, String userId) {
+    final box = _hiveBox;
+    box.put('$userId|current_quiz', quiz.copyWith(userId: userId).toJson());
+    if (_questionBankHash != null) {
+      box.put(_hiveQuestionBankHashKey, _questionBankHash);
+    }
+  }
+
+  /// Load saved quiz from Hive for [userId]. Returns null if no quiz, a quiz
+  /// belonging to a different user, a different day, or the question bank has
+  /// changed since the quiz was cached.
+  DailyQuiz? loadSavedQuiz(String userId) {
     try {
       final box = _hiveBox;
-      final data = box.get('current_quiz');
+      final data = box.get('$userId|current_quiz');
       if (data == null) {
-        debugPrint('📅 [DailyQuiz] loadSavedQuiz: no data in Hive');
+        debugPrint('📅 [DailyQuiz] loadSavedQuiz: no data in Hive '
+            '(userId=$userId)');
         return null;
       }
       final saved = DailyQuiz.fromJson(Map<String, dynamic>.from(data));
+      // Defensive: ignore a cached quiz that doesn't belong to this user
+      // (e.g. a stale global key from a pre-scoped version).
+      if (saved.userId != null && saved.userId != userId) {
+        debugPrint('📅 [DailyQuiz] loadSavedQuiz: userId mismatch '
+            '(saved=${saved.userId}, requested=$userId)');
+        return null;
+      }
       if (saved.date != _todayDateString()) {
         debugPrint('📅 [DailyQuiz] loadSavedQuiz: stale date '
             '(saved=${saved.date}, today=${_todayDateString()})');
         return null;
       }
+
+      // If we have a cached hash, check it against the stored one.
+      if (_questionBankHash != null) {
+        final storedHash =
+            box.get(_hiveQuestionBankHashKey) as String?;
+        if (storedHash != _questionBankHash) {
+          debugPrint('📅 [DailyQuiz] loadSavedQuiz: question bank changed, '
+              'forcing regeneration');
+          return null;
+        }
+      }
+
       debugPrint('📅 [DailyQuiz] loadSavedQuiz: loaded '
           '(completed=${saved.isCompleted}, answers=${saved.answers.length})');
       return saved;
@@ -140,8 +216,10 @@ class DailyQuizService {
   }
 
   /// Get today's quiz: either load saved (if exists) or generate fresh.
-  Future<DailyQuiz> getTodayQuiz() async {
-    return loadSavedQuiz() ?? (await generateTodayQuiz());
+  /// Ensures the question bank is loaded first for hash staleness detection.
+  Future<DailyQuiz> getTodayQuiz(String userId) async {
+    await ensureQuestionBankLoaded();
+    return loadSavedQuiz(userId) ?? (await generateTodayQuiz());
   }
 
   /// Complete the quiz: calculate final results, award XP/coins.

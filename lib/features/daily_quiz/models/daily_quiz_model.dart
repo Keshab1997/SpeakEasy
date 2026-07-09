@@ -148,6 +148,7 @@ class DailyQuizAnswer {
 class DailyQuiz {
   final String id;
   final String date;
+  final String? userId;
   final List<DailyQuizQuestion> questions;
   final List<DailyQuizAnswer> answers;
   final bool isCompleted;
@@ -160,6 +161,7 @@ class DailyQuiz {
   const DailyQuiz({
     required this.id,
     required this.date,
+    this.userId,
     this.questions = const [],
     this.answers = const [],
     this.isCompleted = false,
@@ -180,6 +182,7 @@ class DailyQuiz {
   DailyQuiz copyWith({
     String? id,
     String? date,
+    String? userId,
     List<DailyQuizQuestion>? questions,
     List<DailyQuizAnswer>? answers,
     bool? isCompleted,
@@ -192,6 +195,7 @@ class DailyQuiz {
     DailyQuiz(
       id: id ?? this.id,
       date: date ?? this.date,
+      userId: userId ?? this.userId,
       questions: questions ?? this.questions,
       answers: answers ?? this.answers,
       isCompleted: isCompleted ?? this.isCompleted,
@@ -205,6 +209,7 @@ class DailyQuiz {
   Map<String, dynamic> toJson() => {
     'id': id,
     'date': date,
+    'userId': userId,
     'questions': questions.map((q) => q.toJson()).toList(),
     'answers': answers.map((a) => a.toJson()).toList(),
     'isCompleted': isCompleted,
@@ -217,6 +222,7 @@ class DailyQuiz {
 
   factory DailyQuiz.fromJson(Map<String, dynamic> json) => DailyQuiz(
     id: json['id'] as String,
+    userId: json['userId'] as String?,
     date: json['date'] as String,
     questions: (json['questions'] as List<dynamic>?)
       ?.map((q) => DailyQuizQuestion.fromJson(Map<String, dynamic>.from(q)))

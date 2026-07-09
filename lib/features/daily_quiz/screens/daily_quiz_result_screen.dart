@@ -67,39 +67,69 @@ class DailyQuizResultScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: 40),
 
-                // Score Circle
-                Container(
-                  width: 150,
-                  height: 150,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        blurRadius: 20,
-                        spreadRadius: 5,
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '${quiz.score}',
-                          style: const TextStyle(
-                            fontSize: 48,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.primary,
+                // Score Circle (accuracy progress ring)
+                SizedBox(
+                  width: 160,
+                  height: 160,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      TweenAnimationBuilder<double>(
+                        tween: Tween<double>(
+                          begin: 0,
+                          end: accuracy.clamp(0.0, 1.0),
+                        ),
+                        duration: const Duration(milliseconds: 900),
+                        curve: Curves.easeOut,
+                        builder: (context, value, _) => CircularProgressIndicator(
+                          value: value,
+                          strokeWidth: 12,
+                          backgroundColor: Colors.white.withOpacity(0.25),
+                          valueColor: AlwaysStoppedAnimation(
+                            accuracy >= 0.8
+                                ? AppColors.success
+                                : accuracy >= 0.5
+                                    ? AppColors.accent
+                                    : AppColors.error,
                           ),
                         ),
-                        const Text(
-                          'Score',
-                          style: TextStyle(fontSize: 14, color: Colors.grey),
+                      ),
+                      Container(
+                        width: 130,
+                        height: 130,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 20,
+                              spreadRadius: 5,
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '${quiz.score}',
+                                style: const TextStyle(
+                                  fontSize: 48,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              const Text(
+                                'Score',
+                                style:
+                                    TextStyle(fontSize: 14, color: Colors.grey),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 40),
