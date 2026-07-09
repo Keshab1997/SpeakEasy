@@ -5,6 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
 import '../models/mock_test_model.dart';
 import '../repositories/mock_test_repository.dart';
+import '../repositories/progress_repository.dart';
+import '../services/coin_service.dart';
 
 // ── Repository Provider ──
 
@@ -16,15 +18,17 @@ final mockTestRepositoryProvider = Provider<MockTestRepository>((ref) {
 
 class MockTestProgress {
   final Map<int, int> bestScores; // testNumber -> bestScore (0-20)
-  final Map<int, bool> unlockedTests; // testNumber -> isUnlocked
+  final Map<int, bool> unlockedTests; // testNumber -> permanently unlocked via coins
   final int highestUnlockedTest; // highest test number that is unlocked
   final Map<int, List<int>> wrongQuestions; // testNumber -> list of wrong question indices
+  final Map<int, DateTime> adUnlockedTests; // testNumber -> expiry DateTime (ad unlock)
 
   const MockTestProgress({
     this.bestScores = const {},
     this.unlockedTests = const {},
     this.highestUnlockedTest = 1,
     this.wrongQuestions = const {},
+    this.adUnlockedTests = const {},
   });
 
   MockTestProgress copyWith({
@@ -32,12 +36,14 @@ class MockTestProgress {
     Map<int, bool>? unlockedTests,
     int? highestUnlockedTest,
     Map<int, List<int>>? wrongQuestions,
+    Map<int, DateTime>? adUnlockedTests,
   }) {
     return MockTestProgress(
       bestScores: bestScores ?? this.bestScores,
       unlockedTests: unlockedTests ?? this.unlockedTests,
       highestUnlockedTest: highestUnlockedTest ?? this.highestUnlockedTest,
       wrongQuestions: wrongQuestions ?? this.wrongQuestions,
+      adUnlockedTests: adUnlockedTests ?? this.adUnlockedTests,
     );
   }
 }
@@ -89,6 +95,7 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
       Map<int, bool> unlockedTests = {};
       int highestUnlocked = 1;
       Map<int, List<int>> wrongQuestions = {};
+      Map<int, DateTime> adUnlockedTests = {};
 
       if (savedProgress != null) {
         bestScores = Map<int, int>.from(
@@ -104,10 +111,22 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
           (savedProgress['wrongQuestions'] as Map? ?? {})
               .map((k, v) => MapEntry(int.parse(k), List<int>.from(v as List? ?? []))),
         );
+        // Parse ad-unlocked tests with expiry
+        final rawAdUnlocks = savedProgress['adUnlockedTests'] as Map? ?? {};
+        adUnlockedTests = Map<int, DateTime>.from(
+          rawAdUnlocks.map((k, v) {
+            final expiry = DateTime.tryParse(v as String? ?? '');
+            return MapEntry(int.parse(k), expiry ?? DateTime.now().subtract(const Duration(days: 1)));
+          }),
+        );
       }
 
       // Test 1 is always unlocked
       unlockedTests[1] = true;
+
+      // Remove expired ad unlocks
+      final now = DateTime.now();
+      adUnlockedTests.removeWhere((_, expiry) => now.isAfter(expiry));
 
       // Load all 70 test files
       final List<MockTestModel> allTests = [];
@@ -139,6 +158,7 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
           unlockedTests: unlockedTests,
           highestUnlockedTest: highestUnlocked,
           wrongQuestions: wrongQuestions,
+          adUnlockedTests: adUnlockedTests,
         ),
         isLoading: false,
       );
@@ -152,7 +172,23 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
 
   bool isTestUnlocked(int testNumber) {
     if (testNumber == 1) return true;
-    return state.progress.unlockedTests[testNumber] == true;
+    // Check permanent coin unlock
+    if (state.progress.unlockedTests[testNumber] == true) return true;
+    // Check temporary ad unlock (with expiry)
+    final adExpiry = state.progress.adUnlockedTests[testNumber];
+    if (adExpiry != null && DateTime.now().isBefore(adExpiry)) return true;
+    return false;
+  }
+
+  bool isAdUnlocked(int testNumber) {
+    final adExpiry = state.progress.adUnlockedTests[testNumber];
+    return adExpiry != null && DateTime.now().isBefore(adExpiry);
+  }
+
+  Duration? getAdUnlockTimeRemaining(int testNumber) {
+    final adExpiry = state.progress.adUnlockedTests[testNumber];
+    if (adExpiry == null || DateTime.now().isAfter(adExpiry)) return null;
+    return adExpiry.difference(DateTime.now());
   }
 
   bool isTestCompleted(int testNumber) {
@@ -202,63 +238,95 @@ class MockTestNotifier extends StateNotifier<MockTestState> {
       newWrongQuestions.remove(testNumber); // all cleared
     }
 
-    // Check if we should unlock the next test
-    int newHighestUnlocked = state.progress.highestUnlockedTest;
+    // Keep existing unlocks unchanged — no auto-unlock on perfect score
     final newUnlockedTests = Map<int, bool>.from(state.progress.unlockedTests);
-
     newUnlockedTests[1] = true; // Test 1 always unlocked
-
-    // A test is considered "passed" only if bestScore == 20 AND no wrong questions remain
-    final bool testPassed = newBestScore == 20 &&
-        (!newWrongQuestions.containsKey(testNumber) || newWrongQuestions[testNumber]!.isEmpty);
-
-    if (testPassed && testNumber < 70) {
-      final nextTest = testNumber + 1;
-      newUnlockedTests[nextTest] = true;
-      if (nextTest > newHighestUnlocked) {
-        newHighestUnlocked = nextTest;
-      }
-    }
-
-    // Ensure sequential unlock: a test is unlocked only if previous has 20/20
-    for (int i = 2; i <= 70; i++) {
-      final prevPassed = newBestScores[i - 1] == 20 &&
-          (!newWrongQuestions.containsKey(i - 1) ||
-              newWrongQuestions[i - 1]!.isEmpty);
-      if (prevPassed) {
-        newUnlockedTests[i] = true;
-        if (i > newHighestUnlocked) newHighestUnlocked = i;
-      }
-    }
 
     final newProgress = MockTestProgress(
       bestScores: newBestScores,
       unlockedTests: newUnlockedTests,
-      highestUnlockedTest: newHighestUnlocked,
+      highestUnlockedTest: state.progress.highestUnlockedTest,
       wrongQuestions: newWrongQuestions,
+      adUnlockedTests: state.progress.adUnlockedTests,
     );
 
     state = state.copyWith(progress: newProgress);
 
     // Persist to Hive and Firestore (best-effort; in-memory state already updated)
+    await _persistProgress();
+  }
+
+  /// Unlock a mock test permanently by spending coins.
+  /// Returns `true` if the unlock succeeded, `false` if insufficient coins.
+  Future<bool> unlockWithCoins(int testNumber, int coinPrice) async {
+    if (isTestUnlocked(testNumber)) return true; // already unlocked
+    if (testNumber == 1) return true; // test 1 always free
+
+    // Try to spend coins using CoinNotifier
+    // We use the global coinProvider via ref — but in a StateNotifier we don't have ref.
+    // Instead, we import and use the service directly.
+    final progressRepo = ProgressRepository();
+    final coinService = CoinService(progressRepository: progressRepo);
+    final success = await coinService.spendCoins(coinPrice);
+    if (!success) return false;
+
+    final newUnlockedTests = Map<int, bool>.from(state.progress.unlockedTests);
+    newUnlockedTests[testNumber] = true;
+
+    int newHighestUnlocked = state.progress.highestUnlockedTest;
+    if (testNumber > newHighestUnlocked) newHighestUnlocked = testNumber;
+
+    final newProgress = state.progress.copyWith(
+      unlockedTests: newUnlockedTests,
+      highestUnlockedTest: newHighestUnlocked,
+    );
+
+    state = state.copyWith(progress: newProgress);
+    await _persistProgress();
+    return true;
+  }
+
+  /// Unlock a mock test temporarily by watching a rewarded ad.
+  /// [duration] controls how long the unlock lasts (default 24 hours).
+  Future<void> unlockWithAd(int testNumber, {Duration duration = const Duration(hours: 24)}) async {
+    if (isTestUnlocked(testNumber)) return;
+    final expiry = DateTime.now().add(duration);
+
+    final newAdUnlocks =
+        Map<int, DateTime>.from(state.progress.adUnlockedTests);
+    newAdUnlocks[testNumber] = expiry;
+
+    final newProgress =
+        state.progress.copyWith(adUnlockedTests: newAdUnlocks);
+    state = state.copyWith(progress: newProgress);
+    await _persistProgress();
+  }
+
+  /// Persist current progress to Hive and Firestore.
+  Future<void> _persistProgress() async {
     try {
+      final p = state.progress;
       await _repository.saveToHive({
-        'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
-        'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
-        'highestUnlockedTest': newHighestUnlocked,
+        'bestScores': p.bestScores.map((k, v) => MapEntry(k.toString(), v)),
+        'unlockedTests': p.unlockedTests.map((k, v) => MapEntry(k.toString(), v)),
+        'highestUnlockedTest': p.highestUnlockedTest,
         'wrongQuestions':
-            newWrongQuestions.map((k, v) => MapEntry(k.toString(), v)),
+            p.wrongQuestions.map((k, v) => MapEntry(k.toString(), v)),
+        'adUnlockedTests':
+            p.adUnlockedTests.map((k, v) => MapEntry(k.toString(), v.toIso8601String())),
       });
 
       // Also save to Firestore if user is logged in
       final userId = FirebaseAuth.instance.currentUser?.uid;
       if (userId != null) {
         await _repository.uploadToFirestore(userId, {
-          'bestScores': newBestScores.map((k, v) => MapEntry(k.toString(), v)),
-          'unlockedTests': newUnlockedTests.map((k, v) => MapEntry(k.toString(), v)),
-          'highestUnlockedTest': newHighestUnlocked,
+          'bestScores': p.bestScores.map((k, v) => MapEntry(k.toString(), v)),
+          'unlockedTests': p.unlockedTests.map((k, v) => MapEntry(k.toString(), v)),
+          'highestUnlockedTest': p.highestUnlockedTest,
           'wrongQuestions':
-              newWrongQuestions.map((k, v) => MapEntry(k.toString(), v)),
+              p.wrongQuestions.map((k, v) => MapEntry(k.toString(), v)),
+          'adUnlockedTests':
+              p.adUnlockedTests.map((k, v) => MapEntry(k.toString(), v.toIso8601String())),
         });
       }
     } catch (e) {

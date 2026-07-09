@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../providers/mock_test_provider.dart';
 import 'mock_test_quiz_screen.dart';
+import '../widgets/mock_test_unlock_overlay.dart';
 
 class MockTestListScreen extends ConsumerStatefulWidget {
   const MockTestListScreen({super.key});
@@ -61,6 +62,31 @@ class _MockTestListScreenState extends ConsumerState<MockTestListScreen> {
                   ),
                 )
               : _buildContent(context, isDark, state),
+    );
+  }
+
+  void _showUnlockOverlay(BuildContext context, int testNumber, String testTitle) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => MockTestUnlockOverlay(
+        testNumber: testNumber,
+        testTitle: testTitle,
+        onUnlocked: () {
+          Navigator.of(ctx).pop(); // close overlay
+          // Navigate to the quiz now that it's unlocked
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => MockTestQuizScreen(
+                testNumber: testNumber,
+                testTitle: testTitle,
+              ),
+            ),
+          );
+        },
+        onDismiss: () => Navigator.of(ctx).pop(),
+      ),
     );
   }
 
@@ -168,19 +194,21 @@ class _MockTestListScreenState extends ConsumerState<MockTestListScreen> {
         color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
-          onTap: unlocked
-              ? () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => MockTestQuizScreen(
-                        testNumber: test.testNumber,
-                        testTitle: test.title,
-                      ),
-                    ),
-                  );
-                }
-              : null,
+          onTap: () {
+            if (unlocked) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => MockTestQuizScreen(
+                    testNumber: test.testNumber,
+                    testTitle: test.title,
+                  ),
+                ),
+              );
+            } else {
+              _showUnlockOverlay(context, test.testNumber, test.title);
+            }
+          },
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
@@ -244,7 +272,7 @@ class _MockTestListScreenState extends ConsumerState<MockTestListScreen> {
                                 : '${test.questions.length} questions • Ready')
                             : (test.testNumber == 1
                                 ? 'Always unlocked'
-                                : 'Score 20/20 on Test ${test.testNumber - 1}'),
+                                : 'Tap to unlock 🪙'),
                         style: TextStyle(
                           fontSize: 12,
                           color: perfect

@@ -26,6 +26,9 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
   final _streakFreezeCostController = TextEditingController();
   final _dailyGoalXPController = TextEditingController();
   final _maxStreakFreezesController = TextEditingController();
+  final _mockTestCoinPriceController = TextEditingController();
+  final _mockTestAdUnlockDurationController = TextEditingController();
+  bool _mockTestAdUnlockEnabled = true;
 
   @override
   void initState() {
@@ -42,6 +45,8 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
     _streakFreezeCostController.dispose();
     _dailyGoalXPController.dispose();
     _maxStreakFreezesController.dispose();
+    _mockTestCoinPriceController.dispose();
+    _mockTestAdUnlockDurationController.dispose();
     super.dispose();
   }
 
@@ -69,6 +74,9 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
     _streakFreezeCostController.text = config.gameplay.streakFreezeCost.toString();
     _dailyGoalXPController.text = config.gameplay.dailyGoalXP.toString();
     _maxStreakFreezesController.text = config.gameplay.maxStreakFreezes.toString();
+    _mockTestCoinPriceController.text = config.gameplay.mockTestCoinPrice.toString();
+    _mockTestAdUnlockDurationController.text = config.gameplay.mockTestAdUnlockDurationHours.toString();
+    _mockTestAdUnlockEnabled = config.gameplay.mockTestAdUnlockEnabled;
   }
 
   Future<void> _saveConfig() async {
@@ -100,6 +108,9 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
           'streakFreezeCost': int.tryParse(_streakFreezeCostController.text.trim()) ?? 100,
           'dailyGoalXP': int.tryParse(_dailyGoalXPController.text.trim()) ?? 50,
           'maxStreakFreezes': int.tryParse(_maxStreakFreezesController.text.trim()) ?? 3,
+          'mockTestCoinPrice': int.tryParse(_mockTestCoinPriceController.text.trim()) ?? 300,
+          'mockTestAdUnlockEnabled': _mockTestAdUnlockEnabled,
+          'mockTestAdUnlockDurationHours': int.tryParse(_mockTestAdUnlockDurationController.text.trim()) ?? 24,
         },
       };
 
@@ -408,6 +419,76 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
         ),
       ),
       const SizedBox(height: 12),
+
+      // ── Mock Test Settings ──
+      const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: Divider(),
+      ),
+      const SizedBox(height: 4),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Text(
+          'Mock Test Unlock',
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w700,
+            color: AppColors.primary,
+          ),
+        ),
+      ),
+      const SizedBox(height: 12),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Row(
+          children: [
+            Expanded(
+              child: TextField(
+                controller: _mockTestCoinPriceController,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                decoration: const InputDecoration(
+                  labelText: 'Coin Price',
+                  hintText: '300',
+                  border: OutlineInputBorder(),
+                  isDense: true,
+                ),
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: TextField(
+                controller: _mockTestAdUnlockDurationController,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                decoration: const InputDecoration(
+                  labelText: 'Ad Unlock (hours)',
+                  hintText: '24',
+                  border: OutlineInputBorder(),
+                  isDense: true,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      const SizedBox(height: 8),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: SwitchListTile(
+          title: const Text('Ad Unlock Enabled', style: TextStyle(fontSize: 14)),
+          subtitle: const Text('Allow students to unlock via rewarded ad',
+              style: TextStyle(fontSize: 12)),
+          value: _mockTestAdUnlockEnabled,
+          dense: true,
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+          activeColor: AppColors.primary,
+          onChanged: (value) {
+            setState(() => _mockTestAdUnlockEnabled = value);
+          },
+        ),
+      ),
+      const SizedBox(height: 8),
     ]);
   }
 

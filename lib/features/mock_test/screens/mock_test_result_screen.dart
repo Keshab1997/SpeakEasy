@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/mock_test_model.dart';
 import '../../../providers/mock_test_provider.dart';
-import '../widgets/mock_test_unlock_overlay.dart';
 import 'mock_test_quiz_screen.dart';
 import 'mock_test_list_screen.dart';
 
@@ -42,18 +41,6 @@ class MockTestResultScreen extends ConsumerStatefulWidget {
 }
 
 class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
-  bool _showCelebration = false;
-
-  @override
-  void initState() {
-    super.initState();
-    if (widget.score == widget.total) {
-      Future.delayed(const Duration(milliseconds: 400), () {
-        if (mounted) setState(() => _showCelebration = true);
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -193,8 +180,8 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
                       Expanded(
                         child: Text(
                           isPerfect
-                              ? '🎉 Perfect score! You have mastered this test. ${nextTestNumber <= 70 ? "Next test is now unlocked!" : "You have completed all tests!"}'
-                              : 'You need ${widget.total}/${widget.total} to unlock the next test. Review your answers and try again!',
+                              ? '🎉 Perfect score! You have mastered this test.'
+                              : 'Keep practicing! Tap any locked test to unlock it with coins or by watching an ad.',
                           style: TextStyle(
                             color: isPerfect ? AppColors.secondary : Colors.orange,
                             fontWeight: FontWeight.w600,
@@ -479,32 +466,6 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
           ),
         ),
 
-        // ── Celebration Overlay ──
-        if (_showCelebration)
-          MockTestUnlockOverlay(
-            completedTestNumber: widget.testNumber,
-            completedTestTitle: widget.testTitle,
-            score: widget.score,
-            total: widget.total,
-            nextTestNumber: nextTestNumber,
-            totalCompleted: totalCompleted,
-            totalTests: 70,
-            xpReward: widget.testNumber * 10,
-            coinReward: widget.testNumber * 5,
-            onTakeNextTest: () {
-              setState(() => _showCelebration = false);
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => MockTestQuizScreen(
-                    testNumber: nextTestNumber,
-                    testTitle: 'Mock Test $nextTestNumber',
-                  ),
-                ),
-              );
-            },
-            onDismiss: () => setState(() => _showCelebration = false),
-          ),
       ],
     );
   }

@@ -1,539 +1,487 @@
-import 'dart:math';
-import 'package:confetti/confetti.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../providers/mock_test_provider.dart';
+import '../../../providers/game/coin_provider.dart';
+import '../../../services/ad_service.dart';
+import '../../../services/remote_config_service.dart';
 
-/// Full-screen celebration overlay shown when a student scores a perfect score
-/// (score == total) on a mock test and unlocks the next test.
+/// Full-screen overlay shown when a student taps a locked mock test.
 ///
-/// Displays a gold-themed animated card over a semi-transparent backdrop
-/// with confetti particles. The card scales and fades in with a spring
-/// animation, and the trophy icon bounces separately.
-class MockTestUnlockOverlay extends StatefulWidget {
-  final int completedTestNumber;
-  final String completedTestTitle;
-  final int score;
-  final int total;
-  final int nextTestNumber;
-  final int totalCompleted;
-  final int totalTests;
-  final int xpReward;
-  final int coinReward;
-  final VoidCallback onTakeNextTest;
+/// Offers two unlock methods:
+///   🪙 Pay coins → Permanent unlock
+///   📺 Watch ad  → 24-hour temporary unlock
+class MockTestUnlockOverlay extends ConsumerStatefulWidget {
+  final int testNumber;
+  final String testTitle;
+  final VoidCallback onUnlocked;
   final VoidCallback onDismiss;
 
   const MockTestUnlockOverlay({
     super.key,
-    required this.completedTestNumber,
-    required this.completedTestTitle,
-    required this.score,
-    required this.total,
-    required this.nextTestNumber,
-    required this.totalCompleted,
-    required this.totalTests,
-    this.xpReward = 50,
-    this.coinReward = 25,
-    required this.onTakeNextTest,
+    required this.testNumber,
+    required this.testTitle,
+    required this.onUnlocked,
     required this.onDismiss,
   });
 
   @override
-  State<MockTestUnlockOverlay> createState() => _MockTestUnlockOverlayState();
+  ConsumerState<MockTestUnlockOverlay> createState() =>
+      _MockTestUnlockOverlayState();
 }
 
-class _MockTestUnlockOverlayState extends State<MockTestUnlockOverlay>
-    with TickerProviderStateMixin {
+class _MockTestUnlockOverlayState extends ConsumerState<MockTestUnlockOverlay>
+    with SingleTickerProviderStateMixin {
   late final AnimationController _entryController;
   late final Animation<double> _scaleAnimation;
   late final Animation<double> _fadeAnimation;
 
-  late final AnimationController _bounceController;
-  late final Animation<double> _bounceAnimation;
-
-  late final AnimationController _contentController;
-  late final Animation<double> _contentFade;
-
-  late final ConfettiController _confettiController;
-
-  bool _isLastTest = false;
+  int _coinPrice = 300;
+  bool _adEnabled = true;
+  int _adDurationHours = 24;
+  bool _loadingConfig = true;
+  bool _processingCoin = false;
+  bool _processingAd = false;
+  String? _errorMessage;
 
   @override
   void initState() {
     super.initState();
 
-    _isLastTest = widget.nextTestNumber > widget.totalTests;
-
-    // Entry animation: scale 0 → 1.05 → 1.0 with spring feel
     _entryController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 600),
-    );
-    _scaleAnimation = CurvedAnimation(
-      parent: _entryController,
-      curve: Curves.elasticOut,
-    );
-    _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _entryController, curve: Curves.easeIn),
-    );
-
-    // Trophy bounce animation (starts after card appears)
-    _bounceController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 500),
     );
-    _bounceAnimation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _bounceController, curve: Curves.elasticOut),
+    _scaleAnimation = CurvedAnimation(
+      parent: _entryController,
+      curve: const ElasticOutCurve(0.85),
     );
-
-    // Content staggered fade-in
-    _contentController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 600),
+    _fadeAnimation = CurvedAnimation(
+      parent: _entryController,
+      curve: Curves.easeIn,
     );
-
-    _contentFade = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _contentController, curve: Curves.easeOut),
-    );
-
-    // Confetti particle controller
-    _confettiController =
-        ConfettiController(duration: const Duration(seconds: 3));
-
-    // Start animations
     _entryController.forward();
-    Future.delayed(const Duration(milliseconds: 350), () {
-      if (mounted) _bounceController.forward();
-    });
-    Future.delayed(const Duration(milliseconds: 600), () {
-      if (mounted) _contentController.forward();
-    });
-    _confettiController.play();
+    _loadConfig();
   }
 
   @override
   void dispose() {
     _entryController.dispose();
-    _bounceController.dispose();
-    _contentController.dispose();
-    _confettiController.dispose();
     super.dispose();
   }
 
-  List<Color> get _confettiColors => [
-        const Color(0xFFFF9800), // Gold
-        const Color(0xFFFFC107), // Amber
-        Colors.white,
-        Colors.yellowAccent,
-        const Color(0xFF4CAF50), // Green (AppColors.secondary)
-      ];
+  Future<void> _loadConfig() async {
+    try {
+      final price = await RemoteConfigService.getMockTestCoinPrice();
+      final adEnabled = await RemoteConfigService.isMockTestAdUnlockEnabled();
+      final adHours = await RemoteConfigService.getMockTestAdUnlockDurationHours();
+      if (mounted) {
+        setState(() {
+          _coinPrice = price;
+          _adEnabled = adEnabled;
+          _adDurationHours = adHours;
+          _loadingConfig = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _loadingConfig = false);
+    }
+  }
 
-  /// Draws a simple 5-pointed star path for confetti particles.
-  static Path _drawStar(Size size) {
-    const numPoints = 5;
-    const outerRadius = 6.0;
-    const innerRadius = 2.5;
-    final path = Path();
-    final center = Offset(size.width / 2, size.height / 2);
+  Future<void> _unlockWithCoins() async {
+    if (_processingCoin) return;
+    setState(() {
+      _processingCoin = true;
+      _errorMessage = null;
+    });
 
-    for (var i = 0; i < numPoints * 2; i++) {
-      final radius = i.isEven ? outerRadius : innerRadius;
-      final angle = (pi * i / numPoints) - pi / 2;
-      final x = center.dx + radius * cos(angle);
-      final y = center.dy + radius * sin(angle);
-      if (i == 0) {
-        path.moveTo(x, y);
+    try {
+      final notifier = ref.read(mockTestProvider.notifier);
+      final success = await notifier.unlockWithCoins(widget.testNumber, _coinPrice);
+
+      if (!mounted) return;
+
+      if (success) {
+        // Refresh coin state to update UI
+        ref.read(coinProvider.notifier).refresh();
+        widget.onUnlocked();
       } else {
-        path.lineTo(x, y);
+        setState(() {
+          _errorMessage = 'Not enough coins! 🪙\nYou need $_coinPrice coins to unlock.';
+          _processingCoin = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _errorMessage = 'Something went wrong. Please try again.';
+          _processingCoin = false;
+        });
       }
     }
-    path.close();
-    return path;
+  }
+
+  Future<void> _unlockWithAd() async {
+    if (_processingAd) return;
+    setState(() {
+      _processingAd = true;
+      _errorMessage = null;
+    });
+
+    try {
+      final adService = AdService();
+      // Load the ad first
+      await adService.loadRewardedAd();
+      await Future.delayed(const Duration(milliseconds: 500));
+
+      if (!mounted) return;
+
+      // Use a Completer to wait for the reward callback
+      final rewardCompleter = Completer<void>();
+
+      // Show and check result
+      final shown = await adService.showRewardedAd(
+        onRewardEarned: () {
+          // Ad watched successfully — unlock the test
+          final notifier = ref.read(mockTestProvider.notifier);
+          notifier.unlockWithAd(
+            widget.testNumber,
+            duration: Duration(hours: _adDurationHours),
+          );
+          rewardCompleter.complete();
+        },
+      );
+
+      if (!mounted) return;
+
+      if (shown) {
+        // Wait for the reward callback (user watches full ad)
+        await rewardCompleter.future.timeout(
+          const Duration(minutes: 2),
+          onTimeout: () {
+            if (!rewardCompleter.isCompleted) {
+              rewardCompleter.completeError(TimeoutException('Ad watch timed out'));
+            }
+          },
+        );
+
+        if (mounted) {
+          widget.onUnlocked();
+          return;
+        }
+      }
+
+      if (mounted) {
+        setState(() {
+          _errorMessage = 'Could not show ad right now. Try again later.';
+          _processingAd = false;
+        });
+      }
+    } on TimeoutException {
+      if (mounted) {
+        setState(() {
+          _errorMessage = 'Ad timed out. Please try again.';
+          _processingAd = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _errorMessage = 'Something went wrong. Please try again.';
+          _processingAd = false;
+        });
+      }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
-    final progress = widget.totalCompleted / widget.totalTests;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final coins = ref.watch(coinProvider).currentCoins;
+    final canAfford = coins >= _coinPrice;
 
-    return Material(
-      color: Colors.transparent,
-      child: Stack(
-        children: [
-          // Semi-transparent backdrop (tap to dismiss)
-          GestureDetector(
-            onTap: widget.onDismiss,
-            child: AnimatedBuilder(
-              animation: _fadeAnimation,
-              builder: (context, _) => Container(
-                color: Colors.black.withOpacity(0.55 * _fadeAnimation.value),
-              ),
-            ),
-          ),
-
-          // Confetti particle system
-          Align(
-            alignment: Alignment.topCenter,
-            child: ConfettiWidget(
-              confettiController: _confettiController,
-              blastDirectionality: BlastDirectionality.explosive,
-              shouldLoop: false,
-              colors: _confettiColors,
-              numberOfParticles: 20,
-              maxBlastForce: 20,
-              minBlastForce: 5,
-              gravity: 0.2,
-              particleDrag: 0.05,
-              createParticlePath: _drawStar,
-            ),
-          ),
-
-          // Celebration card (wrapped to absorb taps on margin area)
-          Center(
-            child: GestureDetector(
-              behavior: HitTestBehavior.opaque,
-              onTap: () {}, // prevent taps from passing to backdrop
-              child: AnimatedBuilder(
-                animation: _entryController,
-                builder: (context, _) {
-                  final scale = _scaleAnimation.value;
-                  final opacity = _fadeAnimation.value;
-                  return Transform.scale(
-                    scale: scale,
-                    child: Opacity(
-                      opacity: opacity,
-                      child: _buildCard(context, theme, isDark, progress),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCard(
-    BuildContext context,
-    ThemeData theme,
-    bool isDark,
-    double progress,
-  ) {
-    const goldColor = Color(0xFFFF9800);
-    const goldColorLight = Color(0xFFFFC107);
-
-    return Container(
-      width: 320,
-      margin: const EdgeInsets.symmetric(horizontal: 32),
-      decoration: BoxDecoration(
-        color: theme.cardColor,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: goldColor.withOpacity(0.6), width: 2),
-        boxShadow: [
-          BoxShadow(
-            color: goldColor.withOpacity(0.4),
-            blurRadius: 40,
-            spreadRadius: 8,
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Trophy icon with bounce
-            AnimatedBuilder(
-              animation: _bounceController,
-              builder: (context, _) {
-                final bounce = _bounceAnimation.value;
-                return Transform.scale(
-                  scale: 0.8 + (bounce * 0.4),
-                  child: const Text('🏆', style: TextStyle(fontSize: 72)),
-                );
-              },
-            ),
-            const SizedBox(height: 12),
-
-            // "PERFECT SCORE!" header
-            const Text(
-              'PERFECT SCORE!',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w800,
-                letterSpacing: 3,
-                color: goldColorLight,
-              ),
-            ),
-            const SizedBox(height: 8),
-
-            // Score
-            Text(
-              '🎉 You scored ${widget.score}/${widget.total}!',
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: AppColors.secondary,
-              ),
-            ),
-            const SizedBox(height: 4),
-
-            // Test completed
-            Text(
-              widget.completedTestTitle,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 4),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.check_circle_rounded,
-                    color: AppColors.secondary, size: 18),
-                SizedBox(width: 6),
-                Text(
-                  'Completed ✅',
-                  style: TextStyle(
-                    color: AppColors.secondary,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14,
-                  ),
+    return FadeTransition(
+      opacity: _fadeAnimation,
+      child: Container(
+        color: Colors.black.withOpacity(0.7),
+        child: Center(
+          child: ScaleTransition(
+            scale: _scaleAnimation,
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 28),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: isDark
+                      ? [const Color(0xFF1A1A2E), const Color(0xFF16213E)]
+                      : [Colors.white, const Color(0xFFF8F9FF)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                 ),
-              ],
-            ),
-
-            // Divider
-            if (!_isLastTest) ...[
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 16),
-                child: Divider(height: 1),
-              ),
-
-              // Next test unlocked
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.lock_open_rounded,
-                      color: goldColor, size: 20),
-                  const SizedBox(width: 8),
-                  Text(
-                    'Mock Test ${widget.nextTestNumber} Unlocked!',
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: goldColor,
-                    ),
+                borderRadius: BorderRadius.circular(28),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.primary.withOpacity(0.2),
+                    blurRadius: 30,
+                    offset: const Offset(0, 10),
                   ),
                 ],
               ),
-              const SizedBox(height: 4),
-              Text(
-                'You\'ve earned the right to advance! 🎯',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: theme.textTheme.bodyMedium?.color?.withOpacity(0.6),
-                ),
-              ),
-            ] else ...[
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 16),
-                child: Divider(height: 1),
-              ),
-              Text(
-                '🎉 You completed all ${widget.totalTests} tests!',
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: goldColor,
-                ),
-              ),
-              const SizedBox(height: 4),
-              Text(
-                'What an incredible achievement! 🌟',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: theme.textTheme.bodyMedium?.color?.withOpacity(0.6),
-                ),
-              ),
-            ],
-
-            // Progress bar
-            const SizedBox(height: 16),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Padding(
+                padding: const EdgeInsets.all(28),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      'Progress',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: theme.textTheme.bodyMedium?.color
-                            ?.withOpacity(0.6),
+                    // ── Lock Icon ──
+                    Container(
+                      width: 72,
+                      height: 72,
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Colors.orangeAccent, Colors.deepOrange],
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.deepOrange.withOpacity(0.3),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: const Icon(
+                        Icons.lock_rounded,
+                        color: Colors.white,
+                        size: 36,
                       ),
                     ),
+                    const SizedBox(height: 20),
+
+                    // ── Title ──
                     Text(
-                      '${widget.totalCompleted}/${widget.totalTests}',
-                      style: const TextStyle(
-                        fontSize: 12,
+                      '🔒 Test ${widget.testNumber} is Locked',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: isDark ? Colors.white : const Color(0xFF1A1A2E),
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      widget.testTitle,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: isDark ? Colors.white60 : Colors.black54,
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+
+                    // ── Divider ──
+                    Container(
+                      height: 1,
+                      color: (isDark ? Colors.white12 : Colors.black12),
+                    ),
+                    const SizedBox(height: 20),
+
+                    // ── Choose Method Text ──
+                    Text(
+                      'Choose how to unlock:',
+                      style: TextStyle(
+                        fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.secondary,
+                        color: isDark ? Colors.white70 : Colors.black87,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+
+                    // ── Coins Balance ──
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: AppColors.primary.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Text('🪙', style: TextStyle(fontSize: 18)),
+                          const SizedBox(width: 6),
+                          Text(
+                            '$coins coins available',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.primary,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+
+                    // ── Option 1: Pay Coins ──
+                    _buildOptionButton(
+                      context: context,
+                      icon: '🪙',
+                      title: 'Pay $_coinPrice Coins',
+                      subtitle: 'Permanent unlock — one-time payment',
+                      color: Colors.amber.shade700,
+                      enabled: canAfford && !_loadingConfig && !_processingCoin && !_processingAd,
+                      loading: _processingCoin,
+                      onTap: _unlockWithCoins,
+                      isDark: isDark,
+                    ),
+                    const SizedBox(height: 12),
+
+                    // ── Option 2: Watch Ad ──
+                    if (_adEnabled)
+                      _buildOptionButton(
+                        context: context,
+                        icon: '📺',
+                        title: 'Watch an Ad',
+                        subtitle: '${_adDurationHours}h temporary unlock',
+                        color: Colors.purple.shade400,
+                        enabled: !_loadingConfig && !_processingCoin && !_processingAd,
+                        loading: _processingAd,
+                        onTap: _unlockWithAd,
+                        isDark: isDark,
+                      ),
+
+                    // ── Error Message ──
+                    if (_errorMessage != null) ...[
+                      const SizedBox(height: 12),
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.red.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Colors.red.withOpacity(0.2)),
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.error_outline, color: Colors.redAccent, size: 18),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(
+                                _errorMessage!,
+                                style: const TextStyle(
+                                  color: Colors.redAccent,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+
+                    const SizedBox(height: 20),
+
+                    // ── Cancel ──
+                    TextButton(
+                      onPressed: widget.onDismiss,
+                      child: Text(
+                        'Maybe later',
+                        style: TextStyle(
+                          color: isDark ? Colors.white54 : Colors.black45,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 6),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(4),
-                  child: AnimatedBuilder(
-                    animation: _contentController,
-                    builder: (context, _) => LinearProgressIndicator(
-                      value: progress * _contentFade.value,
-                      backgroundColor:
-                          isDark ? Colors.grey[800] : Colors.grey[200],
-                      color: AppColors.secondary,
-                      minHeight: 6,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
-            // Rewards
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                if (widget.xpReward > 0) ...[
-                  _RewardChip(
-                    icon: '⚡',
-                    label: '+${widget.xpReward} XP',
-                    color: AppColors.warning,
-                  ),
-                  const SizedBox(width: 8),
-                ],
-                if (widget.coinReward > 0)
-                  _RewardChip(
-                    icon: '🪙',
-                    label: '+${widget.coinReward}',
-                    color: AppColors.warning,
-                  ),
-              ],
-            ),
-            const SizedBox(height: 24),
-
-            // Buttons
-            if (!_isLastTest)
-              SizedBox(
-                width: double.infinity,
-                height: 52,
-                child: ElevatedButton.icon(
-                  onPressed: widget.onTakeNextTest,
-                  icon: const Icon(Icons.arrow_forward_rounded),
-                  label: const Text(
-                    'TAKE NEXT TEST',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.secondary,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    elevation: 4,
-                  ),
-                ),
-              )
-            else
-              SizedBox(
-                width: double.infinity,
-                height: 52,
-                child: ElevatedButton.icon(
-                  onPressed: widget.onDismiss,
-                  icon: const Icon(Icons.emoji_events_rounded),
-                  label: const Text(
-                    'VIEW RESULTS',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: goldColor,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    elevation: 4,
-                  ),
-                ),
-              ),
-
-            const SizedBox(height: 12),
-            TextButton(
-              onPressed: widget.onDismiss,
-              child: Text(
-                'Stay & Review',
-                style: TextStyle(
-                  color: theme.textTheme.bodyMedium?.color?.withOpacity(0.5),
-                  fontSize: 13,
-                ),
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
   }
-}
 
-/// Small badge showing a reward (XP or coins).
-class _RewardChip extends StatelessWidget {
-  final String icon;
-  final String label;
-  final Color color;
-
-  const _RewardChip({
-    required this.icon,
-    required this.label,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: color.withOpacity(0.3)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(icon, style: const TextStyle(fontSize: 14)),
-          const SizedBox(width: 4),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w700,
-              color: color,
+  Widget _buildOptionButton({
+    required BuildContext context,
+    required String icon,
+    required String title,
+    required String subtitle,
+    required Color color,
+    required bool enabled,
+    required bool loading,
+    required VoidCallback onTap,
+    required bool isDark,
+  }) {
+    return SizedBox(
+      width: double.infinity,
+      child: Material(
+        borderRadius: BorderRadius.circular(16),
+        color: enabled ? color.withOpacity(0.12) : (isDark ? Colors.white10 : Colors.grey.shade100),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(16),
+          onTap: enabled ? onTap : null,
+          child: AnimatedOpacity(
+            opacity: enabled ? 1.0 : 0.5,
+            duration: const Duration(milliseconds: 200),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              child: Row(
+                children: [
+                  // Icon
+                  Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: enabled ? color.withOpacity(0.15) : Colors.grey.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    child: Center(
+                      child: loading
+                          ? SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                valueColor: AlwaysStoppedAnimation<Color>(color),
+                              ),
+                            )
+                          : Text(icon, style: const TextStyle(fontSize: 24)),
+                    ),
+                  ),
+                  const SizedBox(width: 14),
+                  // Text
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          title,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: enabled ? color : (isDark ? Colors.white38 : Colors.black38),
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          subtitle,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: enabled
+                                ? (isDark ? Colors.white60 : Colors.black54)
+                                : (isDark ? Colors.white24 : Colors.black26),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (enabled)
+                    Icon(Icons.arrow_forward_ios_rounded, color: color, size: 16),
+                ],
+              ),
             ),
           ),
-        ],
+        ),
       ),
     );
   }

@@ -89,6 +89,24 @@ class RemoteConfigService {
     return config.gameplay.maxStreakFreezes;
   }
 
+  /// Returns the cost to unlock a mock test with coins.
+  static Future<int> getMockTestCoinPrice() async {
+    final config = await getConfig();
+    return config.gameplay.mockTestCoinPrice;
+  }
+
+  /// Returns whether ad-based mock test unlock is enabled.
+  static Future<bool> isMockTestAdUnlockEnabled() async {
+    final config = await getConfig();
+    return config.gameplay.mockTestAdUnlockEnabled;
+  }
+
+  /// Returns how many hours an ad-based unlock lasts.
+  static Future<int> getMockTestAdUnlockDurationHours() async {
+    final config = await getConfig();
+    return config.gameplay.mockTestAdUnlockDurationHours;
+  }
+
   /// Returns the maintenance message if maintenance mode is active.
   static Future<String?> getMaintenanceMessage() async {
     final config = await getConfig();

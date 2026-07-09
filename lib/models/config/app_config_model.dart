@@ -193,11 +193,17 @@ class GameplaySettings {
   final int streakFreezeCost;
   final int dailyGoalXP;
   final int maxStreakFreezes;
+  final int mockTestCoinPrice;
+  final bool mockTestAdUnlockEnabled;
+  final int mockTestAdUnlockDurationHours;
 
   const GameplaySettings({
     this.streakFreezeCost = 100,
     this.dailyGoalXP = 50,
     this.maxStreakFreezes = 3,
+    this.mockTestCoinPrice = 300,
+    this.mockTestAdUnlockEnabled = true,
+    this.mockTestAdUnlockDurationHours = 24,
   });
 
   factory GameplaySettings.fromMap(Map<String, dynamic> map) {
@@ -205,6 +211,9 @@ class GameplaySettings {
       streakFreezeCost: map['streakFreezeCost'] as int? ?? 100,
       dailyGoalXP: map['dailyGoalXP'] as int? ?? 50,
       maxStreakFreezes: map['maxStreakFreezes'] as int? ?? 3,
+      mockTestCoinPrice: map['mockTestCoinPrice'] as int? ?? 300,
+      mockTestAdUnlockEnabled: map['mockTestAdUnlockEnabled'] as bool? ?? true,
+      mockTestAdUnlockDurationHours: map['mockTestAdUnlockDurationHours'] as int? ?? 24,
     );
   }
 
@@ -213,6 +222,9 @@ class GameplaySettings {
       'streakFreezeCost': streakFreezeCost,
       'dailyGoalXP': dailyGoalXP,
       'maxStreakFreezes': maxStreakFreezes,
+      'mockTestCoinPrice': mockTestCoinPrice,
+      'mockTestAdUnlockEnabled': mockTestAdUnlockEnabled,
+      'mockTestAdUnlockDurationHours': mockTestAdUnlockDurationHours,
     };
   }
 }
