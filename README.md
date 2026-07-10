@@ -208,7 +208,7 @@ flutter build ios --release
 
 ## 📄 License
 
-This project is private and not licensed for public distribution.
+All Rights Reserved © 2026 Keshab Sarkar. This app is proprietary and may not be copied, modified, or distributed without explicit permission.
 
 ## 📞 Contact
 
