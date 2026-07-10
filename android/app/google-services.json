@@ -12,7 +12,28 @@
           "package_name": "com.speakeasy.english"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "316553555884-l5pdvnrmkek6gfjk93u655lsl46i1lgp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.speakeasy.english",
+            "certificate_hash": "a2c3c692e81f277e5eb3c088feec5a3713f3b235"
+          }
+        },
+        {
+          "client_id": "316553555884-m1k3768693kq0ufcjlbpf8usjotm813n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.speakeasy.english",
+            "certificate_hash": "e96a48efb7802c1b6ec5cb99e6ef702a5b9c18b5"
+          }
+        },
+        {
+          "client_id": "316553555884-4t2gsftsov27n3jekvnj3qh3ql50kbe9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyA0q2lT7iZMEG6VghfKjxron9I-ibcCX_k"
@@ -20,7 +41,57 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316553555884-4t2gsftsov27n3jekvnj3qh3ql50kbe9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316553555884:android:b5bc3be66bd6f5017ad409",
+        "android_client_info": {
+          "package_name": "com.speakeasy.english.learn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316553555884-4v0a43t2mtu92lnq28vnh5g1409g8bqk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.speakeasy.english.learn",
+            "certificate_hash": "e96a48efb7802c1b6ec5cb99e6ef702a5b9c18b5"
+          }
+        },
+        {
+          "client_id": "316553555884-5m1o2dhhacak4r7h9bfoip645d7t7i91.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.speakeasy.english.learn",
+            "certificate_hash": "a2c3c692e81f277e5eb3c088feec5a3713f3b235"
+          }
+        },
+        {
+          "client_id": "316553555884-4t2gsftsov27n3jekvnj3qh3ql50kbe9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0q2lT7iZMEG6VghfKjxron9I-ibcCX_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316553555884-4t2gsftsov27n3jekvnj3qh3ql50kbe9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

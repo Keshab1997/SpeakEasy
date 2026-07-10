@@ -35,8 +35,8 @@
 -keepattributes *Annotation*
 
 # Keep custom model classes used by Hive and Firestore
--keep class com.speakeasy.english.models.** { *; }
--keep class com.speakeasy.english.models.game.** { *; }
+-keep class com.speakeasy.english.learn.models.** { *; }
+-keep class com.speakeasy.english.learn.models.game.** { *; }
 
 # Flutter Wrapper
 -keep class * implements io.flutter.embedding.engine.FlutterEngine { *; }

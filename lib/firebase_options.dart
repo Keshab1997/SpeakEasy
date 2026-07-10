@@ -33,11 +33,11 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDummyKeyAndroid1234567890',
-    appId: '1:1234567890:android:abcdef123456',
-    messagingSenderId: '1234567890',
-    projectId: 'spoken-english-app-dummy',
-    storageBucket: 'spoken-english-app-dummy.appspot.com',
+    apiKey: 'AIzaSyA0q2lT7iZMEG6VghfKjxron9I-ibcCX_k',
+    appId: '1:316553555884:android:b5bc3be66bd6f5017ad409',
+    messagingSenderId: '316553555884',
+    projectId: 'flutter-spoken-english-a-c660b',
+    storageBucket: 'flutter-spoken-english-a-c660b.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -46,7 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1234567890',
     projectId: 'spoken-english-app-dummy',
     storageBucket: 'spoken-english-app-dummy.appspot.com',
-    iosBundleId: 'com.speakeasy.english',
+    iosBundleId: 'com.speakeasy.english.learn',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1234567890',
     projectId: 'spoken-english-app-dummy',
     storageBucket: 'spoken-english-app-dummy.appspot.com',
-    iosBundleId: 'com.speakeasy.english.RunnerTests',
+    iosBundleId: 'com.speakeasy.english.learn.RunnerTests',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
