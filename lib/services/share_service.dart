@@ -1,7 +1,7 @@
 import 'package:share_plus/share_plus.dart';
 
 class ShareService {
-  static const String _appLink = 'https://play.google.com/store/apps/details?id=flutter_spoken_english_app';
+  static const String _appLink = 'https://play.google.com/store/apps/details?id=com.speakeasy.english.learn';
   static const String _appName = 'SpeakEasy';
   static const String _appTagline = 'বাংলায় ইংলিশ শেখার সেরা অ্যাপ';
 

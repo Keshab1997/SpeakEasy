@@ -91,3 +91,9 @@
 -keep class com.onesignal.debug.** { *; }
 -keep class com.huawei.hms.** { *; }
 -keep class com.huawei.agconnect.** { *; }
+
+# Keep Play Core / Feature Delivery (needed by Flutter engine's PlayStoreDeferredComponentManager)
+-keep class com.google.android.play.core.** { *; }
+-dontwarn com.google.android.play.core.tasks.OnFailureListener
+-dontwarn com.google.android.play.core.tasks.OnSuccessListener
+-dontwarn com.google.android.play.core.tasks.Task
