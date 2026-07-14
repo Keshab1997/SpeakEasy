@@ -7,6 +7,8 @@ import '../repository/admin_repository.dart';
 import 'admin_analytics_screen.dart';
 import 'admin_config_screen.dart';
 import 'admin_notifications_screen.dart';
+import 'admin_api_keys_screen.dart';
+import 'admin_error_logs_screen.dart';
 import 'admin_feedback_screen.dart';
 import 'admin_user_detail_screen.dart';
 
@@ -84,6 +86,22 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
               ),
             ),
             icon: const Icon(Icons.settings_applications_rounded),
+          ),
+          IconButton(
+            tooltip: 'API Keys',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const AdminApiKeysScreen()),
+            ),
+            icon: const Icon(Icons.vpn_key_rounded),
+          ),
+          IconButton(
+            tooltip: 'Error Logs',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const AdminErrorLogsScreen()),
+            ),
+            icon: const Icon(Icons.report_problem_rounded),
           ),
           IconButton(
             tooltip: 'Info',
