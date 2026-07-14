@@ -267,44 +267,57 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                             labelText: 'Model',
                             hintText: 'gpt-4o-mini',
                             border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                            isDense: true,
                           ),
                         ),
                       ),
-                      const SizedBox(width: 8),
-                      IconButton(
-                        icon: fetchingModels
-                            ? const SizedBox(
-                                width: 18, height: 18,
-                                child: CircularProgressIndicator(strokeWidth: 2))
-                            : const Icon(Icons.download_rounded),
-                        tooltip: 'Fetch free models from OpenRouter',
-                        onPressed: () async {
-                          setDialogState(() => fetchingModels = true);
-                          final models = await AIService().fetchFreeOpenRouterModels();
-                          setDialogState(() => fetchingModels = false);
-                          if (models.isEmpty || !ctx.mounted) return;
-                          showDialog(
-                            context: ctx,
-                            builder: (c) => SimpleDialog(
-                              title: const Text('Free Models'),
-                              children: models.map((m) {
-                                final id = m['id'] as String;
-                                final tier = m['tier'] as String;
-                                return SimpleDialogOption(
-                                  child: Row(children: [
-                                    Text(tier == 'fast' ? '⚡' : tier == 'medium' ? '🔄' : '🐢'),
-                                    const SizedBox(width: 8),
-                                    Text('$id ($tier)'),
-                                  ]),
-                                  onPressed: () {
-                                    modelCtl.text = id;
-                                    Navigator.pop(c);
-                                  },
+                      SizedBox(width: 4),
+                      InkWell(
+                        borderRadius: BorderRadius.circular(20),
+                        onTap: fetchingModels
+                            ? null
+                            : () async {
+                                setDialogState(() => fetchingModels = true);
+                                final models = await AIService().fetchFreeOpenRouterModels();
+                                setDialogState(() => fetchingModels = false);
+                                if (models.isEmpty || !ctx.mounted) return;
+                                showDialog(
+                                  context: ctx,
+                                  builder: (c) => SimpleDialog(
+                                    title: const Text('Free Models'),
+                                    children: models.map((m) {
+                                      final id = m['id'] as String;
+                                      final tier = m['tier'] as String;
+                                      return SimpleDialogOption(
+                                        child: Row(children: [
+                                          Text(tier == 'fast' ? '⚡' : tier == 'medium' ? '🔄' : '🐢'),
+                                          SizedBox(width: 8),
+                                          Text('$id ($tier)'),
+                                        ]),
+                                        onPressed: () {
+                                          modelCtl.text = id;
+                                          Navigator.pop(c);
+                                        },
+                                      );
+                                    }).toList(),
+                                  ),
                                 );
-                              }).toList(),
-                            ),
-                          );
-                        },
+                              },
+                        child: Container(
+                          width: 36,
+                          height: 36,
+                          decoration: BoxDecoration(
+                            color: Theme.of(ctx).primaryColor.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          child: fetchingModels
+                              ? Padding(
+                                  padding: EdgeInsets.all(8),
+                                  child: CircularProgressIndicator(strokeWidth: 2),
+                                )
+                              : Icon(Icons.download_rounded, size: 20),
+                        ),
                       ),
                     ],
                   ),
