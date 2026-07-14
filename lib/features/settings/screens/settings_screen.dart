@@ -8,7 +8,6 @@ import '../../../providers/auth_provider.dart';
 import '../../../providers/theme_provider.dart';
 import '../../admin/screens/admin_dashboard_screen.dart';
 import '../../feedback/screens/feedback_screen.dart';
-import 'api_setup_guide_screen.dart';
 import 'privacy_security_screen.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
@@ -203,32 +202,21 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ),
             ]),
             const SizedBox(height: 24),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('AI Teacher', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
-                TextButton.icon(
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ApiSetupGuideScreen())),
-                  icon: const Icon(Icons.help_outline_rounded, size: 16, color: AppColors.primary),
-                  label: const Text('How to get API key?', style: TextStyle(fontSize: 12, color: AppColors.primary)),
-                ),
-              ],
-            ),
+            Text('AI Teacher', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
             const SizedBox(height: 8),
-            SwitchListTile(
-              title: const Text('Use Admin API Keys'),
-              subtitle: const Text('Auto-configured keys provided by admin'),
-              secondary: const Icon(Icons.cloud_done_rounded),
-              value: HiveService.getUseApiKeyManager(),
-              onChanged: (val) async {
-                await HiveService.setUseApiKeyManager(val);
-                setState(() {});
-              },
-              activeColor: Theme.of(context).primaryColor,
-            ),
-            const Divider(height: 1),
-            if (!HiveService.getUseApiKeyManager())
-              _buildAiKeysList(isDark),
+            _buildSettingsCard([
+              SwitchListTile(
+                title: const Text('Use Admin API Keys'),
+                subtitle: const Text('Auto-configured keys provided by admin'),
+                secondary: const Icon(Icons.cloud_done_rounded),
+                value: HiveService.getUseApiKeyManager(),
+                onChanged: (val) async {
+                  await HiveService.setUseApiKeyManager(val);
+                  setState(() {});
+                },
+                activeColor: Theme.of(context).primaryColor,
+              ),
+            ]),
             const SizedBox(height: 24),
             Text('Account', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
             const SizedBox(height: 8),
