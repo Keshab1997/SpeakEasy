@@ -1452,110 +1452,110 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                         ),
                                       ),
                                     // --- Translate to Bangla Button ---
-                                    if (!isMe)
-                                      Padding(
-                                        padding: const EdgeInsets.only(right: 4),
-                                        child: InkWell(
-                                          onTap: _isTranslating
-                                              ? null
-                                              : () => _translateToBangla(msg['text'] as String, msg),
-                                          child: AnimatedContainer(
-                                            duration: const Duration(milliseconds: 300),
-                                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                            decoration: BoxDecoration(
-                                              color: msg['translating'] == true
-                                                  ? AppColors.primary.withOpacity(0.2)
-                                                  : AppColors.primary.withOpacity(0.1),
-                                              borderRadius: BorderRadius.circular(12),
-                                              border: Border.all(
-                                                color: msg['translating'] == true
-                                                    ? AppColors.primary
-                                                    : AppColors.primary.withOpacity(0.3),
-                                              ),
-                                            ),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                msg['translating'] == true
-                                                    ? SizedBox(
-                                                        width: 12,
-                                                        height: 12,
-                                                        child: CircularProgressIndicator(
-                                                          strokeWidth: 1.5,
-                                                          color: AppColors.primary,
-                                                        ),
-                                                      )
-                                                    : Icon(Icons.translate_rounded, size: 14, color: AppColors.primary),
-                                                const SizedBox(width: 4),
-                                                Text(
-                                                  msg['translating'] == true ? 'Translating...' : 'বাংলা',
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    fontWeight: FontWeight.w600,
-                                                    color: AppColors.primary,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    if (msg['translatedText'] != null && msg['translatedText'] != '')
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 6, left: 8, right: 8),
-                                        child: Container(
-                                          padding: const EdgeInsets.all(10),
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 4),
+                                      child: InkWell(
+                                        onTap: _isTranslating
+                                            ? null
+                                            : () => _translateToBangla(msg['text'] as String, msg),
+                                        child: AnimatedContainer(
+                                          duration: const Duration(milliseconds: 300),
+                                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                           decoration: BoxDecoration(
-                                            color: AppColors.primary.withOpacity(0.08),
-                                            borderRadius: BorderRadius.circular(10),
-                                            border: Border(
-                                              left: BorderSide(
-                                                color: AppColors.primary.withOpacity(0.5),
-                                                width: 3,
-                                              ),
+                                            color: msg['translating'] == true
+                                                ? AppColors.primary.withOpacity(0.2)
+                                                : AppColors.primary.withOpacity(0.1),
+                                            borderRadius: BorderRadius.circular(12),
+                                            border: Border.all(
+                                              color: msg['translating'] == true
+                                                  ? AppColors.primary
+                                                  : AppColors.primary.withOpacity(0.3),
                                             ),
                                           ),
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             children: [
-                                              Row(
-                                                children: [
-                                                  Icon(Icons.translate_rounded, size: 12, color: AppColors.primary),
-                                                  const SizedBox(width: 4),
-                                                  Text(
-                                                    'বাংলা অনুবাদ',
-                                                    style: TextStyle(
-                                                      fontSize: 10,
-                                                      fontWeight: FontWeight.bold,
-                                                      color: AppColors.primary,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              const SizedBox(height: 4),
+                                              msg['translating'] == true
+                                                  ? SizedBox(
+                                                      width: 12,
+                                                      height: 12,
+                                                      child: CircularProgressIndicator(
+                                                        strokeWidth: 1.5,
+                                                        color: AppColors.primary,
+                                                      ),
+                                                    )
+                                                  : Icon(Icons.translate_rounded, size: 14, color: AppColors.primary),
+                                              const SizedBox(width: 4),
                                               Text(
-                                                msg['translatedText'] as String,
+                                                msg['translating'] == true ? 'Translating...' : 'বাংলা',
                                                 style: TextStyle(
-                                                  fontSize: 13,
-                                                  height: 1.5,
-                                                  color: isDark ? Colors.white70 : Colors.black87,
+                                                  fontSize: 10,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: AppColors.primary,
                                                 ),
                                               ),
                                             ],
                                           ),
                                         ),
                                       ),
-                                    const Spacer(),
-                                    InkWell(
-                                      child: Icon(
-                                        Icons.copy_rounded,
-                                        size: 14,
-                                        color: isDark ? Colors.white38 : Colors.grey[400],
-                                      ),
                                     ),
                                   ],
+                                  const Spacer(),
+                                  InkWell(
+                                    child: Icon(
+                                      Icons.copy_rounded,
+                                      size: 14,
+                                      color: isDark ? Colors.white38 : Colors.grey[400],
+                                    ),
+                                  ),
                                 ],
                               ),
+                              if (msg['translatedText'] != null && msg['translatedText'] != '')
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 6),
+                                  child: Container(
+                                    width: double.infinity,
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: AppColors.primary.withOpacity(0.08),
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border(
+                                        left: BorderSide(
+                                          color: AppColors.primary.withOpacity(0.5),
+                                          width: 3,
+                                        ),
+                                      ),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(Icons.translate_rounded, size: 12, color: AppColors.primary),
+                                            const SizedBox(width: 4),
+                                            Text(
+                                              'বাংলা অনুবাদ',
+                                              style: TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold,
+                                                color: AppColors.primary,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          msg['translatedText'] as String,
+                                          style: TextStyle(
+                                            fontSize: 13,
+                                            height: 1.5,
+                                            color: isDark ? Colors.white70 : Colors.black87,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                             ],
                           ),
                         ),
