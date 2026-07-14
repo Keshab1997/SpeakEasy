@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/config/app_config_model.dart';
 import '../repository/admin_repository.dart';
+import 'admin_api_keys_screen.dart';
+import 'admin_error_logs_screen.dart';
 
 class AdminConfigScreen extends StatefulWidget {
   const AdminConfigScreen({super.key});
@@ -93,6 +95,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
           'sentenceAnalyzer': _config!.featureToggles.sentenceAnalyzer,
           'speaking': _config!.featureToggles.speaking,
           'listening': _config!.featureToggles.listening,
+          'apiKeyManager': _config!.featureToggles.apiKeyManager,
         },
         'forceUpdate': {
           'enabled': _config!.forceUpdate.enabled,
@@ -214,6 +217,29 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
         _buildSectionHeader('Game Settings', Icons.sports_esports_outlined),
         const SizedBox(height: 12),
         _buildGameSettingsSection(isDark),
+        const SizedBox(height: 24),
+        const Divider(height: 1),
+        ListTile(
+          leading: const Icon(Icons.vpn_key_rounded),
+          title: const Text('Manage API Keys'),
+          subtitle: const Text('Add, edit, or disable AI provider keys'),
+          trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const AdminApiKeysScreen()),
+          ),
+        ),
+        const Divider(height: 1),
+        ListTile(
+          leading: const Icon(Icons.error_outline_rounded),
+          title: const Text('Error Logs'),
+          subtitle: const Text('View API error history'),
+          trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const AdminErrorLogsScreen()),
+          ),
+        ),
       ],
     );
   }
@@ -579,6 +605,16 @@ extension _FeatureTogglesModify on FeatureToggles {
           sentenceAnalyzer: sentenceAnalyzer,
           speaking: speaking,
           listening: value,
+        );
+      case 'apiKeyManager':
+        return FeatureToggles(
+          aiTeacher: aiTeacher,
+          games: games,
+          homework: homework,
+          sentenceAnalyzer: sentenceAnalyzer,
+          speaking: speaking,
+          listening: listening,
+          apiKeyManager: value,
         );
       default:
         return this;
