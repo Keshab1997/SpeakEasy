@@ -118,15 +118,22 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                             ),
                           ),
                           if (isActive) ...[
-                            IconButton(
-                              icon: const Icon(Icons.edit_rounded, size: 18),
-                              onPressed: () => _showKeyDialog(context,
+                            InkWell(
+                              borderRadius: BorderRadius.circular(16),
+                              onTap: () => _showKeyDialog(context,
                                   docId: doc.id, existingData: data),
+                              child: Padding(
+                                padding: const EdgeInsets.all(6),
+                                child: Icon(Icons.edit_rounded, size: 16, color: Colors.grey[600]),
+                              ),
                             ),
-                            IconButton(
-                              icon: const Icon(Icons.delete_rounded, size: 18,
-                                  color: Colors.red),
-                              onPressed: () => _confirmDelete(context, doc.id, name),
+                            InkWell(
+                              borderRadius: BorderRadius.circular(16),
+                              onTap: () => _confirmDelete(context, doc.id, name),
+                              child: Padding(
+                                padding: const EdgeInsets.all(6),
+                                child: Icon(Icons.delete_rounded, size: 16, color: Colors.red),
+                              ),
                             ),
                           ],
                         ],
@@ -136,14 +143,21 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                       _infoRow('Key', maskedKey),
                       _infoRow('Priority', priority.toString()),
                       const SizedBox(height: 8),
-                      Row(
+                      Wrap(
+                        spacing: 8,
+                        runSpacing: 4,
+                        crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
                           _statChip('✓ $usage', Colors.green),
-                          const SizedBox(width: 8),
                           _statChip('✗ $errors', errors > 0 ? Colors.red : Colors.grey),
                           const Spacer(),
                           TextButton(
-                            child: const Text('Test Connection'),
+                            style: TextButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(horizontal: 8),
+                              minimumSize: Size.zero,
+                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            ),
+                            child: const Text('Test Connection', style: TextStyle(fontSize: 12)),
                             onPressed: () => _testKey(
                               doc.id,
                               data['baseUrl'] as String? ?? '',
