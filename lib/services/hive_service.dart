@@ -1,4 +1,5 @@
 import 'package:hive_flutter/hive_flutter.dart';
+import '../models/admin_api_key.dart';
 import '../models/game/game_progress_model.dart';
 
 class HiveService {
@@ -914,6 +915,51 @@ class HiveService {
     // Mock test progress
     if (Hive.isBoxOpen(_mockTestProgressBox)) {
       await Hive.box(_mockTestProgressBox).clear();
+    }
+  }
+
+  // ── Admin API Keys Cache ──
+
+  static List<AdminApiKey> getCachedAdminKeys() {
+    final box = Hive.box('settings');
+    final data = box.get('cachedAdminKeys', defaultValue: <Map>[]) as List;
+    return data.map((m) {
+      final map = Map<String, dynamic>.from(m as Map);
+      return AdminApiKey.fromMap(map, map['id'] as String? ?? '');
+    }).toList();
+  }
+
+  static Future<void> saveCachedAdminKeys(List<AdminApiKey> keys) async {
+    final box = Hive.box('settings');
+    await box.put('cachedAdminKeys', keys.map((k) => k.toMap()).toList());
+  }
+
+  static bool getUseApiKeyManager() {
+    final box = Hive.box('settings');
+    return box.get('useApiKeyManager', defaultValue: true) as bool;
+  }
+
+  static Future<void> setUseApiKeyManager(bool value) async {
+    final box = Hive.box('settings');
+    await box.put('useApiKeyManager', value);
+  }
+
+  static String getOneSignalAppId() {
+    final box = Hive.box('settings');
+    return box.get('oneSignalAppId', defaultValue: '') as String;
+  }
+
+  static String getOneSignalRestApiKey() {
+    final box = Hive.box('settings');
+    return box.get('oneSignalRestApiKey', defaultValue: '') as String;
+  }
+
+  static String getUserId() {
+    try {
+      final box = Hive.box('auth');
+      return box.get('userId', defaultValue: '') as String;
+    } catch (_) {
+      return '';
     }
   }
 }
