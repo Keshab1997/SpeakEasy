@@ -1,4 +1,5 @@
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/admin_api_key.dart';
 import '../models/game/game_progress_model.dart';
 
@@ -925,13 +926,29 @@ class HiveService {
     final data = box.get('cachedAdminKeys', defaultValue: <Map>[]) as List;
     return data.map((m) {
       final map = Map<String, dynamic>.from(m as Map);
+      // Convert ISO strings back to Timestamp
+      for (final field in ['createdAt', 'updatedAt', 'lastErrorAt', 'lastUsedAt']) {
+        if (map[field] is String) {
+          map[field] = Timestamp.fromDate(DateTime.parse(map[field] as String));
+        }
+      }
       return AdminApiKey.fromMap(map, map['id'] as String? ?? '');
     }).toList();
   }
 
   static Future<void> saveCachedAdminKeys(List<AdminApiKey> keys) async {
     final box = Hive.box('settings');
-    await box.put('cachedAdminKeys', keys.map((k) => k.toMap()).toList());
+    final data = keys.map((k) {
+      final map = k.toMap();
+      // Convert Timestamp to ISO string for Hive compatibility
+      for (final field in ['createdAt', 'updatedAt', 'lastErrorAt', 'lastUsedAt']) {
+        if (map[field] is Timestamp) {
+          map[field] = (map[field] as Timestamp).toDate().toIso8601String();
+        }
+      }
+      return map;
+    }).toList();
+    await box.put('cachedAdminKeys', data);
   }
 
   static bool getUseApiKeyManager() {
