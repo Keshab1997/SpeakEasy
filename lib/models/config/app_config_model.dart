@@ -52,6 +52,7 @@ class FeatureToggles {
   final bool sentenceAnalyzer;
   final bool speaking;
   final bool listening;
+  final bool apiKeyManager;
 
   const FeatureToggles({
     this.aiTeacher = true,
@@ -60,6 +61,7 @@ class FeatureToggles {
     this.sentenceAnalyzer = true,
     this.speaking = true,
     this.listening = true,
+    this.apiKeyManager = false,
   });
 
   factory FeatureToggles.fromMap(Map<String, dynamic> map) {
@@ -70,6 +72,7 @@ class FeatureToggles {
       sentenceAnalyzer: map['sentenceAnalyzer'] as bool? ?? true,
       speaking: map['speaking'] as bool? ?? true,
       listening: map['listening'] as bool? ?? true,
+      apiKeyManager: map['apiKeyManager'] as bool? ?? false,
     );
   }
 
@@ -81,6 +84,7 @@ class FeatureToggles {
       'sentenceAnalyzer': sentenceAnalyzer,
       'speaking': speaking,
       'listening': listening,
+      'apiKeyManager': apiKeyManager,
     };
   }
 
@@ -92,6 +96,7 @@ class FeatureToggles {
         'sentenceAnalyzer',
         'speaking',
         'listening',
+        'apiKeyManager',
       ];
 
   String displayName(String key) {
@@ -108,6 +113,8 @@ class FeatureToggles {
         return 'Speaking';
       case 'listening':
         return 'Listening';
+      case 'apiKeyManager':
+        return 'API Key Manager';
       default:
         return key;
     }
@@ -127,6 +134,8 @@ class FeatureToggles {
         return speaking;
       case 'listening':
         return listening;
+      case 'apiKeyManager':
+        return apiKeyManager;
       default:
         return true;
     }
