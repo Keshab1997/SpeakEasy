@@ -50,8 +50,20 @@ class AIService {
 
   Future<List<Map<String, dynamic>>> fetchFreeOpenRouterModels() async {
     try {
+      // Need API key for OpenRouter models list
+      final keyForFetch = _apiKey.isNotEmpty ? _apiKey
+          : (HiveService.getUseApiKeyManager()
+              ? (ApiKeyManager.instance.getNextKey()?.key ?? '')
+              : '');
+      if (keyForFetch.isEmpty) return [];
+
       final url = Uri.parse('https://openrouter.ai/api/v1/models?sort=latency-low-to-high');
-      final response = await http.get(url).timeout(const Duration(seconds: 10));
+      final response = await http.get(
+        url,
+        headers: {
+          'Authorization': 'Bearer $keyForFetch',
+        },
+      ).timeout(const Duration(seconds: 10));
       if (response.statusCode == 200) {
         final data = jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
         final allModels = data['data'] as List<dynamic>? ?? [];
