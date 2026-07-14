@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'api_key_manager.dart';
 import 'hive_service.dart';
 
 class AIService {
@@ -7,17 +8,42 @@ class AIService {
   factory AIService() => _instance;
   AIService._();
 
+  /// Returns key from ApiKeyManager if admin keys are enabled, else user's own key.
+  String? get _adminKey {
+    final keyData = ApiKeyManager.instance.getNextKey();
+    return keyData?.key;
+  }
+
+  String? get _adminBaseUrl {
+    final keyData = ApiKeyManager.instance.getNextKey();
+    return keyData?.baseUrl;
+  }
+
+  String? get _adminModel {
+    final keyData = ApiKeyManager.instance.getNextKey();
+    return keyData?.model;
+  }
+
   String get _apiKey {
+    if (HiveService.getUseApiKeyManager()) {
+      return _adminKey ?? '';
+    }
     final active = HiveService.getActiveAiKey();
     return active?['key'] as String? ?? '';
   }
 
   String get _baseUrl {
+    if (HiveService.getUseApiKeyManager()) {
+      return _adminBaseUrl ?? 'https://openrouter.ai/api/v1';
+    }
     final active = HiveService.getActiveAiKey();
     return active?['baseUrl'] as String? ?? 'https://api.chatanywhere.tech/v1';
   }
 
   String get _model {
+    if (HiveService.getUseApiKeyManager()) {
+      return _adminModel ?? 'gpt-4o-mini';
+    }
     final active = HiveService.getActiveAiKey();
     return active?['model'] as String? ?? 'gpt-4o-mini';
   }
@@ -80,7 +106,12 @@ class AIService {
   }
 
   Future<String> sendMessage(String message) async {
-    if (_apiKey.isEmpty) throw Exception('API_KEY_MISSING');
+    if (_apiKey.isEmpty) {
+      if (HiveService.getUseApiKeyManager()) {
+        return '⚠️ সার্ভার ব্যস্ত, কিছুক্ষণ পর আবার চেষ্টা করুন।';
+      }
+      throw Exception('API_KEY_MISSING');
+    }
 
     try {
       return await _callOpenAI(message);
@@ -91,7 +122,12 @@ class AIService {
   }
 
   Future<String> sendMessageWithSystem(String message, {String? systemPrompt, List<Map<String, String>>? history, int? maxTokens}) async {
-    if (_apiKey.isEmpty) throw Exception('API_KEY_MISSING');
+    if (_apiKey.isEmpty) {
+      if (HiveService.getUseApiKeyManager()) {
+        return '⚠️ সার্ভার ব্যস্ত, কিছুক্ষণ পর আবার চেষ্টা করুন।';
+      }
+      throw Exception('API_KEY_MISSING');
+    }
 
     try {
       return await _callOpenAI(message, systemPrompt: systemPrompt, history: history, maxTokens: maxTokens);
