@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'firebase_options.dart';
 import 'core/theme/light_theme.dart';
 import 'core/theme/dark_theme.dart';
+import 'services/api_key_manager.dart';
 import 'services/hive_service.dart';
 import 'services/notification_service.dart';
 import 'services/onesignal_service.dart';
@@ -30,6 +31,7 @@ void main() async {
   }
 
   await HiveService.initialize();
+  ApiKeyManager.instance.initialize();
 
   // Initialize local notification system (uses native AlarmManager/UNUserNotificationCenter)
   await NotificationService().initialize();
