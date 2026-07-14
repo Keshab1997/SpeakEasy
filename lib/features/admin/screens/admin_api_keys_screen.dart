@@ -117,25 +117,23 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                               ),
                             ),
                           ),
-                          if (isActive) ...[
-                            InkWell(
-                              borderRadius: BorderRadius.circular(16),
-                              onTap: () => _showKeyDialog(context,
-                                  docId: doc.id, existingData: data),
-                              child: Padding(
-                                padding: const EdgeInsets.all(6),
-                                child: Icon(Icons.edit_rounded, size: 16, color: Colors.grey[600]),
-                              ),
+                          InkWell(
+                            borderRadius: BorderRadius.circular(16),
+                            onTap: () => _showKeyDialog(context,
+                                docId: doc.id, existingData: data),
+                            child: Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Icon(Icons.edit_rounded, size: 16, color: Colors.grey[600]),
                             ),
-                            InkWell(
-                              borderRadius: BorderRadius.circular(16),
-                              onTap: () => _confirmDelete(context, doc.id, name),
-                              child: Padding(
-                                padding: const EdgeInsets.all(6),
-                                child: Icon(Icons.delete_rounded, size: 16, color: Colors.red),
-                              ),
+                          ),
+                          InkWell(
+                            borderRadius: BorderRadius.circular(16),
+                            onTap: () => _confirmDelete(context, doc.id, name),
+                            child: Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Icon(Icons.delete_rounded, size: 16, color: Colors.red),
                             ),
-                          ],
+                          ),
                         ],
                       ),
                       const SizedBox(height: 12),
