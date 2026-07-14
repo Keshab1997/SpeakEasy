@@ -279,9 +279,19 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                             ? null
                             : () async {
                                 setDialogState(() => fetchingModels = true);
-                                final models = await AIService().fetchFreeOpenRouterModels();
+                                final models = await AIService().fetchFreeOpenRouterModels(apiKey: keyCtl.text.trim());
                                 setDialogState(() => fetchingModels = false);
-                                if (models.isEmpty || !ctx.mounted) return;
+                                if (!ctx.mounted) return;
+                                if (models.isEmpty) {
+                                  ScaffoldMessenger.of(ctx).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('No free models found. Check your API key or internet connection.'),
+                                      backgroundColor: Colors.orange,
+                                      behavior: SnackBarBehavior.floating,
+                                    ),
+                                  );
+                                  return;
+                                }
                                 showDialog(
                                   context: ctx,
                                   builder: (c) => SimpleDialog(

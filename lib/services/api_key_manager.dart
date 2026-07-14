@@ -53,6 +53,14 @@ class ApiKeyManager {
     return key;
   }
 
+  /// Returns the first healthy key WITHOUT consuming it (for model fetching etc).
+  /// Returns null if all keys are exhausted or none configured.
+  AdminApiKey? peekFirstKey() {
+    final healthy = _getHealthyKeys();
+    if (healthy.isEmpty) return null;
+    return healthy.first;
+  }
+
   /// Report a successful API call.
   void reportSuccess(AdminApiKey key) {
     _incrementUsage(key.id);

@@ -48,13 +48,19 @@ class AIService {
     return active?['model'] as String? ?? 'gpt-4o-mini';
   }
 
-  Future<List<Map<String, dynamic>>> fetchFreeOpenRouterModels() async {
+  /// Fetch free models from OpenRouter.
+  /// If [apiKey] is provided, uses it; otherwise peeks at admin key pool or user key.
+  Future<List<Map<String, dynamic>>> fetchFreeOpenRouterModels({String? apiKey}) async {
     try {
-      // Need API key for OpenRouter models list
-      final keyForFetch = _apiKey.isNotEmpty ? _apiKey
-          : (HiveService.getUseApiKeyManager()
-              ? (ApiKeyManager.instance.getNextKey()?.key ?? '')
-              : '');
+      String keyForFetch;
+      if (apiKey != null && apiKey.isNotEmpty) {
+        keyForFetch = apiKey;
+      } else if (HiveService.getUseApiKeyManager()) {
+        keyForFetch = ApiKeyManager.instance.peekFirstKey()?.key ?? '';
+      } else {
+        final active = HiveService.getActiveAiKey();
+        keyForFetch = active?['key'] as String? ?? '';
+      }
       if (keyForFetch.isEmpty) return [];
 
       final url = Uri.parse('https://openrouter.ai/api/v1/models?sort=latency-low-to-high');
