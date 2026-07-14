@@ -215,7 +215,20 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ],
             ),
             const SizedBox(height: 8),
-            _buildAiKeysList(isDark),
+            SwitchListTile(
+              title: const Text('Use Admin API Keys'),
+              subtitle: const Text('Auto-configured keys provided by admin'),
+              secondary: const Icon(Icons.cloud_done_rounded),
+              value: HiveService.getUseApiKeyManager(),
+              onChanged: (val) async {
+                await HiveService.setUseApiKeyManager(val);
+                setState(() {});
+              },
+              activeColor: Theme.of(context).primaryColor,
+            ),
+            const Divider(height: 1),
+            if (!HiveService.getUseApiKeyManager())
+              _buildAiKeysList(isDark),
             const SizedBox(height: 24),
             Text('Account', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
             const SizedBox(height: 8),
