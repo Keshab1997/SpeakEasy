@@ -205,6 +205,9 @@ class _ConversationScreenState extends State<ConversationScreen> {
     final text = _messageController.text.trim();
     if (text.isEmpty) return;
 
+    // Build history BEFORE adding current message to avoid API duplication
+    final history = _buildMessageHistory();
+
     setState(() {
       _messages.add({
         'text': text,
@@ -222,7 +225,6 @@ class _ConversationScreenState extends State<ConversationScreen> {
     final systemPrompt = role['prompt'] as String;
     final displayName = _userName.isNotEmpty ? _userName : 'there';
 
-    final history = _buildMessageHistory();
     final fullPrompt = '$systemPrompt\n\n'
         'IMPORTANT: Always respond in English first, then provide Bangla translation below.\n'
         'Format: [English]\\n\\nবাংলা: [Bangla translation]\\n---\n'
@@ -307,10 +309,13 @@ class _ConversationScreenState extends State<ConversationScreen> {
   List<Map<String, String>> _buildMessageHistory() {
     final result = <Map<String, String>>[];
     for (final msg in _messages) {
-      // Strip leading emoji (added by role emoji prefix) from assistant messages
+      // Strip leading emoji prefix (format: "$emoji $response") from assistant messages
       String content = msg['text'] as String;
       if (msg['isMe'] != true) {
-        content = content.replaceFirst(RegExp(r'^.\s*'), '');
+        final spaceIdx = content.indexOf(' ');
+        if (spaceIdx > 0 && spaceIdx <= 4) {
+          content = content.substring(spaceIdx + 1);
+        }
       }
       result.add({
         'role': msg['isMe'] == true ? 'user' : 'assistant',

@@ -240,6 +240,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
     final text = _messageController.text.trim();
     if (text.isEmpty) return;
 
+    // Build history BEFORE adding current message to avoid duplication
+    final history = _buildMessageHistory();
+
     setState(() {
       _messages.add({
         'text': text,
@@ -361,7 +364,8 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
 
     if (systemPrompt != null) {
       AIService()
-          .sendMessageWithSystem(text, systemPrompt: systemPrompt)
+          .sendMessageWithSystem(text,
+              systemPrompt: systemPrompt, history: history)
           .then(addResponse)
           .catchError(handleError);
     } else {
@@ -385,6 +389,16 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       'updatedAt': DateTime.now().toIso8601String(),
     });
     HiveService.setLastActiveChatId(_currentSessionId!);
+  }
+
+  /// Build conversation history from all stored messages for API context.
+  List<Map<String, String>> _buildMessageHistory() {
+    return _messages.map((msg) {
+      return {
+        'role': msg['isMe'] == true ? 'user' : 'assistant',
+        'content': msg['text'] as String,
+      };
+    }).toList();
   }
 
   void _simulateTyping(String fullText, List<String> suggestions) {
