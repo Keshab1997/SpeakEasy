@@ -1,0 +1,25 @@
+{
+  "connections": [],
+  "connectionRequests": [
+    {
+      "connectionRequestId": "appconn_req_2327f375034a4c84bbf0d01e8d987602",
+      "appId": "com.dotharness.oratorio",
+      "userId": "dotcraft-desktop",
+      "requestTokenHash": "3cb47685915d53ea8654923b499b122eb6372e4fc5d82dbb8995a72cfb777283",
+      "state": "connecting",
+      "createdAt": "2026-07-13T09:12:27.114842+00:00",
+      "expiresAt": "2026-07-13T09:22:27.114842+00:00",
+      "consumed": false
+    }
+  ],
+  "bindingRequests": [],
+  "bindings": [],
+  "audit": [
+    {
+      "timestamp": "2026-07-13T09:12:27.289179+00:00",
+      "event": "connection.start",
+      "appId": "com.dotharness.oratorio",
+      "userId": "dotcraft-desktop"
+    }
+  ]
+}

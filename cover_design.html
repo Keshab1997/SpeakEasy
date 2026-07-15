@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Cover - Keshab Studios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a2e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+
+        .cover-wrapper {
+            position: relative;
+            width: 851px;
+            height: 315px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .cover {
+            width: 851px;
+            height: 315px;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 40%, #24243e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated floating shapes */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        .shape-1 {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            top: -80px;
+            right: -40px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            bottom: -50px;
+            left: 300px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            top: 50px;
+            right: 200px;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        /* Grid pattern overlay */
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Left side - Brand */
+        .brand-section {
+            position: absolute;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .logo-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        .company-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .company-name span {
+            background: linear-gradient(135deg, #667eea, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 6px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        /* Right side - Visual elements */
+        .right-section {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .code-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            min-width: 180px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .code-card .keyword { color: #c792ea; }
+        .code-card .string { color: #c3e88d; }
+        .code-card .function { color: #82aaff; }
+        .code-card .comment { color: #546e7a; font-style: italic; }
+        .code-card .span { color: #ffcb6b; }
+
+        .app-mockup {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea88, #764ba288);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .app-mockup .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            margin-bottom: 8px;
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .app-mockup .bars {
+            display: flex;
+            gap: 4px;
+            align-items: flex-end;
+            height: 30px;
+        }
+
+        .app-mockup .bars div {
+            width: 4px;
+            background: linear-gradient(to top, #667eea, #a78bfa);
+            border-radius: 2px;
+            animation: soundWave 1.5s ease-in-out infinite;
+        }
+
+        .app-mockup .bars div:nth-child(1) { height: 16px; animation-delay: 0s; }
+        .app-mockup .bars div:nth-child(2) { height: 24px; animation-delay: 0.2s; }
+        .app-mockup .bars div:nth-child(3) { height: 12px; animation-delay: 0.4s; }
+        .app-mockup .bars div:nth-child(4) { height: 20px; animation-delay: 0.6s; }
+        .app-mockup .bars div:nth-child(5) { height: 28px; animation-delay: 0.8s; }
+
+        @keyframes soundWave {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.6); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Bottom gradient line */
+        .bottom-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #4facfe);
+            background-size: 300% 100%;
+            animation: gradientMove 4s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 50%;
+            animation: particleFloat 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { top: 60%; left: 15%; animation-delay: 1s; width: 2px; height: 2px; }
+        .particle:nth-child(3) { top: 30%; left: 45%; animation-delay: 2s; }
+        .particle:nth-child(4) { top: 70%; left: 55%; animation-delay: 3s; width: 4px; height: 4px; }
+        .particle:nth-child(5) { top: 40%; left: 80%; animation-delay: 4s; width: 2px; height: 2px; }
+        .particle:nth-child(6) { top: 80%; left: 88%; animation-delay: 5s; }
+
+        @keyframes particleFloat {
+            0%, 100% { 
+                transform: translateY(0) scale(1); 
+                opacity: 0.4;
+            }
+            50% { 
+                transform: translateY(-30px) scale(1.5); 
+                opacity: 0.8;
+            }
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .btn-gif {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-gif:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-video {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        .btn-video:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 87, 108, 0.5);
+        }
+
+        .btn-screenshot {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #1a1a2e;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        .btn-screenshot:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.5);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .status {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            margin-top: 12px;
+            text-align: center;
+            min-height: 24px;
+        }
+
+        .status .highlight {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 300px;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-bar.active {
+            display: block;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            border-radius: 2px;
+            transition: width 0.3s;
+        }
+
+        .instructions {
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+            margin-top: 20px;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.6;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 20px;
+        }
+
+        .instructions kbd {
+            background: rgba(255,255,255,0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .instructions a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .instructions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Recording indicator -->
+    <div id="recordingOverlay" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:999; justify-content:center; align-items:center; flex-direction:column;">
+        <div style="width:60px;height:60px;border-radius:50%;background:#ff4444;animation:pulse 1s ease infinite;display:flex;align-items:center;justify-content:center;">
+            <div style="width:20px;height:20px;border-radius:50%;background:white;"></div>
+        </div>
+        <div style="color:white;font-size:20px;margin-top:20px;font-weight:600;">Recording...</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:14px;margin-top:8px;">Wait for the timer to complete</div>
+    </div>
+
+    <div class="cover-wrapper" id="coverWrapper">
+        <div class="cover" id="cover">
+            <!-- Floating shapes -->
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            
+            <!-- Grid overlay -->
+            <div class="grid-overlay"></div>
+
+            <!-- Particles -->
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+
+            <!-- Brand Section - Left -->
+            <div class="brand-section">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="company-name">
+                    Keshab <span>Studios</span>
+                </div>
+                <div class="tagline">Building Digital Experiences</div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="right-section">
+                <div class="app-mockup">
+                    <div class="dot"></div>
+                    <div class="bars">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="code-card">
+                    <div><span class="comment">// SpeakEasy App</span></div>
+                    <div><span class="keyword">import</span> <span class="string">'english_learning'</span></div>
+                    <div><span class="function">SpeakEasy</span>.<span class="span">start</span>()</div>
+                    <div style="color: #89ddff; margin-top: 4px;">→ Hello, World!</div>
+                </div>
+            </div>
+
+            <!-- Bottom gradient line -->
+            <div class="bottom-line"></div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn btn-screenshot" onclick="takeScreenshot()">📸 Screenshot (Static)</button>
+        <button class="btn btn-gif" onclick="recordGIF()" id="gifBtn">🎬 Export as GIF</button>
+        <button class="btn btn-video" onclick="recordVideo()" id="videoBtn">🎥 Export as MP4</button>
+    </div>
+
+    <div class="status" id="status">
+        💡 Click <span class="highlight">"Export as GIF"</span> or <span class="highlight">"Export as MP4"</span> for animated cover
+    </div>
+
+    <div class="progress-bar" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="instructions">
+        <strong>Facebook Video Cover</strong>: 20-90 seconds, 820 x 312 px min, MP4 format.<br>
+        Or use <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>4</kbd> to screenshot the static version.
+    </div>
+
+    <!-- gif.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
+    <script>
+        const cover = document.getElementById('cover');
+        const status = document.getElementById('status');
+        const progressBar = document.getElementById('progressBar');
+        const progressFill = document.getElementById('progressFill');
+        const gifBtn = document.getElementById('gifBtn');
+        const videoBtn = document.getElementById('videoBtn');
+
+        function setStatus(msg, isError = false) {
+            status.innerHTML = msg;
+            status.style.color = isError ? '#ff6b6b' : 'rgba(255,255,255,0.7)';
+        }
+
+        function setProgress(pct) {
+            progressBar.classList.add('active');
+            progressFill.style.width = pct + '%';
+            if (pct >= 100) {
+                setTimeout(() => {
+                    progressBar.classList.remove('active');
+                    progressFill.style.width = '0%';
+                }, 1000);
+            }
+        }
+
+        function showButtons(show) {
+            gifBtn.disabled = !show;
+            videoBtn.disabled = !show;
+        }
+
+        // --- SCREENSHOT ---
+        function takeScreenshot() {
+            setStatus('📸 Capturing screenshot...');
+            
+            // Use html2canvas for clean capture
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+            script.onload = () => {
+                html2canvas(document.getElementById('coverWrapper'), {
+                    scale: 2,
+                    backgroundColor: null,
+                    useCORS: true,
+                    allowTaint: true,
+                }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'Keshab-Studios-Cover.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                    setStatus('✅ Screenshot downloaded! <span class="highlight">Add to Facebook → Edit Cover Photo</span>');
+                }).catch(err => {
+                    setStatus('❌ Error taking screenshot: ' + err.message, true);
+                });
+            };
+            script.onerror = () => {
+                // Fallback: just take a browser screenshot via native method
+                setStatus('⚠️ Using browser screenshot. Press <kbd>⌘ Cmd</kbd>+<kbd>⇧ Shift</kbd>+<kbd>4</kbd>');
+            };
+            document.head.appendChild(script);
+        }
+
+        // --- RECORD GIF ---
+        async function recordGIF() {
+            showButtons(false);
+            setStatus('🎬 Creating GIF... (this takes ~10 seconds)');
+            
+            const wrapper = document.getElementById('coverWrapper');
+            const totalFrames = 30;
+            const delay = 150; // ms between frames
+            const width = 851;
+            const height = 315;
+
+            try {
+                // Load gif.js
+                const gif = new GIF({
+                    workers: 2,
+                    quality: 10,
+                    width: width,
+                    height: height,
+                    workerURL: 'https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.worker.js'
+                });
+
+                for (let i = 0; i < totalFrames; i++) {
+                    setProgress(Math.round((i / totalFrames) * 100));
+                    
+                    // Capture frame using html2canvas
+                    const canvas = await html2canvas(wrapper, {
+                        scale: 1,
+                        backgroundColor: null,
+                        useCORS: true,
+                        allowTaint: true,
+                    });
+                    
+                    gif.addFrame(canvas, { copy: true, delay: delay });
+                    
+                    // Wait before next frame to allow animation to progress
+                    await new Promise(r => setTimeout(r, delay));
+                }
+
+                setProgress(95);
+                setStatus('⏳ Rendering GIF...');
+                
+                await new Promise((resolve) => {
+                    gif.on('progress', (p) => {
+                        setProgress(Math.round(p * 100));
+                    });
+                    gif.on('finished', (blob) => {
+                        const link = document.createElement('a');
+                        link.download = 'Keshab-Studios-Cover.gif';
+                        link.href = URL.createObjectURL(blob);
+                        link.click();
+                        setProgress(100);
+                        setStatus('✅ GIF downloaded! Upload to Facebook as cover video!');
+                        showButtons(true);
+                        resolve();
+                    });
+                    gif.render();
+                });
+
+            } catch (err) {
+                setStatus('❌ Error creating GIF: ' + err.message + ' - Taking screenshot instead.', true);
+                showButtons(true);
+                // Fallback to screenshot
+                takeScreenshot();
+            }
+        }
+
+        // --- RECORD MP4 VIDEO ---
+        async function recordVideo() {
+            showButtons(false);
+            setStatus('🎥 Starting video recording...');
+            
+            try {
+                // Load html2canvas
+                await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
+                
+                const wrapper = document.getElementById('coverWrapper');
+                const stream = await navigator.mediaDevices.getDisplayMedia({
+                    preferCurrentTab: true,
+                    video: {
+                        width: { ideal: 851 },
+                        height: { ideal: 315 },
+                        frameRate: { ideal: 15 }
+                    }
+                });
+                
+                // If user cancelled screen selection
+                if (!stream) {
+                    setStatus('❌ Recording cancelled', true);
+                    showButtons(true);
+                    return;
+                }
+
+                setStatus('⏺️ Recording started — select "Entire Screen" or "Window" to record the cover...');
+                setProgress(50);
+                
+                const chunks = [];
+                const recorder = new MediaRecorder(stream, {
+                    mimeType: 'video/webm;codecs=vp9',
+                    videoBitsPerSecond: 2500000
+                });
+
+                recorder.ondataavailable = (e) => {
+                    if (e.data.size > 0) chunks.push(e.data);
+                };
+
+                recorder.onstop = () => {
+                    stream.getTracks().forEach(t => t.stop());
+                    setProgress(90);
+                    
+                    const blob = new Blob(chunks, { type: 'video/webm' });
+                    
+                    // Convert to MP4-friendly format
+                    const link = document.createElement('a');
+                    link.download = 'Keshab-Studios-Cover.webm';
+                    link.href = URL.createObjectURL(blob);
+                    link.click();
+                    
+                    setProgress(100);
+                    setStatus('✅ Video recorded! Upload as <span class="highlight">Facebook Video Cover</span>!');
+                    showButtons(true);
+                };
+
+                // Record for 5 seconds
+                setTimeout(() => {
+                    recorder.stop();
+                }, 5000);
+                
+                recorder.start(100);
+
+            } catch (err) {
+                if (err.name === 'NotAllowedError' || err.message?.includes('permission')) {
+                    setStatus('ℹ️ Screen recording permission needed. Use <span class="highlight">"Export as GIF"</span> instead!', true);
+                } else {
+                    setStatus('❌ Error: ' + err.message + ' - Use GIF export instead.', true);
+                }
+                showButtons(true);
+            }
+        }
+
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+
+        // Preload html2canvas
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js')
+            .then(() => console.log('html2canvas loaded'))
+            .catch(() => console.log('html2canvas not available'));
+    </script>
+</body>
+</html>

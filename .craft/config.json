@@ -1,0 +1,9 @@
+{
+  "Plugins": {
+    "DisabledPlugins": []
+  },
+  "Model": "oc/deepseek-v4-flash-free",
+  "Dreams": {
+    "ThreadLookbackCount": 100
+  }
+}
