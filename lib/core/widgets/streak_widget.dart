@@ -310,7 +310,7 @@ class _StreakWidgetState extends State<StreakWidget>
                       onTap: widget.onShare,
                     ),
                     if (widget.currentStreak > 0) ...[
-                      const Spacer(),
+                      const SizedBox(width: double.infinity),
                       // Milestone indicator
                       _buildMilestoneBadge(),
                     ],
