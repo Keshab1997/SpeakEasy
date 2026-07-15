@@ -1,0 +1,2737 @@
+{
+  "assets/json/bangla_to_english/articles.json": {
+    "mtime": 1782155862.9756277,
+    "ast_hash": "472bbefa56b74910f549489c0044fd7d",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/categories.json": {
+    "mtime": 1782154278.3248155,
+    "ast_hash": "7ec2c1d11b81d547e53f37482badb501",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/common_patterns.json": {
+    "mtime": 1782155779.4617183,
+    "ast_hash": "f04cba6d7ea4069ef39d4a75f87633c8",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/conditionals.json": {
+    "mtime": 1782155703.4854004,
+    "ast_hash": "19f91dc1755385654e284a04b40901db",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/future_simple.json": {
+    "mtime": 1782155636.460034,
+    "ast_hash": "f2334fb00a7bfc40569f8d3ce82dafd0",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/modal_verbs.json": {
+    "mtime": 1782155568.9971917,
+    "ast_hash": "b6646ccf2eda3f9f19cbf948598810b2",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/passive_voice.json": {
+    "mtime": 1782155493.4428134,
+    "ast_hash": "a1dcb40499089bd72b79d8a748279f9a",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/past_continuous.json": {
+    "mtime": 1782155416.396487,
+    "ast_hash": "21435976c2e610a76599057e47be1d18",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/past_perfect.json": {
+    "mtime": 1782155306.4025877,
+    "ast_hash": "7ff2408ce3cfe6217fa26c5e34d48902",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/past_simple.json": {
+    "mtime": 1782154916.8801618,
+    "ast_hash": "11340fd63dfb82ad0ad17a1f64311155",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/prepositions.json": {
+    "mtime": 1782155209.5595646,
+    "ast_hash": "b31cf3a3332c7a2a4823b388359ad45a",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/present_continuous.json": {
+    "mtime": 1782155150.008904,
+    "ast_hash": "096128a776a342bf6680d22eb0ab1f45",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/present_perfect.json": {
+    "mtime": 1782155086.9494956,
+    "ast_hash": "fdffb0a7c8594d39d438ee8652499b8c",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/present_simple.json": {
+    "mtime": 1782155017.0720809,
+    "ast_hash": "af23da5b615266389ecc1a0df81dc907",
+    "semantic_hash": ""
+  },
+  "assets/json/bangla_to_english/questions.json": {
+    "mtime": 1782155951.3027813,
+    "ast_hash": "f5ed36e957b2c923451a5fd47f3afeb0",
+    "semantic_hash": ""
+  },
+  "assets/json/daily_quiz/questions.json": {
+    "mtime": 1783538196.965076,
+    "ast_hash": "b8ba731f073e5b1a61fc89c434f4d9db",
+    "semantic_hash": ""
+  },
+  "assets/json/game/bangla_to_english_data.json": {
+    "mtime": 1782381508.5171635,
+    "ast_hash": "ff89517f7d419955d83d1c51a78c38d7",
+    "semantic_hash": ""
+  },
+  "assets/json/game/fill_blanks_data.json": {
+    "mtime": 1782368546.2881777,
+    "ast_hash": "86e166c97c1e9e60a22afa223e9c0809",
+    "semantic_hash": ""
+  },
+  "assets/json/game/flashcard_data.json": {
+    "mtime": 1782499342.548975,
+    "ast_hash": "8626c6896e42c9ca69cd3e71fad1d1bf",
+    "semantic_hash": ""
+  },
+  "assets/json/game/game_achievements.json": {
+    "mtime": 1783178750.3028579,
+    "ast_hash": "fa842e0dbc3824ffa25895f21e2c2b1c",
+    "semantic_hash": ""
+  },
+  "assets/json/game/game_levels.json": {
+    "mtime": 1782017876.7360158,
+    "ast_hash": "1a2ca6890fed0ce186111f72eca90df0",
+    "semantic_hash": ""
+  },
+  "assets/json/game/game_progress.json": {
+    "mtime": 1781992759.5053215,
+    "ast_hash": "3479ec881a73be47c187a6ec392ab7e7",
+    "semantic_hash": ""
+  },
+  "assets/json/game/game_questions.json": {
+    "mtime": 1781992726.7144666,
+    "ast_hash": "cd749c10329e48aefa41b1d199763596",
+    "semantic_hash": ""
+  },
+  "assets/json/game/grammar_detective_data.json": {
+    "mtime": 1782378600.6643977,
+    "ast_hash": "f611c0798c5099da1db74ec76964ce13",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/01_present_indefinite.json": {
+    "mtime": 1782233279.063592,
+    "ast_hash": "9edbed44c12f30e092720977a874a5fa",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/02_present_continuous.json": {
+    "mtime": 1782233281.496376,
+    "ast_hash": "7b2e990ef9865df18ee357e705a1edf0",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/03_present_perfect.json": {
+    "mtime": 1782233284.429453,
+    "ast_hash": "8b5f457224ac35c528e7b7c48ea49454",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/04_present_perfect_continuous.json": {
+    "mtime": 1782233287.6231534,
+    "ast_hash": "a76795f10fd30f9a41b2b25d82226886",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/05_past_indefinite.json": {
+    "mtime": 1782233290.737334,
+    "ast_hash": "ab223b3f44e1cbb1696dfac06c86db38",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/06_past_continuous.json": {
+    "mtime": 1782233293.7569966,
+    "ast_hash": "60cf756c27a333c942eb95042ed4c33f",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/07_past_perfect.json": {
+    "mtime": 1782233295.9368405,
+    "ast_hash": "74c995a884109c2ea364172e266fd607",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/08_past_perfect_continuous.json": {
+    "mtime": 1782233298.7432876,
+    "ast_hash": "17933799588cc4b9e50acf316887be18",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/09_future_indefinite.json": {
+    "mtime": 1782233301.7896082,
+    "ast_hash": "a5f3612584afb1d080fba394986a32b4",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/10_future_continuous.json": {
+    "mtime": 1782233304.5802178,
+    "ast_hash": "dee76c655a9d3ad1d3abcd7f0e722421",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/11_future_perfect.json": {
+    "mtime": 1782233307.469494,
+    "ast_hash": "0b7cf81564e98309379cb08a264edc8c",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/12_future_perfect_continuous.json": {
+    "mtime": 1782233310.0057163,
+    "ast_hash": "b8572b365c9a4d031a8bc5dbf723d3f1",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/01_present_indefinite_rules.json": {
+    "mtime": 1782038558.6302152,
+    "ast_hash": "13fd7be616511d36e630df97ec05193c",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/02_present_continuous_rules.json": {
+    "mtime": 1782038590.8010416,
+    "ast_hash": "f43c3f63757fde5cda15b9a8611e396c",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/03_present_perfect_rules.json": {
+    "mtime": 1782038619.5765414,
+    "ast_hash": "22f5bd3e86e9130c8290b14bb5e353eb",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/04_present_perfect_continuous_rules.json": {
+    "mtime": 1782038642.642882,
+    "ast_hash": "6790febe4995d1cad4ac9ec6aee80370",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/05_past_indefinite_rules.json": {
+    "mtime": 1782038673.2812977,
+    "ast_hash": "8e577b48eefc99327e798d04ffff2f71",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/06_past_continuous_rules.json": {
+    "mtime": 1782038696.923326,
+    "ast_hash": "5d0fce0b30f2b587a5ba874b094ca0b2",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/07_past_perfect_rules.json": {
+    "mtime": 1782038720.1908357,
+    "ast_hash": "8015fc6aeb29d7dca157be446fb23137",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/08_past_perfect_continuous_rules.json": {
+    "mtime": 1782038740.044901,
+    "ast_hash": "f91dd7294136e707567f0b4a00e4e00c",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/09_future_indefinite_rules.json": {
+    "mtime": 1782038766.6975002,
+    "ast_hash": "eaa39bcb9894730c1842660438318670",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/10_future_continuous_rules.json": {
+    "mtime": 1782038790.361976,
+    "ast_hash": "419529ed134c9d6f7190a4276a271e68",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/11_future_perfect_rules.json": {
+    "mtime": 1782038810.3173141,
+    "ast_hash": "da949474bb8d77e40235bde4489de284",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/12_future_perfect_continuous_rules.json": {
+    "mtime": 1782038830.8669877,
+    "ast_hash": "ccbf973ae5fe4ee1c7158595e4e38929",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/13_comparison_rules.json": {
+    "mtime": 1783184590.3153408,
+    "ast_hash": "5054e2f7b29b53d791316cc4c7dc5983",
+    "semantic_hash": ""
+  },
+  "assets/json/game/rules/14_special_usage_rules.json": {
+    "mtime": 1783184628.1358287,
+    "ast_hash": "c279df4bc7d4f43673eb5f1d199afb6c",
+    "semantic_hash": ""
+  },
+  "assets/json/game/sentence_builder_data.json": {
+    "mtime": 1782368323.1625054,
+    "ast_hash": "7527750b8ee6db91a06a3b8ad8499842",
+    "semantic_hash": ""
+  },
+  "assets/json/game/spoken_rules/spoken_english_rules.json": {
+    "mtime": 1782056647.8058686,
+    "ast_hash": "d66ccf6b574026e709b650039643253a",
+    "semantic_hash": ""
+  },
+  "assets/json/game/story_completion_data.json": {
+    "mtime": 1782500613.937805,
+    "ast_hash": "1c1ff2d4add16780d208b409c31f3692",
+    "semantic_hash": ""
+  },
+  "assets/json/game/verb_game_data.json": {
+    "mtime": 1783178750.3045242,
+    "ast_hash": "66879c0a7f8272021c1c622aef9b382b",
+    "semantic_hash": ""
+  },
+  "assets/json/game/verb_quiz_data.json": {
+    "mtime": 1782327167.3886406,
+    "ast_hash": "63aea53bb3a8c510b26c77afe2d93687",
+    "semantic_hash": ""
+  },
+  "assets/json/game/word_match_data.json": {
+    "mtime": 1782368874.978436,
+    "ast_hash": "9595172536c536901254d8fa96b72a3f",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_01_alphabet.json": {
+    "mtime": 1781873486.257886,
+    "ast_hash": "e11b3f84eddb827c5421a50ebdd7d246",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_02_word.json": {
+    "mtime": 1781817025.3982203,
+    "ast_hash": "ea4b09740864066aed8af8ee2f5ae7b7",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_03_sentence.json": {
+    "mtime": 1781873486.2409325,
+    "ast_hash": "000e38bf13bbeb3ac1a216b5a75e5095",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_04_parts_of_speech.json": {
+    "mtime": 1781873502.2206757,
+    "ast_hash": "09617b8372fc36fa45a99c69ebc4ae6e",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_05_noun.json": {
+    "mtime": 1781873505.7511775,
+    "ast_hash": "d5a2f6e68cac2369bb7be3898d1c465b",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_06_pronoun.json": {
+    "mtime": 1781873508.9217684,
+    "ast_hash": "44ecffbec7613eb0bde15ac29597c8b4",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_07_adjective.json": {
+    "mtime": 1781873681.598822,
+    "ast_hash": "e702e71568e1849e024c5fd518dbc76a",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_08_verb.json": {
+    "mtime": 1781873867.3676784,
+    "ast_hash": "3524bb1c9fcbfcd722fa51ee3e42b533",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_09_adverb.json": {
+    "mtime": 1781874104.0892978,
+    "ast_hash": "8ebdfd22d36b8bed1bc540c2762dc7c0",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_10_preposition.json": {
+    "mtime": 1781874333.0809646,
+    "ast_hash": "97b40f796fceea70717155dca0ced6ad",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_11_conjunction.json": {
+    "mtime": 1781874610.5188859,
+    "ast_hash": "c340a3505c2b615697aaa88dc32f3885",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_12_article.json": {
+    "mtime": 1781874772.7153125,
+    "ast_hash": "ea490363b786cff99d3a930ff83220e8",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_13_determiners.json": {
+    "mtime": 1781874936.0551248,
+    "ast_hash": "f524e76f58e83b2468a27ba27715fab9",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_14_quantifiers.json": {
+    "mtime": 1781875155.9564877,
+    "ast_hash": "fe9b37cb233ff2d0f97ec81c8ca0334a",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_15_numbers.json": {
+    "mtime": 1781875346.0078356,
+    "ast_hash": "b10bea5aadd65e3d01acddd06c18d613",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_16_gender.json": {
+    "mtime": 1781875579.9960668,
+    "ast_hash": "ce4df657393a0e13dde34ec7f7484db2",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_17_person.json": {
+    "mtime": 1781875764.4016292,
+    "ast_hash": "1c3394d5427b65242177efe8ee8370c8",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_18_voice.json": {
+    "mtime": 1781875966.0310433,
+    "ast_hash": "aebdabb413b6ec75f989e7954632a57b",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_19_punctuation_marks.json": {
+    "mtime": 1781876316.5904586,
+    "ast_hash": "e610ee3a913764f430c6446daad51041",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_20_capitalization_rules.json": {
+    "mtime": 1781876677.7561102,
+    "ast_hash": "0b69c1c0b07ad133e801d3cacb4b5634",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_21_introduction_to_tense.json": {
+    "mtime": 1781940701.8040817,
+    "ast_hash": "2dc6800d728217fac2327267490e9798",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_22_subject_and_predicate.json": {
+    "mtime": 1781956961.7933311,
+    "ast_hash": "650ff1af8be835ad5b406b02c0371323",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_23_subject-verb_agreement.json": {
+    "mtime": 1781972897.0809672,
+    "ast_hash": "b3adf1c0f4879e9ded2f89460d4fea42",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_24_types_of_sentences.json": {
+    "mtime": 1781973366.4893367,
+    "ast_hash": "3f3c5dcccf44cee11c8990754710e319",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_25_negative_sentences.json": {
+    "mtime": 1781973512.5443041,
+    "ast_hash": "ae5a6c156f186af6ddeb23daeb268515",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_26_wh_questions.json": {
+    "mtime": 1781973587.8669477,
+    "ast_hash": "2fbdd0e13e42dddd1b4e40b007c19788",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_27_tag_questions.json": {
+    "mtime": 1781973651.7342093,
+    "ast_hash": "09dce764d8dac3dc6ebbe6f3b4662b6f",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_28_there_and_it.json": {
+    "mtime": 1781973731.6249406,
+    "ast_hash": "2794af46f7a018e25d0ffe30e5fca193",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_29_modal_verbs.json": {
+    "mtime": 1781973847.2592697,
+    "ast_hash": "3aa90be7a9f46a203890cd284d65add7",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_30_infinitive.json": {
+    "mtime": 1781974480.9773047,
+    "ast_hash": "d4a241ee302e7ba6db29737cacccdedd",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_31_gerund.json": {
+    "mtime": 1781974503.8265028,
+    "ast_hash": "84c157fa67cc2c4b8f00f1e60652b184",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_32_participle.json": {
+    "mtime": 1781974524.5097926,
+    "ast_hash": "38b71523dcf01d18ec2a84a2ff00e649",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_33_phrases.json": {
+    "mtime": 1781974544.1253965,
+    "ast_hash": "56a72e0e5a77723027fcd6f0703a6895",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_34_clauses.json": {
+    "mtime": 1781974562.1320837,
+    "ast_hash": "5c39adcd09a794e01d6a9a23a9388dd9",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_35_phrase_vs_clause.json": {
+    "mtime": 1781974579.6679997,
+    "ast_hash": "eca02819ea61de6851274dc884cd335d",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_36_simple_sentence.json": {
+    "mtime": 1781974812.1224253,
+    "ast_hash": "4a60b65407a6d5b61da6de7e02c9c2af",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_37_compound_sentence.json": {
+    "mtime": 1781974838.7052426,
+    "ast_hash": "9a1d989243ad5d173c93723d13d5652c",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_38_complex_sentence.json": {
+    "mtime": 1781974852.6679463,
+    "ast_hash": "678b56d19272346e7081ee3cebfa985d",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_39_transformation_of_sentences.json": {
+    "mtime": 1781975978.8395782,
+    "ast_hash": "bee749858096a2076983edcadb2225fb",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_40_degree_change.json": {
+    "mtime": 1781975993.5775309,
+    "ast_hash": "6a5684e723d783cabf972a09ccd35800",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_41_affirmative_and_negative_transformation.json": {
+    "mtime": 1781976015.8979063,
+    "ast_hash": "e0c4564066594e8980b6367e025dd16a",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_42_assertive_and_interrogative_transformation.json": {
+    "mtime": 1781975331.3414776,
+    "ast_hash": "c53732a828c3c1252fe4c824f375cc23",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_43_exclamatory_transformation.json": {
+    "mtime": 1781975350.5170758,
+    "ast_hash": "d834874d24fed1060ce56aafcf1e4a7e",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_44_active_voice.json": {
+    "mtime": 1781975366.1214457,
+    "ast_hash": "f6be8554f2c602b418e349e21bfebd26",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_45_passive_voice.json": {
+    "mtime": 1781976349.3808675,
+    "ast_hash": "e59f463b0cb7b5ab62b0dc2e43af4658",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_46_direct_speech.json": {
+    "mtime": 1781976363.018419,
+    "ast_hash": "9beed92d0e4ca6aea43ce1e42fc31043",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_47_indirect_speech.json": {
+    "mtime": 1781976378.3144157,
+    "ast_hash": "79106dc5fa19392da550035af8d9db1d",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_48_conditional_sentences.json": {
+    "mtime": 1781976549.4974089,
+    "ast_hash": "9eac76b99c1eb6e3e28fe9ada2303bb9",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_49_comparison.json": {
+    "mtime": 1781976563.435861,
+    "ast_hash": "8e812a5657cd936957159ae6e190e942",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_50_parallelism.json": {
+    "mtime": 1781976580.5979567,
+    "ast_hash": "6e8d0ab31c4d890b6788280d787233d9",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_51_advanced_modals.json": {
+    "mtime": 1782050466.8228974,
+    "ast_hash": "603b2933bbb2eeabf1591830771bebc4",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_52_causative_verbs.json": {
+    "mtime": 1782050708.0337186,
+    "ast_hash": "d3221a2a5460f9d49133fef9d6de5a19",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_53_inversion.json": {
+    "mtime": 1782051000.8120775,
+    "ast_hash": "d6fdfa19dda5e5462fa51f5e27cfbac9",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_54_emphasis.json": {
+    "mtime": 1782051140.690534,
+    "ast_hash": "b3bb82dfbf8d7dbe5b0233902cb915bf",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_55_ellipsis.json": {
+    "mtime": 1782122359.4722967,
+    "ast_hash": "16469ccb990fdd9ce81dfd1dea3c31dd",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_56_relative_pronouns.json": {
+    "mtime": 1782122544.528027,
+    "ast_hash": "be58bee52d68c84095ac2583aabae1b9",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_57_relative_clauses.json": {
+    "mtime": 1782122653.3074427,
+    "ast_hash": "fb5a8a5b65e21a6041e715dfb31eb320",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_58_reported_speech.json": {
+    "mtime": 1782122784.640638,
+    "ast_hash": "f41afc50a63c3885d3e4328da100a1be",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_59_subjunctive_mood.json": {
+    "mtime": 1782122914.738005,
+    "ast_hash": "3aaa7cf7870b3419a31722910bdf6e88",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_60_advanced_conditionals.json": {
+    "mtime": 1782123014.8287923,
+    "ast_hash": "40d27076dfaa3e659297f2b229c901c2",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_61_complex_structures.json": {
+    "mtime": 1782123141.4209068,
+    "ast_hash": "4dec1d7248ec665b53d75a4dc1e17d55",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_62_nominalization.json": {
+    "mtime": 1782123231.5936842,
+    "ast_hash": "913b9f5277265f5c828bab2868b64984",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_63_formal_and_informal_english.json": {
+    "mtime": 1782123397.3612573,
+    "ast_hash": "7911ef6af18998303bd28b1feb392b27",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_64_common_grammar_mistakes.json": {
+    "mtime": 1782123545.0971742,
+    "ast_hash": "13e69462e40dbd9826d714e1be73e7da",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_65_confusing_words.json": {
+    "mtime": 1782123667.4094775,
+    "ast_hash": "b8798e124a05b15ff33e735e23a890f1",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_66_idiomatic_expressions.json": {
+    "mtime": 1782123844.8600965,
+    "ast_hash": "bbd52e71a7cbc2a8063100d99b5b85ad",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_67_phrasal_verbs.json": {
+    "mtime": 1782124114.8163552,
+    "ast_hash": "81e2c22d7934f18ed2b08df5fa8eabff",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_68_collocations.json": {
+    "mtime": 1782124234.3980842,
+    "ast_hash": "7df737fb90454959dfae04f71fd431f1",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_69_sentence_patterns.json": {
+    "mtime": 1782124352.2675788,
+    "ast_hash": "4c781f14d3d909b16fba6fe824225530",
+    "semantic_hash": ""
+  },
+  "assets/json/grammar/chapter_70_advanced_writing_structures.json": {
+    "mtime": 1782127093.2147906,
+    "ast_hash": "f3e6e56b2c3ae0d9e6dbbc7068590284",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/advanced.json": {
+    "mtime": 1782201594.1004949,
+    "ast_hash": "28d644b25ab31ddff18c2427600be22b",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/beginner.json": {
+    "mtime": 1782201267.291495,
+    "ast_hash": "5f193e6de75a902c0ed45ff03a1dadbe",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/business.json": {
+    "mtime": 1782202594.5875869,
+    "ast_hash": "741a791eb796e68ed7032aa50643958d",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/categories.json": {
+    "mtime": 1782201802.8182971,
+    "ast_hash": "872b671ef4d6ce7a37c8c5c141f92bdc",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/daily_conversations.json": {
+    "mtime": 1782201912.3431723,
+    "ast_hash": "70ef82e685692772f5e601b2f2734a4d",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/ielts_listening.json": {
+    "mtime": 1782202669.978983,
+    "ast_hash": "1fef7dbb847cb94b079ad60a0c9f17ff",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/intermediate.json": {
+    "mtime": 1782201415.082035,
+    "ast_hash": "aead13ecbd10846d7070778735924791",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/kids.json": {
+    "mtime": 1782202124.5990567,
+    "ast_hash": "24b555213775ddd558bb71c2e6995e80",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/moral_stories.json": {
+    "mtime": 1782202209.2591133,
+    "ast_hash": "45516cc191563c49642d05d20cfe70ea",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/news_articles.json": {
+    "mtime": 1782202286.665699,
+    "ast_hash": "4e2ba889132adbfd9fc314942603604a",
+    "semantic_hash": ""
+  },
+  "assets/json/listening_practice/travel.json": {
+    "mtime": 1782202535.5835881,
+    "ast_hash": "793dc76b976ffedded244bdf421628f5",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_01.json": {
+    "mtime": 1783178750.3055487,
+    "ast_hash": "0e28e1f9093cfcca8f09cc62832351dd",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_02.json": {
+    "mtime": 1783178750.3071504,
+    "ast_hash": "6617f58c6a20bace90d6e92461cbc84d",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_03.json": {
+    "mtime": 1783178750.308892,
+    "ast_hash": "f5ff6e1353f61b4ce7628e170ece3cb8",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_04.json": {
+    "mtime": 1783178750.3104196,
+    "ast_hash": "83b372fb4e7da0c91588bff50247642f",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_05.json": {
+    "mtime": 1783178750.3130033,
+    "ast_hash": "4cea9132ed5eb65142f4b4e4ea574532",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_06.json": {
+    "mtime": 1783178750.3141742,
+    "ast_hash": "e49b58d0f6466d57b09df3c6111bc232",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_07.json": {
+    "mtime": 1783178750.3155077,
+    "ast_hash": "e1ae3988e74984f51c56bc054fd9059b",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_08.json": {
+    "mtime": 1783178750.3163216,
+    "ast_hash": "3b7658ebb065f46b73cddd48c81ac19c",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_09.json": {
+    "mtime": 1783178750.3178287,
+    "ast_hash": "5f473f85378b2690f286a0c15c72ddb3",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_10.json": {
+    "mtime": 1783178750.3188758,
+    "ast_hash": "60518ace9965b27e648e4a704d9d89d9",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_11.json": {
+    "mtime": 1783178750.3196023,
+    "ast_hash": "f4ead03f8dba750b4c230817f2e2adfd",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_12.json": {
+    "mtime": 1783178750.3203776,
+    "ast_hash": "27be006250c6185e3e202c42076b6dad",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_13.json": {
+    "mtime": 1783178750.321233,
+    "ast_hash": "89a09ca71bf029986ce459cd3ab4fe99",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_14.json": {
+    "mtime": 1783178750.3219678,
+    "ast_hash": "61db2ea3f44b48e8e7a6ad59151fdf6f",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_15.json": {
+    "mtime": 1783178750.3227034,
+    "ast_hash": "ce6187fcc273c3aa4a9d9ddef15bc6fd",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_16.json": {
+    "mtime": 1783178750.3234339,
+    "ast_hash": "f676582244c598cf38b6c99503ccd561",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_17.json": {
+    "mtime": 1783178750.324361,
+    "ast_hash": "e7b3759949682168fc32b2f73bd9016e",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_18.json": {
+    "mtime": 1783178750.3255372,
+    "ast_hash": "cacff1dcdc2af8623c833e1872845aec",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_19.json": {
+    "mtime": 1783178750.3270361,
+    "ast_hash": "51cfa4ef0bd3dbadacf1535228603fb5",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_20.json": {
+    "mtime": 1783178750.3296964,
+    "ast_hash": "d80232491b14d6519441eeee0423100f",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_21.json": {
+    "mtime": 1783178750.33113,
+    "ast_hash": "923600300f45cf815698df5bb087d10b",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_22.json": {
+    "mtime": 1783178750.332408,
+    "ast_hash": "083f4aa82a25efdbcdef10f959f145b7",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_23.json": {
+    "mtime": 1783178750.3337598,
+    "ast_hash": "5ba113ae29fa0c1e50769a1bfda9a2fb",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_24.json": {
+    "mtime": 1783178750.3348596,
+    "ast_hash": "8f5ded9e192153c865db4982d8c4e3d4",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_25.json": {
+    "mtime": 1783178750.3360455,
+    "ast_hash": "70967ea09ee3da239ca474ee2df43870",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_26.json": {
+    "mtime": 1783178750.3370469,
+    "ast_hash": "e511e6d93e77051eef36d34cbbf35923",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_27.json": {
+    "mtime": 1783178750.3380244,
+    "ast_hash": "439f833c191f41b6be925c26209440c4",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_28.json": {
+    "mtime": 1783178750.3386986,
+    "ast_hash": "4d62e681669098608778bd4a15f25556",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_29.json": {
+    "mtime": 1783178750.3394802,
+    "ast_hash": "046445abe51454ac1125626f0561e8e6",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_30.json": {
+    "mtime": 1783178750.340525,
+    "ast_hash": "65db852da76b9c4ad438a407846992b4",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_31.json": {
+    "mtime": 1783178750.3415592,
+    "ast_hash": "027ca25ed32fefe4607acb843983197a",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_32.json": {
+    "mtime": 1783178750.3430698,
+    "ast_hash": "42db7ae64abce7903d5d39551c0d63a2",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_33.json": {
+    "mtime": 1783178750.3455632,
+    "ast_hash": "9dcc8fe2c9098aa413a5097f2cf3a14f",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_34.json": {
+    "mtime": 1783178750.346863,
+    "ast_hash": "f98e45700932b121f1aea833e23ccb18",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_35.json": {
+    "mtime": 1783178750.3483076,
+    "ast_hash": "abd2d67ed75f04e6963471b769bcb5c2",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_36.json": {
+    "mtime": 1783178750.3490744,
+    "ast_hash": "f3c68adc0eb132aa412016d3cf1bde9e",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_37.json": {
+    "mtime": 1783178750.349772,
+    "ast_hash": "73008b225a571c4539777adaba15d581",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_38.json": {
+    "mtime": 1783178750.3505263,
+    "ast_hash": "7fdfeee58e0423ca28d63270454e4867",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_39.json": {
+    "mtime": 1783178750.3513036,
+    "ast_hash": "0a1f7328b8cce6d155875685fa478d16",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_40.json": {
+    "mtime": 1783178750.3520825,
+    "ast_hash": "37b231f03fb3ac2753f4d63140086d97",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_41.json": {
+    "mtime": 1783178750.3530176,
+    "ast_hash": "7b31db28c7cbbb652e65e5da9972a45f",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_42.json": {
+    "mtime": 1783178750.3548775,
+    "ast_hash": "0dc0e1cf27cf7e1b7671b83e90f5663a",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_43.json": {
+    "mtime": 1783178750.356062,
+    "ast_hash": "b8ef81ffc5d34ea3e0c46fb5ba16d877",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_44.json": {
+    "mtime": 1783178750.3567886,
+    "ast_hash": "760e1c1e90e9d42e7bc91c5c174089bd",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_45.json": {
+    "mtime": 1783178750.3574374,
+    "ast_hash": "190da37fc8a29020476c1ef67fa76918",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_46.json": {
+    "mtime": 1783178750.3580766,
+    "ast_hash": "2e42a1b13628e0d3843c51bcd7220fd9",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_47.json": {
+    "mtime": 1783178750.359005,
+    "ast_hash": "e3441c6233fc618daa87d16f4e73c1b3",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_48.json": {
+    "mtime": 1783178750.3599043,
+    "ast_hash": "8f4012b0f19afd4362e6c2b73c9221e5",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_49.json": {
+    "mtime": 1783178750.3614442,
+    "ast_hash": "2af86a38c379d172676c5decaa6811f4",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_50.json": {
+    "mtime": 1783178750.363203,
+    "ast_hash": "47cbf3bc34154ab59d12ba8630aa481b",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_51.json": {
+    "mtime": 1783178750.3646362,
+    "ast_hash": "19ee8c76fe67e5b4be4bc0abce6ad36c",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_52.json": {
+    "mtime": 1783178750.36572,
+    "ast_hash": "d03b0310fe9ec07a5c8953baf5f94556",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_53.json": {
+    "mtime": 1783178750.366517,
+    "ast_hash": "13a489f8417392d0e89e7120e01d5f50",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_54.json": {
+    "mtime": 1783178750.367161,
+    "ast_hash": "3632dbcbeefcd47171b884efb98c7062",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_55.json": {
+    "mtime": 1783178750.3679893,
+    "ast_hash": "ab9cf83b48b660c3f4c52c6a1de481e9",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_56.json": {
+    "mtime": 1783178750.3686774,
+    "ast_hash": "a8cca9bd682ccc72be64b89683f9ea37",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_57.json": {
+    "mtime": 1783178750.3692834,
+    "ast_hash": "596189fbf16828e52d371b10440d7b5e",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_58.json": {
+    "mtime": 1783178750.3700328,
+    "ast_hash": "0e308d3d785715eac5a4f91c256548ab",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_59.json": {
+    "mtime": 1783178750.3709655,
+    "ast_hash": "bb5a75018ae70d97ba10a785c3c2a02c",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_60.json": {
+    "mtime": 1783178750.3717225,
+    "ast_hash": "9f42eade44fa0898ca83147873147cac",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_61.json": {
+    "mtime": 1783178750.3724701,
+    "ast_hash": "67baa067537f25fc6318e682dd403d25",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_62.json": {
+    "mtime": 1783178750.3734531,
+    "ast_hash": "baf4af25d46e056bc1d9b6ae8d66c8fa",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_63.json": {
+    "mtime": 1783178750.3742037,
+    "ast_hash": "c67046d66f03ba03f0e101a2e1c73122",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_64.json": {
+    "mtime": 1783178750.3748868,
+    "ast_hash": "6245006c960086262ac4b0e95d6cbf32",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_65.json": {
+    "mtime": 1783178750.3757584,
+    "ast_hash": "b5d4463d0f63c5b2d90da51d194efa78",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_66.json": {
+    "mtime": 1783178750.3769557,
+    "ast_hash": "6fa4c144d00bd3b6e4a871d0251c2e68",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_67.json": {
+    "mtime": 1783178750.3794248,
+    "ast_hash": "acf6338343c56da371ad46d6f33a495b",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_68.json": {
+    "mtime": 1783178750.3803594,
+    "ast_hash": "09f8a45c48e2562601f562af0912d363",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_69.json": {
+    "mtime": 1783178750.3812265,
+    "ast_hash": "1df2f2962cb03739230117c47165dcf6",
+    "semantic_hash": ""
+  },
+  "assets/json/mock_tests/mock_test_70.json": {
+    "mtime": 1783178750.3822622,
+    "ast_hash": "48fe153b24d649a7b46d6b3c3d2b6101",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/action_verbs.json": {
+    "mtime": 1782139025.1484294,
+    "ast_hash": "7d03c362378bbf3c105c939a71866b79",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/categories.json": {
+    "mtime": 1782142575.7404354,
+    "ast_hash": "89b7d17bbca4d7074e0ba73d4f57dac7",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/common_verbs.json": {
+    "mtime": 1782138973.316417,
+    "ast_hash": "87cf020b1cbcfd8bf470489b06bd2d8e",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/communication.json": {
+    "mtime": 1782138996.8719635,
+    "ast_hash": "0ec01981b5234b469a107b681eac17ef",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/cooking_verbs.json": {
+    "mtime": 1782143158.424738,
+    "ast_hash": "b246165a0855dbd3d84b20a661208d5e",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/daily_routine.json": {
+    "mtime": 1782139014.4181657,
+    "ast_hash": "1e16216f1316da36dd250b281bd57cab",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/education_verbs.json": {
+    "mtime": 1782143383.0193338,
+    "ast_hash": "78d5ecbc513477d9eb23289807f23b7f",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/emotion_verbs.json": {
+    "mtime": 1782143439.0566134,
+    "ast_hash": "bf5ac620f6e9263745d429c27b2a1c26",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/health_verbs.json": {
+    "mtime": 1782143484.5557957,
+    "ast_hash": "0e77f9b2b477951ff5477228ed7b7549",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/household_verbs.json": {
+    "mtime": 1782143539.6291778,
+    "ast_hash": "df9729778bd40135ba994b793c432482",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/irregular_verbs.json": {
+    "mtime": 1782138987.2470512,
+    "ast_hash": "ce22734e0bf1fcea2da86b5bde5d3c03",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/mental_verbs.json": {
+    "mtime": 1782139035.2333586,
+    "ast_hash": "97e92628c3c51132a54b324f3dcf5f4b",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/money_verbs.json": {
+    "mtime": 1782143591.4214625,
+    "ast_hash": "93eaf44179b3ba4490db878e4f6dc987",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/movement.json": {
+    "mtime": 1782139005.8189971,
+    "ast_hash": "9de692b737abd4f4131d72450050c130",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/sports_verbs.json": {
+    "mtime": 1782143644.4576867,
+    "ast_hash": "a88fbe57114d2ce01900d74d15774b37",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/tech_verbs.json": {
+    "mtime": 1782143724.8040006,
+    "ast_hash": "d373b1cbda2cffcfd55ae4094f559204",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/travel_verbs.json": {
+    "mtime": 1782143777.0427856,
+    "ast_hash": "3a473d5730b81277777072636496664f",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/weather_verbs.json": {
+    "mtime": 1782144252.14979,
+    "ast_hash": "2dda05cee6c2ac59fb0f739f79a43903",
+    "semantic_hash": ""
+  },
+  "assets/json/verb_forms/work_verbs.json": {
+    "mtime": 1782144319.7457116,
+    "ast_hash": "1d8a66a601bedf4a5ddca1533780b735",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Advanced/chapter_32_business_english.json": {
+    "mtime": 1781805490.4161727,
+    "ast_hash": "0cec4e795b308e3dc214ef4a691a287a",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Advanced/chapter_33_interview_english.json": {
+    "mtime": 1781805896.9465306,
+    "ast_hash": "2fc60c990528051f370a9519fe01ef22",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Advanced/chapter_34_formal_english.json": {
+    "mtime": 1781806160.6596317,
+    "ast_hash": "5d58f835f5894492246b529b38eb262d",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Advanced/chapter_35_academic_vocabulary.json": {
+    "mtime": 1781806392.416045,
+    "ast_hash": "a5cf0cfb447ccd8aa89d025eb7246dc0",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Advanced/chapter_36_news_vocabulary.json": {
+    "mtime": 1781806638.4167967,
+    "ast_hash": "db04ace47617cc09cffe705897b36565",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Advanced/chapter_37_debate_vocabulary.json": {
+    "mtime": 1781807813.8105137,
+    "ast_hash": "de3f35b2cb97016c502923271e957139",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Advanced/chapter_38_advanced_phrasal_verbs.json": {
+    "mtime": 1781809979.0698125,
+    "ast_hash": "55f78d7429e6f499c185e4139c35dddd",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Advanced/chapter_39_advanced_idioms.json": {
+    "mtime": 1781810117.952336,
+    "ast_hash": "4aa3f374e78aa9ed95e4d5f027e65ca0",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Advanced/chapter_40_powerful_english_words.json": {
+    "mtime": 1781810229.7807207,
+    "ast_hash": "677fcbae124d2abac5761aaf2cb89c24",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_01_greetings_and_introductions.json": {
+    "mtime": 1781810299.0961542,
+    "ast_hash": "74d8d1dbb7672f797070db89aadeef1f",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_02_family_members.json": {
+    "mtime": 1781810481.2328854,
+    "ast_hash": "69c37317a399223c9f0a2cb2c01add0a",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_03_numbers.json": {
+    "mtime": 1781810481.2359283,
+    "ast_hash": "9f46ad2a582867321a180777f93fbb85",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_04_colors.json": {
+    "mtime": 1781810481.2375894,
+    "ast_hash": "9ccd81fc90e3aa537be26ba313889e6e",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_05_days_and_months.json": {
+    "mtime": 1781810481.2398298,
+    "ast_hash": "238b69359150c94b177a18342ff5cd46",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_06_time_and_date.json": {
+    "mtime": 1781810481.2419078,
+    "ast_hash": "bd158578772e6bfb03f2f68d268961a3",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_07_body_parts.json": {
+    "mtime": 1781810481.2464986,
+    "ast_hash": "f419e94acd26528bd466636eee295a1e",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_08_food_and_drinks.json": {
+    "mtime": 1781810481.248052,
+    "ast_hash": "acb9791273216af7d5e85f66a1a5725c",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_09_fruits_and_vegetables.json": {
+    "mtime": 1781810481.2504017,
+    "ast_hash": "d90f4221d53df0bdaf3a86b7dd70f58f",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_10_animals_and_birds.json": {
+    "mtime": 1781810481.2519948,
+    "ast_hash": "8da7f98b48ecfcf432c72fbaa62a565e",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_11_occupations.json": {
+    "mtime": 1781810481.256733,
+    "ast_hash": "6485001d01fa49a822c98bc358533330",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_12_places.json": {
+    "mtime": 1781810481.2589636,
+    "ast_hash": "38c734021a62da2dd66bda3bd960eb79",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_13_transportation.json": {
+    "mtime": 1781810481.2626207,
+    "ast_hash": "34d87c549316ca04ce821834a415172a",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_14_clothing.json": {
+    "mtime": 1781810481.2662866,
+    "ast_hash": "ca071e86f1cb5e2dbfcce88984b90019",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_15_weather.json": {
+    "mtime": 1781801033.4896235,
+    "ast_hash": "38b513c8b1082f911f57484476b23740",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_16_common_verbs.json": {
+    "mtime": 1781801156.7297704,
+    "ast_hash": "3615d3b0ea0c1c93ba23a931c08031e0",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Beginner/chapter_17_common_adjectives.json": {
+    "mtime": 1781801254.3376772,
+    "ast_hash": "6d3f172203737acb495f198ac92799b9",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_18_education.json": {
+    "mtime": 1781801469.398853,
+    "ast_hash": "96a537a4e2c635f4ccc3e428bba62d72",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_19_health.json": {
+    "mtime": 1781801482.6238987,
+    "ast_hash": "bc94065df9f23677145dce37db8de70a",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_20_technology.json": {
+    "mtime": 1781801499.9846733,
+    "ast_hash": "efe76887dd73a7d781bbd1ba73381f74",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_21_office_vocabulary.json": {
+    "mtime": 1781801512.6970189,
+    "ast_hash": "a75c88ce94a7d847f6ee2f153bf401d2",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_22_banking_vocabulary.json": {
+    "mtime": 1781801527.686924,
+    "ast_hash": "353f49c6ae7e4d3ec4da542ae27c3a79",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_23_shopping_vocabulary.json": {
+    "mtime": 1781801547.5071297,
+    "ast_hash": "d41a43e713b9ac0821f8841fb474ca61",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_24_travel_vocabulary.json": {
+    "mtime": 1781801574.2136526,
+    "ast_hash": "e319a2da0e9bbb437b0fac1ab575fc8f",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_25_communication_vocabulary.json": {
+    "mtime": 1781801586.6677585,
+    "ast_hash": "ae9138b3d59e5f7af8adfa96c41f9ddc",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_26_emotions_and_feelings.json": {
+    "mtime": 1781801598.8975525,
+    "ast_hash": "db267fd4d7d2a57b3b7c8570856766b3",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_27_relationships.json": {
+    "mtime": 1781801614.6224945,
+    "ast_hash": "1907647b868df4c7ea5aeaad315c853e",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_28_environment.json": {
+    "mtime": 1781812730.1457982,
+    "ast_hash": "d42eacde60f318cc89422b6b3dc464c9",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_29_social_media_vocabulary.json": {
+    "mtime": 1781812964.7475889,
+    "ast_hash": "e8ac4c3bb829913a001f207db24d26b7",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_30_common_phrasal_verbs.json": {
+    "mtime": 1781813011.40559,
+    "ast_hash": "6f1737f5055137d6c3dbdd7c9567ad81",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/Intermediate/chapter_31_everyday_idioms.json": {
+    "mtime": 1781813159.2870448,
+    "ast_hash": "2f1f10dbe0660fdaeac54ae762d95e64",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary_manifest.json": {
+    "mtime": 1781812495.6173384,
+    "ast_hash": "9ff461790d45c7ab5892d2e75f56bea5",
+    "semantic_hash": ""
+  },
+  "assets/pdfs/student_guide.json": {
+    "mtime": 1783178750.3881981,
+    "ast_hash": "b92c7c82fc880510d07c216fc42dbe01",
+    "semantic_hash": ""
+  },
+  "assets/pdfs/study_routine.json": {
+    "mtime": 1783178750.389109,
+    "ast_hash": "1370bb38660e920bcbccf8c138c5a2d0",
+    "semantic_hash": ""
+  },
+  "lib/core/constants/app_colors.dart": {
+    "mtime": 1782019580.5552108,
+    "ast_hash": "bf88d079bf5446ac022381baba90785a",
+    "semantic_hash": ""
+  },
+  "lib/core/constants/app_images.dart": {
+    "mtime": 1781772999.6249936,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "lib/core/constants/app_strings.dart": {
+    "mtime": 1781772999.6247423,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "lib/core/constants/tense_constants.dart": {
+    "mtime": 1783184638.7186484,
+    "ast_hash": "52f20ebb62e6bdb06163edfa0360bfe4",
+    "semantic_hash": ""
+  },
+  "lib/core/theme/dark_theme.dart": {
+    "mtime": 1781850023.2902932,
+    "ast_hash": "210071c96d0971bbc7fc5a57a473bbe5",
+    "semantic_hash": ""
+  },
+  "lib/core/theme/light_theme.dart": {
+    "mtime": 1781850018.2415252,
+    "ast_hash": "79a9244c9f2a74478ddfa0dfa04051c3",
+    "semantic_hash": ""
+  },
+  "lib/core/utils/extensions.dart": {
+    "mtime": 1781772999.625815,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "lib/core/utils/grammar_text_parser.dart": {
+    "mtime": 1783178751.0410697,
+    "ast_hash": "df089f205bcf1becaab546fd1eed330c",
+    "semantic_hash": ""
+  },
+  "lib/core/utils/helper.dart": {
+    "mtime": 1781772999.6257157,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "lib/core/utils/validators.dart": {
+    "mtime": 1781772999.6255813,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "lib/core/widgets/banner_ad_widget.dart": {
+    "mtime": 1783331838.9651256,
+    "ast_hash": "3fa1aa394a71525b87cac0c996651429",
+    "semantic_hash": ""
+  },
+  "lib/core/widgets/custom_button.dart": {
+    "mtime": 1781776710.0348632,
+    "ast_hash": "28c72961376f169a00b5c2620ce7bd5f",
+    "semantic_hash": ""
+  },
+  "lib/core/widgets/custom_textfield.dart": {
+    "mtime": 1781776705.908769,
+    "ast_hash": "51801749ba2f9521f6b1515a711b78a8",
+    "semantic_hash": ""
+  },
+  "lib/core/widgets/explanation_widget.dart": {
+    "mtime": 1782019275.4443314,
+    "ast_hash": "85a5d5f7d5277c333e0e05cbd84fc5af",
+    "semantic_hash": ""
+  },
+  "lib/core/widgets/feature_gate_widget.dart": {
+    "mtime": 1783178751.0422764,
+    "ast_hash": "79bb3651d93470c17679f41eb6c43da3",
+    "semantic_hash": ""
+  },
+  "lib/core/widgets/game_widgets.dart": {
+    "mtime": 1782041652.720296,
+    "ast_hash": "5b39016292cfc79ba94d863ef7c51e43",
+    "semantic_hash": ""
+  },
+  "lib/core/widgets/loading_widget.dart": {
+    "mtime": 1781777704.6188,
+    "ast_hash": "69a3f56525b93eb5b18bba7236cefa8e",
+    "semantic_hash": ""
+  },
+  "lib/core/widgets/skeleton_widget.dart": {
+    "mtime": 1783191493.095267,
+    "ast_hash": "7421f09e7a4b9d39e33701b0b92fd0ca",
+    "semantic_hash": ""
+  },
+  "lib/core/widgets/streak_widget.dart": {
+    "mtime": 1783257040.7296207,
+    "ast_hash": "87724451f38717120060e3219a6a9845",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/repository/admin_repository.dart": {
+    "mtime": 1783255351.4446826,
+    "ast_hash": "9cd704562784c7adc27d7540f1071d16",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/admin_analytics_screen.dart": {
+    "mtime": 1783191589.684381,
+    "ast_hash": "02df463e047826a8d7b39c53f606ee34",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/admin_config_screen.dart": {
+    "mtime": 1783191621.2506254,
+    "ast_hash": "5d3a9531586e17d257e503ca62f51eac",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/admin_content_screen.dart": {
+    "mtime": 1783254286.4035172,
+    "ast_hash": "ec840360d710c8d5b6e27245993f1eb3",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/admin_dashboard_screen.dart": {
+    "mtime": 1783254265.6928842,
+    "ast_hash": "5452855ea84d5241fb1c0112263ae6a2",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/admin_feedback_screen.dart": {
+    "mtime": 1783191761.2342708,
+    "ast_hash": "953418472281235e695324d9dc1b9255",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/admin_notifications_screen.dart": {
+    "mtime": 1783191558.673011,
+    "ast_hash": "ee7cc07f7bb4bdab00ec0a8955f6152b",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/admin_user_detail_screen.dart": {
+    "mtime": 1783191650.0629401,
+    "ast_hash": "bf223f6fad27a10434cb09db8897b9ea",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/force_update_screen.dart": {
+    "mtime": 1783178751.0517225,
+    "ast_hash": "328d23d3a0f841827f55db4bd0d9357a",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/maintenance_screen.dart": {
+    "mtime": 1783178751.0547957,
+    "ast_hash": "40d69bbd0def4b8499252b3bcdffa564",
+    "semantic_hash": ""
+  },
+  "lib/features/ai_teacher/screens/ai_chat_screen.dart": {
+    "mtime": 1783178751.0567026,
+    "ast_hash": "9ee0a63535a8335c6e163b9c7ac7287f",
+    "semantic_hash": ""
+  },
+  "lib/features/auth/screens/login_screen.dart": {
+    "mtime": 1783281621.387314,
+    "ast_hash": "9b75f45753f1ad8ad0102611c3a7af16",
+    "semantic_hash": ""
+  },
+  "lib/features/auth/screens/signup_screen.dart": {
+    "mtime": 1783280311.587327,
+    "ast_hash": "0836edf7e992771a9c537c742b33c801",
+    "semantic_hash": ""
+  },
+  "lib/features/auth/screens/splash_screen.dart": {
+    "mtime": 1783279117.351708,
+    "ast_hash": "c40d59a25e84a96494876c23d3e86e17",
+    "semantic_hash": ""
+  },
+  "lib/features/conversation/screens/conversation_screen.dart": {
+    "mtime": 1781858023.5709884,
+    "ast_hash": "10a6e6297b58089442b3561682f1c411",
+    "semantic_hash": ""
+  },
+  "lib/features/conversation/screens/daily_conversation_screen.dart": {
+    "mtime": 1781777612.2185311,
+    "ast_hash": "e23eaafc220fd633bc4634a98a5d1de0",
+    "semantic_hash": ""
+  },
+  "lib/features/conversation/screens/interview_conversation_screen.dart": {
+    "mtime": 1781777626.5268197,
+    "ast_hash": "dd3e66edcf0e221d059a7df5020d8e6e",
+    "semantic_hash": ""
+  },
+  "lib/features/conversation/screens/restaurant_conversation_screen.dart": {
+    "mtime": 1781777619.380947,
+    "ast_hash": "20c3cf9d01ee6d6fe394016269ce0bf1",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/models/daily_quiz_model.dart": {
+    "mtime": 1783578789.07042,
+    "ast_hash": "00e7265831eaf9088a0d468679e25fb1",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/providers/daily_quiz_provider.dart": {
+    "mtime": 1783580639.6782575,
+    "ast_hash": "d21a712b2aadb778bf2daccaab9b513d",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/screens/daily_quiz_leaderboard_screen.dart": {
+    "mtime": 1783580783.4910502,
+    "ast_hash": "e1d6d9c4278a9800e900042a03b0249b",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/screens/daily_quiz_play_screen.dart": {
+    "mtime": 1783577644.6780698,
+    "ast_hash": "e71c4ae3469364b41c406508952ac4e4",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/screens/daily_quiz_result_screen.dart": {
+    "mtime": 1783580018.815903,
+    "ast_hash": "a46df90520dc184c944111a6951e4f9b",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/screens/daily_quiz_review_screen.dart": {
+    "mtime": 1783582360.0265365,
+    "ast_hash": "45c6dd573cfc5ef0043776ef4ca5ec8e",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/screens/daily_quiz_screen.dart": {
+    "mtime": 1783580700.6884801,
+    "ast_hash": "fae375941ac7ce1c56dd7fde2d11c65c",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/services/daily_quiz_leaderboard_service.dart": {
+    "mtime": 1783580624.9671423,
+    "ast_hash": "671e6d51b4b421de05bf299c6ab9720e",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/services/daily_quiz_service.dart": {
+    "mtime": 1783582329.5783257,
+    "ast_hash": "1ecfaf55862757d96cbc910068527301",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/widgets/fill_blanks_widget.dart": {
+    "mtime": 1783528869.897178,
+    "ast_hash": "9534f430457b6cc287f7fd2101e00ae4",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/widgets/match_pairs_widget.dart": {
+    "mtime": 1783582320.76598,
+    "ast_hash": "19042efecdcb29918aa8ce2f30477c57",
+    "semantic_hash": ""
+  },
+  "lib/features/daily_quiz/widgets/sentence_rearrange_widget.dart": {
+    "mtime": 1783529181.926537,
+    "ast_hash": "aa83b7aa880830cded6a029c1063feb6",
+    "semantic_hash": ""
+  },
+  "lib/features/feedback/screens/feedback_screen.dart": {
+    "mtime": 1783178751.0595007,
+    "ast_hash": "4725076f969ed863ddfc60ba9b31353d",
+    "semantic_hash": ""
+  },
+  "lib/features/feedback/screens/my_feedback_screen.dart": {
+    "mtime": 1783178751.0613818,
+    "ast_hash": "f5dd8a276e216f87a6b1040e4284b6e3",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/achievements_screen.dart": {
+    "mtime": 1783178751.0640182,
+    "ast_hash": "4d78a2f8de917247cc1e04527d87517f",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/answer_review_screen.dart": {
+    "mtime": 1782335779.5942228,
+    "ast_hash": "9b0c38741dcfb02021b95a712b4b0e3a",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/boss_battle_screen.dart": {
+    "mtime": 1783178751.0656302,
+    "ast_hash": "a21802db26a6f12d189e0a70ec6cc691",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/category_selection_screen.dart": {
+    "mtime": 1782214258.5706787,
+    "ast_hash": "aa370bfcb8abe9f101d03e224e910dab",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/daily_challenge_screen.dart": {
+    "mtime": 1783178751.067636,
+    "ast_hash": "40dd108bc15baff8a2f75acf99a254d5",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/game_home_screen.dart": {
+    "mtime": 1783178751.0691872,
+    "ast_hash": "82adb5785405f698e4ffca284f857bfa",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/game_mode_selection_screen.dart": {
+    "mtime": 1783178751.0711308,
+    "ast_hash": "fd174141f327f7be228278e745352a71",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/grammar_rules_screen.dart": {
+    "mtime": 1783185734.5537133,
+    "ast_hash": "bb5b34e6b1dbe50e88a7ebf90539f1ce",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/home_screen.dart": {
+    "mtime": 1783178751.0722854,
+    "ast_hash": "e834f9148ef439a9da79a2c000fb6a05",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/leaderboard_screen.dart": {
+    "mtime": 1783178751.0734131,
+    "ast_hash": "d7a75890d69ee1e24bb08bc417aa1911",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/level_selection_screen.dart": {
+    "mtime": 1782041652.9035187,
+    "ast_hash": "77a4ffc697a36c4cafa24ca1f1dcb44a",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/mode_game_screen.dart": {
+    "mtime": 1783486856.1340353,
+    "ast_hash": "a589ff8689d732aaddb1fb2dc6b2aee5",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/mode_selection_screen.dart": {
+    "mtime": 1782214589.4882526,
+    "ast_hash": "358547bc3741183ef1412b690e1df103",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/bangla_to_english_mode.dart": {
+    "mtime": 1783178751.076114,
+    "ast_hash": "55cffdb7b78f37147643a9e915466ab4",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/choose_tense_mode.dart": {
+    "mtime": 1782231669.7549028,
+    "ast_hash": "fd8403dd166eab6a4a3993899318d5be",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/error_detection_mode.dart": {
+    "mtime": 1782041652.839623,
+    "ast_hash": "4ff82212446721a155a7613d4f439b67",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/fill_blank_mode.dart": {
+    "mtime": 1782041652.8003964,
+    "ast_hash": "85653f144b5cb89740c14f39718e1456",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/fill_in_blanks_mode.dart": {
+    "mtime": 1783178751.0786338,
+    "ast_hash": "0ab3d66e5c86d64ffdee11d18790c5d1",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/flashcard_mode.dart": {
+    "mtime": 1783178751.081514,
+    "ast_hash": "fdd105d32b32f68fdf3cebf640e8be2b",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/grammar_detective_mode.dart": {
+    "mtime": 1783178751.083674,
+    "ast_hash": "6619c82b54c711e0dc6b49f06cf9d6b8",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/quick_quiz_mode.dart": {
+    "mtime": 1783178751.085752,
+    "ast_hash": "7ee8edc501ecf3e1ae004fe98f5a9dda",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/sentence_builder_mode.dart": {
+    "mtime": 1783178751.087465,
+    "ast_hash": "5142cad8b8440ed529c38aebdf828798",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/speed_quiz_mode.dart": {
+    "mtime": 1782041652.823603,
+    "ast_hash": "a51c20164f56ea3e0dfd0ad3e5451f7a",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/story_completion_mode.dart": {
+    "mtime": 1783178751.088795,
+    "ast_hash": "281487062f7d0c7be841e9b240c8b816",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/translation_challenge_mode.dart": {
+    "mtime": 1782041652.8288665,
+    "ast_hash": "e903714debfa4622d0c9f6a90dd33408",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/verb_learning_mode.dart": {
+    "mtime": 1783178751.0900116,
+    "ast_hash": "9b9f3e70c0c05b5047762fc7fb07e289",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/modes/word_match_mode.dart": {
+    "mtime": 1783178751.0911062,
+    "ast_hash": "88cd69d4df0420c12b19fb0e5c6230b6",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/question_screen.dart": {
+    "mtime": 1783486856.1238482,
+    "ast_hash": "90979ab215eeba66d6c633fb10c8ef07",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/result_screen.dart": {
+    "mtime": 1783488053.4837503,
+    "ast_hash": "35f8d6d1826df0329ae2eabcc2cab935",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/settings_screen.dart": {
+    "mtime": 1782412068.5714736,
+    "ast_hash": "ee7634dae1f2996094b88217be5e4d3f",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/statistics_screen.dart": {
+    "mtime": 1783178751.09858,
+    "ast_hash": "2127486936f7d8a8a04b35a0e9a5f303",
+    "semantic_hash": ""
+  },
+  "lib/features/game/screens/tense_categories_screen.dart": {
+    "mtime": 1783184654.6395266,
+    "ast_hash": "db56fa003ddbfa8a79f3974d499e04c0",
+    "semantic_hash": ""
+  },
+  "lib/features/game/widgets/achievement_unlock_overlay.dart": {
+    "mtime": 1783178751.1003036,
+    "ast_hash": "e043a9ec22fb87e7a475af264fcf3d41",
+    "semantic_hash": ""
+  },
+  "lib/features/grammar/screens/article_screen.dart": {
+    "mtime": 1781777842.269377,
+    "ast_hash": "aaa202abd64253a63371a9ab7ff38a84",
+    "semantic_hash": ""
+  },
+  "lib/features/grammar/screens/grammar_detail_screen.dart": {
+    "mtime": 1783178751.1017373,
+    "ast_hash": "6abc15a0015410786e99f90c2b0d796b",
+    "semantic_hash": ""
+  },
+  "lib/features/grammar/screens/grammar_list_screen.dart": {
+    "mtime": 1781880900.1220875,
+    "ast_hash": "844d2f5c1cef56dc0b5b17d9344216dc",
+    "semantic_hash": ""
+  },
+  "lib/features/grammar/screens/grammar_master_screen.dart": {
+    "mtime": 1782041652.7782605,
+    "ast_hash": "38f39c965f794ac557ecf956c3795ed5",
+    "semantic_hash": ""
+  },
+  "lib/features/grammar/screens/grammar_test_list_screen.dart": {
+    "mtime": 1781844421.8478808,
+    "ast_hash": "8556458b798bba73b81510627393f3c8",
+    "semantic_hash": ""
+  },
+  "lib/features/grammar/screens/grammar_test_screen.dart": {
+    "mtime": 1781845081.0978925,
+    "ast_hash": "35b3292e2335d4e865f767975e6a5738",
+    "semantic_hash": ""
+  },
+  "lib/features/grammar/screens/preposition_screen.dart": {
+    "mtime": 1781777597.5555394,
+    "ast_hash": "b00d3804c52fdc3229301c2fe2243989",
+    "semantic_hash": ""
+  },
+  "lib/features/grammar/screens/tense_screen.dart": {
+    "mtime": 1782041652.7722197,
+    "ast_hash": "3c4cd2f4e747351e7dfa9fc66e62e1e2",
+    "semantic_hash": ""
+  },
+  "lib/features/guides/models/guide_model.dart": {
+    "mtime": 1783178751.1029916,
+    "ast_hash": "0f14e1aca0322ada40839dfce468da4e",
+    "semantic_hash": ""
+  },
+  "lib/features/guides/screens/guides_screen.dart": {
+    "mtime": 1783178751.1039727,
+    "ast_hash": "7b865b13c215af492cfde5d77de64cdd",
+    "semantic_hash": ""
+  },
+  "lib/features/guides/services/guide_service.dart": {
+    "mtime": 1783178751.1050763,
+    "ast_hash": "6e1e2db1410aca4982d4c69e0658d4d2",
+    "semantic_hash": ""
+  },
+  "lib/features/home/screens/home_screen.dart": {
+    "mtime": 1783486856.1064527,
+    "ast_hash": "3248335a51864fe44790620079240a5a",
+    "semantic_hash": ""
+  },
+  "lib/features/home/screens/main_navigation_screen.dart": {
+    "mtime": 1783178751.109005,
+    "ast_hash": "b3dd4ad92728cfc14b7896d1faee1f19",
+    "semantic_hash": ""
+  },
+  "lib/features/home/widgets/mini_leaderboard_widget.dart": {
+    "mtime": 1783282405.325583,
+    "ast_hash": "6654c66dc635f4d842b420137ceeb485",
+    "semantic_hash": ""
+  },
+  "lib/features/home/widgets/notification_dialog.dart": {
+    "mtime": 1783178751.1106014,
+    "ast_hash": "59cafb00b3e588184266ec3149b65f7b",
+    "semantic_hash": ""
+  },
+  "lib/features/home/widgets/notification_history_screen.dart": {
+    "mtime": 1783178751.113308,
+    "ast_hash": "f01dcfe1fbf77f9ca335f4154e7ff9bb",
+    "semantic_hash": ""
+  },
+  "lib/features/home/widgets/notification_router.dart": {
+    "mtime": 1783178751.1155477,
+    "ast_hash": "17004c9294592da12c14dcefd637c0af",
+    "semantic_hash": ""
+  },
+  "lib/features/home/widgets/spoken_rules_screen.dart": {
+    "mtime": 1782057360.2207835,
+    "ast_hash": "b52a6547e363b63bb933ecfaa1fd3f88",
+    "semantic_hash": ""
+  },
+  "lib/features/home/widgets/study_plan_section.dart": {
+    "mtime": 1782109039.8352013,
+    "ast_hash": "e106ae810fa77f13c92fd7cef21007ec",
+    "semantic_hash": ""
+  },
+  "lib/features/homework/models/homework_model.dart": {
+    "mtime": 1782231492.5488203,
+    "ast_hash": "e459807b6ec82436b4a60700ae5d0a55",
+    "semantic_hash": ""
+  },
+  "lib/features/homework/screens/homework_history_screen.dart": {
+    "mtime": 1782236128.6369872,
+    "ast_hash": "320a81d247f03843863cf013176d864d",
+    "semantic_hash": ""
+  },
+  "lib/features/homework/screens/homework_screen.dart": {
+    "mtime": 1782234531.8128645,
+    "ast_hash": "17f9b0c5211d10bf8ab7c2996ee68fee",
+    "semantic_hash": ""
+  },
+  "lib/features/intro/screens/intro_screen.dart": {
+    "mtime": 1783279092.0120938,
+    "ast_hash": "94654d5e8e0ceefd634ecb55490954e8",
+    "semantic_hash": ""
+  },
+  "lib/features/learning/screens/learning_screen.dart": {
+    "mtime": 1783178751.1170793,
+    "ast_hash": "8515d7df31fb33606b3a925a2d860e4b",
+    "semantic_hash": ""
+  },
+  "lib/features/lessons/screens/lesson_detail_screen.dart": {
+    "mtime": 1782041653.0640864,
+    "ast_hash": "1bc9e7e674f481a2d339a4f3a2b421ee",
+    "semantic_hash": ""
+  },
+  "lib/features/lessons/screens/lesson_list_screen.dart": {
+    "mtime": 1781775241.699904,
+    "ast_hash": "7983f75398ba05b8d23b627ab64f7258",
+    "semantic_hash": ""
+  },
+  "lib/features/listening/screens/listening_screen.dart": {
+    "mtime": 1782203098.444248,
+    "ast_hash": "20dd428754aadb82fbe290d7e6cff1ae",
+    "semantic_hash": ""
+  },
+  "lib/features/mock_test/screens/mock_test_list_screen.dart": {
+    "mtime": 1783178751.1187632,
+    "ast_hash": "b91aa4b09df474036b1479797d7d6602",
+    "semantic_hash": ""
+  },
+  "lib/features/mock_test/screens/mock_test_quiz_screen.dart": {
+    "mtime": 1783178751.1199603,
+    "ast_hash": "723178300658ec99b4d7b4dbdd5e2fa5",
+    "semantic_hash": ""
+  },
+  "lib/features/mock_test/screens/mock_test_result_screen.dart": {
+    "mtime": 1783178751.121213,
+    "ast_hash": "c610a08fdf8d1d0e17f74f6fd10044a8",
+    "semantic_hash": ""
+  },
+  "lib/features/mock_test/widgets/mock_test_unlock_overlay.dart": {
+    "mtime": 1783178751.1223097,
+    "ast_hash": "d37178c8d3df44f41b879cd0ef134807",
+    "semantic_hash": ""
+  },
+  "lib/features/mock_test/widgets/question_palette_bottom_sheet.dart": {
+    "mtime": 1783178751.123561,
+    "ast_hash": "77d0455b5941f89d5d6f31ca8d52c351",
+    "semantic_hash": ""
+  },
+  "lib/features/practice/screens/bangla_english_practice_screen.dart": {
+    "mtime": 1782158358.8326743,
+    "ast_hash": "56dfeccd9864c432ac2bfcb8999556f6",
+    "semantic_hash": ""
+  },
+  "lib/features/practice/screens/practice_screen.dart": {
+    "mtime": 1783178751.1259387,
+    "ast_hash": "192f15334ff0efa5e041aef292edd44a",
+    "semantic_hash": ""
+  },
+  "lib/features/profile/screens/edit_profile_screen.dart": {
+    "mtime": 1781772999.6319566,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "lib/features/profile/screens/profile_screen.dart": {
+    "mtime": 1783280351.9458365,
+    "ast_hash": "6f784da95e5fbb296ff69f7f06769a61",
+    "semantic_hash": ""
+  },
+  "lib/features/quiz/screens/quiz_screen.dart": {
+    "mtime": 1782041652.790721,
+    "ast_hash": "85472abcb3e049156f4f259b2878161d",
+    "semantic_hash": ""
+  },
+  "lib/features/quiz/screens/result_screen.dart": {
+    "mtime": 1781777664.5801673,
+    "ast_hash": "fe9e09240e95779b4d89f54499a13976",
+    "semantic_hash": ""
+  },
+  "lib/features/sentence_analyzer/models/sentence_analysis_model.dart": {
+    "mtime": 1782289852.6608896,
+    "ast_hash": "c06c41b9ae98d7c078e350c4a2f0e165",
+    "semantic_hash": ""
+  },
+  "lib/features/sentence_analyzer/screens/sentence_analysis_history_screen.dart": {
+    "mtime": 1782293484.411113,
+    "ast_hash": "07cf22d4b104f5e555ec6992842faba6",
+    "semantic_hash": ""
+  },
+  "lib/features/sentence_analyzer/screens/sentence_analyzer_screen.dart": {
+    "mtime": 1782385281.1566846,
+    "ast_hash": "7add3ff3fae86c12184cbbd883da57bb",
+    "semantic_hash": ""
+  },
+  "lib/features/settings/screens/api_setup_guide_screen.dart": {
+    "mtime": 1782041652.7525437,
+    "ast_hash": "4079c4285f2f0a17cf5c697a9a684caa",
+    "semantic_hash": ""
+  },
+  "lib/features/settings/screens/privacy_security_screen.dart": {
+    "mtime": 1783178751.1313984,
+    "ast_hash": "42fc984e95fb9aa405a666dce72779c9",
+    "semantic_hash": ""
+  },
+  "lib/features/settings/screens/settings_screen.dart": {
+    "mtime": 1783178751.1334102,
+    "ast_hash": "773e559456b5e743e66e154278b8bf1b",
+    "semantic_hash": ""
+  },
+  "lib/features/speaking/screens/pronunciation_screen.dart": {
+    "mtime": 1783178751.1356301,
+    "ast_hash": "59fbc327eb2e0acc1ae0f4e9694f7e0d",
+    "semantic_hash": ""
+  },
+  "lib/features/speaking/screens/speaking_screen.dart": {
+    "mtime": 1783178751.137055,
+    "ast_hash": "a1d0e3a1fb27d1023795d6b8c63cc645",
+    "semantic_hash": ""
+  },
+  "lib/features/translator/screens/banglish_translator_screen.dart": {
+    "mtime": 1782041653.0598307,
+    "ast_hash": "303fa2184bc6dff82e09775bfebaef4d",
+    "semantic_hash": ""
+  },
+  "lib/features/verb_forms/screens/verb_form_list_screen.dart": {
+    "mtime": 1782140562.9647682,
+    "ast_hash": "6232912e10c7171909c2600682084380",
+    "semantic_hash": ""
+  },
+  "lib/features/verb_forms/screens/verb_form_practice_screen.dart": {
+    "mtime": 1782146586.3111105,
+    "ast_hash": "be375ca286369ef251074c185c0d7a6a",
+    "semantic_hash": ""
+  },
+  "lib/features/verb_forms/screens/verb_forms_guide_screen.dart": {
+    "mtime": 1782141356.9743264,
+    "ast_hash": "c15bc91587cd91d050af2f5e65c25bca",
+    "semantic_hash": ""
+  },
+  "lib/features/verb_forms/screens/verb_forms_screen.dart": {
+    "mtime": 1782145474.683428,
+    "ast_hash": "5a8f185e627e338151131d1fc6229033",
+    "semantic_hash": ""
+  },
+  "lib/features/vocabulary/screens/chapter_words_screen.dart": {
+    "mtime": 1781970524.673843,
+    "ast_hash": "27fed05ed88d2980efaee5e0e2845dd8",
+    "semantic_hash": ""
+  },
+  "lib/features/vocabulary/screens/vocabulary_screen.dart": {
+    "mtime": 1782041653.092419,
+    "ast_hash": "dbe3711a88842942e333f4a7fe6f9dab",
+    "semantic_hash": ""
+  },
+  "lib/features/vocabulary/screens/vocabulary_test_screen.dart": {
+    "mtime": 1782041653.0822654,
+    "ast_hash": "5e6309b748fd150c120a4c634403d976",
+    "semantic_hash": ""
+  },
+  "lib/features/vocabulary/screens/word_details_screen.dart": {
+    "mtime": 1781777796.7853026,
+    "ast_hash": "7f19eaad52d1c2f22940747cf14771bb",
+    "semantic_hash": ""
+  },
+  "lib/firebase_options.dart": {
+    "mtime": 1783178751.138017,
+    "ast_hash": "1e51b9a7e728d11ed3189c050a3b4e90",
+    "semantic_hash": ""
+  },
+  "lib/main.dart": {
+    "mtime": 1783255363.3368037,
+    "ast_hash": "27906a69585b0f32e2c11cdb19a1747b",
+    "semantic_hash": ""
+  },
+  "lib/models/bangla_english_model.dart": {
+    "mtime": 1782156247.9473784,
+    "ast_hash": "0438701a6648440652e766ac65a5fd7c",
+    "semantic_hash": ""
+  },
+  "lib/models/config/app_config_model.dart": {
+    "mtime": 1783178751.45068,
+    "ast_hash": "e5117d35d27fdc89c788c4851cf305dd",
+    "semantic_hash": ""
+  },
+  "lib/models/conversation_model.dart": {
+    "mtime": 1781777782.8418548,
+    "ast_hash": "c0451d3bbb9ac1cd6dd8ecea9af1cd57",
+    "semantic_hash": ""
+  },
+  "lib/models/feedback_model.dart": {
+    "mtime": 1783178751.4517486,
+    "ast_hash": "7154937d191509f38c1264047abf923d",
+    "semantic_hash": ""
+  },
+  "lib/models/game/achievement_model.dart": {
+    "mtime": 1783178751.4535809,
+    "ast_hash": "c22cd29a724af08ce6ca321a527c5afb",
+    "semantic_hash": ""
+  },
+  "lib/models/game/game_level_model.dart": {
+    "mtime": 1782041653.0968099,
+    "ast_hash": "2fefc182c5c7302d2cb0498d124d9467",
+    "semantic_hash": ""
+  },
+  "lib/models/game/game_progress_model.dart": {
+    "mtime": 1783178751.4567325,
+    "ast_hash": "b0db7ca326e1b92bc997871a82c9d5c5",
+    "semantic_hash": ""
+  },
+  "lib/models/game/game_question_model.dart": {
+    "mtime": 1782231315.3627994,
+    "ast_hash": "fef0496af25987c403c83e8c996f04f1",
+    "semantic_hash": ""
+  },
+  "lib/models/game/game_result_model.dart": {
+    "mtime": 1782071089.4697583,
+    "ast_hash": "84d7735994c02f9f972536824077b011",
+    "semantic_hash": ""
+  },
+  "lib/models/game/level_model.dart": {
+    "mtime": 1782017715.191699,
+    "ast_hash": "9c86f588a11a5e37ae1931695d11a3aa",
+    "semantic_hash": ""
+  },
+  "lib/models/game/wrong_question_model.dart": {
+    "mtime": 1782033467.687902,
+    "ast_hash": "c1a32b6911be1e89584fa9662df52365",
+    "semantic_hash": ""
+  },
+  "lib/models/grammar_chapter_model.dart": {
+    "mtime": 1781814497.1148765,
+    "ast_hash": "8d3a7b87babc2b3e9fcb802006cabcf5",
+    "semantic_hash": ""
+  },
+  "lib/models/lesson_model.dart": {
+    "mtime": 1781777781.0557399,
+    "ast_hash": "073737c8e49aedb6f295dbb327f0f4a2",
+    "semantic_hash": ""
+  },
+  "lib/models/listening_model.dart": {
+    "mtime": 1782201891.2134507,
+    "ast_hash": "705973d57aec360251c2bab208a54833",
+    "semantic_hash": ""
+  },
+  "lib/models/mock_test_model.dart": {
+    "mtime": 1783178751.4607563,
+    "ast_hash": "173a80aa06ae7ce518348253a05f4df2",
+    "semantic_hash": ""
+  },
+  "lib/models/notification_history_model.dart": {
+    "mtime": 1783178751.462642,
+    "ast_hash": "e588333ae24261de1ec8af1c9aeeb78b",
+    "semantic_hash": ""
+  },
+  "lib/models/progress_model.dart": {
+    "mtime": 1782022847.0891821,
+    "ast_hash": "c4b327f940fb5180abee2cfdb6da895e",
+    "semantic_hash": ""
+  },
+  "lib/models/quiz_model.dart": {
+    "mtime": 1781777782.2517877,
+    "ast_hash": "0dc91f6775392f00861a3f0da97f254d",
+    "semantic_hash": ""
+  },
+  "lib/models/spoken_rule_model.dart": {
+    "mtime": 1782056663.8546488,
+    "ast_hash": "c96ba9d19d5b8847977bbcae33dba7ac",
+    "semantic_hash": ""
+  },
+  "lib/models/todo_item.dart": {
+    "mtime": 1781887275.9208002,
+    "ast_hash": "4d2528b598012052ec64769dbb0718a6",
+    "semantic_hash": ""
+  },
+  "lib/models/user_model.dart": {
+    "mtime": 1783280238.1142833,
+    "ast_hash": "20a302cc07733f971e8cacda7116fb6e",
+    "semantic_hash": ""
+  },
+  "lib/models/verb_form_model.dart": {
+    "mtime": 1782142566.8449466,
+    "ast_hash": "0e38c446f4a4dd2fa090c85fe56a5984",
+    "semantic_hash": ""
+  },
+  "lib/models/vocabulary_chapter_model.dart": {
+    "mtime": 1781798777.0565143,
+    "ast_hash": "080621797326d11f54c3f4dbe84f15ba",
+    "semantic_hash": ""
+  },
+  "lib/models/vocabulary_model.dart": {
+    "mtime": 1781777781.5080862,
+    "ast_hash": "b525430ae78cf437e5baf92640fb31ee",
+    "semantic_hash": ""
+  },
+  "lib/providers/auth_provider.dart": {
+    "mtime": 1783281634.4933946,
+    "ast_hash": "9f33ef2f9235147bbc21ccfa1c9c5b50",
+    "semantic_hash": ""
+  },
+  "lib/providers/chapter_vocabulary_provider.dart": {
+    "mtime": 1783253862.2932591,
+    "ast_hash": "8432e8f3f2316e4b7252ea77e73b466d",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/achievement_provider.dart": {
+    "mtime": 1783178751.4676278,
+    "ast_hash": "c0ff269f62300a701dcf9787b71b5a51",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/coin_provider.dart": {
+    "mtime": 1783178751.4691436,
+    "ast_hash": "1ab95734adadf720f7cceb4f724b7bd1",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/game_provider.dart": {
+    "mtime": 1783178751.4707317,
+    "ast_hash": "9cfb9622c72ae9100c31eaac434cc555",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/leaderboard_provider.dart": {
+    "mtime": 1783178751.4718733,
+    "ast_hash": "684230abe6ee1441c7c249250931e5a1",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/score_provider.dart": {
+    "mtime": 1782228356.2610774,
+    "ast_hash": "f5364d3cac6aaa35af783b713e6ce768",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/sound_provider.dart": {
+    "mtime": 1782214812.1070333,
+    "ast_hash": "8093a8453a8fa787bea199306f16b42f",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/statistics_provider.dart": {
+    "mtime": 1783178751.4730422,
+    "ast_hash": "c63bedb45881c17c7f05cdc1fa6fa60d",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/streak_provider.dart": {
+    "mtime": 1782023069.623705,
+    "ast_hash": "88ab8206b5ffb928fbd63d32687076f1",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/timer_provider.dart": {
+    "mtime": 1782016053.9354494,
+    "ast_hash": "bb0cb4141d0cd5246142cb84caa30f6a",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/tts_provider.dart": {
+    "mtime": 1782466252.5956607,
+    "ast_hash": "36f92bf65f2dbf9b886b1fc5225adf63",
+    "semantic_hash": ""
+  },
+  "lib/providers/game/xp_provider.dart": {
+    "mtime": 1783178751.4741113,
+    "ast_hash": "4cd60f7a13ec068502cbd2dcdef9aa8c",
+    "semantic_hash": ""
+  },
+  "lib/providers/grammar_provider.dart": {
+    "mtime": 1783178751.4752433,
+    "ast_hash": "e07e5121520f6892742f70f7b60b2817",
+    "semantic_hash": ""
+  },
+  "lib/providers/last_opened_chapter_provider.dart": {
+    "mtime": 1781970460.0037231,
+    "ast_hash": "e678768a8dbd9389c0e5dc178245cbbe",
+    "semantic_hash": ""
+  },
+  "lib/providers/lesson_provider.dart": {
+    "mtime": 1781777531.2864385,
+    "ast_hash": "f627d6795dd4ce17bd7a7404cdbac8ca",
+    "semantic_hash": ""
+  },
+  "lib/providers/mock_test_provider.dart": {
+    "mtime": 1783178751.4762518,
+    "ast_hash": "363744d285526037b999aa60b7bccfd7",
+    "semantic_hash": ""
+  },
+  "lib/providers/notification_provider.dart": {
+    "mtime": 1783178751.4773996,
+    "ast_hash": "611df218495d993c327f9335bd5afa0f",
+    "semantic_hash": ""
+  },
+  "lib/providers/progress_provider.dart": {
+    "mtime": 1783178751.481664,
+    "ast_hash": "0a95056eb6a0397203059acf4c9e76b8",
+    "semantic_hash": ""
+  },
+  "lib/providers/quiz_provider.dart": {
+    "mtime": 1781777540.2567668,
+    "ast_hash": "96670ef945427ca9df403e02268eed48",
+    "semantic_hash": ""
+  },
+  "lib/providers/theme_provider.dart": {
+    "mtime": 1782016382.200644,
+    "ast_hash": "d7bd52c0e2fa489b8554a02691f3aaeb",
+    "semantic_hash": ""
+  },
+  "lib/providers/todo_list_provider.dart": {
+    "mtime": 1782109014.1650982,
+    "ast_hash": "45eb44b893bd6742b5c255712ab7569b",
+    "semantic_hash": ""
+  },
+  "lib/providers/vocab_progress_provider.dart": {
+    "mtime": 1781803875.4697058,
+    "ast_hash": "cb6ec89d952bbe50cc30cf2434f7852a",
+    "semantic_hash": ""
+  },
+  "lib/providers/vocabulary_provider.dart": {
+    "mtime": 1781777535.6708298,
+    "ast_hash": "20313a79055878eb8edf2cf15400207a",
+    "semantic_hash": ""
+  },
+  "lib/repositories/achievement_repository.dart": {
+    "mtime": 1783178751.4829662,
+    "ast_hash": "238d646f2b2f2c49b1b6db471b510af3",
+    "semantic_hash": ""
+  },
+  "lib/repositories/game_repository.dart": {
+    "mtime": 1782031335.142456,
+    "ast_hash": "2051881b06063dd9de017d1cca591116",
+    "semantic_hash": ""
+  },
+  "lib/repositories/leaderboard_repository.dart": {
+    "mtime": 1783178751.4840295,
+    "ast_hash": "1169663c4cade40df7abab423379a4fd",
+    "semantic_hash": ""
+  },
+  "lib/repositories/mock_test_repository.dart": {
+    "mtime": 1783178751.48486,
+    "ast_hash": "e47f970c17a2989a16496fee3700430c",
+    "semantic_hash": ""
+  },
+  "lib/repositories/progress_repository.dart": {
+    "mtime": 1783178751.486238,
+    "ast_hash": "8e69148aaf406e327de9798fb116f310",
+    "semantic_hash": ""
+  },
+  "lib/repositories/statistics_repository.dart": {
+    "mtime": 1783178751.4877343,
+    "ast_hash": "70675f04d75c8ea28b4b5c8e4e75bc8a",
+    "semantic_hash": ""
+  },
+  "lib/repositories/wrong_question_repository.dart": {
+    "mtime": 1782335502.4988165,
+    "ast_hash": "853e22aaecd476eb957f7aa159bb42e4",
+    "semantic_hash": ""
+  },
+  "lib/routes/app_routes.dart": {
+    "mtime": 1783279130.1475775,
+    "ast_hash": "28f9e5d25cdeddda02959163369f9b5b",
+    "semantic_hash": ""
+  },
+  "lib/routes/route_names.dart": {
+    "mtime": 1783279121.570854,
+    "ast_hash": "3f90a2091a2cf7b3ea5d3bcdbf5c65a7",
+    "semantic_hash": ""
+  },
+  "lib/services/achievement_service.dart": {
+    "mtime": 1783178751.4907062,
+    "ast_hash": "6811ca6c83207ef49af02ffcaabcc87b",
+    "semantic_hash": ""
+  },
+  "lib/services/ad_service.dart": {
+    "mtime": 1783331948.7981727,
+    "ast_hash": "5abcc6a2efec081e17cb10bb41827b91",
+    "semantic_hash": ""
+  },
+  "lib/services/ai_service.dart": {
+    "mtime": 1782234473.9616134,
+    "ast_hash": "a51129b91a9f7156efe152f0fa28e674",
+    "semantic_hash": ""
+  },
+  "lib/services/analytics_service.dart": {
+    "mtime": 1783192533.7127419,
+    "ast_hash": "f747dd710ffedf23d3e83de677a7dddd",
+    "semantic_hash": ""
+  },
+  "lib/services/coin_service.dart": {
+    "mtime": 1783178751.492107,
+    "ast_hash": "cfcc893656b7d1192a4b35eaaa0891ab",
+    "semantic_hash": ""
+  },
+  "lib/services/daily_word_service.dart": {
+    "mtime": 1783178751.4934902,
+    "ast_hash": "fc33d9ab8dad961eaf4d54881140c17f",
+    "semantic_hash": ""
+  },
+  "lib/services/firebase_service.dart": {
+    "mtime": 1781772999.6263585,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "lib/services/game_data_sync_service.dart": {
+    "mtime": 1783178751.498358,
+    "ast_hash": "58cb457f75cdd1bcbe72a3b365493acc",
+    "semantic_hash": ""
+  },
+  "lib/services/game_mode_service.dart": {
+    "mtime": 1782041653.1101136,
+    "ast_hash": "c6db2b9943b0d045c17bfb84b40a9000",
+    "semantic_hash": ""
+  },
+  "lib/services/game_service.dart": {
+    "mtime": 1783178751.4997873,
+    "ast_hash": "c876ac2eef1348e7f7e1804534e6b63c",
+    "semantic_hash": ""
+  },
+  "lib/services/hive_service.dart": {
+    "mtime": 1783486856.1389253,
+    "ast_hash": "9f3bde48aea1b9c0e96ff21fa835b892",
+    "semantic_hash": ""
+  },
+  "lib/services/notification_service.dart": {
+    "mtime": 1783280648.6592748,
+    "ast_hash": "a2a9f78936d36d650867487625605bf5",
+    "semantic_hash": ""
+  },
+  "lib/services/onesignal_service.dart": {
+    "mtime": 1783194005.2614827,
+    "ast_hash": "9c02692d10a1a5ae06e79f9c252e4335",
+    "semantic_hash": ""
+  },
+  "lib/services/re_engagement_service.dart": {
+    "mtime": 1783178751.5039594,
+    "ast_hash": "f9e7184c014382afdbd39ccd058d4747",
+    "semantic_hash": ""
+  },
+  "lib/services/referral_service.dart": {
+    "mtime": 1783280504.7891068,
+    "ast_hash": "363c6f26f1ed99ac95ae09c74838f0fc",
+    "semantic_hash": ""
+  },
+  "lib/services/remote_config_service.dart": {
+    "mtime": 1783255340.5023344,
+    "ast_hash": "3ba3a37c2fd625f8777b35e800cf2170",
+    "semantic_hash": ""
+  },
+  "lib/services/share_service.dart": {
+    "mtime": 1783280489.419822,
+    "ast_hash": "94ee1a42590363b7656b8c123262d9d9",
+    "semantic_hash": ""
+  },
+  "lib/services/sound_service.dart": {
+    "mtime": 1782214512.246784,
+    "ast_hash": "7a7c4932042bb90f85972a575ad47a52",
+    "semantic_hash": ""
+  },
+  "lib/services/speech_service.dart": {
+    "mtime": 1782199573.572621,
+    "ast_hash": "8e1c6dfd9765781ed4b91afee67f9217",
+    "semantic_hash": ""
+  },
+  "lib/services/statistics_service.dart": {
+    "mtime": 1783178751.5058382,
+    "ast_hash": "abd2bcf01c197a3caa8dc58bb06ab3fc",
+    "semantic_hash": ""
+  },
+  "lib/services/streak_service.dart": {
+    "mtime": 1783178751.5068874,
+    "ast_hash": "ccab47298a243927531f137db949c8d8",
+    "semantic_hash": ""
+  },
+  "lib/services/timer_service.dart": {
+    "mtime": 1782024398.1415308,
+    "ast_hash": "21624a0dcdb906619386073d6e450be4",
+    "semantic_hash": ""
+  },
+  "lib/services/tts_service.dart": {
+    "mtime": 1782323509.0568955,
+    "ast_hash": "e121ddd5c73c279aa43d7094eb6b6b97",
+    "semantic_hash": ""
+  },
+  "lib/services/vocab_remote_service.dart": {
+    "mtime": 1781816863.6158218,
+    "ast_hash": "8d23ee7aee22d043b2f5ef4ab082d22d",
+    "semantic_hash": ""
+  },
+  "lib/services/workmanager_tasks.dart": {
+    "mtime": 1783178751.5084321,
+    "ast_hash": "79dfed382e972c8791ee644a992e9fc7",
+    "semantic_hash": ""
+  },
+  "lib/services/xp_service.dart": {
+    "mtime": 1783178751.509834,
+    "ast_hash": "9e84339041b12a18610d034088e51537",
+    "semantic_hash": ""
+  },
+  "lib/utils/grammar_quiz_generator.dart": {
+    "mtime": 1781845276.2743182,
+    "ast_hash": "8c4042b3c65bd82e0534ef774b5fb03f",
+    "semantic_hash": ""
+  },
+  "lib/utils/hive_safe.dart": {
+    "mtime": 1783178751.5110795,
+    "ast_hash": "ae2d48d47907d66f4272c503642cb790",
+    "semantic_hash": ""
+  },
+  "test/features/daily_quiz/models/daily_quiz_model_test.dart": {
+    "mtime": 1783452205.2013233,
+    "ast_hash": "2aa291e79fd7d12ef983c9c7310fa109",
+    "semantic_hash": ""
+  },
+  "test/features/daily_quiz/providers/daily_quiz_provider_test.dart": {
+    "mtime": 1783539799.0706365,
+    "ast_hash": "65da340c83d24471ff7361b5c263713c",
+    "semantic_hash": ""
+  },
+  "test/features/daily_quiz/services/daily_quiz_service_test.dart": {
+    "mtime": 1783453337.6341467,
+    "ast_hash": "061a7cc8f97cf1fc62e066a727f455fa",
+    "semantic_hash": ""
+  },
+  "test/last_opened_chapter_provider_test.dart": {
+    "mtime": 1781970426.6416857,
+    "ast_hash": "03caea9d8882ac19dff41e84d3ece82b",
+    "semantic_hash": ""
+  },
+  "test/widget_test.dart": {
+    "mtime": 1783178751.5332222,
+    "ast_hash": "4e341d2b190de675d262a864137f3bde",
+    "semantic_hash": ""
+  },
+  ".github/workflows/validate_json.yml": {
+    "mtime": 1782334607.4744093,
+    "ast_hash": "643562dc92d0232bd34f2473e779f52f",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1783541363.033882,
+    "ast_hash": "073258c94ceb9b9f8a2440e3e413c64d",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1783420601.9470005,
+    "ast_hash": "3bd5b77c3f29ce65be7551e9dc83cdf4",
+    "semantic_hash": ""
+  },
+  "analysis_options.yaml": {
+    "mtime": 1783178750.253657,
+    "ast_hash": "b76b02a354e118ed362efbb6695e36b1",
+    "semantic_hash": ""
+  },
+  "assets/json/game/FUTURE_GAME_IDEAS.md": {
+    "mtime": 1782371363.2910879,
+    "ast_hash": "8722980018c8818e5b5d8f6853da3c43",
+    "semantic_hash": ""
+  },
+  "assets/json/game/README.md": {
+    "mtime": 1782334770.165237,
+    "ast_hash": "fcf60a80331c5ececa4797e5b6418181",
+    "semantic_hash": ""
+  },
+  "assets/json/game/SENTENCE_BUILDER_README.md": {
+    "mtime": 1782368287.8421612,
+    "ast_hash": "1d19c63cd266c2e5794ec8ccb82323e8",
+    "semantic_hash": ""
+  },
+  "assets/json/game/questions/CONTENT_GUIDE.md": {
+    "mtime": 1782031311.4124918,
+    "ast_hash": "f97bc852ca140824c2f2f102ef72c655",
+    "semantic_hash": ""
+  },
+  "assets/json/vocabulary/vocabulary.md": {
+    "mtime": 1781798088.4626255,
+    "ast_hash": "0da0b928f9ad2d3b3c7eebfabb4aae3b",
+    "semantic_hash": ""
+  },
+  "assets/privacy_policy.html": {
+    "mtime": 1783178750.3905263,
+    "ast_hash": "9384b9b9d0233db5cfe6c5c39dcb49cf",
+    "semantic_hash": ""
+  },
+  "docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md": {
+    "mtime": 1783178750.3912218,
+    "ast_hash": "68e776243201c58564404dd84263c503",
+    "semantic_hash": ""
+  },
+  "docs/ADVERTISEMENT_SCREENSHOTS_GUIDE.md": {
+    "mtime": 1783178750.3923655,
+    "ast_hash": "df56042b731aedbfdbc27b4f367f8acf",
+    "semantic_hash": ""
+  },
+  "docs/BANGLISH_TRANSLATOR_PLAN.md": {
+    "mtime": 1783178750.3932142,
+    "ast_hash": "86e9b362c9d2eed243cfecc98b59c481",
+    "semantic_hash": ""
+  },
+  "docs/Grammar_Syllabus.md": {
+    "mtime": 1783178750.3945615,
+    "ast_hash": "a64e18d0d46d10f1d1caa3dcbd1a325b",
+    "semantic_hash": ""
+  },
+  "docs/HomePage.md": {
+    "mtime": 1783178750.395939,
+    "ast_hash": "d9bba8107279a199ce58d1a120a0a193",
+    "semantic_hash": ""
+  },
+  "docs/MOCK_TEST_CONTENT_GUIDE.md": {
+    "mtime": 1783178750.397619,
+    "ast_hash": "e949720c76299963b3f6151b8e38137b",
+    "semantic_hash": ""
+  },
+  "docs/NOTIFICATION_SYSTEM_GUIDE.md": {
+    "mtime": 1783178750.3984792,
+    "ast_hash": "88aba5cca672954857dd70a9f5a9b0c4",
+    "semantic_hash": ""
+  },
+  "docs/Roadmap.md": {
+    "mtime": 1783178750.3989673,
+    "ast_hash": "4a23e1a82f74faff229ef4ab26b53c8d",
+    "semantic_hash": ""
+  },
+  "docs/SETUP.md": {
+    "mtime": 1783178750.3993049,
+    "ast_hash": "ca2dab843cb37c33253b389b65294d0b",
+    "semantic_hash": ""
+  },
+  "docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md": {
+    "mtime": 1783178750.399787,
+    "ast_hash": "657e6b7d68785f510a7c0c764e7681a3",
+    "semantic_hash": ""
+  },
+  "docs/TENSE_MASTERY_WORKFLOW.md": {
+    "mtime": 1783178750.4004176,
+    "ast_hash": "d825bf616cee33b4e0fb2941a7790f18",
+    "semantic_hash": ""
+  },
+  "docs/TODO_HOME_DYNAMIC.md": {
+    "mtime": 1783178750.4008808,
+    "ast_hash": "4f34e7134531cf993fbc5430b067e9cf",
+    "semantic_hash": ""
+  },
+  "docs/Tense_Mastery_Module_Syllabus.md": {
+    "mtime": 1783178750.4012842,
+    "ast_hash": "a7473e33efddbb66defcf2d82ff78125",
+    "semantic_hash": ""
+  },
+  "docs/ai_teacher_improvement_plan.md": {
+    "mtime": 1783178750.4022617,
+    "ast_hash": "8a18a20bf75fd127a338b7a96719e289",
+    "semantic_hash": ""
+  },
+  "docs/analysis_sync_report.md": {
+    "mtime": 1783178750.403654,
+    "ast_hash": "c5f856c6134351653f818ce7687335fc",
+    "semantic_hash": ""
+  },
+  "docs/plan.md": {
+    "mtime": 1783178750.4043784,
+    "ast_hash": "1d82de80f5eafa4ba6646083c7e88d9a",
+    "semantic_hash": ""
+  },
+  "docs/section_status_analysis.md": {
+    "mtime": 1783178750.4055543,
+    "ast_hash": "81b1d8487fd9f957b192cb30af0ab737",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-01-achievement-unlock-experience.md": {
+    "mtime": 1783178750.4077532,
+    "ast_hash": "c3b13bd3714548a7b0959060dd296363",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-01-mock-test-question-palette-implementation.md": {
+    "mtime": 1783178750.409672,
+    "ast_hash": "b405f0a84c00d71172f9c2f5280fad91",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-01-notification-background-improvement.md": {
+    "mtime": 1783178750.4130552,
+    "ast_hash": "3dab7e25fd025f04bb0288f18a637193",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-01-notification-system-improvement.md": {
+    "mtime": 1783178750.4145799,
+    "ast_hash": "35a66623915d642cd9868a634be86617",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-02-mock-test-smart-retry.md": {
+    "mtime": 1783178750.4163501,
+    "ast_hash": "ebde8e07380e3a7f35c5ba692e2f71eb",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-02-mock-test-unlock-celebration.md": {
+    "mtime": 1783178750.4175122,
+    "ast_hash": "5a365131a49a564cfd5293a38873d286",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-08-daily-quiz-implementation.md": {
+    "mtime": 1783451256.7434766,
+    "ast_hash": "f94eb9d9f983bfedd3de6f60494b37ad",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-01-achievement-unlock-experience-design.md": {
+    "mtime": 1783178750.4184527,
+    "ast_hash": "421c0bfef534ac3629b8a11260664808",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-01-mock-test-question-palette-design.md": {
+    "mtime": 1783178750.4193196,
+    "ast_hash": "4751e0f10b4af95fc55406286c506d57",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md": {
+    "mtime": 1783178750.420318,
+    "ast_hash": "a5f94d44d97cbf9700cc6a4932fabc0c",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md": {
+    "mtime": 1783178750.4211435,
+    "ast_hash": "b250515b98579d6b5013818bb33dc05e",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md": {
+    "mtime": 1783178750.4218833,
+    "ast_hash": "8143cc78cafd33678bfbc1c6a5c9721e",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md": {
+    "mtime": 1783178750.4227808,
+    "ast_hash": "e1ac1e51c1ed305d948ece78937067b8",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-08-daily-quiz-design.md": {
+    "mtime": 1783450987.3575294,
+    "ast_hash": "7259f68fdd51badca2d57d897285e13e",
+    "semantic_hash": ""
+  },
+  "lib/services/streak_service_plan.md": {
+    "mtime": 1783178751.5075896,
+    "ast_hash": "d86b413b8c8c34f390645d483b2913ef",
+    "semantic_hash": ""
+  },
+  "pubspec.yaml": {
+    "mtime": 1783491364.0322025,
+    "ast_hash": "856874346329750d4d85bf138fbd4f04",
+    "semantic_hash": ""
+  },
+  "assets/pdfs/originals/STUDENT_GUIDE.pdf": {
+    "mtime": 1783178750.3843606,
+    "ast_hash": "012fca4c02c7a4c229e4fd1f094fe926",
+    "semantic_hash": ""
+  },
+  "assets/pdfs/originals/STUDY_ROUTINE.pdf": {
+    "mtime": 1783178750.3864694,
+    "ast_hash": "76a410318f33bab07858746cbedeb294",
+    "semantic_hash": ""
+  },
+  "assets/icon/app_icon.png": {
+    "mtime": 1783178750.3008006,
+    "ast_hash": "51551ccc5725539eab47a423a565347e",
+    "semantic_hash": ""
+  },
+  "assets/audio/game_achievement.mp3": {
+    "mtime": 1783178750.293612,
+    "ast_hash": "c0babd7d5809649f0ae58cf88a108445",
+    "semantic_hash": ""
+  }
+}

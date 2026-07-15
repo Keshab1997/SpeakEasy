@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "assets/json/daily_quiz/questions.json": {
-    "mtime": 1783538196.965076,
-    "ast_hash": "b8ba731f073e5b1a61fc89c434f4d9db",
+    "mtime": 1783671337.7466183,
+    "ast_hash": "97a2bba405f5739f5632e3943aa568b4",
     "semantic_hash": ""
   },
   "assets/json/game/bangla_to_english_data.json": {
@@ -1435,8 +1435,8 @@
     "semantic_hash": ""
   },
   "lib/core/widgets/streak_widget.dart": {
-    "mtime": 1783257040.7296207,
-    "ast_hash": "87724451f38717120060e3219a6a9845",
+    "mtime": 1784095293.2150543,
+    "ast_hash": "b6eb112c8f829437bbb6b3222eed7271",
     "semantic_hash": ""
   },
   "lib/features/admin/repository/admin_repository.dart": {
@@ -1450,8 +1450,8 @@
     "semantic_hash": ""
   },
   "lib/features/admin/screens/admin_config_screen.dart": {
-    "mtime": 1783191621.2506254,
-    "ast_hash": "5d3a9531586e17d257e503ca62f51eac",
+    "mtime": 1784047829.36797,
+    "ast_hash": "267e96c5049f4a74fa44994e640b511b",
     "semantic_hash": ""
   },
   "lib/features/admin/screens/admin_content_screen.dart": {
@@ -1460,8 +1460,8 @@
     "semantic_hash": ""
   },
   "lib/features/admin/screens/admin_dashboard_screen.dart": {
-    "mtime": 1783254265.6928842,
-    "ast_hash": "5452855ea84d5241fb1c0112263ae6a2",
+    "mtime": 1784047829.3703625,
+    "ast_hash": "0bbc3b8be227854d641930af6193860a",
     "semantic_hash": ""
   },
   "lib/features/admin/screens/admin_feedback_screen.dart": {
@@ -1490,8 +1490,8 @@
     "semantic_hash": ""
   },
   "lib/features/ai_teacher/screens/ai_chat_screen.dart": {
-    "mtime": 1783178751.0567026,
-    "ast_hash": "9ee0a63535a8335c6e163b9c7ac7287f",
+    "mtime": 1784105997.5213943,
+    "ast_hash": "6516a74dcf6324ac30f66af1f11c24d8",
     "semantic_hash": ""
   },
   "lib/features/auth/screens/login_screen.dart": {
@@ -1545,13 +1545,13 @@
     "semantic_hash": ""
   },
   "lib/features/daily_quiz/screens/daily_quiz_play_screen.dart": {
-    "mtime": 1783577644.6780698,
-    "ast_hash": "e71c4ae3469364b41c406508952ac4e4",
+    "mtime": 1783618499.1724856,
+    "ast_hash": "d23d0172874a7fbc72eff3f5a607c27a",
     "semantic_hash": ""
   },
   "lib/features/daily_quiz/screens/daily_quiz_result_screen.dart": {
-    "mtime": 1783580018.815903,
-    "ast_hash": "a46df90520dc184c944111a6951e4f9b",
+    "mtime": 1783626984.3368492,
+    "ast_hash": "46aea97c42a86870a62bb5b5fc6d8d55",
     "semantic_hash": ""
   },
   "lib/features/daily_quiz/screens/daily_quiz_review_screen.dart": {
@@ -1560,8 +1560,8 @@
     "semantic_hash": ""
   },
   "lib/features/daily_quiz/screens/daily_quiz_screen.dart": {
-    "mtime": 1783580700.6884801,
-    "ast_hash": "fae375941ac7ce1c56dd7fde2d11c65c",
+    "mtime": 1783627592.6979547,
+    "ast_hash": "412b7186f65632280bd4e9106d1ca8bb",
     "semantic_hash": ""
   },
   "lib/features/daily_quiz/services/daily_quiz_leaderboard_service.dart": {
@@ -1820,8 +1820,8 @@
     "semantic_hash": ""
   },
   "lib/features/home/screens/home_screen.dart": {
-    "mtime": 1783486856.1064527,
-    "ast_hash": "3248335a51864fe44790620079240a5a",
+    "mtime": 1784095293.314977,
+    "ast_hash": "03be7f3da8138e539963bc99c66c1a42",
     "semantic_hash": ""
   },
   "lib/features/home/screens/main_navigation_screen.dart": {
@@ -1900,8 +1900,8 @@
     "semantic_hash": ""
   },
   "lib/features/mock_test/screens/mock_test_list_screen.dart": {
-    "mtime": 1783178751.1187632,
-    "ast_hash": "b91aa4b09df474036b1479797d7d6602",
+    "mtime": 1783623864.0578601,
+    "ast_hash": "8f3c98f72934ef94071255798b3e5285",
     "semantic_hash": ""
   },
   "lib/features/mock_test/screens/mock_test_quiz_screen.dart": {
@@ -1910,13 +1910,13 @@
     "semantic_hash": ""
   },
   "lib/features/mock_test/screens/mock_test_result_screen.dart": {
-    "mtime": 1783178751.121213,
-    "ast_hash": "c610a08fdf8d1d0e17f74f6fd10044a8",
+    "mtime": 1783623960.0691774,
+    "ast_hash": "c5daf4c7fde7cc7c80f98b9a4dec2196",
     "semantic_hash": ""
   },
   "lib/features/mock_test/widgets/mock_test_unlock_overlay.dart": {
-    "mtime": 1783178751.1223097,
-    "ast_hash": "d37178c8d3df44f41b879cd0ef134807",
+    "mtime": 1783624483.7689004,
+    "ast_hash": "b340d7d30c4983820b93493772d23f67",
     "semantic_hash": ""
   },
   "lib/features/mock_test/widgets/question_palette_bottom_sheet.dart": {
@@ -1925,8 +1925,8 @@
     "semantic_hash": ""
   },
   "lib/features/practice/screens/bangla_english_practice_screen.dart": {
-    "mtime": 1782158358.8326743,
-    "ast_hash": "56dfeccd9864c432ac2bfcb8999556f6",
+    "mtime": 1783619972.315505,
+    "ast_hash": "1489d10e6db3c36ad6ac0ceaccda828e",
     "semantic_hash": ""
   },
   "lib/features/practice/screens/practice_screen.dart": {
@@ -1980,8 +1980,8 @@
     "semantic_hash": ""
   },
   "lib/features/settings/screens/settings_screen.dart": {
-    "mtime": 1783178751.1334102,
-    "ast_hash": "773e559456b5e743e66e154278b8bf1b",
+    "mtime": 1784058852.0611594,
+    "ast_hash": "552a2e5cf3ccc8043899155cd853f30a",
     "semantic_hash": ""
   },
   "lib/features/speaking/screens/pronunciation_screen.dart": {
@@ -1995,8 +1995,8 @@
     "semantic_hash": ""
   },
   "lib/features/translator/screens/banglish_translator_screen.dart": {
-    "mtime": 1782041653.0598307,
-    "ast_hash": "303fa2184bc6dff82e09775bfebaef4d",
+    "mtime": 1784105550.2848592,
+    "ast_hash": "57b24031e238f7bc7c58841d704c1e3f",
     "semantic_hash": ""
   },
   "lib/features/verb_forms/screens/verb_form_list_screen.dart": {
@@ -2005,8 +2005,8 @@
     "semantic_hash": ""
   },
   "lib/features/verb_forms/screens/verb_form_practice_screen.dart": {
-    "mtime": 1782146586.3111105,
-    "ast_hash": "be375ca286369ef251074c185c0d7a6a",
+    "mtime": 1783621670.7775545,
+    "ast_hash": "0fff3c2ea1760662c27ca877392425a9",
     "semantic_hash": ""
   },
   "lib/features/verb_forms/screens/verb_forms_guide_screen.dart": {
@@ -2030,8 +2030,8 @@
     "semantic_hash": ""
   },
   "lib/features/vocabulary/screens/vocabulary_test_screen.dart": {
-    "mtime": 1782041653.0822654,
-    "ast_hash": "5e6309b748fd150c120a4c634403d976",
+    "mtime": 1783621783.3912027,
+    "ast_hash": "9c5aa51f39a12b8276e61b198e0a888b",
     "semantic_hash": ""
   },
   "lib/features/vocabulary/screens/word_details_screen.dart": {
@@ -2040,13 +2040,13 @@
     "semantic_hash": ""
   },
   "lib/firebase_options.dart": {
-    "mtime": 1783178751.138017,
-    "ast_hash": "1e51b9a7e728d11ed3189c050a3b4e90",
+    "mtime": 1783700744.6894734,
+    "ast_hash": "0de2beaffa30ab4aa6b33d707d725f08",
     "semantic_hash": ""
   },
   "lib/main.dart": {
-    "mtime": 1783255363.3368037,
-    "ast_hash": "27906a69585b0f32e2c11cdb19a1747b",
+    "mtime": 1784047829.3881185,
+    "ast_hash": "366215715d6db4b2435f450392fc5886",
     "semantic_hash": ""
   },
   "lib/models/bangla_english_model.dart": {
@@ -2055,8 +2055,8 @@
     "semantic_hash": ""
   },
   "lib/models/config/app_config_model.dart": {
-    "mtime": 1783178751.45068,
-    "ast_hash": "e5117d35d27fdc89c788c4851cf305dd",
+    "mtime": 1784047829.3956387,
+    "ast_hash": "ac4ed060248e2540e083969b29b7f41a",
     "semantic_hash": ""
   },
   "lib/models/conversation_model.dart": {
@@ -2175,8 +2175,8 @@
     "semantic_hash": ""
   },
   "lib/providers/chapter_vocabulary_provider.dart": {
-    "mtime": 1783253862.2932591,
-    "ast_hash": "8432e8f3f2316e4b7252ea77e73b466d",
+    "mtime": 1784095293.3209007,
+    "ast_hash": "afbe32ee97bdc1701dc89a3e783f40a9",
     "semantic_hash": ""
   },
   "lib/providers/game/achievement_provider.dart": {
@@ -2250,8 +2250,8 @@
     "semantic_hash": ""
   },
   "lib/providers/mock_test_provider.dart": {
-    "mtime": 1783178751.4762518,
-    "ast_hash": "363744d285526037b999aa60b7bccfd7",
+    "mtime": 1783623687.7706127,
+    "ast_hash": "7f7bbd2349f4d07d207e9d388f6ee92f",
     "semantic_hash": ""
   },
   "lib/providers/notification_provider.dart": {
@@ -2340,13 +2340,13 @@
     "semantic_hash": ""
   },
   "lib/services/ad_service.dart": {
-    "mtime": 1783331948.7981727,
-    "ast_hash": "5abcc6a2efec081e17cb10bb41827b91",
+    "mtime": 1783618842.2126412,
+    "ast_hash": "2560a36b1bd840b4bc5664e1d19217ba",
     "semantic_hash": ""
   },
   "lib/services/ai_service.dart": {
-    "mtime": 1782234473.9616134,
-    "ast_hash": "a51129b91a9f7156efe152f0fa28e674",
+    "mtime": 1784058561.752899,
+    "ast_hash": "33f8d6256795067f404da72f6b8cdee7",
     "semantic_hash": ""
   },
   "lib/services/analytics_service.dart": {
@@ -2385,8 +2385,8 @@
     "semantic_hash": ""
   },
   "lib/services/hive_service.dart": {
-    "mtime": 1783486856.1389253,
-    "ast_hash": "9f3bde48aea1b9c0e96ff21fa835b892",
+    "mtime": 1784055652.8528771,
+    "ast_hash": "a269950a7f7dbd7fe0f54b689e1fcd22",
     "semantic_hash": ""
   },
   "lib/services/notification_service.dart": {
@@ -2410,13 +2410,13 @@
     "semantic_hash": ""
   },
   "lib/services/remote_config_service.dart": {
-    "mtime": 1783255340.5023344,
-    "ast_hash": "3ba3a37c2fd625f8777b35e800cf2170",
+    "mtime": 1783623584.3348508,
+    "ast_hash": "0da0492d2b09d54e9830ab7d93f9bae2",
     "semantic_hash": ""
   },
   "lib/services/share_service.dart": {
-    "mtime": 1783280489.419822,
-    "ast_hash": "94ee1a42590363b7656b8c123262d9d9",
+    "mtime": 1783703920.4618106,
+    "ast_hash": "3f793a752e251722207c273fa717f8d9",
     "semantic_hash": ""
   },
   "lib/services/sound_service.dart": {
@@ -2450,8 +2450,8 @@
     "semantic_hash": ""
   },
   "lib/services/vocab_remote_service.dart": {
-    "mtime": 1781816863.6158218,
-    "ast_hash": "8d23ee7aee22d043b2f5ef4ab082d22d",
+    "mtime": 1784095293.322703,
+    "ast_hash": "3105332e2b6cc7d0f4f88c575a0cd527",
     "semantic_hash": ""
   },
   "lib/services/workmanager_tasks.dart": {
@@ -2510,8 +2510,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783420601.9470005,
-    "ast_hash": "3bd5b77c3f29ce65be7551e9dc83cdf4",
+    "mtime": 1783671337.8546188,
+    "ast_hash": "8f5cbf339696847ccc2296f1e41f113e",
     "semantic_hash": ""
   },
   "analysis_options.yaml": {
@@ -2710,8 +2710,8 @@
     "semantic_hash": ""
   },
   "pubspec.yaml": {
-    "mtime": 1783491364.0322025,
-    "ast_hash": "856874346329750d4d85bf138fbd4f04",
+    "mtime": 1783761269.3392081,
+    "ast_hash": "ac005541045614132e7f17c45752e349",
     "semantic_hash": ""
   },
   "assets/pdfs/originals/STUDENT_GUIDE.pdf": {
@@ -2730,8 +2730,4718 @@
     "semantic_hash": ""
   },
   "assets/audio/game_achievement.mp3": {
-    "mtime": 1783178750.293612,
+    "mtime": 1784043373.5910113,
     "ast_hash": "c0babd7d5809649f0ae58cf88a108445",
+    "semantic_hash": ""
+  },
+  ".craft/app-bindings/state.json": {
+    "mtime": 1783933983.1444626,
+    "ast_hash": "e17feaa88e700e2c450b17eda4b10b09",
+    "semantic_hash": ""
+  },
+  ".craft/cache/desktop-file-index-v1.json": {
+    "mtime": 1783934159.7445784,
+    "ast_hash": "6757291fab95a00a4a54743e42b01d25",
+    "semantic_hash": ""
+  },
+  ".craft/config.json": {
+    "mtime": 1783933996.2032835,
+    "ast_hash": "1639a9e40a4e4be4b028a11fe4451b3c",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-builder/.craft-plugin/plugin.json": {
+    "mtime": 1783785008.0,
+    "ast_hash": "f8a37ab8f894b68e64c0975bc2a6bb49",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-builder/desktop-extensions.json": {
+    "mtime": 1783785008.0,
+    "ast_hash": "2574432b1a44ff40626d66cc20f42cbc",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-builder/desktop/agent-builder.mjs": {
+    "mtime": 1783785008.0,
+    "ast_hash": "0b9bfe4ee65a01fb0f10bdf995ea88d9",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-teams/.craft-plugin/plugin.json": {
+    "mtime": 1783785008.0,
+    "ast_hash": "244a03e795d6ccbef87ec5572f9053c4",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-teams/desktop-extensions.json": {
+    "mtime": 1783785008.0,
+    "ast_hash": "29f1e3ff5f1a2c76b5252663b5cc7c16",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-teams/desktop/team-card-board.mjs": {
+    "mtime": 1783785008.0,
+    "ast_hash": "5426d2b88da36627b5e8b064799b8d90",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/browser/.craft-plugin/plugin.json": {
+    "mtime": 1783785008.0,
+    "ast_hash": "0311df8164c5d9d1a17c25487e65ec13",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/.craft-plugin/plugin.json": {
+    "mtime": 1783138776.0,
+    "ast_hash": "37164958bc9b3f5e2798865915e78ced",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-doctor/.craft-plugin/plugin.json": {
+    "mtime": 1783785007.0,
+    "ast_hash": "5b7ecd9d9f8605557d7a03020fabb5a6",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/frontend-design/.craft-plugin/plugin.json": {
+    "mtime": 1783138776.0,
+    "ast_hash": "e295f03c3335031ab7328501d5c067b8",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/github/.craft-plugin/plugin.json": {
+    "mtime": 1783138776.0,
+    "ast_hash": "8f0ae9d097b39fbceddb914c60261c99",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/github/.mcp.json": {
+    "mtime": 1783138776.0,
+    "ast_hash": "ffd39d1b343580842c58b365ca61ef14",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/.craft-plugin/plugin.json": {
+    "mtime": 1783138776.0,
+    "ast_hash": "4e0c1eef68a5b5248b6760dde0d1d82e",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/hooks/hooks.json": {
+    "mtime": 1783138776.0,
+    "ast_hash": "a93423b6e2139604e0fbf802cd104cf9",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/hooks/session-start.js": {
+    "mtime": 1783138776.0,
+    "ast_hash": "7dccefc87960c1193a91c5e4186924f3",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/condition-based-waiting-example.ts": {
+    "mtime": 1783138776.0,
+    "ast_hash": "8e502a8c1e9c7de15967202615d241d5",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/find-polluter.sh": {
+    "mtime": 1783138776.0,
+    "ast_hash": "2ae1144fa5a66aa26c13d644a12ad0bf",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-writing-skills/render-graphs.js": {
+    "mtime": 1783138776.0,
+    "ast_hash": "e9d8be9caa34d327cac6f746f947cee0",
+    "semantic_hash": ""
+  },
+  ".craft/security/approvals.json": {
+    "mtime": 1783927315.6462994,
+    "ast_hash": "82ed5fbd5e1ad0fd8058af73240a5c61",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_24v0hi/term_8aeb097ca0ff.json": {
+    "mtime": 1783926712.0086842,
+    "ast_hash": "9daddebfc74decbb8a94b549a138ffb1",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_24v0hi/term_9a04517a6315.json": {
+    "mtime": 1783926643.0222366,
+    "ast_hash": "9da6efc03fb971d8be62aa1e9df10876",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_24v0hi/term_b910c0ecdaa5.json": {
+    "mtime": 1783926645.4896805,
+    "ast_hash": "97b99bdaa6f81a815b4ea9b7fb6577f9",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_0f048231e79c.json": {
+    "mtime": 1783928036.2646537,
+    "ast_hash": "dcbcb0d6dcd88d24e109c021c361f710",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_2e722212f072.json": {
+    "mtime": 1783928043.193942,
+    "ast_hash": "6ddfbaadc6b580b0d34beb229845a08d",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_41637711e4e6.json": {
+    "mtime": 1783928036.2440069,
+    "ast_hash": "47d5a7f459095739e04e77daa50fd37d",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_5e1a08648f0d.json": {
+    "mtime": 1783928056.3842604,
+    "ast_hash": "4085629bd248440d2f6f1052ec6e7f76",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_722687149bf1.json": {
+    "mtime": 1783928056.3970544,
+    "ast_hash": "055a67720da26b5e69d02d12e8a9ae8d",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_7964f575c931.json": {
+    "mtime": 1783927526.5753477,
+    "ast_hash": "1914987df6a0e268121305c3e23e4d29",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_9ae86321a885.json": {
+    "mtime": 1783928048.9417644,
+    "ast_hash": "593c9d6e0a1816572da4796a09c694a5",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_9d505dba4812.json": {
+    "mtime": 1783928036.2438374,
+    "ast_hash": "a1479857f5f227c8466d0d3004939293",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_cedff1cf1c4d.json": {
+    "mtime": 1783928023.1254008,
+    "ast_hash": "2c3f1d99ed410dd3f19794d9040c18b0",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_d4430f3beb89.json": {
+    "mtime": 1783928023.1404176,
+    "ast_hash": "25fa11ede757743f949101d23e31ba6e",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_4hgxm2/term_dc94c421223d.json": {
+    "mtime": 1783928029.4401383,
+    "ast_hash": "84d9dea7a6680eefa412c9f1b693872c",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_0e7244c98bb7.json": {
+    "mtime": 1783927322.951109,
+    "ast_hash": "57b6f976cf12669b13f6236f9f8c04cb",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_15c01abb4f06.json": {
+    "mtime": 1783927394.2746806,
+    "ast_hash": "0075328dc9e9a5c6dde39718ea4fa30b",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_26631e8fc70c.json": {
+    "mtime": 1783927337.06299,
+    "ast_hash": "52cabb205ae7b23e969aac153064e810",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_34a938e28dcb.json": {
+    "mtime": 1783927382.7809284,
+    "ast_hash": "5fd63bb563da642b0fcd7ee4c4e2bb8c",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_39c2d9584839.json": {
+    "mtime": 1783927413.8657906,
+    "ast_hash": "b25630c2c6a92360041c0a5ecb249a82",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_440b45ddc20c.json": {
+    "mtime": 1783927633.9645658,
+    "ast_hash": "568110fd4463d8d00d025abcb8b48561",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_46dbd34c9ac9.json": {
+    "mtime": 1783927330.2345538,
+    "ast_hash": "b814a83de485dd6f260af3913b8498c2",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_4843c1528cdc.json": {
+    "mtime": 1783927657.8146954,
+    "ast_hash": "4cc918322d347dfb6cebd843d3563158",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_4eb4e36b9b93.json": {
+    "mtime": 1783927330.207724,
+    "ast_hash": "498eec4a0eb9ed23cdacfa9aefbc8666",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_62db64e0097b.json": {
+    "mtime": 1783927633.9327736,
+    "ast_hash": "b6e01191fe0cf37eea3ae408437dcaeb",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_649b001ab93b.json": {
+    "mtime": 1783927394.3644245,
+    "ast_hash": "0f027e78be3a8e3a7054aca394f16df2",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_657c89798fe4.json": {
+    "mtime": 1783927413.8439238,
+    "ast_hash": "c981987b0e5a5a1efab5eeec1e7267a9",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_73b969776021.json": {
+    "mtime": 1783927337.1073375,
+    "ast_hash": "3d76818dbea12a6f19142ba024e718cc",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_8f97fd8787e7.json": {
+    "mtime": 1783927330.20448,
+    "ast_hash": "cbab7d4f851f629206f40432e3c0cf59",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_9392d19cf8b2.json": {
+    "mtime": 1783927382.8493288,
+    "ast_hash": "dc272ecbaebcb8405cc74d19eaf22eab",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_9efbea94c8a7.json": {
+    "mtime": 1783927369.4767673,
+    "ast_hash": "c279081e2878e47ac0cf6eb3c0e3d23d",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_adb098543dbc.json": {
+    "mtime": 1783927369.4820864,
+    "ast_hash": "ddbfd6d08a58b4001bd82c2b342b3aa0",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_c5168560622d.json": {
+    "mtime": 1783927646.9799044,
+    "ast_hash": "78814024627552c56e7aa64717ddd604",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_c6e10465460c.json": {
+    "mtime": 1783927658.3294382,
+    "ast_hash": "0304cc6ff27b54e47990a5464f28b9b4",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_ca5f299a7351.json": {
+    "mtime": 1783927413.9057016,
+    "ast_hash": "58f206ed97683a48d5b92262d63f1231",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_dd22f59e14d7.json": {
+    "mtime": 1783927376.0911164,
+    "ast_hash": "61de844dec1d9b2230dd1f63f72a96bf",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_e2fc60415c7d.json": {
+    "mtime": 1783927646.9139569,
+    "ast_hash": "4537625649a8514fa5f9a5b21bc14750",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_e3ee1e8ba273.json": {
+    "mtime": 1783927315.979037,
+    "ast_hash": "6e6b917b95308a90a20cf03c0ae99170",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_e41d3eb34f56.json": {
+    "mtime": 1783927394.3805375,
+    "ast_hash": "bab13fd08bc23bd4b8c18710bbac2971",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_f838cc597403.json": {
+    "mtime": 1783927618.9776323,
+    "ast_hash": "be4de63d59200b2d050a3ab272ba4953",
+    "semantic_hash": ""
+  },
+  ".craft/terminals/thread_20260713_ghu073/term_fcc691801810.json": {
+    "mtime": 1783927618.97769,
+    "ast_hash": "dbe268c3ffb1bd8298096622773bdcb9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/app-bindings/state.json": {
+    "mtime": 1784102009.157274,
+    "ast_hash": "e17feaa88e700e2c450b17eda4b10b09",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/config.json": {
+    "mtime": 1784102009.1648424,
+    "ast_hash": "1639a9e40a4e4be4b028a11fe4451b3c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-builder/.craft-plugin/plugin.json": {
+    "mtime": 1784102009.1663165,
+    "ast_hash": "f8a37ab8f894b68e64c0975bc2a6bb49",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-builder/desktop-extensions.json": {
+    "mtime": 1784102009.168473,
+    "ast_hash": "2574432b1a44ff40626d66cc20f42cbc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-builder/desktop/agent-builder.mjs": {
+    "mtime": 1784102009.1693988,
+    "ast_hash": "0b9bfe4ee65a01fb0f10bdf995ea88d9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-teams/.craft-plugin/plugin.json": {
+    "mtime": 1784102009.1734304,
+    "ast_hash": "244a03e795d6ccbef87ec5572f9053c4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-teams/desktop-extensions.json": {
+    "mtime": 1784102009.1818483,
+    "ast_hash": "29f1e3ff5f1a2c76b5252663b5cc7c16",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-teams/desktop/team-card-board.mjs": {
+    "mtime": 1784102009.1823735,
+    "ast_hash": "5426d2b88da36627b5e8b064799b8d90",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/browser/.craft-plugin/plugin.json": {
+    "mtime": 1784102009.1835072,
+    "ast_hash": "0311df8164c5d9d1a17c25487e65ec13",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/.craft-plugin/plugin.json": {
+    "mtime": 1784102009.1961994,
+    "ast_hash": "37164958bc9b3f5e2798865915e78ced",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-doctor/.craft-plugin/plugin.json": {
+    "mtime": 1784102009.2184846,
+    "ast_hash": "5b7ecd9d9f8605557d7a03020fabb5a6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/frontend-design/.craft-plugin/plugin.json": {
+    "mtime": 1784102009.5528896,
+    "ast_hash": "e295f03c3335031ab7328501d5c067b8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/github/.craft-plugin/plugin.json": {
+    "mtime": 1784102009.5653117,
+    "ast_hash": "8f0ae9d097b39fbceddb914c60261c99",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/github/.mcp.json": {
+    "mtime": 1784102009.5658853,
+    "ast_hash": "ffd39d1b343580842c58b365ca61ef14",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/.craft-plugin/plugin.json": {
+    "mtime": 1784102009.5733137,
+    "ast_hash": "4e0c1eef68a5b5248b6760dde0d1d82e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/hooks/hooks.json": {
+    "mtime": 1784102009.5811322,
+    "ast_hash": "a93423b6e2139604e0fbf802cd104cf9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/hooks/session-start.js": {
+    "mtime": 1784102009.581925,
+    "ast_hash": "7dccefc87960c1193a91c5e4186924f3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/condition-based-waiting-example.ts": {
+    "mtime": 1784102009.7582912,
+    "ast_hash": "8e502a8c1e9c7de15967202615d241d5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/find-polluter.sh": {
+    "mtime": 1784102009.7592506,
+    "ast_hash": "2ae1144fa5a66aa26c13d644a12ad0bf",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-writing-skills/render-graphs.js": {
+    "mtime": 1784102009.7764516,
+    "ast_hash": "e9d8be9caa34d327cac6f746f947cee0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/security/approvals.json": {
+    "mtime": 1784102009.7773838,
+    "ast_hash": "82ed5fbd5e1ad0fd8058af73240a5c61",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/articles.json": {
+    "mtime": 1783662934.0892673,
+    "ast_hash": "472bbefa56b74910f549489c0044fd7d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/categories.json": {
+    "mtime": 1783662934.0898979,
+    "ast_hash": "7ec2c1d11b81d547e53f37482badb501",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/common_patterns.json": {
+    "mtime": 1783662934.0903761,
+    "ast_hash": "f04cba6d7ea4069ef39d4a75f87633c8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/conditionals.json": {
+    "mtime": 1783662934.0908465,
+    "ast_hash": "19f91dc1755385654e284a04b40901db",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/future_simple.json": {
+    "mtime": 1783662934.0913463,
+    "ast_hash": "f2334fb00a7bfc40569f8d3ce82dafd0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/modal_verbs.json": {
+    "mtime": 1783662934.0918732,
+    "ast_hash": "b6646ccf2eda3f9f19cbf948598810b2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/passive_voice.json": {
+    "mtime": 1783662934.0923269,
+    "ast_hash": "a1dcb40499089bd72b79d8a748279f9a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/past_continuous.json": {
+    "mtime": 1783662934.0935228,
+    "ast_hash": "21435976c2e610a76599057e47be1d18",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/past_perfect.json": {
+    "mtime": 1783662934.0948684,
+    "ast_hash": "7ff2408ce3cfe6217fa26c5e34d48902",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/past_simple.json": {
+    "mtime": 1783662934.0952497,
+    "ast_hash": "11340fd63dfb82ad0ad17a1f64311155",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/prepositions.json": {
+    "mtime": 1783662934.0955844,
+    "ast_hash": "b31cf3a3332c7a2a4823b388359ad45a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/present_continuous.json": {
+    "mtime": 1783662934.0959868,
+    "ast_hash": "096128a776a342bf6680d22eb0ab1f45",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/present_perfect.json": {
+    "mtime": 1783662934.0963695,
+    "ast_hash": "fdffb0a7c8594d39d438ee8652499b8c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/present_simple.json": {
+    "mtime": 1783662934.0968552,
+    "ast_hash": "af23da5b615266389ecc1a0df81dc907",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/bangla_to_english/questions.json": {
+    "mtime": 1783662934.0973759,
+    "ast_hash": "f5ed36e957b2c923451a5fd47f3afeb0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/daily_quiz/questions.json": {
+    "mtime": 1783667541.9156842,
+    "ast_hash": "97a2bba405f5739f5632e3943aa568b4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/bangla_to_english_data.json": {
+    "mtime": 1783662934.103157,
+    "ast_hash": "ff89517f7d419955d83d1c51a78c38d7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/fill_blanks_data.json": {
+    "mtime": 1783662934.1037319,
+    "ast_hash": "86e166c97c1e9e60a22afa223e9c0809",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/flashcard_data.json": {
+    "mtime": 1783662934.1042736,
+    "ast_hash": "8626c6896e42c9ca69cd3e71fad1d1bf",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/game_achievements.json": {
+    "mtime": 1783662934.1049933,
+    "ast_hash": "fa842e0dbc3824ffa25895f21e2c2b1c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/game_levels.json": {
+    "mtime": 1783662934.1058865,
+    "ast_hash": "1a2ca6890fed0ce186111f72eca90df0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/game_progress.json": {
+    "mtime": 1783662934.1062517,
+    "ast_hash": "3479ec881a73be47c187a6ec392ab7e7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/game_questions.json": {
+    "mtime": 1783662934.1066375,
+    "ast_hash": "cd749c10329e48aefa41b1d199763596",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/grammar_detective_data.json": {
+    "mtime": 1783662934.1072876,
+    "ast_hash": "f611c0798c5099da1db74ec76964ce13",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/01_present_indefinite.json": {
+    "mtime": 1783662934.1081295,
+    "ast_hash": "9edbed44c12f30e092720977a874a5fa",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/02_present_continuous.json": {
+    "mtime": 1783662934.1092167,
+    "ast_hash": "7b2e990ef9865df18ee357e705a1edf0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/03_present_perfect.json": {
+    "mtime": 1783662934.110433,
+    "ast_hash": "8b5f457224ac35c528e7b7c48ea49454",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/04_present_perfect_continuous.json": {
+    "mtime": 1783662934.11108,
+    "ast_hash": "a76795f10fd30f9a41b2b25d82226886",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/05_past_indefinite.json": {
+    "mtime": 1783662934.1121318,
+    "ast_hash": "ab223b3f44e1cbb1696dfac06c86db38",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/06_past_continuous.json": {
+    "mtime": 1783662934.1127605,
+    "ast_hash": "60cf756c27a333c942eb95042ed4c33f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/07_past_perfect.json": {
+    "mtime": 1783662934.114022,
+    "ast_hash": "74c995a884109c2ea364172e266fd607",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/08_past_perfect_continuous.json": {
+    "mtime": 1783662934.1149662,
+    "ast_hash": "17933799588cc4b9e50acf316887be18",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/09_future_indefinite.json": {
+    "mtime": 1783662934.1157634,
+    "ast_hash": "a5f3612584afb1d080fba394986a32b4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/10_future_continuous.json": {
+    "mtime": 1783662934.116708,
+    "ast_hash": "dee76c655a9d3ad1d3abcd7f0e722421",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/11_future_perfect.json": {
+    "mtime": 1783662934.1176054,
+    "ast_hash": "0b7cf81564e98309379cb08a264edc8c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/12_future_perfect_continuous.json": {
+    "mtime": 1783662934.1183581,
+    "ast_hash": "b8572b365c9a4d031a8bc5dbf723d3f1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/01_present_indefinite_rules.json": {
+    "mtime": 1783662934.1199946,
+    "ast_hash": "13fd7be616511d36e630df97ec05193c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/02_present_continuous_rules.json": {
+    "mtime": 1783662934.12059,
+    "ast_hash": "f43c3f63757fde5cda15b9a8611e396c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/03_present_perfect_rules.json": {
+    "mtime": 1783662934.1209865,
+    "ast_hash": "22f5bd3e86e9130c8290b14bb5e353eb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/04_present_perfect_continuous_rules.json": {
+    "mtime": 1783662934.1213577,
+    "ast_hash": "6790febe4995d1cad4ac9ec6aee80370",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/05_past_indefinite_rules.json": {
+    "mtime": 1783662934.1242561,
+    "ast_hash": "8e577b48eefc99327e798d04ffff2f71",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/06_past_continuous_rules.json": {
+    "mtime": 1783662934.124696,
+    "ast_hash": "5d0fce0b30f2b587a5ba874b094ca0b2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/07_past_perfect_rules.json": {
+    "mtime": 1783662934.1254432,
+    "ast_hash": "8015fc6aeb29d7dca157be446fb23137",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/08_past_perfect_continuous_rules.json": {
+    "mtime": 1783662934.1262245,
+    "ast_hash": "f91dd7294136e707567f0b4a00e4e00c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/09_future_indefinite_rules.json": {
+    "mtime": 1783662934.1270263,
+    "ast_hash": "eaa39bcb9894730c1842660438318670",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/10_future_continuous_rules.json": {
+    "mtime": 1783662934.128051,
+    "ast_hash": "419529ed134c9d6f7190a4276a271e68",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/11_future_perfect_rules.json": {
+    "mtime": 1783662934.1292324,
+    "ast_hash": "da949474bb8d77e40235bde4489de284",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/12_future_perfect_continuous_rules.json": {
+    "mtime": 1783662934.1314073,
+    "ast_hash": "ccbf973ae5fe4ee1c7158595e4e38929",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/13_comparison_rules.json": {
+    "mtime": 1783662934.1322813,
+    "ast_hash": "5054e2f7b29b53d791316cc4c7dc5983",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/rules/14_special_usage_rules.json": {
+    "mtime": 1783662934.1329012,
+    "ast_hash": "c279df4bc7d4f43673eb5f1d199afb6c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/sentence_builder_data.json": {
+    "mtime": 1783662934.1357534,
+    "ast_hash": "7527750b8ee6db91a06a3b8ad8499842",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/spoken_rules/spoken_english_rules.json": {
+    "mtime": 1783662934.136765,
+    "ast_hash": "d66ccf6b574026e709b650039643253a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/story_completion_data.json": {
+    "mtime": 1783662934.1373615,
+    "ast_hash": "1c1ff2d4add16780d208b409c31f3692",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/verb_game_data.json": {
+    "mtime": 1783662934.1384225,
+    "ast_hash": "66879c0a7f8272021c1c622aef9b382b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/verb_quiz_data.json": {
+    "mtime": 1783662934.139039,
+    "ast_hash": "63aea53bb3a8c510b26c77afe2d93687",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/word_match_data.json": {
+    "mtime": 1783662934.142038,
+    "ast_hash": "9595172536c536901254d8fa96b72a3f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_01_alphabet.json": {
+    "mtime": 1783662934.1435297,
+    "ast_hash": "e11b3f84eddb827c5421a50ebdd7d246",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_02_word.json": {
+    "mtime": 1783662934.144295,
+    "ast_hash": "ea4b09740864066aed8af8ee2f5ae7b7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_03_sentence.json": {
+    "mtime": 1783662934.1451437,
+    "ast_hash": "000e38bf13bbeb3ac1a216b5a75e5095",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_04_parts_of_speech.json": {
+    "mtime": 1783662934.1460762,
+    "ast_hash": "09617b8372fc36fa45a99c69ebc4ae6e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_05_noun.json": {
+    "mtime": 1783662934.147101,
+    "ast_hash": "d5a2f6e68cac2369bb7be3898d1c465b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_06_pronoun.json": {
+    "mtime": 1783662934.1484125,
+    "ast_hash": "44ecffbec7613eb0bde15ac29597c8b4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_07_adjective.json": {
+    "mtime": 1783662934.1492653,
+    "ast_hash": "e702e71568e1849e024c5fd518dbc76a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_08_verb.json": {
+    "mtime": 1783662934.1501002,
+    "ast_hash": "3524bb1c9fcbfcd722fa51ee3e42b533",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_09_adverb.json": {
+    "mtime": 1783662934.1508818,
+    "ast_hash": "8ebdfd22d36b8bed1bc540c2762dc7c0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_10_preposition.json": {
+    "mtime": 1783662934.1524372,
+    "ast_hash": "97b40f796fceea70717155dca0ced6ad",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_11_conjunction.json": {
+    "mtime": 1783662934.1534224,
+    "ast_hash": "c340a3505c2b615697aaa88dc32f3885",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_12_article.json": {
+    "mtime": 1783662934.1541445,
+    "ast_hash": "ea490363b786cff99d3a930ff83220e8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_13_determiners.json": {
+    "mtime": 1783662934.1549313,
+    "ast_hash": "f524e76f58e83b2468a27ba27715fab9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_14_quantifiers.json": {
+    "mtime": 1783662934.155666,
+    "ast_hash": "fe9b37cb233ff2d0f97ec81c8ca0334a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_15_numbers.json": {
+    "mtime": 1783662934.1563041,
+    "ast_hash": "b10bea5aadd65e3d01acddd06c18d613",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_16_gender.json": {
+    "mtime": 1783662934.1572626,
+    "ast_hash": "ce4df657393a0e13dde34ec7f7484db2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_17_person.json": {
+    "mtime": 1783662934.1587858,
+    "ast_hash": "1c3394d5427b65242177efe8ee8370c8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_18_voice.json": {
+    "mtime": 1783662934.1604655,
+    "ast_hash": "aebdabb413b6ec75f989e7954632a57b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_19_punctuation_marks.json": {
+    "mtime": 1783662934.1613448,
+    "ast_hash": "e610ee3a913764f430c6446daad51041",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_20_capitalization_rules.json": {
+    "mtime": 1783662934.162188,
+    "ast_hash": "0b69c1c0b07ad133e801d3cacb4b5634",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_21_introduction_to_tense.json": {
+    "mtime": 1783662934.1628733,
+    "ast_hash": "2dc6800d728217fac2327267490e9798",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_22_subject_and_predicate.json": {
+    "mtime": 1783662934.1637082,
+    "ast_hash": "650ff1af8be835ad5b406b02c0371323",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_23_subject-verb_agreement.json": {
+    "mtime": 1783662934.164208,
+    "ast_hash": "b3adf1c0f4879e9ded2f89460d4fea42",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_24_types_of_sentences.json": {
+    "mtime": 1783662934.1646585,
+    "ast_hash": "3f3c5dcccf44cee11c8990754710e319",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_25_negative_sentences.json": {
+    "mtime": 1783662934.1652029,
+    "ast_hash": "ae5a6c156f186af6ddeb23daeb268515",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_26_wh_questions.json": {
+    "mtime": 1783662934.1656783,
+    "ast_hash": "2fbdd0e13e42dddd1b4e40b007c19788",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_27_tag_questions.json": {
+    "mtime": 1783662934.1661124,
+    "ast_hash": "09dce764d8dac3dc6ebbe6f3b4662b6f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_28_there_and_it.json": {
+    "mtime": 1783662934.166559,
+    "ast_hash": "2794af46f7a018e25d0ffe30e5fca193",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_29_modal_verbs.json": {
+    "mtime": 1783662934.1670022,
+    "ast_hash": "3aa90be7a9f46a203890cd284d65add7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_30_infinitive.json": {
+    "mtime": 1783662934.1674182,
+    "ast_hash": "d4a241ee302e7ba6db29737cacccdedd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_31_gerund.json": {
+    "mtime": 1783662934.167782,
+    "ast_hash": "84c157fa67cc2c4b8f00f1e60652b184",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_32_participle.json": {
+    "mtime": 1783662934.1681387,
+    "ast_hash": "38b71523dcf01d18ec2a84a2ff00e649",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_33_phrases.json": {
+    "mtime": 1783662934.1684885,
+    "ast_hash": "56a72e0e5a77723027fcd6f0703a6895",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_34_clauses.json": {
+    "mtime": 1783662934.1688569,
+    "ast_hash": "5c39adcd09a794e01d6a9a23a9388dd9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_35_phrase_vs_clause.json": {
+    "mtime": 1783662934.1691973,
+    "ast_hash": "eca02819ea61de6851274dc884cd335d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_36_simple_sentence.json": {
+    "mtime": 1783662934.1695275,
+    "ast_hash": "4a60b65407a6d5b61da6de7e02c9c2af",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_37_compound_sentence.json": {
+    "mtime": 1783662934.1699405,
+    "ast_hash": "9a1d989243ad5d173c93723d13d5652c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_38_complex_sentence.json": {
+    "mtime": 1783662934.1703103,
+    "ast_hash": "678b56d19272346e7081ee3cebfa985d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_39_transformation_of_sentences.json": {
+    "mtime": 1783662934.1706371,
+    "ast_hash": "bee749858096a2076983edcadb2225fb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_40_degree_change.json": {
+    "mtime": 1783662934.1709604,
+    "ast_hash": "6a5684e723d783cabf972a09ccd35800",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_41_affirmative_and_negative_transformation.json": {
+    "mtime": 1783662934.1713207,
+    "ast_hash": "e0c4564066594e8980b6367e025dd16a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_42_assertive_and_interrogative_transformation.json": {
+    "mtime": 1783662934.1716735,
+    "ast_hash": "c53732a828c3c1252fe4c824f375cc23",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_43_exclamatory_transformation.json": {
+    "mtime": 1783662934.1722157,
+    "ast_hash": "d834874d24fed1060ce56aafcf1e4a7e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_44_active_voice.json": {
+    "mtime": 1783662934.1725512,
+    "ast_hash": "f6be8554f2c602b418e349e21bfebd26",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_45_passive_voice.json": {
+    "mtime": 1783662934.1729367,
+    "ast_hash": "e59f463b0cb7b5ab62b0dc2e43af4658",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_46_direct_speech.json": {
+    "mtime": 1783662934.1732526,
+    "ast_hash": "9beed92d0e4ca6aea43ce1e42fc31043",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_47_indirect_speech.json": {
+    "mtime": 1783662934.1735635,
+    "ast_hash": "79106dc5fa19392da550035af8d9db1d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_48_conditional_sentences.json": {
+    "mtime": 1783662934.1739101,
+    "ast_hash": "9eac76b99c1eb6e3e28fe9ada2303bb9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_49_comparison.json": {
+    "mtime": 1783662934.174313,
+    "ast_hash": "8e812a5657cd936957159ae6e190e942",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_50_parallelism.json": {
+    "mtime": 1783662934.1746435,
+    "ast_hash": "6e8d0ab31c4d890b6788280d787233d9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_51_advanced_modals.json": {
+    "mtime": 1783662934.1753075,
+    "ast_hash": "603b2933bbb2eeabf1591830771bebc4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_52_causative_verbs.json": {
+    "mtime": 1783662934.1759613,
+    "ast_hash": "d3221a2a5460f9d49133fef9d6de5a19",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_53_inversion.json": {
+    "mtime": 1783662934.176622,
+    "ast_hash": "d6fdfa19dda5e5462fa51f5e27cfbac9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_54_emphasis.json": {
+    "mtime": 1783662934.1773853,
+    "ast_hash": "b3bb82dfbf8d7dbe5b0233902cb915bf",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_55_ellipsis.json": {
+    "mtime": 1783662934.179212,
+    "ast_hash": "16469ccb990fdd9ce81dfd1dea3c31dd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_56_relative_pronouns.json": {
+    "mtime": 1783662934.18075,
+    "ast_hash": "be58bee52d68c84095ac2583aabae1b9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_57_relative_clauses.json": {
+    "mtime": 1783662934.181795,
+    "ast_hash": "fb5a8a5b65e21a6041e715dfb31eb320",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_58_reported_speech.json": {
+    "mtime": 1783662934.182868,
+    "ast_hash": "f41afc50a63c3885d3e4328da100a1be",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_59_subjunctive_mood.json": {
+    "mtime": 1783662934.1837504,
+    "ast_hash": "3aaa7cf7870b3419a31722910bdf6e88",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_60_advanced_conditionals.json": {
+    "mtime": 1783662934.1847737,
+    "ast_hash": "40d27076dfaa3e659297f2b229c901c2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_61_complex_structures.json": {
+    "mtime": 1783662934.1855104,
+    "ast_hash": "4dec1d7248ec665b53d75a4dc1e17d55",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_62_nominalization.json": {
+    "mtime": 1783662934.1879942,
+    "ast_hash": "913b9f5277265f5c828bab2868b64984",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_63_formal_and_informal_english.json": {
+    "mtime": 1783662934.1889243,
+    "ast_hash": "7911ef6af18998303bd28b1feb392b27",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_64_common_grammar_mistakes.json": {
+    "mtime": 1783662934.1912968,
+    "ast_hash": "13e69462e40dbd9826d714e1be73e7da",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_65_confusing_words.json": {
+    "mtime": 1783662934.1924183,
+    "ast_hash": "b8798e124a05b15ff33e735e23a890f1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_66_idiomatic_expressions.json": {
+    "mtime": 1783662934.1936564,
+    "ast_hash": "bbd52e71a7cbc2a8063100d99b5b85ad",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_67_phrasal_verbs.json": {
+    "mtime": 1783662934.1952953,
+    "ast_hash": "81e2c22d7934f18ed2b08df5fa8eabff",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_68_collocations.json": {
+    "mtime": 1783662934.196067,
+    "ast_hash": "7df737fb90454959dfae04f71fd431f1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_69_sentence_patterns.json": {
+    "mtime": 1783662934.1966922,
+    "ast_hash": "4c781f14d3d909b16fba6fe824225530",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/grammar/chapter_70_advanced_writing_structures.json": {
+    "mtime": 1783662934.3752496,
+    "ast_hash": "f3e6e56b2c3ae0d9e6dbbc7068590284",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/advanced.json": {
+    "mtime": 1783662934.3776143,
+    "ast_hash": "28d644b25ab31ddff18c2427600be22b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/beginner.json": {
+    "mtime": 1783662934.4081082,
+    "ast_hash": "5f193e6de75a902c0ed45ff03a1dadbe",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/business.json": {
+    "mtime": 1783662934.4192572,
+    "ast_hash": "741a791eb796e68ed7032aa50643958d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/categories.json": {
+    "mtime": 1783662934.4199514,
+    "ast_hash": "872b671ef4d6ce7a37c8c5c141f92bdc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/daily_conversations.json": {
+    "mtime": 1783662934.4205186,
+    "ast_hash": "70ef82e685692772f5e601b2f2734a4d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/ielts_listening.json": {
+    "mtime": 1783662934.4209344,
+    "ast_hash": "1fef7dbb847cb94b079ad60a0c9f17ff",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/intermediate.json": {
+    "mtime": 1783662934.4214976,
+    "ast_hash": "aead13ecbd10846d7070778735924791",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/kids.json": {
+    "mtime": 1783662934.4219787,
+    "ast_hash": "24b555213775ddd558bb71c2e6995e80",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/moral_stories.json": {
+    "mtime": 1783662934.4237368,
+    "ast_hash": "45516cc191563c49642d05d20cfe70ea",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/news_articles.json": {
+    "mtime": 1783662934.425813,
+    "ast_hash": "4e2ba889132adbfd9fc314942603604a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/listening_practice/travel.json": {
+    "mtime": 1783662934.4263248,
+    "ast_hash": "793dc76b976ffedded244bdf421628f5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_01.json": {
+    "mtime": 1783662934.432937,
+    "ast_hash": "0e28e1f9093cfcca8f09cc62832351dd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_02.json": {
+    "mtime": 1783662934.4335325,
+    "ast_hash": "6617f58c6a20bace90d6e92461cbc84d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_03.json": {
+    "mtime": 1783662934.4353254,
+    "ast_hash": "f5ff6e1353f61b4ce7628e170ece3cb8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_04.json": {
+    "mtime": 1783662934.4357855,
+    "ast_hash": "83b372fb4e7da0c91588bff50247642f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_05.json": {
+    "mtime": 1783662934.4361968,
+    "ast_hash": "4cea9132ed5eb65142f4b4e4ea574532",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_06.json": {
+    "mtime": 1783662934.436627,
+    "ast_hash": "e49b58d0f6466d57b09df3c6111bc232",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_07.json": {
+    "mtime": 1783662934.4370377,
+    "ast_hash": "e1ae3988e74984f51c56bc054fd9059b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_08.json": {
+    "mtime": 1783662934.4374683,
+    "ast_hash": "3b7658ebb065f46b73cddd48c81ac19c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_09.json": {
+    "mtime": 1783662934.4379256,
+    "ast_hash": "5f473f85378b2690f286a0c15c72ddb3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_10.json": {
+    "mtime": 1783662934.4383569,
+    "ast_hash": "60518ace9965b27e648e4a704d9d89d9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_11.json": {
+    "mtime": 1783662934.4390209,
+    "ast_hash": "f4ead03f8dba750b4c230817f2e2adfd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_12.json": {
+    "mtime": 1783662934.4393666,
+    "ast_hash": "27be006250c6185e3e202c42076b6dad",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_13.json": {
+    "mtime": 1783662934.4397275,
+    "ast_hash": "89a09ca71bf029986ce459cd3ab4fe99",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_14.json": {
+    "mtime": 1783662934.4425986,
+    "ast_hash": "61db2ea3f44b48e8e7a6ad59151fdf6f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_15.json": {
+    "mtime": 1783662934.4430363,
+    "ast_hash": "ce6187fcc273c3aa4a9d9ddef15bc6fd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_16.json": {
+    "mtime": 1783662934.4433627,
+    "ast_hash": "f676582244c598cf38b6c99503ccd561",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_17.json": {
+    "mtime": 1783662934.4436648,
+    "ast_hash": "e7b3759949682168fc32b2f73bd9016e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_18.json": {
+    "mtime": 1783662934.443974,
+    "ast_hash": "cacff1dcdc2af8623c833e1872845aec",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_19.json": {
+    "mtime": 1783662934.4444687,
+    "ast_hash": "51cfa4ef0bd3dbadacf1535228603fb5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_20.json": {
+    "mtime": 1783662934.4448814,
+    "ast_hash": "d80232491b14d6519441eeee0423100f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_21.json": {
+    "mtime": 1783662934.445479,
+    "ast_hash": "923600300f45cf815698df5bb087d10b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_22.json": {
+    "mtime": 1783662934.4458132,
+    "ast_hash": "083f4aa82a25efdbcdef10f959f145b7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_23.json": {
+    "mtime": 1783662934.4461296,
+    "ast_hash": "5ba113ae29fa0c1e50769a1bfda9a2fb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_24.json": {
+    "mtime": 1783662934.4465384,
+    "ast_hash": "8f5ded9e192153c865db4982d8c4e3d4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_25.json": {
+    "mtime": 1783662934.4468868,
+    "ast_hash": "70967ea09ee3da239ca474ee2df43870",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_26.json": {
+    "mtime": 1783662934.447191,
+    "ast_hash": "e511e6d93e77051eef36d34cbbf35923",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_27.json": {
+    "mtime": 1783662934.4475107,
+    "ast_hash": "439f833c191f41b6be925c26209440c4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_28.json": {
+    "mtime": 1783662934.4488053,
+    "ast_hash": "4d62e681669098608778bd4a15f25556",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_29.json": {
+    "mtime": 1783662934.495445,
+    "ast_hash": "046445abe51454ac1125626f0561e8e6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_30.json": {
+    "mtime": 1783662934.495845,
+    "ast_hash": "65db852da76b9c4ad438a407846992b4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_31.json": {
+    "mtime": 1783662934.4961815,
+    "ast_hash": "027ca25ed32fefe4607acb843983197a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_32.json": {
+    "mtime": 1783662934.4964843,
+    "ast_hash": "42db7ae64abce7903d5d39551c0d63a2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_33.json": {
+    "mtime": 1783662934.496803,
+    "ast_hash": "9dcc8fe2c9098aa413a5097f2cf3a14f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_34.json": {
+    "mtime": 1783662934.497127,
+    "ast_hash": "f98e45700932b121f1aea833e23ccb18",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_35.json": {
+    "mtime": 1783662934.4974706,
+    "ast_hash": "abd2d67ed75f04e6963471b769bcb5c2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_36.json": {
+    "mtime": 1783662934.4977813,
+    "ast_hash": "f3c68adc0eb132aa412016d3cf1bde9e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_37.json": {
+    "mtime": 1783662934.4982634,
+    "ast_hash": "73008b225a571c4539777adaba15d581",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_38.json": {
+    "mtime": 1783662934.4986029,
+    "ast_hash": "7fdfeee58e0423ca28d63270454e4867",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_39.json": {
+    "mtime": 1783662934.4989579,
+    "ast_hash": "0a1f7328b8cce6d155875685fa478d16",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_40.json": {
+    "mtime": 1783662934.4992785,
+    "ast_hash": "37b231f03fb3ac2753f4d63140086d97",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_41.json": {
+    "mtime": 1783662934.4995778,
+    "ast_hash": "7b31db28c7cbbb652e65e5da9972a45f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_42.json": {
+    "mtime": 1783662934.4999678,
+    "ast_hash": "0dc0e1cf27cf7e1b7671b83e90f5663a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_43.json": {
+    "mtime": 1783662934.5003347,
+    "ast_hash": "b8ef81ffc5d34ea3e0c46fb5ba16d877",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_44.json": {
+    "mtime": 1783662934.5006216,
+    "ast_hash": "760e1c1e90e9d42e7bc91c5c174089bd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_45.json": {
+    "mtime": 1783662934.5009782,
+    "ast_hash": "190da37fc8a29020476c1ef67fa76918",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_46.json": {
+    "mtime": 1783662934.5018632,
+    "ast_hash": "2e42a1b13628e0d3843c51bcd7220fd9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_47.json": {
+    "mtime": 1783662934.5022144,
+    "ast_hash": "e3441c6233fc618daa87d16f4e73c1b3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_48.json": {
+    "mtime": 1783662934.5025167,
+    "ast_hash": "8f4012b0f19afd4362e6c2b73c9221e5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_49.json": {
+    "mtime": 1783662934.5029073,
+    "ast_hash": "2af86a38c379d172676c5decaa6811f4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_50.json": {
+    "mtime": 1783662934.5032446,
+    "ast_hash": "47cbf3bc34154ab59d12ba8630aa481b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_51.json": {
+    "mtime": 1783662934.5035415,
+    "ast_hash": "19ee8c76fe67e5b4be4bc0abce6ad36c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_52.json": {
+    "mtime": 1783662934.5038214,
+    "ast_hash": "d03b0310fe9ec07a5c8953baf5f94556",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_53.json": {
+    "mtime": 1783662934.5041459,
+    "ast_hash": "13a489f8417392d0e89e7120e01d5f50",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_54.json": {
+    "mtime": 1783662934.504539,
+    "ast_hash": "3632dbcbeefcd47171b884efb98c7062",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_55.json": {
+    "mtime": 1783662934.5049796,
+    "ast_hash": "ab9cf83b48b660c3f4c52c6a1de481e9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_56.json": {
+    "mtime": 1783662934.5052867,
+    "ast_hash": "a8cca9bd682ccc72be64b89683f9ea37",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_57.json": {
+    "mtime": 1783662934.5055733,
+    "ast_hash": "596189fbf16828e52d371b10440d7b5e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_58.json": {
+    "mtime": 1783662934.505868,
+    "ast_hash": "0e308d3d785715eac5a4f91c256548ab",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_59.json": {
+    "mtime": 1783662934.506153,
+    "ast_hash": "bb5a75018ae70d97ba10a785c3c2a02c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_60.json": {
+    "mtime": 1783662934.506441,
+    "ast_hash": "9f42eade44fa0898ca83147873147cac",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_61.json": {
+    "mtime": 1783662934.5067248,
+    "ast_hash": "67baa067537f25fc6318e682dd403d25",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_62.json": {
+    "mtime": 1783662934.5070193,
+    "ast_hash": "baf4af25d46e056bc1d9b6ae8d66c8fa",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_63.json": {
+    "mtime": 1783662934.5074635,
+    "ast_hash": "c67046d66f03ba03f0e101a2e1c73122",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_64.json": {
+    "mtime": 1783662934.5091057,
+    "ast_hash": "6245006c960086262ac4b0e95d6cbf32",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_65.json": {
+    "mtime": 1783662934.509474,
+    "ast_hash": "b5d4463d0f63c5b2d90da51d194efa78",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_66.json": {
+    "mtime": 1783662934.5098515,
+    "ast_hash": "6fa4c144d00bd3b6e4a871d0251c2e68",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_67.json": {
+    "mtime": 1783662934.5101933,
+    "ast_hash": "acf6338343c56da371ad46d6f33a495b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_68.json": {
+    "mtime": 1783662934.5113473,
+    "ast_hash": "09f8a45c48e2562601f562af0912d363",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_69.json": {
+    "mtime": 1783662934.5127108,
+    "ast_hash": "1df2f2962cb03739230117c47165dcf6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/mock_tests/mock_test_70.json": {
+    "mtime": 1783662934.5134528,
+    "ast_hash": "48fe153b24d649a7b46d6b3c3d2b6101",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/action_verbs.json": {
+    "mtime": 1783662934.5143979,
+    "ast_hash": "7d03c362378bbf3c105c939a71866b79",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/categories.json": {
+    "mtime": 1783662934.5150306,
+    "ast_hash": "89b7d17bbca4d7074e0ba73d4f57dac7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/common_verbs.json": {
+    "mtime": 1783662934.5162106,
+    "ast_hash": "87cf020b1cbcfd8bf470489b06bd2d8e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/communication.json": {
+    "mtime": 1783662934.5172966,
+    "ast_hash": "0ec01981b5234b469a107b681eac17ef",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/cooking_verbs.json": {
+    "mtime": 1783662934.5176544,
+    "ast_hash": "b246165a0855dbd3d84b20a661208d5e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/daily_routine.json": {
+    "mtime": 1783662934.5179105,
+    "ast_hash": "1e16216f1316da36dd250b281bd57cab",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/education_verbs.json": {
+    "mtime": 1783662934.5183747,
+    "ast_hash": "78d5ecbc513477d9eb23289807f23b7f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/emotion_verbs.json": {
+    "mtime": 1783662934.5187159,
+    "ast_hash": "bf5ac620f6e9263745d429c27b2a1c26",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/health_verbs.json": {
+    "mtime": 1783662934.5190964,
+    "ast_hash": "0e77f9b2b477951ff5477228ed7b7549",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/household_verbs.json": {
+    "mtime": 1783662934.5195103,
+    "ast_hash": "df9729778bd40135ba994b793c432482",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/irregular_verbs.json": {
+    "mtime": 1783662934.5198295,
+    "ast_hash": "ce22734e0bf1fcea2da86b5bde5d3c03",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/mental_verbs.json": {
+    "mtime": 1783662934.5201006,
+    "ast_hash": "97e92628c3c51132a54b324f3dcf5f4b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/money_verbs.json": {
+    "mtime": 1783662934.5203822,
+    "ast_hash": "93eaf44179b3ba4490db878e4f6dc987",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/movement.json": {
+    "mtime": 1783662934.5206552,
+    "ast_hash": "9de692b737abd4f4131d72450050c130",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/sports_verbs.json": {
+    "mtime": 1783662934.5210083,
+    "ast_hash": "a88fbe57114d2ce01900d74d15774b37",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/tech_verbs.json": {
+    "mtime": 1783662934.5235643,
+    "ast_hash": "d373b1cbda2cffcfd55ae4094f559204",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/travel_verbs.json": {
+    "mtime": 1783662934.5240257,
+    "ast_hash": "3a473d5730b81277777072636496664f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/weather_verbs.json": {
+    "mtime": 1783662934.5245128,
+    "ast_hash": "2dda05cee6c2ac59fb0f739f79a43903",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/verb_forms/work_verbs.json": {
+    "mtime": 1783662934.5250323,
+    "ast_hash": "1d8a66a601bedf4a5ddca1533780b735",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Advanced/chapter_32_business_english.json": {
+    "mtime": 1783662934.52808,
+    "ast_hash": "0cec4e795b308e3dc214ef4a691a287a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Advanced/chapter_33_interview_english.json": {
+    "mtime": 1783662934.5297751,
+    "ast_hash": "2fc60c990528051f370a9519fe01ef22",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Advanced/chapter_34_formal_english.json": {
+    "mtime": 1783662934.535138,
+    "ast_hash": "5d58f835f5894492246b529b38eb262d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Advanced/chapter_35_academic_vocabulary.json": {
+    "mtime": 1783662934.5370014,
+    "ast_hash": "a5cf0cfb447ccd8aa89d025eb7246dc0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Advanced/chapter_36_news_vocabulary.json": {
+    "mtime": 1783662934.5378146,
+    "ast_hash": "db04ace47617cc09cffe705897b36565",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Advanced/chapter_37_debate_vocabulary.json": {
+    "mtime": 1783662934.5385163,
+    "ast_hash": "de3f35b2cb97016c502923271e957139",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Advanced/chapter_38_advanced_phrasal_verbs.json": {
+    "mtime": 1783662934.5393696,
+    "ast_hash": "55f78d7429e6f499c185e4139c35dddd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Advanced/chapter_39_advanced_idioms.json": {
+    "mtime": 1783662934.5404978,
+    "ast_hash": "4aa3f374e78aa9ed95e4d5f027e65ca0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Advanced/chapter_40_powerful_english_words.json": {
+    "mtime": 1783662934.541496,
+    "ast_hash": "677fcbae124d2abac5761aaf2cb89c24",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_01_greetings_and_introductions.json": {
+    "mtime": 1783662934.542608,
+    "ast_hash": "74d8d1dbb7672f797070db89aadeef1f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_02_family_members.json": {
+    "mtime": 1783662934.5433645,
+    "ast_hash": "69c37317a399223c9f0a2cb2c01add0a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_03_numbers.json": {
+    "mtime": 1783662934.544542,
+    "ast_hash": "9f46ad2a582867321a180777f93fbb85",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_04_colors.json": {
+    "mtime": 1783662934.5450473,
+    "ast_hash": "9ccd81fc90e3aa537be26ba313889e6e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_05_days_and_months.json": {
+    "mtime": 1783662934.5464213,
+    "ast_hash": "238b69359150c94b177a18342ff5cd46",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_06_time_and_date.json": {
+    "mtime": 1783662934.5477586,
+    "ast_hash": "bd158578772e6bfb03f2f68d268961a3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_07_body_parts.json": {
+    "mtime": 1783662934.5484948,
+    "ast_hash": "f419e94acd26528bd466636eee295a1e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_08_food_and_drinks.json": {
+    "mtime": 1783662934.5491974,
+    "ast_hash": "acb9791273216af7d5e85f66a1a5725c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_09_fruits_and_vegetables.json": {
+    "mtime": 1783662934.5498595,
+    "ast_hash": "d90f4221d53df0bdaf3a86b7dd70f58f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_10_animals_and_birds.json": {
+    "mtime": 1783662934.5506208,
+    "ast_hash": "8da7f98b48ecfcf432c72fbaa62a565e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_11_occupations.json": {
+    "mtime": 1783662934.5512471,
+    "ast_hash": "6485001d01fa49a822c98bc358533330",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_12_places.json": {
+    "mtime": 1783662934.55172,
+    "ast_hash": "38c734021a62da2dd66bda3bd960eb79",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_13_transportation.json": {
+    "mtime": 1783662934.5521948,
+    "ast_hash": "34d87c549316ca04ce821834a415172a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_14_clothing.json": {
+    "mtime": 1783662934.5527594,
+    "ast_hash": "ca071e86f1cb5e2dbfcce88984b90019",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_15_weather.json": {
+    "mtime": 1783662934.555511,
+    "ast_hash": "38b513c8b1082f911f57484476b23740",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_16_common_verbs.json": {
+    "mtime": 1783662934.5563118,
+    "ast_hash": "3615d3b0ea0c1c93ba23a931c08031e0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Beginner/chapter_17_common_adjectives.json": {
+    "mtime": 1783662934.5571697,
+    "ast_hash": "6d3f172203737acb495f198ac92799b9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_18_education.json": {
+    "mtime": 1783662934.558131,
+    "ast_hash": "96a537a4e2c635f4ccc3e428bba62d72",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_19_health.json": {
+    "mtime": 1783662934.5585873,
+    "ast_hash": "bc94065df9f23677145dce37db8de70a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_20_technology.json": {
+    "mtime": 1783662934.5589113,
+    "ast_hash": "efe76887dd73a7d781bbd1ba73381f74",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_21_office_vocabulary.json": {
+    "mtime": 1783662934.5592408,
+    "ast_hash": "a75c88ce94a7d847f6ee2f153bf401d2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_22_banking_vocabulary.json": {
+    "mtime": 1783662934.559558,
+    "ast_hash": "353f49c6ae7e4d3ec4da542ae27c3a79",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_23_shopping_vocabulary.json": {
+    "mtime": 1783662934.559875,
+    "ast_hash": "d41a43e713b9ac0821f8841fb474ca61",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_24_travel_vocabulary.json": {
+    "mtime": 1783662934.5601947,
+    "ast_hash": "e319a2da0e9bbb437b0fac1ab575fc8f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_25_communication_vocabulary.json": {
+    "mtime": 1783662934.5605893,
+    "ast_hash": "ae9138b3d59e5f7af8adfa96c41f9ddc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_26_emotions_and_feelings.json": {
+    "mtime": 1783662934.5609846,
+    "ast_hash": "db267fd4d7d2a57b3b7c8570856766b3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_27_relationships.json": {
+    "mtime": 1783662934.561323,
+    "ast_hash": "1907647b868df4c7ea5aeaad315c853e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_28_environment.json": {
+    "mtime": 1783662934.561793,
+    "ast_hash": "d42eacde60f318cc89422b6b3dc464c9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_29_social_media_vocabulary.json": {
+    "mtime": 1783662934.5622027,
+    "ast_hash": "e8ac4c3bb829913a001f207db24d26b7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_30_common_phrasal_verbs.json": {
+    "mtime": 1783662934.5626369,
+    "ast_hash": "6f1737f5055137d6c3dbdd7c9567ad81",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/Intermediate/chapter_31_everyday_idioms.json": {
+    "mtime": 1783662934.5629494,
+    "ast_hash": "2f1f10dbe0660fdaeac54ae762d95e64",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary_manifest.json": {
+    "mtime": 1783662934.5652616,
+    "ast_hash": "9ff461790d45c7ab5892d2e75f56bea5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/pdfs/student_guide.json": {
+    "mtime": 1783662934.5700824,
+    "ast_hash": "b92c7c82fc880510d07c216fc42dbe01",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/pdfs/study_routine.json": {
+    "mtime": 1783662934.5704246,
+    "ast_hash": "1370bb38660e920bcbccf8c138c5a2d0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/firebase.json": {
+    "mtime": 1784102010.3376992,
+    "ast_hash": "9cfd44d4aeb4b24cd709af3e42a6fc12",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/constants/app_colors.dart": {
+    "mtime": 1783662935.9288585,
+    "ast_hash": "bf88d079bf5446ac022381baba90785a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/constants/app_images.dart": {
+    "mtime": 1783662935.9290109,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/constants/app_strings.dart": {
+    "mtime": 1783662935.9294364,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/constants/tense_constants.dart": {
+    "mtime": 1783662935.9298868,
+    "ast_hash": "52f20ebb62e6bdb06163edfa0360bfe4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/theme/dark_theme.dart": {
+    "mtime": 1783662935.9306722,
+    "ast_hash": "210071c96d0971bbc7fc5a57a473bbe5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/theme/light_theme.dart": {
+    "mtime": 1783662935.9312224,
+    "ast_hash": "79a9244c9f2a74478ddfa0dfa04051c3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/utils/extensions.dart": {
+    "mtime": 1783662935.9316518,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/utils/grammar_text_parser.dart": {
+    "mtime": 1783662935.9323444,
+    "ast_hash": "df089f205bcf1becaab546fd1eed330c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/utils/helper.dart": {
+    "mtime": 1783662935.9325383,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/utils/validators.dart": {
+    "mtime": 1783662935.932774,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/widgets/banner_ad_widget.dart": {
+    "mtime": 1783662935.9335983,
+    "ast_hash": "3fa1aa394a71525b87cac0c996651429",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/widgets/custom_button.dart": {
+    "mtime": 1783662935.9343808,
+    "ast_hash": "28c72961376f169a00b5c2620ce7bd5f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/widgets/custom_textfield.dart": {
+    "mtime": 1783662935.9352677,
+    "ast_hash": "51801749ba2f9521f6b1515a711b78a8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/widgets/explanation_widget.dart": {
+    "mtime": 1783662935.9360993,
+    "ast_hash": "85a5d5f7d5277c333e0e05cbd84fc5af",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/widgets/feature_gate_widget.dart": {
+    "mtime": 1783662935.9365911,
+    "ast_hash": "79bb3651d93470c17679f41eb6c43da3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/widgets/game_widgets.dart": {
+    "mtime": 1783662935.9372282,
+    "ast_hash": "5b39016292cfc79ba94d863ef7c51e43",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/widgets/loading_widget.dart": {
+    "mtime": 1783662935.9380352,
+    "ast_hash": "69a3f56525b93eb5b18bba7236cefa8e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/widgets/skeleton_widget.dart": {
+    "mtime": 1783662935.938642,
+    "ast_hash": "7421f09e7a4b9d39e33701b0b92fd0ca",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/core/widgets/streak_widget.dart": {
+    "mtime": 1784102010.3421485,
+    "ast_hash": "1d1a64d45084f0b3a83ca37e0ced6acb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/repository/admin_repository.dart": {
+    "mtime": 1783662935.940712,
+    "ast_hash": "9cd704562784c7adc27d7540f1071d16",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/admin_analytics_screen.dart": {
+    "mtime": 1783662935.9423842,
+    "ast_hash": "02df463e047826a8d7b39c53f606ee34",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/admin_api_keys_screen.dart": {
+    "mtime": 1784095113.5787325,
+    "ast_hash": "d2a805a583865ff5db1632d70adbd039",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/admin_config_screen.dart": {
+    "mtime": 1784095113.5799136,
+    "ast_hash": "267e96c5049f4a74fa44994e640b511b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/admin_content_screen.dart": {
+    "mtime": 1783662935.9446425,
+    "ast_hash": "ec840360d710c8d5b6e27245993f1eb3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/admin_dashboard_screen.dart": {
+    "mtime": 1784095113.5828264,
+    "ast_hash": "0bbc3b8be227854d641930af6193860a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/admin_error_logs_screen.dart": {
+    "mtime": 1784095113.5832677,
+    "ast_hash": "1c0b5974b4902a5f519ee73112fd5c68",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/admin_feedback_screen.dart": {
+    "mtime": 1783662935.9485202,
+    "ast_hash": "953418472281235e695324d9dc1b9255",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/admin_notifications_screen.dart": {
+    "mtime": 1783662935.94946,
+    "ast_hash": "ee7cc07f7bb4bdab00ec0a8955f6152b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/admin_user_detail_screen.dart": {
+    "mtime": 1783662935.9498987,
+    "ast_hash": "bf223f6fad27a10434cb09db8897b9ea",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/force_update_screen.dart": {
+    "mtime": 1783662935.9505153,
+    "ast_hash": "328d23d3a0f841827f55db4bd0d9357a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/admin/screens/maintenance_screen.dart": {
+    "mtime": 1783662935.951387,
+    "ast_hash": "40d69bbd0def4b8499252b3bcdffa564",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/ai_teacher/screens/ai_chat_screen.dart": {
+    "mtime": 1784095113.5882163,
+    "ast_hash": "939719a17e6e67a1d5f092c9a9d020b5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/auth/screens/login_screen.dart": {
+    "mtime": 1783662935.9539318,
+    "ast_hash": "9b75f45753f1ad8ad0102611c3a7af16",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/auth/screens/signup_screen.dart": {
+    "mtime": 1783662935.9547145,
+    "ast_hash": "0836edf7e992771a9c537c742b33c801",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/auth/screens/splash_screen.dart": {
+    "mtime": 1783662935.955391,
+    "ast_hash": "c40d59a25e84a96494876c23d3e86e17",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/conversation/screens/conversation_screen.dart": {
+    "mtime": 1783662936.2640262,
+    "ast_hash": "10a6e6297b58089442b3561682f1c411",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/conversation/screens/daily_conversation_screen.dart": {
+    "mtime": 1783662936.2713249,
+    "ast_hash": "e23eaafc220fd633bc4634a98a5d1de0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/conversation/screens/interview_conversation_screen.dart": {
+    "mtime": 1783662936.2724044,
+    "ast_hash": "dd3e66edcf0e221d059a7df5020d8e6e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/conversation/screens/restaurant_conversation_screen.dart": {
+    "mtime": 1783662936.273198,
+    "ast_hash": "20c3cf9d01ee6d6fe394016269ce0bf1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/models/daily_quiz_model.dart": {
+    "mtime": 1783662936.2739766,
+    "ast_hash": "00e7265831eaf9088a0d468679e25fb1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/providers/daily_quiz_provider.dart": {
+    "mtime": 1783662936.290034,
+    "ast_hash": "d21a712b2aadb778bf2daccaab9b513d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/screens/daily_quiz_leaderboard_screen.dart": {
+    "mtime": 1783662936.290882,
+    "ast_hash": "e1d6d9c4278a9800e900042a03b0249b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/screens/daily_quiz_play_screen.dart": {
+    "mtime": 1783662936.2915769,
+    "ast_hash": "d23d0172874a7fbc72eff3f5a607c27a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/screens/daily_quiz_result_screen.dart": {
+    "mtime": 1783662936.2922857,
+    "ast_hash": "46aea97c42a86870a62bb5b5fc6d8d55",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/screens/daily_quiz_review_screen.dart": {
+    "mtime": 1783662936.2965217,
+    "ast_hash": "45c6dd573cfc5ef0043776ef4ca5ec8e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/screens/daily_quiz_screen.dart": {
+    "mtime": 1783662936.2972562,
+    "ast_hash": "412b7186f65632280bd4e9106d1ca8bb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/services/daily_quiz_leaderboard_service.dart": {
+    "mtime": 1783662936.2979238,
+    "ast_hash": "671e6d51b4b421de05bf299c6ab9720e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/services/daily_quiz_service.dart": {
+    "mtime": 1783669077.151014,
+    "ast_hash": "1ecfaf55862757d96cbc910068527301",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/widgets/fill_blanks_widget.dart": {
+    "mtime": 1783662936.298999,
+    "ast_hash": "9534f430457b6cc287f7fd2101e00ae4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/widgets/match_pairs_widget.dart": {
+    "mtime": 1783662936.2997816,
+    "ast_hash": "19042efecdcb29918aa8ce2f30477c57",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/daily_quiz/widgets/sentence_rearrange_widget.dart": {
+    "mtime": 1783662936.3001797,
+    "ast_hash": "aa83b7aa880830cded6a029c1063feb6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/feedback/screens/feedback_screen.dart": {
+    "mtime": 1783662936.3012834,
+    "ast_hash": "4725076f969ed863ddfc60ba9b31353d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/feedback/screens/my_feedback_screen.dart": {
+    "mtime": 1783662936.3023174,
+    "ast_hash": "f5dd8a276e216f87a6b1040e4284b6e3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/achievements_screen.dart": {
+    "mtime": 1783662936.3043318,
+    "ast_hash": "4d78a2f8de917247cc1e04527d87517f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/answer_review_screen.dart": {
+    "mtime": 1783662936.3050618,
+    "ast_hash": "9b0c38741dcfb02021b95a712b4b0e3a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/boss_battle_screen.dart": {
+    "mtime": 1783662936.3061,
+    "ast_hash": "a21802db26a6f12d189e0a70ec6cc691",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/category_selection_screen.dart": {
+    "mtime": 1783662936.307631,
+    "ast_hash": "aa370bfcb8abe9f101d03e224e910dab",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/daily_challenge_screen.dart": {
+    "mtime": 1783662936.3084996,
+    "ast_hash": "40dd108bc15baff8a2f75acf99a254d5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/game_home_screen.dart": {
+    "mtime": 1783662936.30985,
+    "ast_hash": "82adb5785405f698e4ffca284f857bfa",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/game_mode_selection_screen.dart": {
+    "mtime": 1783662936.3108597,
+    "ast_hash": "fd174141f327f7be228278e745352a71",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/grammar_rules_screen.dart": {
+    "mtime": 1783662936.3118126,
+    "ast_hash": "bb5b34e6b1dbe50e88a7ebf90539f1ce",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/home_screen.dart": {
+    "mtime": 1783662936.3135552,
+    "ast_hash": "e834f9148ef439a9da79a2c000fb6a05",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/leaderboard_screen.dart": {
+    "mtime": 1783662936.314259,
+    "ast_hash": "d7a75890d69ee1e24bb08bc417aa1911",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/level_selection_screen.dart": {
+    "mtime": 1783662936.315263,
+    "ast_hash": "77a4ffc697a36c4cafa24ca1f1dcb44a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/mode_game_screen.dart": {
+    "mtime": 1783662936.3159704,
+    "ast_hash": "a589ff8689d732aaddb1fb2dc6b2aee5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/mode_selection_screen.dart": {
+    "mtime": 1783662936.318724,
+    "ast_hash": "358547bc3741183ef1412b690e1df103",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/bangla_to_english_mode.dart": {
+    "mtime": 1783662936.320158,
+    "ast_hash": "55cffdb7b78f37147643a9e915466ab4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/choose_tense_mode.dart": {
+    "mtime": 1783662936.3213222,
+    "ast_hash": "fd8403dd166eab6a4a3993899318d5be",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/error_detection_mode.dart": {
+    "mtime": 1783662936.3223217,
+    "ast_hash": "4ff82212446721a155a7613d4f439b67",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/fill_blank_mode.dart": {
+    "mtime": 1783662936.3227482,
+    "ast_hash": "85653f144b5cb89740c14f39718e1456",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/fill_in_blanks_mode.dart": {
+    "mtime": 1783662936.3232446,
+    "ast_hash": "0ab3d66e5c86d64ffdee11d18790c5d1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/flashcard_mode.dart": {
+    "mtime": 1783662936.325284,
+    "ast_hash": "fdd105d32b32f68fdf3cebf640e8be2b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/grammar_detective_mode.dart": {
+    "mtime": 1783662936.3263905,
+    "ast_hash": "6619c82b54c711e0dc6b49f06cf9d6b8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/quick_quiz_mode.dart": {
+    "mtime": 1783662936.3281267,
+    "ast_hash": "7ee8edc501ecf3e1ae004fe98f5a9dda",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/sentence_builder_mode.dart": {
+    "mtime": 1783662936.328947,
+    "ast_hash": "5142cad8b8440ed529c38aebdf828798",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/speed_quiz_mode.dart": {
+    "mtime": 1783662936.3295257,
+    "ast_hash": "a51c20164f56ea3e0dfd0ad3e5451f7a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/story_completion_mode.dart": {
+    "mtime": 1783662936.3299594,
+    "ast_hash": "281487062f7d0c7be841e9b240c8b816",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/translation_challenge_mode.dart": {
+    "mtime": 1783662936.416616,
+    "ast_hash": "e903714debfa4622d0c9f6a90dd33408",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/verb_learning_mode.dart": {
+    "mtime": 1783662936.440788,
+    "ast_hash": "9b9f3e70c0c05b5047762fc7fb07e289",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/modes/word_match_mode.dart": {
+    "mtime": 1783662936.4422956,
+    "ast_hash": "88cd69d4df0420c12b19fb0e5c6230b6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/question_screen.dart": {
+    "mtime": 1783662936.4428887,
+    "ast_hash": "90979ab215eeba66d6c633fb10c8ef07",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/result_screen.dart": {
+    "mtime": 1783662936.4439855,
+    "ast_hash": "35f8d6d1826df0329ae2eabcc2cab935",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/settings_screen.dart": {
+    "mtime": 1783662936.4481413,
+    "ast_hash": "ee7634dae1f2996094b88217be5e4d3f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/statistics_screen.dart": {
+    "mtime": 1783662936.5058405,
+    "ast_hash": "2127486936f7d8a8a04b35a0e9a5f303",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/screens/tense_categories_screen.dart": {
+    "mtime": 1783662936.5160332,
+    "ast_hash": "db56fa003ddbfa8a79f3974d499e04c0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/game/widgets/achievement_unlock_overlay.dart": {
+    "mtime": 1783662936.520693,
+    "ast_hash": "e043a9ec22fb87e7a475af264fcf3d41",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/grammar/screens/article_screen.dart": {
+    "mtime": 1783662936.5224044,
+    "ast_hash": "aaa202abd64253a63371a9ab7ff38a84",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/grammar/screens/grammar_detail_screen.dart": {
+    "mtime": 1783662936.5249422,
+    "ast_hash": "6abc15a0015410786e99f90c2b0d796b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/grammar/screens/grammar_list_screen.dart": {
+    "mtime": 1783662936.5255458,
+    "ast_hash": "844d2f5c1cef56dc0b5b17d9344216dc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/grammar/screens/grammar_master_screen.dart": {
+    "mtime": 1783662936.526408,
+    "ast_hash": "38f39c965f794ac557ecf956c3795ed5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/grammar/screens/grammar_test_list_screen.dart": {
+    "mtime": 1783662936.535265,
+    "ast_hash": "8556458b798bba73b81510627393f3c8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/grammar/screens/grammar_test_screen.dart": {
+    "mtime": 1783662936.5362694,
+    "ast_hash": "35b3292e2335d4e865f767975e6a5738",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/grammar/screens/preposition_screen.dart": {
+    "mtime": 1783662936.53675,
+    "ast_hash": "b00d3804c52fdc3229301c2fe2243989",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/grammar/screens/tense_screen.dart": {
+    "mtime": 1783662936.5374575,
+    "ast_hash": "3c4cd2f4e747351e7dfa9fc66e62e1e2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/guides/models/guide_model.dart": {
+    "mtime": 1783662936.5557075,
+    "ast_hash": "0f14e1aca0322ada40839dfce468da4e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/guides/screens/guides_screen.dart": {
+    "mtime": 1783662936.5791905,
+    "ast_hash": "7b865b13c215af492cfde5d77de64cdd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/guides/services/guide_service.dart": {
+    "mtime": 1783662936.5805745,
+    "ast_hash": "6e1e2db1410aca4982d4c69e0658d4d2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/home/screens/home_screen.dart": {
+    "mtime": 1784095113.6886106,
+    "ast_hash": "03be7f3da8138e539963bc99c66c1a42",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/home/screens/main_navigation_screen.dart": {
+    "mtime": 1783662936.710182,
+    "ast_hash": "b3dd4ad92728cfc14b7896d1faee1f19",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/home/widgets/mini_leaderboard_widget.dart": {
+    "mtime": 1783662936.7106621,
+    "ast_hash": "6654c66dc635f4d842b420137ceeb485",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/home/widgets/notification_dialog.dart": {
+    "mtime": 1783662936.7110505,
+    "ast_hash": "59cafb00b3e588184266ec3149b65f7b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/home/widgets/notification_history_screen.dart": {
+    "mtime": 1783662936.7130392,
+    "ast_hash": "f01dcfe1fbf77f9ca335f4154e7ff9bb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/home/widgets/notification_router.dart": {
+    "mtime": 1783662936.7134624,
+    "ast_hash": "17004c9294592da12c14dcefd637c0af",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/home/widgets/spoken_rules_screen.dart": {
+    "mtime": 1783662936.7139342,
+    "ast_hash": "b52a6547e363b63bb933ecfaa1fd3f88",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/home/widgets/study_plan_section.dart": {
+    "mtime": 1783662936.71448,
+    "ast_hash": "e106ae810fa77f13c92fd7cef21007ec",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/homework/models/homework_model.dart": {
+    "mtime": 1783662936.7152119,
+    "ast_hash": "e459807b6ec82436b4a60700ae5d0a55",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/homework/screens/homework_history_screen.dart": {
+    "mtime": 1783662936.715704,
+    "ast_hash": "320a81d247f03843863cf013176d864d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/homework/screens/homework_screen.dart": {
+    "mtime": 1783662936.716277,
+    "ast_hash": "17f9b0c5211d10bf8ab7c2996ee68fee",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/intro/screens/intro_screen.dart": {
+    "mtime": 1783662936.716961,
+    "ast_hash": "94654d5e8e0ceefd634ecb55490954e8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/learning/screens/learning_screen.dart": {
+    "mtime": 1783662936.7175353,
+    "ast_hash": "8515d7df31fb33606b3a925a2d860e4b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/lessons/screens/lesson_detail_screen.dart": {
+    "mtime": 1783662936.7194505,
+    "ast_hash": "1bc9e7e674f481a2d339a4f3a2b421ee",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/lessons/screens/lesson_list_screen.dart": {
+    "mtime": 1783662936.7202413,
+    "ast_hash": "7983f75398ba05b8d23b627ab64f7258",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/listening/screens/listening_screen.dart": {
+    "mtime": 1783662936.721031,
+    "ast_hash": "20dd428754aadb82fbe290d7e6cff1ae",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/mock_test/screens/mock_test_list_screen.dart": {
+    "mtime": 1783662936.7217383,
+    "ast_hash": "8f3c98f72934ef94071255798b3e5285",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/mock_test/screens/mock_test_quiz_screen.dart": {
+    "mtime": 1783662936.7220638,
+    "ast_hash": "723178300658ec99b4d7b4dbdd5e2fa5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/mock_test/screens/mock_test_result_screen.dart": {
+    "mtime": 1783662936.7225447,
+    "ast_hash": "c5daf4c7fde7cc7c80f98b9a4dec2196",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/mock_test/widgets/mock_test_unlock_overlay.dart": {
+    "mtime": 1783662936.7229898,
+    "ast_hash": "b340d7d30c4983820b93493772d23f67",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/mock_test/widgets/question_palette_bottom_sheet.dart": {
+    "mtime": 1783662936.7234013,
+    "ast_hash": "77d0455b5941f89d5d6f31ca8d52c351",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/practice/screens/bangla_english_practice_screen.dart": {
+    "mtime": 1783662936.7240124,
+    "ast_hash": "1489d10e6db3c36ad6ac0ceaccda828e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/practice/screens/practice_screen.dart": {
+    "mtime": 1783662936.724402,
+    "ast_hash": "192f15334ff0efa5e041aef292edd44a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/profile/screens/edit_profile_screen.dart": {
+    "mtime": 1783662936.7265058,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/profile/screens/profile_screen.dart": {
+    "mtime": 1783662936.727441,
+    "ast_hash": "6f784da95e5fbb296ff69f7f06769a61",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/quiz/screens/quiz_screen.dart": {
+    "mtime": 1783662936.7286804,
+    "ast_hash": "85472abcb3e049156f4f259b2878161d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/quiz/screens/result_screen.dart": {
+    "mtime": 1783662936.7291539,
+    "ast_hash": "fe9e09240e95779b4d89f54499a13976",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/sentence_analyzer/models/sentence_analysis_model.dart": {
+    "mtime": 1783662936.729698,
+    "ast_hash": "c06c41b9ae98d7c078e350c4a2f0e165",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/sentence_analyzer/screens/sentence_analysis_history_screen.dart": {
+    "mtime": 1783662936.7302582,
+    "ast_hash": "07cf22d4b104f5e555ec6992842faba6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/sentence_analyzer/screens/sentence_analyzer_screen.dart": {
+    "mtime": 1783662936.7307026,
+    "ast_hash": "7add3ff3fae86c12184cbbd883da57bb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/settings/screens/api_setup_guide_screen.dart": {
+    "mtime": 1783662936.7332604,
+    "ast_hash": "4079c4285f2f0a17cf5c697a9a684caa",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/settings/screens/privacy_security_screen.dart": {
+    "mtime": 1783662936.7337558,
+    "ast_hash": "42fc984e95fb9aa405a666dce72779c9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/settings/screens/settings_screen.dart": {
+    "mtime": 1784095113.5940063,
+    "ast_hash": "552a2e5cf3ccc8043899155cd853f30a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/speaking/screens/pronunciation_screen.dart": {
+    "mtime": 1783662936.7380347,
+    "ast_hash": "59fbc327eb2e0acc1ae0f4e9694f7e0d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/speaking/screens/speaking_screen.dart": {
+    "mtime": 1783662936.7385397,
+    "ast_hash": "a1d0e3a1fb27d1023795d6b8c63cc645",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/translator/screens/banglish_translator_screen.dart": {
+    "mtime": 1783662936.7392592,
+    "ast_hash": "303fa2184bc6dff82e09775bfebaef4d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/verb_forms/screens/verb_form_list_screen.dart": {
+    "mtime": 1783662936.7412822,
+    "ast_hash": "6232912e10c7171909c2600682084380",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/verb_forms/screens/verb_form_practice_screen.dart": {
+    "mtime": 1783662936.7429774,
+    "ast_hash": "0fff3c2ea1760662c27ca877392425a9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/verb_forms/screens/verb_forms_guide_screen.dart": {
+    "mtime": 1783662936.7438266,
+    "ast_hash": "c15bc91587cd91d050af2f5e65c25bca",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/verb_forms/screens/verb_forms_screen.dart": {
+    "mtime": 1783662936.744384,
+    "ast_hash": "5a8f185e627e338151131d1fc6229033",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/vocabulary/screens/chapter_words_screen.dart": {
+    "mtime": 1783662936.7460856,
+    "ast_hash": "27fed05ed88d2980efaee5e0e2845dd8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/vocabulary/screens/vocabulary_screen.dart": {
+    "mtime": 1783662936.7469828,
+    "ast_hash": "dbe3711a88842942e333f4a7fe6f9dab",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/vocabulary/screens/vocabulary_test_screen.dart": {
+    "mtime": 1783662936.7479172,
+    "ast_hash": "9c5aa51f39a12b8276e61b198e0a888b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/features/vocabulary/screens/word_details_screen.dart": {
+    "mtime": 1783662936.749971,
+    "ast_hash": "7f19eaad52d1c2f22940747cf14771bb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/firebase_options.dart": {
+    "mtime": 1784095113.5945268,
+    "ast_hash": "0de2beaffa30ab4aa6b33d707d725f08",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/main.dart": {
+    "mtime": 1784095113.5952744,
+    "ast_hash": "366215715d6db4b2435f450392fc5886",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/admin_api_key.dart": {
+    "mtime": 1784095113.5955913,
+    "ast_hash": "a84289151ef2308d70bcdcb9af9478e7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/api_error_log.dart": {
+    "mtime": 1784095113.5958667,
+    "ast_hash": "c7b104c8ee22cf4267ea5e389a234cb5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/bangla_english_model.dart": {
+    "mtime": 1783662936.7515388,
+    "ast_hash": "0438701a6648440652e766ac65a5fd7c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/config/app_config_model.dart": {
+    "mtime": 1784095113.5971854,
+    "ast_hash": "ac4ed060248e2540e083969b29b7f41a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/conversation_model.dart": {
+    "mtime": 1783662936.752728,
+    "ast_hash": "c0451d3bbb9ac1cd6dd8ecea9af1cd57",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/feedback_model.dart": {
+    "mtime": 1783662936.7532368,
+    "ast_hash": "7154937d191509f38c1264047abf923d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/game/achievement_model.dart": {
+    "mtime": 1783662936.754325,
+    "ast_hash": "c22cd29a724af08ce6ca321a527c5afb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/game/game_level_model.dart": {
+    "mtime": 1783662936.7558653,
+    "ast_hash": "2fefc182c5c7302d2cb0498d124d9467",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/game/game_progress_model.dart": {
+    "mtime": 1783662936.7570097,
+    "ast_hash": "b0db7ca326e1b92bc997871a82c9d5c5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/game/game_question_model.dart": {
+    "mtime": 1783662936.758182,
+    "ast_hash": "fef0496af25987c403c83e8c996f04f1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/game/game_result_model.dart": {
+    "mtime": 1783662936.759191,
+    "ast_hash": "84d7735994c02f9f972536824077b011",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/game/level_model.dart": {
+    "mtime": 1783662936.7601082,
+    "ast_hash": "9c86f588a11a5e37ae1931695d11a3aa",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/game/wrong_question_model.dart": {
+    "mtime": 1783662936.7613635,
+    "ast_hash": "c1a32b6911be1e89584fa9662df52365",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/grammar_chapter_model.dart": {
+    "mtime": 1783662936.7625344,
+    "ast_hash": "8d3a7b87babc2b3e9fcb802006cabcf5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/lesson_model.dart": {
+    "mtime": 1783662936.7629223,
+    "ast_hash": "073737c8e49aedb6f295dbb327f0f4a2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/listening_model.dart": {
+    "mtime": 1783662936.7634225,
+    "ast_hash": "705973d57aec360251c2bab208a54833",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/mock_test_model.dart": {
+    "mtime": 1783662936.763908,
+    "ast_hash": "173a80aa06ae7ce518348253a05f4df2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/notification_history_model.dart": {
+    "mtime": 1783662936.7647028,
+    "ast_hash": "e588333ae24261de1ec8af1c9aeeb78b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/progress_model.dart": {
+    "mtime": 1783662936.765643,
+    "ast_hash": "c4b327f940fb5180abee2cfdb6da895e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/quiz_model.dart": {
+    "mtime": 1783662936.7664084,
+    "ast_hash": "0dc91f6775392f00861a3f0da97f254d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/spoken_rule_model.dart": {
+    "mtime": 1783662936.7667909,
+    "ast_hash": "c96ba9d19d5b8847977bbcae33dba7ac",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/todo_item.dart": {
+    "mtime": 1783662936.7680497,
+    "ast_hash": "4d2528b598012052ec64769dbb0718a6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/user_model.dart": {
+    "mtime": 1783662936.7689013,
+    "ast_hash": "20a302cc07733f971e8cacda7116fb6e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/verb_form_model.dart": {
+    "mtime": 1783662936.7694924,
+    "ast_hash": "0e38c446f4a4dd2fa090c85fe56a5984",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/vocabulary_chapter_model.dart": {
+    "mtime": 1783662936.7699645,
+    "ast_hash": "080621797326d11f54c3f4dbe84f15ba",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/models/vocabulary_model.dart": {
+    "mtime": 1783662936.770468,
+    "ast_hash": "b525430ae78cf437e5baf92640fb31ee",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/auth_provider.dart": {
+    "mtime": 1783662936.7714055,
+    "ast_hash": "9f33ef2f9235147bbc21ccfa1c9c5b50",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/chapter_vocabulary_provider.dart": {
+    "mtime": 1784095113.6902554,
+    "ast_hash": "afbe32ee97bdc1701dc89a3e783f40a9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/achievement_provider.dart": {
+    "mtime": 1783662936.7730885,
+    "ast_hash": "c0ff269f62300a701dcf9787b71b5a51",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/coin_provider.dart": {
+    "mtime": 1783662936.7738328,
+    "ast_hash": "1ab95734adadf720f7cceb4f724b7bd1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/game_provider.dart": {
+    "mtime": 1783662936.7744918,
+    "ast_hash": "9cfb9622c72ae9100c31eaac434cc555",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/leaderboard_provider.dart": {
+    "mtime": 1783662936.7758617,
+    "ast_hash": "684230abe6ee1441c7c249250931e5a1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/score_provider.dart": {
+    "mtime": 1783662936.7764876,
+    "ast_hash": "f5364d3cac6aaa35af783b713e6ce768",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/sound_provider.dart": {
+    "mtime": 1783662936.7770894,
+    "ast_hash": "8093a8453a8fa787bea199306f16b42f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/statistics_provider.dart": {
+    "mtime": 1783662936.7778592,
+    "ast_hash": "c63bedb45881c17c7f05cdc1fa6fa60d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/streak_provider.dart": {
+    "mtime": 1783662936.7784293,
+    "ast_hash": "88ab8206b5ffb928fbd63d32687076f1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/timer_provider.dart": {
+    "mtime": 1783662936.7790735,
+    "ast_hash": "bb0cb4141d0cd5246142cb84caa30f6a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/tts_provider.dart": {
+    "mtime": 1783662936.779849,
+    "ast_hash": "36f92bf65f2dbf9b886b1fc5225adf63",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/game/xp_provider.dart": {
+    "mtime": 1783662936.7804036,
+    "ast_hash": "4cd60f7a13ec068502cbd2dcdef9aa8c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/grammar_provider.dart": {
+    "mtime": 1783662936.780972,
+    "ast_hash": "e07e5121520f6892742f70f7b60b2817",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/last_opened_chapter_provider.dart": {
+    "mtime": 1783662936.7821138,
+    "ast_hash": "e678768a8dbd9389c0e5dc178245cbbe",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/lesson_provider.dart": {
+    "mtime": 1783662936.7825513,
+    "ast_hash": "f627d6795dd4ce17bd7a7404cdbac8ca",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/mock_test_provider.dart": {
+    "mtime": 1783662936.783069,
+    "ast_hash": "7f7bbd2349f4d07d207e9d388f6ee92f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/notification_provider.dart": {
+    "mtime": 1783662936.7834384,
+    "ast_hash": "611df218495d993c327f9335bd5afa0f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/progress_provider.dart": {
+    "mtime": 1783662936.7843006,
+    "ast_hash": "0a95056eb6a0397203059acf4c9e76b8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/quiz_provider.dart": {
+    "mtime": 1783662936.7848372,
+    "ast_hash": "96670ef945427ca9df403e02268eed48",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/theme_provider.dart": {
+    "mtime": 1783662936.7854123,
+    "ast_hash": "d7bd52c0e2fa489b8554a02691f3aaeb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/todo_list_provider.dart": {
+    "mtime": 1783662936.7875037,
+    "ast_hash": "45eb44b893bd6742b5c255712ab7569b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/vocab_progress_provider.dart": {
+    "mtime": 1783662936.7879877,
+    "ast_hash": "cb6ec89d952bbe50cc30cf2434f7852a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/providers/vocabulary_provider.dart": {
+    "mtime": 1783662936.7882586,
+    "ast_hash": "20313a79055878eb8edf2cf15400207a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/repositories/achievement_repository.dart": {
+    "mtime": 1783662936.7899446,
+    "ast_hash": "238d646f2b2f2c49b1b6db471b510af3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/repositories/game_repository.dart": {
+    "mtime": 1783662936.7905302,
+    "ast_hash": "2051881b06063dd9de017d1cca591116",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/repositories/leaderboard_repository.dart": {
+    "mtime": 1783662936.791371,
+    "ast_hash": "1169663c4cade40df7abab423379a4fd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/repositories/mock_test_repository.dart": {
+    "mtime": 1783662936.7922516,
+    "ast_hash": "e47f970c17a2989a16496fee3700430c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/repositories/progress_repository.dart": {
+    "mtime": 1783662936.7928877,
+    "ast_hash": "8e69148aaf406e327de9798fb116f310",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/repositories/statistics_repository.dart": {
+    "mtime": 1783662936.793401,
+    "ast_hash": "70675f04d75c8ea28b4b5c8e4e75bc8a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/repositories/wrong_question_repository.dart": {
+    "mtime": 1783662936.7940905,
+    "ast_hash": "853e22aaecd476eb957f7aa159bb42e4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/routes/app_routes.dart": {
+    "mtime": 1783662936.7950535,
+    "ast_hash": "28f9e5d25cdeddda02959163369f9b5b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/routes/route_names.dart": {
+    "mtime": 1783662936.7958262,
+    "ast_hash": "3f90a2091a2cf7b3ea5d3bcdbf5c65a7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/achievement_service.dart": {
+    "mtime": 1783662936.7968583,
+    "ast_hash": "6811ca6c83207ef49af02ffcaabcc87b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/ad_service.dart": {
+    "mtime": 1783662936.7981215,
+    "ast_hash": "2560a36b1bd840b4bc5664e1d19217ba",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/ai_service.dart": {
+    "mtime": 1784095113.6027164,
+    "ast_hash": "33f8d6256795067f404da72f6b8cdee7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/analytics_service.dart": {
+    "mtime": 1783662936.7997973,
+    "ast_hash": "f747dd710ffedf23d3e83de677a7dddd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/api_key_manager.dart": {
+    "mtime": 1784095113.6031008,
+    "ast_hash": "4a65981186185e53b50f95b6c9d1c9cd",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/coin_service.dart": {
+    "mtime": 1783662936.8001845,
+    "ast_hash": "cfcc893656b7d1192a4b35eaaa0891ab",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/daily_word_service.dart": {
+    "mtime": 1783662936.8007557,
+    "ast_hash": "fc33d9ab8dad961eaf4d54881140c17f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/firebase_service.dart": {
+    "mtime": 1783662936.8009207,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/game_data_sync_service.dart": {
+    "mtime": 1783662936.8012035,
+    "ast_hash": "58cb457f75cdd1bcbe72a3b365493acc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/game_mode_service.dart": {
+    "mtime": 1783662936.8017056,
+    "ast_hash": "c6db2b9943b0d045c17bfb84b40a9000",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/game_service.dart": {
+    "mtime": 1783662936.8028476,
+    "ast_hash": "c876ac2eef1348e7f7e1804534e6b63c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/hive_service.dart": {
+    "mtime": 1784095113.6069393,
+    "ast_hash": "a269950a7f7dbd7fe0f54b689e1fcd22",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/notification_service.dart": {
+    "mtime": 1783662936.8058646,
+    "ast_hash": "a2a9f78936d36d650867487625605bf5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/onesignal_service.dart": {
+    "mtime": 1783662936.8068452,
+    "ast_hash": "9c02692d10a1a5ae06e79f9c252e4335",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/re_engagement_service.dart": {
+    "mtime": 1783662936.8075473,
+    "ast_hash": "f9e7184c014382afdbd39ccd058d4747",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/referral_service.dart": {
+    "mtime": 1783662936.808147,
+    "ast_hash": "363c6f26f1ed99ac95ae09c74838f0fc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/remote_config_service.dart": {
+    "mtime": 1783662936.8086443,
+    "ast_hash": "0da0492d2b09d54e9830ab7d93f9bae2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/share_service.dart": {
+    "mtime": 1784095113.6079252,
+    "ast_hash": "3f793a752e251722207c273fa717f8d9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/sound_service.dart": {
+    "mtime": 1783662936.8098085,
+    "ast_hash": "7a7c4932042bb90f85972a575ad47a52",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/speech_service.dart": {
+    "mtime": 1783662936.8104491,
+    "ast_hash": "8e1c6dfd9765781ed4b91afee67f9217",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/statistics_service.dart": {
+    "mtime": 1783662936.811656,
+    "ast_hash": "abd2bcf01c197a3caa8dc58bb06ab3fc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/streak_service.dart": {
+    "mtime": 1783662936.8131816,
+    "ast_hash": "ccab47298a243927531f137db949c8d8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/timer_service.dart": {
+    "mtime": 1783662936.814612,
+    "ast_hash": "21624a0dcdb906619386073d6e450be4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/tts_service.dart": {
+    "mtime": 1783662936.8152153,
+    "ast_hash": "e121ddd5c73c279aa43d7094eb6b6b97",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/vocab_remote_service.dart": {
+    "mtime": 1784095113.6911383,
+    "ast_hash": "3105332e2b6cc7d0f4f88c575a0cd527",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/workmanager_tasks.dart": {
+    "mtime": 1783662936.8166263,
+    "ast_hash": "79dfed382e972c8791ee644a992e9fc7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/xp_service.dart": {
+    "mtime": 1783662936.8172147,
+    "ast_hash": "9e84339041b12a18610d034088e51537",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/utils/grammar_quiz_generator.dart": {
+    "mtime": 1783662936.8179803,
+    "ast_hash": "8c4042b3c65bd82e0534ef774b5fb03f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/utils/hive_safe.dart": {
+    "mtime": 1783662936.819094,
+    "ast_hash": "ae2d48d47907d66f4272c503642cb790",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/test/features/daily_quiz/models/daily_quiz_model_test.dart": {
+    "mtime": 1783662937.4600954,
+    "ast_hash": "2aa291e79fd7d12ef983c9c7310fa109",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/test/features/daily_quiz/providers/daily_quiz_provider_test.dart": {
+    "mtime": 1783662937.4607239,
+    "ast_hash": "65da340c83d24471ff7361b5c263713c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/test/features/daily_quiz/services/daily_quiz_service_test.dart": {
+    "mtime": 1783662937.4612372,
+    "ast_hash": "061a7cc8f97cf1fc62e066a727f455fa",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/test/last_opened_chapter_provider_test.dart": {
+    "mtime": 1783662937.4633148,
+    "ast_hash": "03caea9d8882ac19dff41e84d3ece82b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/test/widget_test.dart": {
+    "mtime": 1783662937.4802039,
+    "ast_hash": "4e341d2b190de675d262a864137f3bde",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/admin_api_keys_screen.dart": {
+    "mtime": 1784057076.0153406,
+    "ast_hash": "d2a805a583865ff5db1632d70adbd039",
+    "semantic_hash": ""
+  },
+  "lib/features/admin/screens/admin_error_logs_screen.dart": {
+    "mtime": 1784047829.3715527,
+    "ast_hash": "1c0b5974b4902a5f519ee73112fd5c68",
+    "semantic_hash": ""
+  },
+  "lib/models/admin_api_key.dart": {
+    "mtime": 1784047829.3890114,
+    "ast_hash": "a84289151ef2308d70bcdcb9af9478e7",
+    "semantic_hash": ""
+  },
+  "lib/models/api_error_log.dart": {
+    "mtime": 1784047829.3898327,
+    "ast_hash": "c7b104c8ee22cf4267ea5e389a234cb5",
+    "semantic_hash": ""
+  },
+  "lib/services/api_key_manager.dart": {
+    "mtime": 1784053954.7763004,
+    "ast_hash": "4a65981186185e53b50f95b6c9d1c9cd",
+    "semantic_hash": ""
+  },
+  "lib/services/translation_service.dart": {
+    "mtime": 1784105534.5579293,
+    "ast_hash": "da949020d19d9b6700b2fd515dbe0557",
+    "semantic_hash": ""
+  },
+  ".craft/AGENTS.md": {
+    "mtime": 1783926153.5565262,
+    "ast_hash": "fedc4ffc5d1802d1f2759fb83f2263ed",
+    "semantic_hash": ""
+  },
+  ".craft/commands/code-review.md": {
+    "mtime": 1783926158.7725294,
+    "ast_hash": "40e793d952ffc2a9e3a0ffb27d402fe6",
+    "semantic_hash": ""
+  },
+  ".craft/commands/create-hooks.md": {
+    "mtime": 1783926158.7728803,
+    "ast_hash": "11f6f60e5de206e145c20b08d1b59e66",
+    "semantic_hash": ""
+  },
+  ".craft/commands/explain.md": {
+    "mtime": 1783926158.7731485,
+    "ast_hash": "004ab8495906babfde5c450b2b359571",
+    "semantic_hash": ""
+  },
+  ".craft/commands/summarize.md": {
+    "mtime": 1783926158.7734084,
+    "ast_hash": "dc427c86ab77011b3e2f9d03c49cfcfb",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/browser/docs/capabilities/browser/viewport.md": {
+    "mtime": 1783785007.0,
+    "ast_hash": "3ad0eabc5a558818fea0ae6e94717992",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/browser/docs/capabilities/browser/visibility.md": {
+    "mtime": 1783785007.0,
+    "ast_hash": "6b0191ebe513b315df4b9acb0c95b284",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/browser/docs/capabilities/tab/pageAssets.md": {
+    "mtime": 1783785007.0,
+    "ast_hash": "ed74e911c5352d8400a5136411e78192",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/browser/docs/capabilities/tab/webmcp.md": {
+    "mtime": 1783785007.0,
+    "ast_hash": "0208af1014a0ec3d27731bf058c5250c",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/browser/skills/browser/SKILL.md": {
+    "mtime": 1783785007.0,
+    "ast_hash": "989b7c8f1d83edf46acd1e87b7430364",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/browser/skills/browser/agents/openai.yaml": {
+    "mtime": 1783785007.0,
+    "ast_hash": "ab21755ebd0675a496ff5a4cd34ac1e4",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/dev-guide/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "ce4f4418951b4c677fd62830498f2e5a",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/dev-guide/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "fd284afc2c71abbd760451b8f1690b54",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/docs-guide/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "4ab7a3e551630c6022f9dff586fa76b5",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/docs-guide/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "741fbb78cd73701c011efddb38c3d639",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/docs-guide/references/page-templates.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "62e18f2f48bc9b97ab2aa51315773642",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/docs-guide/references/project-profile.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "881b94dba2809a6e322460c55f8354d9",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/docs-guide/references/style-and-mechanics.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "97ace938b1fa378bf187276d25aabe1f",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/feature-workflow/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "1dc9c80ba63516cbb8cbecd5e1663485",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/feature-workflow/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "01a152362d7ebfb142cf30862fe7b36a",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/release-draft/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "e947860bcf6c95b8389adc21f1aae4f7",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/release-draft/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "279b467977cc7e2d54f3ef276f49b5c6",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/svg-design/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "e68f929a4502493fba892016b3821e60",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/svg-design/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "ee5f1c69398db3a418486a5395c400b7",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/svg-design/references/svg_design_checklist.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "469a1bdc55c08579b8aa9a70ee2fb057",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/ui-prototype/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "a3b5b36e685767b93ef3ff03c4c905df",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/skills/ui-prototype/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "ba66a232f50207e2bf4b2152857e05c7",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-doctor/README.md": {
+    "mtime": 1783785007.0,
+    "ast_hash": "b78eb1f98d19304645950432b4144266",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-doctor/README_ZH.md": {
+    "mtime": 1783785007.0,
+    "ast_hash": "df677f4e75f792bc8ce80bff6ad9e691",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-doctor/skills/context-handoff/SKILL.md": {
+    "mtime": 1783785007.0,
+    "ast_hash": "af8e15694dfa25aae1073219c903de50",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-doctor/skills/context-handoff/agents/openai.yaml": {
+    "mtime": 1783785007.0,
+    "ast_hash": "bea87782d38adac654ad1288987daaba",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-doctor/skills/error-diagnosis/SKILL.md": {
+    "mtime": 1783785007.0,
+    "ast_hash": "2dd08fbfee1debce13c620642928b80c",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-doctor/skills/error-diagnosis/agents/openai.yaml": {
+    "mtime": 1783785007.0,
+    "ast_hash": "305e75d7a05d6a6a9b3834859bae40de",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-doctor/skills/report-issue/SKILL.md": {
+    "mtime": 1783785007.0,
+    "ast_hash": "10bacfb04024625bdd551702bbf83f17",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-doctor/skills/report-issue/agents/openai.yaml": {
+    "mtime": 1783785007.0,
+    "ast_hash": "db75899220de4ee27f27a4170776ad9f",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/frontend-design/skills/frontend-design/LICENSE.txt": {
+    "mtime": 1783138776.0,
+    "ast_hash": "3b83ef96387f14655fc854ddc3c6bd57",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/frontend-design/skills/frontend-design/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "5c392562ec1cf5ffa6b9d2319375373f",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/github/README.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "6b792872e902b7b077c42579b1d9556b",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/README.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "9d94ccb27e885108da9b3c888c854e8f",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-brainstorming/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "61aa240c88dfd4c34d10c59f4259a1cc",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-brainstorming/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "a1c6d078aedbdbad2c26fe3e4cdf64e1",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-brainstorming/spec-document-reviewer-prompt.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "ea74c0f2369ae553c62f36af4ed3d424",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-brainstorming/visual-companion.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "45a3f283e3f90895fe79bb899bbe5e1f",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-dispatching-parallel-agents/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "339e89dd64e61a77a07be6aded58f372",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-dispatching-parallel-agents/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "929f50ebd34c0e3df1264ee48d38b99b",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-executing-plans/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "f755052c80cb8995fff2526f7ed87abb",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-executing-plans/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "cccff160bdbe58991bb8e67857a5cfec",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-finishing-a-development-branch/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "1890955017178b2963b69d8530a1279a",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-finishing-a-development-branch/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "f7be0ea01a5798bd52ebf5a86dfe47e3",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-receiving-code-review/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "e3e4a752503899e1d3ef5abd2ee520eb",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-receiving-code-review/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "919699e4a703bd7666344f1112c1b123",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-requesting-code-review/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "f63387bb929b7023bbbf29e6b4ddb956",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-requesting-code-review/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "fcea335e4170490ff541bb62db18db6f",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-requesting-code-review/code-reviewer.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "11211d21337d0c498660f51edff7323b",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-subagent-driven-development/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "099e29bda77cfdc16d3c1cb39b9523b5",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-subagent-driven-development/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "fed83db34b5b4411f232d6b822845d7e",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-subagent-driven-development/code-quality-reviewer-prompt.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "fc5e2ea930681d4228debaa3714f6ea0",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-subagent-driven-development/implementer-prompt.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "b856c2076801a91854adf094a907de9c",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-subagent-driven-development/spec-reviewer-prompt.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "ecc20717d0b31a9013ba732f366eba8f",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "37de54dfd8b34c63c79cb21d9ff8e596",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "4ba12fcb2e166ecc0356e73d3a47adcb",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/condition-based-waiting.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "c64d669f2490aa489c514304c9ad46d3",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/defense-in-depth.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "002a0c9e8bee8fc29f85d7a434916977",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/root-cause-tracing.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "7e96b2fe346c89d4f2300341529178cc",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/test-academic.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "272ab1d95e755a7ff9479d547168eef9",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/test-pressure-1.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "3d8805e8946e3889d4de0e906af66c47",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/test-pressure-2.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "237f40dfd0b48af48d239ab3af499f7b",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-systematic-debugging/test-pressure-3.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "42ea1bd281ca8d837f5dd45143762b95",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-test-driven-development/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "a2deb542b8591bbf3ea80b477d16d0f3",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-test-driven-development/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "668d4c0a351f5703cc22a3d5a4ac0171",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-test-driven-development/testing-anti-patterns.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "f4373033bf29f06897cd63c994deb2a7",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-using-git-worktrees/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "2222245bd4f7afe08a04571375eff1ad",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-using-git-worktrees/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "3a358fe24fa2fa20da3772370a9908ce",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-using-superpowers/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "46252895e572ee792d66fa688ee47e33",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-using-superpowers/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "2c5b114b9263dab29b95b7ef9e523c1a",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-verification-before-completion/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "37fbedea81d01e8788bc0c854179579d",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-verification-before-completion/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "5c0e285e8c792800dd065d7a43aed638",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-writing-plans/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "93d0fbe31793694e6c4770c8e2de5cba",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-writing-plans/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "5f8078ac1a0a0fdb5ba385f22b72d653",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-writing-plans/plan-document-reviewer-prompt.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "dcad0192c2c468107951d7dcb47246a9",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-writing-skills/SKILL.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "f4d13bb51eca876316c09f1dfe6c98ca",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-writing-skills/agents/openai.yaml": {
+    "mtime": 1783138776.0,
+    "ast_hash": "ba3db566d426875c3c59396c68991ca8",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-writing-skills/persuasion-principles.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "e95b206b971fc628c03892d503edf48a",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/skills/superpowers-writing-skills/testing-skills-with-subagents.md": {
+    "mtime": 1783138776.0,
+    "ast_hash": "8f766bddbe967ee846cf651f55644086",
+    "semantic_hash": ""
+  },
+  ".craft/skills/create-hooks/SKILL.md": {
+    "mtime": 1783926158.144958,
+    "ast_hash": "402031939010d5ddfee8032d751c3b98",
+    "semantic_hash": ""
+  },
+  ".craft/skills/create-hooks/agents/openai.yaml": {
+    "mtime": 1783926158.143879,
+    "ast_hash": "60c957e622a4f4fe7fa06ebbe52876f3",
+    "semantic_hash": ""
+  },
+  ".craft/skills/cron/SKILL.md": {
+    "mtime": 1783926158.1476533,
+    "ast_hash": "5cd21503d7625cdfa9c708423f1ace2c",
+    "semantic_hash": ""
+  },
+  ".craft/skills/cron/agents/openai.yaml": {
+    "mtime": 1783926158.1464317,
+    "ast_hash": "aeb997da9acb3b3c1535949c1a5ef99d",
+    "semantic_hash": ""
+  },
+  ".craft/skills/heartbeat/SKILL.md": {
+    "mtime": 1783926158.1507607,
+    "ast_hash": "3b5af7ed060e8ba687283bbbc23e7ee5",
+    "semantic_hash": ""
+  },
+  ".craft/skills/heartbeat/agents/openai.yaml": {
+    "mtime": 1783926158.1495352,
+    "ast_hash": "581a4db307a57c0b1f120050d7f19cf2",
+    "semantic_hash": ""
+  },
+  ".craft/skills/memory/SKILL.md": {
+    "mtime": 1783926158.1556666,
+    "ast_hash": "0c75ec9b6216ee674ce43afa271b318d",
+    "semantic_hash": ""
+  },
+  ".craft/skills/memory/agents/openai.yaml": {
+    "mtime": 1783926158.1525934,
+    "ast_hash": "6a2557bb4200764c8b92473b663f9119",
+    "semantic_hash": ""
+  },
+  ".craft/skills/plugin-creator/SKILL.md": {
+    "mtime": 1783926158.158275,
+    "ast_hash": "1479d9c8071169673c2721950de34aa6",
+    "semantic_hash": ""
+  },
+  ".craft/skills/plugin-creator/agents/openai.yaml": {
+    "mtime": 1783926158.1565592,
+    "ast_hash": "af41ad9b18ae78e563771d9b3597adab",
+    "semantic_hash": ""
+  },
+  ".craft/skills/plugin-creator/references/plugin-json-spec.md": {
+    "mtime": 1783926158.1579983,
+    "ast_hash": "bc84a5c3cfe41e787a8fe4d5c845c1b7",
+    "semantic_hash": ""
+  },
+  ".craft/skills/skill-authoring/SKILL.md": {
+    "mtime": 1783926158.161668,
+    "ast_hash": "c9c14ea1ad02e1619d6020d1b5df6bc8",
+    "semantic_hash": ""
+  },
+  ".craft/skills/skill-authoring/agents/openai.yaml": {
+    "mtime": 1783926158.1605046,
+    "ast_hash": "f3e6d52af4314e91255a6956604ad9e6",
+    "semantic_hash": ""
+  },
+  ".craft/skills/skill-installer/SKILL.md": {
+    "mtime": 1783926158.1645923,
+    "ast_hash": "cd9928a2ac8123d8ecf40220bc40b627",
+    "semantic_hash": ""
+  },
+  ".craft/skills/skill-installer/agents/openai.yaml": {
+    "mtime": 1783926158.163366,
+    "ast_hash": "f7fc59961cb9ec3c0da3cded1975cb32",
+    "semantic_hash": ""
+  },
+  ".zcode/plans/plan-sess_6361d83b-38a8-4829-ba25-f6bfe3e59225.md": {
+    "mtime": 1783671135.6619868,
+    "ast_hash": "f25f8affd82a50aff8ecffc0cb95eea8",
+    "semantic_hash": ""
+  },
+  ".zcode/plans/plan-sess_dadf6a9a-e03f-4e28-8c6e-d6f04e69c0f8.md": {
+    "mtime": 1783626573.8653812,
+    "ast_hash": "8089bc2a712d92fb5c2f3a178287db2b",
+    "semantic_hash": ""
+  },
+  "Code/screenshot_home.html": {
+    "mtime": 1783678404.477436,
+    "ast_hash": "7e3f8eb4948f2e61ee700896d66c51d4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/AGENTS.md": {
+    "mtime": 1784102009.1560986,
+    "ast_hash": "fedc4ffc5d1802d1f2759fb83f2263ed",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/commands/code-review.md": {
+    "mtime": 1784102009.161188,
+    "ast_hash": "40e793d952ffc2a9e3a0ffb27d402fe6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/commands/create-hooks.md": {
+    "mtime": 1784102009.162371,
+    "ast_hash": "11f6f60e5de206e145c20b08d1b59e66",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/commands/explain.md": {
+    "mtime": 1784102009.16393,
+    "ast_hash": "004ab8495906babfde5c450b2b359571",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/commands/summarize.md": {
+    "mtime": 1784102009.1644208,
+    "ast_hash": "dc427c86ab77011b3e2f9d03c49cfcfb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/browser/docs/capabilities/browser/viewport.md": {
+    "mtime": 1784102009.1841857,
+    "ast_hash": "3ad0eabc5a558818fea0ae6e94717992",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/browser/docs/capabilities/browser/visibility.md": {
+    "mtime": 1784102009.184496,
+    "ast_hash": "6b0191ebe513b315df4b9acb0c95b284",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/browser/docs/capabilities/tab/pageAssets.md": {
+    "mtime": 1784102009.1852956,
+    "ast_hash": "ed74e911c5352d8400a5136411e78192",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/browser/docs/capabilities/tab/webmcp.md": {
+    "mtime": 1784102009.1856954,
+    "ast_hash": "0208af1014a0ec3d27731bf058c5250c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/browser/skills/browser/SKILL.md": {
+    "mtime": 1784102009.1879766,
+    "ast_hash": "989b7c8f1d83edf46acd1e87b7430364",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/browser/skills/browser/agents/openai.yaml": {
+    "mtime": 1784102009.1893663,
+    "ast_hash": "ab21755ebd0675a496ff5a4cd34ac1e4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/dev-guide/SKILL.md": {
+    "mtime": 1784102009.1972725,
+    "ast_hash": "ce4f4418951b4c677fd62830498f2e5a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/dev-guide/agents/openai.yaml": {
+    "mtime": 1784102009.1976416,
+    "ast_hash": "fd284afc2c71abbd760451b8f1690b54",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/docs-guide/SKILL.md": {
+    "mtime": 1784102009.2004685,
+    "ast_hash": "4ab7a3e551630c6022f9dff586fa76b5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/docs-guide/agents/openai.yaml": {
+    "mtime": 1784102009.2018788,
+    "ast_hash": "741fbb78cd73701c011efddb38c3d639",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/docs-guide/references/page-templates.md": {
+    "mtime": 1784102009.2030118,
+    "ast_hash": "62e18f2f48bc9b97ab2aa51315773642",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/docs-guide/references/project-profile.md": {
+    "mtime": 1784102009.2035487,
+    "ast_hash": "881b94dba2809a6e322460c55f8354d9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/docs-guide/references/style-and-mechanics.md": {
+    "mtime": 1784102009.2040079,
+    "ast_hash": "97ace938b1fa378bf187276d25aabe1f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/feature-workflow/SKILL.md": {
+    "mtime": 1784102009.2047145,
+    "ast_hash": "1dc9c80ba63516cbb8cbecd5e1663485",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/feature-workflow/agents/openai.yaml": {
+    "mtime": 1784102009.206346,
+    "ast_hash": "01a152362d7ebfb142cf30862fe7b36a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/release-draft/SKILL.md": {
+    "mtime": 1784102009.2078454,
+    "ast_hash": "e947860bcf6c95b8389adc21f1aae4f7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/release-draft/agents/openai.yaml": {
+    "mtime": 1784102009.2083092,
+    "ast_hash": "279b467977cc7e2d54f3ef276f49b5c6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/svg-design/SKILL.md": {
+    "mtime": 1784102009.2087257,
+    "ast_hash": "e68f929a4502493fba892016b3821e60",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/svg-design/agents/openai.yaml": {
+    "mtime": 1784102009.2104216,
+    "ast_hash": "ee5f1c69398db3a418486a5395c400b7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/svg-design/references/svg_design_checklist.md": {
+    "mtime": 1784102009.2132945,
+    "ast_hash": "469a1bdc55c08579b8aa9a70ee2fb057",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/ui-prototype/SKILL.md": {
+    "mtime": 1784102009.2157881,
+    "ast_hash": "a3b5b36e685767b93ef3ff03c4c905df",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/skills/ui-prototype/agents/openai.yaml": {
+    "mtime": 1784102009.2163942,
+    "ast_hash": "ba66a232f50207e2bf4b2152857e05c7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-doctor/README.md": {
+    "mtime": 1784102009.2189248,
+    "ast_hash": "b78eb1f98d19304645950432b4144266",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-doctor/README_ZH.md": {
+    "mtime": 1784102009.2193513,
+    "ast_hash": "df677f4e75f792bc8ce80bff6ad9e691",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-doctor/skills/context-handoff/SKILL.md": {
+    "mtime": 1784102009.2210464,
+    "ast_hash": "af8e15694dfa25aae1073219c903de50",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-doctor/skills/context-handoff/agents/openai.yaml": {
+    "mtime": 1784102009.2217295,
+    "ast_hash": "bea87782d38adac654ad1288987daaba",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-doctor/skills/error-diagnosis/SKILL.md": {
+    "mtime": 1784102009.2230048,
+    "ast_hash": "2dd08fbfee1debce13c620642928b80c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-doctor/skills/error-diagnosis/agents/openai.yaml": {
+    "mtime": 1784102009.5431075,
+    "ast_hash": "305e75d7a05d6a6a9b3834859bae40de",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-doctor/skills/report-issue/SKILL.md": {
+    "mtime": 1784102009.5473602,
+    "ast_hash": "10bacfb04024625bdd551702bbf83f17",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-doctor/skills/report-issue/agents/openai.yaml": {
+    "mtime": 1784102009.549681,
+    "ast_hash": "db75899220de4ee27f27a4170776ad9f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/frontend-design/skills/frontend-design/LICENSE.txt": {
+    "mtime": 1784102009.5569663,
+    "ast_hash": "3b83ef96387f14655fc854ddc3c6bd57",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/frontend-design/skills/frontend-design/SKILL.md": {
+    "mtime": 1784102009.5580516,
+    "ast_hash": "5c392562ec1cf5ffa6b9d2319375373f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/github/README.md": {
+    "mtime": 1784102009.5673568,
+    "ast_hash": "6b792872e902b7b077c42579b1d9556b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/README.md": {
+    "mtime": 1784102009.5758772,
+    "ast_hash": "9d94ccb27e885108da9b3c888c854e8f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-brainstorming/SKILL.md": {
+    "mtime": 1784102009.583377,
+    "ast_hash": "61aa240c88dfd4c34d10c59f4259a1cc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-brainstorming/agents/openai.yaml": {
+    "mtime": 1784102009.5873744,
+    "ast_hash": "a1c6d078aedbdbad2c26fe3e4cdf64e1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-brainstorming/spec-document-reviewer-prompt.md": {
+    "mtime": 1784102009.5950723,
+    "ast_hash": "ea74c0f2369ae553c62f36af4ed3d424",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-brainstorming/visual-companion.md": {
+    "mtime": 1784102009.5960732,
+    "ast_hash": "45a3f283e3f90895fe79bb899bbe5e1f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-dispatching-parallel-agents/SKILL.md": {
+    "mtime": 1784102009.5980854,
+    "ast_hash": "339e89dd64e61a77a07be6aded58f372",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-dispatching-parallel-agents/agents/openai.yaml": {
+    "mtime": 1784102009.5985885,
+    "ast_hash": "929f50ebd34c0e3df1264ee48d38b99b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-executing-plans/SKILL.md": {
+    "mtime": 1784102009.5989795,
+    "ast_hash": "f755052c80cb8995fff2526f7ed87abb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-executing-plans/agents/openai.yaml": {
+    "mtime": 1784102009.5993636,
+    "ast_hash": "cccff160bdbe58991bb8e67857a5cfec",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-finishing-a-development-branch/SKILL.md": {
+    "mtime": 1784102009.6005867,
+    "ast_hash": "1890955017178b2963b69d8530a1279a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-finishing-a-development-branch/agents/openai.yaml": {
+    "mtime": 1784102009.7396598,
+    "ast_hash": "f7be0ea01a5798bd52ebf5a86dfe47e3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-receiving-code-review/SKILL.md": {
+    "mtime": 1784102009.7406917,
+    "ast_hash": "e3e4a752503899e1d3ef5abd2ee520eb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-receiving-code-review/agents/openai.yaml": {
+    "mtime": 1784102009.7423444,
+    "ast_hash": "919699e4a703bd7666344f1112c1b123",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-requesting-code-review/SKILL.md": {
+    "mtime": 1784102009.7436516,
+    "ast_hash": "f63387bb929b7023bbbf29e6b4ddb956",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-requesting-code-review/agents/openai.yaml": {
+    "mtime": 1784102009.7441537,
+    "ast_hash": "fcea335e4170490ff541bb62db18db6f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-requesting-code-review/code-reviewer.md": {
+    "mtime": 1784102009.7457926,
+    "ast_hash": "11211d21337d0c498660f51edff7323b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-subagent-driven-development/SKILL.md": {
+    "mtime": 1784102009.7472029,
+    "ast_hash": "099e29bda77cfdc16d3c1cb39b9523b5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-subagent-driven-development/agents/openai.yaml": {
+    "mtime": 1784102009.7504964,
+    "ast_hash": "fed83db34b5b4411f232d6b822845d7e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-subagent-driven-development/code-quality-reviewer-prompt.md": {
+    "mtime": 1784102009.7509325,
+    "ast_hash": "fc5e2ea930681d4228debaa3714f6ea0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-subagent-driven-development/implementer-prompt.md": {
+    "mtime": 1784102009.7531593,
+    "ast_hash": "b856c2076801a91854adf094a907de9c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-subagent-driven-development/spec-reviewer-prompt.md": {
+    "mtime": 1784102009.7555501,
+    "ast_hash": "ecc20717d0b31a9013ba732f366eba8f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/SKILL.md": {
+    "mtime": 1784102009.7563846,
+    "ast_hash": "37de54dfd8b34c63c79cb21d9ff8e596",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/agents/openai.yaml": {
+    "mtime": 1784102009.75787,
+    "ast_hash": "4ba12fcb2e166ecc0356e73d3a47adcb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/condition-based-waiting.md": {
+    "mtime": 1784102009.7586374,
+    "ast_hash": "c64d669f2490aa489c514304c9ad46d3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/defense-in-depth.md": {
+    "mtime": 1784102009.7589264,
+    "ast_hash": "002a0c9e8bee8fc29f85d7a434916977",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/root-cause-tracing.md": {
+    "mtime": 1784102009.7596493,
+    "ast_hash": "7e96b2fe346c89d4f2300341529178cc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/test-academic.md": {
+    "mtime": 1784102009.7602882,
+    "ast_hash": "272ab1d95e755a7ff9479d547168eef9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/test-pressure-1.md": {
+    "mtime": 1784102009.7607534,
+    "ast_hash": "3d8805e8946e3889d4de0e906af66c47",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/test-pressure-2.md": {
+    "mtime": 1784102009.7610333,
+    "ast_hash": "237f40dfd0b48af48d239ab3af499f7b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-systematic-debugging/test-pressure-3.md": {
+    "mtime": 1784102009.7617486,
+    "ast_hash": "42ea1bd281ca8d837f5dd45143762b95",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-test-driven-development/SKILL.md": {
+    "mtime": 1784102009.76266,
+    "ast_hash": "a2deb542b8591bbf3ea80b477d16d0f3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-test-driven-development/agents/openai.yaml": {
+    "mtime": 1784102009.7631214,
+    "ast_hash": "668d4c0a351f5703cc22a3d5a4ac0171",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-test-driven-development/testing-anti-patterns.md": {
+    "mtime": 1784102009.7635052,
+    "ast_hash": "f4373033bf29f06897cd63c994deb2a7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-using-git-worktrees/SKILL.md": {
+    "mtime": 1784102009.7644348,
+    "ast_hash": "2222245bd4f7afe08a04571375eff1ad",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-using-git-worktrees/agents/openai.yaml": {
+    "mtime": 1784102009.765013,
+    "ast_hash": "3a358fe24fa2fa20da3772370a9908ce",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-using-superpowers/SKILL.md": {
+    "mtime": 1784102009.7666745,
+    "ast_hash": "46252895e572ee792d66fa688ee47e33",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-using-superpowers/agents/openai.yaml": {
+    "mtime": 1784102009.768045,
+    "ast_hash": "2c5b114b9263dab29b95b7ef9e523c1a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-verification-before-completion/SKILL.md": {
+    "mtime": 1784102009.7687314,
+    "ast_hash": "37fbedea81d01e8788bc0c854179579d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-verification-before-completion/agents/openai.yaml": {
+    "mtime": 1784102009.7693949,
+    "ast_hash": "5c0e285e8c792800dd065d7a43aed638",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-writing-plans/SKILL.md": {
+    "mtime": 1784102009.7703943,
+    "ast_hash": "93d0fbe31793694e6c4770c8e2de5cba",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-writing-plans/agents/openai.yaml": {
+    "mtime": 1784102009.771393,
+    "ast_hash": "5f8078ac1a0a0fdb5ba385f22b72d653",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-writing-plans/plan-document-reviewer-prompt.md": {
+    "mtime": 1784102009.7720213,
+    "ast_hash": "dcad0192c2c468107951d7dcb47246a9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-writing-skills/SKILL.md": {
+    "mtime": 1784102009.7741156,
+    "ast_hash": "f4d13bb51eca876316c09f1dfe6c98ca",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-writing-skills/agents/openai.yaml": {
+    "mtime": 1784102009.7748086,
+    "ast_hash": "ba3db566d426875c3c59396c68991ca8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-writing-skills/persuasion-principles.md": {
+    "mtime": 1784102009.7757924,
+    "ast_hash": "e95b206b971fc628c03892d503edf48a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/skills/superpowers-writing-skills/testing-skills-with-subagents.md": {
+    "mtime": 1784102009.776891,
+    "ast_hash": "8f766bddbe967ee846cf651f55644086",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/create-hooks/SKILL.md": {
+    "mtime": 1784102009.7788277,
+    "ast_hash": "402031939010d5ddfee8032d751c3b98",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/create-hooks/agents/openai.yaml": {
+    "mtime": 1784102009.7803676,
+    "ast_hash": "60c957e622a4f4fe7fa06ebbe52876f3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/cron/SKILL.md": {
+    "mtime": 1784102009.7823572,
+    "ast_hash": "5cd21503d7625cdfa9c708423f1ace2c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/cron/agents/openai.yaml": {
+    "mtime": 1784102009.7827702,
+    "ast_hash": "aeb997da9acb3b3c1535949c1a5ef99d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/heartbeat/SKILL.md": {
+    "mtime": 1784102009.7859457,
+    "ast_hash": "3b5af7ed060e8ba687283bbbc23e7ee5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/heartbeat/agents/openai.yaml": {
+    "mtime": 1784102009.786529,
+    "ast_hash": "581a4db307a57c0b1f120050d7f19cf2",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/memory/SKILL.md": {
+    "mtime": 1784102009.7903774,
+    "ast_hash": "0c75ec9b6216ee674ce43afa271b318d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/memory/agents/openai.yaml": {
+    "mtime": 1784102009.7919765,
+    "ast_hash": "6a2557bb4200764c8b92473b663f9119",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/plugin-creator/SKILL.md": {
+    "mtime": 1784102009.797366,
+    "ast_hash": "1479d9c8071169673c2721950de34aa6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/plugin-creator/agents/openai.yaml": {
+    "mtime": 1784102009.7979054,
+    "ast_hash": "af41ad9b18ae78e563771d9b3597adab",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/plugin-creator/references/plugin-json-spec.md": {
+    "mtime": 1784102009.8004766,
+    "ast_hash": "bc84a5c3cfe41e787a8fe4d5c845c1b7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/skill-authoring/SKILL.md": {
+    "mtime": 1784102009.802498,
+    "ast_hash": "c9c14ea1ad02e1619d6020d1b5df6bc8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/skill-authoring/agents/openai.yaml": {
+    "mtime": 1784102009.8033102,
+    "ast_hash": "f3e6d52af4314e91255a6956604ad9e6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/skill-installer/SKILL.md": {
+    "mtime": 1784102009.807078,
+    "ast_hash": "cd9928a2ac8123d8ecf40220bc40b627",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/skill-installer/agents/openai.yaml": {
+    "mtime": 1784102009.8077703,
+    "ast_hash": "f7fc59961cb9ec3c0da3cded1975cb32",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.github/workflows/validate_json.yml": {
+    "mtime": 1783662934.035195,
+    "ast_hash": "643562dc92d0232bd34f2473e779f52f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.zcode/plans/plan-sess_6361d83b-38a8-4829-ba25-f6bfe3e59225.md": {
+    "mtime": 1784095113.528774,
+    "ast_hash": "f25f8affd82a50aff8ecffc0cb95eea8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.zcode/plans/plan-sess_dadf6a9a-e03f-4e28-8c6e-d6f04e69c0f8.md": {
+    "mtime": 1784095113.529094,
+    "ast_hash": "8089bc2a712d92fb5c2f3a178287db2b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/AGENTS.md": {
+    "mtime": 1783662934.0376368,
+    "ast_hash": "073258c94ceb9b9f8a2440e3e413c64d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/Code/screenshot_home.html": {
+    "mtime": 1784095113.5316873,
+    "ast_hash": "7e3f8eb4948f2e61ee700896d66c51d4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/README.md": {
+    "mtime": 1784095113.5347183,
+    "ast_hash": "8f5cbf339696847ccc2296f1e41f113e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/admob_ad_units.txt": {
+    "mtime": 1783662934.040159,
+    "ast_hash": "93941c6219a5bb9682d927576ac2897f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/analysis_options.yaml": {
+    "mtime": 1783662934.0412185,
+    "ast_hash": "b76b02a354e118ed362efbb6695e36b1",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/FUTURE_GAME_IDEAS.md": {
+    "mtime": 1783662934.1017523,
+    "ast_hash": "8722980018c8818e5b5d8f6853da3c43",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/README.md": {
+    "mtime": 1783662934.102242,
+    "ast_hash": "fcf60a80331c5ececa4797e5b6418181",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/SENTENCE_BUILDER_README.md": {
+    "mtime": 1783662934.1027331,
+    "ast_hash": "1d19c63cd266c2e5794ec8ccb82323e8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/game/questions/CONTENT_GUIDE.md": {
+    "mtime": 1783662934.119138,
+    "ast_hash": "f97bc852ca140824c2f2f102ef72c655",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/json/vocabulary/vocabulary.md": {
+    "mtime": 1783662934.563287,
+    "ast_hash": "0da0b928f9ad2d3b3c7eebfabb4aae3b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/privacy_policy.html": {
+    "mtime": 1783662934.5707445,
+    "ast_hash": "9384b9b9d0233db5cfe6c5c39dcb49cf",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/cover_design.html": {
+    "mtime": 1784102009.8406072,
+    "ast_hash": "d786601e6a8218f3f7e9bca07f0c6851",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/delete_account.html": {
+    "mtime": 1784095113.5481663,
+    "ast_hash": "afc5e8aa68c9cb67d34fc15036e19793",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/ADMIN_PANEL_IMPLEMENTATION_GUIDE.md": {
+    "mtime": 1783662934.5712283,
+    "ast_hash": "68e776243201c58564404dd84263c503",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/ADVERTISEMENT_SCREENSHOTS_GUIDE.md": {
+    "mtime": 1783662934.5716033,
+    "ast_hash": "df56042b731aedbfdbc27b4f367f8acf",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/BANGLISH_TRANSLATOR_PLAN.md": {
+    "mtime": 1783662934.571912,
+    "ast_hash": "86e9b362c9d2eed243cfecc98b59c481",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/Grammar_Syllabus.md": {
+    "mtime": 1783662934.572199,
+    "ast_hash": "a64e18d0d46d10f1d1caa3dcbd1a325b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/HomePage.md": {
+    "mtime": 1783662934.5725658,
+    "ast_hash": "d9bba8107279a199ce58d1a120a0a193",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/MOCK_TEST_CONTENT_GUIDE.md": {
+    "mtime": 1783662934.689705,
+    "ast_hash": "e949720c76299963b3f6151b8e38137b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/NOTIFICATION_SYSTEM_GUIDE.md": {
+    "mtime": 1783662934.6903539,
+    "ast_hash": "88aba5cca672954857dd70a9f5a9b0c4",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/PLAYSTORE_UPLOAD_GUIDE.md": {
+    "mtime": 1784095181.5067635,
+    "ast_hash": "543ad7f85daf6d439ea56fb744778c40",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/Roadmap.md": {
+    "mtime": 1783662934.6907556,
+    "ast_hash": "4a23e1a82f74faff229ef4ab26b53c8d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/SETUP.md": {
+    "mtime": 1783662934.691123,
+    "ast_hash": "ca2dab843cb37c33253b389b65294d0b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/TENSE_GAME_DEVELOPMENT_WORKFLOW.md": {
+    "mtime": 1783662934.6916442,
+    "ast_hash": "657e6b7d68785f510a7c0c764e7681a3",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/TENSE_MASTERY_WORKFLOW.md": {
+    "mtime": 1783662934.692251,
+    "ast_hash": "d825bf616cee33b4e0fb2941a7790f18",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/TODO_HOME_DYNAMIC.md": {
+    "mtime": 1783662934.692694,
+    "ast_hash": "4f34e7134531cf993fbc5430b067e9cf",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/Tense_Mastery_Module_Syllabus.md": {
+    "mtime": 1783662934.6931274,
+    "ast_hash": "a7473e33efddbb66defcf2d82ff78125",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/ai_teacher_improvement_plan.md": {
+    "mtime": 1783662934.712659,
+    "ast_hash": "8a18a20bf75fd127a338b7a96719e289",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/analysis_sync_report.md": {
+    "mtime": 1783662934.7132022,
+    "ast_hash": "c5f856c6134351653f818ce7687335fc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/delete_account.html": {
+    "mtime": 1784095113.55815,
+    "ast_hash": "9ec2fef69e710920d2f1112fb6754ee9",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/feature_graphic.html": {
+    "mtime": 1784095113.5588548,
+    "ast_hash": "fc0f4a208c0a496a748cd049fd6e924a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/plan.md": {
+    "mtime": 1783662934.7136438,
+    "ast_hash": "1d82de80f5eafa4ba6646083c7e88d9a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/privacy_policy.html": {
+    "mtime": 1784095113.5594382,
+    "ast_hash": "fabf4bae930945e923bc4de4ece700e0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/section_status_analysis.md": {
+    "mtime": 1783662934.714084,
+    "ast_hash": "81b1d8487fd9f957b192cb30af0ab737",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/plans/2026-07-01-achievement-unlock-experience.md": {
+    "mtime": 1783662934.7172318,
+    "ast_hash": "c3b13bd3714548a7b0959060dd296363",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/plans/2026-07-01-mock-test-question-palette-implementation.md": {
+    "mtime": 1783662934.7178874,
+    "ast_hash": "b405f0a84c00d71172f9c2f5280fad91",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/plans/2026-07-01-notification-background-improvement.md": {
+    "mtime": 1783662934.7227526,
+    "ast_hash": "3dab7e25fd025f04bb0288f18a637193",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/plans/2026-07-01-notification-system-improvement.md": {
+    "mtime": 1783662934.7235138,
+    "ast_hash": "35a66623915d642cd9868a634be86617",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/plans/2026-07-02-mock-test-smart-retry.md": {
+    "mtime": 1783662934.7249596,
+    "ast_hash": "ebde8e07380e3a7f35c5ba692e2f71eb",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/plans/2026-07-02-mock-test-unlock-celebration.md": {
+    "mtime": 1783662934.7257047,
+    "ast_hash": "5a365131a49a564cfd5293a38873d286",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/plans/2026-07-08-daily-quiz-implementation.md": {
+    "mtime": 1783662934.726701,
+    "ast_hash": "f94eb9d9f983bfedd3de6f60494b37ad",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/plans/2026-07-14-api-key-manager.md": {
+    "mtime": 1784095113.561952,
+    "ast_hash": "f90a9ff6a68c9007b89d84299c18936b",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/specs/2026-07-01-achievement-unlock-experience-design.md": {
+    "mtime": 1783662934.7272189,
+    "ast_hash": "421c0bfef534ac3629b8a11260664808",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/specs/2026-07-01-mock-test-question-palette-design.md": {
+    "mtime": 1783662934.7275593,
+    "ast_hash": "4751e0f10b4af95fc55406286c506d57",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/specs/2026-07-01-notification-background-improvement-design.md": {
+    "mtime": 1783662934.7286656,
+    "ast_hash": "a5f94d44d97cbf9700cc6a4932fabc0c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/specs/2026-07-01-notification-system-improvement-design.md": {
+    "mtime": 1783662934.7291002,
+    "ast_hash": "b250515b98579d6b5013818bb33dc05e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/specs/2026-07-02-mock-test-smart-retry-design.md": {
+    "mtime": 1783662934.7295995,
+    "ast_hash": "8143cc78cafd33678bfbc1c6a5c9721e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/specs/2026-07-02-mock-test-unlock-celebration-design.md": {
+    "mtime": 1783662934.729966,
+    "ast_hash": "e1ac1e51c1ed305d948ece78937067b8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/specs/2026-07-08-daily-quiz-design.md": {
+    "mtime": 1783662934.7303827,
+    "ast_hash": "7259f68fdd51badca2d57d897285e13e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/superpowers/specs/2026-07-14-api-key-manager-design.md": {
+    "mtime": 1784095113.5639398,
+    "ast_hash": "5b08d69c3dd0c9fe9cf41fc134891387",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/lib/services/streak_service_plan.md": {
+    "mtime": 1783662936.8138072,
+    "ast_hash": "d86b413b8c8c34f390645d483b2913ef",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/pubspec.yaml": {
+    "mtime": 1784095113.6170323,
+    "ast_hash": "ac005541045614132e7f17c45752e349",
+    "semantic_hash": ""
+  },
+  "admob_ad_units.txt": {
+    "mtime": 1783618006.6509285,
+    "ast_hash": "93941c6219a5bb9682d927576ac2897f",
+    "semantic_hash": ""
+  },
+  "cover_design.html": {
+    "mtime": 1783885503.1427991,
+    "ast_hash": "d786601e6a8218f3f7e9bca07f0c6851",
+    "semantic_hash": ""
+  },
+  "delete_account.html": {
+    "mtime": 1783751373.3951504,
+    "ast_hash": "afc5e8aa68c9cb67d34fc15036e19793",
+    "semantic_hash": ""
+  },
+  "docs/PLAYSTORE_UPLOAD_GUIDE.md": {
+    "mtime": 1784095293.204903,
+    "ast_hash": "543ad7f85daf6d439ea56fb744778c40",
+    "semantic_hash": ""
+  },
+  "docs/delete_account.html": {
+    "mtime": 1783749474.202289,
+    "ast_hash": "9ec2fef69e710920d2f1112fb6754ee9",
+    "semantic_hash": ""
+  },
+  "docs/feature_graphic.html": {
+    "mtime": 1783694704.0197875,
+    "ast_hash": "fc0f4a208c0a496a748cd049fd6e924a",
+    "semantic_hash": ""
+  },
+  "docs/privacy_policy.html": {
+    "mtime": 1783671337.8562703,
+    "ast_hash": "fabf4bae930945e923bc4de4ece700e0",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-14-api-key-manager.md": {
+    "mtime": 1784043254.8122313,
+    "ast_hash": "f90a9ff6a68c9007b89d84299c18936b",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-15-ai-chat-ui-fix-google-translate-plan.md": {
+    "mtime": 1784105249.6023235,
+    "ast_hash": "8749f9c9e62cfc64fbc8ec2c56d650bc",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-14-api-key-manager-design.md": {
+    "mtime": 1784042836.7295263,
+    "ast_hash": "5b08d69c3dd0c9fe9cf41fc134891387",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-15-ai-chat-ui-fix-google-translate-design.md": {
+    "mtime": 1784105035.803349,
+    "ast_hash": "0c03e6dc1aed513d059cc8858711dac5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/pdfs/originals/STUDENT_GUIDE.pdf": {
+    "mtime": 1783662934.5663366,
+    "ast_hash": "012fca4c02c7a4c229e4fd1f094fe926",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/pdfs/originals/STUDY_ROUTINE.pdf": {
+    "mtime": 1783662934.569552,
+    "ast_hash": "76a410318f33bab07858746cbedeb294",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-builder/assets/agent-builder.svg": {
+    "mtime": 1783785008.0,
+    "ast_hash": "b324dd25647cf512330943a62b79e4dc",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-teams/assets/agent-teams.svg": {
+    "mtime": 1783785008.0,
+    "ast_hash": "7e0bf2fba5bfbe395c3396faa4d6c66f",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-teams/assets/team-builder.svg": {
+    "mtime": 1783785008.0,
+    "ast_hash": "0fdea1266dc560ca968d1bb2ba06da0f",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-teams/assets/team-explorer.svg": {
+    "mtime": 1783785008.0,
+    "ast_hash": "3ea13729c325b0139cfc11db7554056d",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-teams/assets/team-leader.svg": {
+    "mtime": 1783785008.0,
+    "ast_hash": "50e5e1aebf8d2ccc3afe51ad5cb73289",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-teams/assets/team-operator.svg": {
+    "mtime": 1783785008.0,
+    "ast_hash": "d539cc112ccd08feb2e8998700587622",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/agent-teams/assets/team-reviewer.svg": {
+    "mtime": 1783785008.0,
+    "ast_hash": "62b3dcf0c80e79c521903757c2cf5859",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/browser/skills/browser/assets/browser-small.svg": {
+    "mtime": 1783785007.0,
+    "ast_hash": "0325b4102fca190b4213469b2d722e33",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/browser/skills/browser/assets/browser.svg": {
+    "mtime": 1783785007.0,
+    "ast_hash": "0593e39b24a927b4586155becf466b2e",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-dev/assets/dotcraft-developer.svg": {
+    "mtime": 1783138776.0,
+    "ast_hash": "b0fa37b9a454c07486ee4cf4ce2cedf7",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/dotcraft-doctor/assets/dotcraft-doctor.svg": {
+    "mtime": 1783785007.0,
+    "ast_hash": "2c85656edf47e10be288d578a2ad0bf5",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/frontend-design/assets/frontend-design.svg": {
+    "mtime": 1783138776.0,
+    "ast_hash": "f87a4da4e335a56555fb42841583eaae",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/github/assets/github-small.svg": {
+    "mtime": 1783138776.0,
+    "ast_hash": "152bfea5b7916ea0cef99882b7b9e419",
+    "semantic_hash": ""
+  },
+  ".craft/plugins/superpowers/assets/superpowers-small.svg": {
+    "mtime": 1783138776.0,
+    "ast_hash": "475e34a81079b0e6b8cbcca75a723eda",
+    "semantic_hash": ""
+  },
+  ".craft/skills/create-hooks/assets/create-hooks-small.svg": {
+    "mtime": 1783926158.1443202,
+    "ast_hash": "8cd06d7a60de0cd0400657467e4355f7",
+    "semantic_hash": ""
+  },
+  ".craft/skills/create-hooks/assets/create-hooks.svg": {
+    "mtime": 1783926158.1446724,
+    "ast_hash": "0a79dbaf88aa610a053928af16a09975",
+    "semantic_hash": ""
+  },
+  ".craft/skills/cron/assets/cron-small.svg": {
+    "mtime": 1783926158.1469116,
+    "ast_hash": "8b98927b1127bd3b2c5bf561d3b25336",
+    "semantic_hash": ""
+  },
+  ".craft/skills/cron/assets/cron.svg": {
+    "mtime": 1783926158.147215,
+    "ast_hash": "067351cfb64f1118bbecf5eb2edc56fa",
+    "semantic_hash": ""
+  },
+  ".craft/skills/heartbeat/assets/heartbeat-small.svg": {
+    "mtime": 1783926158.1498823,
+    "ast_hash": "0bb4e0fd430111b6bc91b74b7eded9d6",
+    "semantic_hash": ""
+  },
+  ".craft/skills/heartbeat/assets/heartbeat.svg": {
+    "mtime": 1783926158.1504657,
+    "ast_hash": "59162bde28826dbe6b0e9781c4f7446e",
+    "semantic_hash": ""
+  },
+  ".craft/skills/memory/assets/memory-small.svg": {
+    "mtime": 1783926158.1539004,
+    "ast_hash": "ab6661ee51532d325a7c4212ddde5ffa",
+    "semantic_hash": ""
+  },
+  ".craft/skills/memory/assets/memory.svg": {
+    "mtime": 1783926158.1552553,
+    "ast_hash": "e7342aca124a483bf2fc7a69e6e38980",
+    "semantic_hash": ""
+  },
+  ".craft/skills/plugin-creator/assets/plugin-creator-small.svg": {
+    "mtime": 1783926158.1572378,
+    "ast_hash": "04c8b22485f9719df27750845f916a4c",
+    "semantic_hash": ""
+  },
+  ".craft/skills/plugin-creator/assets/plugin-creator.svg": {
+    "mtime": 1783926158.1575944,
+    "ast_hash": "6100566430496d309d767adbf73a0a99",
+    "semantic_hash": ""
+  },
+  ".craft/skills/skill-authoring/assets/skill-authoring-small.svg": {
+    "mtime": 1783926158.1609814,
+    "ast_hash": "e3a399efd599fdcd324bb6bbcf37ab7a",
+    "semantic_hash": ""
+  },
+  ".craft/skills/skill-authoring/assets/skill-authoring.svg": {
+    "mtime": 1783926158.1612797,
+    "ast_hash": "caa112fd448e0dbc804513442b8f9c08",
+    "semantic_hash": ""
+  },
+  ".craft/skills/skill-installer/assets/skill-installer-small.svg": {
+    "mtime": 1783926158.1637383,
+    "ast_hash": "069324464ef41203971b94bf147fd5c8",
+    "semantic_hash": ""
+  },
+  ".craft/skills/skill-installer/assets/skill-installer.svg": {
+    "mtime": 1783926158.1640954,
+    "ast_hash": "4083fa7bd7591e3d3431f16a897c016e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-builder/assets/agent-builder.svg": {
+    "mtime": 1784102009.167243,
+    "ast_hash": "b324dd25647cf512330943a62b79e4dc",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-teams/assets/agent-teams.svg": {
+    "mtime": 1784102009.1739197,
+    "ast_hash": "7e0bf2fba5bfbe395c3396faa4d6c66f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-teams/assets/team-builder.svg": {
+    "mtime": 1784102009.1742263,
+    "ast_hash": "0fdea1266dc560ca968d1bb2ba06da0f",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-teams/assets/team-explorer.svg": {
+    "mtime": 1784102009.174599,
+    "ast_hash": "3ea13729c325b0139cfc11db7554056d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-teams/assets/team-leader.svg": {
+    "mtime": 1784102009.1806352,
+    "ast_hash": "50e5e1aebf8d2ccc3afe51ad5cb73289",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-teams/assets/team-operator.svg": {
+    "mtime": 1784102009.181046,
+    "ast_hash": "d539cc112ccd08feb2e8998700587622",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/agent-teams/assets/team-reviewer.svg": {
+    "mtime": 1784102009.1814585,
+    "ast_hash": "62b3dcf0c80e79c521903757c2cf5859",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/browser/skills/browser/assets/browser-small.svg": {
+    "mtime": 1784102009.1907218,
+    "ast_hash": "0325b4102fca190b4213469b2d722e33",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/browser/skills/browser/assets/browser.svg": {
+    "mtime": 1784102009.1910825,
+    "ast_hash": "0593e39b24a927b4586155becf466b2e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-dev/assets/dotcraft-developer.svg": {
+    "mtime": 1784102009.19676,
+    "ast_hash": "b0fa37b9a454c07486ee4cf4ce2cedf7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/dotcraft-doctor/assets/dotcraft-doctor.svg": {
+    "mtime": 1784102009.220203,
+    "ast_hash": "2c85656edf47e10be288d578a2ad0bf5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/frontend-design/assets/frontend-design.svg": {
+    "mtime": 1784102009.5548303,
+    "ast_hash": "f87a4da4e335a56555fb42841583eaae",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/github/assets/github-small.svg": {
+    "mtime": 1784102009.5697925,
+    "ast_hash": "152bfea5b7916ea0cef99882b7b9e419",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/plugins/superpowers/assets/superpowers-small.svg": {
+    "mtime": 1784102009.577088,
+    "ast_hash": "475e34a81079b0e6b8cbcca75a723eda",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/create-hooks/assets/create-hooks-small.svg": {
+    "mtime": 1784102009.7807844,
+    "ast_hash": "8cd06d7a60de0cd0400657467e4355f7",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/create-hooks/assets/create-hooks.svg": {
+    "mtime": 1784102009.7810535,
+    "ast_hash": "0a79dbaf88aa610a053928af16a09975",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/cron/assets/cron-small.svg": {
+    "mtime": 1784102009.7844412,
+    "ast_hash": "8b98927b1127bd3b2c5bf561d3b25336",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/cron/assets/cron.svg": {
+    "mtime": 1784102009.784843,
+    "ast_hash": "067351cfb64f1118bbecf5eb2edc56fa",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/heartbeat/assets/heartbeat-small.svg": {
+    "mtime": 1784102009.7871718,
+    "ast_hash": "0bb4e0fd430111b6bc91b74b7eded9d6",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/heartbeat/assets/heartbeat.svg": {
+    "mtime": 1784102009.7878742,
+    "ast_hash": "59162bde28826dbe6b0e9781c4f7446e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/memory/assets/memory-small.svg": {
+    "mtime": 1784102009.793774,
+    "ast_hash": "ab6661ee51532d325a7c4212ddde5ffa",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/memory/assets/memory.svg": {
+    "mtime": 1784102009.794911,
+    "ast_hash": "e7342aca124a483bf2fc7a69e6e38980",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/plugin-creator/assets/plugin-creator-small.svg": {
+    "mtime": 1784102009.7983978,
+    "ast_hash": "04c8b22485f9719df27750845f916a4c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/plugin-creator/assets/plugin-creator.svg": {
+    "mtime": 1784102009.7987385,
+    "ast_hash": "6100566430496d309d767adbf73a0a99",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/skill-authoring/assets/skill-authoring-small.svg": {
+    "mtime": 1784102009.8052082,
+    "ast_hash": "e3a399efd599fdcd324bb6bbcf37ab7a",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/skill-authoring/assets/skill-authoring.svg": {
+    "mtime": 1784102009.8057063,
+    "ast_hash": "caa112fd448e0dbc804513442b8f9c08",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/skill-installer/assets/skill-installer-small.svg": {
+    "mtime": 1784102009.8093083,
+    "ast_hash": "069324464ef41203971b94bf147fd5c8",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/.craft/skills/skill-installer/assets/skill-installer.svg": {
+    "mtime": 1784102009.8103426,
+    "ast_hash": "4083fa7bd7591e3d3431f16a897c016e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/icon/app_icon.png": {
+    "mtime": 1783662934.088031,
+    "ast_hash": "51551ccc5725539eab47a423a565347e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/docs/app_icon.png": {
+    "mtime": 1784095113.555376,
+    "ast_hash": "51551ccc5725539eab47a423a565347e",
+    "semantic_hash": ""
+  },
+  "docs/app_icon.png": {
+    "mtime": 1783694680.35439,
+    "ast_hash": "51551ccc5725539eab47a423a565347e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/audio/game_achievement.mp3": {
+    "mtime": 1783662934.07227,
+    "ast_hash": "c0babd7d5809649f0ae58cf88a108445",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/audio/game_button_tap.mp3": {
+    "mtime": 1783662934.0812633,
+    "ast_hash": "f8746dd80e05792f072e3257ffd7efae",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/audio/game_coin_collect.mp3": {
+    "mtime": 1783662934.0817783,
+    "ast_hash": "b869a7380b3ca96988a24b8f58070f4d",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/audio/game_correct.mp3": {
+    "mtime": 1783662934.0821884,
+    "ast_hash": "464b08eb5042c4da1da830d71ebbb61c",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/audio/game_countdown.mp3": {
+    "mtime": 1783662934.082551,
+    "ast_hash": "0432ba88a2c075176977822e334c3002",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/audio/game_level_up.mp3": {
+    "mtime": 1783662934.0830004,
+    "ast_hash": "e214728b12b523e9de49b2430ec8ba7e",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/audio/game_over.mp3": {
+    "mtime": 1783662934.08338,
+    "ast_hash": "2756c08fe5520af67bd0721912629303",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/audio/game_streak_bonus.mp3": {
+    "mtime": 1783662934.0837727,
+    "ast_hash": "b2d31e37c6d34f038a1d700abd27a1d0",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/audio/game_tick.mp3": {
+    "mtime": 1783662934.0841422,
+    "ast_hash": "0fc49945f361f1eb810609b7f51b4db5",
+    "semantic_hash": ""
+  },
+  "SpeakEasy/assets/audio/game_wrong.mp3": {
+    "mtime": 1783662934.0857809,
+    "ast_hash": "040156dabd6a8161d3dfd29fde10e23b",
+    "semantic_hash": ""
+  },
+  "assets/audio/game_button_tap.mp3": {
+    "mtime": 1784043373.5903118,
+    "ast_hash": "f8746dd80e05792f072e3257ffd7efae",
+    "semantic_hash": ""
+  },
+  "assets/audio/game_coin_collect.mp3": {
+    "mtime": 1784043373.5892327,
+    "ast_hash": "b869a7380b3ca96988a24b8f58070f4d",
+    "semantic_hash": ""
+  },
+  "assets/audio/game_correct.mp3": {
+    "mtime": 1784043373.588714,
+    "ast_hash": "464b08eb5042c4da1da830d71ebbb61c",
+    "semantic_hash": ""
+  },
+  "assets/audio/game_countdown.mp3": {
+    "mtime": 1784043373.586984,
+    "ast_hash": "0432ba88a2c075176977822e334c3002",
+    "semantic_hash": ""
+  },
+  "assets/audio/game_level_up.mp3": {
+    "mtime": 1783587137.2828145,
+    "ast_hash": "e214728b12b523e9de49b2430ec8ba7e",
+    "semantic_hash": ""
+  },
+  "assets/audio/game_over.mp3": {
+    "mtime": 1784043373.5813384,
+    "ast_hash": "2756c08fe5520af67bd0721912629303",
+    "semantic_hash": ""
+  },
+  "assets/audio/game_streak_bonus.mp3": {
+    "mtime": 1784043373.5762203,
+    "ast_hash": "b2d31e37c6d34f038a1d700abd27a1d0",
+    "semantic_hash": ""
+  },
+  "assets/audio/game_tick.mp3": {
+    "mtime": 1783587143.1866221,
+    "ast_hash": "0fc49945f361f1eb810609b7f51b4db5",
+    "semantic_hash": ""
+  },
+  "assets/audio/game_wrong.mp3": {
+    "mtime": 1784043373.57555,
+    "ast_hash": "040156dabd6a8161d3dfd29fde10e23b",
     "semantic_hash": ""
   }
 }
