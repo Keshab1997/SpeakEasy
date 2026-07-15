@@ -30,8 +30,6 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
   bool _isListening = false;
   bool _speechAvailable = false;
   double _voiceConfidence = 0.0;
-  bool _isAiConfigured = false;
-  String _aiModel = '';
   List<String> _suggestedQuestions = [];
   
   // --- Typing Animation State ---
@@ -100,9 +98,6 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
   void initState() {
     super.initState();
     _userName = HiveService.getUserName();
-    final activeKey = HiveService.getActiveAiKey();
-    _isAiConfigured = activeKey?['key']?.toString().isNotEmpty ?? false;
-    _aiModel = activeKey?['model']?.toString() ?? '';
     _tryRestoreLastSession();
     _initSpeech();
     _initTts();
@@ -985,33 +980,6 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
     }
     
     return cleanLines.join('\n').trim();
-  }
-
-  void _showSetupDialog(String title, String message) {
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(title),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('Cancel'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(ctx);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const ApiSetupGuideScreen()),
-              );
-            },
-            style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary),
-            child: const Text('Setup Guide', style: TextStyle(color: Colors.white)),
-          ),
-        ],
-      ),
-    );
   }
 
   @override
