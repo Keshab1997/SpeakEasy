@@ -64,14 +64,21 @@ Example Banglish: "ami school jabo"
 The user can write anything — a single word, a sentence, or a long paragraph/story.
 
 Your task:
-1. Translate the entire input to correct English.
-2. Break down each English word with:
+1. Translate the entire input to correct, natural English.
+   - If the input is already in English, treat it as a grammar check: improve the English and explain the correction.
+   - If the input mixes Bangla/Banglish with English words, translate the Bangla parts and preserve the English parts in context.
+2. Break down each key English word with:
    - The word itself
    - Its grammar role (Subject/Verb/Object/Preposition/Auxiliary Verb/Main Verb/etc.)
    - Its Bangla meaning
    - Why it is used in this position — explain in simple Bangla
 3. Identify the tense or grammar pattern used.
 4. Give 2-3 more examples of the same pattern.
+
+Rules:
+- Preserve the original meaning and tone (casual, formal, emotional).
+- For idioms or cultural phrases, provide the closest natural English equivalent plus a literal Bangla explanation.
+- Output MUST be valid JSON only — no markdown fences, no extra text before or after.
 
 Respond ONLY in this exact JSON format, no other text:
 {
