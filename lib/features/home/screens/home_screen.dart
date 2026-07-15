@@ -1207,26 +1207,32 @@ Text('${(pct * 100).toInt()}%',
 style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 13)),
 ],
 ),
-const Spacer(),
-Container(
-padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-decoration: BoxDecoration(
-color: color.withOpacity(0.1),
-borderRadius: BorderRadius.circular(6),
-),
-child: Text(typeLabel,
-style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.bold)),
-),
-const SizedBox(height: 4),
-Text(todo.title,
-style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: 14),
-maxLines: 1, overflow: TextOverflow.ellipsis,
-),
-const SizedBox(height: 2),
-Text('Chapter ${todo.chapterNumber} • ${todo.level}',
-style: TextStyle(color: Colors.grey.shade500, fontSize: 11)),
-const SizedBox(height: 10),
-ClipRRect(
+	const Spacer(),
+	Column(
+	mainAxisSize: MainAxisSize.min,
+	crossAxisAlignment: CrossAxisAlignment.start,
+	children: [
+	Container(
+	padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+	decoration: BoxDecoration(
+	color: color.withOpacity(0.1),
+	borderRadius: BorderRadius.circular(6),
+	),
+	child: Text(typeLabel,
+	style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.bold)),
+	),
+	const SizedBox(height: 4),
+	Text(todo.title,
+	style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: 14),
+	maxLines: 1, overflow: TextOverflow.ellipsis,
+	),
+	const SizedBox(height: 2),
+	Text('Chapter ${todo.chapterNumber} • ${todo.level}',
+	style: TextStyle(color: Colors.grey.shade500, fontSize: 11)),
+	],
+	),
+	const SizedBox(height: 10),
+	ClipRRect(
 borderRadius: BorderRadius.circular(4),
 child: Stack(
 children: [

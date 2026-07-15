@@ -1,6 +1,7 @@
 # Play Store Upload Guide — SpeakEasy
 
 ## App Info
+
 - **Package Name:** `com.speakeasy.english.learn`
 - **App Name:** SpeakEasy
 - **Default Language:** English (United States)
@@ -12,6 +13,7 @@
 ---
 
 ## Prerequisites
+
 - ✅ Google Play Developer account ($25) — [play.google.com/console](https://play.google.com/console)
 - ✅ App Bundle ready (`flutter build appbundle` → `build/app/outputs/bundle/release/app-release.aab`)
 - ✅ Privacy Policy hosted: `https://keshab1997.github.io/SpeakEasy/privacy_policy.html`
@@ -50,6 +52,7 @@ EOF
 ## Step-by-Step
 
 ### 1. Create App in Play Console
+
 1. Go to [Google Play Console](https://play.google.com/console)
 2. Click **Create app**
 3. Fill in:
@@ -59,22 +62,24 @@ EOF
    - **Free or paid:** Free
 
 ### 2. Store Listing
+
 Fill in these fields:
 
-| Field | Content |
-|-------|---------|
-| **Short description** (80 chars) | Learn English through Bengali with AI — 70+ grammar lessons, vocabulary, quizzes & speaking practice. |
-| **Full description** | SpeakEasy is your AI English Speaking Partner. Learn English through Bengali with 70+ grammar lessons, vocabulary builder, AI conversation, speaking practice, and daily quizzes. Features: 70+ Grammar Lessons, Vocabulary (Beginner/Intermediate/Advanced), AI Chat Teacher, Speaking Practice with Speech Recognition, Daily Quizzes, Mock Tests with Timer, Streak Tracking, Interactive Games, Dark Mode, Ad-Free option |
-| **Screenshots** | 2-8 phone screenshots (min 2 required) |
-| **Feature graphic** | 1024×500 px (required) |
-| **Category** | Education |
-| **Tags** | Education, Language Learning, English |
-| **Email** | krishnasarkar987653@gmail.com |
-| **Privacy Policy** | https://keshab1997.github.io/SpeakEasy/privacy_policy.html |
+| Field                            | Content                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Short description** (80 chars) | Learn English through Bengali with AI — 70+ grammar lessons, vocabulary, quizzes & speaking practice.                                                                                                                                                                                                                                                                                                                         |
+| **Full description**             | SpeakEasy is your AI English Speaking Partner. Learn English through Bengali with 70+ grammar lessons, vocabulary builder, AI conversation, speaking practice, and daily quizzes. Features: 70+ Grammar Lessons, Vocabulary (Beginner/Intermediate/Advanced), AI Chat Teacher, Speaking Practice with Speech Recognition, Daily Quizzes, Mock Tests with Timer, Streak Tracking, Interactive Games, Dark Mode, Ad-Free option |
+| **Screenshots**                  | 2-8 phone screenshots (min 2 required)                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Feature graphic**              | 1024×500 px (required)                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Category**                     | Education                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Tags**                         | Education, Language Learning, English                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Email**                        | krishnasarkar987653@gmail.com                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Privacy Policy**               | https://keshab1997.github.io/SpeakEasy/privacy_policy.html                                                                                                                                                                                                                                                                                                                                                                    |
 
 > ℹ️ **Note:** The email above should match the one in your Firebase Console support email.
 
 ### 3. App Content
+
 - **Content Rating:** Complete questionnaire (usually rated for Everyone or Everyone 10+)
 - **Target Audience:** Select appropriate age groups
 - **Ads:** Yes (AdMob)
@@ -99,6 +104,7 @@ flutter build appbundle --release
 4. Review and rollout
 
 ### 5. Pricing & Distribution
+
 - Select countries (start with India, Bangladesh, USA, UK, UAE)
 - Keep Free
 
@@ -122,6 +128,7 @@ Since the package name changed to `com.speakeasy.english.learn`, you need to:
 ---
 
 ## Screenshot Tips
+
 - Use Android emulator or real device to capture clean screenshots
 - Show main screens: Home, Lesson, Quiz, AI Chat, Speaking Practice, Progress
 - Dimensions: 1080×1920 px (Android phone screenshots)
@@ -148,6 +155,7 @@ Since the package name changed to `com.speakeasy.english.learn`, you need to:
 ---
 
 ## After Release
+
 - Monitor via Play Console
 - Check Firebase Crashlytics for crashes
 - Respond to user reviews

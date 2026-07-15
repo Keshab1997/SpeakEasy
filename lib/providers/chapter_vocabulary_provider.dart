@@ -31,7 +31,7 @@ final allChaptersProvider =
   return chapters;
 });
 
-/// Loads a single chapter: remote → Hive cache → local asset fallback
+/// Loads a single chapter: Hive cache → local asset → remote (background)
 Future<VocabularyChapter> _loadChapter(String assetPath) async {
   final raw = await VocabRemoteService.loadChapterJson(assetPath);
   return VocabularyChapter.fromJson(jsonDecode(raw) as Map<String, dynamic>);

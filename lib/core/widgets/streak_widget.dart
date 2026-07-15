@@ -127,6 +127,7 @@ class _StreakWidgetState extends State<StreakWidget>
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // ═══ TOP ROW: Streak Counter + Freeze Shield ═══
@@ -237,14 +238,12 @@ class _StreakWidgetState extends State<StreakWidget>
                         ],
                       )
                     else
-                      Flexible(
-                        child: Text(
-                          "Complete a lesson to keep your streak!",
-                          style: TextStyle(
-                            color: Colors.white60,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                          ),
+                      Text(
+                        "Complete a lesson to keep your streak!",
+                        style: TextStyle(
+                          color: Colors.white60,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     if (widget.isStreakFrozen && !widget.hasPracticeToday)
@@ -339,12 +338,13 @@ class _StreakWidgetState extends State<StreakWidget>
         color: Colors.white.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(Icons.calendar_today_rounded,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.calendar_today_rounded,
                   size: 12, color: Colors.white.withOpacity(0.6)),
               const SizedBox(width: 4),
               Text(
