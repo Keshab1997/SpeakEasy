@@ -8,8 +8,7 @@ import '../../../core/constants/app_colors.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../services/ai_service.dart';
 import '../../../services/hive_service.dart';
-import '../../settings/screens/api_setup_guide_screen.dart';
-import '../../settings/screens/settings_screen.dart';
+import '../../../services/translation_service.dart';
 
 class AiChatScreen extends ConsumerStatefulWidget {
   final VoidCallback? onNavigateToHome;
@@ -151,16 +150,12 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
 
   void _addGreeting() {
     final displayName = _userName.isNotEmpty ? _userName : 'there';
-    final greetingText = _isAiConfigured
-        ? 'Hello $displayName! 👋\n\nI am Keshab, your AI English Teacher. '
-            'You can ask me anything about English — grammar, vocabulary, '
-            'pronunciation, or just chat with me in English or Bangla. '
-            'I am here to help you improve!\n\n'
-            'How are you doing today?'
-        : 'Hello $displayName! 👋\n\nI am Keshab, your AI English Teacher. '
-            'To get started, please set up your AI API key by tapping the '
-            '🔧 Setup button above.\n\n'
-            'Once configured, you can ask me anything about English!';
+    final greetingText = 'Hello $displayName! 👋\n\n'
+        'I am Keshab, your AI English Teacher. '
+        'You can ask me anything about English — grammar, vocabulary, '
+        'pronunciation, or just chat with me in English or Bangla. '
+        'I am here to help you improve!\n\n'
+        'How are you doing today?';
     setState(() {
       _messages.add({
         'text': greetingText,
@@ -287,26 +282,17 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
 
     void handleError(Object error) {
       if (!mounted) return;
-      final activeKey = HiveService.getActiveAiKey();
       _cancelStreaming();
       setState(() {
         _isTyping = false;
-        _isAiConfigured = activeKey?['key']?.toString().isNotEmpty ?? false;
-        _aiModel = activeKey?['model']?.toString() ?? '';
+        _messages.add({
+          'text': 'AI service not available',
+          'isMe': false,
+          'time': _formatTime(DateTime.now()),
+          'timestamp': DateTime.now().millisecondsSinceEpoch,
+        });
       });
-      
-      final errorStr = error.toString();
-      if (errorStr.contains('API_KEY_MISSING')) {
-        _showSetupDialog(
-          'AI Model Not Configured',
-          'Please set up your AI API key to use the AI teacher feature.',
-        );
-      } else if (errorStr.contains('API_CALL_FAILED')) {
-        _showSetupDialog(
-          'Connection Failed',
-          'Unable to connect to AI service. Please check your API key configuration.',
-        );
-      }
+      _scrollToBottom();
     }
 
     if (systemPrompt != null) {
@@ -511,12 +497,13 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
     setState(() => _isTranslating = true);
     msg['translating'] = true;
     try {
-      final translation = await AIService().sendMessage(
-        'Translate this English text to Bengali (Bangla). Return ONLY the translation, nothing else:\n\n$text',
+      final translation = await TranslationService().translate(
+        text: text,
+        fromLang: 'en',
+        toLang: 'bn',
       );
       if (!mounted) return;
-      final cleanTranslation = translation.replaceAll('বাংলা:', '').replaceAll('---', '').trim();
-      msg['translatedText'] = cleanTranslation;
+      msg['translatedText'] = translation ?? '(Could not translate. Please try again.)';
       msg['translating'] = false;
       setState(() {});
     } catch (_) {
@@ -1055,55 +1042,13 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
               child: const Icon(Icons.smart_toy_rounded, color: AppColors.primary, size: 24),
             ),
             const SizedBox(width: 12),
-            Flexible(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Keshab',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  Row(
-                  children: [
-                    Container(
-                      width: 8,
-                      height: 8,
-                      decoration: BoxDecoration(
-                        color: _isAiConfigured ? Colors.green : Colors.orange,
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    const SizedBox(width: 4),
-                    Flexible(
-                      child: Text(
-                        _isAiConfigured 
-                            ? (_aiModel.isNotEmpty ? _aiModel : 'Online')
-                            : 'Setup Required',
-                        style: TextStyle(
-                          fontSize: 11,
-                          color: _isAiConfigured ? Colors.green : Colors.orange,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+            const Text(
+              'Keshab',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ],
         ),
         actions: [
-          if (!_isAiConfigured)
-            IconButton(
-              icon: const Icon(Icons.settings_suggest_rounded, size: 24, color: Colors.orange),
-              tooltip: 'Setup AI',
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const SettingsScreen()),
-              ),
-            ),
           // Tools Popup Menu (Grammar Mode, Voice Mode)
           PopupMenuButton<String>(
             icon: Icon(
