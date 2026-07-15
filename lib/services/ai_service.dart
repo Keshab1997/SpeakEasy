@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../models/admin_api_key.dart';
 import 'api_key_manager.dart';
 import 'hive_service.dart';
 
@@ -8,25 +9,14 @@ class AIService {
   factory AIService() => _instance;
   AIService._();
 
-  /// Returns key from ApiKeyManager if admin keys are enabled, else user's own key.
-  String? get _adminKey {
-    final keyData = ApiKeyManager.instance.getNextKey();
-    return keyData?.key;
-  }
+  /// Cached admin key for the current request cycle.
+  AdminApiKey? _currentAdminKey;
 
-  String? get _adminBaseUrl {
-    final keyData = ApiKeyManager.instance.getNextKey();
-    return keyData?.baseUrl;
-  }
-
-  String? get _adminModel {
-    final keyData = ApiKeyManager.instance.getNextKey();
-    return keyData?.model;
-  }
-
+  /// Returns key from the cached admin key, or user's own key.
   String get _apiKey {
     if (HiveService.getUseApiKeyManager()) {
-      return _adminKey ?? '';
+      _currentAdminKey ??= ApiKeyManager.instance.getNextKey();
+      return _currentAdminKey?.key ?? '';
     }
     final active = HiveService.getActiveAiKey();
     return active?['key'] as String? ?? '';
@@ -34,7 +24,7 @@ class AIService {
 
   String get _baseUrl {
     if (HiveService.getUseApiKeyManager()) {
-      return _adminBaseUrl ?? 'https://openrouter.ai/api/v1';
+      return _currentAdminKey?.baseUrl ?? 'https://openrouter.ai/api/v1';
     }
     final active = HiveService.getActiveAiKey();
     return active?['baseUrl'] as String? ?? 'https://api.chatanywhere.tech/v1';
@@ -42,7 +32,7 @@ class AIService {
 
   String get _model {
     if (HiveService.getUseApiKeyManager()) {
-      return _adminModel ?? 'gpt-4o-mini';
+      return _currentAdminKey?.model ?? 'gpt-4o-mini';
     }
     final active = HiveService.getActiveAiKey();
     return active?['model'] as String? ?? 'gpt-4o-mini';
@@ -102,6 +92,7 @@ class AIService {
   }
 
   Future<bool> testConnection() async {
+    _currentAdminKey = null;
     if (_apiKey.isEmpty) return false;
     try {
       final url = Uri.parse('$_baseUrl/chat/completions');
@@ -124,6 +115,7 @@ class AIService {
   }
 
   Future<String> sendMessage(String message) async {
+    _currentAdminKey = null;
     if (_apiKey.isEmpty) {
       if (HiveService.getUseApiKeyManager()) {
         return '⚠️ সার্ভার ব্যস্ত, কিছুক্ষণ পর আবার চেষ্টা করুন।';
@@ -140,6 +132,7 @@ class AIService {
   }
 
   Future<String> sendMessageWithSystem(String message, {String? systemPrompt, List<Map<String, String>>? history, int? maxTokens}) async {
+    _currentAdminKey = null;
     if (_apiKey.isEmpty) {
       if (HiveService.getUseApiKeyManager()) {
         return '⚠️ সার্ভার ব্যস্ত, কিছুক্ষণ পর আবার চেষ্টা করুন।';
