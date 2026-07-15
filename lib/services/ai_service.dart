@@ -40,7 +40,8 @@ class AIService {
 
   /// Fetch free models from OpenRouter.
   /// If [apiKey] is provided, uses it; otherwise peeks at admin key pool or user key.
-  Future<List<Map<String, dynamic>>> fetchFreeOpenRouterModels({String? apiKey}) async {
+  Future<List<Map<String, dynamic>>> fetchFreeOpenRouterModels(
+      {String? apiKey}) async {
     try {
       String keyForFetch;
       if (apiKey != null && apiKey.isNotEmpty) {
@@ -53,7 +54,8 @@ class AIService {
       }
       if (keyForFetch.isEmpty) return [];
 
-      final url = Uri.parse('https://openrouter.ai/api/v1/models?sort=latency-low-to-high');
+      final url = Uri.parse(
+          'https://openrouter.ai/api/v1/models?sort=latency-low-to-high');
       final response = await http.get(
         url,
         headers: {
@@ -61,15 +63,18 @@ class AIService {
         },
       ).timeout(const Duration(seconds: 10));
       if (response.statusCode == 200) {
-        final data = jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
+        final data =
+            jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
         final allModels = data['data'] as List<dynamic>? ?? [];
         final free = allModels.where((m) {
           final map = m as Map<String, dynamic>;
           final pricing = map['pricing'] as Map<String, dynamic>? ?? {};
-          final modality = (map['architecture'] as Map<String, dynamic>? ?? {})['modality'] as String? ?? '';
-          return modality == 'text->text'
-              && pricing['prompt'] == '0'
-              && pricing['completion'] == '0';
+          final modality = (map['architecture'] as Map<String, dynamic>? ??
+                  {})['modality'] as String? ??
+              '';
+          return modality == 'text->text' &&
+              pricing['prompt'] == '0' &&
+              pricing['completion'] == '0';
         }).toList();
 
         final total = free.length;
@@ -96,18 +101,22 @@ class AIService {
     if (_apiKey.isEmpty) return false;
     try {
       final url = Uri.parse('$_baseUrl/chat/completions');
-      final response = await http.post(
-        url,
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer $_apiKey',
-        },
-        body: jsonEncode({
-          'model': _model,
-          'messages': [{'role': 'user', 'content': 'Hi'}],
-          'max_tokens': 5,
-        }),
-      ).timeout(const Duration(seconds: 15));
+      final response = await http
+          .post(
+            url,
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer $_apiKey',
+            },
+            body: jsonEncode({
+              'model': _model,
+              'messages': [
+                {'role': 'user', 'content': 'Hi'}
+              ],
+              'max_tokens': 5,
+            }),
+          )
+          .timeout(const Duration(seconds: 15));
       return response.statusCode == 200;
     } catch (_) {
       return false;
@@ -131,7 +140,10 @@ class AIService {
     }
   }
 
-  Future<String> sendMessageWithSystem(String message, {String? systemPrompt, List<Map<String, String>>? history, int? maxTokens}) async {
+  Future<String> sendMessageWithSystem(String message,
+      {String? systemPrompt,
+      List<Map<String, String>>? history,
+      int? maxTokens}) async {
     _currentAdminKey = null;
     if (_apiKey.isEmpty) {
       if (HiveService.getUseApiKeyManager()) {
@@ -141,14 +153,19 @@ class AIService {
     }
 
     try {
-      return await _callOpenAI(message, systemPrompt: systemPrompt, history: history, maxTokens: maxTokens);
+      return await _callOpenAI(message,
+          systemPrompt: systemPrompt, history: history, maxTokens: maxTokens);
     } catch (e) {
       if (e.toString().contains('API_KEY_MISSING')) rethrow;
       throw Exception('API_CALL_FAILED');
     }
   }
 
-  Future<String> _callOpenAI(String message, {String? systemPrompt, List<Map<String, String>>? history, int? maxTokens}) async {
+  Future<String> _callOpenAI(String message,
+      {String? systemPrompt,
+      List<Map<String, String>>? history,
+      int? maxTokens,
+      bool isRetry = false}) async {
     final url = Uri.parse('$_baseUrl/chat/completions');
     final userName = HiveService.getUserName();
 
@@ -157,19 +174,19 @@ class AIService {
       'role': 'system',
       'content': systemPrompt ??
           'You are Keshab, an AI English teacher for Bengali speakers. '
-          '${userName.isNotEmpty ? "Your student is $userName. " : ""}'
-          'Your job: help the student improve their English through natural conversation.\n\n'
-          'RULES:\n'
-          '1. CRITICAL: Check BOTH grammar AND factual accuracy. If a sentence is '
-          'grammatically correct but factually wrong (e.g., "The Sun revolves around '
-          'the Earth"), politely correct the fact.\n'
-          '2. When the student writes an English sentence, first acknowledge what they '
-          'said, then point out any errors (grammar OR fact).\n'
-          '3. Keep responses in English only. There is a separate translate button for Bangla.\n'
-          '4. If the student asks in Bangla, respond in English with simple words.\n'
-          '5. Be concise — 2-4 sentences max unless explaining a complex topic.\n'
-          '6. Always encourage the student, but be honest about mistakes.\n'
-          '7. Address the student by name when possible.'
+              '${userName.isNotEmpty ? "Your student is $userName. " : ""}'
+              'Your job: help the student improve their English through natural conversation.\n\n'
+              'RULES:\n'
+              '1. CRITICAL: Check BOTH grammar AND factual accuracy. If a sentence is '
+              'grammatically correct but factually wrong (e.g., "The Sun revolves around '
+              'the Earth"), politely correct the fact.\n'
+              '2. When the student writes an English sentence, first acknowledge what they '
+              'said, then point out any errors (grammar OR fact).\n'
+              '3. Keep responses in English only. There is a separate translate button for Bangla.\n'
+              '4. If the student asks in Bangla, respond in English with simple words.\n'
+              '5. Be concise — 2-4 sentences max unless explaining a complex topic.\n'
+              '6. Always encourage the student, but be honest about mistakes.\n'
+              '7. Address the student by name when possible.'
     });
     if (history != null && history.isNotEmpty) {
       messages.addAll(history);
@@ -189,10 +206,38 @@ class AIService {
       }),
     );
 
+    // Report success/failure to ApiKeyManager (for admin key health tracking)
     if (response.statusCode == 200) {
+      if (HiveService.getUseApiKeyManager() && _currentAdminKey != null) {
+        ApiKeyManager.instance.reportSuccess(_currentAdminKey!);
+      }
       final bodyString = utf8.decode(response.bodyBytes);
       final data = jsonDecode(bodyString);
-      return data['choices']?[0]?['message']?['content'] ?? _getLocalResponse(message);
+      final content = data['choices']?[0]?['message']?['content'];
+      if (content != null) return content;
+    } else {
+      // Report failure so the key goes on cooldown
+      if (HiveService.getUseApiKeyManager() && _currentAdminKey != null) {
+        ApiKeyManager.instance.reportFailure(
+          _currentAdminKey!,
+          response.statusCode,
+          'conversation',
+          '',
+        );
+      }
+      // Auto-retry once with next healthy key if admin keys are enabled
+      if (!isRetry && HiveService.getUseApiKeyManager()) {
+        _currentAdminKey = null;
+        final nextKey = ApiKeyManager.instance.getNextKey();
+        if (nextKey != null) {
+          _currentAdminKey = nextKey;
+          return _callOpenAI(message,
+              systemPrompt: systemPrompt,
+              history: history,
+              maxTokens: maxTokens,
+              isRetry: true);
+        }
+      }
     }
     return _getLocalResponse(message);
   }
