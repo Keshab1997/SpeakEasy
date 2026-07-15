@@ -242,19 +242,12 @@ class AIService {
     return _getLocalResponse(message);
   }
 
+  /// Returns a clear fallback message when the AI service is unavailable.
+  /// This is NOT an AI response — it tells the user the service is temporarily down.
   String _getLocalResponse(String message) {
-    final lower = message.toLowerCase();
-    if (lower.contains('hello') || lower.contains('hi')) {
-      return "Hello! Great to hear from you. Let's start practicing English. Would you like to check grammar or talk about a topic?\n\nবাংলা: হ্যালো! তোমার কাছ থেকে শুনে很开心। চলো ইংরেজি চর্চা শুরু করি। তুমি কি গ্রামার চেক করতে চাও নাকি কোনো বিষয় নিয়ে কথা বলতে চাও?";
-    } else if (lower.contains('grammar') || lower.contains('mistake')) {
-      return "Write any sentence, and I will highlight grammar mistakes or suggest more natural alternatives!\n\nবাংলা: যেকোনো বাক্য লিখো, আমি গ্রামার ভুল দেখিয়ে দেব বা আরও স্বাভাবিক বিকল্প suggest করব!";
-    } else if (lower.contains('vocabulary') || lower.contains('word')) {
-      return "Learning new words daily is key! Try using new words in sentences. What word would you like to learn about?\n\nবাংলা: প্রতিদিন নতুন শব্দ শেখা খুবই গুরুত্বপূর্ণ! বাক্যে নতুন শব্দ ব্যবহার করার চেষ্টা করো। তুমি কোন শব্দ সম্পর্কে জানতে চাও?";
-    } else if (lower.contains('fluency') || lower.contains('speak')) {
-      return "To build fluency, try speaking out loud for 5 minutes every day. Use simple, correct sentences. Would you like to practice now?\n\nবাংলা: সাবলীল হতে প্রতিদিন ৫ মিনিট জোরে জোরে কথা বলার চেষ্টা করো। সহজ, সঠিক বাক্য ব্যবহার করো। এখনই প্র্যাকটিস করতে চাও?";
-    } else if (lower.contains('how are you')) {
-      return "I am doing great! How is your English learning journey going? Have you practiced today?\n\nবাংলা: আমি খুব ভালো আছি! তোমার ইংরেজি শেখার যাত্রা কেমন চলছে? আজ কি প্র্যাকটিস করেছ?";
-    }
-    return "That's interesting! Keep practicing. Try to use complete sentences. How can I help you improve your English today?\n\nবাংলা: এটা মজার! প্র্যাকটিস চালিয়ে যাও। সম্পূর্ণ বাক্য ব্যবহার করার চেষ্টা করো। আজ আমি তোমার ইংরেজি উন্নতিতে কীভাবে সাহায্য করতে পারি?";
+    return '⚠️ AI service is temporarily unavailable. Our team has been notified. '
+        'Please try again in a few moments.\n\n'
+        'বাংলা: ⚠️ AI সার্ভিস সাময়িকভাবে কাজ করছে না। আমাদের টিমকে জানানো হয়েছে। '
+        'অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।';
   }
 }
