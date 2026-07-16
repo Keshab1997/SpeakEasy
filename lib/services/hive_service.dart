@@ -283,6 +283,7 @@ class HiveService {
     final map = getWeeklyActivity();
     map[weekday.toString()] = true;
     await _settings.put('weekly_activity', map);
+    await _settings.put('weekly_activity_week_start', _getCurrentWeekStart());
 
     // Also persist to game_progress box so it gets synced to Firebase
     await _saveWeeklyActivityToGameProgress(map);
@@ -308,6 +309,7 @@ class HiveService {
   /// Reset weekly activity (call at start of new week)
   static Future<void> resetWeeklyActivity() async {
     await _settings.put('weekly_activity', <String, dynamic>{});
+    await _settings.put('weekly_activity_week_start', _getCurrentWeekStart());
     // Also reset in game_progress box
     await _saveWeeklyActivityToGameProgress(<String, dynamic>{});
   }
@@ -366,26 +368,62 @@ class HiveService {
     }
 	  }
 
-	  /// Check if the stored weekly activity is from a previous week and reset if so.
-	  /// Should be called before markDayActive() at app start.
-	  static Future<void> resetWeeklyActivityIfNewWeek() async {
-	    final lastPracticeDate = getLastPracticeDate();
-	    if (lastPracticeDate == null) return;
-	    
-	    final now = DateTime.now();
-	    final today = DateTime(now.year, now.month, now.day);
-	    final lastDay = DateTime(lastPracticeDate.year, lastPracticeDate.month, lastPracticeDate.day);
-	    
-	    // Find Monday of current week and last practice week
-	    final daysSinceMondayToday = today.weekday - 1;
-	    final mondayThisWeek = today.subtract(Duration(days: daysSinceMondayToday));
-	    final daysSinceMondayLast = lastDay.weekday - 1;
-	    final mondayLastWeek = lastDay.subtract(Duration(days: daysSinceMondayLast));
-	    
-	    if (mondayLastWeek.isBefore(mondayThisWeek)) {
-	      await resetWeeklyActivity();
-	    }
-	  }
+  /// Check if the stored weekly activity is from a previous week and reset if so.
+  /// Uses both lastPracticeDate and GameProgressModel.weeklyActivityWeekStart
+  /// as fallback for reliable week-boundary detection.
+  /// Should be called before markDayActive() at app start.
+  static Future<void> resetWeeklyActivityIfNewWeek() async {
+    if (_isNewWeek()) {
+      await resetWeeklyActivity();
+    }
+  }
+
+  /// Returns true if the stored weekly activity belongs to a previous week.
+  /// Checks two sources: lastPracticeDate (settings) and weeklyActivityWeekStart (game_progress).
+  static bool _isNewWeek() {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+
+    // Find Monday of the current week
+    final daysSinceMondayToday = today.weekday - 1;
+    final mondayThisWeek = today.subtract(Duration(days: daysSinceMondayToday));
+
+    // Check 1: lastPracticeDate from settings
+    final lastPracticeDate = getLastPracticeDate();
+    if (lastPracticeDate != null) {
+      final lastDay = DateTime(lastPracticeDate.year, lastPracticeDate.month, lastPracticeDate.day);
+      final daysSinceMondayLast = lastDay.weekday - 1;
+      final mondayLastWeek = lastDay.subtract(Duration(days: daysSinceMondayLast));
+      if (mondayLastWeek.isBefore(mondayThisWeek)) {
+        return true;
+      }
+    }
+
+    // Check 2: weeklyActivityWeekStart from GameProgressModel (backup)
+    if (Hive.isBoxOpen(_gameProgressBox)) {
+      final box = Hive.box(_gameProgressBox);
+      final raw = box.get('user_progress');
+      if (raw != null) {
+        try {
+          final progress = GameProgressModel.fromMap(
+            Map<String, dynamic>.from(raw as Map), '');
+          if (progress.weeklyActivityWeekStart != null &&
+              progress.weeklyActivityWeekStart != _getCurrentWeekStart()) {
+            return true;
+          }
+        } catch (_) {}
+      }
+    }
+
+    // Also check if the settings box has weekly_activity from a different week
+    // by looking at the stored week start (we save it alongside activity)
+    final storedWeekStart = _settings.get('weekly_activity_week_start') as String?;
+    if (storedWeekStart != null && storedWeekStart != _getCurrentWeekStart()) {
+      return true;
+    }
+
+    return false;
+  }
 
 	  // ── Streak Freeze Shop / Cost ──
 
