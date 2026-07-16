@@ -71,6 +71,12 @@ class RemoteConfigService {
     return null;
   }
 
+  /// Returns the in-app update configuration.
+  static Future<InAppUpdateConfig> getInAppUpdateConfig() async {
+    final config = await getConfig();
+    return config.inAppUpdate;
+  }
+
   /// Returns the streak freeze cost from gameplay settings.
   static Future<int> getStreakFreezeCost() async {
     final config = await getConfig();
