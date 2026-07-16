@@ -174,12 +174,25 @@ class StreakService {
   }
 
   /// Check if the user had any activity in the previous calendar week.
-  /// Examines the weeklyActivity map stored in GameProgressModel.
+  /// Uses lastActiveDate rather than weeklyActivity (which gets cleared
+  /// by HiveService.resetWeeklyActivityIfNewWeek before this runs).
   bool _hadActivityLastWeek(GameProgressModel progress) {
-    final weeklyActivity = progress.weeklyActivity;
-    if (weeklyActivity.isEmpty) return false;
-    // If any day (Mon=1..Sun=7) has true, there was activity
-    return weeklyActivity.values.any((active) => active);
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final lastActive = progress.lastActiveDate;
+    final lastActiveDay = DateTime(lastActive.year, lastActive.month, lastActive.day);
+
+    // Find Monday of the current week
+    final daysSinceMonday = today.weekday - 1;
+    final mondayThisWeek = today.subtract(Duration(days: daysSinceMonday));
+
+    // Monday of the previous week
+    final mondayPrevWeek = mondayThisWeek.subtract(const Duration(days: 7));
+
+    // Check if lastActiveDay falls within the previous calendar week
+    // (Monday 00:00 ≤ lastActiveDay < Monday 00:00 of current week)
+    return !lastActiveDay.isBefore(mondayPrevWeek) &&
+        lastActiveDay.isBefore(mondayThisWeek);
   }
 
   /// Check and update weekly streak based on week transition.
