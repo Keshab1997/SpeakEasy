@@ -383,12 +383,12 @@ class _StreakWidgetState extends State<StreakWidget>
   }
 
   /// 7-day calendar grid (Duolingo-style)
+  /// 7-day attendance calendar with day names & check/cross marks
   Widget _buildWeeklyCalendar() {
     final activity = HiveService.getWeekActivityList();
     final now = DateTime.now();
-    // Convert: DateTime.monday=1 -> index 0
-    // We'll show Mon-Sun labels
-    final dayLabels = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+    // Short day names (Monday-first to match DateTime.weekday)
+    final dayLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
     return Container(
       padding: const EdgeInsets.all(10),
@@ -396,13 +396,13 @@ class _StreakWidgetState extends State<StreakWidget>
         color: Colors.white.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
       ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Icon(Icons.calendar_today_rounded,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.calendar_today_rounded,
                   size: 12, color: Colors.white.withOpacity(0.6)),
               const SizedBox(width: 4),
               Text(
@@ -415,7 +415,7 @@ class _StreakWidgetState extends State<StreakWidget>
               ),
               const Spacer(),
               Text(
-                '${activity.where((a) => a).length}/7 days',
+                '\${activity.where((a) => a).length}/7 days',
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w700,
@@ -424,59 +424,57 @@ class _StreakWidgetState extends State<StreakWidget>
               ),
             ],
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 12),
+          // Day name row
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: List.generate(7, (i) {
+              final isToday = now.weekday - 1 == i;
+              return Text(
+                dayLabels[i],
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: isToday ? FontWeight.w700 : FontWeight.w500,
+                  color: isToday
+                      ? Colors.white
+                      : Colors.white.withOpacity(0.5),
+                ),
+              );
+            }),
+          ),
+          const SizedBox(height: 6),
+          // Attendance row (✅ present / ❌ absent)
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(7, (i) {
               final isActive = activity[i];
               final isToday = now.weekday - 1 == i;
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 32,
-                    height: 32,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: isActive
-                          ? (isToday
-                              ? Colors.greenAccent
-                              : Colors.green.withOpacity(0.6))
-                          : (isToday
-                              ? Colors.white.withOpacity(0.15)
-                              : Colors.white.withOpacity(0.05)),
-                      border: isToday && !isActive
-                          ? Border.all(
-                              color: Colors.white.withOpacity(0.4), width: 1.5)
-                          : null,
-                    ),
-                    child: Center(
-                      child: isActive
-                          ? const Icon(Icons.check_rounded,
-                              color: Colors.white, size: 16)
-                          : Text(
-                              dayLabels[i],
+              return Container(
+                width: 34,
+                height: 34,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: isActive
+                      ? Colors.green.withOpacity(0.7)
+                      : (isToday
+                          ? Colors.white.withOpacity(0.1)
+                          : Colors.transparent),
+                  border: isToday && !isActive
+                      ? Border.all(
+                          color: Colors.white.withOpacity(0.3), width: 1.5)
+                      : null,
+                ),
+                child: Center(
+                  child: isActive
+                      ? const Text('✅', style: TextStyle(fontSize: 14))
+                      : (isToday
+                          ? const Text('❌', style: TextStyle(fontSize: 11))
+                          : Text(dayLabels[i].substring(0, 1),
                               style: TextStyle(
                                 fontSize: 11,
-                                fontWeight:
-                                    isToday ? FontWeight.w700 : FontWeight.w500,
-                                color: isToday
-                                    ? Colors.white
-                                    : Colors.white.withOpacity(0.4),
-                              ),
-                            ),
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Container(
-                    width: 4,
-                    height: 4,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: isToday ? Colors.white.withOpacity(0.6) : Colors.transparent,
-                    ),
-                  ),
-                ],
+                                color: Colors.white.withOpacity(0.2),
+                              ))),
+                ),
               );
             }),
           ),
@@ -484,8 +482,6 @@ class _StreakWidgetState extends State<StreakWidget>
       ),
     );
   }
-
-  /// Daily XP progress bar (Duolingo style)
   Widget _buildDailyXPBar() {
     final progress = (widget.todayXP / widget.dailyXPTarget).clamp(0.0, 1.0);
 
