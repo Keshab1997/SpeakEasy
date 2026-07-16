@@ -49,6 +49,10 @@ import '../../practice/screens/bangla_english_practice_screen.dart';
 import '../../mock_test/screens/mock_test_list_screen.dart';
 import '../../homework/screens/homework_screen.dart';
 import '../../sentence_analyzer/screens/sentence_analyzer_screen.dart';
+import 'dart:async';
+import '../../../providers/idle_tracker_provider.dart';
+import '../../../core/widgets/reminder_overlay.dart';
+import '../../../services/idle_tracker_service.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
 final Function(int)? onNavigateToTab;
@@ -65,14 +69,20 @@ ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-final _tts = TtsService();
-bool _isSpeaking = false;
+	final _tts = TtsService();
+	bool _isSpeaking = false;
+	Timer? _idleCheckTimer;
 
 @override
 void initState() {
-super.initState();
-// Fetch progress & game stats on load
-WidgetsBinding.instance.addPostFrameCallback((_) async {
+	super.initState();
+	// Start idle tracker periodic check (every 15 minutes)
+	_idleCheckTimer = Timer.periodic(const Duration(minutes: 15), (_) async {
+	final notifier = ref.read(idleTrackerProvider.notifier);
+	await notifier.checkIdleStatus();
+	});
+	// Fetch progress & game stats on load
+	WidgetsBinding.instance.addPostFrameCallback((_) async {
 ref.read(notificationProvider.notifier).refresh();
 ref.read(progressProvider.notifier).fetchProgress();
 ref.read(xpProvider.notifier).refresh();
@@ -158,11 +168,19 @@ await progressRepo.uploadProgressToFirestore(uploadProgress);
 }
 }
 
-// 6. Refresh ALL providers after streak updates
-streakNotifier.refresh();
-ref.read(progressProvider.notifier).fetchProgress();
-});
-}
+	// 6. Refresh ALL providers after streak updates
+	streakNotifier.refresh();
+	ref.read(progressProvider.notifier).fetchProgress();
+	// Record initial activity for idle tracker
+	await IdleTrackerService.recordActivity();
+	});
+	}
+
+@override
+void dispose() {
+	_idleCheckTimer?.cancel();
+	super.dispose();
+	}
 
 void _speakWord(String word) {
 setState(() => _isSpeaking = true);
@@ -309,7 +327,8 @@ final lastOpenedChapter = ref.watch(lastOpenedChapterProvider);
 final xpState = ref.watch(xpProvider);
 final coinState = ref.watch(coinProvider);
 final streakState = ref.watch(streakProvider);
-final notificationState = ref.watch(notificationProvider);
+	final notificationState = ref.watch(notificationProvider);
+	final idleTrackerState = ref.watch(idleTrackerProvider);
 
 final user = authAsync.asData?.value;
 if (user?.name != null && user!.name.isNotEmpty) {
@@ -435,77 +454,98 @@ style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
 ),
 ],
 ),
-body: SafeArea(
-child: SingleChildScrollView(
-physics: const BouncingScrollPhysics(),
-padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-child: Column(
-crossAxisAlignment: CrossAxisAlignment.start,
-children: [
-// 1. Greeting
-_buildGreetingSection(theme, user?.name),
-const SizedBox(height: 20),
-// 🏆 Daily Quest
-_buildDailyQuizCard(context, theme, isDark),
-const SizedBox(height: 20),
-	// 2. Streak & Progress (Combined in one widget)
-	StreakWidget(
-	currentStreak: currentStreak,
-	weeklyStreak: streakState.weeklyStreak,
-	weeklyMilestone: streakState.weeklyMilestone,
-	weeklyMilestoneLabel: streakState.weeklyMilestoneLabel,
-	thisWeekActiveDays: streakState.thisWeekActiveDays,
-	todayXP: currentXP,
-	dailyXPTarget: 50,
-	hasPracticeToday: _hasPracticedToday(),
-	isStreakFrozen: HiveService.getStreakFreezeCount() > 0,
-	streakFreezeCount: HiveService.getStreakFreezeCount(),
-	onTap: () => _showStreakInfoDialog(context),
-	onBuyFreeze: () => _buyStreakFreeze(context, ref, currentCoins),
-	onShare: () => _shareStreak(context, currentStreak),
-	),
-const SizedBox(height: 24),
-
-	// 3. Guides & Resources (Student Guide & Study Routine)
-_buildGuidesSection(theme, isDark),
-const SizedBox(height: 24),
-
-// 5. Continue Learning (Most Important - Keep at top)
-_buildContinueLearningSection(
-theme, isDark, studyState, allGrammarChapters, allVocabChapters, lastOpenedChapter,
-),
-const SizedBox(height: 24),
-
-	// 6. Study Plan (To-Do)
-	const StudyPlanSection(),
+	body: Stack(
+	children: [
+	SafeArea(
+	child: SingleChildScrollView(
+	physics: const BouncingScrollPhysics(),
+	padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+	child: Column(
+	crossAxisAlignment: CrossAxisAlignment.start,
+	children: [
+	// 1. Greeting
+	_buildGreetingSection(theme, user?.name),
+	const SizedBox(height: 20),
+	// 🏆 Daily Quest
+	_buildDailyQuizCard(context, theme, isDark),
+	const SizedBox(height: 20),
+		// 2. Streak & Progress (Combined in one widget)
+		StreakWidget(
+		currentStreak: currentStreak,
+		weeklyStreak: streakState.weeklyStreak,
+		weeklyMilestone: streakState.weeklyMilestone,
+		weeklyMilestoneLabel: streakState.weeklyMilestoneLabel,
+		thisWeekActiveDays: streakState.thisWeekActiveDays,
+		todayXP: currentXP,
+		dailyXPTarget: 50,
+		hasPracticeToday: _hasPracticedToday(),
+		isStreakFrozen: HiveService.getStreakFreezeCount() > 0,
+		streakFreezeCount: HiveService.getStreakFreezeCount(),
+		onTap: () => _showStreakInfoDialog(context),
+		onBuyFreeze: () => _buyStreakFreeze(context, ref, currentCoins),
+		onShare: () => _shareStreak(context, currentStreak),
+		),
 	const SizedBox(height: 24),
-	
-	// 7. AI Features (Important for modern learning)
-_buildAIFeaturesSection(theme, isDark),
-const SizedBox(height: 24),
 
-// 9. Learning Modules
-_buildHomeLearningSection(theme, isDark),
-const SizedBox(height: 24),
+		// 3. Guides & Resources (Student Guide & Study Routine)
+	_buildGuidesSection(theme, isDark),
+	const SizedBox(height: 24),
 
-// 10. Practice Section
-_buildHomePracticeSection(theme, isDark),
-const SizedBox(height: 24),
+	// 5. Continue Learning (Most Important - Keep at top)
+	_buildContinueLearningSection(
+	theme, isDark, studyState, allGrammarChapters, allVocabChapters, lastOpenedChapter,
+	),
+	const SizedBox(height: 24),
 
-// 11. Game Section
-FeatureGateWidget(
-featureKey: 'games',
-child: _buildGameCard(theme, isDark),
-),
-const SizedBox(height: 24),
+		// 6. Study Plan (To-Do)
+		const StudyPlanSection(),
+		const SizedBox(height: 24),
+		
+		// 7. AI Features (Important for modern learning)
+	_buildAIFeaturesSection(theme, isDark),
+	const SizedBox(height: 24),
 
-// 12. Banner Ad
-const BannerAdWidget(),
-const SizedBox(height: 16),
-],
-),
-),
-),
+	// 9. Learning Modules
+	_buildHomeLearningSection(theme, isDark),
+	const SizedBox(height: 24),
+
+	// 10. Practice Section
+	_buildHomePracticeSection(theme, isDark),
+	const SizedBox(height: 24),
+
+	// 11. Game Section
+	FeatureGateWidget(
+	featureKey: 'games',
+	child: _buildGameCard(theme, isDark),
+	),
+	const SizedBox(height: 24),
+
+	// 12. Banner Ad
+	const BannerAdWidget(),
+	const SizedBox(height: 16),
+	],
+	),
+	),
+	),
+	// Idle reminder overlay at bottom
+	if (idleTrackerState.showingReminder)
+	Positioned(
+	left: 0,
+	right: 0,
+	bottom: MediaQuery.of(context).padding.bottom + 8,
+	child: ReminderOverlay(
+	hoursIdle: idleTrackerState.hoursIdle,
+	onStartPractice: () async {
+	await ref.read(idleTrackerProvider.notifier).recordActivity();
+	widget.onNavigateToLessons?.call();
+	},
+	onDismiss: () async {
+	await ref.read(idleTrackerProvider.notifier).dismissReminder();
+	},
+	),
+	),
+	],
+	),
 );
 }
 

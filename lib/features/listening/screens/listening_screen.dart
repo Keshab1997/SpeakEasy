@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../models/listening_model.dart';
+import '../../../services/idle_tracker_service.dart';
 import '../../../services/speech_service.dart';
 
 class ListeningScreen extends StatefulWidget {
@@ -36,6 +37,7 @@ class _ListeningScreenState extends State<ListeningScreen>
   @override
   void initState() {
     super.initState();
+    IdleTrackerService.recordActivity();
     _pulseCtrl = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1200),

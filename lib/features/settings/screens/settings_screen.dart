@@ -24,6 +24,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   bool _practiceReminderNotification = true;
   bool _streakNotification = true;
   bool _reEngagementNotification = true;
+  bool _idleReminderEnabled = true;
+  int _idleReminderFrequency = 4;
+  bool _idleReminderSoundEnabled = true;
   String _selectedLanguage = 'English (US)';
   List<Map<String, dynamic>> _aiKeys = [];
 
@@ -36,6 +39,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     _practiceReminderNotification = HiveService.isPracticeReminderNotification();
     _streakNotification = HiveService.isStreakNotification();
     _reEngagementNotification = HiveService.isReEngagementEnabled();
+    _idleReminderEnabled = HiveService.isIdleReminderEnabled();
+    _idleReminderFrequency = HiveService.getIdleReminderFrequencyHours();
+    _idleReminderSoundEnabled = HiveService.isIdleReminderSoundEnabled();
     _loadAiKeys();
   }
 
@@ -157,6 +163,53 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   },
                   activeColor: AppColors.primary,
                 ),
+                const Divider(height: 1),
+                SwitchListTile(
+                  title: const Text('\u23f3 Idle Reminder'),
+                  subtitle: const Text('Duolingo-style reminder when inactive'),
+                  secondary: const Icon(Icons.timer_outlined, color: AppColors.primary),
+                  value: _idleReminderEnabled,
+                  onChanged: (val) async {
+                    setState(() => _idleReminderEnabled = val);
+                    await HiveService.setIdleReminderEnabled(val);
+                  },
+                  activeColor: AppColors.primary,
+                ),
+                if (_idleReminderEnabled) ...[
+                  const Divider(height: 1),
+                  ListTile(
+                    leading: const Icon(Icons.schedule_rounded, color: AppColors.primary),
+                    title: const Text('Reminder Frequency'),
+                    subtitle: Text('Every $_idleReminderFrequency hours'),
+                    trailing: SizedBox(
+                      width: 120,
+                      child: Slider(
+                        value: _idleReminderFrequency.toDouble(),
+                        min: 2,
+                        max: 24,
+                        divisions: 5,
+                        label: '$_idleReminderFrequency hours',
+                        onChanged: (val) async {
+                          setState(() => _idleReminderFrequency = val.round());
+                          await HiveService.setIdleReminderFrequencyHours(val.round());
+                        },
+                        activeColor: AppColors.primary,
+                      ),
+                    ),
+                  ),
+                  const Divider(height: 1),
+                  SwitchListTile(
+                    title: const Text('\ud83d\udd0a Reminder Sound'),
+                    subtitle: const Text('Play custom notification sound'),
+                    secondary: const Icon(Icons.music_note_rounded, color: AppColors.primary),
+                    value: _idleReminderSoundEnabled,
+                    onChanged: (val) async {
+                      setState(() => _idleReminderSoundEnabled = val);
+                      await HiveService.setIdleReminderSoundEnabled(val);
+                    },
+                    activeColor: AppColors.primary,
+                  ),
+                ],
               ],
             ]),
             if (!_notifications) ...[
