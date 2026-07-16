@@ -142,47 +142,53 @@ class _StreakWidgetState extends State<StreakWidget>
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // 🔥 Flame Streak Number (daily streak)
-                    AnimatedBuilder(
-                      animation: _pulseAnimation,
-                      builder: (context, child) {
-                        return Transform.scale(
-                          scale: widget.currentStreak > 0
-                              ? _pulseAnimation.value
-                              : 1.0,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                '🔥',
-                                style: TextStyle(fontSize: 36),
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                '${widget.currentStreak}',
-                                style: TextStyle(
-                                  fontSize: 48,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                  height: 1.1,
+                    // 🔥 Flame Streak Number (daily streak) — wrapped in Flexible to avoid overflow
+                    Flexible(
+                      child: AnimatedBuilder(
+                        animation: _pulseAnimation,
+                        builder: (context, child) {
+                          return Transform.scale(
+                            scale: widget.currentStreak > 0
+                                ? _pulseAnimation.value
+                                : 1.0,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  '🔥',
+                                  style: TextStyle(fontSize: 36),
                                 ),
-                              ),
-                              const SizedBox(width: 4),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 14),
-                                child: Text(
-                                  widget.currentStreak == 1 ? 'day' : 'days',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white.withOpacity(0.8),
+                                const SizedBox(width: 8),
+                                Flexible(
+                                  child: Text(
+                                    '${widget.currentStreak}',
+                                    style: TextStyle(
+                                      fontSize: 48,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                      height: 1.1,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
+                                const SizedBox(width: 4),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 8),
+                                  child: Text(
+                                    widget.currentStreak == 1 ? 'day' : 'days',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white.withOpacity(0.8),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
                     ),
 
                     // 📅 Weekly Streak Count + Freeze Shield
