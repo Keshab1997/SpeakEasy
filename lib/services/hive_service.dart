@@ -20,7 +20,7 @@ class HiveService {
   static const String _notificationHistoryBox = 'notification_history';
   static const String _mockTestProgressBox = 'mock_test_progress';
   static const String _aiSavedVocabBox = 'ai_saved_vocab';
-  
+
   static const String _dailyQuizCacheBox = 'daily_quiz_cache';
 
   static Future<void> initialize() async {
@@ -41,7 +41,7 @@ class HiveService {
     await Hive.openBox(_notificationHistoryBox);
     await Hive.openBox(_mockTestProgressBox);
     await Hive.openBox(_aiSavedVocabBox);
-    
+
     await Hive.openBox(_dailyQuizCacheBox);
   }
 
@@ -104,11 +104,13 @@ class HiveService {
 
   static Future<void> clearAllTestSessions() async {
     if (!Hive.isBoxOpen(_vocabTestHistoryBox)) return;
-    await Hive.box(_vocabTestHistoryBox).put('sessions', <Map<String, dynamic>>[]);
+    await Hive.box(_vocabTestHistoryBox)
+        .put('sessions', <Map<String, dynamic>>[]);
   }
 
   // Master Guide History
-  static Future<void> saveMasterGuideSession(Map<String, dynamic> session) async {
+  static Future<void> saveMasterGuideSession(
+      Map<String, dynamic> session) async {
     if (!Hive.isBoxOpen(_masterGuideHistoryBox)) {
       await Hive.openBox(_masterGuideHistoryBox);
     }
@@ -137,7 +139,8 @@ class HiveService {
 
   static Future<void> clearAllMasterGuideSessions() async {
     if (!Hive.isBoxOpen(_masterGuideHistoryBox)) return;
-    await Hive.box(_masterGuideHistoryBox).put('sessions', <Map<String, dynamic>>[]);
+    await Hive.box(_masterGuideHistoryBox)
+        .put('sessions', <Map<String, dynamic>>[]);
   }
 
   static Box get _favorites => Hive.box(_favoritesBox);
@@ -146,7 +149,8 @@ class HiveService {
 
   // Favorites
   static Future<void> addFavorite(String wordId) async {
-    final favorites = _favorites.get('wordIds', defaultValue: <String>[]) as List<String>;
+    final favorites =
+        _favorites.get('wordIds', defaultValue: <String>[]) as List<String>;
     if (!favorites.contains(wordId)) {
       favorites.add(wordId);
       await _favorites.put('wordIds', favorites);
@@ -154,7 +158,8 @@ class HiveService {
   }
 
   static Future<void> removeFavorite(String wordId) async {
-    final favorites = _favorites.get('wordIds', defaultValue: <String>[]) as List<String>;
+    final favorites =
+        _favorites.get('wordIds', defaultValue: <String>[]) as List<String>;
     favorites.remove(wordId);
     await _favorites.put('wordIds', favorites);
   }
@@ -198,7 +203,8 @@ class HiveService {
   }
 
   static bool isPracticeReminderNotification() {
-    return _settings.get('notify_practice_reminder', defaultValue: true) as bool;
+    return _settings.get('notify_practice_reminder', defaultValue: true)
+        as bool;
   }
 
   static Future<void> setStreakNotification(bool value) async {
@@ -259,7 +265,64 @@ class HiveService {
   }
 
   static bool isReEngagementEnabled() {
-    return _settings.get('re_engagement_notifications', defaultValue: true) as bool;
+    return _settings.get('re_engagement_notifications', defaultValue: true)
+        as bool;
+  }
+
+  // ── Idle Reminder Settings ──
+
+  static Future<void> setIdleReminderEnabled(bool value) async {
+    await _settings.put('idle_reminder_enabled', value);
+  }
+
+  static bool isIdleReminderEnabled() {
+    return _settings.get('idle_reminder_enabled', defaultValue: true) as bool;
+  }
+
+  static Future<void> setIdleReminderFrequencyHours(int hours) async {
+    await _settings.put('idle_reminder_frequency', hours);
+  }
+
+  static int getIdleReminderFrequencyHours() {
+    return _settings.get('idle_reminder_frequency', defaultValue: 4) as int;
+  }
+
+  static Future<void> setIdleReminderSoundEnabled(bool value) async {
+    await _settings.put('idle_reminder_sound', value);
+  }
+
+  static bool isIdleReminderSoundEnabled() {
+    return _settings.get('idle_reminder_sound', defaultValue: true) as bool;
+  }
+
+  // ── Idle Tracker ──
+
+  static Future<void> setLastActivityTime(DateTime date) async {
+    await _settings.put('last_activity_time', date.toIso8601String());
+  }
+
+  static DateTime? getLastActivityTime() {
+    final raw = _settings.get('last_activity_time');
+    if (raw == null) return null;
+    return DateTime.tryParse(raw as String);
+  }
+
+  static Future<void> setConsecutiveIdleReminders(int count) async {
+    await _settings.put('consecutive_idle_reminders', count);
+  }
+
+  static int getConsecutiveIdleReminders() {
+    return _settings.get('consecutive_idle_reminders', defaultValue: 0) as int;
+  }
+
+  static Future<void> setLastInAppReminderTime(DateTime date) async {
+    await _settings.put('last_in_app_reminder_time', date.toIso8601String());
+  }
+
+  static DateTime? getLastInAppReminderTime() {
+    final raw = _settings.get('last_in_app_reminder_time');
+    if (raw == null) return null;
+    return DateTime.tryParse(raw as String);
   }
 
   // ── Onboarding Completion ──
@@ -290,7 +353,8 @@ class HiveService {
   }
 
   static Map<String, dynamic> getWeeklyActivity() {
-    final raw = _settings.get('weekly_activity', defaultValue: <String, dynamic>{}) as Map;
+    final raw = _settings
+        .get('weekly_activity', defaultValue: <String, dynamic>{}) as Map;
     return Map<String, dynamic>.from(raw);
   }
 
@@ -301,7 +365,8 @@ class HiveService {
 
   /// Returns active days for current week (used for calendar grid)
   static List<bool> getWeekActivityList() {
-    final raw = _settings.get('weekly_activity', defaultValue: <String, dynamic>{}) as Map;
+    final raw = _settings
+        .get('weekly_activity', defaultValue: <String, dynamic>{}) as Map;
     final map = Map<String, dynamic>.from(raw);
     return List.generate(7, (i) => map[(i + 1).toString()] == true);
   }
@@ -323,7 +388,8 @@ class HiveService {
   }
 
   /// Save weekly activity map to game_progress box (for Firebase sync)
-  static Future<void> _saveWeeklyActivityToGameProgress(Map<String, dynamic> activity) async {
+  static Future<void> _saveWeeklyActivityToGameProgress(
+      Map<String, dynamic> activity) async {
     if (!Hive.isBoxOpen(_gameProgressBox)) return;
     final box = Hive.box(_gameProgressBox);
     final raw = box.get('user_progress');
@@ -359,14 +425,14 @@ class HiveService {
 
       // Only restore if the stored week matches the current week
       if (progress.weeklyActivityWeekStart == _getCurrentWeekStart()) {
-        final restoredMap = progress.weeklyActivity
-            .map((k, v) => MapEntry(k, v as dynamic));
+        final restoredMap =
+            progress.weeklyActivity.map((k, v) => MapEntry(k, v as dynamic));
         _settings.put('weekly_activity', restoredMap);
       }
     } catch (_) {
       // Silently ignore parse errors
     }
-	  }
+  }
 
   /// Check if the stored weekly activity is from a previous week and reset if so.
   /// Uses both lastPracticeDate and GameProgressModel.weeklyActivityWeekStart
@@ -391,9 +457,11 @@ class HiveService {
     // Check 1: lastPracticeDate from settings
     final lastPracticeDate = getLastPracticeDate();
     if (lastPracticeDate != null) {
-      final lastDay = DateTime(lastPracticeDate.year, lastPracticeDate.month, lastPracticeDate.day);
+      final lastDay = DateTime(
+          lastPracticeDate.year, lastPracticeDate.month, lastPracticeDate.day);
       final daysSinceMondayLast = lastDay.weekday - 1;
-      final mondayLastWeek = lastDay.subtract(Duration(days: daysSinceMondayLast));
+      final mondayLastWeek =
+          lastDay.subtract(Duration(days: daysSinceMondayLast));
       if (mondayLastWeek.isBefore(mondayThisWeek)) {
         return true;
       }
@@ -406,7 +474,7 @@ class HiveService {
       if (raw != null) {
         try {
           final progress = GameProgressModel.fromMap(
-            Map<String, dynamic>.from(raw as Map), '');
+              Map<String, dynamic>.from(raw as Map), '');
           if (progress.weeklyActivityWeekStart != null &&
               progress.weeklyActivityWeekStart != _getCurrentWeekStart()) {
             return true;
@@ -417,7 +485,8 @@ class HiveService {
 
     // Also check if the settings box has weekly_activity from a different week
     // by looking at the stored week start (we save it alongside activity)
-    final storedWeekStart = _settings.get('weekly_activity_week_start') as String?;
+    final storedWeekStart =
+        _settings.get('weekly_activity_week_start') as String?;
     if (storedWeekStart != null && storedWeekStart != _getCurrentWeekStart()) {
       return true;
     }
@@ -425,9 +494,9 @@ class HiveService {
     return false;
   }
 
-	  // ── Streak Freeze Shop / Cost ──
+  // ── Streak Freeze Shop / Cost ──
 
-	  static int getStreakFreezeCost() {
+  static int getStreakFreezeCost() {
     return 100; // coins per freeze
   }
 
@@ -462,7 +531,9 @@ class HiveService {
     return raw.map((e) {
       final map = Map<String, dynamic>.from(e as Map);
       if (map['questions'] is List) {
-        map['questions'] = (map['questions'] as List).map((q) => Map<String, dynamic>.from(q as Map)).toList();
+        map['questions'] = (map['questions'] as List)
+            .map((q) => Map<String, dynamic>.from(q as Map))
+            .toList();
       }
       return map;
     }).toList();
@@ -479,7 +550,8 @@ class HiveService {
 
   static Future<void> clearAllHomeworkSessions() async {
     if (!Hive.isBoxOpen(_homeworkHistoryBox)) return;
-    await Hive.box(_homeworkHistoryBox).put('sessions', <Map<String, dynamic>>[]);
+    await Hive.box(_homeworkHistoryBox)
+        .put('sessions', <Map<String, dynamic>>[]);
   }
 
   // ── Sentence Analyzer History ──
@@ -513,7 +585,8 @@ class HiveService {
 
   static Future<void> clearSentenceAnalysisHistory() async {
     if (!Hive.isBoxOpen(_sentenceAnalysisHistoryBox)) return;
-    await Hive.box(_sentenceAnalysisHistoryBox).put('entries', <Map<String, dynamic>>[]);
+    await Hive.box(_sentenceAnalysisHistoryBox)
+        .put('entries', <Map<String, dynamic>>[]);
   }
 
   // ── Game Settings ──
@@ -571,7 +644,8 @@ class HiveService {
   }
 
   static List<Map<String, dynamic>> getAiKeys() {
-    final raw = _settings.get('aiKeys', defaultValue: <Map<String, dynamic>>[]) as List;
+    final raw =
+        _settings.get('aiKeys', defaultValue: <Map<String, dynamic>>[]) as List;
     return raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
   }
 
@@ -594,7 +668,9 @@ class HiveService {
     for (final k in keys) {
       if (k['isActive'] == true) return Map<String, dynamic>.from(k as Map);
     }
-    return keys.isNotEmpty ? Map<String, dynamic>.from(keys.first as Map) : null;
+    return keys.isNotEmpty
+        ? Map<String, dynamic>.from(keys.first as Map)
+        : null;
   }
 
   // User Profile
@@ -619,7 +695,8 @@ class HiveService {
   }
 
   static List<Map<String, dynamic>> getChatSessions() {
-    final raw = _settings.get('chatSessions', defaultValue: <Map<String, dynamic>>[]) as List;
+    final raw = _settings
+        .get('chatSessions', defaultValue: <Map<String, dynamic>>[]) as List;
     return raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
   }
 
@@ -657,7 +734,8 @@ class HiveService {
   }
 
   static Map<String, String> getApiKeyDraft() {
-    final raw = _settings.get('api_key_draft', defaultValue: <String, String>{}) as Map;
+    final raw =
+        _settings.get('api_key_draft', defaultValue: <String, String>{}) as Map;
     return raw.map((k, v) => MapEntry(k.toString(), v.toString()));
   }
 
@@ -666,22 +744,27 @@ class HiveService {
   }
 
   // Cached Free OpenRouter Models (with speed tier)
-  static Future<void> saveFreeOpenRouterModels(List<Map<String, dynamic>> models) async {
+  static Future<void> saveFreeOpenRouterModels(
+      List<Map<String, dynamic>> models) async {
     await _settings.put('free_or_models', models);
   }
 
   static List<Map<String, dynamic>> getFreeOpenRouterModels() {
-    final raw = _settings.get('free_or_models', defaultValue: <Map<String, dynamic>>[]) as List;
+    final raw = _settings
+        .get('free_or_models', defaultValue: <Map<String, dynamic>>[]) as List;
     if (raw.isEmpty) return [];
     if (raw.first is String) {
-      return (raw as List<String>).map((id) => {'id': id, 'tier': 'medium'}).toList();
+      return (raw as List<String>)
+          .map((id) => {'id': id, 'tier': 'medium'})
+          .toList();
     }
     return raw.map((e) => Map<String, dynamic>.from(e as Map)).toList();
   }
 
   // History
   static Future<void> addToHistory(String lessonId) async {
-    final history = _history.get('lessonIds', defaultValue: <String>[]) as List<String>;
+    final history =
+        _history.get('lessonIds', defaultValue: <String>[]) as List<String>;
     history.remove(lessonId);
     history.insert(0, lessonId);
     if (history.length > 50) history.removeLast();
@@ -699,7 +782,8 @@ class HiveService {
   }
 
   static List<Map<String, dynamic>> getTodoItems() {
-    return (Hive.box(_studyPlanBox).get('items', defaultValue: <Map<String, dynamic>>[]) as List)
+    return (Hive.box(_studyPlanBox)
+            .get('items', defaultValue: <Map<String, dynamic>>[]) as List)
         .map((e) => Map<String, dynamic>.from(e as Map))
         .toList();
   }
@@ -756,13 +840,16 @@ class HiveService {
 
   static Future<void> clearTranslationHistory() async {
     if (!Hive.isBoxOpen(_translatorHistoryBox)) return;
-    await Hive.box(_translatorHistoryBox).put('entries', <Map<String, dynamic>>[]);
+    await Hive.box(_translatorHistoryBox)
+        .put('entries', <Map<String, dynamic>>[]);
   }
 
   // ── Last Opened Chapter (for Continue Learning resume) ──
 
-  static Future<void> setLastOpenedChapter(String type, int chapterNumber) async {
-    await _settings.put('last_opened_chapter', {'type': type, 'chapter': chapterNumber});
+  static Future<void> setLastOpenedChapter(
+      String type, int chapterNumber) async {
+    await _settings
+        .put('last_opened_chapter', {'type': type, 'chapter': chapterNumber});
   }
 
   static Map<String, dynamic>? getLastOpenedChapter() {
@@ -773,7 +860,8 @@ class HiveService {
 
   // ── Chapter Scroll Progress (for Continue Learning %) ──
 
-  static Future<void> setChapterProgress(String type, int chapterNumber, double progress) async {
+  static Future<void> setChapterProgress(
+      String type, int chapterNumber, double progress) async {
     final key = 'chapter_progress_${type}_$chapterNumber';
     await _settings.put(key, progress.clamp(0.0, 1.0));
   }
@@ -785,18 +873,21 @@ class HiveService {
 
   // ── Notification History ──
 
-  static Future<void> saveNotificationToHistory(Map<String, dynamic> notification) async {
+  static Future<void> saveNotificationToHistory(
+      Map<String, dynamic> notification) async {
     if (!Hive.isBoxOpen(_notificationHistoryBox)) {
       await Hive.openBox(_notificationHistoryBox);
     }
     final box = Hive.box(_notificationHistoryBox);
     final history = getNotificationHistory();
     history.insert(0, notification);
-    if (history.length > 100) history.removeLast(); // Keep last 100 notifications
+    if (history.length > 100)
+      history.removeLast(); // Keep last 100 notifications
     await box.put('notifications', history);
   }
 
-  static Future<bool> saveNotificationToHistoryIfNew(Map<String, dynamic> notification) async {
+  static Future<bool> saveNotificationToHistoryIfNew(
+      Map<String, dynamic> notification) async {
     if (!Hive.isBoxOpen(_notificationHistoryBox)) {
       await Hive.openBox(_notificationHistoryBox);
     }
@@ -850,12 +941,14 @@ class HiveService {
 
   static Future<void> clearNotificationHistory() async {
     if (!Hive.isBoxOpen(_notificationHistoryBox)) return;
-    await Hive.box(_notificationHistoryBox).put('notifications', <Map<String, dynamic>>[]);
+    await Hive.box(_notificationHistoryBox)
+        .put('notifications', <Map<String, dynamic>>[]);
   }
 
   // ── Mock Test Progress ──
 
-  static Future<void> saveMockTestProgress(Map<String, dynamic> progress) async {
+  static Future<void> saveMockTestProgress(
+      Map<String, dynamic> progress) async {
     if (!Hive.isBoxOpen(_mockTestProgressBox)) {
       await Hive.openBox(_mockTestProgressBox);
     }
@@ -888,7 +981,8 @@ class HiveService {
   }
 
   static List<Map<String, dynamic>> getAiSavedVocabWords() {
-    return (Hive.box(_aiSavedVocabBox).get('words', defaultValue: <Map<String, dynamic>>[]) as List)
+    return (Hive.box(_aiSavedVocabBox)
+            .get('words', defaultValue: <Map<String, dynamic>>[]) as List)
         .map((e) => Map<String, dynamic>.from(e as Map))
         .toList();
   }
@@ -967,7 +1061,7 @@ class HiveService {
     if (Hive.isBoxOpen(_gameStatisticsBox)) {
       await Hive.box(_gameStatisticsBox).clear();
     }
-    
+
     if (Hive.isBoxOpen(_gameAchievementsBox)) {
       await Hive.box(_gameAchievementsBox).clear();
     }
@@ -986,7 +1080,12 @@ class HiveService {
     return data.map((m) {
       final map = Map<String, dynamic>.from(m as Map);
       // Convert ISO strings back to Timestamp
-      for (final field in ['createdAt', 'updatedAt', 'lastErrorAt', 'lastUsedAt']) {
+      for (final field in [
+        'createdAt',
+        'updatedAt',
+        'lastErrorAt',
+        'lastUsedAt'
+      ]) {
         if (map[field] is String) {
           map[field] = Timestamp.fromDate(DateTime.parse(map[field] as String));
         }
@@ -1000,7 +1099,12 @@ class HiveService {
     final data = keys.map((k) {
       final map = k.toMap();
       // Convert Timestamp to ISO string for Hive compatibility
-      for (final field in ['createdAt', 'updatedAt', 'lastErrorAt', 'lastUsedAt']) {
+      for (final field in [
+        'createdAt',
+        'updatedAt',
+        'lastErrorAt',
+        'lastUsedAt'
+      ]) {
         if (map[field] is Timestamp) {
           map[field] = (map[field] as Timestamp).toDate().toIso8601String();
         }
