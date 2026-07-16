@@ -15,7 +15,7 @@ class InAppUpdateService {
   /// Checks if an update is available on Google Play Store.
   Future<bool> isUpdateAvailable() async {
     try {
-      final updateInfo = await InAppUpdateManager.checkForUpdate();
+      final updateInfo = await InAppUpdate.checkForUpdate();
       return updateInfo.updateAvailability == UpdateAvailability.updateAvailable;
     } catch (e) {
       debugPrint('InAppUpdateService: check failed — $e');
@@ -72,18 +72,12 @@ class InAppUpdateService {
   Future<void> startFlexibleUpdate() async {
     try {
       final config = await RemoteConfigService.getInAppUpdateConfig();
+      final result = await InAppUpdate.startFlexibleUpdate();
 
-      await InAppUpdateManager.startFlexibleUpdate(
-        listener: (status) {
-          if (status == FlexibleUpdateUpdateStatus.productUpdateComplete) {
-            InAppUpdateManager.completeFlexibleUpdate().then((_) {
-              debugPrint('InAppUpdateService: update completed');
-            }).catchError((e) {
-              debugPrint('InAppUpdateService: complete failed — $e');
-            });
-          }
-        },
-      );
+      if (result == AppUpdateResult.success) {
+        await InAppUpdate.completeFlexibleUpdate();
+        debugPrint('InAppUpdateService: update completed');
+      }
 
       // Set snooze regardless (in case user dismissed it)
       await setSnooze(config.snoozeHours);
@@ -97,7 +91,7 @@ class InAppUpdateService {
   /// Full-screen native UI — user cannot dismiss.
   Future<void> startImmediateUpdate() async {
     try {
-      await InAppUpdateManager.startImmediateUpdate();
+      await InAppUpdate.performImmediateUpdate();
     } catch (e) {
       debugPrint('InAppUpdateService: immediate update failed — $e');
     }
