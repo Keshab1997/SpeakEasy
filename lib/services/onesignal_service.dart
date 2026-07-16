@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import 'hive_service.dart';
+import 'sound_service.dart';
 
 /// Service that wraps the OneSignal SDK for push notification handling.
 ///
@@ -61,6 +62,11 @@ class OneSignalService {
       OneSignal.Notifications.addForegroundWillDisplayListener((event) {
         final notif = event.notification;
         _saveToHistory(notif);
+        // Play custom SpeakEasy notification sound for foreground notifications
+        final soundService = SoundService();
+        if (!soundService.isMuted) {
+          soundService.playNotificationReminder();
+        }
         // Do NOT call preventDefault() — we want the notification to display
         // as a heads-up banner. The notification is delivered to system tray
         // even when the app is closed (via native Android OneSignal service).
