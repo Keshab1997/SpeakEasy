@@ -12,9 +12,11 @@ import 'services/notification_service.dart';
 import 'services/onesignal_service.dart';
 import 'package:workmanager/workmanager.dart';
 import 'services/workmanager_tasks.dart';
-import 'services/remote_config_service.dart';
 import 'services/idle_tracker_service.dart';
+import 'services/remote_config_service.dart';
 import 'providers/theme_provider.dart';
+
+
 import 'features/auth/screens/splash_screen.dart';
 import 'routes/app_routes.dart';
 
@@ -60,6 +62,17 @@ void main() async {
     frequency: const Duration(hours: 24),
     constraints: Constraints(
       networkType: NetworkType.connected,
+    ),
+    existingWorkPolicy: ExistingWorkPolicy.keep,
+  );
+
+  // Register idle reminder background check (every 6 hours)
+  await Workmanager().registerPeriodicTask(
+    'idleReminder',
+    idleReminderTaskName,
+    frequency: const Duration(hours: 6),
+    constraints: Constraints(
+      networkType: NetworkType.not_required,
     ),
     existingWorkPolicy: ExistingWorkPolicy.keep,
   );

@@ -5,9 +5,11 @@ import '../firebase_options.dart';
 import 'hive_service.dart';
 import 'notification_service.dart';
 import 're_engagement_service.dart';
+import 'idle_tracker_service.dart';
 
 /// Unique task names registered with WorkManager
 const String reEngagementTaskName = 'reEngagementTask';
+const String idleReminderTaskName = 'idleReminderTask';
 
 /// Unique notification IDs used by background tasks (avoid conflicts with
 /// daily word (1000), practice reminder (1001), streak milestone (1002))
@@ -64,6 +66,8 @@ void workmanagerCallbackDispatcher() {
       switch (task) {
         case reEngagementTaskName:
           return await _handleReEngagement();
+        case idleReminderTaskName:
+          return await _handleIdleReminder();
         default:
           return false;
       }
@@ -86,6 +90,22 @@ Future<bool> _handleReEngagement() async {
       title: '⏰ ফিরে আসুন!',
       body: message,
       payload: 'type=re_engagement',
+    );
+  }
+  return true;
+}
+
+/// Checks user idle duration and sends a custom-sound notification if the
+/// user has been inactive beyond the threshold.
+Future<bool> _handleIdleReminder() async {
+  final shouldNotify = await IdleTrackerService.shouldSendNativeNotification();
+  if (shouldNotify) {
+    final idleDuration = await IdleTrackerService.getIdleDuration();
+    final message = IdleTrackerService.getReminderMessage(idleDuration.inHours);
+    await NotificationService().scheduleIdleReminder(
+      title: 'সময় হয়েছে! 📚',
+      body: message,
+      payload: 'type=idle_reminder',
     );
   }
   return true;
