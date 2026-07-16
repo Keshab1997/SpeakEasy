@@ -10,6 +10,7 @@ import '../../admin/screens/maintenance_screen.dart';
 import '../../admin/screens/force_update_screen.dart';
 import '../../home/screens/main_navigation_screen.dart';
 import 'login_screen.dart';
+import '../../../services/in_app_update_service.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
@@ -109,6 +110,14 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
           );
         }
         return;
+      }
+
+      // Check for soft / in-app update (Google Play In-App Update)
+      final inAppService = InAppUpdateService();
+      final hasUpdate = await inAppService.isUpdateAvailable();
+      if (hasUpdate && await inAppService.shouldShowUpdate()) {
+        await inAppService.startFlexibleUpdate();
+        // After dialog is dismissed, continue to normal navigation
       }
     } catch (_) {
       // If remote config fails, proceed with normal flow
