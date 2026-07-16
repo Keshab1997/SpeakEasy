@@ -4,6 +4,10 @@ import '../../services/remote_config_service.dart';
 
 class StreakWidget extends StatefulWidget {
   final int currentStreak;
+  final int weeklyStreak;
+  final String weeklyMilestone;
+  final String weeklyMilestoneLabel;
+  final int thisWeekActiveDays;
   final int todayXP;
   final int dailyXPTarget;
   final bool hasPracticeToday;
@@ -16,6 +20,10 @@ class StreakWidget extends StatefulWidget {
   const StreakWidget({
     super.key,
     required this.currentStreak,
+    this.weeklyStreak = 0,
+    this.weeklyMilestone = '🌱',
+    this.weeklyMilestoneLabel = 'Started',
+    this.thisWeekActiveDays = 0,
     this.todayXP = 0,
     this.dailyXPTarget = 50,
     this.hasPracticeToday = false,
@@ -130,11 +138,11 @@ class _StreakWidgetState extends State<StreakWidget>
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ═══ TOP ROW: Streak Counter + Freeze Shield ═══
+                // ═══ TOP ROW: Streak Counter + Weekly Streak + Freeze Shield ═══
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // 🔥 Flame Streak Number
+                    // 🔥 Flame Streak Number (daily streak)
                     AnimatedBuilder(
                       animation: _pulseAnimation,
                       builder: (context, child) {
@@ -177,38 +185,88 @@ class _StreakWidgetState extends State<StreakWidget>
                       },
                     ),
 
-                    // 🛡️ Streak Freeze Shield
-                    if (widget.streakFreezeCount > 0)
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.15),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                            color: Colors.white.withOpacity(0.3),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Icon(
-                              Icons.shield_rounded,
-                              color: Colors.cyanAccent,
-                              size: 16,
+                    // 📅 Weekly Streak Count + Freeze Shield
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // Weekly Streak Badge
+                        if (widget.weeklyStreak > 0)
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.12),
+                              borderRadius: BorderRadius.circular(12),
                             ),
-                            const SizedBox(width: 4),
-                            Text(
-                              '×${widget.streakFreezeCount}',
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 13,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Icon(
+                                  Icons.calendar_view_week_rounded,
+                                  color: Colors.amberAccent,
+                                  size: 14,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '${widget.weeklyStreak}',
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(width: 2),
+                                Text(
+                                  'wk',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white.withOpacity(0.7),
+                                  ),
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  widget.weeklyMilestone,
+                                  style: const TextStyle(fontSize: 16),
+                                ),
+                              ],
+                            ),
+                          ),
+                        const SizedBox(width: 8),
+                        // 🛡️ Streak Freeze Shield
+                        if (widget.streakFreezeCount > 0)
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.15),
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: Colors.white.withOpacity(0.3),
                               ),
                             ),
-                          ],
-                        ),
-                      ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Icon(
+                                  Icons.shield_rounded,
+                                  color: Colors.cyanAccent,
+                                  size: 16,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '×${widget.streakFreezeCount}',
+                                  style: const TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                      ],
+                    ),
                   ],
                 ),
 

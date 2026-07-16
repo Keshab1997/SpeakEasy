@@ -364,11 +364,32 @@ class HiveService {
     } catch (_) {
       // Silently ignore parse errors
     }
-  }
+	  }
 
-  // ── Streak Freeze Shop / Cost ──
+	  /// Check if the stored weekly activity is from a previous week and reset if so.
+	  /// Should be called before markDayActive() at app start.
+	  static Future<void> resetWeeklyActivityIfNewWeek() async {
+	    final lastPracticeDate = getLastPracticeDate();
+	    if (lastPracticeDate == null) return;
+	    
+	    final now = DateTime.now();
+	    final today = DateTime(now.year, now.month, now.day);
+	    final lastDay = DateTime(lastPracticeDate.year, lastPracticeDate.month, lastPracticeDate.day);
+	    
+	    // Find Monday of current week and last practice week
+	    final daysSinceMondayToday = today.weekday - 1;
+	    final mondayThisWeek = today.subtract(Duration(days: daysSinceMondayToday));
+	    final daysSinceMondayLast = lastDay.weekday - 1;
+	    final mondayLastWeek = lastDay.subtract(Duration(days: daysSinceMondayLast));
+	    
+	    if (mondayLastWeek.isBefore(mondayThisWeek)) {
+	      await resetWeeklyActivity();
+	    }
+	  }
 
-  static int getStreakFreezeCost() {
+	  // ── Streak Freeze Shop / Cost ──
+
+	  static int getStreakFreezeCost() {
     return 100; // coins per freeze
   }
 

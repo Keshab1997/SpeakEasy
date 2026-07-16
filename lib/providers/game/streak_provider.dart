@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../services/streak_service.dart';
+import '../../services/hive_service.dart';
 import 'game_provider.dart';
 
 // ── Streak State ──
@@ -13,6 +14,9 @@ class StreakState {
   final bool shouldReset;
   final String emoji;
   final int flameCount;
+  final String weeklyMilestone;      // milestone emoji for weekly streak
+  final String weeklyMilestoneLabel; // label like "Dedicated"
+  final int thisWeekActiveDays;      // how many days active this week (0-7)
 
   const StreakState({
     this.currentStreak = 0,
@@ -23,6 +27,9 @@ class StreakState {
     this.shouldReset = false,
     this.emoji = '⚫',
     this.flameCount = 0,
+    this.weeklyMilestone = '🌱',
+    this.weeklyMilestoneLabel = 'Started',
+    this.thisWeekActiveDays = 0,
   });
 
   StreakState copyWith({
@@ -60,6 +67,8 @@ class StreakNotifier extends StateNotifier<StreakState> {
     final weeklyStreak = _streakService.getCurrentWeeklyStreak();
     final longestStreak = _streakService.getLongestStreak();
     final missedDays = _streakService.getMissedDays();
+    final milestone = StreakNotifier.getWeeklyMilestone(weeklyStreak);
+    final weekActiveDays = HiveService.getWeekActivityList().where((a) => a).length;
     
     state = StreakState(
       currentStreak: streak,
@@ -70,6 +79,9 @@ class StreakNotifier extends StateNotifier<StreakState> {
       shouldReset: _streakService.shouldResetStreak(),
       emoji: _streakService.getStreakEmoji(streak),
       flameCount: _streakService.getStreakFlameCount(streak),
+      weeklyMilestone: milestone.emoji,
+      weeklyMilestoneLabel: milestone.label,
+      thisWeekActiveDays: weekActiveDays,
     );
   }
 
@@ -104,6 +116,18 @@ class StreakNotifier extends StateNotifier<StreakState> {
 
   int getStreakBonusCoins() {
     return _streakService.getStreakBonusCoins(state.currentStreak);
+  }
+
+  // ── Weekly Milestone Helpers ──
+
+  /// Get milestone emoji and label for a given weekly streak count.
+  static ({String emoji, String label}) getWeeklyMilestone(int weeklyStreak) {
+    if (weeklyStreak >= 52) return (emoji: '👑', label: 'Legend');
+    if (weeklyStreak >= 26) return (emoji: '💪', label: 'Committed');
+    if (weeklyStreak >= 12) return (emoji: '⚡', label: 'Dedicated');
+    if (weeklyStreak >= 4) return (emoji: '🔥', label: 'Consistent');
+    if (weeklyStreak >= 1) return (emoji: '🌱', label: 'Started');
+    return (emoji: '⚪', label: 'No streak');
   }
 
   // ── Weekly Streak ──
