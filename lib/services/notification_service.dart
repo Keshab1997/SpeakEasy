@@ -20,6 +20,7 @@ class NotificationService {
   static const int _practiceReminderId = 1001;
   static const int _streakMilestoneId = 1002;
   static const int _streakAtRiskId = 1003;
+  static const int _idleReminderId = 1004;
 
   // Sample vocabulary words for daily notifications
   static const List<Map<String, String>> _sampleWords = [
@@ -227,6 +228,7 @@ class NotificationService {
     await _plugin.cancel(_practiceReminderId);
     await _plugin.cancel(_streakMilestoneId);
     await _plugin.cancel(_streakAtRiskId);
+    await _plugin.cancel(_idleReminderId);
   }
 
   /// Schedule all notifications (respects sub-toggles from Hive)
@@ -460,6 +462,59 @@ ${todayWord.exampleSentence}
     } catch (_) {
       // Silently handle — background notification delivery is best-effort
     }
+  }
+
+  /// Schedule an idle reminder notification with custom sound
+  Future<void> scheduleIdleReminder({
+    required String title,
+    required String body,
+    String? payload,
+  }) async {
+    try {
+      final androidDetails = AndroidNotificationDetails(
+        'speakeasy_idle_reminder',
+        'স্পিকইজি রিমাইন্ডার',
+        channelDescription: 'ইউজারকে অ্যাপে ফিরিয়ে আনার জন্য রিমাইন্ডার',
+        importance: Importance.high,
+        priority: Priority.high,
+        sound: const RawResourceAndroidNotificationSound('speakeasy_notification'),
+        icon: '@mipmap/ic_launcher',
+      );
+
+      const iosDetails = DarwinNotificationDetails(
+        presentAlert: true,
+        presentBadge: true,
+        presentSound: true,
+        sound: 'speakeasy_notification.caf',
+      );
+
+      final details = NotificationDetails(
+        android: androidDetails,
+        iOS: iosDetails,
+      );
+
+      await _plugin.show(
+        _idleReminderId,
+        title,
+        body,
+        details,
+        payload: payload,
+      );
+
+      await _saveNotificationToHistory(
+        title: title,
+        body: body,
+        type: 'idle_reminder',
+        payload: payload,
+      );
+    } catch (_) {
+      // Silently handle
+    }
+  }
+
+  /// Cancel idle reminder notification
+  Future<void> cancelIdleReminder() async {
+    await _plugin.cancel(_idleReminderId);
   }
 
   /// Get notification history
