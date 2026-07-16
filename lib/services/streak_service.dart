@@ -1,3 +1,4 @@
+import '../models/game/game_progress_model.dart';
 import '../repositories/progress_repository.dart';
 
 class StreakService {
@@ -149,40 +150,61 @@ class StreakService {
     await _progressRepository.resetWeeklyStreak();
   }
 
+  /// Check if the user is in a new ISO week compared to last active date.
   bool isNewWeek() {
     final progress = _progressRepository.getProgress();
     if (progress == null) return false;
 
     final now = DateTime.now();
     final lastActive = progress.lastActiveDate;
-    
-    // A strict way: see if we are in a different ISO week.
-    // For simplicity: if days difference >= 7 or weekday has wrapped around and enough days passed.
-    // A robust standard approach:
+
     final today = DateTime(now.year, now.month, now.day);
     final lastDay = DateTime(lastActive.year, lastActive.month, lastActive.day);
-    
-    // Find the Monday of the current week (ISO week starts on Monday by default, weekday = 1)
+
+    // Find the Monday of the current week
     final daysSinceMondayToday = today.weekday - 1;
     final mondayThisWeek = today.subtract(Duration(days: daysSinceMondayToday));
-    
-    return lastDay.isBefore(mondayThisWeek);
+
+    // Also find the Monday of the week containing lastActiveDate
+    final daysSinceMondayLast = lastDay.weekday - 1;
+    final mondayLastWeek = lastDay.subtract(Duration(days: daysSinceMondayLast));
+
+    // New week if lastActiveDate's Monday is before this week's Monday
+    return mondayLastWeek.isBefore(mondayThisWeek);
   }
 
+  /// Check if the user had any activity in the previous calendar week.
+  /// Examines the weeklyActivity map stored in GameProgressModel.
+  bool _hadActivityLastWeek(GameProgressModel progress) {
+    final weeklyActivity = progress.weeklyActivity;
+    if (weeklyActivity.isEmpty) return false;
+    // If any day (Mon=1..Sun=7) has true, there was activity
+    return weeklyActivity.values.any((active) => active);
+  }
+
+  /// Check and update weekly streak based on week transition.
+  /// Called once per app open, when entering a new week.
+  /// - If new week AND had activity last week → increment weeklyStreak
+  /// - If new week AND no activity last week → reset weeklyStreak to 0
+  /// - If same week → no change
   Future<int> checkAndUpdateWeeklyStreak() async {
     final progress = _progressRepository.getProgress();
     if (progress == null) return 0;
 
-    if (isNewWeek()) {
-      // New week - reset weekly streak and start fresh
-      await resetWeeklyStreak();
-      await incrementWeeklyStreak();
-      return 1;
+    // If still in the same calendar week, no streak update needed
+    if (!isNewWeek()) {
+      return progress.weeklyStreak;
     }
 
-    // Checking if we already incremented weekly streak for today happens before calling this.
-    // Assuming this is only called once per day!
-    await incrementWeeklyStreak();
+    // We've crossed into a new week
+    // Check if the user had activity in the previous week
+    final hadActivity = _hadActivityLastWeek(progress);
+    
+    if (hadActivity) {
+      await _progressRepository.incrementWeeklyStreak();
+    } else {
+      await _progressRepository.resetWeeklyStreak();
+    }
 
     return getCurrentWeeklyStreak();
   }
