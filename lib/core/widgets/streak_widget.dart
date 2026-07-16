@@ -143,7 +143,7 @@ class _StreakWidgetState extends State<StreakWidget>
                 FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       // 🔥 Flame Streak Number (daily streak)
                       AnimatedBuilder(
@@ -155,7 +155,6 @@ class _StreakWidgetState extends State<StreakWidget>
                                 : 1.0,
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
                                   '🔥',
@@ -173,7 +172,7 @@ class _StreakWidgetState extends State<StreakWidget>
                                 ),
                                 const SizedBox(width: 4),
                                 Padding(
-                                  padding: const EdgeInsets.only(bottom: 8),
+                                  padding: const EdgeInsets.only(bottom: 6),
                                   child: Text(
                                     widget.currentStreak == 1 ? 'day' : 'days',
                                     style: TextStyle(
@@ -188,7 +187,7 @@ class _StreakWidgetState extends State<StreakWidget>
                           );
                         },
                       ),
-                      const SizedBox(width: 8),
+                      const SizedBox(width: 12),
                       // 📅 Weekly Streak Count + Freeze Shield
                       Row(
                         mainAxisSize: MainAxisSize.min,
@@ -197,83 +196,83 @@ class _StreakWidgetState extends State<StreakWidget>
                           if (widget.weeklyStreak > 0)
                             Container(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 4),
+                                  horizontal: 10, vertical: 6),
                               decoration: BoxDecoration(
                                 color: Colors.white.withOpacity(0.12),
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(14),
                               ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  const Icon(
+                                  Icon(
                                     Icons.calendar_view_week_rounded,
                                     color: Colors.amberAccent,
-                                    size: 14,
+                                    size: 16,
                                   ),
                                   const SizedBox(width: 4),
-                                Text(
-                                  '${widget.weeklyStreak}',
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w800,
-                                    color: Colors.white,
+                                  Text(
+                                    '${widget.weeklyStreak}',
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(width: 2),
-                                Text(
-                                  'wk',
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white.withOpacity(0.7),
+                                  const SizedBox(width: 2),
+                                  Text(
+                                    'wk',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white.withOpacity(0.7),
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(width: 4),
-                                Text(
-                                  widget.weeklyMilestone,
-                                  style: const TextStyle(fontSize: 16),
-                                ),
-                              ],
-                            ),
-                          ),
-                        const SizedBox(width: 8),
-                        // 🛡️ Streak Freeze Shield
-                        if (widget.streakFreezeCount > 0)
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.15),
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: Colors.white.withOpacity(0.3),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    widget.weeklyMilestone,
+                                    style: const TextStyle(fontSize: 18),
+                                  ),
+                                ],
                               ),
                             ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                const Icon(
-                                  Icons.shield_rounded,
-                                  color: Colors.cyanAccent,
-                                  size: 16,
+                          const SizedBox(width: 8),
+                          // 🛡️ Streak Freeze Shield
+                          if (widget.streakFreezeCount > 0)
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 6),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.15),
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(
+                                  color: Colors.white.withOpacity(0.3),
                                 ),
-                                const SizedBox(width: 4),
-                                Text(
-                                  '×${widget.streakFreezeCount}',
-                                  style: const TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w700,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.shield_rounded,
+                                    color: Colors.cyanAccent,
+                                    size: 16,
                                   ),
-                                ),
-                              ],
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    '×${widget.streakFreezeCount}',
+                                    style: const TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
 
                 // ═══ SUBTITLE ═══
                 const SizedBox(height: 2),
@@ -420,7 +419,7 @@ class _StreakWidgetState extends State<StreakWidget>
               ),
               const Spacer(),
               Text(
-                '\${activity.where((a) => a).length}/7 days',
+                '${activity.where((a) => a).length}/7 days',
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w700,
@@ -430,55 +429,61 @@ class _StreakWidgetState extends State<StreakWidget>
             ],
           ),
           const SizedBox(height: 12),
-          // Day name row
+          // Day name row — each day takes equal width
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(7, (i) {
               final isToday = now.weekday - 1 == i;
-              return Text(
-                dayLabels[i],
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: isToday ? FontWeight.w700 : FontWeight.w500,
-                  color: isToday
-                      ? Colors.white
-                      : Colors.white.withOpacity(0.5),
+              return Expanded(
+                child: Center(
+                  child: Text(
+                    dayLabels[i],
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: isToday ? FontWeight.w700 : FontWeight.w500,
+                      color: isToday
+                          ? Colors.white
+                          : Colors.white.withOpacity(0.5),
+                    ),
+                  ),
                 ),
               );
             }),
           ),
           const SizedBox(height: 6),
-          // Attendance row (✅ present / ❌ absent)
+          // Attendance row (✅ present / ❌ absent) — each day takes equal width
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(7, (i) {
               final isActive = activity[i];
               final isToday = now.weekday - 1 == i;
-              return Container(
-                width: 34,
-                height: 34,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: isActive
-                      ? Colors.green.withOpacity(0.7)
-                      : (isToday
-                          ? Colors.white.withOpacity(0.1)
-                          : Colors.transparent),
-                  border: isToday && !isActive
-                      ? Border.all(
-                          color: Colors.white.withOpacity(0.3), width: 1.5)
-                      : null,
-                ),
+              return Expanded(
                 child: Center(
-                  child: isActive
-                      ? const Text('✅', style: TextStyle(fontSize: 14))
-                      : (isToday
-                          ? const Text('❌', style: TextStyle(fontSize: 11))
-                          : Text(dayLabels[i].substring(0, 1),
-                              style: TextStyle(
-                                fontSize: 11,
-                                color: Colors.white.withOpacity(0.2),
-                              ))),
+                  child: Container(
+                    width: 34,
+                    height: 34,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: isActive
+                          ? Colors.green.withOpacity(0.7)
+                          : (isToday
+                              ? Colors.white.withOpacity(0.1)
+                              : Colors.transparent),
+                      border: isToday && !isActive
+                          ? Border.all(
+                              color: Colors.white.withOpacity(0.3), width: 1.5)
+                          : null,
+                    ),
+                    child: Center(
+                      child: isActive
+                          ? const Text('✅', style: TextStyle(fontSize: 14))
+                          : (isToday
+                              ? const Text('❌', style: TextStyle(fontSize: 12))
+                              : Text(dayLabels[i].substring(0, 1),
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.white.withOpacity(0.2),
+                                  ))),
+                    ),
+                  ),
                 ),
               );
             }),
