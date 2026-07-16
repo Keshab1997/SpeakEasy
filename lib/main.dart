@@ -13,6 +13,7 @@ import 'services/onesignal_service.dart';
 import 'package:workmanager/workmanager.dart';
 import 'services/workmanager_tasks.dart';
 import 'services/remote_config_service.dart';
+import 'services/idle_tracker_service.dart';
 import 'providers/theme_provider.dart';
 import 'features/auth/screens/splash_screen.dart';
 import 'routes/app_routes.dart';
@@ -65,6 +66,9 @@ void main() async {
 
   // Track app open for re-engagement logic
   await HiveService.setLastAppOpenDate(DateTime.now());
+
+  // Initialize idle tracker with initial activity timestamp
+  await IdleTrackerService.recordActivity();
 
   // Pre-warm remote config cache on app start
   RemoteConfigService.seedDefaultConfig();
