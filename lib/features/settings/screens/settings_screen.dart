@@ -101,131 +101,133 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ),
             ]),
             const SizedBox(height: 24),
-            Text('Notifications', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
-            const SizedBox(height: 8),
-            _buildSettingsCard([
-              SwitchListTile(
-                title: const Text('Push Notifications'),
-                subtitle: const Text('Master toggle for all notifications'),
-                secondary: const Icon(Icons.notifications_none_rounded, color: AppColors.primary),
-                value: _notifications,
-                onChanged: (val) async {
-                  setState(() => _notifications = val);
-                  await NotificationService().updateNotificationEnabled(val);
-                },
-                activeColor: AppColors.primary,
-              ),
-              if (_notifications) ...[
-                const Divider(height: 1),
+            if (isAdmin) ...[
+              Text('Notifications', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
+              const SizedBox(height: 8),
+              _buildSettingsCard([
                 SwitchListTile(
-                  title: const Text('📖 Word of the Day'),
-                  subtitle: const Text('Daily vocabulary at 9:00 AM'),
-                  value: _dailyWordNotification,
+                  title: const Text('Push Notifications'),
+                  subtitle: const Text('Master toggle for all notifications'),
+                  secondary: const Icon(Icons.notifications_none_rounded, color: AppColors.primary),
+                  value: _notifications,
                   onChanged: (val) async {
-                    setState(() => _dailyWordNotification = val);
-                    await HiveService.setDailyWordNotification(val);
-                    await NotificationService().rescheduleOnAppOpen();
+                    setState(() => _notifications = val);
+                    await NotificationService().updateNotificationEnabled(val);
                   },
                   activeColor: AppColors.primary,
                 ),
-                const Divider(height: 1),
-                SwitchListTile(
-                  title: const Text('⏰ Practice Reminder'),
-                  subtitle: const Text('Reminder to practice at 7:00 PM'),
-                  value: _practiceReminderNotification,
-                  onChanged: (val) async {
-                    setState(() => _practiceReminderNotification = val);
-                    await HiveService.setPracticeReminderNotification(val);
-                    await NotificationService().rescheduleOnAppOpen();
-                  },
-                  activeColor: AppColors.primary,
-                ),
-                const Divider(height: 1),
-                SwitchListTile(
-                  title: const Text('🔥 Streak Reminder'),
-                  subtitle: const Text('Milestone streak celebrations'),
-                  value: _streakNotification,
-                  onChanged: (val) async {
-                    setState(() => _streakNotification = val);
-                    await HiveService.setStreakNotification(val);
-                    await NotificationService().rescheduleOnAppOpen();
-                  },
-                  activeColor: AppColors.primary,
-                ),
-                const Divider(height: 1),
-                SwitchListTile(
-                  title: const Text('🔔 Re-engagement'),
-                  subtitle: const Text('Get notified to return when inactive'),
-                  value: _reEngagementNotification,
-                  onChanged: (val) async {
-                    setState(() => _reEngagementNotification = val);
-                    await HiveService.setReEngagementEnabled(val);
-                  },
-                  activeColor: AppColors.primary,
-                ),
-                const Divider(height: 1),
-                SwitchListTile(
-                  title: const Text('\u23f3 Idle Reminder'),
-                  subtitle: const Text('Duolingo-style reminder when inactive'),
-                  secondary: const Icon(Icons.timer_outlined, color: AppColors.primary),
-                  value: _idleReminderEnabled,
-                  onChanged: (val) async {
-                    setState(() => _idleReminderEnabled = val);
-                    await HiveService.setIdleReminderEnabled(val);
-                  },
-                  activeColor: AppColors.primary,
-                ),
-                if (_idleReminderEnabled) ...[
-                  const Divider(height: 1),
-                  ListTile(
-                    leading: const Icon(Icons.schedule_rounded, color: AppColors.primary),
-                    title: const Text('Reminder Frequency'),
-                    subtitle: Text('Every $_idleReminderFrequency hours'),
-                    trailing: SizedBox(
-                      width: 120,
-                      child: Slider(
-                        value: _idleReminderFrequency.toDouble(),
-                        min: 2,
-                        max: 24,
-                        divisions: 5,
-                        label: '$_idleReminderFrequency hours',
-                        onChanged: (val) async {
-                          setState(() => _idleReminderFrequency = val.round());
-                          await HiveService.setIdleReminderFrequencyHours(val.round());
-                        },
-                        activeColor: AppColors.primary,
-                      ),
-                    ),
-                  ),
+                if (_notifications) ...[
                   const Divider(height: 1),
                   SwitchListTile(
-                    title: const Text('\ud83d\udd0a Reminder Sound'),
-                    subtitle: const Text('Play custom notification sound'),
-                    secondary: const Icon(Icons.music_note_rounded, color: AppColors.primary),
-                    value: _idleReminderSoundEnabled,
+                    title: const Text('📖 Word of the Day'),
+                    subtitle: const Text('Daily vocabulary at 9:00 AM'),
+                    value: _dailyWordNotification,
                     onChanged: (val) async {
-                      setState(() => _idleReminderSoundEnabled = val);
-                      await HiveService.setIdleReminderSoundEnabled(val);
+                      setState(() => _dailyWordNotification = val);
+                      await HiveService.setDailyWordNotification(val);
+                      await NotificationService().rescheduleOnAppOpen();
                     },
                     activeColor: AppColors.primary,
                   ),
+                  const Divider(height: 1),
+                  SwitchListTile(
+                    title: const Text('⏰ Practice Reminder'),
+                    subtitle: const Text('Reminder to practice at 7:00 PM'),
+                    value: _practiceReminderNotification,
+                    onChanged: (val) async {
+                      setState(() => _practiceReminderNotification = val);
+                      await HiveService.setPracticeReminderNotification(val);
+                      await NotificationService().rescheduleOnAppOpen();
+                    },
+                    activeColor: AppColors.primary,
+                  ),
+                  const Divider(height: 1),
+                  SwitchListTile(
+                    title: const Text('🔥 Streak Reminder'),
+                    subtitle: const Text('Milestone streak celebrations'),
+                    value: _streakNotification,
+                    onChanged: (val) async {
+                      setState(() => _streakNotification = val);
+                      await HiveService.setStreakNotification(val);
+                      await NotificationService().rescheduleOnAppOpen();
+                    },
+                    activeColor: AppColors.primary,
+                  ),
+                  const Divider(height: 1),
+                  SwitchListTile(
+                    title: const Text('🔔 Re-engagement'),
+                    subtitle: const Text('Get notified to return when inactive'),
+                    value: _reEngagementNotification,
+                    onChanged: (val) async {
+                      setState(() => _reEngagementNotification = val);
+                      await HiveService.setReEngagementEnabled(val);
+                    },
+                    activeColor: AppColors.primary,
+                  ),
+                  const Divider(height: 1),
+                  SwitchListTile(
+                    title: const Text('⏳ Idle Reminder'),
+                    subtitle: const Text('Duolingo-style reminder when inactive'),
+                    secondary: const Icon(Icons.timer_outlined, color: AppColors.primary),
+                    value: _idleReminderEnabled,
+                    onChanged: (val) async {
+                      setState(() => _idleReminderEnabled = val);
+                      await HiveService.setIdleReminderEnabled(val);
+                    },
+                    activeColor: AppColors.primary,
+                  ),
+                  if (_idleReminderEnabled) ...[
+                    const Divider(height: 1),
+                    ListTile(
+                      leading: const Icon(Icons.schedule_rounded, color: AppColors.primary),
+                      title: const Text('Reminder Frequency'),
+                      subtitle: Text('Every $_idleReminderFrequency hours'),
+                      trailing: SizedBox(
+                        width: 120,
+                        child: Slider(
+                          value: _idleReminderFrequency.toDouble(),
+                          min: 2,
+                          max: 24,
+                          divisions: 5,
+                          label: '$_idleReminderFrequency hours',
+                          onChanged: (val) async {
+                            setState(() => _idleReminderFrequency = val.round());
+                            await HiveService.setIdleReminderFrequencyHours(val.round());
+                          },
+                          activeColor: AppColors.primary,
+                        ),
+                      ),
+                    ),
+                    const Divider(height: 1),
+                    SwitchListTile(
+                      title: const Text('🔊 Reminder Sound'),
+                      subtitle: const Text('Play custom notification sound'),
+                      secondary: const Icon(Icons.music_note_rounded, color: AppColors.primary),
+                      value: _idleReminderSoundEnabled,
+                      onChanged: (val) async {
+                        setState(() => _idleReminderSoundEnabled = val);
+                        await HiveService.setIdleReminderSoundEnabled(val);
+                      },
+                      activeColor: AppColors.primary,
+                    ),
+                  ],
                 ],
-              ],
-            ]),
-            if (!_notifications) ...[
-              const SizedBox(height: 4),
-              Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: Text(
-                  'Enable notifications to get daily vocabulary words and practice reminders.',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: isDark ? Colors.white38 : Colors.grey.shade500,
+              ]),
+              if (!_notifications) ...[
+                const SizedBox(height: 4),
+                Padding(
+                  padding: const EdgeInsets.only(left: 16),
+                  child: Text(
+                    'Enable notifications to get daily vocabulary words and practice reminders.',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: isDark ? Colors.white38 : Colors.grey.shade500,
+                    ),
                   ),
                 ),
-              ),
+              ],
+              const SizedBox(height: 24),
             ],
-            const SizedBox(height: 24),
             Text('Language', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
             const SizedBox(height: 8),
             _buildSettingsCard([
