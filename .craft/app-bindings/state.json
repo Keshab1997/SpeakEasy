@@ -1,5 +1,13 @@
 {
-  "connections": [],
+  "connections": [
+    {
+      "appId": "com.dotharness.dotcraft-teams",
+      "userId": "dotcraft-teams",
+      "state": "connected",
+      "connectedAt": "2026-07-16T14:43:20.048135+00:00",
+      "accountLabel": "DotCraft Teams"
+    }
+  ],
   "connectionRequests": [
     {
       "connectionRequestId": "appconn_req_2327f375034a4c84bbf0d01e8d987602",
@@ -13,13 +21,290 @@
     }
   ],
   "bindingRequests": [],
-  "bindings": [],
+  "bindings": [
+    {
+      "bindingId": "bind_5d3b1a619c514f93a3b963083e7cea8f",
+      "threadId": "thread_20260716_aw3jz7",
+      "appId": "com.dotharness.dotcraft-teams",
+      "userId": "dotcraft-teams",
+      "state": "active",
+      "bindingKind": "managedApp",
+      "grantId": "teams-grant-mission_342e89669e0544a5991dbc9bccf4aad3-leader",
+      "requestedScopes": [
+        "team.read",
+        "mission.manage",
+        "task.dispatch",
+        "message.send",
+        "artifact.publish"
+      ],
+      "grantedScopes": [
+        "team.read",
+        "mission.manage",
+        "task.dispatch",
+        "message.send",
+        "artifact.publish"
+      ],
+      "createdAt": "2026-07-16T14:43:20.048135+00:00",
+      "lastChangedAt": "2026-07-16T14:43:20.215111+00:00",
+      "approvalMode": "managed",
+      "approvedBy": "dotcraft-teams",
+      "auditRef": "managed:first-party",
+      "exposureRevision": 4,
+      "attachedTools": [
+        {
+          "namespace": "teams",
+          "name": "CreateMissionPlan",
+          "description": "Record a mission plan before assigning work.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "plan": {
+                "type": "string",
+                "description": "Concise plan for the current mission."
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "plan"
+            ]
+          },
+          "deferLoading": false
+        },
+        {
+          "namespace": "teams",
+          "name": "AssignTask",
+          "description": "Create a Teams task and let the scheduler dispatch it when ready.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "assignee": {
+                "type": "string",
+                "description": "Assignee member id, role, or display name."
+              },
+              "title": {
+                "type": "string",
+                "description": "Task title."
+              },
+              "prompt": {
+                "type": "string",
+                "description": "Task prompt for the member."
+              },
+              "dependsOnTaskIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Upstream task aliases or canonical task ids that must be done before this task can run."
+              },
+              "kind": {
+                "type": "string",
+                "description": "Task kind, such as work or review."
+              },
+              "requiresLeaderSynthesis": {
+                "type": "boolean",
+                "description": "Whether dependencies release this task to Leader synthesis before teammate dispatch."
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "assignee",
+              "title",
+              "prompt"
+            ]
+          },
+          "deferLoading": false
+        },
+        {
+          "namespace": "teams",
+          "name": "ListTeamMembers",
+          "description": "Read Team roster and teammate availability summaries.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          },
+          "deferLoading": false
+        },
+        {
+          "namespace": "teams",
+          "name": "ReadMissionState",
+          "description": "Read Mission-scoped task, thread, digest, artifact, and message summaries.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          },
+          "deferLoading": false
+        },
+        {
+          "namespace": "teams",
+          "name": "ReadMemberStatus",
+          "description": "Read one teammate\u0027s current status and recent progress.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "memberId": {
+                "type": "string",
+                "description": "Member id, role, or display name."
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "memberId"
+            ]
+          },
+          "deferLoading": false
+        },
+        {
+          "namespace": "teams",
+          "name": "SendMessage",
+          "description": "Send a lightweight Mission-scoped message to the Leader or a participating teammate.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "to": {
+                "type": "string",
+                "description": "Target member id, role, display name, or \u0027leader\u0027."
+              },
+              "message": {
+                "type": "string",
+                "description": "Message for the teammate."
+              },
+              "taskId": {
+                "type": "string",
+                "description": "Optional related task alias or canonical task id."
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "to",
+              "message"
+            ]
+          },
+          "deferLoading": false
+        },
+        {
+          "namespace": "teams",
+          "name": "MarkMissionDone",
+          "description": "Finalize a Teams mission with the user-facing final response.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "finalResponse": {
+                "type": "string",
+                "description": "User-facing final response."
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "finalResponse"
+            ]
+          },
+          "deferLoading": false
+        }
+      ],
+      "directToolNames": [
+        "CreateMissionPlan",
+        "AssignTask",
+        "ListTeamMembers",
+        "ReadMissionState",
+        "ReadMemberStatus",
+        "SendMessage",
+        "MarkMissionDone"
+      ],
+      "deferredToolNames": [],
+      "contextBlocks": [
+        {
+          "blockId": "role",
+          "kind": "role",
+          "title": "Team Leader Role",
+          "content": "You are Team Leader, a DotCraft Teams member.\n\nRole: leader\nProfile: Breaks missions into plans, assigns tasks, and keeps the team synchronized.\n\nCoordinate through explicit Teams tools. Treat Missions and Tasks as app-owned workflow state.",
+          "order": 10,
+          "version": "sha256:c9ce687e657ff66ea658b213a0b2b405d82702bbd8120a347a658eebdc52f1e0",
+          "updatedAt": "2026-07-16T14:43:20.203617+00:00",
+          "visibility": "model"
+        },
+        {
+          "blockId": "mission",
+          "kind": "mission",
+          "title": "Current Mission",
+          "content": "Mission ID: mission_342e89669e0544a5991dbc9bccf4aad3\nMission title: New Mission\nMission scratchpad: /Users/keshabsarkar/Vs Code Apps/SpeakEasy/.craft/teams/missions/mission_342e89669e0544a5991dbc9bccf4aad3\nYour teammate role for this mission: Team Leader\n\nMission prompt:\nNew Mission",
+          "order": 20,
+          "version": "sha256:5670130099780b413cafed1fa2a9e3b7fd8a318490b15fd439294ce2ea26b484",
+          "updatedAt": "2026-07-16T14:43:20.214069+00:00",
+          "visibility": "model"
+        },
+        {
+          "blockId": "policy",
+          "kind": "policy",
+          "title": "Teams Runtime Policy",
+          "content": "Coordinate through explicit Teams tools. App Context contains fixed role and mission context only; use ListTeamMembers, ReadMissionState, and ReadMemberStatus for live state. Do not treat digests or Teams messages as user-authored conversation history.",
+          "order": 30,
+          "version": "sha256:40e4926841530faf877c02221be61e289a3c96ff72a6c2e4e69b0f1981b22fd6",
+          "updatedAt": "2026-07-16T14:43:20.215111+00:00",
+          "visibility": "model"
+        }
+      ]
+    }
+  ],
   "audit": [
     {
       "timestamp": "2026-07-13T09:12:27.289179+00:00",
       "event": "connection.start",
       "appId": "com.dotharness.oratorio",
       "userId": "dotcraft-desktop"
+    },
+    {
+      "timestamp": "2026-07-16T14:43:20.097119+00:00",
+      "event": "connection.managed.connected",
+      "appId": "com.dotharness.dotcraft-teams",
+      "userId": "dotcraft-teams",
+      "detail": "DotCraft Teams"
+    },
+    {
+      "timestamp": "2026-07-16T14:43:20.125822+00:00",
+      "event": "binding.managed.created",
+      "threadId": "thread_20260716_aw3jz7",
+      "bindingId": "bind_5d3b1a619c514f93a3b963083e7cea8f",
+      "appId": "com.dotharness.dotcraft-teams",
+      "userId": "dotcraft-teams",
+      "detail": "7 tools"
+    },
+    {
+      "timestamp": "2026-07-16T14:43:20.205146+00:00",
+      "event": "binding.context.upsert",
+      "threadId": "thread_20260716_aw3jz7",
+      "bindingId": "bind_5d3b1a619c514f93a3b963083e7cea8f",
+      "appId": "com.dotharness.dotcraft-teams",
+      "userId": "dotcraft-teams",
+      "detail": "role:role:sha256:c9ce687e657ff66ea658b213a0b2b405d82702bbd8120a347a658eebdc52f1e0"
+    },
+    {
+      "timestamp": "2026-07-16T14:43:20.214245+00:00",
+      "event": "binding.context.upsert",
+      "threadId": "thread_20260716_aw3jz7",
+      "bindingId": "bind_5d3b1a619c514f93a3b963083e7cea8f",
+      "appId": "com.dotharness.dotcraft-teams",
+      "userId": "dotcraft-teams",
+      "detail": "mission:mission:sha256:5670130099780b413cafed1fa2a9e3b7fd8a318490b15fd439294ce2ea26b484"
+    },
+    {
+      "timestamp": "2026-07-16T14:43:20.215114+00:00",
+      "event": "binding.context.upsert",
+      "threadId": "thread_20260716_aw3jz7",
+      "bindingId": "bind_5d3b1a619c514f93a3b963083e7cea8f",
+      "appId": "com.dotharness.dotcraft-teams",
+      "userId": "dotcraft-teams",
+      "detail": "policy:policy:sha256:40e4926841530faf877c02221be61e289a3c96ff72a6c2e4e69b0f1981b22fd6"
+    },
+    {
+      "timestamp": "2026-07-16T14:43:20.394582+00:00",
+      "event": "binding.threadInput.enqueue",
+      "threadId": "thread_20260716_aw3jz7",
+      "bindingId": "bind_5d3b1a619c514f93a3b963083e7cea8f",
+      "appId": "com.dotharness.dotcraft-teams",
+      "userId": "dotcraft-teams",
+      "detail": "queued_20260716144320369_kg46nd:team:Mission: New Mission:mission_342e89669e0544a5991dbc9bccf4aad3"
     }
   ]
 }

@@ -1,0 +1,110 @@
+{
+  "team": {
+    "teamId": "default",
+    "enabled": true,
+    "createdAt": "2026-07-16T14:43:03.927517+00:00",
+    "updatedAt": "2026-07-16T14:45:17.8747+00:00"
+  },
+  "members": [
+    {
+      "memberId": "leader",
+      "role": "leader",
+      "displayName": "Team Leader",
+      "description": "Breaks missions into plans, assigns tasks, and keeps the team synchronized.",
+      "agentProfileId": "team-leader",
+      "threadId": "",
+      "bindingId": "",
+      "grantId": "",
+      "avatarAccent": "#4f7cf6",
+      "status": "idle",
+      "deskX": 50,
+      "deskY": 26
+    },
+    {
+      "memberId": "explorer",
+      "role": "explorer",
+      "displayName": "Explorer",
+      "description": "Researches, inspects, and maps unknowns before the team commits to a path.",
+      "agentProfileId": "team-explorer",
+      "threadId": "",
+      "bindingId": "",
+      "grantId": "",
+      "avatarAccent": "#0ea5e9",
+      "status": "idle",
+      "deskX": 32,
+      "deskY": 62
+    },
+    {
+      "memberId": "builder",
+      "role": "builder",
+      "displayName": "Builder",
+      "description": "Implements changes, creates artifacts, and reports practical blockers.",
+      "agentProfileId": "team-builder",
+      "threadId": "",
+      "bindingId": "",
+      "grantId": "",
+      "avatarAccent": "#8b5cf6",
+      "status": "idle",
+      "deskX": 52,
+      "deskY": 68
+    },
+    {
+      "memberId": "reviewer",
+      "role": "reviewer",
+      "displayName": "Reviewer",
+      "description": "Checks correctness, risks, missing tests, and quality before delivery.",
+      "agentProfileId": "team-reviewer",
+      "threadId": "",
+      "bindingId": "",
+      "grantId": "",
+      "avatarAccent": "#22c55e",
+      "status": "idle",
+      "deskX": 68,
+      "deskY": 52
+    },
+    {
+      "memberId": "operator",
+      "role": "operator",
+      "displayName": "Operator",
+      "description": "Handles app, computer, and workflow operations that need careful execution.",
+      "agentProfileId": "team-operator",
+      "threadId": "",
+      "bindingId": "",
+      "grantId": "",
+      "avatarAccent": "#eab308",
+      "status": "idle",
+      "deskX": 70,
+      "deskY": 28
+    }
+  ],
+  "missions": [
+    {
+      "missionId": "mission_342e89669e0544a5991dbc9bccf4aad3",
+      "title": "New Mission",
+      "prompt": "New Mission",
+      "plan": "",
+      "status": "planning",
+      "createdAt": "2026-07-16T14:43:19.817607+00:00",
+      "updatedAt": "2026-07-16T14:43:19.817607+00:00",
+      "scratchpadPath": "/Users/keshabsarkar/Vs Code Apps/SpeakEasy/.craft/teams/missions/mission_342e89669e0544a5991dbc9bccf4aad3",
+      "leaderThreadId": "thread_20260716_aw3jz7"
+    }
+  ],
+  "missionThreads": [
+    {
+      "missionId": "mission_342e89669e0544a5991dbc9bccf4aad3",
+      "memberId": "leader",
+      "threadId": "thread_20260716_aw3jz7",
+      "bindingId": "bind_5d3b1a619c514f93a3b963083e7cea8f",
+      "grantId": "teams-grant-mission_342e89669e0544a5991dbc9bccf4aad3-leader",
+      "status": "idle",
+      "createdAt": "2026-07-16T14:43:20.037645+00:00",
+      "updatedAt": "2026-07-16T14:45:17.8747+00:00"
+    }
+  ],
+  "tasks": [],
+  "messages": [],
+  "leaderWaits": [],
+  "mailboxDigests": [],
+  "artifacts": []
+}
