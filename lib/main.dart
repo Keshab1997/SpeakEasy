@@ -1,3 +1,4 @@
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -31,6 +32,10 @@ void main() async {
   }
 
   await HiveService.initialize();
+
+  // Open the in-app update Hive box for snooze persistence
+  await Hive.openBox('in_app_update');
+
   ApiKeyManager.instance.initialize();
 
   // Initialize local notification system (uses native AlarmManager/UNUserNotificationCenter)
