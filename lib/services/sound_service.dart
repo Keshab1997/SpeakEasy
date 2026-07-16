@@ -12,6 +12,8 @@ enum GameSoundEffect {
   buttonTap,
   coinCollect,
   streakBonus,
+  notificationReminder,
+  notificationCharacter,
 }
 
 class SoundService {
@@ -69,6 +71,12 @@ class SoundService {
   Future<void> playCoinCollect() => playSound(GameSoundEffect.coinCollect);
   Future<void> playStreakBonus() => playSound(GameSoundEffect.streakBonus);
 
+  Future<void> playNotificationReminder() =>
+      playSound(GameSoundEffect.notificationReminder);
+
+  Future<void> playNotificationCharacter() =>
+      playSound(GameSoundEffect.notificationCharacter);
+
   String? _getAssetPath(GameSoundEffect effect) {
     switch (effect) {
       case GameSoundEffect.correct:
@@ -91,6 +99,10 @@ class SoundService {
         return 'audio/game_coin_collect.mp3';
       case GameSoundEffect.streakBonus:
         return 'audio/game_streak_bonus.mp3';
+      case GameSoundEffect.notificationReminder:
+        return 'audio/notification_reminder.mp3';
+      case GameSoundEffect.notificationCharacter:
+        return 'audio/notification_character.mp3';
     }
   }
 
