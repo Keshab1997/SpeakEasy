@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 
 /// Represents the remote app configuration stored in Firestore at config/app_settings.
 class AppConfig {
@@ -6,12 +7,14 @@ class AppConfig {
   final ForceUpdateInfo forceUpdate;
   final MaintenanceModeInfo maintenanceMode;
   final GameplaySettings gameplay;
+  final InAppUpdateConfig inAppUpdate;
 
   const AppConfig({
     this.featureToggles = const FeatureToggles(),
     this.forceUpdate = const ForceUpdateInfo(),
     this.maintenanceMode = const MaintenanceModeInfo(),
     this.gameplay = const GameplaySettings(),
+    this.inAppUpdate = const InAppUpdateConfig(),
   });
 
   factory AppConfig.fromMap(Map<String, dynamic> map) {
@@ -28,6 +31,9 @@ class AppConfig {
       gameplay: GameplaySettings.fromMap(
         map['gameplay'] as Map<String, dynamic>? ?? {},
       ),
+      inAppUpdate: InAppUpdateConfig.fromMap(
+        map['inAppUpdate'] as Map<String, dynamic>? ?? {},
+      ),
     );
   }
 
@@ -37,6 +43,7 @@ class AppConfig {
       'forceUpdate': forceUpdate.toMap(),
       'maintenanceMode': maintenanceMode.toMap(),
       'gameplay': gameplay.toMap(),
+      'inAppUpdate': inAppUpdate.toMap(),
     };
   }
 
@@ -170,6 +177,35 @@ class ForceUpdateInfo {
       'message': message,
       'targetVersion': targetVersion,
       'playStoreUrl': playStoreUrl,
+    };
+  }
+}
+
+@immutable
+class InAppUpdateConfig {
+  final bool enabled;
+  final String mode; // "flexible" or "immediate"
+  final int snoozeHours;
+
+  const InAppUpdateConfig({
+    this.enabled = true,
+    this.mode = 'flexible',
+    this.snoozeHours = 24,
+  });
+
+  factory InAppUpdateConfig.fromMap(Map<String, dynamic> map) {
+    return InAppUpdateConfig(
+      enabled: map['enabled'] as bool? ?? true,
+      mode: map['mode'] as String? ?? 'flexible',
+      snoozeHours: map['snoozeHours'] as int? ?? 24,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'enabled': enabled,
+      'mode': mode,
+      'snoozeHours': snoozeHours,
     };
   }
 }
