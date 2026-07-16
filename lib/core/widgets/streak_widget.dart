@@ -139,12 +139,14 @@ class _StreakWidgetState extends State<StreakWidget>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // ═══ TOP ROW: Streak Counter + Weekly Streak + Freeze Shield ═══
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // 🔥 Flame Streak Number (daily streak) — wrapped in Flexible to avoid overflow
-                    Flexible(
-                      child: AnimatedBuilder(
+                // FittedBox scales everything down if screen is too narrow
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // 🔥 Flame Streak Number (daily streak)
+                      AnimatedBuilder(
                         animation: _pulseAnimation,
                         builder: (context, child) {
                           return Transform.scale(
@@ -160,16 +162,13 @@ class _StreakWidgetState extends State<StreakWidget>
                                   style: TextStyle(fontSize: 36),
                                 ),
                                 const SizedBox(width: 8),
-                                Flexible(
-                                  child: Text(
-                                    '${widget.currentStreak}',
-                                    style: TextStyle(
-                                      fontSize: 48,
-                                      fontWeight: FontWeight.w900,
-                                      color: Colors.white,
-                                      height: 1.1,
-                                    ),
-                                    overflow: TextOverflow.ellipsis,
+                                Text(
+                                  '${widget.currentStreak}',
+                                  style: TextStyle(
+                                    fontSize: 48,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                    height: 1.1,
                                   ),
                                 ),
                                 const SizedBox(width: 4),
@@ -189,30 +188,29 @@ class _StreakWidgetState extends State<StreakWidget>
                           );
                         },
                       ),
-                    ),
-
-                    // 📅 Weekly Streak Count + Freeze Shield
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        // Weekly Streak Badge
-                        if (widget.weeklyStreak > 0)
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.12),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                const Icon(
-                                  Icons.calendar_view_week_rounded,
-                                  color: Colors.amberAccent,
-                                  size: 14,
-                                ),
-                                const SizedBox(width: 4),
+                      const SizedBox(width: 8),
+                      // 📅 Weekly Streak Count + Freeze Shield
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          // Weekly Streak Badge
+                          if (widget.weeklyStreak > 0)
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.12),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Icon(
+                                    Icons.calendar_view_week_rounded,
+                                    color: Colors.amberAccent,
+                                    size: 14,
+                                  ),
+                                  const SizedBox(width: 4),
                                 Text(
                                   '${widget.weeklyStreak}',
                                   style: const TextStyle(
@@ -275,6 +273,7 @@ class _StreakWidgetState extends State<StreakWidget>
                     ),
                   ],
                 ),
+              ),
 
                 // ═══ SUBTITLE ═══
                 const SizedBox(height: 2),
