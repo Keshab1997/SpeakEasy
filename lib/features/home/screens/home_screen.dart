@@ -109,15 +109,19 @@ streakNotifier.refresh();
 //    so the weekly calendar survives cache clears
 HiveService.restoreWeeklyActivityFromProgress();
 
-// 1. Update HiveService weekly activity + last practice date FIRST
-await HiveService.markDayActive(now.weekday);
-await HiveService.setLastPracticeDate(now);
+	// 1. Update HiveService weekly activity + last practice date FIRST
+	await HiveService.resetWeeklyActivityIfNewWeek();
+	await HiveService.markDayActive(now.weekday);
+	await HiveService.setLastPracticeDate(now);
 
-// 2. Check if streak should increment (new day) or reset (missed >48h)
-final newStreak = await streakNotifier.checkAndUpdateStreak();
-
-// 3. Record today as active (updates lastActiveDate, totalActiveDays)
-await streakNotifier.recordActiveDay();
+	// 2. Check if streak should increment (new day) or reset (missed >48h)
+	final newStreak = await streakNotifier.checkAndUpdateStreak();
+	
+	// 2.5 Check if weekly streak should update (new week)
+	await streakNotifier.checkAndUpdateWeeklyStreak();
+	
+	// 3. Record today as active (updates lastActiveDate, totalActiveDays)
+	await streakNotifier.recordActiveDay();
 
 // 4. Handle streak freeze — if streak was reset to 1 and we have a freeze, restore it
 if (newStreak == 1) {
@@ -465,18 +469,22 @@ const SizedBox(height: 20),
 // 🏆 Daily Quest
 _buildDailyQuizCard(context, theme, isDark),
 const SizedBox(height: 20),
-// 2. Streak & Progress (Combined in one widget)
-StreakWidget(
-currentStreak: currentStreak,
-todayXP: currentXP,
-dailyXPTarget: 50,
-hasPracticeToday: _hasPracticedToday(),
-isStreakFrozen: HiveService.getStreakFreezeCount() > 0,
-streakFreezeCount: HiveService.getStreakFreezeCount(),
-onTap: () => _showStreakInfoDialog(context),
-onBuyFreeze: () => _buyStreakFreeze(context, ref, currentCoins),
-onShare: () => _shareStreak(context, currentStreak),
-),
+	// 2. Streak & Progress (Combined in one widget)
+	StreakWidget(
+	currentStreak: currentStreak,
+	weeklyStreak: streakState.weeklyStreak,
+	weeklyMilestone: streakState.weeklyMilestone,
+	weeklyMilestoneLabel: streakState.weeklyMilestoneLabel,
+	thisWeekActiveDays: streakState.thisWeekActiveDays,
+	todayXP: currentXP,
+	dailyXPTarget: 50,
+	hasPracticeToday: _hasPracticedToday(),
+	isStreakFrozen: HiveService.getStreakFreezeCount() > 0,
+	streakFreezeCount: HiveService.getStreakFreezeCount(),
+	onTap: () => _showStreakInfoDialog(context),
+	onBuyFreeze: () => _buyStreakFreeze(context, ref, currentCoins),
+	onShare: () => _shareStreak(context, currentStreak),
+	),
 const SizedBox(height: 24),
 
 // 3. Leaderboard (Mini)
