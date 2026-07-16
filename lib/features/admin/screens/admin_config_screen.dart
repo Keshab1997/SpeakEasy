@@ -31,6 +31,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
   final _mockTestCoinPriceController = TextEditingController();
   final _mockTestAdUnlockDurationController = TextEditingController();
   bool _mockTestAdUnlockEnabled = true;
+  final _inAppUpdateSnoozeController = TextEditingController();
 
   @override
   void initState() {
@@ -49,6 +50,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
     _maxStreakFreezesController.dispose();
     _mockTestCoinPriceController.dispose();
     _mockTestAdUnlockDurationController.dispose();
+    _inAppUpdateSnoozeController.dispose();
     super.dispose();
   }
 
@@ -79,6 +81,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
     _mockTestCoinPriceController.text = config.gameplay.mockTestCoinPrice.toString();
     _mockTestAdUnlockDurationController.text = config.gameplay.mockTestAdUnlockDurationHours.toString();
     _mockTestAdUnlockEnabled = config.gameplay.mockTestAdUnlockEnabled;
+    _inAppUpdateSnoozeController.text = config.inAppUpdate.snoozeHours.toString();
   }
 
   Future<void> _saveConfig() async {
@@ -106,6 +109,11 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
         'maintenanceMode': {
           'enabled': _config!.maintenanceMode.enabled,
           'message': _maintenanceMessageController.text.trim(),
+        },
+        'inAppUpdate': {
+          'enabled': _config!.inAppUpdate.enabled,
+          'mode': _config!.inAppUpdate.mode,
+          'snoozeHours': int.tryParse(_inAppUpdateSnoozeController.text.trim()) ?? 24,
         },
         'gameplay': {
           'streakFreezeCost': int.tryParse(_streakFreezeCostController.text.trim()) ?? 100,
@@ -213,6 +221,10 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
         _buildSectionHeader('Maintenance Mode', Icons.construction_rounded),
         const SizedBox(height: 12),
         _buildMaintenanceSection(isDark),
+        const SizedBox(height: 24),
+        _buildSectionHeader('In-App Update', Icons.update_rounded),
+        const SizedBox(height: 12),
+        _buildInAppUpdateSection(isDark),
         const SizedBox(height: 24),
         _buildSectionHeader('Game Settings', Icons.sports_esports_outlined),
         const SizedBox(height: 12),
@@ -393,6 +405,46 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
     ]);
   }
 
+  Widget _buildInAppUpdateSection(bool isDark) {
+    return _buildSectionCard(isDark, [
+      SwitchListTile(
+        title: const Text('In-App Update',
+            style: TextStyle(fontWeight: FontWeight.w600)),
+        subtitle: Text(_config!.inAppUpdate.enabled
+            ? 'Active — users see update prompt'
+            : 'Inactive'),
+        value: _config!.inAppUpdate.enabled,
+        activeColor: AppColors.primary,
+        onChanged: (value) {
+          setState(() {
+            _config = _config!.copyWith(
+              inAppUpdate: InAppUpdateConfig(
+                enabled: value,
+                mode: _config!.inAppUpdate.mode,
+                snoozeHours: _config!.inAppUpdate.snoozeHours,
+              ),
+            );
+          });
+        },
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: TextField(
+          controller: _inAppUpdateSnoozeController,
+          keyboardType: TextInputType.number,
+          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+          decoration: const InputDecoration(
+            labelText: 'Snooze Hours',
+            hintText: '24',
+            border: OutlineInputBorder(),
+            isDense: true,
+          ),
+        ),
+      ),
+      const SizedBox(height: 12),
+    ]);
+  }
+
   Widget _buildGameSettingsSection(bool isDark) {
     return _buildSectionCard(isDark, [
       Padding(
@@ -538,12 +590,14 @@ extension _AppConfigCopy on AppConfig {
     ForceUpdateInfo? forceUpdate,
     MaintenanceModeInfo? maintenanceMode,
     GameplaySettings? gameplay,
+    InAppUpdateConfig? inAppUpdate,
   }) {
     return AppConfig(
       featureToggles: featureToggles ?? this.featureToggles,
       forceUpdate: forceUpdate ?? this.forceUpdate,
       maintenanceMode: maintenanceMode ?? this.maintenanceMode,
       gameplay: gameplay ?? this.gameplay,
+      inAppUpdate: inAppUpdate ?? this.inAppUpdate,
     );
   }
 }
