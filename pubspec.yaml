@@ -64,6 +64,7 @@ dependencies:
   fl_chart: ^0.68.0
 
 dev_dependencies:
+  flutter_skill: ^0.9.36
   flutter_test:
     sdk: flutter
 
@@ -211,4 +212,7 @@ flutter_launcher_icons:
   min_sdk_android: 21
   adaptive_icon_background: "#1A237E"
   adaptive_icon_foreground: "assets/icon/app_icon.png"
+
+dependency_overrides:
+  vm_service: ^14.2.0
 

@@ -1,8 +1,10 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_skill/flutter_skill.dart';
 import 'firebase_options.dart';
 import 'core/theme/light_theme.dart';
 import 'core/theme/dark_theme.dart';
@@ -22,6 +24,9 @@ import 'routes/app_routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if (kDebugMode) {
+    FlutterSkillBinding.ensureInitialized();
+  }
 
   try {
     if (Firebase.apps.isEmpty) {
