@@ -476,7 +476,7 @@ class _StreakWidgetState extends State<StreakWidget>
                       child: isActive
                           ? const Text('✅', style: TextStyle(fontSize: 14))
                           : (isToday
-                              ? const Text('❌', style: TextStyle(fontSize: 12))
+                              ? const Text('🔵', style: TextStyle(fontSize: 10))
                               : Text(dayLabels[i].substring(0, 1),
                                   style: TextStyle(
                                     fontSize: 11,

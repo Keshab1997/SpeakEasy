@@ -1,5 +1,6 @@
 import '../models/game/game_progress_model.dart';
 import '../repositories/progress_repository.dart';
+import 'hive_service.dart';
 
 class StreakService {
   final ProgressRepository _progressRepository;
@@ -80,9 +81,22 @@ class StreakService {
     final daysDifference = today.difference(lastActiveDay).inDays;
 
     if (daysDifference >= 2) {
-      // Streak broken — reset to 1
+      // Check if streak freeze can save us (only for exactly 1 missed day)
+      if (daysDifference == 2) {
+        final freezeCount = HiveService.getStreakFreezeCount();
+        if (freezeCount > 0) {
+          // Use one freeze to protect the streak
+          await HiveService.useStreakFreeze();
+          await _progressRepository.incrementTotalActiveDays();
+          await _progressRepository.updateLastActiveDate(now);
+          return progress.streak; // Streak preserved!
+        }
+      }
+
+      // No freeze available — streak broken, reset to 1
       await _progressRepository.resetStreak();
       await _progressRepository.incrementStreak();
+      await _progressRepository.incrementMissedDays();
       return 1;
     }
 

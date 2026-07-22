@@ -123,7 +123,7 @@ HiveService.restoreWeeklyActivityFromProgress();
 	await HiveService.setLastPracticeDate(now);
 
 	// 2. Check if streak should increment (new day) or reset (missed >48h)
-	final newStreak = await streakNotifier.checkAndUpdateStreak();
+	await streakNotifier.checkAndUpdateStreak();
 	
 	// 2.5 Check if weekly streak should update (new week)
 	await streakNotifier.checkAndUpdateWeeklyStreak();
@@ -131,42 +131,26 @@ HiveService.restoreWeeklyActivityFromProgress();
 	// 3. Record today as active (updates lastActiveDate, totalActiveDays)
 	await streakNotifier.recordActiveDay();
 
-// 4. Handle streak freeze — if streak was reset to 1 and we have a freeze, restore it
-if (newStreak == 1) {
-final progress = ref.read(progressProvider).asData?.value;
-final oldStreak = progress?.streakDays ?? 0;
-if (oldStreak > 1) {
-final hadFreeze = await HiveService.useStreakFreeze();
-if (hadFreeze) {
-// Restore the streak from before the reset
-for (int i = 1; i < oldStreak; i++) {
-await streakNotifier.incrementStreak();
-}
-}
-}
-}
-
-// 4.5 Sync the final streak back to the main progress provider (Firestore 'progress' collection)
-
-// if it wasn't refreshed yet use the one from service directly or 
-await ref.read(progressProvider.notifier).syncStreak(ref.read(streakServiceProvider).getCurrentStreak());
-
-// 5. Upload streak data to Firestore for persistent storage
-if (authUser?.id.isNotEmpty == true) {
-try {
-final progressRepo = ref.read(progressRepositoryProvider);
-var gameProgress = progressRepo.getProgress();
-if (gameProgress != null) {
-// Ensure progress has the correct userId before uploading
-final uploadProgress = gameProgress.userId.isEmpty
-? gameProgress.copyWith(userId: authUser!.id)
-: gameProgress;
-await progressRepo.uploadProgressToFirestore(uploadProgress);
-}
-} catch (_) {
-// Silently handle Firestore upload failure
-}
-}
+	// 4. Sync the final streak to the main progress provider
+	await ref.read(progressProvider.notifier).syncStreak(
+		ref.read(streakServiceProvider).getCurrentStreak(),
+	);
+	// 5. Upload streak data to Firestore for persistent storage
+		if (authUser?.id.isNotEmpty == true) {
+			try {
+				final progressRepo = ref.read(progressRepositoryProvider);
+				var gameProgress = progressRepo.getProgress();
+				if (gameProgress != null) {
+					// Ensure progress has the correct userId before uploading
+					final uploadProgress = gameProgress.userId.isEmpty
+						? gameProgress.copyWith(userId: authUser!.id)
+						: gameProgress;
+					await progressRepo.uploadProgressToFirestore(uploadProgress);
+				}
+			} catch (_) {
+				// Silently handle Firestore upload failure
+			}
+		}
 
 	// 6. Refresh ALL providers after streak updates
 	streakNotifier.refresh();
