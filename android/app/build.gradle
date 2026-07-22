@@ -32,7 +32,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace "com.speakeasy.english.learn"
-    compileSdk 35
+    compileSdk 36
     ndkVersion "25.1.8937393"
 
     compileOptions {
@@ -52,7 +52,7 @@ android {
     defaultConfig {
         applicationId "com.speakeasy.english.learn"
         minSdkVersion 21
-        targetSdkVersion 35
+        targetSdkVersion 36
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
