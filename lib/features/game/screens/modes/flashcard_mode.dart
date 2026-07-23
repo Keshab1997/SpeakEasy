@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../providers/game/sound_provider.dart';
+import '../../../../services/speech_service.dart';
 import '../../../../services/tts_service.dart';
 import '../result_screen.dart';
 
@@ -81,6 +82,8 @@ class FlashcardsModeScreen extends ConsumerStatefulWidget {
 class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
     with TickerProviderStateMixin {
   final TtsService _tts = TtsService();
+  final SpeechService _speechService = SpeechService();
+  bool _isListening = false;
 
   // Data
   List<_Category> _categories = [];
@@ -111,12 +114,14 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
       vsync: this,
     );
     _loadData();
+    _speechService.initialize();
   }
 
   @override
   void dispose() {
     _flipController.dispose();
     _slideController.dispose();
+    _speechService.dispose();
     super.dispose();
   }
 
@@ -179,6 +184,38 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
     if (_currentIndex >= _cards.length || _isAnimating) return;
     ref.read(soundProvider.notifier).playWrong();
     _nextCard();
+  }
+
+  Future<void> _startSpeechCheck() async {
+    if (_currentIndex >= _cards.length || _isAnimating) return;
+    if (!_isFlipped) {
+      _flipCard();
+      return;
+    }
+
+    setState(() => _isListening = true);
+
+    await _speechService.startListening(
+      onResult: (text) {
+        if (!mounted) return;
+        final correct = _cards[_currentIndex].card.en.trim().toLowerCase();
+        final spoken = text.trim().toLowerCase();
+
+        setState(() => _isListening = false);
+
+        if (spoken == correct) {
+          _markKnown();
+        } else {
+          _markUnknown();
+        }
+      },
+      onError: (error) {
+        if (mounted) {
+          setState(() => _isListening = false);
+          _markUnknown();
+        }
+      },
+    );
   }
 
   void _nextCard() {
@@ -447,13 +484,13 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
                 ),
               ),
               const SizedBox(width: 12),
-              // Know Button
+              // Mic Button
               Expanded(
                 child: _ActionButton(
-                  icon: Icons.check_rounded,
-                  label: 'Know it!',
-                  color: Colors.green.shade400,
-                  onTap: _markKnown,
+                  icon: _isListening ? Icons.mic : Icons.mic_none_rounded,
+                  label: _isListening ? 'Listening...' : 'Speak',
+                  color: _isListening ? Colors.orange.shade400 : Colors.green.shade400,
+                  onTap: _startSpeechCheck,
                 ),
               ),
             ],
