@@ -514,7 +514,7 @@ class _VerbLearningModeScreenState
                       Text(
                         verb.v1.toUpperCase(),
                         style: const TextStyle(
-                          fontSize: 40,
+                          fontSize: 28,
                           fontWeight: FontWeight.w900,
                           color: Color(0xFF4B4B4B),
                           letterSpacing: 2,
@@ -526,12 +526,12 @@ class _VerbLearningModeScreenState
                     ],
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 6),
 
                 // Verb forms
                 Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: const Color(0xFFF7F7F7),
                     borderRadius: BorderRadius.circular(16),
@@ -539,23 +539,23 @@ class _VerbLearningModeScreenState
                   child: Column(
                     children: [
                       _buildFormRow('V1 (Present)', verb.v1),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 6),
                       _buildFormRow('V2 (Past)', verb.v2),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 6),
                       _buildFormRow('V3 (Participle)', verb.v3),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 6),
                       _buildFormRow('V4 (-ing)', verb.v4),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 6),
                       _buildFormRow('V5 (-s)', verb.v5),
                     ],
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 10),
 
                 // Meanings
                 Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: const Color(0xFFF7F7F7),
                     borderRadius: BorderRadius.circular(16),
@@ -619,14 +619,14 @@ class _VerbLearningModeScreenState
                     ],
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 10),
 
                 // Example sentences
                 GestureDetector(
                   onTap: () => _tts.speak(verb.enSentence),
                   child: Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: const Color(0xFFF0FFF0),
                       borderRadius: BorderRadius.circular(16),
@@ -658,7 +658,7 @@ class _VerbLearningModeScreenState
                         Text(
                           verb.enSentence,
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.w600,
                             color: Color(0xFF4B4B4B),
                             fontStyle: FontStyle.italic,
@@ -668,7 +668,7 @@ class _VerbLearningModeScreenState
                         Text(
                           verb.bnSentence,
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                             color: Colors.grey.shade600,
                           ),
@@ -677,15 +677,14 @@ class _VerbLearningModeScreenState
                     ),
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 10),
 
                 // Explanation (collapsible)
                 GestureDetector(
                   onTap: _toggleExplanation,
                   child: Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(12),                    decoration: BoxDecoration(
                       color: const Color(0xFFFFF8E1),
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
