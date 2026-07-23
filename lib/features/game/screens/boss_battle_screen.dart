@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../services/haptic_service.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../providers/game/game_provider.dart';
 import '../../../providers/game/timer_provider.dart';
 import '../../../providers/game/score_provider.dart';
@@ -28,8 +29,12 @@ class BossBattleScreen extends ConsumerWidget {
     });
 
     if (gameState.isLoading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+      return Scaffold(
+        body: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 5,
+          itemBuilder: (_, __) => const SkeletonListTile(),
+        ),
       );
     }
 

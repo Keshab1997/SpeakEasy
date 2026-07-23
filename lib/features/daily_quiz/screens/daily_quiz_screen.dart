@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/widgets/banner_ad_widget.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../services/ad_service.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../models/daily_quiz_model.dart';
@@ -59,7 +60,15 @@ class DailyQuizScreen extends ConsumerWidget {
     DailyQuizState quizState,
   ) {
     if (quizState.isLoading) {
-      return const Center(child: CircularProgressIndicator());
+      return const SingleChildScrollView(
+        child: Column(
+          children: [
+            SkeletonProgressHeader(),
+            SkeletonCourseCard(),
+            SkeletonCourseCard(),
+          ],
+        ),
+      );
     }
 
     if (quizState.error != null) {

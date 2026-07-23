@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../models/game/achievement_model.dart';
 import '../../../providers/game/achievement_provider.dart';
 
@@ -23,7 +24,14 @@ class AchievementsScreen extends ConsumerWidget {
         ],
       ),
       body: asyncState.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
+        loading: () => const SingleChildScrollView(
+          child: Column(
+            children: [
+              SkeletonProgressHeader(),
+              SkeletonGrid(),
+            ],
+          ),
+        ),
         error: (error, _) => Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

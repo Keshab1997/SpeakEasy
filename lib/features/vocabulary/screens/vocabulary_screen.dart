@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../providers/chapter_vocabulary_provider.dart';
 import '../../../providers/vocab_progress_provider.dart';
 import 'chapter_words_screen.dart';
@@ -53,7 +54,14 @@ class VocabularyScreen extends ConsumerWidget {
         ],
       ),
       body: chaptersAsync.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
+        loading: () => const SingleChildScrollView(
+          child: Column(
+            children: [
+              SkeletonProgressHeader(),
+              SkeletonGrid(),
+            ],
+          ),
+        ),
         error: (e, _) => Center(child: Text('Error: $e')),
         data: (byLevel) {
           if (byLevel.isEmpty) {

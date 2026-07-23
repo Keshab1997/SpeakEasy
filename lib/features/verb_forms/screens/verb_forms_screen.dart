@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../models/verb_form_model.dart';
 import 'verb_form_list_screen.dart';
 import 'verb_forms_guide_screen.dart';
@@ -45,7 +46,11 @@ class _VerbFormsScreenState extends State<VerbFormsScreen> {
         ),
       ),
       body: _loading
-          ? const Center(child: CircularProgressIndicator())
+          ? ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 5,
+              itemBuilder: (_, __) => const SkeletonListTile(),
+            )
           : SafeArea(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),

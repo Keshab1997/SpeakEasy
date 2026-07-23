@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../providers/game/leaderboard_provider.dart';
 import '../../../repositories/leaderboard_repository.dart';
 
@@ -45,7 +46,11 @@ class LeaderboardScreen extends ConsumerWidget {
         ],
       ),
       body: ref.watch(leaderboardProvider).when(
-        loading: () => const Center(child: CircularProgressIndicator()),
+        loading: () => ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 8,
+          itemBuilder: (_, __) => const SkeletonListTile(),
+        ),
         error: (error, _) => Center(child: Text('Error: $error')),
         data: (leaderboardState) => leaderboardState.entries.isEmpty
             ? const Center(

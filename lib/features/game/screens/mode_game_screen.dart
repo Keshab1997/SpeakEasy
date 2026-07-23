@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/widgets/skeleton_widget.dart';
 import '../../../../services/haptic_service.dart';
 import '../../../../services/game_mode_service.dart';
 import '../../../../providers/game/timer_provider.dart';
@@ -360,8 +361,12 @@ class _ModeGameScreenState extends ConsumerState<ModeGameScreen> with TickerProv
     final gameState = ref.watch(gameProvider);
 
     if (gameState.isLoading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+      return Scaffold(
+        body: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 5,
+          itemBuilder: (_, __) => const SkeletonListTile(),
+        ),
       );
     }
 

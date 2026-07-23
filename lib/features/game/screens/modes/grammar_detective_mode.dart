@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../services/haptic_service.dart';
+import '../../../../core/widgets/skeleton_widget.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../result_screen.dart';
@@ -334,7 +335,11 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
           title: const Text('Grammar Detective'),
           backgroundColor: const Color(0xFF8B0000),
         ),
-        body: const Center(child: CircularProgressIndicator()),
+        body: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 5,
+          itemBuilder: (_, __) => const SkeletonListTile(),
+        ),
       );
     }
 

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../services/ad_service.dart';
 import '../../../services/sound_service.dart';
 import '../../../services/haptic_service.dart';
@@ -303,7 +304,11 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,
         ),
-        body: const Center(child: CircularProgressIndicator()),
+        body: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 5,
+          itemBuilder: (_, __) => const SkeletonListTile(),
+        ),
       );
     }
 

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../models/feedback_model.dart';
 import '../../../providers/auth_provider.dart';
 
@@ -91,7 +92,11 @@ class _MyFeedbackScreenState extends ConsumerState<MyFeedbackScreen> {
         }
 
         if (!snapshot.hasData) {
-          return const Center(child: CircularProgressIndicator());
+          return ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 5,
+            itemBuilder: (_, __) => const SkeletonListTile(),
+          );
         }
 
         final docs = snapshot.data!.docs;

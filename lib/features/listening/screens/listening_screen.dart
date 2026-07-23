@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../models/listening_model.dart';
 import '../../../services/idle_tracker_service.dart';
 import '../../../services/speech_service.dart';
@@ -231,7 +232,11 @@ class _ListeningScreenState extends State<ListeningScreen>
       return Scaffold(
         appBar: AppBar(title: const Text('Listening Practice',
             style: TextStyle(fontWeight: FontWeight.w900))),
-        body: const Center(child: CircularProgressIndicator()),
+        body: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 5,
+          itemBuilder: (_, __) => const SkeletonListTile(),
+        ),
       );
     }
 

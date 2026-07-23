@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../services/daily_quiz_leaderboard_service.dart';
 
@@ -76,7 +77,11 @@ class _DailyQuizLeaderboardScreenState
 
   Widget _buildBody(ThemeData theme, bool isDark) {
     if (_isLoading) {
-      return const Center(child: CircularProgressIndicator());
+      return ListView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: 8,
+        itemBuilder: (_, __) => const SkeletonListTile(),
+      );
     }
 
     if (_error != null) {

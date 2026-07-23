@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../services/haptic_service.dart';
+import '../../../../core/widgets/skeleton_widget.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../providers/game/tts_provider.dart';
@@ -285,7 +286,11 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
     if (_isLoading) {
       return Scaffold(
         appBar: AppBar(title: const Text('Bangla → English')),
-        body: const Center(child: CircularProgressIndicator()),
+        body: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 5,
+          itemBuilder: (_, __) => const SkeletonListTile(),
+        ),
       );
     }
 

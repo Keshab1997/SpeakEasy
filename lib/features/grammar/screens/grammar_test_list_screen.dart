@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../providers/grammar_provider.dart';
 import 'grammar_test_screen.dart';
 
@@ -51,7 +52,11 @@ class _GrammarTestListScreenState extends ConsumerState<GrammarTestListScreen>
         ),
       ),
       body: chaptersAsync.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
+        loading: () => ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 4,
+          itemBuilder: (_, __) => const SkeletonListTile(),
+        ),
         error: (e, _) => Center(child: Text('Error: $e')),
         data: (map) {
           _levels

@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/widgets/banner_ad_widget.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../models/verb_form_model.dart';
 
 class VerbFormPracticeScreen extends StatefulWidget {
@@ -163,7 +164,11 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
           title: const Text('Verb Forms Quiz',
               style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 0.5)),
         ),
-        body: const Center(child: CircularProgressIndicator()),
+        body: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 5,
+          itemBuilder: (_, __) => const SkeletonListTile(),
+        ),
       );
     }
 

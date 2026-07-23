@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../core/widgets/skeleton_widget.dart';
 import '../../../../providers/game/game_provider.dart';
 import '../../../../providers/game/sound_provider.dart';
 import '../../../../models/game/game_question_model.dart';
@@ -14,7 +15,13 @@ class FillBlankMode extends ConsumerWidget {
     final gameState = ref.watch(gameProvider);
 
     if (gameState.isLoading) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      return Scaffold(
+        body: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 5,
+          itemBuilder: (_, __) => const SkeletonListTile(),
+        ),
+      );
     }
 
     if (gameState.error != null) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../models/guide_model.dart';
 import '../services/guide_service.dart';
 
@@ -101,14 +102,12 @@ class _GuidesScreenState extends State<GuidesScreen>
 
   Widget _buildBody() {
     if (_isLoading) {
-      return const Center(
+      return const SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: [
-            CircularProgressIndicator(color: AppColors.primary),
-            SizedBox(height: 16),
-            Text('গাইড লোড হচ্ছে...',
-                style: TextStyle(color: Colors.grey, fontSize: 14)),
+            SkeletonParagraph(lines: 4),
+            SkeletonParagraph(lines: 3),
+            SkeletonParagraph(lines: 4),
           ],
         ),
       );

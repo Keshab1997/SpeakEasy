@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../models/spoken_rule_model.dart';
 
 class SpokenRulesScreen extends StatefulWidget {
@@ -52,7 +53,15 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
     return Scaffold(
       backgroundColor: isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator(color: AppColors.primary))
+          ? const SingleChildScrollView(
+              child: Column(
+                children: [
+                  SkeletonParagraph(lines: 4),
+                  SkeletonParagraph(lines: 3),
+                  SkeletonParagraph(lines: 4),
+                ],
+              ),
+            )
           : _rulesData == null
               ? _buildErrorState(isDark)
               : _buildContent(isDark),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../providers/game/game_provider.dart';
 import '../../../providers/game/sound_provider.dart';
 import 'question_screen.dart';
@@ -213,8 +214,14 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
     return Scaffold(
       backgroundColor: isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
       body: _isLoading
-          ? const Center(
-              child: CircularProgressIndicator(color: AppColors.primary),
+          ? const SingleChildScrollView(
+              child: Column(
+                children: [
+                  SkeletonParagraph(lines: 4),
+                  SkeletonParagraph(lines: 3),
+                  SkeletonParagraph(lines: 4),
+                ],
+              ),
             )
           : _rulesData == null
               ? _buildErrorState(isDark)

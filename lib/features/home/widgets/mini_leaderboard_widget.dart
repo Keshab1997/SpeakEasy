@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../providers/game/leaderboard_provider.dart';
 import '../../../repositories/leaderboard_repository.dart';
 import '../../game/screens/leaderboard_screen.dart';
@@ -294,7 +295,7 @@ class MiniLeaderboardWidget extends ConsumerWidget {
   Widget _buildSkeleton(bool isDark) {
     return Container(
       width: double.infinity,
-      height: 180,
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
         borderRadius: BorderRadius.circular(24),
@@ -302,12 +303,13 @@ class MiniLeaderboardWidget extends ConsumerWidget {
           color: isDark ? AppColors.borderDark : AppColors.borderLight,
         ),
       ),
-      child: const Center(
-        child: SizedBox(
-          width: 20,
-          height: 20,
-          child: CircularProgressIndicator(strokeWidth: 2),
-        ),
+      child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SkeletonListTile(),
+          SkeletonListTile(),
+          SkeletonListTile(),
+        ],
       ),
     );
   }

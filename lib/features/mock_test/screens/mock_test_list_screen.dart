@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../providers/mock_test_provider.dart';
 import 'mock_test_quiz_screen.dart';
 import '../widgets/mock_test_unlock_overlay.dart';
@@ -37,7 +38,11 @@ class _MockTestListScreenState extends ConsumerState<MockTestListScreen> {
         ),
       ),
       body: state.isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 5,
+              itemBuilder: (_, __) => const SkeletonListTile(),
+            )
           : state.error != null
               ? Center(
                   child: Padding(
