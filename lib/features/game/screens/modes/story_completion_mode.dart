@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../services/haptic_service.dart';
 import '../../../../services/tts_service.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
@@ -175,7 +176,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
     _wrongCount++;
     _streak = 0;
 
-    HapticFeedback.mediumImpact();
+    HapticService.wrong();
     _saveWrongAnswer(null);
 
     setState(() {});
@@ -203,13 +204,13 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
       final streakBonus = min((_streak - 1) * 2, 10);
       _score += 15 + timeBonus + streakBonus;
 
-      HapticFeedback.lightImpact();
+      HapticService.correct();
       _scoreAnimCtrl.forward().then((_) => _scoreAnimCtrl.reverse());
       _tts.speak(answer);
     } else {
       _wrongCount++;
       _streak = 0;
-      HapticFeedback.mediumImpact();
+      HapticService.wrong();
       _saveWrongAnswer(answer);
     }
 

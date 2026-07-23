@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../services/haptic_service.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../result_screen.dart';
@@ -183,7 +184,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
     });
     _wrongCount++;
     _streak = 0;
-    HapticFeedback.heavyImpact();
+    HapticService.heavy();
 
     // Wrong answer – send to wrong queue for retry
     if (_currentQuestion != null) {
@@ -216,14 +217,14 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
       final streakBonus = min(_streak * 4, 20).toInt();
       _score += 20 + timeBonus + streakBonus;
 
-      HapticFeedback.lightImpact();
+      HapticService.correct();
       _scoreAnimCtrl.forward().then((_) => _scoreAnimCtrl.reverse());
       
       // Correct – consume this question (do NOT requeue)
     } else {
       _wrongCount++;
       _streak = 0;
-      HapticFeedback.heavyImpact();
+      HapticService.heavy();
       _shakeController.forward().then((_) => _shakeController.reverse());
 
       // Wrong answer – requeue for retry later

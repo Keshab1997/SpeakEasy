@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../services/haptic_service.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../providers/game/tts_provider.dart';
@@ -189,10 +190,10 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
     if (isCorrect) {
       _correctCount++;
       _score += 10;
-      HapticFeedback.lightImpact();
+      HapticService.correct();
     } else {
       _wrongCount++;
-      HapticFeedback.heavyImpact();
+      HapticService.heavy();
       _saveWrongAnswer(answer);
     }
 

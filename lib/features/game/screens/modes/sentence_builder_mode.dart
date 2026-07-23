@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../services/haptic_service.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
@@ -155,12 +156,12 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
         _score += baseScore + timeBonus + streakBonus;
       });
       
-      HapticFeedback.lightImpact();
+      HapticService.correct();
     } else {
       _wrongCount++;
       _streak = 0;
       _shakeController.forward().then((_) => _shakeController.reverse());
-      HapticFeedback.heavyImpact();
+      HapticService.heavy();
       
       // Save wrong answer
       _saveWrongAnswer(question, userAnswer, correctAnswer);

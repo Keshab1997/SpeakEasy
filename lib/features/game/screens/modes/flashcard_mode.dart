@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../services/haptic_service.dart';
 import '../../../../services/speech_service.dart';
 import '../../../../services/tts_service.dart';
 import '../result_screen.dart';
@@ -172,7 +173,7 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
 
   void _markKnown() {
     if (_currentIndex >= _cards.length || _isAnimating) return;
-    HapticFeedback.lightImpact();
+    HapticService.correct();
     setState(() {
       _cards[_currentIndex].known = true;
     });
@@ -181,7 +182,7 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
 
   void _markUnknown() {
     if (_currentIndex >= _cards.length || _isAnimating) return;
-    HapticFeedback.mediumImpact();
+    HapticService.wrong();
     _nextCard();
   }
 
