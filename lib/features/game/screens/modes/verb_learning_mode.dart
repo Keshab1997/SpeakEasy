@@ -7,7 +7,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../services/haptic_service.dart';
 import '../../../../services/tts_service.dart';
 import '../result_screen.dart';
-import '../../../../services/haptic_service.dart';
 
 // ─────────────────────────────────────────────────────────────
 // Data Model
@@ -487,262 +486,270 @@ class _VerbLearningModeScreenState
 
     final verb = _sessionVerbs[_currentVerbIndex];
 
-    return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Title
-          const Text(
-            'Learn the Verb',
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              color: Color(0xFFAFAFAF),
-              letterSpacing: 1.2,
-            ),
-          ),
-          const SizedBox(height: 8),
-
-          // Verb name — large
-          GestureDetector(
-            onTap: () => _tts.speak(verb.v1),
-            child: Row(
-              children: [
-                Text(
-                  verb.v1.toUpperCase(),
-                  style: const TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w900,
-                    color: Color(0xFF4B4B4B),
-                    letterSpacing: 2,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                const Icon(Icons.volume_up_rounded,
-                    color: Color(0xFFAFAFAF), size: 24),
-              ],
-            ),
-          ),
-          const SizedBox(height: 8),
-
-          // Verb forms
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: const Color(0xFFF7F7F7),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Column(
-              children: [
-                _buildFormRow('V1 (Present)', verb.v1),
-                const SizedBox(height: 8),
-                _buildFormRow('V2 (Past)', verb.v2),
-                const SizedBox(height: 8),
-                _buildFormRow('V3 (Participle)', verb.v3),
-                const SizedBox(height: 8),
-                _buildFormRow('V4 (-ing)', verb.v4),
-                const SizedBox(height: 8),
-                _buildFormRow('V5 (-s)', verb.v5),
-              ],
-            ),
-          ),
-          const SizedBox(height: 16),
-
-          // Meanings
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: const Color(0xFFF7F7F7),
-              borderRadius: BorderRadius.circular(16),
-            ),
+    return Column(
+      children: [
+        Expanded(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    const Icon(Icons.translate_rounded,
-                        color: Color(0xFF58CC02), size: 18),
-                    const SizedBox(width: 8),
-                    const Text(
-                      'Bangla:',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFFAFAFAF),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        verb.bangla,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xFF4B4B4B),
-                        ),
-                      ),
-                    ),
-                  ],
+                // Title
+                const Text(
+                  'Learn the Verb',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFFAFAFAF),
+                    letterSpacing: 1.2,
+                  ),
                 ),
                 const SizedBox(height: 8),
-                Row(
-                  children: [
-                    const Icon(Icons.translate_rounded,
-                        color: Color(0xFF1CB0F6), size: 18),
-                    const SizedBox(width: 8),
-                    const Text(
-                      'English:',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFFAFAFAF),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        verb.meaning,
+
+                // Verb name — large
+                GestureDetector(
+                  onTap: () => _tts.speak(verb.v1),
+                  child: Row(
+                    children: [
+                      Text(
+                        verb.v1.toUpperCase(),
                         style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 40,
+                          fontWeight: FontWeight.w900,
                           color: Color(0xFF4B4B4B),
+                          letterSpacing: 2,
                         ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(width: 12),
+                      const Icon(Icons.volume_up_rounded,
+                          color: Color(0xFFAFAFAF), size: 24),
+                    ],
+                  ),
                 ),
+                const SizedBox(height: 8),
+
+                // Verb forms
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF7F7F7),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Column(
+                    children: [
+                      _buildFormRow('V1 (Present)', verb.v1),
+                      const SizedBox(height: 8),
+                      _buildFormRow('V2 (Past)', verb.v2),
+                      const SizedBox(height: 8),
+                      _buildFormRow('V3 (Participle)', verb.v3),
+                      const SizedBox(height: 8),
+                      _buildFormRow('V4 (-ing)', verb.v4),
+                      const SizedBox(height: 8),
+                      _buildFormRow('V5 (-s)', verb.v5),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                // Meanings
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF7F7F7),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          const Icon(Icons.translate_rounded,
+                              color: Color(0xFF58CC02), size: 18),
+                          const SizedBox(width: 8),
+                          const Text(
+                            'Bangla:',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFFAFAFAF),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              verb.bangla,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF4B4B4B),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          const Icon(Icons.translate_rounded,
+                              color: Color(0xFF1CB0F6), size: 18),
+                          const SizedBox(width: 8),
+                          const Text(
+                            'English:',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFFAFAFAF),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              verb.meaning,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF4B4B4B),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                // Example sentences
+                GestureDetector(
+                  onTap: () => _tts.speak(verb.enSentence),
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF0FFF0),
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                          color: const Color(0xFF58CC02).withOpacity(0.3)),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            const Icon(Icons.format_quote_rounded,
+                                color: Color(0xFF58CC02), size: 18),
+                            const SizedBox(width: 8),
+                            const Text(
+                              'Example Sentence',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xFFAFAFAF),
+                              ),
+                            ),
+                            const Spacer(),
+                            const Icon(Icons.volume_up_rounded,
+                                color: Color(0xFF58CC02), size: 18),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          verb.enSentence,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFF4B4B4B),
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          verb.bnSentence,
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey.shade600,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                // Explanation (collapsible)
+                GestureDetector(
+                  onTap: _toggleExplanation,
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFFF8E1),
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                          color: const Color(0xFFFFC800).withOpacity(0.3)),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            const Icon(Icons.lightbulb_rounded,
+                                color: Color(0xFFFFC800), size: 18),
+                            const SizedBox(width: 8),
+                            const Text(
+                              'Explanation',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF4B4B4B),
+                              ),
+                            ),
+                            const Spacer(),
+                            AnimatedRotation(
+                              turns: _showExplanation ? 0.5 : 0,
+                              duration: const Duration(milliseconds: 200),
+                              child: const Icon(
+                                Icons.expand_more_rounded,
+                                color: Color(0xFFAFAFAF),
+                              ),
+                            ),
+                          ],
+                        ),
+                        AnimatedCrossFade(
+                          firstChild: const SizedBox.shrink(),
+                          secondChild: Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Text(
+                              verb.explanation,
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.grey.shade700,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                          crossFadeState: _showExplanation
+                              ? CrossFadeState.showSecond
+                              : CrossFadeState.showFirst,
+                          duration: const Duration(milliseconds: 300),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24),
               ],
             ),
           ),
-          const SizedBox(height: 16),
-
-          // Example sentences
-          GestureDetector(
-            onTap: () => _tts.speak(verb.enSentence),
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF0FFF0),
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(
-                    color: const Color(0xFF58CC02).withOpacity(0.3)),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      const Icon(Icons.format_quote_rounded,
-                          color: Color(0xFF58CC02), size: 18),
-                      const SizedBox(width: 8),
-                      const Text(
-                        'Example Sentence',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFFAFAFAF),
-                        ),
-                      ),
-                      const Spacer(),
-                      const Icon(Icons.volume_up_rounded,
-                          color: Color(0xFF58CC02), size: 18),
-                    ],
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    verb.enSentence,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF4B4B4B),
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    verb.bnSentence,
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey.shade600,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-
-          // Explanation (collapsible)
-          GestureDetector(
-            onTap: _toggleExplanation,
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: const Color(0xFFFFF8E1),
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(
-                    color: const Color(0xFFFFC800).withOpacity(0.3)),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      const Icon(Icons.lightbulb_rounded,
-                          color: Color(0xFFFFC800), size: 18),
-                      const SizedBox(width: 8),
-                      const Text(
-                        'Explanation',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xFF4B4B4B),
-                        ),
-                      ),
-                      const Spacer(),
-                      AnimatedRotation(
-                        turns: _showExplanation ? 0.5 : 0,
-                        duration: const Duration(milliseconds: 200),
-                        child: const Icon(
-                          Icons.expand_more_rounded,
-                          color: Color(0xFFAFAFAF),
-                        ),
-                      ),
-                    ],
-                  ),
-                  AnimatedCrossFade(
-                    firstChild: const SizedBox.shrink(),
-                    secondChild: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Text(
-                        verb.explanation,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.grey.shade700,
-                          height: 1.5,
-                        ),
-                      ),
-                    ),
-                    crossFadeState: _showExplanation
-                        ? CrossFadeState.showSecond
-                        : CrossFadeState.showFirst,
-                    duration: const Duration(milliseconds: 300),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(height: 24),
-
-          // Navigation buttons
-          Row(
+        ),
+        // Nav buttons — ALWAYS VISIBLE at bottom
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
+          child: Row(
             children: [
               // Previous button
               if (_currentVerbIndex > 0)
@@ -771,9 +778,8 @@ class _VerbLearningModeScreenState
               ),
             ],
           ),
-          const SizedBox(height: 40),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
