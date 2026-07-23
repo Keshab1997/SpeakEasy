@@ -2,9 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../providers/game/sound_provider.dart';
 import '../../../../services/tts_service.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
@@ -171,7 +170,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
     _wrongCount++;
     _streak = 0;
 
-    ref.read(soundServiceProvider).playWrong();
+    HapticFeedback.mediumImpact();
     _saveWrongAnswer(null);
 
     setState(() {});
@@ -202,13 +201,13 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
       final streakBonus = min((_streak - 1) * 2, 10);
       _score += 15 + timeBonus + streakBonus;
 
-      ref.read(soundServiceProvider).playCorrect();
+      HapticFeedback.lightImpact();
       _scoreAnimCtrl.forward().then((_) => _scoreAnimCtrl.reverse());
       _tts.speak(answer);
     } else {
       _wrongCount++;
       _streak = 0;
-      ref.read(soundServiceProvider).playWrong();
+      HapticFeedback.mediumImpact();
       _saveWrongAnswer(answer);
     }
 

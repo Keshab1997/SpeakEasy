@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../providers/game/game_provider.dart';
 import '../../../providers/game/timer_provider.dart';
 import '../../../providers/game/score_provider.dart';
-import '../../../providers/game/sound_provider.dart';
 import '../../../providers/game/statistics_provider.dart';
 import 'result_screen.dart';
 
@@ -204,10 +204,10 @@ class QuestionScreen extends ConsumerWidget {
     final isCorrect = ref.read(gameProvider).isCurrentAnswerCorrect ?? false;
     if (isCorrect) {
       ref.read(scoreProvider.notifier).addCorrect();
-      ref.read(soundProvider.notifier).playCorrect();
+      HapticFeedback.lightImpact();
     } else {
       ref.read(scoreProvider.notifier).addWrong();
-      ref.read(soundProvider.notifier).playWrong();
+      HapticFeedback.mediumImpact();
     }
   }
 

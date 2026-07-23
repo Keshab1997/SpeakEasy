@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../../../../repositories/wrong_question_repository.dart';
-import '../../../../providers/game/sound_provider.dart';
 import '../../../../providers/game/tts_provider.dart';
 import '../result_screen.dart';
 
@@ -191,11 +190,9 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
       _correctCount++;
       _score += 10;
       HapticFeedback.lightImpact();
-      ref.read(soundServiceProvider).playCorrect();
     } else {
       _wrongCount++;
       HapticFeedback.heavyImpact();
-      ref.read(soundServiceProvider).playWrong();
       _saveWrongAnswer(answer);
     }
 

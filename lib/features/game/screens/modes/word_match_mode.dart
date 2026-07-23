@@ -2,9 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../providers/game/sound_provider.dart';
 import '../../../../services/tts_service.dart';
 import '../result_screen.dart';
 
@@ -190,7 +189,7 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
       final streakBonus = (_streak - 1) * 2;
       _score += 10 + streakBonus;
 
-      ref.read(soundServiceProvider).playCorrect();
+      HapticFeedback.lightImpact();
       _scoreAnimCtrl.forward().then((_) => _scoreAnimCtrl.reverse());
       _celebrationAnimCtrl.forward().then((_) => _celebrationAnimCtrl.reverse());
       _tts.speak(_selectedRight!.text);
@@ -207,7 +206,7 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
       });
     } else {
       _streak = 0;
-      ref.read(soundServiceProvider).playWrong();
+      HapticFeedback.mediumImpact();
 
       _selectedLeft!.isWrong = true;
       _selectedRight!.isWrong = true;
