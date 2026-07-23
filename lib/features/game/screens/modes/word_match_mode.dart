@@ -68,6 +68,16 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
   late AnimationController _shakeAnimCtrl;
   late Animation<double> _shakeAnim;
 
+  // New: Correct matched card animation
+  late AnimationController _matchAnimCtrl;
+
+  // New: Wrong card flash animation  
+  late AnimationController _wrongFlashCtrl;
+
+  // New: Floating score text animation
+  late AnimationController _floatTextCtrl;
+
+  int _lastScoreGain = 0;
 
   @override
   void initState() {
@@ -98,6 +108,21 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
       CurvedAnimation(parent: _shakeAnimCtrl, curve: Curves.elasticIn),
     );
 
+    // Match animation: scale down + green glow
+    _matchAnimCtrl = AnimationController(
+      duration: const Duration(milliseconds: 600), vsync: this,
+    );
+
+    // Wrong flash: red overlay fades in then out
+    _wrongFlashCtrl = AnimationController(
+      duration: const Duration(milliseconds: 400), vsync: this,
+    );
+
+    // Floating text: rises up and fades out
+    _floatTextCtrl = AnimationController(
+      duration: const Duration(milliseconds: 900), vsync: this,
+    );
+
     _loadWords();
   }
 
@@ -107,6 +132,9 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
     _pulseAnimCtrl.dispose();
     _celebrationAnimCtrl.dispose();
     _shakeAnimCtrl.dispose();
+    _matchAnimCtrl.dispose();
+    _wrongFlashCtrl.dispose();
+    _floatTextCtrl.dispose();
     super.dispose();
   }
 
@@ -191,9 +219,12 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
       final streakBonus = (_streak - 1) * 2;
       _score += 10 + streakBonus;
 
+      _lastScoreGain = 10 + streakBonus;
       HapticService.correct();
       _scoreAnimCtrl.forward().then((_) => _scoreAnimCtrl.reverse());
       _celebrationAnimCtrl.forward().then((_) => _celebrationAnimCtrl.reverse());
+      _matchAnimCtrl.forward(from: 0);
+      _floatTextCtrl.forward(from: 0);
       _tts.speak(_selectedRight!.text);
 
       setState(() {});
@@ -212,6 +243,7 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
 
       _selectedLeft!.isWrong = true;
       _selectedRight!.isWrong = true;
+      _wrongFlashCtrl.forward(from: 0);
       _shakeAnimCtrl.forward().then((_) => _shakeAnimCtrl.reverse());
 
       setState(() {});
@@ -404,7 +436,13 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
               padding: const EdgeInsets.symmetric(vertical: 6),
               child: GestureDetector(
                 onTap: () => isLeft ? _onLeftTap(card) : _onRightTap(card),
-                child: _DuolingoDuoCard(card: card),
+                child: _DuolingoDuoCard(
+                  card: card,
+                  matchAnimCtrl: _matchAnimCtrl,
+                  wrongFlashCtrl: _wrongFlashCtrl,
+                  floatTextCtrl: _floatTextCtrl,
+                  lastScoreGain: _lastScoreGain,
+                ),
               ),
             ),
           ),
@@ -416,19 +454,89 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
 
 class _DuolingoDuoCard extends StatelessWidget {
   final _MatchCard card;
+  final AnimationController? matchAnimCtrl;
+  final AnimationController? wrongFlashCtrl;
+  final AnimationController? floatTextCtrl;
+  final int lastScoreGain;
 
-  const _DuolingoDuoCard({Key? key, required this.card}) : super(key: key);
+  const _DuolingoDuoCard({
+    Key? key,
+    required this.card,
+    this.matchAnimCtrl,
+    this.wrongFlashCtrl,
+    this.floatTextCtrl,
+    this.lastScoreGain = 0,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     if (card.isMatched) {
-      return Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: const Color(0xFFE5E5E5),
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: const Color(0xFFE5E5E5), width: 2),
-        ),
+      return Stack(
+        children: [
+          AnimatedBuilder(
+            animation: matchAnimCtrl!,
+            builder: (context, child) {
+              final scale = Tween<double>(begin: 1.0, end: 0.85).animate(
+                CurvedAnimation(parent: matchAnimCtrl!, curve: Curves.easeInOut),
+              );
+              final glow = Tween<double>(begin: 1.0, end: 0.0).animate(
+                CurvedAnimation(parent: matchAnimCtrl!, curve: const Interval(0.0, 0.3)),
+              );
+              return Transform.scale(
+                scale: scale.value,
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color.lerp(const Color(0xFF58CC02), const Color(0xFFE5E5E5), glow.value)!,
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: Color.lerp(const Color(0xFF58CC02), const Color(0xFFE5E5E5), glow.value)!,
+                      width: 2,
+                    ),
+                    boxShadow: glow.value > 0.5
+                        ? [BoxShadow(color: const Color(0xFF58CC02).withOpacity(glow.value * 0.3), blurRadius: 12, spreadRadius: 2)]
+                        : null,
+                  ),
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  child: const Icon(Icons.check_circle_rounded, color: Colors.white, size: 28),
+                ),
+              );
+            },
+          ),
+          if (floatTextCtrl != null)
+            AnimatedBuilder(
+              animation: floatTextCtrl!,
+              builder: (context, child) {
+                final floatAnim = Tween<double>(begin: 0.0, end: -40.0).animate(
+                  CurvedAnimation(parent: floatTextCtrl!, curve: Curves.easeOut),
+                );
+                final fadeAnim = Tween<double>(begin: 1.0, end: 0.0).animate(
+                  CurvedAnimation(parent: floatTextCtrl!, curve: const Interval(0.5, 1.0)),
+                );
+                return Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  child: Transform.translate(
+                    offset: Offset(0, floatAnim.value),
+                    child: Opacity(
+                      opacity: fadeAnim.value,
+                      child: Text(
+                        '+$lastScoreGain',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF58CC02),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+        ],
       );
     }
 
@@ -457,35 +565,63 @@ class _DuolingoDuoCard extends StatelessWidget {
 
     return Transform.translate(
       offset: Offset(0, topTranslate),
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: bgColor,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: borderColor, width: 2),
-          boxShadow: bottomThickness > 0
-              ? [
-                  BoxShadow(
-                    color: bottomBorderColor,
-                    offset: Offset(0, bottomThickness),
-                    blurRadius: 0,
-                  ),
-                ]
-              : null,
-        ),
-        alignment: Alignment.center,
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        child: Text(
-          card.text,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: card.isBangla ? 16 : 15,
-            fontWeight: FontWeight.w700,
-            color: textColor,
+      child: Stack(
+        children: [
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: bgColor,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: borderColor, width: 2),
+              boxShadow: bottomThickness > 0
+                  ? [
+                      BoxShadow(
+                        color: bottomBorderColor,
+                        offset: Offset(0, bottomThickness),
+                        blurRadius: 0,
+                      ),
+                    ]
+                  : null,
+            ),
+            alignment: Alignment.center,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            child: Text(
+              card.text,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: card.isBangla ? 16 : 15,
+                fontWeight: FontWeight.w700,
+                color: textColor,
+              ),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
-          maxLines: 3,
-          overflow: TextOverflow.ellipsis,
-        ),
+          if (card.isWrong && wrongFlashCtrl != null)
+            Positioned.fill(
+              child: AnimatedBuilder(
+                animation: wrongFlashCtrl!,
+                builder: (context, child) {
+                  final flashAnim = Tween<double>(begin: 0.0, end: 0.4).animate(
+                    CurvedAnimation(parent: wrongFlashCtrl!, curve: Curves.easeInOut),
+                  );
+                  return IgnorePointer(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.red.withOpacity(flashAnim.value),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      alignment: Alignment.center,
+                      child: Opacity(
+                        opacity: flashAnim.value > 0.2 ? 1.0 : 0.0,
+                        child: const Icon(Icons.close_rounded, color: Colors.white, size: 40),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+        ],
       ),
     );
   }
