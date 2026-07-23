@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../../services/haptic_service.dart';
 import '../../../../services/game_mode_service.dart';
 import '../../../../providers/game/timer_provider.dart';
 import '../../../../providers/game/score_provider.dart';
@@ -105,7 +105,7 @@ class _ModeGameScreenState extends ConsumerState<ModeGameScreen> with TickerProv
     if (_config.hasLives) {
       final newLives = _gameState.lives - 1;
       setState(() => _gameState = _gameState.copyWith(lives: newLives));
-      HapticFeedback.mediumImpact();
+      HapticService.wrong();
 
       if (newLives <= 0) {
         _endGame();
@@ -139,10 +139,10 @@ class _ModeGameScreenState extends ConsumerState<ModeGameScreen> with TickerProv
       // Award coins for correct answer
       final coins = ref.read(coinProvider.notifier).calculateCorrectAnswerCoins(streak: streak);
       ref.read(coinProvider.notifier).addCoins(coins);
-      HapticFeedback.lightImpact();
+      HapticService.correct();
     } else {
       _loseLife();
-      HapticFeedback.mediumImpact();
+      HapticService.wrong();
     }
   }
 

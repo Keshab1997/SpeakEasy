@@ -9,6 +9,7 @@ import '../../../../models/game/wrong_question_model.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../providers/game/tts_provider.dart';
 import '../result_screen.dart';
+import '../../../../services/haptic_service.dart';
 
 class BanglaToEnglishModeScreen extends ConsumerStatefulWidget {
   const BanglaToEnglishModeScreen({super.key});

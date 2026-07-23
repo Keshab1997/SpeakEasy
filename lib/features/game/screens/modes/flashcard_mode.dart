@@ -8,6 +8,7 @@ import '../../../../services/haptic_service.dart';
 import '../../../../services/speech_service.dart';
 import '../../../../services/tts_service.dart';
 import '../result_screen.dart';
+import '../../../../services/haptic_service.dart';
 
 // ─────────────────────────────────────────────────────────────
 // Data Models

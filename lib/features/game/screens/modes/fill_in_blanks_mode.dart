@@ -9,6 +9,7 @@ import '../../../../services/tts_service.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../result_screen.dart';
+import '../../../../services/haptic_service.dart';
 
 class _QuestionData {
   final String id;

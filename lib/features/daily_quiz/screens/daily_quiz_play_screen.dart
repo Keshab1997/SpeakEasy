@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../services/ad_service.dart';
 import '../../../services/sound_service.dart';
+import '../../../services/haptic_service.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../models/daily_quiz_model.dart';
 import '../widgets/fill_blanks_widget.dart';
@@ -151,9 +151,9 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
 
     // Play haptic feedback for correct/wrong answer
     if (isCorrect) {
-      HapticFeedback.lightImpact();
+      HapticService.correct();
     } else {
-      HapticFeedback.mediumImpact();
+      HapticService.wrong();
     }
 
     // Wait 2 s so the user can see the feedback, then auto-advance
@@ -192,9 +192,9 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
 
     // Play haptic feedback for correct/wrong answer
     if (isCorrect) {
-      HapticFeedback.lightImpact();
+      HapticService.correct();
     } else {
-      HapticFeedback.mediumImpact();
+      HapticService.wrong();
     }
 
     Future.delayed(const Duration(seconds: 2), _autoAdvance);

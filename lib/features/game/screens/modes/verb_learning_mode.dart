@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../services/haptic_service.dart';
 import '../../../../services/tts_service.dart';
 import '../result_screen.dart';
+import '../../../../services/haptic_service.dart';
 
 // ─────────────────────────────────────────────────────────────
 // Data Model

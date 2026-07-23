@@ -9,6 +9,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../result_screen.dart';
+import '../../../../services/haptic_service.dart';
 
 class SentenceBuilderModeScreen extends ConsumerStatefulWidget {
   const SentenceBuilderModeScreen({super.key});

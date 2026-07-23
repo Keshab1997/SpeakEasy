@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../services/haptic_service.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../providers/game/game_provider.dart';
 import '../../../providers/game/timer_provider.dart';
@@ -312,10 +312,10 @@ class BossBattleScreen extends ConsumerWidget {
     final isCorrect = ref.read(gameProvider).isCurrentAnswerCorrect ?? false;
     if (isCorrect) {
       ref.read(scoreProvider.notifier).addCorrect();
-      HapticFeedback.lightImpact();
+      HapticService.correct();
     } else {
       ref.read(scoreProvider.notifier).addWrong();
-      HapticFeedback.mediumImpact();
+      HapticService.wrong();
     }
   }
 
