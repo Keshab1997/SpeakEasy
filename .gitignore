@@ -57,3 +57,6 @@ app.*.map.json
 .goose/
 .opencode/
 .qwen/
+
+# Nested duplicate project folder — was created by accident
+SpeakEasy/
