@@ -5,6 +5,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/widgets/banner_ad_widget.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../models/vocabulary_chapter_model.dart';
 import '../../../providers/chapter_vocabulary_provider.dart';
 import '../../../services/hive_service.dart';
@@ -158,9 +159,9 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
     final theme = Theme.of(context);
 
     if (_questions.isEmpty) {
-      return Scaffold(
-        appBar: AppBar(title: const Text('Vocabulary Test')),
-        body: const Center(child: CircularProgressIndicator()),
+      return const SkeletonPage(
+        title: 'Vocabulary Test',
+        type: SkeletonType.detail,
       );
     }
 

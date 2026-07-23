@@ -9,6 +9,7 @@ import '../../../../services/speech_service.dart';
 import '../../../../services/tts_service.dart';
 import '../result_screen.dart';
 import '../../../../services/haptic_service.dart';
+import '../../../../core/widgets/skeleton_widget.dart';
 
 // ─────────────────────────────────────────────────────────────
 // Data Models
@@ -769,7 +770,7 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
               backgroundColor: Colors.transparent,
             ),
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? const SingleChildScrollView(child: SkeletonGrid())
           : _selectedCategory == null
               ? _buildCategoryGrid()
               : _buildStudyScreen(),

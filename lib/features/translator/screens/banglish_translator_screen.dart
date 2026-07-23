@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../services/ai_service.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../services/hive_service.dart';
 import '../../../services/tts_service.dart';
 
@@ -1048,7 +1049,19 @@ class _TranslationHistoryScreenState extends State<_TranslationHistoryScreen> {
         ],
       ),
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? const SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
+              child: Column(
+                children: [
+                  SizedBox(height: 8),
+                  SkeletonListTile(),
+                  SkeletonListTile(),
+                  SkeletonListTile(),
+                  SkeletonListTile(),
+                  SkeletonListTile(),
+                ],
+              ),
+            )
           : _history.isEmpty
               ? Center(
                   child: Column(

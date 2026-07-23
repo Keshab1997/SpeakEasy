@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/widgets/banner_ad_widget.dart';
+import '../../../core/widgets/skeleton_widget.dart';
 import '../../../models/bangla_english_model.dart';
 
 
@@ -46,7 +47,20 @@ class _BanglaEnglishCategoryScreenState
         ),
       ),
       body: _loading
-          ? const Center(child: CircularProgressIndicator())
+          ? const SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
+              padding: EdgeInsets.symmetric(vertical: 16),
+              child: Column(
+                children: [
+                  SkeletonParagraph(lines: 2),
+                  SizedBox(height: 8),
+                  SkeletonCourseCard(),
+                  SkeletonCourseCard(),
+                  SkeletonCourseCard(),
+                  SkeletonCourseCard(),
+                ],
+              ),
+            )
           : SafeArea(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
