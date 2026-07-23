@@ -80,6 +80,11 @@ class NotificationService {
       onDidReceiveNotificationResponse: _onNotificationTap,
     );
 
+    // Explicitly create all notification channels with proper sound settings.
+    // Using new channel IDs (_v2) because Android channels are immutable once created.
+    // This ensures all channels have Importance.high + sound enabled.
+    await _createNotificationChannels();
+
     _initialized = true;
 
     // Request permissions on first launch (for Android 13+ and iOS)
@@ -185,6 +190,80 @@ class NotificationService {
     }
   }
 
+  /// Create all notification channels with proper sound settings.
+  /// Using new channel IDs (_v2) because Android notification channels are immutable
+  /// once created — old channels created without sound must be replaced.
+  Future<void> _createNotificationChannels() async {
+    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+    if (androidPlugin == null) return;
+
+    const channels = [
+      AndroidNotificationChannel(
+        'daily_word_v2',
+        'Word of the Day',
+        description: 'Daily word learning notifications',
+        importance: Importance.high,
+        playSound: true,
+      ),
+      AndroidNotificationChannel(
+        'practice_reminder_v2',
+        'Practice Reminder',
+        description: 'Reminders to practice English',
+        importance: Importance.high,
+        playSound: true,
+      ),
+      AndroidNotificationChannel(
+        'streak_saver_v2',
+        'Streak Saver',
+        description: 'Streak at risk notifications',
+        importance: Importance.high,
+        playSound: true,
+      ),
+      AndroidNotificationChannel(
+        'streak_milestone_v2',
+        'Streak Milestone',
+        description: 'Streak achievement celebrations',
+        importance: Importance.high,
+        playSound: true,
+      ),
+      AndroidNotificationChannel(
+        'general_v2',
+        'General Notifications',
+        description: 'General app notifications',
+        importance: Importance.high,
+        playSound: true,
+      ),
+      AndroidNotificationChannel(
+        'background_alerts_v2',
+        'Background Alerts',
+        description: 'Notifications delivered in background',
+        importance: Importance.high,
+        playSound: true,
+      ),
+      AndroidNotificationChannel(
+        'speakeasy_idle_reminder_v2',
+        'Idle Reminder',
+        description: 'User re-engagement reminders',
+        importance: Importance.high,
+        playSound: true,
+      ),
+      // OneSignal channel: created here but used by OneSignal native SDK
+      // via onesignal_notification_service_channel_id in AndroidManifest.xml
+      AndroidNotificationChannel(
+        'speakeasy_onesignal_channel',
+        'SpeakEasy Push',
+        description: 'Push notifications from SpeakEasy',
+        importance: Importance.high,
+        playSound: true,
+      ),
+    ];
+
+    for (final channel in channels) {
+      await androidPlugin.createNotificationChannel(channel);
+    }
+  }
+
   // ─── Show Immediate Notifications (for in-app use while streak) ───
 
   Future<void> showStreakMilestoneNotification(int streak) async {
@@ -193,12 +272,13 @@ class NotificationService {
       const body = 'Amazing! Keep up your daily practice to maintain your streak.';
       
       const androidDetails = AndroidNotificationDetails(
-        'streak_milestone',
+        'streak_milestone_v2',
         'Streak Milestone',
         channelDescription: 'Celebrate your streak milestones',
-        importance: Importance.defaultImportance,
-        priority: Priority.defaultPriority,
+        importance: Importance.high,
+        priority: Priority.high,
         icon: '@mipmap/ic_launcher',
+        playSound: true,
       );
       const details = NotificationDetails(android: androidDetails);
       await _plugin.show(
@@ -249,7 +329,7 @@ class NotificationService {
         id: _dailyWordId,
         hour: 9,
         minute: 0,
-        channelId: 'daily_word',
+        channelId: 'daily_word_v2',
         channelName: 'Word of the Day',
         title: richTitle,
         body: richBody,
@@ -278,7 +358,7 @@ ${todayWord.exampleSentence}
         id: _practiceReminderId,
         hour: 19,
         minute: 0,
-        channelId: 'practice_reminder',
+        channelId: 'practice_reminder_v2',
         channelName: 'Practice Reminder',
         title: '⏰ Time to Practice! 🎯',
         body: "Don't break your streak! Practice English for 5 minutes.",
@@ -297,7 +377,7 @@ ${todayWord.exampleSentence}
         id: _streakAtRiskId,
         hour: 20,
         minute: 0,
-        channelId: 'streak_saver',
+        channelId: 'streak_saver_v2',
         channelName: 'Streak Saver',
         title: '⚠️ Streak at Risk!',
         body: streakMessage,
@@ -340,9 +420,10 @@ ${todayWord.exampleSentence}
       channelId,
       channelName,
       channelDescription: channelName,
-      importance: isHighPriority ? Importance.high : Importance.defaultImportance,
-      priority: isHighPriority ? Priority.high : Priority.defaultPriority,
+      importance: Importance.high,
+      priority: Priority.high,
       icon: '@mipmap/ic_launcher',
+      playSound: true,
       styleInformation: bigTextStyle, // null → default small style
     );
 
@@ -408,12 +489,13 @@ ${todayWord.exampleSentence}
   }) async {
     try {
       const androidDetails = AndroidNotificationDetails(
-        'general',
+        'general_v2',
         'General Notifications',
         channelDescription: 'General app notifications',
-        importance: Importance.defaultImportance,
-        priority: Priority.defaultPriority,
+        importance: Importance.high,
+        priority: Priority.high,
         icon: '@mipmap/ic_launcher',
+        playSound: true,
       );
       const details = NotificationDetails(android: androidDetails);
       await _plugin.show(id, title, body, details, payload: payload);
@@ -438,12 +520,13 @@ ${todayWord.exampleSentence}
   }) async {
     try {
       const androidDetails = AndroidNotificationDetails(
-        'background_alerts',
+        'background_alerts_v2',
         'Background Alerts',
         channelDescription: 'Notifications delivered in background',
         importance: Importance.high,
         priority: Priority.high,
         icon: '@mipmap/ic_launcher',
+        playSound: true,
       );
       const details = NotificationDetails(android: androidDetails);
       await _plugin.show(id, title, body, details, payload: payload);
@@ -472,13 +555,14 @@ ${todayWord.exampleSentence}
   }) async {
     try {
       final androidDetails = AndroidNotificationDetails(
-        'speakeasy_idle_reminder',
+        'speakeasy_idle_reminder_v2',
         'স্পিকইজি রিমাইন্ডার',
         channelDescription: 'ইউজারকে অ্যাপে ফিরিয়ে আনার জন্য রিমাইন্ডার',
         importance: Importance.high,
         priority: Priority.high,
         sound: const RawResourceAndroidNotificationSound('speakeasy_notification'),
         icon: '@mipmap/ic_launcher',
+        playSound: true,
       );
 
       const iosDetails = DarwinNotificationDetails(

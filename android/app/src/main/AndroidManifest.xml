@@ -22,6 +22,11 @@
         <meta-data
             android:name="firebase_automatic_resource_management_enabled"
             android:value="false" />
+
+        <!-- OneSignal notification channel (used when app is killed/backgrounded) -->
+        <meta-data
+            android:name="onesignal_notification_service_channel_id"
+            android:value="speakeasy_onesignal_channel" />
         <!-- AdMob App ID (test ID — replace with real one before Play Store release) -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
