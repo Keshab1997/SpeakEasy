@@ -320,23 +320,24 @@ class NotificationService {
 
     // Schedule Word of the Day at 9:00 AM (if enabled)
     if (HiveService.isDailyWordNotification()) {
-      // Fetch today's word for the rich notification content
-      final todayWord = await DailyWordService.getTodayWord();
-      final richTitle = '📚 Word of the Day';
-      final richBody = '${todayWord.word} → ${todayWord.banglaMeaning}';
+      try {
+        // Fetch today's word for the rich notification content
+        final todayWord = await DailyWordService.getTodayWord();
+        final richTitle = '📚 Word of the Day';
+        final richBody = '${todayWord.word} → ${todayWord.banglaMeaning}';
 
-      await _scheduleDailyAt(
-        id: _dailyWordId,
-        hour: 9,
-        minute: 0,
-        channelId: 'daily_word_v2',
-        channelName: 'Word of the Day',
-        title: richTitle,
-        body: richBody,
-        payload: 'daily_word',
-        isHighPriority: true,
-        bigTextStyle: BigTextStyleInformation(
-          '''
+        await _scheduleDailyAt(
+          id: _dailyWordId,
+          hour: 9,
+          minute: 0,
+          channelId: 'daily_word_v2',
+          channelName: 'Word of the Day',
+          title: richTitle,
+          body: richBody,
+          payload: 'daily_word',
+          isHighPriority: true,
+          bigTextStyle: BigTextStyleInformation(
+            '''
 📖 *${todayWord.word}*${todayWord.pronunciation != null ? ' (${todayWord.pronunciation})' : ''}
 ━━━━━━━━━━━━━━━━
 🔤 বাংলা অর্থ: ${todayWord.banglaMeaning}
@@ -345,11 +346,14 @@ class NotificationService {
 ${todayWord.exampleSentence}
 ━━━━━━━━━━━━━━━━
 ℹ️ বিস্তারিত জানতে Tap করুন
-          ''',
-          contentTitle: richTitle,
-          summaryText: richBody,
-        ),
-      );
+            ''',
+            contentTitle: richTitle,
+            summaryText: richBody,
+          ),
+        );
+      } catch (e) {
+        debugPrint('NotificationService: failed to schedule Word of the Day — $e');
+      }
     }
 
     // Schedule Practice Reminder at 7:00 PM (if enabled)

@@ -101,8 +101,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ),
             ]),
             const SizedBox(height: 24),
-            if (isAdmin) ...[
-              Text('Notifications', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
+            Text('Notifications', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
               const SizedBox(height: 8),
               _buildSettingsCard([
                 SwitchListTile(
@@ -227,7 +226,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 ),
               ],
               const SizedBox(height: 24),
-            ],
             Text('Language', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
             const SizedBox(height: 8),
             _buildSettingsCard([

@@ -360,23 +360,40 @@ notifier.state == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
 HiveService.setDarkMode(notifier.state == ThemeMode.dark);
 },
 ),
-IconButton(
-onPressed: () async {
-await Navigator.push(
-context,
-MaterialPageRoute(
-builder: (_) => const NotificationHistoryScreen(),
-),
-);
-// Update notification count when returning from history screen
-ref.read(notificationProvider.notifier).refresh();
-},
-icon: Stack(
-children: [
-const Icon(Icons.notifications_outlined, size: 28),
-if (notificationState.unreadCount > 0)
-Positioned(
-right: 0,
+	GestureDetector(
+	onLongPress: () {
+	  showDialog(
+	    context: context,
+	    builder: (_) => NotificationDialog(
+	      onNavigateToSettings: () {
+	        Navigator.pop(context);
+	        Navigator.push(
+	          context,
+	          MaterialPageRoute(
+	            builder: (_) => const SettingsScreen(),
+	          ),
+	        );
+	      },
+	    ),
+	  );
+	},
+	child: IconButton(
+	onPressed: () async {
+	await Navigator.push(
+	context,
+	MaterialPageRoute(
+	builder: (_) => const NotificationHistoryScreen(),
+	),
+	);
+	// Update notification count when returning from history screen
+	ref.read(notificationProvider.notifier).refresh();
+	},
+	icon: Stack(
+	children: [
+	const Icon(Icons.notifications_outlined, size: 28),
+	if (notificationState.unreadCount > 0)
+	Positioned(
+	right: 0,
 top: 0,
 child: Container(
 padding: const EdgeInsets.all(4),
@@ -403,9 +420,10 @@ textAlign: TextAlign.center,
 ),
 ),
 ],
-),
-),
-IconButton(
+		),
+	),
+		),
+		IconButton(
 onPressed: () async {
 await Navigator.push(
 context,
