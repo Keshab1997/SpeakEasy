@@ -144,11 +144,18 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                       Wrap(
                         spacing: 8,
                         runSpacing: 4,
+                        alignment: WrapAlignment.spaceBetween,
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
-                          _statChip('✓ $usage', Colors.green),
-                          _statChip('✗ $errors', errors > 0 ? Colors.red : Colors.grey),
-                          const Spacer(),
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 4,
+                            crossAxisAlignment: WrapCrossAlignment.center,
+                            children: [
+                              _statChip('✓ $usage', Colors.green),
+                              _statChip('✗ $errors', errors > 0 ? Colors.red : Colors.grey),
+                            ],
+                          ),
                           TextButton(
                             style: TextButton.styleFrom(
                               padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -314,8 +321,20 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                                       return SimpleDialogOption(
                                         child: Row(children: [
                                           Text(tier == 'fast' ? '⚡' : tier == 'medium' ? '🔄' : '🐢'),
-                                          SizedBox(width: 8),
-                                          Text('$id ($tier)'),
+                                          const SizedBox(width: 8),
+                                          // FIXED: the model name Text was a rigid
+                                          // (non-flexible) Row child, so long ids
+                                          // inflated the dialog's intrinsic width and
+                                          // overflowed on the right. Expanded lets it
+                                          // share the available width; ellipsis keeps it
+                                          // inside the dialog on any screen size.
+                                          Expanded(
+                                            child: Text(
+                                              '$id ($tier)',
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
                                         ]),
                                         onPressed: () {
                                           modelCtl.text = id;

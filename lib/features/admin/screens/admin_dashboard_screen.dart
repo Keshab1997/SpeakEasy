@@ -476,7 +476,12 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       final fallback = _buildFallbackAiMessage(idea);
       _titleController.text = fallback.$1;
       _bodyController.text = fallback.$2;
-      _showSnack('AI unavailable, ami ekta draft ready kore dilam.', isError: true);
+      final reason = e.toString().replaceFirst('Exception: ', '');
+      _showSnack(
+        'AI generate hochhe ni: $reason. '
+        'Admin → API Keys te ekta valid key ache ki na check koro.',
+        isError: true,
+      );
     } finally {
       if (mounted) setState(() => _generating = false);
     }

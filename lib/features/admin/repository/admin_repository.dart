@@ -312,10 +312,24 @@ class AdminRepository {
         systemPrompt: systemPrompt,
         maxTokens: 180,
       );
+      // AIService returns these fallback strings (instead of throwing) when
+      // the key pool is empty or the API call fails. Parsing them as
+      // TITLE:/BODY: content would publish an error message as a real
+      // notification, so surface the real failure to the caller instead.
+      if (_isAiServiceFallback(response)) {
+        throw Exception(response);
+      }
       return response;
-    } catch (_) {
-      return 'TITLE: 📢 Important Update!\nBODY: $idea ✨ Keep practicing English today!';
+    } catch (e) {
+      throw Exception('AI notification generation failed: ${e.toString()}');
     }
+  }
+
+  /// True when [response] is one of AIService's known fallback/error texts
+  /// rather than real AI-generated content.
+  bool _isAiServiceFallback(String response) {
+    return response.contains('সার্ভার ব্যস্ত') ||
+        response.contains('AI service is temporarily unavailable');
   }
 
   // ── Config ──

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import '../models/admin_api_key.dart';
 import 'api_key_manager.dart';
@@ -36,6 +37,38 @@ class AIService {
     }
     final active = HiveService.getActiveAiKey();
     return active?['model'] as String? ?? 'gpt-4o-mini';
+  }
+
+  /// OpenRouter serves models as `provider/model` ids (e.g. `openai/gpt-4o-mini`).
+  /// ChatAnywhere-style entries store bare names (e.g. `gpt-4o-mini`), which
+  /// OpenRouter rejects. Map a bare name to the right provider prefix when the
+  /// request targets OpenRouter; leave every other backend untouched.
+  @visibleForTesting
+  static String resolveOpenRouterModel(String baseUrl, String model) {
+    if (!baseUrl.contains('openrouter')) return model;
+    if (model.contains('/')) return model; // already provider-prefixed
+    const providerByPrefix = <String, String>{
+      'claude': 'anthropic/',
+      'gemini': 'google/',
+      'gemma': 'google/',
+      'llama': 'meta-llama/',
+      'mistral': 'mistralai/',
+      'qwen': 'qwen/',
+      'deepseek': 'deepseek/',
+      'command': 'cohere/',
+      'phi': 'microsoft/',
+      'granite': 'ibm-granite/',
+      'grok': 'x-ai/',
+      'gpt-': 'openai/',
+      'o1': 'openai/',
+      'o3': 'openai/',
+      'o4': 'openai/',
+    };
+    final lower = model.toLowerCase();
+    for (final entry in providerByPrefix.entries) {
+      if (lower.startsWith(entry.key)) return '${entry.value}$model';
+    }
+    return model;
   }
 
   /// Fetch free models from OpenRouter.
@@ -100,16 +133,21 @@ class AIService {
     _currentAdminKey = null;
     if (_apiKey.isEmpty) return false;
     try {
-      final url = Uri.parse('$_baseUrl/chat/completions');
+      // Resolve key first so baseUrl/model come from the SAME admin key, and
+      // normalize the model for OpenRouter (bare names are rejected there).
+      final apiKey = _apiKey;
+      final baseUrl = _baseUrl;
+      final model = resolveOpenRouterModel(baseUrl, _model);
+      final url = Uri.parse('$baseUrl/chat/completions');
       final response = await http
           .post(
             url,
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': 'Bearer $_apiKey',
+              'Authorization': 'Bearer $apiKey',
             },
             body: jsonEncode({
-              'model': _model,
+              'model': model,
               'messages': [
                 {'role': 'user', 'content': 'Hi'}
               ],
@@ -166,7 +204,12 @@ class AIService {
       List<Map<String, String>>? history,
       int? maxTokens,
       bool isRetry = false}) async {
-    final url = Uri.parse('$_baseUrl/chat/completions');
+    // Resolve key first so baseUrl/model below come from the SAME admin key,
+    // and normalize the model for OpenRouter (bare names are rejected there).
+    final apiKey = _apiKey;
+    final baseUrl = _baseUrl;
+    final model = resolveOpenRouterModel(baseUrl, _model);
+    final url = Uri.parse('$baseUrl/chat/completions');
     final userName = HiveService.getUserName();
 
     final messages = <Map<String, String>>[];
@@ -197,14 +240,14 @@ class AIService {
       url,
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer $_apiKey',
+        'Authorization': 'Bearer $apiKey',
       },
       body: jsonEncode({
-        'model': _model,
+        'model': model,
         'messages': messages,
         'max_tokens': maxTokens ?? 1024,
       }),
-    );
+    ).timeout(const Duration(seconds: 30));
 
     // Report success/failure to ApiKeyManager (for admin key health tracking)
     if (response.statusCode == 200) {
