@@ -57,6 +57,7 @@ app.*.map.json
 .goose/
 .opencode/
 .qwen/
+.playwright-mcp/
 
 # Nested duplicate project folder — was created by accident
 SpeakEasy/

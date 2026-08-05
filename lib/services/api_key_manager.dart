@@ -14,6 +14,7 @@ class ApiKeyManager {
   // ── State ──
   List<AdminApiKey> _keyPool = [];
   final List<_KeyCooldown> _cooldownList = [];
+  final Completer<void> _readyCompleter = Completer<void>();
   int _currentIndex = 0;
   bool _allKeysFailedNotified = false;
   DateTime? _lastAllKeysFailedNotification;
@@ -120,6 +121,21 @@ class ApiKeyManager {
     _loadFromCache();
   }
 
+  /// True once the key pool has been loaded (from cache or Firestore) at least
+  /// once. Lets callers distinguish "still loading" from "no keys configured".
+  bool get isReady => _readyCompleter.isCompleted;
+
+  /// Waits until the admin key pool has been loaded, so a call made immediately
+  /// after app start doesn't race the async Firestore listener. Falls back
+  /// (returns) after [timeout] so callers surface their own empty-pool error.
+  Future<void> ensureReady() async {
+    if (_readyCompleter.isCompleted) return;
+    await _readyCompleter.future.timeout(
+      const Duration(seconds: 10),
+      onTimeout: () {},
+    );
+  }
+
   void dispose() {
     _firestoreSub?.cancel();
     _batchTimer?.cancel();
@@ -140,6 +156,7 @@ class ApiKeyManager {
         ..sort((a, b) => a.priority.compareTo(b.priority));
 
       _saveToCache();
+      if (!_readyCompleter.isCompleted) _readyCompleter.complete();
       debugPrint('[ApiKeyManager] Keys updated: ${_keyPool.length} active keys');
     }, onError: (e) {
       debugPrint('[ApiKeyManager] Firestore listener error: $e');
@@ -151,6 +168,7 @@ class ApiKeyManager {
       final cached = HiveService.getCachedAdminKeys();
       if (cached.isNotEmpty) {
         _keyPool = cached;
+        if (!_readyCompleter.isCompleted) _readyCompleter.complete();
         debugPrint('[ApiKeyManager] Loaded ${_keyPool.length} keys from cache');
       }
     } catch (e) {

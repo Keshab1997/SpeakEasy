@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 import '../../../models/config/app_config_model.dart';
 import '../../../services/remote_config_service.dart';
 import '../../../services/ai_service.dart';
+import '../../../services/api_key_manager.dart';
+import '../../../services/hive_service.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -307,6 +309,18 @@ class AdminRepository {
         'TITLE: <max 55 chars>\n'
         'BODY: <max 180 chars>';
     try {
+      // The admin API key pool loads asynchronously at app start. Wait for it
+      // so a generate tapped right after launch doesn't race the Firestore
+      // listener and fail with "no key". Mirror the AI teacher's key access.
+      if (HiveService.getUseApiKeyManager()) {
+        await ApiKeyManager.instance.ensureReady();
+        if (ApiKeyManager.instance.peekFirstKey() == null) {
+          throw Exception(
+            'Admin → API Keys-এ কোনো healthy (active, not-in-cooldown) key নেই। '
+            'একটা valid key যোগ করো, নইলে AI notification generate হবে না।',
+          );
+        }
+      }
       final response = await AIService().sendMessageWithSystem(
         'Idea/topic: $idea',
         systemPrompt: systemPrompt,
