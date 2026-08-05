@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import '../../../models/admin_api_key.dart';
 import '../../../services/ai_service.dart';
 import '../../../services/hive_service.dart';
 
@@ -27,154 +28,83 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
         ],
       ),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+        // Group configs (provider → enabled/priority). Outer stream so toggling
+        // a group re-renders the whole list immediately.
         stream: FirebaseFirestore.instance
-            .collection('admin_api_keys')
-            .orderBy('priority', descending: false)
+            .collection('admin_key_groups')
             .snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+        builder: (context, groupSnapshot) {
+          final groupData = <String, Map<String, dynamic>>{};
+          for (final d in groupSnapshot.data?.docs ??
+              const <QueryDocumentSnapshot<Map<String, dynamic>>>[]) {
+            groupData[d.id] = d.data();
           }
-          if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
-          }
+          return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+            stream: FirebaseFirestore.instance
+                .collection('admin_api_keys')
+                .orderBy('priority', descending: false)
+                .snapshots(),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Center(child: Text('Error: ${snapshot.error}'));
+              }
+              if (!snapshot.hasData) {
+                return const Center(child: CircularProgressIndicator());
+              }
 
-          final docs = snapshot.data!.docs;
+              final docs = snapshot.data!.docs;
 
-          if (docs.isEmpty) {
-            return Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons.vpn_key_off_rounded, size: 64,
-                      color: isDark ? Colors.white24 : Colors.black26),
-                  const SizedBox(height: 16),
-                  Text('No API keys configured.',
-                      style: TextStyle(fontSize: 16,
-                          color: isDark ? Colors.white60 : Colors.black54)),
-                  const SizedBox(height: 8),
-                  TextButton.icon(
-                    icon: const Icon(Icons.add_rounded),
-                    label: const Text('Add Your First Key'),
-                    onPressed: () => _showKeyDialog(context),
-                  ),
-                ],
-              ),
-            );
-          }
-
-          return ListView.builder(
-            padding: const EdgeInsets.all(16),
-            itemCount: docs.length,
-            itemBuilder: (context, index) {
-              final doc = docs[index];
-              final data = doc.data();
-              final isActive = data['isActive'] as bool? ?? true;
-              final name = data['name'] as String? ?? 'Key ${index + 1}';
-              final model = data['model'] as String? ?? 'gpt-4o-mini';
-              final maskedKey = _maskKey(data['key'] as String? ?? '');
-              final priority = data['priority'] as int? ?? index + 1;
-              final usage = data['usageCount'] as int? ?? 0;
-              final errors = data['errorCount'] as int? ?? 0;
-
-              return Card(
-                margin: const EdgeInsets.only(bottom: 12),
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
+              if (docs.isEmpty) {
+                return Center(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            isActive
-                                ? Icons.vpn_key_rounded
-                                : Icons.vpn_key_off_rounded,
-                            color: isActive ? Colors.green : Colors.red,
-                            size: 20,
-                          ),
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: Text(name,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 16)),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 2),
-                            decoration: BoxDecoration(
-                              color: isActive
-                                  ? Colors.green.withOpacity(0.15)
-                                  : Colors.red.withOpacity(0.15),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Text(
-                              isActive ? 'Active' : 'Inactive',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: isActive ? Colors.green : Colors.red,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                          InkWell(
-                            borderRadius: BorderRadius.circular(16),
-                            onTap: () => _showKeyDialog(context,
-                                docId: doc.id, existingData: data),
-                            child: Padding(
-                              padding: const EdgeInsets.all(6),
-                              child: Icon(Icons.edit_rounded, size: 16, color: Colors.grey[600]),
-                            ),
-                          ),
-                          InkWell(
-                            borderRadius: BorderRadius.circular(16),
-                            onTap: () => _confirmDelete(context, doc.id, name),
-                            child: Padding(
-                              padding: const EdgeInsets.all(6),
-                              child: Icon(Icons.delete_rounded, size: 16, color: Colors.red),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      _infoRow('Model', model),
-                      _infoRow('Key', maskedKey),
-                      _infoRow('Priority', priority.toString()),
+                      Icon(Icons.vpn_key_off_rounded, size: 64,
+                          color: isDark ? Colors.white24 : Colors.black26),
+                      const SizedBox(height: 16),
+                      Text('No API keys configured.',
+                          style: TextStyle(fontSize: 16,
+                              color: isDark ? Colors.white60 : Colors.black54)),
                       const SizedBox(height: 8),
-                      Wrap(
-                        spacing: 8,
-                        runSpacing: 4,
-                        alignment: WrapAlignment.spaceBetween,
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        children: [
-                          Wrap(
-                            spacing: 8,
-                            runSpacing: 4,
-                            crossAxisAlignment: WrapCrossAlignment.center,
-                            children: [
-                              _statChip('✓ $usage', Colors.green),
-                              _statChip('✗ $errors', errors > 0 ? Colors.red : Colors.grey),
-                            ],
-                          ),
-                          TextButton(
-                            style: TextButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(horizontal: 8),
-                              minimumSize: Size.zero,
-                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            ),
-                            child: const Text('Test Connection', style: TextStyle(fontSize: 12)),
-                            onPressed: () => _testKey(
-                              doc.id,
-                              data['baseUrl'] as String? ?? '',
-                              data['key'] as String? ?? '',
-                              data['model'] as String? ?? '',
-                            ),
-                          ),
-                        ],
+                      TextButton.icon(
+                        icon: const Icon(Icons.add_rounded),
+                        label: const Text('Add Your First Key'),
+                        onPressed: () => _showKeyDialog(context),
                       ),
                     ],
                   ),
-                ),
+                );
+              }
+
+              // Group the key docs by provider so each provider renders under
+              // its own header (group toggle + priority) instead of one flat
+              // list.
+              final sections = <String, List<QueryDocumentSnapshot<Map<String, dynamic>>>>{};
+              for (final doc in docs) {
+                final data = doc.data();
+                final provider = (data['provider'] as String?) ??
+                    AdminApiKey.inferProvider(data['baseUrl'] as String? ?? '');
+                sections.putIfAbsent(provider, () => []).add(doc);
+              }
+              final providers = sections.keys.toList()
+                ..sort((a, b) {
+                  final ap = groupData[a]?['priority'] as int? ?? 100;
+                  final bp = groupData[b]?['priority'] as int? ?? 100;
+                  return ap.compareTo(bp);
+                });
+
+              final items = <Widget>[];
+              for (final provider in providers) {
+                items.add(_buildGroupHeader(
+                    provider, groupData[provider], sections[provider]!.length));
+                for (final doc in sections[provider]!) {
+                  items.add(_buildKeyCard(doc));
+                }
+              }
+
+              return ListView(
+                padding: const EdgeInsets.all(16),
+                children: items,
               );
             },
           );
@@ -218,6 +148,201 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
     return '${key.substring(0, 4)}...${key.substring(key.length - 4)}';
   }
 
+  /// Provider group header: name, key count, priority (lower = tried first)
+  /// and a master enable/disable switch for the whole group.
+  Widget _buildGroupHeader(
+      String provider, Map<String, dynamic>? config, int keyCount) {
+    final enabled = config?['enabled'] as bool? ?? true;
+    final priority = config?['priority'] as int? ?? 100;
+    final name = config?['name'] as String? ?? AdminApiKey.providerName(provider);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Card(
+      margin: const EdgeInsets.only(top: 8, bottom: 12),
+      color: enabled
+          ? (isDark ? Colors.blueGrey[800] : Colors.blueGrey[50])
+          : (isDark ? Colors.grey[850] : Colors.grey[200]),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        child: Row(
+          children: [
+            Icon(
+              enabled ? Icons.bolt_rounded : Icons.cloud_off_rounded,
+              size: 20,
+              color: enabled ? Colors.amber : Colors.grey,
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(name,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 15)),
+                  Text('$keyCount key(s) · priority $priority (lower = first)',
+                      style: TextStyle(
+                          fontSize: 11,
+                          color: isDark ? Colors.white60 : Colors.black54)),
+                ],
+              ),
+            ),
+            IconButton(
+              tooltip: 'Lower priority (tried first)',
+              icon: const Icon(Icons.remove_circle_outline, size: 20),
+              onPressed: priority > 1
+                  ? () => _saveGroupConfig(provider, priority: priority - 1)
+                  : null,
+            ),
+            IconButton(
+              tooltip: 'Higher priority (tried later)',
+              icon: const Icon(Icons.add_circle_outline, size: 20),
+              onPressed: () => _saveGroupConfig(provider, priority: priority + 1),
+            ),
+            Switch(
+              value: enabled,
+              onChanged: (v) => _saveGroupConfig(provider, enabled: v),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildKeyCard(QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+    final data = doc.data();
+    final isActive = data['isActive'] as bool? ?? true;
+    final name = data['name'] as String? ?? 'Key';
+    final model = data['model'] as String? ?? 'gpt-4o-mini';
+    final provider = (data['provider'] as String?) ??
+        AdminApiKey.inferProvider(data['baseUrl'] as String? ?? '');
+    final maskedKey = _maskKey(data['key'] as String? ?? '');
+    final priority = data['priority'] as int? ?? 1;
+    final usage = data['usageCount'] as int? ?? 0;
+    final errors = data['errorCount'] as int? ?? 0;
+
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  isActive
+                      ? Icons.vpn_key_rounded
+                      : Icons.vpn_key_off_rounded,
+                  color: isActive ? Colors.green : Colors.red,
+                  size: 20,
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(name,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 16)),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: isActive
+                        ? Colors.green.withOpacity(0.15)
+                        : Colors.red.withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    isActive ? 'Active' : 'Inactive',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: isActive ? Colors.green : Colors.red,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  borderRadius: BorderRadius.circular(16),
+                  onTap: () =>
+                      _showKeyDialog(context, docId: doc.id, existingData: data),
+                  child: Padding(
+                    padding: const EdgeInsets.all(6),
+                    child: Icon(Icons.edit_rounded, size: 16, color: Colors.grey[600]),
+                  ),
+                ),
+                InkWell(
+                  borderRadius: BorderRadius.circular(16),
+                  onTap: () => _confirmDelete(context, doc.id, name),
+                  child: Padding(
+                    padding: const EdgeInsets.all(6),
+                    child: Icon(Icons.delete_rounded, size: 16, color: Colors.red),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            _infoRow('Provider', AdminApiKey.providerName(provider)),
+            _infoRow('Model', model),
+            _infoRow('Key', maskedKey),
+            _infoRow('Priority', priority.toString()),
+            const SizedBox(height: 8),
+            Wrap(
+              spacing: 8,
+              runSpacing: 4,
+              alignment: WrapAlignment.spaceBetween,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 4,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    _statChip('✓ $usage', Colors.green),
+                    _statChip('✗ $errors', errors > 0 ? Colors.red : Colors.grey),
+                  ],
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: const Text('Test Connection', style: TextStyle(fontSize: 12)),
+                  onPressed: () => _testKey(
+                    provider,
+                    data['baseUrl'] as String? ?? '',
+                    data['key'] as String? ?? '',
+                    data['model'] as String? ?? '',
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Creates/updates a group config doc in Firestore (merge semantics), so a
+  /// missing doc (fresh setup / legacy keys) gets sensible defaults.
+  Future<void> _saveGroupConfig(String provider,
+      {bool? enabled, int? priority}) async {
+    final data = <String, dynamic>{'name': AdminApiKey.providerName(provider)};
+    if (enabled != null) data['enabled'] = enabled;
+    if (priority != null) data['priority'] = priority;
+    try {
+      await FirebaseFirestore.instance
+          .collection('admin_key_groups')
+          .doc(provider)
+          .set(data, SetOptions(merge: true));
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error: $e'), backgroundColor: Colors.red),
+        );
+      }
+    }
+  }
+
   void _showKeyDialog(BuildContext context, {String? docId, Map<String, dynamic>? existingData}) {
     final nameCtl = TextEditingController(text: existingData?['name'] as String? ?? '');
     final keyCtl = TextEditingController(text: existingData?['key'] as String? ?? '');
@@ -227,6 +352,8 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
         text: existingData?['model'] as String? ?? 'gpt-4o-mini');
     final priorityCtl = TextEditingController(
         text: (existingData?['priority'] as int?)?.toString() ?? '1');
+    String provider = (existingData?['provider'] as String?) ??
+        AdminApiKey.inferProvider(existingData?['baseUrl'] as String? ?? '');
     bool isActive = existingData?['isActive'] as bool? ?? true;
     bool fetchingModels = false;
 
@@ -249,6 +376,33 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                   Text(existingData != null ? 'Edit API Key' : 'Add API Key',
                       style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                   const SizedBox(height: 20),
+                  DropdownButtonFormField<String>(
+                    value: provider,
+                    decoration: const InputDecoration(
+                      labelText: 'Provider',
+                      border: OutlineInputBorder(),
+                    ),
+                    items: const [
+                      DropdownMenuItem(value: 'openrouter', child: Text('OpenRouter')),
+                      DropdownMenuItem(value: 'google', child: Text('Google AI Studio')),
+                      DropdownMenuItem(value: 'custom', child: Text('Custom')),
+                    ],
+                    onChanged: (v) {
+                      if (v == null) return;
+                      setDialogState(() {
+                        provider = v;
+                        // Pre-fill sensible base URL/model per provider.
+                        if (v == 'google') {
+                          urlCtl.text = 'https://generativelanguage.googleapis.com/v1beta';
+                          modelCtl.text = 'gemini-2.5-flash';
+                        } else if (v == 'openrouter') {
+                          urlCtl.text = 'https://openrouter.ai/api/v1';
+                          modelCtl.text = 'gpt-4o-mini';
+                        }
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 12),
                   TextField(
                     controller: nameCtl,
                     decoration: const InputDecoration(
@@ -291,9 +445,10 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 4),
-                      InkWell(
-                        borderRadius: BorderRadius.circular(20),
+                      if (provider == 'openrouter') ...[
+                        const SizedBox(width: 4),
+                        InkWell(
+                          borderRadius: BorderRadius.circular(20),
                         onTap: fetchingModels
                             ? null
                             : () async {
@@ -360,6 +515,7 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                               : Icon(Icons.download_rounded, size: 20),
                         ),
                       ),
+                      ],
                     ],
                   ),
                   const SizedBox(height: 12),
@@ -398,6 +554,7 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                           'key': keyCtl.text.trim(),
                           'baseUrl': urlCtl.text.trim(),
                           'model': modelCtl.text.trim(),
+                          'provider': provider,
                           'isActive': isActive,
                           'priority': int.tryParse(priorityCtl.text.trim()) ?? 1,
                           'usageCount': existingData?['usageCount'] as int? ?? 0,
@@ -464,7 +621,7 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
     );
   }
 
-  Future<void> _testKey(String docId, String baseUrl, String key, String model) async {
+  Future<void> _testKey(String provider, String baseUrl, String key, String model) async {
     if (key.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('No API key to test'), backgroundColor: Colors.orange),
@@ -472,26 +629,20 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
       return;
     }
 
-    // Temporarily save this key as the active user key
-    final prevToggle = HiveService.getUseApiKeyManager();
-    await HiveService.setUseApiKeyManager(false);
-    await HiveService.saveAiKey({
-      'id': 'test_$docId',
-      'name': 'test',
-      'key': key,
-      'baseUrl': baseUrl,
-      'model': model,
-      'isActive': true,
-    });
-    await HiveService.setActiveAiKey('test_$docId');
-
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Testing connection...'), behavior: SnackBarBehavior.floating),
     );
 
-    final ok = await AIService().testConnection();
-    await HiveService.setUseApiKeyManager(prevToggle);
+    // Test the key directly against its own base URL. This never touches the
+    // saved user key or the useAdminKeys toggle, so a failed test can't leave
+    // the app in a broken key state.
+    final ok = await AIService().testConnectionWithKey(
+      provider: provider,
+      baseUrl: baseUrl,
+      apiKey: key,
+      model: model,
+    );
 
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(

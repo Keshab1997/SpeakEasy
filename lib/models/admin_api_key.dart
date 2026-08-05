@@ -6,6 +6,11 @@ class AdminApiKey {
   final String key;
   final String baseUrl;
   final String model;
+
+  /// Provider/backend for this key: `google` (Gemini API), `openrouter`, or
+  /// `custom` (any OpenAI-compatible /chat/completions endpoint).
+  final String provider;
+
   final bool isActive;
   final int priority;
   final int usageCount;
@@ -22,6 +27,7 @@ class AdminApiKey {
     required this.key,
     this.baseUrl = 'https://openrouter.ai/api/v1',
     this.model = 'gpt-4o-mini',
+    this.provider = 'custom',
     this.isActive = true,
     this.priority = 1,
     this.usageCount = 0,
@@ -33,13 +39,35 @@ class AdminApiKey {
     required this.updatedAt,
   });
 
+  /// Infers the provider from a base URL for keys stored before the provider
+  /// field existed (zero-migration backfill).
+  static String inferProvider(String baseUrl) {
+    final b = baseUrl.toLowerCase();
+    if (b.contains('generativelanguage')) return 'google';
+    if (b.contains('openrouter')) return 'openrouter';
+    return 'custom';
+  }
+
+  static String providerName(String provider) {
+    switch (provider) {
+      case 'google':
+        return 'Google AI Studio';
+      case 'openrouter':
+        return 'OpenRouter';
+      default:
+        return 'Custom';
+    }
+  }
+
   factory AdminApiKey.fromMap(Map<String, dynamic> map, String docId) {
+    final baseUrl = map['baseUrl'] as String? ?? 'https://openrouter.ai/api/v1';
     return AdminApiKey(
       id: docId,
       name: map['name'] as String? ?? '',
       key: map['key'] as String? ?? '',
-      baseUrl: map['baseUrl'] as String? ?? 'https://openrouter.ai/api/v1',
+      baseUrl: baseUrl,
       model: map['model'] as String? ?? 'gpt-4o-mini',
+      provider: map['provider'] as String? ?? inferProvider(baseUrl),
       isActive: map['isActive'] as bool? ?? true,
       priority: map['priority'] as int? ?? 1,
       usageCount: map['usageCount'] as int? ?? 0,
@@ -58,6 +86,7 @@ class AdminApiKey {
       'key': key,
       'baseUrl': baseUrl,
       'model': model,
+      'provider': provider,
       'isActive': isActive,
       'priority': priority,
       'usageCount': usageCount,
@@ -76,6 +105,7 @@ class AdminApiKey {
     String? key,
     String? baseUrl,
     String? model,
+    String? provider,
     bool? isActive,
     int? priority,
     int? usageCount,
@@ -92,6 +122,7 @@ class AdminApiKey {
       key: key ?? this.key,
       baseUrl: baseUrl ?? this.baseUrl,
       model: model ?? this.model,
+      provider: provider ?? this.provider,
       isActive: isActive ?? this.isActive,
       priority: priority ?? this.priority,
       usageCount: usageCount ?? this.usageCount,

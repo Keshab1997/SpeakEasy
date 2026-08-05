@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import '../models/admin_api_key.dart';
+import '../models/admin_key_group.dart';
 import '../models/api_error_log.dart';
 import 'hive_service.dart';
 
@@ -13,6 +14,7 @@ class ApiKeyManager {
 
   // ── State ──
   List<AdminApiKey> _keyPool = [];
+  Map<String, AdminKeyGroup> _groups = {};
   final List<_KeyCooldown> _cooldownList = [];
   final Completer<void> _readyCompleter = Completer<void>();
   int _currentIndex = 0;
@@ -21,6 +23,7 @@ class ApiKeyManager {
   Timer? _notificationCooldownTimer;
   Timer? _batchTimer;
   StreamSubscription<QuerySnapshot<Map<String, dynamic>>>? _firestoreSub;
+  StreamSubscription<QuerySnapshot<Map<String, dynamic>>>? _groupSub;
 
   // Error batching
   final List<ApiErrorLog> _errorQueue = [];
@@ -37,20 +40,28 @@ class ApiKeyManager {
     if (_initialized) return;
     _initialized = true;
     _loadFromCache();
+    _loadCooldownsFromCache();
     _startFirestoreListener();
+    _startGroupListener();
     _batchTimer = Timer.periodic(_batchInterval, (_) => _flushErrorQueue());
     debugPrint('[ApiKeyManager] initialized');
   }
 
-  /// Returns the next healthy key (round-robin, skipping cooldown keys).
-  /// Returns null if all keys are exhausted or none configured.
+  /// Returns the next healthy key from the highest-priority enabled group
+  /// (round-robin within that group). Slower groups are used only as a
+  /// fallback when every key of the preferred group is on cooldown, so the
+  /// "fast" group carries the load while the rest wait in reserve.
   AdminApiKey? getNextKey() {
     final healthy = _getHealthyKeys();
     if (healthy.isEmpty) return null;
 
-    if (_currentIndex >= healthy.length) _currentIndex = 0;
-    final key = healthy[_currentIndex];
-    _currentIndex = (_currentIndex + 1) % healthy.length;
+    final topPriority = _groupPriority(healthy.first.provider);
+    final pool =
+        healthy.where((k) => _groupPriority(k.provider) == topPriority).toList();
+
+    if (_currentIndex >= pool.length) _currentIndex = 0;
+    final key = pool[_currentIndex];
+    _currentIndex = (_currentIndex + 1) % pool.length;
     return key;
   }
 
@@ -77,6 +88,7 @@ class ApiKeyManager {
       until: DateTime.now().add(duration),
     ));
     _cooldownList.removeWhere((c) => c.until.isBefore(DateTime.now()));
+    _saveCooldownsToCache();
 
     _errorQueue.add(ApiErrorLog(
       keyId: key.id,
@@ -94,6 +106,9 @@ class ApiKeyManager {
     if (_errorQueue.length >= _batchSize) {
       _flushErrorQueue();
     }
+
+    // Push error stats to Firestore so the admin screen shows live error counts.
+    unawaited(_updateKeyStats(key.id, lastErrorAt: DateTime.now()));
 
     if (_getHealthyKeys().isEmpty) {
       _handleAllKeysFailed();
@@ -138,6 +153,7 @@ class ApiKeyManager {
 
   void dispose() {
     _firestoreSub?.cancel();
+    _groupSub?.cancel();
     _batchTimer?.cancel();
     _notificationCooldownTimer?.cancel();
   }
@@ -184,12 +200,100 @@ class ApiKeyManager {
     }
   }
 
+  void _loadCooldownsFromCache() {
+    try {
+      final cached = HiveService.getCachedAdminKeyCooldowns();
+      if (cached.isEmpty) return;
+      final now = DateTime.now();
+      _cooldownList.clear();
+      for (final c in cached) {
+        final until = DateTime.tryParse(c['until'] as String? ?? '');
+        if (until != null && until.isAfter(now)) {
+          _cooldownList
+              .add(_KeyCooldown(keyId: c['keyId'] as String, until: until));
+        }
+      }
+      debugPrint('[ApiKeyManager] Loaded ${_cooldownList.length} cooldowns from cache');
+    } catch (e) {
+      debugPrint('[ApiKeyManager] Cooldown cache load error: $e');
+    }
+  }
+
+  void _saveCooldownsToCache() {
+    try {
+      HiveService.saveCachedAdminKeyCooldowns(
+        _cooldownList
+            .map((c) => {
+                  'keyId': c.keyId,
+                  'until': c.until.toIso8601String(),
+                })
+            .toList(),
+      );
+    } catch (e) {
+      debugPrint('[ApiKeyManager] Cooldown cache save error: $e');
+    }
+  }
+
+  /// Pushes usage/error stats to the key's Firestore doc so the admin screen
+  /// shows live numbers. Fire-and-forget: failures here must never break the
+  /// AI call itself, so any error is swallowed after logging.
+  Future<void> _updateKeyStats(String keyId,
+      {int usageDelta = 0, DateTime? lastErrorAt}) async {
+    try {
+      final data = <String, dynamic>{};
+      if (usageDelta > 0) {
+        data['usageCount'] = FieldValue.increment(usageDelta);
+        data['lastUsedAt'] = FieldValue.serverTimestamp();
+      }
+      if (lastErrorAt != null) {
+        data['errorCount'] = FieldValue.increment(1);
+        data['lastErrorAt'] = lastErrorAt;
+      }
+      if (data.isEmpty) return;
+      await FirebaseFirestore.instance
+          .collection('admin_api_keys')
+          .doc(keyId)
+          .set(data, SetOptions(merge: true));
+    } catch (e) {
+      debugPrint('[ApiKeyManager] Stats update error: $e');
+    }
+  }
+
   List<AdminApiKey> _getHealthyKeys() {
     final now = DateTime.now();
     return _keyPool.where((k) {
-      final isOnCooldown = _cooldownList.any((c) => c.keyId == k.id && c.until.isAfter(now));
-      return k.isActive && !isOnCooldown;
-    }).toList();
+      final isOnCooldown =
+          _cooldownList.any((c) => c.keyId == k.id && c.until.isAfter(now));
+      final groupEnabled = _groups[k.provider]?.enabled ?? true;
+      return k.isActive && groupEnabled && !isOnCooldown;
+    }).toList()
+      ..sort((a, b) {
+        final gp = _groupPriority(a.provider).compareTo(_groupPriority(b.provider));
+        if (gp != 0) return gp;
+        return a.priority.compareTo(b.priority);
+      });
+  }
+
+  /// Priority of a provider's group (lower = tried first). Groups without a
+  /// config doc default to 100 so they never shadow an explicitly ranked group.
+  int _groupPriority(String provider) => _groups[provider]?.priority ?? 100;
+
+  /// Snapshot of group configs (provider → group) for the admin UI.
+  Map<String, AdminKeyGroup> get groupConfigs => Map.unmodifiable(_groups);
+
+  void _startGroupListener() {
+    _groupSub = FirebaseFirestore.instance
+        .collection('admin_key_groups')
+        .snapshots()
+        .listen((snapshot) {
+      _groups = {
+        for (final doc in snapshot.docs)
+          doc.id: AdminKeyGroup.fromMap(doc.data(), doc.id),
+      };
+      debugPrint('[ApiKeyManager] Groups updated: ${_groups.length}');
+    }, onError: (e) {
+      debugPrint('[ApiKeyManager] Groups listener error: $e');
+    });
   }
 
   void _incrementUsage(String keyId) {
@@ -200,9 +304,12 @@ class ApiKeyManager {
       lastUsedAt: DateTime.now(),
     );
     _saveToCache();
+    // Push usage stats to Firestore so the admin screen shows live usage counts.
+    unawaited(_updateKeyStats(keyId, usageDelta: 1));
   }
 
   String _classifyError(int statusCode) {
+    if (statusCode == 0) return 'network_error';
     if (statusCode == 429) return 'rate_limit';
     if (statusCode == 401 || statusCode == 403) return 'auth_error';
     if (statusCode >= 500) return 'server_error';
@@ -211,6 +318,7 @@ class ApiKeyManager {
 
   String _errorMessage(int statusCode) {
     switch (statusCode) {
+      case 0: return 'Network error';
       case 429: return 'Rate limit exceeded';
       case 401: return 'Unauthorized — key may be invalid';
       case 403: return 'Forbidden';

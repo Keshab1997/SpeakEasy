@@ -200,6 +200,19 @@ service cloud.firestore {
     }
 
     // ═══════════════════════════════════════════════
+    //  ★ NEW: ADMIN KEY GROUPS (provider → group config)
+    //  Structure: admin_key_groups/{provider}
+    //  All users read (defaults for key pool), only admin write
+    // ═══════════════════════════════════════════════
+
+    match /admin_key_groups/{groupId} {
+      allow read: if isAuthenticated();
+      allow create: if isAdmin();
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
     //  ★ NEW: API ERROR LOGS
     //  Structure: api_error_logs/{logId}
     //  Authenticated users can write (report errors)

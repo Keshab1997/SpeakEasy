@@ -1114,6 +1114,21 @@ class HiveService {
     await box.put('cachedAdminKeys', data);
   }
 
+  /// Key cooldowns survive app restarts, so a known-bad key (e.g. one that got
+  /// 401) isn't retried again right after relaunch, which would re-fail and
+  /// re-notify the admin. Each entry is {keyId, until (ISO-8601)}.
+  static List<Map<String, dynamic>> getCachedAdminKeyCooldowns() {
+    final box = Hive.box('settings');
+    final data = box.get('adminKeyCooldowns', defaultValue: <Map>[]) as List;
+    return data.map((m) => Map<String, dynamic>.from(m as Map)).toList();
+  }
+
+  static Future<void> saveCachedAdminKeyCooldowns(
+      List<Map<String, dynamic>> cooldowns) async {
+    final box = Hive.box('settings');
+    await box.put('adminKeyCooldowns', cooldowns);
+  }
+
   static bool getUseApiKeyManager() {
     final box = Hive.box('settings');
     return box.get('useApiKeyManager', defaultValue: true) as bool;
