@@ -13,7 +13,11 @@ class ApiErrorLog {
   final bool retrySuccess;
   final DateTime timestamp;
 
-  const ApiErrorLog({
+  /// Firestore TTL field: docs older than this are auto-deleted once the
+  /// console TTL policy is enabled on `api_error_logs` (default +30 days).
+  final DateTime ttlExpireAt;
+
+  ApiErrorLog({
     this.id,
     required this.keyId,
     required this.keyName,
@@ -25,7 +29,8 @@ class ApiErrorLog {
     this.retried = false,
     this.retrySuccess = false,
     required this.timestamp,
-  });
+    DateTime? ttlExpireAt,
+  }) : ttlExpireAt = ttlExpireAt ?? timestamp.add(const Duration(days: 30));
 
   factory ApiErrorLog.fromMap(Map<String, dynamic> map, [String? docId]) {
     return ApiErrorLog(
@@ -40,6 +45,8 @@ class ApiErrorLog {
       retried: map['retried'] as bool? ?? false,
       retrySuccess: map['retrySuccess'] as bool? ?? false,
       timestamp: (map['timestamp'] as Timestamp?)?.toDate() ?? DateTime.now(),
+      ttlExpireAt: (map['ttlExpireAt'] as Timestamp?)?.toDate() ??
+          DateTime.now().add(const Duration(days: 30)),
     );
   }
 
@@ -55,6 +62,7 @@ class ApiErrorLog {
       'retried': retried,
       'retrySuccess': retrySuccess,
       'timestamp': Timestamp.fromDate(timestamp),
+      'ttlExpireAt': Timestamp.fromDate(ttlExpireAt),
     };
   }
 

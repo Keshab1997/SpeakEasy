@@ -189,27 +189,54 @@ service cloud.firestore {
     // ═══════════════════════════════════════════════
     //  ★ NEW: ADMIN API KEYS
     //  Structure: admin_api_keys/{keyId}
-    //  All users read, only admin write
+    //  All users read, only admin write.
+    //  Hardened: addedBy must match the creator's auth uid, stat counters
+    //  must start at 0, and updates are split into config-only vs stat-only
+    //  so addedBy/createdAt are immutable and counters can't be tampered
+    //  (manager uses FieldValue.increment on stat fields only).
     // ═══════════════════════════════════════════════
+
+    function onlyKeysAffected(set) {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(set);
+    }
 
     match /admin_api_keys/{keyId} {
       allow read: if isAuthenticated();
-      allow create: if isAdmin();
-      allow update: if isAdmin();
+      allow create: if isAdmin()
+        && request.resource.data.addedBy == request.auth.uid
+        && request.resource.data.usageCount == 0
+        && request.resource.data.errorCount == 0
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.key is string
+        && request.resource.data.key.size() > 0;
+      allow update: if isAdmin() && (
+        onlyKeysAffected(['name','key','baseUrl','model','provider','priority','isActive','updatedAt'])
+        || onlyKeysAffected(['usageCount','errorCount','lastUsedAt','lastErrorAt'])
+      );
       allow delete: if isAdmin();
     }
 
     // ═══════════════════════════════════════════════
     //  ★ NEW: ADMIN KEY GROUPS (provider → group config)
     //  Structure: admin_key_groups/{provider}
-    //  All users read (defaults for key pool), only admin write
+    //  All users read (defaults for key pool), only admin write.
+    //  Hardened: doc id must be a known provider, fields type-checked,
+    //  and updates limited to name/enabled/priority.
     // ═══════════════════════════════════════════════
 
-    match /admin_key_groups/{groupId} {
+    match /admin_key_groups/{provider} {
       allow read: if isAuthenticated();
-      allow create: if isAdmin();
-      allow update: if isAdmin();
-      allow delete: if isAdmin();
+      allow create: if isAdmin()
+        && provider in ['google','openrouter','custom']
+        && request.resource.data.name is string
+        && request.resource.data.enabled is bool
+        && request.resource.data.priority is int;
+      allow update: if isAdmin()
+        && provider in ['google','openrouter','custom']
+        && onlyKeysAffected(['name','enabled','priority']);
+      allow delete: if isAdmin()
+        && provider in ['google','openrouter','custom'];
     }
 
     // ═══════════════════════════════════════════════
@@ -231,6 +258,17 @@ service cloud.firestore {
     // ═══════════════════════════════════════════════
 
     match /admin_notification_targets/{targetId} {
+      allow read: if isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
+    //  ★ NEW: ADMIN ALERTS (in-app outage banner)
+    //  Structure: admin_alerts/{alertId}
+    //  Written by ApiKeyManager when all keys fail; dismissed by admin UI.
+    // ═══════════════════════════════════════════════
+
+    match /admin_alerts/{alertId} {
       allow read: if isAdmin();
       allow write: if isAdmin();
     }

@@ -7,6 +7,7 @@ import '../models/admin_api_key.dart';
 import '../models/admin_key_group.dart';
 import '../models/api_error_log.dart';
 import 'hive_service.dart';
+import 'key_pool_selector.dart';
 
 class ApiKeyManager {
   static final ApiKeyManager instance = ApiKeyManager._();
@@ -15,7 +16,12 @@ class ApiKeyManager {
   // ── State ──
   List<AdminApiKey> _keyPool = [];
   Map<String, AdminKeyGroup> _groups = {};
-  final List<_KeyCooldown> _cooldownList = [];
+  final List<KeyCooldown> _cooldownList = [];
+
+  /// Consecutive 401/403 failures per key. Reaching [_consecutiveAuthFailureLimit]
+  /// auto-deactivates the key globally (see [_deactivateKey]).
+  final Map<String, int> _consecutiveAuthFailures = {};
+  DateTime? _lastLogCleanup;
   final Completer<void> _readyCompleter = Completer<void>();
   int _currentIndex = 0;
   bool _allKeysFailedNotified = false;
@@ -34,6 +40,18 @@ class ApiKeyManager {
   static const int _batchSize = 20;
   static const Duration _batchInterval = Duration(seconds: 30);
 
+  /// Hard cap on the in-memory error queue so a prolonged Firestore outage
+  /// can't grow it without bound (oldest entries are dropped first).
+  static const int _maxErrorQueue = 500;
+
+  /// Consecutive 401/403 failures after which a key is auto-deactivated.
+  static const int _consecutiveAuthFailureLimit = 3;
+
+  /// Error-log cleanup runs at most this often. Free-plan fallback for
+  /// Firestore TTL, which requires billing.
+  static const Duration _logCleanupInterval = Duration(hours: 1);
+  static const Duration _logRetention = Duration(days: 30);
+
   // ── Public API ──
 
   void initialize() {
@@ -44,6 +62,7 @@ class ApiKeyManager {
     _startFirestoreListener();
     _startGroupListener();
     _batchTimer = Timer.periodic(_batchInterval, (_) => _flushErrorQueue());
+    _cleanupExpiredErrorLogs();
     debugPrint('[ApiKeyManager] initialized');
   }
 
@@ -52,17 +71,9 @@ class ApiKeyManager {
   /// fallback when every key of the preferred group is on cooldown, so the
   /// "fast" group carries the load while the rest wait in reserve.
   AdminApiKey? getNextKey() {
-    final healthy = _getHealthyKeys();
-    if (healthy.isEmpty) return null;
-
-    final topPriority = _groupPriority(healthy.first.provider);
-    final pool =
-        healthy.where((k) => _groupPriority(k.provider) == topPriority).toList();
-
-    if (_currentIndex >= pool.length) _currentIndex = 0;
-    final key = pool[_currentIndex];
-    _currentIndex = (_currentIndex + 1) % pool.length;
-    return key;
+    final result = _selector().select(_currentIndex);
+    _currentIndex = result.$2;
+    return result.$1;
   }
 
   /// Returns the first healthy key WITHOUT consuming it (for model fetching etc).
@@ -75,22 +86,27 @@ class ApiKeyManager {
 
   /// Report a successful API call.
   void reportSuccess(AdminApiKey key) {
+    _consecutiveAuthFailures.remove(key.id);
     _incrementUsage(key.id);
   }
 
   /// Report a failed API call.
-  void reportFailure(AdminApiKey key, int statusCode, String feature, String userId) {
+  void reportFailure(
+      AdminApiKey key, int statusCode, String feature, String userId) {
     final errorType = _classifyError(statusCode);
     final duration = _getCooldownDuration(statusCode);
+    // Whether another healthy key exists to retry with — checked before this
+    // key goes on cooldown. Retry success is unknown at this point.
+    final canRetry = _getHealthyKeys().any((k) => k.id != key.id);
 
-    _cooldownList.add(_KeyCooldown(
+    _cooldownList.add(KeyCooldown(
       keyId: key.id,
       until: DateTime.now().add(duration),
     ));
     _cooldownList.removeWhere((c) => c.until.isBefore(DateTime.now()));
     _saveCooldownsToCache();
 
-    _errorQueue.add(ApiErrorLog(
+    _enqueueError(ApiErrorLog(
       keyId: key.id,
       keyName: key.name,
       userId: userId,
@@ -98,17 +114,24 @@ class ApiKeyManager {
       errorType: errorType,
       statusCode: statusCode,
       message: _errorMessage(statusCode),
-      retried: true,
+      retried: canRetry,
       retrySuccess: false,
       timestamp: DateTime.now(),
     ));
 
-    if (_errorQueue.length >= _batchSize) {
-      _flushErrorQueue();
-    }
-
     // Push error stats to Firestore so the admin screen shows live error counts.
     unawaited(_updateKeyStats(key.id, lastErrorAt: DateTime.now()));
+
+    // Repeated auth failures mean the key is dead: deactivate it globally via
+    // Firestore so every device stops using it, instead of relying only on the
+    // device-local cooldown.
+    if (errorType == 'auth_error') {
+      final failures = (_consecutiveAuthFailures[key.id] ?? 0) + 1;
+      _consecutiveAuthFailures[key.id] = failures;
+      if (failures >= _consecutiveAuthFailureLimit) {
+        _deactivateKey(key.id);
+      }
+    }
 
     if (_getHealthyKeys().isEmpty) {
       _handleAllKeysFailed();
@@ -173,7 +196,8 @@ class ApiKeyManager {
 
       _saveToCache();
       if (!_readyCompleter.isCompleted) _readyCompleter.complete();
-      debugPrint('[ApiKeyManager] Keys updated: ${_keyPool.length} active keys');
+      debugPrint(
+          '[ApiKeyManager] Keys updated: ${_keyPool.length} active keys');
     }, onError: (e) {
       debugPrint('[ApiKeyManager] Firestore listener error: $e');
     });
@@ -210,10 +234,11 @@ class ApiKeyManager {
         final until = DateTime.tryParse(c['until'] as String? ?? '');
         if (until != null && until.isAfter(now)) {
           _cooldownList
-              .add(_KeyCooldown(keyId: c['keyId'] as String, until: until));
+              .add(KeyCooldown(keyId: c['keyId'] as String, until: until));
         }
       }
-      debugPrint('[ApiKeyManager] Loaded ${_cooldownList.length} cooldowns from cache');
+      debugPrint(
+          '[ApiKeyManager] Loaded ${_cooldownList.length} cooldowns from cache');
     } catch (e) {
       debugPrint('[ApiKeyManager] Cooldown cache load error: $e');
     }
@@ -259,24 +284,37 @@ class ApiKeyManager {
     }
   }
 
-  List<AdminApiKey> _getHealthyKeys() {
-    final now = DateTime.now();
-    return _keyPool.where((k) {
-      final isOnCooldown =
-          _cooldownList.any((c) => c.keyId == k.id && c.until.isAfter(now));
-      final groupEnabled = _groups[k.provider]?.enabled ?? true;
-      return k.isActive && groupEnabled && !isOnCooldown;
-    }).toList()
-      ..sort((a, b) {
-        final gp = _groupPriority(a.provider).compareTo(_groupPriority(b.provider));
-        if (gp != 0) return gp;
-        return a.priority.compareTo(b.priority);
+  /// Marks a key inactive in Firestore so the change propagates to every
+  /// device via the snapshot listener. Only admin writes pass the rules;
+  /// non-admin devices fail silently, which is fine — the first admin device
+  /// to hit the failure threshold does the deactivation.
+  Future<void> _deactivateKey(String keyId) async {
+    _consecutiveAuthFailures.remove(keyId);
+    // Drop from the local pool so this device stops using it immediately.
+    _keyPool = _keyPool.where((k) => k.id != keyId).toList();
+    _saveToCache();
+    try {
+      await FirebaseFirestore.instance
+          .collection('admin_api_keys')
+          .doc(keyId)
+          .update({
+        'isActive': false,
+        'updatedAt': FieldValue.serverTimestamp(),
       });
+      debugPrint(
+          '[ApiKeyManager] Auto-deactivated key $keyId (repeated auth failures)');
+    } catch (e) {
+      debugPrint('[ApiKeyManager] Failed to auto-deactivate key $keyId: $e');
+    }
   }
 
-  /// Priority of a provider's group (lower = tried first). Groups without a
-  /// config doc default to 100 so they never shadow an explicitly ranked group.
-  int _groupPriority(String provider) => _groups[provider]?.priority ?? 100;
+  List<AdminApiKey> _getHealthyKeys() => _selector().getHealthyKeys();
+
+  KeyPoolSelector _selector() => KeyPoolSelector(
+        keys: _keyPool,
+        groups: _groups,
+        cooldowns: _cooldownList,
+      );
 
   /// Snapshot of group configs (provider → group) for the admin UI.
   Map<String, AdminKeyGroup> get groupConfigs => Map.unmodifiable(_groups);
@@ -318,29 +356,41 @@ class ApiKeyManager {
 
   String _errorMessage(int statusCode) {
     switch (statusCode) {
-      case 0: return 'Network error';
-      case 429: return 'Rate limit exceeded';
-      case 401: return 'Unauthorized — key may be invalid';
-      case 403: return 'Forbidden';
-      case 500: return 'Provider server error';
-      default: return 'HTTP $statusCode';
+      case 0:
+        return 'Network error';
+      case 429:
+        return 'Rate limit exceeded';
+      case 401:
+        return 'Unauthorized — key may be invalid';
+      case 403:
+        return 'Forbidden';
+      case 500:
+        return 'Provider server error';
+      default:
+        return 'HTTP $statusCode';
     }
   }
 
   Duration _getCooldownDuration(int statusCode) {
     switch (statusCode) {
-      case 429: return const Duration(seconds: 60);
-      case 401: return const Duration(days: 365);
-      case 403: return const Duration(days: 365);
-      case 500: return const Duration(seconds: 120);
-      default: return const Duration(seconds: 30);
+      case 429:
+        return const Duration(seconds: 60);
+      case 401:
+        return const Duration(days: 365);
+      case 403:
+        return const Duration(days: 365);
+      case 500:
+        return const Duration(seconds: 120);
+      default:
+        return const Duration(seconds: 30);
     }
   }
 
   void _handleAllKeysFailed() {
     if (_allKeysFailedNotified) {
       if (_lastAllKeysFailedNotification != null &&
-          DateTime.now().difference(_lastAllKeysFailedNotification!) < _notificationDebounce) {
+          DateTime.now().difference(_lastAllKeysFailedNotification!) <
+              _notificationDebounce) {
         return;
       }
     }
@@ -348,11 +398,33 @@ class ApiKeyManager {
     _allKeysFailedNotified = true;
     _lastAllKeysFailedNotification = DateTime.now();
     _sendOneSignalNotification();
+    unawaited(_writeAdminAlert());
 
     _notificationCooldownTimer?.cancel();
     _notificationCooldownTimer = Timer(_notificationDebounce, () {
       _allKeysFailedNotified = false;
     });
+  }
+
+  /// Writes an in-app alert doc so admins see the outage in the admin panel
+  /// even without push notifications. Merge semantics: the doc stays until an
+  /// admin dismisses it (sets resolved: true) from the admin screen.
+  Future<void> _writeAdminAlert() async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('admin_alerts')
+          .doc('api_keys_failed')
+          .set({
+        'type': 'api_keys_failed',
+        'message':
+            '${_keyPool.length} key(s) failed. Users cannot use AI features. Please add new keys.',
+        'keyCount': _keyPool.length,
+        'at': FieldValue.serverTimestamp(),
+        'resolved': false,
+      }, SetOptions(merge: true));
+    } catch (e) {
+      debugPrint('[ApiKeyManager] Failed to write admin alert: $e');
+    }
   }
 
   Future<void> _sendOneSignalNotification() async {
@@ -380,7 +452,8 @@ class ApiKeyManager {
         'include_player_ids': adminIds,
         'headings': {'en': '🚨 All API Keys Failed!'},
         'contents': {
-          'en': '${_keyPool.length} key(s) failed. Users cannot use AI features. Please add new keys.',
+          'en':
+              '${_keyPool.length} key(s) failed. Users cannot use AI features. Please add new keys.',
         },
         'priority': 10,
       });
@@ -415,6 +488,50 @@ class ApiKeyManager {
     }
   }
 
+  /// Deletes error logs older than [_logRetention]. Firestore TTL requires a
+  /// paid plan, so on the free plan we clean up from admin devices instead
+  /// (rules allow admin read/delete on api_error_logs; non-admin devices fail
+  /// silently). Throttled to [_logCleanupInterval].
+  void _cleanupExpiredErrorLogs() {
+    final now = DateTime.now();
+    if (_lastLogCleanup != null &&
+        now.difference(_lastLogCleanup!) < _logCleanupInterval) {
+      return;
+    }
+    _lastLogCleanup = now;
+    unawaited(() async {
+      try {
+        final expired = await FirebaseFirestore.instance
+            .collection('api_error_logs')
+            .where('timestamp', isLessThan: now.subtract(_logRetention))
+            .limit(500)
+            .get();
+        if (expired.docs.isEmpty) return;
+        final batch = FirebaseFirestore.instance.batch();
+        for (final doc in expired.docs) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+        debugPrint(
+            '[ApiKeyManager] Cleaned up ${expired.docs.length} expired error logs');
+      } catch (e) {
+        debugPrint('[ApiKeyManager] Error log cleanup failed: $e');
+      }
+    }());
+  }
+
+  /// Adds an error to the batched queue, dropping the oldest entry when the
+  /// hard cap is hit, and flushing as soon as the batch size is reached.
+  void _enqueueError(ApiErrorLog log) {
+    _errorQueue.add(log);
+    if (_errorQueue.length > _maxErrorQueue) {
+      _errorQueue.removeAt(0);
+    }
+    if (_errorQueue.length >= _batchSize) {
+      _flushErrorQueue();
+    }
+  }
+
   Future<void> _flushErrorQueue() async {
     if (_errorQueue.isEmpty) return;
 
@@ -423,7 +540,8 @@ class ApiKeyManager {
     _errorQueue.clear();
 
     for (final error in logsToWrite) {
-      final docRef = FirebaseFirestore.instance.collection('api_error_logs').doc();
+      final docRef =
+          FirebaseFirestore.instance.collection('api_error_logs').doc();
       batch.set(docRef, error.toMap());
     }
 
@@ -433,12 +551,9 @@ class ApiKeyManager {
     } catch (e) {
       debugPrint('[ApiKeyManager] Failed to flush error logs: $e');
       _errorQueue.addAll(logsToWrite);
+      if (_errorQueue.length > _maxErrorQueue) {
+        _errorQueue.removeRange(0, _errorQueue.length - _maxErrorQueue);
+      }
     }
   }
-}
-
-class _KeyCooldown {
-  final String keyId;
-  final DateTime until;
-  _KeyCooldown({required this.keyId, required this.until});
 }
