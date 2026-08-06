@@ -106,7 +106,7 @@ class ApiKeyManager {
   void reportFailure(
       AdminApiKey key, int statusCode, String feature, String userId) {
     final errorType = _classifyError(statusCode);
-    final duration = _getCooldownDuration(statusCode);
+    final duration = _getCooldownDuration(statusCode, key.provider);
     // Whether another healthy key exists to retry with — checked before this
     // key goes on cooldown. Retry success is unknown at this point.
     final canRetry = _getHealthyKeys().any((k) => k.id != key.id);
@@ -429,18 +429,21 @@ class ApiKeyManager {
     }
   }
 
-  Duration _getCooldownDuration(int statusCode) {
+  Duration _getCooldownDuration(int statusCode, String provider) {
+    final group = _groups[provider];
     switch (statusCode) {
       case 429:
-        return const Duration(seconds: 60);
+        final s = group?.rateLimitCooldownSeconds;
+        return s != null ? Duration(seconds: s) : const Duration(seconds: 60);
       case 401:
-        return const Duration(days: 365);
       case 403:
         return const Duration(days: 365);
       case 500:
-        return const Duration(seconds: 120);
+        final s = group?.serverErrorCooldownSeconds;
+        return s != null ? Duration(seconds: s) : const Duration(seconds: 120);
       default:
-        return const Duration(seconds: 30);
+        final s = group?.defaultCooldownSeconds;
+        return s != null ? Duration(seconds: s) : const Duration(seconds: 30);
     }
   }
 

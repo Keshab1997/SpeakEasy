@@ -595,6 +595,11 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
               ),
             ),
             IconButton(
+              tooltip: 'Cooldown settings',
+              icon: const Icon(Icons.settings_rounded, size: 20),
+              onPressed: () => _showGroupSettings(provider, config),
+            ),
+            IconButton(
               tooltip: 'Lower priority (tried first)',
               icon: const Icon(Icons.remove_circle_outline, size: 20),
               onPressed: priority > 1
@@ -809,6 +814,119 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
         );
       }
     }
+  }
+
+  /// Bottom sheet to tune per-provider cooldown durations (seconds). An empty
+  /// field resets that cooldown to the built-in default (deleted from the doc).
+  void _showGroupSettings(String provider, Map<String, dynamic>? config) {
+    final name =
+        config?['name'] as String? ?? AdminApiKey.providerName(provider);
+    final rateCtl = TextEditingController(
+        text: (config?['rateLimitCooldownSeconds'] as int?)?.toString() ?? '');
+    final serverCtl = TextEditingController(
+        text:
+            (config?['serverErrorCooldownSeconds'] as int?)?.toString() ?? '');
+    final defaultCtl = TextEditingController(
+        text: (config?['defaultCooldownSeconds'] as int?)?.toString() ?? '');
+
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (ctx) => Padding(
+        padding: EdgeInsets.only(
+          left: 20,
+          right: 20,
+          top: 20,
+          bottom: MediaQuery.of(ctx).viewInsets.bottom + 20,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Cooldown Settings — $name',
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 18)),
+              const SizedBox(height: 4),
+              Text('Empty field = built-in default.',
+                  style: TextStyle(fontSize: 12, color: Colors.grey[600])),
+              const SizedBox(height: 16),
+              _cooldownField(
+                  rateCtl, 'Rate-limit (429)', 'seconds, default 60'),
+              const SizedBox(height: 12),
+              _cooldownField(
+                  serverCtl, 'Server error (5xx)', 'seconds, default 120'),
+              const SizedBox(height: 12),
+              _cooldownField(defaultCtl, 'Other errors', 'seconds, default 30'),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton.icon(
+                  icon: const Icon(Icons.save_rounded),
+                  label: const Text('Save'),
+                  onPressed: () async {
+                    final rate = int.tryParse(rateCtl.text.trim());
+                    final server = int.tryParse(serverCtl.text.trim());
+                    final def = int.tryParse(defaultCtl.text.trim());
+                    if ((rate != null && rate < 1) ||
+                        (server != null && server < 1) ||
+                        (def != null && def < 1)) {
+                      ScaffoldMessenger.of(ctx).showSnackBar(
+                        const SnackBar(
+                            content: Text('Cooldowns must be positive seconds'),
+                            backgroundColor: Colors.orange),
+                      );
+                      return;
+                    }
+                    try {
+                      // Include name/enabled/priority so a fresh doc passes
+                      // the create rule; FieldValue.delete() resets a field to
+                      // the built-in default.
+                      final data = <String, dynamic>{
+                        'name': AdminApiKey.providerName(provider),
+                        'enabled': config?['enabled'] as bool? ?? true,
+                        'priority': config?['priority'] as int? ?? 100,
+                        'rateLimitCooldownSeconds': rate ?? FieldValue.delete(),
+                        'serverErrorCooldownSeconds':
+                            server ?? FieldValue.delete(),
+                        'defaultCooldownSeconds': def ?? FieldValue.delete(),
+                      };
+                      await FirebaseFirestore.instance
+                          .collection('admin_key_groups')
+                          .doc(provider)
+                          .set(data, SetOptions(merge: true));
+                      if (ctx.mounted) Navigator.pop(ctx);
+                    } catch (e) {
+                      if (ctx.mounted) {
+                        ScaffoldMessenger.of(ctx).showSnackBar(
+                          SnackBar(
+                              content: Text('Error: $e'),
+                              backgroundColor: Colors.red),
+                        );
+                      }
+                    }
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _cooldownField(TextEditingController ctl, String label, String hint) {
+    return TextField(
+      controller: ctl,
+      keyboardType: TextInputType.number,
+      decoration: InputDecoration(
+        labelText: label,
+        hintText: hint,
+        border: const OutlineInputBorder(),
+        isDense: true,
+      ),
+    );
   }
 
   void _showKeyDialog(BuildContext context,
