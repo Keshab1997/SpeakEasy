@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import '../models/admin_api_key.dart';
 import 'api_key_manager.dart';
 import 'hive_service.dart';
+import 'key_health_checker.dart' as key_health;
 
 class AIService {
   static final AIService _instance = AIService._();
@@ -44,32 +45,8 @@ class AIService {
   /// OpenRouter rejects. Map a bare name to the right provider prefix when the
   /// request targets OpenRouter; leave every other backend untouched.
   @visibleForTesting
-  static String resolveOpenRouterModel(String baseUrl, String model) {
-    if (!baseUrl.contains('openrouter')) return model;
-    if (model.contains('/')) return model; // already provider-prefixed
-    const providerByPrefix = <String, String>{
-      'claude': 'anthropic/',
-      'gemini': 'google/',
-      'gemma': 'google/',
-      'llama': 'meta-llama/',
-      'mistral': 'mistralai/',
-      'qwen': 'qwen/',
-      'deepseek': 'deepseek/',
-      'command': 'cohere/',
-      'phi': 'microsoft/',
-      'granite': 'ibm-granite/',
-      'grok': 'x-ai/',
-      'gpt-': 'openai/',
-      'o1': 'openai/',
-      'o3': 'openai/',
-      'o4': 'openai/',
-    };
-    final lower = model.toLowerCase();
-    for (final entry in providerByPrefix.entries) {
-      if (lower.startsWith(entry.key)) return '${entry.value}$model';
-    }
-    return model;
-  }
+  static String resolveOpenRouterModel(String baseUrl, String model) =>
+      key_health.resolveOpenRouterModel(baseUrl, model);
 
   /// Fetch free models from OpenRouter.
   /// If [apiKey] is provided, uses it; otherwise peeks at admin key pool or user key.
@@ -178,45 +155,13 @@ class AIService {
       required String baseUrl,
       required String apiKey,
       required String model}) async {
-    try {
-      if (provider == 'google') {
-        final url = Uri.parse('$baseUrl/models/$model:generateContent?key=$apiKey');
-        final response = await http.post(
-          url,
-          headers: {'Content-Type': 'application/json'},
-          body: jsonEncode({
-            'contents': [
-              {
-                'role': 'user',
-                'parts': [
-                  {'text': 'Hi'}
-                ]
-              }
-            ],
-            'generationConfig': {'maxOutputTokens': 5},
-          }),
-        ).timeout(const Duration(seconds: 15));
-        return response.statusCode == 200;
-      }
-      final url = Uri.parse('$baseUrl/chat/completions');
-      final response = await http.post(
-        url,
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer $apiKey',
-        },
-        body: jsonEncode({
-          'model': resolveOpenRouterModel(baseUrl, model),
-          'messages': [
-            {'role': 'user', 'content': 'Hi'}
-          ],
-          'max_tokens': 5,
-        }),
-      ).timeout(const Duration(seconds: 15));
-      return response.statusCode == 200;
-    } catch (_) {
-      return false;
-    }
+    final status = await key_health.pingKeyStatus(
+      provider: provider,
+      baseUrl: baseUrl,
+      apiKey: apiKey,
+      model: model,
+    );
+    return status == 200;
   }
 
   Future<String> sendMessage(String message) async {
@@ -295,18 +240,20 @@ class AIService {
 
     late final http.Response response;
     try {
-      response = await http.post(
-        url,
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer $apiKey',
-        },
-        body: jsonEncode({
-          'model': model,
-          'messages': messages,
-          'max_tokens': maxTokens ?? 1024,
-        }),
-      ).timeout(const Duration(seconds: 30));
+      response = await http
+          .post(
+            url,
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer $apiKey',
+            },
+            body: jsonEncode({
+              'model': model,
+              'messages': messages,
+              'max_tokens': maxTokens ?? 1024,
+            }),
+          )
+          .timeout(const Duration(seconds: 30));
     } on Exception {
       // Network-level failure (timeout, connection refused, DNS, TLS, ...) —
       // the request never got an HTTP response. Mark this key as failed so it
@@ -391,11 +338,13 @@ class AIService {
 
     late final http.Response response;
     try {
-      response = await http.post(
-        url,
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode(payload),
-      ).timeout(const Duration(seconds: 30));
+      response = await http
+          .post(
+            url,
+            headers: {'Content-Type': 'application/json'},
+            body: jsonEncode(payload),
+          )
+          .timeout(const Duration(seconds: 30));
     } on Exception {
       return _handleProviderFailure(message,
           systemPrompt: systemPrompt,

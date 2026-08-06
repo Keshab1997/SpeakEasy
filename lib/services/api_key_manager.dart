@@ -7,6 +7,7 @@ import '../models/admin_api_key.dart';
 import '../models/admin_key_group.dart';
 import '../models/api_error_log.dart';
 import 'hive_service.dart';
+import 'key_health_checker.dart' as key_health;
 import 'key_pool_selector.dart';
 
 class ApiKeyManager {
@@ -28,6 +29,8 @@ class ApiKeyManager {
   DateTime? _lastAllKeysFailedNotification;
   Timer? _notificationCooldownTimer;
   Timer? _batchTimer;
+  Timer? _healthCheckTimer;
+  bool _healthCheckInProgress = false;
   StreamSubscription<QuerySnapshot<Map<String, dynamic>>>? _firestoreSub;
   StreamSubscription<QuerySnapshot<Map<String, dynamic>>>? _groupSub;
 
@@ -52,6 +55,13 @@ class ApiKeyManager {
   static const Duration _logCleanupInterval = Duration(hours: 1);
   static const Duration _logRetention = Duration(days: 30);
 
+  /// How often the proactive health check pings the primary key.
+  static const Duration _healthCheckInterval = Duration(minutes: 30);
+
+  /// Skip re-reporting a key the health check already flagged recently (all
+  /// devices ping, so this prevents duplicate error logs per key).
+  static const Duration _healthCheckDedup = Duration(hours: 2);
+
   // ── Public API ──
 
   void initialize() {
@@ -62,6 +72,8 @@ class ApiKeyManager {
     _startFirestoreListener();
     _startGroupListener();
     _batchTimer = Timer.periodic(_batchInterval, (_) => _flushErrorQueue());
+    _healthCheckTimer =
+        Timer.periodic(_healthCheckInterval, (_) => _runHealthCheck());
     _cleanupExpiredErrorLogs();
     debugPrint('[ApiKeyManager] initialized');
   }
@@ -126,16 +138,61 @@ class ApiKeyManager {
     // Firestore so every device stops using it, instead of relying only on the
     // device-local cooldown.
     if (errorType == 'auth_error') {
-      final failures = (_consecutiveAuthFailures[key.id] ?? 0) + 1;
-      _consecutiveAuthFailures[key.id] = failures;
-      if (failures >= _consecutiveAuthFailureLimit) {
-        _deactivateKey(key.id);
-      }
+      _recordAuthFailure(key);
     }
 
     if (_getHealthyKeys().isEmpty) {
       _handleAllKeysFailed();
     }
+  }
+
+  /// Increments the consecutive auth-failure counter for a key and deactivates
+  /// it globally once the limit is reached. Shared by [reportFailure] and the
+  /// periodic health check.
+  void _recordAuthFailure(AdminApiKey key) {
+    final failures = (_consecutiveAuthFailures[key.id] ?? 0) + 1;
+    _consecutiveAuthFailures[key.id] = failures;
+    if (failures >= _consecutiveAuthFailureLimit) {
+      _deactivateKey(key.id);
+    }
+  }
+
+  /// Proactively pings the primary healthy key so a dead (unused) key is
+  /// caught before users hit it — the failure-time auto-deactivate only fires
+  /// on real calls. Only auth errors (401/403) act: rate limits, server errors
+  /// and network failures are transient and already handled by the normal
+  /// failure path.
+  void _runHealthCheck() {
+    if (_healthCheckInProgress) return;
+    final key = peekFirstKey();
+    if (key == null) return;
+    _healthCheckInProgress = true;
+    unawaited(() async {
+      try {
+        final status = await key_health.pingKeyStatus(
+          provider: key.provider,
+          baseUrl: key.baseUrl,
+          apiKey: key.key,
+          model: key.model,
+        );
+        debugPrint('[ApiKeyManager] Health check ${key.name}: HTTP $status');
+        if (status == 200) {
+          _consecutiveAuthFailures.remove(key.id);
+        } else if (status == 401 || status == 403) {
+          // Every device pings, so dedupe by the key's last reported error.
+          final lastError = key.lastErrorAt;
+          if (lastError == null ||
+              DateTime.now().difference(lastError) > _healthCheckDedup) {
+            reportFailure(key, status, 'health_check', '');
+          }
+        }
+        // status 0 (network) and everything else: transient — don't act.
+      } catch (e) {
+        debugPrint('[ApiKeyManager] Health check error: $e');
+      } finally {
+        _healthCheckInProgress = false;
+      }
+    }());
   }
 
   /// Returns health stats for all keys (for admin dashboard).
@@ -178,6 +235,7 @@ class ApiKeyManager {
     _firestoreSub?.cancel();
     _groupSub?.cancel();
     _batchTimer?.cancel();
+    _healthCheckTimer?.cancel();
     _notificationCooldownTimer?.cancel();
   }
 
