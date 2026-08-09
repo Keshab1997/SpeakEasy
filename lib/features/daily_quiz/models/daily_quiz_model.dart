@@ -68,19 +68,19 @@ class DailyQuizQuestion {
   });
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type,
-    'questionType': questionType.name,
-    'question': question,
-    'options': options,
-    'correctAnswer': correctAnswer,
-    'explanation': explanation,
-    'timeLimit': timeLimit,
-    'difficulty': difficulty,
-    'category': category,
-    if (pairs != null) 'pairs': pairs!.map((p) => p.toJson()).toList(),
-    if (jumbledWords != null) 'jumbledWords': jumbledWords,
-  };
+        'id': id,
+        'type': type,
+        'questionType': questionType.name,
+        'question': question,
+        'options': options,
+        'correctAnswer': correctAnswer,
+        'explanation': explanation,
+        'timeLimit': timeLimit,
+        'difficulty': difficulty,
+        'category': category,
+        if (pairs != null) 'pairs': pairs!.map((p) => p.toJson()).toList(),
+        if (jumbledWords != null) 'jumbledWords': jumbledWords,
+      };
 
   factory DailyQuizQuestion.fromJson(Map<String, dynamic> json) =>
       DailyQuizQuestion(
@@ -126,13 +126,13 @@ class DailyQuizAnswer {
   });
 
   Map<String, dynamic> toJson() => {
-    'questionId': questionId,
-    'selectedAnswer': selectedAnswer,
-    'isCorrect': isCorrect,
-    'timeTaken': timeTaken,
-    'pointsEarned': pointsEarned,
-    if (responseData != null) 'responseData': responseData,
-  };
+        'questionId': questionId,
+        'selectedAnswer': selectedAnswer,
+        'isCorrect': isCorrect,
+        'timeTaken': timeTaken,
+        'pointsEarned': pointsEarned,
+        if (responseData != null) 'responseData': responseData,
+      };
 
   factory DailyQuizAnswer.fromJson(Map<String, dynamic> json) =>
       DailyQuizAnswer(
@@ -192,53 +192,104 @@ class DailyQuiz {
     DateTime? completedAt,
     int? seed,
   }) =>
-    DailyQuiz(
-      id: id ?? this.id,
-      date: date ?? this.date,
-      userId: userId ?? this.userId,
-      questions: questions ?? this.questions,
-      answers: answers ?? this.answers,
-      isCompleted: isCompleted ?? this.isCompleted,
-      earnedXP: earnedXP ?? this.earnedXP,
-      earnedCoins: earnedCoins ?? this.earnedCoins,
-      startedAt: startedAt ?? this.startedAt,
-      completedAt: completedAt ?? this.completedAt,
-      seed: seed ?? this.seed,
-    );
+      DailyQuiz(
+        id: id ?? this.id,
+        date: date ?? this.date,
+        userId: userId ?? this.userId,
+        questions: questions ?? this.questions,
+        answers: answers ?? this.answers,
+        isCompleted: isCompleted ?? this.isCompleted,
+        earnedXP: earnedXP ?? this.earnedXP,
+        earnedCoins: earnedCoins ?? this.earnedCoins,
+        startedAt: startedAt ?? this.startedAt,
+        completedAt: completedAt ?? this.completedAt,
+        seed: seed ?? this.seed,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'date': date,
-    'userId': userId,
-    'questions': questions.map((q) => q.toJson()).toList(),
-    'answers': answers.map((a) => a.toJson()).toList(),
-    'isCompleted': isCompleted,
-    'earnedXP': earnedXP,
-    'earnedCoins': earnedCoins,
-    'startedAt': startedAt?.toIso8601String(),
-    'completedAt': completedAt?.toIso8601String(),
-    'seed': seed,
-  };
+        'id': id,
+        'date': date,
+        'userId': userId,
+        'questions': questions.map((q) => q.toJson()).toList(),
+        'answers': answers.map((a) => a.toJson()).toList(),
+        'isCompleted': isCompleted,
+        'earnedXP': earnedXP,
+        'earnedCoins': earnedCoins,
+        'startedAt': startedAt?.toIso8601String(),
+        'completedAt': completedAt?.toIso8601String(),
+        'seed': seed,
+      };
 
   factory DailyQuiz.fromJson(Map<String, dynamic> json) => DailyQuiz(
-    id: json['id'] as String,
-    userId: json['userId'] as String?,
-    date: json['date'] as String,
-    questions: (json['questions'] as List<dynamic>?)
-      ?.map((q) => DailyQuizQuestion.fromJson(Map<String, dynamic>.from(q)))
-      .toList() ?? [],
-    answers: (json['answers'] as List<dynamic>?)
-      ?.map((a) => DailyQuizAnswer.fromJson(Map<String, dynamic>.from(a)))
-      .toList() ?? [],
-    isCompleted: (json['isCompleted'] as bool?) ?? false,
-    earnedXP: (json['earnedXP'] as int?) ?? 0,
-    earnedCoins: (json['earnedCoins'] as int?) ?? 0,
-    startedAt: json['startedAt'] != null
-      ? DateTime.parse(json['startedAt'] as String)
-      : null,
-    completedAt: json['completedAt'] != null
-      ? DateTime.parse(json['completedAt'] as String)
-      : null,
-    seed: json['seed'] as int,
-  );
+        id: json['id'] as String,
+        userId: json['userId'] as String?,
+        date: json['date'] as String,
+        questions: (json['questions'] as List<dynamic>?)
+                ?.map((q) =>
+                    DailyQuizQuestion.fromJson(Map<String, dynamic>.from(q)))
+                .toList() ??
+            [],
+        answers: (json['answers'] as List<dynamic>?)
+                ?.map((a) =>
+                    DailyQuizAnswer.fromJson(Map<String, dynamic>.from(a)))
+                .toList() ??
+            [],
+        isCompleted: (json['isCompleted'] as bool?) ?? false,
+        earnedXP: (json['earnedXP'] as int?) ?? 0,
+        earnedCoins: (json['earnedCoins'] as int?) ?? 0,
+        startedAt: json['startedAt'] != null
+            ? DateTime.parse(json['startedAt'] as String)
+            : null,
+        completedAt: json['completedAt'] != null
+            ? DateTime.parse(json['completedAt'] as String)
+            : null,
+        seed: json['seed'] as int,
+      );
+}
+
+/// Lightweight summary of one completed Daily Quiz, stored per-user in Hive
+/// so learners can browse their past results.
+class DailyQuizHistoryEntry {
+  final String date; // YYYY-MM-DD
+  final int score;
+  final int correctCount;
+  final int totalQuestions;
+  final int totalTime;
+  final int earnedXP;
+  final int earnedCoins;
+
+  const DailyQuizHistoryEntry({
+    required this.date,
+    required this.score,
+    required this.correctCount,
+    required this.totalQuestions,
+    required this.totalTime,
+    this.earnedXP = 0,
+    this.earnedCoins = 0,
+  });
+
+  /// Percentage of questions answered correctly (0-100).
+  int get accuracy =>
+      totalQuestions == 0 ? 0 : (correctCount * 100 ~/ totalQuestions);
+
+  Map<String, dynamic> toJson() => {
+        'date': date,
+        'score': score,
+        'correctCount': correctCount,
+        'totalQuestions': totalQuestions,
+        'totalTime': totalTime,
+        'earnedXP': earnedXP,
+        'earnedCoins': earnedCoins,
+      };
+
+  factory DailyQuizHistoryEntry.fromJson(Map<String, dynamic> json) =>
+      DailyQuizHistoryEntry(
+        date: json['date'] as String,
+        score: (json['score'] as int?) ?? 0,
+        correctCount: (json['correctCount'] as int?) ?? 0,
+        totalQuestions: (json['totalQuestions'] as int?) ?? 0,
+        totalTime: (json['totalTime'] as int?) ?? 0,
+        earnedXP: (json['earnedXP'] as int?) ?? 0,
+        earnedCoins: (json['earnedCoins'] as int?) ?? 0,
+      );
 }

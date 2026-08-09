@@ -10,6 +10,7 @@ class DailyQuizService {
       'assets/json/daily_quiz/questions.json';
   static const String _hiveBoxName = 'daily_quiz_cache';
   static const String _hiveQuestionBankHashKey = 'question_bank_hash';
+  static const int _maxHistoryEntries = 60;
 
   /// Cache of loaded question bank to avoid repeated asset I/O.
   List<DailyQuizQuestion>? _cachedQuestionBank;
@@ -42,10 +43,9 @@ class DailyQuizService {
     final newType = allQuestions
         .where((q) => q.questionType != QuestionType.multipleChoice)
         .toList();
-    final standard =
-        allQuestions
-            .where((q) => q.questionType == QuestionType.multipleChoice)
-            .toList();
+    final standard = allQuestions
+        .where((q) => q.questionType == QuestionType.multipleChoice)
+        .toList();
 
     newType.shuffle(rng);
     standard.shuffle(rng);
@@ -94,8 +94,8 @@ class DailyQuizService {
 
     // Safety net: if any slots remain unfilled, top up from any pool.
     if (allocated < slotsRemaining) {
-      final allRemaining =
-          typePools.values.expand((p) => p).toList()..shuffle(rng);
+      final allRemaining = typePools.values.expand((p) => p).toList()
+        ..shuffle(rng);
       selected.addAll(allRemaining.take(slotsRemaining - allocated));
     }
 
@@ -171,6 +171,49 @@ class DailyQuizService {
     }
   }
 
+  /// Append a completed quiz to the user's Hive history (best-effort).
+  ///
+  /// Re-completing the same day's quiz replaces that day's entry instead of
+  /// duplicating it, and the list is trimmed to the most recent
+  /// [_maxHistoryEntries] records.
+  void saveQuizHistory(DailyQuiz quiz, String userId) {
+    final box = _hiveBox;
+    final key = '$userId|quiz_history';
+    final stored = box.get(key, defaultValue: const <dynamic>[]) as List;
+    final entries = stored
+        .map((e) =>
+            DailyQuizHistoryEntry.fromJson(Map<String, dynamic>.from(e as Map)))
+        .toList();
+    entries.removeWhere((e) => e.date == quiz.date);
+    entries.insert(
+      0,
+      DailyQuizHistoryEntry(
+        date: quiz.date,
+        score: quiz.score,
+        correctCount: quiz.correctCount,
+        totalQuestions: quiz.totalQuestions,
+        totalTime: quiz.totalTime,
+        earnedXP: quiz.earnedXP,
+        earnedCoins: quiz.earnedCoins,
+      ),
+    );
+    entries.sort((a, b) => b.date.compareTo(a.date));
+    final trimmed = entries.take(_maxHistoryEntries).toList();
+    box.put(key, trimmed.map((e) => e.toJson()).toList());
+  }
+
+  /// Load the current user's past quiz results from Hive, newest first.
+  List<DailyQuizHistoryEntry> loadQuizHistory(String userId) {
+    final box = _hiveBox;
+    final stored = box.get('$userId|quiz_history', defaultValue: const []);
+    final entries = (stored as List<dynamic>)
+        .map((e) =>
+            DailyQuizHistoryEntry.fromJson(Map<String, dynamic>.from(e as Map)))
+        .toList();
+    entries.sort((a, b) => b.date.compareTo(a.date));
+    return entries;
+  }
+
   /// Load saved quiz from Hive for [userId]. Returns null if no quiz, a quiz
   /// belonging to a different user, a different day, or the question bank has
   /// changed since the quiz was cached.
@@ -199,8 +242,7 @@ class DailyQuizService {
 
       // If we have a cached hash, check it against the stored one.
       if (_questionBankHash != null) {
-        final storedHash =
-            box.get(_hiveQuestionBankHashKey) as String?;
+        final storedHash = box.get(_hiveQuestionBankHashKey) as String?;
         if (storedHash != _questionBankHash) {
           debugPrint('📅 [DailyQuiz] loadSavedQuiz: question bank changed, '
               'forcing regeneration');

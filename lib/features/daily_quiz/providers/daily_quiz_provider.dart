@@ -127,15 +127,15 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
         });
       }
     } else {
-      debugPrint('📅 [DailyQuiz] _init: Hive empty — waiting for loadTodayQuiz()');
+      debugPrint(
+          '📅 [DailyQuiz] _init: Hive empty — waiting for loadTodayQuiz()');
     }
     // No fallback generation here — loadTodayQuiz() (called from home screen)
     // will handle that with proper isLoading state.
   }
 
   /// Current authenticated user id, or null if signed out.
-  String? get _currentUserId =>
-      _ref.read(authProvider).asData?.value?.id;
+  String? get _currentUserId => _ref.read(authProvider).asData?.value?.id;
 
   /// Private async helper that generates a fresh quiz in the background.
   Future<void> _generateQuizAsync() async {
@@ -275,8 +275,8 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   /// Record an answer for complex question types (match_pairs, rearrange).
   ///
   /// [isCorrect] is determined by the widget based on the specific logic.
-  void answerComplexQuestion(Map<String, dynamic> responseData, bool isCorrect,
-      int timeTaken) {
+  void answerComplexQuestion(
+      Map<String, dynamic> responseData, bool isCorrect, int timeTaken) {
     final quiz = state.quiz;
     if (quiz == null || !state.isPlaying || quiz.isCompleted) return;
 
@@ -357,7 +357,10 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     // marked as completed and is restored as "already done" on the next app
     // launch — so the user is never offered the quiz again.
     final userId = _currentUserId;
-    if (userId != null) _service.saveQuiz(completed, userId);
+    if (userId != null) {
+      _service.saveQuiz(completed, userId);
+      _service.saveQuizHistory(completed, userId);
+    }
     state = DailyQuizState(
       quiz: completed,
       isPlaying: false,
@@ -387,11 +390,11 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   /// and the current user's rank.
   ///
   /// Returns a record of (topEntries, leaderboardRank).
-	  Future<(List<DailyQuizLeaderboardEntry>, int?)> _fetchLeaderboard(
-	      DailyQuiz quiz) async {
-	    try {
-	      final authUser = _ref.read(authProvider).asData?.value;
-	      if (authUser == null) {
+  Future<(List<DailyQuizLeaderboardEntry>, int?)> _fetchLeaderboard(
+      DailyQuiz quiz) async {
+    try {
+      final authUser = _ref.read(authProvider).asData?.value;
+      if (authUser == null) {
         return (<DailyQuizLeaderboardEntry>[], null);
       }
 
@@ -411,7 +414,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
           await _leaderboardService.getUserRank(authUser.id, quiz.date);
 
       return (top, rank);
-	    } catch (_) {
+    } catch (_) {
       return (<DailyQuizLeaderboardEntry>[], null);
     }
   }
