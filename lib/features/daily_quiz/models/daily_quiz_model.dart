@@ -8,11 +8,17 @@ enum QuestionType {
   static QuestionType fromString(String s) {
     switch (s) {
       case 'fill_blanks':
+      case 'fillBlanks':
         return QuestionType.fillBlanks;
       case 'match_pairs':
+      case 'matchPairs':
         return QuestionType.matchPairs;
       case 'sentence_rearrange':
+      case 'sentenceRearrange':
         return QuestionType.sentenceRearrange;
+      case 'multiple_choice':
+      case 'multipleChoice':
+        return QuestionType.multipleChoice;
       default:
         return QuestionType.multipleChoice;
     }

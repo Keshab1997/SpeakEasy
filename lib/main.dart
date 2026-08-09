@@ -68,7 +68,7 @@ void main() async {
     constraints: Constraints(
       networkType: NetworkType.connected,
     ),
-    existingWorkPolicy: ExistingWorkPolicy.keep,
+    existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
   );
 
   // Register idle reminder background check (every 6 hours)
@@ -77,9 +77,9 @@ void main() async {
     idleReminderTaskName,
     frequency: const Duration(hours: 6),
     constraints: Constraints(
-      networkType: NetworkType.not_required,
+      networkType: NetworkType.notRequired,
     ),
-    existingWorkPolicy: ExistingWorkPolicy.keep,
+    existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
   );
 
   // Track app open for re-engagement logic

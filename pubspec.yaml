@@ -43,12 +43,12 @@ dependencies:
   flutter_riverpod: ^2.5.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  speech_to_text: ^6.6.0
+  speech_to_text: ^7.4.0
   flutter_tts: ^3.8.5
   audioplayers: ^6.0.0
   flutter_local_notifications: ^17.1.2
   onesignal_flutter: ^5.2.0
-  workmanager: ^0.5.2
+  workmanager: ^0.10.7
   timezone: ^0.9.2
   intl: ^0.19.0
   google_sign_in: ^6.2.1
@@ -215,4 +215,12 @@ flutter_launcher_icons:
 
 dependency_overrides:
   vm_service: ^14.2.0
+  # win32 5.5.0 uses UnmodifiableUint8ListView (removed in newer Dart SDKs).
+  # share_plus 10.0.0 unconditionally exports Windows code, so win32 is
+  # compiled even on Android — pin a Dart-3.10-compatible 5.x version.
+  win32: ^5.5.4
+  # Old firebase stack pins web ^0.5.1, but speech_to_text 7.x needs web ^1.0.0.
+  # The app is Android-first (web/ is a default scaffold) so this is safe;
+  # if web builds are ever needed, upgrade firebase packages to 6.x/4.x first.
+  web: ^1.0.0
 

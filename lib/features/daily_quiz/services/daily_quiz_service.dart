@@ -215,8 +215,9 @@ class DailyQuizService {
   }
 
   /// Load saved quiz from Hive for [userId]. Returns null if no quiz, a quiz
-  /// belonging to a different user, a different day, or the question bank has
-  /// changed since the quiz was cached.
+  /// belonging to a different user, a different day, or — for an in-progress
+  /// quiz only — the question bank has changed since it was cached. Completed
+  /// quizzes are always restored so a finished daily quiz is never lost.
   DailyQuiz? loadSavedQuiz(String userId) {
     try {
       final box = _hiveBox;
@@ -240,8 +241,13 @@ class DailyQuizService {
         return null;
       }
 
-      // If we have a cached hash, check it against the stored one.
-      if (_questionBankHash != null) {
+      // If we have a cached hash, check it against the stored one — but only
+      // for quizzes that are NOT yet completed. A completed quiz is immutable:
+      // its questions are already answered and rewards already granted, so a
+      // question-bank change must never invalidate it. Otherwise the user's
+      // finished daily quiz would be silently regenerated and they would see
+      // "Start Quiz" instead of "View Results" on their next app visit.
+      if (_questionBankHash != null && !saved.isCompleted) {
         final storedHash = box.get(_hiveQuestionBankHashKey) as String?;
         if (storedHash != _questionBankHash) {
           debugPrint('📅 [DailyQuiz] loadSavedQuiz: question bank changed, '

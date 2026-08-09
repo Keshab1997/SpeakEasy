@@ -33,7 +33,7 @@ if (keystorePropertiesFile.exists()) {
 android {
     namespace "com.speakeasy.english.learn"
     compileSdk 36
-    ndkVersion "25.1.8937393"
+    ndkVersion "28.2.13676358"
 
     compileOptions {
         coreLibraryDesugaringEnabled true
@@ -51,7 +51,7 @@ android {
 
     defaultConfig {
         applicationId "com.speakeasy.english.learn"
-        minSdkVersion 21
+        minSdkVersion flutter.minSdkVersion
         targetSdkVersion 36
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

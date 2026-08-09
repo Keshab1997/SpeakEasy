@@ -27,7 +27,7 @@ final ThemeData lightTheme = ThemeData(
       color: AppColors.onBackgroundLight,
     ),
   ),
-  cardTheme: CardTheme(
+  cardTheme: CardThemeData(
     color: AppColors.surfaceLight,
     elevation: 2,
     shadowColor: Colors.black.withOpacity(0.05),
