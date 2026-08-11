@@ -221,7 +221,15 @@ class DailyQuizService {
   DailyQuiz? loadSavedQuiz(String userId) {
     try {
       final box = _hiveBox;
-      final data = box.get('$userId|current_quiz');
+      var data = box.get('$userId|current_quiz');
+      // Migration: builds before the per-user scoping stored today's quiz
+      // under a single global `current_quiz` key (no userId). Fall back to
+      // that key so an upgrade never silently loses a completed quiz.
+      final fromLegacy = data == null && box.get('current_quiz') != null;
+      if (fromLegacy) {
+        data = box.get('current_quiz');
+        debugPrint('📅 [DailyQuiz] loadSavedQuiz: migrating legacy global key');
+      }
       if (data == null) {
         debugPrint('📅 [DailyQuiz] loadSavedQuiz: no data in Hive '
             '(userId=$userId)');
@@ -258,6 +266,13 @@ class DailyQuizService {
 
       debugPrint('📅 [DailyQuiz] loadSavedQuiz: loaded '
           '(completed=${saved.isCompleted}, answers=${saved.answers.length})');
+
+      // Re-persist a restored legacy quiz under the per-user key so it is
+      // found on every later launch without the fallback.
+      if (fromLegacy && saved.isCompleted) {
+        box.put('$userId|current_quiz', saved.copyWith(userId: userId).toJson());
+      }
+
       return saved;
     } catch (e) {
       debugPrint('📅 [DailyQuiz] loadSavedQuiz: ERROR $e');

@@ -263,4 +263,48 @@ void main() {
         reason: 'user2 must see user2\'s accuracy, not user1\'s');
     expect(h1.single.correctCount, isNot(h2.single.correctCount));
   });
+
+  test('completed quiz under legacy global key is restored and migrated',
+      () async {
+    // Session 1 — user completes today's quiz (same as the first test).
+    final service = DailyQuizService();
+    final box = await Hive.openBox('daily_quiz_cache');
+
+    final quiz = await service.generateTodayQuiz();
+    var current = quiz.copyWith(startedAt: DateTime.now());
+    for (var i = 0; i < quiz.totalQuestions; i++) {
+      current = current.copyWith(
+        answers: [
+          ...current.answers,
+          DailyQuizAnswer(
+            questionId: current.questions[i].id,
+            selectedAnswer: 0,
+            isCorrect: true,
+            timeTaken: 5,
+            pointsEarned: 150,
+          ),
+        ],
+      );
+    }
+    final completed = service.completeQuiz(current);
+
+    // Simulate an OLD build: quiz persisted under the single global
+    // `current_quiz` key, without any per-user scoping or userId field.
+    final legacyJson = Map<String, dynamic>.from(completed.toJson())
+      ..remove('userId');
+    box.put('current_quiz', legacyJson);
+
+    // Session 2 — upgraded build loads it for a user.
+    final service2 = DailyQuizService();
+    await service2.ensureQuestionBankLoaded();
+    final restored = service2.loadSavedQuiz('user1');
+
+    expect(restored, isNotNull,
+        reason: 'legacy global-key quiz must be restored after upgrade');
+    expect(restored!.isCompleted, isTrue,
+        reason: 'restored legacy quiz must still be marked completed');
+    // Migrated to the per-user key so later launches find it directly.
+    expect(box.get('user1|current_quiz'), isNotNull,
+        reason: 'legacy quiz must be migrated to the per-user key');
+  });
 }
