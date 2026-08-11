@@ -161,4 +161,106 @@ void main() {
         reason: 'every daily quiz must include match/rearrange/fill-blank '
             'questions, not just MCQ');
   });
+
+  test('restored quiz preserves answers — accuracy survives restart',
+      () async {
+    // Session 1 — complete the quiz with a known correct/incorrect mix.
+    final service = DailyQuizService();
+    await Hive.openBox('daily_quiz_cache');
+
+    final quiz = await service.generateTodayQuiz();
+    var current = quiz.copyWith(startedAt: DateTime.now());
+    for (var i = 0; i < quiz.totalQuestions; i++) {
+      // Answer the first question wrong, the rest correct (mixed accuracy).
+      final isCorrect = i != 0;
+      current = current.copyWith(
+        answers: [
+          ...current.answers,
+          DailyQuizAnswer(
+            questionId: current.questions[i].id,
+            selectedAnswer: isCorrect ? 0 : 1,
+            isCorrect: isCorrect,
+            timeTaken: 5,
+            pointsEarned: isCorrect ? 10 : 0,
+          ),
+        ],
+      );
+    }
+    final completed = service.completeQuiz(current);
+    service.saveQuiz(completed, 'user1');
+
+    // Session 2 — app restart: the restored quiz must keep the exact same
+    // correctCount (accuracy) because the answers were persisted per-user.
+    final service2 = DailyQuizService();
+    await service2.ensureQuestionBankLoaded();
+    final restored = service2.loadSavedQuiz('user1');
+
+    debugPrint('RESTORED accuracy: correct=${restored?.correctCount}/'
+        '${restored?.totalQuestions} (saved: ${completed.correctCount}/'
+        '${completed.totalQuestions})');
+
+    expect(restored, isNotNull);
+    expect(restored!.correctCount, completed.correctCount,
+        reason: 'accuracy must survive a Hive save+restore');
+    expect(restored.totalQuestions, completed.totalQuestions);
+    expect(restored.correctCount, completed.totalQuestions - 1,
+        reason: 'mixed-answer quiz must keep its exact score');
+  });
+
+  test('quiz history is scoped per user (accuracy is not shared)', () async {
+    final service = DailyQuizService();
+    await Hive.openBox('daily_quiz_cache');
+
+    final quiz = await service.generateTodayQuiz();
+
+    // user1: perfect score. user2: half score.
+    var u1 = quiz.copyWith(startedAt: DateTime.now());
+    for (var i = 0; i < quiz.totalQuestions; i++) {
+      u1 = u1.copyWith(
+        answers: [
+          ...u1.answers,
+          DailyQuizAnswer(
+            questionId: u1.questions[i].id,
+            selectedAnswer: 0,
+            isCorrect: true,
+            timeTaken: 5,
+            pointsEarned: 10,
+          ),
+        ],
+      );
+    }
+    var u2 = quiz.copyWith(startedAt: DateTime.now());
+    for (var i = 0; i < quiz.totalQuestions; i++) {
+      final isCorrect = i.isEven; // ~half correct
+      u2 = u2.copyWith(
+        answers: [
+          ...u2.answers,
+          DailyQuizAnswer(
+            questionId: u2.questions[i].id,
+            selectedAnswer: isCorrect ? 0 : 1,
+            isCorrect: isCorrect,
+            timeTaken: 5,
+            pointsEarned: isCorrect ? 10 : 0,
+          ),
+        ],
+      );
+    }
+
+    final c1 = service.completeQuiz(u1);
+    final c2 = service.completeQuiz(u2);
+    service.saveQuizHistory(c1, 'user1');
+    service.saveQuizHistory(c2, 'user2');
+
+    final h1 = service.loadQuizHistory('user1');
+    final h2 = service.loadQuizHistory('user2');
+
+    debugPrint('USER1 history: ${h1.map((e) => e.correctCount).toList()} '
+        'USER2 history: ${h2.map((e) => e.correctCount).toList()}');
+
+    expect(h1.single.correctCount, c1.correctCount,
+        reason: 'user1 must see user1\'s accuracy, not user2\'s');
+    expect(h2.single.correctCount, c2.correctCount,
+        reason: 'user2 must see user2\'s accuracy, not user1\'s');
+    expect(h1.single.correctCount, isNot(h2.single.correctCount));
+  });
 }

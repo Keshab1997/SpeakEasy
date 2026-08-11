@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/game/xp_provider.dart';
 import '../../../providers/game/coin_provider.dart';
+import '../../../providers/game/game_provider.dart';
 import '../models/daily_quiz_model.dart';
 import '../services/daily_quiz_service.dart';
 import '../services/daily_quiz_leaderboard_service.dart';
@@ -370,6 +371,21 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     try {
       await _ref.read(xpProvider.notifier).addXP(completed.earnedXP);
       await _ref.read(coinProvider.notifier).addCoins(completed.earnedCoins);
+
+      // Upload the updated progress to Firestore per user. Without this the
+      // daily quiz rewards live only in the local Hive cache (a single global
+      // `user_progress` key). On the next app launch, auth's DOWN-sync
+      // (syncProgressFromFirestoreToHive) overwrites Hive from the stale
+      // Firestore doc — silently erasing the XP/coins just earned. Uploading
+      // here keeps Firestore in sync so the rewards survive restarts.
+      if (userId != null) {
+        final progressRepo = _ref.read(progressRepositoryProvider);
+        final localProgress = progressRepo.getProgress();
+        if (localProgress != null) {
+          final updatedProgress = localProgress.copyWith(userId: userId);
+          await progressRepo.uploadProgressToFirestore(updatedProgress);
+        }
+      }
     } catch (_) {
       // Rewards are non-critical; completion is already persisted.
     }
