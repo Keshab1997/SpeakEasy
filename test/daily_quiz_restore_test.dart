@@ -149,7 +149,7 @@ void main() {
     }
   });
 
-  test('fresh daily quiz includes new-type questions', () async {
+  test('fresh daily quiz contains only multiple-choice questions', () async {
     final service = DailyQuizService();
     final quiz = await service.generateTodayQuiz();
     final special = quiz.questions
@@ -157,9 +157,10 @@ void main() {
         .toList();
     debugPrint('GENERATED ${quiz.totalQuestions} questions, '
         'special=${special.map((q) => q.questionType.name).join(',')}');
-    expect(special.length, greaterThanOrEqualTo(2),
-        reason: 'every daily quiz must include match/rearrange/fill-blank '
-            'questions, not just MCQ');
+    expect(special, isEmpty,
+        reason: 'question bank is MCQ-only (fill_blanks / match_pairs / '
+            'sentence_rearrange were removed from the bank by product '
+            'decision)');
   });
 
   test('restored quiz preserves answers — accuracy survives restart',
