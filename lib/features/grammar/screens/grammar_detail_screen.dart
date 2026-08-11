@@ -207,7 +207,6 @@ class _SectionLabel extends StatelessWidget {
               style: theme.textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.w700,
                 color: AppColors.primary,
-                letterSpacing: 0.3,
               )),
           const SizedBox(width: 6),
           Text(english,
@@ -307,11 +306,10 @@ class _TopicCard extends StatelessWidget {
               child: FormulaRichText(
                 formula: topic.formula,
                 style: const TextStyle(
-                    fontFamily: 'monospace',
-                    fontSize: 14,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: AppColors.accent,
-                    height: 1.5),
+                    height: 1.6),
               ),
             ),
           ],
@@ -354,7 +352,7 @@ class _TopicCard extends StatelessWidget {
                               style: theme.textTheme.bodyMedium?.copyWith(
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.italic,
-                                  height: 1.4),
+                                  height: 1.6),
                             ),
                           ),
                         ],
@@ -375,7 +373,7 @@ class _TopicCard extends StatelessWidget {
                               style: theme.textTheme.bodySmall
                                   ?.copyWith(
                                       color: Colors.grey[600],
-                                      height: 1.4),
+                                      height: 1.7),
                             ),
                           ),
                         ],
@@ -430,7 +428,6 @@ class _MasterGuideCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
 
     return GestureDetector(
       onTap: () => Navigator.push(
@@ -578,7 +575,7 @@ class _CommonMistakesSection extends StatelessWidget {
                                 color: Colors.red.shade700,
                                 decoration: TextDecoration.lineThrough,
                                 fontWeight: FontWeight.w500,
-                                height: 1.3),
+                                height: 1.6),
                           ),
                         ),
                       ],
@@ -603,7 +600,7 @@ class _CommonMistakesSection extends StatelessWidget {
                             style: TextStyle(
                                 color: Colors.green.shade700,
                                 fontWeight: FontWeight.w600,
-                                height: 1.3),
+                                height: 1.6),
                           ),
                         ),
                       ],
@@ -626,7 +623,7 @@ class _CommonMistakesSection extends StatelessWidget {
                               child: GrammarRichText(
                                 text: m.explanation,
                                 style: theme.textTheme.bodySmall?.copyWith(
-                                    color: Colors.grey[600], height: 1.5),
+                                    color: Colors.grey[600], height: 1.7),
                               ),
                             ),
                           ],

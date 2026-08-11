@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../services/hive_service.dart';
 import '../../../services/ai_service.dart';
@@ -28,11 +29,13 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   int _idleReminderFrequency = 4;
   bool _idleReminderSoundEnabled = true;
   String _selectedLanguage = 'English (US)';
+  String _appVersion = '';
   List<Map<String, dynamic>> _aiKeys = [];
 
   @override
   void initState() {
     super.initState();
+    _loadAppVersion();
     _darkMode = HiveService.isDarkMode();
     _notifications = HiveService.isNotificationEnabled();
     _dailyWordNotification = HiveService.isDailyWordNotification();
@@ -47,6 +50,13 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
   void _loadAiKeys() {
     setState(() => _aiKeys = HiveService.getAiKeys());
+  }
+
+  Future<void> _loadAppVersion() async {
+    final info = await PackageInfo.fromPlatform();
+    if (mounted) {
+      setState(() => _appVersion = info.version);
+    }
   }
 
   @override
@@ -303,10 +313,10 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             Text('About', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
             const SizedBox(height: 8),
             _buildSettingsCard([
-              const ListTile(
-                leading: Icon(Icons.info_outline_rounded, color: AppColors.primary),
-                title: Text('Version'),
-                subtitle: Text('1.0.0'),
+              ListTile(
+                leading: const Icon(Icons.info_outline_rounded, color: AppColors.primary),
+                title: const Text('Version'),
+                subtitle: Text(_appVersion.isEmpty ? '1.0.0' : _appVersion),
               ),
             ]),
             const SizedBox(height: 32),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../constants/app_colors.dart';
 
 final ThemeData darkTheme = ThemeData(
   useMaterial3: true,
   brightness: Brightness.dark,
-  fontFamily: GoogleFonts.notoSansBengali().fontFamily,
+  fontFamily: 'NotoSansBengali',
+  fontFamilyFallback: const ['NotoSansBengali'],
   colorScheme: const ColorScheme.dark(
     primary: AppColors.primary,
     secondary: AppColors.secondary,
@@ -66,7 +66,7 @@ final ThemeData darkTheme = ThemeData(
       );
     }),
   ),
-  textTheme: GoogleFonts.notoSansBengaliTextTheme(const TextTheme(
+  textTheme: const TextTheme(
     headlineLarge: TextStyle(
       fontSize: 28,
       fontWeight: FontWeight.bold,
@@ -90,5 +90,5 @@ final ThemeData darkTheme = ThemeData(
       fontSize: 14,
       color: AppColors.textSecondaryDark,
     ),
-  )),
+  ).apply(fontFamily: 'NotoSansBengali'),
 );
