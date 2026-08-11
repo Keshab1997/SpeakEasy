@@ -1,0 +1,22 @@
+SPEAKEASY — RELEASE NOTES v1.0.13 (13)
+নতুন আপডেটে যা যা আছে:
+
+ Bengali
+────────
+• বাংলা টেক্সট এখন নিখুঁতভাবে দেখাবে — বানান ভাঙা/উল্টানো সমস্যা ফিক্স করা হয়েছে
+• অফলাইন বাংলা ফন্ট (Noto Sans Bengali) যোগ করা হয়েছে — ইন্টারনেট ছাড়াও সব জায়গায় সুন্দর বাংলা
+• ডেইলি কোজ: লিডারবোর্ড, ফলাফল ও হিস্ট্রি বাড়তি ফিচার
+• ডেইলি কোজ: কোজ পুনরায় চালু/রিস্টোর করার সুবিধা
+• গ্রামার লেসনের টেক্সট বড় ও আরামদায়ক করে সাজানো হয়েছে
+• সেটিংসে অ্যাপের সঠিক version নাম্বার দেখানো হচ্ছে
+• ছোটখাটো বাগ ফিক্স ও পারফরম্যান্স উন্নতি
+
+ English
+────────
+• Fixed broken/overlapping Bengali text rendering in grammar lessons
+• Added bundled offline Bengali font (Noto Sans Bengali) for all platforms
+• Daily Quiz: improved leaderboard, results & history
+• Daily Quiz: resume/restore feature
+• Improved grammar lesson text readability (larger line spacing)
+• Settings now shows the real app version number
+• Bug fixes and performance improvements
