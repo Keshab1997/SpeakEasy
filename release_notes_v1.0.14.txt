@@ -1,0 +1,14 @@
+SPEAKEASY — RELEASE NOTES v1.0.14 (14)
+নতুন আপডেটে যা যা আছে:
+ Bengali
+────────
+• ডেইলি কোজ: অর্জিত XP ও কয়েন এখন ফায়ারস্টোরে সেভ হয় — অ্যাপ বন্ধ বা রিস্টার্ট করলেও রিওয়ার্ড হারাবে না
+• ডেইলি কোজ: পুরনো (লেগাসি) কী-এর অধীনে সেভ করা কমপ্লিটেড কোজ আবার দেখা ও রিস্টোর করা যাবে
+• ডেইলি কোজ: নতুন কিছু প্রশ্নের ধরন (ফিল-দ্য-ব্ল্যাঙ্কস, ম্যাচ-পেয়ার্স, রি-অ্যারেঞ্জ) সাময়িকভাবে সরানো হয়েছে স্থিতিশীলতার জন্য
+• ছোটখাটো বাগ ফিক্স ও পারফরম্যান্স উন্নতি
+ English
+────────
+• Daily Quiz: earned XP and coins now persist to Firestore — rewards no longer lost on app close or restart
+• Daily Quiz: completed quizzes saved under the old (legacy) key can be viewed and restored again
+• Daily Quiz: temporarily removed some new question types (fill-in-the-blanks, match-pairs, rearrange) for stability
+• Bug fixes and performance improvements
