@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show AssetManifest, rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../services/tts_service.dart';
+import '../../../../services/haptic_service.dart';
 import '../../../../repositories/statistics_repository.dart';
+import '../../../../repositories/wrong_question_repository.dart';
+import '../../../../models/game/wrong_question_model.dart';
 import '../../../../models/game/game_result_model.dart';
 import '../../../../providers/game/game_provider.dart';
 import '../result_screen.dart';
@@ -39,6 +42,7 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
   final TtsService _tts = TtsService();
 
   List<_Question> _questions = [];
+  final List<WrongQuestionModel> _wrongQuestionsList = [];
   int _currentIndex = 0;
   int _score = 0;
   int _correctCount = 0;
@@ -184,6 +188,29 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
 
   void _handleTimeout() {
     if (_isAnswered || _isGameOver) return;
+    final q = _questions[_currentIndex];
+
+    // Save wrong answer for review and bank
+    final wrongModel = WrongQuestionModel.fromGameQuestion(
+      questionId: 'quick_quiz_${q.correctEnglish.toLowerCase().replaceAll(' ', '_')}_${DateTime.now().millisecondsSinceEpoch}',
+      tenseType: 'Vocabulary',
+      question: 'What is the English word for "${q.banglaWord}"?',
+      options: q.options,
+      correctAnswer: q.correctEnglish,
+      explanation: 'Time up! "${q.banglaWord}" এর সঠিক ইংরেজি হলো "${q.correctEnglish}"।',
+      userAnswer: 'Time Out (No Answer)',
+      difficulty: 'medium',
+      mode: 'quickQuiz',
+    );
+    _wrongQuestionsList.add(wrongModel);
+    try {
+      WrongQuestionRepository().saveWrongQuestions([wrongModel]);
+    } catch (e) {
+      debugPrint('❌ Error saving wrong question on timeout: $e');
+    }
+
+    HapticService.wrong();
+
     setState(() {
       _isAnswered = true;
       _wrongCount++;
@@ -195,21 +222,44 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
   void _selectAnswer(String answer) {
     if (_isAnswered || _isGameOver) return;
     _questionTimer?.cancel();
+    final q = _questions[_currentIndex];
+    final isCorrect = answer == q.correctEnglish;
+
+    if (isCorrect) {
+      _correctCount++;
+      _score += _calculateScore();
+      _streak++;
+      if (_streak > _bestStreak) _bestStreak = _streak;
+      HapticService.correct();
+      _scoreAnimCtrl.forward().then((_) => _scoreAnimCtrl.reverse());
+    } else {
+      _wrongCount++;
+      _streak = 0;
+      HapticService.wrong();
+
+      final wrongModel = WrongQuestionModel.fromGameQuestion(
+        questionId: 'quick_quiz_${q.correctEnglish.toLowerCase().replaceAll(' ', '_')}_${DateTime.now().millisecondsSinceEpoch}',
+        tenseType: 'Vocabulary',
+        question: 'What is the English word for "${q.banglaWord}"?',
+        options: q.options,
+        correctAnswer: q.correctEnglish,
+        explanation: '"${q.banglaWord}" এর সঠিক ইংরেজি হলো "${q.correctEnglish}"।',
+        userAnswer: answer,
+        difficulty: 'medium',
+        mode: 'quickQuiz',
+      );
+      _wrongQuestionsList.add(wrongModel);
+      try {
+        WrongQuestionRepository().saveWrongQuestions([wrongModel]);
+      } catch (e) {
+        debugPrint('❌ Error saving wrong question: $e');
+      }
+    }
 
     setState(() {
       _isAnswered = true;
       _selectedAnswer = answer;
       _userAnswers[_currentIndex] = answer;
-
-      if (answer == _questions[_currentIndex].correctEnglish) {
-        _correctCount++;
-        _score += _calculateScore();
-        _streak++;
-        if (_streak > _bestStreak) _bestStreak = _streak;
-      } else {
-        _wrongCount++;
-        _streak = 0;
-      }
     });
 
     _autoAdvance();
@@ -267,6 +317,7 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
           earnedXP: xpEarned,
           earnedCoins: coinsEarned,
           gameMode: 'quickQuiz',
+          wrongQuestionsList: _wrongQuestionsList,
         ),
       ),
     );
@@ -312,7 +363,7 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
     if (_questions.isEmpty) {
       return Scaffold(
         backgroundColor: Colors.orange.shade50,
-        body: Center(
+        body: const Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -392,24 +443,17 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
   // ─────────────────────────────────────────────
   Widget _buildHeader(double progress) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(4, 4, 4, 0),
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
       child: Column(
         children: [
           Row(
             children: [
-              // Close button with glass effect
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.25),
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: IconButton(
-                  icon: const Icon(Icons.close_rounded,
-                      color: Colors.white, size: 22),
-                  onPressed: () => Navigator.pop(context),
-                ),
+              // Close button
+              IconButton(
+                icon: const Icon(Icons.close_rounded, color: Colors.white, size: 28),
+                onPressed: () => Navigator.pop(context),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 4),
               // Title
               const Text(
                 'Quick Quiz',
@@ -417,67 +461,51 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  letterSpacing: -0.5,
                 ),
               ),
               const Spacer(),
               // Score badge
-              AnimatedBuilder(
-                animation: _scoreAnim,
-                builder: (_, child) => Transform.scale(
-                  scale: _scoreAnim.value,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 7),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Colors.amber.shade400,
-                          Colors.orange.shade400,
-                        ],
+              ScaleTransition(
+                scale: _scoreAnim,
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                        color: Colors.white.withOpacity(0.3), width: 1.5),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.stars_rounded,
+                          color: Colors.amber, size: 20),
+                      const SizedBox(width: 4),
+                      Text(
+                        '$_score',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
                       ),
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.amber.withOpacity(0.4),
-                          blurRadius: 8,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(Icons.star_rounded,
-                            color: Colors.white, size: 18),
-                        const SizedBox(width: 4),
-                        Text(
-                          '$_score',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
-                    ),
+                    ],
                   ),
                 ),
               ),
               const SizedBox(width: 8),
-              // Streak fire
+              // Streak badge
               if (_streak > 1)
                 Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 10, vertical: 7),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                        color: Colors.white.withOpacity(0.3)),
+                        color: Colors.white.withOpacity(0.3), width: 1.5),
                   ),
                   child: Row(
-                    mainAxisSize: MainAxisSize.min,
                     children: [
                       const Icon(Icons.local_fire_department_rounded,
                           color: Colors.orange, size: 18),

@@ -8,7 +8,16 @@ import '../../../models/game/wrong_question_model.dart';
 import 'game_home_screen.dart';
 
 class AnswerReviewScreen extends ConsumerStatefulWidget {
-  const AnswerReviewScreen({super.key});
+  final List<WrongQuestionModel>? wrongQuestions;
+  final int? totalQuestions;
+  final int? correctCount;
+
+  const AnswerReviewScreen({
+    super.key,
+    this.wrongQuestions,
+    this.totalQuestions,
+    this.correctCount,
+  });
 
   @override
   ConsumerState<AnswerReviewScreen> createState() => _AnswerReviewScreenState();
@@ -22,51 +31,75 @@ class _AnswerReviewScreenState extends ConsumerState<AnswerReviewScreen> {
     final gameState = ref.watch(gameProvider);
     final theme = Theme.of(context);
 
-    // Collect only the WRONG questions from gameProvider
-    final wrongEntriesFromGame = <_WrongEntry>[];
-    for (int i = 0; i < gameState.questions.length; i++) {
-      if (i >= gameState.userAnswers.length) break;
-      final question = gameState.questions[i];
-      final userAnswer = gameState.userAnswers[i];
-      final isCorrect = question.correctAnswer.trim().toLowerCase() ==
-          userAnswer.trim().toLowerCase();
-      if (!isCorrect) {
-        wrongEntriesFromGame.add(_WrongEntry(
-          index: i,
-          question: question,
-          userAnswer: userAnswer,
-        ));
+    List<_WrongEntry> wrongEntries = [];
+
+    // 1. If explicit wrongQuestions were passed from the game round, use them!
+    if (widget.wrongQuestions != null && widget.wrongQuestions!.isNotEmpty) {
+      wrongEntries = widget.wrongQuestions!.asMap().entries.map((e) {
+        final wq = e.value;
+        return _WrongEntry(
+          index: e.key,
+          question: GameQuestionModel(
+            id: wq.id,
+            question: wq.question,
+            options: wq.decodedOptions,
+            correctAnswer: wq.correctAnswer,
+            explanation: wq.explanation,
+            tenseType: wq.tenseType,
+            difficulty: wq.difficulty,
+            mode: wq.mode,
+          ),
+          userAnswer: wq.userAnswer,
+        );
+      }).toList();
+    } else {
+      // 2. Collect only the WRONG questions from gameProvider if available
+      final wrongEntriesFromGame = <_WrongEntry>[];
+      for (int i = 0; i < gameState.questions.length; i++) {
+        if (i >= gameState.userAnswers.length) break;
+        final question = gameState.questions[i];
+        final userAnswer = gameState.userAnswers[i];
+        final isCorrect = question.correctAnswer.trim().toLowerCase() ==
+            userAnswer.trim().toLowerCase();
+        if (!isCorrect) {
+          wrongEntriesFromGame.add(_WrongEntry(
+            index: i,
+            question: question,
+            userAnswer: userAnswer,
+          ));
+        }
+      }
+
+      if (wrongEntriesFromGame.isNotEmpty) {
+        wrongEntries = wrongEntriesFromGame;
+      } else {
+        // 3. Fall back to WrongQuestionRepository for recent mistakes
+        final repo = WrongQuestionRepository();
+        final recentWrongs = repo.getRecentWrongQuestions(limit: 50);
+        wrongEntries = recentWrongs.asMap().entries.map((e) {
+          final wq = e.value;
+          return _WrongEntry(
+            index: e.key,
+            question: GameQuestionModel(
+              id: wq.id,
+              question: wq.question,
+              options: wq.decodedOptions,
+              correctAnswer: wq.correctAnswer,
+              explanation: wq.explanation,
+              tenseType: wq.tenseType,
+              difficulty: wq.difficulty,
+              mode: wq.mode,
+            ),
+            userAnswer: wq.userAnswer,
+          );
+        }).toList();
       }
     }
 
-    // Also check WrongQuestionRepository for special game modes
-    final repo = WrongQuestionRepository();
-    final recentWrongs = repo.getRecentWrongQuestions(limit: 50);
-    
-    // If gameProvider is empty but we have recent wrongs, use those
-    final wrongEntries = wrongEntriesFromGame.isEmpty && recentWrongs.isNotEmpty
-        ? recentWrongs.map((wq) => _WrongEntry(
-              index: 0,
-              question: GameQuestionModel(
-                id: wq.id,
-                question: wq.question,
-                options: wq.decodedOptions,
-                correctAnswer: wq.correctAnswer,
-                explanation: wq.explanation,
-                tenseType: wq.tenseType,
-                difficulty: wq.difficulty,
-                mode: wq.mode,
-              ),
-              userAnswer: wq.userAnswer,
-            ))
-            .toList()
-        : wrongEntriesFromGame;
-
-    final totalQuestions = gameState.questions.isNotEmpty 
-        ? gameState.questions.length 
-        : wrongEntries.length;
     final totalWrong = wrongEntries.length;
-    final totalCorrect = totalQuestions - totalWrong;
+    final totalQuestions = widget.totalQuestions ??
+        (gameState.questions.isNotEmpty ? gameState.questions.length : totalWrong);
+    final totalCorrect = widget.correctCount ?? (totalQuestions >= totalWrong ? totalQuestions - totalWrong : 0);
 
     return Scaffold(
       appBar: AppBar(
@@ -108,7 +141,11 @@ class _AnswerReviewScreenState extends ConsumerState<AnswerReviewScreen> {
                   children: [
                     _SummaryItem(label: 'Correct', value: '$totalCorrect', color: Colors.white),
                     _SummaryItem(label: 'Wrong', value: '$totalWrong', color: Colors.yellow.shade200),
-                    _SummaryItem(label: 'Accuracy', value: '${totalQuestions > 0 ? ((totalCorrect / totalQuestions) * 100).toStringAsFixed(0) : 0}%', color: Colors.white),
+                    _SummaryItem(
+                      label: 'Accuracy',
+                      value: '${totalQuestions > 0 ? ((totalCorrect / totalQuestions) * 100).toStringAsFixed(0) : 0}%',
+                      color: Colors.white,
+                    ),
                   ],
                 ),
               ],
@@ -157,9 +194,13 @@ class _AnswerReviewScreenState extends ConsumerState<AnswerReviewScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton.icon(
-                      onPressed: _isSaving ? null : _saveAndGoHome,
+                      onPressed: _isSaving ? null : () => _saveAndGoHome(wrongEntries),
                       icon: _isSaving
-                          ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                          ? const SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                            )
                           : const Icon(Icons.bookmark_add),
                       label: const Text('Save & Go Home', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                       style: ElevatedButton.styleFrom(
@@ -185,34 +226,34 @@ class _AnswerReviewScreenState extends ConsumerState<AnswerReviewScreen> {
   }
 
   /// Save wrong questions to Hive, then go home.
-  Future<void> _saveAndGoHome() async {
+  Future<void> _saveAndGoHome(List<_WrongEntry> entries) async {
     setState(() => _isSaving = true);
 
-    final gameState = ref.read(gameProvider);
     final repo = WrongQuestionRepository();
 
-    final wrongs = <WrongQuestionModel>[];
-    for (int i = 0; i < gameState.questions.length; i++) {
-      if (i >= gameState.userAnswers.length) break;
-      final q = gameState.questions[i];
-      final userAnswer = gameState.userAnswers[i];
-      final isCorrect = q.correctAnswer.trim().toLowerCase() == userAnswer.trim().toLowerCase();
-      if (!isCorrect) {
-        wrongs.add(WrongQuestionModel.fromGameQuestion(
-          questionId: q.id,
-          tenseType: q.tenseType,
-          question: q.question,
-          options: q.options,
-          correctAnswer: q.correctAnswer,
-          explanation: q.explanation,
-          userAnswer: userAnswer,
-          difficulty: q.difficulty,
-          mode: q.mode,
-        ));
+    try {
+      if (widget.wrongQuestions != null && widget.wrongQuestions!.isNotEmpty) {
+        await repo.saveWrongQuestions(widget.wrongQuestions!);
+      } else if (entries.isNotEmpty) {
+        final wrongs = entries.map((e) {
+          final q = e.question;
+          return WrongQuestionModel.fromGameQuestion(
+            questionId: q.id,
+            tenseType: q.tenseType,
+            question: q.question,
+            options: q.options,
+            correctAnswer: q.correctAnswer,
+            explanation: q.explanation,
+            userAnswer: e.userAnswer,
+            difficulty: q.difficulty,
+            mode: q.mode,
+          );
+        }).toList();
+        await repo.saveWrongQuestions(wrongs);
       }
+    } catch (e) {
+      debugPrint('❌ Error saving wrong answers: $e');
     }
-
-    await repo.saveWrongQuestions(wrongs);
 
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -222,7 +263,11 @@ class _AnswerReviewScreenState extends ConsumerState<AnswerReviewScreen> {
           behavior: SnackBarBehavior.floating,
         ),
       );
-      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const GameHomeScreen()), (route) => false);
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (_) => const GameHomeScreen()),
+        (route) => false,
+      );
     }
   }
 }
@@ -318,7 +363,7 @@ class _WrongQuestionCard extends StatelessWidget {
                     border: Border.all(color: AppColors.primary),
                   ),
                   child: Text(
-                    q.tenseType,
+                    q.tenseType.isNotEmpty ? q.tenseType : 'Quiz',
                     style: const TextStyle(color: AppColors.primary, fontSize: 11, fontWeight: FontWeight.w600),
                   ),
                 ),
@@ -362,7 +407,7 @@ class _WrongQuestionCard extends StatelessWidget {
                       children: [
                         const TextSpan(text: 'Your Answer: ', style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.error)),
                         TextSpan(
-                          text: userAnswer,
+                          text: userAnswer.isNotEmpty ? userAnswer : '(No Answer / Time Out)',
                           style: const TextStyle(
                             color: AppColors.error,
                             fontWeight: FontWeight.w700,
@@ -444,33 +489,35 @@ class _WrongQuestionCard extends StatelessWidget {
           ],
 
           // ── Explanation ──
-          const SizedBox(height: 12),
-          Container(
-            margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-            padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(
-              color: AppColors.primary.withAlpha(10),
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: AppColors.primary.withAlpha(40)),
+          if (q.explanation.isNotEmpty) ...[
+            const SizedBox(height: 12),
+            Container(
+              margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                color: AppColors.primary.withAlpha(10),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: AppColors.primary.withAlpha(40)),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Row(
+                    children: [
+                      Icon(Icons.lightbulb, color: AppColors.primary, size: 20),
+                      SizedBox(width: 8),
+                      Text('Explanation', style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primary, fontSize: 14)),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    q.explanation,
+                    style: const TextStyle(fontSize: 14, height: 1.5, color: Colors.black87),
+                  ),
+                ],
+              ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Row(
-                  children: [
-                    Icon(Icons.lightbulb, color: AppColors.primary, size: 20),
-                    SizedBox(width: 8),
-                    Text('Explanation', style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primary, fontSize: 14)),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  q.explanation,
-                  style: const TextStyle(fontSize: 14, height: 1.5, color: Colors.black87),
-                ),
-              ],
-            ),
-          ),
+          ],
         ],
       ),
     );
@@ -480,14 +527,14 @@ class _WrongQuestionCard extends StatelessWidget {
   String _generateWhyWrong(GameQuestionModel q, String userAnswer, String correctAnswer) {
     final user = userAnswer.trim().toLowerCase();
 
-    if (user.isEmpty) {
-      return 'You did not answer this question. The correct answer is "$correctAnswer".';
+    if (user.isEmpty || user.contains('time out') || user.contains('timeout') || user.contains('no answer')) {
+      return 'You ran out of time or did not answer this question. The correct answer is "$correctAnswer".';
     }
 
     // Check if the user's answer is one of the other options (they picked the wrong one)
     if (q.options.any((o) => o.trim().toLowerCase() == user)) {
       // They selected a distractor — point out the difference
-      return '"$userAnswer" is incorrect here. The right answer is "$correctAnswer". See the explanation below to understand the rule.';
+      return '"$userAnswer" is incorrect here. The right answer is "$correctAnswer". See the explanation below to understand.';
     }
 
     // They typed something not in the options

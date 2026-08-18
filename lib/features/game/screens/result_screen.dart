@@ -18,8 +18,10 @@ import '../../../providers/game/achievement_provider.dart';
 import '../../../repositories/progress_repository.dart';
 import '../../../repositories/statistics_repository.dart';
 import '../../../repositories/achievement_repository.dart';
+import '../../../repositories/wrong_question_repository.dart';
 import '../../../models/game/game_result_model.dart';
 import '../../../models/game/achievement_model.dart';
+import '../../../models/game/wrong_question_model.dart';
 import 'game_home_screen.dart';
 import 'answer_review_screen.dart';
 import 'question_screen.dart';
@@ -39,6 +41,7 @@ class ResultScreen extends ConsumerStatefulWidget {
   final int earnedXP;
   final int earnedCoins;
   final String gameMode;
+  final List<WrongQuestionModel>? wrongQuestionsList;
 
   /// Optional: when this game was started from a Daily Quest task,
   /// this task ID will be marked as complete.
@@ -51,6 +54,7 @@ class ResultScreen extends ConsumerStatefulWidget {
     required this.earnedXP,
     required this.earnedCoins,
     this.gameMode = 'normal',
+    this.wrongQuestionsList,
   });
 
   @override
@@ -96,6 +100,14 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
       ));
     } catch (e) {
       debugPrint('❌ Error saving game result: $e');
+    }
+
+    if (widget.wrongQuestionsList != null && widget.wrongQuestionsList!.isNotEmpty) {
+      try {
+        await WrongQuestionRepository().saveWrongQuestions(widget.wrongQuestionsList!);
+      } catch (e) {
+        debugPrint('❌ Error saving wrong questions: $e');
+      }
     }
   }
 
@@ -427,7 +439,13 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (_) => const AnswerReviewScreen()),
+                            MaterialPageRoute(
+                              builder: (_) => AnswerReviewScreen(
+                                wrongQuestions: widget.wrongQuestionsList,
+                                totalQuestions: widget.correctAnswers + widget.wrongAnswers,
+                                correctCount: widget.correctAnswers,
+                              ),
+                            ),
                           );
                         },
                         icon: const Icon(Icons.rate_review),

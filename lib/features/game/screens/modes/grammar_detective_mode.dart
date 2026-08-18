@@ -50,6 +50,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
   
   // Questions that were answered wrong – these will be re-shown
   final List<_QuestionData> _wrongQuestions = [];
+  final List<WrongQuestionModel> _wrongQuestionsList = [];
 
   int _currentIndex = 0;
   int _score = 0;
@@ -261,20 +262,20 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
   void _saveWrongAnswer(String? userAnswer) {
     if (_currentQuestion == null) return;
     final q = _currentQuestion!;
+    final wq = WrongQuestionModel.fromGameQuestion(
+      questionId: q.id,
+      tenseType: q.errorType,
+      question: q.incorrect,
+      options: q.options,
+      correctAnswer: q.correct,
+      explanation: q.rule,
+      userAnswer: userAnswer ?? '(timeout)',
+      difficulty: q.difficulty,
+      mode: 'grammar_detective',
+    );
+    _wrongQuestionsList.add(wq);
     try {
-      WrongQuestionRepository().saveWrongQuestions([
-        WrongQuestionModel.fromGameQuestion(
-          questionId: q.id,
-          tenseType: q.errorType,
-          question: q.incorrect,
-          options: q.options,
-          correctAnswer: q.correct,
-          explanation: q.rule,
-          userAnswer: userAnswer ?? '(timeout)',
-          difficulty: q.difficulty,
-          mode: 'grammar_detective',
-        ),
-      ]);
+      WrongQuestionRepository().saveWrongQuestions([wq]);
     } catch (_) {}
   }
 
@@ -316,6 +317,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
             earnedXP: earnedXP,
             earnedCoins: earnedCoins,
             gameMode: 'grammarDetective',
+            wrongQuestionsList: _wrongQuestionsList,
           ),
         ),
       );

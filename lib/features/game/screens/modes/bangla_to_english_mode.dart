@@ -67,6 +67,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
   // Game state
   _TopicData? _selectedTopic;
   List<_QuestionData> _activeQuestions = [];
+  final List<WrongQuestionModel> _wrongQuestionsList = [];
   int _currentIndex = 0;
   late List<String> _shuffledOptions;
   int _score = 0;
@@ -218,20 +219,20 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
 
   void _saveWrongAnswer(String userAnswer) {
     final q = _currentQuestion;
+    final wq = WrongQuestionModel.fromGameQuestion(
+      questionId: '${_selectedTopic?.id ?? 'all'}_${q.id}',
+      tenseType: q.errorType ?? 'translation',
+      question: q.bangla,
+      options: q.options,
+      correctAnswer: q.correct,
+      explanation: q.explanation,
+      userAnswer: userAnswer,
+      difficulty: q.difficulty,
+      mode: 'bangla_to_english',
+    );
+    _wrongQuestionsList.add(wq);
     try {
-      WrongQuestionRepository().saveWrongQuestions([
-        WrongQuestionModel.fromGameQuestion(
-          questionId: '${_selectedTopic?.id ?? 'all'}_${q.id}',
-          tenseType: q.errorType ?? 'translation',
-          question: q.bangla,
-          options: q.options,
-          correctAnswer: q.correct,
-          explanation: q.explanation,
-          userAnswer: userAnswer,
-          difficulty: q.difficulty,
-          mode: 'bangla_to_english',
-        ),
-      ]);
+      WrongQuestionRepository().saveWrongQuestions([wq]);
     } catch (_) {}
   }
 
@@ -265,6 +266,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
             earnedXP: earnedXP,
             earnedCoins: earnedCoins,
             gameMode: 'banglaToEnglish',
+            wrongQuestionsList: _wrongQuestionsList,
           ),
         ),
       );

@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../services/haptic_service.dart';
 import '../../../../services/tts_service.dart';
+import '../../../../models/game/wrong_question_model.dart';
+import '../../../../repositories/wrong_question_repository.dart';
 import '../result_screen.dart';
 
 // ─────────────────────────────────────────────────────────────
@@ -93,6 +95,7 @@ class _VerbLearningModeScreenState
 
   // Quiz phase
   List<_QuizQuestion> _quizQuestions = [];
+  final List<WrongQuestionModel> _wrongQuestionsList = [];
   int _currentQuizIndex = 0;
   String _selectedAnswer = '';
   bool _isQuizAnswered = false;
@@ -331,6 +334,24 @@ class _VerbLearningModeScreenState
       _wrongCount++;
       _streak = 0;
       HapticService.wrong();
+
+      final wq = WrongQuestionModel.fromGameQuestion(
+        questionId: 'verb_${question.verb.v1}_${DateTime.now().millisecondsSinceEpoch}',
+        tenseType: 'Verb Form',
+        question: question.question,
+        options: question.options,
+        correctAnswer: question.correctAnswer,
+        explanation: 'Verb "${question.verb.v1}" (${question.verb.bangla}) এর সঠিক রূপ হলো "${question.correctAnswer}"।',
+        userAnswer: _selectedAnswer,
+        difficulty: 'medium',
+        mode: 'verbLearning',
+      );
+      _wrongQuestionsList.add(wq);
+      try {
+        WrongQuestionRepository().saveWrongQuestions([wq]);
+      } catch (e) {
+        debugPrint('❌ Error saving wrong verb question: $e');
+      }
     }
   }
 
@@ -363,6 +384,7 @@ class _VerbLearningModeScreenState
             earnedXP: xpEarned,
             earnedCoins: coinsEarned,
             gameMode: 'verbLearning',
+            wrongQuestionsList: _wrongQuestionsList,
           ),
         ),
       );

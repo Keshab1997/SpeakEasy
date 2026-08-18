@@ -20,6 +20,7 @@ class HiveService {
   static const String _notificationHistoryBox = 'notification_history';
   static const String _mockTestProgressBox = 'mock_test_progress';
   static const String _aiSavedVocabBox = 'ai_saved_vocab';
+  static const String _wrongQuestionsBox = 'wrong_questions';
 
   static const String _dailyQuizCacheBox = 'daily_quiz_cache';
 
@@ -41,6 +42,7 @@ class HiveService {
     await Hive.openBox(_notificationHistoryBox);
     await Hive.openBox(_mockTestProgressBox);
     await Hive.openBox(_aiSavedVocabBox);
+    await Hive.openBox(_wrongQuestionsBox);
 
     await Hive.openBox(_dailyQuizCacheBox);
   }
