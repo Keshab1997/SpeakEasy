@@ -31,6 +31,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
   int _correctCount = 0;
   int _wrongCount = 0;
   int _streak = 0;
+  final List<WrongQuestionModel> _wrongQuestionsList = [];
   
   Timer? _timer;
   int _timeLeft = 15; // 15 seconds per question
@@ -215,6 +216,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
       difficulty: question['difficulty'] ?? 'medium',
       mode: 'sentence_builder',
     );
+    _wrongQuestionsList.add(wrongQuestion);
     
     await WrongQuestionRepository().saveWrongQuestions([wrongQuestion]);
   }
@@ -236,6 +238,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
             earnedXP: earnedXP,
             earnedCoins: earnedCoins,
             gameMode: 'sentenceBuilder',
+            wrongQuestionsList: _wrongQuestionsList,
           ),
         ),
       );

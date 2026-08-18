@@ -49,6 +49,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
   final TtsService _tts = TtsService();
 
   List<_StoryQuestion> _questions = [];
+  final List<WrongQuestionModel> _wrongQuestionsList = [];
   int _currentIndex = 0;
   int _score = 0;
   int _correctCount = 0;
@@ -224,20 +225,20 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
 
   void _saveWrongAnswer(String? userAnswer) {
     final q = _questions[_currentIndex];
+    final wq = WrongQuestionModel.fromGameQuestion(
+      questionId: q.id,
+      tenseType: q.difficulty,
+      question: q.sentence.replaceAll('___', '_____'),
+      options: q.options,
+      correctAnswer: q.blank,
+      explanation: q.explanation,
+      userAnswer: userAnswer ?? '(timeout)',
+      difficulty: q.difficulty,
+      mode: 'story_completion',
+    );
+    _wrongQuestionsList.add(wq);
     try {
-      WrongQuestionRepository().saveWrongQuestions([
-        WrongQuestionModel.fromGameQuestion(
-          questionId: q.id,
-          tenseType: q.difficulty,
-          question: q.sentence.replaceAll('___', '_____'),
-          options: q.options,
-          correctAnswer: q.blank,
-          explanation: q.explanation,
-          userAnswer: userAnswer ?? '(timeout)',
-          difficulty: q.difficulty,
-          mode: 'story_completion',
-        ),
-      ]);
+      WrongQuestionRepository().saveWrongQuestions([wq]);
     } catch (_) {}
   }
 
@@ -274,6 +275,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
             earnedXP: xpEarned,
             earnedCoins: coinsEarned,
             gameMode: 'storyCompletion',
+            wrongQuestionsList: _wrongQuestionsList,
           ),
         ),
       );
