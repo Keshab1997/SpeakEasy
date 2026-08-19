@@ -163,27 +163,13 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // App Logo Icon
-                Container(
-                  padding: const EdgeInsets.all(24),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: AppColors.primaryGradient,
-                    ),
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.primary.withOpacity(0.3),
-                        blurRadius: 24,
-                        offset: const Offset(0, 10),
-                      ),
-                    ],
-                  ),
-                  child: const Icon(
-                    Icons.translate_rounded,
-                    color: Colors.white,
-                    size: 64,
-                  ),
+                // 3D mascot illustration (not the launcher icon)
+                Image.asset(
+                  'assets/images/splash_character.png',
+                  width: 220,
+                  height: 220,
+                  fit: BoxFit.contain,
+                  filterQuality: FilterQuality.high,
                 ),
                 const SizedBox(height: 24),
                 // App Title

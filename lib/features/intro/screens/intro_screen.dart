@@ -14,27 +14,27 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
-  final List<_IntroItem> _pages = [
+  final List<_IntroItem> _pages = const [
     _IntroItem(
-      icon: Icons.menu_book_rounded,
+      imageAsset: 'assets/images/onboarding_grammar.png',
       title: '৭০+ গ্রামার লেসন',
       subtitle: 'বাংলায় ইংরেজি গ্রামার শিখুন\nA-Z পর্যন্ত সম্পূর্ণ কোর্স',
-      color: const Color(0xFF6C63FF),
+      color: Color(0xFF6C63FF),
     ),
     _IntroItem(
-      icon: Icons.sports_esports_rounded,
+      imageAsset: 'assets/images/onboarding_games.png',
       title: 'গেম খেলে শিখুন',
       subtitle: '১০+ মজার গেম মোড\nখেলতে খেলতে ইংরেজি শিখুন',
-      color: const Color(0xFFFF6B6B),
+      color: Color(0xFFFF6B6B),
     ),
     _IntroItem(
-      icon: Icons.record_voice_over_rounded,
+      imageAsset: 'assets/images/onboarding_speaking.png',
       title: 'AI টিচার ও স্পিকিং',
       subtitle: 'AI-এর সাথে কথা বলুন\nস্পিকিং প্র্যাকটিস করুন',
-      color: const Color(0xFF4ECDC4),
+      color: Color(0xFF4ECDC4),
     ),
     _IntroItem(
-      icon: Icons.emoji_events_rounded,
+      imageAsset: 'assets/images/onboarding_start.png',
       title: 'শুরু করুন',
       subtitle: 'প্রতিদিন প্র্যাকটিস করুন\nস্ট্রিক ধরে রাখুন, লিডারবোর্ডে জায়গা করুন',
       color: AppColors.primary,
@@ -83,7 +83,6 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Skip button (top-right)
             Padding(
               padding: const EdgeInsets.only(right: 20, top: 16),
               child: Row(
@@ -105,8 +104,6 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
                 ],
               ),
             ),
-
-            // PageView slides
             Expanded(
               child: PageView.builder(
                 controller: _pageController,
@@ -117,26 +114,21 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
                 itemBuilder: (context, index) {
                   final item = _pages[index];
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 40),
+                    padding: const EdgeInsets.symmetric(horizontal: 28),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          width: size.width * 0.35,
-                          height: size.width * 0.35,
-                          decoration: BoxDecoration(
-                            color: item.color.withOpacity(0.1),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            item.icon,
-                            size: size.width * 0.16,
-                            color: item.color,
-                          ),
+                        Image.asset(
+                          item.imageAsset,
+                          width: size.width * 0.78,
+                          height: size.width * 0.78,
+                          fit: BoxFit.contain,
+                          filterQuality: FilterQuality.high,
                         ),
-                        SizedBox(height: size.height * 0.05),
+                        SizedBox(height: size.height * 0.02),
                         Text(
                           item.title,
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 26,
                             fontWeight: FontWeight.bold,
@@ -159,8 +151,6 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
                 },
               ),
             ),
-
-            // Bottom section: dots + button
             Padding(
               padding: EdgeInsets.only(
                 bottom: size.height * 0.06,
@@ -169,7 +159,6 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
               ),
               child: Column(
                 children: [
-                  // Dot indicators
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
@@ -182,15 +171,15 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
                         decoration: BoxDecoration(
                           color: _currentPage == index
                               ? _pages[_currentPage].color
-                              : (isDark ? Colors.white24 : Colors.grey.withOpacity(0.3)),
+                              : (isDark
+                                  ? Colors.white24
+                                  : Colors.grey.withValues(alpha: 0.3)),
                           borderRadius: BorderRadius.circular(4),
                         ),
                       ),
                     ),
                   ),
                   const SizedBox(height: 40),
-
-                  // Next / Get Started button
                   SizedBox(
                     width: double.infinity,
                     height: 56,
@@ -227,13 +216,13 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
 }
 
 class _IntroItem {
-  final IconData icon;
+  final String imageAsset;
   final String title;
   final String subtitle;
   final Color color;
 
   const _IntroItem({
-    required this.icon,
+    required this.imageAsset,
     required this.title,
     required this.subtitle,
     required this.color,
