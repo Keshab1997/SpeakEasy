@@ -12,7 +12,6 @@ import '../../../providers/game/coin_provider.dart';
 import '../../../providers/game/streak_provider.dart';
 import '../../../services/hive_service.dart';
 import '../../../services/share_service.dart';
-import '../../../services/referral_service.dart';
 import '../../auth/screens/login_screen.dart';
 import '../../settings/screens/settings_screen.dart';
 import '../../feedback/screens/feedback_screen.dart';
@@ -484,7 +483,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     child: Row(
                       children: [
                         Text(
-                          user!.referralCode,
+                          user.referralCode,
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,

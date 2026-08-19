@@ -50,8 +50,6 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
     final nextTestNumber = widget.testNumber + 1;
     final nextTestUnlocked = nextTestNumber <= 70 &&
         ref.read(mockTestProvider.notifier).isTestUnlocked(nextTestNumber);
-    final totalCompleted =
-        ref.read(mockTestProvider.notifier).getTotalCompleted();
 
     return Stack(
       children: [

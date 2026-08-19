@@ -22,40 +22,6 @@ class NotificationService {
   static const int _streakAtRiskId = 1003;
   static const int _idleReminderId = 1004;
 
-  // Sample vocabulary words for daily notifications
-  static const List<Map<String, String>> _sampleWords = [
-    {'word': 'Eloquent', 'meaning': 'Fluent or persuasive in speaking'},
-    {'word': 'Resilient', 'meaning': 'Able to recover quickly from difficulties'},
-    {'word': 'Ambition', 'meaning': 'Strong desire to achieve something'},
-    {'word': 'Diligent', 'meaning': 'Hardworking and careful'},
-    {'word': 'Empathy', 'meaning': 'Ability to understand others\' feelings'},
-    {'word': 'Gratitude', 'meaning': 'Feeling of thankfulness'},
-    {'word': 'Persevere', 'meaning': 'Continue despite difficulties'},
-    {'word': 'Confident', 'meaning': 'Feeling sure of oneself'},
-    {'word': 'Curious', 'meaning': 'Eager to learn or know'},
-    {'word': 'Generous', 'meaning': 'Willing to give and share'},
-    {'word': 'Humble', 'meaning': 'Modest about one\'s importance'},
-    {'word': 'Optimistic', 'meaning': 'Hopeful about the future'},
-    {'word': 'Patient', 'meaning': 'Able to wait without frustration'},
-    {'word': 'Sincere', 'meaning': 'Genuine and honest'},
-    {'word': 'Thoughtful', 'meaning': 'Showing consideration for others'},
-    {'word': 'Adaptable', 'meaning': 'Able to adjust to new conditions'},
-    {'word': 'Brave', 'meaning': 'Ready to face danger or pain'},
-    {'word': 'Creative', 'meaning': 'Using imagination to create'},
-    {'word': 'Determined', 'meaning': 'Having firmness of purpose'},
-    {'word': 'Enthusiastic', 'meaning': 'Showing intense enjoyment'},
-    {'word': 'Friendly', 'meaning': 'Kind and pleasant'},
-    {'word': 'Honest', 'meaning': 'Truthful and sincere'},
-    {'word': 'Innovative', 'meaning': 'Introducing new ideas'},
-    {'word': 'Joyful', 'meaning': 'Feeling great happiness'},
-    {'word': 'Kind', 'meaning': 'Generous and caring'},
-    {'word': 'Loyal', 'meaning': 'Faithful to commitments'},
-    {'word': 'Mindful', 'meaning': 'Attentive and aware'},
-    {'word': 'Noble', 'meaning': 'Having high moral qualities'},
-    {'word': 'Organized', 'meaning': 'Arranged in a systematic way'},
-    {'word': 'Passionate', 'meaning': 'Showing strong emotions'},
-  ];
-
   bool get isInitialized => _initialized;
 
   FlutterLocalNotificationsPlugin get plugin => _plugin;
@@ -455,12 +421,6 @@ ${todayWord.exampleSentence}
           UILocalNotificationDateInterpretation.absoluteTime,
       payload: payload,
     );
-  }
-
-  /// Pick a random word for today's notification (called at schedule time)
-  String _getRandomWordTitle() {
-    final word = _sampleWords[DateTime.now().day % _sampleWords.length];
-    return '📖 Word of the Day: ${word['word']}';
   }
 
   // ─── Update Notification Settings ───

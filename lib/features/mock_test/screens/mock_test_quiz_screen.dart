@@ -460,8 +460,7 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
 			    }
 			    setState(() => _isSubmitting = true);
 		
-		    final questions = _activeQuestions;
-		    int correct = 0;
+    int correct = 0;
 		    final List<int> currentWrongIndices = [];
 		    for (final entry in _answers.entries) {
 		      final questionIndex = entry.key;
