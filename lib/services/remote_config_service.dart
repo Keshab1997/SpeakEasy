@@ -31,7 +31,9 @@ class RemoteConfigService {
     }
 
     try {
-      final doc = await _configRef.get();
+      // Bounded so a slow/hanging Firestore request can never block the
+      // splash screen or any screen that awaits the config.
+      final doc = await _configRef.get().timeout(const Duration(seconds: 8));
       if (doc.exists) {
         _cachedConfig = AppConfig.fromSnapshot(doc);
       } else {
@@ -145,7 +147,7 @@ class RemoteConfigService {
   /// Seeds the default config document in Firestore if it doesn't exist.
   static Future<void> seedDefaultConfig() async {
     try {
-      final doc = await _configRef.get();
+      final doc = await _configRef.get().timeout(const Duration(seconds: 8));
       if (!doc.exists) {
         await _configRef.set(const AppConfig().toMap());
       }

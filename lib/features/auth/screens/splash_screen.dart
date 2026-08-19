@@ -24,6 +24,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
   late Animation<double> _fadeAnimation;
   late Animation<double> _scaleAnimation;
   bool _navigated = false;
+  bool _navigationStarted = false;
 
   @override
   void initState() {
@@ -67,76 +68,81 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
   }
 
   Future<void> _navigateToNext(UserModel? user) async {
-    if (_navigated) return;
-    _navigated = true;
+    if (_navigated || _navigationStarted) return;
+    _navigationStarted = true;
 
-    // Check if onboarding has been completed
-    if (!HiveService.isOnboardingCompleted()) {
-      if (mounted) {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const IntroScreen()),
-        );
-      }
-      return;
-    }
-
-    // Fetch remote config to check maintenance/force-update status
     try {
-      final config = await RemoteConfigService.getConfig();
-
-      // Check maintenance mode first
-      if (config.maintenanceMode.enabled) {
-        if (mounted) {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (_) => MaintenanceScreen(
-                message: config.maintenanceMode.message,
-              ),
-            ),
-          );
-        }
+      // Check if onboarding has been completed
+      if (!HiveService.isOnboardingCompleted()) {
+        _pushReplacement(const IntroScreen());
         return;
       }
 
-      // Check force update
-      if (config.forceUpdate.enabled) {
-        if (mounted) {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (_) => ForceUpdateScreen(
-                updateInfo: config.forceUpdate,
-              ),
-            ),
+      // Fetch remote config to check maintenance/force-update status.
+      // Bounded with a timeout so a slow/hanging Firestore call can NEVER
+      // leave the user stuck on the splash screen.
+      try {
+        final config = await RemoteConfigService.getConfig()
+            .timeout(const Duration(seconds: 8));
+
+        // Check maintenance mode first
+        if (config.maintenanceMode.enabled) {
+          _pushReplacement(
+            MaintenanceScreen(message: config.maintenanceMode.message),
           );
+          return;
         }
-        return;
+
+        // Check force update
+        if (config.forceUpdate.enabled) {
+          _pushReplacement(
+            ForceUpdateScreen(updateInfo: config.forceUpdate),
+          );
+          return;
+        }
+
+        // Check for soft / in-app update (Google Play In-App Update).
+        // Best-effort and time-bounded — never blocks normal navigation.
+        try {
+          final inAppService = InAppUpdateService();
+          final hasUpdate = await inAppService
+              .isUpdateAvailable()
+              .timeout(const Duration(seconds: 5), onTimeout: () => false);
+          if (hasUpdate && await inAppService.shouldShowUpdate()) {
+            await inAppService.startFlexibleUpdate();
+            // After dialog is dismissed, continue to normal navigation
+          }
+        } catch (_) {
+          // Update check failure must never block navigation
+        }
+      } catch (_) {
+        // If remote config fails or times out, proceed with normal flow
       }
 
-      // Check for soft / in-app update (Google Play In-App Update)
-      final inAppService = InAppUpdateService();
-      final hasUpdate = await inAppService.isUpdateAvailable();
-      if (hasUpdate && await inAppService.shouldShowUpdate()) {
-        await inAppService.startFlexibleUpdate();
-        // After dialog is dismissed, continue to normal navigation
-      }
-    } catch (_) {
-      // If remote config fails, proceed with normal flow
-    }
-
-    // Normal navigation
-    if (mounted) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (_) => user != null
-              ? const MainNavigationScreen()
-              : const LoginScreen(),
-        ),
+      // Normal navigation
+      _pushReplacement(
+        user != null ? const MainNavigationScreen() : const LoginScreen(),
       );
+    } finally {
+      _navigationStarted = false;
     }
   }
 
+  /// Single place that performs the actual navigation.
+  ///
+  /// [_navigated] is only set HERE (right before navigating), so the 10-second
+  /// safety timeout in [_timeoutNavigate] can still rescue the app if any
+  /// async work above hangs unexpectedly.
+  void _pushReplacement(Widget screen) {
+    if (_navigated || !mounted) return;
+    _navigated = true;
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (_) => screen),
+    );
+  }
+
   void _navigateToLogin() {
-    if (_navigated) return;
+    if (_navigated || !mounted) return;
     _navigated = true;
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) => const LoginScreen()),

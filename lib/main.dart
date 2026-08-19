@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +27,16 @@ import 'routes/app_routes.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kDebugMode) {
-    FlutterSkillBinding.ensureInitialized();
+    // Best-effort, non-blocking dev harness: initialize shortly after the
+    // first frame so a missing/broken flutter-skill server can NEVER block
+    // app startup or leave the splash hanging.
+    unawaited(Future<void>.delayed(const Duration(seconds: 3), () {
+      try {
+        FlutterSkillBinding.ensureInitialized();
+      } catch (e) {
+        debugPrint('main: flutter_skill init failed — $e');
+      }
+    }));
   }
 
   try {
@@ -130,7 +141,8 @@ Future<void> _initOneSignal() async {
     final doc = await FirebaseFirestore.instance
         .collection('Config')
         .doc('app_settings')
-        .get();
+        .get()
+        .timeout(const Duration(seconds: 8));
 
     if (doc.exists) {
       final data = doc.data();

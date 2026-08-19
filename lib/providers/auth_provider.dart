@@ -46,7 +46,13 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
 
   Future<void> fetchUserData(String uid) async {
     try {
-      final doc = await _firestore.collection('users').doc(uid).get();
+      // Bounded so auth can never stay "loading" forever on a slow/hanging
+      // network — the splash screen depends on this resolving.
+      final doc = await _firestore
+          .collection('users')
+          .doc(uid)
+          .get()
+          .timeout(const Duration(seconds: 8));
       if (doc.exists && doc.data() != null) {
         var userModel = UserModel.fromMap(doc.data()!, uid);
         final authPhotoUrl = _auth.currentUser?.photoURL ?? '';
@@ -70,11 +76,19 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
         }
 
         state = AsyncValue.data(userModel);
-        
-        // Load user's game data from Firebase after successful auth
-        final syncService = GameDataSyncService();
-        await syncService.loadUserDataFromFirebase();
-        
+
+        // Load user's game data from Firebase after successful auth.
+        // Best-effort + bounded — a slow sync must never replace the good
+        // user data with an error state or hold up the splash.
+        try {
+          final syncService = GameDataSyncService();
+          await syncService
+              .loadUserDataFromFirebase()
+              .timeout(const Duration(seconds: 8));
+        } catch (_) {
+          // Ignore — game data sync is non-critical at auth time
+        }
+
         debugPrint('✅ User data loaded from Firebase: ${userModel.name}');
       } else {
         // Fallback or if document doesn't exist yet
@@ -86,9 +100,15 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
           joinedAt: DateTime.now(),
         ));
         
-        // Load game data for new user too
-        final syncService = GameDataSyncService();
-        await syncService.loadUserDataFromFirebase();
+        // Load game data for new user too (best-effort, bounded)
+        try {
+          final syncService = GameDataSyncService();
+          await syncService
+              .loadUserDataFromFirebase()
+              .timeout(const Duration(seconds: 8));
+        } catch (_) {
+          // Ignore — game data sync is non-critical at auth time
+        }
       }
     } catch (e, stack) {
       state = AsyncValue.error(e, stack);
