@@ -237,9 +237,9 @@ class _BatteryOptimizationScreenState extends State<BatteryOptimizationScreen> {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: AppColors.warning.withOpacity(isDark ? 0.15 : 0.1),
+        color: AppColors.warning.withValues(alpha: isDark ? 0.15 : 0.1),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: AppColors.warning.withOpacity(0.35)),
+        border: Border.all(color: AppColors.warning.withValues(alpha: 0.35)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -313,7 +313,7 @@ class _BatteryOptimizationScreenState extends State<BatteryOptimizationScreen> {
                 height: 32,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withOpacity(0.15),
+                  color: AppColors.primary.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(step,
