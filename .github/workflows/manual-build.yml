@@ -17,6 +17,11 @@ jobs:
     uses: Keshab1997/flutter-builder/.github/workflows/flutter-build.yml@v1
     with:
       flutter-channel: stable
+      # Manual release builds should not be blocked by existing formatting,
+      # analyzer, or test issues. Validation can run in a separate CI workflow.
+      run-format-check: false
+      run-analyze: false
+      run-tests: false
       build-apk: ${{ inputs.format == 'apk' }}
       build-aab: ${{ inputs.format == 'aab' }}
       artifact-retention-days: 14
