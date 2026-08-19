@@ -233,20 +233,18 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
         await statisticsRepo.saveResult(result);
       }
 
-      if (result != null) {
-        // Upload complete result with ALL 11 fields preserved
-        final data = result.toFirestoreMap();
-        data['userId'] = userId;
-        await FirebaseFirestore.instance
-            .collection('game_statistics')
-            .add(data);
+      // Upload complete result with ALL 11 fields preserved
+      final data = result.toFirestoreMap();
+      data['userId'] = userId;
+      await FirebaseFirestore.instance
+          .collection('game_statistics')
+          .add(data);
 
-	        debugPrint('✅ Game result uploaded to Firebase (score: ${result.score}, '
-            'correct: ${result.correctAnswers}, wrong: ${result.wrongAnswers}, '
-            'xp: ${result.earnedXP}, coins: ${result.earnedCoins}, '
-            'gameType: ${result.gameType}, duration: ${result.durationSeconds}s, '
-            'isBossWin: ${result.isBossWin}, isDailyChallengeWin: ${result.isDailyChallengeWin})');
-      }
+      debugPrint('✅ Game result uploaded to Firebase (score: ${result.score}, '
+          'correct: ${result.correctAnswers}, wrong: ${result.wrongAnswers}, '
+          'xp: ${result.earnedXP}, coins: ${result.earnedCoins}, '
+          'gameType: ${result.gameType}, duration: ${result.durationSeconds}s, '
+          'isBossWin: ${result.isBossWin}, isDailyChallengeWin: ${result.isDailyChallengeWin})');
 
       // ── 2. Upload meta statistics (boss wins, daily wins, time played) ──
       await statisticsRepo.uploadMetaToFirestore(userId);
@@ -358,7 +356,7 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(

@@ -306,10 +306,15 @@ class StatisticsService {
 
     // Performance rating
     String perfRating = 'Needs Practice';
-    if (accuracy >= 0.95) perfRating = 'Excellent';
-    else if (accuracy >= 0.85) perfRating = 'Great';
-    else if (accuracy >= 0.70) perfRating = 'Good';
-    else if (accuracy >= 0.50) perfRating = 'Average';
+    if (accuracy >= 0.95) {
+      perfRating = 'Excellent';
+    } else if (accuracy >= 0.85) {
+      perfRating = 'Great';
+    } else if (accuracy >= 0.70) {
+      perfRating = 'Good';
+    } else if (accuracy >= 0.50) {
+      perfRating = 'Average';
+    }
 
     // Average game duration
     final completed = results.where((r) => r.durationSeconds > 0).toList();
