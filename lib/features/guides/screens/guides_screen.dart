@@ -199,7 +199,7 @@ class _GuideContentView extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withOpacity(0.3),
+            color: AppColors.primary.withValues(alpha: 0.3),
             blurRadius: 16,
             offset: const Offset(0, 8),
           ),
@@ -211,7 +211,7 @@ class _GuideContentView extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Icon(guide.icon, color: Colors.white, size: 32),
@@ -262,7 +262,7 @@ class _GuideContentView extends StatelessWidget {
           width: 36,
           height: 36,
           decoration: BoxDecoration(
-            color: AppColors.primary.withOpacity(0.1),
+            color: AppColors.primary.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Center(
@@ -335,9 +335,9 @@ class _GuideContentView extends StatelessWidget {
               margin: const EdgeInsets.only(top: 12),
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppColors.accent.withOpacity(0.1),
+                color: AppColors.accent.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppColors.accent.withOpacity(0.2)),
+                border: Border.all(color: AppColors.accent.withValues(alpha: 0.2)),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -349,7 +349,7 @@ class _GuideContentView extends StatelessWidget {
                     child: Text(
                       section.note!,
                       style: TextStyle(
-                        color: AppColors.accent.withOpacity(0.9),
+                        color: AppColors.accent.withValues(alpha: 0.9),
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
                         height: 1.4,
@@ -369,15 +369,15 @@ class _GuideContentView extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    AppColors.primary.withOpacity(0.08),
-                    AppColors.accent.withOpacity(0.08),
+                    AppColors.primary.withValues(alpha: 0.08),
+                    AppColors.accent.withValues(alpha: 0.08),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
-                  color: AppColors.primary.withOpacity(0.15),
+                  color: AppColors.primary.withValues(alpha: 0.15),
                   width: 1.5,
                 ),
               ),
@@ -440,7 +440,7 @@ class _GuideContentView extends StatelessWidget {
                   children: [
                     Text('▸ ',
                         style: TextStyle(
-                            color: AppColors.primary.withOpacity(0.6),
+                            color: AppColors.primary.withValues(alpha: 0.6),
                             fontSize: 14)),
                     Expanded(
                       child: Text(
@@ -475,10 +475,10 @@ class _GuideContentView extends StatelessWidget {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: DataTable(
-          headingRowColor: MaterialStateProperty.all(
-            AppColors.primary.withOpacity(0.08),
+          headingRowColor: WidgetStateProperty.all(
+            AppColors.primary.withValues(alpha: 0.08),
           ),
-          dataRowColor: MaterialStateProperty.all(Colors.transparent),
+          dataRowColor: WidgetStateProperty.all(Colors.transparent),
           columnSpacing: 16,
           dataRowMinHeight: 44,
           dataRowMaxHeight: double.infinity,

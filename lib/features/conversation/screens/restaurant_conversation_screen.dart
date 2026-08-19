@@ -35,7 +35,7 @@ class RestaurantConversationScreen extends StatelessWidget {
             decoration: BoxDecoration(
               color: isCustomer
                   ? (isDark ? AppColors.surfaceDark : AppColors.surfaceLight)
-                  : AppColors.secondary.withOpacity(0.06),
+                  : AppColors.secondary.withValues(alpha: 0.06),
               borderRadius: BorderRadius.only(
                 topLeft: const Radius.circular(16),
                 topRight: const Radius.circular(16),
@@ -45,7 +45,7 @@ class RestaurantConversationScreen extends StatelessWidget {
               border: Border.all(
                 color: isCustomer
                     ? (isDark ? AppColors.borderDark : AppColors.borderLight)
-                    : AppColors.secondary.withOpacity(0.15),
+                    : AppColors.secondary.withValues(alpha: 0.15),
               ),
             ),
             child: Column(

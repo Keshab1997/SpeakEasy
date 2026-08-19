@@ -217,7 +217,7 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                           decoration: BoxDecoration(
-                            color: Colors.orange.withOpacity(0.2),
+                            color: Colors.orange.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text(
@@ -266,7 +266,7 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                         decoration: BoxDecoration(
-                          color: AppColors.primary.withOpacity(0.1),
+                          color: AppColors.primary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
@@ -314,7 +314,7 @@ class _MockTestQuizScreenState extends ConsumerState<MockTestQuizScreen> {
                               padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
                                 color: isSelected
-                                    ? AppColors.primary.withOpacity(0.1)
+                                    ? AppColors.primary.withValues(alpha: 0.1)
                                     : (isDark ? AppColors.surfaceDark : AppColors.surfaceLight),
                                 borderRadius: BorderRadius.circular(16),
                                 border: Border.all(

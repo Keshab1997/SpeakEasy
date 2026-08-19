@@ -61,7 +61,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
     final achievementState = ref.watch(achievementProvider);
     final statsState = ref.watch(statisticsProvider);
     final themeState = ref.watch(themeProvider);
-    final theme = Theme.of(context);
 
     // Set system UI overlay style based on theme
     SystemChrome.setSystemUIOverlayStyle(
@@ -79,7 +78,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
             end: Alignment.bottomCenter,
             colors: themeState.isDark
                 ? [AppColors.backgroundDark, AppColors.surfaceDark]
-                : [AppColors.primary.withOpacity(0.05), Colors.white],
+                : [AppColors.primary.withValues(alpha: 0.05), Colors.white],
           ),
         ),
         child: SafeArea(
@@ -344,7 +343,6 @@ class _PlayerStatsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Container(
       padding: const EdgeInsets.all(24),
@@ -353,7 +351,7 @@ class _PlayerStatsCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withOpacity(0.3),
+            color: AppColors.primary.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -494,7 +492,6 @@ class _ContinuePlayingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return InkWell(
       onTap: onTap,
@@ -511,7 +508,7 @@ class _ContinuePlayingCard extends StatelessWidget {
               width: 56,
               height: 56,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: const Icon(Icons.play_arrow, color: Colors.white, size: 32),
@@ -571,7 +568,6 @@ class _DailyChallengeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return InkWell(
       onTap: onTap,
@@ -588,7 +584,7 @@ class _DailyChallengeCard extends StatelessWidget {
               width: 56,
               height: 56,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: const Icon(Icons.today, color: Colors.white, size: 32),
@@ -720,7 +716,7 @@ class _LevelProgressCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             child: LinearProgressIndicator(
               value: progress,
-              backgroundColor: AppColors.primary.withOpacity(0.1),
+              backgroundColor: AppColors.primary.withValues(alpha: 0.1),
               color: AppColors.primary,
               minHeight: 8,
             ),
@@ -749,7 +745,6 @@ class _StreakCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Container(
       padding: const EdgeInsets.all(20),
@@ -875,7 +870,7 @@ class _AchievementsPreview extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4),
                     child: LinearProgressIndicator(
                       value: progress,
-                      backgroundColor: AppColors.primary.withOpacity(0.1),
+                      backgroundColor: AppColors.primary.withValues(alpha: 0.1),
                       color: AppColors.primary,
                       minHeight: 4,
                     ),
@@ -916,7 +911,7 @@ class _ActionButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: gradient.first.withOpacity(0.3),
+              color: gradient.first.withValues(alpha: 0.3),
               blurRadius: 12,
               offset: const Offset(0, 6),
             ),

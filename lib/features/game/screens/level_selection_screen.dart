@@ -177,7 +177,7 @@ class _LevelCard extends StatelessWidget {
           boxShadow: isUnlocked
               ? [
                   BoxShadow(
-                    color: _getLevelColors(level.id).first.withOpacity(0.3),
+                    color: _getLevelColors(level.id).first.withValues(alpha: 0.3),
                     blurRadius: 12,
                     offset: const Offset(0, 6),
                   ),
@@ -283,7 +283,7 @@ class _LevelCard extends StatelessWidget {
       case 'advanced':
         return [Colors.purple, Colors.deepPurple];
       default:
-        return [AppColors.primary, AppColors.primary.withOpacity(0.8)];
+        return [AppColors.primary, AppColors.primary.withValues(alpha: 0.8)];
     }
   }
 

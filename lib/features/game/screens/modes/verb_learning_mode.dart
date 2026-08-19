@@ -461,7 +461,7 @@ class _VerbLearningModeScreenState
                         margin:
                             const EdgeInsets.only(top: 3, left: 6, right: 6, bottom: 9),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.3),
+                          color: Colors.white.withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(4),
                         ),
                       ),
@@ -653,17 +653,17 @@ class _VerbLearningModeScreenState
                       color: const Color(0xFFF0FFF0),
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
-                          color: const Color(0xFF58CC02).withOpacity(0.3)),
+                          color: const Color(0xFF58CC02).withValues(alpha: 0.3)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
+                        const Row(
                           children: [
-                            const Icon(Icons.format_quote_rounded,
+                            Icon(Icons.format_quote_rounded,
                                 color: Color(0xFF58CC02), size: 18),
-                            const SizedBox(width: 8),
-                            const Text(
+                            SizedBox(width: 8),
+                            Text(
                               'Example Sentence',
                               style: TextStyle(
                                 fontSize: 12,
@@ -671,8 +671,8 @@ class _VerbLearningModeScreenState
                                 color: Color(0xFFAFAFAF),
                               ),
                             ),
-                            const Spacer(),
-                            const Icon(Icons.volume_up_rounded,
+                            Spacer(),
+                            Icon(Icons.volume_up_rounded,
                                 color: Color(0xFF58CC02), size: 18),
                           ],
                         ),
@@ -710,7 +710,7 @@ class _VerbLearningModeScreenState
                       color: const Color(0xFFFFF8E1),
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
-                          color: const Color(0xFFFFC800).withOpacity(0.3)),
+                          color: const Color(0xFFFFC800).withValues(alpha: 0.3)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

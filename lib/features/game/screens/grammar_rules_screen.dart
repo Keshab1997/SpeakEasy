@@ -271,7 +271,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
                   end: Alignment.bottomRight,
                   colors: [
                     themeColor,
-                    themeColor.withOpacity(0.7),
+                    themeColor.withValues(alpha: 0.7),
                   ],
                 ),
               ),
@@ -285,7 +285,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
+                          color: Colors.white.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
@@ -310,7 +310,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
                       Text(
                         data.shortDescription,
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.85),
+                          color: Colors.white.withValues(alpha: 0.85),
                           fontSize: 13,
                         ),
                       ),
@@ -390,7 +390,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
           borderRadius: BorderRadius.circular(8),
           child: LinearProgressIndicator(
             value: current / total,
-            backgroundColor: themeColor.withOpacity(0.15),
+            backgroundColor: themeColor.withValues(alpha: 0.15),
             valueColor: AlwaysStoppedAnimation<Color>(themeColor),
             minHeight: 8,
           ),
@@ -403,9 +403,9 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: themeColor.withOpacity(0.08),
+        color: themeColor.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: themeColor.withOpacity(0.3)),
+        border: Border.all(color: themeColor.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -454,7 +454,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
                           : Colors.white,
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: themeColor.withOpacity(0.2),
+                        color: themeColor.withValues(alpha: 0.2),
                       ),
                     ),
                     child: Text(
@@ -487,14 +487,14 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [stepColor, stepColor.withOpacity(0.8)],
+              colors: [stepColor, stepColor.withValues(alpha: 0.8)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: stepColor.withOpacity(0.3),
+                color: stepColor.withValues(alpha: 0.3),
                 blurRadius: 12,
                 offset: const Offset(0, 6),
               ),
@@ -506,7 +506,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.25),
+                  color: Colors.white.withValues(alpha: 0.25),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Center(
@@ -537,7 +537,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
                     Text(
                       rule.banglaTitle,
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.85),
+                        color: Colors.white.withValues(alpha: 0.85),
                         fontSize: 13,
                       ),
                     ),
@@ -625,7 +625,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
                         width: 24,
                         height: 24,
                         decoration: BoxDecoration(
-                          color: stepColor.withOpacity(0.15),
+                          color: stepColor.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Center(
@@ -667,9 +667,9 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: stepColor.withOpacity(0.07),
+              color: stepColor.withValues(alpha: 0.07),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: stepColor.withOpacity(0.25)),
+              border: Border.all(color: stepColor.withValues(alpha: 0.25)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -705,7 +705,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
       decoration: BoxDecoration(
         color: isDark ? AppColors.surfaceDark : Colors.white,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -750,7 +750,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF7C3AED).withOpacity(0.3),
+                color: const Color(0xFF7C3AED).withValues(alpha: 0.3),
                 blurRadius: 12,
                 offset: const Offset(0, 6),
               ),
@@ -761,7 +761,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: const Icon(Icons.auto_awesome, color: Colors.white, size: 28),
@@ -799,7 +799,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
           decoration: BoxDecoration(
             color: isDark ? AppColors.surfaceDark : Colors.white,
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: themeColor.withOpacity(0.4), width: 2),
+            border: Border.all(color: themeColor.withValues(alpha: 0.4), width: 2),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -822,7 +822,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
               Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: themeColor.withOpacity(0.08),
+                  color: themeColor.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
@@ -902,7 +902,7 @@ class _GrammarRulesScreenState extends ConsumerState<GrammarRulesScreen>
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [AppColors.success, AppColors.success.withOpacity(0.8)],
+              colors: [AppColors.success, AppColors.success.withValues(alpha: 0.8)],
             ),
             borderRadius: BorderRadius.circular(16),
           ),

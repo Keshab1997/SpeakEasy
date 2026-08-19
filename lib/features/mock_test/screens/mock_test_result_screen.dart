@@ -83,7 +83,7 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
                         : const LinearGradient(colors: [Colors.orange, Colors.redAccent]),
                     boxShadow: [
                       BoxShadow(
-                        color: (isPerfect ? AppColors.secondary : Colors.orange).withOpacity(0.3),
+                        color: (isPerfect ? AppColors.secondary : Colors.orange).withValues(alpha: 0.3),
                         blurRadius: 20,
                         offset: const Offset(0, 8),
                       ),
@@ -118,7 +118,7 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   decoration: BoxDecoration(
-                    color: (isPerfect ? AppColors.secondary : Colors.orange).withOpacity(0.1),
+                    color: (isPerfect ? AppColors.secondary : Colors.orange).withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
@@ -137,7 +137,7 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.1),
+                      color: Colors.grey.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Row(
@@ -160,11 +160,11 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: isPerfect
-                        ? AppColors.secondary.withOpacity(0.1)
-                        : Colors.orange.withOpacity(0.1),
+                        ? AppColors.secondary.withValues(alpha: 0.1)
+                        : Colors.orange.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
-                      color: isPerfect ? AppColors.secondary.withOpacity(0.3) : Colors.orange.withOpacity(0.3),
+                      color: isPerfect ? AppColors.secondary.withValues(alpha: 0.3) : Colors.orange.withValues(alpha: 0.3),
                     ),
                   ),
                   child: Row(
@@ -337,7 +337,7 @@ class _MockTestResultScreenState extends ConsumerState<MockTestResultScreen> {
                             Container(
                               padding: const EdgeInsets.all(4),
                               decoration: BoxDecoration(
-                                color: (isCorrect ? AppColors.secondary : Colors.redAccent).withOpacity(0.1),
+                                color: (isCorrect ? AppColors.secondary : Colors.redAccent).withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Icon(

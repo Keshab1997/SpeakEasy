@@ -320,7 +320,9 @@ Format:
                                   onPressed: () async {
                                     await HiveService
                                         .clearAllMasterGuideSessions();
+                                    if (!dCtx.mounted) return;
                                     Navigator.pop(dCtx);
+                                    if (!ctx.mounted) return;
                                     Navigator.pop(ctx);
                                   },
                                   child: const Text('Delete All',
@@ -511,7 +513,7 @@ Format:
                     Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.1),
+                        color: AppColors.primary.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: const Icon(Icons.school,
@@ -559,13 +561,13 @@ Format:
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
                       color: isCorrect
-                          ? Colors.green.withOpacity(0.05)
-                          : Colors.red.withOpacity(0.05),
+                          ? Colors.green.withValues(alpha: 0.05)
+                          : Colors.red.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(14),
                       border: Border.all(
                         color: isCorrect
-                            ? Colors.green.withOpacity(0.2)
-                            : Colors.red.withOpacity(0.2),
+                            ? Colors.green.withValues(alpha: 0.2)
+                            : Colors.red.withValues(alpha: 0.2),
                       ),
                     ),
                     child: Column(
@@ -629,7 +631,7 @@ Format:
                             padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: AppColors.primary
-                                  .withOpacity(0.06),
+                                  .withValues(alpha: 0.06),
                               borderRadius:
                                   BorderRadius.circular(8),
                             ),
@@ -698,8 +700,8 @@ Format:
                         shape: BoxShape.circle,
                         gradient: LinearGradient(
                           colors: [
-                            AppColors.primary.withOpacity(0.2),
-                            AppColors.purpleGradient[0].withOpacity(0.1),
+                            AppColors.primary.withValues(alpha: 0.2),
+                            AppColors.purpleGradient[0].withValues(alpha: 0.1),
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
@@ -716,7 +718,7 @@ Format:
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.primary.withOpacity(0.3),
+                                color: AppColors.primary.withValues(alpha: 0.3),
                                 blurRadius: 20,
                                 offset: const Offset(0, 8),
                               ),
@@ -739,15 +741,15 @@ Format:
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        AppColors.primary.withOpacity(0.06),
-                        AppColors.purpleGradient[0].withOpacity(0.03),
+                        AppColors.primary.withValues(alpha: 0.06),
+                        AppColors.purpleGradient[0].withValues(alpha: 0.03),
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                      color: AppColors.primary.withOpacity(0.1),
+                      color: AppColors.primary.withValues(alpha: 0.1),
                     ),
                   ),
                   child: Column(
@@ -794,7 +796,7 @@ Format:
                       Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: AppColors.primary.withOpacity(0.1),
+                          color: AppColors.primary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Text(
@@ -835,8 +837,8 @@ Format:
                             height: 10,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: AppColors.primary.withOpacity(
-                                0.5 + i * 0.2,
+                              color: AppColors.primary.withValues(
+                                alpha: 0.5 + i * 0.2,
                               ),
                             ),
                           ),
@@ -908,7 +910,7 @@ Format:
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withOpacity(0.1),
+                  color: AppColors.primary.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
@@ -964,7 +966,7 @@ Format:
                     Container(
                       padding: const EdgeInsets.all(6),
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.1),
+                        color: AppColors.primary.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: const Icon(Icons.help_outline,
@@ -1004,12 +1006,12 @@ Format:
 
             if (_isAnswered) {
               if (isCorrectOption) {
-                bgColor = Colors.green.withOpacity(0.1);
+                bgColor = Colors.green.withValues(alpha: 0.1);
                 borderColor = Colors.green;
                 letterBg = Colors.green;
                 icon = Icons.check_circle;
               } else if (isSelected && !isCorrectOption) {
-                bgColor = Colors.red.withOpacity(0.1);
+                bgColor = Colors.red.withValues(alpha: 0.1);
                 borderColor = Colors.red;
                 letterBg = Colors.red;
                 icon = Icons.cancel;
@@ -1020,7 +1022,7 @@ Format:
               }
             } else {
               bgColor = isSelected
-                  ? AppColors.primary.withOpacity(0.08)
+                  ? AppColors.primary.withValues(alpha: 0.08)
                   : (isDark ? AppColors.surfaceDark : Colors.grey[50]);
               borderColor = isSelected
                   ? AppColors.primary
@@ -1158,16 +1160,16 @@ Format:
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: isPassed
-                    ? [Colors.green.withOpacity(0.15), Colors.green.withOpacity(0.05)]
-                    : [Colors.orange.withOpacity(0.15), Colors.orange.withOpacity(0.05)],
+                    ? [Colors.green.withValues(alpha: 0.15), Colors.green.withValues(alpha: 0.05)]
+                    : [Colors.orange.withValues(alpha: 0.15), Colors.orange.withValues(alpha: 0.05)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(20),
               border: Border.all(
                 color: isPassed
-                    ? Colors.green.withOpacity(0.2)
-                    : Colors.orange.withOpacity(0.2),
+                    ? Colors.green.withValues(alpha: 0.2)
+                    : Colors.orange.withValues(alpha: 0.2),
               ),
             ),
             child: Column(
@@ -1213,9 +1215,9 @@ Format:
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(0.05),
+              color: AppColors.primary.withValues(alpha: 0.05),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppColors.primary.withOpacity(0.1)),
+              border: Border.all(color: AppColors.primary.withValues(alpha: 0.1)),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1253,13 +1255,13 @@ Format:
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
                 color: isCorrect
-                    ? Colors.green.withOpacity(0.05)
-                    : Colors.red.withOpacity(0.05),
+                    ? Colors.green.withValues(alpha: 0.05)
+                    : Colors.red.withValues(alpha: 0.05),
                 borderRadius: BorderRadius.circular(14),
                 border: Border.all(
                   color: isCorrect
-                      ? Colors.green.withOpacity(0.2)
-                      : Colors.red.withOpacity(0.2),
+                      ? Colors.green.withValues(alpha: 0.2)
+                      : Colors.red.withValues(alpha: 0.2),
                 ),
               ),
               child: Column(
@@ -1324,7 +1326,7 @@ Format:
                           padding: const EdgeInsets.symmetric(
                               horizontal: 12, vertical: 8),
                           decoration: BoxDecoration(
-                            color: AppColors.primary.withOpacity(0.08),
+                            color: AppColors.primary.withValues(alpha: 0.08),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: const Row(
@@ -1432,7 +1434,7 @@ Format:
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.1),
+                      color: AppColors.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: const Icon(Icons.school,
@@ -1480,16 +1482,16 @@ class _TeacherExplanationCard extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: isCorrect
-              ? [Colors.green.withOpacity(0.08), Colors.green.withOpacity(0.02)]
-              : [Colors.orange.withOpacity(0.08), Colors.orange.withOpacity(0.02)],
+              ? [Colors.green.withValues(alpha: 0.08), Colors.green.withValues(alpha: 0.02)]
+              : [Colors.orange.withValues(alpha: 0.08), Colors.orange.withValues(alpha: 0.02)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: isCorrect
-              ? Colors.green.withOpacity(0.2)
-              : Colors.orange.withOpacity(0.2),
+              ? Colors.green.withValues(alpha: 0.2)
+              : Colors.orange.withValues(alpha: 0.2),
         ),
       ),
       child: Column(
@@ -1501,8 +1503,8 @@ class _TeacherExplanationCard extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: isCorrect
-                      ? Colors.green.withOpacity(0.15)
-                      : Colors.orange.withOpacity(0.15),
+                      ? Colors.green.withValues(alpha: 0.15)
+                      : Colors.orange.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(

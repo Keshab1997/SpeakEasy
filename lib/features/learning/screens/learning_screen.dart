@@ -107,7 +107,7 @@ class LearningScreen extends StatelessWidget {
           gradient: LinearGradient(colors: gradient, begin: Alignment.topLeft, end: Alignment.bottomRight),
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
-            BoxShadow(color: gradient[0].withOpacity(0.3), blurRadius: 16, offset: const Offset(0, 6)),
+            BoxShadow(color: gradient[0].withValues(alpha: 0.3), blurRadius: 16, offset: const Offset(0, 6)),
           ],
         ),
         child: Row(
@@ -115,7 +115,7 @@ class LearningScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(18),
               ),
               child: Icon(icon, color: Colors.white, size: 36),
@@ -133,7 +133,7 @@ class LearningScreen extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(subtitle,
                       style: TextStyle(
-                          color: Colors.white.withOpacity(0.85),
+                          color: Colors.white.withValues(alpha: 0.85),
                           fontSize: 13)),
                 ],
               ),
@@ -141,7 +141,7 @@ class LearningScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 20),

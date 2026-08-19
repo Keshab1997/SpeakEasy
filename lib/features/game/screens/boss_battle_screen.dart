@@ -154,7 +154,7 @@ class BossBattleScreen extends ConsumerWidget {
               gradient: const LinearGradient(colors: themeGradient),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.deepPurple.withOpacity(0.3),
+                  color: Colors.deepPurple.withValues(alpha: 0.3),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -165,7 +165,7 @@ class BossBattleScreen extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: const Icon(Icons.emoji_events, color: Colors.amber, size: 28),
@@ -186,7 +186,7 @@ class BossBattleScreen extends ConsumerWidget {
                     Text(
                       'Question ${gameState.currentQuestionIndex + 1} of ${gameState.totalQuestions}',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.8),
+                        color: Colors.white.withValues(alpha: 0.8),
                         fontSize: 13,
                       ),
                     ),
@@ -196,7 +196,7 @@ class BossBattleScreen extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
@@ -259,7 +259,7 @@ class BossBattleScreen extends ConsumerWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: themeColor.withOpacity(0.1),
+                      color: themeColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: themeColor),
                     ),
@@ -327,6 +327,7 @@ class BossBattleScreen extends ConsumerWidget {
   Future<void> _handleContinue(BuildContext context, WidgetRef ref) async {
     await ref.read(gameProvider.notifier).continueToNext();
     final gameState = ref.read(gameProvider);
+    if (!context.mounted) return;
     if (gameState.isGameOver) {
       ref.read(timerProvider.notifier).resetTimer();
       ref.read(statisticsProvider.notifier).refresh();
@@ -376,20 +377,20 @@ class _BossAnswerOption extends StatelessWidget {
 
     if (isAnswerChecked) {
       if (isCorrect) {
-        cardBgColor = isDark ? Colors.green.withOpacity(0.15) : Colors.green.shade50;
+        cardBgColor = isDark ? Colors.green.withValues(alpha: 0.15) : Colors.green.shade50;
         borderColor = Colors.green;
         letterBgColor = Colors.green;
         textColor = isDark ? Colors.white : Colors.green.shade900;
         suffixIcon = const Icon(Icons.check_circle, color: Colors.green, size: 24);
       } else if (isSelected) {
-        cardBgColor = isDark ? Colors.red.withOpacity(0.15) : Colors.red.shade50;
+        cardBgColor = isDark ? Colors.red.withValues(alpha: 0.15) : Colors.red.shade50;
         borderColor = Colors.red;
         letterBgColor = Colors.red;
         textColor = isDark ? Colors.white : Colors.red.shade900;
         suffixIcon = const Icon(Icons.cancel, color: Colors.red, size: 24);
       } else {
-        cardBgColor = (isDark ? theme.cardColor : Colors.grey.shade100).withOpacity(0.6);
-        borderColor = AppColors.borderLight.withOpacity(0.4);
+        cardBgColor = (isDark ? theme.cardColor : Colors.grey.shade100).withValues(alpha: 0.6);
+        borderColor = AppColors.borderLight.withValues(alpha: 0.4);
         letterBgColor = isDark ? Colors.white12 : Colors.grey.shade300;
         letterTextColor = Colors.grey;
         textColor = Colors.grey;
@@ -406,7 +407,7 @@ class _BossAnswerOption extends StatelessWidget {
         boxShadow: isAnswerChecked && (isCorrect || isSelected)
             ? [
                 BoxShadow(
-                  color: (isCorrect ? Colors.green : Colors.red).withOpacity(0.1),
+                  color: (isCorrect ? Colors.green : Colors.red).withValues(alpha: 0.1),
                   blurRadius: 8,
                   offset: const Offset(0, 4),
                 )
@@ -504,7 +505,7 @@ class _ExplanationPanel extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
+            color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 10,
             offset: const Offset(0, -4),
           ),
@@ -512,8 +513,8 @@ class _ExplanationPanel extends StatelessWidget {
         border: Border(
           top: BorderSide(
             color: isCorrect
-                ? (isDark ? Colors.green.withOpacity(0.3) : Colors.green.shade200)
-                : (isDark ? Colors.red.withOpacity(0.3) : Colors.red.shade200),
+                ? (isDark ? Colors.green.withValues(alpha: 0.3) : Colors.green.shade200)
+                : (isDark ? Colors.red.withValues(alpha: 0.3) : Colors.red.shade200),
             width: 1.5,
           ),
         ),
@@ -551,7 +552,7 @@ class _ExplanationPanel extends StatelessWidget {
                     Text(
                       'বিস্তারিত ব্যাখ্যা:',
                       style: TextStyle(
-                        color: textColor.withOpacity(0.85),
+                        color: textColor.withValues(alpha: 0.85),
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
                       ),
@@ -560,7 +561,7 @@ class _ExplanationPanel extends StatelessWidget {
                     Text(
                       explanation,
                       style: TextStyle(
-                        color: isDark ? Colors.white.withOpacity(0.9) : Colors.black87,
+                        color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
                         fontSize: 15,
                         height: 1.5,
                         fontWeight: FontWeight.w500,

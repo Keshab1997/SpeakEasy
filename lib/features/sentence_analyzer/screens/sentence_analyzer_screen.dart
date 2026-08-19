@@ -531,7 +531,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF8B5CF6).withOpacity(0.3),
+                    color: const Color(0xFF8B5CF6).withValues(alpha: 0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -563,9 +563,9 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                 width: double.infinity,
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(0.08),
+                  color: Colors.red.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.red.withOpacity(0.2)),
+                  border: Border.all(color: Colors.red.withValues(alpha: 0.2)),
                 ),
                 child: Row(
                   children: [
@@ -596,14 +596,14 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
-                            colors: [color, color.withOpacity(0.8)],
+                            colors: [color, color.withValues(alpha: 0.8)],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: [
                             BoxShadow(
-                              color: color.withOpacity(0.3),
+                              color: color.withValues(alpha: 0.3),
                               blurRadius: 12,
                               offset: const Offset(0, 4),
                             ),
@@ -615,7 +615,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                             Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.2),
+                                color: Colors.white.withValues(alpha: 0.2),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Icon(icon, color: Colors.white, size: 22),
@@ -629,7 +629,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                             const SizedBox(height: 4),
                             Text(desc,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.85), fontSize: 11,
+                                color: Colors.white.withValues(alpha: 0.85), fontSize: 11,
                               ),
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
@@ -692,7 +692,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF8B5CF6).withOpacity(0.3),
+                    color: const Color(0xFF8B5CF6).withValues(alpha: 0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -703,7 +703,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
+                      color: Colors.white.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Text('BANGLA SENTENCE',
@@ -718,7 +718,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                   const SizedBox(height: 12),
                   Text(
                     _analysis!.englishTranslation,
-                    style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 16, fontStyle: FontStyle.italic),
+                    style: TextStyle(color: Colors.white.withValues(alpha: 0.85), fontSize: 16, fontStyle: FontStyle.italic),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -731,7 +731,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF8B5CF6).withOpacity(0.1),
+                  color: const Color(0xFF8B5CF6).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Icon(Icons.psychology_rounded, color: Color(0xFF8B5CF6), size: 22),
@@ -784,9 +784,9 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xFF8B5CF6).withOpacity(0.05),
+              color: const Color(0xFF8B5CF6).withValues(alpha: 0.05),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: const Color(0xFF8B5CF6).withOpacity(0.15)),
+              border: Border.all(color: const Color(0xFF8B5CF6).withValues(alpha: 0.15)),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -856,16 +856,16 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
       width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.05),
+        color: color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withOpacity(0.15)),
+        border: Border.all(color: color.withValues(alpha: 0.15)),
       ),
       child: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(icon, color: color, size: 20),
@@ -907,7 +907,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFFF59E0B).withOpacity(0.3),
+                    color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -918,7 +918,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
+                      color: Colors.white.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Text('PRACTICE TASK',
@@ -1016,7 +1016,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: (_review!.isCorrect ? Colors.green : Colors.red).withOpacity(0.3),
+                    color: (_review!.isCorrect ? Colors.green : Colors.red).withValues(alpha: 0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -1035,7 +1035,7 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
                   const SizedBox(height: 8),
                   Text(
                     _analysis!.banglaSentence,
-                    style: TextStyle(color: Colors.white.withOpacity(0.9), fontSize: 16, fontWeight: FontWeight.w600),
+                    style: TextStyle(color: Colors.white.withValues(alpha: 0.9), fontSize: 16, fontWeight: FontWeight.w600),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -1048,13 +1048,13 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: _review!.isCorrect
-                  ? Colors.green.withOpacity(0.05)
-                  : const Color(0xFFF59E0B).withOpacity(0.08),
+                  ? Colors.green.withValues(alpha: 0.05)
+                  : const Color(0xFFF59E0B).withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
                 color: _review!.isCorrect
-                    ? Colors.green.withOpacity(0.2)
-                    : const Color(0xFFF59E0B).withOpacity(0.2),
+                    ? Colors.green.withValues(alpha: 0.2)
+                    : const Color(0xFFF59E0B).withValues(alpha: 0.2),
               ),
             ),
             child: Row(
@@ -1081,9 +1081,9 @@ class _SentenceAnalyzerScreenState extends ConsumerState<SentenceAnalyzerScreen>
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.green.withOpacity(0.05),
+                color: Colors.green.withValues(alpha: 0.05),
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.green.withOpacity(0.2)),
+                border: Border.all(color: Colors.green.withValues(alpha: 0.2)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

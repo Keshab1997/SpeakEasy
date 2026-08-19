@@ -437,7 +437,7 @@ class _PronunciationScreenState extends State<PronunciationScreen>
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       decoration: BoxDecoration(
-                        color: _modeColor().withOpacity(0.1),
+                        color: _modeColor().withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
@@ -596,7 +596,7 @@ class _PronunciationScreenState extends State<PronunciationScreen>
                     Text(
                       'Press the microphone and start speaking in English.\nYour speech will be transcribed live.',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.85),
+                        color: Colors.white.withValues(alpha: 0.85),
                         fontSize: 14,
                       ),
                     ),
@@ -623,9 +623,9 @@ class _PronunciationScreenState extends State<PronunciationScreen>
                   width: double.infinity,
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: AppColors.purpleGradient[0].withOpacity(0.06),
+                    color: AppColors.purpleGradient[0].withValues(alpha: 0.06),
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: AppColors.purpleGradient[0].withOpacity(0.15)),
+                    border: Border.all(color: AppColors.purpleGradient[0].withValues(alpha: 0.15)),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -745,9 +745,9 @@ class _PronunciationScreenState extends State<PronunciationScreen>
       width: double.infinity,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.07),
+        color: color.withValues(alpha: 0.07),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -807,7 +807,7 @@ class _PronunciationScreenState extends State<PronunciationScreen>
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: AppColors.error.withOpacity(0.06),
+              color: AppColors.error.withValues(alpha: 0.06),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(
@@ -851,12 +851,12 @@ class _PronunciationScreenState extends State<PronunciationScreen>
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: _isListening
-                      ? AppColors.error.withOpacity(0.1 + _pulseCtrl.value * 0.2)
-                      : color.withOpacity(0.1),
+                      ? AppColors.error.withValues(alpha: 0.1 + _pulseCtrl.value * 0.2)
+                      : color.withValues(alpha: 0.1),
                   border: Border.all(
                     color: _isListening
-                        ? AppColors.error.withOpacity(0.5)
-                        : color.withOpacity(0.3),
+                        ? AppColors.error.withValues(alpha: 0.5)
+                        : color.withValues(alpha: 0.3),
                     width: 2,
                   ),
                 ),
@@ -888,7 +888,7 @@ class _PronunciationScreenState extends State<PronunciationScreen>
               height: height,
               margin: const EdgeInsets.symmetric(horizontal: 2.5),
               decoration: BoxDecoration(
-                color: AppColors.error.withOpacity(0.6 + t * 0.4),
+                color: AppColors.error.withValues(alpha: 0.6 + t * 0.4),
                 borderRadius: BorderRadius.circular(2),
               ),
             );
@@ -952,10 +952,10 @@ class _PronunciationScreenState extends State<PronunciationScreen>
               return Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: (matched ? AppColors.success : AppColors.error).withOpacity(0.1),
+                  color: (matched ? AppColors.success : AppColors.error).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: (matched ? AppColors.success : AppColors.error).withOpacity(0.3),
+                    color: (matched ? AppColors.success : AppColors.error).withValues(alpha: 0.3),
                   ),
                 ),
                 child: Text(
@@ -984,9 +984,9 @@ class _PronunciationScreenState extends State<PronunciationScreen>
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.06),
+        color: color.withValues(alpha: 0.06),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.15)),
+        border: Border.all(color: color.withValues(alpha: 0.15)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1014,9 +1014,9 @@ class _PronunciationScreenState extends State<PronunciationScreen>
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(
         children: [

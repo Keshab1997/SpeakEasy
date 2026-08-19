@@ -346,7 +346,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
     // --- Main scaffold -------------------------------------------------------
     return PopScope(
       canPop: false,
-      onPopInvoked: (didPop) {
+      onPopInvokedWithResult: (didPop, _) {
         if (didPop) return;
         _showQuitDialog();
       },
@@ -446,12 +446,12 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                   decoration: BoxDecoration(
-                    color: barColor.withOpacity(0.15),
+                    color: barColor.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: _remainingSeconds <= 5 && !_isAnswerChecked
                         ? [
                             BoxShadow(
-                              color: barColor.withOpacity(0.4),
+                              color: barColor.withValues(alpha: 0.4),
                               blurRadius: 8,
                               offset: const Offset(0, 2),
                             ),
@@ -493,7 +493,6 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
         label = 'Rearrange';
         break;
       case QuestionType.multipleChoice:
-      default:
         icon = question.type == 'vocabulary' ? '📖' : '📝';
         label = question.type == 'vocabulary' ? 'Vocabulary' : 'Grammar';
     }
@@ -503,7 +502,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
           decoration: BoxDecoration(
-            color: AppColors.primary.withOpacity(0.1),
+            color: AppColors.primary.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: AppColors.primary),
           ),
@@ -532,7 +531,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withOpacity(0.25),
+            color: AppColors.primary.withValues(alpha: 0.25),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -602,7 +601,6 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
         );
 
       case QuestionType.multipleChoice:
-      default:
         return Column(
           children: [
             const SizedBox(height: 24),
@@ -649,7 +647,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
     if (_isAnswerChecked) {
       if (isCorrectOption) {
         cardBgColor =
-            isDark ? Colors.green.withOpacity(0.15) : Colors.green.shade50;
+            isDark ? Colors.green.withValues(alpha: 0.15) : Colors.green.shade50;
         borderColor = Colors.green;
         borderWidth = 2.0;
         letterBgColor = Colors.green;
@@ -657,17 +655,17 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
             const Icon(Icons.check_circle, color: Colors.green, size: 24);
       } else if (isSelected) {
         cardBgColor =
-            isDark ? Colors.red.withOpacity(0.15) : Colors.red.shade50;
+            isDark ? Colors.red.withValues(alpha: 0.15) : Colors.red.shade50;
         borderColor = Colors.red;
         borderWidth = 2.0;
         letterBgColor = Colors.red;
         suffixIcon =
             const Icon(Icons.cancel, color: Colors.red, size: 24);
       } else {
-        cardBgColor = theme.cardColor.withOpacity(0.6);
+        cardBgColor = theme.cardColor.withValues(alpha: 0.6);
         borderColor =
             (isDark ? Colors.grey.shade600 : Colors.grey.shade300)
-                .withOpacity(0.4);
+                .withValues(alpha: 0.4);
       }
     }
 
@@ -685,7 +683,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
                   BoxShadow(
                     color:
                         (isCorrectOption ? Colors.green : Colors.red)
-                            .withOpacity(0.1),
+                            .withValues(alpha: 0.1),
                     blurRadius: 8,
                     offset: const Offset(0, 4),
                   ),
@@ -737,7 +735,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
                                 !isCorrectOption &&
                                 !isSelected
                             ? theme.textTheme.bodyLarge?.color
-                                ?.withOpacity(0.5)
+                                ?.withValues(alpha: 0.5)
                             : null,
                       ),
                     ),
@@ -783,10 +781,10 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
         border: Border.all(
           color: _isCorrect
               ? (isDark
-                    ? Colors.green.withOpacity(0.3)
+                    ? Colors.green.withValues(alpha: 0.3)
                     : Colors.green.shade200)
               : (isDark
-                    ? Colors.red.withOpacity(0.3)
+                    ? Colors.red.withValues(alpha: 0.3)
                     : Colors.red.shade200),
           width: 1.5,
         ),
@@ -814,7 +812,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
           Text(
             'বিস্তারিত ব্যাখ্যা:',
             style: TextStyle(
-              color: textColor.withOpacity(0.8),
+              color: textColor.withValues(alpha: 0.8),
               fontWeight: FontWeight.bold,
               fontSize: 13,
             ),
@@ -824,7 +822,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
             question.explanation,
             style: TextStyle(
               color: isDark
-                  ? Colors.white.withOpacity(0.9)
+                  ? Colors.white.withValues(alpha: 0.9)
                   : Colors.black87,
               fontSize: 14,
               height: 1.5,

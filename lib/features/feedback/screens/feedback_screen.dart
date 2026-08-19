@@ -162,7 +162,7 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
+                          color: Colors.white.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: const Icon(
@@ -292,7 +292,7 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   disabledBackgroundColor:
-                      AppColors.primary.withOpacity(0.6),
+                      AppColors.primary.withValues(alpha: 0.6),
                 ),
                 child: _isSubmitting
                     ? const SizedBox(

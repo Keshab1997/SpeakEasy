@@ -107,7 +107,7 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [themeColor, themeColor.withOpacity(0.7)],
+                  colors: [themeColor, themeColor.withValues(alpha: 0.7)],
                 ),
               ),
               child: SafeArea(
@@ -121,7 +121,7 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
+                          color: Colors.white.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(16),
                         ),
                         child: const Text(
@@ -217,7 +217,7 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.03),
+                color: Colors.black.withValues(alpha: 0.03),
                 blurRadius: 8,
                 offset: const Offset(0, 4),
               ),
@@ -232,7 +232,7 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                   width: 56,
                   height: 56,
                   decoration: BoxDecoration(
-                    color: catColor.withOpacity(0.12),
+                    color: catColor.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Icon(iconData, color: catColor, size: 28),
@@ -276,7 +276,7 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                   width: 32,
                   height: 32,
                   decoration: BoxDecoration(
-                    color: catColor.withOpacity(0.1),
+                    color: catColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(
@@ -319,7 +319,7 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        colors: [catColor, catColor.withOpacity(0.7)],
+                        colors: [catColor, catColor.withValues(alpha: 0.7)],
                       ),
                     ),
                     child: SafeArea(
@@ -334,7 +334,7 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                               width: 36,
                               height: 36,
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.2),
+                                color: Colors.white.withValues(alpha: 0.2),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Icon(iconData, color: Colors.white, size: 20),
@@ -352,7 +352,7 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                             Text(
                               category.banglaTitle,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.85),
+                                color: Colors.white.withValues(alpha: 0.85),
                                 fontSize: 12,
                               ),
                             ),
@@ -372,9 +372,9 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                     width: double.infinity,
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: catColor.withOpacity(0.08),
+                      color: catColor.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: catColor.withOpacity(0.25)),
+                      border: Border.all(color: catColor.withValues(alpha: 0.25)),
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -442,7 +442,7 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                     width: 28,
                     height: 28,
                     decoration: BoxDecoration(
-                      color: catColor.withOpacity(0.15),
+                      color: catColor.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Center(
@@ -460,7 +460,7 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                     decoration: BoxDecoration(
-                      color: catColor.withOpacity(0.1),
+                      color: catColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Text(
@@ -494,9 +494,9 @@ class _SpokenRulesScreenState extends State<SpokenRulesScreen> {
                 width: double.infinity,
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: catColor.withOpacity(0.06),
+                  color: catColor.withValues(alpha: 0.06),
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: catColor.withOpacity(0.15)),
+                  border: Border.all(color: catColor.withValues(alpha: 0.15)),
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,

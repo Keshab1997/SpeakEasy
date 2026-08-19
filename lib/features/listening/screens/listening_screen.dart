@@ -276,15 +276,15 @@ class _ListeningScreenState extends State<ListeningScreen>
                 child: Container(
                   width: double.infinity, padding: const EdgeInsets.all(18),
                   decoration: BoxDecoration(
-                    color: cat.color.withOpacity(0.1),
+                    color: cat.color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: cat.color.withOpacity(0.2)),
+                    border: Border.all(color: cat.color.withValues(alpha: 0.2)),
                   ),
                   child: Row(children: [
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: cat.color.withOpacity(0.15),
+                        color: cat.color.withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Icon(cat.icon, color: cat.color, size: 30),
@@ -298,7 +298,7 @@ class _ListeningScreenState extends State<ListeningScreen>
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                       decoration: BoxDecoration(
-                        color: cat.color.withOpacity(0.15), borderRadius: BorderRadius.circular(10),
+                        color: cat.color.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(10),
                       ),
                       child: Text('${cat.stories.length}',
                           style: TextStyle(color: cat.color, fontWeight: FontWeight.bold, fontSize: 13)),
@@ -350,15 +350,15 @@ class _ListeningScreenState extends State<ListeningScreen>
                 child: Container(
                   width: double.infinity, padding: const EdgeInsets.all(18),
                   decoration: BoxDecoration(
-                    color: accent.withOpacity(0.08),
+                    color: accent.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: accent.withOpacity(0.15)),
+                    border: Border.all(color: accent.withValues(alpha: 0.15)),
                   ),
                   child: Row(children: [
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: accent.withOpacity(0.12), borderRadius: BorderRadius.circular(16),
+                        color: accent.withValues(alpha: 0.12), borderRadius: BorderRadius.circular(16),
                       ),
                       child: const Icon(Icons.menu_book_rounded, color: AppColors.primary, size: 28),
                     ),
@@ -370,7 +370,7 @@ class _ListeningScreenState extends State<ListeningScreen>
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                           decoration: BoxDecoration(
-                            color: accent.withOpacity(0.15), borderRadius: BorderRadius.circular(6),
+                            color: accent.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(6),
                           ),
                           child: Text(story.level,
                               style: TextStyle(fontSize: 10, color: accent, fontWeight: FontWeight.w600)),
@@ -440,9 +440,9 @@ class _ListeningScreenState extends State<ListeningScreen>
               Container(
                 width: double.infinity, padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: accent.withOpacity(0.08),
+                  color: accent.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: accent.withOpacity(0.15)),
+                  border: Border.all(color: accent.withValues(alpha: 0.15)),
                 ),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text('বাংলা:', style: TextStyle(color: Colors.grey.shade500, fontSize: 12)),
@@ -455,7 +455,7 @@ class _ListeningScreenState extends State<ListeningScreen>
               Container(
                 width: double.infinity, padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withOpacity(0.06),
+                  color: AppColors.primary.withValues(alpha: 0.06),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Column(children: [
@@ -567,13 +567,13 @@ class _ListeningScreenState extends State<ListeningScreen>
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
         decoration: BoxDecoration(
-          color: AppColors.primary.withOpacity(0.1),
+          color: AppColors.primary.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Row(mainAxisSize: MainAxisSize.min, children: [
           Icon(icon, color: AppColors.primary, size: 20),
           const SizedBox(width: 4),
-          Text(label, style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.w600, fontSize: 13)),
+          Text(label, style: const TextStyle(color: AppColors.primary, fontWeight: FontWeight.w600, fontSize: 13)),
         ]),
       ),
     );
@@ -584,10 +584,10 @@ class _ListeningScreenState extends State<ListeningScreen>
     return Container(
       width: double.infinity, padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: correct ? AppColors.success.withOpacity(0.1) : AppColors.error.withOpacity(0.1),
+        color: correct ? AppColors.success.withValues(alpha: 0.1) : AppColors.error.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: correct ? AppColors.success.withOpacity(0.3) : AppColors.error.withOpacity(0.3),
+          color: correct ? AppColors.success.withValues(alpha: 0.3) : AppColors.error.withValues(alpha: 0.3),
         ),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -691,8 +691,8 @@ class _ListeningScreenState extends State<ListeningScreen>
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1), borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.2)),
+        color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(children: [
         Text(value, style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: color)),
@@ -731,7 +731,7 @@ class _AnimatedMic extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: isListening
-                    ? AppColors.error.withOpacity(0.1 + pulseCtrl.value * 0.15)
+                    ? AppColors.error.withValues(alpha: 0.1 + pulseCtrl.value * 0.15)
                     : null,
               ),
               child: IconButton(
@@ -771,7 +771,7 @@ class _ListeningBars extends StatelessWidget {
               height: height,
               margin: const EdgeInsets.symmetric(horizontal: 2.5),
               decoration: BoxDecoration(
-                color: AppColors.error.withOpacity(0.6 + t * 0.4),
+                color: AppColors.error.withValues(alpha: 0.6 + t * 0.4),
                 borderRadius: BorderRadius.circular(2),
               ),
             );

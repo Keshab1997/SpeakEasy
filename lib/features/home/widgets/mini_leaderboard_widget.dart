@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/widgets/skeleton_widget.dart';
 import '../../../providers/game/leaderboard_provider.dart';
-import '../../../repositories/leaderboard_repository.dart';
 import '../../game/screens/leaderboard_screen.dart';
 
 class MiniLeaderboardWidget extends ConsumerWidget {
@@ -25,7 +24,6 @@ class MiniLeaderboardWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final leaderboardAsync = ref.watch(leaderboardProvider);
-    final theme = Theme.of(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return leaderboardAsync.when(
@@ -48,7 +46,7 @@ class MiniLeaderboardWidget extends ConsumerWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.03),
+                color: Colors.black.withValues(alpha: 0.03),
                 blurRadius: 10,
                 offset: const Offset(0, 4),
               ),
@@ -61,7 +59,7 @@ class MiniLeaderboardWidget extends ConsumerWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withOpacity(0.08),
+                  color: AppColors.primary.withValues(alpha: 0.08),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(24),
                     topRight: Radius.circular(24),
@@ -71,7 +69,7 @@ class MiniLeaderboardWidget extends ConsumerWidget {
                   children: [
                     const Icon(Icons.emoji_events_rounded, color: AppColors.primary, size: 20),
                     const SizedBox(width: 8),
-                    Text(
+                    const Text(
                       'LEADERBOARD',
                       style: TextStyle(
                         color: AppColors.primary,
@@ -90,7 +88,7 @@ class MiniLeaderboardWidget extends ConsumerWidget {
                           ),
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         'See All',
                         style: TextStyle(
                           color: AppColors.primary,
@@ -100,7 +98,7 @@ class MiniLeaderboardWidget extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(width: 4),
-                    Icon(
+                    const Icon(
                       Icons.arrow_forward_ios_rounded,
                       size: 10,
                       color: AppColors.primary,
@@ -126,7 +124,7 @@ class MiniLeaderboardWidget extends ConsumerWidget {
                             width: isFirst ? 48 : 40,
                             height: isFirst ? 48 : 40,
                             decoration: BoxDecoration(
-                              color: AppColors.primary.withOpacity(0.15),
+                              color: AppColors.primary.withValues(alpha: 0.15),
                               shape: BoxShape.circle,
                               border: isFirst
                                   ? Border.all(color: AppColors.primary, width: 2)
@@ -199,10 +197,10 @@ class MiniLeaderboardWidget extends ConsumerWidget {
                         width: 32,
                         height: 32,
                         decoration: BoxDecoration(
-                          color: Colors.amber.withOpacity(0.15),
+                          color: Colors.amber.withValues(alpha: 0.15),
                           shape: BoxShape.circle,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             '👤',
                             style: TextStyle(fontSize: 16),
@@ -235,12 +233,12 @@ class MiniLeaderboardWidget extends ConsumerWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                         decoration: BoxDecoration(
-                          color: AppColors.primary.withOpacity(0.1),
+                          color: AppColors.primary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
                           'Level ${currentUser.level}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.w600,
                             color: AppColors.primary,
@@ -262,14 +260,14 @@ class MiniLeaderboardWidget extends ConsumerWidget {
                         ),
                       );
                     },
-                    child: Row(
+                    child: const Row(
                       children: [
                         Icon(
                           Icons.sports_esports_rounded,
                           size: 18,
                           color: AppColors.primary,
                         ),
-                        const SizedBox(width: 8),
+                        SizedBox(width: 8),
                         Expanded(
                           child: Text(
                             'Play games to earn XP & climb!',

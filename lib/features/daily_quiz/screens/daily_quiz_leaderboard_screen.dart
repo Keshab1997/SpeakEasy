@@ -108,7 +108,7 @@ class _DailyQuizLeaderboardScreenState
             onPressed: () => Navigator.of(context).maybePop(),
             icon: const Icon(Icons.arrow_back_ios_new_rounded),
             style: IconButton.styleFrom(
-              backgroundColor: AppColors.primary.withOpacity(0.1),
+              backgroundColor: AppColors.primary.withValues(alpha: 0.1),
               foregroundColor: AppColors.primary,
             ),
           ),
@@ -127,7 +127,7 @@ class _DailyQuizLeaderboardScreenState
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             decoration: BoxDecoration(
-              color: _gold.withOpacity(0.12),
+              color: _gold.withValues(alpha: 0.12),
               borderRadius: BorderRadius.circular(20),
             ),
             child: const Text(
@@ -169,7 +169,7 @@ class _DailyQuizLeaderboardScreenState
                 width: 72,
                 height: 72,
                 decoration: BoxDecoration(
-                  color: AppColors.error.withOpacity(0.1),
+                  color: AppColors.error.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child:
@@ -370,7 +370,7 @@ class _PodiumTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(22),
         boxShadow: [
           BoxShadow(
-            color: _DailyQuizLeaderboardScreenState._gold.withOpacity(0.35),
+            color: _DailyQuizLeaderboardScreenState._gold.withValues(alpha: 0.35),
             blurRadius: 16,
             offset: const Offset(0, 8),
           ),
@@ -386,7 +386,7 @@ class _PodiumTile extends StatelessWidget {
               height: 90,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white.withOpacity(0.12),
+                color: Colors.white.withValues(alpha: 0.12),
               ),
             ),
           ),
@@ -398,13 +398,13 @@ class _PodiumTile extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.6),
+                    color: Colors.white.withValues(alpha: 0.6),
                     width: 3,
                   ),
                 ),
                 child: CircleAvatar(
                   radius: 30,
-                  backgroundColor: Colors.white.withOpacity(0.3),
+                  backgroundColor: Colors.white.withValues(alpha: 0.3),
                   backgroundImage: hasPhoto ? NetworkImage(photoUrl!) : null,
                   child: hasPhoto
                       ? null
@@ -444,7 +444,7 @@ class _PodiumTile extends StatelessWidget {
                     Text(
                       '#$rank · $score pts',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.9),
+                        color: Colors.white.withValues(alpha: 0.9),
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                       ),
@@ -501,7 +501,7 @@ class _PodiumCard extends StatelessWidget {
           const SizedBox(height: 8),
           CircleAvatar(
             radius: 20,
-            backgroundColor: Colors.white.withOpacity(0.4),
+            backgroundColor: Colors.white.withValues(alpha: 0.4),
             backgroundImage: hasPhoto ? NetworkImage(photoUrl!) : null,
             child: hasPhoto
                 ? null
@@ -576,7 +576,7 @@ class _LeaderboardRow extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
         color: isYou
-            ? AppColors.primary.withOpacity(0.08)
+            ? AppColors.primary.withValues(alpha: 0.08)
             : (isDark ? AppColors.surfaceDark : Colors.white),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
@@ -587,7 +587,7 @@ class _LeaderboardRow extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.03),
+            color: Colors.black.withValues(alpha: 0.03),
             blurRadius: 6,
             offset: const Offset(0, 2),
           ),
@@ -607,7 +607,7 @@ class _LeaderboardRow extends StatelessWidget {
                     width: 26,
                     height: 26,
                     decoration: BoxDecoration(
-                      color: accent.withOpacity(0.12),
+                      color: accent.withValues(alpha: 0.12),
                       shape: BoxShape.circle,
                     ),
                     child: Center(
@@ -626,7 +626,7 @@ class _LeaderboardRow extends StatelessWidget {
           // Avatar
           CircleAvatar(
             radius: 15,
-            backgroundColor: accent.withOpacity(0.15),
+            backgroundColor: accent.withValues(alpha: 0.15),
             backgroundImage: hasPhoto ? NetworkImage(entry.photoUrl!) : null,
             child: hasPhoto
                 ? null

@@ -50,7 +50,7 @@ class _MockTestListScreenState extends ConsumerState<MockTestListScreen> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.error_outline_rounded, size: 64, color: Colors.redAccent.withOpacity(0.5)),
+                        Icon(Icons.error_outline_rounded, size: 64, color: Colors.redAccent.withValues(alpha: 0.5)),
                         const SizedBox(height: 16),
                         Text('Error loading tests', style: Theme.of(context).textTheme.titleLarge),
                         const SizedBox(height: 8),
@@ -113,7 +113,7 @@ class _MockTestListScreenState extends ConsumerState<MockTestListScreen> {
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: AppColors.primary.withOpacity(0.3),
+                color: AppColors.primary.withValues(alpha: 0.3),
                 blurRadius: 12,
                 offset: const Offset(0, 4),
               ),
@@ -178,7 +178,7 @@ class _MockTestListScreenState extends ConsumerState<MockTestListScreen> {
         Icon(icon, color: color, size: 22),
         const SizedBox(height: 4),
         Text(value, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18)),
-        Text(label, style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 11)),
+        Text(label, style: TextStyle(color: Colors.white.withValues(alpha: 0.7), fontSize: 11)),
       ],
     );
   }
@@ -222,7 +222,7 @@ class _MockTestListScreenState extends ConsumerState<MockTestListScreen> {
                     ? AppColors.secondary
                     : (unlocked
                         ? (isDark ? AppColors.borderDark : AppColors.borderLight)
-                        : Colors.grey.withOpacity(0.2)),
+                        : Colors.grey.withValues(alpha: 0.2)),
               ),
             ),
             padding: const EdgeInsets.all(14),
@@ -238,7 +238,7 @@ class _MockTestListScreenState extends ConsumerState<MockTestListScreen> {
                             ? const LinearGradient(colors: [AppColors.secondary, Color(0xFF00BFA5)])
                             : const LinearGradient(colors: AppColors.primaryGradient))
                         : LinearGradient(
-                            colors: [Colors.grey.withOpacity(0.3), Colors.grey.withOpacity(0.1)]),
+                            colors: [Colors.grey.withValues(alpha: 0.3), Colors.grey.withValues(alpha: 0.1)]),
                     borderRadius: BorderRadius.circular(14),
                   ),
                   child: Center(
@@ -294,8 +294,8 @@ class _MockTestListScreenState extends ConsumerState<MockTestListScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     decoration: BoxDecoration(
                       color: perfect
-                          ? AppColors.secondary.withOpacity(0.15)
-                          : AppColors.primary.withOpacity(0.1),
+                          ? AppColors.secondary.withValues(alpha: 0.15)
+                          : AppColors.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Row(

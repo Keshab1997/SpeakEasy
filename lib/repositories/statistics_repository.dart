@@ -66,32 +66,32 @@ class StatisticsRepository {
 
   Future<int> getTotalCorrectAnswers() async {
     final results = await getResults();
-    return results.fold<int>(0, (sum, r) => sum + r.correctAnswers);
+    return results.fold<int>(0, (acc, r) => acc + r.correctAnswers);
   }
 
   Future<int> getTotalWrongAnswers() async {
     final results = await getResults();
-    return results.fold<int>(0, (sum, r) => sum + r.wrongAnswers);
+    return results.fold<int>(0, (acc, r) => acc + r.wrongAnswers);
   }
 
   Future<double> getOverallAccuracy() async {
     final results = await getResults();
     if (results.isEmpty) return 0.0;
-    final totalCorrect = results.fold<int>(0, (sum, r) => sum + r.correctAnswers);
+    final totalCorrect = results.fold<int>(0, (acc, r) => acc + r.correctAnswers);
     final totalQuestions =
-        results.fold<int>(0, (sum, r) => sum + r.correctAnswers + r.wrongAnswers);
+        results.fold<int>(0, (acc, r) => acc + r.correctAnswers + r.wrongAnswers);
     if (totalQuestions == 0) return 0.0;
     return totalCorrect / totalQuestions;
   }
 
   Future<int> getTotalEarnedXP() async {
     final results = await getResults();
-    return results.fold<int>(0, (sum, r) => sum + r.earnedXP);
+    return results.fold<int>(0, (acc, r) => acc + r.earnedXP);
   }
 
   Future<int> getTotalEarnedCoins() async {
     final results = await getResults();
-    return results.fold<int>(0, (sum, r) => sum + r.earnedCoins);
+    return results.fold<int>(0, (acc, r) => acc + r.earnedCoins);
   }
 
   /// Returns the sum of correct answers for a specific game mode.
@@ -100,7 +100,7 @@ class StatisticsRepository {
     final results = await getResults();
     return results
         .where((r) => r.gameType == gameType)
-        .fold<int>(0, (sum, r) => sum + r.correctAnswers);
+        .fold<int>(0, (acc, r) => acc + r.correctAnswers);
   }
 
   Future<GameResultModel?> getBestResult() async {

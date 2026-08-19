@@ -123,13 +123,13 @@ class _NotificationDialogState extends State<NotificationDialog> {
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: notificationEnabled
-                      ? Colors.green.withOpacity(0.1)
-                      : Colors.orange.withOpacity(0.1),
+                      ? Colors.green.withValues(alpha: 0.1)
+                      : Colors.orange.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
                     color: notificationEnabled
-                        ? Colors.green.withOpacity(0.3)
-                        : Colors.orange.withOpacity(0.3),
+                        ? Colors.green.withValues(alpha: 0.3)
+                        : Colors.orange.withValues(alpha: 0.3),
                   ),
                 ),
                 child: Row(
@@ -279,7 +279,7 @@ class _NotificationDialogState extends State<NotificationDialog> {
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
           color: isActive
-              ? color.withOpacity(0.3)
+              ? color.withValues(alpha: 0.3)
               : (isDark ? Colors.grey[700]! : Colors.grey[300]!),
         ),
       ),
@@ -288,7 +288,7 @@ class _NotificationDialogState extends State<NotificationDialog> {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(icon, color: color, size: 20),
@@ -320,13 +320,13 @@ class _NotificationDialogState extends State<NotificationDialog> {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
               color: isActive
-                  ? Colors.green.withOpacity(0.1)
-                  : Colors.grey.withOpacity(0.1),
+                  ? Colors.green.withValues(alpha: 0.1)
+                  : Colors.grey.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
               border: Border.all(
                 color: isActive
-                    ? Colors.green.withOpacity(0.3)
-                    : Colors.grey.withOpacity(0.3),
+                    ? Colors.green.withValues(alpha: 0.3)
+                    : Colors.grey.withValues(alpha: 0.3),
               ),
             ),
             child: Text(

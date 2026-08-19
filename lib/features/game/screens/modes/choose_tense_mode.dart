@@ -11,7 +11,6 @@ class ChooseTenseMode extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
     final gameState = ref.watch(gameProvider);
 
     if (gameState.isLoading) {
@@ -109,7 +108,7 @@ class ChooseTenseMode extends ConsumerWidget {
                           ? Colors.red
                           : isSelected
                               ? Colors.green
-                              : Colors.green.withOpacity(0.3),
+                              : Colors.green.withValues(alpha: 0.3),
                   width: showResult && (isCorrect || isWrong) ? 3 : 2,
                 ),
               ),
@@ -126,7 +125,7 @@ class ChooseTenseMode extends ConsumerWidget {
                               ? Colors.red
                               : isSelected
                                   ? Colors.green
-                                  : Colors.green.withOpacity(0.2),
+                                  : Colors.green.withValues(alpha: 0.2),
                       shape: BoxShape.circle,
                     ),
                     child: Center(
@@ -188,7 +187,7 @@ class ChooseTenseMode extends ConsumerWidget {
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: isCorrect ? [Colors.green, Colors.green.withOpacity(0.8)] : [Colors.red, Colors.red.withOpacity(0.8)],
+          colors: isCorrect ? [Colors.green, Colors.green.withValues(alpha: 0.8)] : [Colors.red, Colors.red.withValues(alpha: 0.8)],
         ),
         borderRadius: BorderRadius.circular(20),
       ),
@@ -225,7 +224,7 @@ class ChooseTenseMode extends ConsumerWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            question.explanation ?? 'No explanation available.',
+            question.explanation,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 15,

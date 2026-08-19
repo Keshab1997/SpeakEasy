@@ -120,8 +120,8 @@ class _StreakWidgetState extends State<StreakWidget>
         boxShadow: [
           BoxShadow(
             color: widget.currentStreak > 0
-                ? (isDark ? const Color(0xFFFF6B35).withOpacity(0.4) : Colors.orange.withOpacity(0.3))
-                : (isDark ? Colors.black.withOpacity(0.3) : Colors.grey.withOpacity(0.2)),
+                ? (isDark ? const Color(0xFFFF6B35).withValues(alpha: 0.4) : Colors.orange.withValues(alpha: 0.3))
+                : (isDark ? Colors.black.withValues(alpha: 0.3) : Colors.grey.withValues(alpha: 0.2)),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -156,14 +156,14 @@ class _StreakWidgetState extends State<StreakWidget>
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Text(
+                                const Text(
                                   '🔥',
                                   style: TextStyle(fontSize: 36),
                                 ),
                                 const SizedBox(width: 8),
                                 Text(
                                   '${widget.currentStreak}',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 48,
                                     fontWeight: FontWeight.w900,
                                     color: Colors.white,
@@ -178,7 +178,7 @@ class _StreakWidgetState extends State<StreakWidget>
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white.withOpacity(0.8),
+                                      color: Colors.white.withValues(alpha: 0.8),
                                     ),
                                   ),
                                 ),
@@ -198,13 +198,13 @@ class _StreakWidgetState extends State<StreakWidget>
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 6),
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.12),
+                                color: Colors.white.withValues(alpha: 0.12),
                                 borderRadius: BorderRadius.circular(14),
                               ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.calendar_view_week_rounded,
                                     color: Colors.amberAccent,
                                     size: 16,
@@ -224,7 +224,7 @@ class _StreakWidgetState extends State<StreakWidget>
                                     style: TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white.withOpacity(0.7),
+                                      color: Colors.white.withValues(alpha: 0.7),
                                     ),
                                   ),
                                   const SizedBox(width: 4),
@@ -242,16 +242,16 @@ class _StreakWidgetState extends State<StreakWidget>
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 6),
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.15),
+                                color: Colors.white.withValues(alpha: 0.15),
                                 borderRadius: BorderRadius.circular(20),
                                 border: Border.all(
-                                  color: Colors.white.withOpacity(0.3),
+                                  color: Colors.white.withValues(alpha: 0.3),
                                 ),
                               ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.shield_rounded,
                                     color: Colors.cyanAccent,
                                     size: 16,
@@ -300,8 +300,8 @@ class _StreakWidgetState extends State<StreakWidget>
                         ],
                       )
                     else
-                      Text(
-                        "Complete a lesson to keep your streak!",
+                      const Text(
+                        'Complete a lesson to keep your streak!',
                         style: TextStyle(
                           color: Colors.white60,
                           fontSize: 12,
@@ -313,10 +313,10 @@ class _StreakWidgetState extends State<StreakWidget>
                         padding: const EdgeInsets.symmetric(
                             horizontal: 6, vertical: 2),
                         decoration: BoxDecoration(
-                          color: Colors.amber.withOpacity(0.2),
+                          color: Colors.amber.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                            color: Colors.amber.shade300.withOpacity(0.4),
+                            color: Colors.amber.shade300.withValues(alpha: 0.4),
                           ),
                         ),
                         child: const Row(
@@ -397,7 +397,7 @@ class _StreakWidgetState extends State<StreakWidget>
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
@@ -407,14 +407,14 @@ class _StreakWidgetState extends State<StreakWidget>
           Row(
             children: [
               Icon(Icons.calendar_today_rounded,
-                  size: 12, color: Colors.white.withOpacity(0.6)),
+                  size: 12, color: Colors.white.withValues(alpha: 0.6)),
               const SizedBox(width: 4),
               Text(
                 'This Week',
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white.withOpacity(0.6),
+                  color: Colors.white.withValues(alpha: 0.6),
                 ),
               ),
               const Spacer(),
@@ -423,7 +423,7 @@ class _StreakWidgetState extends State<StreakWidget>
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w700,
-                  color: Colors.white.withOpacity(0.8),
+                  color: Colors.white.withValues(alpha: 0.8),
                 ),
               ),
             ],
@@ -442,7 +442,7 @@ class _StreakWidgetState extends State<StreakWidget>
                       fontWeight: isToday ? FontWeight.w700 : FontWeight.w500,
                       color: isToday
                           ? Colors.white
-                          : Colors.white.withOpacity(0.5),
+                          : Colors.white.withValues(alpha: 0.5),
                     ),
                   ),
                 ),
@@ -463,13 +463,13 @@ class _StreakWidgetState extends State<StreakWidget>
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: isActive
-                          ? Colors.green.withOpacity(0.7)
+                          ? Colors.green.withValues(alpha: 0.7)
                           : (isToday
-                              ? Colors.white.withOpacity(0.1)
+                              ? Colors.white.withValues(alpha: 0.1)
                               : Colors.transparent),
                       border: isToday && !isActive
                           ? Border.all(
-                              color: Colors.white.withOpacity(0.3), width: 1.5)
+                              color: Colors.white.withValues(alpha: 0.3), width: 1.5)
                           : null,
                     ),
                     child: Center(
@@ -480,7 +480,7 @@ class _StreakWidgetState extends State<StreakWidget>
                               : Text(dayLabels[i].substring(0, 1),
                                   style: TextStyle(
                                     fontSize: 11,
-                                    color: Colors.white.withOpacity(0.2),
+                                    color: Colors.white.withValues(alpha: 0.2),
                                   ))),
                     ),
                   ),
@@ -498,12 +498,12 @@ class _StreakWidgetState extends State<StreakWidget>
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
         children: [
-          Icon(Icons.star_rounded, color: Colors.amberAccent, size: 18),
+          const Icon(Icons.star_rounded, color: Colors.amberAccent, size: 18),
           const SizedBox(width: 6),
           Expanded(
             child: Column(
@@ -517,7 +517,7 @@ class _StreakWidgetState extends State<StreakWidget>
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white.withOpacity(0.7),
+                        color: Colors.white.withValues(alpha: 0.7),
                       ),
                     ),
                     const Spacer(),
@@ -526,7 +526,7 @@ class _StreakWidgetState extends State<StreakWidget>
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white.withOpacity(0.9),
+                        color: Colors.white.withValues(alpha: 0.9),
                       ),
                     ),
                   ],
@@ -536,7 +536,7 @@ class _StreakWidgetState extends State<StreakWidget>
                   borderRadius: BorderRadius.circular(4),
                   child: LinearProgressIndicator(
                     value: progress,
-                    backgroundColor: Colors.white.withOpacity(0.15),
+                    backgroundColor: Colors.white.withValues(alpha: 0.15),
                     valueColor: AlwaysStoppedAnimation<Color>(
                       progress >= 1.0
                           ? Colors.greenAccent
@@ -565,9 +565,9 @@ class _StreakWidgetState extends State<StreakWidget>
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.12),
+          color: Colors.white.withValues(alpha: 0.12),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.white.withOpacity(0.15)),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.15)),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -617,7 +617,7 @@ class _StreakWidgetState extends State<StreakWidget>
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.12),
+        color: Colors.white.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Text(

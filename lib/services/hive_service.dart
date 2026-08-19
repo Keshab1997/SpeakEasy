@@ -894,8 +894,9 @@ class HiveService {
     final box = Hive.box(_notificationHistoryBox);
     final history = getNotificationHistory();
     history.insert(0, notification);
-    if (history.length > 100)
+    if (history.length > 100) {
       history.removeLast(); // Keep last 100 notifications
+    }
     await box.put('notifications', history);
   }
 

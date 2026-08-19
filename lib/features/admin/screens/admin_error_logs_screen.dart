@@ -79,7 +79,7 @@ class _AdminErrorLogsScreenState extends State<AdminErrorLogsScreen> {
             children: [
               Container(
                 padding: const EdgeInsets.all(12),
-                color: (isDark ? Colors.white : Colors.black).withOpacity(0.05),
+                color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.05),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [

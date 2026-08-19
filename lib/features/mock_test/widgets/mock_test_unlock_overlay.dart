@@ -204,7 +204,7 @@ class _MockTestUnlockOverlayState extends ConsumerState<MockTestUnlockOverlay>
     return FadeTransition(
       opacity: _fadeAnimation,
       child: Container(
-        color: Colors.black.withOpacity(0.7),
+        color: Colors.black.withValues(alpha: 0.7),
         child: Center(
           child: ScaleTransition(
             scale: _scaleAnimation,
@@ -221,7 +221,7 @@ class _MockTestUnlockOverlayState extends ConsumerState<MockTestUnlockOverlay>
                 borderRadius: BorderRadius.circular(28),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.primary.withOpacity(0.2),
+                    color: AppColors.primary.withValues(alpha: 0.2),
                     blurRadius: 30,
                     offset: const Offset(0, 10),
                   ),
@@ -243,7 +243,7 @@ class _MockTestUnlockOverlayState extends ConsumerState<MockTestUnlockOverlay>
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.deepOrange.withOpacity(0.3),
+                            color: Colors.deepOrange.withValues(alpha: 0.3),
                             blurRadius: 12,
                             offset: const Offset(0, 4),
                           ),
@@ -299,7 +299,7 @@ class _MockTestUnlockOverlayState extends ConsumerState<MockTestUnlockOverlay>
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.1),
+                        color: AppColors.primary.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Row(
@@ -309,7 +309,7 @@ class _MockTestUnlockOverlayState extends ConsumerState<MockTestUnlockOverlay>
                           const SizedBox(width: 6),
                           Text(
                             '$coins coins available',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: AppColors.primary,
@@ -354,9 +354,9 @@ class _MockTestUnlockOverlayState extends ConsumerState<MockTestUnlockOverlay>
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: Colors.red.withOpacity(0.1),
+                          color: Colors.red.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.red.withOpacity(0.2)),
+                          border: Border.all(color: Colors.red.withValues(alpha: 0.2)),
                         ),
                         child: Row(
                           children: [
@@ -415,7 +415,7 @@ class _MockTestUnlockOverlayState extends ConsumerState<MockTestUnlockOverlay>
       width: double.infinity,
       child: Material(
         borderRadius: BorderRadius.circular(16),
-        color: enabled ? color.withOpacity(0.12) : (isDark ? Colors.white10 : Colors.grey.shade100),
+        color: enabled ? color.withValues(alpha: 0.12) : (isDark ? Colors.white10 : Colors.grey.shade100),
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
           onTap: enabled ? onTap : null,
@@ -431,7 +431,7 @@ class _MockTestUnlockOverlayState extends ConsumerState<MockTestUnlockOverlay>
                     width: 48,
                     height: 48,
                     decoration: BoxDecoration(
-                      color: enabled ? color.withOpacity(0.15) : Colors.grey.withOpacity(0.1),
+                      color: enabled ? color.withValues(alpha: 0.15) : Colors.grey.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: Center(

@@ -89,13 +89,13 @@ class _VerbFormListScreenState extends State<VerbFormListScreen> {
               physics: const BouncingScrollPhysics(),
               child: Row(
                 children: [
-                  _HeaderChip(label: 'V1', color: AppColors.primary),
+                  const _HeaderChip(label: 'V1', color: AppColors.primary),
                   const SizedBox(width: 4),
-                  _HeaderChip(label: 'V2', color: AppColors.secondary),
+                  const _HeaderChip(label: 'V2', color: AppColors.secondary),
                   const SizedBox(width: 4),
-                  _HeaderChip(label: 'V3', color: AppColors.warning),
+                  const _HeaderChip(label: 'V3', color: AppColors.warning),
                   const SizedBox(width: 4),
-                  _HeaderChip(label: 'V4', color: AppColors.info),
+                  const _HeaderChip(label: 'V4', color: AppColors.info),
                   const SizedBox(width: 4),
                   _HeaderChip(label: 'V5', color: AppColors.pinkGradient[0]),
                 ],
@@ -137,7 +137,7 @@ class _VerbFormListScreenState extends State<VerbFormListScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                     decoration: BoxDecoration(
-                      color: accent.withOpacity(0.1),
+                      color: accent.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(v.bangla,
@@ -190,7 +190,7 @@ class _HeaderChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.15),
+        color: color.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Text(label,
@@ -210,9 +210,9 @@ class _ValueChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.08),
+        color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Text(value,
           style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12, color: color)),

@@ -289,7 +289,7 @@ class NotificationService {
       try {
         // Fetch today's word for the rich notification content
         final todayWord = await DailyWordService.getTodayWord();
-        final richTitle = '📚 Word of the Day';
+        const richTitle = '📚 Word of the Day';
         final richBody = '${todayWord.word} → ${todayWord.banglaMeaning}';
 
         await _scheduleDailyAt(
@@ -341,8 +341,8 @@ ${todayWord.exampleSentence}
     if (HiveService.isStreakNotification()) {
       final currentStreak = HiveService.getStreak();
       final streakMessage = currentStreak > 0
-          ? "🔥 আপনার $currentStreak দিনের স্ট্রিক ভাঙার পথে! এখনই প্র্যাকটিস শুরু করুন!"
-          : "🔥 আজকে কি প্র্যাকটিস করেছেন? স্ট্রিক ধরে রাখুন!";
+          ? '🔥 আপনার $currentStreak দিনের স্ট্রিক ভাঙার পথে! এখনই প্র্যাকটিস শুরু করুন!'
+          : '🔥 আজকে কি প্র্যাকটিস করেছেন? স্ট্রিক ধরে রাখুন!';
       await _scheduleDailyAt(
         id: _streakAtRiskId,
         hour: 20,
@@ -518,13 +518,13 @@ ${todayWord.exampleSentence}
     String? payload,
   }) async {
     try {
-      final androidDetails = AndroidNotificationDetails(
+      const androidDetails = AndroidNotificationDetails(
         'speakeasy_idle_reminder_v2',
         'স্পিকইজি রিমাইন্ডার',
         channelDescription: 'ইউজারকে অ্যাপে ফিরিয়ে আনার জন্য রিমাইন্ডার',
         importance: Importance.high,
         priority: Priority.high,
-        sound: const RawResourceAndroidNotificationSound('speakeasy_notification'),
+        sound: RawResourceAndroidNotificationSound('speakeasy_notification'),
         icon: '@mipmap/ic_launcher',
         playSound: true,
       );
@@ -536,7 +536,7 @@ ${todayWord.exampleSentence}
         sound: 'speakeasy_notification.caf',
       );
 
-      final details = NotificationDetails(
+      const details = NotificationDetails(
         android: androidDetails,
         iOS: iosDetails,
       );

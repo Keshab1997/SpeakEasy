@@ -94,7 +94,7 @@ class _DailyConversationScreenState extends State<DailyConversationScreen> {
                   decoration: BoxDecoration(
                     color: isSpeakerA
                         ? (isDark ? AppColors.surfaceDark : AppColors.surfaceLight)
-                        : AppColors.primary.withOpacity(0.05),
+                        : AppColors.primary.withValues(alpha: 0.05),
                     borderRadius: BorderRadius.only(
                       topLeft: const Radius.circular(16),
                       topRight: const Radius.circular(16),
@@ -104,7 +104,7 @@ class _DailyConversationScreenState extends State<DailyConversationScreen> {
                     border: Border.all(
                       color: isSpeakerA
                           ? (isDark ? AppColors.borderDark : AppColors.borderLight)
-                          : AppColors.primary.withOpacity(0.15),
+                          : AppColors.primary.withValues(alpha: 0.15),
                     ),
                   ),
                   child: Column(

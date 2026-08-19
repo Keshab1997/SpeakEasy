@@ -15,7 +15,6 @@ class ExplanationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Container(
       margin: const EdgeInsets.all(16),
@@ -23,15 +22,15 @@ class ExplanationWidget extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: isCorrect
-              ? [AppColors.success, AppColors.success.withOpacity(0.8)]
-              : [AppColors.error, AppColors.error.withOpacity(0.8)],
+              ? [AppColors.success, AppColors.success.withValues(alpha: 0.8)]
+              : [AppColors.error, AppColors.error.withValues(alpha: 0.8)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: (isCorrect ? AppColors.success : AppColors.error).withOpacity(0.3),
+            color: (isCorrect ? AppColors.success : AppColors.error).withValues(alpha: 0.3),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),

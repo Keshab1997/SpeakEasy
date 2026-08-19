@@ -41,7 +41,7 @@ $_appLink
 
   /// Share app with referral code
   static Future<ShareResult> shareApp() {
-    final message = '''
+    const message = '''
 📚 $_appName — $_appTagline
 
 ৭০+ গ্রামার লেসন, ১০+ গেম, AI টিচার, স্পিকিং প্র্যাকটিস!

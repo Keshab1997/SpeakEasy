@@ -425,7 +425,7 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Text(text,
@@ -659,8 +659,8 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                       const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                   decoration: BoxDecoration(
                     color: isActive
-                        ? Colors.green.withOpacity(0.15)
-                        : Colors.red.withOpacity(0.15),
+                        ? Colors.green.withValues(alpha: 0.15)
+                        : Colors.red.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -716,8 +716,8 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                 InkWell(
                   borderRadius: BorderRadius.circular(16),
                   onTap: () => _confirmDelete(context, doc.id, name),
-                  child: Padding(
-                    padding: const EdgeInsets.all(6),
+                  child: const Padding(
+                    padding: EdgeInsets.all(6),
                     child:
                         Icon(Icons.delete_rounded, size: 16, color: Colors.red),
                   ),
@@ -970,7 +970,7 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                           fontWeight: FontWeight.bold, fontSize: 18)),
                   const SizedBox(height: 20),
                   DropdownButtonFormField<String>(
-                    value: provider,
+                    initialValue: provider,
                     decoration: const InputDecoration(
                       labelText: 'Provider',
                       border: OutlineInputBorder(),
@@ -1109,16 +1109,16 @@ class _AdminApiKeysScreenState extends State<AdminApiKeysScreen> {
                             height: 36,
                             decoration: BoxDecoration(
                               color:
-                                  Theme.of(ctx).primaryColor.withOpacity(0.1),
+                                  Theme.of(ctx).primaryColor.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(18),
                             ),
                             child: fetchingModels
-                                ? Padding(
+                                ? const Padding(
                                     padding: EdgeInsets.all(8),
                                     child: CircularProgressIndicator(
                                         strokeWidth: 2),
                                   )
-                                : Icon(Icons.download_rounded, size: 20),
+                                : const Icon(Icons.download_rounded, size: 20),
                           ),
                         ),
                       ],

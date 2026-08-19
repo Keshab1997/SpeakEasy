@@ -137,7 +137,7 @@ class PracticeScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           gradient: LinearGradient(colors: gradient, begin: Alignment.topLeft, end: Alignment.bottomRight),
           boxShadow: [
-            BoxShadow(color: gradient[0].withOpacity(0.3), blurRadius: 12, offset: const Offset(0, 4)),
+            BoxShadow(color: gradient[0].withValues(alpha: 0.3), blurRadius: 12, offset: const Offset(0, 4)),
           ],
         ),
         child: Padding(
@@ -149,7 +149,7 @@ class PracticeScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Icon(cat.icon, color: Colors.white, size: 22),
@@ -166,7 +166,7 @@ class PracticeScreen extends StatelessWidget {
                   const SizedBox(height: 1),
                   Text(cat.subtitle,
                       style: TextStyle(
-                          color: Colors.white.withOpacity(0.8),
+                          color: Colors.white.withValues(alpha: 0.8),
                           fontSize: 10)),
                 ],
               ),

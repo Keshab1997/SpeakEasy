@@ -188,7 +188,7 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
           preferredSize: const Size.fromHeight(4),
           child: LinearProgressIndicator(
             value: (_current + 1) / _questions.length,
-            backgroundColor: Colors.grey.withOpacity(0.2),
+            backgroundColor: Colors.grey.withValues(alpha: 0.2),
             valueColor: const AlwaysStoppedAnimation(AppColors.primary),
           ),
         ),
@@ -226,7 +226,7 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
+                      color: Colors.white.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Row(
@@ -251,10 +251,10 @@ class _VocabularyTestScreenState extends ConsumerState<VocabularyTestScreen> {
               final isCorrect = opt == q.correctAnswer;
               final isSelected = _selected == idx;
               Color bg = Colors.transparent;
-              Color border = Colors.grey.withOpacity(0.3);
+              Color border = Colors.grey.withValues(alpha: 0.3);
               if (_answered) {
-                if (isCorrect) { bg = Colors.green.withOpacity(0.12); border = Colors.green; }
-                else if (isSelected) { bg = Colors.red.withOpacity(0.12); border = Colors.red; }
+                if (isCorrect) { bg = Colors.green.withValues(alpha: 0.12); border = Colors.green; }
+                else if (isSelected) { bg = Colors.red.withValues(alpha: 0.12); border = Colors.red; }
               }
               return GestureDetector(
                 onTap: () => _select(opt),
@@ -490,7 +490,7 @@ class _HistorySheetState extends State<_HistorySheet> {
                         leading: Container(
                           padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                            color: AppColors.primary.withOpacity(0.1),
+                            color: AppColors.primary.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text('$score/$total',

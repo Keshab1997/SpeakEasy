@@ -202,7 +202,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         borderRadius: BorderRadius.circular(18),
         boxShadow: [
           BoxShadow(
-            color: gradient.first.withOpacity(0.25),
+            color: gradient.first.withValues(alpha: 0.25),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),
@@ -336,7 +336,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       ),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: roleColor.withOpacity(0.12),
+          backgroundColor: roleColor.withValues(alpha: 0.12),
           backgroundImage: user.photoUrl.isNotEmpty ? NetworkImage(user.photoUrl) : null,
           child: user.photoUrl.isEmpty
               ? Text(_initials(user.name), style: TextStyle(color: roleColor, fontWeight: FontWeight.bold))
@@ -596,22 +596,22 @@ class _AdminSkeleton extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        Row(
+        const Row(
           children: [
             Expanded(child: _Skel(height: 90)),
-            const SizedBox(width: 10),
+            SizedBox(width: 10),
             Expanded(child: _Skel(height: 90)),
-            const SizedBox(width: 10),
+            SizedBox(width: 10),
             Expanded(child: _Skel(height: 90)),
           ],
         ),
         const SizedBox(height: 16),
-        _Skel(height: 200),
+        const _Skel(height: 200),
         const SizedBox(height: 20),
-        _Skel(height: 14, width: 150),
+        const _Skel(height: 14, width: 150),
         const SizedBox(height: 12),
-        ...List.generate(5, (_) => Padding(
-          padding: const EdgeInsets.only(bottom: 8),
+        ...List.generate(5, (_) => const Padding(
+          padding: EdgeInsets.only(bottom: 8),
           child: _Skel(height: 72),
         )),
       ],
@@ -631,7 +631,7 @@ class _Skel extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: (isDark ? Colors.white : Colors.black).withOpacity(0.08),
+        color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(14),
       ),
     );

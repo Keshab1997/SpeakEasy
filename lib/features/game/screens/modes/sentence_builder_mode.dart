@@ -10,7 +10,6 @@ import '../../../../core/widgets/skeleton_widget.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../result_screen.dart';
-import '../../../../services/haptic_service.dart';
 
 class SentenceBuilderModeScreen extends ConsumerStatefulWidget {
   const SentenceBuilderModeScreen({super.key});
@@ -335,10 +334,10 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withValues(alpha: 0.1),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -403,7 +402,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: color.withOpacity(0.5),
+            color: color.withValues(alpha: 0.5),
             blurRadius: 8,
             spreadRadius: 2,
           ),
@@ -426,7 +425,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
@@ -452,7 +451,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -465,7 +464,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withOpacity(0.1),
+                  color: AppColors.primary.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: AppColors.primary),
                 ),
@@ -482,7 +481,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: _getDifficultyColor(question['difficulty']).withOpacity(0.1),
+                  color: _getDifficultyColor(question['difficulty']).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -526,7 +525,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: _isAnswerSubmitted
-              ? (_isCorrect ? Colors.green.withOpacity(0.2) : Colors.red.withOpacity(0.2))
+              ? (_isCorrect ? Colors.green.withValues(alpha: 0.2) : Colors.red.withValues(alpha: 0.2))
               : Colors.white,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
@@ -537,7 +536,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -618,11 +617,11 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
       width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.9),
+        color: Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -655,7 +654,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.blue.withOpacity(0.3),
+                        color: Colors.blue.withValues(alpha: 0.3),
                         blurRadius: 4,
                         offset: const Offset(0, 2),
                       ),
@@ -745,7 +744,7 @@ class _SentenceBuilderModeScreenState extends ConsumerState<SentenceBuilderModeS
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.1),
+                color: Colors.black.withValues(alpha: 0.1),
                 blurRadius: 10,
                 offset: const Offset(0, 4),
               ),

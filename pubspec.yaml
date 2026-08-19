@@ -64,8 +64,8 @@ dependencies:
   google_mobile_ads: ^5.0.0
   fl_chart: ^0.68.0
 
-dev_dependencies:
   flutter_skill: ^0.9.36
+dev_dependencies:
   flutter_test:
     sdk: flutter
 

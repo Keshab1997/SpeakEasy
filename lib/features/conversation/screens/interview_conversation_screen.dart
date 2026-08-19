@@ -34,7 +34,7 @@ class InterviewConversationScreen extends StatelessWidget {
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
               color: isInterviewer
-                  ? AppColors.primary.withOpacity(0.05)
+                  ? AppColors.primary.withValues(alpha: 0.05)
                   : (isDark ? AppColors.surfaceDark : AppColors.surfaceLight),
               borderRadius: BorderRadius.only(
                 topLeft: const Radius.circular(16),
@@ -44,7 +44,7 @@ class InterviewConversationScreen extends StatelessWidget {
               ),
               border: Border.all(
                 color: isInterviewer
-                    ? AppColors.primary.withOpacity(0.15)
+                    ? AppColors.primary.withValues(alpha: 0.15)
                     : (isDark ? AppColors.borderDark : AppColors.borderLight),
               ),
             ),

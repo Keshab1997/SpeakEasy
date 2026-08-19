@@ -68,7 +68,6 @@ void main() async {
   // Initialize WorkManager for background notification tasks
   await Workmanager().initialize(
     workmanagerCallbackDispatcher,
-    isInDebugMode: false,
   );
 
   // Register daily re-engagement check task

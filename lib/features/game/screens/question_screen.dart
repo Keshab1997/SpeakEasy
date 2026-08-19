@@ -150,7 +150,7 @@ class QuestionScreen extends ConsumerWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.1),
+                      color: AppColors.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: AppColors.primary),
                     ),
@@ -219,6 +219,7 @@ class QuestionScreen extends ConsumerWidget {
   Future<void> _handleContinue(BuildContext context, WidgetRef ref) async {
     await ref.read(gameProvider.notifier).continueToNext();
     final gameState = ref.read(gameProvider);
+    if (!context.mounted) return;
     if (gameState.isGameOver) {
       ref.read(statisticsProvider.notifier).refresh();
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => ResultScreen(
@@ -266,20 +267,20 @@ class _AnswerOption extends StatelessWidget {
 
     if (isAnswerChecked) {
       if (isCorrect) {
-        cardBgColor = isDark ? Colors.green.withOpacity(0.15) : Colors.green.shade50;
+        cardBgColor = isDark ? Colors.green.withValues(alpha: 0.15) : Colors.green.shade50;
         borderColor = Colors.green;
         borderWidth = 2.0;
         letterBgColor = Colors.green;
         suffixIcon = const Icon(Icons.check_circle, color: Colors.green, size: 24);
       } else if (isSelected) {
-        cardBgColor = isDark ? Colors.red.withOpacity(0.15) : Colors.red.shade50;
+        cardBgColor = isDark ? Colors.red.withValues(alpha: 0.15) : Colors.red.shade50;
         borderColor = Colors.red;
         borderWidth = 2.0;
         letterBgColor = Colors.red;
         suffixIcon = const Icon(Icons.cancel, color: Colors.red, size: 24);
       } else {
-        cardBgColor = theme.cardColor.withOpacity(0.6);
-        borderColor = AppColors.borderLight.withOpacity(0.4);
+        cardBgColor = theme.cardColor.withValues(alpha: 0.6);
+        borderColor = AppColors.borderLight.withValues(alpha: 0.4);
       }
     }
 
@@ -293,7 +294,7 @@ class _AnswerOption extends StatelessWidget {
         boxShadow: isAnswerChecked && (isCorrect || isSelected)
             ? [
                 BoxShadow(
-                  color: (isCorrect ? Colors.green : Colors.red).withOpacity(0.1),
+                  color: (isCorrect ? Colors.green : Colors.red).withValues(alpha: 0.1),
                   blurRadius: 8,
                   offset: const Offset(0, 4),
                 ),
@@ -336,7 +337,7 @@ class _AnswerOption extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: isAnswerChecked && (isCorrect || isSelected) ? FontWeight.w600 : FontWeight.normal,
                           color: isAnswerChecked && !isCorrect && !isSelected
-                              ? theme.textTheme.bodyLarge?.color?.withOpacity(0.5)
+                              ? theme.textTheme.bodyLarge?.color?.withValues(alpha: 0.5)
                               : null,
                         ),
                       ),
@@ -406,7 +407,7 @@ class _ExplanationPanel extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
+            color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 10,
             offset: const Offset(0, -4),
           ),
@@ -414,8 +415,8 @@ class _ExplanationPanel extends StatelessWidget {
         border: Border(
           top: BorderSide(
             color: isCorrect
-                ? (isDark ? Colors.green.withOpacity(0.3) : Colors.green.shade200)
-                : (isDark ? Colors.red.withOpacity(0.3) : Colors.red.shade200),
+                ? (isDark ? Colors.green.withValues(alpha: 0.3) : Colors.green.shade200)
+                : (isDark ? Colors.red.withValues(alpha: 0.3) : Colors.red.shade200),
             width: 1.5,
           ),
         ),
@@ -453,7 +454,7 @@ class _ExplanationPanel extends StatelessWidget {
                     Text(
                       'বিস্তারিত ব্যাখ্যা:',
                       style: TextStyle(
-                        color: textColor.withOpacity(0.85),
+                        color: textColor.withValues(alpha: 0.85),
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
                       ),
@@ -462,7 +463,7 @@ class _ExplanationPanel extends StatelessWidget {
                     Text(
                       explanation,
                       style: TextStyle(
-                        color: isDark ? Colors.white.withOpacity(0.9) : Colors.black87,
+                        color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
                         fontSize: 15,
                         height: 1.5,
                         fontWeight: FontWeight.w500,

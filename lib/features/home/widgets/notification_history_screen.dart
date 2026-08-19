@@ -194,7 +194,7 @@ class _NotificationHistoryScreenState extends ConsumerState<NotificationHistoryS
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    color: AppColors.primary.withOpacity(0.1),
+                    color: AppColors.primary.withValues(alpha: 0.1),
                     child: Row(
                       children: [
                         Container(
@@ -345,13 +345,13 @@ class _NotificationHistoryScreenState extends ConsumerState<NotificationHistoryS
             color: notification.isRead
                 ? (isDark ? AppColors.surfaceDark : AppColors.surfaceLight)
                 : (isDark
-                    ? AppColors.primary.withOpacity(0.15)
-                    : AppColors.primary.withOpacity(0.08)),
+                    ? AppColors.primary.withValues(alpha: 0.15)
+                    : AppColors.primary.withValues(alpha: 0.08)),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: notification.isRead
                   ? (isDark ? AppColors.borderDark : AppColors.borderLight)
-                  : AppColors.primary.withOpacity(0.3),
+                  : AppColors.primary.withValues(alpha: 0.3),
               width: notification.isRead ? 1 : 1.5,
             ),
           ),
@@ -363,7 +363,7 @@ class _NotificationHistoryScreenState extends ConsumerState<NotificationHistoryS
                 Container(
                   width: 44, height: 44,
                   decoration: BoxDecoration(
-                    color: _getTypeColor(notification.type).withOpacity(0.15),
+                    color: _getTypeColor(notification.type).withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Center(
@@ -405,7 +405,7 @@ class _NotificationHistoryScreenState extends ConsumerState<NotificationHistoryS
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                             decoration: BoxDecoration(
-                              color: _getTypeColor(notification.type).withOpacity(0.15),
+                              color: _getTypeColor(notification.type).withValues(alpha: 0.15),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(

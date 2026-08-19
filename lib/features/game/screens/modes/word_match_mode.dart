@@ -7,7 +7,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../services/haptic_service.dart';
 import '../../../../services/tts_service.dart';
 import '../result_screen.dart';
-import '../../../../services/haptic_service.dart';
 
 class WordPair {
   final String bn;
@@ -20,18 +19,15 @@ class _MatchCard {
   final String text;
   final String pairIndex;
   final bool isBangla;
-  bool isMatched;
-  bool isSelected;
-  bool isWrong;
+  bool isMatched = false;
+  bool isSelected = false;
+  bool isWrong = false;
 
   _MatchCard({
     required this.id,
     required this.text,
     required this.pairIndex,
     required this.isBangla,
-    this.isMatched = false,
-    this.isSelected = false,
-    this.isWrong = false,
   });
 }
 
@@ -181,8 +177,12 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
     if (_isChecking || card.isMatched || _isGameOver) return;
     // Play Bangla word sound
     _tts.speakBangla(card.text);
-    for (final c in _leftCards) c.isSelected = false;
-    for (final c in _leftCards) c.isWrong = false;
+    for (final c in _leftCards) {
+      c.isSelected = false;
+    }
+    for (final c in _leftCards) {
+      c.isWrong = false;
+    }
     card.isSelected = true;
     _selectedLeft = card;
     setState(() {});
@@ -193,8 +193,12 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
     if (_isChecking || card.isMatched || _isGameOver) return;
     // Play English word sound
     _tts.speak(card.text);
-    for (final c in _rightCards) c.isSelected = false;
-    for (final c in _rightCards) c.isWrong = false;
+    for (final c in _rightCards) {
+      c.isSelected = false;
+    }
+    for (final c in _rightCards) {
+      c.isWrong = false;
+    }
     card.isSelected = true;
     _selectedRight = card;
     setState(() {});
@@ -366,7 +370,7 @@ class _WordMatchModeScreenState extends ConsumerState<WordMatchModeScreen>
                       child: Container(
                         margin: const EdgeInsets.only(top: 3, left: 6, right: 6, bottom: 9),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.3),
+                          color: Colors.white.withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(4),
                         ),
                       ),
@@ -460,13 +464,12 @@ class _DuolingoDuoCard extends StatelessWidget {
   final int lastScoreGain;
 
   const _DuolingoDuoCard({
-    Key? key,
     required this.card,
     this.matchAnimCtrl,
     this.wrongFlashCtrl,
     this.floatTextCtrl,
     this.lastScoreGain = 0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -494,7 +497,7 @@ class _DuolingoDuoCard extends StatelessWidget {
                       width: 2,
                     ),
                     boxShadow: glow.value > 0.5
-                        ? [BoxShadow(color: const Color(0xFF58CC02).withOpacity(glow.value * 0.3), blurRadius: 12, spreadRadius: 2)]
+                        ? [BoxShadow(color: const Color(0xFF58CC02).withValues(alpha: glow.value * 0.3), blurRadius: 12, spreadRadius: 2)]
                         : null,
                   ),
                   alignment: Alignment.center,
@@ -608,7 +611,7 @@ class _DuolingoDuoCard extends StatelessWidget {
                   return IgnorePointer(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.red.withOpacity(flashAnim.value),
+                        color: Colors.red.withValues(alpha: flashAnim.value),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       alignment: Alignment.center,

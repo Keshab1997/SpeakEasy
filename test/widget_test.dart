@@ -9,7 +9,7 @@ void main() {
   group('AppColors', () {
     test('primary color is defined', () {
       expect(AppColors.primary, isNotNull);
-      expect(AppColors.primary.value, 0xFF2563EB);
+      expect(AppColors.primary.toARGB32(), 0xFF2563EB);
     });
 
     test('all theme colors are defined', () {

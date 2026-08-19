@@ -155,7 +155,7 @@ class _MatchPairsWidgetState extends State<MatchPairsWidget> {
                     final pairedWithLeft = _matchedPairs.entries
                         .firstWhere(
                           (e) => e.value == realRight,
-                          orElse: () => MapEntry(-1, -1),
+                          orElse: () => const MapEntry(-1, -1),
                         )
                         .key;
                     final isCorrectMatch =
@@ -264,7 +264,7 @@ class _MatchPairsWidgetState extends State<MatchPairsWidget> {
                   ? Colors.red
                   : isMatched
                       ? Colors.green
-                      : color.withOpacity(0.4),
+                      : color.withValues(alpha: 0.4),
               width: isMatched ? 2 : 1,
             ),
           ),

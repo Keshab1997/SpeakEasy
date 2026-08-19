@@ -135,7 +135,7 @@ class CategorySelectionScreen extends ConsumerWidget {
       case 'advanced':
         return [Colors.purple, Colors.deepPurple];
       default:
-        return [AppColors.primary, AppColors.primary.withOpacity(0.8)];
+        return [AppColors.primary, AppColors.primary.withValues(alpha: 0.8)];
     }
   }
 }
@@ -262,7 +262,7 @@ class _CategoryCard extends StatelessWidget {
   }
 
   List<Color> _getCategoryColors() {
-    return [AppColors.primary, AppColors.primary.withOpacity(0.8)];
+    return [AppColors.primary, AppColors.primary.withValues(alpha: 0.8)];
   }
 
   IconData _getCategoryIcon() {
@@ -298,7 +298,7 @@ class _BossLevelCard extends StatelessWidget {
           boxShadow: isUnlocked
               ? [
                   BoxShadow(
-                    color: Colors.red.withOpacity(0.4),
+                    color: Colors.red.withValues(alpha: 0.4),
                     blurRadius: 16,
                     offset: const Offset(0, 8),
                   ),

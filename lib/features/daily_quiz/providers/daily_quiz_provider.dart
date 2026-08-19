@@ -138,17 +138,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   /// Current authenticated user id, or null if signed out.
   String? get _currentUserId => _ref.read(authProvider).asData?.value?.id;
 
-  /// Private async helper that generates a fresh quiz in the background.
-  Future<void> _generateQuizAsync() async {
-    try {
-      final quiz = await _service.generateTodayQuiz();
-      final userId = _currentUserId;
-      if (userId != null) _service.saveQuiz(quiz, userId);
-      state = DailyQuizState(quiz: quiz);
-    } catch (e) {
-      state = state.copyWith(error: e.toString());
-    }
-  }
+
 
   // -----------------------------------------------------------------------
   // Public API

@@ -486,7 +486,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       onResult: (result) {
         setState(() => _userSpeechResult = result.recognizedWords);
       },
-      localeId: 'en_US',
+      listenOptions: stt.SpeechListenOptions(
+        localeId: 'en_US',
+      ),
     );
   }
 
@@ -646,14 +648,14 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            AppColors.primary.withOpacity(0.08),
-            AppColors.primary.withOpacity(0.02)
+            AppColors.primary.withValues(alpha: 0.08),
+            AppColors.primary.withValues(alpha: 0.02)
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.primary.withOpacity(0.2)),
+        border: Border.all(color: AppColors.primary.withValues(alpha: 0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -685,7 +687,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                   decoration: BoxDecoration(
-                    color: AppColors.primary.withOpacity(0.15),
+                    color: AppColors.primary.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
@@ -773,8 +775,10 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
           _sendMessage();
         }
       },
-      localeId: 'en_US',
-      listenFor: const Duration(seconds: 10),
+      listenOptions: stt.SpeechListenOptions(
+        localeId: 'en_US',
+        listenFor: const Duration(seconds: 10),
+      ),
     );
   }
 
@@ -930,7 +934,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                           child: ListTile(
                             selected: isActive,
                             selectedTileColor:
-                                AppColors.primary.withOpacity(0.08),
+                                AppColors.primary.withValues(alpha: 0.08),
                             leading: CircleAvatar(
                               radius: 18,
                               backgroundColor: isActive
@@ -1036,9 +1040,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
+            color: color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: color.withOpacity(0.3)),
+            border: Border.all(color: color.withValues(alpha: 0.3)),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -1081,7 +1085,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
           _voiceConfidence = result.confidence;
         });
       },
-      localeId: _locale,
+      listenOptions: stt.SpeechListenOptions(
+        localeId: _locale,
+      ),
     );
   }
 
@@ -1128,14 +1134,14 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: widget.onNavigateToHome == null,
+      onPopInvokedWithResult: (didPop, _) {
         _autoSaveSession();
+        if (didPop) return;
         if (widget.onNavigateToHome != null) {
           widget.onNavigateToHome!();
-          return false;
         }
-        return true;
       },
       child: Scaffold(
         appBar: AppBar(
@@ -1144,7 +1150,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
               Container(
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withOpacity(0.1),
+                  color: AppColors.primary.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(Icons.smart_toy_rounded,
@@ -1264,11 +1270,11 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 8, vertical: 2),
                                     decoration: BoxDecoration(
-                                      color: Colors.orange.withOpacity(0.15),
+                                      color: Colors.orange.withValues(alpha: 0.15),
                                       borderRadius: BorderRadius.circular(12),
                                       border: Border.all(
                                           color:
-                                              Colors.orange.withOpacity(0.3)),
+                                              Colors.orange.withValues(alpha: 0.3)),
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
@@ -1326,7 +1332,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                       padding: const EdgeInsets.all(10),
                                       decoration: BoxDecoration(
                                         color: isActiveLesson
-                                            ? AppColors.primary.withOpacity(0.1)
+                                            ? AppColors.primary.withValues(alpha: 0.1)
                                             : (isDark
                                                 ? AppColors.surfaceDark
                                                 : Colors.white),
@@ -1335,13 +1341,13 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                           color: isActiveLesson
                                               ? AppColors.primary
                                               : AppColors.primary
-                                                  .withOpacity(0.2),
+                                                  .withValues(alpha: 0.2),
                                           width: isActiveLesson ? 1.5 : 1,
                                         ),
                                         boxShadow: [
                                           BoxShadow(
                                             color:
-                                                Colors.black.withOpacity(0.04),
+                                                Colors.black.withValues(alpha: 0.04),
                                             blurRadius: 4,
                                             offset: const Offset(0, 2),
                                           ),
@@ -1364,7 +1370,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                                         vertical: 2),
                                                 decoration: BoxDecoration(
                                                   color: AppColors.primary
-                                                      .withOpacity(0.1),
+                                                      .withValues(alpha: 0.1),
                                                   borderRadius:
                                                       BorderRadius.circular(8),
                                                 ),
@@ -1487,7 +1493,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                     styleSheet: MarkdownStyleSheet(
                                       p: TextStyle(
                                         color: isDark
-                                            ? Colors.white.withOpacity(0.9)
+                                            ? Colors.white.withValues(alpha: 0.9)
                                             : Colors.black87,
                                         fontSize: 15,
                                         height: 1.35,
@@ -1500,7 +1506,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                       ),
                                       em: TextStyle(
                                         color: isDark
-                                            ? Colors.white.withOpacity(0.9)
+                                            ? Colors.white.withValues(alpha: 0.9)
                                             : Colors.black87,
                                         fontStyle: FontStyle.italic,
                                       ),
@@ -1519,7 +1525,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                       ),
                                       listBullet: TextStyle(
                                         color: isDark
-                                            ? Colors.white.withOpacity(0.9)
+                                            ? Colors.white.withValues(alpha: 0.9)
                                             : Colors.black87,
                                       ),
                                     ),
@@ -1554,12 +1560,12 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                                       vertical: 2),
                                               decoration: BoxDecoration(
                                                 color: Colors.amber
-                                                    .withOpacity(0.15),
+                                                    .withValues(alpha: 0.15),
                                                 borderRadius:
                                                     BorderRadius.circular(8),
                                                 border: Border.all(
                                                     color: Colors.amber
-                                                        .withOpacity(0.4)),
+                                                        .withValues(alpha: 0.4)),
                                               ),
                                               child: const Row(
                                                 mainAxisSize: MainAxisSize.min,
@@ -1598,9 +1604,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                             decoration: BoxDecoration(
                                               color: msg['translating'] == true
                                                   ? AppColors.primary
-                                                      .withOpacity(0.2)
+                                                      .withValues(alpha: 0.2)
                                                   : AppColors.primary
-                                                      .withOpacity(0.1),
+                                                      .withValues(alpha: 0.1),
                                               borderRadius:
                                                   BorderRadius.circular(12),
                                               border: Border.all(
@@ -1608,14 +1614,14 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                                     msg['translating'] == true
                                                         ? AppColors.primary
                                                         : AppColors.primary
-                                                            .withOpacity(0.3),
+                                                            .withValues(alpha: 0.3),
                                               ),
                                             ),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 msg['translating'] == true
-                                                    ? SizedBox(
+                                                    ? const SizedBox(
                                                         width: 12,
                                                         height: 12,
                                                         child:
@@ -1625,7 +1631,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                                               AppColors.primary,
                                                         ),
                                                       )
-                                                    : Icon(
+                                                    : const Icon(
                                                         Icons.translate_rounded,
                                                         size: 14,
                                                         color:
@@ -1635,7 +1641,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                                   msg['translating'] == true
                                                       ? 'Translating...'
                                                       : 'বাংলা',
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     fontSize: 10,
                                                     fontWeight: FontWeight.w600,
                                                     color: AppColors.primary,
@@ -1668,12 +1674,12 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                       padding: const EdgeInsets.all(10),
                                       decoration: BoxDecoration(
                                         color:
-                                            AppColors.primary.withOpacity(0.08),
+                                            AppColors.primary.withValues(alpha: 0.08),
                                         borderRadius: BorderRadius.circular(10),
                                         border: Border(
                                           left: BorderSide(
                                             color: AppColors.primary
-                                                .withOpacity(0.5),
+                                                .withValues(alpha: 0.5),
                                             width: 3,
                                           ),
                                         ),
@@ -1682,12 +1688,12 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Row(
+                                          const Row(
                                             children: [
                                               Icon(Icons.translate_rounded,
                                                   size: 12,
                                                   color: AppColors.primary),
-                                              const SizedBox(width: 4),
+                                              SizedBox(width: 4),
                                               Text(
                                                 'বাংলা অনুবাদ',
                                                 style: TextStyle(
@@ -1780,7 +1786,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                               styleSheet: MarkdownStyleSheet(
                                 p: TextStyle(
                                   color: isDark
-                                      ? Colors.white.withOpacity(0.9)
+                                      ? Colors.white.withValues(alpha: 0.9)
                                       : Colors.black87,
                                   fontSize: 15,
                                   height: 1.35,
@@ -1825,7 +1831,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                       : Colors.white,
                                   side: BorderSide(
                                       color:
-                                          AppColors.primary.withOpacity(0.3)),
+                                          AppColors.primary.withValues(alpha: 0.3)),
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 8),
                                   onPressed: () {
@@ -1850,7 +1856,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                 width: double.infinity,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                color: AppColors.primary.withOpacity(0.08),
+                color: AppColors.primary.withValues(alpha: 0.08),
                 child: Row(
                   children: [
                     Icon(
@@ -1868,7 +1874,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                             : _isListening
                                 ? 'Listening... Speak now'
                                 : 'Voice Mode Active',
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 11,
                             color: AppColors.primary,
                             fontWeight: FontWeight.w500),
@@ -1950,9 +1956,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                               ),
                               backgroundColor:
                                   isPronunciation && _pronunciationMode
-                                      ? AppColors.primary.withOpacity(0.15)
+                                      ? AppColors.primary.withValues(alpha: 0.15)
                                       : (isEvaluate && _writingEvalMode
-                                          ? AppColors.primary.withOpacity(0.15)
+                                          ? AppColors.primary.withValues(alpha: 0.15)
                                           : (isDark
                                               ? AppColors.surfaceDark
                                               : Colors.white)),
@@ -1961,7 +1967,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                     ? AppColors.primary
                                     : (isEvaluate && _writingEvalMode
                                         ? AppColors.primary
-                                        : AppColors.primary.withOpacity(0.2)),
+                                        : AppColors.primary.withValues(alpha: 0.2)),
                               ),
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 8),
@@ -1973,8 +1979,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                                 _messageController.text = action['prompt']!;
                                 setState(() {
                                   _suggestedQuestions = [];
-                                  if (isPronunciation)
+                                  if (isPronunciation) {
                                     _pronunciationMode = true;
+                                  }
                                   if (isEvaluate) _writingEvalMode = true;
                                 });
                                 _sendMessage();
@@ -2028,7 +2035,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                         color: isDark ? Colors.white10 : Colors.grey[50],
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                            color: AppColors.primary.withOpacity(0.2)),
+                            color: AppColors.primary.withValues(alpha: 0.2)),
                       ),
                       child: Text(
                         _pronunciationSentence,
@@ -2175,7 +2182,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                             boxShadow: _isListening
                                 ? [
                                     BoxShadow(
-                                      color: Colors.red.withOpacity(0.3),
+                                      color: Colors.red.withValues(alpha: 0.3),
                                       blurRadius: 8,
                                       spreadRadius: 1,
                                     ),
@@ -2230,11 +2237,11 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: _isListening
-                                ? Colors.red.withOpacity(0.2)
+                                ? Colors.red.withValues(alpha: 0.2)
                                 : (isDark ? Colors.white12 : Colors.grey[200]),
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
-                                color: AppColors.primary.withOpacity(0.3),
+                                color: AppColors.primary.withValues(alpha: 0.3),
                                 width: 1),
                           ),
                           child: Text(

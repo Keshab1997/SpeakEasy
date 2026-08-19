@@ -133,10 +133,6 @@ class _HomeworkHistoryScreenState extends ConsumerState<HomeworkHistoryScreen> {
     final score = s['score'] as int? ?? 0;
     final total = s['total'] as int? ?? 10;
     final percentage = total > 0 ? score / total : 0.0;
-    final questions = (s['questions'] as List<dynamic>?)
-        ?.map((q) => q is Map<String, dynamic> ? q : Map<String, dynamic>.from(q as Map))
-        .toList() ?? [];
-
     return Dismissible(
       key: Key('homework_$index'),
       direction: DismissDirection.endToStart,
@@ -166,7 +162,7 @@ class _HomeworkHistoryScreenState extends ConsumerState<HomeworkHistoryScreen> {
             border: Border.all(color: isDark ? AppColors.borderDark : AppColors.borderLight),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.02),
+                color: Colors.black.withValues(alpha: 0.02),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
               ),
@@ -325,19 +321,19 @@ class _HomeworkDetailScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(_formatDate(date),
-                      style: TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 13)),
+                      style: TextStyle(color: Colors.white.withValues(alpha: 0.8), fontSize: 13)),
                     const SizedBox(height: 12),
                     Text('$score / $total',
                       style: const TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w900)),
                     const SizedBox(height: 4),
                     Text('${(percentage * 100).toInt()}% Accuracy',
-                      style: TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 16, fontWeight: FontWeight.w600)),
+                      style: TextStyle(color: Colors.white.withValues(alpha: 0.8), fontSize: 16, fontWeight: FontWeight.w600)),
                     const SizedBox(height: 12),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: LinearProgressIndicator(
                         value: percentage,
-                        backgroundColor: Colors.white.withOpacity(0.2),
+                        backgroundColor: Colors.white.withValues(alpha: 0.2),
                         color: Colors.white,
                         minHeight: 6,
                       ),
@@ -352,7 +348,7 @@ class _HomeworkDetailScreen extends StatelessWidget {
             const SizedBox(height: 16),
             ...List.generate(questions.length, (i) {
               final rawQ = questions[i];
-              final q = rawQ is Map<String, dynamic> ? rawQ : Map<String, dynamic>.from(rawQ as Map);
+              final q = rawQ;
               return _buildResultCard(theme, isDark, q, i);
             }),
             const SizedBox(height: 32),
@@ -378,7 +374,7 @@ class _HomeworkDetailScreen extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: isCorrect ? Colors.green.withOpacity(0.4) : Colors.red.withOpacity(0.4),
+            color: isCorrect ? Colors.green.withValues(alpha: 0.4) : Colors.red.withValues(alpha: 0.4),
             width: 1.5,
           ),
         ),
@@ -391,7 +387,7 @@ class _HomeworkDetailScreen extends StatelessWidget {
                 Container(
                   width: 28, height: 28,
                   decoration: BoxDecoration(
-                    color: isCorrect ? Colors.green.withOpacity(0.1) : Colors.red.withOpacity(0.1),
+                    color: isCorrect ? Colors.green.withValues(alpha: 0.1) : Colors.red.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Center(
@@ -406,7 +402,7 @@ class _HomeworkDetailScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                   decoration: BoxDecoration(
-                    color: isCorrect ? Colors.green.withOpacity(0.1) : Colors.red.withOpacity(0.1),
+                    color: isCorrect ? Colors.green.withValues(alpha: 0.1) : Colors.red.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: Text(
@@ -452,10 +448,10 @@ class _HomeworkDetailScreen extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: isCorrect ? Colors.green.withOpacity(0.05) : Colors.red.withOpacity(0.05),
+                      color: isCorrect ? Colors.green.withValues(alpha: 0.05) : Colors.red.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: isCorrect ? Colors.green.withOpacity(0.2) : Colors.red.withOpacity(0.2),
+                        color: isCorrect ? Colors.green.withValues(alpha: 0.2) : Colors.red.withValues(alpha: 0.2),
                       ),
                     ),
                     child: Column(
@@ -480,9 +476,9 @@ class _HomeworkDetailScreen extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.green.withOpacity(0.05),
+                      color: Colors.green.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.green.withOpacity(0.2)),
+                      border: Border.all(color: Colors.green.withValues(alpha: 0.2)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -509,9 +505,9 @@ class _HomeworkDetailScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: AppColors.warning.withOpacity(0.08),
+                  color: AppColors.warning.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.warning.withOpacity(0.2)),
+                  border: Border.all(color: AppColors.warning.withValues(alpha: 0.2)),
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,

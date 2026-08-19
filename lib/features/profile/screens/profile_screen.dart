@@ -61,11 +61,11 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Row(
+        title: const Row(
           children: [
-            const Icon(Icons.warning_amber_rounded, color: Colors.red, size: 28),
-            const SizedBox(width: 8),
-            const Text('Delete Account?'),
+            Icon(Icons.warning_amber_rounded, color: Colors.red, size: 28),
+            SizedBox(width: 8),
+            Text('Delete Account?'),
           ],
         ),
         content: const Text(
@@ -93,7 +93,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     );
 
     if (confirmed != true) return;
-    if (!mounted) return;
+    if (!context.mounted) return;
 
     // Step 2: Show loading
     showDialog(
@@ -120,7 +120,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     // Step 3: Execute deletion
     final result = await ref.read(authProvider.notifier).deleteAccount();
 
-    if (!mounted) return;
+    if (!context.mounted) return;
     Navigator.of(context).pop(); // dismiss loading dialog
 
     if (result == null) {
@@ -305,7 +305,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         child: Container(
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            border: Border.all(color: AppColors.primary.withOpacity(0.2), width: 4),
+                            border: Border.all(color: AppColors.primary.withValues(alpha: 0.2), width: 4),
                           ),
                           child: _buildProfileAvatar(
                             photoUrl: user?.photoUrl ?? '',
@@ -418,15 +418,15 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    AppColors.primary.withOpacity(0.1),
-                    AppColors.secondary.withOpacity(0.05),
+                    AppColors.primary.withValues(alpha: 0.1),
+                    AppColors.secondary.withValues(alpha: 0.05),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(
-                  color: AppColors.primary.withOpacity(0.2),
+                  color: AppColors.primary.withValues(alpha: 0.2),
                 ),
               ),
               child: Column(
@@ -436,7 +436,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: AppColors.primary.withOpacity(0.1),
+                          color: AppColors.primary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: const Icon(
@@ -474,17 +474,17 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                     decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withOpacity(0.08) : Colors.white,
+                      color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.white,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: AppColors.primary.withOpacity(0.3),
+                        color: AppColors.primary.withValues(alpha: 0.3),
                       ),
                     ),
                     child: Row(
                       children: [
                         Text(
                           user.referralCode,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 2,
@@ -522,7 +522,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                           label: const Text('Share Code'),
                           style: OutlinedButton.styleFrom(
                             foregroundColor: AppColors.primary,
-                            side: BorderSide(color: AppColors.primary.withOpacity(0.3)),
+                            side: BorderSide(color: AppColors.primary.withValues(alpha: 0.3)),
                             padding: const EdgeInsets.symmetric(vertical: 12),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
@@ -539,7 +539,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                           label: const Text('Share App'),
                           style: OutlinedButton.styleFrom(
                             foregroundColor: AppColors.secondary,
-                            side: BorderSide(color: AppColors.secondary.withOpacity(0.3)),
+                            side: BorderSide(color: AppColors.secondary.withValues(alpha: 0.3)),
                             padding: const EdgeInsets.symmetric(vertical: 12),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
@@ -715,7 +715,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   Widget _buildMetricTile(ThemeData theme, String value, String label, String iconEmoji, Color color) {
     return Container(
       padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(color: color.withOpacity(0.06), borderRadius: BorderRadius.circular(16)),
+      decoration: BoxDecoration(color: color.withValues(alpha: 0.06), borderRadius: BorderRadius.circular(16)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,

@@ -129,7 +129,7 @@ class _VocabularyTab extends StatelessWidget {
               ),
               child: ListTile(
                 leading: CircleAvatar(
-                  backgroundColor: AppColors.primary.withOpacity(0.12),
+                  backgroundColor: AppColors.primary.withValues(alpha: 0.12),
                   child: Text('$chapterNumber',
                       style: const TextStyle(
                           fontWeight: FontWeight.bold,
@@ -269,7 +269,7 @@ void _showChapterForm(BuildContext context,
                 ),
                 const SizedBox(height: 12),
                 DropdownButtonFormField<String>(
-                  value: selectedLevel,
+                  initialValue: selectedLevel,
                   decoration: const InputDecoration(
                     labelText: 'Level',
                     border: OutlineInputBorder(),
@@ -740,7 +740,7 @@ class _GrammarTab extends StatelessWidget {
               ),
               child: ListTile(
                 leading: CircleAvatar(
-                  backgroundColor: AppColors.accent.withOpacity(0.12),
+                  backgroundColor: AppColors.accent.withValues(alpha: 0.12),
                   child: Text('$chapterNumber',
                       style: const TextStyle(
                           fontWeight: FontWeight.bold,
@@ -844,7 +844,7 @@ class _GrammarEditorScreenState extends State<_GrammarEditorScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
                 color: isDark
-                    ? AppColors.surfaceDark.withOpacity(0.5)
+                    ? AppColors.surfaceDark.withValues(alpha: 0.5)
                     : Colors.grey.shade100,
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -1018,7 +1018,7 @@ class _DailyWordTabState extends State<_DailyWordTab> {
                     elevation: 0,
                     margin: const EdgeInsets.symmetric(vertical: 3),
                     color: isSelected
-                        ? AppColors.primary.withOpacity(0.1)
+                        ? AppColors.primary.withValues(alpha: 0.1)
                         : isDark
                             ? AppColors.surfaceDark
                             : AppColors.surfaceLight,
@@ -1122,9 +1122,9 @@ class _DailyWordTabState extends State<_DailyWordTab> {
 
         final words = snapshot.data!.docs;
         if (words.isEmpty) {
-          return Card(
+          return const Card(
             child: Padding(
-              padding: const EdgeInsets.all(16),
+              padding: EdgeInsets.all(16),
               child: Text('No words in this chapter.',
                   style: TextStyle(color: Colors.grey)),
             ),
@@ -1136,20 +1136,20 @@ class _DailyWordTabState extends State<_DailyWordTab> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.08),
+                color: AppColors.primary.withValues(alpha: 0.08),
                 borderRadius:
                     const BorderRadius.vertical(top: Radius.circular(10)),
               ),
-              child: Row(
+              child: const Row(
                 children: [
-                  const Text('Word',
+                  Text('Word',
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 13)),
-                  const Spacer(),
-                  const Text('Meaning',
+                  Spacer(),
+                  Text('Meaning',
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 13)),
-                  const SizedBox(width: 40),
+                  SizedBox(width: 40),
                 ],
               ),
             ),

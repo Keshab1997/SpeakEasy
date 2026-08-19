@@ -4,7 +4,6 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/widgets/streak_widget.dart';
 import '../../../core/widgets/feature_gate_widget.dart';
 import '../../../services/hive_service.dart';
-import '../../../services/tts_service.dart';
 import '../../../services/remote_config_service.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/progress_provider.dart';
@@ -69,8 +68,6 @@ ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-	final _tts = TtsService();
-	bool _isSpeaking = false;
 	Timer? _idleCheckTimer;
 
 @override
@@ -166,13 +163,7 @@ void dispose() {
 	super.dispose();
 	}
 
-void _speakWord(String word) {
-setState(() => _isSpeaking = true);
-_tts.speak(word);
-Future.delayed(const Duration(seconds: 2), () {
-if (mounted) setState(() => _isSpeaking = false);
-});
-}
+
 
 String _getTimeGreeting() {
 final hour = DateTime.now().hour;
@@ -282,7 +273,7 @@ child: const Text('Buy', style: TextStyle(fontWeight: FontWeight.bold)),
 void _shareStreak(BuildContext context, int streak) {
 final message = streak > 0
 ? "🔥 I'm on a $streak-day streak on SpeakEasy! Practicing English every day. Join me! 🚀"
-: "Start your English learning journey with SpeakEasy! 🚀";
+: 'Start your English learning journey with SpeakEasy! 🚀';
 ScaffoldMessenger.of(context).showSnackBar(
 SnackBar(
 content: Text('📤 Share: "$message"'),
@@ -326,20 +317,18 @@ final progress = progressAsync.asData?.value;
 	final int currentStreak = streakState.currentStreak > 0
 		? streakState.currentStreak
 		: (progress?.streakDays ?? 0);
-	final lessonsCompleted = studyState.completedCount;
-	final totalLessons = studyState.totalCount > 0 ? studyState.totalCount : 1;
 	final int currentXP = xpState.currentXP;
 	final int currentCoins = coinState.currentCoins;
 
 // Group lessons by level for Continue Learning
 return Scaffold(
 appBar: AppBar(
-title: Row(
+title: const Row(
 children: [
-const Icon(Icons.translate_rounded, color: AppColors.primary, size: 28),
-const SizedBox(width: 8),
+Icon(Icons.translate_rounded, color: AppColors.primary, size: 28),
+SizedBox(width: 8),
 Flexible(
-child: const Text(
+child: Text(
 'SpeakEasy',
 style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 0.5),
 overflow: TextOverflow.ellipsis,
@@ -442,7 +431,7 @@ child: Container(
 margin: const EdgeInsets.only(right: 16),
 decoration: BoxDecoration(
 shape: BoxShape.circle,
-border: Border.all(color: AppColors.primary.withOpacity(0.2), width: 2),
+border: Border.all(color: AppColors.primary.withValues(alpha: 0.2), width: 2),
 ),
 child: CircleAvatar(
 radius: 18,
@@ -589,127 +578,9 @@ style: theme.textTheme.bodyMedium?.copyWith(fontSize: 15, fontWeight: FontWeight
 );
 }
 
-// PROGRESS CARD — real data from providers
-Widget _buildProgressCard(
-ThemeData theme, int currentStreak, int lessonsCompleted, double progressPct, int totalLessons, int currentXP, int currentCoins, int currentLevel,
-) {
-final pctLabel = '${(progressPct * 100).toInt()}%';
-return Container(
-width: double.infinity,
-padding: const EdgeInsets.all(20),
-decoration: BoxDecoration(
-gradient: const LinearGradient(colors: AppColors.primaryGradient, begin: Alignment.topLeft, end: Alignment.bottomRight),
-borderRadius: BorderRadius.circular(24),
-boxShadow: [BoxShadow(color: AppColors.primary.withOpacity(0.3), blurRadius: 15, offset: const Offset(0, 8))],
-),
-child: Column(
-crossAxisAlignment: CrossAxisAlignment.start,
-children: [
-Row(
-mainAxisAlignment: MainAxisAlignment.spaceBetween,
-children: [
-const Text('Overall Progress', style: TextStyle(color: Colors.white70, fontSize: 14, fontWeight: FontWeight.w600, letterSpacing: 0.5)),
-Container(
-padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-decoration: BoxDecoration(color: Colors.white.withOpacity(0.2), borderRadius: BorderRadius.circular(12)),
-child: Row(
-children: [
-const Text('🔥 ', style: TextStyle(fontSize: 12)),
-Text(
-'$currentStreak Day${currentStreak == 1 ? '' : 's'} Streak',
-style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
-),
-],
-),
-),
-],
-),
-const SizedBox(height: 12),
-Row(
-crossAxisAlignment: CrossAxisAlignment.baseline,
-textBaseline: TextBaseline.alphabetic,
-children: [
-Text(pctLabel, style: const TextStyle(color: Colors.white, fontSize: 36, fontWeight: FontWeight.w900)),
-const SizedBox(width: 8),
-Text('Overall Progress', style: TextStyle(color: Colors.white.withOpacity(0.9), fontSize: 14, fontWeight: FontWeight.w500)),
-],
-),
-const SizedBox(height: 16),
-ClipRRect(
-borderRadius: BorderRadius.circular(10),
-child: Stack(
-children: [
-Container(height: 8, color: Colors.white.withOpacity(0.25)),
-FractionallySizedBox(
-widthFactor: progressPct,
-child: Container(height: 8, decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10))),
-),
-],
-),
-),
-const SizedBox(height: 16),
-Row(
-children: [
-const Text('📚 ', style: TextStyle(fontSize: 14)),
-Text(
-'$lessonsCompleted Chapters Completed',
-style: TextStyle(color: Colors.white.withOpacity(0.9), fontSize: 13, fontWeight: FontWeight.w600),
-),
-const Spacer(),
-const Text('🎯 ', style: TextStyle(fontSize: 14)),
-Text(
-'Total: $totalLessons',
-style: TextStyle(color: Colors.white.withOpacity(0.9), fontSize: 13, fontWeight: FontWeight.w600),
-),
-],
-),
-const SizedBox(height: 12),
-// Live game stats row
-Container(
-padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.12),
-borderRadius: BorderRadius.circular(14),
-),
-child: Row(
-mainAxisAlignment: MainAxisAlignment.spaceAround,
-children: [
-_buildMiniStat('✨', '$currentXP', 'XP'),
-Container(width: 1, height: 24, color: Colors.white.withOpacity(0.2)),
-_buildMiniStat('🪙', '$currentCoins', 'Coins'),
-Container(width: 1, height: 24, color: Colors.white.withOpacity(0.2)),
-_buildMiniStat('🏆', 'Lv. $currentLevel', 'Level'),
-],
-),
-),
-],
-),
-);
-}
 
-Widget _buildMiniStat(String emoji, String value, String label) {
-return Column(
-mainAxisSize: MainAxisSize.min,
-children: [
-Row(
-mainAxisSize: MainAxisSize.min,
-children: [
-Text(emoji, style: const TextStyle(fontSize: 14)),
-const SizedBox(width: 4),
-Text(
-value,
-style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
-),
-],
-),
-const SizedBox(height: 2),
-Text(
-label,
-style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 10, fontWeight: FontWeight.w500),
-),
-],
-);
-}
+
+
 
 // TODAY'S WORDS — multi-word card
 
@@ -728,12 +599,12 @@ final grammarTotal = grammarItems.length;
 final vocabTotal = vocabItems.length;
 
 // 🔍 DEBUG: Log study plan state to help diagnose "All chapters completed" issue
-print('📚 [ContinueLearning] items.length: ${items.length}');
-print('📚 [ContinueLearning] nextGrammarId: ${studyState.nextGrammarId}');
-print('📚 [ContinueLearning] nextVocabId: ${studyState.nextVocabId}');
-print('📚 [ContinueLearning] lastOpened: $lastOpened');
-print('📚 [ContinueLearning] grammarDone: $grammarDone / $grammarTotal');
-print('📚 [ContinueLearning] vocabDone: $vocabDone / $vocabTotal');
+debugPrint('📚 [ContinueLearning] items.length: ${items.length}');
+debugPrint('📚 [ContinueLearning] nextGrammarId: ${studyState.nextGrammarId}');
+debugPrint('📚 [ContinueLearning] nextVocabId: ${studyState.nextVocabId}');
+debugPrint('📚 [ContinueLearning] lastOpened: $lastOpened');
+debugPrint('📚 [ContinueLearning] grammarDone: $grammarDone / $grammarTotal');
+debugPrint('📚 [ContinueLearning] vocabDone: $vocabDone / $vocabTotal');
 
 GrammarChapter? findGrammar(int chapterNum) {
 for (final c in allGrammarChapters) {
@@ -791,10 +662,10 @@ final resumeVocab = resumeFromLastOpened('vocabulary', 'vocab')
 ?? firstPendingVocab;
 
 // 🔍 DEBUG: Log what we resolved
-print('📚 [ContinueLearning] resumeGrammar: ${resumeGrammar?.id ?? 'null'}');
-print('📚 [ContinueLearning] resumeVocab: ${resumeVocab?.id ?? 'null'}');
-print('📚 [ContinueLearning] firstPendingGrammar: ${firstPendingGrammar?.id ?? 'null'}');
-print('📚 [ContinueLearning] firstPendingVocab: ${firstPendingVocab?.id ?? 'null'}');
+debugPrint('📚 [ContinueLearning] resumeGrammar: ${resumeGrammar?.id ?? 'null'}');
+debugPrint('📚 [ContinueLearning] resumeVocab: ${resumeVocab?.id ?? 'null'}');
+debugPrint('📚 [ContinueLearning] firstPendingGrammar: ${firstPendingGrammar?.id ?? 'null'}');
+debugPrint('📚 [ContinueLearning] firstPendingVocab: ${firstPendingVocab?.id ?? 'null'}');
 
 final hasAny = resumeGrammar != null || resumeVocab != null;
 
@@ -830,9 +701,9 @@ Container(
 width: double.infinity,
 padding: const EdgeInsets.all(20),
 decoration: BoxDecoration(
-color: Colors.green.withOpacity(0.06),
+color: Colors.green.withValues(alpha: 0.06),
 borderRadius: BorderRadius.circular(20),
-border: Border.all(color: Colors.green.withOpacity(0.15)),
+border: Border.all(color: Colors.green.withValues(alpha: 0.15)),
 ),
 child: const Row(
 children: [
@@ -892,7 +763,7 @@ decoration: BoxDecoration(
 color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
 borderRadius: BorderRadius.circular(20),
 border: Border.all(color: isDark ? AppColors.borderDark : AppColors.borderLight, width: 1.2),
-boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 8, offset: const Offset(0, 4))],
+boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 8, offset: const Offset(0, 4))],
 ),
 child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
@@ -917,7 +788,7 @@ style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 13)),
 	Container(
 	padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
 	decoration: BoxDecoration(
-	color: color.withOpacity(0.1),
+	color: color.withValues(alpha: 0.1),
 	borderRadius: BorderRadius.circular(6),
 	),
 	child: Text(typeLabel,
@@ -987,7 +858,7 @@ borderRadius: BorderRadius.circular(4))),
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF6C63FF).withOpacity(0.35),
+              color: const Color(0xFF6C63FF).withValues(alpha: 0.35),
               blurRadius: 16,
               offset: const Offset(0, 8),
             ),
@@ -999,7 +870,7 @@ borderRadius: BorderRadius.circular(4))),
               right: -16,
               bottom: -16,
               child: Icon(Icons.quiz_outlined,
-                  size: 100, color: Colors.white.withOpacity(0.1)),
+                  size: 100, color: Colors.white.withValues(alpha: 0.1)),
             ),
             Padding(
               padding: const EdgeInsets.all(20),
@@ -1012,7 +883,7 @@ borderRadius: BorderRadius.circular(4))),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 4),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
+                          color: Colors.white.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Text(
@@ -1050,7 +921,7 @@ borderRadius: BorderRadius.circular(4))),
                             ? '10 questions ⏱️ ~5 min'
                             : '${quiz.answeredCount} / ${quiz.totalQuestions} answered',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.85),
+                      color: Colors.white.withValues(alpha: 0.85),
                       fontSize: 13,
                     ),
                   ),
@@ -1061,7 +932,7 @@ borderRadius: BorderRadius.circular(4))),
                       child: LinearProgressIndicator(
                         value: progress,
                         minHeight: 6,
-                        backgroundColor: Colors.white.withOpacity(0.3),
+                        backgroundColor: Colors.white.withValues(alpha: 0.3),
                         color: Colors.amberAccent,
                       ),
                     ),
@@ -1112,314 +983,13 @@ borderRadius: BorderRadius.circular(4))),
     );
   }
 
-Widget _buildDailyChallengeCard(ThemeData theme, int streakDays) {
-final goal = streakDays < 3 ? 'Speak 5 English sentences' : streakDays < 7 ? 'Speak 10 English sentences' : 'Speak 15 English sentences';
-return Container(
-width: double.infinity,
-decoration: BoxDecoration(
-gradient: const LinearGradient(colors: [Color(0xFFFF8C00), Color(0xFFFF4500)], begin: Alignment.topLeft, end: Alignment.bottomRight),
-borderRadius: BorderRadius.circular(24),
-boxShadow: [BoxShadow(color: Colors.orange.withOpacity(0.3), blurRadius: 15, offset: const Offset(0, 8))],
-),
-child: Stack(
-children: [
-Positioned(
-right: -20, bottom: -20,
-child: Icon(Icons.local_fire_department_rounded, size: 130, color: Colors.white.withOpacity(0.12)),
-),
-Padding(
-padding: const EdgeInsets.all(20),
-child: Column(
-crossAxisAlignment: CrossAxisAlignment.start,
-children: [
-Row(
-children: [
-Container(
-padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-decoration: BoxDecoration(color: Colors.white.withOpacity(0.2), borderRadius: BorderRadius.circular(10)),
-child: const Text('DAILY CHALLENGE', style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1.0)),
-),
-const Spacer(),
-const Text('🔥', style: TextStyle(fontSize: 18)),
-],
-),
-const SizedBox(height: 16),
-const Text("Today's Challenge", style: TextStyle(color: Colors.white70, fontSize: 13, fontWeight: FontWeight.w600)),
-const SizedBox(height: 4),
-Text(goal, style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w800)),
-const SizedBox(height: 16),
-ElevatedButton(
-onPressed: () {
-widget.onNavigateToTab?.call(2);
-ScaffoldMessenger.of(context).showSnackBar(
-const SnackBar(content: Text('Launching Daily Speaking Challenge...'), behavior: SnackBarBehavior.floating),
-);
-},
-style: ElevatedButton.styleFrom(
-backgroundColor: Colors.white,
-foregroundColor: Colors.deepOrange,
-elevation: 0,
-padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-),
-child: const Text('Start Now', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-),
-],
-),
-),
-],
-),
-);
-}
 
-// AI TEACHER BANNER
-Widget _buildAiTeacherBanner(ThemeData theme) {
-return Container(
-width: double.infinity,
-padding: const EdgeInsets.all(20),
-decoration: BoxDecoration(
-color: AppColors.primary.withOpacity(0.05),
-borderRadius: BorderRadius.circular(24),
-border: Border.all(color: AppColors.primary.withOpacity(0.12), width: 1.5),
-),
-child: Row(
-children: [
-Expanded(
-child: Column(
-crossAxisAlignment: CrossAxisAlignment.start,
-children: [
-Row(
-children: [
-Container(
-padding: const EdgeInsets.all(6),
-decoration: BoxDecoration(color: AppColors.primary.withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
-child: const Icon(Icons.smart_toy_rounded, color: AppColors.primary, size: 20),
-),
-const SizedBox(width: 8),
-const Text('AI TEACHER', style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.bold, fontSize: 11, letterSpacing: 1.0)),
-],
-),
-const SizedBox(height: 12),
-Text('Practice with AI Teacher', style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800, fontSize: 17)),
-const SizedBox(height: 4),
-Text('Get real-time feedback on speaking & grammar.', style: theme.textTheme.bodyMedium?.copyWith(fontSize: 13)),
-const SizedBox(height: 16),
-OutlinedButton(
-onPressed: () => widget.onNavigateToTab?.call(3),
-style: OutlinedButton.styleFrom(
-foregroundColor: AppColors.primary,
-side: const BorderSide(color: AppColors.primary, width: 1.5),
-padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-),
-child: const Row(
-mainAxisSize: MainAxisSize.min,
-children: [
-Text('Start Chat', style: TextStyle(fontWeight: FontWeight.bold)),
-SizedBox(width: 6),
-Icon(Icons.arrow_forward_rounded, size: 16),
-],
-),
-),
-],
-),
-),
-const SizedBox(width: 16),
-Container(
-width: 70, height: 70,
-decoration: BoxDecoration(color: AppColors.primary.withOpacity(0.1), shape: BoxShape.circle),
-child: const Icon(Icons.face_retouching_natural_rounded, color: AppColors.primary, size: 40),
-),
-],
-),
-);
-}
 
-// HOMEWORK CARD — AI-generated translation practice
-Widget _buildHomeworkCard(ThemeData theme) {
-return GestureDetector(
-onTap: () => Navigator.push(
-context,
-MaterialPageRoute(builder: (_) => const HomeworkScreen()),
-),
-child: Container(
-width: double.infinity,
-padding: const EdgeInsets.all(20),
-decoration: BoxDecoration(
-gradient: const LinearGradient(
-colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-begin: Alignment.topLeft,
-end: Alignment.bottomRight,
-),
-borderRadius: BorderRadius.circular(24),
-boxShadow: [
-BoxShadow(
-color: const Color(0xFF6366F1).withOpacity(0.3),
-blurRadius: 16,
-offset: const Offset(0, 8),
-),
-],
-),
-child: Stack(
-children: [
-Positioned(
-right: -16,
-bottom: -16,
-child: Icon(Icons.home_work_rounded, size: 120, color: Colors.white.withOpacity(0.1)),
-),
-Column(
-crossAxisAlignment: CrossAxisAlignment.start,
-children: [
-Row(
-children: [
-Container(
-padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.2),
-borderRadius: BorderRadius.circular(10),
-),
-child: const Text(
-'HOMEWORK',
-style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1.0),
-),
-),
-const Spacer(),
-Container(
-padding: const EdgeInsets.all(6),
-decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.2),
-borderRadius: BorderRadius.circular(8),
-),
-child: const Icon(Icons.auto_awesome_rounded, color: Colors.white, size: 16),
-),
-],
-),
-const SizedBox(height: 12),
-const Text(
-'AI Homework',
-style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),
-),
-const SizedBox(height: 4),
-Text(
-'Pick a topic. AI creates 10 Bangla sentences.\nTranslate them and get instant corrections.',
-style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 13),
-),
-const SizedBox(height: 16),
-ElevatedButton.icon(
-onPressed: () => Navigator.push(
-context,
-MaterialPageRoute(builder: (_) => const HomeworkScreen()),
-),
-icon: const Icon(Icons.auto_awesome_rounded, size: 18),
-label: const Text('Start Homework', style: TextStyle(fontWeight: FontWeight.bold)),
-style: ElevatedButton.styleFrom(
-backgroundColor: Colors.white,
-foregroundColor: const Color(0xFF6366F1),
-elevation: 0,
-padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-),
-),
-],
-),
-],
-),
-),
-);
-}
 
-// SENTENCE ANALYZER CARD — AI grammar breakdown + practice
-Widget _buildSentenceAnalyzerCard(ThemeData theme) {
-return GestureDetector(
-onTap: () => Navigator.push(
-context,
-MaterialPageRoute(builder: (_) => const SentenceAnalyzerScreen()),
-),
-child: Container(
-width: double.infinity,
-padding: const EdgeInsets.all(20),
-decoration: BoxDecoration(
-gradient: const LinearGradient(
-colors: [Color(0xFF8B5CF6), Color(0xFF6366F1)],
-begin: Alignment.topLeft,
-end: Alignment.bottomRight,
-),
-borderRadius: BorderRadius.circular(24),
-boxShadow: [
-BoxShadow(
-color: const Color(0xFF8B5CF6).withOpacity(0.3),
-blurRadius: 16,
-offset: const Offset(0, 8),
-),
-],
-),
-child: Stack(
-children: [
-Positioned(
-right: -16,
-bottom: -16,
-child: Icon(Icons.auto_stories_rounded, size: 120, color: Colors.white.withOpacity(0.1)),
-),
-Column(
-crossAxisAlignment: CrossAxisAlignment.start,
-children: [
-Row(
-children: [
-Container(
-padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.2),
-borderRadius: BorderRadius.circular(10),
-),
-child: const Text(
-'SENTENCE ANALYZER',
-style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1.0),
-),
-),
-const Spacer(),
-Container(
-padding: const EdgeInsets.all(6),
-decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.2),
-borderRadius: BorderRadius.circular(8),
-),
-child: const Icon(Icons.auto_stories_rounded, color: Colors.white, size: 16),
-),
-],
-),
-const SizedBox(height: 12),
-const Text(
-'Learn Grammar with AI',
-style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),
-),
-const SizedBox(height: 4),
-Text(
-'Analyze Bangla sentences by tense.\nAI explains grammar, then gives practice tasks.',
-style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 13),
-),
-const SizedBox(height: 16),
-ElevatedButton.icon(
-onPressed: () => Navigator.push(
-context,
-MaterialPageRoute(builder: (_) => const SentenceAnalyzerScreen()),
-),
-icon: const Icon(Icons.auto_stories_rounded, size: 18),
-label: const Text('Start Learning', style: TextStyle(fontWeight: FontWeight.bold)),
-style: ElevatedButton.styleFrom(
-backgroundColor: Colors.white,
-foregroundColor: const Color(0xFF8B5CF6),
-elevation: 0,
-padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-),
-),
-],
-),
-],
-),
-),
-);
-}
+
+
+
+
 
 // HOME LEARNING SECTION — Spoken Rules, Vocabulary, Grammar, Tense Rules
 Widget _buildHomeLearningSection(ThemeData theme, bool isDark) {
@@ -1434,7 +1004,7 @@ Text('Learning', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWei
 const Spacer(),
 GestureDetector(
 onTap: () => widget.onNavigateToTab?.call(1),
-child: Text('See All', style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.w600, fontSize: 13)),
+child: const Text('See All', style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.w600, fontSize: 13)),
 ),
 ],
 ),
@@ -1451,13 +1021,13 @@ final items = [
 {
 'title': 'Tense Rules',
 'icon': Icons.auto_stories,
-'gradient': [Color(0xFFE94057), Color(0xFFF27121)],
+'gradient': [const Color(0xFFE94057), const Color(0xFFF27121)],
 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const TenseCategoriesScreen())),
 },
 {
 'title': 'Spoken Rules',
 'icon': Icons.record_voice_over_rounded,
-'gradient': [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+'gradient': [const Color(0xFF6366F1), const Color(0xFF8B5CF6)],
 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SpokenRulesScreen())),
 },
 {
@@ -1469,7 +1039,7 @@ final items = [
 {
 'title': 'Verb Forms',
 'icon': Icons.transform_rounded,
-'gradient': [Color(0xFF06B6D4), Color(0xFF0891B2)],
+'gradient': [const Color(0xFF06B6D4), const Color(0xFF0891B2)],
 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const VerbFormsScreen())),
 },
 {
@@ -1489,7 +1059,7 @@ padding: const EdgeInsets.all(16),
 decoration: BoxDecoration(
 gradient: LinearGradient(colors: grad, begin: Alignment.topLeft, end: Alignment.bottomRight),
 borderRadius: BorderRadius.circular(20),
-boxShadow: [BoxShadow(color: grad[0].withOpacity(0.25), blurRadius: 10, offset: const Offset(0, 4))],
+boxShadow: [BoxShadow(color: grad[0].withValues(alpha: 0.25), blurRadius: 10, offset: const Offset(0, 4))],
 ),
 child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
@@ -1498,7 +1068,7 @@ children: [
 Container(
 padding: const EdgeInsets.all(8),
 decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.2),
+color: Colors.white.withValues(alpha: 0.2),
 borderRadius: BorderRadius.circular(12),
 ),
 child: Icon(item['icon'] as IconData, color: Colors.white, size: 24),
@@ -1541,7 +1111,7 @@ Text('Practice', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWei
 const Spacer(),
 GestureDetector(
 onTap: () => widget.onNavigateToTab?.call(2),
-child: Text('See All', style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.w600, fontSize: 13)),
+child: const Text('See All', style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.w600, fontSize: 13)),
 ),
 ],
 ),
@@ -1565,7 +1135,7 @@ child: Container(
 decoration: BoxDecoration(
 gradient: LinearGradient(colors: grad, begin: Alignment.topLeft, end: Alignment.bottomRight),
 borderRadius: BorderRadius.circular(18),
-boxShadow: [BoxShadow(color: grad[0].withOpacity(0.25), blurRadius: 8, offset: const Offset(0, 3))],
+boxShadow: [BoxShadow(color: grad[0].withValues(alpha: 0.25), blurRadius: 8, offset: const Offset(0, 3))],
 ),
 child: Column(
 mainAxisAlignment: MainAxisAlignment.center,
@@ -1573,7 +1143,7 @@ children: [
 Container(
 padding: const EdgeInsets.all(10),
 decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.2),
+color: Colors.white.withValues(alpha: 0.2),
 borderRadius: BorderRadius.circular(14),
 ),
 child: Icon(item['icon'] as IconData, color: Colors.white, size: 26),
@@ -1646,7 +1216,7 @@ padding: const EdgeInsets.all(20),
 decoration: BoxDecoration(
 gradient: LinearGradient(colors: grad, begin: Alignment.topLeft, end: Alignment.bottomRight),
 borderRadius: BorderRadius.circular(20),
-boxShadow: [BoxShadow(color: grad[0].withOpacity(0.3), blurRadius: 12, offset: const Offset(0, 6))],
+boxShadow: [BoxShadow(color: grad[0].withValues(alpha: 0.3), blurRadius: 12, offset: const Offset(0, 6))],
 ),
 child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
@@ -1655,7 +1225,7 @@ children: [
 Container(
 padding: const EdgeInsets.all(10),
 decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.2),
+color: Colors.white.withValues(alpha: 0.2),
 borderRadius: BorderRadius.circular(12),
 ),
 child: Icon(item['icon'] as IconData, color: Colors.white, size: 28),
@@ -1670,7 +1240,7 @@ style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSiz
 const SizedBox(height: 4),
 Text(
 item['subtitle'] as String,
-style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 12),
+style: TextStyle(color: Colors.white.withValues(alpha: 0.85), fontSize: 12),
 ),
 ],
 ),
@@ -1736,7 +1306,7 @@ padding: const EdgeInsets.all(20),
 decoration: BoxDecoration(
 gradient: LinearGradient(colors: grad, begin: Alignment.topLeft, end: Alignment.bottomRight),
 borderRadius: BorderRadius.circular(20),
-boxShadow: [BoxShadow(color: grad[0].withOpacity(0.25), blurRadius: 10, offset: const Offset(0, 4))],
+boxShadow: [BoxShadow(color: grad[0].withValues(alpha: 0.25), blurRadius: 10, offset: const Offset(0, 4))],
 ),
 child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
@@ -1747,7 +1317,7 @@ children: [
 Container(
 padding: const EdgeInsets.all(10),
 decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.2),
+color: Colors.white.withValues(alpha: 0.2),
 borderRadius: BorderRadius.circular(12),
 ),
 child: Icon(item['icon'] as IconData, color: Colors.white, size: 26),
@@ -1756,7 +1326,7 @@ const Spacer(),
 Container(
 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
 decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.15),
+color: Colors.white.withValues(alpha: 0.15),
 borderRadius: BorderRadius.circular(8),
 ),
 child: const Row(
@@ -1780,7 +1350,7 @@ style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSiz
 const SizedBox(height: 4),
 Text(
 item['subtitle'] as String,
-style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 12),
+style: TextStyle(color: Colors.white.withValues(alpha: 0.85), fontSize: 12),
 maxLines: 2,
 overflow: TextOverflow.ellipsis,
 ),
@@ -1815,7 +1385,7 @@ end: Alignment.bottomRight,
 ),
 borderRadius: BorderRadius.circular(24),
 boxShadow: [
-BoxShadow(color: const Color(0xFF6A11CB).withOpacity(0.35), blurRadius: 16, offset: const Offset(0, 8)),
+BoxShadow(color: const Color(0xFF6A11CB).withValues(alpha: 0.35), blurRadius: 16, offset: const Offset(0, 8)),
 ],
 ),
 child: Stack(
@@ -1823,7 +1393,7 @@ children: [
 Positioned(
 right: -16,
 bottom: -16,
-child: Icon(Icons.sports_esports_rounded, size: 120, color: Colors.white.withOpacity(0.1)),
+child: Icon(Icons.sports_esports_rounded, size: 120, color: Colors.white.withValues(alpha: 0.1)),
 ),
 Column(
 crossAxisAlignment: CrossAxisAlignment.start,
@@ -1833,7 +1403,7 @@ children: [
 Container(
 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
 decoration: BoxDecoration(
-color: Colors.white.withOpacity(0.2),
+color: Colors.white.withValues(alpha: 0.2),
 borderRadius: BorderRadius.circular(10),
 ),
 child: const Text(
@@ -1853,7 +1423,7 @@ style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900)
 const SizedBox(height: 4),
 Text(
 'Play fun learning games, practice English & earn rewards!',
-style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 13),
+style: TextStyle(color: Colors.white.withValues(alpha: 0.85), fontSize: 13),
 ),
 const SizedBox(height: 16),
 ElevatedButton.icon(

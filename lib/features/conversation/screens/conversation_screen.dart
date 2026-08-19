@@ -263,8 +263,9 @@ class _ConversationScreenState extends State<ConversationScreen> {
   }
 
   void _autoSaveSession() {
-    if (_currentSessionId == null || _selectedRole == null || _messages.isEmpty)
+    if (_currentSessionId == null || _selectedRole == null || _messages.isEmpty) {
       return;
+    }
     final firstUserMsg = _messages.firstWhere(
       (m) => m['isMe'] == true,
       orElse: () => const {'text': 'Conversation Practice'},
@@ -446,7 +447,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
                           child: ListTile(
                             selected: isActive,
                             selectedTileColor:
-                                AppColors.primary.withOpacity(0.08),
+                                AppColors.primary.withValues(alpha: 0.08),
                             leading: CircleAvatar(
                               radius: 18,
                               backgroundColor: isActive
@@ -555,7 +556,9 @@ class _ConversationScreenState extends State<ConversationScreen> {
           }
         });
       },
-      localeId: _locale,
+      listenOptions: stt.SpeechListenOptions(
+        localeId: _locale,
+      ),
     );
   }
 
@@ -649,7 +652,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
               width: 50,
               height: 50,
               decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.1),
+                color: AppColors.primary.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(14),
               ),
               child: Center(
@@ -718,7 +721,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
                               color: isMe
                                   ? Colors.white
                                   : (isDark
-                                      ? Colors.white.withOpacity(0.9)
+                                      ? Colors.white.withValues(alpha: 0.9)
                                       : Colors.black87),
                               fontSize: 15,
                               height: 1.35)),
@@ -820,11 +823,11 @@ class _ConversationScreenState extends State<ConversationScreen> {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: _isListening
-                        ? Colors.red.withOpacity(0.2)
+                        ? Colors.red.withValues(alpha: 0.2)
                         : (isDark ? Colors.white12 : Colors.grey[200]),
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
-                        color: AppColors.primary.withOpacity(0.3), width: 1),
+                        color: AppColors.primary.withValues(alpha: 0.3), width: 1),
                   ),
                   child: Text(
                     _localeLabels[_locales.indexOf(_locale)],

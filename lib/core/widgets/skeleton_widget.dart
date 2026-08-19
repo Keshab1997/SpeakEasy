@@ -48,7 +48,7 @@ class _SkeletonWidgetState extends State<SkeletonWidget>
           height: widget.height,
           decoration: BoxDecoration(
             color: (isDark ? Colors.white : Colors.black)
-                .withOpacity(_animation.value),
+                .withValues(alpha: _animation.value),
             borderRadius: BorderRadius.circular(widget.borderRadius),
           ),
         );
@@ -190,7 +190,7 @@ class _SkeletonGridCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
       ),
       padding: const EdgeInsets.all(12),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SkeletonWidget(
@@ -198,9 +198,9 @@ class _SkeletonGridCard extends StatelessWidget {
             height: 80,
             borderRadius: 12,
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10),
           SkeletonWidget(width: double.infinity, height: 12),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           SkeletonWidget(width: 100, height: 12),
         ],
       ),
@@ -221,22 +221,22 @@ class SkeletonCourseCard extends StatelessWidget {
         color: isDark ? Colors.grey.shade900 : Colors.white,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Row(
+      child: const Row(
         children: [
           SkeletonWidget(width: 64, height: 64, borderRadius: 32),
-          const SizedBox(width: 16),
+          SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SkeletonWidget(width: 180, height: 16),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
                 SkeletonWidget(width: 120, height: 12),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 Row(
                   children: [
                     SkeletonWidget(width: 60, height: 12),
-                    const SizedBox(width: 16),
+                    SizedBox(width: 16),
                     SkeletonWidget(width: 40, height: 12),
                   ],
                 ),
@@ -262,16 +262,16 @@ class SkeletonProgressHeader extends StatelessWidget {
         color: isDark ? Colors.grey.shade900 : Colors.white,
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Row(
+      child: const Row(
         children: [
           SkeletonWidget(width: 48, height: 48, borderRadius: 24),
-          const SizedBox(width: 12),
+          SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SkeletonWidget(width: 100, height: 14),
-                const SizedBox(height: 6),
+                SizedBox(height: 6),
                 SkeletonWidget(width: 60, height: 12),
               ],
             ),

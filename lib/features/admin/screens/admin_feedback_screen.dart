@@ -86,8 +86,8 @@ class _AdminFeedbackScreenState extends State<AdminFeedbackScreen>
               height: 120,
               decoration: BoxDecoration(
                 color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white.withOpacity(0.05)
-                    : Colors.black.withOpacity(0.05),
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : Colors.black.withValues(alpha: 0.05),
                 borderRadius: BorderRadius.circular(16),
               ),
             ),
@@ -304,7 +304,7 @@ class _FeedbackCardState extends State<_FeedbackCard> {
                       // User avatar
                       CircleAvatar(
                         radius: 20,
-                        backgroundColor: _categoryColor().withOpacity(0.15),
+                        backgroundColor: _categoryColor().withValues(alpha: 0.15),
                         child: Icon(
                           _categoryIcon(),
                           color: _categoryColor(),
@@ -348,8 +348,8 @@ class _FeedbackCardState extends State<_FeedbackCard> {
                         ),
                         decoration: BoxDecoration(
                           color: feedback.status == 'resolved'
-                              ? AppColors.success.withOpacity(0.15)
-                              : AppColors.warning.withOpacity(0.15),
+                              ? AppColors.success.withValues(alpha: 0.15)
+                              : AppColors.warning.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
@@ -376,7 +376,7 @@ class _FeedbackCardState extends State<_FeedbackCard> {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: _categoryColor().withOpacity(0.1),
+                      color: _categoryColor().withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Row(
@@ -458,24 +458,24 @@ class _FeedbackCardState extends State<_FeedbackCard> {
                       width: double.infinity,
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: AppColors.success.withOpacity(0.08),
+                        color: AppColors.success.withValues(alpha: 0.08),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: AppColors.success.withOpacity(0.2),
+                          color: AppColors.success.withValues(alpha: 0.2),
                         ),
                       ),
                       child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
+                        const Row(
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.reply_rounded,
                               size: 16,
                               color: AppColors.success,
                             ),
-                            const SizedBox(width: 6),
-                            const Text(
+                            SizedBox(width: 6),
+                            Text(
                               'Your Reply',
                               style: TextStyle(
                                 fontSize: 12,
@@ -530,10 +530,10 @@ class _FeedbackCardState extends State<_FeedbackCard> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 5),
                                   decoration: BoxDecoration(
-                                    color: AppColors.primary.withOpacity(0.1),
+                                    color: AppColors.primary.withValues(alpha: 0.1),
                                     borderRadius: BorderRadius.circular(8),
                                     border: Border.all(
-                                      color: AppColors.primary.withOpacity(0.3),
+                                      color: AppColors.primary.withValues(alpha: 0.3),
                                     ),
                                   ),
                                   child: const Row(
@@ -622,7 +622,7 @@ class _FeedbackCardState extends State<_FeedbackCard> {
                               padding:
                                   const EdgeInsets.symmetric(vertical: 12),
                               disabledBackgroundColor:
-                                  AppColors.primary.withOpacity(0.6),
+                                  AppColors.primary.withValues(alpha: 0.6),
                             ),
                             icon: _isSending
                                 ? const SizedBox(

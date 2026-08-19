@@ -178,11 +178,11 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   Container(
                     decoration: BoxDecoration(
                       color: isDark
-                          ? Colors.white.withOpacity(0.05)
+                          ? Colors.white.withValues(alpha: 0.05)
                           : const Color(0xFFF5F7FA),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: isDark ? Colors.white12 : Colors.grey.withOpacity(0.2),
+                        color: isDark ? Colors.white12 : Colors.grey.withValues(alpha: 0.2),
                       ),
                     ),
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -190,7 +190,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                       children: [
                         Icon(
                           Icons.card_giftcard_rounded,
-                          color: AppColors.primary.withOpacity(0.7),
+                          color: AppColors.primary.withValues(alpha: 0.7),
                           size: 20,
                         ),
                         const SizedBox(width: 12),

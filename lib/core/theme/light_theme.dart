@@ -37,16 +37,16 @@ final ThemeData lightTheme = ThemeData(
   cardTheme: CardThemeData(
     color: AppColors.surfaceLight,
     elevation: 2,
-    shadowColor: Colors.black.withOpacity(0.05),
+    shadowColor: Colors.black.withValues(alpha: 0.05),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(16),
     ),
   ),
   navigationBarTheme: NavigationBarThemeData(
     backgroundColor: AppColors.surfaceLight,
-    indicatorColor: AppColors.primary.withOpacity(0.1),
-    labelTextStyle: MaterialStateProperty.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
+    indicatorColor: AppColors.primary.withValues(alpha: 0.1),
+    labelTextStyle: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
         return const TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.bold,
@@ -59,8 +59,8 @@ final ThemeData lightTheme = ThemeData(
         color: AppColors.textSecondaryLight,
       );
     }),
-    iconTheme: MaterialStateProperty.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
+    iconTheme: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
         return const IconThemeData(
           color: AppColors.primary,
           size: 26,

@@ -82,7 +82,7 @@ class LessonListScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             side: BorderSide(
               color: isInProgress
-                  ? AppColors.primary.withOpacity(0.4)
+                  ? AppColors.primary.withValues(alpha: 0.4)
                   : (isDark ? AppColors.borderDark : AppColors.borderLight),
               width: isInProgress ? 1.5 : 1.0,
             ),
@@ -97,9 +97,9 @@ class LessonListScreen extends StatelessWidget {
                   height: 46,
                   decoration: BoxDecoration(
                     color: isCompleted
-                        ? AppColors.secondary.withOpacity(0.1)
+                        ? AppColors.secondary.withValues(alpha: 0.1)
                         : (isInProgress
-                            ? AppColors.primary.withOpacity(0.1)
+                            ? AppColors.primary.withValues(alpha: 0.1)
                             : (isDark ? Colors.grey[850] : Colors.grey[100])),
                     shape: BoxShape.circle,
                   ),
@@ -150,7 +150,7 @@ class LessonListScreen extends StatelessWidget {
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                               decoration: BoxDecoration(
-                                color: AppColors.primary.withOpacity(0.1),
+                                color: AppColors.primary.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               child: const Text(

@@ -82,7 +82,7 @@ class _MyFeedbackScreenState extends ConsumerState<MyFeedbackScreen> {
               child: Text(
                 'Failed to load feedback:\n${snapshot.error}',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   color: AppColors.error,
                   fontSize: 14,
                 ),
@@ -254,7 +254,7 @@ class _MyFeedbackCardState extends State<_MyFeedbackCard> {
                       // Category icon in circle
                       CircleAvatar(
                         radius: 18,
-                        backgroundColor: _categoryColor().withOpacity(0.15),
+                        backgroundColor: _categoryColor().withValues(alpha: 0.15),
                         child: Icon(
                           _categoryIcon(),
                           color: _categoryColor(),
@@ -280,8 +280,8 @@ class _MyFeedbackCardState extends State<_MyFeedbackCard> {
                         ),
                         decoration: BoxDecoration(
                           color: feedback.status == 'resolved'
-                              ? AppColors.success.withOpacity(0.15)
-                              : AppColors.warning.withOpacity(0.15),
+                              ? AppColors.success.withValues(alpha: 0.15)
+                              : AppColors.warning.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
@@ -333,13 +333,13 @@ class _MyFeedbackCardState extends State<_MyFeedbackCard> {
                       // Show reply indicator if admin replied
                       if (feedback.adminReply != null &&
                           feedback.adminReply!.isNotEmpty) ...[
-                        Icon(
+                        const Icon(
                           Icons.reply_rounded,
                           size: 14,
                           color: AppColors.success,
                         ),
                         const SizedBox(width: 4),
-                        Text(
+                        const Text(
                           'Replied',
                           style: TextStyle(
                             fontSize: 11,
@@ -377,10 +377,10 @@ class _MyFeedbackCardState extends State<_MyFeedbackCard> {
                     width: double.infinity,
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.08),
+                      color: AppColors.primary.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: AppColors.primary.withOpacity(0.2),
+                        color: AppColors.primary.withValues(alpha: 0.2),
                       ),
                     ),
                     child: Column(
@@ -391,7 +391,7 @@ class _MyFeedbackCardState extends State<_MyFeedbackCard> {
                             Container(
                               padding: const EdgeInsets.all(6),
                               decoration: BoxDecoration(
-                                color: AppColors.primary.withOpacity(0.15),
+                                color: AppColors.primary.withValues(alpha: 0.15),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: const Icon(
@@ -448,10 +448,10 @@ class _MyFeedbackCardState extends State<_MyFeedbackCard> {
                 width: double.infinity,
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: AppColors.warning.withOpacity(0.06),
+                  color: AppColors.warning.withValues(alpha: 0.06),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: AppColors.warning.withOpacity(0.15),
+                    color: AppColors.warning.withValues(alpha: 0.15),
                     style: BorderStyle.solid,
                   ),
                 ),
@@ -460,7 +460,7 @@ class _MyFeedbackCardState extends State<_MyFeedbackCard> {
                     Container(
                       padding: const EdgeInsets.all(6),
                       decoration: BoxDecoration(
-                        color: AppColors.warning.withOpacity(0.12),
+                        color: AppColors.warning.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: const Icon(

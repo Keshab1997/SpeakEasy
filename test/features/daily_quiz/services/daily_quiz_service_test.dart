@@ -55,10 +55,10 @@ void main() {
         correctAnswer: 0, explanation: 'E',
       ));
       final answers = [
-        DailyQuizAnswer(questionId: 'q0', selectedAnswer: 0, isCorrect: true, timeTaken: 8, pointsEarned: 0),
-        DailyQuizAnswer(questionId: 'q1', selectedAnswer: 1, isCorrect: false, timeTaken: 15, pointsEarned: 0),
-        DailyQuizAnswer(questionId: 'q2', selectedAnswer: 0, isCorrect: true, timeTaken: 25, pointsEarned: 0),
-        DailyQuizAnswer(questionId: 'q3', selectedAnswer: 0, isCorrect: true, timeTaken: 30, pointsEarned: 0),
+        const DailyQuizAnswer(questionId: 'q0', selectedAnswer: 0, isCorrect: true, timeTaken: 8, pointsEarned: 0),
+        const DailyQuizAnswer(questionId: 'q1', selectedAnswer: 1, isCorrect: false, timeTaken: 15, pointsEarned: 0),
+        const DailyQuizAnswer(questionId: 'q2', selectedAnswer: 0, isCorrect: true, timeTaken: 25, pointsEarned: 0),
+        const DailyQuizAnswer(questionId: 'q3', selectedAnswer: 0, isCorrect: true, timeTaken: 30, pointsEarned: 0),
       ];
       final quiz = DailyQuiz(id: 'quiz_test', date: '2026-07-08', questions: questions, answers: answers, seed: 123);
 
@@ -70,12 +70,12 @@ void main() {
     });
 
     test('handles timeout answers (null selectedAnswer)', () {
-      final questions = [DailyQuizQuestion(
+      final questions = [const DailyQuizQuestion(
         id: 'q0', type: 'vocabulary',
         question: 'Q', options: ['A','B','C','D'],
         correctAnswer: 0, explanation: 'E',
       )];
-      final answers = [DailyQuizAnswer(
+      final answers = [const DailyQuizAnswer(
         questionId: 'q0', selectedAnswer: null, isCorrect: false, timeTaken: 30, pointsEarned: 0,
       )];
       final quiz = DailyQuiz(id: 'quiz_test', date: '2026-07-08', questions: questions, answers: answers, seed: 123);

@@ -101,7 +101,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   ref.read(themeModeProvider.notifier).state =
                       val ? ThemeMode.dark : ThemeMode.light;
                 },
-                activeColor: AppColors.primary,
+                activeThumbColor: AppColors.primary,
               ),
             ]),
             const SizedBox(height: 24),
@@ -117,7 +117,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                     setState(() => _notifications = val);
                     await NotificationService().updateNotificationEnabled(val);
                   },
-                  activeColor: AppColors.primary,
+                  activeThumbColor: AppColors.primary,
                 ),
                 if (_notifications) ...[
                   const Divider(height: 1),
@@ -130,7 +130,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       await HiveService.setDailyWordNotification(val);
                       await NotificationService().rescheduleOnAppOpen();
                     },
-                    activeColor: AppColors.primary,
+                    activeThumbColor: AppColors.primary,
                   ),
                   const Divider(height: 1),
                   SwitchListTile(
@@ -142,7 +142,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       await HiveService.setPracticeReminderNotification(val);
                       await NotificationService().rescheduleOnAppOpen();
                     },
-                    activeColor: AppColors.primary,
+                    activeThumbColor: AppColors.primary,
                   ),
                   const Divider(height: 1),
                   SwitchListTile(
@@ -154,7 +154,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       await HiveService.setStreakNotification(val);
                       await NotificationService().rescheduleOnAppOpen();
                     },
-                    activeColor: AppColors.primary,
+                    activeThumbColor: AppColors.primary,
                   ),
                   const Divider(height: 1),
                   SwitchListTile(
@@ -165,7 +165,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       setState(() => _reEngagementNotification = val);
                       await HiveService.setReEngagementEnabled(val);
                     },
-                    activeColor: AppColors.primary,
+                    activeThumbColor: AppColors.primary,
                   ),
                   const Divider(height: 1),
                   SwitchListTile(
@@ -177,7 +177,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       setState(() => _idleReminderEnabled = val);
                       await HiveService.setIdleReminderEnabled(val);
                     },
-                    activeColor: AppColors.primary,
+                    activeThumbColor: AppColors.primary,
                   ),
                   if (_idleReminderEnabled) ...[
                     const Divider(height: 1),
@@ -211,7 +211,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                         setState(() => _idleReminderSoundEnabled = val);
                         await HiveService.setIdleReminderSoundEnabled(val);
                       },
-                      activeColor: AppColors.primary,
+                      activeThumbColor: AppColors.primary,
                     ),
                   ],
                 ],
@@ -289,7 +289,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   await HiveService.setUseApiKeyManager(val);
                   setState(() {});
                 },
-                activeColor: Theme.of(context).primaryColor,
+                activeThumbColor: Theme.of(context).primaryColor,
               ),
             ]),
             const SizedBox(height: 24),

@@ -87,7 +87,7 @@ class _GrammarTestScreenState extends State<GrammarTestScreen> {
             borderRadius: BorderRadius.circular(2),
             child: LinearProgressIndicator(
               value: progress,
-              backgroundColor: (isDark ? Colors.white : Colors.black).withOpacity(0.1),
+              backgroundColor: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.1),
               valueColor: const AlwaysStoppedAnimation<Color>(AppColors.primary),
               minHeight: 4,
             ),
@@ -144,7 +144,7 @@ class _GrammarTestScreenState extends State<GrammarTestScreen> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primary,
                   foregroundColor: Colors.white,
-                  disabledBackgroundColor: Colors.grey.withOpacity(0.3),
+                  disabledBackgroundColor: Colors.grey.withValues(alpha: 0.3),
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                   elevation: 0,
@@ -160,9 +160,9 @@ class _GrammarTestScreenState extends State<GrammarTestScreen> {
               Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(0.06),
+                  color: Colors.blue.withValues(alpha: 0.06),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.blue.withOpacity(0.12)),
+                  border: Border.all(color: Colors.blue.withValues(alpha: 0.12)),
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -197,11 +197,11 @@ class _GrammarTestScreenState extends State<GrammarTestScreen> {
       border = isDark ? AppColors.borderDark : AppColors.borderLight;
       textColor = isDark ? Colors.white : Colors.black87;
     } else if (correct) {
-      bg = Colors.green.withOpacity(0.1);
+      bg = Colors.green.withValues(alpha: 0.1);
       border = Colors.green;
       textColor = Colors.green.shade700;
     } else if (selected && !correct) {
-      bg = Colors.red.withOpacity(0.1);
+      bg = Colors.red.withValues(alpha: 0.1);
       border = Colors.red;
       textColor = Colors.red.shade700;
     } else {
@@ -296,7 +296,7 @@ class _GrammarTestScreenState extends State<GrammarTestScreen> {
               height: 160,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: passed ? Colors.green.withOpacity(0.1) : Colors.orange.withOpacity(0.1),
+                color: passed ? Colors.green.withValues(alpha: 0.1) : Colors.orange.withValues(alpha: 0.1),
                 border: Border.all(color: passed ? Colors.green : Colors.orange, width: 4),
               ),
               child: Center(

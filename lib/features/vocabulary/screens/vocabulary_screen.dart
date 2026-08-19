@@ -109,7 +109,7 @@ class VocabularyScreen extends ConsumerWidget {
                       child: LinearProgressIndicator(
                         value: progressPct,
                         minHeight: 8,
-                        backgroundColor: Colors.white.withOpacity(0.25),
+                        backgroundColor: Colors.white.withValues(alpha: 0.25),
                         valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
                       ),
                     ),
@@ -154,7 +154,7 @@ class VocabularyScreen extends ConsumerWidget {
                           height: 46,
                           decoration: BoxDecoration(
                             color: (_levelColors[level] ?? AppColors.primary)
-                                .withOpacity(0.1),
+                                .withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Center(

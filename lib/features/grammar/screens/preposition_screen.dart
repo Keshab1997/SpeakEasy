@@ -109,7 +109,7 @@ class _PrepositionScreenState extends State<PrepositionScreen> {
                         width: 50,
                         height: 50,
                         decoration: BoxDecoration(
-                          color: AppColors.primary.withOpacity(0.1),
+                          color: AppColors.primary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Center(

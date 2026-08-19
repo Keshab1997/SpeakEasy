@@ -76,7 +76,7 @@ class _AdminUserDetailScreenState extends State<AdminUserDetailScreen> {
         children: [
           CircleAvatar(
             radius: 40,
-            backgroundColor: roleColor.withOpacity(0.12),
+            backgroundColor: roleColor.withValues(alpha: 0.12),
             backgroundImage:
                 user.photoUrl.isNotEmpty ? NetworkImage(user.photoUrl) : null,
             child: user.photoUrl.isEmpty
@@ -160,7 +160,7 @@ class _AdminUserDetailScreenState extends State<AdminUserDetailScreen> {
                   height: 16,
                   decoration: BoxDecoration(
                     color: (isDark ? Colors.white : Colors.black)
-                        .withOpacity(0.06),
+                        .withValues(alpha: 0.06),
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),

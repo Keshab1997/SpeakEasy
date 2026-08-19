@@ -22,21 +22,20 @@ class QuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [gradientStart ?? AppColors.primary, gradientEnd ?? AppColors.primary.withOpacity(0.8)],
+          colors: [gradientStart ?? AppColors.primary, gradientEnd ?? AppColors.primary.withValues(alpha: 0.8)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: (gradientStart ?? AppColors.primary).withOpacity(0.3),
+            color: (gradientStart ?? AppColors.primary).withValues(alpha: 0.3),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),
@@ -49,7 +48,7 @@ class QuestionCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
@@ -154,7 +153,7 @@ class OptionButton extends StatelessWidget {
       borderColor = AppColors.error;
       textColor = Colors.white;
     } else if (isSelected) {
-      backgroundColor = buttonColor.withOpacity(0.1);
+      backgroundColor = buttonColor.withValues(alpha: 0.1);
       borderColor = buttonColor;
       textColor = theme.textTheme.bodyLarge?.color ?? Colors.black;
     } else {
@@ -270,8 +269,6 @@ class TimerWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final progress = totalSeconds > 0 ? remainingSeconds / totalSeconds : 0.0;
     final isWarning = remainingSeconds < 10;
 
     return Row(
@@ -285,7 +282,7 @@ class TimerWidget extends ConsumerWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           decoration: BoxDecoration(
-            color: isWarning ? Colors.red.withOpacity(0.1) : AppColors.primary.withOpacity(0.1),
+            color: isWarning ? Colors.red.withValues(alpha: 0.1) : AppColors.primary.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20),
           ),
           child: Text(
@@ -329,7 +326,6 @@ class ScoreCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Container(
       padding: const EdgeInsets.all(16),
@@ -426,7 +422,6 @@ class HintButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
     final buttonColor = color ?? Colors.amber;
 
     return InkWell(
@@ -436,7 +431,7 @@ class HintButton extends ConsumerWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         decoration: BoxDecoration(
           gradient: hintsRemaining > 0
-              ? LinearGradient(colors: [buttonColor, buttonColor.withOpacity(0.8)])
+              ? LinearGradient(colors: [buttonColor, buttonColor.withValues(alpha: 0.8)])
               : null,
           color: hintsRemaining > 0 ? null : Colors.grey[300],
           borderRadius: BorderRadius.circular(12),
@@ -540,7 +535,7 @@ class AchievementCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: isUnlocked ? AppColors.success.withOpacity(0.1) : theme.cardColor,
+        color: isUnlocked ? AppColors.success.withValues(alpha: 0.1) : theme.cardColor,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: isUnlocked ? AppColors.success : AppColors.borderLight,
@@ -664,7 +659,7 @@ class XPBar extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           child: LinearProgressIndicator(
             value: progress.clamp(0.0, 1.0),
-            backgroundColor: AppColors.primary.withOpacity(0.1),
+            backgroundColor: AppColors.primary.withValues(alpha: 0.1),
             color: AppColors.primary,
             minHeight: 8,
           ),
@@ -692,7 +687,6 @@ class CoinCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Container(
       padding: const EdgeInsets.all(16),
@@ -845,7 +839,7 @@ class LevelCard extends StatelessWidget {
   }
 
   List<Color> _getLevelColors() {
-    return [AppColors.primary, AppColors.primary.withOpacity(0.8)];
+    return [AppColors.primary, AppColors.primary.withValues(alpha: 0.8)];
   }
 
   IconData _getLevelIcon() {
@@ -1104,7 +1098,7 @@ class DailyChallengeCard extends StatelessWidget {
               width: 56,
               height: 56,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: const Icon(Icons.today, color: Colors.white, size: 32),

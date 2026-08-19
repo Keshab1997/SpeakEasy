@@ -8,7 +8,6 @@ import '../../../../services/haptic_service.dart';
 import '../../../../services/speech_service.dart';
 import '../../../../services/tts_service.dart';
 import '../result_screen.dart';
-import '../../../../services/haptic_service.dart';
 import '../../../../core/widgets/skeleton_widget.dart';
 
 // ─────────────────────────────────────────────────────────────
@@ -67,7 +66,7 @@ class _CardProgress {
   final _FlashCard card;
   bool known;
 
-  _CardProgress({required this.card, this.known = false});
+  _CardProgress({required this.card}) : known = false;
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -321,7 +320,7 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF6366F1).withOpacity(0.3),
+                    color: const Color(0xFF6366F1).withValues(alpha: 0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -343,7 +342,7 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
                   Text(
                     'Choose a category to study',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                       fontSize: 14,
                     ),
                   ),
@@ -476,7 +475,7 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
                 width: 56,
                 height: 56,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6366F1).withOpacity(0.1),
+                  color: const Color(0xFF6366F1).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: IconButton(
@@ -540,7 +539,7 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
         borderRadius: BorderRadius.circular(28),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF667eea).withOpacity(0.3),
+            color: const Color(0xFF667eea).withValues(alpha: 0.3),
             blurRadius: 25,
             offset: const Offset(0, 12),
           ),
@@ -552,7 +551,7 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.15),
+              color: Colors.white.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(20),
             ),
             child: const Icon(Icons.translate_rounded, color: Colors.white, size: 36),
@@ -570,23 +569,23 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
           const SizedBox(height: 8),
           Text(
             'বাংলা',
-            style: TextStyle(color: Colors.white.withOpacity(0.6), fontSize: 14),
+            style: TextStyle(color: Colors.white.withValues(alpha: 0.6), fontSize: 14),
           ),
           const SizedBox(height: 24),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.15),
+              color: Colors.white.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.tap_and_play, color: Colors.white.withOpacity(0.7), size: 16),
+                Icon(Icons.tap_and_play, color: Colors.white.withValues(alpha: 0.7), size: 16),
                 const SizedBox(width: 6),
                 Text(
                   'Tap to flip',
-                  style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 13),
+                  style: TextStyle(color: Colors.white.withValues(alpha: 0.7), fontSize: 13),
                 ),
               ],
             ),
@@ -606,12 +605,12 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
         borderRadius: BorderRadius.circular(28),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 25,
             offset: const Offset(0, 12),
           ),
         ],
-        border: Border.all(color: const Color(0xFF6366F1).withOpacity(0.2), width: 2),
+        border: Border.all(color: const Color(0xFF6366F1).withValues(alpha: 0.2), width: 2),
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -620,7 +619,7 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: const Color(0xFF6366F1).withOpacity(0.1),
+                color: const Color(0xFF6366F1).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(14),
               ),
               child: const Icon(Icons.check_circle_rounded, color: Color(0xFF6366F1), size: 28),
@@ -656,21 +655,21 @@ class _FlashcardsModeScreenState extends ConsumerState<FlashcardsModeScreen>
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
               decoration: BoxDecoration(
-                color: const Color(0xFF6366F1).withOpacity(0.08),
+                color: const Color(0xFF6366F1).withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: const Color(0xFF6366F1).withOpacity(0.15)),
+                border: Border.all(color: const Color(0xFF6366F1).withValues(alpha: 0.15)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                  const Row(
                     children: [
-                      const Icon(Icons.translate, color: Color(0xFF6366F1), size: 14),
-                      const SizedBox(width: 4),
+                      Icon(Icons.translate, color: Color(0xFF6366F1), size: 14),
+                      SizedBox(width: 4),
                       Text(
                         'বাংলা',
                         style: TextStyle(
-                          color: const Color(0xFF6366F1),
+                          color: Color(0xFF6366F1),
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
                         ),
@@ -816,14 +815,14 @@ class _CategoryCard extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [color, color.withOpacity(0.8)],
+            colors: [color, color.withValues(alpha: 0.8)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: color.withOpacity(0.3),
+              color: color.withValues(alpha: 0.3),
               blurRadius: 12,
               offset: const Offset(0, 6),
             ),
@@ -836,7 +835,7 @@ class _CategoryCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.25),
+                color: Colors.white.withValues(alpha: 0.25),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Icon(icon, color: Colors.white, size: 24),
@@ -856,7 +855,7 @@ class _CategoryCard extends StatelessWidget {
             Text(
               '$count cards',
               style: TextStyle(
-                color: Colors.white.withOpacity(0.8),
+                color: Colors.white.withValues(alpha: 0.8),
                 fontSize: 11,
               ),
             ),
@@ -888,9 +887,9 @@ class _ActionButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: color.withOpacity(0.3)),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
         child: Column(
           children: [

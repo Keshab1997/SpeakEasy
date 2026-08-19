@@ -34,7 +34,7 @@ class ReEngagementService {
 
     // Re-engagement toggle off → skip
     if (!HiveService.isReEngagementEnabled()) {
-      return InactivityResult(shouldNotify: false);
+      return const InactivityResult(shouldNotify: false);
     }
 
     final daysInactive = now.difference(lastOpenDate).inDays;
@@ -53,7 +53,7 @@ class ReEngagementService {
     final prefix = greeting.isNotEmpty ? '$greeting, ' : '';
 
     if (daysInactive == 1) {
-      return '${prefix}আপনার আজকের একটি Daily Word অপেক্ষা করছে! 🎯';
+      return '$prefixআপনার আজকের একটি Daily Word অপেক্ষা করছে! 🎯';
     } else if (daysInactive == 2) {
       return '$prefix🔥 ২ দিন ধরে আসেননি! আপনার streak বাঁচান — মাত্র ১ মিনিট সময় নিন!';
     } else if (daysInactive <= 5) {

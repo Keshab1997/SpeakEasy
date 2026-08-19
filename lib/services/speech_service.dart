@@ -35,13 +35,13 @@ class SpeechService {
           onPartialResult?.call(result.recognizedWords);
         }
       },
-      listenFor: const Duration(seconds: 60),
-      pauseFor: const Duration(seconds: 60),
       listenOptions: stt.SpeechListenOptions(
         partialResults: true,
         cancelOnError: false,
+        listenFor: const Duration(seconds: 60),
+        pauseFor: const Duration(seconds: 60),
+        localeId: 'en_US',
       ),
-      localeId: 'en_US',
     );
     _isListening = false;
   }

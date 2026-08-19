@@ -177,7 +177,7 @@ class _AdminAnalyticsScreenState extends State<AdminAnalyticsScreen> {
                       borderRadius: BorderRadius.circular(18),
                       boxShadow: [
                         BoxShadow(
-                          color: card.gradient.first.withOpacity(0.25),
+                          color: card.gradient.first.withValues(alpha: 0.25),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
                         ),
@@ -187,7 +187,7 @@ class _AdminAnalyticsScreenState extends State<AdminAnalyticsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(card.icon, color: Colors.white.withOpacity(0.9),
+                        Icon(card.icon, color: Colors.white.withValues(alpha: 0.9),
                             size: 22),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,7 +200,7 @@ class _AdminAnalyticsScreenState extends State<AdminAnalyticsScreen> {
                                 )),
                             Text(card.label,
                                 style: TextStyle(
-                                  color: Colors.white.withOpacity(0.8),
+                                  color: Colors.white.withValues(alpha: 0.8),
                                   fontSize: 11,
                                   fontWeight: FontWeight.w600,
                                 )),
@@ -386,8 +386,8 @@ class _AdminAnalyticsScreenState extends State<AdminAnalyticsScreen> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    AppColors.primary.withOpacity(0.3),
-                    AppColors.primary.withOpacity(0.0),
+                    AppColors.primary.withValues(alpha: 0.3),
+                    AppColors.primary.withValues(alpha: 0.0),
                   ],
                 ),
               ),
@@ -649,7 +649,7 @@ class _AdminAnalyticsScreenState extends State<AdminAnalyticsScreen> {
       width: double.infinity,
       height: height,
       decoration: BoxDecoration(
-        color: (isDark ? Colors.white : Colors.black).withOpacity(0.06),
+        color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.06),
         borderRadius: BorderRadius.circular(14),
       ),
     );

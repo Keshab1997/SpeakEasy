@@ -35,7 +35,7 @@ class ResultScreen extends StatelessWidget {
               height: 120,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: isPassed ? AppColors.secondary.withOpacity(0.1) : Colors.redAccent.withOpacity(0.1),
+                color: isPassed ? AppColors.secondary.withValues(alpha: 0.1) : Colors.redAccent.withValues(alpha: 0.1),
               ),
               child: Center(
                 child: Icon(

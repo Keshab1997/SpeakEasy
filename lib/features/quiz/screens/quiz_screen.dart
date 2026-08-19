@@ -155,7 +155,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
                             color: isSelected
-                                ? AppColors.primary.withOpacity(0.1)
+                                ? AppColors.primary.withValues(alpha: 0.1)
                                 : (isDark ? AppColors.surfaceDark : AppColors.surfaceLight),
                             borderRadius: BorderRadius.circular(16),
                             border: Border.all(

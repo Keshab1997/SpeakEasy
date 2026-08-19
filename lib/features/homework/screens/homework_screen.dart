@@ -43,7 +43,9 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
   @override
   void dispose() {
     _topicController.dispose();
-    for (final c in _controllers) c.dispose();
+    for (final c in _controllers) {
+      c.dispose();
+    }
     super.dispose();
   }
 
@@ -52,7 +54,9 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
       _currentStep = HomeworkStep.topic;
       _questions.clear();
       _topicController.clear();
-      for (final c in _controllers) c.dispose();
+      for (final c in _controllers) {
+        c.dispose();
+      }
       _controllers.clear();
       _score = 0;
       _isSaved = false;
@@ -186,8 +190,8 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
     setState(() => _isSaved = true);
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Row(
+        const SnackBar(
+          content: Row(
             children: [
               Icon(Icons.check_circle_rounded, color: Colors.white, size: 20),
               SizedBox(width: 8),
@@ -196,7 +200,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
           ),
           behavior: SnackBarBehavior.floating,
           backgroundColor: AppColors.success,
-          duration: const Duration(seconds: 2),
+          duration: Duration(seconds: 2),
         ),
       );
     }
@@ -294,7 +298,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.primary.withOpacity(0.3),
+                    color: AppColors.primary.withValues(alpha: 0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -385,7 +389,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                 },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
-                  side: BorderSide(color: AppColors.primary.withOpacity(0.3)),
+                  side: BorderSide(color: AppColors.primary.withValues(alpha: 0.3)),
                 ),
               );
             }).toList(),
@@ -400,7 +404,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             width: 64, height: 64,
             child: CircularProgressIndicator(
               strokeWidth: 4,
@@ -434,8 +438,8 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
         Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(colors: AppColors.primaryGradient),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: AppColors.primaryGradient),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -445,7 +449,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
+                      color: Colors.white.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Text('HOMEWORK',
@@ -461,7 +465,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                 style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 4),
               Text(_topicController.text.trim(),
-                style: TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 13)),
+                style: TextStyle(color: Colors.white.withValues(alpha: 0.8), fontSize: 13)),
             ],
           ),
         ),
@@ -591,7 +595,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.primary.withOpacity(0.2),
+                    color: AppColors.primary.withValues(alpha: 0.2),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -616,7 +620,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                   Text(
                     '$_score / $total Correct',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.9),
+                      color: Colors.white.withValues(alpha: 0.9),
                       fontSize: 36,
                       fontWeight: FontWeight.w900,
                     ),
@@ -625,7 +629,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                   Text(
                     '${(percentage * 100).toInt()}% Accuracy',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.7),
+                      color: Colors.white.withValues(alpha: 0.7),
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
@@ -635,7 +639,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                     borderRadius: BorderRadius.circular(8),
                     child: LinearProgressIndicator(
                       value: percentage,
-                      backgroundColor: Colors.white.withOpacity(0.2),
+                      backgroundColor: Colors.white.withValues(alpha: 0.2),
                       color: Colors.white,
                       minHeight: 8,
                     ),
@@ -677,9 +681,9 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 14),
               decoration: BoxDecoration(
-                color: Colors.green.withOpacity(0.1),
+                color: Colors.green.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.green.withOpacity(0.3)),
+                border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
               ),
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -727,8 +731,8 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: isCorrect
-                ? Colors.green.withOpacity(0.4)
-                : Colors.red.withOpacity(0.4),
+                ? Colors.green.withValues(alpha: 0.4)
+                : Colors.red.withValues(alpha: 0.4),
             width: 1.5,
           ),
         ),
@@ -741,7 +745,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                 Container(
                   width: 28, height: 28,
                   decoration: BoxDecoration(
-                    color: isCorrect ? Colors.green.withOpacity(0.1) : Colors.red.withOpacity(0.1),
+                    color: isCorrect ? Colors.green.withValues(alpha: 0.1) : Colors.red.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Center(
@@ -756,7 +760,7 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                   decoration: BoxDecoration(
-                    color: isCorrect ? Colors.green.withOpacity(0.1) : Colors.red.withOpacity(0.1),
+                    color: isCorrect ? Colors.green.withValues(alpha: 0.1) : Colors.red.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: Text(
@@ -805,13 +809,13 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: isCorrect
-                          ? Colors.green.withOpacity(0.05)
-                          : Colors.red.withOpacity(0.05),
+                          ? Colors.green.withValues(alpha: 0.05)
+                          : Colors.red.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
                         color: isCorrect
-                            ? Colors.green.withOpacity(0.2)
-                            : Colors.red.withOpacity(0.2),
+                            ? Colors.green.withValues(alpha: 0.2)
+                            : Colors.red.withValues(alpha: 0.2),
                       ),
                     ),
                     child: Column(
@@ -838,9 +842,9 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                   child: Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.green.withOpacity(0.05),
+                      color: Colors.green.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.green.withOpacity(0.2)),
+                      border: Border.all(color: Colors.green.withValues(alpha: 0.2)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -867,9 +871,9 @@ class _HomeworkScreenState extends ConsumerState<HomeworkScreen> {
                 width: double.infinity,
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: AppColors.warning.withOpacity(0.08),
+                  color: AppColors.warning.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.warning.withOpacity(0.2)),
+                  border: Border.all(color: AppColors.warning.withValues(alpha: 0.2)),
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,

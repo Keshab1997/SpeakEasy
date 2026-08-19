@@ -80,7 +80,7 @@ class DailyQuizScreen extends ConsumerWidget {
             onPressed: () => Navigator.of(context).maybePop(),
             icon: const Icon(Icons.arrow_back_ios_new_rounded),
             style: IconButton.styleFrom(
-              backgroundColor: AppColors.primary.withOpacity(0.1),
+              backgroundColor: AppColors.primary.withValues(alpha: 0.1),
               foregroundColor: AppColors.primary,
             ),
           ),
@@ -104,7 +104,7 @@ class DailyQuizScreen extends ConsumerWidget {
             ),
             icon: const Icon(Icons.history_rounded),
             style: IconButton.styleFrom(
-              backgroundColor: AppColors.primary.withOpacity(0.1),
+              backgroundColor: AppColors.primary.withValues(alpha: 0.1),
               foregroundColor: AppColors.primary,
             ),
           ),
@@ -114,10 +114,10 @@ class DailyQuizScreen extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             decoration: BoxDecoration(
               color: hasStreak
-                  ? streakColor.withOpacity(0.12)
+                  ? streakColor.withValues(alpha: 0.12)
                   : (isDark
-                      ? Colors.white.withOpacity(0.08)
-                      : Colors.black.withOpacity(0.05)),
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : Colors.black.withValues(alpha: 0.05)),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
@@ -257,7 +257,7 @@ class DailyQuizScreen extends ConsumerWidget {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF8B5CF6).withOpacity(0.35),
+            color: const Color(0xFF8B5CF6).withValues(alpha: 0.35),
             blurRadius: 16,
             offset: const Offset(0, 8),
           ),
@@ -273,7 +273,7 @@ class DailyQuizScreen extends ConsumerWidget {
               height: 90,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white.withOpacity(0.08),
+                color: Colors.white.withValues(alpha: 0.08),
               ),
             ),
           ),
@@ -285,7 +285,7 @@ class DailyQuizScreen extends ConsumerWidget {
               height: 70,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white.withOpacity(0.06),
+                color: Colors.white.withValues(alpha: 0.06),
               ),
             ),
           ),
@@ -300,7 +300,7 @@ class DailyQuizScreen extends ConsumerWidget {
               Text(
                 dateLabel.toUpperCase(),
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.75),
+                  color: Colors.white.withValues(alpha: 0.75),
                   fontSize: 12,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 1.2,
@@ -319,7 +319,7 @@ class DailyQuizScreen extends ConsumerWidget {
               Text(
                 subtitle,
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.85),
+                  color: Colors.white.withValues(alpha: 0.85),
                   fontSize: 13,
                   height: 1.4,
                 ),
@@ -404,7 +404,7 @@ class DailyQuizScreen extends ConsumerWidget {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: shadowColor.withOpacity(0.3),
+            color: shadowColor.withValues(alpha: 0.3),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -415,7 +415,7 @@ class DailyQuizScreen extends ConsumerWidget {
           Positioned(
             right: -12,
             bottom: -20,
-            child: Icon(icon, size: 110, color: Colors.white.withOpacity(0.08)),
+            child: Icon(icon, size: 110, color: Colors.white.withValues(alpha: 0.08)),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -425,7 +425,7 @@ class DailyQuizScreen extends ConsumerWidget {
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.18),
+                      color: Colors.white.withValues(alpha: 0.18),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Icon(icon, color: Colors.white, size: 28),
@@ -558,7 +558,7 @@ class DailyQuizScreen extends ConsumerWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -577,7 +577,7 @@ class DailyQuizScreen extends ConsumerWidget {
                   strokeWidth: 7,
                   strokeCap: StrokeCap.round,
                   backgroundColor: isDark
-                      ? Colors.white.withOpacity(0.1)
+                      ? Colors.white.withValues(alpha: 0.1)
                       : Colors.grey.shade200,
                   color: AppColors.success,
                 ),
@@ -632,9 +632,9 @@ class DailyQuizScreen extends ConsumerWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.info.withOpacity(0.1),
+        color: AppColors.info.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.info.withOpacity(0.3)),
+        border: Border.all(color: AppColors.info.withValues(alpha: 0.3)),
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(20),
@@ -654,7 +654,7 @@ class DailyQuizScreen extends ConsumerWidget {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: AppColors.info.withOpacity(0.15),
+                color: AppColors.info.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: const Icon(Icons.menu_book_rounded,
@@ -705,7 +705,7 @@ class DailyQuizScreen extends ConsumerWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -738,7 +738,7 @@ class DailyQuizScreen extends ConsumerWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.1),
+                      color: AppColors.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
@@ -784,7 +784,7 @@ class DailyQuizScreen extends ConsumerWidget {
                                   width: 26,
                                   height: 26,
                                   decoration: BoxDecoration(
-                                    color: AppColors.primary.withOpacity(0.1),
+                                    color: AppColors.primary.withValues(alpha: 0.1),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: Center(
@@ -836,9 +836,9 @@ class DailyQuizScreen extends ConsumerWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: Colors.amber.withOpacity(0.12),
+        color: Colors.amber.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: Colors.amber.withOpacity(0.25)),
+        border: Border.all(color: Colors.amber.withValues(alpha: 0.25)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -909,9 +909,9 @@ class _QuizChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.18),
+        color: Colors.white.withValues(alpha: 0.18),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white.withOpacity(0.3)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -954,10 +954,10 @@ class _StatTile extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? AppColors.surfaceDark : Colors.white,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: accent.withOpacity(0.15)),
+        border: Border.all(color: accent.withValues(alpha: 0.15)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -1012,7 +1012,7 @@ class _Avatar extends StatelessWidget {
     final hasPhoto = photoUrl != null && photoUrl!.isNotEmpty;
     return CircleAvatar(
       radius: radius,
-      backgroundColor: AppColors.primary.withOpacity(0.12),
+      backgroundColor: AppColors.primary.withValues(alpha: 0.12),
       backgroundImage: hasPhoto ? NetworkImage(photoUrl!) : null,
       child: hasPhoto
           ? null
@@ -1082,7 +1082,7 @@ class _YesterdayChampionBannerState extends State<_YesterdayChampionBanner> {
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFFF59E0B).withOpacity(0.3),
+                color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
                 blurRadius: 14,
                 offset: const Offset(0, 6),
               ),
@@ -1096,7 +1096,7 @@ class _YesterdayChampionBannerState extends State<_YesterdayChampionBanner> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.6),
+                    color: Colors.white.withValues(alpha: 0.6),
                     width: 2.5,
                   ),
                 ),
@@ -1112,7 +1112,7 @@ class _YesterdayChampionBannerState extends State<_YesterdayChampionBanner> {
                     Text(
                       "YESTERDAY'S CHAMPION",
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.8),
+                        color: Colors.white.withValues(alpha: 0.8),
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
                         letterSpacing: 0.8,
@@ -1132,7 +1132,7 @@ class _YesterdayChampionBannerState extends State<_YesterdayChampionBanner> {
                     Text(
                       '${champion.score} pts — can you beat them today?',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.85),
+                        color: Colors.white.withValues(alpha: 0.85),
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                       ),

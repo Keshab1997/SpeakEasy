@@ -9,7 +9,6 @@ import '../../../../services/tts_service.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../result_screen.dart';
-import '../../../../services/haptic_service.dart';
 
 class _QuestionData {
   final String id;
@@ -313,7 +312,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                 gradient: LinearGradient(
                   colors: [
                     Colors.purple.shade50,
-                    Colors.deepPurple.shade50.withOpacity(0.3),
+                    Colors.deepPurple.shade50.withValues(alpha: 0.3),
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -365,7 +364,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                             borderRadius: BorderRadius.circular(24),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.purple.withOpacity(0.15),
+                                color: Colors.purple.withValues(alpha: 0.15),
                                 blurRadius: 24,
                                 offset: const Offset(0, 8),
                               ),
@@ -529,13 +528,13 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                 color: borderColor ??
                     (_isAnswered && !isSelectedOption && !isCorrectOption
                         ? Colors.grey.shade200
-                        : Colors.purple.withOpacity(0.3)),
+                        : Colors.purple.withValues(alpha: 0.3)),
                 width: borderColor != null ? 2.5 : 1.5,
               ),
               boxShadow: [
                 if (!_isAnswered)
                   BoxShadow(
-                    color: Colors.purple.withOpacity(0.08),
+                    color: Colors.purple.withValues(alpha: 0.08),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),
@@ -592,7 +591,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.purple.withOpacity(0.3),
+            color: Colors.purple.withValues(alpha: 0.3),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -604,7 +603,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: IconButton(
@@ -632,7 +631,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                     padding: const EdgeInsets.symmetric(
                         horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
+                      color: Colors.white.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: Row(
@@ -661,9 +660,9 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                   padding: const EdgeInsets.symmetric(
                       horizontal: 8, vertical: 6),
                   decoration: BoxDecoration(
-                    color: Colors.orange.withOpacity(0.3),
+                    color: Colors.orange.withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: Colors.orange.withOpacity(0.5)),
+                    border: Border.all(color: Colors.orange.withValues(alpha: 0.5)),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -691,7 +690,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
             child: LinearProgressIndicator(
               value: progress,
               minHeight: 6,
-              backgroundColor: Colors.white.withOpacity(0.25),
+              backgroundColor: Colors.white.withValues(alpha: 0.25),
               valueColor:
                   const AlwaysStoppedAnimation<Color>(Colors.white),
             ),

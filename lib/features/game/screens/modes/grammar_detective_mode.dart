@@ -9,7 +9,6 @@ import '../../../../core/widgets/skeleton_widget.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../result_screen.dart';
-import '../../../../services/haptic_service.dart';
 
 class GrammarDetectiveModeScreen extends ConsumerStatefulWidget {
   const GrammarDetectiveModeScreen({super.key});
@@ -411,10 +410,10 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withValues(alpha: 0.1),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -439,7 +438,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
                 Row(
                   children: [
                     Text(
-                      'Q${_displayedCount}/$_estimatedTotal',
+                      'Q$_displayedCount/$_estimatedTotal',
                       style: const TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(width: 8),
@@ -482,7 +481,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: color.withOpacity(0.5),
+            color: color.withValues(alpha: 0.5),
             blurRadius: 8,
             spreadRadius: 2,
           ),
@@ -505,7 +504,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
@@ -531,7 +530,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.15),
+            color: Colors.black.withValues(alpha: 0.15),
             blurRadius: 15,
             offset: const Offset(0, 6),
           ),
@@ -552,7 +551,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF8B0000).withOpacity(0.4),
+                      color: const Color(0xFF8B0000).withValues(alpha: 0.4),
                       blurRadius: 6,
                       offset: const Offset(0, 2),
                     ),
@@ -579,7 +578,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: _getDifficultyColor(q.difficulty).withOpacity(0.1),
+                  color: _getDifficultyColor(q.difficulty).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: _getDifficultyColor(q.difficulty)),
                 ),
@@ -702,7 +701,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
               decoration: BoxDecoration(
                 color: isSelected
-                    ? Colors.blue.withOpacity(0.1)
+                    ? Colors.blue.withValues(alpha: 0.1)
                     : Colors.white,
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
@@ -711,7 +710,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(isSelected ? 0.1 : 0.05),
+                    color: Colors.black.withValues(alpha: isSelected ? 0.1 : 0.05),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),
@@ -766,7 +765,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -865,13 +864,13 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  const Color(0xFF8B0000).withOpacity(0.05),
-                  const Color(0xFFFF4444).withOpacity(0.05),
+                  const Color(0xFF8B0000).withValues(alpha: 0.05),
+                  const Color(0xFFFF4444).withValues(alpha: 0.05),
                 ],
               ),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: const Color(0xFF8B0000).withOpacity(0.2),
+                color: const Color(0xFF8B0000).withValues(alpha: 0.2),
               ),
             ),
             child: Column(
@@ -925,7 +924,7 @@ class _GrammarDetectiveModeScreenState extends ConsumerState<GrammarDetectiveMod
           const SizedBox(width: 8),
           Flexible(
             child: Text(
-              'Next question in ${_nextQuestionCountdown} second${_nextQuestionCountdown > 1 ? "s" : ""}',
+              'Next question in $_nextQuestionCountdown second${_nextQuestionCountdown > 1 ? "s" : ""}',
               style: TextStyle(
                 color: _isAnswerCorrect == true ? Colors.green.shade700 : Colors.orange.shade700,
                 fontSize: 14,

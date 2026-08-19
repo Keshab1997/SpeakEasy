@@ -208,7 +208,7 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
                           fontSize: 13)),
                   const Spacer(),
                   Text('Score: $_score',
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: AppColors.primary,
                           fontWeight: FontWeight.bold,
                           fontSize: 14)),
@@ -219,7 +219,7 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: isDark ? AppColors.surfaceDark : AppColors.primary.withOpacity(0.06),
+                  color: isDark ? AppColors.surfaceDark : AppColors.primary.withValues(alpha: 0.06),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(
@@ -230,11 +230,11 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                           decoration: BoxDecoration(
-                            color: AppColors.primary.withOpacity(0.12),
+                            color: AppColors.primary.withValues(alpha: 0.12),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: Text(q.formLabel,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: AppColors.primary,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 11)),
@@ -264,10 +264,10 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
                 Color txt;
                 if (_showResult) {
                   if (opt == q.correctAnswer) {
-                    bg = AppColors.success.withOpacity(0.15);
+                    bg = AppColors.success.withValues(alpha: 0.15);
                     txt = AppColors.success;
                   } else if (i == _selected) {
-                    bg = AppColors.error.withOpacity(0.15);
+                    bg = AppColors.error.withValues(alpha: 0.15);
                     txt = AppColors.error;
                   } else {
                     bg = isDark ? AppColors.surfaceDark : AppColors.surfaceLight;
@@ -278,9 +278,9 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
                   txt = isDark ? Colors.white : Colors.black87;
                 }
                 final borderC = _showResult && opt == q.correctAnswer
-                    ? AppColors.success.withOpacity(0.4)
+                    ? AppColors.success.withValues(alpha: 0.4)
                     : _showResult && i == _selected
-                        ? AppColors.error.withOpacity(0.4)
+                        ? AppColors.error.withValues(alpha: 0.4)
                         : isDark
                             ? AppColors.borderDark
                             : AppColors.borderLight;
@@ -347,9 +347,9 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
                   padding: const EdgeInsets.all(14),
                   margin: const EdgeInsets.only(bottom: 8),
                   decoration: BoxDecoration(
-                    color: AppColors.info.withOpacity(0.1),
+                    color: AppColors.info.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: AppColors.info.withOpacity(0.2)),
+                    border: Border.all(color: AppColors.info.withValues(alpha: 0.2)),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -435,7 +435,7 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
                       ?.copyWith(fontWeight: FontWeight.w900)),
               const SizedBox(height: 8),
               Text('$_score / ${_questions.length} correct',
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.w900,
                       color: AppColors.primary)),
@@ -479,9 +479,9 @@ class _VerbFormPracticeScreenState extends State<VerbFormPracticeScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(
         children: [

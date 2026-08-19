@@ -1,4 +1,3 @@
-import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -182,7 +181,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
         
         state = AsyncValue.data(newUser);
       } else {
-        throw Exception("User registration failed.");
+        throw Exception('User registration failed.');
       }
     } catch (e, stack) {
       state = AsyncValue.error(e, stack);
@@ -204,7 +203,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
       if (credential.user != null) {
         await fetchUserData(credential.user!.uid);
       } else {
-        throw Exception("User login failed.");
+        throw Exception('User login failed.');
       }
     } catch (e, stack) {
       state = AsyncValue.error(e, stack);
@@ -287,7 +286,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
 
         state = AsyncValue.data(userModel);
       } else {
-        throw Exception("Google Sign-in failed.");
+        throw Exception('Google Sign-in failed.');
       }
     } catch (e, stack) {
       state = AsyncValue.error(e, stack);

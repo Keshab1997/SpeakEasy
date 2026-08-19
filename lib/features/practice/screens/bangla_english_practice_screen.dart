@@ -101,16 +101,16 @@ class _BanglaEnglishCategoryScreenState
         width: double.infinity,
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
-          color: cat.color.withOpacity(0.1),
+          color: cat.color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: cat.color.withOpacity(0.2)),
+          border: Border.all(color: cat.color.withValues(alpha: 0.2)),
         ),
         child: Row(
           children: [
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: cat.color.withOpacity(0.15),
+                color: cat.color.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Icon(cat.icon, color: cat.color, size: 30),
@@ -135,7 +135,7 @@ class _BanglaEnglishCategoryScreenState
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                color: cat.color.withOpacity(0.15),
+                color: cat.color.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text('${cat.exercises.length}',
@@ -376,10 +376,10 @@ class _BanglaEnglishExerciseScreenState
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: widget.category.color.withOpacity(0.08),
+                  color: widget.category.color.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                      color: widget.category.color.withOpacity(0.15)),
+                      color: widget.category.color.withValues(alpha: 0.15)),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -425,10 +425,10 @@ class _BanglaEnglishExerciseScreenState
                   width: double.infinity,
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: AppColors.info.withOpacity(0.08),
+                    color: AppColors.info.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                        color: AppColors.info.withOpacity(0.15)),
+                        color: AppColors.info.withValues(alpha: 0.15)),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -552,10 +552,10 @@ class _BanglaEnglishExerciseScreenState
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 6),
                         decoration: BoxDecoration(
-                          color: accent.withOpacity(0.12),
+                          color: accent.withValues(alpha: 0.12),
                           borderRadius: BorderRadius.circular(8),
                           border:
-                              Border.all(color: accent.withOpacity(0.25)),
+                              Border.all(color: accent.withValues(alpha: 0.25)),
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
@@ -567,7 +567,7 @@ class _BanglaEnglishExerciseScreenState
                                     color: accent)),
                             const SizedBox(width: 4),
                             Icon(Icons.close_rounded,
-                                size: 14, color: accent.withOpacity(0.5)),
+                                size: 14, color: accent.withValues(alpha: 0.5)),
                           ],
                         ),
                       ),
@@ -597,9 +597,9 @@ class _BanglaEnglishExerciseScreenState
               padding:
                   const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
               decoration: BoxDecoration(
-                color: accent.withOpacity(0.08),
+                color: accent.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: accent.withOpacity(0.15)),
+                border: Border.all(color: accent.withValues(alpha: 0.15)),
               ),
               child: Text(w,
                   style: TextStyle(
@@ -620,13 +620,13 @@ class _BanglaEnglishExerciseScreenState
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: correct
-            ? AppColors.success.withOpacity(0.1)
-            : AppColors.error.withOpacity(0.1),
+            ? AppColors.success.withValues(alpha: 0.1)
+            : AppColors.error.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: correct
-              ? AppColors.success.withOpacity(0.3)
-              : AppColors.error.withOpacity(0.3),
+              ? AppColors.success.withValues(alpha: 0.3)
+              : AppColors.error.withValues(alpha: 0.3),
         ),
       ),
       child: Column(
@@ -657,7 +657,7 @@ class _BanglaEnglishExerciseScreenState
                 TextSpan(text: 'Correct: ',
                     style: TextStyle(color: Colors.grey.shade500, fontSize: 12)),
                 TextSpan(text: ex.english,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontWeight: FontWeight.w700, fontSize: 14)),
               ],
             ),
@@ -760,9 +760,9 @@ class _BanglaEnglishExerciseScreenState
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(
         children: [

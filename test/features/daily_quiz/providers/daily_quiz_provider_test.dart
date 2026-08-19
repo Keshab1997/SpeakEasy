@@ -53,13 +53,13 @@ void main() {
     });
 
     test('copyWith clearError works', () {
-      final state = DailyQuizState(error: 'some error');
+      const state = DailyQuizState(error: 'some error');
       final cleared = state.copyWith(clearError: true);
       expect(cleared.error, isNull);
     });
 
     test('copyWith clearLeaderboardRank works', () {
-      final state = DailyQuizState(leaderboardRank: 1);
+      const state = DailyQuizState(leaderboardRank: 1);
       final cleared = state.copyWith(clearLeaderboardRank: true);
       expect(cleared.leaderboardRank, isNull);
     });

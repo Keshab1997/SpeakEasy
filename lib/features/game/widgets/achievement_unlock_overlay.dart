@@ -123,7 +123,7 @@ class _AchievementUnlockOverlayState extends State<AchievementUnlockOverlay>
     final base = widget.achievement.rarityColor;
     return [
       base,
-      base.withOpacity(0.7),
+      base.withValues(alpha: 0.7),
       Colors.white,
       Colors.amberAccent,
       Colors.yellowAccent,
@@ -149,7 +149,7 @@ class _AchievementUnlockOverlayState extends State<AchievementUnlockOverlay>
             child: AnimatedBuilder(
               animation: _fadeAnimation,
               builder: (context, _) => Container(
-                color: Colors.black.withOpacity(0.55 * _fadeAnimation.value),
+                color: Colors.black.withValues(alpha: 0.55 * _fadeAnimation.value),
               ),
             ),
           ),
@@ -214,10 +214,10 @@ class _AchievementUnlockOverlayState extends State<AchievementUnlockOverlay>
       decoration: BoxDecoration(
         color: theme.cardColor,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: rarityColor.withOpacity(0.6), width: 2),
+        border: Border.all(color: rarityColor.withValues(alpha: 0.6), width: 2),
         boxShadow: [
           BoxShadow(
-            color: rarityColor.withOpacity(glowOpacity),
+            color: rarityColor.withValues(alpha: glowOpacity),
             blurRadius: glowRadius,
             spreadRadius: 8,
           ),
@@ -275,7 +275,7 @@ class _AchievementUnlockOverlayState extends State<AchievementUnlockOverlay>
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 14,
-                color: theme.textTheme.bodyMedium?.color?.withOpacity(0.7),
+                color: theme.textTheme.bodyMedium?.color?.withValues(alpha: 0.7),
               ),
             ),
             const SizedBox(height: 20),
@@ -284,7 +284,7 @@ class _AchievementUnlockOverlayState extends State<AchievementUnlockOverlay>
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
               decoration: BoxDecoration(
-                color: rarityColor.withOpacity(0.15),
+                color: rarityColor.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
@@ -392,9 +392,9 @@ class _RewardChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
+        color: color.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

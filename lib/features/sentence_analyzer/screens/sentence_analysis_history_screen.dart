@@ -149,7 +149,7 @@ class _SentenceAnalysisHistoryScreenState extends State<SentenceAnalysisHistoryS
             color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
             borderRadius: BorderRadius.circular(18),
             border: Border.all(color: isDark ? AppColors.borderDark : AppColors.borderLight),
-            boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 8, offset: const Offset(0, 2))],
+            boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 8, offset: const Offset(0, 2))],
           ),
           child: Row(
             children: [
@@ -188,7 +188,7 @@ class _SentenceAnalysisHistoryScreenState extends State<SentenceAnalysisHistoryS
                           child: Container(
                             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                             decoration: BoxDecoration(
-                              color: AppColors.primary.withOpacity(0.1),
+                              color: AppColors.primary.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(
@@ -271,7 +271,7 @@ class _SentenceAnalysisDetailScreen extends StatelessWidget {
                   Text(
                     item['englishTranslation']?.toString() ?? '',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white.withOpacity(0.85), fontSize: 15, fontStyle: FontStyle.italic),
+                    style: TextStyle(color: Colors.white.withValues(alpha: 0.85), fontSize: 15, fontStyle: FontStyle.italic),
                   ),
                   const SizedBox(height: 10),
                   Text(formattedDate, style: const TextStyle(color: Colors.white70, fontSize: 12)),
@@ -316,7 +316,7 @@ class _SentenceAnalysisDetailScreen extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(color: color.withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
+            decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10)),
             child: Icon(icon, color: color, size: 20),
           ),
           const SizedBox(width: 12),

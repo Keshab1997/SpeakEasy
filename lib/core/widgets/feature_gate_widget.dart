@@ -53,7 +53,7 @@ class FeatureGateWidget extends StatelessWidget {
           Icon(
             Icons.rocket_launch_outlined,
             size: 40,
-            color: AppColors.primary.withOpacity(0.4),
+            color: AppColors.primary.withValues(alpha: 0.4),
           ),
           const SizedBox(height: 12),
           Text(
@@ -61,7 +61,7 @@ class FeatureGateWidget extends StatelessWidget {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w700,
-              color: AppColors.primary.withOpacity(0.6),
+              color: AppColors.primary.withValues(alpha: 0.6),
             ),
           ),
           const SizedBox(height: 4),

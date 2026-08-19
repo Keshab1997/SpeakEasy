@@ -4,7 +4,7 @@ import 'package:flutter_spoken_english_app/features/daily_quiz/models/daily_quiz
 void main() {
   group('DailyQuizQuestion', () {
     test('toJson / fromJson round-trips correctly', () {
-      final question = DailyQuizQuestion(
+      const question = DailyQuizQuestion(
         id: 'dq_v_001',
         type: 'vocabulary',
         question: 'What meaning Eloquent?',
@@ -39,7 +39,7 @@ void main() {
 
   group('DailyQuizAnswer', () {
     test('toJson / fromJson round-trips correctly', () {
-      final answer = DailyQuizAnswer(
+      const answer = DailyQuizAnswer(
         questionId: 'dq_v_001',
         selectedAnswer: 2,
         isCorrect: true,
@@ -56,7 +56,7 @@ void main() {
     });
 
     test('supports null selectedAnswer (timeout)', () {
-      final answer = DailyQuizAnswer(
+      const answer = DailyQuizAnswer(
         questionId: 'dq_v_001',
         selectedAnswer: null,
         isCorrect: false,
@@ -75,13 +75,13 @@ void main() {
   group('DailyQuiz', () {
     test('toJson / fromJson round-trips with all fields', () {
       final questions = [
-        DailyQuizQuestion(
+        const DailyQuizQuestion(
           id: 'dq_v_001', type: 'vocabulary',
           question: 'Q1', options: ['A','B','C','D'],
           correctAnswer: 0, explanation: 'E1',
           timeLimit: 30, difficulty: 'easy', category: 'general',
         ),
-        DailyQuizQuestion(
+        const DailyQuizQuestion(
           id: 'dq_g_001', type: 'grammar',
           question: 'Q2', options: ['A','B','C','D'],
           correctAnswer: 1, explanation: 'E2',
@@ -89,8 +89,8 @@ void main() {
         ),
       ];
       final answers = [
-        DailyQuizAnswer(questionId: 'dq_v_001', selectedAnswer: 0, isCorrect: true, timeTaken: 5, pointsEarned: 150),
-        DailyQuizAnswer(questionId: 'dq_g_001', selectedAnswer: null, isCorrect: false, timeTaken: 30, pointsEarned: 0),
+        const DailyQuizAnswer(questionId: 'dq_v_001', selectedAnswer: 0, isCorrect: true, timeTaken: 5, pointsEarned: 150),
+        const DailyQuizAnswer(questionId: 'dq_g_001', selectedAnswer: null, isCorrect: false, timeTaken: 30, pointsEarned: 0),
       ];
       final quiz = DailyQuiz(
         id: 'quiz_2026-07-08',
@@ -122,7 +122,7 @@ void main() {
     });
 
     test('computed properties work on empty quiz', () {
-      final quiz = DailyQuiz(id: 'quiz_2026-07-08', date: '2026-07-08', seed: 20260708);
+      const quiz = DailyQuiz(id: 'quiz_2026-07-08', date: '2026-07-08', seed: 20260708);
       expect(quiz.correctCount, 0);
       expect(quiz.wrongCount, 0);
       expect(quiz.score, 0);
@@ -134,12 +134,12 @@ void main() {
 
     test('isCompleted true when all questions answered', () {
       final questions = [
-        DailyQuizQuestion(id: 'q1', type: 'vocabulary', question: 'Q1', options: ['A','B','C','D'], correctAnswer: 0, explanation: 'E'),
-        DailyQuizQuestion(id: 'q2', type: 'grammar', question: 'Q2', options: ['A','B','C','D'], correctAnswer: 1, explanation: 'E'),
+        const DailyQuizQuestion(id: 'q1', type: 'vocabulary', question: 'Q1', options: ['A','B','C','D'], correctAnswer: 0, explanation: 'E'),
+        const DailyQuizQuestion(id: 'q2', type: 'grammar', question: 'Q2', options: ['A','B','C','D'], correctAnswer: 1, explanation: 'E'),
       ];
       final answers = [
-        DailyQuizAnswer(questionId: 'q1', selectedAnswer: 0, isCorrect: true, timeTaken: 5, pointsEarned: 150),
-        DailyQuizAnswer(questionId: 'q2', selectedAnswer: 1, isCorrect: true, timeTaken: 8, pointsEarned: 150),
+        const DailyQuizAnswer(questionId: 'q1', selectedAnswer: 0, isCorrect: true, timeTaken: 5, pointsEarned: 150),
+        const DailyQuizAnswer(questionId: 'q2', selectedAnswer: 1, isCorrect: true, timeTaken: 8, pointsEarned: 150),
       ];
       final quiz = DailyQuiz(
         id: 'quiz_test', date: '2026-07-08',

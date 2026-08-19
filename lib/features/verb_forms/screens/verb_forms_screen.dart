@@ -91,19 +91,19 @@ class _VerbFormsScreenState extends State<VerbFormsScreen> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              AppColors.primary.withOpacity(0.15),
-              AppColors.secondary.withOpacity(0.1),
+              AppColors.primary.withValues(alpha: 0.15),
+              AppColors.secondary.withValues(alpha: 0.1),
             ],
           ),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.primary.withOpacity(0.15)),
+          border: Border.all(color: AppColors.primary.withValues(alpha: 0.15)),
         ),
         child: Row(
           children: [
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.15),
+                color: AppColors.primary.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Icon(Icons.school_rounded,
@@ -150,19 +150,19 @@ class _VerbFormsScreenState extends State<VerbFormsScreen> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              AppColors.warning.withOpacity(0.2),
-              AppColors.error.withOpacity(0.08),
+              AppColors.warning.withValues(alpha: 0.2),
+              AppColors.error.withValues(alpha: 0.08),
             ],
           ),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.warning.withOpacity(0.15)),
+          border: Border.all(color: AppColors.warning.withValues(alpha: 0.15)),
         ),
         child: Row(
           children: [
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppColors.warning.withOpacity(0.15),
+                color: AppColors.warning.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Icon(Icons.quiz_rounded,
@@ -202,16 +202,16 @@ class _VerbFormsScreenState extends State<VerbFormsScreen> {
         width: double.infinity,
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
-          color: cat.color.withOpacity(0.1),
+          color: cat.color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: cat.color.withOpacity(0.2)),
+          border: Border.all(color: cat.color.withValues(alpha: 0.2)),
         ),
         child: Row(
           children: [
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: cat.color.withOpacity(0.15),
+                color: cat.color.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Icon(cat.icon, color: cat.color, size: 30),
@@ -235,7 +235,7 @@ class _VerbFormsScreenState extends State<VerbFormsScreen> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                color: cat.color.withOpacity(0.15),
+                color: cat.color.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text('${cat.verbs.length}',

@@ -218,7 +218,7 @@ class _PodiumCard extends StatelessWidget {
               border: Border.all(color: medalColor, width: 2.5),
               boxShadow: [
                 BoxShadow(
-                  color: medalColor.withOpacity(0.4),
+                  color: medalColor.withValues(alpha: 0.4),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -285,7 +285,7 @@ class _PodiumCard extends StatelessWidget {
                 end: Alignment.bottomCenter,
                 colors: [
                   medalColor,
-                  medalColor.withOpacity(0.6),
+                  medalColor.withValues(alpha: 0.6),
                 ],
               ),
               borderRadius: const BorderRadius.only(
@@ -294,7 +294,7 @@ class _PodiumCard extends StatelessWidget {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: medalColor.withOpacity(0.3),
+                  color: medalColor.withValues(alpha: 0.3),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -359,8 +359,8 @@ class _PodiumCard extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  medalColor.withOpacity(0.4),
-                  medalColor.withOpacity(0.6),
+                  medalColor.withValues(alpha: 0.4),
+                  medalColor.withValues(alpha: 0.6),
                 ],
               ),
               borderRadius: const BorderRadius.only(
@@ -411,7 +411,7 @@ class _LeaderboardTile extends StatelessWidget {
             width: 32,
             height: 32,
             decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(0.1),
+              color: AppColors.primary.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Center(

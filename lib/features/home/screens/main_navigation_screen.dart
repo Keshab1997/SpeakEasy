@@ -4,7 +4,6 @@ import '../../learning/screens/learning_screen.dart';
 import '../../practice/screens/practice_screen.dart';
 import '../../ai_teacher/screens/ai_chat_screen.dart';
 import '../../profile/screens/profile_screen.dart';
-import '../../../providers/game/streak_provider.dart';
 import 'home_screen.dart';
 
 class MainNavigationScreen extends ConsumerStatefulWidget {

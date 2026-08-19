@@ -9,7 +9,6 @@ import '../../../../services/tts_service.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
 import '../result_screen.dart';
-import '../../../../services/haptic_service.dart';
 
 class _StoryQuestion {
   final String id;
@@ -313,7 +312,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
                 gradient: LinearGradient(
                   colors: [
                     Colors.teal.shade50,
-                    Colors.green.shade50.withOpacity(0.3),
+                    Colors.green.shade50.withValues(alpha: 0.3),
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -370,7 +369,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
                             borderRadius: BorderRadius.circular(24),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.teal.withOpacity(0.12),
+                                color: Colors.teal.withValues(alpha: 0.12),
                                 blurRadius: 24,
                                 offset: const Offset(0, 8),
                               ),
@@ -384,7 +383,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFF0D9488).withOpacity(0.1),
+                                    color: const Color(0xFF0D9488).withValues(alpha: 0.1),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: Row(
@@ -421,10 +420,10 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
                                   width: double.infinity,
                                   padding: const EdgeInsets.all(16),
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFF0D9488).withOpacity(0.06),
+                                    color: const Color(0xFF0D9488).withValues(alpha: 0.06),
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
-                                      color: const Color(0xFF0D9488).withOpacity(0.15),
+                                      color: const Color(0xFF0D9488).withValues(alpha: 0.15),
                                     ),
                                   ),
                                   child: Row(
@@ -451,7 +450,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                   decoration: BoxDecoration(
-                                    color: _difficultyColor(question.difficulty).withOpacity(0.1),
+                                    color: _difficultyColor(question.difficulty).withValues(alpha: 0.1),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: Text(
@@ -534,12 +533,12 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
                     decoration: BoxDecoration(
                       color: _isAnswered
                           ? (_isAnswerCorrect! ? Colors.green.shade50 : Colors.red.shade50)
-                          : const Color(0xFF0D9488).withOpacity(0.1),
+                          : const Color(0xFF0D9488).withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
                         color: _isAnswered
                             ? (_isAnswerCorrect! ? Colors.green : Colors.red)
-                            : const Color(0xFF0D9488).withOpacity(0.4),
+                            : const Color(0xFF0D9488).withValues(alpha: 0.4),
                         width: 2,
                       ),
                     ),
@@ -604,13 +603,13 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
                 color: borderColor ??
                     (_isAnswered && !isSelectedOption && !isCorrectOption
                         ? Colors.grey.shade200
-                        : const Color(0xFF0D9488).withOpacity(0.3)),
+                        : const Color(0xFF0D9488).withValues(alpha: 0.3)),
                 width: borderColor != null ? 2.5 : 1.5,
               ),
               boxShadow: [
                 if (!_isAnswered)
                   BoxShadow(
-                    color: const Color(0xFF0D9488).withOpacity(0.08),
+                    color: const Color(0xFF0D9488).withValues(alpha: 0.08),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),
@@ -628,7 +627,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
                         ? Colors.green
                         : _isAnswered && isSelectedOption && !isCorrectOption
                             ? Colors.red
-                            : const Color(0xFF0D9488).withOpacity(0.1),
+                            : const Color(0xFF0D9488).withValues(alpha: 0.1),
                   ),
                   child: Center(
                     child: _isAnswered && (isCorrectOption || (isSelectedOption && !isCorrectOption))
@@ -688,7 +687,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF0D9488).withOpacity(0.3),
+            color: const Color(0xFF0D9488).withValues(alpha: 0.3),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -700,7 +699,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: IconButton(
@@ -735,9 +734,9 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   decoration: BoxDecoration(
-                    color: Colors.orange.withOpacity(0.3),
+                    color: Colors.orange.withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: Colors.orange.withOpacity(0.5)),
+                    border: Border.all(color: Colors.orange.withValues(alpha: 0.5)),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -763,7 +762,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
+                      color: Colors.white.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: Row(
@@ -792,7 +791,7 @@ class _StoryCompletionModeScreenState extends ConsumerState<StoryCompletionModeS
             child: LinearProgressIndicator(
               value: progress,
               minHeight: 6,
-              backgroundColor: Colors.white.withOpacity(0.25),
+              backgroundColor: Colors.white.withValues(alpha: 0.25),
               valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
             ),
           ),

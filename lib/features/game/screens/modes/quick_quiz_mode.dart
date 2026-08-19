@@ -6,11 +6,8 @@ import 'package:flutter/services.dart' show AssetManifest, rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../services/tts_service.dart';
 import '../../../../services/haptic_service.dart';
-import '../../../../repositories/statistics_repository.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
-import '../../../../models/game/game_result_model.dart';
-import '../../../../providers/game/game_provider.dart';
 import '../result_screen.dart';
 
 class _WordEntry {
@@ -56,12 +53,10 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
   Timer? _questionTimer;
   Timer? _autoAdvanceTimer;
   int _totalQuestions = 10;
-  final Set<int> _usedIndices = {};
-  Map<int, String> _userAnswers = {};
+  final Map<int, String> _userAnswers = {};
 
   // Animations
   late AnimationController _timerAnimCtrl;
-  late Animation<double> _timerAnim;
   late AnimationController _scoreAnimCtrl;
   late Animation<double> _scoreAnim;
 
@@ -72,7 +67,6 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
       vsync: this,
       duration: const Duration(seconds: 10),
     );
-    _timerAnim = Tween(begin: 0.0, end: 1.0).animate(_timerAnimCtrl);
     _scoreAnimCtrl = AnimationController(
       duration: const Duration(milliseconds: 300),
       vsync: this,
@@ -471,10 +465,10 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                        color: Colors.white.withOpacity(0.3), width: 1.5),
+                        color: Colors.white.withValues(alpha: 0.3), width: 1.5),
                   ),
                   child: Row(
                     children: [
@@ -500,10 +494,10 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                        color: Colors.white.withOpacity(0.3), width: 1.5),
+                        color: Colors.white.withValues(alpha: 0.3), width: 1.5),
                   ),
                   child: Row(
                     children: [
@@ -544,7 +538,7 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
                     child: LinearProgressIndicator(
                       value: progress,
                       minHeight: 5,
-                      backgroundColor: Colors.white.withOpacity(0.2),
+                      backgroundColor: Colors.white.withValues(alpha: 0.2),
                       valueColor:
                           const AlwaysStoppedAnimation<Color>(Colors.white),
                     ),
@@ -574,7 +568,7 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
             child: LinearProgressIndicator(
               value: value.clamp(0.0, 1.0),
               minHeight: 8,
-              backgroundColor: Colors.white.withOpacity(0.3),
+              backgroundColor: Colors.white.withValues(alpha: 0.3),
               valueColor: AlwaysStoppedAnimation<Color>(
                 value < 0.25
                     ? Colors.redAccent
@@ -606,7 +600,7 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
           borderRadius: BorderRadius.circular(28),
           boxShadow: [
             BoxShadow(
-              color: Colors.deepOrange.withOpacity(0.15),
+              color: Colors.deepOrange.withValues(alpha: 0.15),
               blurRadius: 30,
               offset: const Offset(0, 10),
             ),
@@ -734,13 +728,13 @@ class _QuickQuizModeScreenState extends ConsumerState<QuickQuizModeScreen>
                 color: borderColor ??
                     (_isAnswered
                         ? Colors.grey.shade200
-                        : Colors.deepOrange.withOpacity(0.2)),
+                        : Colors.deepOrange.withValues(alpha: 0.2)),
                 width: isCorrectOption && _isAnswered ? 2.5 : 1.5,
               ),
               boxShadow: [
                 if (!_isAnswered)
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.04),
+                    color: Colors.black.withValues(alpha: 0.04),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),

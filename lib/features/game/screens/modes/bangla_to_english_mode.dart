@@ -10,7 +10,6 @@ import '../../../../models/game/wrong_question_model.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../providers/game/tts_provider.dart';
 import '../result_screen.dart';
-import '../../../../services/haptic_service.dart';
 
 class BanglaToEnglishModeScreen extends ConsumerStatefulWidget {
   const BanglaToEnglishModeScreen({super.key});
@@ -174,12 +173,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
     } catch (_) {}
   }
 
-  Future<void> _speakCorrectAnswer() async {
-    try {
-      // Speak the correct English translation
-      await ref.read(ttsServiceProvider.notifier).speak(_currentQuestion.correct);
-    } catch (_) {}
-  }
+
 
   void _selectAnswer(String answer) {
     if (_isAnswered) return;
@@ -442,7 +436,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
-          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 8, offset: const Offset(0, 2))],
+          boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.08), blurRadius: 8, offset: const Offset(0, 2))],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -451,7 +445,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
             Container(
               width: 36, height: 36,
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Icon(icon, color: color, size: 20),
@@ -504,7 +498,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
               // Header
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                decoration: BoxDecoration(color: Colors.white.withOpacity(0.1)),
+                decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.1)),
                 child: Row(
                   children: [
                     IconButton(
@@ -526,7 +520,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                                 decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.2),
+                                  color: Colors.white.withValues(alpha: 0.2),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Row(
@@ -579,7 +573,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
-                            BoxShadow(color: Colors.black.withOpacity(0.15), blurRadius: 15, offset: const Offset(0, 6)),
+                            BoxShadow(color: Colors.black.withValues(alpha: 0.15), blurRadius: 15, offset: const Offset(0, 6)),
                           ],
                         ),
                         child: Column(
@@ -587,7 +581,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                               decoration: BoxDecoration(
-                                color: const Color(0xFF2E7D32).withOpacity(0.1),
+                                color: const Color(0xFF2E7D32).withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: const Row(
@@ -619,7 +613,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                   decoration: BoxDecoration(
-                                    color: _getDifficultyColor(q.difficulty).withOpacity(0.1),
+                                    color: _getDifficultyColor(q.difficulty).withValues(alpha: 0.1),
                                     borderRadius: BorderRadius.circular(8),
                                     border: Border.all(color: _getDifficultyColor(q.difficulty)),
                                   ),
@@ -635,7 +629,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
                                   child: Container(
                                     padding: const EdgeInsets.all(8),
                                     decoration: BoxDecoration(
-                                      color: const Color(0xFF2E7D32).withOpacity(0.1),
+                                      color: const Color(0xFF2E7D32).withValues(alpha: 0.1),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: const Icon(Icons.volume_up, color: Color(0xFF2E7D32), size: 22),
@@ -654,7 +648,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.15),
+                            color: Colors.white.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: const Row(
@@ -703,7 +697,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
             color: Colors.white,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(color: Colors.grey.shade300),
-            boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 8, offset: const Offset(0, 2))],
+            boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 8, offset: const Offset(0, 2))],
           ),
           child: Text(option, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Colors.black87)),
         ),
@@ -718,7 +712,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10, offset: const Offset(0, 4))],
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10, offset: const Offset(0, 4))],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -775,10 +769,10 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [const Color(0xFF2E7D32).withOpacity(0.05), const Color(0xFF4CAF50).withOpacity(0.05)],
+                colors: [const Color(0xFF2E7D32).withValues(alpha: 0.05), const Color(0xFF4CAF50).withValues(alpha: 0.05)],
               ),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: const Color(0xFF2E7D32).withOpacity(0.2)),
+              border: Border.all(color: const Color(0xFF2E7D32).withValues(alpha: 0.2)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -806,9 +800,9 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
       width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.15),
+        color: Colors.white.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.3)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
@@ -816,7 +810,7 @@ class _BanglaToEnglishModeScreenState extends ConsumerState<BanglaToEnglishModeS
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.timer_outlined, color: Colors.white, size: 18),
+              const Icon(Icons.timer_outlined, color: Colors.white, size: 18),
               const SizedBox(width: 8),
               Text(
                 'Auto next in $_nextCountdown sec',

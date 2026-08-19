@@ -65,8 +65,8 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
                 height: 100,
                 decoration: BoxDecoration(
                   color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white.withOpacity(0.05)
-                      : Colors.black.withOpacity(0.05),
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : Colors.black.withValues(alpha: 0.05),
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
@@ -233,7 +233,7 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: AppColors.primary.withOpacity(0.1),
+                    color: AppColors.primary.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Icon(
@@ -306,7 +306,7 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
                     vertical: 2,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.secondary.withOpacity(0.12),
+                    color: AppColors.secondary.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
@@ -325,7 +325,7 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
                     vertical: 2,
                   ),
                   decoration: BoxDecoration(
-                    color: statusColor.withOpacity(0.12),
+                    color: statusColor.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
@@ -373,7 +373,7 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
 
     try {
       await _repository.deleteNotification(docId);
-      if (!mounted) return;
+      if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Notification deleted.'),
@@ -381,7 +381,7 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
         ),
       );
     } catch (e) {
-      if (!mounted) return;
+      if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Failed to delete: $e'),
@@ -420,7 +420,7 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
     setState(() => _deletingAll = true);
     try {
       await _repository.clearAllNotifications();
-      if (!mounted) return;
+      if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('All notifications deleted.'),
@@ -429,7 +429,7 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
         ),
       );
     } catch (e) {
-      if (!mounted) return;
+      if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Failed to clear all: $e'),

@@ -202,7 +202,7 @@ class _StudyPlanSectionState extends ConsumerState<StudyPlanSection> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.1),
+                color: AppColors.primary.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text('${pending.length} pending',
@@ -246,7 +246,7 @@ class _StudyPlanSectionState extends ConsumerState<StudyPlanSection> {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                    color: const Color(0xFF6C63FF).withOpacity(0.3),
+                    color: const Color(0xFF6C63FF).withValues(alpha: 0.3),
                     blurRadius: 10,
                     offset: const Offset(0, 4)),
               ],
@@ -256,7 +256,7 @@ class _StudyPlanSectionState extends ConsumerState<StudyPlanSection> {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Icon(Icons.quiz_rounded, color: Colors.white, size: 22),
@@ -314,7 +314,7 @@ class _StudyPlanSectionState extends ConsumerState<StudyPlanSection> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                   decoration: BoxDecoration(
-                    color: Colors.green.withOpacity(0.1),
+                    color: Colors.green.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text('${completed.length}',
@@ -368,12 +368,12 @@ class _ChapterCard extends StatelessWidget {
         color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: _typeColor(type).withOpacity(0.15),
+          color: _typeColor(type).withValues(alpha: 0.15),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: _typeColor(type).withOpacity(0.08),
+            color: _typeColor(type).withValues(alpha: 0.08),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -392,7 +392,7 @@ class _ChapterCard extends StatelessWidget {
                       width: 52,
                       height: 52,
                       decoration: BoxDecoration(
-                        color: _typeColor(type).withOpacity(0.1),
+                        color: _typeColor(type).withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Center(
@@ -416,7 +416,7 @@ class _ChapterCard extends StatelessWidget {
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                                 decoration: BoxDecoration(
-                                  color: _typeColor(type).withOpacity(0.1),
+                                  color: _typeColor(type).withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 child: Text(
@@ -436,7 +436,7 @@ class _ChapterCard extends StatelessWidget {
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                                   decoration: BoxDecoration(
-                                    color: Colors.orange.withOpacity(0.1),
+                                    color: Colors.orange.withValues(alpha: 0.1),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   child: const Text('SKIPPED',
@@ -493,9 +493,9 @@ class _SkipWarning extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 6),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.orange.withOpacity(0.1),
+        color: Colors.orange.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.orange.withOpacity(0.2)),
+        border: Border.all(color: Colors.orange.withValues(alpha: 0.2)),
       ),
       child: Row(
         children: [
@@ -582,16 +582,16 @@ class _AllDoneCard extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.green.withOpacity(0.06),
+        color: Colors.green.withValues(alpha: 0.06),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.green.withOpacity(0.15)),
+        border: Border.all(color: Colors.green.withValues(alpha: 0.15)),
       ),
       child: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Colors.green.withOpacity(0.1),
+              color: Colors.green.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: const Icon(Icons.celebration_rounded, color: Colors.green, size: 22),
@@ -628,7 +628,7 @@ class _CompactCompletedRow extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
           decoration: BoxDecoration(
-            color: Colors.green.withOpacity(0.04),
+            color: Colors.green.withValues(alpha: 0.04),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(
@@ -638,7 +638,7 @@ class _CompactCompletedRow extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
                 decoration: BoxDecoration(
-                  color: (type == 'grammar' ? AppColors.purpleGradient[0] : AppColors.primary).withOpacity(0.1),
+                  color: (type == 'grammar' ? AppColors.purpleGradient[0] : AppColors.primary).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Text(type == 'grammar' ? 'G' : 'V',

@@ -37,8 +37,8 @@ List<QuestionModel> generateGrammarQuiz(GrammarChapter chapter) {
     final wrong = others.take(3).map((t) => t.name).toList();
     final options = [topic.name, ...wrong]..shuffle(rng);
     final q2 = topic.banglaDefinition.isNotEmpty
-        ? "Which topic does this definition belong to?\nএই সংজ্ঞাটি কোন টপিকের?\n\n${topic.definition}\n\nবাংলা: ${topic.banglaDefinition}"
-        : "Which topic does this definition belong to?\n\n${topic.definition}";
+        ? 'Which topic does this definition belong to?\nএই সংজ্ঞাটি কোন টপিকের?\n\n${topic.definition}\n\nবাংলা: ${topic.banglaDefinition}'
+        : 'Which topic does this definition belong to?\n\n${topic.definition}';
     questions.add(QuestionModel(
       question: q2,
       options: options,
@@ -58,7 +58,7 @@ List<QuestionModel> generateGrammarQuiz(GrammarChapter chapter) {
     final wrong = others.take(3).map((e) => e.bn).toList();
     final options = [ex.bn, ...wrong]..shuffle(rng);
     questions.add(QuestionModel(
-      question: "Choose the Bangla translation / বাংলা অনুবাদ নির্বাচন করুন:\n\n\"${ex.en}\"",
+      question: 'Choose the Bangla translation / বাংলা অনুবাদ নির্বাচন করুন:\n\n"${ex.en}"',
       options: options,
       correctIndex: options.indexOf(ex.bn),
     ));
@@ -78,7 +78,7 @@ List<QuestionModel> generateGrammarQuiz(GrammarChapter chapter) {
     final wrong = others.take(3).map((t) => t.name).toList();
     final options = [pair.value, ...wrong]..shuffle(rng);
     questions.add(QuestionModel(
-      question: "Which topic does this rule belong to?\nএই নিয়মটি কোন টপিকের?\n\n\"${pair.key}\"",
+      question: 'Which topic does this rule belong to?\nএই নিয়মটি কোন টপিকের?\n\n"${pair.key}"',
       options: options,
       correctIndex: options.indexOf(pair.value),
     ));
@@ -96,7 +96,7 @@ List<QuestionModel> generateGrammarQuiz(GrammarChapter chapter) {
       if (wrong.length < 3) continue;
       final options = [m.correct, ...wrong]..shuffle(rng);
       questions.add(QuestionModel(
-        question: "Which sentence is grammatically correct?\nকোন বাক্যটি ব্যাকরণগতভাবে সঠিক?",
+        question: 'Which sentence is grammatically correct?\nকোন বাক্যটি ব্যাকরণগতভাবে সঠিক?',
         options: options,
         correctIndex: options.indexOf(m.correct),
         explanation: m.explanation,

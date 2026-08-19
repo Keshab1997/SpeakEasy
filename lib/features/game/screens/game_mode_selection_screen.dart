@@ -78,7 +78,7 @@ class GameModeSelectionScreen extends ConsumerWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF6366F1).withOpacity(0.3),
+              color: const Color(0xFF6366F1).withValues(alpha: 0.3),
               blurRadius: 12,
               offset: const Offset(0, 6),
             ),
@@ -90,7 +90,7 @@ class GameModeSelectionScreen extends ConsumerWidget {
               width: 64,
               height: 64,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Icon(Icons.compare_arrows_rounded, color: Colors.white, size: 32),
@@ -114,7 +114,7 @@ class GameModeSelectionScreen extends ConsumerWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                         decoration: BoxDecoration(
-                          color: Colors.amber.withOpacity(0.3),
+                          color: Colors.amber.withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: const Text(
@@ -134,15 +134,15 @@ class GameModeSelectionScreen extends ConsumerWidget {
                     style: TextStyle(color: Colors.white70, fontSize: 13),
                   ),
                   const SizedBox(height: 12),
-                  Row(
+                  const Row(
                     children: [
-                      const Icon(Icons.compare_arrows_rounded, color: Colors.white70, size: 14),
-                      const SizedBox(width: 4),
-                      const Text('6 pairs', style: TextStyle(color: Colors.white70, fontSize: 12)),
-                      const SizedBox(width: 12),
-                      const Icon(Icons.star_rounded, color: Colors.amber, size: 14),
-                      const SizedBox(width: 4),
-                      const Text('Score + Streak', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                      Icon(Icons.compare_arrows_rounded, color: Colors.white70, size: 14),
+                      SizedBox(width: 4),
+                      Text('6 pairs', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                      SizedBox(width: 12),
+                      Icon(Icons.star_rounded, color: Colors.amber, size: 14),
+                      SizedBox(width: 4),
+                      Text('Score + Streak', style: TextStyle(color: Colors.white70, fontSize: 12)),
                     ],
                   ),
                 ],
@@ -177,7 +177,7 @@ class GameModeSelectionScreen extends ConsumerWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF58CC02).withOpacity(0.3),
+              color: const Color(0xFF58CC02).withValues(alpha: 0.3),
               blurRadius: 12,
               offset: const Offset(0, 6),
             ),
@@ -189,7 +189,7 @@ class GameModeSelectionScreen extends ConsumerWidget {
               width: 64,
               height: 64,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Icon(Icons.directions_run_rounded, color: Colors.white, size: 32),
@@ -213,7 +213,7 @@ class GameModeSelectionScreen extends ConsumerWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                         decoration: BoxDecoration(
-                          color: Colors.amber.withOpacity(0.3),
+                          color: Colors.amber.withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: const Text(
@@ -233,15 +233,15 @@ class GameModeSelectionScreen extends ConsumerWidget {
                     style: TextStyle(color: Colors.white70, fontSize: 13),
                   ),
                   const SizedBox(height: 12),
-                  Row(
+                  const Row(
                     children: [
-                      const Icon(Icons.abc_rounded, color: Colors.white70, size: 14),
-                      const SizedBox(width: 4),
-                      const Text('V1-V5 Forms', style: TextStyle(color: Colors.white70, fontSize: 12)),
-                      const SizedBox(width: 12),
-                      const Icon(Icons.quiz_rounded, color: Colors.amber, size: 14),
-                      const SizedBox(width: 4),
-                      const Text('Quick Quiz', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                      Icon(Icons.abc_rounded, color: Colors.white70, size: 14),
+                      SizedBox(width: 4),
+                      Text('V1-V5 Forms', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                      SizedBox(width: 12),
+                      Icon(Icons.quiz_rounded, color: Colors.amber, size: 14),
+                      SizedBox(width: 4),
+                      Text('Quick Quiz', style: TextStyle(color: Colors.white70, fontSize: 12)),
                     ],
                   ),
                 ],
@@ -274,7 +274,7 @@ class _ModeCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: _getGradientColors(config.type).first.withOpacity(0.3),
+              color: _getGradientColors(config.type).first.withValues(alpha: 0.3),
               blurRadius: 12,
               offset: const Offset(0, 6),
             ),
@@ -286,7 +286,7 @@ class _ModeCard extends StatelessWidget {
               width: 64,
               height: 64,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Icon(config.icon, color: Colors.white, size: 32),

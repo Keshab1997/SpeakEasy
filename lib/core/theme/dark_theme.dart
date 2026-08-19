@@ -37,7 +37,7 @@ final ThemeData darkTheme = ThemeData(
   cardTheme: CardThemeData(
     color: AppColors.surfaceDark,
     elevation: 2,
-    shadowColor: Colors.black.withOpacity(0.2),
+    shadowColor: Colors.black.withValues(alpha: 0.2),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(16),
       side: const BorderSide(color: AppColors.borderDark, width: 0.5),
@@ -45,9 +45,9 @@ final ThemeData darkTheme = ThemeData(
   ),
   navigationBarTheme: NavigationBarThemeData(
     backgroundColor: AppColors.surfaceDark,
-    indicatorColor: AppColors.primary.withOpacity(0.2),
-    labelTextStyle: MaterialStateProperty.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
+    indicatorColor: AppColors.primary.withValues(alpha: 0.2),
+    labelTextStyle: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
         return const TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.bold,
@@ -60,8 +60,8 @@ final ThemeData darkTheme = ThemeData(
         color: AppColors.textSecondaryDark,
       );
     }),
-    iconTheme: MaterialStateProperty.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
+    iconTheme: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
         return const IconThemeData(
           color: Colors.white,
           size: 26,

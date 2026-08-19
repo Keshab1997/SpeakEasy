@@ -129,7 +129,7 @@ class _SentenceRearrangeWidgetState extends State<SentenceRearrangeWidget> {
                           ? (idx == _userOrder.indexOf(idx)
                               ? Colors.green.shade50
                               : Colors.red.shade50)
-                          : AppColors.primary.withOpacity(0.1),
+                          : AppColors.primary.withValues(alpha: 0.1),
                       side: BorderSide.none,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -173,7 +173,7 @@ class _SentenceRearrangeWidgetState extends State<SentenceRearrangeWidget> {
                       ? null
                       : [
                           BoxShadow(
-                            color: AppColors.primary.withOpacity(0.3),
+                            color: AppColors.primary.withValues(alpha: 0.3),
                             blurRadius: 6,
                             offset: const Offset(0, 2),
                           )

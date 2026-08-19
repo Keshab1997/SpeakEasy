@@ -94,13 +94,7 @@ class _ModeGameScreenState extends ConsumerState<ModeGameScreen> with TickerProv
     ref.read(soundServiceProvider).playButtonTap();
   }
 
-  void _useHint() {
-    if (_gameState.hintsRemaining > 0 && !_gameState.isPaused && !_gameState.isGameOver) {
-      setState(() => _gameState = _gameState.copyWith(hintsRemaining: _gameState.hintsRemaining - 1));
-      ref.read(soundServiceProvider).playButtonTap();
-      // TODO: Show hint
-    }
-  }
+
 
   void _loseLife() {
     if (_config.hasLives) {
@@ -455,7 +449,7 @@ class _ModeGameScreenState extends ConsumerState<ModeGameScreen> with TickerProv
                     tenseType: question.tenseType,
                     difficulty: question.difficulty,
                     gradientStart: _getModeColor(),
-                    gradientEnd: _getModeColor().withOpacity(0.8),
+                    gradientEnd: _getModeColor().withValues(alpha: 0.8),
                   ),
 
                   const SizedBox(height: 24),
@@ -531,10 +525,7 @@ class _ModeGameScreenState extends ConsumerState<ModeGameScreen> with TickerProv
     );
   }
 
-  String _getModeQuestionText() {
-    // Placeholder - each mode will provide its own question format
-    return 'Sample question for ${_config.name} mode';
-  }
+
 
   Color _getModeColor() {
     switch (widget.modeType) {

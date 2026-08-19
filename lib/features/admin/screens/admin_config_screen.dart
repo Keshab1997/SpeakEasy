@@ -169,7 +169,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
         ],
       ),
       body: _loading
-          ? _SkelForm()
+          ? const _SkelForm()
           : _error != null
               ? Center(
                   child: Column(
@@ -287,7 +287,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
             style: const TextStyle(fontWeight: FontWeight.w600)),
         subtitle: Text(enabled ? 'Enabled' : 'Disabled'),
         value: enabled,
-        activeColor: AppColors.primary,
+        activeThumbColor: AppColors.primary,
         onChanged: (value) {
           setState(() {
             _config = _config!.copyWith(
@@ -306,7 +306,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
             style: TextStyle(fontWeight: FontWeight.w600)),
         subtitle: Text(_config!.forceUpdate.enabled ? 'Active' : 'Inactive'),
         value: _config!.forceUpdate.enabled,
-        activeColor: AppColors.primary,
+        activeThumbColor: AppColors.primary,
         onChanged: (value) {
           setState(() {
             _config = _config!.copyWith(
@@ -376,7 +376,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
             ? 'Active — users see maintenance screen'
             : 'Inactive'),
         value: _config!.maintenanceMode.enabled,
-        activeColor: AppColors.primary,
+        activeThumbColor: AppColors.primary,
         onChanged: (value) {
           setState(() {
             _config = _config!.copyWith(
@@ -414,7 +414,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
             ? 'Active — users see update prompt'
             : 'Inactive'),
         value: _config!.inAppUpdate.enabled,
-        activeColor: AppColors.primary,
+        activeThumbColor: AppColors.primary,
         onChanged: (value) {
           setState(() {
             _config = _config!.copyWith(
@@ -504,8 +504,8 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
         child: Divider(),
       ),
       const SizedBox(height: 4),
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+      const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: Text(
           'Mock Test Unlock',
           style: TextStyle(
@@ -560,7 +560,7 @@ class _AdminConfigScreenState extends State<AdminConfigScreen> {
           value: _mockTestAdUnlockEnabled,
           dense: true,
           contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-          activeColor: AppColors.primary,
+          activeThumbColor: AppColors.primary,
           onChanged: (value) {
             setState(() => _mockTestAdUnlockEnabled = value);
           },
@@ -682,7 +682,7 @@ class _SkelForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final c = (isDark ? Colors.white : Colors.black).withOpacity(0.06);
+    final c = (isDark ? Colors.white : Colors.black).withValues(alpha: 0.06);
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
       children: List.generate(8, (i) => Padding(

@@ -67,12 +67,12 @@ class FillBlanksWidget extends StatelessWidget {
 
           if (isAnswered) {
             if (isCorrectOption) {
-              bgColor = isDark ? Colors.green.withOpacity(0.2) : Colors.green.shade50;
+              bgColor = isDark ? Colors.green.withValues(alpha: 0.2) : Colors.green.shade50;
               borderColor = Colors.green;
               textColor = Colors.green.shade700;
               suffixIcon = Icons.check_circle;
             } else if (isWrongOption) {
-              bgColor = isDark ? Colors.red.withOpacity(0.2) : Colors.red.shade50;
+              bgColor = isDark ? Colors.red.withValues(alpha: 0.2) : Colors.red.shade50;
               borderColor = Colors.red;
               textColor = Colors.red.shade700;
               suffixIcon = Icons.cancel;
@@ -95,7 +95,7 @@ class FillBlanksWidget extends StatelessWidget {
                   boxShadow: isSelected
                       ? [
                           BoxShadow(
-                            color: borderColor.withOpacity(0.3),
+                            color: borderColor.withValues(alpha: 0.3),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           )
