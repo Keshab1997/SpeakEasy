@@ -123,31 +123,45 @@ class MyApp extends ConsumerWidget {
 /// (`Config/app_settings → onesignal.AppId`). If the config is missing or the
 /// App ID is empty, OneSignal initialization is skipped gracefully.
 Future<void> _initOneSignal() async {
+  var appId = '';
+
+  // 1) Try the live Firestore config first (lets admins update the App ID
+  //    remotely without shipping a new release).
   try {
     final doc = await FirebaseFirestore.instance
         .collection('Config')
         .doc('app_settings')
         .get();
 
-    if (!doc.exists) {
+    if (doc.exists) {
+      final data = doc.data();
+      final onesignalRaw = data?['onesignal'];
+      final onesignalConfig = onesignalRaw as Map<String, dynamic>?;
+      appId = onesignalConfig?['AppId'] as String? ?? '';
+      debugPrint('main: resolved appId="$appId" from Firestore');
+
+      if (appId.isNotEmpty) {
+        // Cache it so offline launches can still init push.
+        await HiveService.setCachedOneSignalAppId(appId);
+      }
+    } else {
       debugPrint('main: app_settings doc not found in Config collection');
-      return;
     }
-
-    final data = doc.data();
-    debugPrint(
-      'main: found at Config/app_settings, keys=${data?.keys.toList()}',
-    );
-
-    final onesignalRaw = data?['onesignal'];
-    final onesignalConfig = onesignalRaw as Map<String, dynamic>?;
-    final appId = onesignalConfig?['AppId'] as String? ?? '';
-    debugPrint('main: resolved appId="$appId"');
-
-    await OneSignalService().initialize(appId);
   } catch (e) {
-    // Firestore might not be available (offline first launch).
-    // OneSignal init is deferred — it will be retried on next app open.
-    debugPrint('main: OneSignal init deferred — config not available ($e)');
+    debugPrint('main: Firestore config unavailable ($e) — trying cache');
   }
+
+  // 2) Fallback to the cached App ID from a previous successful launch.
+  //    Without this, an offline/slow first run would silently skip OneSignal
+  //    init and the device would never register for push until the next open.
+  if (appId.isEmpty) {
+    appId = HiveService.getCachedOneSignalAppId() ?? '';
+    if (appId.isNotEmpty) {
+      debugPrint('main: using cached appId="$appId"');
+    } else {
+      debugPrint('main: no OneSignal App ID available (Firestore + cache empty)');
+    }
+  }
+
+  await OneSignalService().initialize(appId);
 }

@@ -46,9 +46,21 @@
 -keep class com.google.android.play.core.splitinstall.** { *; }
 -keep class com.google.android.play.core.tasks.** { *; }
 
-# OneSignal: keep notification entry points; let R8 shrink the rest
--keep class com.onesignal.notifications.** { *; }
--keep class com.onesignal.OneSignal { *; }
+# OneSignal — keep the FULL SDK. OneSignal's background/killed-state delivery
+# depends on FCM classes (FirebaseMessagingService subclasses, broadcast
+# receivers, the notification extender service) that are looked up via the
+# merged manifest / reflection. If R8 renames or strips any of these, push
+# notifications stop arriving the moment the app is swiped away from recents
+# (the exact "works in background, fails when killed" symptom).
+-keep class com.onesignal.** { *; }
+-dontwarn com.onesignal.**
+
+# FCM — keep the messaging entry points used for killed-state delivery.
+# Firebase ships consumer rules, but with minifyEnabled + aggressive shrinking
+# an explicit keep here guarantees the MessagingService survives.
+-keep class com.google.firebase.messaging.** { *; }
+-dontwarn com.google.firebase.messaging.**
+
 -dontwarn com.huawei.hms.**
 -dontwarn com.huawei.agconnect.**
 -dontwarn com.amazon.**

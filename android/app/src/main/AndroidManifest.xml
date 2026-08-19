@@ -9,19 +9,20 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- Allow asking the user to exempt SpeakEasy from battery optimization
+         (critical for push delivery on Realme/OPPO/Vivo/Xiaomi). -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
     
     <application
         android:label="SpeakEasy"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 
-        <!-- Disable Firebase auto-initialization -->
-        <meta-data
-            android:name="firebase_automatic_data_collection_enabled"
-            android:value="false" />
-        <meta-data
-            android:name="firebase_automatic_resource_management_enabled"
-            android:value="false" />
+        <!-- NOTE: Firebase auto-init must stay ENABLED (default). OneSignal's
+             killed-state delivery routes through FCM, which needs automatic
+             FCM token registration to work when the app is not running.
+             Disabling firebase_automatic_data_collection_enabled breaks push
+             delivery when the app is swiped away / not open. -->
 
         <!-- OneSignal notification channel (used when app is killed/backgrounded) -->
         <meta-data

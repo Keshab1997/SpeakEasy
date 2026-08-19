@@ -183,6 +183,17 @@ class HiveService {
     return _settings.get('darkMode', defaultValue: false) as bool;
   }
 
+  // OneSignal App ID cache — lets push init proceed even when Firestore is
+  // unreachable on launch (offline first run / slow network), so users are
+  // still registered for push notifications.
+  static Future<void> setCachedOneSignalAppId(String value) async {
+    await _settings.put('onesignal_app_id', value);
+  }
+
+  static String? getCachedOneSignalAppId() {
+    return _settings.get('onesignal_app_id') as String?;
+  }
+
   static Future<void> setNotificationEnabled(bool value) async {
     await _settings.put('notifications', value);
   }

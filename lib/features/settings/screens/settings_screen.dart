@@ -9,6 +9,7 @@ import '../../../providers/auth_provider.dart';
 import '../../../providers/theme_provider.dart';
 import '../../admin/screens/admin_dashboard_screen.dart';
 import '../../feedback/screens/feedback_screen.dart';
+import 'battery_optimization_screen.dart';
 import 'privacy_security_screen.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
@@ -235,6 +236,24 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   ),
                 ),
               ],
+              const SizedBox(height: 12),
+              _buildSettingsCard([
+                ListTile(
+                  leading: const Icon(Icons.notification_important_outlined,
+                      color: AppColors.warning),
+                  title: const Text('Notification আসছে না?'),
+                  subtitle: const Text(
+                      'Realme/OPPO/Vivo/Xiaomi-এ অ্যাপ বন্ধ থাকলে notification বন্ধ হয়ে যায় — এখান থেকে ঠিক করুন'),
+                  trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => const BatteryOptimizationScreen()),
+                    );
+                  },
+                ),
+              ]),
               const SizedBox(height: 24),
             Text('Language', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
             const SizedBox(height: 8),
