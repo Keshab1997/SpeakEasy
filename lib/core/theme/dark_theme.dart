@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../constants/app_colors.dart';
 
 final ThemeData darkTheme = ThemeData(
@@ -20,6 +21,12 @@ final ThemeData darkTheme = ThemeData(
     backgroundColor: AppColors.backgroundDark,
     foregroundColor: AppColors.onBackgroundDark,
     elevation: 0,
+    scrolledUnderElevation: 0,
+    systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+    ),
     centerTitle: false,
     titleTextStyle: TextStyle(
       fontSize: 22,
