@@ -267,12 +267,13 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
       }
 
       // ── 5. Update leaderboard ──
+      final syncedXp = localProgress?.currentXP ?? widget.earnedXP;
       await ref.read(leaderboardProvider.notifier).updateUserStats(
             userId: userId,
             userName: userName,
-            xp: localProgress?.currentXP ?? widget.earnedXP,
+            xp: syncedXp,
             score: widget.score,
-            level: localProgress?.currentLevel ?? 1,
+            level: ref.read(xpProvider).currentLevel,
             photoUrl: user.photoURL ?? '',
           );
 

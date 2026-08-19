@@ -1,5 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import '../services/xp_service.dart';
 
 class LeaderboardEntry {
   final String userId;
@@ -20,14 +21,29 @@ class LeaderboardEntry {
     this.photoUrl = '',
   });
 
+  static int _asInt(dynamic value, {int fallback = 0}) {
+    if (value is int) return value;
+    if (value is num) return value.toInt();
+    if (value is String) return int.tryParse(value) ?? fallback;
+    return fallback;
+  }
+
   factory LeaderboardEntry.fromMap(Map<String, dynamic> map, {int? rank}) {
+    final xp = _asInt(map['xp'] ?? map['currentXP']);
+    final storedLevel = _asInt(
+      map['level'] ?? map['currentLevel'],
+      fallback: 0,
+    );
+    // Prefer XP-derived level so stale / missing Firestore `level: 1` is not shown.
+    final level = XpService.levelFromTotalXP(xp, fallback: storedLevel > 0 ? storedLevel : 1);
+
     return LeaderboardEntry(
       userId: map['userId'] as String? ?? '',
-      userName: map['userName'] as String? ?? '',
-      score: map['score'] as int? ?? 0,
-      xp: map['xp'] as int? ?? 0,
-      level: map['level'] as int? ?? 1,
-      rank: rank ?? map['rank'] as int? ?? 0,
+      userName: map['userName'] as String? ?? map['name'] as String? ?? '',
+      score: _asInt(map['score']),
+      xp: xp,
+      level: level,
+      rank: rank ?? _asInt(map['rank']),
       photoUrl: map['photoUrl'] as String? ?? '',
     );
   }
@@ -189,6 +205,7 @@ class LeaderboardRepository {
     required int level,
     String photoUrl = '',
   }) async {
+    final resolvedLevel = XpService.levelFromTotalXP(xp, fallback: level);
     await FirebaseFirestore.instance
         .collection(_firestoreCollection)
         .doc(userId)
@@ -197,10 +214,11 @@ class LeaderboardRepository {
       'userName': userName,
       'xp': xp,
       'score': score,
-      'level': level,
+      'level': resolvedLevel,
+      'currentLevel': resolvedLevel,
       'photoUrl': photoUrl,
       'lastActive': DateTime.now(),
-    });
+    }, SetOptions(merge: true));
   }
 
   // ── Sync ──

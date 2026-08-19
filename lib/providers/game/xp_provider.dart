@@ -19,7 +19,7 @@ class XpState {
   const XpState({
     this.currentXP = 0,
     this.currentLevel = 1,
-    this.xpForNextLevel = 100,
+    this.xpForNextLevel = XpService.xpPerLevel,
     this.levelProgress = 0.0,
     this.levelTitle = 'Rookie',
     this.levelEmoji = '🎯',

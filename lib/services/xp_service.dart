@@ -99,15 +99,31 @@ class XpService {
     return totalEarned;
   }
 
-  Future<int> getCurrentLevel() async {
-    final xp = await getCurrentXP();
-    if (xp > 0) return (xp ~/ 100) + 1;
-    final progress = _progressRepository.getProgress();
-    return progress?.currentLevel ?? 1;
+  /// XP needed to finish one level. 300 (was 100) so gamer rank
+  /// levels up more slowly and feels earned.
+  static const int xpPerLevel = 300;
+
+  /// Level from total XP. Shared so Hive / Firestore / leaderboard stay in sync.
+  static int levelFromTotalXP(int xp, {int fallback = 1}) {
+    if (xp <= 0) return fallback;
+    return (xp ~/ xpPerLevel) + 1;
   }
 
+  int levelFromXP(int xp, {int fallback = 1}) {
+    return levelFromTotalXP(xp, fallback: fallback);
+  }
+
+  Future<int> getCurrentLevel() async {
+    final xp = await getCurrentXP();
+    final progress = _progressRepository.getProgress();
+    return levelFromXP(xp, fallback: progress?.currentLevel ?? 1);
+  }
+
+  /// Cumulative XP required to *finish* [currentLevel] and reach the next.
+  /// Level 0 (before L1) is 0 so progress-in-level math stays correct.
   int getXPForNextLevel(int currentLevel) {
-    return currentLevel * 100; // Level 1 = 100 XP, Level 2 = 200 XP, etc.
+    if (currentLevel <= 0) return 0;
+    return currentLevel * xpPerLevel; // L1→2 = 300, L2→3 = 600, …
   }
 
   Future<double> getLevelProgress() async {

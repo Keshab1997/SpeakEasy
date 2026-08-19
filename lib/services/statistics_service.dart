@@ -2,6 +2,7 @@ import '../models/game/game_result_model.dart';
 import '../repositories/statistics_repository.dart';
 import '../repositories/progress_repository.dart';
 import 'streak_service.dart';
+import 'xp_service.dart';
 
 class StatisticsService {
   final StatisticsRepository _statisticsRepository;
@@ -56,9 +57,9 @@ class StatisticsService {
   }
 
   Future<int> getCurrentLevel() async {
-    // Derive level from total earned XP (100 XP per level)
+    // Derive level from total earned XP (xpPerLevel XP per level)
     final totalXP = await getCurrentXP();
-    if (totalXP > 0) return (totalXP ~/ 100) + 1;
+    if (totalXP > 0) return (totalXP ~/ XpService.xpPerLevel) + 1;
     final progress = _progressRepository.getProgress();
     return progress?.currentLevel ?? 1;
   }
@@ -294,7 +295,9 @@ class StatisticsService {
 
     // Coalesce current XP / level / coins from stats, fall back to progress box
     final currentXP = totalXP > 0 ? totalXP : (_progressRepository.getProgress()?.currentXP ?? 0);
-    final currentLevel = currentXP > 0 ? (currentXP ~/ 100) + 1 : (_progressRepository.getProgress()?.currentLevel ?? 1);
+    final currentLevel = currentXP > 0
+        ? XpService.levelFromTotalXP(currentXP)
+        : (_progressRepository.getProgress()?.currentLevel ?? 1);
     final currentCoins = totalCoins > 0 ? totalCoins : (_progressRepository.getProgress()?.totalCoins ?? 0);
 
     // Time played
