@@ -44,7 +44,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   speech_to_text: ^7.4.0
-  flutter_tts: ^3.8.5
+  flutter_tts: ^4.2.5
   audioplayers: ^6.0.0
   flutter_local_notifications: ^17.1.2
   onesignal_flutter: ^5.2.0
