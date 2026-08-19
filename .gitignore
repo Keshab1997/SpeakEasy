@@ -45,6 +45,7 @@ app.*.map.json
 # Keystore and signing keys — DO NOT COMMIT!
 *.jks
 *.keystore
+/android/key.properties
 /android/app/key.properties
 
 # ByteRover — .brv/context-tree/ contains a nested .git managed by brv vc.
