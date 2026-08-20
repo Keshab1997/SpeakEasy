@@ -81,15 +81,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    // Use compressed (legacy) JNI packaging. Keeps native libs compressed in the bundle so
-    // no 16 KB zip alignment is required: ELF segments (already 2**16 aligned) satisfy the
-    // 16 KB page-size requirement without needing AGP >= 8.5.1.
-    packagingOptions {
-        jniLibs {
-            useLegacyPackaging true
-        }
+        // AGP 8.13.0 fully supports 16 KB page-size alignment for native libs,
+        // so legacy (compressed) JNI packaging is no longer needed. Default
+        // (uncompressed, page-aligned) packaging is used instead, which is
+        // correct for AAB/App Bundle installs on Play Store.
     }
-}
 
 flutter {
     source '../..'
