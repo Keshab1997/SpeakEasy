@@ -39,73 +39,128 @@ void main() async {
     }));
   }
 
+  // ── Essentials the splash screen needs on its very first frame ──
+  // Bound every call with a timeout so a stuck platform/channel can NEVER
+  // prevent runApp() from being reached (which would freeze the splash).
   try {
     if (Firebase.apps.isEmpty) {
       await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,
-      );
+      ).timeout(const Duration(seconds: 8));
     }
   } catch (e) {
     // If Firebase is already initialized, just log and continue
     debugPrint('main: Firebase init note — $e');
   }
 
-  await HiveService.initialize();
+  try {
+    await HiveService.initialize().timeout(const Duration(seconds: 8));
+  } catch (e) {
+    debugPrint('main: Hive init failed/bounded — $e');
+  }
 
   // Open the in-app update Hive box for snooze persistence
-  await Hive.openBox('in_app_update');
+  try {
+    await Hive.openBox('in_app_update').timeout(const Duration(seconds: 3));
+  } catch (e) {
+    debugPrint('main: in_app_update box open failed — $e');
+  }
 
   ApiKeyManager.instance.initialize();
 
-  // Initialize local notification system (uses native AlarmManager/UNUserNotificationCenter)
-  await NotificationService().initialize();
-  // Reschedule daily notifications on app open
-  await NotificationService().rescheduleOnAppOpen();
-
-  // Initialize OneSignal for push notifications
-  await _initOneSignal();
-
-  // Initialize WorkManager for background notification tasks
-  await Workmanager().initialize(
-    workmanagerCallbackDispatcher,
-  );
-
-  // Register daily re-engagement check task
-  await Workmanager().registerPeriodicTask(
-    'reEngagement',
-    reEngagementTaskName,
-    frequency: const Duration(hours: 24),
-    constraints: Constraints(
-      networkType: NetworkType.connected,
-    ),
-    existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
-  );
-
-  // Register idle reminder background check (every 6 hours)
-  await Workmanager().registerPeriodicTask(
-    'idleReminder',
-    idleReminderTaskName,
-    frequency: const Duration(hours: 6),
-    constraints: Constraints(
-      networkType: NetworkType.notRequired,
-    ),
-    existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
-  );
-
-  // Track app open for re-engagement logic
-  await HiveService.setLastAppOpenDate(DateTime.now());
-
-  // Initialize idle tracker with initial activity timestamp
-  await IdleTrackerService.recordActivity();
-
-  // Pre-warm remote config cache on app start
-  RemoteConfigService.seedDefaultConfig();
-
+  // ── Show the app IMMEDIATELY. Everything below this point is best-effort
+  //    and fire-and-forget (each bounded by a timeout) so a hung notification,
+  //    OneSignal or WorkManager plugin can never leave the splash stuck. The
+  //    SplashScreen has its own 2s/10s safety navigation as a backstop.
   runApp(
     const ProviderScope(
       child: MyApp(),
     ),
   );
+
+  // Best-effort background service init — runs concurrently, never blocks UI.
+  await _initBackgroundServices();
+}
+
+/// Initializes all non-essential, potentially-slow services AFTER the app has
+/// rendered. Every operation is wrapped in its own timeout so that a hanging
+/// native plugin (OneSignal permission dialog, WorkManager, notification
+/// scheduling) degrades gracefully instead of freezing the splash screen.
+Future<void> _initBackgroundServices() async {
+  // Local notification system (uses native AlarmManager/UNUserNotificationCenter)
+  try {
+    await NotificationService()
+        .initialize()
+        .timeout(const Duration(seconds: 10));
+  } catch (e) {
+    debugPrint('main: Notification init failed/bounded — $e');
+  }
+
+  // Reschedule daily notifications on app open
+  try {
+    await NotificationService()
+        .rescheduleOnAppOpen()
+        .timeout(const Duration(seconds: 10));
+  } catch (e) {
+    debugPrint('main: rescheduleOnAppOpen failed/bounded — $e');
+  }
+
+  // Initialize OneSignal for push notifications
+  try {
+    await _initOneSignal().timeout(const Duration(seconds: 15));
+  } catch (e) {
+    debugPrint('main: OneSignal init failed/bounded — $e');
+  }
+
+  // WorkManager background notification tasks
+  try {
+    await Workmanager()
+        .initialize(workmanagerCallbackDispatcher)
+        .timeout(const Duration(seconds: 10));
+
+    // Register daily re-engagement check task
+    await Workmanager()
+        .registerPeriodicTask(
+          'reEngagement',
+          reEngagementTaskName,
+          frequency: const Duration(hours: 24),
+          constraints: Constraints(
+            networkType: NetworkType.connected,
+          ),
+          existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
+        )
+        .timeout(const Duration(seconds: 5));
+
+    // Register idle reminder background check (every 6 hours)
+    await Workmanager()
+        .registerPeriodicTask(
+          'idleReminder',
+          idleReminderTaskName,
+          frequency: const Duration(hours: 6),
+          constraints: Constraints(
+            networkType: NetworkType.notRequired,
+          ),
+          existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
+        )
+        .timeout(const Duration(seconds: 5));
+  } catch (e) {
+    debugPrint('main: WorkManager init failed/bounded — $e');
+  }
+
+  // Track app open for re-engagement logic + idle tracker
+  try {
+    await HiveService.setLastAppOpenDate(DateTime.now());
+    await IdleTrackerService.recordActivity();
+  } catch (e) {
+    debugPrint('main: app-open tracking failed — $e');
+  }
+
+  // Pre-warm remote config cache on app start
+  try {
+    await RemoteConfigService.seedDefaultConfig();
+  } catch (e) {
+    debugPrint('main: remote config seed failed — $e');
+  }
 }
 
 class MyApp extends ConsumerWidget {
