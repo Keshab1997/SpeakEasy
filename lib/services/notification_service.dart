@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz_data;
@@ -121,7 +122,46 @@ class NotificationService {
     await HiveService.saveNotificationToHistory(notification);
   }
 
-  /// Request notification permissions (Android 13+ and iOS)
+  /// Opens the OS app-settings screen so the user can grant notification
+  /// permission if it was permanently denied (Android 13+). Best-effort:
+  /// uses the existing native `openAppDetailsSettings` MethodChannel handler
+  /// in MainActivity; silently no-ops if the call is unsupported.
+  Future<bool> openAppNotificationSettings() async {
+    try {
+      const channel = MethodChannel('com.speakeasy.english.learn/device');
+      final result = await channel
+          .invokeMethod<bool>('openAppDetailsSettings')
+          .timeout(const Duration(seconds: 5));
+      return result == true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  /// Returns true when the OS-level notification permission is currently
+  /// granted. On Android <13 (no runtime permission) this is treated as
+  /// granted. Useful for detecting a permanently-denied state.
+  Future<bool> areNotificationsEnabled() async {
+    try {
+      final androidPlatform = _plugin.resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>();
+      if (androidPlatform != null) {
+        final enabled = await androidPlatform.areNotificationsEnabled();
+        return enabled ?? true;
+      }
+      return true;
+    } catch (_) {
+      // If the platform call is unsupported, assume allowed and proceed.
+      return true;
+    }
+  }
+
+  /// Request notification permissions (Android 13+ and iOS).
+  ///
+  /// Returns `true` when notifications can be shown. When the OS reports the
+  /// permission is denied *and* can no longer be prompted (permanently
+  /// denied), it attempts to open the app settings screen so the user can
+  /// re-enable it there.
   Future<bool> requestPermissions() async {
     try {
       final androidPlatform = _plugin.resolvePlatformSpecificImplementation<
@@ -129,6 +169,13 @@ class NotificationService {
       if (androidPlatform != null) {
         final granted = await androidPlatform.requestNotificationsPermission();
         if (granted != true) {
+          // Detect permanently-denied state: if the OS says notifications are
+          // globally disabled AND a re-prompt is no longer possible, guide the
+          // user to settings instead of silently failing.
+          final enabled = await areNotificationsEnabled();
+          if (!enabled) {
+            await openAppNotificationSettings();
+          }
           return false;
         }
 
@@ -414,8 +461,10 @@ ${todayWord.exampleSentence}
       body,
       scheduledDate,
       details,
-      // Use inexactAllowWhileIdle for Doze mode compatibility
-      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+      // Use exactAllowWhileIdle so the notification fires at the scheduled
+      // time even in Doze mode. The SCHEDULE_EXACT_ALARM permission is already
+      // declared in AndroidManifest.xml, so this is safe on Android 12+.
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       matchDateTimeComponents: DateTimeComponents.time,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
@@ -439,8 +488,15 @@ ${todayWord.exampleSentence}
   /// Schedule notification on next app launch (called from main)
   Future<void> rescheduleOnAppOpen() async {
     if (!HiveService.isNotificationEnabled()) return;
-    // Request permissions again if needed (in case user revoked)
+    // Request permissions again if needed (in case user revoked).
+    // requestPermissions() already opens app settings when the OS reports
+    // notifications are permanently disabled.
     await requestPermissions();
+    if (!await areNotificationsEnabled()) {
+      // Without the OS permission the scheduled notifications would never
+      // display, so skip scheduling and let the user re-enable in settings.
+      return;
+    }
     await _scheduleAll();
   }
 
