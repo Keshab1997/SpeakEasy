@@ -153,8 +153,8 @@ UI (ConsumerWidget)
 
 ```bash
 # Clone
-git clone https://github.com/Keshab1997/Flutter-Spoken-English-App.git
-cd Flutter-Spoken-English-App
+git clone https://github.com/Keshab1997/SpeakEasy.git
+cd SpeakEasy
 
 # Install dependencies
 flutter pub get
@@ -212,4 +212,4 @@ All Rights Reserved © 2026 Keshab Sarkar. This app is proprietary and may not b
 
 ## 📞 Contact
 
-For questions or support, please open an issue on [GitHub](https://github.com/Keshab1997/Flutter-Spoken-English-App).
+For questions or support, please open an issue on [GitHub](https://github.com/Keshab1997/SpeakEasy).

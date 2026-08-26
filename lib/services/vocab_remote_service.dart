@@ -5,7 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class VocabRemoteService {
   static const String _baseUrl =
-      'https://raw.githubusercontent.com/Keshab1997/Flutter-Spoken-English-App/main/assets';
+      'https://raw.githubusercontent.com/Keshab1997/SpeakEasy/main/assets';
 
   static const String _cacheBox = 'vocab_cache';
   static const String _manifestKey = 'remote_manifest';
