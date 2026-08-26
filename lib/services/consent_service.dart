@@ -36,7 +36,7 @@ class ConsentService {
   /// (true for EEA/UK users — the Settings screen must then show a
   /// "Privacy Options" tile).
   Future<bool> isPrivacyOptionsRequired() async =>
-      await _consentInfo.privacyOptionsRequirementStatus ==
+      await _consentInfo.getPrivacyOptionsRequirementStatus() ==
       PrivacyOptionsRequirementStatus.required;
 
   /// Whether the app is allowed to make ad requests right now.
@@ -56,7 +56,7 @@ class ConsentService {
 
     final params = ConsentRequestParameters(
       consentDebugSettings: kDebugMode && _debugForceEeaGeography
-          ? const ConsentDebugSettings(
+          ? ConsentDebugSettings(
               debugGeography: DebugGeography.debugGeographyEea,
             )
           : null,
