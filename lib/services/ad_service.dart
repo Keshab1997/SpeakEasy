@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+import 'consent_service.dart';
 
 class AdService {
   static final AdService _instance = AdService._();
@@ -27,6 +31,50 @@ class AdService {
       kReleaseMode ? _realInterstitialAdUnitId : _testInterstitialAdUnitId;
   static String get _rewardedAdUnitId =>
       kReleaseMode ? _realRewardedAdUnitId : _testRewardedAdUnitId;
+
+  /// Google-recommended startup flow:
+  /// consent → SDK init → preload fullscreen ads.
+  ///
+  /// Safe to call on every app start and from multiple places — everything
+  /// below is idempotent. Ad requests only happen after consent allows it.
+  Future<void>? _initInFlight;
+
+  Future<void> initializeWithConsent() {
+    if (_initialized) return Future.value();
+    // Collapse concurrent callers (e.g. several banner widgets starting
+    // together) into a single consent+init sequence.
+    final inFlight = _initInFlight;
+    if (inFlight != null) return inFlight;
+
+    final future = _initializeWithConsentInternal();
+    _initInFlight = future;
+    return future.whenComplete(() => _initInFlight = null);
+  }
+
+  Future<void> _initializeWithConsentInternal() async {
+    // Refreshes consent info; shows the UMP form only when required (EEA/UK).
+    // Never throws — offline failures are handled inside.
+    await ConsentService().gatherConsent();
+
+    if (!await ConsentService().canRequestAds()) {
+      debugPrint('AdService: consent not obtained — ads disabled this session');
+      return;
+    }
+
+    await initialize();
+
+    // Preload fullscreen ads so quiz/game-over interstitials and rewarded
+    // hints are ready instantly.
+    unawaited(loadInterstitialAd());
+    unawaited(loadRewardedAd());
+  }
+
+  /// Idempotent UI-facing guard. Returns true when the SDK is initialised
+  /// AND ad requests are permitted — otherwise no ad request should be made.
+  Future<bool> ensureInitialized() async {
+    if (!_initialized) await initializeWithConsent();
+    return _initialized;
+  }
 
   /// Initialize AdMob SDK
   Future<void> initialize() async {
@@ -73,6 +121,7 @@ class AdService {
 
   /// Load an interstitial ad
   Future<void> loadInterstitialAd() async {
+    if (!await ensureInitialized()) return;
     await InterstitialAd.load(
       adUnitId: _interstitialAdUnitId,
       request: const AdRequest(),
@@ -122,6 +171,7 @@ class AdService {
 
   /// Load a rewarded ad
   Future<void> loadRewardedAd() async {
+    if (!await ensureInitialized()) return;
     await RewardedAd.load(
       adUnitId: _rewardedAdUnitId,
       request: const AdRequest(),

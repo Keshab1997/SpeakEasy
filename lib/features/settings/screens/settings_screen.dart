@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../services/consent_service.dart';
 import '../../../services/hive_service.dart';
 import '../../../services/notification_service.dart';
 import '../../../providers/auth_provider.dart';
@@ -30,11 +31,13 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   bool _idleReminderSoundEnabled = true;
   String _selectedLanguage = 'English (US)';
   String _appVersion = '';
+  bool _privacyOptionsRequired = false;
 
   @override
   void initState() {
     super.initState();
     _loadAppVersion();
+    _loadPrivacyOptionsRequirement();
     _darkMode = HiveService.isDarkMode();
     _notifications = HiveService.isNotificationEnabled();
     _dailyWordNotification = HiveService.isDailyWordNotification();
@@ -51,6 +54,25 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     if (mounted) {
       setState(() => _appVersion = info.version);
     }
+  }
+
+  /// Google requires a privacy-options entry point (EEA/UK) so users can
+  /// revisit their ad-consent choices. Hidden elsewhere automatically.
+  Future<void> _loadPrivacyOptionsRequirement() async {
+    try {
+      final required = await ConsentService().isPrivacyOptionsRequired();
+      if (mounted && required) {
+        setState(() => _privacyOptionsRequired = true);
+      }
+    } catch (_) {
+      // Consent info not ready yet — tile stays hidden this session.
+    }
+  }
+
+  Future<void> _showPrivacyOptions() async {
+    await ConsentService().showPrivacyOptionsForm();
+    // Consent choices may have changed — re-evaluate for next build.
+    _loadPrivacyOptionsRequirement();
   }
 
   @override
@@ -320,6 +342,18 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   );
                 },
               ),
+              // UMP privacy-options entry point — only rendered when Google
+              // requires it (e.g. EEA/UK users). Google policy compliance.
+              if (_privacyOptionsRequired) ...[
+                const Divider(height: 1),
+                ListTile(
+                  leading: const Icon(Icons.privacy_tip_outlined, color: AppColors.primary),
+                  title: const Text('Privacy Options'),
+                  subtitle: const Text('Manage how ads use your data'),
+                  trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
+                  onTap: _showPrivacyOptions,
+                ),
+              ],
             ]),
             const SizedBox(height: 24),
             Text('About', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),

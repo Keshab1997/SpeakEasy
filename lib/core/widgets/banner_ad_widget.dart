@@ -19,7 +19,12 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
     _loadAd();
   }
 
-  void _loadAd() {
+  Future<void> _loadAd() async {
+    // Consent + SDK init are idempotent — no-op after the first run, and
+    // guarantees no ad request is made before Google-consent allows it.
+    if (!await AdService().ensureInitialized()) return;
+    if (!mounted) return;
+
     final ad = AdService().createBannerAd();
     ad.load().then((_) {
       if (mounted) {

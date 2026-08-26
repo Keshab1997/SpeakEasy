@@ -11,6 +11,7 @@ import 'firebase_options.dart';
 import 'core/theme/light_theme.dart';
 import 'core/theme/dark_theme.dart';
 import 'services/api_key_manager.dart';
+import 'services/ad_service.dart';
 import 'services/hive_service.dart';
 import 'services/notification_service.dart';
 import 'services/onesignal_service.dart';
@@ -87,6 +88,17 @@ void main() async {
 /// native plugin (OneSignal permission dialog, WorkManager, notification
 /// scheduling) degrades gracefully instead of freezing the splash screen.
 Future<void> _initBackgroundServices() async {
+  // AdMob: gather UMP consent → init SDK → preload ads (Google-required
+  // order). Best-effort and bounded — a hung consent call can never delay
+  // the UI; banner/interstitial calls self-guard via ensureInitialized().
+  try {
+    await AdService()
+        .initializeWithConsent()
+        .timeout(const Duration(seconds: 15));
+  } catch (e) {
+    debugPrint('main: AdMob consent/init failed/bounded — $e');
+  }
+
   // Local notification system (uses native AlarmManager/UNUserNotificationCenter)
   try {
     await NotificationService()
