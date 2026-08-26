@@ -2394,6 +2394,906 @@
       "difficulty": "easy",
       "category": "conversation",
       "id": "dq_143"
+    },
+    {
+      "id": "dq_144",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Fragile' mean?",
+      "bangla": "'Fragile' শব্দটির অর্থ কী?",
+      "options": [
+        "ভঙ্গুর (Easily broken)",
+        "শক্ত (Strong)",
+        "নমনীয় (Flexible)",
+        "ভারী (Heavy)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Fragile' means easily broken or damaged — 'ভঙ্গুর' বা 'ভাঙার প্রবণ'।",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_145",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Humble' mean?",
+      "bangla": "'Humble' শব্দটির অর্থ কী?",
+      "options": [
+        "অহংকারী (Arrogant)",
+        "ধনী (Rich)",
+        "দুর্বল (Weak)",
+        "বিনীত (Modest)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Humble' means not proud and respectful towards others — 'বিনীত' বা 'নম্র'।",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_146",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Keen' mean?",
+      "bangla": "'Keen' শব্দটির অর্থ কী?",
+      "options": [
+        "রাগী (Angry)",
+        "ভীরু (Timid)",
+        "উৎসাহী (Eager)",
+        "আলসেমি (Lazy)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Keen' means very eager or enthusiastic — 'উৎসাহী' বা 'আগ্রহী'।",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_147",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Swift' mean?",
+      "bangla": "'Swift' শব্দটির অর্থ কী?",
+      "options": [
+        "শক্ত (Firm)",
+        "দ্রুত (Fast)",
+        "ধীর (Slow)",
+        "দুর্বল (Weak)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Swift' means moving very fast — 'দ্রুত' বা 'গতিময়'।",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_148",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Genuine' mean?",
+      "bangla": "'Genuine' শব্দটির অর্থ কী?",
+      "options": [
+        "আসল (Real)",
+        "নকল (Fake)",
+        "পুরনো (Old)",
+        "বিরল (Rare)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Genuine' means real or truly what it claims to be — 'আসল' বা 'খাঁটি'।",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_149",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Vague' mean?",
+      "bangla": "'Vague' শব্দটির অর্থ কী?",
+      "options": [
+        "স্পষ্ট (Clear)",
+        "ছোট (Small)",
+        "দীর্ঘ (Long)",
+        "অস্পষ্ট (Unclear)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Vague' means not clear or definite — 'অস্পষ্ট' বা 'ঝাপসা'।",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_150",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Concise' mean?",
+      "bangla": "'Concise' শব্দটির অর্থ কী?",
+      "options": [
+        "বিস্তারিত (Detailed)",
+        "বিভ্রান্তিকর (Confusing)",
+        "সংক্ষিপ্ত (Brief)",
+        "দীর্ঘ (Lengthy)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Concise' means short and clear, giving much information in few words — 'সংক্ষিপ্ত'।",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_151",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Prompt' mean?",
+      "bangla": "'Prompt' শব্দটির অর্থ কী?",
+      "options": [
+        "অনিচ্ছুক (Unwilling)",
+        "দ্রুত ও যথাসময়ে (Quick)",
+        "বিলম্বিত (Late)",
+        "ধীর (Slow)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Prompt' means done quickly and without delay — 'যথাসময়ে' বা 'তৎপর'।",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_152",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Massive' mean?",
+      "bangla": "'Massive' শব্দটির অর্থ কী?",
+      "options": [
+        "বিশাল (Huge)",
+        "ক্ষুদ্র (Tiny)",
+        "হালকা (Light)",
+        "সরু (Narrow)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Massive' means extremely large and heavy — 'বিশাল' বা 'প্রকাণ্ড'।",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_153",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Idle' mean?",
+      "bangla": "'Idle' শব্দটির অর্থ কী?",
+      "options": [
+        "ব্যস্ত (Busy)",
+        "সক্রিয় (Active)",
+        "দ্রুত (Fast)",
+        "অলস (Not working)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Idle' means not working or being used — 'অলস' বা 'কর্মহীন'।",
+      "timeLimit": 30,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_154",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Diligent' mean?",
+      "bangla": "'Diligent' শব্দটির অর্থ কী?",
+      "options": [
+        "ধনী (Rich)",
+        "চঞ্চল (Restless)",
+        "পরিশ্রমী (Hardworking)",
+        "অলস (Lazy)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Diligent' means working carefully and with effort — 'পরিশ্রমী' বা 'অধ্যবসায়ী'।",
+      "timeLimit": 30,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_155",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Lavish' mean?",
+      "bangla": "'Lavish' শব্দটির অর্থ কী?",
+      "options": [
+        "সস্তা (Cheap)",
+        "বিলাসবহুল (Luxurious)",
+        "সাদামাটা (Plain)",
+        "কষ্টকর (Painful)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Lavish' means very rich, grand and expensive — 'বিলাসবহুল' বা 'আড়ম্বরপূর্ণ'।",
+      "timeLimit": 30,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_156",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Obsolete' mean?",
+      "bangla": "'Obsolete' শব্দটির অর্থ কী?",
+      "options": [
+        "সেকেলে (Outdated)",
+        "আধুনিক (Modern)",
+        "জনপ্রিয় (Popular)",
+        "দামি (Expensive)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Obsolete' means no longer used because it is old-fashioned — 'সেকেলে' বা 'অচল'।",
+      "timeLimit": 30,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_157",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Prudent' mean?",
+      "bangla": "'Prudent' শব্দটির অর্থ কী?",
+      "options": [
+        "বোকা (Foolish)",
+        "অলস (Lazy)",
+        "রুক্ষ (Rough)",
+        "বিচক্ষণ (Wise)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Prudent' means acting with care and thought for the future — 'বিচক্ষণ' বা 'বিবেচক'।",
+      "timeLimit": 30,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_158",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Robust' mean?",
+      "bangla": "'Robust' শব্দটির অর্থ কী?",
+      "options": [
+        "রোগী (Sick)",
+        "কৃশ (Thin)",
+        "বলিষ্ঠ (Strong)",
+        "দুর্বল (Weak)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Robust' means strong and healthy — 'বলিষ্ঠ' বা 'দৃঢ়'।",
+      "timeLimit": 30,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_159",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Mandatory' mean?",
+      "bangla": "'Mandatory' শব্দটির অর্থ কী?",
+      "options": [
+        "সাময়িক (Temporary)",
+        "বাধ্যতামূলক (Compulsory)",
+        "ঐচ্ছিক (Optional)",
+        "নিষিদ্ধ (Forbidden)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Mandatory' means required by rule, compulsory — 'বাধ্যতামূলক'।",
+      "timeLimit": 30,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_160",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Tenacious' mean?",
+      "bangla": "'Tenacious' শব্দটির অর্থ কী?",
+      "options": [
+        "নাছোড়বান্দা (Persistent)",
+        "ভীরু (Cowardly)",
+        "আনাড়ি (Clumsy)",
+        "উদাসীন (Indifferent)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Tenacious' means holding on firmly, never giving up — 'নাছোড়বান্দা' বা 'হাঠে পড়া'।",
+      "timeLimit": 30,
+      "difficulty": "hard",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_161",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Lucid' mean?",
+      "bangla": "'Lucid' শব্দটির অর্থ কী?",
+      "options": [
+        "অস্পষ্ট (Confusing)",
+        "গভীর (Deep)",
+        "দীর্ঘ (Lengthy)",
+        "সুস্পষ্ট (Clear)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Lucid' means expressed clearly and easy to understand — 'সুস্পষ্ট' বা 'স্পষ্টবাদী'।",
+      "timeLimit": 30,
+      "difficulty": "hard",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_162",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'He is ___ honest man.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'He is ___ honest man.'",
+      "options": [
+        "the",
+        "no article",
+        "an",
+        "a"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Honest' starts with a silent 'h' (vowel sound), so it takes 'an'.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_163",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'She is afraid ___ dogs.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'She is afraid ___ dogs.'",
+      "options": [
+        "at",
+        "of",
+        "with",
+        "from"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Afraid' always takes the preposition 'of' — 'afraid of something'.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_164",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'One of my friends ___ a doctor.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'One of my friends ___ a doctor.'",
+      "options": [
+        "is",
+        "are",
+        "am",
+        "were"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'One of + plural noun' always takes a singular verb → 'is'.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_165",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Choose the past tense of 'Eat'.",
+      "bangla": "'Eat' ক্রিয়াটির অতীত রূপ নির্বাচন করুন।",
+      "options": [
+        "eaten",
+        "eats",
+        "eating",
+        "ate"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Eat' is an irregular verb: eat → ate → eaten.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_166",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Choose the correct plural form of 'Child'.",
+      "bangla": "'Child' শব্দটির সঠিক বহুবচন নির্বাচন করুন।",
+      "options": [
+        "childes",
+        "childrens",
+        "children",
+        "childs"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Child' has an irregular plural → 'children'. It never takes 's'.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_167",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Choose the correct sentence:",
+      "bangla": "সঠিক বাক্যটি নির্বাচন করুন:",
+      "options": [
+        "She does not likes coffee.",
+        "She does not like coffee.",
+        "She do not like coffee.",
+        "She not like coffee."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Third-person singular negative uses 'does not + base verb' → 'does not like'.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_168",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Complete the question tag: 'She sings well, ___?'",
+      "bangla": "প্রশ্নবোধক ট্যাগ সম্পূর্ণ করুন: 'She sings well, ___?'",
+      "options": [
+        "doesn't she?",
+        "doesn't he?",
+        "isn't she?",
+        "don't she?"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Positive statement 'she sings' takes a negative tag → 'doesn't she?'.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_169",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'If I ___ rich, I would help the poor.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'If I ___ rich, I would help the poor.'",
+      "options": [
+        "am",
+        "was",
+        "will be",
+        "were"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Second conditional (unreal present) uses 'were' for all subjects → 'If I were'.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_170",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'He avoided ___ the question.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'He avoided ___ the question.'",
+      "options": [
+        "answered",
+        "to answer",
+        "answering",
+        "answer"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Avoid' is always followed by a gerund (verb + ing) → 'answering'.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_171",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Choose the correct passive form: 'Someone has stolen my purse.'",
+      "bangla": "সঠিক passive রূপ নির্বাচন করুন: 'Someone has stolen my purse.'",
+      "options": [
+        "My purse is stolen.",
+        "My purse has been stolen.",
+        "My purse has stolen.",
+        "My purse was steal."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Present perfect passive = 'has/have been + past participle' → 'has been stolen'.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_172",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'I had my car ___ yesterday.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'I had my car ___ yesterday.'",
+      "options": [
+        "repaired",
+        "repair",
+        "repairing",
+        "to repair"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Causative structure: 'have + object + past participle' → 'had my car repaired'.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_173",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'You must finish the work ___ Friday.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'You must finish the work ___ Friday.'",
+      "options": [
+        "until",
+        "since",
+        "from",
+        "by"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'By' means 'not later than' a deadline; 'until' means continuing up to a time.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_174",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'She looked at ___ in the mirror.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'She looked at ___ in the mirror.'",
+      "options": [
+        "her",
+        "hers",
+        "herself",
+        "himself"
+      ],
+      "correctAnswer": 2,
+      "explanation": "When the subject and object are the same person, use a reflexive pronoun → 'herself'.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_175",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'She is as tall ___ her sister.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'She is as tall ___ her sister.'",
+      "options": [
+        "like",
+        "as",
+        "than",
+        "so"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Comparison of equality uses 'as + adjective + as' → 'as tall as'.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_176",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Choose the correct sentence:",
+      "bangla": "সঠিক বাক্যটি নির্বাচন করুন:",
+      "options": [
+        "Hardly had he arrived when the phone rang.",
+        "Hardly he had arrived when the phone rang.",
+        "Hardly had he arrived than the phone rang.",
+        "Hardly did he arrive when the phone rang."
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Hardly … when' requires inversion: 'Hardly had + subject + past participle … when'.",
+      "timeLimit": 30,
+      "difficulty": "hard",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_177",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Fill in the blank: 'He talks as if he ___ everything.'",
+      "bangla": "শূন্যস্থান পূরণ করুন: 'He talks as if he ___ everything.'",
+      "options": [
+        "knows",
+        "know",
+        "known",
+        "knew"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'As if' with an unreal situation takes the past subjunctive → 'knew'.",
+      "timeLimit": 30,
+      "difficulty": "hard",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_178",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you politely order tea at a café?",
+      "bangla": "ক্যাফেতে ভদ্রভাবে কীভাবে চা অর্ডার করবেন?",
+      "options": [
+        "Tea! Fast!",
+        "I want tea now.",
+        "Could I have a cup of tea, please?",
+        "Give me one tea."
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Could I have …, please?' is the polite way to order something.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_179",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "What do you say when someone says 'Thank you'?",
+      "bangla": "কেউ 'Thank you' বললে আপনি কী বলবেন?",
+      "options": [
+        "Goodbye.",
+        "You're welcome.",
+        "I am fine.",
+        "I do not know."
+      ],
+      "correctAnswer": 1,
+      "explanation": "'You're welcome' is the standard polite reply to 'Thank you'.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_180",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask the price of something?",
+      "bangla": "কোনো জিনিসের দাম কীভাবে জিজ্ঞাসা করবেন?",
+      "options": [
+        "How much does this cost?",
+        "How many is this?",
+        "What cost it?",
+        "Price what?"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'How much does this cost?' is the correct way to ask a price.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_181",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "Someone says 'I am sorry.' What is a polite reply?",
+      "bangla": "কেউ 'I am sorry' বললে ভদ্র উত্তর কী হবে?",
+      "options": [
+        "Go away.",
+        "Who cares?",
+        "Why me?",
+        "It's okay."
+      ],
+      "correctAnswer": 3,
+      "explanation": "'It's okay' politely accepts an apology.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_182",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "You meet a new person. What do you say after 'Hello'?",
+      "bangla": "নতুন কারো সাথে পরিচয় হলে 'Hello'-এর পরে কী বলবেন?",
+      "options": [
+        "See you soon.",
+        "I am leaving.",
+        "Nice to meet you.",
+        "Goodbye."
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Nice to meet you' is the standard phrase when meeting someone new.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_183",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask for directions to the station?",
+      "bangla": "স্টেশনের পথ কীভাবে জিজ্ঞাসা করবেন?",
+      "options": [
+        "Where station is?",
+        "How can I get to the station?",
+        "Station where?",
+        "You go station?"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'How can I get to …?' is the polite way to ask for directions.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_184",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you politely ask for someone on the phone?",
+      "bangla": "ফোনে ভদ্রভাবে কীভাবে কাউকে ডাকবেন?",
+      "options": [
+        "May I speak to Rahim, please?",
+        "Give Rahim the phone.",
+        "I talk Rahim.",
+        "Where is Rahim?"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'May I speak to …, please?' is polite telephone English.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_185",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "What do you say to offer help to a customer?",
+      "bangla": "কাস্টমারকে সাহায্যের প্রস্তাব দিতে কী বলবেন?",
+      "options": [
+        "What you want?",
+        "Go quickly.",
+        "You need something?",
+        "Can I help you?"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Can I help you?' is the standard way to offer assistance.",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_186",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you politely disagree with a friend?",
+      "bangla": "বন্ধুর সাথে ভদ্রভাবে কীভাবে দ্বিমত করবেন?",
+      "options": [
+        "That is stupid.",
+        "No, no, no.",
+        "I'm afraid I don't agree with you.",
+        "You are wrong!"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'I'm afraid I don't agree' expresses disagreement politely.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_187",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "Someone says 'Would you mind opening the window?' What does it mean?",
+      "bangla": "'Would you mind opening the window?' — এর অর্থ কী?",
+      "options": [
+        "Close the door.",
+        "A polite request to open the window.",
+        "He/She is angry.",
+        "The window is broken."
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Would you mind + verb + ing' is a very polite way of making a request.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_188",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "What is the correct reply to 'Would you mind opening the window?' if you agree?",
+      "bangla": "আপনি রাজি হলে 'Would you mind opening the window?'-এর সঠিক উত্তর কী?",
+      "options": [
+        "Not at all.",
+        "Yes, I would mind.",
+        "I mind it.",
+        "Never you mind."
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Not at all' means 'no problem — of course I will'.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_189",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "What is the correct reply to 'How do you do?'",
+      "bangla": "'How do you do?'-এর সঠিক উত্তর কী?",
+      "options": [
+        "Fine, thanks.",
+        "Yes, I do.",
+        "I am doing work.",
+        "How do you do?"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The formal reply to 'How do you do?' is simply 'How do you do?'.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_190",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "You arrived late to class. What do you say?",
+      "bangla": "ক্লাসে দেরি করে ঢুকলে কী বলবেন?",
+      "options": [
+        "Where is everyone?",
+        "Hello all.",
+        "Sorry, I'm late. May I come in?",
+        "I am here."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Apologise and ask permission politely: 'Sorry, I'm late. May I come in?'.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_191",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you politely say goodbye to your teacher?",
+      "bangla": "শিক্ষককে ভদ্রভাবে কীভাবে বিদায় জানাবেন?",
+      "options": [
+        "Enough today.",
+        "Goodbye, sir. Have a nice day.",
+        "Bye bye, tata!",
+        "Go now."
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Goodbye, sir. Have a nice day.' is a respectful way to take leave.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_192",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask a friend's opinion about a movie?",
+      "bangla": "বন্ধুর কাছে সিনেমা নিয়ে মতামত কীভাবে জিজ্ঞাসা করবেন?",
+      "options": [
+        "What do you think of the movie?",
+        "Movie good?",
+        "You like movie, why?",
+        "Tell movie."
+      ],
+      "correctAnswer": 0,
+      "explanation": "'What do you think of …?' is the standard way to ask for an opinion.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_193",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask for the bill at a restaurant?",
+      "bangla": "রেস্টুরেন্টে বিল কীভাবে চাইবেন?",
+      "options": [
+        "Money! Quick!",
+        "Give the bill.",
+        "Pay now.",
+        "Could we have the bill, please?"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Could we have the bill, please?' is the polite way to ask for the bill.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
     }
   ]
 }
