@@ -1,0 +1,16 @@
+SPEAKEASY — RELEASE NOTES v1.0.22 (22)
+নতুন আপডেটে যা যা আছে:
+ Bengali
+────────
+• ডেইলি কুইজে ৫০টি নতুন প্রশ্ন যোগ হয়েছে (শব্দভাণ্ডার, ব্যাকরণ ও কথোপকথন) — এখন প্রতিদিন আরও বেশি নতুন নতুন প্রশ্ন পাবেন
+• বিজ্ঞাপন ব্যবস্থার গোপনীয়তা উন্নত হয়েছে: GDPR সম্মতি (EEA/UK ব্যবহারকারীদের জন্য) ও প্রাইভেসি অপশন যোগ করা হয়েছে
+• Settings → Account-এ নতুন "Privacy Options" — বিজ্ঞাপন-সংক্রান্ত ডেটা ব্যবহারের অনুমতি যেকোনো সময় বদলাতে পারবেন (প্রযোজ্য ক্ষেত্রে)
+• গোপনীয়তা নীতির লিংক হালনাগাদ করা হয়েছে — অ্যাপ থেকে এখন সঠিক পেজ খুলবে
+• কিছু ক্ষেত্রে বিজ্ঞাপন না চলার মূল সমস্যা (SDK ইনিশিয়ালাইজ না হওয়া) সমাধান করা হয়েছে
+ English
+────────
+• Added 50 new Daily Quiz questions (vocabulary, grammar & conversation) — a bigger bank means more fresh questions every day
+• Improved ad privacy: GDPR consent flow (for EEA/UK users) and privacy options entry point added
+• New "Privacy Options" tile in Settings → Account — manage ad-related consent anytime (where required)
+• Updated privacy policy links so the correct page opens from the app
+• Fixed a root cause of ads never loading (SDK was not initialised in some flows)
