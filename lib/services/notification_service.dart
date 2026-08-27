@@ -1,5 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz_data;
@@ -7,6 +7,25 @@ import 'hive_service.dart';
 import 'daily_word_service.dart';
 import 'dart:math';
 import '../models/notification_history_model.dart';
+import '../core/navigation/app_navigator.dart';
+import '../features/home/widgets/notification_router.dart';
+
+/// Handles a notification tap that arrives while the app is in the background
+/// or terminated. Must be a top-level function tagged with `vm:entry-point`
+/// so the Dart VM keeps it after tree-shaking.
+///
+/// The background isolate cannot touch the widget tree, so we only persist the
+/// payload; the UI isolate picks it up on the next launch/resume via
+/// [NotificationService.handleAppLaunchNotification].
+@pragma('vm:entry-point')
+void notificationTapBackground(NotificationResponse response) {
+  final payload = response.payload;
+  if (payload == null || payload.isEmpty) return;
+  // Best-effort: Hive may not be open in this isolate, so failures are ignored.
+  try {
+    HiveService.setPendingNotificationPayload(payload);
+  } catch (_) {}
+}
 
 class NotificationService {
   static final NotificationService _instance = NotificationService._();
@@ -30,6 +49,37 @@ class NotificationService {
   Future<void> initialize() async {
     if (_initialized) return;
 
+    await _initPlugin();
+
+    _initialized = true;
+
+    // Request permissions on first launch (for Android 13+ and iOS)
+    await requestPermissions();
+
+    // Schedule daily repeating notifications using native scheduler
+    if (HiveService.isNotificationEnabled()) {
+      await _scheduleAll();
+    }
+  }
+
+  /// Background-isolate-safe initialization.
+  ///
+  /// WorkManager runs task handlers in a separate isolate where there is **no
+  /// Activity**, so [requestPermissions] (which needs one) can fail or hang,
+  /// and [_scheduleAll] would perform a network call (Word of the Day) right
+  /// after cancelling every pending alarm — if that call throws, the user ends
+  /// up with *no* scheduled notifications at all.
+  ///
+  /// This variant only prepares the plugin + channels so background tasks can
+  /// safely call `show()`.
+  Future<void> initializeForBackground() async {
+    if (_initialized) return;
+    await _initPlugin();
+    _initialized = true;
+  }
+
+  /// Shared plugin/channel setup used by both foreground and background init.
+  Future<void> _initPlugin() async {
     // Initialize timezone data and use India time for the daily reminder clock.
     tz_data.initializeTimeZones();
     tz.setLocalLocation(tz.getLocation('Asia/Kolkata'));
@@ -45,22 +95,14 @@ class NotificationService {
     await _plugin.initialize(
       settings,
       onDidReceiveNotificationResponse: _onNotificationTap,
+      // Taps that arrive while the app is killed/background land here.
+      onDidReceiveBackgroundNotificationResponse: notificationTapBackground,
     );
 
     // Explicitly create all notification channels with proper sound settings.
     // Using new channel IDs (_v2) because Android channels are immutable once created.
     // This ensures all channels have Importance.high + sound enabled.
     await _createNotificationChannels();
-
-    _initialized = true;
-
-    // Request permissions on first launch (for Android 13+ and iOS)
-    await requestPermissions();
-
-    // Schedule daily repeating notifications using native scheduler
-    if (HiveService.isNotificationEnabled()) {
-      await _scheduleAll();
-    }
   }
 
   void _onNotificationTap(NotificationResponse response) {
@@ -74,22 +116,85 @@ class NotificationService {
     _navigateFromPayload(payload);
   }
 
+  /// Maps a local-notification payload to a [NotificationRouter] action type.
+  static String? _actionTypeForPayload(String payload) {
+    if (payload.startsWith('daily_word')) return 'vocabulary';
+    if (payload.startsWith('practice_reminder')) return 'game';
+    if (payload.startsWith('streak_saver') ||
+        payload.startsWith('streak_milestone')) {
+      return 'game';
+    }
+    if (payload.contains('re_engagement') || payload.contains('idle_reminder')) {
+      return 'game';
+    }
+    return null;
+  }
+
   void _navigateFromPayload(String payload) {
     try {
-      final history = HiveService.getNotificationHistory();
-      for (final json in history) {
+      // Prefer the exact history entry (it can carry actionType/actionPayload
+      // coming from an admin push); fall back to a payload→screen mapping.
+      NotificationHistoryItem? matched;
+      for (final json in HiveService.getNotificationHistory()) {
         if (json['payload'] == payload) {
-          final item = NotificationHistoryItem.fromJson(json);
-          // Navigation from system tray requires a global navigator key.
-          // Since the app doesn't have one, navigation is handled when the user
-          // opens the notification from the in-app history screen.
-          // Log the intent for debugging.
-          debugPrint('NotificationRouter would navigate to: ${item.actionType}');
+          matched = NotificationHistoryItem.fromJson(json);
           break;
         }
       }
-    } catch (_) {
-      // Silently handle — navigation from background is best-effort
+
+      final actionType = matched?.actionType ?? _actionTypeForPayload(payload);
+      if (actionType == null) return;
+
+      final item = (matched ??
+              NotificationHistoryItem(
+                id: payload,
+                title: '',
+                body: '',
+                type: payload,
+                receivedAt: DateTime.now(),
+                payload: payload,
+              ))
+          .copyWith(actionType: actionType);
+
+      // The navigator may not exist yet if the app is cold-starting; retry
+      // after the first frame.
+      void go() {
+        final context = appNavigatorContext;
+        if (context == null) return;
+        NotificationRouter.navigate(context, item);
+      }
+
+      if (appNavigatorContext != null) {
+        go();
+      } else {
+        WidgetsBinding.instance.addPostFrameCallback((_) => go());
+      }
+    } catch (e) {
+      debugPrint('NotificationService: navigation from payload failed — $e');
+    }
+  }
+
+  /// Handles a notification that launched the app from a terminated state, plus
+  /// any payload stashed by the background tap handler. Call this once the UI
+  /// is ready (after `runApp`).
+  Future<void> handleAppLaunchNotification() async {
+    try {
+      final details = await _plugin.getNotificationAppLaunchDetails();
+      final launchPayload = details?.didNotificationLaunchApp == true
+          ? details?.notificationResponse?.payload
+          : null;
+
+      final pending = HiveService.getPendingNotificationPayload();
+      final payload = launchPayload ?? pending;
+      if (pending != null) {
+        await HiveService.clearPendingNotificationPayload();
+      }
+      if (payload == null || payload.isEmpty) return;
+
+      _markNotificationAsReadByPayload(payload);
+      _navigateFromPayload(payload);
+    } catch (e) {
+      debugPrint('NotificationService: launch-details handling failed — $e');
     }
   }
 
@@ -333,12 +438,36 @@ class NotificationService {
 
     // Schedule Word of the Day at 9:00 AM (if enabled)
     if (HiveService.isDailyWordNotification()) {
+      const richTitle = '📚 Word of the Day';
+      // Generic fallback text — used when today's word can't be fetched
+      // (offline / background isolate). Never leave the slot unscheduled.
+      var richBody = 'আজকের নতুন শব্দটি দেখে নিন! 📖';
+      BigTextStyleInformation? bigText;
+
       try {
         // Fetch today's word for the rich notification content
         final todayWord = await DailyWordService.getTodayWord();
-        const richTitle = '📚 Word of the Day';
-        final richBody = '${todayWord.word} → ${todayWord.banglaMeaning}';
+        richBody = '${todayWord.word} → ${todayWord.banglaMeaning}';
+        bigText = BigTextStyleInformation(
+          '''
+📖 *${todayWord.word}*${todayWord.pronunciation != null ? ' (${todayWord.pronunciation})' : ''}
+━━━━━━━━━━━━━━━━
+🔤 বাংলা অর্থ: ${todayWord.banglaMeaning}
 
+📝 উদাহরণ:
+${todayWord.exampleSentence}
+━━━━━━━━━━━━━━━━
+ℹ️ বিস্তারিত জানতে Tap করুন
+            ''',
+          contentTitle: richTitle,
+          summaryText: richBody,
+        );
+      } catch (e) {
+        debugPrint('NotificationService: Word of the Day fetch failed, '
+            'scheduling generic body — $e');
+      }
+
+      try {
         await _scheduleDailyAt(
           id: _dailyWordId,
           hour: 9,
@@ -349,20 +478,7 @@ class NotificationService {
           body: richBody,
           payload: 'daily_word',
           isHighPriority: true,
-          bigTextStyle: BigTextStyleInformation(
-            '''
-📖 *${todayWord.word}*${todayWord.pronunciation != null ? ' (${todayWord.pronunciation})' : ''}
-━━━━━━━━━━━━━━━━
-🔤 বাংলা অর্থ: ${todayWord.banglaMeaning}
-
-📝 উদাহরণ:
-${todayWord.exampleSentence}
-━━━━━━━━━━━━━━━━
-ℹ️ বিস্তারিত জানতে Tap করুন
-            ''',
-            contentTitle: richTitle,
-            summaryText: richBody,
-          ),
+          bigTextStyle: bigText,
         );
       } catch (e) {
         debugPrint('NotificationService: failed to schedule Word of the Day — $e');
@@ -461,15 +577,31 @@ ${todayWord.exampleSentence}
       body,
       scheduledDate,
       details,
-      // Use exactAllowWhileIdle so the notification fires at the scheduled
-      // time even in Doze mode. The SCHEDULE_EXACT_ALARM permission is already
-      // declared in AndroidManifest.xml, so this is safe on Android 12+.
-      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      // Prefer an exact alarm so the notification fires on time even in Doze.
+      // On Android 14+ the user can revoke "Alarms & reminders" at any time —
+      // in that case an exact schedule throws and the notification would be
+      // lost entirely, so fall back to the inexact (but always allowed) mode.
+      androidScheduleMode: await _resolveScheduleMode(),
       matchDateTimeComponents: DateTimeComponents.time,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       payload: payload,
     );
+  }
+
+  /// Picks the strongest schedule mode the OS currently permits.
+  Future<AndroidScheduleMode> _resolveScheduleMode() async {
+    try {
+      final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>();
+      if (androidPlugin == null) return AndroidScheduleMode.exactAllowWhileIdle;
+      final canExact = await androidPlugin.canScheduleExactNotifications();
+      return canExact == false
+          ? AndroidScheduleMode.inexactAllowWhileIdle
+          : AndroidScheduleMode.exactAllowWhileIdle;
+    } catch (_) {
+      return AndroidScheduleMode.inexactAllowWhileIdle;
+    }
   }
 
   // ─── Update Notification Settings ───
@@ -498,6 +630,163 @@ ${todayWord.exampleSentence}
       return;
     }
     await _scheduleAll();
+  }
+
+  /// Re-applies the current Hive preferences to the OS scheduler *immediately*.
+  ///
+  /// Call this from every settings toggle. Unlike [rescheduleOnAppOpen] it does
+  /// **not** re-request permissions (which would pop a dialog / settings screen
+  /// on every switch flip) — it just cancels and re-schedules, so turning a
+  /// sub-toggle off actually stops the already-registered repeating alarm.
+  Future<void> rescheduleNow() async {
+    if (!_initialized) {
+      await initialize();
+      return;
+    }
+    if (!HiveService.isNotificationEnabled()) {
+      await cancelAllScheduled();
+      return;
+    }
+    await _scheduleAll();
+  }
+
+  /// Refreshes only the Word of the Day slot with today's word.
+  ///
+  /// `zonedSchedule(matchDateTimeComponents: time)` repeats the *same text*
+  /// every day, so without this the notification would show a frozen word for
+  /// users who don't open the app. Called daily by a WorkManager task.
+  Future<void> refreshDailyWordSchedule() async {
+    if (!HiveService.isNotificationEnabled()) return;
+    if (!HiveService.isDailyWordNotification()) return;
+
+    try {
+      final todayWord = await DailyWordService.getTodayWord();
+      const richTitle = '📚 Word of the Day';
+      final richBody = '${todayWord.word} → ${todayWord.banglaMeaning}';
+
+      await _plugin.cancel(_dailyWordId);
+      await _scheduleDailyAt(
+        id: _dailyWordId,
+        hour: 9,
+        minute: 0,
+        channelId: 'daily_word_v2',
+        channelName: 'Word of the Day',
+        title: richTitle,
+        body: richBody,
+        payload: 'daily_word',
+        isHighPriority: true,
+        bigTextStyle: BigTextStyleInformation(
+          '''
+📖 *${todayWord.word}*${todayWord.pronunciation != null ? ' (${todayWord.pronunciation})' : ''}
+━━━━━━━━━━━━━━━━
+🔤 বাংলা অর্থ: ${todayWord.banglaMeaning}
+
+📝 উদাহরণ:
+${todayWord.exampleSentence}
+━━━━━━━━━━━━━━━━
+ℹ️ বিস্তারিত জানতে Tap করুন
+            ''',
+          contentTitle: richTitle,
+          summaryText: richBody,
+        ),
+      );
+    } catch (e) {
+      debugPrint('NotificationService: daily word refresh failed — $e');
+    }
+  }
+
+  // ─── History backfill for OS-scheduled notifications ───
+
+  /// Daily slots that are delivered by the OS scheduler. Because the alarm can
+  /// fire while the app process is dead, no Dart code runs at delivery time and
+  /// nothing can be written to the history box. We therefore reconstruct the
+  /// entries the next time the app runs.
+  static const List<Map<String, dynamic>> _dailySlots = [
+    {
+      'type': 'daily_word',
+      'hour': 9,
+      'title': '📚 Word of the Day',
+      'body': 'আজকের নতুন শব্দটি দেখে নিন! 📖',
+      'payload': 'daily_word',
+    },
+    {
+      'type': 'practice_reminder',
+      'hour': 19,
+      'title': '⏰ Time to Practice! 🎯',
+      'body': "Don't break your streak! Practice English for 5 minutes.",
+      'payload': 'practice_reminder',
+    },
+    {
+      'type': 'streak_saver',
+      'hour': 20,
+      'title': '⚠️ Streak at Risk!',
+      'body': '🔥 আজকে কি প্র্যাকটিস করেছেন? স্ট্রিক ধরে রাখুন!',
+      'payload': 'streak_saver',
+    },
+  ];
+
+  bool _isSlotEnabled(String type) {
+    switch (type) {
+      case 'daily_word':
+        return HiveService.isDailyWordNotification();
+      case 'practice_reminder':
+        return HiveService.isPracticeReminderNotification();
+      case 'streak_saver':
+        return HiveService.isStreakNotification();
+      default:
+        return false;
+    }
+  }
+
+  static String _dateKey(DateTime d) =>
+      '${d.year.toString().padLeft(4, '0')}-'
+      '${d.month.toString().padLeft(2, '0')}-'
+      '${d.day.toString().padLeft(2, '0')}';
+
+  /// Adds history entries for every daily notification slot that has already
+  /// fired since the last time this ran (max 7 days back). Entries are
+  /// de-duplicated by a deterministic id (`daily_word_2026-08-27`), so calling
+  /// it on every resume is safe.
+  Future<void> backfillScheduledHistory() async {
+    try {
+      if (!HiveService.isNotificationEnabled()) return;
+
+      final now = DateTime.now();
+      final last = HiveService.getLastHistoryBackfillDate();
+      // First run: only look at today, so existing users don't get a week of
+      // notifications dumped into their history at once.
+      final since = last ?? DateTime(now.year, now.month, now.day);
+      final from = now.difference(since).inDays > 7
+          ? now.subtract(const Duration(days: 7))
+          : since;
+
+      for (var day = DateTime(from.year, from.month, from.day);
+          !day.isAfter(DateTime(now.year, now.month, now.day));
+          day = day.add(const Duration(days: 1))) {
+        for (final slot in _dailySlots) {
+          final type = slot['type'] as String;
+          if (!_isSlotEnabled(type)) continue;
+
+          final firedAt = DateTime(day.year, day.month, day.day, slot['hour'] as int);
+          if (firedAt.isAfter(now)) continue; // hasn't fired yet today
+          if (firedAt.isBefore(since)) continue; // already covered
+
+          await HiveService.saveNotificationToHistoryIfNew({
+            'id': '${type}_${_dateKey(day)}',
+            'title': slot['title'],
+            'body': slot['body'],
+            'type': type,
+            'receivedAt': firedAt.toIso8601String(),
+            'isRead': false,
+            'payload': slot['payload'],
+          });
+        }
+      }
+
+      await HiveService.setLastHistoryBackfillDate(now);
+    } catch (e) {
+      debugPrint('NotificationService: history backfill failed — $e');
+    }
   }
 
   /// Show custom notification immediately (for in-app use)

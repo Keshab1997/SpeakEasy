@@ -10,6 +10,7 @@ import 'idle_tracker_service.dart';
 /// Unique task names registered with WorkManager
 const String reEngagementTaskName = 'reEngagementTask';
 const String idleReminderTaskName = 'idleReminderTask';
+const String dailyWordRefreshTaskName = 'dailyWordRefreshTask';
 
 /// Unique notification IDs used by background tasks (avoid conflicts with
 /// daily word (1000), practice reminder (1001), streak milestone (1002))
@@ -47,7 +48,11 @@ Future<void> _initializeBackgroundServices() async {
   }
 
   try {
-    await NotificationService().initialize();
+    // IMPORTANT: use the background-safe variant. The full initialize() would
+    // request runtime permissions (needs an Activity — none exists here) and
+    // re-run _scheduleAll(), which cancels every pending alarm before doing a
+    // network call; if that call fails the user loses all notifications.
+    await NotificationService().initializeForBackground();
   } catch (e) {
     debugPrint('WorkManager: NotificationService init failed — $e');
   }
@@ -68,6 +73,8 @@ void workmanagerCallbackDispatcher() {
           return await _handleReEngagement();
         case idleReminderTaskName:
           return await _handleIdleReminder();
+        case dailyWordRefreshTaskName:
+          return await _handleDailyWordRefresh();
         default:
           return false;
       }
@@ -108,5 +115,15 @@ Future<bool> _handleIdleReminder() async {
       payload: 'type=idle_reminder',
     );
   }
+  return true;
+}
+
+/// Re-schedules the 9:00 AM Word of the Day alarm with *today's* word.
+///
+/// The alarm repeats via `matchDateTimeComponents: time`, which reuses the same
+/// text forever — without this daily refresh a user who never opens the app
+/// would see the same word every morning.
+Future<bool> _handleDailyWordRefresh() async {
+  await NotificationService().refreshDailyWordSchedule();
   return true;
 }

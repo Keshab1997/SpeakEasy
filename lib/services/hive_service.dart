@@ -886,6 +886,32 @@ class HiveService {
 
   // ── Notification History ──
 
+  /// Payload stashed by the background notification-tap handler so the UI
+  /// isolate can act on it (navigate) on the next launch/resume.
+  static Future<void> setPendingNotificationPayload(String payload) async {
+    await _settings.put('pending_notification_payload', payload);
+  }
+
+  static String? getPendingNotificationPayload() {
+    return _settings.get('pending_notification_payload') as String?;
+  }
+
+  static Future<void> clearPendingNotificationPayload() async {
+    await _settings.delete('pending_notification_payload');
+  }
+
+  /// Timestamp of the last time OS-scheduled notifications were reconstructed
+  /// into the local history (see NotificationService.backfillScheduledHistory).
+  static Future<void> setLastHistoryBackfillDate(DateTime date) async {
+    await _settings.put('notif_history_backfill_at', date.toIso8601String());
+  }
+
+  static DateTime? getLastHistoryBackfillDate() {
+    final raw = _settings.get('notif_history_backfill_at');
+    if (raw == null) return null;
+    return DateTime.tryParse(raw as String);
+  }
+
   static Future<void> saveNotificationToHistory(
       Map<String, dynamic> notification) async {
     if (!Hive.isBoxOpen(_notificationHistoryBox)) {
