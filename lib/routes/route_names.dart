@@ -24,4 +24,6 @@ class RouteNames {
   static const String feedback = '/feedback';
   static const String myFeedback = '/my-feedback';
   static const String adminFeedback = '/admin-feedback';
+  static const String battleLobby = '/battle-lobby';
+  static const String battleArena = '/battle-arena';
 }
