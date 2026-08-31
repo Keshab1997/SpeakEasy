@@ -30,7 +30,6 @@ enum BattleRoomStatus {
       case BattleRoomStatus.abandoned:
         return 'abandoned';
       case BattleRoomStatus.waiting:
-      default:
         return 'waiting';
     }
   }
