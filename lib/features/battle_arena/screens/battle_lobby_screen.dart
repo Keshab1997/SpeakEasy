@@ -494,7 +494,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                               roomId: room.id,
                             );
 
-                        if (!mounted) return;
+                        if (!ctx.mounted) return;
                         Navigator.pop(ctx);
                         ref.read(battleArenaProvider.notifier).startFromRoom(room);
                       },
