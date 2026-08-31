@@ -17,6 +17,8 @@ import '../features/translator/screens/banglish_translator_screen.dart';
 import '../features/feedback/screens/feedback_screen.dart';
 import '../features/feedback/screens/my_feedback_screen.dart';
 import '../features/admin/screens/admin_feedback_screen.dart';
+import '../features/battle_arena/screens/battle_lobby_screen.dart';
+import '../features/battle_arena/screens/battle_arena_screen.dart';
 import 'route_names.dart';
 
 class AppRoutes {
@@ -58,6 +60,10 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const MyFeedbackScreen());
       case RouteNames.adminFeedback:
         return MaterialPageRoute(builder: (_) => const AdminFeedbackScreen());
+      case RouteNames.battleLobby:
+        return MaterialPageRoute(builder: (_) => const BattleLobbyScreen());
+      case RouteNames.battleArena:
+        return MaterialPageRoute(builder: (_) => const BattleArenaScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
