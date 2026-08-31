@@ -294,6 +294,114 @@ service cloud.firestore {
     }
 
     // ═══════════════════════════════════════════════
+    //  BATTLE ARENA — PRESENCE
+    //  Structure: battle_presence/{userId}
+    //  Each user writes only their own presence doc (heartbeat every 45s).
+    // ═══════════════════════════════════════════════
+
+    match /battle_presence/{userId} {
+      allow read: if isAuthenticated();
+      allow create: if isOwner(userId)
+        && request.resource.data.id == request.auth.uid
+        && request.resource.data.isOnline is bool
+        && request.resource.data.trophies is int;
+      allow update: if isOwner(userId)
+        && request.resource.data.id == request.auth.uid;
+      allow delete: if isOwner(userId) || isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
+    //  BATTLE ARENA — CHALLENGES (1v1 Direct)
+    //  Structure: battle_challenges/{challengeId}
+    //  Fields: fromUserId, toUserId, status(pending/accepted/rejected), roomId
+    // ═══════════════════════════════════════════════
+
+    match /battle_challenges/{challengeId} {
+      allow read: if isAuthenticated()
+        && (resource.data.fromUserId == request.auth.uid
+            || resource.data.toUserId == request.auth.uid);
+      allow create: if isAuthenticated()
+        && request.resource.data.fromUserId == request.auth.uid
+        && request.resource.data.toUserId != request.auth.uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.fromUserId is string
+        && request.resource.data.toUserId is string;
+      // Only the receiver can accept/reject (status + optional roomId)
+      allow update: if isAuthenticated()
+        && resource.data.toUserId == request.auth.uid
+        && resource.data.status == 'pending'
+        && request.resource.data.status in ['accepted', 'rejected']
+        && request.resource.data.fromUserId == resource.data.fromUserId
+        && request.resource.data.toUserId == resource.data.toUserId
+        && onlyKeysAffected(['status', 'roomId']);
+      allow delete: if isAdmin()
+        || (isAuthenticated() && (
+             resource.data.fromUserId == request.auth.uid
+             || resource.data.toUserId == request.auth.uid));
+    }
+
+    // ═══════════════════════════════════════════════
+    //  BATTLE ARENA — MATCHMAKING QUEUE
+    //  Structure: battle_queue/{queueId}
+    //  Fields: userId, userName, trophies, status(waiting/matched), roomId, createdAt
+    // ═══════════════════════════════════════════════
+
+    match /battle_queue/{queueId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.status == 'waiting'
+        && request.resource.data.userId is string;
+      // Owner can delete own entry (timeout); any authenticated user can mark 'matched' when pairing
+      // For matched transition, only status + roomId may change
+      allow update: if isAuthenticated() && (
+        (resource.data.userId == request.auth.uid)
+        || (resource.data.status == 'waiting'
+            && request.resource.data.status == 'matched'
+            && request.resource.data.roomId is string
+            && onlyKeysAffected(['status', 'roomId']))
+      );
+      allow delete: if isAuthenticated()
+        && (resource.data.userId == request.auth.uid || isAdmin());
+    }
+
+    // ═══════════════════════════════════════════════
+    //  BATTLE ARENA — ROOMS
+    //  Structure: battle_rooms/{roomId}
+    //  Fields: player1{id,name,trophies,currentScore...}, player2{...},
+    //          questions[], status(in_progress/completed), winnerId,
+    //          activeEmote, emoteSenderId, currentRoundIndex
+    // ═══════════════════════════════════════════════
+
+    function isBattleParticipant() {
+      return isAuthenticated()
+        && (resource.data.player1.id == request.auth.uid
+            || resource.data.player2.id == request.auth.uid);
+    }
+
+    function isBattleParticipantOnCreate() {
+      return isAuthenticated()
+        && (request.resource.data.player1.id == request.auth.uid
+            || request.resource.data.player2.id == request.auth.uid);
+    }
+
+    match /battle_rooms/{roomId} {
+      allow read: if isBattleParticipant() || isAdmin();
+      allow create: if isBattleParticipantOnCreate()
+        && request.resource.data.status in ['in_progress', 'waiting']
+        && request.resource.data.player1.id is string
+        && request.resource.data.player2.id is string
+        && request.resource.data.questions is list;
+      // Participants can update scores/emotes/rounds/forfeit/completion.
+      // Questions are immutable after creation; player ids must not change.
+      allow update: if isBattleParticipant()
+        && request.resource.data.player1.id == resource.data.player1.id
+        && request.resource.data.player2.id == resource.data.player2.id
+        && request.resource.data.questions == resource.data.questions;
+      allow delete: if isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
     //  DENY ALL OTHER COLLECTIONS
     // ═══════════════════════════════════════════════
 
