@@ -6,8 +6,11 @@ import 'package:flutter/services.dart' show AssetManifest, rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../services/tts_service.dart';
 import '../../../../services/haptic_service.dart';
+import '../../../../repositories/statistics_repository.dart';
 import '../../../../repositories/wrong_question_repository.dart';
 import '../../../../models/game/wrong_question_model.dart';
+import '../../../../models/game/game_result_model.dart';
+import '../../../../providers/game/game_provider.dart';
 import '../result_screen.dart';
 
 class _WordEntry {
