@@ -31,7 +31,7 @@ class LivePlayerCard extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.2 : 0.04),
+            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
             blurRadius: 8,
             offset: const Offset(0, 3),
           ),
@@ -44,7 +44,7 @@ class LivePlayerCard extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 22,
-                backgroundColor: AppColors.primary.withOpacity(0.1),
+                backgroundColor: AppColors.primary.withValues(alpha: 0.1),
                 backgroundImage: user.photoUrl.isNotEmpty ? NetworkImage(user.photoUrl) : null,
                 child: user.photoUrl.isEmpty
                     ? Text(
@@ -68,7 +68,7 @@ class LivePlayerCard extends StatelessWidget {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF10B981).withOpacity(0.6),
+                        color: const Color(0xFF10B981).withValues(alpha: 0.6),
                         blurRadius: 4,
                         spreadRadius: 1,
                       ),
@@ -110,7 +110,7 @@ class LivePlayerCard extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF10B981).withOpacity(0.15),
+                        color: const Color(0xFF10B981).withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: const Text(
