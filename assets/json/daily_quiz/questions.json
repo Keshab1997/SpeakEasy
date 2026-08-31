@@ -3294,6 +3294,906 @@
       "timeLimit": 20,
       "difficulty": "medium",
       "category": "conversation"
+    },
+    {
+      "id": "dq_194",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the meaning of 'Reluctant'?",
+      "bangla": "'Reluctant' শব্দটির অর্থ কী?",
+      "options": [
+        "উৎসাহী (Enthusiastic)",
+        "অনিচ্ছুক (Unwilling)",
+        "বিশ্বস্ত (Loyal)",
+        "সাহসী (Brave)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Reluctant' means 'অনিচ্ছুক' বা unwilling — hesitate or unwilling to do something.",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_195",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the synonym of 'Grateful'?",
+      "bangla": "'Grateful' শব্দের সমার্থক শব্দ (synonym) কোনটি?",
+      "options": [
+        "Thankful (কৃতজ্ঞ)",
+        "Angry (রাগান্বিত)",
+        "Greedy (লোভী)",
+        "Careless (অসতর্ক)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Grateful' means 'কৃতজ্ঞ' বা thankful — feeling or showing an appreciation of kindness.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_196",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Punctual' mean?",
+      "bangla": "'Punctual' শব্দটির অর্থ কী?",
+      "options": [
+        "দেরিতে আসা (Late)",
+        "শান্ত স্বভাবের (Quiet)",
+        "সময়নিষ্ঠ বা সময়মতো উপস্থিত (On time)",
+        "ভুলোমনা (Forgetful)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Punctual' means 'সময়নিষ্ঠ' — doing something at the agreed or proper time.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_197",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the antonym of 'Ambiguous'?",
+      "bangla": "'Ambiguous' (দ্ব্যর্থবোধক/অস্পষ্ট) শব্দের বিপরীত শব্দ (antonym) কোনটি?",
+      "options": [
+        "Doubtful (সন্দেহজনক)",
+        "Confusing (বিভ্রান্তিকর)",
+        "Vague (অস্পষ্ট)",
+        "Clear (স্পষ্ট)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Ambiguous' means unclear or having double meaning, so its antonym is 'Clear' (স্পষ্ট).",
+      "timeLimit": 25,
+      "difficulty": "hard",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_198",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the meaning of 'Generous'?",
+      "bangla": "'Generous' শব্দটির অর্থ কী?",
+      "options": [
+        "কৃপণ (Miser)",
+        "উদার বা দানশীল (Giving/Kind)",
+        "অহংকারী (Proud)",
+        "লোভী (Selfish)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Generous' means 'উদার' বা willing to give and share freely.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_199",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the meaning of 'Obsolete'?",
+      "bangla": "'Obsolete' শব্দটির অর্থ কী?",
+      "options": [
+        "নতুন এবং আধুনিক (Brand new)",
+        "খুবই মূল্যবান (Precious)",
+        "অপ্রচলিত বা সেকেলে (Outdated)",
+        "সহজে ব্যবহারযোগ্য (Usable)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Obsolete' means 'অপ্রচলিত' — no longer produced or used, out of date.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_200",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "A person who is hopeful and looks at the bright side of life is called:",
+      "bangla": "যিনি সবসময় জীবনের ইতিবাচক দিক দেখেন এবং আশাবাদী, তাকে কী বলা হয়?",
+      "options": [
+        "Optimistic (আশাবাদী)",
+        "Pessimistic (হতাশাবাদী)",
+        "Cynical (নিন্দুক)",
+        "Skeptical (সংশয়বাদী)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Optimistic' means hopeful and confident about the future (আশাবাদী).",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_201",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the meaning of 'Stubborn'?",
+      "bangla": "'Stubborn' শব্দটির সঠিক অর্থ কোনটি?",
+      "options": [
+        "কোমল স্বভাবের (Gentle)",
+        "ভীতু (Coward)",
+        "সহজসরল (Simple)",
+        "একগুঁয়ে বা নাছোড়বান্দা (Obstinate)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Stubborn' means refusing to change one's opinion or decision (একগুঁয়ে).",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_202",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the synonym of 'Courageous'?",
+      "bangla": "'Courageous' শব্দের সমার্থক শব্দ কোনটি?",
+      "options": [
+        "Timid (ভীতু)",
+        "Brave (সাহসী)",
+        "Weak (দুর্বল)",
+        "Lazy (অলস)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Courageous' means brave and not deterred by danger or pain (সাহসী).",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_203",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the meaning of 'Frugal'?",
+      "bangla": "'Frugal' শব্দটির অর্থ কী?",
+      "options": [
+        "মিতব্যয়ী বা হিসেবি (Economical)",
+        "অপব্যয়ী (Extravagant)",
+        "উচ্ছৃঙ্খল (Careless)",
+        "ধনী (Rich)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Frugal' means careful in spending money or using resources; economical (মিতব্যয়ী).",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_204",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the synonym of 'Bizarre'?",
+      "bangla": "'Bizarre' শব্দের সমার্থক শব্দ কোনটি?",
+      "options": [
+        "Ordinary (সাধারণ)",
+        "Normal (স্বাভাবিক)",
+        "Strange / Weird (অদ্ভুত)",
+        "Beautiful (সুন্দর)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Bizarre' means very strange, weird, or unusual (অদ্ভুত).",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_205",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the antonym of 'Genuine'?",
+      "bangla": "'Genuine' (খাঁটি/আসল) শব্দের বিপরীত শব্দ কোনটি?",
+      "options": [
+        "Pure (খাঁটি)",
+        "Real (আসল)",
+        "Original (মৌলিক)",
+        "Fake / Counterfeit (নকল/ভুয়া)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Genuine' means authentic or real; its opposite is 'Fake' (নকল).",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_206",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Cautious' mean?",
+      "bangla": "'Cautious' শব্দটির অর্থ কী?",
+      "options": [
+        "সতর্ক বা সাবধানী (Careful)",
+        "উদাসীন (Careless)",
+        "হিংসুক (Jealous)",
+        "অস্থির (Restless)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Cautious' means careful to avoid potential problems or dangers (সতর্ক).",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_207",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the antonym of 'Rigid'?",
+      "bangla": "'Rigid' (অনমনীয়/শক্ত) শব্দের বিপরীত শব্দ কোনটি?",
+      "options": [
+        "Stiff (শক্ত)",
+        "Flexible (নমনীয়)",
+        "Hard (কঠিন)",
+        "Strict (কঠোর)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Rigid' means unable to bend or be forced out of shape; its antonym is 'Flexible' (নমনীয়).",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_208",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the meaning of 'Crucial'?",
+      "bangla": "'Crucial' শব্দটির অর্থ কী?",
+      "options": [
+        "অপ্রয়োজনীয় (Unnecessary)",
+        "সহজ (Simple)",
+        "অত্যন্ত গুরুত্বপূর্ণ (Extremely important)",
+        "তুচ্ছ (Minor)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Crucial' means of great importance, especially in the success of something (অত্যন্ত জরুরি/গুরুত্বপূর্ণ).",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_209",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the synonym of 'Enormous'?",
+      "bangla": "'Enormous' শব্দের সমার্থক শব্দ কোনটি?",
+      "options": [
+        "Tiny (ক্ষুদ্র)",
+        "Narrow (সংকীর্ণ)",
+        "Short (সংক্ষিপ্ত)",
+        "Huge / Massive (বিশাল)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Enormous' means extremely large in size or scale; huge (বিশাল).",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_210",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What does 'Hesitant' mean?",
+      "bangla": "'Hesitant' শব্দটির সঠিক অর্থ কী?",
+      "options": [
+        "দ্বিধাগ্রস্ত বা সিদ্ধান্তহীন (Uncertain / doubtful)",
+        "দৃঢ়প্রতিজ্ঞ (Determined)",
+        "উচ্ছ্বসিত (Excited)",
+        "দ্রুতগামী (Fast)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Hesitant' means tentative, unsure, or slow in acting or speaking (দ্বিধাগ্রস্ত).",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_211",
+      "type": "vocabulary",
+      "questionType": "multiple_choice",
+      "question": "What is the meaning of 'Impartial'?",
+      "bangla": "'Impartial' শব্দটির অর্থ কী?",
+      "options": [
+        "পক্ষপাতদুষ্ট (Biased)",
+        "নিরপেক্ষ বা পক্ষপাতহীন (Fair / Unbiased)",
+        "অসম্পূর্ণ (Incomplete)",
+        "অনিষ্ঠুর (Gentle)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Impartial' means treating all rivals or disputants equally; fair and unbiased (নিরপেক্ষ).",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "vocabulary"
+    },
+    {
+      "id": "dq_212",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Neither the teacher nor the students ____ present yesterday.",
+      "bangla": "শূন্যস্থানে সঠিক verb বসান: Neither the teacher nor the students ____ present yesterday.",
+      "options": [
+        "was",
+        "is",
+        "were",
+        "are"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Neither... nor' ব্যবহারে verb তার নিকটবর্তী subject (students - plural) অনুসারে বসে এবং অতীত কালের জন্য 'were' হবে।",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_213",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "If I had known your number, I ____ called you.",
+      "bangla": "শূন্যস্থানে সঠিক রূপটি বাছুন: If I had known your number, I ____ called you.",
+      "options": [
+        "would",
+        "will have",
+        "had",
+        "would have"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Third Conditional কাঠামো: If + Past Perfect, Subject + would have + V3.",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_214",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "She has been living in Kolkata ____ 2018.",
+      "bangla": "সঠিক preposition কোনটি হবে: She has been living in Kolkata ____ 2018.",
+      "options": [
+        "since",
+        "for",
+        "from",
+        "at"
+      ],
+      "correctAnswer": 0,
+      "explanation": "নির্দিষ্ট পয়েন্ট অফ টাইম (Point of time) বোঝাতে Present Perfect Continuous-এ 'since' ব্যবহৃত হয়।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_215",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "He is very good ____ English.",
+      "bangla": "সঠিক preposition বসান: He is very good ____ English.",
+      "options": [
+        "in",
+        "at",
+        "with",
+        "on"
+      ],
+      "correctAnswer": 1,
+      "explanation": "কোনো বিষয়ে দক্ষ বা ভালো বোঝাতে 'good at' ব্যবহৃত হয়।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_216",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "You love listening to music, ____?",
+      "bangla": "সঠিক Question Tag নির্বাচন করুন: You love listening to music, ____?",
+      "options": [
+        "aren't you?",
+        "do you?",
+        "don't you?",
+        "didn't you?"
+      ],
+      "correctAnswer": 2,
+      "explanation": "মূল বাক্যটি Present Simple এবং Positive, তাই Tag হবে Negative: 'don't you?'.",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_217",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "The match was called ____ due to heavy rain.",
+      "bangla": "ম্যাচ বাতিল/স্থগিত হওয়ার ক্ষেত্রে কোন phrasal verb-টি সঠিক?",
+      "options": [
+        "call in",
+        "call out",
+        "call over",
+        "called off"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Call off' অর্থ বাতিল বা প্রত্যাহার করা (cancel). প্যাসিভ ও অতীতরূপে 'called off' সঠিক।",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_218",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Hardly had we reached the station ____ the train left.",
+      "bangla": "সঠিক conjunction কোনটি? Hardly had we reached the station ____ the train left.",
+      "options": [
+        "when",
+        "than",
+        "then",
+        "after"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Hardly had... when' এবং 'Scarcely had... when' পেয়ার হিসেবে ব্যবহৃত হয় (No sooner had-এর সাথে than বসে)।",
+      "timeLimit": 25,
+      "difficulty": "hard",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_219",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "I look forward to ____ you at the conference.",
+      "bangla": "সঠিক verb রূপ বাছুন: I look forward to ____ you at the conference.",
+      "options": [
+        "meet",
+        "meeting",
+        "met",
+        "have met"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Look forward to' একটি ফ্রেজাল এক্সপ্রেশন যেখানে 'to' preposition হওয়ায় এর পরে Gerund (verb+ing) বসে।",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_220",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "One of my friends ____ going to Canada next week.",
+      "bangla": "সঠিক verb কোনটি হবে? One of my friends ____ going to Canada next week.",
+      "options": [
+        "are",
+        "were",
+        "is",
+        "have"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'One of + plural noun' থাকলে subject মূলত 'One', যা singular; তাই verb হবে 'is'।",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_221",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "The boy ____ father is a doctor helped me yesterday.",
+      "bangla": "সঠিক relative pronoun কোনটি? The boy ____ father is a doctor helped me yesterday.",
+      "options": [
+        "who",
+        "whom",
+        "which",
+        "whose"
+      ],
+      "correctAnswer": 3,
+      "explanation": "মালিকানা বা সম্পর্ক (possession) বোঝাতে 'whose' (যার) ব্যবহৃত হয়।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_222",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Unless you ____ hard, you will not pass the exam.",
+      "bangla": "সঠিক রূপ কোনটি? Unless you ____ hard, you will not pass the exam.",
+      "options": [
+        "study",
+        "will study",
+        "studied",
+        "don't study"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Unless' নিজেই নেগেটিভ অর্থ প্রকাশ করে ('if not'), তাই এর সাথে 'study' (Present Simple) বসবে।",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_223",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "By next December, we ____ our graduation.",
+      "bangla": "ভবিষ্যতে কোনো নির্দিষ্ট সময়ের মধ্যে কাজ শেষ হওয়া বোঝাতে কোন tense হবে?",
+      "options": [
+        "complete",
+        "will have completed",
+        "have completed",
+        "completed"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'By + future time' থাকলে Future Perfect Tense (will have + V3) ব্যবহৃত হয়।",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_224",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "The novel was written ____ Rabindranath Tagore.",
+      "bangla": "Passive voice-এ লেখকের পূর্বে কোন preposition বসে?",
+      "options": [
+        "from",
+        "with",
+        "by",
+        "to"
+      ],
+      "correctAnswer": 2,
+      "explanation": "প্যাসিভ ভয়েসে কাজ সম্পাদনকারী (agent/doer) ব্যক্তির পূর্বে 'by' বসে।",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_225",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "She prefers tea ____ coffee.",
+      "bangla": "সঠিক preposition কোনটি? She prefers tea ____ coffee.",
+      "options": [
+        "than",
+        "to",
+        "over",
+        "for"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Prefer' verb-এর সাথে দুটি পছন্দের তুলনা করতে 'to' ব্যবহৃত হয়, 'than' নয়।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_226",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "Although it was raining heavily, ____ he went out.",
+      "bangla": "বাক্যটির সঠিক গঠন কোনটি?",
+      "options": [
+        "but he went out",
+        "yet he went out",
+        "he went out",
+        "so he went out"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Although / Even though' যুক্ত বাক্যের দ্বিতীয় ক্লজে সাধারণত 'but' বা 'so' বসে না, শুধু সাধারণ ক্লজ 'he went out' বসে।",
+      "timeLimit": 25,
+      "difficulty": "hard",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_227",
+      "type": "grammar",
+      "questionType": "multiple_choice",
+      "question": "He told me that he ____ the film the previous day.",
+      "bangla": "Indirect speech-এ সঠিক verb রূপ কোনটি হবে?",
+      "options": [
+        "saw",
+        "had seen",
+        "has seen",
+        "sees"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Direct speech-এ Past Simple থাকলে Indirect-এ তা Past Perfect (had seen)-এ পরিবর্তিত হয়।",
+      "timeLimit": 25,
+      "difficulty": "medium",
+      "category": "grammar"
+    },
+    {
+      "id": "dq_228",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you politely decline an invitation to a party?",
+      "bangla": "একটি পার্টির নিমন্ত্রণ ভদ্রভাবে প্রত্যাখ্যান করতে কী বলবেন?",
+      "options": [
+        "I'd love to, but I already have plans.",
+        "No, I hate parties.",
+        "Why did you invite me?",
+        "I will not come."
+      ],
+      "correctAnswer": 0,
+      "explanation": "'I'd love to, but I already have plans.' ভদ্রভাবে নিমন্ত্রণ প্রত্যাখ্যানের সঠিক প্রকাশ।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_229",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask someone for directions to the nearest bank?",
+      "bangla": "নিকটস্থ ব্যাংকের পথ কীভাবে ভদ্রভাবে জিজ্ঞাসা করবেন?",
+      "options": [
+        "Where bank is?",
+        "Excuse me, could you tell me the way to the nearest bank?",
+        "Tell me where bank.",
+        "Bank location give me."
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Excuse me, could you tell me the way to the nearest bank?' হলো রাস্তা জানতে চাওয়ার মার্জিত রূপ।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_230",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "Someone says 'Thank you for your help!'. How do you reply?",
+      "bangla": "কেউ 'Thank you for your help!' বললে কী উত্তর দেবেন?",
+      "options": [
+        "It doesn't matter.",
+        "No problem, you're welcome!",
+        "Why thank me?",
+        "Never mind."
+      ],
+      "correctAnswer": 1,
+      "explanation": "ধন্যবাদ জানানোর জবাবে 'You're welcome!' বা 'No problem!' সবচেয়ে স্বাভাবিক ও ভদ্র উত্তর।",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_231",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "You didn't hear what someone said. How do you politely ask them to repeat?",
+      "bangla": "কারও কথা শুনতে না পেলে ভদ্রভাবে আবার বলতে কীভাবে অনুরোধ করবেন?",
+      "options": [
+        "What? Louder!",
+        "Speak again.",
+        "Pardon me, could you repeat that please?",
+        "Say it again now."
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Pardon me, could you repeat that please?' বা 'Could you say that again?' সবচেয়ে ভদ্র উপায়।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_232",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask the price of a shirt in a clothing shop?",
+      "bangla": "দোকানে একটি জামার দাম কীভাবে জিজ্ঞাসা করবেন?",
+      "options": [
+        "Give price this shirt.",
+        "What cost of shirt?",
+        "Money how much?",
+        "How much is this shirt, please?"
+      ],
+      "correctAnswer": 3,
+      "explanation": "দোকানে দাম জানতে 'How much is this...?' বা 'How much does this cost?' ব্যবহার করা হয়।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_233",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you politely disagree with someone during a meeting?",
+      "bangla": "মিটিংয়ে কারও মতের সাথে ভদ্রভাবে দ্বিমত পোষণ করতে কী বলবেন?",
+      "options": [
+        "I see your point, but I have a slightly different view.",
+        "You are completely wrong.",
+        "That is a bad idea.",
+        "Stop talking nonsense."
+      ],
+      "correctAnswer": 0,
+      "explanation": "'I see your point, but...' দিয়ে দ্বিমত শুরু করা প্রফেশনাল ও মার্জিত।",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_234",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "You see an elderly person carrying heavy luggage. How do you offer help?",
+      "bangla": "কাউকে ভারী ব্যাগ বহন করতে দেখে কীভাবে সাহায্যের প্রস্তাব দেবেন?",
+      "options": [
+        "Give me that bag.",
+        "May I help you with your bags?",
+        "Why is bag heavy?",
+        "You cannot carry this."
+      ],
+      "correctAnswer": 1,
+      "explanation": "'May I help you with...?' বা 'Would you like a hand with...?' সাহায্যের প্রস্তাব দেওয়ার ভদ্র নিয়ম।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_235",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask for permission to leave early from work?",
+      "bangla": "অফিস থেকে তাড়াতাড়ি বের হওয়ার জন্য ম্যানেজারের অনুমতি কীভাবে চাইবেন?",
+      "options": [
+        "I am going home now.",
+        "Let me go today.",
+        "Could I leave a bit early today, if you don't mind?",
+        "I will leave early, bye."
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Could I leave a bit early today, if you don't mind?' হলো বিনম্র অনুরোধ।",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_236",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "A friend shares sad news about losing a pet. What is a compassionate response?",
+      "bangla": "কোনো বন্ধু দুঃসংবাদ জানালে সহমর্মিতা প্রকাশে কী বলবেন?",
+      "options": [
+        "That happens.",
+        "Buy another one.",
+        "It is not a big deal.",
+        "I am so sorry to hear that. My heartfelt condolences."
+      ],
+      "correctAnswer": 3,
+      "explanation": "'I am so sorry to hear that' সহমর্মিতা এবং সান্ত্বনা জানানোর উপযুক্ত বাক্য।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_237",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you order food without onions at a restaurant?",
+      "bangla": "রেস্টুরেন্টে পেঁয়াজ ছাড়া খাবার অর্ডার করতে কী বলবেন?",
+      "options": [
+        "Could I have the pasta without onions, please?",
+        "No onion bring me.",
+        "I hate onions, don't give.",
+        "Remove onion fast."
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Could I have [item] without [ingredient], please?' অর্ডার করার ভদ্র ফরম্যাট।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_238",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask a colleague if they have a minute to talk?",
+      "bangla": "সহকর্মীর সাথে কথা বলার জন্য সময় আছে কিনা কীভাবে জিজ্ঞাসা করবেন?",
+      "options": [
+        "Talk to me now.",
+        "Do you have a quick minute to chat?",
+        "Leave work and come here.",
+        "Are you working?"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Do you have a minute?' বা 'Do you have a moment?' কাজের মাঝে কথা বলার সুযোগ খোঁজার জন্য ব্যবহৃত হয়।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_239",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you congratulate a friend who got a new job?",
+      "bangla": "নতুন চাকরি পাওয়া বন্ধুকে কীভাবে অভিনন্দন জানাবেন?",
+      "options": [
+        "Good luck with high salary.",
+        "Is the job easy?",
+        "Congratulations on your new job! I'm so proud of you.",
+        "Finally you got something."
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Congratulations on your new job! I'm so proud of you.' আনন্দ ও অভিনন্দন প্রকাশের চমৎকার বাক্য।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_240",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "You accidentally bumped into someone on the bus. What should you say?",
+      "bangla": "বাসে অসাবধানতাবশত কারও গায়ে ধাক্কা লাগলে কী বলা উচিত?",
+      "options": [
+        "Look where you walk!",
+        "It was nothing.",
+        "Why are you here?",
+        "I'm so sorry, that was my fault."
+      ],
+      "correctAnswer": 3,
+      "explanation": "ধাক্কা লাগলে বিনয়ের সাথে ক্ষমা চাওয়া উচিত: 'I'm so sorry, that was my fault.'",
+      "timeLimit": 15,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_241",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask a friend what they did over the weekend?",
+      "bangla": "বন্ধুকে সপ্তাহান্তে (weekend-এ) কী করেছে জানতে কী জিজ্ঞাসা করবেন?",
+      "options": [
+        "How was your weekend? Did you do anything fun?",
+        "What is weekend?",
+        "You stay home on weekend?",
+        "Tell whole weekend."
+      ],
+      "correctAnswer": 0,
+      "explanation": "'How was your weekend? Did you do anything fun?' হলো ক্যাজুয়াল ও স্বাভাবিক প্রশ্ন।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_242",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "On the phone, how do you ask to speak with Mr. Sharma?",
+      "bangla": "ফোনে মি. শর্মার সাথে কথা বলতে চাইলে কীভাবে বলবেন?",
+      "options": [
+        "Give phone to Sharma.",
+        "May I please speak to Mr. Sharma?",
+        "Sharma where is he?",
+        "I want Sharma now."
+      ],
+      "correctAnswer": 1,
+      "explanation": "ফোনে কাঙ্ক্ষিত ব্যক্তির সাথে কথা বলতে 'May I please speak to...?' ব্যবহার করা হয়।",
+      "timeLimit": 20,
+      "difficulty": "easy",
+      "category": "conversation"
+    },
+    {
+      "id": "dq_243",
+      "type": "conversation",
+      "questionType": "multiple_choice",
+      "question": "How do you ask a tourist guide for food recommendations in a new city?",
+      "bangla": "নতুন শহরে স্থানীয় খাবারের পরামর্শ কীভাবে চাইবেন?",
+      "options": [
+        "Food places give me.",
+        "Eat where is best?",
+        "Could you recommend some good local places to eat?",
+        "Where to buy meals fast?"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Could you recommend some good local places to eat?' হলো খাবারের পরামর্শ চাওয়ার সবচেয়ে মার্জিত প্রশ্ন।",
+      "timeLimit": 20,
+      "difficulty": "medium",
+      "category": "conversation"
     }
   ]
 }
