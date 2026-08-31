@@ -46,7 +46,7 @@ class BattleTimerBar extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
               decoration: BoxDecoration(
-                color: barColor.withOpacity(0.15),
+                color: barColor.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(
@@ -71,7 +71,7 @@ class BattleTimerBar extends StatelessWidget {
               return LinearProgressIndicator(
                 value: value,
                 minHeight: 8,
-                backgroundColor: Colors.grey.withOpacity(0.2),
+                backgroundColor: Colors.grey.withValues(alpha: 0.2),
                 valueColor: AlwaysStoppedAnimation<Color>(barColor),
               );
             },
