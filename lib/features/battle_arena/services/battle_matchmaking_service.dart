@@ -18,7 +18,7 @@ class BattleMatchmakingService {
     final questions = await BattleGameService.loadCuratedQuestions();
 
     try {
-      onProgress("Searching for live opponents... 🔍");
+      onProgress('Searching for live opponents... 🔍');
 
       // 1. Check if there is someone waiting in the queue
       final queueQuery = await _firestore
@@ -44,7 +44,7 @@ class BattleMatchmakingService {
 
       if (matchedDoc != null) {
         // Matched with a real waiting opponent!
-        onProgress("Opponent found! Initializing Arena... ⚔️");
+        onProgress('Opponent found! Initializing Arena... ⚔️');
         final oppData = matchedDoc.data() as Map<String, dynamic>;
         final opponent = BattlePlayer(
           id: oppData['userId'],
@@ -80,7 +80,7 @@ class BattleMatchmakingService {
       }
 
       // 2. No opponent waiting immediately — join queue and wait up to 6 seconds
-      onProgress("Scanning online learners... 📡");
+      onProgress('Scanning online learners... 📡');
       final myQueueEntry = await _firestore.collection(_queueCollection).add({
         'userId': localPlayer.id,
         'userName': localPlayer.name,
@@ -125,7 +125,7 @@ class BattleMatchmakingService {
     }
 
     // 3. Fallback to Smart Bot match
-    onProgress("Matching with an AI Challenger... 🤖");
+    onProgress('Matching with an AI Challenger... 🤖');
     final botOpponent = BattleBotSimulator.createBotPlayer(userTrophies: localPlayer.trophies);
 
     return BattleRoom(
