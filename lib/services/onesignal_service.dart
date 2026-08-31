@@ -1,8 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
+import '../core/navigation/app_navigator.dart';
+import '../features/home/widgets/notification_router.dart';
+import '../models/notification_history_model.dart';
 import 'hive_service.dart';
 import 'sound_service.dart';
 
@@ -101,13 +105,17 @@ class OneSignalService {
   /// Marks it as read in Hive history and logs navigation intent.
   void _handleNotificationOpened(OSNotification notification) {
     final additionalData = notification.additionalData ?? {};
-    final notifId = additionalData['notification_id'] as String?;
 
+    // A push that arrived while the app was backgrounded/killed never reached
+    // the foreground listener, so it is missing from history. Save it first
+    // (deduped by id), then mark it read.
+    _saveToHistory(notification);
+
+    final notifId = additionalData['notification_id'] as String?;
     if (notifId != null) {
       HiveService.markNotificationAsRead(notifId);
     }
 
-    // Log navigation intent for the notification router
     final actionType = additionalData['actionType'] as String?;
     final actionPayload = additionalData['actionPayload'] as String?;
     debugPrint(
@@ -115,8 +123,30 @@ class OneSignalService {
       'actionPayload: $actionPayload',
     );
 
-    // Navigation from system tray is best-effort without a global navigator key.
-    // In-app navigation is handled when the user opens NotificationHistoryScreen.
+    if (actionType == null || actionType.isEmpty) return;
+
+    final item = NotificationHistoryItem(
+      id: notifId ?? 'os_tap_${DateTime.now().millisecondsSinceEpoch}',
+      title: notification.title ?? '',
+      body: notification.body ?? '',
+      type: additionalData['type'] as String? ?? 'push',
+      receivedAt: DateTime.now(),
+      actionType: actionType,
+      actionPayload: actionPayload,
+    );
+
+    void go() {
+      final context = appNavigatorContext;
+      if (context == null) return;
+      NotificationRouter.navigate(context, item);
+    }
+
+    if (appNavigatorContext != null) {
+      go();
+    } else {
+      // Cold start from the system tray — wait for the first frame.
+      WidgetsBinding.instance.addPostFrameCallback((_) => go());
+    }
   }
 
   /// Saves a received OSNotification to the local Hive history.

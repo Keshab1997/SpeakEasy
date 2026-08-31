@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../services/streak_service.dart';
 import '../../services/hive_service.dart';
+import '../../services/notification_service.dart';
 import 'game_provider.dart';
 
 // ── Streak State ──
@@ -83,6 +86,13 @@ class StreakNotifier extends StateNotifier<StreakState> {
       weeklyMilestoneLabel: milestone.label,
       thisWeekActiveDays: weekActiveDays,
     );
+
+    // Keep the notification-facing streak value in sync. The 8:00 PM
+    // "Streak at Risk" reminder reads HiveService.getStreak(), which nothing
+    // used to write — so it always showed the generic 0-streak message.
+    if (HiveService.getStreak() != streak) {
+      unawaited(HiveService.setStreak(streak));
+    }
   }
 
   Future<int> incrementStreak() async {
@@ -97,9 +107,26 @@ class StreakNotifier extends StateNotifier<StreakState> {
   }
 
   Future<int> checkAndUpdateStreak() async {
+    final previous = state.currentStreak;
     final newStreak = await _streakService.checkAndUpdateStreak();
     _refresh();
+    await _maybeNotifyMilestone(previous, newStreak);
     return newStreak;
+  }
+
+  /// Fires the streak-milestone notification when a new milestone is reached.
+  /// Guarded so it fires at most once per streak value per day.
+  Future<void> _maybeNotifyMilestone(int previous, int current) async {
+    try {
+      if (current <= previous) return;
+      if (!_streakService.isMilestoneReached(current)) return;
+      if (!HiveService.isNotificationEnabled()) return;
+      if (!HiveService.isStreakNotification()) return;
+
+      await NotificationService().showStreakMilestoneNotification(current);
+    } catch (_) {
+      // Best-effort — never block streak updates on a notification failure.
+    }
   }
 
   bool isMilestoneReached() {

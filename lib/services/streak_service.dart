@@ -44,9 +44,9 @@ class StreakService {
     if (streak == 14) return 'Two weeks strong! Amazing dedication! 💪';
     if (streak == 30) return '30-day streak! You\'re a champion! 🏆';
     if (streak == 100) return '100-day streak! Legendary! 👑';
-    if (streak % 30 == 0) return '\$streak-day streak! Unstoppable! 🚀';
-    if (streak % 7 == 0) return '\$streak-day streak! Keep it up! ⭐';
-    return 'Streak: \$streak days! 🔥';
+    if (streak % 30 == 0) return '$streak-day streak! Unstoppable! 🚀';
+    if (streak % 7 == 0) return '$streak-day streak! Keep it up! ⭐';
+    return 'Streak: $streak days! 🔥';
   }
 
   // ── Daily Streak Check ──

@@ -150,7 +150,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                     onChanged: (val) async {
                       setState(() => _dailyWordNotification = val);
                       await HiveService.setDailyWordNotification(val);
-                      await NotificationService().rescheduleOnAppOpen();
+                      await NotificationService().rescheduleNow();
                     },
                     activeThumbColor: AppColors.primary,
                   ),
@@ -162,7 +162,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                     onChanged: (val) async {
                       setState(() => _practiceReminderNotification = val);
                       await HiveService.setPracticeReminderNotification(val);
-                      await NotificationService().rescheduleOnAppOpen();
+                      await NotificationService().rescheduleNow();
                     },
                     activeThumbColor: AppColors.primary,
                   ),
@@ -174,7 +174,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                     onChanged: (val) async {
                       setState(() => _streakNotification = val);
                       await HiveService.setStreakNotification(val);
-                      await NotificationService().rescheduleOnAppOpen();
+                      await NotificationService().rescheduleNow();
                     },
                     activeThumbColor: AppColors.primary,
                   ),
@@ -215,8 +215,12 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                           max: 24,
                           divisions: 5,
                           label: '$_idleReminderFrequency hours',
-                          onChanged: (val) async {
+                          onChanged: (val) {
+                            // Only update the label while dragging; persist
+                            // once the user lets go (avoids dozens of writes).
                             setState(() => _idleReminderFrequency = val.round());
+                          },
+                          onChangeEnd: (val) async {
                             await HiveService.setIdleReminderFrequencyHours(val.round());
                           },
                           activeColor: AppColors.primary,

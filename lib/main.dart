@@ -8,6 +8,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_skill/flutter_skill.dart';
 import 'firebase_options.dart';
+import 'core/navigation/app_navigator.dart';
 import 'core/theme/light_theme.dart';
 import 'core/theme/dark_theme.dart';
 import 'services/api_key_manager.dart';
@@ -20,6 +21,7 @@ import 'services/workmanager_tasks.dart';
 import 'services/idle_tracker_service.dart';
 import 'services/remote_config_service.dart';
 import 'providers/theme_provider.dart';
+import 'providers/notification_provider.dart';
 
 
 import 'features/auth/screens/splash_screen.dart';
@@ -136,10 +138,16 @@ Future<void> _initBackgroundServices() async {
           'reEngagement',
           reEngagementTaskName,
           frequency: const Duration(hours: 24),
+          // The re-engagement check is purely local (Hive date compare +
+          // local notification) — requiring connectivity only prevented
+          // offline users, i.e. exactly the inactive ones, from being nudged.
           constraints: Constraints(
-            networkType: NetworkType.connected,
+            networkType: NetworkType.notRequired,
           ),
-          existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
+          // UPDATE (not KEEP): with KEEP, any change to frequency/constraints
+          // is silently ignored for users who already have the task
+          // registered — a known workmanager wrong-frequency footgun.
+          existingWorkPolicy: ExistingPeriodicWorkPolicy.update,
         )
         .timeout(const Duration(seconds: 5));
 
@@ -152,7 +160,22 @@ Future<void> _initBackgroundServices() async {
           constraints: Constraints(
             networkType: NetworkType.notRequired,
           ),
-          existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
+          existingWorkPolicy: ExistingPeriodicWorkPolicy.update,
+        )
+        .timeout(const Duration(seconds: 5));
+
+    // Refresh the Word of the Day alarm text daily. Without this the repeating
+    // 9:00 AM alarm would keep showing the word captured at schedule time.
+    await Workmanager()
+        .registerPeriodicTask(
+          'dailyWordRefresh',
+          dailyWordRefreshTaskName,
+          frequency: const Duration(hours: 24),
+          initialDelay: const Duration(hours: 2),
+          constraints: Constraints(
+            networkType: NetworkType.connected,
+          ),
+          existingWorkPolicy: ExistingPeriodicWorkPolicy.update,
         )
         .timeout(const Duration(seconds: 5));
   } catch (e) {
@@ -167,6 +190,25 @@ Future<void> _initBackgroundServices() async {
     debugPrint('main: app-open tracking failed — $e');
   }
 
+  // Reconstruct history entries for OS-scheduled notifications that fired
+  // while the app process was dead (the alarm runs no Dart code).
+  try {
+    await NotificationService()
+        .backfillScheduledHistory()
+        .timeout(const Duration(seconds: 5));
+  } catch (e) {
+    debugPrint('main: notification history backfill failed — $e');
+  }
+
+  // Handle a notification that launched the app from a terminated state.
+  try {
+    await NotificationService()
+        .handleAppLaunchNotification()
+        .timeout(const Duration(seconds: 5));
+  } catch (e) {
+    debugPrint('main: launch notification handling failed — $e');
+  }
+
   // Pre-warm remote config cache on app start
   try {
     await RemoteConfigService.seedDefaultConfig();
@@ -175,15 +217,57 @@ Future<void> _initBackgroundServices() async {
   }
 }
 
-class MyApp extends ConsumerWidget {
+class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state != AppLifecycleState.resumed) return;
+
+    // Notifications can be written to Hive by the WorkManager isolate, by
+    // OneSignal, or reconstructed by the backfill — none of which the UI knows
+    // about. Refresh on every resume so the unread badge is never stale.
+    unawaited(_refreshNotificationsOnResume());
+  }
+
+  Future<void> _refreshNotificationsOnResume() async {
+    try {
+      await IdleTrackerService.recordActivity();
+      await NotificationService().backfillScheduledHistory();
+      await NotificationService().handleAppLaunchNotification();
+      if (!mounted) return;
+      ref.read(notificationProvider.notifier).notifyExternalUpdate();
+    } catch (e) {
+      debugPrint('MyApp: resume refresh failed — $e');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final themeMode = ref.watch(themeModeProvider);
     return MaterialApp(
       title: 'SpeakEasy',
       debugShowCheckedModeBanner: false,
+      // Global key so notification taps (local + push) can navigate without a
+      // BuildContext.
+      navigatorKey: appNavigatorKey,
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeMode,
