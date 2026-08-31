@@ -1,7 +1,6 @@
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/constants/app_colors.dart';
 import '../providers/battle_arena_provider.dart';
 
 class BattleResultScreen extends ConsumerStatefulWidget {
@@ -77,7 +76,7 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen> {
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: outcomeColor.withOpacity(0.15),
+                      color: outcomeColor.withValues(alpha: 0.15),
                       shape: BoxShape.circle,
                       border: Border.all(color: outcomeColor, width: 3),
                     ),
@@ -106,7 +105,7 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen> {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF10B981).withOpacity(0.15),
+                        color: const Color(0xFF10B981).withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: const Text(
@@ -128,11 +127,11 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen> {
                       color: isDark ? const Color(0xFF1E293B) : Colors.white,
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color: outcomeColor.withOpacity(0.3),
+                        color: outcomeColor.withValues(alpha: 0.3),
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
                         ),
@@ -179,7 +178,7 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen> {
                         Container(
                           padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.1),
+                            color: Colors.grey.withValues(alpha: 0.1),
                             shape: BoxShape.circle,
                           ),
                           child: const Text('VS', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
