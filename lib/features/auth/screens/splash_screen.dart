@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
-import '../../../providers/auth_provider.dart';
 import '../../../models/user_model.dart';
-import '../../../services/remote_config_service.dart';
+import '../../../providers/auth_provider.dart';
 import '../../../services/hive_service.dart';
-import '../../intro/screens/intro_screen.dart';
-import '../../admin/screens/maintenance_screen.dart';
-import '../../admin/screens/force_update_screen.dart';
-import '../../home/screens/main_navigation_screen.dart';
-import 'login_screen.dart';
 import '../../../services/in_app_update_service.dart';
+import '../../../services/remote_config_service.dart';
+import '../../admin/screens/force_update_screen.dart';
+import '../../admin/screens/maintenance_screen.dart';
+import '../../home/screens/main_navigation_screen.dart';
+import '../../intro/screens/intro_screen.dart';
+import 'login_screen.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
@@ -23,6 +23,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
   late Animation<double> _scaleAnimation;
+  late Animation<double> _slideAnimation;
   bool _navigated = false;
   bool _navigationStarted = false;
 
@@ -31,13 +32,28 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 1400),
     );
+
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.easeIn),
+      CurvedAnimation(
+        parent: _animationController,
+        curve: const Interval(0.0, 0.7, curve: Curves.easeIn),
+      ),
     );
-    _scaleAnimation = Tween<double>(begin: 0.85, end: 1.0).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.easeOutBack),
+
+    _scaleAnimation = Tween<double>(begin: 0.88, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: const Interval(0.0, 0.9, curve: Curves.easeOutCubic),
+      ),
+    );
+
+    _slideAnimation = Tween<double>(begin: 30.0, end: 0.0).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: const Interval(0.2, 1.0, curve: Curves.easeOutCubic),
+      ),
     );
 
     _animationController.forward();
@@ -56,7 +72,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
   }
 
   void _listenAndNavigate() {
-    // Watch live; as soon as auth is no longer loading, navigate once
     ref.listenManual(authProvider, (_, next) {
       if (!next.isLoading && mounted) {
         next.whenOrNull(
@@ -72,20 +87,15 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
     _navigationStarted = true;
 
     try {
-      // Check if onboarding has been completed
       if (!HiveService.isOnboardingCompleted()) {
         _pushReplacement(const IntroScreen());
         return;
       }
 
-      // Fetch remote config to check maintenance/force-update status.
-      // Bounded with a timeout so a slow/hanging Firestore call can NEVER
-      // leave the user stuck on the splash screen.
       try {
         final config = await RemoteConfigService.getConfig()
             .timeout(const Duration(seconds: 8));
 
-        // Check maintenance mode first
         if (config.maintenanceMode.enabled) {
           _pushReplacement(
             MaintenanceScreen(message: config.maintenanceMode.message),
@@ -93,7 +103,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
           return;
         }
 
-        // Check force update
         if (config.forceUpdate.enabled) {
           _pushReplacement(
             ForceUpdateScreen(updateInfo: config.forceUpdate),
@@ -101,8 +110,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
           return;
         }
 
-        // Check for soft / in-app update (Google Play In-App Update).
-        // Best-effort and time-bounded — never blocks normal navigation.
         try {
           final inAppService = InAppUpdateService();
           final hasUpdate = await inAppService
@@ -110,16 +117,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
               .timeout(const Duration(seconds: 5), onTimeout: () => false);
           if (hasUpdate && await inAppService.shouldShowUpdate()) {
             await inAppService.startFlexibleUpdate();
-            // After dialog is dismissed, continue to normal navigation
           }
-        } catch (_) {
-          // Update check failure must never block navigation
-        }
-      } catch (_) {
-        // If remote config fails or times out, proceed with normal flow
-      }
+        } catch (_) {}
+      } catch (_) {}
 
-      // Normal navigation
       _pushReplacement(
         user != null ? const MainNavigationScreen() : const LoginScreen(),
       );
@@ -128,11 +129,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
     }
   }
 
-  /// Single place that performs the actual navigation.
-  ///
-  /// [_navigated] is only set HERE (right before navigating), so the 10-second
-  /// safety timeout in [_timeoutNavigate] can still rescue the app if any
-  /// async work above hangs unexpectedly.
   void _pushReplacement(Widget screen) {
     if (_navigated || !mounted) return;
     _navigated = true;
@@ -157,59 +153,162 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = theme.brightness == Brightness.dark;
+    final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: isDark ? AppColors.backgroundDark : Colors.white,
-      body: Center(
-        child: FadeTransition(
-          opacity: _fadeAnimation,
-          child: ScaleTransition(
-            scale: _scaleAnimation,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // 3D mascot illustration (not the launcher icon)
-                Image.asset(
-                  'assets/images/splash_character.png',
-                  width: 220,
-                  height: 220,
-                  fit: BoxFit.contain,
-                  filterQuality: FilterQuality.high,
-                ),
-                const SizedBox(height: 24),
-                // App Title
-                const Text(
-                  'SpeakEasy',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.0,
-                    color: AppColors.primary,
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: isDark
+                ? const [Color(0xFF0B1120), Color(0xFF1E1B4B), Color(0xFF0F172A)]
+                : const [Color(0xFFF8FAFC), Color(0xFFEEF2FF), Color(0xFFE0E7FF)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              const Spacer(flex: 1),
+
+              // 🌟 Hero Character Image (Full & Beautiful)
+              Expanded(
+                flex: 7,
+                child: Center(
+                  child: FadeTransition(
+                    opacity: _fadeAnimation,
+                    child: ScaleTransition(
+                      scale: _scaleAnimation,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        constraints: BoxConstraints(
+                          maxHeight: size.height * 0.52,
+                          maxWidth: size.width * 0.92,
+                        ),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            // Soft Ambient Glow behind Character
+                            Container(
+                              width: size.width * 0.7,
+                              height: size.width * 0.7,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: const Color(0xFF3B82F6).withValues(alpha: isDark ? 0.18 : 0.12),
+                              ),
+                            ),
+                            // Character Illustration
+                            Image.asset(
+                              'assets/images/splash_character_android.png',
+                              fit: BoxFit.contain,
+                              filterQuality: FilterQuality.high,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-                const SizedBox(height: 8),
-                // App Subtitle
-                Text(
-                  'Your AI English Speaking Partner',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: isDark ? Colors.white60 : Colors.black54,
-                    fontWeight: FontWeight.w500,
+              ),
+
+              const SizedBox(height: 12),
+
+              // 🏷️ Bottom Branding Section
+              AnimatedBuilder(
+                animation: _animationController,
+                builder: (context, child) {
+                  return Transform.translate(
+                    offset: Offset(0, _slideAnimation.value),
+                    child: Opacity(
+                      opacity: _fadeAnimation.value,
+                      child: child,
+                    ),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // App Name with Gradient Glow
+                      ShaderMask(
+                        shaderCallback: (bounds) => const LinearGradient(
+                          colors: [Color(0xFF2563EB), Color(0xFF7C3AED), Color(0xFFEC4899)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ).createShader(bounds),
+                        child: const Text(
+                          'SpeakEasy',
+                          style: TextStyle(
+                            fontSize: 38,
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: 1.5,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+
+                      // Tagline Badge Pill
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : const Color(0xFF2563EB).withValues(alpha: 0.08),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.15)
+                                : const Color(0xFF2563EB).withValues(alpha: 0.2),
+                          ),
+                        ),
+                        child: Text(
+                          'Your AI English Speaking Partner 🗣️',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: isDark ? const Color(0xFFE2E8F0) : const Color(0xFF1E293B),
+                            letterSpacing: 0.3,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+
+                      // Bengali Subtitle
+                      Text(
+                        'বাংলা থেকে সহজে ইংরেজি শেখার সেরা অ্যাপ',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: isDark ? const Color(0xFF94A3B8) : const Color(0xFF64748B),
+                          fontFamily: 'NotoSansBengali',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const SizedBox(height: 36),
+
+                      // Sleek Loading Indicator
+                      SizedBox(
+                        width: 28,
+                        height: 28,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2.5,
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            isDark ? const Color(0xFF60A5FA) : AppColors.primary,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 48),
-                // Small indicator
-                const SizedBox(
-                  width: 24,
-                  height: 24,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2.5,
-                    valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
-                  ),
-                ),
-              ],
-            ),
+              ),
+
+              const Spacer(flex: 1),
+            ],
           ),
         ),
       ),
