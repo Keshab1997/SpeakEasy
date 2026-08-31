@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/constants/app_colors.dart';
 import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../widgets/battle_emote_overlay.dart';
@@ -53,7 +52,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
           title: Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
             decoration: BoxDecoration(
-              color: const Color(0xFF3B82F6).withOpacity(0.15),
+              color: const Color(0xFF3B82F6).withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Text(
@@ -154,7 +153,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -271,7 +270,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
                 decoration: BoxDecoration(
-                  color: Colors.purple.withOpacity(0.2),
+                  color: Colors.purple.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: const Text('AI', style: TextStyle(fontSize: 8, color: Colors.purple, fontWeight: FontWeight.bold)),
@@ -304,7 +303,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -319,7 +318,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF59E0B).withOpacity(0.15),
+                  color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
@@ -387,12 +386,12 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
     if (isAnswerSubmitted) {
       if (isCorrectOption) {
         borderColor = const Color(0xFF10B981);
-        bgColor = const Color(0xFF10B981).withOpacity(0.15);
+        bgColor = const Color(0xFF10B981).withValues(alpha: 0.15);
         textColor = const Color(0xFF10B981);
         trailingIcon = const Icon(Icons.check_circle_rounded, color: Color(0xFF10B981));
       } else if (isSelected && !isCorrectOption) {
         borderColor = const Color(0xFFEF4444);
-        bgColor = const Color(0xFFEF4444).withOpacity(0.15);
+        bgColor = const Color(0xFFEF4444).withValues(alpha: 0.15);
         textColor = const Color(0xFFEF4444);
         trailingIcon = const Icon(Icons.cancel_rounded, color: Color(0xFFEF4444));
       }
@@ -482,9 +481,8 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
               onPressed: () async {
                 Navigator.pop(ctx);
                 await ref.read(battleArenaProvider.notifier).forfeitCurrentMatch();
-                if (mounted) {
-                  Navigator.of(context).pop();
-                }
+                if (!context.mounted) return;
+                Navigator.of(context).pop();
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFEF4444),
