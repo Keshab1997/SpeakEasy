@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/constants/app_colors.dart';
 import '../../../../providers/auth_provider.dart';
 import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';
+import '../services/battle_matchmaking_service.dart';
 import '../widgets/live_player_card.dart';
 import '../widgets/radar_search_dialog.dart';
 import 'battle_arena_screen.dart';
@@ -117,7 +117,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                         data: (users) => Container(
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF10B981).withOpacity(0.15),
+                            color: const Color(0xFF10B981).withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text(
@@ -234,7 +234,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF4338CA).withOpacity(0.3),
+            color: const Color(0xFF4338CA).withValues(alpha: 0.3),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -251,7 +251,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.15),
+                      color: Colors.white.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
@@ -289,7 +289,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                 width: 65,
                 height: 65,
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.1),
+                  color: Colors.white.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                   border: Border.all(color: Colors.white24, width: 2),
                 ),
@@ -353,7 +353,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFFEF4444).withOpacity(0.4),
+                  color: const Color(0xFFEF4444).withValues(alpha: 0.4),
                   blurRadius: 14,
                   offset: const Offset(0, 5),
                 ),
@@ -399,21 +399,19 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             toUserId: targetUser.id,
           );
 
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Challenge sent to ${targetUser.name}! ⚔️'),
-            backgroundColor: const Color(0xFF10B981),
-            behavior: SnackBarBehavior.floating,
-          ),
-        );
-      }
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Challenge sent to ${targetUser.name}! ⚔️'),
+          backgroundColor: const Color(0xFF10B981),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
     } catch (_) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Failed to send challenge.')),
-        );
-      }
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Failed to send challenge.')),
+      );
     } finally {
       if (mounted) {
         setState(() => _challengingUserId = null);
@@ -484,7 +482,8 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                           trophies: myStats.trophies,
                         );
 
-                        final room = await BattleMatchmakingService().createDirectChallengeRoom(
+                        final matchmakingService = BattleMatchmakingService();
+                        final room = await matchmakingService.createDirectChallengeRoom(
                           player1: player1,
                           player2: player2,
                         );
@@ -495,10 +494,9 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                               roomId: room.id,
                             );
 
-                        if (mounted) {
-                          Navigator.pop(ctx);
-                          ref.read(battleArenaProvider.notifier).startFromRoom(room);
-                        }
+                        if (!mounted) return;
+                        Navigator.pop(ctx);
+                        ref.read(battleArenaProvider.notifier).startFromRoom(room);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFFEF4444),
