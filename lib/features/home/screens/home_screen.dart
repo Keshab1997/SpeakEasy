@@ -36,6 +36,7 @@ import '../../game/screens/tense_categories_screen.dart';
 import '../widgets/study_plan_section.dart';
 import '../../../core/widgets/banner_ad_widget.dart';
 import '../../daily_quiz/screens/daily_quiz_screen.dart';
+import '../../battle_arena/screens/battle_lobby_screen.dart';
 import '../../daily_quiz/providers/daily_quiz_provider.dart';
 import '../widgets/spoken_rules_screen.dart';
 import '../widgets/notification_dialog.dart';
@@ -459,6 +460,9 @@ style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
 	const SizedBox(height: 20),
 	// 🏆 Daily Quest
 	_buildDailyQuizCard(context, theme, isDark),
+	const SizedBox(height: 16),
+	// ⚔️ Battle Arena (1v1 Live Duel)
+	_buildBattleArenaCard(context, theme, isDark),
 	const SizedBox(height: 20),
 		// 2. Streak & Progress (Combined in one widget)
 		StreakWidget(
@@ -992,7 +996,167 @@ borderRadius: BorderRadius.circular(4))),
 
 
 // HOME LEARNING SECTION — Spoken Rules, Vocabulary, Grammar, Tense Rules
-Widget _buildHomeLearningSection(ThemeData theme, bool isDark) {
+
+  // ── Battle Arena Card (1v1 Live English Quiz Duel) ──
+  Widget _buildBattleArenaCard(BuildContext context, ThemeData theme, bool isDark) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const BattleLobbyScreen()),
+        );
+      },
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFF1E1B4B), Color(0xFF312E81), Color(0xFFEF4444)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFFEF4444).withValues(alpha: 0.3),
+              blurRadius: 16,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              right: -10,
+              bottom: -10,
+              child: Icon(
+                Icons.sports_kabaddi_rounded,
+                size: 110,
+                color: Colors.white.withValues(alpha: 0.12),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.3),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              width: 8,
+                              height: 8,
+                              decoration: const BoxDecoration(
+                                color: Color(0xFF10B981),
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                            const SizedBox(width: 6),
+                            const Text(
+                              'BATTLE ARENA',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 11,
+                                letterSpacing: 1.2,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Spacer(),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF59E0B).withValues(alpha: 0.25),
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: const Color(0xFFF59E0B).withValues(alpha: 0.6), width: 1),
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.emoji_events_rounded, color: Color(0xFFFBBF24), size: 14),
+                            SizedBox(width: 4),
+                            Text(
+                              '1v1 DUEL',
+                              style: TextStyle(
+                                color: Color(0xFFFBBF24),
+                                fontWeight: FontWeight.w900,
+                                fontSize: 11,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 14),
+                  const Text(
+                    '1v1 Live Quiz Duel ⚔️',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Challenge online learners or duel AI Bot in a 5-round speed quiz!',
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.85),
+                      fontSize: 13,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.2),
+                              blurRadius: 6,
+                            ),
+                          ],
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              'Enter Arena',
+                              style: TextStyle(
+                                color: Color(0xFF1E1B4B),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                              ),
+                            ),
+                            SizedBox(width: 6),
+                            Icon(Icons.arrow_forward_rounded, size: 16, color: Color(0xFF1E1B4B)),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHomeLearningSection(ThemeData theme, bool isDark) {
 return Column(
 crossAxisAlignment: CrossAxisAlignment.start,
 children: [
