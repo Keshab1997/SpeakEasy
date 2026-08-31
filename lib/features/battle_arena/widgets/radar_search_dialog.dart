@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import '../../../../core/constants/app_colors.dart';
 
 class RadarSearchDialog extends StatefulWidget {
   final String statusMessage;
@@ -48,12 +47,12 @@ class _RadarSearchDialogState extends State<RadarSearchDialog> with SingleTicker
           color: isDark ? const Color(0xFF0F172A) : Colors.white,
           borderRadius: BorderRadius.circular(28),
           border: Border.all(
-            color: const Color(0xFF3B82F6).withOpacity(0.4),
+            color: const Color(0xFF3B82F6).withValues(alpha: 0.4),
             width: 1.5,
           ),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF3B82F6).withOpacity(0.2),
+              color: const Color(0xFF3B82F6).withValues(alpha: 0.2),
               blurRadius: 24,
               spreadRadius: 4,
             ),
@@ -90,7 +89,7 @@ class _RadarSearchDialogState extends State<RadarSearchDialog> with SingleTicker
                         width: 50,
                         height: 50,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF3B82F6).withOpacity(0.2),
+                          color: const Color(0xFF3B82F6).withValues(alpha: 0.2),
                           shape: BoxShape.circle,
                           border: Border.all(color: const Color(0xFF3B82F6), width: 2),
                         ),
@@ -156,7 +155,7 @@ class _RadarPainter extends CustomPainter {
 
     // Draw static concentric circles
     final circlePaint = Paint()
-      ..color = primaryColor.withOpacity(0.15)
+      ..color = primaryColor.withValues(alpha: 0.15)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1;
 
@@ -169,7 +168,7 @@ class _RadarPainter extends CustomPainter {
       final waveValue = (animationValue + (i * 0.5)) % 1.0;
       final waveRadius = waveValue * maxRadius;
       final wavePaint = Paint()
-        ..color = primaryColor.withOpacity((1.0 - waveValue) * 0.6)
+        ..color = primaryColor.withValues(alpha: (1.0 - waveValue) * 0.6)
         ..style = PaintingStyle.stroke
         ..strokeWidth = 2;
 
@@ -185,8 +184,8 @@ class _RadarPainter extends CustomPainter {
         endAngle: 2 * pi,
         colors: [
           Colors.transparent,
-          primaryColor.withOpacity(0.0),
-          primaryColor.withOpacity(0.35),
+          primaryColor.withValues(alpha: 0.0),
+          primaryColor.withValues(alpha: 0.35),
         ],
         stops: const [0.0, 0.75, 1.0],
         transform: GradientRotation(sweepAngle),
