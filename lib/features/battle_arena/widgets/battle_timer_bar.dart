@@ -12,6 +12,8 @@ class BattleTimerBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
     final progress = (remainingSeconds / totalSeconds).clamp(0.0, 1.0);
 
     Color barColor;
@@ -31,7 +33,7 @@ class BattleTimerBar extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(Icons.timer_outlined, size: 16, color: barColor),
+                Icon(Icons.bolt_rounded, size: 16, color: barColor),
                 const SizedBox(width: 4),
                 Text(
                   'Round Timer',
@@ -43,11 +45,13 @@ class BattleTimerBar extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
               decoration: BoxDecoration(
                 color: barColor.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: barColor.withValues(alpha: 0.4)),
               ),
               child: Text(
                 '${remainingSeconds}s',
@@ -60,22 +64,47 @@ class BattleTimerBar extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 6),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(6),
-          child: TweenAnimationBuilder<double>(
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOut,
-            tween: Tween<double>(begin: progress, end: progress),
-            builder: (context, value, _) {
-              return LinearProgressIndicator(
-                value: value,
-                minHeight: 8,
-                backgroundColor: Colors.grey.withValues(alpha: 0.2),
-                valueColor: AlwaysStoppedAnimation<Color>(barColor),
-              );
-            },
-          ),
+        const SizedBox(height: 8),
+        LayoutBuilder(
+          builder: (context, constraints) {
+            return ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Container(
+                height: 10,
+                decoration: BoxDecoration(
+                  color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.08),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Stack(
+                  alignment: Alignment.centerLeft,
+                  children: [
+                    // Smoothly drains once per second
+                    AnimatedContainer(
+                      duration: const Duration(milliseconds: 950),
+                      curve: Curves.linear,
+                      width: constraints.maxWidth * progress,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            barColor.withValues(alpha: 0.65),
+                            barColor,
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                        boxShadow: [
+                          BoxShadow(
+                            color: barColor.withValues(alpha: 0.55),
+                            blurRadius: 8,
+                            offset: const Offset(0, 1),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
         ),
       ],
     );

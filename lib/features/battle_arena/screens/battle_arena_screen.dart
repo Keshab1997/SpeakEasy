@@ -50,17 +50,26 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
             onPressed: () => _confirmForfeitExit(context),
           ),
           title: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
             decoration: BoxDecoration(
-              color: const Color(0xFF3B82F6).withValues(alpha: 0.15),
+              gradient: const LinearGradient(
+                colors: [Color(0xFF3B82F6), Color(0xFF06B6D4)],
+              ),
               borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFF3B82F6).withValues(alpha: 0.35),
+                  blurRadius: 10,
+                  offset: const Offset(0, 3),
+                ),
+              ],
             ),
             child: Text(
               'ROUND ${battleState.currentRoundIndex + 1} / 5',
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF3B82F6),
+                color: Colors.white,
                 letterSpacing: 1.0,
               ),
             ),
@@ -77,69 +86,120 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
         ),
         body: question == null
             ? const Center(child: CircularProgressIndicator())
-            : SafeArea(
-                child: Stack(
-                  children: [
-                    Column(
-                      children: [
-                        // 1. Split Score Bar (Player VS Opponent)
-                        _buildVersusScoreHeader(battleState, isDark),
-                        const SizedBox(height: 12),
+            : Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: isDark
+                        ? const [Color(0xFF0A1020), Color(0xFF0F172A), Color(0xFF101B33)]
+                        : const [Color(0xFFF8FAFC), Color(0xFFF1F5F9), Color(0xFFE7EDF5)],
+                  ),
+                ),
+                child: SafeArea(
+                  child: Stack(
+                    children: [
+                      // Decorative arena glows
+                      Positioned(
+                        top: -70,
+                        right: -50,
+                        child: _buildGlow(const Color(0xFF3B82F6), isDark),
+                      ),
+                      Positioned(
+                        bottom: 60,
+                        left: -60,
+                        child: _buildGlow(const Color(0xFFEF4444), isDark),
+                      ),
 
-                        // 2. Round Timer Bar
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: BattleTimerBar(
-                            remainingSeconds: battleState.remainingSeconds,
-                            totalSeconds: 15,
+                      Column(
+                        children: [
+                          // 1. Split Score Bar (Player VS Opponent)
+                          _buildVersusScoreHeader(battleState, isDark),
+                          const SizedBox(height: 12),
+
+                          // 2. Round Timer Bar
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: BattleTimerBar(
+                              remainingSeconds: battleState.remainingSeconds,
+                              totalSeconds: 15,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 16),
+                          const SizedBox(height: 16),
 
-                        // 3. Question Card & Options
-                        Expanded(
-                          child: SingleChildScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Column(
-                              children: [
-                                _buildQuestionCard(question, isDark, theme),
-                                const SizedBox(height: 18),
-                                ...List.generate(question.options.length, (index) {
-                                  return _buildOptionTile(
-                                    index: index,
-                                    optionText: question.options[index],
-                                    question: question,
-                                    battleState: battleState,
-                                    isDark: isDark,
-                                  );
-                                }),
-                                const SizedBox(height: 80),
-                              ],
+                          // 3. Question Card & Options
+                          Expanded(
+                            child: SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
+                              child: Column(
+                                children: [
+                                  _buildQuestionCard(question, isDark, theme),
+                                  const SizedBox(height: 18),
+                                  ...List.generate(question.options.length, (index) {
+                                    return _buildOptionTile(
+                                      index: index,
+                                      optionText: question.options[index],
+                                      question: question,
+                                      battleState: battleState,
+                                      isDark: isDark,
+                                    );
+                                  }),
+                                  const SizedBox(height: 80),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      // Quick Emote Tray Popup (slides up with fade)
+                      Positioned(
+                        bottom: 24,
+                        left: 0,
+                        right: 0,
+                        child: IgnorePointer(
+                          ignoring: !_showEmoteTray,
+                          child: AnimatedSlide(
+                            offset: _showEmoteTray ? Offset.zero : const Offset(0, 0.6),
+                            duration: const Duration(milliseconds: 250),
+                            curve: Curves.easeOutCubic,
+                            child: AnimatedOpacity(
+                              opacity: _showEmoteTray ? 1 : 0,
+                              duration: const Duration(milliseconds: 200),
+                              child: Center(
+                                child: BattleEmoteOverlay(
+                                  onSelectEmote: (emote) {
+                                    ref.read(battleArenaProvider.notifier).sendEmote(emote);
+                                    setState(() => _showEmoteTray = false);
+                                  },
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
-
-                    // Quick Emote Tray Popup
-                    if (_showEmoteTray)
-                      Positioned(
-                        bottom: 20,
-                        left: 0,
-                        right: 0,
-                        child: Center(
-                          child: BattleEmoteOverlay(
-                            onSelectEmote: (emote) {
-                              ref.read(battleArenaProvider.notifier).sendEmote(emote);
-                              setState(() => _showEmoteTray = false);
-                            },
-                          ),
-                        ),
                       ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
+      ),
+    );
+  }
+
+  /// Soft radial glow used as background decoration.
+  Widget _buildGlow(Color color, bool isDark) {
+    return Container(
+      width: 190,
+      height: 190,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: RadialGradient(
+          colors: [
+            color.withValues(alpha: isDark ? 0.14 : 0.08),
+            color.withValues(alpha: 0.0),
+          ],
+        ),
       ),
     );
   }
@@ -149,13 +209,22 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(20),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: isDark
+              ? const [Color(0xFF1E293B), Color(0xFF16233B)]
+              : [Colors.white, const Color(0xFFF1F5F9)],
+        ),
+        borderRadius: BorderRadius.circular(22),
+        border: Border.all(
+          color: isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0),
+        ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.06),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
+            color: Colors.black.withValues(alpha: 0.10),
+            blurRadius: 18,
+            offset: const Offset(0, 6),
           ),
         ],
       ),
@@ -167,6 +236,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
             player: state.localPlayer,
             isLocal: true,
             hasAnswered: state.isAnswerSubmitted,
+            isDark: isDark,
             emote: state.activeEmote,
           ),
 
@@ -180,6 +250,13 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
                     colors: [Color(0xFFEF4444), Color(0xFFF97316)],
                   ),
                   borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFFEF4444).withValues(alpha: 0.4),
+                      blurRadius: 10,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
                 ),
                 child: const Text(
                   'VS',
@@ -193,7 +270,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
               ),
               const SizedBox(height: 4),
               Text(
-                'Speed Duel',
+                '⚔️ Speed Duel',
                 style: TextStyle(
                   fontSize: 10,
                   fontWeight: FontWeight.w600,
@@ -208,6 +285,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
             player: state.opponent,
             isLocal: false,
             hasAnswered: state.isOpponentAnswered,
+            isDark: isDark,
             emote: state.opponentEmote,
           ),
         ],
@@ -219,6 +297,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
     required BattlePlayer player,
     required bool isLocal,
     required bool hasAnswered,
+    required bool isDark,
     String? emote,
   }) {
     return Column(
@@ -226,34 +305,65 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
         Stack(
           alignment: Alignment.center,
           children: [
-            CircleAvatar(
-              radius: 24,
-              backgroundColor: isLocal ? const Color(0xFF3B82F6) : const Color(0xFFEF4444),
-              backgroundImage: player.photoUrl.isNotEmpty ? NetworkImage(player.photoUrl) : null,
-              child: player.photoUrl.isEmpty
-                  ? Text(
-                      player.name.isNotEmpty ? player.name[0].toUpperCase() : 'P',
-                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                    )
-                  : null,
+            // Avatar with gradient ring + glow when answered
+            Container(
+              padding: const EdgeInsets.all(2.5),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: isLocal
+                      ? const [Color(0xFF3B82F6), Color(0xFF06B6D4)]
+                      : const [Color(0xFFEF4444), Color(0xFFF97316)],
+                ),
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: (isLocal ? const Color(0xFF3B82F6) : const Color(0xFFEF4444))
+                        .withValues(alpha: hasAnswered ? 0.55 : 0.25),
+                    blurRadius: hasAnswered ? 14 : 8,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: CircleAvatar(
+                radius: 22,
+                backgroundColor: isLocal ? const Color(0xFF3B82F6) : const Color(0xFFEF4444),
+                backgroundImage: player.photoUrl.isNotEmpty ? NetworkImage(player.photoUrl) : null,
+                child: player.photoUrl.isEmpty
+                    ? Text(
+                        player.name.isNotEmpty ? player.name[0].toUpperCase() : 'P',
+                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                      )
+                    : null,
+              ),
             ),
             if (hasAnswered)
               Positioned(
                 bottom: -2,
                 right: -2,
                 child: Container(
-                  padding: const EdgeInsets.all(2),
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF10B981),
+                  padding: const EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF10B981),
                     shape: BoxShape.circle,
+                    border: Border.all(
+                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                      width: 1.5,
+                    ),
                   ),
-                  child: const Icon(Icons.check, size: 12, color: Colors.white),
+                  child: const Icon(Icons.check, size: 11, color: Colors.white),
                 ),
               ),
             if (emote != null)
               Positioned(
-                top: -15,
-                child: FloatingEmoteBubble(emote: emote),
+                top: -24,
+                left: isLocal ? -12 : null,
+                right: isLocal ? null : -12,
+                child: FloatingEmoteBubble(
+                  emote: emote,
+                  accentColor: isLocal
+                      ? const Color(0xFF3B82F6)
+                      : (player.isBot ? const Color(0xFF8B5CF6) : const Color(0xFFEF4444)),
+                ),
               ),
           ],
         ),
@@ -279,16 +389,38 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
           ],
         ),
         const SizedBox(height: 2),
-        Text(
-          '${player.currentScore} pts',
-          style: TextStyle(
-            fontWeight: FontWeight.w900,
-            fontSize: 15,
-            color: isLocal ? const Color(0xFF2563EB) : const Color(0xFFEF4444),
+        // Animated score counter
+        AnimatedSwitcher(
+          duration: const Duration(milliseconds: 350),
+          transitionBuilder: (child, animation) => FadeTransition(
+            opacity: animation,
+            child: SlideTransition(
+              position: Tween<Offset>(begin: const Offset(0, 0.5), end: Offset.zero)
+                  .animate(animation),
+              child: child,
+            ),
+          ),
+          child: Text(
+            '${player.currentScore} pts',
+            key: ValueKey<int>(player.currentScore),
+            style: TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 15,
+              color: isLocal ? const Color(0xFF2563EB) : const Color(0xFFEF4444),
+            ),
           ),
         ),
       ],
     );
+  }
+
+  /// Emoji per question category (used in the question card badge).
+  String _categoryEmoji(String category) {
+    final c = category.toLowerCase();
+    if (c.contains('vocab')) return '📚';
+    if (c.contains('gram')) return '✍️';
+    if (c.contains('conv')) return '💬';
+    return '🎯';
   }
 
   Widget _buildQuestionCard(BattleQuestion question, bool isDark, ThemeData theme) {
@@ -296,16 +428,22 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
       width: double.infinity,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: isDark
+              ? const [Color(0xFF1E293B), Color(0xFF18243A)]
+              : [Colors.white, const Color(0xFFFAFBFF)],
+        ),
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
           color: isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0),
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
+            color: const Color(0xFF3B82F6).withValues(alpha: isDark ? 0.10 : 0.06),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
           ),
         ],
       ),
@@ -316,17 +454,26 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFFF59E0B), Color(0xFFF97316)],
+                  ),
                   borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFFF59E0B).withValues(alpha: 0.35),
+                      blurRadius: 8,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
                 ),
                 child: Text(
-                  question.category.toUpperCase(),
+                  '${_categoryEmoji(question.category)} ${question.category.toUpperCase()}',
                   style: const TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFFF59E0B),
+                    color: Colors.white,
                     letterSpacing: 0.8,
                   ),
                 ),
@@ -346,9 +493,9 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
           Text(
             question.question,
             style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-              fontSize: 17,
-              height: 1.3,
+              fontWeight: FontWeight.w800,
+              fontSize: 18,
+              height: 1.35,
             ),
           ),
           if (question.bangla.isNotEmpty) ...[
@@ -381,6 +528,8 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
     Color borderColor = isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0);
     Color bgColor = isDark ? const Color(0xFF1E293B) : Colors.white;
     Color textColor = isDark ? Colors.white : const Color(0xFF1E293B);
+    List<Color> badgeColors = const [Color(0xFF3B82F6), Color(0xFF6366F1)];
+    Color? tileGlow;
     Widget? trailingIcon;
 
     if (isAnswerSubmitted) {
@@ -388,11 +537,15 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
         borderColor = const Color(0xFF10B981);
         bgColor = const Color(0xFF10B981).withValues(alpha: 0.15);
         textColor = const Color(0xFF10B981);
+        badgeColors = const [Color(0xFF10B981), Color(0xFF34D399)];
+        tileGlow = const Color(0xFF10B981);
         trailingIcon = const Icon(Icons.check_circle_rounded, color: Color(0xFF10B981));
       } else if (isSelected && !isCorrectOption) {
         borderColor = const Color(0xFFEF4444);
         bgColor = const Color(0xFFEF4444).withValues(alpha: 0.15);
         textColor = const Color(0xFFEF4444);
+        badgeColors = const [Color(0xFFEF4444), Color(0xFFF87171)];
+        tileGlow = const Color(0xFFEF4444);
         trailingIcon = const Icon(Icons.cancel_rounded, color: Color(0xFFEF4444));
       }
     }
@@ -413,24 +566,43 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             decoration: BoxDecoration(
               color: bgColor,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: borderColor, width: isSelected || (isAnswerSubmitted && isCorrectOption) ? 2 : 1),
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(
+                color: borderColor,
+                width: isSelected || (isAnswerSubmitted && isCorrectOption) ? 2 : 1,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: tileGlow != null
+                      ? tileGlow.withValues(alpha: 0.30)
+                      : Colors.black.withValues(alpha: 0.05),
+                  blurRadius: tileGlow != null ? 12 : 8,
+                  offset: const Offset(0, 3),
+                ),
+              ],
             ),
             child: Row(
               children: [
                 Container(
-                  width: 32,
-                  height: 32,
+                  width: 34,
+                  height: 34,
                   decoration: BoxDecoration(
-                    color: isDark ? const Color(0xFF334155) : const Color(0xFFF1F5F9),
+                    gradient: LinearGradient(colors: badgeColors),
                     shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: badgeColors.first.withValues(alpha: 0.4),
+                        blurRadius: 6,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
                   ),
                   child: Center(
                     child: Text(
                       String.fromCharCode(65 + index), // A, B, C, D
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: textColor,
+                        color: Colors.white,
                       ),
                     ),
                   ),

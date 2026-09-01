@@ -3,6 +3,7 @@ import '../models/battle_models.dart';
 
 class BattleBotSimulator {
   static final Random _rng = Random();
+  static int? _lastEmoteRound;
 
   static const List<Map<String, String>> _botProfiles = [
     {'name': 'Arif Hasan', 'avatar': 'https://api.dicebear.com/7.x/bottts/png?seed=Arif'},
@@ -19,6 +20,9 @@ class BattleBotSimulator {
 
   /// Creates a realistic bot player matching the user's trophy level
   static BattlePlayer createBotPlayer({required int userTrophies}) {
+    // New match → reset the emote cooldown tracker
+    _lastEmoteRound = null;
+
     final profile = _botProfiles[_rng.nextInt(_botProfiles.length)];
     final trophyDelta = _rng.nextInt(60) - 30; // +/- 30 trophies
     final botTrophies = max(50, userTrophies + trophyDelta);
@@ -64,9 +68,17 @@ class BattleBotSimulator {
     );
   }
 
-  /// 20% chance for bot to send a friendly emote
-  static String? maybeGenerateEmote() {
-    if (_rng.nextDouble() < 0.25) {
+  /// Occasional friendly emote from the bot.
+  /// Rules to avoid spam after every question:
+  /// - never in round 1 (let the player settle in)
+  /// - never two rounds in a row (cooldown)
+  /// - only ~15% chance
+  static String? maybeGenerateEmote({int roundNumber = 0}) {
+    if (roundNumber <= 1) return null;
+    if (_lastEmoteRound != null && roundNumber - _lastEmoteRound! < 2) return null;
+
+    if (_rng.nextDouble() < 0.15) {
+      _lastEmoteRound = roundNumber;
       const emotes = ['🔥', '😎', '👏', '⚡', '🤯'];
       return emotes[_rng.nextInt(emotes.length)];
     }

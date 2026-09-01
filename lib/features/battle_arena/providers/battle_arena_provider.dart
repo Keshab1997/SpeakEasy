@@ -310,8 +310,10 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         opponent: state.opponent.copyWith(currentScore: newBotScore),
       );
 
-      // Bot maybe sends emote
-      final botEmote = BattleBotSimulator.maybeGenerateEmote();
+      // Bot maybe sends emote (occasional + cooldown — no spam after every question)
+      final botEmote = BattleBotSimulator.maybeGenerateEmote(
+        roundNumber: state.currentRoundIndex + 1,
+      );
       if (botEmote != null) {
         _showOpponentEmote(botEmote);
       }
