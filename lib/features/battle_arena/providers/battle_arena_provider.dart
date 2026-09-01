@@ -132,6 +132,10 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   Timer? _roundTransitionTimer;
   StreamSubscription<BattleRoom?>? _roomSubscription;
 
+  /// Handle for the in-flight quick-match search so a Cancel truly aborts it
+  /// (deletes our queue entry, stops the listener, skips the bot fallback).
+  MatchmakingToken? _matchmakingToken;
+
   /// True while the 1.8s round-summary delay is running — prevents the
   /// round from being advanced twice (answer + timer expiry racing).
   bool _roundTransitioning = false;
@@ -176,6 +180,11 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   /// Starts quick matchmaking
   Future<void> startQuickMatch() async {
     _localCorrectRounds = 0;
+    // Cancel any previous in-flight search before starting a fresh one.
+    _matchmakingToken?.cancel();
+    final token = MatchmakingToken();
+    _matchmakingToken = token;
+
     final freshLocal = state.localPlayer.copyWith(
       currentScore: 0,
       currentRound: 0,
@@ -207,7 +216,11 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         onProgress: (msg) {
           state = state.copyWith(searchStatusMessage: msg);
         },
+        token: token,
       );
+
+      // Stale result from an older, already-cancelled search — ignore it.
+      if (token.isCancelled || _matchmakingToken != token) return;
 
       final isPlayer1 = room.player1.id == freshLocal.id;
       final opp = isPlayer1 ? room.player2 : room.player1;
@@ -244,8 +257,16 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       if (opp.isBot) {
         _scheduleBotAnswer();
       }
+    } on MatchmakingCancelledException {
+      // User hit Cancel — resetLobby() already handled state; just clear our
+      // token if this was the current search.
+      if (_matchmakingToken == token) _matchmakingToken = null;
     } catch (e) {
-      state = state.copyWith(status: BattleArenaStatus.idle);
+      // A real error: only fall back to idle if no newer search has started.
+      if (_matchmakingToken == token) {
+        _matchmakingToken = null;
+        state = state.copyWith(status: BattleArenaStatus.idle);
+      }
     }
   }
 
@@ -685,6 +706,11 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _roundTransitionTimer?.cancel();
     _opponentEmoteTimer?.cancel();
     _roomSubscription?.cancel();
+    // Abort any in-flight matchmaking search: deletes the queue entry,
+    // stops the listener and prevents the bot fallback from launching a
+    // match after the user pressed Cancel.
+    _matchmakingToken?.cancel();
+    _matchmakingToken = null;
     _roundTransitioning = false;
     _lastOpponentEmote = null;
     state = state.copyWith(

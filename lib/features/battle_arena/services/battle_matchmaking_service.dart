@@ -5,18 +5,56 @@ import '../models/battle_models.dart';
 import 'battle_bot_simulator.dart';
 import 'battle_game_service.dart';
 
+/// Thrown when the user cancels matchmaking before (or while) a match starts.
+class MatchmakingCancelledException implements Exception {
+  const MatchmakingCancelledException();
+}
+
+/// A live handle to an in-flight [BattleMatchmakingService.findMatch] call.
+/// Calling [cancel] immediately:
+///   • flips [isCancelled] so the search aborts at its next checkpoint
+///     (no room is entered, no bot fallback launches),
+///   • deletes our `battle_queue` entry so no other player can match with us,
+///   • cancels the queue snapshot listener and unblocks the wait future.
+class MatchmakingToken {
+  bool isCancelled = false;
+  DocumentReference? queueEntryRef;
+  void Function()? _abort;
+
+  void cancel() {
+    if (isCancelled) return;
+    isCancelled = true;
+    _abort?.call();
+    final ref = queueEntryRef;
+    if (ref != null) {
+      ref.delete().catchError((_) {});
+    }
+  }
+}
+
 class BattleMatchmakingService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   static const String _queueCollection = 'battle_queue';
   static const String _roomsCollection = 'battle_rooms';
 
-  /// Starts quick matchmaking with 6-second timeout fallback to Bot
+  /// Starts quick matchmaking with 6-second timeout fallback to Bot.
+  /// Pass a [MatchmakingToken]; if it gets cancelled, the search aborts
+  /// (queue entry deleted, listener cancelled) and a
+  /// [MatchmakingCancelledException] is thrown — no room, no bot fallback.
   Future<BattleRoom> findMatch({
     required BattlePlayer localPlayer,
     required void Function(String statusMessage) onProgress,
+    MatchmakingToken? token,
   }) async {
+    void checkCancelled() {
+      if (token?.isCancelled ?? false) {
+        throw const MatchmakingCancelledException();
+      }
+    }
+
     final questions = await BattleGameService.loadCuratedQuestions();
+    checkCancelled();
 
     try {
       onProgress('Searching for live opponents... 🔍');
@@ -27,6 +65,7 @@ class BattleMatchmakingService {
           .where('status', isEqualTo: 'waiting')
           .limit(5)
           .get();
+      checkCancelled();
 
       final now = DateTime.now();
       DocumentSnapshot? matchedDoc;
@@ -44,6 +83,7 @@ class BattleMatchmakingService {
       }
 
       if (matchedDoc != null) {
+        checkCancelled(); // don't create a room after the user backed out
         // Matched with a real waiting opponent!
         onProgress('Opponent found! Initializing Arena... ⚔️');
         final oppData = matchedDoc.data() as Map<String, dynamic>;
@@ -70,7 +110,7 @@ class BattleMatchmakingService {
           'roomId': roomDoc.id,
         });
 
-        return BattleRoom(
+        final room = BattleRoom(
           id: roomDoc.id,
           player1: opponent,
           player2: localPlayer,
@@ -78,6 +118,11 @@ class BattleMatchmakingService {
           status: BattleRoomStatus.inProgress,
           createdAt: DateTime.now(),
         );
+        checkCancelled();
+        // Rare race: we created the room just as the user hit cancel.
+        // Forfeit on their behalf so the opponent isn't left waiting forever.
+        unawaited(_forfeitRoom(roomDoc.id, localPlayer.id));
+        throw const MatchmakingCancelledException();
       }
 
       // 2. No opponent waiting immediately — join queue and wait up to 6 seconds
@@ -90,6 +135,12 @@ class BattleMatchmakingService {
         'status': 'waiting',
         'createdAt': FieldValue.serverTimestamp(),
       });
+      token?.queueEntryRef = myQueueEntry;
+      // Cancelled while the entry was being created.
+      if (token?.isCancelled ?? false) {
+        unawaited(myQueueEntry.delete().catchError((_) {}));
+        throw const MatchmakingCancelledException();
+      }
 
       // Listen for a match for 6 seconds
       final completer = Completer<BattleRoom?>();
@@ -99,14 +150,25 @@ class BattleMatchmakingService {
         if (!snapshot.exists) return;
         final data = snapshot.data();
         if (data != null && data['status'] == 'matched' && data['roomId'] != null) {
-          subscription.cancel();
           final roomId = data['roomId'] as String;
+          // A cancelled search must not drag us into a room.
+          if (token?.isCancelled ?? false) {
+            if (!completer.isCompleted) completer.complete(null);
+            return;
+          }
+          subscription.cancel();
           final roomDoc = await _firestore.collection(_roomsCollection).doc(roomId).get();
           if (roomDoc.exists && !completer.isCompleted) {
             completer.complete(BattleRoom.fromMap(roomDoc.data()!, roomDoc.id));
           }
         }
       });
+
+      // Allow an external cancel to break the wait immediately.
+      token?._abort = () {
+        subscription.cancel();
+        if (!completer.isCompleted) completer.complete(null);
+      };
 
       // 6-second timeout: If no user matched, launch Smart Bot!
       final matchedRoom = await completer.future.timeout(
@@ -118,14 +180,23 @@ class BattleMatchmakingService {
         },
       );
 
+      checkCancelled();
+
       if (matchedRoom != null) {
         return matchedRoom;
       }
+    } on MatchmakingCancelledException {
+      rethrow;
     } catch (e, st) {
+      if (token?.isCancelled ?? false) {
+        throw const MatchmakingCancelledException();
+      }
       // Network/Firestore error — fall back to Bot, but log for diagnostics.
       debugPrint('⚠️ Matchmaking failed, falling back to bot: $e');
       debugPrintStack(stackTrace: st);
     }
+
+    checkCancelled();
 
     // 3. Fallback to Smart Bot match
     onProgress('Matching with an AI Challenger... 🤖');
@@ -139,6 +210,26 @@ class BattleMatchmakingService {
       status: BattleRoomStatus.inProgress,
       createdAt: DateTime.now(),
     );
+  }
+
+  /// Marks a freshly created room as forfeit by [forfeitedUserId] (used when
+  /// matchmaking is cancelled at the exact moment a room was created, so the
+  /// opponent gets their win instead of staring at an empty arena).
+  Future<void> _forfeitRoom(String roomId, String forfeitedUserId) async {
+    try {
+      final snap = await _firestore.collection(_roomsCollection).doc(roomId).get();
+      if (!snap.exists) return;
+      final data = snap.data()!;
+      final p1 = data['player1'] as Map<String, dynamic>?;
+      final p2 = data['player2'] as Map<String, dynamic>?;
+      final p1Forfeit = p1?['id'] == forfeitedUserId;
+      final winnerId = p1Forfeit ? (p2?['id'] ?? '') : (p1?['id'] ?? '');
+      await _firestore.collection(_roomsCollection).doc(roomId).update({
+        'status': 'completed',
+        'winnerId': winnerId,
+        '${p1Forfeit ? 'player1' : 'player2'}.isForfeited': true,
+      });
+    } catch (_) {}
   }
 
   /// Creates a direct room for 1v1 challenge
