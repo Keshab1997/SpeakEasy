@@ -1,0 +1,24 @@
+SpeakEasy v1.0.26 — Battle Arena Update ⚔️
+
+⚔️ BATTLE ARENA — Major Improvements
+• Challenge received now works from ANY screen (Home etc.) — accept and
+  jump straight into the duel, even from a push notification.
+• Fixed online 1v1 rounds advancing before both players answer.
+• Fixed rounds being skipped and stale answers carrying over.
+• Server-authoritative scores & trophies — cheating is no longer possible.
+• Auto-forfeit if an opponent disconnects mid-battle.
+• Old rooms/queue/challenges are cleaned up automatically.
+• Player presence ("IN BATTLE") so you can't challenge someone mid-fight.
+
+📚 NEW QUESTION BANK
+• Battle questions now come from your lessons, not the Daily Quiz:
+  Mock Tests (grammar), Vocabulary chapters, and Verb forms.
+
+🏆 NEW: LEADERBOARD, HISTORY & BADGES
+• Global battle leaderboard with podium and your rank.
+• Match history (win/loss, score, opponent).
+• Achievement badges (First Blood, win streaks, Flawless win & more).
+• Tap any online player to view their profile & win rate.
+
+🔔 Push notification when someone challenges you.
+🤖 Smarter bots that scale with your skill + explanations after answers.
