@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../providers/auth_provider.dart';
@@ -18,6 +20,9 @@ class BattleLobbyScreen extends ConsumerStatefulWidget {
 
 class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   String? _challengingUserId;
+  // Challenge ids whose accepted/rejected status has already been handled,
+  // so the Firestore stream firing again doesn't trigger duplicate actions.
+  final Set<String> _handledOutgoingChallengeIds = {};
 
   @override
   void initState() {
@@ -58,6 +63,38 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
       if (challenges.isNotEmpty && mounted && battleState.status == BattleArenaStatus.idle) {
         final challenge = challenges.first;
         _showIncomingChallengeModal(context, challenge);
+      }
+    });
+
+    // Listen to challenges I SENT: when the receiver accepts, join the room;
+    // when rejected/expired, notify me. (Defer side effects to post-frame.)
+    ref.watch(outgoingChallengesProvider).whenData((outgoing) {
+      for (final challenge in outgoing) {
+        if (_handledOutgoingChallengeIds.contains(challenge.id)) continue;
+
+        if (challenge.status == 'accepted' && challenge.roomId != null) {
+          _handledOutgoingChallengeIds.add(challenge.id);
+          final id = challenge.id;
+          final roomId = challenge.roomId!;
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (!mounted || !_handledOutgoingChallengeIds.contains(id)) return;
+            _joinAcceptedChallengeId(roomId, id);
+          });
+        } else if (challenge.status == 'rejected') {
+          _handledOutgoingChallengeIds.add(challenge.id);
+          final id = challenge.id;
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (!mounted) return;
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('The player declined your challenge. Try another warrior! 🤺'),
+                backgroundColor: Color(0xFFEF4444),
+                behavior: SnackBarBehavior.floating,
+              ),
+            );
+          });
+          unawaited(BattleMatchmakingService().deleteChallenge(id));
+        }
       }
     });
 
@@ -415,6 +452,38 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
     } finally {
       if (mounted) {
         setState(() => _challengingUserId = null);
+      }
+    }
+  }
+
+  /// Called on the SENDER's device when the receiver accepts the challenge:
+  /// fetch the room the receiver created and enter the duel.
+  Future<void> _joinAcceptedChallengeId(String roomId, String challengeId) async {
+    try {
+      final matchmaking = BattleMatchmakingService();
+      final room = await matchmaking.getRoom(roomId);
+      if (room == null) {
+        // Room may not have propagated yet — retry once after a short beat.
+        await Future.delayed(const Duration(milliseconds: 800));
+        final retry = await matchmaking.getRoom(roomId);
+        if (retry == null) return;
+        if (!mounted) return;
+        ref.read(battleArenaProvider.notifier).startFromRoom(retry);
+        unawaited(matchmaking.deleteChallenge(challengeId));
+        return;
+      }
+
+      if (!mounted) return;
+      // Ignore if already in a match (guards against double navigation).
+      if (ref.read(battleArenaProvider).status == BattleArenaStatus.inDuel) return;
+
+      ref.read(battleArenaProvider.notifier).startFromRoom(room);
+      unawaited(matchmaking.deleteChallenge(challengeId));
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not join the duel. Please try again.')),
+        );
       }
     }
   }

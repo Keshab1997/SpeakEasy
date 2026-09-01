@@ -48,6 +48,12 @@ class BattlePlayer {
   final int? selectedAnswer;
   final int timeTakenSeconds;
 
+  /// Round-index keyed answers, e.g. {'0': 2, '1': 0}.
+  /// Used in online matches so a previous round's answer can never be
+  /// mistaken for the current round's answer (single `selectedAnswer`
+  /// field on Firestore was never cleared between rounds).
+  final Map<String, int> roundAnswers;
+
   const BattlePlayer({
     required this.id,
     required this.name,
@@ -60,6 +66,7 @@ class BattlePlayer {
     this.isForfeited = false,
     this.selectedAnswer,
     this.timeTakenSeconds = 0,
+    this.roundAnswers = const {},
   });
 
   BattlePlayer copyWith({
@@ -74,6 +81,7 @@ class BattlePlayer {
     bool? isForfeited,
     int? selectedAnswer,
     int? timeTakenSeconds,
+    Map<String, int>? roundAnswers,
     bool clearSelectedAnswer = false,
   }) {
     return BattlePlayer(
@@ -88,6 +96,7 @@ class BattlePlayer {
       isForfeited: isForfeited ?? this.isForfeited,
       selectedAnswer: clearSelectedAnswer ? null : (selectedAnswer ?? this.selectedAnswer),
       timeTakenSeconds: timeTakenSeconds ?? this.timeTakenSeconds,
+      roundAnswers: roundAnswers ?? this.roundAnswers,
     );
   }
 
@@ -104,10 +113,18 @@ class BattlePlayer {
       'isForfeited': isForfeited,
       'selectedAnswer': selectedAnswer,
       'timeTakenSeconds': timeTakenSeconds,
+      'roundAnswers': roundAnswers,
     };
   }
 
   factory BattlePlayer.fromMap(Map<String, dynamic> map) {
+    final rawRoundAnswers = map['roundAnswers'];
+    final roundAnswers = <String, int>{};
+    if (rawRoundAnswers is Map) {
+      rawRoundAnswers.forEach((k, v) {
+        if (v is num) roundAnswers['$k'] = v.toInt();
+      });
+    }
     return BattlePlayer(
       id: map['id'] ?? '',
       name: map['name'] ?? 'Player',
@@ -120,6 +137,7 @@ class BattlePlayer {
       isForfeited: map['isForfeited'] ?? false,
       selectedAnswer: map['selectedAnswer'] as int?,
       timeTakenSeconds: (map['timeTakenSeconds'] as num?)?.toInt() ?? 0,
+      roundAnswers: roundAnswers,
     );
   }
 }

@@ -122,7 +122,16 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   Timer? _roundTimer;
   Timer? _botActionTimer;
   Timer? _emoteDismissTimer;
+  Timer? _opponentEmoteTimer;
+  Timer? _roundTransitionTimer;
   StreamSubscription<BattleRoom?>? _roomSubscription;
+
+  /// True while the 1.8s round-summary delay is running — prevents the
+  /// round from being advanced twice (answer + timer expiry racing).
+  bool _roundTransitioning = false;
+
+  /// Seconds for the current question (questions may define their own limit).
+  int get _roundTimeLimit => state.currentQuestion?.timeLimit ?? 15;
 
   BattleArenaNotifier({this.currentUser})
       : super(
@@ -189,8 +198,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         },
       );
 
-      final isPlayer1 = room.player1.id == freshLocal.id;
-      final opp = isPlayer1 ? room.player2 : room.player1;
+      final opp = room.player1.id == freshLocal.id ? room.player2 : room.player1;
 
       state = state.copyWith(
         status: BattleArenaStatus.inDuel,
@@ -204,7 +212,6 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
           timeTakenSeconds: 0,
         ),
         currentRoundIndex: 0,
-        remainingSeconds: 15,
         isAnswerSubmitted: false,
         isOpponentAnswered: false,
         clearSelectedAnswer: true,
@@ -231,8 +238,9 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
   /// Starts a match from a direct challenge
   void startFromRoom(BattleRoom room) {
-    final isPlayer1 = room.player1.id == state.localPlayer.id;
-    final opp = isPlayer1 ? room.player2 : room.player1;
+    final opp = room.player1.id == state.localPlayer.id
+        ? room.player2
+        : room.player1;
 
     state = state.copyWith(
       status: BattleArenaStatus.inDuel,
@@ -243,6 +251,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         selectedAnswer: null,
         isForfeited: false,
         timeTakenSeconds: 0,
+        roundAnswers: const {},
       ),
       opponent: opp.copyWith(
         currentScore: 0,
@@ -252,7 +261,6 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         timeTakenSeconds: 0,
       ),
       currentRoundIndex: 0,
-      remainingSeconds: 15,
       isAnswerSubmitted: false,
       isOpponentAnswered: false,
       clearSelectedAnswer: true,
@@ -270,30 +278,53 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _startRoundTimer();
   }
 
+  String? _lastOpponentEmote;
+
   void _subscribeToRoom(String roomId, bool isPlayer1) {
     _roomSubscription?.cancel();
     _roomSubscription = _matchmakingService.streamRoom(roomId).listen((room) {
       if (room == null) return;
+      if (state.status != BattleArenaStatus.inDuel &&
+          state.status != BattleArenaStatus.roundSummary) {
+        return;
+      }
 
       final opp = isPlayer1 ? room.player2 : room.player1;
 
-      // Check if opponent forfeited / surrendered!
-      if (opp.isForfeited || (room.status == BattleRoomStatus.completed && room.winnerId == state.localPlayer.id && !state.localPlayer.isForfeited)) {
+      // Opponent explicitly forfeited / surrendered → we win.
+      if (opp.isForfeited) {
         _handleOpponentForfeited();
         return;
       }
 
-      // Check opponent answer & score
-      if (opp.selectedAnswer != null && opp.selectedAnswer != state.opponentAnswerIndex) {
+      // Opponent's answer for the CURRENT round (read from per-round map).
+      final currentRoundKey = state.currentRoundIndex.toString();
+      final oppAnswerThisRound = opp.roundAnswers[currentRoundKey];
+
+      // Sync the opponent's live score on every update (covers timeouts,
+      // late answers — previously only synced when an answer arrived).
+      if (opp.currentScore != state.opponent.currentScore ||
+          (oppAnswerThisRound != null && oppAnswerThisRound != state.opponentAnswerIndex)) {
         state = state.copyWith(
-          opponentAnswerIndex: opp.selectedAnswer,
-          isOpponentAnswered: true,
-          opponent: state.opponent.copyWith(currentScore: opp.currentScore),
+          opponentAnswerIndex: oppAnswerThisRound,
+          isOpponentAnswered: oppAnswerThisRound != null,
+          opponent: state.opponent.copyWith(
+            currentScore: opp.currentScore,
+            selectedAnswer: oppAnswerThisRound,
+          ),
         );
+
+        // Both players answered the current round → advance.
+        if (state.isAnswerSubmitted && state.isOpponentAnswered) {
+          _completeRoundWithDelay();
+        }
       }
 
-      // Check opponent emote
-      if (room.activeEmote != null && room.emoteSenderId == opp.id) {
+      // Opponent emote (only react to a NEW emote, not every snapshot).
+      if (room.activeEmote != null &&
+          room.emoteSenderId == opp.id &&
+          room.activeEmote != _lastOpponentEmote) {
+        _lastOpponentEmote = room.activeEmote;
         _showOpponentEmote(room.activeEmote!);
       }
     });
@@ -301,9 +332,14 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
   void _startRoundTimer() {
     _roundTimer?.cancel();
-    state = state.copyWith(remainingSeconds: 15);
+    final limit = _roundTimeLimit;
+    state = state.copyWith(remainingSeconds: limit);
 
     _roundTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
       if (state.remainingSeconds > 1) {
         state = state.copyWith(remainingSeconds: state.remainingSeconds - 1);
       } else {
@@ -325,11 +361,12 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     );
 
     _botActionTimer = Timer(Duration(seconds: decision.reactionSeconds), () {
-      if (state.status != BattleArenaStatus.inDuel) return;
+      if (!mounted || state.status != BattleArenaStatus.inDuel) return;
 
       final roundScore = BattleGameService.calculateRoundScore(
         isCorrect: decision.isCorrect,
         timeTakenSeconds: decision.reactionSeconds,
+        roundTimeLimit: _roundTimeLimit,
       );
 
       final newBotScore = state.opponent.currentScore + roundScore;
@@ -337,11 +374,16 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       state = state.copyWith(
         opponentAnswerIndex: decision.selectedAnswer,
         isOpponentAnswered: true,
-        opponent: state.opponent.copyWith(currentScore: newBotScore),
+        opponent: state.opponent.copyWith(
+          currentScore: newBotScore,
+          selectedAnswer: decision.selectedAnswer,
+        ),
       );
 
-      // Bot maybe sends emote
-      final botEmote = BattleBotSimulator.maybeGenerateEmote();
+      // Bot maybe sends emote (pass the current round so the cooldown works)
+      final botEmote = BattleBotSimulator.maybeGenerateEmote(
+        roundNumber: state.currentRoundIndex + 1,
+      );
       if (botEmote != null) {
         _showOpponentEmote(botEmote);
       }
@@ -360,14 +402,20 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     final question = state.currentQuestion;
     if (question == null) return;
 
-    final timeTaken = 15 - state.remainingSeconds;
+    final timeTaken = _roundTimeLimit - state.remainingSeconds;
     final isCorrect = answerIndex == question.correctAnswer;
     final roundScore = BattleGameService.calculateRoundScore(
       isCorrect: isCorrect,
       timeTakenSeconds: timeTaken,
+      roundTimeLimit: _roundTimeLimit,
     );
 
     final newLocalScore = state.localPlayer.currentScore + roundScore;
+    final roundIndex = state.currentRoundIndex;
+
+    // Keep our local roundAnswers map in sync as well.
+    final updatedRoundAnswers = Map<String, int>.from(state.localPlayer.roundAnswers)
+      ..[roundIndex.toString()] = answerIndex;
 
     state = state.copyWith(
       selectedAnswerIndex: answerIndex,
@@ -376,6 +424,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         currentScore: newLocalScore,
         selectedAnswer: answerIndex,
         timeTakenSeconds: timeTaken,
+        roundAnswers: updatedRoundAnswers,
       ),
     );
 
@@ -388,27 +437,39 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         isPlayer1: isPlayer1,
         selectedAnswer: answerIndex,
         newScore: newLocalScore,
-        roundIndex: state.currentRoundIndex,
+        roundIndex: roundIndex,
       );
     }
 
-    // If opponent has also answered, proceed
-    if (state.isOpponentAnswered || state.opponent.isBot == false) {
+    // Advance only when the opponent has ALSO answered.
+    // - Bot match: bot answers on its own timer and triggers advance; the
+    //   round timer handles the case where the bot is slow.
+    // - Human match: the room subscription triggers advance when both are in;
+    //   the round timer handles a slow opponent.
+    if (state.isOpponentAnswered) {
       _completeRoundWithDelay();
     }
   }
 
   void _onRoundTimeExpired() {
+    if (!mounted) return;
     state = state.copyWith(remainingSeconds: 0);
     _completeRoundWithDelay();
   }
 
   void _completeRoundWithDelay() {
+    // Guard: a transition is already scheduled (answer + timer raced).
+    if (_roundTransitioning) return;
+    _roundTransitioning = true;
+
     _roundTimer?.cancel();
     _botActionTimer?.cancel();
+    _roundTransitionTimer?.cancel();
 
-    Timer(const Duration(milliseconds: 1800), () {
-      if (state.status != BattleArenaStatus.inDuel) return;
+    // Brief window so both players see the correct/wrong answer.
+    _roundTransitionTimer = Timer(const Duration(milliseconds: 1800), () {
+      _roundTransitioning = false;
+      if (!mounted || state.status != BattleArenaStatus.inDuel) return;
 
       final nextRound = state.currentRoundIndex + 1;
       final totalRounds = state.room?.questions.length ?? 5;
@@ -419,7 +480,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         // Next round
         state = state.copyWith(
           currentRoundIndex: nextRound,
-          remainingSeconds: 15,
+          remainingSeconds: _roundTimeLimit,
           isAnswerSubmitted: false,
           isOpponentAnswered: false,
           clearSelectedAnswer: true,
@@ -437,10 +498,31 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   Future<void> _finishDuel() async {
     _roundTimer?.cancel();
     _botActionTimer?.cancel();
+    _roundTransitionTimer?.cancel();
+
+    final isOnline = state.room != null && !state.opponent.isBot;
+
+    // For online matches, pull the freshest opponent score/answer from
+    // Firestore before deciding the result (our local copy may lag if the
+    // opponent answered on the final round after our timer expired).
+    int oppScore = state.opponent.currentScore;
+    if (isOnline) {
+      try {
+        final freshRoom = await _matchmakingService.getRoom(state.room!.id);
+        if (freshRoom != null) {
+          final isP1 = freshRoom.player1.id == state.localPlayer.id;
+          final freshOpp = isP1 ? freshRoom.player2 : freshRoom.player1;
+          oppScore = freshOpp.currentScore;
+          state = state.copyWith(
+            opponent: state.opponent.copyWith(currentScore: freshOpp.currentScore),
+          );
+        }
+      } catch (_) {}
+    }
+
     _roomSubscription?.cancel();
 
     final localScore = state.localPlayer.currentScore;
-    final oppScore = state.opponent.currentScore;
 
     final isWin = localScore > oppScore;
     final isDraw = localScore == oppScore;
@@ -450,7 +532,16 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       isWin: isWin,
       isDraw: isDraw,
       score: localScore,
+      userId: currentUser?.id,
     );
+
+    // Mark the room completed so the opponent's client + cleanup agree.
+    if (isOnline) {
+      await _matchmakingService.completeRoom(
+        roomId: state.room!.id,
+        winnerId: isWin ? state.localPlayer.id : (isDraw ? null : state.opponent.id),
+      );
+    }
 
     state = state.copyWith(
       status: BattleArenaStatus.completed,
@@ -464,14 +555,19 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
   /// Handles when opponent forfeits or disconnects mid-match
   void _handleOpponentForfeited() async {
+    if (state.status == BattleArenaStatus.completed) return;
+
     _roundTimer?.cancel();
     _botActionTimer?.cancel();
+    _roundTransitionTimer?.cancel();
     _roomSubscription?.cancel();
 
+    const trophyDelta = 25;
     final updatedStats = await BattleGameService.saveMatchResult(
       isWin: true,
       isDraw: false,
       score: state.localPlayer.currentScore,
+      userId: currentUser?.id,
     );
 
     state = state.copyWith(
@@ -479,7 +575,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       isOpponentForfeited: true,
       isWinner: true,
       isDraw: false,
-      trophyDelta: 25,
+      trophyDelta: trophyDelta,
       stats: updatedStats,
       localPlayer: state.localPlayer.copyWith(trophies: updatedStats.trophies),
     );
@@ -489,7 +585,10 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   Future<void> forfeitCurrentMatch() async {
     _roundTimer?.cancel();
     _botActionTimer?.cancel();
+    _roundTransitionTimer?.cancel();
+    _opponentEmoteTimer?.cancel();
     _roomSubscription?.cancel();
+    _roundTransitioning = false;
 
     if (state.status == BattleArenaStatus.inDuel) {
       if (state.room != null && !state.opponent.isBot) {
@@ -502,11 +601,12 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         );
       }
 
-      // Deduct 10 trophies for forfeiting
+      // Deduct trophies for forfeiting (loss recorded)
       await BattleGameService.saveMatchResult(
         isWin: false,
         isDraw: false,
         score: state.localPlayer.currentScore,
+        userId: currentUser?.id,
       );
     }
 
@@ -537,16 +637,21 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   }
 
   void _showOpponentEmote(String emote) {
+    _opponentEmoteTimer?.cancel();
     state = state.copyWith(opponentEmote: emote);
-    Timer(const Duration(seconds: 3), () {
-      state = state.copyWith(opponentEmote: null);
+    _opponentEmoteTimer = Timer(const Duration(seconds: 3), () {
+      if (mounted) state = state.copyWith(opponentEmote: null);
     });
   }
 
   void resetLobby() {
     _roundTimer?.cancel();
     _botActionTimer?.cancel();
+    _roundTransitionTimer?.cancel();
+    _opponentEmoteTimer?.cancel();
     _roomSubscription?.cancel();
+    _roundTransitioning = false;
+    _lastOpponentEmote = null;
     state = state.copyWith(
       status: BattleArenaStatus.idle,
       localPlayer: state.localPlayer.copyWith(
@@ -580,6 +685,8 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _roundTimer?.cancel();
     _botActionTimer?.cancel();
     _emoteDismissTimer?.cancel();
+    _opponentEmoteTimer?.cancel();
+    _roundTransitionTimer?.cancel();
     _roomSubscription?.cancel();
     super.dispose();
   }

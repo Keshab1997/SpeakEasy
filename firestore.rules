@@ -385,6 +385,24 @@ service cloud.firestore {
             || request.resource.data.player2.id == request.auth.uid);
     }
 
+    // Player identity fields, when present in the update, must not change.
+    // (Partial updates — e.g. just 'player1.roundAnswers.0' — don't carry an
+    //  'id' key, so we must guard the access with 'in' to avoid a rule error.)
+    function battlePlayersUnchanged() {
+      return (!('player1' in request.resource.data)
+              || !('id' in request.resource.data.player1)
+              || request.resource.data.player1.id == resource.data.player1.id)
+        && (!('player2' in request.resource.data)
+              || !('id' in request.resource.data.player2)
+              || request.resource.data.player2.id == resource.data.player2.id);
+    }
+
+    // Questions are immutable after creation (client can only patch state).
+    function battleQuestionsUnchanged() {
+      return !('questions' in request.resource.data)
+        || request.resource.data.questions == resource.data.questions;
+    }
+
     match /battle_rooms/{roomId} {
       allow read: if isBattleParticipant() || isAdmin();
       allow create: if isBattleParticipantOnCreate()
@@ -392,12 +410,11 @@ service cloud.firestore {
         && request.resource.data.player1.id is string
         && request.resource.data.player2.id is string
         && request.resource.data.questions is list;
-      // Participants can update scores/emotes/rounds/forfeit/completion.
-      // Questions are immutable after creation; player ids must not change.
+      // Participants can update scores/answers/emotes/rounds/forfeit/completion.
+      // Questions & player identities are immutable after creation.
       allow update: if isBattleParticipant()
-        && request.resource.data.player1.id == resource.data.player1.id
-        && request.resource.data.player2.id == resource.data.player2.id
-        && request.resource.data.questions == resource.data.questions;
+        && battlePlayersUnchanged()
+        && battleQuestionsUnchanged();
       allow delete: if isAdmin();
     }
 

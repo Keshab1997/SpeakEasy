@@ -29,7 +29,7 @@ class BattleGameService {
             correctAnswer: (map['correctAnswer'] as num?)?.toInt() ?? 0,
             explanation: map['explanation'] ?? '',
             category: map['category'] ?? map['type'] ?? 'grammar',
-            timeLimit: 15, // Standard 15 seconds per round
+            timeLimit: (map['timeLimit'] as num?)?.toInt() ?? 15,
           );
         }).toList();
       } catch (e) {
@@ -71,12 +71,18 @@ class BattleGameService {
     return selected;
   }
 
-  /// Calculates round score with speed bonus
-  static int calculateRoundScore({required bool isCorrect, required int timeTakenSeconds}) {
+  /// Calculates round score with speed bonus.
+  /// Speed bonus scales with the question's own time limit (default 15s):
+  /// answering instantly gives ~150, answering at the buzzer gives 100.
+  static int calculateRoundScore({
+    required bool isCorrect,
+    required int timeTakenSeconds,
+    int roundTimeLimit = 15,
+  }) {
     if (!isCorrect) return 0;
-    // Base 100 points
-    final clampedTime = timeTakenSeconds.clamp(0, 15);
-    final speedBonus = ((15 - clampedTime) * 3.33).round(); // 0 to 50
+    final limit = roundTimeLimit > 0 ? roundTimeLimit : 15;
+    final clampedTime = timeTakenSeconds.clamp(0, limit);
+    final speedBonus = ((limit - clampedTime) * (50 / limit)).round(); // 0 to 50
     return 100 + speedBonus; // 100 to 150 points
   }
 

@@ -122,7 +122,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: BattleTimerBar(
                               remainingSeconds: battleState.remainingSeconds,
-                              totalSeconds: 15,
+                              totalSeconds: question.timeLimit,
                             ),
                           ),
                           const SizedBox(height: 16),
@@ -524,6 +524,9 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
     final isSelected = battleState.selectedAnswerIndex == index;
     final isAnswerSubmitted = battleState.isAnswerSubmitted;
     final isCorrectOption = index == question.correctAnswer;
+    // The opponent's chosen option (revealed with a small rival marker once
+    // the round settles — only meaningful against a live player).
+    final isOpponentChoice = battleState.opponentAnswerIndex == index;
 
     Color borderColor = isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0);
     Color bgColor = isDark ? const Color(0xFF1E293B) : Colors.white;
@@ -619,7 +622,29 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
                     ),
                   ),
                 ),
-                if (trailingIcon != null) trailingIcon,
+                // Show which option the opponent picked (after the round is
+                // revealed) — a small rival marker that never hides the
+                // correct/wrong answer colours.
+                if (trailingIcon == null && isOpponentChoice && battleState.isOpponentAnswered)
+                  const Padding(
+                    padding: EdgeInsets.only(left: 6),
+                    child: Tooltip(
+                      message: "Opponent's choice",
+                      child: Icon(Icons.person_rounded, size: 20, color: Color(0xFFEF4444)),
+                    ),
+                  )
+                else if (trailingIcon != null)
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (isOpponentChoice && battleState.isOpponentAnswered)
+                        const Padding(
+                          padding: EdgeInsets.only(right: 6),
+                          child: Icon(Icons.person_rounded, size: 18, color: Color(0xFFEF4444)),
+                        ),
+                      trailingIcon,
+                    ],
+                  ),
               ],
             ),
           ),

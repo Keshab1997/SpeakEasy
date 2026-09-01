@@ -129,6 +129,20 @@ class BattlePresenceService {
     return docRef.id;
   }
 
+  /// Listen for challenges SENT by the current user (so the sender knows
+  /// when the receiver accepts/rejects and can join the room).
+  Stream<List<BattleChallenge>> listenToOutgoingChallenges(String currentUserId) {
+    return _firestore
+        .collection(_challengesCollection)
+        .where('fromUserId', isEqualTo: currentUserId)
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs
+          .map((doc) => BattleChallenge.fromMap(doc.data(), doc.id))
+          .toList();
+    });
+  }
+
   /// Listen for incoming challenges for current user
   Stream<List<BattleChallenge>> listenToIncomingChallenges(String currentUserId) {
     return _firestore

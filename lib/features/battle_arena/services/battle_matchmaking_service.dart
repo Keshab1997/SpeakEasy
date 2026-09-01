@@ -163,6 +163,22 @@ class BattleMatchmakingService {
     );
   }
 
+  /// Fetches a single room by id (used by the challenge SENDER to join
+  /// the room the receiver created on accept).
+  Future<BattleRoom?> getRoom(String roomId) async {
+    if (roomId.startsWith('local_bot_room_')) return null;
+    final doc = await _firestore.collection(_roomsCollection).doc(roomId).get();
+    if (!doc.exists || doc.data() == null) return null;
+    return BattleRoom.fromMap(doc.data()!, doc.id);
+  }
+
+  /// Deletes a challenge doc after it was accepted/rejected (housekeeping).
+  Future<void> deleteChallenge(String challengeId) async {
+    try {
+      await _firestore.collection('battle_challenges').doc(challengeId).delete();
+    } catch (_) {}
+  }
+
   /// Listen to real-time room updates
   Stream<BattleRoom?> streamRoom(String roomId) {
     if (roomId.startsWith('local_bot_room_')) {
@@ -174,7 +190,9 @@ class BattleMatchmakingService {
     });
   }
 
-  /// Submit answer and score in Firestore
+  /// Submit answer and score in Firestore.
+  /// Answer is stored per-round (`roundAnswers.{roundIndex}`) so a stale
+  /// answer from a previous round can never show up on the new question.
   Future<void> submitAnswer({
     required String roomId,
     required String playerId,
@@ -187,10 +205,26 @@ class BattleMatchmakingService {
 
     final fieldPrefix = isPlayer1 ? 'player1' : 'player2';
     await _firestore.collection(_roomsCollection).doc(roomId).update({
-      '$fieldPrefix.selectedAnswer': selectedAnswer,
+      // roundAnswers keyed by round index for the opponent to read safely
+      '$fieldPrefix.roundAnswers.$roundIndex': selectedAnswer,
       '$fieldPrefix.currentScore': newScore,
       '$fieldPrefix.currentRound': roundIndex,
     });
+  }
+
+  /// Marks the room completed with the winner so both clients and any
+  /// future cleanup logic agree on the final state.
+  Future<void> completeRoom({
+    required String roomId,
+    required String? winnerId,
+  }) async {
+    if (roomId.startsWith('local_bot_room_')) return;
+    try {
+      await _firestore.collection(_roomsCollection).doc(roomId).update({
+        'status': 'completed',
+        'winnerId': winnerId,
+      });
+    } catch (_) {}
   }
 
   /// Send in-match emote
