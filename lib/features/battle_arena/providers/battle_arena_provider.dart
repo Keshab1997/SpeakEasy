@@ -5,6 +5,7 @@ import '../../../providers/auth_provider.dart';
 import '../models/battle_models.dart';
 import '../services/battle_bot_simulator.dart';
 import '../services/battle_game_service.dart';
+import '../services/battle_history_service.dart';
 import '../services/battle_matchmaking_service.dart';
 import '../services/battle_presence_service.dart';
 
@@ -135,6 +136,10 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   /// round from being advanced twice (answer + timer expiry racing).
   bool _roundTransitioning = false;
 
+  /// Number of rounds the local player answered correctly this match
+  /// (used for the local history + flawless badge).
+  int _localCorrectRounds = 0;
+
   /// Seconds for the current question (questions may define their own limit).
   int get _roundTimeLimit => state.currentQuestion?.timeLimit ?? 15;
 
@@ -170,6 +175,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
   /// Starts quick matchmaking
   Future<void> startQuickMatch() async {
+    _localCorrectRounds = 0;
     final freshLocal = state.localPlayer.copyWith(
       currentScore: 0,
       currentRound: 0,
@@ -245,6 +251,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
   /// Starts a match from a direct challenge
   void startFromRoom(BattleRoom room) {
+    _localCorrectRounds = 0;
     final isPlayer1 = room.player1.id == state.localPlayer.id;
     final opp = isPlayer1 ? room.player2 : room.player1;
 
@@ -412,6 +419,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
     final timeTaken = _roundTimeLimit - state.remainingSeconds;
     final isCorrect = answerIndex == question.correctAnswer;
+    if (isCorrect) _localCorrectRounds++;
     final roundScore = BattleGameService.calculateRoundScore(
       isCorrect: isCorrect,
       timeTakenSeconds: timeTaken,
@@ -553,6 +561,19 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     }
 
     _presenceService.setInBattle(state.localPlayer.id, false);
+
+    // Save to local history (offline, zero Firestore cost).
+    unawaited(BattleHistoryService().addRecord(BattleHistoryRecord(
+      opponentName: state.opponent.name,
+      isBot: state.opponent.isBot,
+      myScore: localScore,
+      opponentScore: oppScore,
+      result: isDraw ? 'draw' : (isWin ? 'win' : 'loss'),
+      trophyDelta: trophyDelta,
+      playedAt: DateTime.now(),
+      perfectRounds: _localCorrectRounds,
+    )));
+
     state = state.copyWith(
       status: BattleArenaStatus.completed,
       stats: updatedStats,

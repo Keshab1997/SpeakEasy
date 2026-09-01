@@ -19,7 +19,10 @@ class LivePlayerCard extends StatelessWidget {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    return Container(
+    return GestureDetector(
+      // Tap the card (not the Duel button) to see the player's profile/stats.
+      onTap: () => _showProfile(context, user, isDark),
+      child: Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
@@ -157,6 +160,84 @@ class LivePlayerCard extends StatelessWidget {
           ),
         ],
       ),
+      ),
+    );
+  }
+
+  void _showProfile(BuildContext context, BattlePresenceUser user, bool isDark) {
+    String division(int t) {
+      if (t >= 1500) return '💎 Grandmaster';
+      if (t >= 800) return '🥇 Master';
+      if (t >= 300) return '🥈 Challenger';
+      return '🥉 Novice';
+    }
+
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (ctx) {
+        final played = user.totalMatches;
+        return Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircleAvatar(
+                radius: 36,
+                backgroundColor: AppColors.primary.withValues(alpha: 0.12),
+                backgroundImage:
+                    user.photoUrl.isNotEmpty ? NetworkImage(user.photoUrl) : null,
+                child: user.photoUrl.isEmpty
+                    ? Text(user.name.isNotEmpty ? user.name[0].toUpperCase() : '?',
+                        style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold))
+                    : null,
+              ),
+              const SizedBox(height: 10),
+              Text(user.name,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text(division(user.trophies),
+                  style: const TextStyle(color: Color(0xFFF59E0B), fontWeight: FontWeight.w600)),
+              const SizedBox(height: 18),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _stat('🏆 Trophies', '${user.trophies}'),
+                  _stat('⚔️ Battles', '$played'),
+                  _stat('🔥 Streak', '${user.winStreak}'),
+                ],
+              ),
+              const SizedBox(height: 12),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _stat('✅ Wins', '${user.wins}', color: const Color(0xFF10B981)),
+                  _stat('❌ Losses', '${user.losses}', color: const Color(0xFFEF4444)),
+                  _stat('📈 Win Rate',
+                      played == 0 ? '—' : '${user.winRate.toStringAsFixed(0)}%'),
+                ],
+              ),
+              const SizedBox(height: 16),
+              if (played == 0)
+                const Text('No ranked online battles yet',
+                    style: TextStyle(color: Colors.grey, fontSize: 12)),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _stat(String label, String value, {Color? color}) {
+    return Column(
+      children: [
+        Text(value,
+            style: TextStyle(
+                fontSize: 20, fontWeight: FontWeight.w900, color: color)),
+        const SizedBox(height: 2),
+        Text(label, style: const TextStyle(fontSize: 11, color: Colors.grey)),
+      ],
     );
   }
 }

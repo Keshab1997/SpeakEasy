@@ -290,6 +290,18 @@ service cloud.firestore {
     }
 
     // ═══════════════════════════════════════════════
+    //  BATTLE ARENA — LEADERBOARD
+    //  Structure: battle_leaderboard/{userId}
+    //  Written ONLY by the server (Cloud Functions / Admin SDK bypasses rules).
+    //  Authenticated users can read the rankings.
+    // ═══════════════════════════════════════════════
+
+    match /battle_leaderboard/{userId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if false; // server-only
+    }
+
+    // ═══════════════════════════════════════════════
     //  BATTLE ARENA — PRESENCE
     //  Structure: battle_presence/{userId}
     //  Each user writes only their own presence doc (heartbeat every 45s).

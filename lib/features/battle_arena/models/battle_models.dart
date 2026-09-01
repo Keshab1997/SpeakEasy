@@ -282,6 +282,12 @@ class BattlePresenceUser {
   final bool isOnline;
   final DateTime lastActive;
   final bool isInBattle;
+  // Career stats (synced from the server Cloud Function).
+  final int wins;
+  final int losses;
+  final int draws;
+  final int totalMatches;
+  final int winStreak;
 
   const BattlePresenceUser({
     required this.id,
@@ -291,7 +297,14 @@ class BattlePresenceUser {
     this.isOnline = true,
     required this.lastActive,
     this.isInBattle = false,
+    this.wins = 0,
+    this.losses = 0,
+    this.draws = 0,
+    this.totalMatches = 0,
+    this.winStreak = 0,
   });
+
+  double get winRate => totalMatches == 0 ? 0 : (wins / totalMatches) * 100;
 
   Map<String, dynamic> toMap() {
     return {
@@ -314,6 +327,11 @@ class BattlePresenceUser {
       isOnline: map['isOnline'] ?? false,
       lastActive: (map['lastActive'] as Timestamp?)?.toDate() ?? DateTime.now(),
       isInBattle: map['isInBattle'] ?? false,
+      wins: (map['wins'] as num?)?.toInt() ?? 0,
+      losses: (map['losses'] as num?)?.toInt() ?? 0,
+      draws: (map['draws'] as num?)?.toInt() ?? 0,
+      totalMatches: (map['totalMatches'] as num?)?.toInt() ?? 0,
+      winStreak: (map['winStreak'] as num?)?.toInt() ?? 0,
     );
   }
 }

@@ -6,6 +6,7 @@ import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';
 import '../widgets/live_player_card.dart';
 import '../widgets/radar_search_dialog.dart';
+import 'battle_leaderboard_screen.dart';
 
 class BattleLobbyScreen extends ConsumerStatefulWidget {
   const BattleLobbyScreen({super.key});
@@ -71,6 +72,19 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
+        actions: [
+          IconButton(
+            tooltip: 'Leaderboard & Stats',
+            icon: const Icon(Icons.leaderboard_rounded, color: Color(0xFFF59E0B)),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const BattleLeaderboardScreen(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Stack(
         children: [
