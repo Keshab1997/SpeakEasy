@@ -40,7 +40,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    ref.watch(battleArenaProvider);
+    final battleState = ref.watch(battleArenaProvider);
     final onlineUsersAsync = ref.watch(onlineBattleUsersProvider);
 
     // Forfeit/exit from a duel returns here — notify the trophy loss.

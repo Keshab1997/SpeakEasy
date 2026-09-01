@@ -10,7 +10,6 @@ import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';
 import '../screens/battle_arena_screen.dart';
 import '../services/battle_matchmaking_service.dart';
-import '../services/battle_presence_service.dart';
 
 /// Mounted ONCE near the app root. Makes 1v1 battle challenges work from
 /// ANY screen (Home, lobby, etc.):
@@ -34,6 +33,22 @@ class _GlobalBattleChallengeGateState
   final Set<String> _handledOutgoing = {};
   bool _arenaOpen = false;
   bool _sheetOpen = false;
+
+  /// Shows a snackbar from anywhere via the root navigator (no BuildContext
+  /// is held across an await, so this is safe to call from catch blocks).
+  void _showGlobalSnack(String message, {Color color = const Color(0xFFEF4444)}) {
+    final ctx = appNavigatorKey.currentContext;
+    if (ctx == null) return;
+    final messenger = ScaffoldMessenger.of(ctx);
+    messenger.hideCurrentSnackBar();
+    messenger.showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: color,
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,19 +104,10 @@ class _GlobalBattleChallengeGateState
         } else if (challenge.status == 'rejected') {
           _handledOutgoing.add(challenge.id);
           unawaited(BattleMatchmakingService().deleteChallenge(challenge.id));
-          final ctx = appNavigatorKey.currentContext;
-          if (ctx != null) {
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              ScaffoldMessenger.of(ctx).showSnackBar(
-                const SnackBar(
-                  content: Text(
-                      'The player declined your challenge. Try another warrior! 🤺'),
-                  backgroundColor: Color(0xFFEF4444),
-                  behavior: SnackBarBehavior.floating,
-                ),
-              );
-            });
-          }
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _showGlobalSnack(
+                'The player declined your challenge. Try another warrior! 🤺');
+          });
         }
       }
     });
@@ -125,12 +131,7 @@ class _GlobalBattleChallengeGateState
       ref.read(battleArenaProvider.notifier).startFromRoom(room);
       unawaited(matchmaking.deleteChallenge(challengeId));
     } catch (_) {
-      final ctx = appNavigatorKey.currentContext;
-      if (ctx != null) {
-        ScaffoldMessenger.of(ctx).showSnackBar(
-          const SnackBar(content: Text('Could not join the duel. Try again.')),
-        );
-      }
+      _showGlobalSnack('Could not join the duel. Try again.');
     }
   }
 
@@ -259,12 +260,7 @@ class _GlobalBattleChallengeGateState
       // pushes the arena screen.
       ref.read(battleArenaProvider.notifier).startFromRoom(room);
     } catch (_) {
-      final ctx = appNavigatorKey.currentContext;
-      if (ctx != null) {
-        ScaffoldMessenger.of(ctx).showSnackBar(
-          const SnackBar(content: Text('Could not start the duel. Try again.')),
-        );
-      }
+      _showGlobalSnack('Could not start the duel. Try again.');
     }
   }
 }
