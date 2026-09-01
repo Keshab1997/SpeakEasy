@@ -636,10 +636,13 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
                     ),
                   ),
                 ),
-                // Show which option the opponent picked (after the round is
-                // revealed) — a small rival marker that never hides the
-                // correct/wrong answer colours.
-                if (trailingIcon == null && isOpponentChoice && battleState.isOpponentAnswered)
+                // Show which option the opponent picked ONLY AFTER I have
+                // answered myself — revealing it earlier would let me copy
+                // their choice (fair play).
+                if (trailingIcon == null &&
+                    isOpponentChoice &&
+                    battleState.isOpponentAnswered &&
+                    battleState.isAnswerSubmitted)
                   const Padding(
                     padding: EdgeInsets.only(left: 6),
                     child: Tooltip(
@@ -651,7 +654,9 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (isOpponentChoice && battleState.isOpponentAnswered)
+                      if (isOpponentChoice &&
+                          battleState.isOpponentAnswered &&
+                          battleState.isAnswerSubmitted)
                         const Padding(
                           padding: EdgeInsets.only(right: 6),
                           child: Icon(Icons.person_rounded, size: 18, color: Color(0xFFEF4444)),
