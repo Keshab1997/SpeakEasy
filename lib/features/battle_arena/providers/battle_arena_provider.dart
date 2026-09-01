@@ -132,12 +132,14 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
               name: currentUser?.name ?? 'Player',
               photoUrl: currentUser?.photoUrl ?? '',
               trophies: 100,
+              currentScore: 0,
             ),
             opponent: const BattlePlayer(
               id: 'opponent',
               name: 'Opponent',
               photoUrl: '',
               trophies: 100,
+              currentScore: 0,
             ),
           ),
         ) {
@@ -152,53 +154,65 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     );
   }
 
-  /// Returns a clean copy of [player] for the start of a new match.
-  /// Fixes the rematch bug where the score from the previous match
-  /// carried over instead of restarting from 0 pts.
-  BattlePlayer _resetPlayerForNewMatch(BattlePlayer player) {
-    return player.copyWith(
-      currentScore: 0,
-      currentRound: 0,
-      timeTakenSeconds: 0,
-      isReady: true,
-      isForfeited: false,
-      clearSelectedAnswer: true,
-    );
-  }
-
   /// Starts quick matchmaking
   Future<void> startQuickMatch() async {
-    // Reset any leftover state from the previous match (rematch fix):
-    // score must start from 0 and the Firestore room must be created clean.
-    final freshPlayer = _resetPlayerForNewMatch(state.localPlayer);
+    final freshLocal = state.localPlayer.copyWith(
+      currentScore: 0,
+      currentRound: 0,
+      selectedAnswer: null,
+      isForfeited: false,
+      timeTakenSeconds: 0,
+    );
 
     state = state.copyWith(
       status: BattleArenaStatus.searching,
       searchStatusMessage: 'Initializing radar scanner... 📡',
-      localPlayer: freshPlayer,
+      localPlayer: freshLocal,
+      opponent: const BattlePlayer(id: 'opponent', name: 'Opponent', trophies: 100, currentScore: 0),
+      currentRoundIndex: 0,
+      remainingSeconds: 15,
+      isAnswerSubmitted: false,
+      isOpponentAnswered: false,
+      clearSelectedAnswer: true,
+      clearOpponentAnswer: true,
+      isWinner: false,
+      isDraw: false,
+      trophyDelta: 0,
+      isOpponentForfeited: false,
     );
 
     try {
       final room = await _matchmakingService.findMatch(
-        localPlayer: freshPlayer,
+        localPlayer: freshLocal,
         onProgress: (msg) {
           state = state.copyWith(searchStatusMessage: msg);
         },
       );
 
-      final isPlayer1 = room.player1.id == state.localPlayer.id;
+      final isPlayer1 = room.player1.id == freshLocal.id;
       final opp = isPlayer1 ? room.player2 : room.player1;
 
       state = state.copyWith(
         status: BattleArenaStatus.inDuel,
         room: room,
-        opponent: opp,
+        localPlayer: freshLocal,
+        opponent: opp.copyWith(
+          currentScore: 0,
+          currentRound: 0,
+          selectedAnswer: null,
+          isForfeited: false,
+          timeTakenSeconds: 0,
+        ),
         currentRoundIndex: 0,
         remainingSeconds: 15,
         isAnswerSubmitted: false,
         isOpponentAnswered: false,
         clearSelectedAnswer: true,
         clearOpponentAnswer: true,
+        isWinner: false,
+        isDraw: false,
+        trophyDelta: 0,
+        isOpponentForfeited: false,
       );
 
       // Listen to real room if online
@@ -223,14 +237,30 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     state = state.copyWith(
       status: BattleArenaStatus.inDuel,
       room: room,
-      opponent: opp,
-      localPlayer: _resetPlayerForNewMatch(state.localPlayer), // rematch fix: start from 0 pts
+      localPlayer: state.localPlayer.copyWith(
+        currentScore: 0,
+        currentRound: 0,
+        selectedAnswer: null,
+        isForfeited: false,
+        timeTakenSeconds: 0,
+      ),
+      opponent: opp.copyWith(
+        currentScore: 0,
+        currentRound: 0,
+        selectedAnswer: null,
+        isForfeited: false,
+        timeTakenSeconds: 0,
+      ),
       currentRoundIndex: 0,
       remainingSeconds: 15,
       isAnswerSubmitted: false,
       isOpponentAnswered: false,
       clearSelectedAnswer: true,
       clearOpponentAnswer: true,
+      isWinner: false,
+      isDraw: false,
+      trophyDelta: 0,
+      isOpponentForfeited: false,
     );
 
     if (!opp.isBot) {
@@ -310,10 +340,8 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         opponent: state.opponent.copyWith(currentScore: newBotScore),
       );
 
-      // Bot maybe sends emote (occasional + cooldown — no spam after every question)
-      final botEmote = BattleBotSimulator.maybeGenerateEmote(
-        roundNumber: state.currentRoundIndex + 1,
-      );
+      // Bot maybe sends emote
+      final botEmote = BattleBotSimulator.maybeGenerateEmote();
       if (botEmote != null) {
         _showOpponentEmote(botEmote);
       }
@@ -422,7 +450,6 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       isWin: isWin,
       isDraw: isDraw,
       score: localScore,
-      userId: currentUser?.id ?? state.localPlayer.id,
     );
 
     state = state.copyWith(
@@ -445,7 +472,6 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       isWin: true,
       isDraw: false,
       score: state.localPlayer.currentScore,
-      userId: currentUser?.id ?? state.localPlayer.id,
     );
 
     state = state.copyWith(
@@ -481,11 +507,14 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         isWin: false,
         isDraw: false,
         score: state.localPlayer.currentScore,
-        userId: currentUser?.id ?? state.localPlayer.id,
       );
     }
 
-    state = state.copyWith(status: BattleArenaStatus.idle);
+    state = state.copyWith(
+      status: BattleArenaStatus.idle,
+      localPlayer: state.localPlayer.copyWith(currentScore: 0, currentRound: 0, selectedAnswer: null),
+      opponent: state.opponent.copyWith(currentScore: 0, currentRound: 0, selectedAnswer: null),
+    );
     await _initLocalStats();
   }
 
@@ -520,11 +549,28 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _roomSubscription?.cancel();
     state = state.copyWith(
       status: BattleArenaStatus.idle,
+      localPlayer: state.localPlayer.copyWith(
+        currentScore: 0,
+        currentRound: 0,
+        selectedAnswer: null,
+        isForfeited: false,
+        timeTakenSeconds: 0,
+      ),
+      opponent: state.opponent.copyWith(
+        currentScore: 0,
+        currentRound: 0,
+        selectedAnswer: null,
+        isForfeited: false,
+        timeTakenSeconds: 0,
+      ),
       isAnswerSubmitted: false,
       isOpponentAnswered: false,
       clearSelectedAnswer: true,
       clearOpponentAnswer: true,
       isOpponentForfeited: false,
+      isWinner: false,
+      isDraw: false,
+      trophyDelta: 0,
     );
     _initLocalStats();
   }
