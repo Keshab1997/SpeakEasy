@@ -152,16 +152,35 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     );
   }
 
+  /// Returns a clean copy of [player] for the start of a new match.
+  /// Fixes the rematch bug where the score from the previous match
+  /// carried over instead of restarting from 0 pts.
+  BattlePlayer _resetPlayerForNewMatch(BattlePlayer player) {
+    return player.copyWith(
+      currentScore: 0,
+      currentRound: 0,
+      timeTakenSeconds: 0,
+      isReady: true,
+      isForfeited: false,
+      clearSelectedAnswer: true,
+    );
+  }
+
   /// Starts quick matchmaking
   Future<void> startQuickMatch() async {
+    // Reset any leftover state from the previous match (rematch fix):
+    // score must start from 0 and the Firestore room must be created clean.
+    final freshPlayer = _resetPlayerForNewMatch(state.localPlayer);
+
     state = state.copyWith(
       status: BattleArenaStatus.searching,
       searchStatusMessage: 'Initializing radar scanner... 📡',
+      localPlayer: freshPlayer,
     );
 
     try {
       final room = await _matchmakingService.findMatch(
-        localPlayer: state.localPlayer,
+        localPlayer: freshPlayer,
         onProgress: (msg) {
           state = state.copyWith(searchStatusMessage: msg);
         },
@@ -205,6 +224,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       status: BattleArenaStatus.inDuel,
       room: room,
       opponent: opp,
+      localPlayer: _resetPlayerForNewMatch(state.localPlayer), // rematch fix: start from 0 pts
       currentRoundIndex: 0,
       remainingSeconds: 15,
       isAnswerSubmitted: false,

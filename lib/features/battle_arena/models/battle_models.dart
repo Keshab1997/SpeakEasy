@@ -74,6 +74,7 @@ class BattlePlayer {
     bool? isForfeited,
     int? selectedAnswer,
     int? timeTakenSeconds,
+    bool clearSelectedAnswer = false,
   }) {
     return BattlePlayer(
       id: id ?? this.id,
@@ -85,7 +86,7 @@ class BattlePlayer {
       isReady: isReady ?? this.isReady,
       isBot: isBot ?? this.isBot,
       isForfeited: isForfeited ?? this.isForfeited,
-      selectedAnswer: selectedAnswer ?? this.selectedAnswer,
+      selectedAnswer: clearSelectedAnswer ? null : (selectedAnswer ?? this.selectedAnswer),
       timeTakenSeconds: timeTakenSeconds ?? this.timeTakenSeconds,
     );
   }
