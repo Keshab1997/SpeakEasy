@@ -56,6 +56,19 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
           MaterialPageRoute(builder: (_) => const BattleArenaScreen()),
         );
       }
+      // Returned to lobby right after a duel (forfeit/exit) → notify loss.
+      if (previous != null &&
+          previous.status == BattleArenaStatus.inDuel &&
+          next.status == BattleArenaStatus.idle &&
+          mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('You surrendered the battle — 10 Trophies lost. ⚔️'),
+            backgroundColor: Color(0xFFEF4444),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
     });
 
     // Listen to incoming challenges

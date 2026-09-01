@@ -8,6 +8,7 @@ class BattlePresenceService {
   Timer? _heartbeatTimer;
   String? _lastName;
   String? _lastPhotoUrl;
+  bool _isInBattle = false;
 
   static const String _presenceCollection = 'battle_presence';
   static const String _challengesCollection = 'battle_challenges';
@@ -50,7 +51,7 @@ class BattlePresenceService {
         photoUrl: photoUrl,
         trophies: latestTrophies,
         isOnline: true,
-        isInBattle: false,
+        isInBattle: _isInBattle,
       );
     });
   }
@@ -77,6 +78,20 @@ class BattlePresenceService {
     try {
       await _firestore.collection(_presenceCollection).doc(userId).set({
         'isOnline': false,
+        'isInBattle': false,
+        'lastActive': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
+    } catch (_) {}
+  }
+
+  /// Marks whether the user is currently inside a duel, so others don't
+  /// challenge someone who is busy fighting.
+  Future<void> setInBattle(String userId, bool inBattle) async {
+    _isInBattle = inBattle;
+    if (userId.isEmpty || userId.startsWith('guest_')) return;
+    try {
+      await _firestore.collection(_presenceCollection).doc(userId).set({
+        'isInBattle': inBattle,
         'lastActive': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
     } catch (_) {}

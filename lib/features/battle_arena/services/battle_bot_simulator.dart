@@ -24,7 +24,8 @@ class BattleBotSimulator {
     _lastEmoteRound = null;
 
     final profile = _botProfiles[_rng.nextInt(_botProfiles.length)];
-    final trophyDelta = _rng.nextInt(60) - 30; // +/- 30 trophies
+    // Keep the bot within ~30 trophies of the player so the matchup is fair.
+    final trophyDelta = _rng.nextInt(61) - 30; // -30..+30
     final botTrophies = max(50, userTrophies + trophyDelta);
 
     return BattlePlayer(
@@ -39,27 +40,43 @@ class BattleBotSimulator {
     );
   }
 
-  /// Calculates a bot answer choice and response time
-  /// - delay: 2.5 to 6.5 seconds
-  /// - accuracy: 75% correct
+  /// Bot accuracy rises with the player's trophy band, so low-trophy
+  /// learners get a forgiving bot and veterans get a real challenge.
+  static double accuracyForTrophies(int userTrophies) {
+    if (userTrophies >= 1500) return 0.92; // Grandmaster
+    if (userTrophies >= 800) return 0.85;  // Master
+    if (userTrophies >= 300) return 0.75;  // Challenger
+    return 0.60;                           // Novice
+  }
+
+  /// Reaction speed (seconds) — higher-trophy players meet a faster bot.
+  static int reactionSecondsForTrophies(int userTrophies) {
+    if (userTrophies >= 800) {
+      return 2 + _rng.nextInt(4); // 2–5s (fast)
+    }
+    return 3 + _rng.nextInt(5);   // 3–7s
+  }
+
+  /// Calculates a bot answer choice and response time, scaled to the
+  /// player's trophy level.
   static BotAnswerDecision decideAnswer({
     required BattleQuestion question,
     required int roundNumber,
+    int userTrophies = 100,
   }) {
-    // 75% accuracy
-    final isCorrect = _rng.nextDouble() < 0.75;
+    final accuracy = accuracyForTrophies(userTrophies);
+    final isCorrect = _rng.nextDouble() < accuracy;
     final int chosenAnswer;
 
     if (isCorrect) {
       chosenAnswer = question.correctAnswer;
     } else {
-      // Pick one of the 3 incorrect options
+      // Pick one of the incorrect options
       final wrongOptions = [0, 1, 2, 3]..remove(question.correctAnswer);
       chosenAnswer = wrongOptions[_rng.nextInt(wrongOptions.length)];
     }
 
-    // Reaction time between 3 and 7 seconds
-    final int reactionSeconds = 3 + _rng.nextInt(5);
+    final int reactionSeconds = reactionSecondsForTrophies(userTrophies);
 
     return BotAnswerDecision(
       selectedAnswer: chosenAnswer,

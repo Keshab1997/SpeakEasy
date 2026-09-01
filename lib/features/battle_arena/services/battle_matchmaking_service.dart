@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import '../models/battle_models.dart';
 import 'battle_bot_simulator.dart';
 import 'battle_game_service.dart';
@@ -120,8 +121,10 @@ class BattleMatchmakingService {
       if (matchedRoom != null) {
         return matchedRoom;
       }
-    } catch (_) {
-      // If network/firestore error happens, gracefully fall back to Bot match
+    } catch (e, st) {
+      // Network/Firestore error — fall back to Bot, but log for diagnostics.
+      debugPrint('⚠️ Matchmaking failed, falling back to bot: $e');
+      debugPrintStack(stackTrace: st);
     }
 
     // 3. Fallback to Smart Bot match
@@ -203,13 +206,17 @@ class BattleMatchmakingService {
   }) async {
     if (roomId.startsWith('local_bot_room_')) return;
 
-    final fieldPrefix = isPlayer1 ? 'player1' : 'player2';
-    await _firestore.collection(_roomsCollection).doc(roomId).update({
-      // roundAnswers keyed by round index for the opponent to read safely
-      '$fieldPrefix.roundAnswers.$roundIndex': selectedAnswer,
-      '$fieldPrefix.currentScore': newScore,
-      '$fieldPrefix.currentRound': roundIndex,
-    });
+    try {
+      final fieldPrefix = isPlayer1 ? 'player1' : 'player2';
+      await _firestore.collection(_roomsCollection).doc(roomId).update({
+        // roundAnswers keyed by round index for the opponent to read safely
+        '$fieldPrefix.roundAnswers.$roundIndex': selectedAnswer,
+        '$fieldPrefix.currentScore': newScore,
+        '$fieldPrefix.currentRound': roundIndex,
+      });
+    } catch (e) {
+      debugPrint('⚠️ submitAnswer failed for room $roomId: $e');
+    }
   }
 
   /// Marks the room completed with the winner so both clients and any
@@ -224,7 +231,9 @@ class BattleMatchmakingService {
         'status': 'completed',
         'winnerId': winnerId,
       });
-    } catch (_) {}
+    } catch (e) {
+      debugPrint('⚠️ completeRoom failed for room $roomId: $e');
+    }
   }
 
   /// Send in-match emote
@@ -234,10 +243,14 @@ class BattleMatchmakingService {
     required String emote,
   }) async {
     if (roomId.startsWith('local_bot_room_')) return;
-    await _firestore.collection(_roomsCollection).doc(roomId).update({
-      'activeEmote': emote,
-      'emoteSenderId': senderId,
-    });
+    try {
+      await _firestore.collection(_roomsCollection).doc(roomId).update({
+        'activeEmote': emote,
+        'emoteSenderId': senderId,
+      });
+    } catch (e) {
+      debugPrint('⚠️ sendEmote failed for room $roomId: $e');
+    }
   }
 
   /// Forfeits match: marks exiting player as forfeited and declares opponent the winner
@@ -255,6 +268,8 @@ class BattleMatchmakingService {
         'winnerId': winnerUserId,
         '$fieldPrefix.isForfeited': true,
       });
-    } catch (_) {}
+    } catch (e) {
+      debugPrint('⚠️ forfeitMatch failed for room $roomId: $e');
+    }
   }
 }

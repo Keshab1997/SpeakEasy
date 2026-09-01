@@ -60,7 +60,9 @@ class LivePlayerCard extends StatelessWidget {
                   width: 12,
                   height: 12,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF10B981), // Emerald Green
+                    color: user.isInBattle
+                        ? const Color(0xFFF59E0B) // Amber = in a duel
+                        : const Color(0xFF10B981), // Green = online
                     shape: BoxShape.circle,
                     border: Border.all(
                       color: isDark ? const Color(0xFF1E293B) : Colors.white,
@@ -68,7 +70,10 @@ class LivePlayerCard extends StatelessWidget {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF10B981).withValues(alpha: 0.6),
+                        color: (user.isInBattle
+                                ? const Color(0xFFF59E0B)
+                                : const Color(0xFF10B981))
+                            .withValues(alpha: 0.6),
                         blurRadius: 4,
                         spreadRadius: 1,
                       ),
@@ -110,15 +115,20 @@ class LivePlayerCard extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF10B981).withValues(alpha: 0.15),
+                        color: (user.isInBattle
+                                ? const Color(0xFFF59E0B)
+                                : const Color(0xFF10B981))
+                            .withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(6),
                       ),
-                      child: const Text(
-                        'ONLINE',
+                      child: Text(
+                        user.isInBattle ? '⚔️ IN BATTLE' : 'ONLINE',
                         style: TextStyle(
                           fontSize: 9,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF10B981),
+                          color: user.isInBattle
+                              ? const Color(0xFFF59E0B)
+                              : const Color(0xFF10B981),
                           letterSpacing: 0.5,
                         ),
                       ),
@@ -129,11 +139,13 @@ class LivePlayerCard extends StatelessWidget {
             ),
           ),
 
-          // Challenge button
+          // Challenge button (disabled while the player is in a duel)
           ElevatedButton.icon(
-            onPressed: isChallenging ? null : onChallenge,
+            onPressed: (isChallenging || user.isInBattle) ? null : onChallenge,
             icon: const Icon(Icons.sports_kabaddi_rounded, size: 16),
-            label: Text(isChallenging ? 'Sent...' : 'Duel ⚔️'),
+            label: Text(user.isInBattle
+                ? 'Busy'
+                : (isChallenging ? 'Sent...' : 'Duel ⚔️')),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFEF4444),
               foregroundColor: Colors.white,

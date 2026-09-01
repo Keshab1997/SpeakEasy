@@ -6,6 +6,7 @@ import '../models/battle_models.dart';
 import '../services/battle_bot_simulator.dart';
 import '../services/battle_game_service.dart';
 import '../services/battle_matchmaking_service.dart';
+import '../services/battle_presence_service.dart';
 
 enum BattleArenaStatus {
   idle,
@@ -118,6 +119,7 @@ final battleArenaProvider = StateNotifierProvider.autoDispose<BattleArenaNotifie
 class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   final UserModel? currentUser;
   final BattleMatchmakingService _matchmakingService = BattleMatchmakingService();
+  final BattlePresenceService _presenceService = BattlePresenceService();
 
   Timer? _roundTimer;
   Timer? _botActionTimer;
@@ -228,6 +230,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         _subscribeToRoom(room.id, isPlayer1);
       }
 
+      _presenceService.setInBattle(freshLocal.id, true);
       _startRoundTimer();
       if (opp.isBot) {
         _scheduleBotAnswer();
@@ -275,6 +278,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       _subscribeToRoom(room.id, isPlayer1);
     }
 
+    _presenceService.setInBattle(state.localPlayer.id, true);
     _startRoundTimer();
   }
 
@@ -358,6 +362,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     final decision = BattleBotSimulator.decideAnswer(
       question: question,
       roundNumber: state.currentRoundIndex + 1,
+      userTrophies: state.localPlayer.trophies,
     );
 
     _botActionTimer = Timer(Duration(seconds: decision.reactionSeconds), () {
@@ -543,6 +548,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       );
     }
 
+    _presenceService.setInBattle(state.localPlayer.id, false);
     state = state.copyWith(
       status: BattleArenaStatus.completed,
       stats: updatedStats,
@@ -570,6 +576,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       userId: currentUser?.id,
     );
 
+    _presenceService.setInBattle(state.localPlayer.id, false);
     state = state.copyWith(
       status: BattleArenaStatus.completed,
       isOpponentForfeited: true,
@@ -583,6 +590,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
   /// When user exits or leaves mid-match: forfeits match & rewards opponent
   Future<void> forfeitCurrentMatch() async {
+    final wasInDuel = state.status == BattleArenaStatus.inDuel;
     _roundTimer?.cancel();
     _botActionTimer?.cancel();
     _roundTransitionTimer?.cancel();
@@ -590,7 +598,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _roomSubscription?.cancel();
     _roundTransitioning = false;
 
-    if (state.status == BattleArenaStatus.inDuel) {
+    if (wasInDuel) {
       if (state.room != null && !state.opponent.isBot) {
         final isPlayer1 = state.room!.player1.id == state.localPlayer.id;
         await _matchmakingService.forfeitMatch(
@@ -610,6 +618,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       );
     }
 
+    _presenceService.setInBattle(state.localPlayer.id, false);
     state = state.copyWith(
       status: BattleArenaStatus.idle,
       localPlayer: state.localPlayer.copyWith(currentScore: 0, currentRound: 0, selectedAnswer: null),

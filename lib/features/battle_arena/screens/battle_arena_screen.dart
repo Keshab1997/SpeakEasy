@@ -145,6 +145,19 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
                                       isDark: isDark,
                                     );
                                   }),
+
+                                  // Explanation card — appears after answering
+                                  if (battleState.isAnswerSubmitted &&
+                                      question.explanation.trim().isNotEmpty) ...[
+                                    const SizedBox(height: 8),
+                                    _buildExplanationCard(
+                                      question: question,
+                                      isCorrect:
+                                          battleState.selectedAnswerIndex == question.correctAnswer,
+                                      isDark: isDark,
+                                    ),
+                                  ],
+
                                   const SizedBox(height: 80),
                                 ],
                               ),
@@ -649,6 +662,71 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  /// Card shown after the player answers: correct/incorrect + explanation.
+  Widget _buildExplanationCard({
+    required BattleQuestion question,
+    required bool isCorrect,
+    required bool isDark,
+  }) {
+    final color = isCorrect ? const Color(0xFF10B981) : const Color(0xFFEF4444);
+    final correctOption = question.options[question.correctAnswer];
+
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      width: double.infinity,
+      margin: const EdgeInsets.only(top: 4),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: isDark ? 0.14 : 0.08),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: color.withValues(alpha: 0.4)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(
+                isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded,
+                color: color,
+                size: 20,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                isCorrect ? 'Correct! 🎉' : 'Not quite 💡',
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  color: color,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
+          if (!isCorrect) ...[
+            const SizedBox(height: 6),
+            Text(
+              'Answer: $correctOption',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white : const Color(0xFF1E293B),
+                fontSize: 13,
+              ),
+            ),
+          ],
+          const SizedBox(height: 8),
+          Text(
+            question.explanation,
+            style: TextStyle(
+              fontSize: 13.5,
+              height: 1.4,
+              color: isDark ? const Color(0xFFCBD5E1) : const Color(0xFF475569),
+            ),
+          ),
+        ],
       ),
     );
   }
