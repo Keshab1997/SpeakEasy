@@ -543,14 +543,15 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
     final isWin = localScore > oppScore;
     final isDraw = localScore == oppScore;
-    final trophyDelta = BattleGameService.calculateTrophyDelta(isWin: isWin, isDraw: isDraw);
 
-    final updatedStats = await BattleGameService.saveMatchResult(
+    final outcome = await BattleGameService.saveMatchResult(
       isWin: isWin,
       isDraw: isDraw,
       score: localScore,
       userId: currentUser?.id,
     );
+    final updatedStats = outcome.stats;
+    final trophyDelta = outcome.trophyDelta;
 
     // Mark the room completed so the opponent's client + cleanup agree.
     if (isOnline) {
@@ -593,13 +594,13 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _roundTransitionTimer?.cancel();
     _roomSubscription?.cancel();
 
-    const trophyDelta = 25;
-    final updatedStats = await BattleGameService.saveMatchResult(
+    final outcome = await BattleGameService.saveMatchResult(
       isWin: true,
       isDraw: false,
       score: state.localPlayer.currentScore,
       userId: currentUser?.id,
     );
+    final updatedStats = outcome.stats;
 
     _presenceService.setInBattle(state.localPlayer.id, false);
     state = state.copyWith(
@@ -607,7 +608,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       isOpponentForfeited: true,
       isWinner: true,
       isDraw: false,
-      trophyDelta: trophyDelta,
+      trophyDelta: outcome.trophyDelta,
       stats: updatedStats,
       localPlayer: state.localPlayer.copyWith(trophies: updatedStats.trophies),
     );

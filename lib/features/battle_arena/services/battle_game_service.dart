@@ -4,6 +4,21 @@ import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../models/battle_models.dart';
 
+/// Result of applying a finished battle to local stats.
+class BattleMatchOutcome {
+  final BattleStats stats;
+  final int trophyDelta; // actually applied (after shield/floor)
+  final bool shielded; // loss-streak shield triggered (no trophies lost)
+  final bool comeback; // comeback bonus applied (+30 win)
+
+  const BattleMatchOutcome({
+    required this.stats,
+    required this.trophyDelta,
+    this.shielded = false,
+    this.comeback = false,
+  });
+}
+
 class BattleGameService {
   static const String _hiveBoxName = 'battle_arena_stats';
 
@@ -243,10 +258,19 @@ class BattleGameService {
     return 100 + speedBonus; // 100 to 150 points
   }
 
-  /// Calculates trophy changes: Winner +25, Loser -10 (cannot drop below 0)
+  // ── Trophy economy (mirrors the Cloud Function rules) ──
+  static const int trophyWin = 25;
+  static const int trophyLoss = -10;
+  static const int trophyDraw = 5;
+  static const int comebackBonus = 5; // win below 100 trophies => +30
+  static const int comebackThreshold = 100;
+  static const int lossShieldAfter = 3; // 4th straight loss is free
+
+  /// Simple delta kept for reference; prefer [saveMatchResult] which applies
+  /// shields, comeback bonus and division floors.
   static int calculateTrophyDelta({required bool isWin, required bool isDraw}) {
-    if (isDraw) return 5;
-    return isWin ? 25 : -10;
+    if (isDraw) return trophyDraw;
+    return isWin ? trophyWin : trophyLoss;
   }
 
   /// Gets local battle stats from Hive
@@ -267,7 +291,10 @@ class BattleGameService {
 
   /// Updates battle stats after match
   /// Also syncs trophies to Firestore presence doc for immediate Firebase visibility
-  static Future<BattleStats> saveMatchResult({
+  /// Applies the result to local Hive stats with the full trophy rule set
+  /// (comeback bonus, loss-streak shield, division floor, rookie floor at 0).
+  /// Mirrors the server Cloud Function so the instant local UI matches.
+  static Future<BattleMatchOutcome> saveMatchResult({
     required bool isWin,
     required bool isDraw,
     required int score,
@@ -275,26 +302,56 @@ class BattleGameService {
   }) async {
     final box = await Hive.openBox(_hiveBoxName);
     final current = await getLocalStats();
-    final trophyDelta = calculateTrophyDelta(isWin: isWin, isDraw: isDraw);
-    final newTrophies = max(0, current.trophies + trophyDelta);
+
+    var applied = 0;
+    var shielded = false;
+    var comeback = false;
+    var lossStreak = current.lossStreak;
+
+    if (isWin) {
+      lossStreak = 0;
+      comeback = current.trophies < comebackThreshold;
+      applied = trophyWin + (comeback ? comebackBonus : 0); // 25 or 30
+    } else if (isDraw) {
+      applied = trophyDraw; // loss streak held
+    } else {
+      // Loss — every 4th straight loss is free (loss-streak shield).
+      if (lossStreak >= lossShieldAfter) {
+        shielded = true;
+        applied = 0;
+        lossStreak = 0;
+      } else {
+        applied = trophyLoss;
+        lossStreak += 1;
+      }
+    }
+
+    final floor = current.divisionFloor; // rank protection
+    final newTrophies = max(0, max(floor, current.trophies + applied));
 
     final updated = BattleStats(
       totalMatches: current.totalMatches + 1,
       wins: isWin ? current.wins + 1 : current.wins,
       losses: (!isWin && !isDraw) ? current.losses + 1 : current.losses,
-      winStreak: isWin ? current.winStreak + 1 : 0,
+      winStreak: isWin
+          ? current.winStreak + 1
+          : (isDraw ? current.winStreak : 0),
+      lossStreak: lossStreak,
       trophies: newTrophies,
     );
 
     await box.put('stats', updated.toMap());
 
-    // NOTE: Server (Cloud Function `onBattleRoomWrite`) is the single source of
-    // truth for PRESENCE trophies — it awards +25/-10/+5 once per room.
-    // We intentionally do NOT write trophies here anymore, otherwise a forfeit
-    // could be counted twice (client + server). Local Hive stats stay in sync
-    // for instant UI; presence trophies reconcile from the server/heartbeat.
+    // NOTE: The Cloud Function `onBattleRoomWrite` is the source of truth for
+    // the SHARED/online trophies & leaderboard; this local Hive record only
+    // drives the instant on-device UI (bot matches + immediate feedback).
 
-    return updated;
+    return BattleMatchOutcome(
+      stats: updated,
+      trophyDelta: newTrophies - current.trophies,
+      shielded: shielded,
+      comeback: comeback,
+    );
   }
 
   static List<BattleQuestion> _getFallbackQuestions() {

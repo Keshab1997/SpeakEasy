@@ -153,6 +153,38 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen> {
                       ],
                     ),
                   ),
+
+                  // Shield / comeback encouragement
+                  if (!isWinner && !isDraw && state.trophyDelta == 0) ...[
+                    const SizedBox(height: 14),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF3B82F6).withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      child: const Text(
+                        "🛡️ Loss Shield activated — you didn't lose any trophies! Keep going!",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Color(0xFF3B82F6), fontWeight: FontWeight.bold, fontSize: 13),
+                      ),
+                    ),
+                  ],
+                  if (isWinner && state.trophyDelta >= 30) ...[
+                    const SizedBox(height: 14),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      child: const Text(
+                        '📈 Comeback Bonus! Extra trophies for climbing back 💪',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Color(0xFFB45309), fontWeight: FontWeight.bold, fontSize: 13),
+                      ),
+                    ),
+                  ],
                   const SizedBox(height: 28),
 
                   // Score Comparison Card

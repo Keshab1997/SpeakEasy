@@ -43,6 +43,118 @@ const DEFAULT_TIME_LIMIT = 15;
 const TROPHY_WIN = 25;
 const TROPHY_LOSS = -10;
 const TROPHY_DRAW = 5;
+const COMEBACK_BONUS = 5; // extra trophies for a win while below 100 (=> +30)
+const COMEBACK_THRESHOLD = 100;
+const LOSS_SHIELD_AFTER = 3; // 3rd straight loss arms a shield; the 4th loss is free
+
+/**
+ * Division trophy floors — once a player earns a rank they can never be
+ * demoted below its starting trophy line (rank protection).
+ */
+function divisionFloor(trophies) {
+  if (trophies >= 1500) return 1500; // Grandmaster
+  if (trophies >= 800) return 800;   // Master
+  if (trophies >= 300) return 300;   // Challenger
+  return 0;                          // Novice
+}
+
+function isFakeUser(id) {
+  return !id || String(id).startsWith('bot_') || String(id).startsWith('guest_');
+}
+
+/**
+ * Records a finished battle for a real player: updates trophies + career
+ * stats on their presence doc AND their leaderboard entry (one write each),
+ * server-side so it can't be tampered with.
+ *   result: 'win' | 'loss' | 'draw'
+ * Trophy rules:
+ *   • win  = +25 (or +30 if under 100 trophies — comeback bonus)
+ *   • draw = +5
+ *   • loss = −10, but every 4th consecutive loss is FREE (loss-streak shield),
+ *     and trophies never drop below the floor of the player's current division
+ *     nor below 0 (Rookie Shield).
+ */
+function recordMatchResult(userId, name, photoUrl, result) {
+  if (isFakeUser(userId)) return Promise.resolve();
+
+  const presenceRef = db.collection(PRESENCE).doc(userId);
+  const lbRef = db.collection(LEADERBOARD).doc(userId);
+  const now = admin.firestore.FieldValue.serverTimestamp();
+
+  return db.runTransaction(async (tx) => {
+    const snap = await tx.get(presenceRef);
+    const d = snap.exists ? snap.data() : {};
+    const currentTrophies = d.trophies || 100;
+
+    // ── Compute trophy change ──
+    let lossStreak = d.lossStreak || 0;
+    let applied = 0;
+    let shielded = false;
+    let comeback = false;
+
+    if (result === 'win') {
+      lossStreak = 0;
+      comeback = currentTrophies < COMEBACK_THRESHOLD;
+      applied = TROPHY_WIN + (comeback ? COMEBACK_BONUS : 0);
+    } else if (result === 'draw') {
+      applied = TROPHY_DRAW; // loss streak held
+    } else {
+      // loss
+      if (lossStreak >= LOSS_SHIELD_AFTER) {
+        shielded = true;
+        applied = 0; // free loss — shield consumed
+        lossStreak = 0;
+      } else {
+        applied = TROPHY_LOSS;
+        lossStreak += 1;
+      }
+    }
+
+    const floor = divisionFloor(currentTrophies);
+    let trophies = Math.max(0, Math.max(floor, currentTrophies + applied));
+
+    const total = (d.totalMatches || 0) + 1;
+    const wins = (d.wins || 0) + (result === 'win' ? 1 : 0);
+    const losses = (d.losses || 0) + (result === 'loss' ? 1 : 0);
+    const draws = (d.draws || 0) + (result === 'draw' ? 1 : 0);
+    // Win streak resets on loss, held on draw, incremented on win.
+    const winStreak = result === 'win'
+      ? (d.winStreak || 0) + 1
+      : (result === 'draw' ? (d.winStreak || 0) : 0);
+    const bestStreak = Math.max(d.bestStreak || 0, winStreak);
+
+    const base = {
+      name: d.name || name || 'Player',
+      photoUrl: d.photoUrl || photoUrl || '',
+      trophies,
+      wins,
+      losses,
+      draws,
+      totalMatches: total,
+      winStreak,
+      bestStreak,
+      lossStreak,
+      lastShielded: shielded,
+      lastComeback: comeback,
+      lastActive: now,
+    };
+
+    // Presence doc (powers profile card + online list).
+    if (!snap.exists) {
+      tx.set(presenceRef, { id: userId, isOnline: true, ...base }, { merge: true });
+    } else {
+      tx.update(presenceRef, base);
+    }
+
+    // Leaderboard entry (doc id = userId), safe upsert.
+    const lbSnap = await tx.get(lbRef);
+    if (!lbSnap.exists) {
+      tx.set(lbRef, { userId, ...base });
+    } else {
+      tx.update(lbRef, base);
+    }
+  });
+}
 
 // ---------------------------------------------------------------------------
 // Score helpers (mirrors the client's BattleGameService)
@@ -74,81 +186,6 @@ function computeLegitScore(player, questions) {
     total += roundScore(correct, times[key], limit);
   }
   return total;
-}
-
-function isFakeUser(id) {
-  return !id || String(id).startsWith('bot_') || String(id).startsWith('guest_');
-}
-
-/**
- * Records a finished battle for a real player: updates trophies + career
- * stats on their presence doc AND their leaderboard entry (one write each),
- * server-side so it can't be tampered with.
- *   result: 'win' | 'loss' | 'draw'
- */
-function recordMatchResult(userId, name, photoUrl, result, trophyDelta) {
-  if (isFakeUser(userId)) return Promise.resolve();
-
-  const presenceRef = db.collection(PRESENCE).doc(userId);
-  const lbRef = db.collection(LEADERBOARD).doc(userId);
-  const now = admin.firestore.FieldValue.serverTimestamp();
-
-  return db.runTransaction(async (tx) => {
-    const snap = await tx.get(presenceRef);
-    const d = snap.exists ? snap.data() : {};
-    const currentTrophies = d.trophies || 100;
-    const trophies = Math.max(0, currentTrophies + trophyDelta);
-
-    const total = (d.totalMatches || 0) + 1;
-    const wins = (d.wins || 0) + (result === 'win' ? 1 : 0);
-    const losses = (d.losses || 0) + (result === 'loss' ? 1 : 0);
-    const draws = (d.draws || 0) + (result === 'draw' ? 1 : 0);
-    // Win streak resets on loss, held on draw, incremented on win.
-    const winStreak = result === 'win'
-      ? (d.winStreak || 0) + 1
-      : (result === 'draw' ? (d.winStreak || 0) : 0);
-    const bestStreak = Math.max(d.bestStreak || 0, winStreak);
-
-    const base = {
-      name: d.name || name || 'Player',
-      photoUrl: d.photoUrl || photoUrl || '',
-      trophies,
-      wins,
-      losses,
-      draws,
-      totalMatches: total,
-      winStreak,
-      bestStreak,
-      lastActive: now,
-    };
-
-    // Presence doc (powers profile card + online list).
-    if (!snap.exists) {
-      tx.set(presenceRef, { id: userId, isOnline: true, ...base }, { merge: true });
-    } else {
-      tx.update(presenceRef, base);
-    }
-
-    // Leaderboard entry (doc id = userId), safe upsert.
-    const lbSnap = await tx.get(lbRef);
-    if (!lbSnap.exists) {
-      tx.set(lbRef, { userId, ...base });
-    } else {
-      tx.update(lbRef, base);
-    }
-  });
-}
-
-// Kept for compatibility — thin wrapper around the full result recorder.
-function changeTrophies(userId, delta) {
-  if (isFakeUser(userId)) return Promise.resolve();
-  return recordMatchResult(
-    userId,
-    '',
-    '',
-    delta >= 0 ? (delta === 0 ? 'draw' : 'win') : 'loss',
-    delta,
-  );
 }
 
 // ---------------------------------------------------------------------------
@@ -243,23 +280,23 @@ exports.onBattleRoomWrite = functions.firestore
       if (isForfeit) {
         if (p1 && p2) {
           if (p1.isForfeited) {
-            jobs.push(recordMatchResult(p1.id, info(p1).name, info(p1).photoUrl, 'loss', TROPHY_LOSS));
-            jobs.push(recordMatchResult(p2.id, info(p2).name, info(p2).photoUrl, 'win', TROPHY_WIN));
+            jobs.push(recordMatchResult(p1.id, info(p1).name, info(p1).photoUrl, 'loss'));
+            jobs.push(recordMatchResult(p2.id, info(p2).name, info(p2).photoUrl, 'win'));
           } else {
-            jobs.push(recordMatchResult(p2.id, info(p2).name, info(p2).photoUrl, 'loss', TROPHY_LOSS));
-            jobs.push(recordMatchResult(p1.id, info(p1).name, info(p1).photoUrl, 'win', TROPHY_WIN));
+            jobs.push(recordMatchResult(p2.id, info(p2).name, info(p2).photoUrl, 'loss'));
+            jobs.push(recordMatchResult(p1.id, info(p1).name, info(p1).photoUrl, 'win'));
           }
         }
       } else if (isDraw) {
-        if (p1) jobs.push(recordMatchResult(p1.id, p1.name, p1.photoUrl, 'draw', TROPHY_DRAW));
-        if (p2) jobs.push(recordMatchResult(p2.id, p2.name, p2.photoUrl, 'draw', TROPHY_DRAW));
+        if (p1) jobs.push(recordMatchResult(p1.id, p1.name, p1.photoUrl, 'draw'));
+        if (p2) jobs.push(recordMatchResult(p2.id, p2.name, p2.photoUrl, 'draw'));
       } else if (winnerId) {
         if (p1 && p1.id === winnerId) {
-          jobs.push(recordMatchResult(p1.id, p1.name, p1.photoUrl, 'win', TROPHY_WIN));
-          if (p2) jobs.push(recordMatchResult(p2.id, p2.name, p2.photoUrl, 'loss', TROPHY_LOSS));
+          jobs.push(recordMatchResult(p1.id, p1.name, p1.photoUrl, 'win'));
+          if (p2) jobs.push(recordMatchResult(p2.id, p2.name, p2.photoUrl, 'loss'));
         } else if (p2) {
-          jobs.push(recordMatchResult(p2.id, p2.name, p2.photoUrl, 'win', TROPHY_WIN));
-          if (p1) jobs.push(recordMatchResult(p1.id, p1.name, p1.photoUrl, 'loss', TROPHY_LOSS));
+          jobs.push(recordMatchResult(p2.id, p2.name, p2.photoUrl, 'win'));
+          if (p1) jobs.push(recordMatchResult(p1.id, p1.name, p1.photoUrl, 'loss'));
         }
       }
 

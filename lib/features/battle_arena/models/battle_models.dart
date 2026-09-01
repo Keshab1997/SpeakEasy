@@ -393,6 +393,7 @@ class BattleStats {
   final int wins;
   final int losses;
   final int winStreak;
+  final int lossStreak;
   final int trophies;
 
   const BattleStats({
@@ -400,6 +401,7 @@ class BattleStats {
     this.wins = 0,
     this.losses = 0,
     this.winStreak = 0,
+    this.lossStreak = 0,
     this.trophies = 100,
   });
 
@@ -412,12 +414,22 @@ class BattleStats {
     return 'Novice 🥉';
   }
 
+  /// Trophy floor of the current division (rank protection — once earned,
+  /// you never drop below your division's starting line).
+  int get divisionFloor {
+    if (trophies >= 1500) return 1500;
+    if (trophies >= 800) return 800;
+    if (trophies >= 300) return 300;
+    return 0;
+  }
+
   Map<String, dynamic> toMap() {
     return {
       'totalMatches': totalMatches,
       'wins': wins,
       'losses': losses,
       'winStreak': winStreak,
+      'lossStreak': lossStreak,
       'trophies': trophies,
     };
   }
@@ -428,6 +440,7 @@ class BattleStats {
       wins: (map['wins'] as num?)?.toInt() ?? 0,
       losses: (map['losses'] as num?)?.toInt() ?? 0,
       winStreak: (map['winStreak'] as num?)?.toInt() ?? 0,
+      lossStreak: (map['lossStreak'] as num?)?.toInt() ?? 0,
       trophies: (map['trophies'] as num?)?.toInt() ?? 100,
     );
   }
