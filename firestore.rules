@@ -19,10 +19,6 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == userId;
     }
 
-    function hasUserIdField() {
-      return resource.data.userId == request.auth.uid;
-    }
-
     // ═══════════════════════════════════════════════
     //  USERS
     // ═══════════════════════════════════════════════
