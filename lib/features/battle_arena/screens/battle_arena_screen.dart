@@ -432,6 +432,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
     final c = category.toLowerCase();
     if (c.contains('vocab')) return '📚';
     if (c.contains('gram')) return '✍️';
+    if (c.contains('verb')) return '🔤';
     if (c.contains('conv')) return '💬';
     return '🎯';
   }
