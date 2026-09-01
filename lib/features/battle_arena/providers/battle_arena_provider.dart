@@ -110,7 +110,10 @@ class BattleArenaState {
   }
 }
 
-final battleArenaProvider = StateNotifierProvider.autoDispose<BattleArenaNotifier, BattleArenaState>((ref) {
+// Kept alive (not autoDispose) so a battle can be started from anywhere in
+// the app — e.g. accepting a challenge from the Home screen — and the room
+// state survives until the player reaches the arena/result screens.
+final battleArenaProvider = StateNotifierProvider<BattleArenaNotifier, BattleArenaState>((ref) {
   final authState = ref.watch(authProvider);
   final currentUser = authState.asData?.value;
   return BattleArenaNotifier(currentUser: currentUser);

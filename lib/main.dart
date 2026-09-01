@@ -25,6 +25,7 @@ import 'providers/notification_provider.dart';
 
 
 import 'features/auth/screens/splash_screen.dart';
+import 'features/battle_arena/widgets/global_battle_challenge_gate.dart';
 import 'routes/app_routes.dart';
 
 void main() async {
@@ -262,17 +263,19 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     final themeMode = ref.watch(themeModeProvider);
-    return MaterialApp(
-      title: 'SpeakEasy',
-      debugShowCheckedModeBanner: false,
-      // Global key so notification taps (local + push) can navigate without a
-      // BuildContext.
-      navigatorKey: appNavigatorKey,
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      themeMode: themeMode,
-      home: const SplashScreen(),
-      onGenerateRoute: AppRoutes.generateRoute,
+    return GlobalBattleChallengeGate(
+      child: MaterialApp(
+        title: 'SpeakEasy',
+        debugShowCheckedModeBanner: false,
+        // Global key so notification taps (local + push) can navigate without a
+        // BuildContext.
+        navigatorKey: appNavigatorKey,
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        themeMode: themeMode,
+        home: const SplashScreen(),
+        onGenerateRoute: AppRoutes.generateRoute,
+      ),
     );
   }
 }

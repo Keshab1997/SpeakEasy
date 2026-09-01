@@ -1,15 +1,11 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../providers/auth_provider.dart';
 import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';
-import '../services/battle_matchmaking_service.dart';
 import '../widgets/live_player_card.dart';
 import '../widgets/radar_search_dialog.dart';
-import 'battle_arena_screen.dart';
 
 class BattleLobbyScreen extends ConsumerStatefulWidget {
   const BattleLobbyScreen({super.key});
@@ -20,13 +16,12 @@ class BattleLobbyScreen extends ConsumerStatefulWidget {
 
 class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   String? _challengingUserId;
-  // Challenge ids whose accepted/rejected status has already been handled,
-  // so the Firestore stream firing again doesn't trigger duplicate actions.
-  final Set<String> _handledOutgoingChallengeIds = {};
 
   @override
   void initState() {
     super.initState();
+    // Presence heartbeat runs while the lobby is open. (Challenge popups and
+    // arena navigation are handled app-wide by GlobalBattleChallengeGate.)
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final user = ref.read(authProvider).asData?.value;
       if (user != null) {
@@ -45,18 +40,11 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final battleState = ref.watch(battleArenaProvider);
+    ref.watch(battleArenaProvider);
     final onlineUsersAsync = ref.watch(onlineBattleUsersProvider);
-    final incomingChallengesAsync = ref.watch(incomingChallengesProvider);
 
-    // Listen to status change to open arena screen
+    // Forfeit/exit from a duel returns here — notify the trophy loss.
     ref.listen<BattleArenaState>(battleArenaProvider, (previous, next) {
-      if (previous?.status != BattleArenaStatus.inDuel && next.status == BattleArenaStatus.inDuel) {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (_) => const BattleArenaScreen()),
-        );
-      }
-      // Returned to lobby right after a duel (forfeit/exit) → notify loss.
       if (previous != null &&
           previous.status == BattleArenaStatus.inDuel &&
           next.status == BattleArenaStatus.idle &&
@@ -68,46 +56,6 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             behavior: SnackBarBehavior.floating,
           ),
         );
-      }
-    });
-
-    // Listen to incoming challenges
-    incomingChallengesAsync.whenData((challenges) {
-      if (challenges.isNotEmpty && mounted && battleState.status == BattleArenaStatus.idle) {
-        final challenge = challenges.first;
-        _showIncomingChallengeModal(context, challenge);
-      }
-    });
-
-    // Listen to challenges I SENT: when the receiver accepts, join the room;
-    // when rejected/expired, notify me. (Defer side effects to post-frame.)
-    ref.watch(outgoingChallengesProvider).whenData((outgoing) {
-      for (final challenge in outgoing) {
-        if (_handledOutgoingChallengeIds.contains(challenge.id)) continue;
-
-        if (challenge.status == 'accepted' && challenge.roomId != null) {
-          _handledOutgoingChallengeIds.add(challenge.id);
-          final id = challenge.id;
-          final roomId = challenge.roomId!;
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (!mounted || !_handledOutgoingChallengeIds.contains(id)) return;
-            _joinAcceptedChallengeId(roomId, id);
-          });
-        } else if (challenge.status == 'rejected') {
-          _handledOutgoingChallengeIds.add(challenge.id);
-          final id = challenge.id;
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (!mounted) return;
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('The player declined your challenge. Try another warrior! 🤺'),
-                backgroundColor: Color(0xFFEF4444),
-                behavior: SnackBarBehavior.floating,
-              ),
-            );
-          });
-          unawaited(BattleMatchmakingService().deleteChallenge(id));
-        }
       }
     });
 
@@ -467,133 +415,5 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
         setState(() => _challengingUserId = null);
       }
     }
-  }
-
-  /// Called on the SENDER's device when the receiver accepts the challenge:
-  /// fetch the room the receiver created and enter the duel.
-  Future<void> _joinAcceptedChallengeId(String roomId, String challengeId) async {
-    try {
-      final matchmaking = BattleMatchmakingService();
-      final room = await matchmaking.getRoom(roomId);
-      if (room == null) {
-        // Room may not have propagated yet — retry once after a short beat.
-        await Future.delayed(const Duration(milliseconds: 800));
-        final retry = await matchmaking.getRoom(roomId);
-        if (retry == null) return;
-        if (!mounted) return;
-        ref.read(battleArenaProvider.notifier).startFromRoom(retry);
-        unawaited(matchmaking.deleteChallenge(challengeId));
-        return;
-      }
-
-      if (!mounted) return;
-      // Ignore if already in a match (guards against double navigation).
-      if (ref.read(battleArenaProvider).status == BattleArenaStatus.inDuel) return;
-
-      ref.read(battleArenaProvider.notifier).startFromRoom(room);
-      unawaited(matchmaking.deleteChallenge(challengeId));
-    } catch (_) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not join the duel. Please try again.')),
-        );
-      }
-    }
-  }
-
-  void _showIncomingChallengeModal(BuildContext context, BattleChallenge challenge) {
-    showModalBottomSheet(
-      context: context,
-      isDismissible: false,
-      enableDrag: false,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-      ),
-      builder: (ctx) {
-        return Container(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text('⚔️ 1v1 CHALLENGE RECEIVED!', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFFEF4444))),
-              const SizedBox(height: 16),
-              CircleAvatar(
-                radius: 30,
-                backgroundImage: challenge.fromUserPhoto.isNotEmpty ? NetworkImage(challenge.fromUserPhoto) : null,
-                child: challenge.fromUserPhoto.isEmpty ? Text(challenge.fromUserName[0].toUpperCase()) : null,
-              ),
-              const SizedBox(height: 10),
-              Text(
-                '${challenge.fromUserName} wants to duel with you!',
-                textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-              Text('${challenge.fromUserTrophies} Trophies 🏆', style: const TextStyle(color: Color(0xFFF59E0B), fontWeight: FontWeight.w600)),
-              const SizedBox(height: 24),
-              Row(
-                children: [
-                  Expanded(
-                    child: OutlinedButton(
-                      onPressed: () {
-                        ref.read(battlePresenceServiceProvider).respondToChallenge(challenge.id, false);
-                        Navigator.pop(ctx);
-                      },
-                      style: OutlinedButton.styleFrom(
-                        foregroundColor: Colors.grey,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                      ),
-                      child: const Text('Decline'),
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: ElevatedButton(
-                      onPressed: () async {
-                        final myUser = ref.read(authProvider).asData?.value;
-                        final myStats = ref.read(battleArenaProvider).stats;
-                        final player1 = BattlePlayer(
-                          id: challenge.fromUserId,
-                          name: challenge.fromUserName,
-                          photoUrl: challenge.fromUserPhoto,
-                          trophies: challenge.fromUserTrophies,
-                        );
-                        final player2 = BattlePlayer(
-                          id: myUser?.id ?? 'me',
-                          name: myUser?.name ?? 'Me',
-                          photoUrl: myUser?.photoUrl ?? '',
-                          trophies: myStats.trophies,
-                        );
-
-                        final matchmakingService = BattleMatchmakingService();
-                        final room = await matchmakingService.createDirectChallengeRoom(
-                          player1: player1,
-                          player2: player2,
-                        );
-
-                        await ref.read(battlePresenceServiceProvider).respondToChallenge(
-                              challenge.id,
-                              true,
-                              roomId: room.id,
-                            );
-
-                        if (!ctx.mounted) return;
-                        Navigator.pop(ctx);
-                        ref.read(battleArenaProvider.notifier).startFromRoom(room);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFEF4444),
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                      ),
-                      child: const Text('Accept Duel ⚔️', style: TextStyle(fontWeight: FontWeight.bold)),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        );
-      },
-    );
   }
 }
