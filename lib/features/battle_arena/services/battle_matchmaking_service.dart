@@ -196,6 +196,7 @@ class BattleMatchmakingService {
   /// Submit answer and score in Firestore.
   /// Answer is stored per-round (`roundAnswers.{roundIndex}`) so a stale
   /// answer from a previous round can never show up on the new question.
+  /// `roundTimes` lets the Cloud Function verify the speed bonus server-side.
   Future<void> submitAnswer({
     required String roomId,
     required String playerId,
@@ -203,6 +204,7 @@ class BattleMatchmakingService {
     required int selectedAnswer,
     required int newScore,
     required int roundIndex,
+    int? timeTakenSeconds,
   }) async {
     if (roomId.startsWith('local_bot_room_')) return;
 
@@ -211,6 +213,8 @@ class BattleMatchmakingService {
       await _firestore.collection(_roomsCollection).doc(roomId).update({
         // roundAnswers keyed by round index for the opponent to read safely
         '$fieldPrefix.roundAnswers.$roundIndex': selectedAnswer,
+        if (timeTakenSeconds != null)
+          '$fieldPrefix.roundTimes.$roundIndex': timeTakenSeconds,
         '$fieldPrefix.currentScore': newScore,
         '$fieldPrefix.currentRound': roundIndex,
       });

@@ -63,3 +63,10 @@ app.*.map.json
 # Nested duplicate project folder — was created by accident
 SpeakEasy/
 *.jks.bak
+
+# Cloud Functions
+functions/node_modules/
+functions/.runtimeconfig.json
+functions/lib/
+functions/logs/
+*.log

@@ -443,6 +443,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         selectedAnswer: answerIndex,
         newScore: newLocalScore,
         roundIndex: roundIndex,
+        timeTakenSeconds: timeTaken,
       );
     }
 

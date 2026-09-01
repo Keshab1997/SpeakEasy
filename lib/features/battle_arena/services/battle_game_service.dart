@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:math';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../models/battle_models.dart';
@@ -131,15 +130,11 @@ class BattleGameService {
 
     await box.put('stats', updated.toMap());
 
-    // Immediate Firebase sync if userId provided (so 115 shows in Firebase, not just 100)
-    if (userId != null && userId.isNotEmpty && !userId.startsWith('guest_')) {
-      try {
-        await FirebaseFirestore.instance.collection('battle_presence').doc(userId).set({
-          'trophies': newTrophies,
-          'lastActive': FieldValue.serverTimestamp(),
-        }, SetOptions(merge: true));
-      } catch (_) {}
-    }
+    // NOTE: Server (Cloud Function `onBattleRoomWrite`) is the single source of
+    // truth for PRESENCE trophies — it awards +25/-10/+5 once per room.
+    // We intentionally do NOT write trophies here anymore, otherwise a forfeit
+    // could be counted twice (client + server). Local Hive stats stay in sync
+    // for instant UI; presence trophies reconcile from the server/heartbeat.
 
     return updated;
   }

@@ -1,30 +1,25 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import '../models/battle_models.dart';
 
 class BattlePresenceService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   Timer? _heartbeatTimer;
-  String? _lastName;
-  String? _lastPhotoUrl;
   bool _isInBattle = false;
 
   static const String _presenceCollection = 'battle_presence';
   static const String _challengesCollection = 'battle_challenges';
 
   /// Sets user online status in Firestore and starts heartbeat.
-  /// Heartbeat now reads latest trophies from Hive every 45s so post-match
-  /// trophy changes sync to Firebase without re-entering lobby.
+  /// The initial write includes trophies (needed for the presence create
+  /// rule); the periodic heartbeat refreshes liveness only — trophies are
+  /// owned server-side by the Cloud Function.
   void startPresenceHeartbeat({
     required String userId,
     required String name,
     required String photoUrl,
     required int trophies,
   }) {
-    _lastName = name;
-    _lastPhotoUrl = photoUrl;
-
     _updatePresence(
       userId: userId,
       name: name,
@@ -36,39 +31,20 @@ class BattlePresenceService {
 
     _heartbeatTimer?.cancel();
     _heartbeatTimer = Timer.periodic(const Duration(seconds: 45), (_) async {
-      // Read latest trophies from Hive (battle_arena_stats) for delayed sync
-      int latestTrophies = trophies;
+      // Periodic heartbeat refreshes liveness only. Trophies are NOT written
+      // here — the Cloud Function is the source of truth for presence
+      // trophies, and writing Hive trophies here could stack on top of the
+      // server's award (double count). The initial create above sets trophies.
       try {
-        final box = await Hive.openBox('battle_arena_stats');
-        final map = box.get('stats');
-        if (map != null) {
-          latestTrophies = (Map<String, dynamic>.from(map)['trophies'] as num?)?.toInt() ?? trophies;
-        }
+        await _firestore.collection(_presenceCollection).doc(userId).set({
+          'name': name.isEmpty ? 'Student' : name,
+          'photoUrl': photoUrl,
+          'isOnline': true,
+          'isInBattle': _isInBattle,
+          'lastActive': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
       } catch (_) {}
-      _updatePresence(
-        userId: userId,
-        name: name,
-        photoUrl: photoUrl,
-        trophies: latestTrophies,
-        isOnline: true,
-        isInBattle: _isInBattle,
-      );
     });
-  }
-
-  /// Immediate trophies sync after a match — call from BattleArenaNotifier
-  Future<void> updateTrophiesNow(String userId, int newTrophies) async {
-    final name = _lastName ?? '';
-    final photoUrl = _lastPhotoUrl ?? '';
-    // Merge update so we don't overwrite name/photo if not available
-    try {
-      await _firestore.collection(_presenceCollection).doc(userId).set({
-        'trophies': newTrophies,
-        'lastActive': FieldValue.serverTimestamp(),
-        if (name.isNotEmpty) 'name': name,
-        if (photoUrl.isNotEmpty) 'photoUrl': photoUrl,
-      }, SetOptions(merge: true));
-    } catch (_) {}
   }
 
   /// Sets user offline when leaving battle arena
