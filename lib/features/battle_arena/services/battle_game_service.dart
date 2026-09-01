@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../models/battle_models.dart';
@@ -102,10 +103,12 @@ class BattleGameService {
   }
 
   /// Updates battle stats after match
+  /// Also syncs trophies to Firestore presence doc for immediate Firebase visibility
   static Future<BattleStats> saveMatchResult({
     required bool isWin,
     required bool isDraw,
     required int score,
+    String? userId,
   }) async {
     final box = await Hive.openBox(_hiveBoxName);
     final current = await getLocalStats();
@@ -121,6 +124,17 @@ class BattleGameService {
     );
 
     await box.put('stats', updated.toMap());
+
+    // Immediate Firebase sync if userId provided (so 115 shows in Firebase, not just 100)
+    if (userId != null && userId.isNotEmpty && !userId.startsWith('guest_')) {
+      try {
+        await FirebaseFirestore.instance.collection('battle_presence').doc(userId).set({
+          'trophies': newTrophies,
+          'lastActive': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
+      } catch (_) {}
+    }
+
     return updated;
   }
 

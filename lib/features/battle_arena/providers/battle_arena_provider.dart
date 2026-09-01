@@ -422,6 +422,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       isWin: isWin,
       isDraw: isDraw,
       score: localScore,
+      userId: currentUser?.id ?? state.localPlayer.id,
     );
 
     state = state.copyWith(
@@ -444,6 +445,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       isWin: true,
       isDraw: false,
       score: state.localPlayer.currentScore,
+      userId: currentUser?.id ?? state.localPlayer.id,
     );
 
     state = state.copyWith(
@@ -479,6 +481,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         isWin: false,
         isDraw: false,
         score: state.localPlayer.currentScore,
+        userId: currentUser?.id ?? state.localPlayer.id,
       );
     }
 

@@ -1,21 +1,29 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import '../models/battle_models.dart';
 
 class BattlePresenceService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   Timer? _heartbeatTimer;
+  String? _lastName;
+  String? _lastPhotoUrl;
 
   static const String _presenceCollection = 'battle_presence';
   static const String _challengesCollection = 'battle_challenges';
 
-  /// Sets user online status in Firestore and starts heartbeat
+  /// Sets user online status in Firestore and starts heartbeat.
+  /// Heartbeat now reads latest trophies from Hive every 45s so post-match
+  /// trophy changes sync to Firebase without re-entering lobby.
   void startPresenceHeartbeat({
     required String userId,
     required String name,
     required String photoUrl,
     required int trophies,
   }) {
+    _lastName = name;
+    _lastPhotoUrl = photoUrl;
+
     _updatePresence(
       userId: userId,
       name: name,
@@ -26,16 +34,40 @@ class BattlePresenceService {
     );
 
     _heartbeatTimer?.cancel();
-    _heartbeatTimer = Timer.periodic(const Duration(seconds: 45), (_) {
+    _heartbeatTimer = Timer.periodic(const Duration(seconds: 45), (_) async {
+      // Read latest trophies from Hive (battle_arena_stats) for delayed sync
+      int latestTrophies = trophies;
+      try {
+        final box = await Hive.openBox('battle_arena_stats');
+        final map = box.get('stats');
+        if (map != null) {
+          latestTrophies = (Map<String, dynamic>.from(map)['trophies'] as num?)?.toInt() ?? trophies;
+        }
+      } catch (_) {}
       _updatePresence(
         userId: userId,
         name: name,
         photoUrl: photoUrl,
-        trophies: trophies,
+        trophies: latestTrophies,
         isOnline: true,
         isInBattle: false,
       );
     });
+  }
+
+  /// Immediate trophies sync after a match — call from BattleArenaNotifier
+  Future<void> updateTrophiesNow(String userId, int newTrophies) async {
+    final name = _lastName ?? '';
+    final photoUrl = _lastPhotoUrl ?? '';
+    // Merge update so we don't overwrite name/photo if not available
+    try {
+      await _firestore.collection(_presenceCollection).doc(userId).set({
+        'trophies': newTrophies,
+        'lastActive': FieldValue.serverTimestamp(),
+        if (name.isNotEmpty) 'name': name,
+        if (photoUrl.isNotEmpty) 'photoUrl': photoUrl,
+      }, SetOptions(merge: true));
+    } catch (_) {}
   }
 
   /// Sets user offline when leaving battle arena
