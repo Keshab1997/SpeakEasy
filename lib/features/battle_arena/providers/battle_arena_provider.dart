@@ -198,7 +198,8 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         },
       );
 
-      final opp = room.player1.id == freshLocal.id ? room.player2 : room.player1;
+      final isPlayer1 = room.player1.id == freshLocal.id;
+      final opp = isPlayer1 ? room.player2 : room.player1;
 
       state = state.copyWith(
         status: BattleArenaStatus.inDuel,
@@ -238,9 +239,8 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
   /// Starts a match from a direct challenge
   void startFromRoom(BattleRoom room) {
-    final opp = room.player1.id == state.localPlayer.id
-        ? room.player2
-        : room.player1;
+    final isPlayer1 = room.player1.id == state.localPlayer.id;
+    final opp = isPlayer1 ? room.player2 : room.player1;
 
     state = state.copyWith(
       status: BattleArenaStatus.inDuel,
