@@ -1,0 +1,20 @@
+SpeakEasy v1.0.27 — Fair Play & Trophy Protection 🛡️
+
+🛡️ TROPHIES CAN NEVER TRAP YOU
+• Rookie Shield: trophies never drop below 0.
+• Rank protection: once you reach a division (Challenger, Master,
+  Grandmaster) you can never fall back below its starting line.
+• Loss-streak shield: every 4th loss in a row costs ZERO trophies —
+  a bad streak can't ruin your climb.
+• Comeback bonus: winning while under 100 trophies gives +30 instead
+  of +25, so getting back on your feet is faster than ever.
+• Result screen now celebrates your shield saves and comeback wins.
+
+🎯 FAIR PLAY
+• Your opponent's chosen answer is now hidden until YOU submit your
+  own answer — no more peeking at the other player's choice.
+
+🔧 FIXES
+• Fixed a match sometimes starting on its own right after you pressed
+  Cancel during opponent search — cancel now truly stops matchmaking,
+  removes you from the queue, and never launches a bot match.
