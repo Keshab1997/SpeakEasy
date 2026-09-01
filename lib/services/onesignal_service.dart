@@ -28,6 +28,7 @@ class OneSignalService {
   bool _initialized = false;
   String _appId = '';
   String? _playerId;
+  String? _pendingExternalId;
 
   /// The OneSignal App ID used for initialization.
   String get appId => _appId;
@@ -95,9 +96,39 @@ class OneSignalService {
 
       _initialized = true;
       debugPrint('OneSignal: initialized successfully (playerId: $_playerId)');
+
+      // If a user id was provided before init finished, apply it now.
+      if (_pendingExternalId != null && _pendingExternalId!.isNotEmpty) {
+        try {
+          await OneSignal.login(_pendingExternalId!);
+        } catch (_) {}
+      }
     } catch (e) {
       debugPrint('OneSignal: initialization failed — $e');
     }
+  }
+
+  /// Tags this device's push subscription with the authenticated user's uid,
+  /// so Cloud Functions can send a targeted push via OneSignal
+  /// `include_aliases: { external_id: [uid] }` (used for battle challenges).
+  Future<void> setExternalUserId(String uid) async {
+    if (uid.isEmpty) return;
+    _pendingExternalId = uid;
+    if (!_initialized) return; // applied automatically once init finishes
+    try {
+      await OneSignal.login(uid);
+      debugPrint('OneSignal: external user id set → $uid');
+    } catch (e) {
+      debugPrint('OneSignal: setExternalUserId failed — $e');
+    }
+  }
+
+  /// Clears the alias on logout.
+  Future<void> clearExternalUserId() async {
+    if (!_initialized) return;
+    try {
+      await OneSignal.logout();
+    } catch (_) {}
   }
 
   /// Handles a notification that was tapped by the user.

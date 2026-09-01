@@ -209,6 +209,67 @@ exports.onBattleRoomWrite = functions.firestore
   });
 
 // ---------------------------------------------------------------------------
+// 1b) Send a push to the challenged player when a 1v1 challenge is created.
+//     Targets exactly that user via OneSignal external_id alias (the app calls
+//     OneSignal.login(uid) on sign-in). App ID + REST key come from the same
+//     Firestore Config/app_settings.onesignal doc the admin panel uses.
+// ---------------------------------------------------------------------------
+
+exports.onBattleChallengeCreate = functions.firestore
+  .document(`${CHALLENGES}/{challengeId}`)
+  .onCreate(async (snap) => {
+    try {
+      const ch = snap.data() || {};
+      const toUid = ch.toUserId;
+      const fromName = ch.fromUserName || 'A player';
+      if (!toUid || String(toUid).startsWith('guest_')) return null;
+
+      const cfgSnap = await db.collection('Config').doc('app_settings').get();
+      const os = cfgSnap.exists ? cfgSnap.data() && cfgSnap.data().onesignal : null;
+      const appId = os && os.AppId;
+      const apiKey = os && os.ApiKey;
+      if (!appId || !apiKey) {
+        functions.logger.log('onBattleChallengeCreate: OneSignal config missing — skip push');
+        return null;
+      }
+
+      const payload = {
+        app_id: appId,
+        target_channel: 'push',
+        include_aliases: { external_id: [toUid] },
+        headings: { en: `⚔️ ${fromName} challenges you!` },
+        contents: { en: 'Tap to accept the 1v1 English duel!' },
+        priority: 10,
+        small_icon: 'ic_stat_onesignal_default',
+        large_icon: 'ic_stat_onesignal_default',
+        data: {
+          actionType: 'battle_challenge',
+          type: 'battle_challenge',
+          notification_id: `battle_${snap.id}`,
+        },
+      };
+
+      const res = await fetch('https://onesignal.com/api/v1/notifications', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          Authorization: `Key ${apiKey}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      const body = await res.text();
+      if (!res.ok) {
+        functions.logger.error('OneSignal challenge push failed', res.status, body);
+      } else {
+        functions.logger.log('Battle challenge push sent →', toUid, body);
+      }
+    } catch (e) {
+      functions.logger.error('onBattleChallengeCreate error', e);
+    }
+    return null;
+  });
+
+// ---------------------------------------------------------------------------
 // 2) Scheduled cleanup (every 5 minutes)
 // ---------------------------------------------------------------------------
 

@@ -22,6 +22,7 @@ import 'services/idle_tracker_service.dart';
 import 'services/remote_config_service.dart';
 import 'providers/theme_provider.dart';
 import 'providers/notification_provider.dart';
+import 'providers/auth_provider.dart';
 
 
 import 'features/auth/screens/splash_screen.dart';
@@ -263,6 +264,16 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     final themeMode = ref.watch(themeModeProvider);
+
+    // Bind the OneSignal push subscription to the signed-in user's uid so
+    // battle-challenge pushes can be delivered to exactly that person.
+    ref.listen(authProvider, (prev, next) {
+      final uid = next.asData?.value?.id;
+      if (uid != null && uid.isNotEmpty && !uid.startsWith('guest_')) {
+        OneSignalService().setExternalUserId(uid);
+      }
+    });
+
     return GlobalBattleChallengeGate(
       child: MaterialApp(
         title: 'SpeakEasy',

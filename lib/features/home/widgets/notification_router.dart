@@ -34,6 +34,11 @@ class NotificationRouter {
           MaterialPageRoute(builder: (_) => const GameHomeScreen()),
         );
         break;
+      case 'battle_challenge':
+        // Open the battle lobby — the GlobalBattleChallengeGate will show
+        // the pending challenge sheet automatically.
+        Navigator.pushNamed(context, RouteNames.battleLobby);
+        break;
       default:
         // Just mark as read, no navigation needed
         break;
