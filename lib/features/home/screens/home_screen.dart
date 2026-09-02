@@ -340,15 +340,13 @@ style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
 	children: [
 	// 1. Greeting
 	_buildGreetingSection(theme, user?.name),
-	const SizedBox(height: 20),
-	// 🏆 Daily Quest
-	_buildDailyQuizCard(context, theme, isDark),
-	const SizedBox(height: 16),
-	// ⚔️ Battle Arena (1v1 Live Duel)
-	_buildBattleArenaCard(context, theme, isDark),
+	const SizedBox(height: 18),
+
+	// 📝 Daily Quiz & ⚔️ Battle Arena (Side-by-Side Dual Cards)
+	_buildDailyQuizAndBattleRow(context, theme, isDark),
 	const SizedBox(height: 16),
 
-	// 🎮 Learning Games (Directly below Battle Arena)
+	// 🎮 Learning Games (Directly below Quiz & Battle Arena)
 	FeatureGateWidget(
 	featureKey: 'games',
 	child: _buildGameCard(theme, isDark),
@@ -701,261 +699,152 @@ borderRadius: BorderRadius.circular(4))),
 );
 }
 
-// ── Daily Quest Card (Duolingo-style, drives daily engagement) ──
-  //Daily Quiz Card (replaces Daily Quest)
-  Widget _buildDailyQuizCard(BuildContext context, ThemeData theme, bool isDark) {
+  // ── Daily Quiz & Battle Arena (Side-by-Side Dual Cards) ──
+  Widget _buildDailyQuizAndBattleRow(BuildContext context, ThemeData theme, bool isDark) {
     final quizState = ref.watch(dailyQuizProvider);
     final quiz = quizState.quiz;
     final isCompleted = quiz?.isCompleted ?? false;
     final progress = quiz == null || quiz.totalQuestions == 0
         ? 0.0
         : quiz.answeredCount / quiz.totalQuestions;
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => const DailyQuizScreen()),
-        );
-      },
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [Color(0xFF6C63FF), Color(0xFF3F51B5)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(24),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFF6C63FF).withValues(alpha: 0.35),
-              blurRadius: 16,
-              offset: const Offset(0, 8),
-            ),
-          ],
-        ),
-        child: Stack(
-          children: [
-            Positioned(
-              right: -16,
-              bottom: -16,
-              child: Icon(Icons.quiz_outlined,
-                  size: 100, color: Colors.white.withValues(alpha: 0.1)),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const Text(
-                          'DAILY QUIZ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.0,
-                          ),
-                        ),
-                      ),
-                      const Spacer(),
-                      if (isCompleted)
-                        const Icon(Icons.check_circle,
-                            color: Colors.greenAccent, size: 22)
-                      else
-                        const Text('📝', style: TextStyle(fontSize: 20)),
-                    ],
+
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // ── LEFT: Daily Quiz Card ──
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const DailyQuizScreen()),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF6C63FF), Color(0xFF4338CA)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
-                  const SizedBox(height: 14),
-                  const Text(
-                    "Today's Quiz Challenge",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    isCompleted
-                        ? 'Score: ${quiz!.score} pts! Great work today! 🎉'
-                        : quiz == null
-                            ? '10 questions ⏱️ ~5 min'
-                            : '${quiz.answeredCount} / ${quiz.totalQuestions} answered',
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.85),
-                      fontSize: 13,
-                    ),
-                  ),
-                  if (quiz != null && !isCompleted) ...[
-                    const SizedBox(height: 14),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(6),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 6,
-                        backgroundColor: Colors.white.withValues(alpha: 0.3),
-                        color: Colors.amberAccent,
-                      ),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF6C63FF).withValues(alpha: 0.35),
+                      blurRadius: 14,
+                      offset: const Offset(0, 6),
                     ),
                   ],
-                  const SizedBox(height: 14),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const DailyQuizScreen(),
-                        ),
-                      );
-                    },
-                    icon: Icon(
-                      isCompleted
-                          ? Icons.celebration
-                          : Icons.arrow_forward,
-                      size: 18,
-                    ),
-                    label: Text(
-                      isCompleted
-                          ? 'View Results'
-                          : quiz == null
-                              ? 'Generate Quiz'
-                              : quiz.answeredCount > 0
-                                  ? 'Resume Quiz'
-                                  : 'Start Quiz',
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: const Color(0xFF3F51B5),
-                      elevation: 0,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-
-
-
-
-
-
-
-
-// HOME LEARNING SECTION — Spoken Rules, Vocabulary, Grammar, Tense Rules
-
-  // ── Battle Arena Card (1v1 Live English Quiz Duel) ──
-  Widget _buildBattleArenaCard(BuildContext context, ThemeData theme, bool isDark) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => const BattleLobbyScreen()),
-        );
-      },
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [Color(0xFF1E1B4B), Color(0xFF312E81), Color(0xFFEF4444)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(24),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFFEF4444).withValues(alpha: 0.3),
-              blurRadius: 16,
-              offset: const Offset(0, 8),
-            ),
-          ],
-        ),
-        child: Stack(
-          children: [
-            Positioned(
-              right: -10,
-              bottom: -10,
-              child: Icon(
-                Icons.sports_kabaddi_rounded,
-                size: 110,
-                color: Colors.white.withValues(alpha: 0.12),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Stack(
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.3),
-                          borderRadius: BorderRadius.circular(12),
+                      Positioned(
+                        right: -12,
+                        bottom: -12,
+                        child: Icon(
+                          Icons.quiz_outlined,
+                          size: 76,
+                          color: Colors.white.withValues(alpha: 0.12),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(14),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              width: 8,
-                              height: 8,
-                              decoration: const BoxDecoration(
-                                color: Color(0xFF10B981),
-                                shape: BoxShape.circle,
-                              ),
+                            Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withValues(alpha: 0.2),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Text(
+                                    isCompleted ? 'COMPLETED' : 'DAILY QUIZ',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 9,
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 0.6,
+                                    ),
+                                  ),
+                                ),
+                                const Spacer(),
+                                if (isCompleted)
+                                  const Icon(Icons.check_circle, color: Colors.greenAccent, size: 18)
+                                else
+                                  const Text('📝', style: TextStyle(fontSize: 16)),
+                              ],
                             ),
-                            const SizedBox(width: 6),
+                            const SizedBox(height: 10),
                             const Text(
-                              'BATTLE ARENA',
+                              'Daily Quiz',
                               style: TextStyle(
                                 color: Colors.white,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 11,
-                                letterSpacing: 1.2,
                               ),
                             ),
-                          ],
-                        ),
-                      ),
-                      const Spacer(),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFF59E0B).withValues(alpha: 0.25),
-                          borderRadius: BorderRadius.circular(8),
-                          border: Border.all(color: const Color(0xFFF59E0B).withValues(alpha: 0.6), width: 1),
-                        ),
-                        child: const Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(Icons.emoji_events_rounded, color: Color(0xFFFBBF24), size: 14),
-                            SizedBox(width: 4),
+                            const SizedBox(height: 2),
                             Text(
-                              '1v1 DUEL',
+                              isCompleted
+                                  ? 'Score: ${quiz!.score} pts 🎉'
+                                  : (quiz == null
+                                      ? '10 Qs • ~5 min'
+                                      : '${quiz.answeredCount}/${quiz.totalQuestions} answered'),
                               style: TextStyle(
-                                color: Color(0xFFFBBF24),
-                                fontWeight: FontWeight.w900,
-                                fontSize: 11,
+                                color: Colors.white.withValues(alpha: 0.85),
+                                fontSize: 11.5,
+                              ),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            if (quiz != null && !isCompleted) ...[
+                              const SizedBox(height: 6),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(4),
+                                child: LinearProgressIndicator(
+                                  value: progress,
+                                  minHeight: 4,
+                                  backgroundColor: Colors.white.withValues(alpha: 0.25),
+                                  color: Colors.amberAccent,
+                                ),
+                              ),
+                            ],
+                            const Spacer(),
+                            const SizedBox(height: 10),
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    isCompleted
+                                        ? 'Results'
+                                        : (quiz == null
+                                            ? 'Start'
+                                            : (quiz.answeredCount > 0 ? 'Resume' : 'Start')),
+                                    style: const TextStyle(
+                                      color: Color(0xFF4338CA),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 11.5,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Icon(
+                                    isCompleted ? Icons.celebration_rounded : Icons.arrow_forward_rounded,
+                                    size: 13,
+                                    color: const Color(0xFF4338CA),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
@@ -963,61 +852,148 @@ borderRadius: BorderRadius.circular(4))),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 14),
-                  const Text(
-                    '1v1 Live Quiz Duel ⚔️',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    'Challenge online learners or duel AI Bot in a 5-round speed quiz!',
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.85),
-                      fontSize: 13,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.2),
-                              blurRadius: 6,
-                            ),
-                          ],
-                        ),
-                        child: const Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              'Enter Arena',
-                              style: TextStyle(
-                                color: Color(0xFF1E1B4B),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13,
-                              ),
-                            ),
-                            SizedBox(width: 6),
-                            Icon(Icons.arrow_forward_rounded, size: 16, color: Color(0xFF1E1B4B)),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+          const SizedBox(width: 12),
+
+          // ── RIGHT: Battle Arena Card ──
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const BattleLobbyScreen()),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF1E1B4B), Color(0xFF312E81), Color(0xFFEF4444)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFFEF4444).withValues(alpha: 0.3),
+                      blurRadius: 14,
+                      offset: const Offset(0, 6),
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        right: -10,
+                        bottom: -10,
+                        child: Icon(
+                          Icons.sports_kabaddi_rounded,
+                          size: 76,
+                          color: Colors.white.withValues(alpha: 0.12),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(14),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withValues(alpha: 0.3),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Container(
+                                        width: 6,
+                                        height: 6,
+                                        decoration: const BoxDecoration(
+                                          color: Color(0xFF10B981),
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 4),
+                                      const Text(
+                                        '1v1 DUEL',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 9,
+                                          letterSpacing: 0.6,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const Spacer(),
+                                const Text('⚔️', style: TextStyle(fontSize: 16)),
+                              ],
+                            ),
+                            const SizedBox(height: 10),
+                            const Text(
+                              'Battle Arena',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 2),
+                            Text(
+                              'Speed quiz & live duel with learners or AI 🤖',
+                              style: TextStyle(
+                                color: Colors.white.withValues(alpha: 0.85),
+                                fontSize: 11.5,
+                              ),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            const Spacer(),
+                            const SizedBox(height: 10),
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: const Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Enter Arena',
+                                    style: TextStyle(
+                                      color: Color(0xFF1E1B4B),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 11.5,
+                                    ),
+                                  ),
+                                  SizedBox(width: 4),
+                                  Icon(
+                                    Icons.arrow_forward_rounded,
+                                    size: 13,
+                                    color: Color(0xFF1E1B4B),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
