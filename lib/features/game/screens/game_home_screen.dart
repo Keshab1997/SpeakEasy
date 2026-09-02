@@ -42,7 +42,6 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
   @override
   void initState() {
     super.initState();
-    // Refresh providers so the header shows the latest accumulated values
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(xpProvider.notifier).refresh();
       ref.read(coinProvider.notifier).refresh();
@@ -50,9 +49,8 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
       ref.read(statisticsProvider.notifier).refresh();
     });
 
-    // Animation setup
     _animationController = AnimationController(
-      duration: const Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 600),
       vsync: this,
     );
 
@@ -61,10 +59,11 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
     );
 
     _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, 0.3),
+      begin: const Offset(0, 0.15),
       end: Offset.zero,
     ).animate(
-        CurvedAnimation(parent: _animationController, curve: Curves.easeOutCubic));
+      CurvedAnimation(parent: _animationController, curve: Curves.easeOutCubic),
+    );
 
     _animationController.forward();
   }
@@ -78,10 +77,9 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
   String _buildAchievementsSubtitle() {
     final achievementState = ref.watch(achievementProvider);
     return achievementState.when(
-      data: (state) =>
-          '${state.unlockedCount}/${state.totalCount} badges unlocked',
-      loading: () => 'Loading badges...',
-      error: (_, __) => 'View achievements',
+      data: (state) => '${state.unlockedCount}/${state.totalCount} unlocked',
+      loading: () => 'Loading...',
+      error: (_, __) => 'View Badges',
     );
   }
 
@@ -98,6 +96,7 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: const Row(
           children: [
             Text('🔥 ', style: TextStyle(fontSize: 24)),
@@ -148,6 +147,7 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: const Text('🛡️ Buy Streak Freeze'),
         content: Text('Spend $cost coins to buy a Streak Freeze?\n'
             'You can protect your streak if you miss a day.'),
@@ -193,9 +193,8 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
     final streakState = ref.watch(streakProvider);
     final statsState = ref.watch(statisticsProvider);
     final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
 
-    // Use total earned XP/Coins from statistics (the persistent cumulative
-    // counters) when the per-box ProgressRepository values are still 0.
     final int displayXP = statsState.totalEarnedXP > 0
         ? statsState.totalEarnedXP
         : xpState.currentXP;
@@ -206,813 +205,676 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
         xpState.currentLevel > 0 ? xpState.currentLevel : 1;
 
     return Scaffold(
+      backgroundColor: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
       appBar: AppBar(
-        title: const Text('Learning Games',
-            style: TextStyle(fontWeight: FontWeight.bold)),
-        elevation: 0,
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // ── Player Stats Card ──
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(colors: AppColors.primaryGradient),
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.primary.withValues(alpha: 0.3),
-                    blurRadius: 15,
-                    offset: const Offset(0, 8),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Level $displayLevel',
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold)),
-                          Row(
-                            children: [
-                              Text(xpState.levelEmoji,
-                                  style: const TextStyle(fontSize: 16)),
-                              const SizedBox(width: 6),
-                              Text(xpState.levelTitle,
-                                  style: const TextStyle(
-                                      color: Colors.white70, fontSize: 14)),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const Icon(Icons.monetization_on,
-                                  color: Colors.amber, size: 20),
-                              const SizedBox(width: 4),
-                              Text('$displayCoins',
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold)),
-                            ],
-                          ),
-                          const SizedBox(height: 4),
-                          Row(
-                            children: [
-                              Text(streakState.emoji,
-                                  style: const TextStyle(fontSize: 20)),
-                              const SizedBox(width: 4),
-                              Text('${streakState.currentStreak}',
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600)),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(4),
-                    child: LinearProgressIndicator(
-                      value: xpState.levelProgress,
-                      backgroundColor: Colors.white30,
-                      color: Colors.white,
-                      minHeight: 6,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text('$displayXP XP earned',
-                      style:
-                          const TextStyle(color: Colors.white70, fontSize: 12)),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 18),
-
-            // ── Streak & Weekly Progress ──
-            StreakWidget(
-              currentStreak: streakState.currentStreak,
-              weeklyStreak: streakState.weeklyStreak,
-              weeklyMilestone: streakState.weeklyMilestone,
-              weeklyMilestoneLabel: streakState.weeklyMilestoneLabel,
-              thisWeekActiveDays: streakState.thisWeekActiveDays,
-              todayXP: displayXP,
-              dailyXPTarget: 50,
-              hasPracticeToday: _hasPracticedToday(),
-              isStreakFrozen: HiveService.getStreakFreezeCount() > 0,
-              streakFreezeCount: HiveService.getStreakFreezeCount(),
-              onTap: () => _showStreakInfoDialog(context),
-              onBuyFreeze: () => _buyStreakFreeze(context, displayCoins),
-              onShare: () => _shareStreak(context, streakState.currentStreak),
-            ),
-
-            const SizedBox(height: 20),
-
-            // ── Quick Stats ──
-            Row(
-              children: [
-                Expanded(
-                  child: _StatCard(
-                    icon: Icons.quiz,
-                    label: 'Games Played',
-                    value: '${statsState.totalGamesPlayed}',
-                    color: AppColors.primary,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: _StatCard(
-                    icon: Icons.trending_up,
-                    label: 'Accuracy',
-                    value:
-                        '${(statsState.overallAccuracy * 100).toStringAsFixed(1)}%',
-                    color: AppColors.success,
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 24),
-
-            // ── Featured Game Section Title ──
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Colors.amber.shade400, Colors.orange.shade400],
-                    ),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Icon(Icons.stars_rounded,
-                      color: Colors.white, size: 24),
-                ),
-                const SizedBox(width: 12),
-                Text(
-                  'Featured Games',
-                  style: theme.textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-
-            // ── Enhanced Featured Games Grid ──
-            FadeTransition(
-              opacity: _fadeAnimation,
-              child: SlideTransition(
-                position: _slideAnimation,
-                child: Column(
-                  children: [
-                    _EnhancedGameCard(
-                      title: 'Word Match',
-                      description: 'Match বাংলা → English pairs',
-                      details: '6 rounds • Score + Streak bonus',
-                      icon: Icons.compare_arrows_rounded,
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF667eea), Color(0xFF764ba2)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      badge: 'HOT',
-                      badgeColor: Colors.deepOrange,
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const WordMatchModeScreen()),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    _EnhancedGameCard(
-                      title: 'Quick Quiz',
-                      description: 'বাংলা দেখে correct English বেছে নিন',
-                      details: '5 sec timer • Fast-paced challenge',
-                      icon: Icons.bolt_rounded,
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFFf093fb), Color(0xFFF5576C)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      badge: 'NEW',
-                      badgeColor: Colors.green,
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const QuickQuizModeScreen()),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    _EnhancedGameCard(
-                      title: 'Verb Learning',
-                      description: 'Verb forms, Bangla meaning & example sentences',
-                      details: 'V1-V5 • Explanation • Quick Quiz',
-                      icon: Icons.directions_run_rounded,
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF58CC02), Color(0xFF3DA302)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      badge: 'NEW',
-                      badgeColor: Colors.orange,
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const VerbLearningModeScreen()),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: _CompactGameCard(
-                            title: 'Fill Blanks',
-                            icon: Icons.edit_note_rounded,
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFF6A1B9A), Color(0xFFBA68C8)],
-                            ),
-                            onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) =>
-                                      const FillInBlanksModeScreen()),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: _CompactGameCard(
-                            title: 'Sentence Builder',
-                            icon: Icons.construction_rounded,
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFF1565C0), Color(0xFF42A5F5)],
-                            ),
-                            onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) =>
-                                      const SentenceBuilderModeScreen()),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: _CompactGameCard(
-                            title: 'Grammar Detective',
-                            icon: Icons.search_rounded,
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFFc31432), Color(0xFF240b36)],
-                            ),
-                            onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) =>
-                                      const GrammarDetectiveModeScreen()),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: _CompactGameCard(
-                            title: 'Translation',
-                            icon: Icons.translate_rounded,
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFF56ab2f), Color(0xFFa8e063)],
-                            ),
-                            onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) =>
-                                      const BanglaToEnglishModeScreen()),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                    _EnhancedGameCard(
-                      title: 'Story Completion',
-                      description: 'গল্পে ফাঁকা জায়গায় সঠিক শব্দ বসান',
-                      details: '10 stories • Bengali translation + explanation',
-                      icon: Icons.auto_stories_rounded,
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF0D9488), Color(0xFF14B8A6)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      badge: 'NEW',
-                      badgeColor: const Color(0xFF0D9488),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const StoryCompletionModeScreen()),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    _EnhancedGameCard(
-                      title: 'Flashcards',
-                      description: 'Swipe & memorize বাংলা → English',
-                      details: '8 categories • 100+ words with pronunciation',
-                      icon: Icons.style_rounded,
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      badge: 'NEW',
-                      badgeColor: const Color(0xFF6366F1),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const FlashcardsModeScreen()),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 28),
-
-            // ── Game Modes ──
-            Row(
-              children: [
-                const Icon(Icons.sports_esports_rounded,
-                    color: AppColors.primary, size: 24),
-                const SizedBox(width: 8),
-                Text('Game Modes',
-                    style: theme.textTheme.titleLarge
-                        ?.copyWith(fontWeight: FontWeight.bold)),
-              ],
-            ),
-            const SizedBox(height: 12),
-            GridView.count(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              mainAxisSpacing: 12,
-              crossAxisSpacing: 12,
-              childAspectRatio: 1.25,
-              children: [
-                _ModeCard(
-                  title: 'Practice',
-                  subtitle: 'Learn at your pace',
-                  icon: Icons.school,
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const ModeSelectionScreen())),
-                ),
-                _ModeCard(
-                  title: 'Daily Challenge',
-                  subtitle: 'New questions daily',
-                  icon: Icons.today,
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const DailyChallengeScreen())),
-                ),
-                _ModeCard(
-                  title: 'Boss Battle',
-                  subtitle: 'Ultimate test',
-                  icon: Icons.emoji_events,
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const BossBattleScreen())),
-                ),
-                _ModeCard(
-                  title: 'Leaderboard',
-                  subtitle: 'Compete globally',
-                  icon: Icons.leaderboard,
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const LeaderboardScreen())),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 24),
-
-            // ── More Options ──
-            Row(
-              children: [
-                const Icon(Icons.more_horiz_rounded,
-                    color: AppColors.primary, size: 24),
-                const SizedBox(width: 8),
-                Text('More',
-                    style: theme.textTheme.titleLarge
-                        ?.copyWith(fontWeight: FontWeight.bold)),
-              ],
-            ),
-            const SizedBox(height: 12),
-            ListView(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              children: [
-                _ListTile(
-                  icon: Icons.bar_chart,
-                  title: 'Statistics',
-                  subtitle: 'View your progress',
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const StatisticsScreen())),
-                ),
-                _ListTile(
-                  icon: Icons.emoji_events,
-                  title: 'Achievements',
-                  subtitle: _buildAchievementsSubtitle(),
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const AchievementsScreen())),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// ── Enhanced Game Card Widget ──
-class _EnhancedGameCard extends StatelessWidget {
-  final String title;
-  final String description;
-  final String details;
-  final IconData icon;
-  final Gradient gradient;
-  final String badge;
-  final Color badgeColor;
-  final VoidCallback onTap;
-
-  const _EnhancedGameCard({
-    required this.title,
-    required this.description,
-    required this.details,
-    required this.icon,
-    required this.gradient,
-    required this.badge,
-    required this.badgeColor,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(24),
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          gradient: gradient,
-          borderRadius: BorderRadius.circular(24),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.15),
-              blurRadius: 20,
-              offset: const Offset(0, 10),
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(14),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.3), width: 2),
-                  ),
-                  child: Icon(icon, color: Colors.white, size: 32),
-                ),
-                Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: badgeColor.withValues(alpha: 0.9),
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: badgeColor.withValues(alpha: 0.3),
-                        blurRadius: 8,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: Text(
-                    badge,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 11,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            Text(
-              title,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                letterSpacing: -0.5,
-              ),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              description,
-              style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.9),
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            const SizedBox(height: 12),
-            Row(
-              children: [
-                Icon(Icons.info_outline_rounded,
-                    color: Colors.white.withValues(alpha: 0.8), size: 16),
-                const SizedBox(width: 6),
-                Expanded(
-                  child: Text(
-                    details,
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.75),
-                      fontSize: 12,
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.2),
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(Icons.arrow_forward_rounded,
-                      color: Colors.white, size: 18),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// ── Compact Game Card Widget ──
-class _CompactGameCard extends StatelessWidget {
-  final String title;
-  final IconData icon;
-  final Gradient gradient;
-  final VoidCallback onTap;
-
-  const _CompactGameCard({
-    required this.title,
-    required this.icon,
-    required this.gradient,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(20),
-      child: Container(
-        padding: const EdgeInsets.all(12),
-        height: 130,
-        decoration: BoxDecoration(
-          gradient: gradient,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.1),
-              blurRadius: 12,
-              offset: const Offset(0, 6),
-            ),
-          ],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        title: const Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Icon(icon, color: Colors.white, size: 24),
-            ),
-            Flexible(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      height: 1.2,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  const SizedBox(height: 4),
-                  Container(
-                    padding: const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.2),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(Icons.play_arrow_rounded,
-                        color: Colors.white, size: 12),
-                  ),
-                ],
-              ),
-            ),
+            Text('🎮 Learning Games', style: TextStyle(fontWeight: FontWeight.bold)),
           ],
+        ),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: FadeTransition(
+          opacity: _fadeAnimation,
+          child: SlideTransition(
+            position: _slideAnimation,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // ── 1. Compact Player Banner (Level, XP, Coins) ──
+                _buildPlayerHeaderCard(
+                  displayLevel: displayLevel,
+                  levelEmoji: xpState.levelEmoji,
+                  levelTitle: xpState.levelTitle,
+                  displayCoins: displayCoins,
+                  displayXP: displayXP,
+                  levelProgress: xpState.levelProgress,
+                  isDark: isDark,
+                ),
+                const SizedBox(height: 14),
+
+                // ── 2. Streak & Weekly Attendance Card ──
+                StreakWidget(
+                  currentStreak: streakState.currentStreak,
+                  weeklyStreak: streakState.weeklyStreak,
+                  weeklyMilestone: streakState.weeklyMilestone,
+                  weeklyMilestoneLabel: streakState.weeklyMilestoneLabel,
+                  thisWeekActiveDays: streakState.thisWeekActiveDays,
+                  todayXP: displayXP,
+                  dailyXPTarget: 50,
+                  hasPracticeToday: _hasPracticedToday(),
+                  isStreakFrozen: HiveService.getStreakFreezeCount() > 0,
+                  streakFreezeCount: HiveService.getStreakFreezeCount(),
+                  onTap: () => _showStreakInfoDialog(context),
+                  onBuyFreeze: () => _buyStreakFreeze(context, displayCoins),
+                  onShare: () => _shareStreak(context, streakState.currentStreak),
+                ),
+                const SizedBox(height: 18),
+
+                // ── 3. Quick Play Modes Grid (Daily Challenge, Boss Battle, Leaderboard, Practice) ──
+                _buildSectionHeader('GAME MODES', Icons.sports_esports_rounded, const Color(0xFF6366F1), isDark),
+                const SizedBox(height: 10),
+                _buildQuickModesGrid(context, isDark),
+                const SizedBox(height: 20),
+
+                // ── 4. All Learning Games (Compact 2-Column Grid) ──
+                _buildSectionHeader('ALL LEARNING GAMES', Icons.stars_rounded, const Color(0xFFF59E0B), isDark),
+                const SizedBox(height: 10),
+                _buildAllGamesGrid(context),
+                const SizedBox(height: 20),
+
+                // ── 5. Quick Stats & Achievements (Side-by-Side Compact) ──
+                _buildStatsAndAchievementsRow(
+                  context: context,
+                  statsState: statsState,
+                  isDark: isDark,
+                ),
+                const SizedBox(height: 24),
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
-}
 
-class _StatCard extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final String value;
-  final Color color;
-
-  const _StatCard(
-      {required this.icon,
-      required this.label,
-      required this.value,
-      required this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+  // ── Compact Player Header Banner ──
+  Widget _buildPlayerHeaderCard({
+    required int displayLevel,
+    required String levelEmoji,
+    required String levelTitle,
+    required int displayCoins,
+    required int displayXP,
+    required double levelProgress,
+    required bool isDark,
+  }) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       decoration: BoxDecoration(
-        color: theme.cardColor,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.borderLight),
+        gradient: const LinearGradient(
+          colors: [Color(0xFF1E1B4B), Color(0xFF312E81), Color(0xFF4338CA)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 10,
+            color: const Color(0xFF4338CA).withValues(alpha: 0.3),
+            blurRadius: 12,
             offset: const Offset(0, 4),
           ),
         ],
       ),
       child: Column(
         children: [
-          Icon(icon, color: color, size: 28),
-          const SizedBox(height: 8),
-          Text(value,
-              style: theme.textTheme.titleLarge
-                  ?.copyWith(fontWeight: FontWeight.bold, color: color)),
-          Text(label, style: theme.textTheme.bodySmall),
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: Text(levelEmoji, style: const TextStyle(fontSize: 22)),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Level $displayLevel',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(width: 6),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.2),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Text(
+                            levelTitle,
+                            style: const TextStyle(color: Colors.white70, fontSize: 10.5, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      '$displayXP XP earned',
+                      style: TextStyle(color: Colors.white.withValues(alpha: 0.75), fontSize: 11.5),
+                    ),
+                  ],
+                ),
+              ),
+              // Coins Pill
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                decoration: BoxDecoration(
+                  color: Colors.black.withValues(alpha: 0.25),
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(color: Colors.amber.withValues(alpha: 0.4)),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.monetization_on, color: Colors.amber, size: 16),
+                    const SizedBox(width: 4),
+                    Text(
+                      '$displayCoins',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: LinearProgressIndicator(
+              value: levelProgress.clamp(0.0, 1.0),
+              backgroundColor: Colors.white.withValues(alpha: 0.18),
+              valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF38BDF8)),
+              minHeight: 5,
+            ),
+          ),
         ],
       ),
     );
   }
-}
 
-class _ModeCard extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final IconData icon;
-  final VoidCallback onTap;
-
-  const _ModeCard(
-      {required this.title,
-      required this.subtitle,
-      required this.icon,
-      required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(16),
-      child: Container(
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(colors: AppColors.primaryGradient),
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.primary.withValues(alpha: 0.3),
-              blurRadius: 8,
-              offset: const Offset(0, 4),
-            ),
-          ],
+  // ── Section Header ──
+  Widget _buildSectionHeader(String title, IconData icon, Color color, bool isDark) {
+    return Row(
+      children: [
+        Icon(icon, size: 17, color: color),
+        const SizedBox(width: 6),
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 11.5,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.1,
+            color: isDark ? const Color(0xFF94A3B8) : const Color(0xFF64748B),
+          ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(icon, color: Colors.white, size: 26),
-            const SizedBox(height: 6),
-            Text(
-              title,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-            Text(
-              subtitle,
-              style: const TextStyle(color: Colors.white70, fontSize: 11),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ],
+      ],
+    );
+  }
+
+  // ── Quick Play Modes Grid (Practice, Daily, Boss, Leaderboard) ──
+  Widget _buildQuickModesGrid(BuildContext context, bool isDark) {
+    return GridView.count(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,
+      mainAxisSpacing: 10,
+      crossAxisSpacing: 10,
+      childAspectRatio: 2.1,
+      children: [
+        _buildQuickModeTile(
+          title: 'Daily Challenge',
+          subtitle: 'New Daily Qs',
+          icon: Icons.today_rounded,
+          gradient: const [Color(0xFFF59E0B), Color(0xFFD97706)],
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const DailyChallengeScreen()),
+          ),
+        ),
+        _buildQuickModeTile(
+          title: 'Boss Battle',
+          subtitle: 'Ultimate Test',
+          icon: Icons.shield_rounded,
+          gradient: const [Color(0xFFEF4444), Color(0xFFB91C1C)],
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const BossBattleScreen()),
+          ),
+        ),
+        _buildQuickModeTile(
+          title: 'Leaderboard',
+          subtitle: 'Compete Global',
+          icon: Icons.leaderboard_rounded,
+          gradient: const [Color(0xFF3B82F6), Color(0xFF1D4ED8)],
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const LeaderboardScreen()),
+          ),
+        ),
+        _buildQuickModeTile(
+          title: 'Practice Hub',
+          subtitle: 'Self-Paced',
+          icon: Icons.school_rounded,
+          gradient: const [Color(0xFF10B981), Color(0xFF047857)],
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const ModeSelectionScreen()),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildQuickModeTile({
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required List<Color> gradient,
+    required VoidCallback onTap,
+  }) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16),
+        child: Ink(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: gradient),
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: gradient.first.withValues(alpha: 0.28),
+                blurRadius: 8,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.2),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(icon, color: Colors.white, size: 18),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.5,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      subtitle,
+                      style: const TextStyle(color: Colors.white70, fontSize: 10),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
-}
 
-class _ListTile extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final String subtitle;
-  final VoidCallback onTap;
-
-  const _ListTile(
-      {required this.icon,
-      required this.title,
-      required this.subtitle,
-      required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 8),
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: theme.cardColor,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppColors.borderLight),
+  // ── All Learning Games (Compact 2-Column Grid) ──
+  Widget _buildAllGamesGrid(BuildContext context) {
+    final games = [
+      _GameItem(
+        title: 'Word Match',
+        description: 'বাংলা → English pairs',
+        icon: Icons.compare_arrows_rounded,
+        badge: 'HOT',
+        gradient: const [Color(0xFF6366F1), Color(0xFF4338CA)],
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const WordMatchModeScreen()),
         ),
-        child: Row(
-          children: [
-            Icon(icon, color: AppColors.primary),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+      ),
+      _GameItem(
+        title: 'Quick Quiz',
+        description: '5s speed challenge',
+        icon: Icons.bolt_rounded,
+        badge: 'SPEED',
+        gradient: const [Color(0xFFF43F5E), Color(0xFFBE123C)],
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const QuickQuizModeScreen()),
+        ),
+      ),
+      _GameItem(
+        title: 'Verb Learning',
+        description: 'V1–V5 & grammar rules',
+        icon: Icons.directions_run_rounded,
+        badge: 'VERBS',
+        gradient: const [Color(0xFF10B981), Color(0xFF047857)],
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const VerbLearningModeScreen()),
+        ),
+      ),
+      _GameItem(
+        title: 'Fill Blanks',
+        description: 'Sentence grammar gaps',
+        icon: Icons.edit_note_rounded,
+        badge: 'MCQ',
+        gradient: const [Color(0xFF8B5CF6), Color(0xFF6D28D9)],
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const FillInBlanksModeScreen()),
+        ),
+      ),
+      _GameItem(
+        title: 'Sentence Builder',
+        description: 'Arrange words in order',
+        icon: Icons.construction_rounded,
+        badge: 'BUILD',
+        gradient: const [Color(0xFF0284C7), Color(0xFF0369A1)],
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const SentenceBuilderModeScreen()),
+        ),
+      ),
+      _GameItem(
+        title: 'Grammar Detective',
+        description: 'Spot & fix mistakes',
+        icon: Icons.search_rounded,
+        badge: 'ERROR',
+        gradient: const [Color(0xFFD97706), Color(0xFFB45309)],
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const GrammarDetectiveModeScreen()),
+        ),
+      ),
+      _GameItem(
+        title: 'Translation',
+        description: 'বাংলা to English mode',
+        icon: Icons.translate_rounded,
+        badge: 'DUAL',
+        gradient: const [Color(0xFF059669), Color(0xFF065F46)],
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const BanglaToEnglishModeScreen()),
+        ),
+      ),
+      _GameItem(
+        title: 'Story Completion',
+        description: 'Complete the short story',
+        icon: Icons.auto_stories_rounded,
+        badge: 'READ',
+        gradient: const [Color(0xFF0D9488), Color(0xFF115E59)],
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const StoryCompletionModeScreen()),
+        ),
+      ),
+      _GameItem(
+        title: 'Flashcards',
+        description: 'Swipe & learn vocabulary',
+        icon: Icons.style_rounded,
+        badge: 'VOCAB',
+        gradient: const [Color(0xFFEC4899), Color(0xFFBE185D)],
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const FlashcardsModeScreen()),
+        ),
+      ),
+    ];
+
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 12,
+        crossAxisSpacing: 12,
+        childAspectRatio: 1.22,
+      ),
+      itemCount: games.length,
+      itemBuilder: (context, index) {
+        final g = games[index];
+        return _buildGameGridTile(g);
+      },
+    );
+  }
+
+  Widget _buildGameGridTile(_GameItem game) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: game.onTap,
+        borderRadius: BorderRadius.circular(18),
+        child: Ink(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: game.gradient,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(18),
+            boxShadow: [
+              BoxShadow(
+                color: game.gradient.first.withValues(alpha: 0.32),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(title,
-                      style: theme.textTheme.titleMedium
-                          ?.copyWith(fontWeight: FontWeight.w600)),
-                  Text(subtitle, style: theme.textTheme.bodySmall),
+                  Container(
+                    padding: const EdgeInsets.all(7),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.22),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Icon(game.icon, color: Colors.white, size: 20),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: 0.25),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Text(
+                      game.badge,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 9,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                  ),
                 ],
               ),
-            ),
-            const Icon(Icons.chevron_right, color: Colors.grey),
-          ],
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    game.title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      height: 1.2,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    game.description,
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.85),
+                      fontSize: 10.5,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+
+  // ── Quick Stats & Achievements (Side-by-Side Row) ──
+  Widget _buildStatsAndAchievementsRow({
+    required BuildContext context,
+    required dynamic statsState,
+    required bool isDark,
+  }) {
+    return Row(
+      children: [
+        Expanded(
+          child: _buildBottomHubCard(
+            title: 'Statistics',
+            subtitle: '${statsState.totalGamesPlayed} Played · ${(statsState.overallAccuracy * 100).toStringAsFixed(0)}% Acc',
+            icon: Icons.bar_chart_rounded,
+            color: const Color(0xFF3B82F6),
+            isDark: isDark,
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const StatisticsScreen()),
+            ),
+          ),
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: _buildBottomHubCard(
+            title: 'Achievements',
+            subtitle: _buildAchievementsSubtitle(),
+            icon: Icons.emoji_events_rounded,
+            color: const Color(0xFFF59E0B),
+            isDark: isDark,
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const AchievementsScreen()),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildBottomHubCard({
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required Color color,
+    required bool isDark,
+    required VoidCallback onTap,
+  }) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+                blurRadius: 8,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(icon, color: color, size: 18),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12.5),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      subtitle,
+                      style: TextStyle(color: Colors.grey[500], fontSize: 10),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ── Model for Clean Game Grid Items ──
+class _GameItem {
+  final String title;
+  final String description;
+  final IconData icon;
+  final String badge;
+  final List<Color> gradient;
+  final VoidCallback onTap;
+
+  const _GameItem({
+    required this.title,
+    required this.description,
+    required this.icon,
+    required this.badge,
+    required this.gradient,
+    required this.onTap,
+  });
 }
