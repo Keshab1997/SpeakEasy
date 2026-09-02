@@ -1,0 +1,7 @@
+SpeakEasy v1.0.30 — Compact Home & Learning Games Dashboard 🎮✨
+
+What's New in this Release:
+• 🎮 Redesigned Learning Games Screen: Compact 2-column game card layout for quicker navigation through Word Match, Quick Quiz, Verb Learning, and all 9 game modes.
+• 📱 Streamlined Home Screen: Compact side-by-side Daily Quiz & Battle Arena section for a cleaner and more efficient dashboard.
+• 🛡️ Integrated Streak & Attendance Widget: Track daily streak, weekly attendance, and streak freeze protections directly in Learning Games.
+• ⚡ Performance & Stability: Cleaned up analyzer warnings, optimized UI rendering, and enhanced state synchronization across game modes.
