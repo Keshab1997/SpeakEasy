@@ -118,11 +118,15 @@ class BattleMatchmakingService {
           status: BattleRoomStatus.inProgress,
           createdAt: DateTime.now(),
         );
+        // Rare race: we created the room just as the user hit cancel —
+        // forfeit on their behalf so the opponent isn't left stranded.
+        // Otherwise return the room normally.
+        if (token?.isCancelled ?? false) {
+          unawaited(_forfeitRoom(roomDoc.id, localPlayer.id));
+          throw const MatchmakingCancelledException();
+        }
         checkCancelled();
-        // Rare race: we created the room just as the user hit cancel.
-        // Forfeit on their behalf so the opponent isn't left waiting forever.
-        unawaited(_forfeitRoom(roomDoc.id, localPlayer.id));
-        throw const MatchmakingCancelledException();
+        return room;
       }
 
       // 2. No opponent waiting immediately — join queue and wait up to 6 seconds
