@@ -177,7 +177,6 @@ final theme = Theme.of(context);
 final isDark = theme.brightness == Brightness.dark;
 
 final authAsync = ref.watch(authProvider);
-final progressAsync = ref.watch(progressProvider);
 	final chaptersAsync = ref.watch(allChaptersProvider);
 final grammarAsync = ref.watch(allGrammarChaptersProvider);
 final studyState = ref.watch(todoListProvider);
@@ -189,7 +188,6 @@ final user = authAsync.asData?.value;
 if (user?.name != null && user!.name.isNotEmpty) {
 HiveService.setUserName(user.name);
 }
-final progress = progressAsync.asData?.value;
 	final allVocabChapters = chaptersAsync.asData?.value ?? [];
 	final allGrammarChapters = grammarAsync.asData?.value ?? [];
 
