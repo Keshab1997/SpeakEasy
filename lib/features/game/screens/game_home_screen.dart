@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/widgets/streak_widget.dart';
 import '../../../providers/game/xp_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../../../providers/game/streak_provider.dart';
 import '../../../providers/game/statistics_provider.dart';
 import '../../../providers/game/achievement_provider.dart';
+import '../../../services/hive_service.dart';
+import '../../../services/remote_config_service.dart';
+import '../../../services/share_service.dart';
 import 'mode_selection_screen.dart';
 import 'leaderboard_screen.dart';
 import 'statistics_screen.dart';
@@ -79,6 +83,107 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
       loading: () => 'Loading badges...',
       error: (_, __) => 'View achievements',
     );
+  }
+
+  bool _hasPracticedToday() {
+    final lastActive = HiveService.getLastActiveDate();
+    if (lastActive == null) return false;
+    final now = DateTime.now();
+    return lastActive.year == now.year &&
+        lastActive.month == now.month &&
+        lastActive.day == now.day;
+  }
+
+  void _showStreakInfoDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Row(
+          children: [
+            Text('🔥 ', style: TextStyle(fontSize: 24)),
+            Text('My Streak'),
+          ],
+        ),
+        content: const Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              '• Practice daily to keep your streak alive.\n'
+              '• Complete at least one lesson each day.\n'
+              '• Buy a Streak Freeze (🛡️) to protect your streak if you miss a day.\n'
+              '• Longer streaks unlock special badges & rewards!',
+              style: TextStyle(fontSize: 14, height: 1.5),
+            ),
+            SizedBox(height: 16),
+            Text(
+              '💡 Tip: Set a daily reminder in Settings to never miss a practice day!',
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: Colors.orange),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Got it!'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _buyStreakFreeze(BuildContext context, int currentCoins) async {
+    final cost = await RemoteConfigService.getStreakFreezeCost();
+    if (!context.mounted) return;
+    if (currentCoins < cost) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text('Not enough coins! Play games to earn more.'),
+          backgroundColor: Colors.red.shade400,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('🛡️ Buy Streak Freeze'),
+        content: Text('Spend $cost coins to buy a Streak Freeze?\n'
+            'You can protect your streak if you miss a day.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () async {
+              await ref.read(coinProvider.notifier).spendCoins(cost);
+              await HiveService.addStreakFreeze();
+              if (context.mounted) {
+                Navigator.pop(ctx);
+                setState(() {});
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('🛡️ Streak Freeze purchased!'),
+                    behavior: SnackBarBehavior.floating,
+                  ),
+                );
+              }
+            },
+            child: const Text('Buy', style: TextStyle(fontWeight: FontWeight.bold)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _shareStreak(BuildContext context, int streak) {
+    if (streak > 0) {
+      ShareService.shareStreak(streak);
+    } else {
+      ShareService.shareApp();
+    }
   }
 
   @override
@@ -200,7 +305,26 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
               ),
             ),
 
-            const SizedBox(height: 24),
+            const SizedBox(height: 18),
+
+            // ── Streak & Weekly Progress ──
+            StreakWidget(
+              currentStreak: streakState.currentStreak,
+              weeklyStreak: streakState.weeklyStreak,
+              weeklyMilestone: streakState.weeklyMilestone,
+              weeklyMilestoneLabel: streakState.weeklyMilestoneLabel,
+              thisWeekActiveDays: streakState.thisWeekActiveDays,
+              todayXP: xpState.todayXP > 0 ? xpState.todayXP : displayXP,
+              dailyXPTarget: 50,
+              hasPracticeToday: _hasPracticedToday(),
+              isStreakFrozen: HiveService.getStreakFreezeCount() > 0,
+              streakFreezeCount: HiveService.getStreakFreezeCount(),
+              onTap: () => _showStreakInfoDialog(context),
+              onBuyFreeze: () => _buyStreakFreeze(context, displayCoins),
+              onShare: () => _shareStreak(context, streakState.currentStreak),
+            ),
+
+            const SizedBox(height: 20),
 
             // ── Quick Stats ──
             Row(

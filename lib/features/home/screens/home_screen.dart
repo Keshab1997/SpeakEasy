@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
-import '../../../core/widgets/streak_widget.dart';
 import '../../../core/widgets/feature_gate_widget.dart';
 import '../../../services/hive_service.dart';
 import '../../../services/remote_config_service.dart';
@@ -171,122 +170,6 @@ final hour = DateTime.now().hour;
 if (hour < 12) return 'Good Morning';
 if (hour < 17) return 'Good Afternoon';
 return 'Good Evening';
-}
-
-/// Returns true if user practiced today (checked via last active date)
-bool _hasPracticedToday() {
-final lastActive = HiveService.getLastPracticeDate();
-if (lastActive == null) return false;
-final now = DateTime.now();
-return lastActive.year == now.year &&
-lastActive.month == now.month &&
-lastActive.day == now.day;
-}
-
-/// Shows streak info dialog (Duolingo-style)
-void _showStreakInfoDialog(BuildContext context) {
-showDialog(
-context: context,
-builder: (ctx) => AlertDialog(
-title: const Row(
-children: [
-Text('🔥 ', style: TextStyle(fontSize: 24)),
-Text('My Streak'),
-],
-),
-content: const Column(
-mainAxisSize: MainAxisSize.min,
-crossAxisAlignment: CrossAxisAlignment.start,
-children: [
-Text(
-'• Practice daily to keep your streak alive.\n'
-'• Complete at least one lesson each day.\n'
-'• Buy a Streak Freeze (🛡️) to protect your streak '
-'if you miss a day.\n'
-'• Longer streaks unlock special badges & rewards!',
-style: TextStyle(fontSize: 14, height: 1.5),
-),
-SizedBox(height: 16),
-Text(
-'💡 Tip: Set a daily reminder in Settings '
-'to never miss a practice day!',
-style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: Colors.orange),
-),
-],
-),
-actions: [
-TextButton(
-onPressed: () => Navigator.pop(ctx),
-child: const Text('Got it!'),
-),
-],
-),
-);
-}
-
-/// Buy streak freeze (cost from remote config)
-Future<void> _buyStreakFreeze(BuildContext context, WidgetRef ref, int currentCoins) async {
-final cost = await RemoteConfigService.getStreakFreezeCost();
-if (!context.mounted) return;
-if (currentCoins < cost) {
-ScaffoldMessenger.of(context).showSnackBar(
-SnackBar(
-content: const Text('Not enough coins! Play games to earn more.'),
-backgroundColor: Colors.red.shade400,
-behavior: SnackBarBehavior.floating,
-),
-);
-return;
-}
-showDialog(
-context: context,
-builder: (ctx) => AlertDialog(
-title: const Text('🛡️ Buy Streak Freeze'),
-content: Text('Spend $cost coins to buy a Streak Freeze?\n'
-'You can protect your streak if you miss a day.'),
-actions: [
-TextButton(
-onPressed: () => Navigator.pop(ctx),
-child: const Text('Cancel'),
-),
-TextButton(
-onPressed: () async {
-await ref.read(coinProvider.notifier).spendCoins(cost);
-await HiveService.addStreakFreeze();
-if (context.mounted) {
-Navigator.pop(ctx);
-ScaffoldMessenger.of(context).showSnackBar(
-const SnackBar(
-content: Text('🛡️ Streak Freeze purchased!'),
-behavior: SnackBarBehavior.floating,
-),
-);
-}
-},
-child: const Text('Buy', style: TextStyle(fontWeight: FontWeight.bold)),
-),
-],
-),
-);
-}
-
-/// Share streak on social media
-void _shareStreak(BuildContext context, int streak) {
-final message = streak > 0
-? "🔥 I'm on a $streak-day streak on SpeakEasy! Practicing English every day. Join me! 🚀"
-: 'Start your English learning journey with SpeakEasy! 🚀';
-ScaffoldMessenger.of(context).showSnackBar(
-SnackBar(
-content: Text('📤 Share: "$message"'),
-behavior: SnackBarBehavior.floating,
-action: SnackBarAction(
-label: 'Copy',
-onPressed: () {
-// In a real app, use share_plus package
-},
-),
-),
-);
 }
 
 	@override
@@ -463,23 +346,13 @@ style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
 	const SizedBox(height: 16),
 	// ⚔️ Battle Arena (1v1 Live Duel)
 	_buildBattleArenaCard(context, theme, isDark),
-	const SizedBox(height: 20),
-		// 2. Streak & Progress (Combined in one widget)
-		StreakWidget(
-		currentStreak: currentStreak,
-		weeklyStreak: streakState.weeklyStreak,
-		weeklyMilestone: streakState.weeklyMilestone,
-		weeklyMilestoneLabel: streakState.weeklyMilestoneLabel,
-		thisWeekActiveDays: streakState.thisWeekActiveDays,
-		todayXP: currentXP,
-		dailyXPTarget: 50,
-		hasPracticeToday: _hasPracticedToday(),
-		isStreakFrozen: HiveService.getStreakFreezeCount() > 0,
-		streakFreezeCount: HiveService.getStreakFreezeCount(),
-		onTap: () => _showStreakInfoDialog(context),
-		onBuyFreeze: () => _buyStreakFreeze(context, ref, currentCoins),
-		onShare: () => _shareStreak(context, currentStreak),
-		),
+	const SizedBox(height: 16),
+
+	// 🎮 Learning Games (Directly below Battle Arena)
+	FeatureGateWidget(
+	featureKey: 'games',
+	child: _buildGameCard(theme, isDark),
+	),
 	const SizedBox(height: 24),
 
 		// 3. Guides & Resources (Student Guide & Study Routine)
@@ -506,13 +379,6 @@ style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
 
 	// 10. Practice Section
 	_buildHomePracticeSection(theme, isDark),
-	const SizedBox(height: 24),
-
-	// 11. Game Section
-	FeatureGateWidget(
-	featureKey: 'games',
-	child: _buildGameCard(theme, isDark),
-	),
 	const SizedBox(height: 24),
 
 	// 12. Banner Ad
