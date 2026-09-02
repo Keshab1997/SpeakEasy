@@ -510,7 +510,10 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       if (!mounted || state.status != BattleArenaStatus.inDuel) return;
 
       final nextRound = state.currentRoundIndex + 1;
-      final totalRounds = state.room?.questions.length ?? 5;
+      final rawTotal = state.room?.questions.length ?? 5;
+      // Guard against empty question list (asset load failure) — fallback
+      // to 5 rounds instead of instantly finishing (nextRound 1 >= 0).
+      final totalRounds = rawTotal == 0 ? 5 : rawTotal;
 
       if (nextRound >= totalRounds) {
         _finishDuel();

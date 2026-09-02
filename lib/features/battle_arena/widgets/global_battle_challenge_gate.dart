@@ -58,8 +58,33 @@ class _GlobalBattleChallengeGateState
       final wasDuel = prev?.status == BattleArenaStatus.inDuel;
       final isDuel = next.status == BattleArenaStatus.inDuel;
 
-      if (!wasDuel && isDuel && !_arenaOpen) {
+      if (!wasDuel && isDuel) {
+        if (_arenaOpen) {
+          // Previous duel's arena/result route is still considered open
+          // (its push future hasn't completed yet — e.g. BattleResultScreen
+          // is still on top and the user pressed "Play Again" which pops
+          // the result and immediately starts a new Quick 1v1). Pushing
+          // now would either be dropped by the guard or stack on top of
+          // the result. Schedule a retry after the previous route is
+          // popped and _arenaOpen clears.
+          // ignore: use_build_context_synchronously
+          Future.delayed(const Duration(milliseconds: 500), () async {
+            if (!mounted) return;
+            if (ref.read(battleArenaProvider).status != BattleArenaStatus.inDuel) return;
+            if (_arenaOpen) return;
+            final navCtx = appNavigatorKey.currentContext;
+            if (navCtx == null) return;
+            _arenaOpen = true;
+            // ignore: use_build_context_synchronously
+            await Navigator.of(navCtx).push(
+              MaterialPageRoute(builder: (_) => const BattleArenaScreen()),
+            );
+            _arenaOpen = false;
+          });
+          return;
+        }
         _arenaOpen = true;
+        // ignore: use_build_context_synchronously
         await Navigator.of(appNavigatorKey.currentContext!).push(
           MaterialPageRoute(builder: (_) => const BattleArenaScreen()),
         );
@@ -204,8 +229,16 @@ class _GlobalBattleChallengeGateState
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () async {
-                          await _acceptChallenge(challenge);
+                          // Pop sheet FIRST before pushing the arena.
+                          // GlobalBattleChallengeGate pushes BattleArenaScreen
+                          // onto the same root navigator as the bottom sheet;
+                          // if we start the duel while the sheet is still
+                          // open, the arena lands under the sheet and the
+                          // following pop(sheetCtx) pops the arena instead
+                          // of the sheet — leaving the receiver with no
+                          // visible question.
                           if (sheetCtx.mounted) Navigator.pop(sheetCtx);
+                          await _acceptChallenge(challenge);
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFEF4444),
@@ -254,7 +287,10 @@ class _GlobalBattleChallengeGateState
           .read(battlePresenceServiceProvider)
           .respondToChallenge(challenge.id, true, roomId: room.id);
 
-      unawaited(matchmaking.deleteChallenge(challenge.id));
+      // Don't delete the challenge here — the sender's
+      // outgoingChallengesProvider needs to see status='accepted' + roomId
+      // before the doc disappears. The sender deletes it after joining
+      // (_joinAcceptedRoom), and the scheduled cleanup removes stale ones.
 
       // Start the battle on THIS (receiver) device — the gate's listener
       // pushes the arena screen.

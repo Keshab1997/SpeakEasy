@@ -230,10 +230,23 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen> {
 
                   // Play Again & Lobby Buttons
                   ElevatedButton(
-                    onPressed: () {
-                      ref.read(battleArenaProvider.notifier).resetLobby();
-                      Navigator.of(context).pop();
-                      ref.read(battleArenaProvider.notifier).startQuickMatch();
+                    onPressed: () async {
+                      // Capture the notifier before popping — after pop this
+                      // State is disposed and `ref` becomes invalid for
+                      // subsequent reads.
+                      final notifier = ref.read(battleArenaProvider.notifier);
+                      notifier.resetLobby();
+                      if (context.mounted) Navigator.of(context).pop();
+                      // Wait for the previous arena/result route's push
+                      // future to complete and GlobalBattleChallengeGate's
+                      // _arenaOpen flag to clear. Otherwise the next
+                      // inDuel is ignored by the gate (guarded by
+                      // _arenaOpen) and the duel runs headlessly — timer
+                      // ticks but no BattleArenaScreen is visible, so the
+                      // player is declared winner without ever seeing a
+                      // question (Quick 1v1 "instant win" bug).
+                      await Future.delayed(const Duration(milliseconds: 400));
+                      notifier.startQuickMatch();
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF2563EB),
