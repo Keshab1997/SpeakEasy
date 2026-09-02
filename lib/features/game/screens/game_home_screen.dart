@@ -86,7 +86,7 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
   }
 
   bool _hasPracticedToday() {
-    final lastActive = HiveService.getLastActiveDate();
+    final lastActive = HiveService.getLastPracticeDate();
     if (lastActive == null) return false;
     final now = DateTime.now();
     return lastActive.year == now.year &&
@@ -314,7 +314,7 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
               weeklyMilestone: streakState.weeklyMilestone,
               weeklyMilestoneLabel: streakState.weeklyMilestoneLabel,
               thisWeekActiveDays: streakState.thisWeekActiveDays,
-              todayXP: xpState.todayXP > 0 ? xpState.todayXP : displayXP,
+              todayXP: displayXP,
               dailyXPTarget: 50,
               hasPracticeToday: _hasPracticedToday(),
               isStreakFrozen: HiveService.getStreakFreezeCount() > 0,
