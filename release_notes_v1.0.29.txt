@@ -1,0 +1,14 @@
+SpeakEasy v1.0.29 — Battle Review & Home Layout Update 📝🎮
+
+📝 BATTLE ARENA — QUESTION REVIEW & EXPLANATIONS
+• Review Your Answers: Added a new "Review Questions & Explanations" button directly on the Battle Result screen.
+• Round Breakdown: Easily see which questions you got right, which ones you missed, and what your opponent picked.
+• In-Depth Explanations: Every battle question now comes with a clear explanation in Bengali & English so you can learn from your mistakes instantly.
+
+🎮 HOMESCREEN & GAMES REDESIGN
+• Faster Access to Games: Learning Games is now placed directly below the Battle Arena on the Home screen for quick gaming sessions.
+• Streak Hub: The Daily Streak & 7-Day Attendance calendar has been moved inside Learning Games, right alongside your level and coin stats.
+
+⚡ STABILITY & IMPROVEMENTS
+• Optimized result screen rendering and scrolling across all device screen sizes.
+• Smoother match transitions and navigation bug fixes.
