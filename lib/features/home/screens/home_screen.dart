@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/widgets/feature_gate_widget.dart';
 import '../../../services/hive_service.dart';
-import '../../../services/remote_config_service.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/progress_provider.dart';
 import '../../../providers/chapter_vocabulary_provider.dart';
@@ -183,9 +182,6 @@ final progressAsync = ref.watch(progressProvider);
 final grammarAsync = ref.watch(allGrammarChaptersProvider);
 final studyState = ref.watch(todoListProvider);
 final lastOpenedChapter = ref.watch(lastOpenedChapterProvider);
-final xpState = ref.watch(xpProvider);
-final coinState = ref.watch(coinProvider);
-final streakState = ref.watch(streakProvider);
 	final notificationState = ref.watch(notificationProvider);
 	final idleTrackerState = ref.watch(idleTrackerProvider);
 
@@ -196,13 +192,6 @@ HiveService.setUserName(user.name);
 final progress = progressAsync.asData?.value;
 	final allVocabChapters = chaptersAsync.asData?.value ?? [];
 	final allGrammarChapters = grammarAsync.asData?.value ?? [];
-	
-	// Derived values — progress from Study Plan (todo list)
-	final int currentStreak = streakState.currentStreak > 0
-		? streakState.currentStreak
-		: (progress?.streakDays ?? 0);
-	final int currentXP = xpState.currentXP;
-	final int currentCoins = coinState.currentCoins;
 
 // Group lessons by level for Continue Learning
 return Scaffold(
