@@ -89,6 +89,74 @@ class _BattleLeaderboardScreenState
   // ── Leaderboard ──────────────────────────────────────────────────────
   Widget _buildLeaderboardTab(bool isDark, BattleStats stats) {
     if (_entries.isEmpty) {
+      // No global leaderboard yet — but the local player may have bot/offline
+      // history in Hive. Show a local fallback so the tab never looks "broken"
+      // and the player sees their progress immediately.
+      if (stats.totalMatches > 0 || _history.isNotEmpty) {
+        final me = ref.read(authProvider).asData?.value;
+        final localEntry = LeaderboardEntry(
+          userId: me?.id ?? 'local',
+          name: me?.name ?? 'You',
+          photoUrl: me?.photoUrl ?? '',
+          trophies: stats.trophies,
+          wins: stats.wins,
+          losses: stats.losses,
+          draws: 0,
+          totalMatches: stats.totalMatches,
+          winStreak: stats.winStreak,
+          bestStreak: stats.winStreak,
+          rank: 1,
+        );
+        return ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            _myRankCard(isDark, localEntry),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                color: const Color(0xFF3B82F6).withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(
+                    color: const Color(0xFF3B82F6).withValues(alpha: 0.25)),
+              ),
+              child: Row(
+                children: [
+                  const Icon(Icons.info_outline_rounded,
+                      color: Color(0xFF3B82F6), size: 20),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      'Global leaderboard is waiting for its first ONLINE 1v1. Your bot battles are counted locally below — win an online duel to appear globally! 🌍⚔️',
+                      style: TextStyle(
+                          color: isDark
+                              ? const Color(0xFF93C5FD)
+                              : const Color(0xFF1E40AF),
+                          fontSize: 12.5,
+                          height: 1.35),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            // Show a single local podium as feedback
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _podium(localEntry, 1, isDark, height: 100),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Center(
+              child: Text(
+                '${_history.length} local battle(s) saved • ${_history.where((e) => e.isBot).length} vs Bot 🤖',
+                style: TextStyle(color: Colors.grey[500], fontSize: 12),
+              ),
+            ),
+          ],
+        );
+      }
       return _emptyState(
         isDark,
         icon: Icons.emoji_events_outlined,
@@ -100,10 +168,34 @@ class _BattleLeaderboardScreenState
     final podium = _entries.take(3).toList();
     final rest = _entries.length > 3 ? _entries.sublist(3) : <LeaderboardEntry>[];
 
+    // If global board has data but current user has never played online
+    // (myRank null), show their LOCAL stats as a fallback card so they still
+    // see progress. Never leave them without a "YOU" card.
+    LeaderboardEntry? displayMyRank = _myRank;
+    if (displayMyRank == null && stats.totalMatches > 0) {
+      final me = ref.read(authProvider).asData?.value;
+      displayMyRank = LeaderboardEntry(
+        userId: me?.id ?? 'local',
+        name: me?.name ?? 'You',
+        photoUrl: me?.photoUrl ?? '',
+        trophies: stats.trophies,
+        wins: stats.wins,
+        losses: stats.losses,
+        draws: 0,
+        totalMatches: stats.totalMatches,
+        winStreak: stats.winStreak,
+        bestStreak: stats.winStreak,
+        rank: 0, // 0 → card shows "LOCAL" badge via fallback
+      );
+    }
+
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        if (_myRank != null) _myRankCard(isDark, _myRank!),
+        if (displayMyRank != null)
+          displayMyRank.rank == 0
+              ? _myLocalRankCard(isDark, displayMyRank)
+              : _myRankCard(isDark, displayMyRank),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -169,6 +261,84 @@ class _BattleLeaderboardScreenState
                   style: const TextStyle(
                       color: Color(0xFFFBBF24),
                       fontSize: 26,
+                      fontWeight: FontWeight.w900)),
+              Text('${me.trophies} 🏆',
+                  style: const TextStyle(color: Colors.white70, fontSize: 12)),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _myLocalRankCard(bool isDark, LeaderboardEntry me) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFF1E293B), Color(0xFF334155)],
+        ),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: const Color(0xFFF59E0B).withValues(alpha: 0.35)),
+      ),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 26,
+            backgroundImage:
+                me.photoUrl.isNotEmpty ? NetworkImage(me.photoUrl) : null,
+            child: me.photoUrl.isEmpty
+                ? Text(me.name.isNotEmpty ? me.name[0].toUpperCase() : '?',
+                    style: const TextStyle(color: Colors.white))
+                : null,
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    const Text('YOUR STATS',
+                        style: TextStyle(
+                            color: Colors.white70,
+                            fontSize: 11,
+                            letterSpacing: 1,
+                            fontWeight: FontWeight.bold)),
+                    const SizedBox(width: 6),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: const Text('LOCAL',
+                          style: TextStyle(
+                              color: Color(0xFFFBBF24),
+                              fontSize: 9,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 0.5)),
+                    ),
+                  ],
+                ),
+                Text(me.name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16)),
+                Text('${me.wins}W · ${me.losses}L · ${me.winRate.toStringAsFixed(0)}% win',
+                    style: const TextStyle(color: Colors.white70, fontSize: 12)),
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              const Text('—',
+                  style: TextStyle(
+                      color: Color(0xFFFBBF24),
+                      fontSize: 20,
                       fontWeight: FontWeight.w900)),
               Text('${me.trophies} 🏆',
                   style: const TextStyle(color: Colors.white70, fontSize: 12)),

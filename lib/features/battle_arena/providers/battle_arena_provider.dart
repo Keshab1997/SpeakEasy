@@ -573,6 +573,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       isDraw: isDraw,
       score: localScore,
       userId: currentUser?.id,
+      isOnline: isOnline,
     );
     final updatedStats = outcome.stats;
     final trophyDelta = outcome.trophyDelta;
@@ -618,11 +619,13 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _roundTransitionTimer?.cancel();
     _roomSubscription?.cancel();
 
+    final isOnline = state.room != null && !state.opponent.isBot;
     final outcome = await BattleGameService.saveMatchResult(
       isWin: true,
       isDraw: false,
       score: state.localPlayer.currentScore,
       userId: currentUser?.id,
+      isOnline: isOnline,
     );
     final updatedStats = outcome.stats;
 
@@ -660,11 +663,13 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       }
 
       // Deduct trophies for forfeiting (loss recorded)
+      final isOnlineForfeit = state.room != null && !state.opponent.isBot;
       await BattleGameService.saveMatchResult(
         isWin: false,
         isDraw: false,
         score: state.localPlayer.currentScore,
         userId: currentUser?.id,
+        isOnline: isOnlineForfeit,
       );
     }
 

@@ -70,23 +70,30 @@ class BattleLeaderboardService {
       return _cache!;
     }
 
-    final snap = await _firestore
-        .collection(_collection)
-        .orderBy('trophies', descending: true)
-        .limit(_limit)
-        .get();
+    try {
+      final snap = await _firestore
+          .collection(_collection)
+          .orderBy('trophies', descending: true)
+          .limit(_limit)
+          .get();
 
-    final entries = <LeaderboardEntry>[];
-    for (var i = 0; i < snap.docs.length; i++) {
-      entries.add(
-        LeaderboardEntry.fromMap(snap.docs[i].data(), snap.docs[i].id,
-            rank: i + 1),
-      );
+      final entries = <LeaderboardEntry>[];
+      for (var i = 0; i < snap.docs.length; i++) {
+        entries.add(
+          LeaderboardEntry.fromMap(snap.docs[i].data(), snap.docs[i].id,
+              rank: i + 1),
+        );
+      }
+
+      _cache = entries;
+      _cachedAt = DateTime.now();
+      return entries;
+    } catch (e) {
+      // If offline / permission error, return stale cache or empty — caller
+      // will fall back to local Hive stats.
+      if (_cache != null) return _cache!;
+      return [];
     }
-
-    _cache = entries;
-    _cachedAt = DateTime.now();
-    return entries;
   }
 
   /// Returns the caller's own rank/entry, or null if they've never played a
@@ -109,11 +116,73 @@ class BattleLeaderboardService {
   }
 
   /// Fetches a single opponent's career stats (for the profile card).
+  /// Tries `battle_leaderboard` first (server-authoritative for online ranked
+  /// matches), then falls back to `battle_presence` (live presence + bot stats).
+  /// Merges both so the card never shows only trophies.
   Future<BattlePresenceUser?> getPlayerProfile(String userId) async {
     try {
-      final doc = await _firestore.collection('battle_presence').doc(userId).get();
-      if (!doc.exists) return null;
-      return BattlePresenceUser.fromMap(doc.data()!, doc.id);
+      // 1) Try authoritative leaderboard entry (has wins/losses/draws).
+      final lbDoc = await _firestore.collection(_collection).doc(userId).get();
+      BattlePresenceUser? lbUser;
+      if (lbDoc.exists && lbDoc.data() != null) {
+        final d = lbDoc.data()!;
+        lbUser = BattlePresenceUser(
+          id: userId,
+          name: d['name'] ?? 'Player',
+          photoUrl: d['photoUrl'] ?? '',
+          trophies: (d['trophies'] as num?)?.toInt() ?? 100,
+          isOnline: true,
+          lastActive: DateTime.now(),
+          isInBattle: false,
+          wins: (d['wins'] as num?)?.toInt() ?? 0,
+          losses: (d['losses'] as num?)?.toInt() ?? 0,
+          draws: (d['draws'] as num?)?.toInt() ?? 0,
+          totalMatches: (d['totalMatches'] as num?)?.toInt() ?? 0,
+          winStreak: (d['winStreak'] as num?)?.toInt() ?? 0,
+        );
+      }
+
+      // 2) Always also fetch presence (has live online/battle flag + newer trophies).
+      final presenceDoc =
+          await _firestore.collection('battle_presence').doc(userId).get();
+      if (!presenceDoc.exists) return lbUser;
+      final p = BattlePresenceUser.fromMap(presenceDoc.data()!, presenceDoc.id);
+
+      // 3) Merge: leaderboard wins/stats take precedence, but presence
+      // trophies/photo/name are fresher for the live card.
+      if (lbUser == null) return p;
+      return BattlePresenceUser(
+        id: p.id,
+        name: p.name.isNotEmpty ? p.name : lbUser.name,
+        photoUrl: p.photoUrl.isNotEmpty ? p.photoUrl : lbUser.photoUrl,
+        trophies: p.trophies != 100 || lbUser.trophies == 100
+            ? p.trophies
+            : lbUser.trophies,
+        isOnline: p.isOnline,
+        lastActive: p.lastActive,
+        isInBattle: p.isInBattle,
+        wins: lbUser.wins != 0 ? lbUser.wins : p.wins,
+        losses: lbUser.losses != 0 ? lbUser.losses : p.losses,
+        draws: lbUser.draws != 0 ? lbUser.draws : p.draws,
+        totalMatches: lbUser.totalMatches != 0 ? lbUser.totalMatches : p.totalMatches,
+        winStreak: lbUser.winStreak != 0 ? lbUser.winStreak : p.winStreak,
+      );
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Direct fetch of a leaderboard entry as [LeaderboardEntry].
+  Future<LeaderboardEntry?> getLeaderboardEntry(String userId) async {
+    try {
+      final doc = await _firestore.collection(_collection).doc(userId).get();
+      if (!doc.exists || doc.data() == null) return null;
+      final myTrophies = (doc.data()?['trophies'] as num?)?.toInt() ?? 0;
+      final above = await _firestore
+          .collection(_collection)
+          .where('trophies', isGreaterThan: myTrophies)
+          .get();
+      return LeaderboardEntry.fromMap(doc.data()!, doc.id, rank: above.size + 1);
     } catch (_) {
       return null;
     }

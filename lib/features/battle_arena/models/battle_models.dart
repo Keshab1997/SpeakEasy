@@ -315,6 +315,11 @@ class BattlePresenceUser {
       'isOnline': isOnline,
       'lastActive': Timestamp.fromDate(lastActive),
       'isInBattle': isInBattle,
+      'wins': wins,
+      'losses': losses,
+      'draws': draws,
+      'totalMatches': totalMatches,
+      'winStreak': winStreak,
     };
   }
 

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../models/battle_models.dart';
@@ -294,11 +295,16 @@ class BattleGameService {
   /// Applies the result to local Hive stats with the full trophy rule set
   /// (comeback bonus, loss-streak shield, division floor, rookie floor at 0).
   /// Mirrors the server Cloud Function so the instant local UI matches.
+  /// [isOnline] true → server (Cloud Function) owns trophies/leaderboard, so
+  /// we DON'T write presence here (avoids double-count). false (bot/offline)
+  /// → we write presence immediately so the online list & profile card show
+  /// the new trophies/wins without waiting for a server.
   static Future<BattleMatchOutcome> saveMatchResult({
     required bool isWin,
     required bool isDraw,
     required int score,
     String? userId,
+    bool isOnline = false,
   }) async {
     final box = await Hive.openBox(_hiveBoxName);
     final current = await getLocalStats();
@@ -342,9 +348,30 @@ class BattleGameService {
 
     await box.put('stats', updated.toMap());
 
-    // NOTE: The Cloud Function `onBattleRoomWrite` is the source of truth for
-    // the SHARED/online trophies & leaderboard; this local Hive record only
-    // drives the instant on-device UI (bot matches + immediate feedback).
+    // Sync to presence for bot/offline matches so the online roster & profile
+    // cards (which read battle_presence) see the new trophies/wins instantly.
+    // Online ranked matches are owned by the Cloud Function — don't write
+    // here or the server's next transaction would double-count the delta.
+    if (!isOnline && userId != null && userId.isNotEmpty && !userId.startsWith('guest_') && !userId.startsWith('bot_')) {
+      try {
+        await FirebaseFirestore.instance.collection('battle_presence').doc(userId).set({
+          'id': userId,
+          'trophies': newTrophies,
+          'wins': updated.wins,
+          'losses': updated.losses,
+          'draws': 0, // Hive BattleStats doesn't track draws separately; presence keeps it.
+          'totalMatches': updated.totalMatches,
+          'winStreak': updated.winStreak,
+          'bestStreak': updated.winStreak, // best approx — server keeps true best
+          'isOnline': true,
+          'lastActive': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
+      } catch (_) {}
+    }
+
+    // NOTE: For online matches the Cloud Function `onBattleRoomWrite` is the
+    // source of truth for the SHARED trophies & leaderboard; this Hive record
+    // only drives the instant on-device UI (bot matches + immediate feedback).
 
     return BattleMatchOutcome(
       stats: updated,

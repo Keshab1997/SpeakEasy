@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../models/battle_models.dart';
+import '../services/battle_leaderboard_service.dart';
 
 class LivePlayerCard extends StatelessWidget {
   final BattlePresenceUser user;
@@ -178,52 +179,79 @@ class LivePlayerCard extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       builder: (ctx) {
-        final played = user.totalMatches;
-        return Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              CircleAvatar(
-                radius: 36,
-                backgroundColor: AppColors.primary.withValues(alpha: 0.12),
-                backgroundImage:
-                    user.photoUrl.isNotEmpty ? NetworkImage(user.photoUrl) : null,
-                child: user.photoUrl.isEmpty
-                    ? Text(user.name.isNotEmpty ? user.name[0].toUpperCase() : '?',
-                        style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold))
-                    : null,
-              ),
-              const SizedBox(height: 10),
-              Text(user.name,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              Text(division(user.trophies),
-                  style: const TextStyle(color: Color(0xFFF59E0B), fontWeight: FontWeight.w600)),
-              const SizedBox(height: 18),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        return FutureBuilder<BattlePresenceUser?>(
+          future: BattleLeaderboardService().getPlayerProfile(user.id),
+          builder: (context, snap) {
+            // Use enriched data when available; fall back to the streamed
+            // presence user so the sheet never appears empty.
+            final u = (snap.hasData && snap.data != null) ? snap.data! : user;
+            final isLoading = snap.connectionState == ConnectionState.waiting;
+            final played = u.totalMatches;
+            return Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  _stat('🏆 Trophies', '${user.trophies}'),
-                  _stat('⚔️ Battles', '$played'),
-                  _stat('🔥 Streak', '${user.winStreak}'),
+                  if (isLoading)
+                    const Padding(
+                      padding: EdgeInsets.only(bottom: 12),
+                      child: SizedBox(
+                        height: 2,
+                        child: LinearProgressIndicator(
+                          minHeight: 2,
+                          backgroundColor: Colors.transparent,
+                        ),
+                      ),
+                    ),
+                  CircleAvatar(
+                    radius: 36,
+                    backgroundColor: AppColors.primary.withValues(alpha: 0.12),
+                    backgroundImage:
+                        u.photoUrl.isNotEmpty ? NetworkImage(u.photoUrl) : null,
+                    child: u.photoUrl.isEmpty
+                        ? Text(u.name.isNotEmpty ? u.name[0].toUpperCase() : '?',
+                            style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold))
+                        : null,
+                  ),
+                  const SizedBox(height: 10),
+                  Text(u.name,
+                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  Text(division(u.trophies),
+                      style: const TextStyle(color: Color(0xFFF59E0B), fontWeight: FontWeight.w600)),
+                  const SizedBox(height: 18),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      _stat('🏆 Trophies', '${u.trophies}'),
+                      _stat('⚔️ Battles', '$played'),
+                      _stat('🔥 Streak', '${u.winStreak}'),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      _stat('✅ Wins', '${u.wins}', color: const Color(0xFF10B981)),
+                      _stat('❌ Losses', '${u.losses}', color: const Color(0xFFEF4444)),
+                      _stat('📈 Win Rate',
+                          played == 0 ? '—' : '${u.winRate.toStringAsFixed(0)}%'),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  if (played == 0)
+                    Text(
+                      isLoading ? 'Loading stats...' : 'No ranked online battles yet',
+                      style: const TextStyle(color: Colors.grey, fontSize: 12),
+                    )
+                  else if (u.totalMatches > 0)
+                    Text(
+                      '${u.draws} Draws • Best Streak ${u.winStreak} 🔥',
+                      style: const TextStyle(color: Colors.grey, fontSize: 11),
+                    ),
                 ],
               ),
-              const SizedBox(height: 12),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _stat('✅ Wins', '${user.wins}', color: const Color(0xFF10B981)),
-                  _stat('❌ Losses', '${user.losses}', color: const Color(0xFFEF4444)),
-                  _stat('📈 Win Rate',
-                      played == 0 ? '—' : '${user.winRate.toStringAsFixed(0)}%'),
-                ],
-              ),
-              const SizedBox(height: 16),
-              if (played == 0)
-                const Text('No ranked online battles yet',
-                    style: TextStyle(color: Colors.grey, fontSize: 12)),
-            ],
-          ),
+            );
+          },
         );
       },
     );
