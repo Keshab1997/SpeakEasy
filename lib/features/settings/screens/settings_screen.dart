@@ -303,22 +303,28 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ),
             ]),
             const SizedBox(height: 24),
-            Text('AI Teacher', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
-            const SizedBox(height: 8),
-            _buildSettingsCard([
-              SwitchListTile(
-                title: const Text('Use Admin API Keys'),
-                subtitle: const Text('Auto-configured keys provided by admin'),
-                secondary: const Icon(Icons.cloud_done_rounded),
-                value: HiveService.getUseApiKeyManager(),
-                onChanged: (val) async {
-                  await HiveService.setUseApiKeyManager(val);
-                  setState(() {});
-                },
-                activeThumbColor: Theme.of(context).primaryColor,
-              ),
-            ]),
-            const SizedBox(height: 24),
+            // "Use Admin API Keys" is a technical switch: default ON (admin
+            // key pool). A regular user turning it OFF would fall back to a
+            // per-user BYOK key most people don't have — breaking AI chat.
+            // Hide it from non-admins; admins keep it for testing/rollback.
+            if (isAdmin) ...[
+              Text('AI Teacher', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
+              const SizedBox(height: 8),
+              _buildSettingsCard([
+                SwitchListTile(
+                  title: const Text('Use Admin API Keys'),
+                  subtitle: const Text('Auto-configured keys provided by admin'),
+                  secondary: const Icon(Icons.cloud_done_rounded),
+                  value: HiveService.getUseApiKeyManager(),
+                  onChanged: (val) async {
+                    await HiveService.setUseApiKeyManager(val);
+                    setState(() {});
+                  },
+                  activeThumbColor: Theme.of(context).primaryColor,
+                ),
+              ]),
+              const SizedBox(height: 24),
+            ],
             Text('Account', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: isDark ? Colors.white60 : Colors.black45)),
             const SizedBox(height: 8),
             _buildSettingsCard([
