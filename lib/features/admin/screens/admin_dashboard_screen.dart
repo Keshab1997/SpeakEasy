@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_colors.dart';
 import '../../../models/user_model.dart';
+import '../models/notification_templates.dart';
 import '../repository/admin_repository.dart';
 import 'admin_analytics_screen.dart';
 import 'admin_config_screen.dart';
@@ -46,6 +47,16 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
 
   bool _sending = false;
   bool _generating = false;
+  bool _winnerLoading = false;
+  String _selectedTone = 'funny';
+  String? _selectedTemplateId;
+
+  static const _tones = <String, String>{
+    'funny': '😄 Funny',
+    'motivational': '🔥 Motivational',
+    'urgent': '⏳ Urgent',
+    'festive': '🎉 Festive',
+  };
 
   @override
   void initState() {
@@ -236,8 +247,9 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
 
   void _push(Widget page) => Navigator.push(context, MaterialPageRoute(builder: (_) => page));
 
-  // ── Notification composer ──
+  // ── Notification composer (advanced: templates + AI + winner + tone) ──
   Widget _buildNotificationComposer(bool isDark) {
+    final hintColor = isDark ? Colors.white38 : Colors.black38;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -250,10 +262,92 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         const SizedBox(height: 6),
         Text('Server push via OneSignal → all subscribed users. Even if app closed for weeks.', style: TextStyle(fontSize: 12, color: isDark ? Colors.white54 : Colors.black54)),
         const SizedBox(height: 14),
-        TextField(controller: _ideaController, minLines: 1, maxLines: 2, decoration: InputDecoration(labelText: 'AI idea / topic', hintText: 'e.g. kal vocabulary test...', prefixIcon: const Icon(Icons.auto_awesome_rounded), border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)))),
+
+        // ── 1. Quick templates (no AI needed — always correct) ──
+        Text('⚡ Quick Templates — tap to load', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: AppColors.primary)),
+        const SizedBox(height: 8),
+        SizedBox(
+          height: 38,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemCount: kNotificationTemplates.length,
+            separatorBuilder: (_, __) => const SizedBox(width: 8),
+            itemBuilder: (context, i) {
+              final t = kNotificationTemplates[i];
+              final selected = _selectedTemplateId == t.id;
+              return ChoiceChip(
+                selected: selected,
+                onSelected: (_) => _applyTemplate(t),
+                avatar: Icon(t.icon, size: 16, color: selected ? Colors.white : AppColors.primary),
+                label: Text(t.label),
+                labelStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: selected ? Colors.white : hintColor),
+                selectedColor: AppColors.primary,
+                backgroundColor: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+                showCheckmark: false,
+                visualDensity: VisualDensity.compact,
+              );
+            },
+          ),
+        ),
         const SizedBox(height: 10),
-        SizedBox(width: double.infinity, child: OutlinedButton.icon(onPressed: _generating ? null : _generateNotificationWithAi, icon: _generating ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2)) : const Icon(Icons.auto_fix_high_rounded), label: Text(_generating ? 'AI writing...' : 'Write with AI'), style: OutlinedButton.styleFrom(foregroundColor: AppColors.primary, side: const BorderSide(color: AppColors.primary), padding: const EdgeInsets.symmetric(vertical: 13), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))))),
+
+        // ── 2. One-tap winner announcement (real leaderboard data) ──
+        SizedBox(
+          width: double.infinity,
+          child: OutlinedButton.icon(
+            onPressed: _winnerLoading || _sending ? null : _sendWinnerNow,
+            icon: _winnerLoading
+                ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
+                : const Icon(Icons.emoji_events_rounded, color: Colors.amber),
+            label: Text(_winnerLoading ? 'Leaderboard loading...' : '🏆 Ajker Quiz Winner — Name + Score Pathao'),
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.amber.shade800,
+              side: BorderSide(color: Colors.amber.shade600),
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+            ),
+          ),
+        ),
+        Text('Aajker quiz er champion er naam + score, automatic message. Roj raat 9 tar scheduled push-o ache (Cloud Function).', style: TextStyle(fontSize: 11, color: hintColor)),
         const SizedBox(height: 12),
+
+        // ── 3. AI writer: idea + tone ──
+        Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Expanded(
+            child: TextField(
+              controller: _ideaController,
+              minLines: 1,
+              maxLines: 2,
+              decoration: InputDecoration(
+                labelText: 'AI idea / topic',
+                hintText: 'e.g. kal vocabulary test...',
+                prefixIcon: const Icon(Icons.auto_awesome_rounded),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+              ),
+            ),
+          ),
+          const SizedBox(width: 8),
+          SizedBox(
+            width: 132,
+            child: DropdownButtonFormField<String>(
+              value: _selectedTone,
+              decoration: InputDecoration(
+                labelText: 'Tone',
+                prefixIcon: const Icon(Icons.tune_rounded, size: 18),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+              ),
+              style: TextStyle(fontSize: 13, color: isDark ? Colors.white : Colors.black87),
+              items: _tones.entries.map((e) => DropdownMenuItem(value: e.key, child: Text(e.value, style: const TextStyle(fontSize: 13)))).toList(),
+              onChanged: (v) => setState(() => _selectedTone = v ?? 'funny'),
+            ),
+          ),
+        ]),
+        const SizedBox(height: 10),
+        SizedBox(width: double.infinity, child: OutlinedButton.icon(onPressed: _generating ? null : _generateNotificationWithAi, icon: _generating ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2)) : const Icon(Icons.auto_fix_high_rounded), label: Text(_generating ? 'AI writing...' : '✍️ Write with AI'), style: OutlinedButton.styleFrom(foregroundColor: AppColors.primary, side: const BorderSide(color: AppColors.primary), padding: const EdgeInsets.symmetric(vertical: 13), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))))),
+        const SizedBox(height: 12),
+
+        // ── 4. Manual fields ──
         TextField(controller: _titleController, decoration: InputDecoration(labelText: 'Title', prefixIcon: const Icon(Icons.title_rounded), border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)))),
         const SizedBox(height: 12),
         TextField(controller: _bodyController, maxLines: 3, decoration: InputDecoration(labelText: 'Message', prefixIcon: const Icon(Icons.message_rounded), alignLabelWithHint: true, border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)))),
@@ -263,6 +357,112 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         SizedBox(width: double.infinity, child: ElevatedButton.icon(onPressed: _sending ? null : () => _sendAnnouncement(_students), icon: _sending ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white)) : const Icon(Icons.send_rounded), label: Text(_sending ? 'Sending...' : 'Send to $_students students'), style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary, foregroundColor: Colors.white, padding: const EdgeInsets.symmetric(vertical: 14), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))))),
       ]),
     );
+  }
+
+  /// Loads a template into the composer (instantly correct content).
+  void _applyTemplate(NotificationTemplate t) {
+    setState(() => _selectedTemplateId = t.id);
+    _titleController.text = t.title;
+    _bodyController.text = t.body;
+    _showSnack('Template loaded — edit kore send koro. Winner-এর real data পেতে উপরের 🏆 button use koro.');
+  }
+
+  /// Fetches today's REAL quiz leaderboard top-3 from Firestore, builds the
+  /// winner announcement and sends it via OneSignal (one tap from admin).
+  Future<void> _sendWinnerNow() async {
+    if (_sending || _winnerLoading) return;
+    setState(() => _winnerLoading = true);
+    try {
+      final entries = await _repository.fetchQuizTopEntries(limit: 3);
+      if (!mounted) return;
+      if (entries.isEmpty) {
+        _showSnack('Ajker quiz e ekhono kono participant nei! Push pathano hocche na.', isError: true);
+        return;
+      }
+      final w = entries.first;
+      final winnerName = ((w['userName'] as String?) ?? '').trim().isNotEmpty
+          ? (w['userName'] as String).trim()
+          : 'Champion';
+      final score = (w['score'] as num?)?.toInt() ?? 0;
+      final correct = (w['correctCount'] as num?)?.toInt();
+      String? second;
+      int? secondScore;
+      if (entries.length > 1) {
+        second = ((entries[1]['userName'] as String?) ?? '').trim();
+        secondScore = (entries[1]['score'] as num?)?.toInt();
+      }
+      final msg = buildQuizWinnerMessage(
+        dateKey: todayQuizDateKey(),
+        winnerName: winnerName,
+        score: score,
+        correctCount: correct,
+        secondName: second,
+        secondScore: secondScore,
+      );
+
+      final confirmed = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Send Quiz Winner Push?'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(msg.title, style: const TextStyle(fontWeight: FontWeight.w700)),
+              const SizedBox(height: 8),
+              Text(msg.body, style: const TextStyle(fontSize: 13)),
+              const SizedBox(height: 10),
+              Text('Top: ${entries.map((e) => (e['userName'] ?? '?')).join(' • ')}', style: const TextStyle(fontSize: 11)),
+            ],
+          ),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')),
+            ElevatedButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary),
+              child: const Text('Send Now', style: TextStyle(color: Colors.white)),
+            ),
+          ],
+        ),
+      );
+      if (confirmed != true) return;
+
+      var firestoreDocId = '';
+      try {
+        firestoreDocId = await _repository.sendNotification(
+          title: msg.title,
+          body: msg.body,
+          targetRole: 'student',
+          targetCount: _students,
+        );
+      } catch (e) {
+        debugPrint('Winner push Firestore save failed: $e');
+      }
+      final push = await _repository.sendPushNotification(
+        title: msg.title,
+        body: msg.body,
+        firestoreDocId: firestoreDocId.isNotEmpty ? firestoreDocId : null,
+      );
+      if (firestoreDocId.isNotEmpty) {
+        await _repository.updateNotificationOutcome(
+          firestoreDocId,
+          status: push.success ? 'sent' : 'failed',
+          oneSignalId: push.oneSignalId,
+          recipients: push.recipients,
+          error: push.success ? null : push.detail,
+        );
+      }
+      _showSnack(
+        push.success
+            ? '🏆 Winner push sent!${push.recipients != null ? ' (${push.recipients} devices)' : ''}'
+            : '⚠️ Winner push failed: ${push.detail}',
+        isError: !push.success,
+      );
+    } catch (e) {
+      _showSnack('Winner push failed: $e', isError: true);
+    } finally {
+      if (mounted) setState(() => _winnerLoading = false);
+    }
   }
 
   // ── Users section (paginated, searchable) ──
@@ -326,8 +526,25 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
     var firestoreDocId = '';
     try { firestoreDocId = await _repository.sendNotification(title: title, body: body, link: actionUrl, targetRole: 'student', targetCount: studentCount); } catch (e) { debugPrint('Firestore save failed: $e'); }
     final pushResult = await _repository.sendPushNotification(title: title, body: body, link: actionUrl, firestoreDocId: firestoreDocId.isNotEmpty ? firestoreDocId : null);
+    // Persist the true outcome on the notification doc (history shows sent/failed)
+    if (firestoreDocId.isNotEmpty) {
+      await _repository.updateNotificationOutcome(
+        firestoreDocId,
+        status: pushResult.success ? 'sent' : 'failed',
+        oneSignalId: pushResult.oneSignalId,
+        recipients: pushResult.recipients,
+        error: pushResult.success ? null : pushResult.detail,
+      );
+    }
     _titleController.clear(); _bodyController.clear(); _linkController.clear();
-    if (pushResult) { _showSnack('✅ Push sent to $studentCount students!'); } else { _showSnack('⚠️ Saved but push failed. Check OneSignal config.', isError: true); }
+    if (pushResult.success) {
+      final rc = pushResult.recipients;
+      _showSnack(rc != null && rc > 0
+          ? '✅ Push sent! OneSignal recipients: $rc'
+          : '✅ Push sent to OneSignal (recipients: ${rc ?? 'n/a'}).');
+    } else {
+      _showSnack('⚠️ Push failed: ${pushResult.detail}', isError: true);
+    }
     if (mounted) setState(() => _sending = false);
   }
 
@@ -336,35 +553,22 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
     if (idea.isEmpty) { _showSnack('AI idea/topic dao first.', isError: true); return; }
     setState(() => _generating = true);
     try {
-      final response = await _repository.generateNotificationContent(idea);
-      final g = _parseAiNotification(response);
-      _titleController.text = g.$1; _bodyController.text = g.$2;
-      _showSnack('AI ready — review kore send koro.');
+      final result = await _repository.generateNotificationContent(idea, tone: _selectedTone);
+      _titleController.text = result.title;
+      _bodyController.text = result.body;
+      if (result.fallbackUsed) {
+        _showSnack('⚠️ AI not responding — best-matching template use hoyeche. Edit kore send koro.', isError: true);
+      } else {
+        _showSnack('✅ AI ready — review kore send koro.');
+      }
     } catch (e) {
-      final fallback = _buildFallbackAiMessage(idea);
-      _titleController.text = fallback.$1; _bodyController.text = fallback.$2;
-      _showSnack('AI failed: ${e.toString().replaceFirst('Exception: ', '')}', isError: true);
+      // Last-resort safety net: a template always beats a broken AI message.
+      final tpl = bestTemplateForIdea(idea);
+      _titleController.text = tpl.title;
+      _bodyController.text = tpl.body;
+      _showSnack('AI failed (${e.toString().replaceFirst('Exception: ', '')}) — template use hoyeche.', isError: true);
     } finally { if (mounted) setState(() => _generating = false); }
   }
-
-  (String, String) _parseAiNotification(String response) {
-    final lines = response.split('\n').map((l) => l.trim()).where((l) => l.isNotEmpty);
-    var title = ''; var body = '';
-    for (final line in lines) {
-      final upper = line.toUpperCase();
-      if (upper.startsWith('TITLE:')) title = line.substring(line.indexOf(':') + 1).trim();
-      else if (upper.startsWith('BODY:')) body = line.substring(line.indexOf(':') + 1).trim();
-      else if (body.isNotEmpty) body = '$body ${line.trim()}';
-    }
-    if (title.isEmpty || body.isEmpty) {
-      final clean = response.replaceAll(RegExp(r'[*#`>-]'), '').trim();
-      final parts = clean.split(RegExp(r'\n+'));
-      title = parts.isNotEmpty ? parts.first.trim() : '📢 New Update!'; body = parts.length > 1 ? parts.skip(1).join(' ').trim() : clean;
-    }
-    if (title.length > 55) title = '${title.substring(0, 52)}...'; if (body.length > 180) body = '${body.substring(0, 177)}...';
-    return (title.isEmpty ? '📢 New Update!' : title, body.isEmpty ? 'Open the app and keep learning! 🚀' : body);
-  }
-  (String, String) _buildFallbackAiMessage(String idea) { final c = idea.length > 120 ? '${idea.substring(0, 117)}...' : idea; return ('📢 Important Update!', '$c ✨ Keep practicing today! 🚀'); }
   Future<void> _changeRole(UserModel user, String role) async { if (user.role == role) return; try { await _repository.updateUserRole(user.id, role); _showSnack('${user.name.isEmpty ? user.email : user.name} is now $role.'); } catch (e) { _showSnack('Failed: $e', isError: true); } }
   void _showInfo() => showDialog(context: context, builder: (_) => AlertDialog(title: const Text('Admin Panel'), content: const Text('Firestore users/{uid}.role = "admin" once. Push needs OneSignal AppId/ApiKey in Config/app_settings → onesignal.'), actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('OK'))]));
   Widget _previewField(String label, String value) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(label, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: AppColors.primary)), const SizedBox(height: 2), Text(value, style: const TextStyle(fontSize: 14))]);

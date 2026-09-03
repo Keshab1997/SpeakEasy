@@ -205,11 +205,15 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
         ? _formatTime(createdAt.toDate())
         : '';
 
-    final statusColor = status == 'queued'
-        ? Colors.orange
-        : status == 'sent'
-            ? Colors.green
-            : Colors.grey;
+    final statusColor = status == 'sent'
+        ? Colors.green
+        : (status == 'failed'
+            ? AppColors.error
+            : (status == 'sending' || status == 'queued'
+                ? Colors.orange
+                : Colors.grey));
+    final error = data['error'] as String?;
+    final recipients = data['recipients'];
 
     return Card(
       elevation: 0,
@@ -339,6 +343,36 @@ class _AdminNotificationsScreenState extends State<AdminNotificationsScreen> {
                 ),
               ],
             ),
+
+            if (error != null && error.isNotEmpty) ...[
+              const SizedBox(height: 6),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  color: AppColors.error.withValues(alpha: 0.08),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  error,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(fontSize: 11, color: AppColors.error),
+                ),
+              ),
+            ] else if (recipients != null) ...[
+              const SizedBox(height: 6),
+              Text(
+                'OneSignal recipients: $recipients',
+                style: TextStyle(
+                  fontSize: 11,
+                  color: isDark ? Colors.white38 : Colors.black38,
+                ),
+              ),
+            ],
           ],
         ),
       ),

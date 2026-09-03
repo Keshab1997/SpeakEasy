@@ -339,10 +339,9 @@ exports.onBattleChallengeCreate = functions.firestore
         headings: { en: `⚔️ ${fromName} challenges you!` },
         contents: { en: 'Tap to accept the 1v1 English duel!' },
         priority: 10,
-        android_channel_id: 'speakeasy_onesignal_channel',
+        // NOTE: no `android_channel_id` — OneSignal now rejects unknown ids
+        // with HTTP 400 "Could not find android_channel_id" (verified 2026-09-03).
         ttl: 259200,
-        small_icon: 'ic_stat_onesignal_default',
-        large_icon: 'ic_stat_onesignal_default',
         data: {
           actionType: 'battle_challenge',
           type: 'battle_challenge',
@@ -350,7 +349,7 @@ exports.onBattleChallengeCreate = functions.firestore
         },
       };
 
-      const res = await fetch('https://onesignal.com/api/v1/notifications', {
+      const res = await fetch('https://api.onesignal.com/notifications', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
@@ -540,13 +539,12 @@ async function sendOneSignalToAll(title, body, extraData) {
       headings: { en: title },
       contents: { en: body },
       priority: 10,
-      android_channel_id: 'speakeasy_onesignal_channel',
+      // NOTE: no `android_channel_id` — OneSignal now rejects unknown ids
+      // with HTTP 400 "Could not find android_channel_id" (verified 2026-09-03).
       ttl: 259200,
-      small_icon: 'ic_stat_onesignal_default',
-      large_icon: 'ic_stat_onesignal_default',
       data: extraData || {},
     };
-    const res = await fetch('https://onesignal.com/api/v1/notifications', {
+    const res = await fetch('https://api.onesignal.com/notifications', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8', Authorization: `Key ${apiKey}` },
       body: JSON.stringify(payload),
@@ -582,5 +580,86 @@ exports.dailyPracticePush = functions.pubsub
       "Don't break your streak! 5 min practice kore felo 🔥",
       { type: 'practice_reminder', payload: 'practice_reminder', actionType: 'game' }
     );
+    return null;
+  });
+
+// ---------------------------------------------------------------------------
+// 5) Daily Quiz Winner announcement — 9:00 PM Asia/Kolkata (or config time)
+//    Reads TODAY's real `daily_quiz_leaderboard/{date}/entries` and pushes the
+//    champion's NAME + SCORE to everyone, encouraging others to play tomorrow.
+//    Toggle: Config/app_settings → dailyQuizWinnerPush.enabled = false.
+// ---------------------------------------------------------------------------
+function kolkataDateKey() {
+  // en-CA locale yields YYYY-MM-DD — same key the app uses.
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Kolkata',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date());
+}
+
+function buildWinnerMessage(w, second, third) {
+  const name = String(w.userName || 'Champion').trim().slice(0, 20);
+  const score = Number(w.score || 0);
+  const correct = w.correctCount != null ? Number(w.correctCount) : null;
+
+  let title = `🏆 ${name} — Ajker Champion! 🎉`;
+  if (title.length > 55) title = title.slice(0, 52) + '...';
+
+  let body = `${name} ${score} points score koreche!`;
+  if (correct != null && correct > 0) body += ` (${correct} ta correct)`;
+  if (second) {
+    body += ` ${String(second.userName || '').slice(0, 20)} ${Number(second.score || 0)} points — ektu holei pichhe!`;
+  }
+  body += ' Kal tomar turn — quiz khelo, naam likho! 💪🔥';
+  if (body.length > 180) body = body.slice(0, 177) + '...';
+  return { title, body };
+}
+
+exports.dailyQuizWinnerPush = functions.pubsub
+  .schedule('0 21 * * *') // 9:00 PM IST
+  .timeZone('Asia/Kolkata')
+  .onRun(async () => {
+    try {
+      const cfgSnap = await db.collection('Config').doc('app_settings').get();
+      const cfg = cfgSnap.exists ? cfgSnap.data() : {};
+      const wCfg = (cfg.dailyQuizWinnerPush || {});
+      if (wCfg.enabled === false) {
+        functions.logger.log('dailyQuizWinnerPush: disabled in config — skip');
+        return null;
+      }
+
+      const date = kolkataDateKey();
+      const snap = await db
+        .collection('daily_quiz_leaderboard')
+        .doc(date)
+        .collection('entries')
+        .orderBy('score', 'desc')
+        .orderBy('totalTime', 'asc')
+        .limit(3)
+        .get();
+
+      if (snap.empty) {
+        functions.logger.log('dailyQuizWinnerPush: no entries for ' + date + ' — skip');
+        return null;
+      }
+
+      const entries = snap.docs.map((d) => d.data());
+      const { title, body } = buildWinnerMessage(entries[0], entries[1], entries[2]);
+
+      await sendOneSignalToAll(title, body, {
+        type: 'quiz_winner',
+        payload: date,
+        actionType: 'daily_quiz',
+        winnerName: String(entries[0].userName || ''),
+        winnerScore: String(entries[0].score || 0),
+      });
+      functions.logger.log(
+        'dailyQuizWinnerPush sent — ' + date + ' winner: ' + entries[0].userName + ' (' + entries[0].score + ')'
+      );
+    } catch (e) {
+      functions.logger.error('dailyQuizWinnerPush error', e);
+    }
     return null;
   });
