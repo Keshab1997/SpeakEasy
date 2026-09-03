@@ -371,7 +371,7 @@ class AdminRepository {
           );
         } catch (_) {
           // Response body not JSON — treat as success since status is 2xx
-          return PushSendResult(success: true, detail: 'OneSignal accepted (2xx)');
+          return const PushSendResult(success: true, detail: 'OneSignal accepted (2xx)');
         }
       } else {
         // Show the server's real error (auth / bad segment / rate-limit...)
@@ -413,7 +413,8 @@ class AdminRepository {
       'festive': '- Tone: festive & celebratory.',
     };
 
-    const systemPrompt = '''
+    // NOTE: not `const` — it interpolates the selected tone rule at runtime.
+    final systemPrompt = '''
 You write short push notifications (title + body) for SpeakEasy — a Bengali-English learning app. Audience: Bengali students. The notification must make them smile and tap.
 
 STRICT OUTPUT CONTRACT:
@@ -524,7 +525,7 @@ Idea: streak miss hobe → {"title":"🔥 Arey, Streak Ta Kande! 🥺","body":"2
         .doc(date)
         .collection('entries')
         .orderBy('score', descending: true)
-        .orderBy('totalTime', ascending: true)
+        .orderBy('totalTime', descending: false)
         .limit(limit)
         .get();
     return snapshot.docs.map((d) => d.data()).toList();

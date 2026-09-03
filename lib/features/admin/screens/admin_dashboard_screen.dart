@@ -264,7 +264,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         const SizedBox(height: 14),
 
         // ── 1. Quick templates (no AI needed — always correct) ──
-        Text('⚡ Quick Templates — tap to load', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: AppColors.primary)),
+        const Text('⚡ Quick Templates — tap to load', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: AppColors.primary)),
         const SizedBox(height: 8),
         SizedBox(
           height: 38,
@@ -330,7 +330,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
           SizedBox(
             width: 132,
             child: DropdownButtonFormField<String>(
-              value: _selectedTone,
+              initialValue: _selectedTone,
               decoration: InputDecoration(
                 labelText: 'Tone',
                 prefixIcon: const Icon(Icons.tune_rounded, size: 18),
@@ -589,8 +589,8 @@ class _StatsSkeleton extends StatelessWidget {
 }
 
 class _Skel extends StatelessWidget {
-  final double height; final double width;
-  const _Skel({this.height = 16, this.width = double.infinity});
+  final double height;
+  const _Skel({this.height = 16});
   @override
-  Widget build(BuildContext context) { final isDark = Theme.of(context).brightness == Brightness.dark; return Container(width: width, height: height, decoration: BoxDecoration(color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.08), borderRadius: BorderRadius.circular(14))); }
+  Widget build(BuildContext context) { final isDark = Theme.of(context).brightness == Brightness.dark; return Container(width: double.infinity, height: height, decoration: BoxDecoration(color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.08), borderRadius: BorderRadius.circular(14))); }
 }
