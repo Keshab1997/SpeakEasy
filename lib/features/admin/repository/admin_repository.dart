@@ -52,6 +52,18 @@ class AdminRepository {
     return snapshot.count ?? 0;
   }
 
+  /// Lightweight aggregated counts — 1 read each via count() aggregation.
+  /// Used by dashboard stats row to avoid downloading 200 user docs.
+  Future<Map<String, int>> getUserCounts() async {
+    final results = await Future.wait([
+      _firestore.collection('users').count().get(),
+      _firestore.collection('users').where('role', isEqualTo: 'admin').count().get(),
+    ]);
+    final total = results[0].count ?? 0;
+    final admins = results[1].count ?? 0;
+    return {'total': total, 'admins': admins, 'students': total - admins};
+  }
+
   Future<QuerySnapshot<Map<String, dynamic>>> loadMoreUsers({
     DocumentSnapshot? lastDoc,
     int pageSize = 50,
@@ -240,14 +252,17 @@ class AdminRepository {
 
       final payload = <String, dynamic>{
         'app_id': appId,
-        // Use 'All' — OneSignal's default segment for all active subscriptions.
-        // If you renamed it in the dashboard, update this value accordingly.
+        'target_channel': 'push',
         'included_segments': ['All'],
         'headings': {'en': title},
         'contents': {'en': body},
+        // High priority + our native channel → delivers even when app is killed / force-stopped
         'priority': 10,
+        'android_channel_id': 'speakeasy_onesignal_channel',
         'small_icon': 'ic_stat_onesignal_default',
         'large_icon': 'ic_stat_onesignal_default',
+        // Ensure background delivery: TTL 3 days so offline devices get it on reconnect
+        'ttl': 259200,
       };
       if (link != null) payload['url'] = link;
       if (firestoreDocId != null) {
@@ -303,11 +318,33 @@ class AdminRepository {
 
   Future<String> generateNotificationContent(String idea) async {
     const systemPrompt =
-        'You write short, beautiful in-app notifications for a spoken English learning app. '
-        'Use friendly Bangla/Banglish tone, useful emojis, and motivating language. '
-        'Return only this exact format with no markdown:\n'
-        'TITLE: <max 55 chars>\n'
-        'BODY: <max 180 chars>';
+        'You are SpeakEasy\'s friendly notification writer — a fun, cheerful friend, NOT a boring school teacher.\n'
+        'GOAL: Write notifications that users ENJOY tapping — playful, warm, a bit funny, never boring or formal.\n'
+        '\n'
+        'TONE RULES:\n'
+        '- Speak like a close friend: use "tumi", "cholo", "ki khobor?", "arey wah!" — never robotic/formal Bangla.\n'
+        '- Mix Bangla + Banglish naturally (e.g. "Practice ta miss koro na!").\n'
+        '- 1-2 relevant emojis only (front-loaded in title if possible). No emoji spam.\n'
+        '- Be encouraging & funny — light humor, wordplay, or cute challenge. Never scolding or guilt-tripping.\n'
+        '- Keep it SHORT, punchy, thumb-stopping. User should smile and tap.\n'
+        '- Never use corporate phrases like "গুরুত্বপূর্ণ বিজ্ঞপ্তি" or "অনুরোধ করা হচ্ছে".\n'
+        '\n'
+        'EXAMPLES (follow this vibe):\n'
+        'Idea: vocabulary test kal\n'
+        'TITLE: 📚 Kal Test, Ready to Rock? 😎\n'
+        'BODY: 5 min practice korlei kal hero hoye jabe! Cholo, ekta quick revision kore feli? 🔥\n'
+        '\n'
+        'Idea: streak miss hobe\n'
+        'TITLE: 🔥 Arey, Streak Ta Kande! 🥺\n'
+        'BODY: 2 min e streak bachano jabe! Ekta lesson kore streak hero hoye jao 😍\n'
+        '\n'
+        'Idea: new lesson added\n'
+        'TITLE: ✨ Notun Lesson Eseche! 🎉\n'
+        'BODY: Ekdom fresh lesson — moja kore English shikhe felo, boring lagbe na promise! 😄\n'
+        '\n'
+        'STRICT OUTPUT — no markdown, no extra lines, exactly:\n'
+        'TITLE: <max 55 chars, fun + emoji>\n'
+        'BODY: <max 180 chars, friendly + playful + 1 emoji at end>';
     try {
       // The admin API key pool loads asynchronously at app start. Wait for it
       // so a generate tapped right after launch doesn't race the Firestore
@@ -322,9 +359,9 @@ class AdminRepository {
         }
       }
       final response = await AIService().sendMessageWithSystem(
-        'Idea/topic: $idea',
+        'Idea/topic: $idea\nWrite a FUN, friendly notification — make user smile and tap!',
         systemPrompt: systemPrompt,
-        maxTokens: 180,
+        maxTokens: 250,
       );
       // AIService returns these fallback strings (instead of throwing) when
       // the key pool is empty or the API call fails. Parsing them as

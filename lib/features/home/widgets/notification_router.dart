@@ -39,6 +39,9 @@ class NotificationRouter {
         // the pending challenge sheet automatically.
         Navigator.pushNamed(context, RouteNames.battleLobby);
         break;
+      case 'daily_quiz':
+        Navigator.pushNamed(context, RouteNames.quiz);
+        break;
       default:
         // Just mark as read, no navigation needed
         break;

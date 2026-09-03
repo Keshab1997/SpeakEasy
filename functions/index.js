@@ -339,6 +339,8 @@ exports.onBattleChallengeCreate = functions.firestore
         headings: { en: `⚔️ ${fromName} challenges you!` },
         contents: { en: 'Tap to accept the 1v1 English duel!' },
         priority: 10,
+        android_channel_id: 'speakeasy_onesignal_channel',
+        ttl: 259200,
         small_icon: 'ic_stat_onesignal_default',
         large_icon: 'ic_stat_onesignal_default',
         data: {
@@ -513,5 +515,72 @@ exports.autoForfeitDisconnectedPlayers = functions.pubsub
     } catch (e) {
       functions.logger.error('auto-forfeit failed', e);
     }
+    return null;
+  });
+
+// ---------------------------------------------------------------------------
+// 4) Daily server push — delivers even when app is killed / not opened for weeks
+//    Uses OneSignal high-priority FCM via Play Services (not AlarmManager).
+//    Local AlarmManager is killed by OEMs when app is swiped; this is not.
+// ---------------------------------------------------------------------------
+async function sendOneSignalToAll(title, body, extraData) {
+  try {
+    const cfgSnap = await db.collection('Config').doc('app_settings').get();
+    const os = cfgSnap.exists ? cfgSnap.data() && cfgSnap.data().onesignal : null;
+    const appId = os && os.AppId;
+    const apiKey = os && os.ApiKey;
+    if (!appId || !apiKey) {
+      functions.logger.log('dailyPush: OneSignal config missing — skip');
+      return;
+    }
+    const payload = {
+      app_id: appId,
+      target_channel: 'push',
+      included_segments: ['All'],
+      headings: { en: title },
+      contents: { en: body },
+      priority: 10,
+      android_channel_id: 'speakeasy_onesignal_channel',
+      ttl: 259200,
+      small_icon: 'ic_stat_onesignal_default',
+      large_icon: 'ic_stat_onesignal_default',
+      data: extraData || {},
+    };
+    const res = await fetch('https://onesignal.com/api/v1/notifications', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8', Authorization: `Key ${apiKey}` },
+      body: JSON.stringify(payload),
+    });
+    const text = await res.text();
+    if (!res.ok) functions.logger.error('dailyPush failed', res.status, text);
+    else functions.logger.log('dailyPush sent:', title, text);
+  } catch (e) {
+    functions.logger.error('dailyPush error', e);
+  }
+}
+
+// 8:00 AM Asia/Kolkata — Daily Quiz reminder (morning, fun)
+exports.dailyQuizPush = functions.pubsub
+  .schedule('0 8 * * *')
+  .timeZone('Asia/Kolkata')
+  .onRun(async () => {
+    await sendOneSignalToAll(
+      '🧠 Daily Quiz Ready! ☀️',
+      'Good morning! 10 ta fun question tomar jonno ready — 5 min e quiz ta complete koro? 🔥',
+      { type: 'daily_quiz', payload: 'daily_quiz', actionType: 'daily_quiz' }
+    );
+    return null;
+  });
+
+// 7:00 PM Asia/Kolkata — Practice reminder
+exports.dailyPracticePush = functions.pubsub
+  .schedule('0 19 * * *')
+  .timeZone('Asia/Kolkata')
+  .onRun(async () => {
+    await sendOneSignalToAll(
+      '⏰ Time to Practice! 🎯',
+      "Don't break your streak! 5 min practice kore felo 🔥",
+      { type: 'practice_reminder', payload: 'practice_reminder', actionType: 'game' }
+    );
     return null;
   });

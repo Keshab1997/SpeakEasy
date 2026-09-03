@@ -61,12 +61,15 @@ class AnalyticsService {
   static final _firestore = FirebaseFirestore.instance;
   static AppAnalytics? _cached;
   static DateTime _lastFetch = DateTime(2000);
+  // 5-min cache — analytics is not realtime; avoids 7 count()+1 get
+  // on every tab switch / pull-to-refresh spam.
+  static const Duration _cacheExpiry = Duration(minutes: 5);
 
-  /// Returns cached analytics if fetched within the last 60 seconds,
+  /// Returns cached analytics if fetched within the last 5 minutes,
   /// otherwise fetches fresh data from Firestore.
   static Future<AppAnalytics> getAnalytics() async {
     if (_cached != null &&
-        DateTime.now().difference(_lastFetch).inSeconds < 60) {
+        DateTime.now().difference(_lastFetch) < _cacheExpiry) {
       return _cached!;
     }
 

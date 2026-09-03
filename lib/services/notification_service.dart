@@ -878,7 +878,6 @@ ${todayWord.exampleSentence}
         presentAlert: true,
         presentBadge: true,
         presentSound: true,
-        sound: 'speakeasy_notification.caf',
       );
 
       const details = NotificationDetails(
