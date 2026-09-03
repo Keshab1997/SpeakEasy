@@ -1,0 +1,4 @@
+What's New in v1.0.31:
+• 🔔 Notifications work even when app is closed — Daily Quiz at 8AM & Practice at 7PM
+• 🛠️ Faster Admin Panel with cleaner design & lower data usage
+• 🤖 More fun AI notifications + stability improvements
