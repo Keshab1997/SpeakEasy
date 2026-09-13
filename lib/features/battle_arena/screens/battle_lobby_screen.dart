@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../providers/auth_provider.dart';
+import '../../../friends/models/friend_models.dart';
+import '../../../friends/providers/friend_providers.dart';
+import '../../../friends/screens/friend_requests_screen.dart';
+import '../../../friends/services/friend_service.dart';
+import '../../../friends/widgets/friend_list_card.dart';
 import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';
@@ -101,6 +106,9 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
               SliverToBoxAdapter(
                 child: _buildQuickMatchButton(context, isDark),
               ),
+
+              // 2.5 My Friends (live presence + one-tap challenge)
+              ..._buildFriendsSection(theme, isDark),
 
               // 3. Section Title: Live Warriors
               SliverToBoxAdapter(
@@ -398,6 +406,177 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
         ),
       ),
     );
+  }
+
+  /// Section: MY FRIENDS — accepted friends with live presence dots,
+  /// one-tap challenge (live when online, async when offline), plus a chip
+  /// that opens the Friend Requests inbox (with unread count badge).
+  List<Widget> _buildFriendsSection(ThemeData theme, bool isDark) {
+    final friendsAsync = ref.watch(myFriendsProvider);
+    final requestsCount = ref
+            .watch(incomingFriendRequestsProvider)
+            .asData
+            ?.value
+            .length ??
+        0;
+    final onlineUsers = ref.watch(onlineBattleUsersProvider).asData?.value ?? [];
+    final onlineById = {for (final u in onlineUsers) u.id: u};
+
+    final friends = friendsAsync.asData?.value ?? [];
+    // Hide the whole section when there's nothing to show/manage.
+    if (friends.isEmpty && requestsCount == 0) return const [];
+
+    return [
+      SliverToBoxAdapter(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 28, 20, 10),
+          child: Row(
+            children: [
+              const Icon(Icons.groups_rounded, size: 14, color: Color(0xFF10B981)),
+              const SizedBox(width: 6),
+              Text(
+                'MY FRIENDS',
+                style: theme.textTheme.titleSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.1,
+                  color: isDark ? const Color(0xFF94A3B8) : const Color(0xFF64748B),
+                ),
+              ),
+              const Spacer(),
+              // Requests inbox chip (with badge)
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(10),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (_) => const FriendRequestsScreen()));
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: requestsCount > 0
+                          ? const Color(0xFFEF4444).withValues(alpha: 0.15)
+                          : const Color(0xFF10B981).withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.mail_rounded,
+                          size: 12,
+                          color: requestsCount > 0
+                              ? const Color(0xFFEF4444)
+                              : const Color(0xFF10B981),
+                        ),
+                        const SizedBox(width: 4),
+                        Text(
+                          requestsCount > 0
+                              ? 'Requests ($requestsCount)'
+                              : 'Requests',
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                            color: requestsCount > 0
+                                ? const Color(0xFFEF4444)
+                                : const Color(0xFF10B981),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      if (friends.isEmpty)
+        const SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 8),
+            child: Text(
+              'No friends yet — tap ➕ on any player card to send a request!',
+              style: TextStyle(fontSize: 11, color: Colors.grey),
+            ),
+          ),
+        )
+      else
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              final f = friends[index];
+              final presence = onlineById[f.id];
+              final isOnline = presence != null;
+              return FriendListCard(
+                friend: f,
+                isOnline: isOnline,
+                isInBattle: presence?.isInBattle ?? false,
+                isChallenging: _challengingUserId == f.id,
+                onChallenge: () => _challengeFriend(f, online: isOnline),
+                onRemove: () => _removeFriend(f),
+              );
+            },
+            childCount: friends.length,
+          ),
+        ),
+    ];
+  }
+
+  /// Challenge a friend — live duel when they're online, async challenge
+  /// (delivered on their next login) when they're offline.
+  Future<void> _challengeFriend(Friend friend, {required bool online}) async {
+    final currentUser = ref.read(authProvider).asData?.value;
+    if (currentUser == null) return;
+
+    setState(() => _challengingUserId = friend.id);
+    final stats = ref.read(battleArenaProvider).stats;
+
+    try {
+      await ref.read(battlePresenceServiceProvider).sendChallenge(
+            fromUserId: currentUser.id,
+            fromUserName: currentUser.name,
+            fromUserPhoto: currentUser.photoUrl,
+            fromUserTrophies: stats.trophies,
+            toUserId: friend.id,
+            type: online ? 'live' : 'async',
+          );
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(online
+              ? 'Challenge sent to ${friend.name}! ⚔️'
+              : 'Challenge sent! ${friend.name} will get it when they come online 🔔'),
+          backgroundColor:
+              online ? const Color(0xFF10B981) : const Color(0xFF8B5CF6),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Failed to send challenge.')),
+      );
+    } finally {
+      if (mounted) setState(() => _challengingUserId = null);
+    }
+  }
+
+  Future<void> _removeFriend(Friend friend) async {
+    final currentUser = ref.read(authProvider).asData?.value;
+    if (currentUser == null) return;
+    try {
+      await FriendService().removeFriend(currentUser.id, friend.id);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('${friend.name} removed from your friends.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    } catch (_) {}
   }
 
   /// Section: offline warriors active within the last 7 days. Challenging

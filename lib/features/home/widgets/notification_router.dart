@@ -39,6 +39,13 @@ class NotificationRouter {
         // the pending challenge sheet automatically.
         Navigator.pushNamed(context, RouteNames.battleLobby);
         break;
+      case 'friend_request':
+      case 'friend_accepted':
+      case 'friend_online':
+        // All friend events resolve from the battle lobby's MY FRIENDS
+        // section (requests inbox chip lives there too).
+        Navigator.pushNamed(context, RouteNames.battleLobby);
+        break;
       case 'daily_quiz':
         Navigator.pushNamed(context, RouteNames.quiz);
         break;

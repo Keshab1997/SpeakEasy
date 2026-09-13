@@ -34,6 +34,8 @@ const QUEUE = 'battle_queue';
 const CHALLENGES = 'battle_challenges';
 const PRESENCE = 'battle_presence';
 const LEADERBOARD = 'battle_leaderboard';
+const FRIEND_REQUESTS = 'friend_requests';
+const FRIENDSHIPS = 'friendships';
 
 const ROUNDS_PER_MATCH = 5;
 const BASE_SCORE = 100;
@@ -452,6 +454,249 @@ exports.onBattleChallengeUpdate = functions.firestore
   });
 
 // ---------------------------------------------------------------------------
+// 1d) FRIENDS — push the target when someone sends a friend request.
+// ---------------------------------------------------------------------------
+
+exports.onFriendRequestCreate = functions.firestore
+  .document(`${FRIEND_REQUESTS}/{requestId}`)
+  .onCreate(async (snap) => {
+    try {
+      const req = snap.data() || {};
+      const toUid = req.toUserId;
+      const fromName = req.fromUserName || 'A learner';
+      if (!toUid || String(toUid).startsWith('guest_')) return null;
+
+      const cfgSnap = await db.collection('Config').doc('app_settings').get();
+      const os = cfgSnap.exists ? cfgSnap.data() && cfgSnap.data().onesignal : null;
+      const appId = os && os.AppId;
+      const apiKey = os && os.ApiKey;
+      if (!appId || !apiKey) {
+        functions.logger.log('onFriendRequestCreate: OneSignal config missing — skip push');
+        return null;
+      }
+
+      const payload = {
+        app_id: appId,
+        target_channel: 'push',
+        include_aliases: { external_id: [toUid] },
+        headings: { en: '🤝 New friend request!' },
+        contents: { en: `${fromName} wants to be your friend. Open the Battle Arena to respond!` },
+        priority: 10,
+        ttl: 259200,
+        data: {
+          actionType: 'friend_request',
+          type: 'friend_request',
+          notification_id: `friend_req_${snap.id}`,
+        },
+      };
+
+      const res = await fetch('https://api.onesignal.com/notifications', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          Authorization: `Key ${apiKey}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      const body = await res.text();
+      if (!res.ok) {
+        functions.logger.error('OneSignal friend-request push failed', res.status, body);
+      } else {
+        functions.logger.log('Friend request push sent →', toUid);
+      }
+    } catch (e) {
+      functions.logger.error('onFriendRequestCreate error', e);
+    }
+    return null;
+  });
+
+// ---------------------------------------------------------------------------
+// 1e) FRIENDS — when a request is ACCEPTED, write BOTH sides of the
+//     friendship (clients may only write their own doc) and push the
+//     requester "X accepted your friend request!".
+// ---------------------------------------------------------------------------
+
+exports.onFriendRequestUpdate = functions.firestore
+  .document(`${FRIEND_REQUESTS}/{requestId}`)
+  .onUpdate(async (change) => {
+    try {
+      const before = change.before.data() || {};
+      const after = change.after.data() || {};
+      if (before.status !== 'pending' || after.status !== 'accepted') return null;
+
+      const fromUid = after.fromUserId;
+      const toUid = after.toUserId;
+      if (!fromUid || !toUid) return null;
+
+      // Receiver's display snapshot (presence doc → users doc fallback).
+      let toName = 'A learner';
+      let toPhoto = '';
+      let toTrophies = 100;
+      try {
+        const presenceSnap = await db.collection(PRESENCE).doc(toUid).get();
+        if (presenceSnap.exists) {
+          const p = presenceSnap.data();
+          toName = p.name || toName;
+          toPhoto = p.photoUrl || '';
+          toTrophies = typeof p.trophies === 'number' ? p.trophies : toTrophies;
+        } else {
+          const userSnap = await db.collection('users').doc(toUid).get();
+          if (userSnap.exists) {
+            const u = userSnap.data();
+            toName = u.name || toName;
+            toPhoto = u.photoUrl || '';
+            toTrophies = typeof u.trophies === 'number' ? u.trophies : toTrophies;
+          }
+        }
+      } catch (_) {}
+
+      const now = new Date();
+      const batch = db.batch();
+      batch.set(
+        db.collection(FRIENDSHIPS).doc(fromUid),
+        {
+          friends: {
+            [toUid]: {
+              name: toName,
+              photoUrl: toPhoto,
+              trophies: toTrophies,
+              addedAt: now,
+            },
+          },
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+      batch.set(
+        db.collection(FRIENDSHIPS).doc(toUid),
+        {
+          friends: {
+            [fromUid]: {
+              name: after.fromUserName || 'A learner',
+              photoUrl: after.fromUserPhoto || '',
+              trophies: typeof after.fromUserTrophies === 'number' ? after.fromUserTrophies : 100,
+              addedAt: now,
+            },
+          },
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+      await batch.commit();
+
+      // Push the requester.
+      const cfgSnap = await db.collection('Config').doc('app_settings').get();
+      const os = cfgSnap.exists ? cfgSnap.data() && cfgSnap.data().onesignal : null;
+      const appId = os && os.AppId;
+      const apiKey = os && os.ApiKey;
+      if (!appId || !apiKey || String(fromUid).startsWith('guest_')) return null;
+
+      const payload = {
+        app_id: appId,
+        target_channel: 'push',
+        include_aliases: { external_id: [fromUid] },
+        headings: { en: '🎉 Friend request accepted!' },
+        contents: { en: `${toName} is now your friend. Challenge them to a duel! ⚔️` },
+        priority: 10,
+        ttl: 259200,
+        data: {
+          actionType: 'friend_accepted',
+          type: 'friend_accepted',
+          notification_id: `friend_acc_${change.after.id}`,
+        },
+      };
+
+      const res = await fetch('https://api.onesignal.com/notifications', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          Authorization: `Key ${apiKey}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      const body = await res.text();
+      if (!res.ok) {
+        functions.logger.error('OneSignal friend-accepted push failed', res.status, body);
+      } else {
+        functions.logger.log('Friend accepted push sent →', fromUid);
+      }
+    } catch (e) {
+      functions.logger.error('onFriendRequestUpdate error', e);
+    }
+    return null;
+  });
+
+// ---------------------------------------------------------------------------
+// 1f) FRIENDS — "friend is online now" alert.
+//     Fires only on the isOnline false→true transition of battle_presence
+//     (heartbeats keep isOnline true, so they never retrigger this).
+//     Reads my friends list and pushes all of them in ONE OneSignal call.
+// ---------------------------------------------------------------------------
+
+exports.onBattlePresenceOnline = functions.firestore
+  .document(`${PRESENCE}/{userId}`)
+  .onUpdate(async (change) => {
+    try {
+      const before = change.before.data() || {};
+      const after = change.after.data() || {};
+
+      // Only the offline → online transition.
+      if (before.isOnline === true || after.isOnline !== true) return null;
+
+      const uid = change.params.userId;
+      if (!uid || uid.startsWith('guest_')) return null;
+
+      const fsSnap = await db.collection(FRIENDSHIPS).doc(uid).get();
+      if (!fsSnap.exists) return null;
+      const friends = (fsSnap.data() || {}).friends || {};
+      const friendIds = Object.keys(friends)
+        .filter((id) => !id.startsWith('guest_'))
+        .slice(0, 100); // OneSignal alias batch safety cap
+      if (friendIds.length === 0) return null;
+
+      const cfgSnap = await db.collection('Config').doc('app_settings').get();
+      const os = cfgSnap.exists ? cfgSnap.data() && cfgSnap.data().onesignal : null;
+      const appId = os && os.AppId;
+      const apiKey = os && os.ApiKey;
+      if (!appId || !apiKey) return null;
+
+      const name = after.name || 'Your friend';
+      const payload = {
+        app_id: appId,
+        target_channel: 'push',
+        include_aliases: { external_id: friendIds },
+        headings: { en: `🟢 ${name} is online!` },
+        contents: { en: 'Your friend just entered the Battle Arena — challenge them to a duel ⚔️' },
+        priority: 10,
+        ttl: 3600,
+        data: {
+          actionType: 'friend_online',
+          type: 'friend_online',
+          notification_id: `friend_online_${uid}_${Date.now()}`,
+        },
+      };
+
+      const res = await fetch('https://api.onesignal.com/notifications', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          Authorization: `Key ${apiKey}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      const body = await res.text();
+      if (!res.ok) {
+        functions.logger.error('OneSignal friend-online push failed', res.status, body);
+      } else {
+        functions.logger.log(`Friend-online push sent for ${uid} → ${friendIds.length} friend(s)`);
+      }
+    } catch (e) {
+      functions.logger.error('onBattlePresenceOnline error', e);
+    }
+    return null;
+  });
+
+// ---------------------------------------------------------------------------
 // 2) Scheduled cleanup (every 5 minutes)
 // ---------------------------------------------------------------------------
 
@@ -534,6 +779,34 @@ exports.cleanupBattleData = functions.pubsub
       if (n > 0) functions.logger.log(`cleanup: removed ${n} expired challenges`);
     } catch (e) {
       functions.logger.error('challenge cleanup failed', e);
+    }
+
+    // 2b2. Friend requests hygiene:
+    //      • accepted requests: both friendship docs are already written by
+    //        the Cloud Function → sweep the request after 24h.
+    //      • pending requests older than 7 days: stale/spam → delete.
+    try {
+      const ACC_TTL = 24 * 60 * 60 * 1000; // 24h
+      const PENDING_TTL = 7 * 24 * 60 * 60 * 1000; // 7d
+      const frSnap = await db.collection(FRIEND_REQUESTS).limit(500).get();
+      const batch = db.batch();
+      let n = 0;
+      frSnap.forEach((doc) => {
+        const d = doc.data();
+        const created = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate() : null;
+        const age = created ? now - created.getTime() : 0;
+        if (d.status === 'accepted' && age > ACC_TTL) {
+          batch.delete(doc.ref);
+          n++;
+        } else if (d.status === 'pending' && age > PENDING_TTL) {
+          batch.delete(doc.ref);
+          n++;
+        }
+      });
+      if (n > 0) await batch.commit();
+      if (n > 0) functions.logger.log(`cleanup: removed ${n} stale friend requests`);
+    } catch (e) {
+      functions.logger.error('friend request cleanup failed', e);
     }
 
     // 2c. Abandoned in-progress rooms (> 30 min) → mark abandoned

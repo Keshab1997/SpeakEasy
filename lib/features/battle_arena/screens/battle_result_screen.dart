@@ -1,6 +1,7 @@
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../friends/widgets/friend_action_button.dart';
 import '../providers/battle_arena_provider.dart';
 import 'battle_answer_review_screen.dart';
 
@@ -701,6 +702,27 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
                                 ),
                               ),
                             ),
+
+                          // ── ADD FRIEND (real players only) ────────────
+                          if (!state.opponent.isBot) ...[
+                            const SizedBox(height: 14),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: FriendActionButton(
+                                      targetUserId: state.opponent.id,
+                                      targetName: state.opponent.name,
+                                      targetPhotoUrl: state.opponent.photoUrl,
+                                      targetTrophies: state.opponent.trophies,
+                                      compact: false,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
 
                           const SizedBox(height: 18),
 

@@ -325,6 +325,46 @@ service cloud.firestore {
     //          type('live'|'async' — async waits up to 48h for an offline target)
     // ═══════════════════════════════════════════════
 
+    // ═══════════════════════════════════════════════
+    //  FRIENDS — REQUESTS & FRIENDSHIP LISTS (Phase 3)
+    //  friend_requests/{id}: fromUserId, fromUserName, fromUserPhoto,
+    //    fromUserTrophies, toUserId, status(pending/accepted), createdAt
+    //  friendships/{userId}: { friends: { uid: {name, photoUrl, trophies,
+    //    addedAt} } } — written by Cloud Function on accept (admin); the
+    //    owner may read and update their own doc (e.g. remove a friend).
+    // ═══════════════════════════════════════════════
+
+    match /friend_requests/{requestId} {
+      allow read: if isAuthenticated()
+        && (resource.data.fromUserId == request.auth.uid
+            || resource.data.toUserId == request.auth.uid);
+      allow create: if isAuthenticated()
+        && request.resource.data.fromUserId == request.auth.uid
+        && request.resource.data.toUserId != request.auth.uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.fromUserId is string
+        && request.resource.data.toUserId is string;
+      // Only the receiver can accept (status flip); reject = delete below.
+      allow update: if isAuthenticated()
+        && resource.data.toUserId == request.auth.uid
+        && resource.data.status == 'pending'
+        && request.resource.data.status == 'accepted'
+        && request.resource.data.fromUserId == resource.data.fromUserId
+        && request.resource.data.toUserId == resource.data.toUserId
+        && onlyKeysAffected(['status']);
+      // Sender can cancel; receiver can reject; admin sweeps stale docs.
+      allow delete: if isAdmin()
+        || (isAuthenticated() && (
+             resource.data.fromUserId == request.auth.uid
+             || resource.data.toUserId == request.auth.uid));
+    }
+
+    match /friendships/{userId} {
+      allow read, create, update: if isAuthenticated()
+        && userId == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+
     match /battle_challenges/{challengeId} {
       allow read: if isAuthenticated()
         && (resource.data.fromUserId == request.auth.uid

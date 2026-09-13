@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../friends/widgets/friend_action_button.dart';
 import '../models/battle_models.dart';
 import '../services/battle_leaderboard_service.dart';
 
@@ -143,6 +144,14 @@ class LivePlayerCard extends StatelessWidget {
             ),
           ),
 
+          // Send/accept friend request (state-aware compact button)
+          FriendActionButton(
+            targetUserId: user.id,
+            targetName: user.name,
+            targetPhotoUrl: user.photoUrl,
+            targetTrophies: user.trophies,
+          ),
+
           // Challenge button (disabled while the player is in a duel)
           ElevatedButton.icon(
             onPressed: (isChallenging || user.isInBattle) ? null : onChallenge,
@@ -248,6 +257,14 @@ class LivePlayerCard extends StatelessWidget {
                       '${u.draws} Draws • Best Streak ${u.winStreak} 🔥',
                       style: const TextStyle(color: Colors.grey, fontSize: 11),
                     ),
+                  const SizedBox(height: 14),
+                  FriendActionButton(
+                    targetUserId: u.id,
+                    targetName: u.name,
+                    targetPhotoUrl: u.photoUrl,
+                    targetTrophies: u.trophies,
+                    compact: false,
+                  ),
                 ],
               ),
             );

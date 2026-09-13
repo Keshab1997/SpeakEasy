@@ -54,10 +54,15 @@
 - [x] **Live-Recall on Accept:** When the (previously offline) receiver accepts, a new `onBattleChallengeUpdate` Cloud Function pushes the challenger — *"X accepted your challenge — join now!"* — and the challenger's outgoing-challenge listener auto-joins the room on next app open.
 - [x] **Cleanup Policy Update:** pending challenges expire in 90s (live) / 48h (async); accepted-but-never-joined challenges swept after 2h (previously never cleaned).
 
-### 9. 🤝 Friends & Online Alerts (Phase 3 — upcoming)
-- [ ] Friend requests from player cards, leaderboard & post-match screens.
-- [ ] Friends section in lobby with live presence dots & one-tap challenge.
-- [ ] "Friend is online now" OneSignal push (every login) via presence-transition Cloud Function.
+### 9. 🤝 Friends & Online Alerts (Phase 3)
+- [x] **Friend Requests:** send from player cards (online + recently active), profile sheets & post-match result screen (real players only, bots excluded). State-aware button: ➕ Send → ⏳ Requested (tap cancels) → Accept incoming → ✓ Friends.
+- [x] **Data Model:** `friend_requests/{id}` (pending/accepted) + `friendships/{userId}` per-user friends map with snapshot data (name, photo, trophies, addedAt).
+- [x] **Secure Mutual Write:** clients only write their own friendship doc; accepting flips request status and the `onFriendRequestUpdate` Cloud Function writes BOTH sides + pushes the requester "X accepted your request! 🎉".
+- [x] **Requests Inbox:** `FriendRequestsScreen` with Accept/Decline, opened from the MY FRIENDS header chip (red badge with unread count); push on incoming request.
+- [x] **MY FRIENDS Lobby Section:** friends list with live presence dots (green/amber/grey), ONLINE/IN BATTLE/OFFLINE badges, one-tap Duel (live challenge when online, async when offline), long-press to remove.
+- [x] **Friend-Online Alert:** `onBattlePresenceOnline` fires only on the `isOnline` false→true presence transition (heartbeats never retrigger), pushes ALL friends in a single OneSignal call — "🟢 X is online! Challenge them ⚔️" (every login, per product decision).
+- [x] **Cleanup:** accepted friend requests swept after 24h; stale pending requests after 7 days.
+- [x] **Rules & Indexes:** friend_requests read/create/update/delete rules (receiver-only accept), owner-only friendships, composite index `(toUserId, status)`.
 
 ---
 

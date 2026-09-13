@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../friends/widgets/friend_action_button.dart';
 import '../models/battle_models.dart';
 import '../services/battle_leaderboard_service.dart';
 
@@ -153,6 +154,14 @@ class RecentPlayerCard extends StatelessWidget {
               ),
             ),
 
+            // Send/accept friend request (state-aware compact button)
+            FriendActionButton(
+              targetUserId: user.id,
+              targetName: user.name,
+              targetPhotoUrl: user.photoUrl,
+              targetTrophies: user.trophies,
+            ),
+
             // Async challenge button
             ElevatedButton.icon(
               onPressed: isChallenging ? null : onChallenge,
@@ -247,6 +256,14 @@ class RecentPlayerCard extends StatelessWidget {
                       _stat('📈 Win Rate',
                           played == 0 ? '—' : '${u.winRate.toStringAsFixed(0)}%'),
                     ],
+                  ),
+                  const SizedBox(height: 14),
+                  FriendActionButton(
+                    targetUserId: u.id,
+                    targetName: u.name,
+                    targetPhotoUrl: u.photoUrl,
+                    targetTrophies: u.trophies,
+                    compact: false,
                   ),
                 ],
               ),
