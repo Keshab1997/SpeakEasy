@@ -466,6 +466,49 @@ exports.onFriendRequestCreate = functions.firestore
       const fromName = req.fromUserName || 'A learner';
       if (!toUid || String(toUid).startsWith('guest_')) return null;
 
+      // ── Dedup guard ────────────────────────────────────────────────
+      // New clients use a deterministic doc id (req_{from}_{to}) so
+      // duplicates are impossible, but legacy auto-id requests could stack
+      // up (the "accept one, three more appear" bug). If several pending
+      // requests exist between the same pair, keep ONLY the oldest and
+      // delete the rest — including this one if it isn't the oldest.
+      try {
+        const dupSnap = await db
+          .collection(FRIEND_REQUESTS)
+          .where('toUserId', '==', toUid)
+          .where('status', '==', 'pending')
+          .get();
+        const samePair = [];
+        dupSnap.forEach((d) => {
+          if (d.id === snap.id) {
+            samePair.push(d); // include self
+          } else if ((d.data() || {}).fromUserId === req.fromUserId) {
+            samePair.push(d);
+          }
+        });
+        if (samePair.length > 1) {
+          let oldest = null;
+          samePair.forEach((d) => {
+            const c = (d.data() || {}).createdAt;
+            const t = c && c.toDate ? c.toDate().getTime() : Number.MAX_SAFE_INTEGER;
+            if (oldest === null || t < oldest.t) oldest = { id: d.id, t };
+          });
+          const dels = [];
+          samePair.forEach((d) => {
+            if (d.id !== oldest.id) dels.push(d.ref.delete());
+          });
+          await Promise.all(dels);
+          functions.logger.log(
+            `friend-request dedup: removed ${dels.length} duplicate(s) between ${req.fromUserId} -> ${toUid}`
+          );
+          // If THIS doc was one of the deleted duplicates, stop here —
+          // the receiver already has the original request.
+          if (oldest.id !== snap.id) return null;
+        }
+      } catch (e) {
+        functions.logger.error('friend-request dedup check failed', e);
+      }
+
       const cfgSnap = await db.collection('Config').doc('app_settings').get();
       const os = cfgSnap.exists ? cfgSnap.data() && cfgSnap.data().onesignal : null;
       const appId = os && os.AppId;
@@ -791,6 +834,10 @@ exports.cleanupBattleData = functions.pubsub
       const frSnap = await db.collection(FRIEND_REQUESTS).limit(500).get();
       const batch = db.batch();
       let n = 0;
+
+      // Dedup: for pending requests between the same pair (legacy auto-id
+      // spam), keep only the oldest and delete the stacked copies.
+      const pendingByPair = new Map(); // "from->to" -> { oldestTime, dupRefs }
       frSnap.forEach((doc) => {
         const d = doc.data();
         const created = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate() : null;
@@ -801,7 +848,27 @@ exports.cleanupBattleData = functions.pubsub
         } else if (d.status === 'pending' && age > PENDING_TTL) {
           batch.delete(doc.ref);
           n++;
+        } else if (d.status === 'pending') {
+          const key = `${d.fromUserId}->${d.toUserId}`;
+          const t = created ? created.getTime() : Number.MAX_SAFE_INTEGER;
+          const entry = pendingByPair.get(key);
+          if (!entry) {
+            pendingByPair.set(key, { oldestTime: t, oldestRef: doc.ref, dupRefs: [] });
+          } else if (t < entry.oldestTime) {
+            // This doc is older — the previous "oldest" becomes a duplicate.
+            entry.dupRefs.push(entry.oldestRef);
+            entry.oldestTime = t;
+            entry.oldestRef = doc.ref;
+          } else {
+            entry.dupRefs.push(doc.ref);
+          }
         }
+      });
+      pendingByPair.forEach((entry) => {
+        entry.dupRefs.forEach((ref) => {
+          batch.delete(ref);
+          n++;
+        });
       });
       if (n > 0) await batch.commit();
       if (n > 0) functions.logger.log(`cleanup: removed ${n} stale friend requests`);

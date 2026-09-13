@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../providers/auth_provider.dart';
@@ -37,6 +38,20 @@ class FriendActionButton extends ConsumerStatefulWidget {
 class _FriendActionButtonState extends ConsumerState<FriendActionButton> {
   bool _busy = false;
 
+  /// Optimistic "requested" flag — flips instantly on tap so rapid tapping
+  /// can never fire multiple requests while the outgoing-requests stream is
+  /// still propagating. Cleared when the request is cancelled.
+  bool _justSent = false;
+
+  @override
+  void didUpdateWidget(covariant FriendActionButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.targetUserId != widget.targetUserId) {
+      _justSent = false;
+      _busy = false;
+    }
+  }
+
   void _snack(String message, {Color color = const Color(0xFF10B981)}) {
     if (!mounted) return;
     ScaffoldMessenger.of(context)
@@ -60,7 +75,18 @@ class _FriendActionButtonState extends ConsumerState<FriendActionButton> {
             fromUserTrophies: ref.read(battleArenaProvider).stats.trophies,
             toUserId: widget.targetUserId,
           );
+      _justSent = true;
       _snack('Friend request sent to ${widget.targetName}! 🤝');
+    } on FirebaseException catch (e) {
+      // Deterministic doc id + rules: re-sending while a request is
+      // pending/accepted lands as a rejected update.
+      if (e.code == 'permission-denied') {
+        _justSent = true;
+        _snack('A request is already pending with ${widget.targetName} 🤝');
+      } else {
+        _snack('Could not send friend request.',
+            color: const Color(0xFFEF4444));
+      }
     } catch (_) {
       _snack('Could not send friend request.', color: const Color(0xFFEF4444));
     } finally {
@@ -87,6 +113,8 @@ class _FriendActionButtonState extends ConsumerState<FriendActionButton> {
   Future<void> _cancel(String requestId) async {
     try {
       await ref.read(friendServiceProvider).cancelOutgoingRequest(requestId);
+      _justSent = false;
+      if (mounted) setState(() {});
       _snack('Friend request cancelled.');
     } catch (_) {}
   }
@@ -154,17 +182,18 @@ class _FriendActionButtonState extends ConsumerState<FriendActionButton> {
             );
     }
 
-    // ── Outgoing request pending → tap to cancel ──────────────────────
-    if (outReq != null) {
+    // ── Outgoing request pending (or just sent) → tap to cancel ─────────
+    if (outReq != null || _justSent) {
       return widget.compact
           ? IconButton(
               tooltip: 'Friend request sent — tap to cancel',
-              onPressed: () => _cancel(outReq.id),
+              onPressed:
+                  outReq == null ? null : () => _cancel(outReq.id),
               icon: const Icon(Icons.hourglass_top_rounded,
                   color: Color(0xFFF59E0B)),
             )
           : OutlinedButton.icon(
-              onPressed: () => _cancel(outReq.id),
+              onPressed: outReq == null ? null : () => _cancel(outReq.id),
               icon: const Icon(Icons.hourglass_top_rounded, size: 18),
               label: const Text('Requested'),
               style: OutlinedButton.styleFrom(

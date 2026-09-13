@@ -19,6 +19,13 @@ class FriendService {
   static const String _friendshipsCollection = 'friendships';
 
   /// Send a friend request to another player.
+  ///
+  /// DEDUP: the doc id is deterministic (`req_{from}_{to}`) instead of an
+  /// auto-id, so a repeat send targets the EXISTING doc. Security rules
+  /// reject that write (only the receiver may update a request), making
+  /// duplicate pending requests between the same pair impossible — the
+  /// spam-storm where accepting one revealed three more stacked copies is
+  /// fixed at the source.
   Future<String> sendFriendRequest({
     required String fromUserId,
     required String fromUserName,
@@ -26,7 +33,8 @@ class FriendService {
     required int fromUserTrophies,
     required String toUserId,
   }) async {
-    final docRef = await _firestore.collection(_requestsCollection).add({
+    final requestId = 'req_${fromUserId}_$toUserId';
+    await _firestore.collection(_requestsCollection).doc(requestId).set({
       'fromUserId': fromUserId,
       'fromUserName': fromUserName,
       'fromUserPhoto': fromUserPhoto,
@@ -35,7 +43,7 @@ class FriendService {
       'status': 'pending',
       'createdAt': FieldValue.serverTimestamp(),
     });
-    return docRef.id;
+    return requestId;
   }
 
   /// Requests waiting for MY decision.

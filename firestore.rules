@@ -327,8 +327,11 @@ service cloud.firestore {
 
     // ═══════════════════════════════════════════════
     //  FRIENDS — REQUESTS & FRIENDSHIP LISTS (Phase 3)
-    //  friend_requests/{id}: fromUserId, fromUserName, fromUserPhoto,
-    //    fromUserTrophies, toUserId, status(pending/accepted), createdAt
+    //  friend_requests/{id}: id is DETERMINISTIC 'req_{from}_{to}' so a
+    //    repeat send hits the existing doc and is rejected by the update
+    //    rule below (spam-proof). Fields: fromUserId, fromUserName,
+    //    fromUserPhoto, fromUserTrophies, toUserId, status(pending/accepted),
+    //    createdAt
     //  friendships/{userId}: { friends: { uid: {name, photoUrl, trophies,
     //    addedAt} } } — written by Cloud Function on accept (admin); the
     //    owner may read and update their own doc (e.g. remove a friend).
