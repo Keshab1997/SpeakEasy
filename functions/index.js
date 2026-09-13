@@ -370,6 +370,88 @@ exports.onBattleChallengeCreate = functions.firestore
   });
 
 // ---------------------------------------------------------------------------
+// 1c) When a challenge is ACCEPTED (especially an async one, where the
+//     challenger may be offline by now), push the challenger so they come
+//     back and join the room: "X accepted your challenge — join now!"
+//     The challenger's app auto-joins the room on open via the outgoing
+//     challenge listener (GlobalBattleChallengeGate).
+// ---------------------------------------------------------------------------
+
+exports.onBattleChallengeUpdate = functions.firestore
+  .document(`${CHALLENGES}/{challengeId}`)
+  .onUpdate(async (change) => {
+    try {
+      const before = change.before.data() || {};
+      const after = change.after.data() || {};
+
+      // Only react to the pending -> accepted transition.
+      if (before.status !== 'pending' || after.status !== 'accepted') return null;
+
+      const toUid = after.toUserId;
+      const fromUid = after.fromUserId;
+      if (!toUid || !fromUid || String(fromUid).startsWith('guest_')) return null;
+
+      const cfgSnap = await db.collection('Config').doc('app_settings').get();
+      const os = cfgSnap.exists ? cfgSnap.data() && cfgSnap.data().onesignal : null;
+      const appId = os && os.AppId;
+      const apiKey = os && os.ApiKey;
+      if (!appId || !apiKey) {
+        functions.logger.log('onBattleChallengeUpdate: OneSignal config missing — skip push');
+        return null;
+      }
+
+      // Receiver's display name (presence doc has it; users doc as fallback).
+      let toName = 'A player';
+      try {
+        const presenceSnap = await db.collection(PRESENCE).doc(toUid).get();
+        if (presenceSnap.exists && presenceSnap.data().name) {
+          toName = presenceSnap.data().name;
+        } else {
+          const userSnap = await db.collection('users').doc(toUid).get();
+          if (userSnap.exists && userSnap.data().name) {
+            toName = userSnap.data().name;
+          }
+        }
+      } catch (_) {}
+
+      const payload = {
+        app_id: appId,
+        target_channel: 'push',
+        include_aliases: { external_id: [fromUid] },
+        headings: { en: '⚔️ Challenge accepted!' },
+        contents: { en: `${toName} accepted your challenge — open the app and join the battle now!` },
+        priority: 10,
+        // NOTE: no `android_channel_id` — OneSignal now rejects unknown ids
+        // with HTTP 400 "Could not find android_channel_id" (verified 2026-09-03).
+        ttl: 3600,
+        data: {
+          actionType: 'battle_challenge',
+          type: 'battle_challenge',
+          notification_id: `battle_accepted_${change.after.id}`,
+        },
+      };
+
+      const res = await fetch('https://api.onesignal.com/notifications', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          Authorization: `Key ${apiKey}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      const body = await res.text();
+      if (!res.ok) {
+        functions.logger.error('OneSignal accepted push failed', res.status, body);
+      } else {
+        functions.logger.log('Challenge-accepted push sent →', fromUid, body);
+      }
+    } catch (e) {
+      functions.logger.error('onBattleChallengeUpdate error', e);
+    }
+    return null;
+  });
+
+// ---------------------------------------------------------------------------
 // 2) Scheduled cleanup (every 5 minutes)
 // ---------------------------------------------------------------------------
 
@@ -399,25 +481,57 @@ exports.cleanupBattleData = functions.pubsub
       functions.logger.error('queue cleanup failed', e);
     }
 
-    // 2b. Expired pending challenges (> 90s)
+    // 2b. Expired pending challenges.
+    //     • live challenges (no `type` or type=='live'): expire after 90s —
+    //       the challenger was online and will have reacted by now.
+    //     • async challenges (type=='async'): the target was offline; keep
+    //       pending up to 48h so it can be delivered when they return.
+    //     Also sweep ACCEPTED challenges after 2h (room was created but the
+    //     challenger never joined; room itself is abandoned after 30 min).
     try {
-      const chSnap = await db
+      const ASYNC_TTL = 48 * 60 * 60 * 1000; // 48h
+      const LIVE_TTL = 90 * 1000; // 90s
+      const ACCEPTED_TTL = 2 * 60 * 60 * 1000; // 2h
+
+      let n = 0;
+      const batch = db.batch();
+
+      // Pending challenges — TTL depends on type (missing field = live).
+      const pendingSnap = await db
         .collection(CHALLENGES)
         .where('status', '==', 'pending')
+        .limit(500)
         .get();
-      const batch = db.batch();
-      let n = 0;
-      chSnap.forEach((doc) => {
+      pendingSnap.forEach((doc) => {
         const d = doc.data();
         const created = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate() : null;
         const age = created ? now - created.getTime() : 0;
-        if (age > 90 * 1000) {
+        const ttl = d.type === 'async' ? ASYNC_TTL : LIVE_TTL;
+        if (age > ttl) {
           batch.delete(doc.ref);
           n++;
         }
       });
+
+      // Accepted-but-never-joined challenges (room was created, challenger
+      // never showed up; the room itself is abandoned after 30 min).
+      const accSnap = await db
+        .collection(CHALLENGES)
+        .where('status', '==', 'accepted')
+        .limit(500)
+        .get();
+      accSnap.forEach((doc) => {
+        const d = doc.data();
+        const created = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate() : null;
+        const age = created ? now - created.getTime() : 0;
+        if (age > ACCEPTED_TTL) {
+          batch.delete(doc.ref);
+          n++;
+        }
+      });
+
       if (n > 0) await batch.commit();
-      functions.logger.log(`cleanup: removed ${n} expired challenges`);
+      if (n > 0) functions.logger.log(`cleanup: removed ${n} expired challenges`);
     } catch (e) {
       functions.logger.error('challenge cleanup failed', e);
     }

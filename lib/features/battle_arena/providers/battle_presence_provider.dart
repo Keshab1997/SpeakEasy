@@ -17,6 +17,19 @@ final onlineBattleUsersProvider = StreamProvider.autoDispose<List<BattlePresence
   return service.streamOnlineUsers(currentUser.id);
 });
 
+/// Stream of RECENTLY ACTIVE players — offline warriors who played within
+/// the last 7 days. They can receive async challenges that are delivered
+/// the next time they open the app.
+final recentlyActiveBattleUsersProvider =
+    StreamProvider.autoDispose<List<BattlePresenceUser>>((ref) {
+  final authState = ref.watch(authProvider);
+  final currentUser = authState.asData?.value;
+  if (currentUser == null) return const Stream.empty();
+
+  final service = ref.watch(battlePresenceServiceProvider);
+  return service.streamRecentlyActiveUsers(currentUser.id);
+});
+
 /// Stream of outgoing (sent by me) challenges — so I know when the
 /// receiver accepts and I need to join the room myself.
 final outgoingChallengesProvider = StreamProvider.autoDispose<List<BattleChallenge>>((ref) {

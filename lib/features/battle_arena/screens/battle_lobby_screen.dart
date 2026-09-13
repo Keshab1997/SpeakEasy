@@ -5,6 +5,7 @@ import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';
 import '../widgets/live_player_card.dart';
+import '../widgets/recent_player_card.dart';
 import '../widgets/radar_search_dialog.dart';
 import 'battle_leaderboard_screen.dart';
 
@@ -216,6 +217,10 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                 ),
               ),
 
+              // 5. Recently Active Warriors (offline players who played
+              //    within the last 7 days — async challenge them!)
+              ..._buildRecentlyActiveSection(theme, isDark),
+
               const SliverToBoxAdapter(child: SizedBox(height: 40)),
             ],
           ),
@@ -395,7 +400,85 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
     );
   }
 
-  Future<void> _sendDirectChallenge(BattlePresenceUser targetUser) async {
+  /// Section: offline warriors active within the last 7 days. Challenging
+  /// one of them sends an async challenge that waits (up to 48h) and is
+  /// delivered — popup + push — the next time they open the app.
+  List<Widget> _buildRecentlyActiveSection(ThemeData theme, bool isDark) {
+    final recentUsersAsync = ref.watch(recentlyActiveBattleUsersProvider);
+
+    return recentUsersAsync.maybeWhen<List<Widget>>(
+      data: (users) {
+        if (users.isEmpty) return const [];
+        return [
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 28, 20, 4),
+              child: Row(
+                children: [
+                  const Icon(Icons.schedule_rounded,
+                      size: 14, color: Color(0xFF8B5CF6)),
+                  const SizedBox(width: 6),
+                  Text(
+                    'RECENTLY ACTIVE',
+                    style: theme.textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.1,
+                      color: isDark ? const Color(0xFF94A3B8) : const Color(0xFF64748B),
+                    ),
+                  ),
+                  const Spacer(),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF8B5CF6).withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      '${users.length}',
+                      style: const TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF8B5CF6),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 8),
+              child: Text(
+                'Offline warriors from the last 7 days — challenge them and they\'ll get it when they\'re back online 🔔',
+                style: TextStyle(fontSize: 11, color: Colors.grey),
+              ),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final u = users[index];
+                return RecentPlayerCard(
+                  user: u,
+                  isChallenging: _challengingUserId == u.id,
+                  onChallenge: () => _sendDirectChallenge(u, async: true),
+                );
+              },
+              childCount: users.length,
+            ),
+          ),
+        ];
+      },
+      orElse: () => const [],
+    );
+  }
+
+  /// Sends a 1v1 challenge to [targetUser]. With [async] true the target is
+  /// offline: the challenge stays pending up to 48h and is delivered when
+  /// they return online (popup via GlobalBattleChallengeGate + OneSignal push).
+  Future<void> _sendDirectChallenge(BattlePresenceUser targetUser,
+      {bool async = false}) async {
     final currentUser = ref.read(authProvider).asData?.value;
     if (currentUser == null) return;
 
@@ -409,13 +492,17 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             fromUserPhoto: currentUser.photoUrl,
             fromUserTrophies: stats.trophies,
             toUserId: targetUser.id,
+            type: async ? 'async' : 'live',
           );
 
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Challenge sent to ${targetUser.name}! ⚔️'),
-          backgroundColor: const Color(0xFF10B981),
+          content: Text(async
+              ? 'Challenge sent! ${targetUser.name} will get it when they come online 🔔'
+              : 'Challenge sent to ${targetUser.name}! ⚔️'),
+          backgroundColor:
+              async ? const Color(0xFF8B5CF6) : const Color(0xFF10B981),
           behavior: SnackBarBehavior.floating,
         ),
       );

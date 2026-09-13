@@ -100,13 +100,70 @@ class BattlePresenceService {
     });
   }
 
-  /// Send direct 1v1 challenge to an online player
+  /// Stream of RECENTLY ACTIVE players — warriors who are offline right now
+  /// but opened the app within the last 7 days. These are the players who
+  /// "don't come daily but play occasionally" and can still receive async
+  /// challenges (delivered when they return online).
+  ///
+  /// Implementation note: we query by `lastActive` desc only (no composite
+  /// index needed) over a wide window, then filter client-side:
+  ///   • drop the current user
+  ///   • drop users who are genuinely online (isOnline && active <= 3 min) —
+  ///     they already appear in the ONLINE LEARNERS list
+  ///   • drop users inactive for more than [activeWithinDays] days
+  /// The remaining users are sorted by trophies desc and capped at [limit].
+  Stream<List<BattlePresenceUser>> streamRecentlyActiveUsers(
+    String currentUserId, {
+    int limit = 15,
+    int activeWithinDays = 7,
+  }) {
+    return _firestore
+        .collection(_presenceCollection)
+        .orderBy('lastActive', descending: true)
+        .limit(80)
+        .snapshots()
+        .map((snapshot) {
+      final now = DateTime.now();
+      final users = <BattlePresenceUser>[];
+
+      for (var doc in snapshot.docs) {
+        if (doc.id == currentUserId) continue; // Don't show self
+        try {
+          final user = BattlePresenceUser.fromMap(doc.data(), doc.id);
+          final age = now.difference(user.lastActive);
+
+          // Skip players inactive for longer than the window.
+          if (age.inDays >= activeWithinDays) continue;
+
+          // Skip genuinely online players (they're in the online list).
+          // Stale "online" flags (app killed without a clean offline write)
+          // are treated as offline once the heartbeat goes stale (> 3 min).
+          final genuinelyOnline =
+              user.isOnline && age.inMinutes <= 3;
+          if (genuinelyOnline) continue;
+
+          users.add(user);
+        } catch (_) {}
+      }
+
+      users.sort((a, b) => b.trophies.compareTo(a.trophies));
+      return users.take(limit).toList();
+    });
+  }
+
+  /// Send direct 1v1 challenge to another player.
+  ///
+  /// [type]:
+  ///   • 'live'  → target is online now; expires after ~90s (server cleanup)
+  ///   • 'async' → target is offline; stays pending up to 48h and is
+  ///     delivered (popup + push) the next time they open the app.
   Future<String> sendChallenge({
     required String fromUserId,
     required String fromUserName,
     required String fromUserPhoto,
     required int fromUserTrophies,
     required String toUserId,
+    String type = 'live',
   }) async {
     final docRef = await _firestore.collection(_challengesCollection).add({
       'fromUserId': fromUserId,
@@ -115,6 +172,7 @@ class BattlePresenceService {
       'fromUserTrophies': fromUserTrophies,
       'toUserId': toUserId,
       'status': 'pending',
+      'type': type,
       'createdAt': FieldValue.serverTimestamp(),
     });
     return docRef.id;

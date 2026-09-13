@@ -321,7 +321,8 @@ service cloud.firestore {
     // ═══════════════════════════════════════════════
     //  BATTLE ARENA — CHALLENGES (1v1 Direct)
     //  Structure: battle_challenges/{challengeId}
-    //  Fields: fromUserId, toUserId, status(pending/accepted/rejected), roomId
+    //  Fields: fromUserId, toUserId, status(pending/accepted/rejected), roomId,
+    //          type('live'|'async' — async waits up to 48h for an offline target)
     // ═══════════════════════════════════════════════
 
     match /battle_challenges/{challengeId} {

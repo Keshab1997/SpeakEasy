@@ -160,6 +160,14 @@ class _GlobalBattleChallengeGateState
     }
   }
 
+  /// Compact "time ago" for the async-challenge badge.
+  String _timeAgo(Duration diff) {
+    if (diff.inMinutes < 1) return 'just now';
+    if (diff.inMinutes < 60) return '${diff.inMinutes}m ago';
+    if (diff.inHours < 24) return '${diff.inHours}h ago';
+    return '${diff.inDays}d ago';
+  }
+
   void _showIncomingSheet(BattleChallenge challenge) {
     final ctx = appNavigatorKey.currentContext;
     if (ctx == null) return;
@@ -207,6 +215,26 @@ class _GlobalBattleChallengeGateState
                 Text('${challenge.fromUserTrophies} Trophies 🏆',
                     style: const TextStyle(
                         color: Color(0xFFF59E0B), fontWeight: FontWeight.w600)),
+                if (challenge.isAsync)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 5),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF8B5CF6).withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        '🕐 Sent ${_timeAgo(DateTime.now().difference(challenge.createdAt))} — while you were offline',
+                        style: const TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF8B5CF6),
+                        ),
+                      ),
+                    ),
+                  ),
                 const SizedBox(height: 24),
                 Row(
                   children: [

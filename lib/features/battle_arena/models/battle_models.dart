@@ -352,6 +352,12 @@ class BattleChallenge {
   final String? roomId;
   final DateTime createdAt;
 
+  /// 'live' = target was online when challenged (expires ~90s, server cleanup).
+  /// 'async' = target was offline; stays pending up to 48h and is delivered
+  /// (popup + push) the next time they open the app. Legacy docs without the
+  /// field default to 'live'.
+  final String type;
+
   const BattleChallenge({
     required this.id,
     required this.fromUserId,
@@ -362,7 +368,10 @@ class BattleChallenge {
     this.status = 'pending',
     this.roomId,
     required this.createdAt,
+    this.type = 'live',
   });
+
+  bool get isAsync => type == 'async';
 
   Map<String, dynamic> toMap() {
     return {
@@ -375,6 +384,7 @@ class BattleChallenge {
       'status': status,
       'roomId': roomId,
       'createdAt': Timestamp.fromDate(createdAt),
+      'type': type,
     };
   }
 
@@ -389,6 +399,7 @@ class BattleChallenge {
       status: map['status'] ?? 'pending',
       roomId: map['roomId'] as String?,
       createdAt: (map['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),
+      type: map['type'] ?? 'live',
     );
   }
 }
