@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../providers/auth_provider.dart';
-import '../../../friends/models/friend_models.dart';
-import '../../../friends/providers/friend_providers.dart';
-import '../../../friends/screens/friend_requests_screen.dart';
-import '../../../friends/services/friend_service.dart';
-import '../../../friends/widgets/friend_list_card.dart';
+import '../../friends/models/friend_models.dart';
+import '../../friends/providers/friend_providers.dart';
+import '../../friends/screens/friend_requests_screen.dart';
+import '../../friends/services/friend_service.dart';
+import '../../friends/widgets/friend_list_card.dart';
 import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';

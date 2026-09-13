@@ -115,12 +115,12 @@ class _FriendActionButtonState extends ConsumerState<FriendActionButton> {
       return widget.compact
           ? const Padding(
               padding: EdgeInsets.symmetric(horizontal: 6),
-              child: Icon(Icons.person_check_rounded,
+              child: Icon(Icons.check_circle_rounded,
                   size: 22, color: Color(0xFF10B981)),
             )
           : OutlinedButton.icon(
               onPressed: null,
-              icon: const Icon(Icons.person_check_rounded, size: 18),
+              icon: const Icon(Icons.check_circle_rounded, size: 18),
               label: const Text('Friends ✓'),
               style: OutlinedButton.styleFrom(
                 foregroundColor: const Color(0xFF10B981),

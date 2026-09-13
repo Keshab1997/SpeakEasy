@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/friend_providers.dart';
-import '../services/friend_service.dart';
 
 /// Incoming friend requests — Accept / Decline.
 /// Opened from the MY FRIENDS header chip in the Battle Lobby.
