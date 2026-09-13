@@ -54,7 +54,19 @@
 - [x] **Live-Recall on Accept:** When the (previously offline) receiver accepts, a new `onBattleChallengeUpdate` Cloud Function pushes the challenger — *"X accepted your challenge — join now!"* — and the challenger's outgoing-challenge listener auto-joins the room on next app open.
 - [x] **Cleanup Policy Update:** pending challenges expire in 90s (live) / 48h (async); accepted-but-never-joined challenges swept after 2h (previously never cleaned).
 
-### 9. 🤝 Friends & Online Alerts (Phase 3)
+### 9. 🛡️ Arena Hardening Pass (race, timers, trophies, presence, bots)
+- [x] **Matchmaking race fixed:** queue candidates are claimed inside `runTransaction` with a `status == 'waiting'` precondition; room creation is inside the same transaction, so two searchers can never claim the same waiting player (no more duplicate/orphan rooms). Losers of the contention retry the next candidate.
+- [x] **Queue wait 6s → 9s** so slow networks don't fall through to the bot while a human match is joining.
+- [x] **Server-authoritative trophies:** new `BattleGameService.syncStatsFromServer()` adopts presence trophies/lossStreak into Hive — called when arena stats load and re-synced ~5s after every online match/forfeit, so the local preview converges with the Cloud Function's award (no drift, no stale overwrite via lobby heartbeat).
+- [x] **Presence staleness:** heartbeat 45s → 20s; `BattlePresenceService` is now a `WidgetsBindingObserver` — app backgrounded/killed flips `isOnline=false` instantly (no 3-minute ghost); resume restores it.
+- [x] **Auto-forfeit:** server threshold 4min → **90s**, schedule 5min → **every minute** (with 20s heartbeats, 90s silence ≈ 4-5 missed beats = genuinely disconnected).
+- [x] **Authoritative round timer:** countdown is derived from a wall-clock round deadline (`_roundEndsAt`) instead of decrementing a counter — app pauses/throttling no longer desync local vs opponent time.
+- [x] **Question pool:** category-bucketed cache (O(1) picks), AssetManifest parsed once instead of 3×, 5-minute TTL.
+- [x] **Bot fairness:** trophies ±15 (was ±30), linear accuracy `0.55 + trophies/3000` capped at 0.92 (was step function), reaction time scales with the question's own time limit.
+- [x] **Emote throttling:** 2s client cooldown (was unlimited Firestore writes per tap).
+- [x] **Stream cost:** recently-active query now filters server-side (`lastActive > cutoff`, single-field index) with `limit(30)` instead of pulling 80 docs to every client.
+
+### 10. 🤝 Friends & Online Alerts (Phase 3)
 - [x] **Friend Requests:** send from player cards (online + recently active), profile sheets & post-match result screen (real players only, bots excluded). State-aware button: ➕ Send → ⏳ Requested (tap cancels) → Accept incoming → ✓ Friends.
 - [x] **Data Model:** `friend_requests/{id}` (pending/accepted) + `friendships/{userId}` per-user friends map with snapshot data (name, photo, trophies, addedAt).
 - [x] **Secure Mutual Write:** clients only write their own friendship doc; accepting flips request status and the `onFriendRequestUpdate` Cloud Function writes BOTH sides + pushes the requester "X accepted your request! 🎉".

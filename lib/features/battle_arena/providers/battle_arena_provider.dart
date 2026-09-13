@@ -132,6 +132,16 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   Timer? _roundTransitionTimer;
   StreamSubscription<BattleRoom?>? _roomSubscription;
 
+  /// Wall-clock deadline of the current round. The countdown is DERIVED from
+  /// this timestamp on every tick instead of decrementing a counter, so an
+  /// app pause / OS timer throttling can never desync us from real elapsed
+  /// time (previously the local 1s Timer drifted vs. the opponent's clock).
+  DateTime? _roundEndsAt;
+
+  /// Client-side emote throttle — rapid taps used to fire one Firestore
+  /// write each (write storm on the room doc). One emote per 2s max.
+  DateTime? _lastEmoteSentAt;
+
   /// Handle for the in-flight quick-match search so a Cancel truly aborts it
   /// (deletes our queue entry, stops the listener, skips the bot fallback).
   MatchmakingToken? _matchmakingToken;
@@ -170,7 +180,15 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   }
 
   Future<void> _initLocalStats() async {
-    final stats = await BattleGameService.getLocalStats();
+    // Signed-in users: the Cloud Function owns shared trophies, so adopt
+    // the server values into Hive first — prevents the lobby heartbeat from
+    // re-publishing a stale local trophy count over the server's truth.
+    // Guests/offline fall back to the local Hive record.
+    final uid = currentUser?.id ?? '';
+    final stats = uid.isNotEmpty && !uid.startsWith('guest_')
+        ? await BattleGameService.syncStatsFromServer(uid)
+        : await BattleGameService.getLocalStats();
+    if (!mounted) return;
     state = state.copyWith(
       stats: stats,
       localPlayer: state.localPlayer.copyWith(trophies: stats.trophies),
@@ -369,14 +387,24 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _roundTimer?.cancel();
     final limit = _roundTimeLimit;
     state = state.copyWith(remainingSeconds: limit);
+    _roundEndsAt = DateTime.now().add(Duration(seconds: limit));
 
+    // The tick is only a UI refresh — remaining time is always recomputed
+    // from the wall-clock deadline, so background pauses never steal or add
+    // seconds relative to the opponent.
     _roundTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (!mounted) {
         timer.cancel();
         return;
       }
-      if (state.remainingSeconds > 1) {
-        state = state.copyWith(remainingSeconds: state.remainingSeconds - 1);
+      final endsAt = _roundEndsAt;
+      if (endsAt == null) {
+        timer.cancel();
+        return;
+      }
+      final remainingMs = endsAt.difference(DateTime.now()).inMilliseconds;
+      if (remainingMs > 0) {
+        state = state.copyWith(remainingSeconds: (remainingMs / 1000).ceil());
       } else {
         // Time ran out for this round
         timer.cancel();
@@ -501,6 +529,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _roundTransitioning = true;
 
     _roundTimer?.cancel();
+    _roundEndsAt = null;
     _botActionTimer?.cancel();
     _roundTransitionTimer?.cancel();
 
@@ -538,6 +567,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
   Future<void> _finishDuel() async {
     _roundTimer?.cancel();
+    _roundEndsAt = null;
     _botActionTimer?.cancel();
     _roundTransitionTimer?.cancel();
 
@@ -584,6 +614,13 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         roomId: state.room!.id,
         winnerId: isWin ? state.localPlayer.id : (isDraw ? null : state.opponent.id),
       );
+      // The Cloud Function applies the authoritative trophy result a moment
+      // after completion; re-sync then so Hive converges with the server
+      // (covers comeback/shield/streak outcomes the local preview missed).
+      unawaited(Future.delayed(const Duration(seconds: 5), () {
+        if (mounted) return _initLocalStats();
+        return Future.value();
+      }));
     }
 
     _presenceService.setInBattle(state.localPlayer.id, false);
@@ -639,6 +676,15 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       stats: updatedStats,
       localPlayer: state.localPlayer.copyWith(trophies: updatedStats.trophies),
     );
+
+    // Server (Cloud Function) awards the forfeit-win asynchronously — adopt
+    // its authoritative numbers shortly after so Hive doesn't drift.
+    if (isOnline) {
+      unawaited(Future.delayed(const Duration(seconds: 5), () {
+        if (mounted) return _initLocalStats();
+        return Future.value();
+      }));
+    }
   }
 
   /// When user exits or leaves mid-match: forfeits match & rewards opponent
@@ -662,7 +708,11 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         );
       }
 
-      // Deduct trophies for forfeiting (loss recorded)
+      // For online forfeits the SERVER is the single loss recorder
+      // (onBattleRoomWrite → recordMatchResult). The local saveMatchResult
+      // call only produces the instant Hive UI preview; we re-adopt the
+      // server's authoritative result below once the function has run, so
+      // the loss is never counted twice or with a drifted trophy value.
       final isOnlineForfeit = state.room != null && !state.opponent.isBot;
       await BattleGameService.saveMatchResult(
         isWin: false,
@@ -671,8 +721,15 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         userId: currentUser?.id,
         isOnline: isOnlineForfeit,
       );
+      if (isOnlineForfeit) {
+        unawaited(Future.delayed(const Duration(seconds: 5), () {
+          if (mounted) return _initLocalStats();
+          return Future.value();
+        }));
+      }
     }
 
+    _roundEndsAt = null;
     _presenceService.setInBattle(state.localPlayer.id, false);
     state = state.copyWith(
       status: BattleArenaStatus.idle,
@@ -682,8 +739,16 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     await _initLocalStats();
   }
 
-  /// Sends quick emote
+  /// Sends quick emote (throttled to one per 2s — rapid taps used to fire
+  /// one Firestore room-doc write each, i.e. a write storm).
   void sendEmote(String emote) {
+    final now = DateTime.now();
+    if (_lastEmoteSentAt != null &&
+        now.difference(_lastEmoteSentAt!).inMilliseconds < 2000) {
+      return;
+    }
+    _lastEmoteSentAt = now;
+
     state = state.copyWith(activeEmote: emote);
 
     if (state.room != null && !state.opponent.isBot) {
@@ -710,6 +775,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
   void resetLobby() {
     _roundTimer?.cancel();
+    _roundEndsAt = null;
     _botActionTimer?.cancel();
     _roundTransitionTimer?.cancel();
     _opponentEmoteTimer?.cancel();

@@ -49,15 +49,33 @@ class BattleGameService {
 
   static List<BattleQuestion>? _cachedQuestions;
 
+  /// Pool bucketed by category so `pick()` is O(1) instead of filtering the
+  /// whole pool on every match. Built once alongside [_cachedQuestions].
+  static Map<String, List<BattleQuestion>>? _cachedByCategory;
+
+  /// The parsed pool is static asset content, but we still re-parse after a
+  /// TTL so hot-reloaded / OTA asset changes are picked up and we don't pin
+  /// a huge list forever if the process lives a long time.
+  static DateTime? _cachedAt;
+  static const Duration _cacheTtl = Duration(minutes: 5);
+
+  static bool get _cacheValid =>
+      _cachedQuestions != null &&
+      _cachedQuestions!.isNotEmpty &&
+      _cachedAt != null &&
+      DateTime.now().difference(_cachedAt!) < _cacheTtl;
+
   /// Loads 5 curated questions: 2 Grammar (mock tests), 2 Vocabulary, 1 Verb.
   /// Questions are generated from the app's learning content so the battle
   /// feels like a real review of lessons rather than the daily quiz bank.
   static Future<List<BattleQuestion>> loadCuratedQuestions() async {
-    final pool = await _loadQuestionPool();
+    await _loadQuestionPool();
+    final byCategory = _cachedByCategory ?? const <String, List<BattleQuestion>>{};
+    final pool = _cachedQuestions ?? const <BattleQuestion>[];
 
     final rng = Random();
     List<BattleQuestion> pick(String category, int count) {
-      final list = pool.where((q) => q.category == category).toList()
+      final list = List<BattleQuestion>.from(byCategory[category] ?? const [])
         ..shuffle(rng);
       return list.take(count).toList();
     }
@@ -70,9 +88,9 @@ class BattleGameService {
 
     // Top up from anything available if a category ran short.
     if (selected.length < 5) {
+      final selectedIds = selected.map((s) => s.id).toSet();
       final remaining =
-          pool.where((q) => !selected.any((s) => s.id == q.id)).toList()
-            ..shuffle(rng);
+          pool.where((q) => !selectedIds.contains(q.id)).toList()..shuffle(rng);
       selected.addAll(remaining.take(5 - selected.length));
     }
 
@@ -81,8 +99,9 @@ class BattleGameService {
   }
 
   /// Builds (and caches) the full battle question pool from the three sources.
+  /// Bucketed by category and reused until the TTL expires.
   static Future<List<BattleQuestion>> _loadQuestionPool() async {
-    if (_cachedQuestions != null && _cachedQuestions!.isNotEmpty) {
+    if (_cacheValid) {
       return _cachedQuestions!;
     }
 
@@ -173,15 +192,17 @@ class BattleGameService {
 
     // 3) Vocabulary — "English word → Bengali meaning" MCQs (same style as the
     //    in-app Vocab Test), generated from every chapter's word list.
+    //    AssetManifest is parsed ONCE (previously once per chapter dir = 3×).
     final allWords = <Map<String, dynamic>>[];
-    for (final dir in _vocabChapterPaths) {
-      // Chapters are named chapter_XX_*.json; load via AssetManifest is heavy,
-      // so we rely on a known manifest list if present, else scan common names.
-      try {
-        final manifest =
-            await rootBundle.loadString('AssetManifest.json');
-        final map = json.decode(manifest) as Map<String, dynamic>;
-        for (final key in map.keys) {
+    Map<String, dynamic>? assetManifest;
+    try {
+      final manifest = await rootBundle.loadString('AssetManifest.json');
+      assetManifest = json.decode(manifest) as Map<String, dynamic>;
+    } catch (_) {}
+
+    if (assetManifest != null) {
+      for (final dir in _vocabChapterPaths) {
+        for (final key in assetManifest.keys) {
           if (key.startsWith(dir) && key.endsWith('.json')) {
             try {
               final raw = await rootBundle.loadString(key);
@@ -198,7 +219,7 @@ class BattleGameService {
             } catch (_) {}
           }
         }
-      } catch (_) {}
+      }
     }
 
     // Stable shuffled meaning pool for vocab distractors.
@@ -241,7 +262,57 @@ class BattleGameService {
     } else {
       _cachedQuestions = all;
     }
+
+    // Bucket by category once so per-match selection is O(1) per category.
+    _cachedByCategory = {};
+    for (final q in _cachedQuestions!) {
+      _cachedByCategory!.putIfAbsent(q.category, () => []).add(q);
+    }
+    _cachedAt = DateTime.now();
+
     return _cachedQuestions!;
+  }
+
+  /// Pulls the authoritative battle stats (trophies + win/loss record) from
+  /// the server `battle_presence` doc and overwrites the local Hive copy.
+  ///
+  /// The Cloud Function `onBattleRoomWrite` → `recordMatchResult` is the
+  /// source of truth for shared trophies. The local Hive record is only an
+  /// instant on-device preview; without re-syncing it drifts (e.g. server
+  /// applies a forfeit/comeback the client never saw). Calling this when
+  /// entering the arena and after an online match keeps them converged and
+  /// prevents the lobby heartbeat from re-publishing a stale local trophy
+  /// count over the server's value.
+  static Future<BattleStats> syncStatsFromServer(String userId) async {
+    if (userId.isEmpty || userId.startsWith('guest_') || userId.startsWith('bot_')) {
+      return getLocalStats();
+    }
+    try {
+      final doc =
+          await FirebaseFirestore.instance.collection('battle_presence').doc(userId).get();
+      if (!doc.exists) return getLocalStats();
+      final d = doc.data();
+      if (d == null) return getLocalStats();
+
+      final local = await getLocalStats();
+      final serverTrophies = (d['trophies'] as num?)?.toInt();
+      if (serverTrophies == null) return local;
+
+      final synced = BattleStats(
+        totalMatches: (d['totalMatches'] as num?)?.toInt() ?? local.totalMatches,
+        wins: (d['wins'] as num?)?.toInt() ?? local.wins,
+        losses: (d['losses'] as num?)?.toInt() ?? local.losses,
+        winStreak: (d['winStreak'] as num?)?.toInt() ?? local.winStreak,
+        lossStreak: (d['lossStreak'] as num?)?.toInt() ?? local.lossStreak,
+        trophies: serverTrophies,
+      );
+
+      final box = await Hive.openBox(_hiveBoxName);
+      await box.put('stats', synced.toMap());
+      return synced;
+    } catch (_) {
+      return getLocalStats();
+    }
   }
 
   /// Calculates round score with speed bonus.

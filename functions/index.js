@@ -837,12 +837,16 @@ exports.cleanupBattleData = functions.pubsub
 
 // ---------------------------------------------------------------------------
 // 3) Auto-forfeit: a player whose presence went silent mid-battle loses.
-//    Runs with the same schedule; checks online players who haven't sent a
-//    heartbeat in > 4 minutes while flagged isInBattle.
+//    Checks players flagged isInBattle whose heartbeat (every 20s client-side)
+//    went silent for > 90s. Runs every minute for fast resolution.
 // ---------------------------------------------------------------------------
 
+// Heartbeats now arrive every 20s (client), so 90s of silence means ~4-5
+// missed beats — the player is genuinely gone. Running every minute (was 5)
+// means a disconnected opponent is resolved within ~1-2 minutes instead of
+// leaving the other player staring at a frozen arena.
 exports.autoForfeitDisconnectedPlayers = functions.pubsub
-  .schedule('every 5 minutes')
+  .schedule('every 1 minutes')
   .timeZone('UTC')
   .onRun(async () => {
     const now = Date.now();
@@ -857,7 +861,7 @@ exports.autoForfeitDisconnectedPlayers = functions.pubsub
         const d = doc.data();
         const last = d.lastActive && d.lastActive.toDate ? d.lastActive.toDate() : null;
         const age = last ? now - last.getTime() : 999999;
-        if (age > 4 * 60 * 1000) deadIds.push(doc.id);
+        if (age > 90 * 1000) deadIds.push(doc.id);
       });
 
       if (deadIds.length === 0) return null;

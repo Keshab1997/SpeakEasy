@@ -24,8 +24,9 @@ class BattleBotSimulator {
     _lastEmoteRound = null;
 
     final profile = _botProfiles[_rng.nextInt(_botProfiles.length)];
-    // Keep the bot within ~30 trophies of the player so the matchup is fair.
-    final trophyDelta = _rng.nextInt(61) - 30; // -30..+30
+    // Keep the bot within ±15 trophies of the player so the matchup is fair
+    // (was ±30 — low-trophy players kept meeting scary 130-trophy bots).
+    final trophyDelta = _rng.nextInt(31) - 15; // -15..+15
     final botTrophies = max(50, userTrophies + trophyDelta);
 
     return BattlePlayer(
@@ -40,21 +41,25 @@ class BattleBotSimulator {
     );
   }
 
-  /// Bot accuracy rises with the player's trophy band, so low-trophy
-  /// learners get a forgiving bot and veterans get a real challenge.
+  /// Bot accuracy rises LINEARLY with the player's trophies, so low-trophy
+  /// learners get a forgiving bot and veterans get a real challenge — no
+  /// more cliff-jumps at division boundaries (was a step function).
+  /// 100🏆 → ~0.58 · 300🏆 → ~0.65 · 800🏆 → ~0.82 · 1100🏆+ → 0.92 cap.
   static double accuracyForTrophies(int userTrophies) {
-    if (userTrophies >= 1500) return 0.92; // Grandmaster
-    if (userTrophies >= 800) return 0.85;  // Master
-    if (userTrophies >= 300) return 0.75;  // Challenger
-    return 0.60;                           // Novice
+    final t = userTrophies < 0 ? 0 : userTrophies;
+    return (0.55 + t / 3000).clamp(0.55, 0.92);
   }
 
   /// Reaction speed (seconds) — higher-trophy players meet a faster bot.
-  static int reactionSecondsForTrophies(int userTrophies) {
-    if (userTrophies >= 800) {
-      return 2 + _rng.nextInt(4); // 2–5s (fast)
-    }
-    return 3 + _rng.nextInt(5);   // 3–7s
+  /// Scales with the question's own [timeLimit] so the bot never eats an
+  /// unfair share of short rounds (grammar questions give 20s, others 15s).
+  static int reactionSecondsForTrophies(int userTrophies, {int timeLimit = 15}) {
+    final base = userTrophies >= 800
+        ? 2 + _rng.nextInt(4) // 2–5s (fast)
+        : 3 + _rng.nextInt(5); // 3–7s
+    final scaled = (base * (timeLimit / 15.0)).round();
+    // Always leave the player at least 2s of theoretical headroom.
+    return scaled.clamp(2, max(2, timeLimit - 2));
   }
 
   /// Calculates a bot answer choice and response time, scaled to the
@@ -76,7 +81,10 @@ class BattleBotSimulator {
       chosenAnswer = wrongOptions[_rng.nextInt(wrongOptions.length)];
     }
 
-    final int reactionSeconds = reactionSecondsForTrophies(userTrophies);
+    final int reactionSeconds = reactionSecondsForTrophies(
+      userTrophies,
+      timeLimit: question.timeLimit > 0 ? question.timeLimit : 15,
+    );
 
     return BotAnswerDecision(
       selectedAnswer: chosenAnswer,

@@ -1,11 +1,25 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/widgets.dart';
 import '../models/battle_models.dart';
 
-class BattlePresenceService {
+/// Heartbeat interval. Kept short (20s) so a killed app is detected quickly:
+/// the online-list filter drops a heartbeat stale after 3 minutes, and the
+/// server auto-forfeit treats >90s of silence in battle as a disconnect.
+const Duration kPresenceHeartbeatInterval = Duration(seconds: 20);
+
+class BattlePresenceService with WidgetsBindingObserver {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   Timer? _heartbeatTimer;
   bool _isInBattle = false;
+
+  /// Identity of the user whose heartbeat we're running — needed by the
+  /// lifecycle observer to flip presence instantly on pause/resume.
+  String? _activeUserId;
+  String _activeName = '';
+  String _activePhoto = '';
+  int _activeTrophies = 100;
+  bool _observing = false;
 
   static const String _presenceCollection = 'battle_presence';
   static const String _challengesCollection = 'battle_challenges';
@@ -20,6 +34,18 @@ class BattlePresenceService {
     required String photoUrl,
     required int trophies,
   }) {
+    _activeUserId = userId;
+    _activeName = name;
+    _activePhoto = photoUrl;
+    _activeTrophies = trophies;
+
+    // Go offline instantly when the app is backgrounded/killed — no more
+    // ~3-minute ghost-online window waiting for the heartbeat to go stale.
+    if (!_observing) {
+      WidgetsBinding.instance.addObserver(this);
+      _observing = true;
+    }
+
     _updatePresence(
       userId: userId,
       name: name,
@@ -30,7 +56,7 @@ class BattlePresenceService {
     );
 
     _heartbeatTimer?.cancel();
-    _heartbeatTimer = Timer.periodic(const Duration(seconds: 45), (_) async {
+    _heartbeatTimer = Timer.periodic(kPresenceHeartbeatInterval, (_) async {
       // Periodic heartbeat refreshes liveness only. Trophies are NOT written
       // here — the Cloud Function is the source of truth for presence
       // trophies, and writing Hive trophies here could stack on top of the
@@ -47,10 +73,40 @@ class BattlePresenceService {
     });
   }
 
+  /// App backgrounded/killed → offline immediately; resumed → back online.
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    final userId = _activeUserId;
+    if (userId == null || userId.isEmpty || userId.startsWith('guest_')) return;
+
+    if (state == AppLifecycleState.paused ||
+        state == AppLifecycleState.hidden ||
+        state == AppLifecycleState.detached) {
+      _firestore.collection(_presenceCollection).doc(userId).set({
+        'isOnline': false,
+        'lastActive': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true)).catchError((_) {});
+    } else if (state == AppLifecycleState.resumed) {
+      _updatePresence(
+        userId: userId,
+        name: _activeName,
+        photoUrl: _activePhoto,
+        trophies: _activeTrophies,
+        isOnline: true,
+        isInBattle: _isInBattle,
+      );
+    }
+  }
+
   /// Sets user offline when leaving battle arena
   Future<void> stopPresenceHeartbeat(String userId) async {
     _heartbeatTimer?.cancel();
     _heartbeatTimer = null;
+    if (_observing) {
+      WidgetsBinding.instance.removeObserver(this);
+      _observing = false;
+    }
+    _activeUserId = null;
     try {
       await _firestore.collection(_presenceCollection).doc(userId).set({
         'isOnline': false,
@@ -101,26 +157,30 @@ class BattlePresenceService {
   }
 
   /// Stream of RECENTLY ACTIVE players — warriors who are offline right now
-  /// but opened the app within the last 7 days. These are the players who
-  /// "don't come daily but play occasionally" and can still receive async
-  /// challenges (delivered when they return online).
+  /// but opened the app within the last [activeWithinDays] days. These are
+  /// the players who "don't come daily but play occasionally" and can still
+  /// receive async challenges (delivered when they return online).
   ///
-  /// Implementation note: we query by `lastActive` desc only (no composite
-  /// index needed) over a wide window, then filter client-side:
-  ///   • drop the current user
-  ///   • drop users who are genuinely online (isOnline && active <= 3 min) —
-  ///     they already appear in the ONLINE LEARNERS list
-  ///   • drop users inactive for more than [activeWithinDays] days
-  /// The remaining users are sorted by trophies desc and capped at [limit].
+  /// Cost-optimized: the recency window is filtered SERVER-SIDE with
+  /// `where lastActive > cutoff` (single-field range on the same field we
+  /// order by — no composite index needed), so each client only reads the
+  /// small recent slice instead of 80 docs on every presence write.
+  /// Remaining client-side filtering: drop self and drop genuinely online
+  /// players (they're already shown in the ONLINE LEARNERS list; stale
+  /// "online" flags from killed apps count as offline after 3 minutes).
   Stream<List<BattlePresenceUser>> streamRecentlyActiveUsers(
     String currentUserId, {
     int limit = 15,
     int activeWithinDays = 7,
   }) {
+    final cutoff = Timestamp.fromDate(
+      DateTime.now().subtract(Duration(days: activeWithinDays)),
+    );
     return _firestore
         .collection(_presenceCollection)
+        .where('lastActive', isGreaterThan: cutoff)
         .orderBy('lastActive', descending: true)
-        .limit(80)
+        .limit(limit * 2) // headroom for self/online filtering below
         .snapshots()
         .map((snapshot) {
       final now = DateTime.now();
@@ -130,16 +190,12 @@ class BattlePresenceService {
         if (doc.id == currentUserId) continue; // Don't show self
         try {
           final user = BattlePresenceUser.fromMap(doc.data(), doc.id);
-          final age = now.difference(user.lastActive);
-
-          // Skip players inactive for longer than the window.
-          if (age.inDays >= activeWithinDays) continue;
 
           // Skip genuinely online players (they're in the online list).
           // Stale "online" flags (app killed without a clean offline write)
           // are treated as offline once the heartbeat goes stale (> 3 min).
           final genuinelyOnline =
-              user.isOnline && age.inMinutes <= 3;
+              user.isOnline && now.difference(user.lastActive).inMinutes <= 3;
           if (genuinelyOnline) continue;
 
           users.add(user);
