@@ -122,45 +122,62 @@ void main() {
         reason: 'restored quiz must still be marked completed');
   });
 
-  test('QuestionType round-trips through toJson/fromJson', () {
-    // Match/rearrange/fill-blank types must survive a Hive save+restore.
-    for (final type in QuestionType.values) {
-      if (type == QuestionType.multipleChoice) continue;
-      final q = DailyQuizQuestion(
-        id: 'q1',
-        type: 'vocabulary',
-        questionType: type,
-        question: 'Q',
-        options: const [],
-        correctAnswer: 0,
-        explanation: 'E',
-        pairs: type == QuestionType.matchPairs
-            ? const [MatchPair(left: 'a', right: 'b')]
-            : null,
-        jumbledWords: type == QuestionType.sentenceRearrange
-            ? const ['I', 'am', 'ok']
-            : null,
-      );
-      final restored = DailyQuizQuestion.fromJson(q.toJson());
-      debugPrint('QUESTION TYPE round-trip: ${type.name} -> '
-          '${restored.questionType.name}');
-      expect(restored.questionType, type,
-          reason: '${type.name} must not degrade to multipleChoice');
-    }
+  test('MCQ question round-trips through toJson/fromJson', () {
+    // Standard MCQ questions must survive a Hive save+restore intact.
+    final q = DailyQuizQuestion(
+      id: 'q1',
+      type: 'vocabulary',
+      question: 'Q',
+      options: const ['a', 'b', 'c', 'd'],
+      correctAnswer: 2,
+      explanation: 'E',
+      timeLimit: 25,
+      difficulty: 'hard',
+      category: 'vocabulary',
+    );
+    final restored = DailyQuizQuestion.fromJson(q.toJson());
+    expect(restored.id, q.id);
+    expect(restored.type, q.type);
+    expect(restored.options, q.options);
+    expect(restored.correctAnswer, q.correctAnswer);
+    expect(restored.timeLimit, q.timeLimit);
+    expect(restored.difficulty, q.difficulty);
   });
 
-  test('fresh daily quiz contains only multiple-choice questions', () async {
+  test('legacy saved question JSON with removed keys still parses', () {
+    // Quizzes saved before the MCQ-only cleanup carry questionType/pairs/
+    // jumbledWords keys — fromJson must ignore them, not crash.
+    final restored = DailyQuizQuestion.fromJson({
+      'id': 'old1',
+      'type': 'grammar',
+      'question': 'Q',
+      'options': const ['a', 'b', 'c', 'd'],
+      'correctAnswer': 1,
+      'explanation': 'E',
+      'questionType': 'fill_blanks',
+      'pairs': [
+        {'left': 'a', 'right': 'b'}
+      ],
+      'jumbledWords': const ['I', 'am', 'ok'],
+    });
+    expect(restored.id, 'old1');
+    expect(restored.correctAnswer, 1);
+  });
+
+  test('fresh daily quiz is valid MCQ-only', () async {
     final service = DailyQuizService();
     final quiz = await service.generateTodayQuiz();
-    final special = quiz.questions
-        .where((q) => q.questionType != QuestionType.multipleChoice)
-        .toList();
-    debugPrint('GENERATED ${quiz.totalQuestions} questions, '
-        'special=${special.map((q) => q.questionType.name).join(',')}');
-    expect(special, isEmpty,
-        reason: 'question bank is MCQ-only (fill_blanks / match_pairs / '
-            'sentence_rearrange were removed from the bank by product '
-            'decision)');
+    debugPrint('GENERATED ${quiz.totalQuestions} MCQ questions');
+    expect(quiz.totalQuestions, 10,
+        reason: 'daily quiz always serves exactly 10 questions');
+    for (final q in quiz.questions) {
+      expect(q.options.length, greaterThanOrEqualTo(3),
+          reason: '${q.id}: every MCQ needs real options');
+      expect(q.correctAnswer, inInclusiveRange(0, q.options.length - 1),
+          reason: '${q.id}: correctAnswer index must be valid');
+      expect(['vocabulary', 'grammar', 'conversation'], contains(q.type),
+          reason: '${q.id}: unexpected category ${q.type}');
+    }
   });
 
   test('restored quiz preserves answers — accuracy survives restart',

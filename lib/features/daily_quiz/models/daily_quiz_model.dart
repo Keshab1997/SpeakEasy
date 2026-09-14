@@ -1,6 +1,6 @@
-/// All Daily Quiz questions are standard multiple-choice questions (MCQ).
-/// The earlier experimental types (fill_blanks, match_pairs,
-/// sentence_rearrange) were removed — keep the bank MCQ-only.
+// All Daily Quiz questions are standard multiple-choice questions (MCQ).
+// The earlier experimental types (fill_blanks, match_pairs,
+// sentence_rearrange) were removed — keep the bank MCQ-only.
 
 class DailyQuizQuestion {
   final String id;
