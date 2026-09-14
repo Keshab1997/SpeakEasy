@@ -124,11 +124,11 @@ void main() {
 
   test('MCQ question round-trips through toJson/fromJson', () {
     // Standard MCQ questions must survive a Hive save+restore intact.
-    final q = DailyQuizQuestion(
+    const q = DailyQuizQuestion(
       id: 'q1',
       type: 'vocabulary',
       question: 'Q',
-      options: const ['a', 'b', 'c', 'd'],
+      options: ['a', 'b', 'c', 'd'],
       correctAnswer: 2,
       explanation: 'E',
       timeLimit: 25,
