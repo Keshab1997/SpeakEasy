@@ -985,6 +985,33 @@ exports.cleanupBattleData = functions.pubsub
       functions.logger.error('room cleanup failed', e);
     }
 
+    // 2c2. Stale WAITING rooms (room-first challenges). Async challenges
+    //      stay deliverable for 48h, so a waiting room is only garbage
+    //      after that — delete it (its answer key gets swept separately).
+    try {
+      const waitSnap = await db
+        .collection(ROOMS)
+        .where('status', '==', 'waiting')
+        .get();
+      const batch = db.batch();
+      let n = 0;
+      waitSnap.forEach((doc) => {
+        const d = doc.data();
+        const created = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate() : null;
+        const age = created ? now - created.getTime() : 999999;
+        if (age > 48 * 60 * 60 * 1000) {
+          batch.delete(doc.ref);
+          n++;
+        }
+      });
+      if (n > 0) {
+        await batch.commit();
+        functions.logger.log(`cleanup: deleted ${n} stale waiting rooms`);
+      }
+    } catch (e) {
+      functions.logger.error('waiting room cleanup failed', e);
+    }
+
     // 2d. Seed-room answer keys older than 24h (rooms never live past 30min
     //     active / 48h cleanup, so 24h is a generous safety margin).
     try {

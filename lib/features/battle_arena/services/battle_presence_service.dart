@@ -223,6 +223,7 @@ class BattlePresenceService with WidgetsBindingObserver {
     required String toUserId,
     String type = 'live',
     bool isRematch = false,
+    String? roomId,
   }) async {
     // DEDUP + RATE-LIMIT: deterministic doc id `ch_{from}_{to}` — at most
     // ONE pending challenge per pair can exist. A repeat send targets the
@@ -260,6 +261,8 @@ class BattlePresenceService with WidgetsBindingObserver {
       'status': 'pending',
       'type': type,
       'isRematch': isRematch,
+      // Room-first flow: the waiting room already exists at send time.
+      if (roomId != null) 'roomId': roomId,
       'createdAt': FieldValue.serverTimestamp(),
     });
     return challengeId;
@@ -291,6 +294,31 @@ class BattlePresenceService with WidgetsBindingObserver {
         return BattleChallenge.fromMap(doc.data(), doc.id);
       }).toList();
     });
+  }
+
+  /// Streams a single challenge doc (null once it is deleted).
+  Stream<BattleChallenge?> streamChallenge(String challengeId) {
+    return _firestore
+        .collection(_challengesCollection)
+        .doc(challengeId)
+        .snapshots()
+        .map((doc) => doc.exists && doc.data() != null
+            ? BattleChallenge.fromMap(doc.data()!, doc.id)
+            : null);
+  }
+
+  /// Challenges addressed to me that I already ACCEPTED — used to restore
+  /// the waiting room after an app restart (room-first flow).
+  Stream<List<BattleChallenge>> listenToAcceptedIncomingChallenges(
+      String currentUserId) {
+    return _firestore
+        .collection(_challengesCollection)
+        .where('toUserId', isEqualTo: currentUserId)
+        .where('status', isEqualTo: 'accepted')
+        .snapshots()
+        .map((snapshot) => snapshot.docs
+            .map((doc) => BattleChallenge.fromMap(doc.data(), doc.id))
+            .toList());
   }
 
   /// Respond to challenge (Accept / Reject)

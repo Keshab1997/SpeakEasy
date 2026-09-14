@@ -93,6 +93,13 @@
 - [x] **Removed unused question types:** fill_blanks / match_pairs / sentence_rearrange code deleted (3 widgets, QuestionType enum, MatchPair model, pairs/jumbledWords/responseData fields, complex-answer handlers, review-screen branches, "2 new-type per day" generation logic). Everything is now plain MCQ — the whole feature is simpler and the play screen renders one path only.
 - [x] **+36 new questions (234 → 270):** 12 vocabulary, 12 grammar, 12 conversation (dq_244–dq_279), bilingual Bangla/English with explanations; difficulty spread kept balanced (easy/medium/hard). Category badge on the quiz header now shows 📖 Vocabulary / 📝 Grammar / 💬 Conversation correctly.
 
+### 14. 🏟️ Room-First Challenges + Challenge Popup Fix
+- [x] **Room-first flow:** challenging someone now creates a WAITING room at SEND time (seed questions + answer key prepared up-front); the challenge doc carries the roomId. Accepting JOINS the room; the HOST presses **START BATTLE** to begin — no more surprise instant-duels. New `BattleWaitingRoomScreen` (player cards, join/ready states, START / Cancel / Leave, back-button cleanup, PopScope).
+- [x] **Restore everywhere:** gate routes accepted outgoing challenges to the waiting room (host side, covers async + app restarts); accepted incoming restores the guest seat; in_progress rooms still drop straight into the arena (incl. legacy senders without roomId, which keep the old immediate-start path).
+- [x] **Challenge popup fixed (was a dead end):** sheet no longer one-shot-blocked — pending challenges resurface until answered; buttons await with retryable errors; new **Later** button; lobby shows a persistent "Respond" banner for postponed challenges (`reshowChallengeProvider`).
+- [x] **Decline/cancel cleanup:** receiver's decline deletes the waiting room immediately (participants may delete rooms while status == 'waiting'); host cancel deletes room + challenge; guest leave marks `player2LeftAt` so the host is notified. Cleanup sweeps waiting rooms > 48h.
+- [x] **Models/rules:** BattleRoom gains `player2JoinedAt`/`player2LeftAt`; room delete rule extended for waiting rooms; challenge doc gains `roomId` at creation.
+
 ---
 
 ## 📁 File Structure
@@ -116,6 +123,7 @@ lib/features/battle_arena/
 └── screens/
     ├── battle_lobby_screen.dart
     ├── battle_arena_screen.dart
+    ├── battle_waiting_room_screen.dart
     ├── battle_result_screen.dart
     └── battle_leaderboard_screen.dart
 ```

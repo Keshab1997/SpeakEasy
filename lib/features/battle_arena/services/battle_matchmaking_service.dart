@@ -308,8 +308,81 @@ class BattleMatchmakingService {
     } catch (_) {}
   }
 
-  /// Creates a direct room for 1v1 challenge (seed room — no questions
-  /// stored in Firestore, correct answers stay on-device).
+  /// ROOM-FIRST CHALLENGE FLOW — creates a WAITING room when the challenge
+  /// is SENT (not when it is accepted). The receiver joins the room on
+  /// accept; the host then presses START, which flips the room to
+  /// in_progress and both devices enter the arena.
+  Future<BattleRoom> createWaitingRoom({
+    required BattlePlayer player1,
+    required BattlePlayer player2,
+  }) async {
+    final seed = Random().nextInt(0x7FFFFFFF);
+    final questions = await BattleGameService.generateSeededQuestions(seed);
+    final roomDoc = await _firestore.collection(_roomsCollection).add({
+      'player1': player1.toMap(),
+      'player2': player2.toMap(),
+      'questionSeed': seed,
+      'questionCount': questions.length,
+      'questionSetVersion': BattleGameService.questionSetVersion,
+      'status': 'waiting',
+      'currentRoundIndex': 0,
+      'createdAt': FieldValue.serverTimestamp(),
+    });
+
+    // Answer key for server-side verification (admin-only, non-fatal).
+    unawaited(_writeAnswerKey(roomDoc.id, questions, player1.id));
+
+    return BattleRoom(
+      id: roomDoc.id,
+      player1: player1,
+      player2: player2,
+      questions: questions,
+      questionSeed: seed,
+      questionSetVersion: BattleGameService.questionSetVersion,
+      questionCount: questions.length,
+      status: BattleRoomStatus.waiting,
+      createdAt: DateTime.now(),
+    );
+  }
+
+  /// Guest accepted → mark the join so the host sees "ready" and can START.
+  Future<void> markPlayer2Joined(String roomId) async {
+    await _firestore.collection(_roomsCollection).doc(roomId).update({
+      'player2JoinedAt': FieldValue.serverTimestamp(),
+      // A rejoin clears a previous "left" mark.
+      'player2LeftAt': FieldValue.delete(),
+    });
+  }
+
+  /// Guest left the waiting room before the host started.
+  Future<void> markPlayer2Left(String roomId) async {
+    await _firestore.collection(_roomsCollection).doc(roomId).update({
+      'player2LeftAt': FieldValue.serverTimestamp(),
+    });
+  }
+
+  /// HOST starts the duel: waiting → in_progress. Both waiting-room screens
+  /// watch this transition and enter the arena.
+  Future<void> startWaitingRoom(String roomId) async {
+    await _firestore.collection(_roomsCollection).doc(roomId).update({
+      'status': 'in_progress',
+      'startedAt': FieldValue.serverTimestamp(),
+    });
+  }
+
+  /// Deletes a room — allowed by security rules ONLY while it is still
+  /// 'waiting' (participants) or by admin. Used for cancel/decline cleanup.
+  Future<void> deleteRoom(String roomId) async {
+    try {
+      await _firestore.collection(_roomsCollection).doc(roomId).delete();
+    } catch (e) {
+      debugPrint('⚠️ room delete failed for $roomId: $e');
+    }
+  }
+
+  /// LEGACY FALLBACK: a challenge from an older sender (no roomId on the
+  /// challenge doc) still expects the receiver to create an in_progress
+  /// room and start immediately. New senders use [createWaitingRoom].
   Future<BattleRoom> createDirectChallengeRoom({
     required BattlePlayer player1,
     required BattlePlayer player2,
@@ -327,7 +400,6 @@ class BattleMatchmakingService {
       'createdAt': FieldValue.serverTimestamp(),
     });
 
-    // Answer key for server-side verification (admin-only, non-fatal).
     unawaited(_writeAnswerKey(roomDoc.id, questions, player2.id));
 
     return BattleRoom(

@@ -483,7 +483,11 @@ service cloud.firestore {
         && battlePlayersUnchanged()
         && battleQuestionsUnchanged()
         && battleSeedUnchanged();
-      allow delete: if isAdmin();
+      // Admin sweeps, OR a participant may delete a room that is still
+      // WAITING (challenge cancelled/declined before the duel started).
+      // In-progress/completed rooms are never client-deletable.
+      allow delete: if isAdmin()
+        || (isBattleParticipant() && resource.data.status == 'waiting');
     }
 
     // ═══════════════════════════════════════════════

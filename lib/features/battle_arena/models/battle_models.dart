@@ -219,6 +219,15 @@ class BattleRoom {
   final String? emoteSenderId;
   final DateTime createdAt;
 
+  /// Waiting-room handshake (challenge flow):
+  /// set when player2 ENTERS the waiting room after accepting, and
+  /// set if player2 leaves it again before the host starts.
+  final DateTime? player2JoinedAt;
+  final DateTime? player2LeftAt;
+
+  bool get isWaiting => status == BattleRoomStatus.waiting;
+  bool get player2Joined => player2JoinedAt != null;
+
   const BattleRoom({
     required this.id,
     required this.player1,
@@ -233,6 +242,8 @@ class BattleRoom {
     this.activeEmote,
     this.emoteSenderId,
     required this.createdAt,
+    this.player2JoinedAt,
+    this.player2LeftAt,
   });
 
   bool get isSeedRoom => questionSeed != null;
@@ -251,6 +262,8 @@ class BattleRoom {
     String? activeEmote,
     String? emoteSenderId,
     DateTime? createdAt,
+    DateTime? player2JoinedAt,
+    DateTime? player2LeftAt,
   }) {
     return BattleRoom(
       id: id ?? this.id,
@@ -266,6 +279,8 @@ class BattleRoom {
       activeEmote: activeEmote ?? this.activeEmote,
       emoteSenderId: emoteSenderId ?? this.emoteSenderId,
       createdAt: createdAt ?? this.createdAt,
+      player2JoinedAt: player2JoinedAt ?? this.player2JoinedAt,
+      player2LeftAt: player2LeftAt ?? this.player2LeftAt,
     );
   }
 
@@ -284,6 +299,10 @@ class BattleRoom {
       'activeEmote': activeEmote,
       'emoteSenderId': emoteSenderId,
       'createdAt': Timestamp.fromDate(createdAt),
+      if (player2JoinedAt != null)
+        'player2JoinedAt': Timestamp.fromDate(player2JoinedAt!),
+      if (player2LeftAt != null)
+        'player2LeftAt': Timestamp.fromDate(player2LeftAt!),
     };
   }
 
@@ -305,6 +324,8 @@ class BattleRoom {
       activeEmote: map['activeEmote'] as String?,
       emoteSenderId: map['emoteSenderId'] as String?,
       createdAt: (map['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),
+      player2JoinedAt: (map['player2JoinedAt'] as Timestamp?)?.toDate(),
+      player2LeftAt: (map['player2LeftAt'] as Timestamp?)?.toDate(),
     );
   }
 }

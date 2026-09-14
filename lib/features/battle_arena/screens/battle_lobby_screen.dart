@@ -10,10 +10,12 @@ import '../../friends/widgets/friend_list_card.dart';
 import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';
+import '../services/battle_matchmaking_service.dart';
 import '../widgets/live_player_card.dart';
 import '../widgets/recent_player_card.dart';
 import '../widgets/radar_search_dialog.dart';
 import 'battle_leaderboard_screen.dart';
+import 'battle_waiting_room_screen.dart';
 
 class BattleLobbyScreen extends ConsumerStatefulWidget {
   const BattleLobbyScreen({super.key});
@@ -113,6 +115,10 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
           CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
+              // 0. Pending challenge banner (challenges postponed with
+              //    "Later" stay actionable from here — never a dead end).
+              SliverToBoxAdapter(child: _buildPendingChallengeBanner()),
+
               // 1. Top Hero Card: Stats & Division
               SliverToBoxAdapter(
                 child: _buildHeroStatsCard(context, theme, isDark, battleState.stats),
@@ -551,50 +557,13 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   /// Challenge a friend — live duel when they're online, async challenge
   /// (delivered on their next login) when they're offline.
   Future<void> _challengeFriend(Friend friend, {required bool online}) async {
-    final currentUser = ref.read(authProvider).asData?.value;
-    if (currentUser == null) return;
-
-    setState(() => _challengingUserId = friend.id);
-    final stats = ref.read(battleArenaProvider).stats;
-
-    try {
-      await ref.read(battlePresenceServiceProvider).sendChallenge(
-            fromUserId: currentUser.id,
-            fromUserName: currentUser.name,
-            fromUserPhoto: currentUser.photoUrl,
-            fromUserTrophies: stats.trophies,
-            toUserId: friend.id,
-            type: online ? 'live' : 'async',
-          );
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(online
-              ? 'Challenge sent to ${friend.name}! ⚔️'
-              : 'Challenge sent! ${friend.name} will get it when they come online 🔔'),
-          backgroundColor:
-              online ? const Color(0xFF10B981) : const Color(0xFF8B5CF6),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
-    } on FirebaseException catch (e) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(e.code == 'permission-denied'
-              ? 'You already challenged ${friend.name} — waiting for their response ⚔️'
-              : 'Failed to send challenge.'),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
-    } catch (_) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Failed to send challenge.')),
-      );
-    } finally {
-      if (mounted) setState(() => _challengingUserId = null);
-    }
+    await _sendChallenge(
+      toId: friend.id,
+      toName: friend.name,
+      toPhoto: friend.photoUrl,
+      toTrophies: friend.trophies,
+      async: !online,
+    );
   }
 
   Future<void> _removeFriend(Friend friend) async {
@@ -691,39 +660,89 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   /// they return online (popup via GlobalBattleChallengeGate + OneSignal push).
   Future<void> _sendDirectChallenge(BattlePresenceUser targetUser,
       {bool async = false}) async {
+    await _sendChallenge(
+      toId: targetUser.id,
+      toName: targetUser.name,
+      toPhoto: targetUser.photoUrl,
+      toTrophies: targetUser.trophies,
+      async: async,
+    );
+  }
+
+  /// ROOM-FIRST challenge send: creates the waiting room FIRST, then the
+  /// challenge doc (carrying the roomId). For a live target the sender is
+  /// dropped into the waiting room immediately; for an offline (async)
+  /// target they stay in the lobby and get pulled in when it's accepted.
+  Future<void> _sendChallenge({
+    required String toId,
+    required String toName,
+    required String toPhoto,
+    required int toTrophies,
+    required bool async,
+    bool isRematch = false,
+  }) async {
     final currentUser = ref.read(authProvider).asData?.value;
     if (currentUser == null) return;
 
-    setState(() => _challengingUserId = targetUser.id);
+    setState(() => _challengingUserId = toId);
     final stats = ref.read(battleArenaProvider).stats;
 
     try {
-      await ref.read(battlePresenceServiceProvider).sendChallenge(
-            fromUserId: currentUser.id,
-            fromUserName: currentUser.name,
-            fromUserPhoto: currentUser.photoUrl,
-            fromUserTrophies: stats.trophies,
-            toUserId: targetUser.id,
-            type: async ? 'async' : 'live',
-          );
-
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(async
-              ? 'Challenge sent! ${targetUser.name} will get it when they come online 🔔'
-              : 'Challenge sent to ${targetUser.name}! ⚔️'),
-          backgroundColor:
-              async ? const Color(0xFF8B5CF6) : const Color(0xFF10B981),
-          behavior: SnackBarBehavior.floating,
+      final matchmaking = BattleMatchmakingService();
+      // 1) Prepare the room (seed questions + answer key) before inviting.
+      final room = await matchmaking.createWaitingRoom(
+        player1: BattlePlayer(
+          id: currentUser.id,
+          name: currentUser.name,
+          photoUrl: currentUser.photoUrl,
+          trophies: stats.trophies,
+        ),
+        player2: BattlePlayer(
+          id: toId,
+          name: toName,
+          photoUrl: toPhoto,
+          trophies: toTrophies,
         ),
       );
+
+      // 2) Send the challenge referencing that room. If it's rejected
+      //    (e.g. a challenge is already pending for this pair), remove the
+      //    room we just made so nothing is left behind.
+      try {
+        await ref.read(battlePresenceServiceProvider).sendChallenge(
+              fromUserId: currentUser.id,
+              fromUserName: currentUser.name,
+              fromUserPhoto: currentUser.photoUrl,
+              fromUserTrophies: stats.trophies,
+              toUserId: toId,
+              type: async ? 'async' : 'live',
+              isRematch: isRematch,
+              roomId: room.id,
+            );
+      } catch (e) {
+        await matchmaking.deleteRoom(room.id);
+        rethrow;
+      }
+
+      if (!mounted) return;
+      if (async) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+                'Challenge sent! ${toName} will get it when they come online 🔔'),
+            backgroundColor: const Color(0xFF8B5CF6),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      } else {
+        _openWaitingRoom(room, challengeId: 'ch_${currentUser.id}_$toId');
+      }
     } on FirebaseException catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(e.code == 'permission-denied'
-              ? 'You already challenged ${targetUser.name} — waiting for their response ⚔️'
+              ? 'You already challenged ${toName} — waiting for their response ⚔️'
               : 'Failed to send challenge.'),
           behavior: SnackBarBehavior.floating,
         ),
@@ -738,5 +757,72 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
         setState(() => _challengingUserId = null);
       }
     }
+  }
+
+  void _openWaitingRoom(BattleRoom room, {required String challengeId}) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => BattleWaitingRoomScreen(
+          roomId: room.id,
+          challengeId: challengeId,
+          isHost: true,
+        ),
+      ),
+    );
+  }
+
+  /// Banner for pending incoming challenges (e.g. ones postponed via
+  /// "Later") — tapping Respond reopens the accept/decline sheet.
+  Widget _buildPendingChallengeBanner() {
+    return ref.watch(incomingChallengesProvider).when(
+          data: (challenges) {
+            if (challenges.isEmpty) return const SizedBox.shrink();
+            final c = challenges.first;
+            return Container(
+              margin: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFF7C3AED), Color(0xFFEF4444)],
+                ),
+                borderRadius: BorderRadius.circular(18),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFFEF4444).withValues(alpha: 0.35),
+                    blurRadius: 14,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  const Text('⚔️', style: TextStyle(fontSize: 24)),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      '${c.fromUserName} challenged you!',
+                      style: const TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () => ref
+                        .read(reshowChallengeProvider.notifier)
+                        .state = c,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: const Color(0xFFEF4444),
+                      padding: const EdgeInsets.symmetric(horizontal: 14),
+                    ),
+                    child: const Text('Respond',
+                        style: TextStyle(fontWeight: FontWeight.w800)),
+                  ),
+                ],
+              ),
+            );
+          },
+          loading: () => const SizedBox.shrink(),
+          error: (_, __) => const SizedBox.shrink(),
+        );
   }
 }

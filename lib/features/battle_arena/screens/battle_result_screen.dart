@@ -6,6 +6,7 @@ import '../../../providers/auth_provider.dart';
 import '../../../core/navigation/app_navigator.dart';
 import '../../friends/widgets/friend_action_button.dart';
 import '../providers/battle_arena_provider.dart';
+import '../services/battle_matchmaking_service.dart';
 import '../services/battle_presence_service.dart';
 import 'battle_answer_review_screen.dart';
 
@@ -74,15 +75,38 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
 
     setState(() => _rematchBusy = true);
     try {
-      await BattlePresenceService().sendChallenge(
-        fromUserId: me.id,
-        fromUserName: me.name,
-        fromUserPhoto: me.photoUrl,
-        fromUserTrophies: state.stats.trophies,
-        toUserId: opp.id,
-        type: 'async',
-        isRematch: true,
+      // ROOM-FIRST: prepare the duel room now; the rematch popup on the
+      // opponent's side joins it, and I start the battle from the lobby.
+      final matchmaking = BattleMatchmakingService();
+      final room = await matchmaking.createWaitingRoom(
+        player1: BattlePlayer(
+          id: me.id,
+          name: me.name,
+          photoUrl: me.photoUrl,
+          trophies: state.stats.trophies,
+        ),
+        player2: BattlePlayer(
+          id: opp.id,
+          name: opp.name,
+          photoUrl: opp.photoUrl,
+          trophies: opp.trophies,
+        ),
       );
+      try {
+        await BattlePresenceService().sendChallenge(
+          fromUserId: me.id,
+          fromUserName: me.name,
+          fromUserPhoto: me.photoUrl,
+          fromUserTrophies: state.stats.trophies,
+          toUserId: opp.id,
+          type: 'async',
+          isRematch: true,
+          roomId: room.id,
+        );
+      } catch (e) {
+        await matchmaking.deleteRoom(room.id);
+        rethrow;
+      }
       if (!mounted) return;
       setState(() {
         _rematchSent = true;

@@ -50,3 +50,20 @@ final incomingChallengesProvider = StreamProvider.autoDispose<List<BattleChallen
   final service = ref.watch(battlePresenceServiceProvider);
   return service.listenToIncomingChallenges(currentUser.id);
 });
+
+/// Challenges addressed to me that I already ACCEPTED — the gate uses this
+/// to restore the waiting room / arena after an app restart.
+final acceptedIncomingChallengesProvider =
+    StreamProvider.autoDispose<List<BattleChallenge>>((ref) {
+  final authState = ref.watch(authProvider);
+  final currentUser = authState.asData?.value;
+  if (currentUser == null) return const Stream.empty();
+
+  final service = ref.watch(battlePresenceServiceProvider);
+  return service.listenToAcceptedIncomingChallenges(currentUser.id);
+});
+
+/// Set by UI entry points (e.g. the lobby's pending-challenge banner) when
+/// the user wants the accept/decline sheet for a challenge that was
+/// dismissed with "Later". The gate shows it and clears this back to null.
+final reshowChallengeProvider = StateProvider<BattleChallenge?>((ref) => null);
