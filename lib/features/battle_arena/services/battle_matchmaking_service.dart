@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import '../models/battle_models.dart';
@@ -66,7 +67,14 @@ class BattleMatchmakingService {
       }
     }
 
-    final questions = await BattleGameService.loadCuratedQuestions();
+    // SEED ROOMS: the room doc stores only a question seed (no questions,
+    // no correct answers — anti-cheat + tiny snapshots). Both players
+    // regenerate the identical question set locally from the seed.
+    await BattleGameService.ensurePoolLoaded();
+    checkCancelled();
+
+    final roomSeed = Random().nextInt(0x7FFFFFFF);
+    final questions = await BattleGameService.generateSeededQuestions(roomSeed);
     checkCancelled();
 
     try {
@@ -123,11 +131,14 @@ class BattleMatchmakingService {
 
             // Room creation is INSIDE the transaction: either the claim +
             // room happen atomically, or nothing does.
+            // Seed room: NO questions in the doc — only the seed.
             final roomRef = _firestore.collection(_roomsCollection).doc();
             tx.set(roomRef, {
               'player1': opponent.toMap(),
               'player2': localPlayer.toMap(),
-              'questions': questions.map((q) => q.toMap()).toList(),
+              'questionSeed': roomSeed,
+              'questionCount': questions.length,
+              'questionSetVersion': BattleGameService.questionSetVersion,
               'status': 'in_progress',
               'currentRoundIndex': 0,
               'createdAt': FieldValue.serverTimestamp(),
@@ -142,6 +153,9 @@ class BattleMatchmakingService {
               player1: opponent,
               player2: localPlayer,
               questions: questions,
+              questionSeed: roomSeed,
+              questionSetVersion: BattleGameService.questionSetVersion,
+              questionCount: questions.length,
               status: BattleRoomStatus.inProgress,
               createdAt: DateTime.now(),
             );
@@ -152,6 +166,10 @@ class BattleMatchmakingService {
         }
 
         if (claimed != null) {
+          // Server-side answer verification key (admin-only collection,
+          // clients can never read it). Non-fatal: if it fails, the Cloud
+          // Function falls back to a hard score cap.
+          unawaited(_writeAnswerKey(claimed.id, questions, localPlayer.id));
           onProgress('Opponent found! Initializing Arena... ⚔️');
           // Rare race: we created the room just as the user hit cancel —
           // forfeit on their behalf so the opponent isn't left stranded.
@@ -198,7 +216,10 @@ class BattleMatchmakingService {
           subscription.cancel();
           final roomDoc = await _firestore.collection(_roomsCollection).doc(roomId).get();
           if (roomDoc.exists && !completer.isCompleted) {
-            completer.complete(BattleRoom.fromMap(roomDoc.data()!, roomDoc.id));
+            // Hydrate seed rooms (regenerate questions locally from seed).
+            final room = await _hydrateRoom(
+                BattleRoom.fromMap(roomDoc.data()!, roomDoc.id));
+            if (!completer.isCompleted) completer.complete(room);
           }
         }
       });
@@ -271,38 +292,87 @@ class BattleMatchmakingService {
     } catch (_) {}
   }
 
-  /// Creates a direct room for 1v1 challenge
+  /// Creates a direct room for 1v1 challenge (seed room — no questions
+  /// stored in Firestore, correct answers stay on-device).
   Future<BattleRoom> createDirectChallengeRoom({
     required BattlePlayer player1,
     required BattlePlayer player2,
   }) async {
-    final questions = await BattleGameService.loadCuratedQuestions();
+    final seed = Random().nextInt(0x7FFFFFFF);
+    final questions = await BattleGameService.generateSeededQuestions(seed);
     final roomDoc = await _firestore.collection(_roomsCollection).add({
       'player1': player1.toMap(),
       'player2': player2.toMap(),
-      'questions': questions.map((q) => q.toMap()).toList(),
+      'questionSeed': seed,
+      'questionCount': questions.length,
+      'questionSetVersion': BattleGameService.questionSetVersion,
       'status': 'in_progress',
       'currentRoundIndex': 0,
       'createdAt': FieldValue.serverTimestamp(),
     });
+
+    // Answer key for server-side verification (admin-only, non-fatal).
+    unawaited(_writeAnswerKey(roomDoc.id, questions, player2.id));
 
     return BattleRoom(
       id: roomDoc.id,
       player1: player1,
       player2: player2,
       questions: questions,
+      questionSeed: seed,
+      questionSetVersion: BattleGameService.questionSetVersion,
+      questionCount: questions.length,
       status: BattleRoomStatus.inProgress,
       createdAt: DateTime.now(),
     );
   }
 
+  /// Writes the answer key for server-side verification into the
+  /// admin-only `battle_answer_keys` collection (security rules: a client
+  /// may CREATE only for a room it participates in, and can NEVER read it
+  /// back — only the Cloud Function with admin access can).
+  /// Failing is non-fatal: the Cloud Function then falls back to a hard
+  /// score cap instead of exact verification.
+  Future<void> _writeAnswerKey(
+    String roomId,
+    List<BattleQuestion> questions,
+    String createdBy,
+  ) async {
+    try {
+      await _firestore.collection('battle_answer_keys').doc(roomId).set({
+        'answers': questions.map((q) => q.correctAnswer).toList(),
+        'timeLimits': questions.map((q) => q.timeLimit).toList(),
+        'questionSetVersion': BattleGameService.questionSetVersion,
+        'createdBy': createdBy,
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+    } catch (e) {
+      debugPrint('⚠️ answer key write failed for room $roomId: $e');
+    }
+  }
+
   /// Fetches a single room by id (used by the challenge SENDER to join
-  /// the room the receiver created on accept).
+  /// the room the receiver created on accept). Seed rooms are hydrated —
+  /// the questions are regenerated locally from the seed.
   Future<BattleRoom?> getRoom(String roomId) async {
     if (roomId.startsWith('local_bot_room_')) return null;
     final doc = await _firestore.collection(_roomsCollection).doc(roomId).get();
     if (!doc.exists || doc.data() == null) return null;
-    return BattleRoom.fromMap(doc.data()!, doc.id);
+    final room = BattleRoom.fromMap(doc.data()!, doc.id);
+    return _hydrateRoom(room);
+  }
+
+  /// Regenerates the question list for a seed room (no-op for legacy rooms
+  /// that still carry embedded questions).
+  Future<BattleRoom> _hydrateRoom(BattleRoom room) async {
+    if (room.questions.isNotEmpty || room.questionSeed == null) return room;
+    try {
+      final questions =
+          await BattleGameService.generateSeededQuestions(room.questionSeed!);
+      return room.copyWith(questions: questions);
+    } catch (_) {
+      return room;
+    }
   }
 
   /// Deletes a challenge doc after it was accepted/rejected (housekeeping).

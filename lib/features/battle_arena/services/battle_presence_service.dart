@@ -224,7 +224,14 @@ class BattlePresenceService with WidgetsBindingObserver {
     String type = 'live',
     bool isRematch = false,
   }) async {
-    final docRef = await _firestore.collection(_challengesCollection).add({
+    // DEDUP + RATE-LIMIT: deterministic doc id `ch_{from}_{to}` — at most
+    // ONE pending challenge per pair can exist. A repeat send targets the
+    // existing doc; security rules reject that write (only the receiver may
+    // update), so mashing the challenge button can't stack duplicates or
+    // spam OneSignal pushes. The id frees up when cleanup deletes the
+    // expired/accepted doc (live: 90s, async: 48h).
+    final challengeId = 'ch_${fromUserId}_$toUserId';
+    await _firestore.collection(_challengesCollection).doc(challengeId).set({
       'fromUserId': fromUserId,
       'fromUserName': fromUserName,
       'fromUserPhoto': fromUserPhoto,
@@ -235,7 +242,7 @@ class BattlePresenceService with WidgetsBindingObserver {
       'isRematch': isRematch,
       'createdAt': FieldValue.serverTimestamp(),
     });
-    return docRef.id;
+    return challengeId;
   }
 
   /// Listen for challenges SENT by the current user (so the sender knows

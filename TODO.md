@@ -81,6 +81,14 @@
 - [x] **Cleanup:** accepted friend requests swept after 24h; stale pending requests after 7 days.
 - [x] **Rules & Indexes:** friend_requests read/create/update/delete rules (receiver-only accept), owner-only friendships, composite index `(toUserId, status)`.
 
+### 12. 🛡️ Seed Rooms + Anti-Cheat + Polish Batch
+- [x] **Seed rooms (questions out of the room doc):** room docs now store only `questionSeed` + `questionCount` + `questionSetVersion`. Both clients regenerate the identical 5-question set locally via `BattleGameService.generateSeededQuestions(seed)` — every pool build step is deterministic (fixed-seed distractor/option shuffles, stable asset order). Tiny snapshots, cheaper reads, and correct answers never touch Firestore. Legacy embedded-question rooms still parse & play.
+- [x] **Server-side answer verification:** the room creator writes `battle_answer_keys/{roomId}` (answers + timeLimits) into an admin-only collection right after the room transaction commits. Security rules: players may CREATE for their own room only, and can NEVER read/update/delete the key. `onBattleRoomWrite` now verifies every reported score against the key (`computeLegitScoreFromAnswers`) and clamps hacked scores before trophies are awarded; missing key → hard score cap fallback. Keys cleaned after 24h.
+- [x] **Rules hardening:** battle_rooms create accepts questions-list OR questionSeed; new `battleSeedUnchanged()` makes seed/count/version immutable after creation (no mid-game seed swapping).
+- [x] **Heartbeat optimization:** presence heartbeat is now stopped when the Battle Lobby leaves the nav stack (`dispose` → `stopPresenceHeartbeat`). During duels the arena route sits on top of the lobby, so the lobby stays mounted and auto-forfeit keeps working. No more 20s heartbeat writes from Home/Quiz/etc.
+- [x] **Challenge rate-limit/dedup:** challenge doc id is deterministic `ch_{from}_{to}` with `set()` — at most ONE pending challenge per pair; repeat sends hit the existing doc and rules reject them (friendly snackbars on lobby, friend list & rematch button). Cleanup also dedups Quick Match queue entries per user (keeps newest).
+- [x] **Sounds + haptics:** battles now use the app's existing `SoundService` (respects the user's mute/volume setting): correct → `game_correct`, wrong/timeout → `game_wrong`, win/forfeit-win → `game_achievement` (+heavy haptic), draw → `game_level_up`, loss → `game_over`, emote send → `game_button_tap` (+selection haptic). Haptics via `HapticFeedback` (no new dependency).
+
 ---
 
 ## 📁 File Structure
@@ -104,5 +112,6 @@ lib/features/battle_arena/
 └── screens/
     ├── battle_lobby_screen.dart
     ├── battle_arena_screen.dart
-    └── battle_result_screen.dart
+    ├── battle_result_screen.dart
+    └── battle_leaderboard_screen.dart
 ```

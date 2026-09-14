@@ -194,7 +194,24 @@ class BattleRoom {
   final String id;
   final BattlePlayer player1;
   final BattlePlayer player2;
+
+  /// The question list for this room.
+  /// • Rooms created locally (or fetched from Firestore on LEGACY docs)
+  ///   carry the full list.
+  /// • SEED rooms (new design) store only [questionSeed] in Firestore —
+  ///   both clients deterministically regenerate the same questions from
+  ///   their local question bank. Correct answers never touch Firestore
+  ///   (anti-cheat) and the room doc stays tiny (cheap snapshots).
+  ///   Callers that read a room from Firestore must hydrate via
+  ///   [BattleMatchmakingService.getRoom] /
+  ///   [BattleGameService.generateSeededQuestions].
   final List<BattleQuestion> questions;
+
+  /// Seed for deterministic question generation (seed rooms only).
+  final int? questionSeed;
+  final int questionSetVersion;
+  final int questionCount;
+
   final BattleRoomStatus status;
   final String? winnerId;
   final int currentRoundIndex; // 0 to 4
@@ -207,6 +224,9 @@ class BattleRoom {
     required this.player1,
     required this.player2,
     required this.questions,
+    this.questionSeed,
+    this.questionSetVersion = 1,
+    this.questionCount = 5,
     this.status = BattleRoomStatus.waiting,
     this.winnerId,
     this.currentRoundIndex = 0,
@@ -215,11 +235,16 @@ class BattleRoom {
     required this.createdAt,
   });
 
+  bool get isSeedRoom => questionSeed != null;
+
   BattleRoom copyWith({
     String? id,
     BattlePlayer? player1,
     BattlePlayer? player2,
     List<BattleQuestion>? questions,
+    int? questionSeed,
+    int? questionSetVersion,
+    int? questionCount,
     BattleRoomStatus? status,
     String? winnerId,
     int? currentRoundIndex,
@@ -232,6 +257,9 @@ class BattleRoom {
       player1: player1 ?? this.player1,
       player2: player2 ?? this.player2,
       questions: questions ?? this.questions,
+      questionSeed: questionSeed ?? this.questionSeed,
+      questionSetVersion: questionSetVersion ?? this.questionSetVersion,
+      questionCount: questionCount ?? this.questionCount,
       status: status ?? this.status,
       winnerId: winnerId ?? this.winnerId,
       currentRoundIndex: currentRoundIndex ?? this.currentRoundIndex,
@@ -247,6 +275,9 @@ class BattleRoom {
       'player1': player1.toMap(),
       'player2': player2.toMap(),
       'questions': questions.map((q) => q.toMap()).toList(),
+      'questionSeed': questionSeed,
+      'questionSetVersion': questionSetVersion,
+      'questionCount': questionCount,
       'status': status.toValueString(),
       'winnerId': winnerId,
       'currentRoundIndex': currentRoundIndex,
@@ -257,6 +288,7 @@ class BattleRoom {
   }
 
   factory BattleRoom.fromMap(Map<String, dynamic> map, String docId) {
+    final seedRaw = map['questionSeed'];
     return BattleRoom(
       id: docId,
       player1: BattlePlayer.fromMap(Map<String, dynamic>.from(map['player1'] ?? {})),
@@ -264,6 +296,9 @@ class BattleRoom {
       questions: (map['questions'] as List<dynamic>? ?? [])
           .map((q) => BattleQuestion.fromMap(Map<String, dynamic>.from(q)))
           .toList(),
+      questionSeed: seedRaw is num ? seedRaw.toInt() : null,
+      questionSetVersion: (map['questionSetVersion'] as num?)?.toInt() ?? 1,
+      questionCount: (map['questionCount'] as num?)?.toInt() ?? 5,
       status: BattleRoomStatus.fromString(map['status'] ?? 'waiting'),
       winnerId: map['winnerId'] as String?,
       currentRoundIndex: (map['currentRoundIndex'] as num?)?.toInt() ?? 0,

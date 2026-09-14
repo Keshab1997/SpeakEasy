@@ -455,19 +455,56 @@ service cloud.firestore {
         || request.resource.data.questions == resource.data.questions;
     }
 
+    // Seed-room fields are immutable once the room exists — a client cannot
+    // swap the seed mid-game to regenerate a "friendlier" question set.
+    function battleSeedUnchanged() {
+      return (!('questionSeed' in request.resource.data)
+              || request.resource.data.questionSeed == resource.data.questionSeed)
+        && (!('questionCount' in request.resource.data)
+              || request.resource.data.questionCount == resource.data.questionCount)
+        && (!('questionSetVersion' in request.resource.data)
+              || request.resource.data.questionSetVersion == resource.data.questionSetVersion);
+    }
+
     match /battle_rooms/{roomId} {
       allow read: if isBattleParticipant() || isAdmin();
       allow create: if isBattleParticipantOnCreate()
         && request.resource.data.status in ['in_progress', 'waiting']
         && request.resource.data.player1.id is string
         && request.resource.data.player2.id is string
-        && request.resource.data.questions is list;
+        // LEGACY rooms embed the questions list; SEED rooms carry only a
+        // question seed (questions are regenerated locally, correct answers
+        // never touch Firestore — see battle_answer_keys).
+        && (request.resource.data.questions is list
+            || request.resource.data.questionSeed is int);
       // Participants can update scores/answers/emotes/rounds/forfeit/completion.
-      // Questions & player identities are immutable after creation.
+      // Questions, seed & player identities are immutable after creation.
       allow update: if isBattleParticipant()
         && battlePlayersUnchanged()
-        && battleQuestionsUnchanged();
+        && battleQuestionsUnchanged()
+        && battleSeedUnchanged();
       allow delete: if isAdmin();
+    }
+
+    // ═══════════════════════════════════════════════
+    //  Battle answer keys (anti-cheat for seed rooms)
+    // ═══════════════════════════════════════════════
+    //  Structure: battle_answer_keys/{roomId}
+    //  Written ONCE by the room creator right after the room transaction
+    //  commits: { answers: [...], timeLimits: [...], createdBy, createdAt }
+    //
+    //  Clients may CREATE the key only for a room they participate in.
+    //  They can NEVER read / update / delete it — the Cloud Function
+    //  verifies scores against it with admin access. This keeps correct
+    //  answers off any document a client can read.
+    // ═══════════════════════════════════════════════
+
+    match /battle_answer_keys/{roomId} {
+      allow create: if isAuthenticated() && (
+        get(/databases/$(database)/documents/battle_rooms/$(roomId)).data.player1.id == request.auth.uid
+        || get(/databases/$(database)/documents/battle_rooms/$(roomId)).data.player2.id == request.auth.uid
+      );
+      allow read, update, delete: if false;
     }
 
     // ═══════════════════════════════════════════════

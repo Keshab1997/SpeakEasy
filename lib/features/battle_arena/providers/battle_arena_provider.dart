@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../models/user_model.dart';
 import '../../../providers/auth_provider.dart';
+import '../../../providers/game/sound_provider.dart';
 import '../models/battle_models.dart';
 import '../services/battle_bot_simulator.dart';
 import '../services/battle_game_service.dart';
@@ -469,6 +471,18 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     final timeTaken = _roundTimeLimit - state.remainingSeconds;
     final isCorrect = answerIndex == question.correctAnswer;
     if (isCorrect) _localCorrectRounds++;
+
+    // Instant feedback: sound + haptics on every answer.
+    try {
+      if (isCorrect) {
+        unawaited(ref.read(soundServiceProvider).playCorrect());
+        HapticFeedback.lightImpact();
+      } else {
+        unawaited(ref.read(soundServiceProvider).playWrong());
+        HapticFeedback.mediumImpact();
+      }
+    } catch (_) {}
+
     final roundScore = BattleGameService.calculateRoundScore(
       isCorrect: isCorrect,
       timeTakenSeconds: timeTaken,
@@ -520,6 +534,10 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   void _onRoundTimeExpired() {
     if (!mounted) return;
     state = state.copyWith(remainingSeconds: 0);
+    // Out of time = unanswered round; a soft wrong-cue keeps the rhythm.
+    try {
+      unawaited(ref.read(soundServiceProvider).playWrong());
+    } catch (_) {}
     _completeRoundWithDelay();
   }
 
@@ -637,6 +655,21 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       perfectRounds: _localCorrectRounds,
     )));
 
+    // Result fanfare + haptics.
+    try {
+      final sound = ref.read(soundServiceProvider);
+      if (isWin) {
+        unawaited(sound.playAchievement());
+        HapticFeedback.heavyImpact();
+      } else if (isDraw) {
+        unawaited(sound.playLevelUp());
+        HapticFeedback.mediumImpact();
+      } else {
+        unawaited(sound.playGameOver());
+        HapticFeedback.heavyImpact();
+      }
+    } catch (_) {}
+
     state = state.copyWith(
       status: BattleArenaStatus.completed,
       stats: updatedStats,
@@ -667,6 +700,11 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     final updatedStats = outcome.stats;
 
     _presenceService.setInBattle(state.localPlayer.id, false);
+    // Opponent bailed — we win by forfeit.
+    try {
+      unawaited(ref.read(soundServiceProvider).playAchievement());
+      HapticFeedback.heavyImpact();
+    } catch (_) {}
     state = state.copyWith(
       status: BattleArenaStatus.completed,
       isOpponentForfeited: true,
@@ -750,6 +788,12 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _lastEmoteSentAt = now;
 
     state = state.copyWith(activeEmote: emote);
+
+    // Tactile + audio pop on send.
+    try {
+      unawaited(ref.read(soundServiceProvider).playButtonTap());
+      HapticFeedback.selectionClick();
+    } catch (_) {}
 
     if (state.room != null && !state.opponent.isBot) {
       _matchmakingService.sendEmote(

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -91,6 +92,17 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
           content: Text(
               'Rematch challenge sent to ${opp.name}! They\'ll get it when they\'re back 🔁'),
           backgroundColor: const Color(0xFF8B5CF6),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    } on FirebaseException catch (e) {
+      if (!mounted) return;
+      setState(() => _rematchBusy = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.code == 'permission-denied'
+              ? 'A rematch challenge is already pending with ${opp.name} 🔁'
+              : 'Could not send rematch challenge.'),
           behavior: SnackBarBehavior.floating,
         ),
       );

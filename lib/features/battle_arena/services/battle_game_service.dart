@@ -65,19 +65,40 @@ class BattleGameService {
       _cachedAt != null &&
       DateTime.now().difference(_cachedAt!) < _cacheTtl;
 
+  /// Question-set version stored on seed rooms. Bump it whenever the pool
+  /// construction changes so old rooms keep generating their original set.
+  static const int questionSetVersion = 1;
+
   /// Loads 5 curated questions: 2 Grammar (mock tests), 2 Vocabulary, 1 Verb.
   /// Questions are generated from the app's learning content so the battle
   /// feels like a real review of lessons rather than the daily quiz bank.
   static Future<List<BattleQuestion>> loadCuratedQuestions() async {
+    return generateSeededQuestions(Random().nextInt(0x7FFFFFFF));
+  }
+
+  /// Warms the question-pool cache without selecting anything.
+  static Future<void> ensurePoolLoaded() => _loadQuestionPool().then((_) {});
+
+  /// DETERMINISTIC question selection for SEED rooms. Both players (and the
+  /// anti-cheat Cloud Function's data) derive the same 5 questions from the
+  /// shared seed, so the room doc itself carries only the seed — never the
+  /// correct answers. Determinism requires:
+  ///   • the pool built in a fixed order (asset iteration is stable) with
+  ///     seeded distractor shuffles (see _loadQuestionPool), and
+  ///   • Dart's `Random(seed)`, which is reproducible across platforms.
+  static Future<List<BattleQuestion>> generateSeededQuestions(
+    int seed, {
+    int count = 5,
+  }) async {
     await _loadQuestionPool();
     final byCategory = _cachedByCategory ?? const <String, List<BattleQuestion>>{};
     final pool = _cachedQuestions ?? const <BattleQuestion>[];
 
-    final rng = Random();
-    List<BattleQuestion> pick(String category, int count) {
+    final rng = Random(seed);
+    List<BattleQuestion> pick(String category, int n) {
       final list = List<BattleQuestion>.from(byCategory[category] ?? const [])
         ..shuffle(rng);
-      return list.take(count).toList();
+      return list.take(n).toList();
     }
 
     final selected = <BattleQuestion>[
@@ -87,15 +108,15 @@ class BattleGameService {
     ];
 
     // Top up from anything available if a category ran short.
-    if (selected.length < 5) {
+    if (selected.length < count) {
       final selectedIds = selected.map((s) => s.id).toSet();
       final remaining =
           pool.where((q) => !selectedIds.contains(q.id)).toList()..shuffle(rng);
-      selected.addAll(remaining.take(5 - selected.length));
+      selected.addAll(remaining.take(count - selected.length));
     }
 
     selected.shuffle(rng);
-    return selected.take(5).toList();
+    return selected.take(count).toList();
   }
 
   /// Builds (and caches) the full battle question pool from the three sources.
@@ -155,13 +176,17 @@ class BattleGameService {
         if (verbs.length < 4) continue;
 
         // One stable shuffled pool of V2 forms used for distractors.
+        // FIXED-SEED shuffle: seed rooms regenerate questions on two
+        // devices — every device must build byte-identical options.
         final v2pool = verbs
             .map((m) => (m['v2'] ?? '').toString().trim())
             .where((s) => s.isNotEmpty)
             .toSet()
             .toList()
-          ..shuffle();
+          ..shuffle(Random(987654321));
 
+        // Deterministic option order across devices (seed rooms).
+        final verbOptionRng = Random(555555);
         for (var v = 0; v < verbs.length; v++) {
           final verb = verbs[v];
           final v1 = (verb['v1'] ?? '').toString().trim();
@@ -174,7 +199,7 @@ class BattleGameService {
               .toList();
           if (distractors.length < 3) continue;
 
-          final options = <String>[v2, ...distractors]..shuffle();
+          final options = <String>[v2, ...distractors]..shuffle(verbOptionRng);
           all.add(BattleQuestion(
             id: 'verb_${name}_$v',
             question: 'Past form (V2) of "$v1" is —',
@@ -223,13 +248,16 @@ class BattleGameService {
     }
 
     // Stable shuffled meaning pool for vocab distractors.
+    // FIXED-SEED shuffle — required for cross-device seed-room determinism.
     final meaningPool = allWords
         .map((w) => (w['banglaMeaning'] ?? '').toString().trim())
         .where((s) => s.isNotEmpty)
         .toSet()
         .toList()
-      ..shuffle();
+      ..shuffle(Random(123456789));
 
+    // Deterministic option order across devices (seed rooms).
+    final vocabOptionRng = Random(444444);
     for (var i = 0; i < allWords.length; i++) {
       final w = allWords[i];
       final word = (w['word'] ?? '').toString().trim();
@@ -242,7 +270,7 @@ class BattleGameService {
           .toList();
       if (distractors.length < 3) continue;
 
-      final options = <String>[meaning, ...distractors]..shuffle();
+      final options = <String>[meaning, ...distractors]..shuffle(vocabOptionRng);
       all.add(BattleQuestion(
         id: 'vocab_$i',
         question: '"$word" এর বাংলা অর্থ কী?',

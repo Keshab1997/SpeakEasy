@@ -150,6 +150,12 @@ class _GlobalBattleChallengeGateState
         room = await matchmaking.getRoom(roomId);
       }
       if (room == null) return;
+      // Seed-room hydration failed (question bank unavailable) → bail out
+      // gracefully instead of opening an arena with zero questions.
+      if (room.questions.isEmpty) {
+        _showGlobalSnack('Could not load the questions for this duel. Try again.');
+        return;
+      }
       if (ref.read(battleArenaProvider).status == BattleArenaStatus.inDuel) {
         return;
       }

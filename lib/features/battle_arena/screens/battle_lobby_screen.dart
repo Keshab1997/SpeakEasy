@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../providers/auth_provider.dart';
@@ -41,6 +42,21 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             );
       }
     });
+  }
+
+  @override
+  void dispose() {
+    // Stop the presence heartbeat when the lobby leaves the nav stack —
+    // previously it kept running on every screen for the whole app session
+    // (wasted writes + false "online" presence in Home/Quiz/etc.).
+    // During an active duel the arena route sits ON TOP of the lobby, so
+    // the lobby stays mounted and the heartbeat keeps running (required —
+    // the server auto-forfeit relies on it).
+    final user = ref.read(authProvider).asData?.value;
+    if (user != null) {
+      ref.read(battlePresenceServiceProvider).stopPresenceHeartbeat(user.id);
+    }
+    super.dispose();
   }
 
   @override
@@ -554,6 +570,16 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
           behavior: SnackBarBehavior.floating,
         ),
       );
+    } on FirebaseException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.code == 'permission-denied'
+              ? 'You already challenged ${friend.name} — waiting for their response ⚔️'
+              : 'Failed to send challenge.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
@@ -682,6 +708,16 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
               : 'Challenge sent to ${targetUser.name}! ⚔️'),
           backgroundColor:
               async ? const Color(0xFF8B5CF6) : const Color(0xFF10B981),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    } on FirebaseException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.code == 'permission-denied'
+              ? 'You already challenged ${targetUser.name} — waiting for their response ⚔️'
+              : 'Failed to send challenge.'),
           behavior: SnackBarBehavior.floating,
         ),
       );

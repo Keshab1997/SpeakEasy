@@ -31,6 +31,7 @@ const db = admin.firestore();
 
 const ROOMS = 'battle_rooms';
 const QUEUE = 'battle_queue';
+const ANSWER_KEYS = 'battle_answer_keys';
 const CHALLENGES = 'battle_challenges';
 const PRESENCE = 'battle_presence';
 const LEADERBOARD = 'battle_leaderboard';
@@ -174,6 +175,23 @@ function roundScore(isCorrect, timeTaken, timeLimit) {
  * Recomputes the legitimate total score for a player map from the room's
  * questions and the per-round answers/times stored by that player.
  */
+// Server-side verification for SEED rooms: recompute a player's score from
+// their recorded answers/times + the admin-only answer key. The correct
+// answers never live on the room doc, so a modified client cannot fake them.
+function computeLegitScoreFromAnswers(player, correctAnswers, timeLimits) {
+  const answers = player.roundAnswers || {};
+  const times = player.roundTimes || {};
+  let total = 0;
+  for (let i = 0; i < correctAnswers.length; i++) {
+    const k = String(i);
+    if (!(k in answers)) continue; // unanswered round = 0 pts
+    const isRight = answers[k] === correctAnswers[i];
+    const limit = (Array.isArray(timeLimits) && timeLimits[i]) || DEFAULT_TIME_LIMIT;
+    total += roundScore(isRight, times[k], limit);
+  }
+  return total;
+}
+
 function computeLegitScore(player, questions) {
   const answers = player.roundAnswers || {};
   const times = player.roundTimes || {};
@@ -201,12 +219,33 @@ exports.onBattleRoomWrite = functions.firestore
     if (!after.exists) return null;
     const room = after.data();
     const questions = Array.isArray(room.questions) ? room.questions : [];
-    if (questions.length === 0) return null;
+
+    // SEED rooms carry only a question seed in the doc — both clients
+    // regenerate the questions locally and the correct answers live in the
+    // admin-only battle_answer_keys collection (never readable by clients).
+    const isSeedRoom = Number.isInteger(room.questionSeed);
+    const questionCount = isSeedRoom
+      ? (Number(room.questionCount) || 5)
+      : questions.length;
+    if (!isSeedRoom && questions.length === 0) return null;
+
+    // Load the answer key once for seed rooms (non-fatal if missing).
+    let seedKey = null;
+    if (isSeedRoom) {
+      try {
+        const keySnap = await db.collection(ANSWER_KEYS).doc(after.id).get();
+        if (keySnap.exists) seedKey = keySnap.data();
+      } catch (e) {
+        functions.logger.warn('answer key read failed', e);
+      }
+    }
+    const hasKey =
+      isSeedRoom && seedKey && Array.isArray(seedKey.answers) && seedKey.answers.length > 0;
 
     const updates = {};
 
     // --- Anti-cheat: clamp each player's currentScore to the legit value ---
-    const maxPossible = questions.length * (BASE_SCORE + MAX_SPEED_BONUS);
+    const maxPossible = questionCount * (BASE_SCORE + MAX_SPEED_BONUS);
     ['player1', 'player2'].forEach((key) => {
       const p = room[key];
       if (!p || !p.id) return;
@@ -217,7 +256,14 @@ exports.onBattleRoomWrite = functions.firestore
 
       let legit;
       const hasTimingForAll = answeredKeys.every((k) => times[k] !== undefined);
-      if (hasTimingForAll && answeredKeys.length > 0) {
+      if (isSeedRoom) {
+        // Verified against the admin-only answer key. If the key is missing
+        // (write failed / very old room) fall back to the hard cap so we
+        // never penalise a legitimate player.
+        legit = hasKey && hasTimingForAll && answeredKeys.length > 0
+          ? computeLegitScoreFromAnswers(p, seedKey.answers, seedKey.timeLimits)
+          : maxPossible;
+      } else if (hasTimingForAll && answeredKeys.length > 0) {
         // New client sends per-round times → we can recompute exactly.
         legit = computeLegitScore(p, questions);
       } else {
@@ -233,8 +279,8 @@ exports.onBattleRoomWrite = functions.firestore
 
     const answeredCount = (p) => Object.keys(p && p.roundAnswers ? p.roundAnswers : {}).length;
     const bothFinished =
-      answeredCount(room.player1) >= questions.length &&
-      answeredCount(room.player2) >= questions.length;
+      answeredCount(room.player1) >= questionCount &&
+      answeredCount(room.player2) >= questionCount;
 
     const isForfeit = Boolean(
       (room.player1 && room.player1.isForfeited) ||
@@ -749,11 +795,14 @@ exports.cleanupBattleData = functions.pubsub
   .onRun(async () => {
     const now = Date.now();
 
-    // 2a. Stale matchmaking queue entries (> 30s)
+    // 2a. Stale matchmaking queue entries (> 30s) + DEDUP per user.
+    //     Spam-mashing Quick Match could leave several waiting entries for
+    //     one user; keep only the NEWEST per userId.
     try {
       const queueSnap = await db.collection(QUEUE).get();
       const batch = db.batch();
       let n = 0;
+      const newestByUser = new Map(); // userId -> { time, ref }
       queueSnap.forEach((doc) => {
         const d = doc.data();
         const created = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate() : null;
@@ -761,10 +810,26 @@ exports.cleanupBattleData = functions.pubsub
         if (age > 30 * 1000) {
           batch.delete(doc.ref);
           n++;
+          return;
+        }
+        if (d.status !== 'waiting') return;
+        const uid = d.userId;
+        if (!uid) return;
+        const t = created ? created.getTime() : 0;
+        const cur = newestByUser.get(uid);
+        if (!cur) {
+          newestByUser.set(uid, { time: t, ref: doc.ref });
+        } else if (t > cur.time) {
+          batch.delete(cur.ref); // the older duplicate
+          n++;
+          newestByUser.set(uid, { time: t, ref: doc.ref });
+        } else {
+          batch.delete(doc.ref); // this one is older
+          n++;
         }
       });
       if (n > 0) await batch.commit();
-      functions.logger.log(`cleanup: removed ${n} stale queue entries`);
+      if (n > 0) functions.logger.log(`cleanup: removed ${n} stale/duplicate queue entries`);
     } catch (e) {
       functions.logger.error('queue cleanup failed', e);
     }
@@ -897,6 +962,28 @@ exports.cleanupBattleData = functions.pubsub
       functions.logger.log(`cleanup: abandoned ${n} stale rooms`);
     } catch (e) {
       functions.logger.error('room cleanup failed', e);
+    }
+
+    // 2d. Seed-room answer keys older than 24h (rooms never live past 30min
+    //     active / 48h cleanup, so 24h is a generous safety margin).
+    try {
+      const keysSnap = await db.collection(ANSWER_KEYS).limit(500).get();
+      const batch = db.batch();
+      let n = 0;
+      keysSnap.forEach((doc) => {
+        const d = doc.data();
+        const ts = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate() : null;
+        if (!ts || now - ts.getTime() > 24 * 60 * 60 * 1000) {
+          batch.delete(doc.ref);
+          n++;
+        }
+      });
+      if (n > 0) {
+        await batch.commit();
+        functions.logger.log(`cleanup: removed ${n} expired answer keys`);
+      }
+    } catch (e) {
+      functions.logger.error('answer key cleanup failed', e);
     }
 
     return null;
