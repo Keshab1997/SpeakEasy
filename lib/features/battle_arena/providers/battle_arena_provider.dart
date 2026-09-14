@@ -82,6 +82,8 @@ class BattleArenaState {
     String? searchStatusMessage,
     String? activeEmote,
     String? opponentEmote,
+    bool clearActiveEmote = false,
+    bool clearOpponentEmote = false,
     BattleStats? stats,
     bool? isWinner,
     bool? isDraw,
@@ -102,8 +104,9 @@ class BattleArenaState {
       isAnswerSubmitted: isAnswerSubmitted ?? this.isAnswerSubmitted,
       isOpponentAnswered: isOpponentAnswered ?? this.isOpponentAnswered,
       searchStatusMessage: searchStatusMessage ?? this.searchStatusMessage,
-      activeEmote: activeEmote ?? this.activeEmote,
-      opponentEmote: opponentEmote ?? this.opponentEmote,
+      activeEmote: clearActiveEmote ? null : (activeEmote ?? this.activeEmote),
+      opponentEmote:
+          clearOpponentEmote ? null : (opponentEmote ?? this.opponentEmote),
       stats: stats ?? this.stats,
       isWinner: isWinner ?? this.isWinner,
       isDraw: isDraw ?? this.isDraw,
@@ -380,10 +383,13 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       }
 
       // Opponent emote (only react to a NEW emote, not every snapshot).
+      // Dedup key includes round + sender so the SAME emote can appear
+      // again in a later round (previously the lock never reset).
+      final emoteKey = '${room.activeEmote}:${room.emoteSenderId}:${room.currentRoundIndex}';
       if (room.activeEmote != null &&
           room.emoteSenderId == opp.id &&
-          room.activeEmote != _lastOpponentEmote) {
-        _lastOpponentEmote = room.activeEmote;
+          emoteKey != _lastOpponentEmote) {
+        _lastOpponentEmote = emoteKey;
         _showOpponentEmote(room.activeEmote!);
       }
     });
@@ -809,7 +815,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
     _emoteDismissTimer?.cancel();
     _emoteDismissTimer = Timer(const Duration(seconds: 3), () {
-      state = state.copyWith(activeEmote: null);
+      if (mounted) state = state.copyWith(clearActiveEmote: true);
     });
   }
 
@@ -817,7 +823,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     _opponentEmoteTimer?.cancel();
     state = state.copyWith(opponentEmote: emote);
     _opponentEmoteTimer = Timer(const Duration(seconds: 3), () {
-      if (mounted) state = state.copyWith(opponentEmote: null);
+      if (mounted) state = state.copyWith(clearOpponentEmote: true);
     });
   }
 

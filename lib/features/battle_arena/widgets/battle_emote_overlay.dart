@@ -151,7 +151,9 @@ class _FloatingEmoteBubbleState extends State<FloatingEmoteBubble>
       TweenSequenceItem(tween: Tween(begin: 1.0, end: 0.0), weight: 25),
     ]).animate(_animController);
 
-    _slideAnimation = Tween<double>(begin: 6.0, end: -36.0).animate(
+    // Gentle float — the bubble stays near the avatar's corner instead of
+    // drifting up over the header / app bar.
+    _slideAnimation = Tween<double>(begin: 3.0, end: -8.0).animate(
       CurvedAnimation(parent: _animController, curve: Curves.easeOut),
     );
   }

@@ -366,12 +366,17 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
                   child: const Icon(Icons.check, size: 11, color: Colors.white),
                 ),
               ),
+            // Emote bubble floats at the avatar's INNER top corner (towards
+            // the VS badge) — never covers the face and never sticks out of
+            // the card/screen edge. ValueKey restarts the pop animation when
+            // a different emote arrives.
             if (emote != null)
               Positioned(
-                top: -24,
-                left: isLocal ? -12 : null,
-                right: isLocal ? null : -12,
+                top: -14,
+                right: isLocal ? -14 : null,
+                left: isLocal ? null : -14,
                 child: FloatingEmoteBubble(
+                  key: ValueKey(emote),
                   emote: emote,
                   accentColor: isLocal
                       ? const Color(0xFF3B82F6)
