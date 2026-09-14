@@ -191,9 +191,9 @@ class BattleLeaderboardService {
 
   /// FRIENDS LEADERBOARD — ranks the caller and their friends by trophies.
   ///
-  /// One batched `getAll` fetches every friend's leaderboard doc in a single
-  /// RPC (leaderboard doc id == userId). Friends who've never played a ranked
-  /// match fall back to the trophy snapshot stored in the friendship record.
+  /// Fetches every friend's leaderboard doc in parallel (leaderboard doc id
+  /// == userId). Friends who've never played a ranked match fall back to
+  /// the trophy snapshot stored in the friendship record.
   /// Ranks are 1-based WITHIN the friend circle.
   Future<List<LeaderboardEntry>> getFriendsLeaderboard({
     required String myId,
@@ -204,9 +204,11 @@ class BattleLeaderboardService {
 
     final ids = <String>{myId, ...friendSeeds.map((f) => f.userId)}.toList();
     try {
-      final refs =
-          ids.map((id) => _firestore.collection(_collection).doc(id)).toList();
-      final snaps = await _firestore.getAll(refs);
+      // Parallel per-doc fetches (older cloud_firestore has no getAll()).
+      // Cost is the same — one read per friend, all in flight at once.
+      final snaps = await Future.wait(
+        ids.map((id) => _firestore.collection(_collection).doc(id).get()),
+      );
 
       final seedById = <String, LeaderboardSeed>{
         for (final s in friendSeeds) s.userId: s,

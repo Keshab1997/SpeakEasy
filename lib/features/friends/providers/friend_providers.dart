@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../providers/auth_provider.dart';
-import '../../battle_arena/models/battle_models.dart';
 import '../../battle_arena/providers/battle_arena_provider.dart';
 import '../../battle_arena/services/battle_leaderboard_service.dart';
 import '../models/friend_models.dart';
