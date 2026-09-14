@@ -213,6 +213,8 @@ class BattlePresenceService with WidgetsBindingObserver {
   ///   • 'live'  → target is online now; expires after ~90s (server cleanup)
   ///   • 'async' → target is offline; stays pending up to 48h and is
   ///     delivered (popup + push) the next time they open the app.
+  /// [isRematch]: true when sent from the post-match REMATCH button — the
+  /// receiver's popup says "wants a rematch" instead of a fresh duel.
   Future<String> sendChallenge({
     required String fromUserId,
     required String fromUserName,
@@ -220,6 +222,7 @@ class BattlePresenceService with WidgetsBindingObserver {
     required int fromUserTrophies,
     required String toUserId,
     String type = 'live',
+    bool isRematch = false,
   }) async {
     final docRef = await _firestore.collection(_challengesCollection).add({
       'fromUserId': fromUserId,
@@ -229,6 +232,7 @@ class BattlePresenceService with WidgetsBindingObserver {
       'toUserId': toUserId,
       'status': 'pending',
       'type': type,
+      'isRematch': isRematch,
       'createdAt': FieldValue.serverTimestamp(),
     });
     return docRef.id;

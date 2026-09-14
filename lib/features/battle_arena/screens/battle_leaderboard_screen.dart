@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../providers/auth_provider.dart';
+import '../../friends/providers/friend_providers.dart';
 import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../services/battle_history_service.dart';
@@ -40,6 +41,8 @@ class _BattleLeaderboardScreenState
       _historyService.getRecords(),
       if (me != null) _service.getMyRank(me.id) else Future.value(null),
     ]);
+    // Pull-to-refresh also refreshes the friends leaderboard tab.
+    ref.invalidate(friendsLeaderboardProvider);
     if (!mounted) return;
     setState(() {
       _entries = results[0] as List<LeaderboardEntry>;
@@ -55,7 +58,7 @@ class _BattleLeaderboardScreenState
     final stats = ref.watch(battleArenaProvider).stats;
 
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         backgroundColor: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
         appBar: AppBar(
@@ -63,8 +66,10 @@ class _BattleLeaderboardScreenState
           bottom: const TabBar(
             labelColor: Color(0xFFF59E0B),
             indicatorColor: Color(0xFFF59E0B),
+            isScrollable: true,
             tabs: [
               Tab(icon: Icon(Icons.leaderboard_rounded), text: 'Leaders'),
+              Tab(icon: Icon(Icons.groups_rounded), text: 'Friends'),
               Tab(icon: Icon(Icons.history_rounded), text: 'Matches'),
               Tab(icon: Icon(Icons.military_tech_rounded), text: 'Badges'),
             ],
@@ -77,11 +82,140 @@ class _BattleLeaderboardScreenState
                 child: TabBarView(
                   children: [
                     _buildLeaderboardTab(isDark, stats),
+                    _buildFriendsTab(isDark),
                     _buildHistoryTab(isDark),
                     _buildBadgesTab(isDark, stats),
                   ],
                 ),
               ),
+      ),
+    );
+  }
+
+  // ── Friends Leaderboard ─────────────────────────────────────────────
+  /// Me + my friends ranked by trophies within the circle. Data comes from
+  /// [friendsLeaderboardProvider] (batched getAll, seeded from friendship
+  /// snapshots for friends without a ranked history).
+  Widget _buildFriendsTab(bool isDark) {
+    final friendsBoardAsync = ref.watch(friendsLeaderboardProvider);
+    final meId = ref.read(authProvider).asData?.value?.id;
+
+    return friendsBoardAsync.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (_, __) => _emptyState(
+        isDark,
+        icon: Icons.wifi_off_rounded,
+        title: 'Could not load friends leaderboard',
+        subtitle: 'Pull down to try again.',
+      ),
+      data: (entries) {
+        if (entries.isEmpty) {
+          return _emptyState(
+            isDark,
+            icon: Icons.groups_rounded,
+            title: 'No friends yet',
+            subtitle:
+                'Tap ➕ on any player card in the arena to add friends and compare ranks here! 🤝',
+          );
+        }
+
+        LeaderboardEntry? myEntry;
+        for (final e in entries) {
+          if (e.userId == meId) {
+            myEntry = e;
+            break;
+          }
+        }
+
+        final podium = entries.take(3).toList();
+        final rest = entries.length > 3 ? entries.sublist(3) : <LeaderboardEntry>[];
+
+        return ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            if (myEntry != null) _myFriendRankCard(isDark, myEntry),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                if (podium.length > 1) _podium(podium[1], 2, isDark, height: 78),
+                if (podium.isNotEmpty) _podium(podium[0], 1, isDark, height: 100),
+                if (podium.length > 2) _podium(podium[2], 3, isDark, height: 60),
+              ],
+            ),
+            const SizedBox(height: 20),
+            ...rest.map((e) => _rankTile(e, isDark, highlight: e.userId == meId)),
+            const SizedBox(height: 12),
+            Center(
+              child: Text(
+                '${entries.length} warriors in your circle 🤝',
+                style: TextStyle(color: Colors.grey[500], fontSize: 12),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  /// "YOUR RANK AMONG FRIENDS" hero card (green theme to match friends).
+  Widget _myFriendRankCard(bool isDark, LeaderboardEntry me) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFF064E3B), Color(0xFF059669)],
+        ),
+        borderRadius: BorderRadius.circular(18),
+      ),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 26,
+            backgroundImage:
+                me.photoUrl.isNotEmpty ? NetworkImage(me.photoUrl) : null,
+            child: me.photoUrl.isEmpty
+                ? Text(me.name.isNotEmpty ? me.name[0].toUpperCase() : '?',
+                    style: const TextStyle(color: Colors.white))
+                : null,
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('YOUR RANK AMONG FRIENDS',
+                    style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 10,
+                        letterSpacing: 1,
+                        fontWeight: FontWeight.bold)),
+                Text(me.name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16)),
+                Text(
+                    '${me.wins}W · ${me.losses}L · ${me.winRate.toStringAsFixed(0)}% win',
+                    style: const TextStyle(color: Colors.white70, fontSize: 12)),
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              Text('#${me.rank}',
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 26,
+                      fontWeight: FontWeight.w900)),
+              const Text('of friends',
+                  style: TextStyle(color: Colors.white70, fontSize: 10)),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -404,15 +538,19 @@ class _BattleLeaderboardScreenState
     );
   }
 
-  Widget _rankTile(LeaderboardEntry e, bool isDark) {
+  Widget _rankTile(LeaderboardEntry e, bool isDark, {bool highlight = false}) {
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: highlight
+            ? const Color(0xFF10B981).withValues(alpha: isDark ? 0.15 : 0.1)
+            : (isDark ? const Color(0xFF1E293B) : Colors.white),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-            color: isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0)),
+            color: highlight
+                ? const Color(0xFF10B981)
+                : (isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0))),
       ),
       child: Row(
         children: [
@@ -421,7 +559,7 @@ class _BattleLeaderboardScreenState
             child: Text('#${e.rank}',
                 style: TextStyle(
                     fontWeight: FontWeight.w900,
-                    color: Colors.grey[500],
+                    color: highlight ? const Color(0xFF10B981) : Colors.grey[500],
                     fontSize: 15)),
           ),
           CircleAvatar(
@@ -439,10 +577,33 @@ class _BattleLeaderboardScreenState
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(e.name,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.bold)),
+                Row(
+                  children: [
+                    Flexible(
+                      child: Text(e.name,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(fontWeight: FontWeight.bold)),
+                    ),
+                    if (highlight) ...[
+                      const SizedBox(width: 6),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 6, vertical: 1),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF10B981),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: const Text('YOU',
+                            style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                                letterSpacing: 0.5)),
+                      ),
+                    ],
+                  ],
+                ),
                 Text('${e.wins}W · ${e.losses}L',
                     style: TextStyle(fontSize: 12, color: Colors.grey[500])),
               ],

@@ -1,8 +1,10 @@
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../providers/auth_provider.dart';
 import '../../friends/widgets/friend_action_button.dart';
 import '../providers/battle_arena_provider.dart';
+import '../services/battle_presence_service.dart';
 import 'battle_answer_review_screen.dart';
 
 class BattleResultScreen extends ConsumerStatefulWidget {
@@ -18,6 +20,10 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
   late AnimationController _heroController;
   late Animation<double> _heroScale;
   late Animation<double> _heroFade;
+
+  /// Rematch (post-match challenge to the SAME opponent) bookkeeping.
+  bool _rematchSent = false;
+  bool _rematchBusy = false;
 
   @override
   void initState() {
@@ -50,6 +56,54 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
     _confettiController.dispose();
     _heroController.dispose();
     super.dispose();
+  }
+
+  /// Challenges the SAME opponent to a rematch. Sent as an ASYNC challenge:
+  /// if they're still in the app the global challenge gate pops up
+  /// instantly; if they've already left it's delivered (popup + push) the
+  /// next time they open the arena. One send per result screen.
+  Future<void> _sendRematch() async {
+    if (_rematchSent || _rematchBusy) return;
+    final me = ref.read(authProvider).asData?.value;
+    if (me == null) return;
+    final state = ref.read(battleArenaProvider);
+    final opp = state.opponent;
+    if (opp.isBot || opp.id.isEmpty) return;
+
+    setState(() => _rematchBusy = true);
+    try {
+      await BattlePresenceService().sendChallenge(
+        fromUserId: me.id,
+        fromUserName: me.name,
+        fromUserPhoto: me.photoUrl,
+        fromUserTrophies: state.stats.trophies,
+        toUserId: opp.id,
+        type: 'async',
+        isRematch: true,
+      );
+      if (!mounted) return;
+      setState(() {
+        _rematchSent = true;
+        _rematchBusy = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+              'Rematch challenge sent to ${opp.name}! They\'ll get it when they\'re back 🔁'),
+          backgroundColor: const Color(0xFF8B5CF6),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _rematchBusy = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Could not send rematch challenge.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
   }
 
   @override
@@ -780,6 +834,82 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
                                     ),
                                   ),
                                 ),
+                                // ── REMATCH — challenge the SAME opponent again.
+                                // Sent as an async challenge: they get the popup
+                                // instantly if still in the app, or on their next
+                                // visit if they've already left. Real players only.
+                                if (!state.opponent.isBot) ...[
+                                  const SizedBox(height: 10),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    height: 50,
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      child: InkWell(
+                                        onTap: _rematchSent || _rematchBusy
+                                            ? null
+                                            : _sendRematch,
+                                        borderRadius: BorderRadius.circular(16),
+                                        child: Ink(
+                                          decoration: BoxDecoration(
+                                            gradient: LinearGradient(
+                                              colors: _rematchSent
+                                                  ? [const Color(0xFF10B981), const Color(0xFF059669)]
+                                                  : [const Color(0xFF8B5CF6), const Color(0xFF6D28D9)],
+                                            ),
+                                            borderRadius: BorderRadius.circular(16),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: (_rematchSent
+                                                        ? const Color(0xFF10B981)
+                                                        : const Color(0xFF8B5CF6))
+                                                    .withValues(alpha: 0.35),
+                                                blurRadius: 12,
+                                                offset: const Offset(0, 5),
+                                              ),
+                                            ],
+                                          ),
+                                          child: Center(
+                                            child: _rematchBusy
+                                                ? const SizedBox(
+                                                    width: 20,
+                                                    height: 20,
+                                                    child: CircularProgressIndicator(
+                                                        strokeWidth: 2, color: Colors.white))
+                                                : Row(
+                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    children: [
+                                                      Icon(
+                                                        _rematchSent
+                                                            ? Icons.check_rounded
+                                                            : Icons.replay_rounded,
+                                                        color: Colors.white,
+                                                        size: 20,
+                                                      ),
+                                                      const SizedBox(width: 8),
+                                                      Text(
+                                                        _rematchSent
+                                                            ? 'REMATCH SENT ✓'
+                                                            : 'REMATCH ${state.opponent.name.toUpperCase()}',
+                                                        style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontWeight: FontWeight.w900,
+                                                          letterSpacing: 1.1,
+                                                          fontSize: 14,
+                                                        ),
+                                                      ),
+                                                      if (!_rematchSent) ...[
+                                                        const SizedBox(width: 6),
+                                                        const Text('🔁', style: TextStyle(fontSize: 16)),
+                                                      ],
+                                                    ],
+                                                  ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                                 const SizedBox(height: 10),
                                 SizedBox(
                                   width: double.infinity,

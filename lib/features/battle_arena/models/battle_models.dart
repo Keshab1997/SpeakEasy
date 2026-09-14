@@ -358,6 +358,10 @@ class BattleChallenge {
   /// field default to 'live'.
   final String type;
 
+  /// True when this challenge was sent from the post-match REMATCH button —
+  /// the incoming sheet shows "wants a rematch" instead of a fresh duel.
+  final bool isRematch;
+
   const BattleChallenge({
     required this.id,
     required this.fromUserId,
@@ -369,6 +373,7 @@ class BattleChallenge {
     this.roomId,
     required this.createdAt,
     this.type = 'live',
+    this.isRematch = false,
   });
 
   bool get isAsync => type == 'async';
@@ -385,6 +390,7 @@ class BattleChallenge {
       'roomId': roomId,
       'createdAt': Timestamp.fromDate(createdAt),
       'type': type,
+      'isRematch': isRematch,
     };
   }
 
@@ -400,6 +406,7 @@ class BattleChallenge {
       roomId: map['roomId'] as String?,
       createdAt: (map['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),
       type: map['type'] ?? 'live',
+      isRematch: map['isRematch'] ?? false,
     );
   }
 }

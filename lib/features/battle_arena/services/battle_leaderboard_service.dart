@@ -49,6 +49,23 @@ class LeaderboardEntry {
   }
 }
 
+/// Snapshot used to build a friends-leaderboard row for someone who has no
+/// `battle_leaderboard` doc yet (never played a ranked online match), so
+/// the friends board isn't full of holes.
+class LeaderboardSeed {
+  final String userId;
+  final String name;
+  final String photoUrl;
+  final int trophies;
+
+  const LeaderboardSeed({
+    required this.userId,
+    required this.name,
+    this.photoUrl = '',
+    this.trophies = 100,
+  });
+}
+
 /// Reads the battle leaderboard. Uses a ONE-TIME query (no live listener) plus
 /// a short in-memory cache to keep Firestore reads cheap: opening the board
 /// costs ~50 reads max, and re-opens within the TTL cost nothing.
@@ -169,6 +186,73 @@ class BattleLeaderboardService {
       );
     } catch (_) {
       return null;
+    }
+  }
+
+  /// FRIENDS LEADERBOARD — ranks the caller and their friends by trophies.
+  ///
+  /// One batched `getAll` fetches every friend's leaderboard doc in a single
+  /// RPC (leaderboard doc id == userId). Friends who've never played a ranked
+  /// match fall back to the trophy snapshot stored in the friendship record.
+  /// Ranks are 1-based WITHIN the friend circle.
+  Future<List<LeaderboardEntry>> getFriendsLeaderboard({
+    required String myId,
+    required LeaderboardSeed mySeed,
+    required List<LeaderboardSeed> friendSeeds,
+  }) async {
+    if (friendSeeds.isEmpty) return [];
+
+    final ids = <String>{myId, ...friendSeeds.map((f) => f.userId)}.toList();
+    try {
+      final refs =
+          ids.map((id) => _firestore.collection(_collection).doc(id)).toList();
+      final snaps = await _firestore.getAll(refs);
+
+      final seedById = <String, LeaderboardSeed>{
+        for (final s in friendSeeds) s.userId: s,
+        myId: mySeed,
+      };
+
+      final entries = <LeaderboardEntry>[];
+      for (var i = 0; i < snaps.length; i++) {
+        final snap = snaps[i];
+        final id = ids[i];
+        if (snap.exists && snap.data() != null) {
+          entries.add(LeaderboardEntry.fromMap(snap.data()!, snap.id));
+        } else {
+          final seed = seedById[id];
+          if (seed != null) {
+            entries.add(LeaderboardEntry(
+              userId: id,
+              name: seed.name,
+              photoUrl: seed.photoUrl,
+              trophies: seed.trophies,
+            ));
+          }
+        }
+      }
+
+      entries.sort((a, b) => b.trophies.compareTo(a.trophies));
+      final ranked = <LeaderboardEntry>[];
+      for (var i = 0; i < entries.length; i++) {
+        final e = entries[i];
+        ranked.add(LeaderboardEntry(
+          userId: e.userId,
+          name: e.name,
+          photoUrl: e.photoUrl,
+          trophies: e.trophies,
+          wins: e.wins,
+          losses: e.losses,
+          draws: e.draws,
+          totalMatches: e.totalMatches,
+          winStreak: e.winStreak,
+          bestStreak: e.bestStreak,
+          rank: i + 1,
+        ));
+      }
+      return ranked;
+    } catch (_) {
+      return [];
     }
   }
 

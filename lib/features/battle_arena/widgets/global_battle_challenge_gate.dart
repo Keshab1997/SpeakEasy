@@ -188,11 +188,14 @@ class _GlobalBattleChallengeGateState
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Text('⚔️ 1v1 CHALLENGE RECEIVED!',
+                Text(
+                  challenge.isRematch ? '🔁 1v1 REMATCH REQUESTED!' : '⚔️ 1v1 CHALLENGE RECEIVED!',
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFFEF4444))),
+                        color: challenge.isRematch
+                            ? const Color(0xFF8B5CF6)
+                            : const Color(0xFFEF4444))),
                 const SizedBox(height: 16),
                 CircleAvatar(
                   radius: 30,
@@ -207,7 +210,9 @@ class _GlobalBattleChallengeGateState
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  '${challenge.fromUserName} wants to duel with you!',
+                  challenge.isRematch
+                      ? '${challenge.fromUserName} wants a rematch!'
+                      : '${challenge.fromUserName} wants to duel with you!',
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                       fontSize: 16, fontWeight: FontWeight.bold),
@@ -273,8 +278,11 @@ class _GlobalBattleChallengeGateState
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 12),
                         ),
-                        child: const Text('Accept Duel ⚔️',
-                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        child: Text(
+                            challenge.isRematch
+                                ? 'Accept Rematch 🔁'
+                                : 'Accept Duel ⚔️',
+                            style: const TextStyle(fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ],

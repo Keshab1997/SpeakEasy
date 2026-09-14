@@ -66,7 +66,11 @@
 - [x] **Emote throttling:** 2s client cooldown (was unlimited Firestore writes per tap).
 - [x] **Stream cost:** recently-active query now filters server-side (`lastActive > cutoff`, single-field index) with `limit(30)` instead of pulling 80 docs to every client.
 
-### 10. 🤝 Friends & Online Alerts (Phase 3)
+### 10. 🔁 Rematch + 🤝 Friends Leaderboard
+- [x] **Rematch button** on the post-match result screen (real players only): sends an async challenge flagged `isRematch` — the opponent gets "🔁 REMATCH REQUESTED!" popup instantly if still in the app, or on their next visit if they left. One send per result screen, button flips to "REMATCH SENT ✓".
+- [x] **Friends Leaderboard tab** in Battle Stats: me + my friends ranked by trophies within the circle — one batched `getAll` of leaderboard docs (doc id == userId), seeded from friendship snapshots for friends without ranked history. Green "YOUR RANK AMONG FRIENDS" hero card, podium, YOU-highlighted rows; pull-to-refresh aware.
+
+### 11. 🤝 Friends & Online Alerts (Phase 3)
 - [x] **Friend request dedup (spam fix):** request doc id is deterministic `req_{from}_{to}` — a repeat send targets the existing doc and the security rules reject it, so duplicate pending requests between the same pair are impossible. Button flips to "Requested" optimistically on tap (rapid taps can't fire multiple writes). `onFriendRequestCreate` deletes stacked legacy duplicates (keeps oldest); the scheduled cleanup sweeps any remaining piles.
 - [x] **Friend Requests:** send from player cards (online + recently active), profile sheets & post-match result screen (real players only, bots excluded). State-aware button: ➕ Send → ⏳ Requested (tap cancels) → Accept incoming → ✓ Friends.
 - [x] **Data Model:** `friend_requests/{id}` (pending/accepted) + `friendships/{userId}` per-user friends map with snapshot data (name, photo, trophies, addedAt).
