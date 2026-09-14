@@ -729,7 +729,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-                'Challenge sent! ${toName} will get it when they come online 🔔'),
+                'Challenge sent! $toName will get it when they come online 🔔'),
             backgroundColor: const Color(0xFF8B5CF6),
             behavior: SnackBarBehavior.floating,
           ),
@@ -742,7 +742,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(e.code == 'permission-denied'
-              ? 'You already challenged ${toName} — waiting for their response ⚔️'
+              ? 'You already challenged $toName — waiting for their response ⚔️'
               : 'Failed to send challenge.'),
           behavior: SnackBarBehavior.floating,
         ),

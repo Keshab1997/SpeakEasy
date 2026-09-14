@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../core/navigation/app_navigator.dart';
 import '../../friends/widgets/friend_action_button.dart';
+import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../services/battle_matchmaking_service.dart';
 import '../services/battle_presence_service.dart';
@@ -851,6 +852,7 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
                                         if (error != null) {
                                           final ctx = appNavigatorKey.currentContext;
                                           if (ctx != null) {
+                                            // ignore: use_build_context_synchronously
                                             ScaffoldMessenger.of(ctx).showSnackBar(
                                               SnackBar(
                                                   content: Text(error),

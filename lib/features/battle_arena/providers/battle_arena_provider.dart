@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../models/user_model.dart';
@@ -247,7 +248,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       );
 
       // Stale result from an older, already-cancelled search — ignore it.
-      if (token.isCancelled || _matchmakingToken != token) return;
+      if (token.isCancelled || _matchmakingToken != token) return null;
 
       final isPlayer1 = room.player1.id == freshLocal.id;
       final opp = isPlayer1 ? room.player2 : room.player1;

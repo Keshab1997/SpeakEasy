@@ -220,6 +220,7 @@ class _GlobalBattleChallengeGateState
       final navCtx = appNavigatorKey.currentContext;
       if (navCtx == null) return;
       _waitingRoomOpen = true;
+      // ignore: use_build_context_synchronously
       await Navigator.of(navCtx).push(
         MaterialPageRoute(
           builder: (_) => BattleWaitingRoomScreen(
@@ -278,7 +279,6 @@ class _GlobalBattleChallengeGateState
                           color: challenge.isRematch
                               ? const Color(0xFF8B5CF6)
                               : const Color(0xFFEF4444))),
-                    ),
                     const SizedBox(height: 16),
                     CircleAvatar(
                       radius: 30,
