@@ -379,8 +379,15 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {
-            ref.read(battleArenaProvider.notifier).startQuickMatch();
+          onTap: () async {
+            final error =
+                await ref.read(battleArenaProvider.notifier).startQuickMatch();
+            if (error != null && context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                    content: Text(error), behavior: SnackBarBehavior.floating),
+              );
+            }
           },
           borderRadius: BorderRadius.circular(20),
           child: Ink(

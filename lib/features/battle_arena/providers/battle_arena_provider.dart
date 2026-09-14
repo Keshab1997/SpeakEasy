@@ -205,7 +205,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
   }
 
   /// Starts quick matchmaking
-  Future<void> startQuickMatch() async {
+  Future<String?> startQuickMatch() async {
     _localCorrectRounds = 0;
     // Cancel any previous in-flight search before starting a fresh one.
     _matchmakingToken?.cancel();
@@ -288,17 +288,33 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       // User hit Cancel — resetLobby() already handled state; just clear our
       // token if this was the current search.
       if (_matchmakingToken == token) _matchmakingToken = null;
+      return null;
+    } on MatchmakingFailedException catch (e) {
+      // A visible failure (e.g. seed room could not hydrate its questions) —
+      // surface the reason in a snackbar instead of silently dropping back.
+      if (_matchmakingToken == token) {
+        _matchmakingToken = null;
+        state = state.copyWith(status: BattleArenaStatus.idle);
+      }
+      return e.message;
     } catch (e) {
       // A real error: only fall back to idle if no newer search has started.
       if (_matchmakingToken == token) {
         _matchmakingToken = null;
         state = state.copyWith(status: BattleArenaStatus.idle);
       }
+      return 'Matchmaking failed. Please try again.';
     }
+    return null;
   }
 
   /// Starts a match from a direct challenge
   void startFromRoom(BattleRoom room) {
+    if (room.questions.isEmpty) {
+      // Never open a blank arena — callers guard too, this is the net.
+      debugPrint('⚠️ startFromRoom aborted: room ${room.id} has no questions');
+      return;
+    }
     _localCorrectRounds = 0;
     final isPlayer1 = room.player1.id == state.localPlayer.id;
     final opp = isPlayer1 ? room.player2 : room.player1;

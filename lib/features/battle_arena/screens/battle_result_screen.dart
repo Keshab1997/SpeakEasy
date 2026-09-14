@@ -3,6 +3,7 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../providers/auth_provider.dart';
+import '../../../core/navigation/app_navigator.dart';
 import '../../friends/widgets/friend_action_button.dart';
 import '../providers/battle_arena_provider.dart';
 import '../services/battle_presence_service.dart';
@@ -822,7 +823,17 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
                                         notifier.resetLobby();
                                         if (context.mounted) Navigator.of(context).pop();
                                         await Future.delayed(const Duration(milliseconds: 350));
-                                        notifier.startQuickMatch();
+                                        final error = await notifier.startQuickMatch();
+                                        if (error != null) {
+                                          final ctx = appNavigatorKey.currentContext;
+                                          if (ctx != null) {
+                                            ScaffoldMessenger.of(ctx).showSnackBar(
+                                              SnackBar(
+                                                  content: Text(error),
+                                                  behavior: SnackBarBehavior.floating),
+                                            );
+                                          }
+                                        }
                                       },
                                       borderRadius: BorderRadius.circular(16),
                                       child: const Row(

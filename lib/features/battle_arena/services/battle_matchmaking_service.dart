@@ -11,6 +11,15 @@ class MatchmakingCancelledException implements Exception {
   const MatchmakingCancelledException();
 }
 
+/// Matchmaking failed with a user-facing reason (e.g. the seed room could
+/// not hydrate its questions — typically a build mismatch between phones).
+class MatchmakingFailedException implements Exception {
+  final String message;
+  const MatchmakingFailedException(this.message);
+  @override
+  String toString() => message;
+}
+
 /// A live handle to an in-flight [BattleMatchmakingService.findMatch] call.
 /// Calling [cancel] immediately:
 ///   • flips [isCancelled] so the search aborts at its next checkpoint
@@ -243,6 +252,13 @@ class BattleMatchmakingService {
       checkCancelled();
 
       if (matchedRoom != null) {
+        // SAFETY: a seed room whose questions failed to regenerate (bank
+        // unavailable / build mismatch) must NOT open a blank arena.
+        if (matchedRoom.questions.isEmpty) {
+          debugPrint('⚠️ matched room ${matchedRoom.id} hydrated with ZERO questions');
+          throw const MatchmakingFailedException(
+              'Could not load questions for this match. Update the app and try again.');
+        }
         return matchedRoom;
       }
     } on MatchmakingCancelledException {
@@ -369,8 +385,13 @@ class BattleMatchmakingService {
     try {
       final questions =
           await BattleGameService.generateSeededQuestions(room.questionSeed!);
+      if (questions.isEmpty) {
+        debugPrint('⚠️ seed ${room.questionSeed} regenerated ZERO questions '
+            '(question bank unavailable?)');
+      }
       return room.copyWith(questions: questions);
-    } catch (_) {
+    } catch (e) {
+      debugPrint('⚠️ seed-room hydration failed for room ${room.id}: $e');
       return room;
     }
   }
