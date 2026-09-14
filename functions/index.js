@@ -883,6 +883,27 @@ exports.cleanupBattleData = functions.pubsub
         }
       });
 
+      // REJECTED (declined) challenges: the deterministic doc id
+      // ch_{from}_{to} would otherwise block the sender from ever
+      // challenging that player again (rules allow create-only, and the
+      // client-side resend path also deletes stale docs — this is the
+      // hygiene net for senders who were offline at decline time).
+      const REJECTED_TTL = 10 * 60 * 1000; // 10 min
+      const rejSnap = await db
+        .collection(CHALLENGES)
+        .where('status', '==', 'rejected')
+        .limit(500)
+        .get();
+      rejSnap.forEach((doc) => {
+        const d = doc.data();
+        const created = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate() : null;
+        const age = created ? now - created.getTime() : 0;
+        if (age > REJECTED_TTL) {
+          batch.delete(doc.ref);
+          n++;
+        }
+      });
+
       if (n > 0) await batch.commit();
       if (n > 0) functions.logger.log(`cleanup: removed ${n} expired challenges`);
     } catch (e) {

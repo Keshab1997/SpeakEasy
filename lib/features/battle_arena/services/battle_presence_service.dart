@@ -231,7 +231,27 @@ class BattlePresenceService with WidgetsBindingObserver {
     // spam OneSignal pushes. The id frees up when cleanup deletes the
     // expired/accepted doc (live: 90s, async: 48h).
     final challengeId = 'ch_${fromUserId}_$toUserId';
-    await _firestore.collection(_challengesCollection).doc(challengeId).set({
+    final docRef = _firestore.collection(_challengesCollection).doc(challengeId);
+
+    // SELF-HEALING RESEND: the deterministic id means a leftover doc from a
+    // previous round (declined = 'rejected', or an old 'accepted' that never
+    // led to a duel) would make our `.set()` an UPDATE — and security rules
+    // only let the RECEIVER update. So: pending → friendly block; resolved →
+    // delete the stale doc and create a fresh challenge.
+    final existing = await docRef.get();
+    if (existing.exists) {
+      final status = (existing.data() ?? const {})['status'];
+      if (status == 'pending') {
+        throw FirebaseException(
+          plugin: 'cloud_firestore',
+          code: 'permission-denied',
+          message: 'A challenge is already pending for this pair',
+        );
+      }
+      await docRef.delete();
+    }
+
+    await docRef.set({
       'fromUserId': fromUserId,
       'fromUserName': fromUserName,
       'fromUserPhoto': fromUserPhoto,
