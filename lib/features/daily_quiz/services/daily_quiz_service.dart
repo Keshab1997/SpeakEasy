@@ -28,10 +28,9 @@ class DailyQuizService {
   }
 
   /// Generate today's quiz deterministically from seed.
-  /// Loads the full question bank, splits into vocab/grammar, shuffles each
-  /// with seed-based RNG, picks first 5 of each, interleaves.
-  /// At least 2 new-type questions (fill_blanks, match_pairs, rearrange)
-  /// are guaranteed each day for variety.
+  /// Loads the full MCQ question bank, splits it into vocabulary / grammar /
+  /// conversation pools, shuffles each with the date-seeded RNG and fills
+  /// the 10 daily slots proportionally across the pools.
   Future<DailyQuiz> generateTodayQuiz({int? seed}) async {
     final dateStr = _todayDateString();
     seed ??= _dateSeed(dateStr);
@@ -39,27 +38,13 @@ class DailyQuizService {
 
     final allQuestions = await _loadQuestionBank();
 
-    // Separate into standard MCQ and new-type questions.
-    final newType = allQuestions
-        .where((q) => q.questionType != QuestionType.multipleChoice)
-        .toList();
-    final standard = allQuestions
-        .where((q) => q.questionType == QuestionType.multipleChoice)
-        .toList();
-
-    newType.shuffle(rng);
-    standard.shuffle(rng);
-
     final selected = <DailyQuizQuestion>[];
 
-    // Pick 2 new-type questions (if available).
-    selected.addAll(newType.take(2));
-
-    // Fill remaining from standard, supporting vocab/grammar/conversation.
-    final vocabPool = standard.where((q) => q.type == 'vocabulary').toList();
-    final grammarPool = standard.where((q) => q.type == 'grammar').toList();
+    // All questions are standard MCQ — pools by category.
+    final vocabPool = allQuestions.where((q) => q.type == 'vocabulary').toList();
+    final grammarPool = allQuestions.where((q) => q.type == 'grammar').toList();
     final conversationPool =
-        standard.where((q) => q.type == 'conversation').toList();
+        allQuestions.where((q) => q.type == 'conversation').toList();
 
     // Distribute remaining slots proportionally across available types.
     final typePools = <String, List<DailyQuizQuestion>>{
@@ -75,9 +60,8 @@ class DailyQuizService {
 
     final totalAvailable =
         typePools.values.fold<int>(0, (sum, p) => sum + p.length);
-    // Remaining slots to reach 10 (never cap below 10 — e.g. when there are
-    // no new-type questions, the full 10 come from the standard pool).
-    final slotsRemaining = (10 - selected.length).clamp(0, 10);
+    // Ten daily questions from the MCQ pools.
+    const slotsRemaining = 10;
 
     var allocated = 0;
     for (final entry in typePools.entries) {
@@ -99,7 +83,7 @@ class DailyQuizService {
       selected.addAll(allRemaining.take(slotsRemaining - allocated));
     }
 
-    // Final shuffle so new types aren't always first.
+    // Final shuffle so categories are interleaved.
     selected.shuffle(rng);
 
     // Trim to exactly 10.
@@ -112,7 +96,6 @@ class DailyQuizService {
       return DailyQuizQuestion(
         id: '${dateStr}_q_$idx',
         type: q.type,
-        questionType: q.questionType,
         question: q.question,
         options: q.options,
         correctAnswer: q.correctAnswer,
@@ -120,8 +103,6 @@ class DailyQuizService {
         timeLimit: q.timeLimit,
         difficulty: q.difficulty,
         category: q.category,
-        pairs: q.pairs,
-        jumbledWords: q.jumbledWords,
       );
     }).toList();
 
@@ -295,15 +276,14 @@ class DailyQuizService {
       // references a question that is no longer present (e.g. after a
       // question-bank update or a resume across a regenerate) we must NOT
       // throw — otherwise completion would silently fail to persist.
-      // Preserve the user's recorded answer (selectedAnswer + responseData)
-      // so the per-question review screen shows what THEY actually answered.
+      // Preserve the user's recorded answer so the per-question review
+      // screen shows what THEY actually answered.
       return DailyQuizAnswer(
         questionId: a.questionId,
         selectedAnswer: a.selectedAnswer,
         isCorrect: a.isCorrect,
         timeTaken: a.timeTaken,
         pointsEarned: calculatePoints(a.isCorrect, a.timeTaken),
-        responseData: a.responseData,
       );
     }).toList();
 

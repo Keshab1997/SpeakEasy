@@ -263,28 +263,6 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     _commitAnswer(quiz, answer);
   }
 
-  /// Record an answer for complex question types (match_pairs, rearrange).
-  ///
-  /// [isCorrect] is determined by the widget based on the specific logic.
-  void answerComplexQuestion(
-      Map<String, dynamic> responseData, bool isCorrect, int timeTaken) {
-    final quiz = state.quiz;
-    if (quiz == null || !state.isPlaying || quiz.isCompleted) return;
-
-    final question = quiz.questions[state.currentQuestionIndex];
-    final points = _service.calculatePoints(isCorrect, timeTaken);
-
-    final answer = DailyQuizAnswer(
-      questionId: question.id,
-      isCorrect: isCorrect,
-      timeTaken: timeTaken,
-      pointsEarned: points,
-      responseData: responseData,
-    );
-
-    _commitAnswer(quiz, answer);
-  }
-
   /// Record that the current question timed out (no answer selected).
   ///
   /// Behaves the same as [answerQuestion] but marks the answer as incorrect

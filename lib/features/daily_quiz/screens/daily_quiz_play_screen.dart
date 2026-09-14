@@ -8,9 +8,6 @@ import '../../../services/sound_service.dart';
 import '../../../services/haptic_service.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../models/daily_quiz_model.dart';
-import '../widgets/fill_blanks_widget.dart';
-import '../widgets/match_pairs_widget.dart';
-import '../widgets/sentence_rearrange_widget.dart';
 import 'daily_quiz_result_screen.dart';
 
 /// Play screen for Daily Quiz.
@@ -161,45 +158,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
     Future.delayed(const Duration(seconds: 2), _autoAdvance);
   }
 
-  /// Called by FillBlanksWidget when the user taps an option.
-  void _handleFillBlankAnswer(int index) => _handleAnswerTap(index);
-
-  /// Called by MatchPairsWidget / SentenceRearrangeWidget when done.
-  void _handleComplexAnswer(Map<String, dynamic> data) {
-    if (_isAnswerChecked || _isAutoAdvancing) return;
-
-    _countdownTimer?.cancel();
-    _stopwatch.stop();
-    final elapsed = _stopwatch.elapsed.inSeconds;
-
-    final quiz = ref.read(dailyQuizProvider).quiz;
-    if (quiz == null) return;
-    final question =
-        quiz.questions[ref.read(dailyQuizProvider).currentQuestionIndex];
-
-    final isCorrect = (data['isCorrect'] as bool?) ?? false;
-
-    _answeredQuestion = question;
-
-    ref
-        .read(dailyQuizProvider.notifier)
-        .answerComplexQuestion(data, isCorrect, elapsed);
-
-    setState(() {
-      _isCorrect = isCorrect;
-      _isAnswerChecked = true;
-      _isAutoAdvancing = true;
-    });
-
-    // Play haptic feedback for correct/wrong answer
-    if (isCorrect) {
-      HapticService.correct();
-    } else {
-      HapticService.wrong();
-    }
-
-    Future.delayed(const Duration(seconds: 2), _autoAdvance);
-  }
+  /// Called when the user taps an MCQ option.
 
   /// Called when the countdown reaches zero.
   void _handleTimeout() {
@@ -379,7 +338,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
                     _buildQuestionCard(question, theme),
                     const SizedBox(height: 24),
 
-                    // Interactive answer area (differs by questionType)
+                    // Interactive answer area (MCQ options)
                     _buildAnswerArea(question, theme, isDark),
                   ],
                 ),
@@ -477,24 +436,24 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
 
   /// Row with the question-type badge on the left.
   Widget _buildHeaderRow(DailyQuizQuestion question) {
-    String icon;
-    String label;
-    switch (question.questionType) {
-      case QuestionType.fillBlanks:
-        icon = '✍️';
-        label = 'Fill Blanks';
+    final String icon;
+    final String label;
+    switch (question.type) {
+      case 'vocabulary':
+        icon = '📖';
+        label = 'Vocabulary';
         break;
-      case QuestionType.matchPairs:
-        icon = '🔗';
-        label = 'Match Pairs';
+      case 'grammar':
+        icon = '📝';
+        label = 'Grammar';
         break;
-      case QuestionType.sentenceRearrange:
-        icon = '🔄';
-        label = 'Rearrange';
+      case 'conversation':
+        icon = '💬';
+        label = 'Conversation';
         break;
-      case QuestionType.multipleChoice:
-        icon = question.type == 'vocabulary' ? '📖' : '📝';
-        label = question.type == 'vocabulary' ? 'Vocabulary' : 'Grammar';
+      default:
+        icon = '❓';
+        label = 'General';
     }
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -550,58 +509,10 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
     );
   }
 
-  /// Route to the correct answer-area widget based on [questionType].
+  /// Builds the MCQ answer area (option cards + timeout/explanation).
   Widget _buildAnswerArea(
       DailyQuizQuestion question, ThemeData theme, bool isDark) {
-    switch (question.questionType) {
-      case QuestionType.fillBlanks:
-        return Column(
-          children: [
-            FillBlanksWidget(
-              question: question,
-              selectedAnswer: _selectedAnswer,
-              isAnswered: _isAnswerChecked,
-              onAnswer: _handleFillBlankAnswer,
-            ),
-            if (_isTimeOut) _buildTimeoutMessage(theme),
-            if (_isAnswerChecked && !_isTimeOut)
-              _buildExplanationPanel(question, theme, isDark),
-          ],
-        );
-
-      case QuestionType.matchPairs:
-        return Column(
-          children: [
-            SizedBox(
-              height: 320,
-              child: MatchPairsWidget(
-                question: question,
-                isAnswered: _isAnswerChecked,
-                onAnswer: _handleComplexAnswer,
-              ),
-            ),
-            if (_isTimeOut) _buildTimeoutMessage(theme),
-            if (_isAnswerChecked && !_isTimeOut)
-              _buildExplanationPanel(question, theme, isDark),
-          ],
-        );
-
-      case QuestionType.sentenceRearrange:
-        return Column(
-          children: [
-            SentenceRearrangeWidget(
-              question: question,
-              isAnswered: _isAnswerChecked,
-              onAnswer: _handleComplexAnswer,
-            ),
-            if (_isTimeOut) _buildTimeoutMessage(theme),
-            if (_isAnswerChecked && !_isTimeOut)
-              _buildExplanationPanel(question, theme, isDark),
-          ],
-        );
-
-      case QuestionType.multipleChoice:
-        return Column(
+    return Column(
           children: [
             const SizedBox(height: 24),
             // MCQ option cards
@@ -619,9 +530,8 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
             // Explanation panel
             if (_isAnswerChecked && !_isTimeOut)
               _buildExplanationPanel(question, theme, isDark),
-          ],
-        );
-    }
+      ],
+    );
   }
 
   /// An interactive option card (A/B/C/D).

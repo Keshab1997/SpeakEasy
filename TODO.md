@@ -89,6 +89,10 @@
 - [x] **Challenge rate-limit/dedup:** challenge doc id is deterministic `ch_{from}_{to}` with `set()` — at most ONE pending challenge per pair; repeat sends hit the existing doc and rules reject them (friendly snackbars on lobby, friend list & rematch button). Cleanup also dedups Quick Match queue entries per user (keeps newest).
 - [x] **Sounds + haptics:** battles now use the app's existing `SoundService` (respects the user's mute/volume setting): correct → `game_correct`, wrong/timeout → `game_wrong`, win/forfeit-win → `game_achievement` (+heavy haptic), draw → `game_level_up`, loss → `game_over`, emote send → `game_button_tap` (+selection haptic). Haptics via `HapticFeedback` (no new dependency).
 
+### 13. 📝 Daily Quiz — MCQ-only + Question Bank Expansion
+- [x] **Removed unused question types:** fill_blanks / match_pairs / sentence_rearrange code deleted (3 widgets, QuestionType enum, MatchPair model, pairs/jumbledWords/responseData fields, complex-answer handlers, review-screen branches, "2 new-type per day" generation logic). Everything is now plain MCQ — the whole feature is simpler and the play screen renders one path only.
+- [x] **+36 new questions (234 → 270):** 12 vocabulary, 12 grammar, 12 conversation (dq_244–dq_279), bilingual Bangla/English with explanations; difficulty spread kept balanced (easy/medium/hard). Category badge on the quiz header now shows 📖 Vocabulary / 📝 Grammar / 💬 Conversation correctly.
+
 ---
 
 ## 📁 File Structure
