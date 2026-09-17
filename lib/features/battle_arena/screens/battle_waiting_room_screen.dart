@@ -186,11 +186,18 @@ class _BattleWaitingRoomScreenState
     if (_busy) return;
     setState(() => _busy = true);
     try {
-      await _matchmaking.startWaitingRoom(widget.roomId);
+      // The Firestore write only resolves on server ack — on a flaky/offline
+      // connection the await hangs forever and the button sticks on
+      // STARTING… while the guest waits indefinitely. Bounding it turns the
+      // hang into an actionable error; retrying is safe (idempotent flip).
+      await _matchmaking.startWaitingRoom(widget.roomId).timeout(
+        const Duration(seconds: 12),
+        onTimeout: () => throw TimeoutException('start battle timed out'),
+      );
       // The room snapshot flips to in_progress → _enterArena() fires.
     } catch (_) {
       if (mounted) setState(() => _busy = false);
-      _toast('Could not start the battle. Try again.');
+      _toast('Could not start the battle. Check your internet and try again.');
     }
   }
 

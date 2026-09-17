@@ -338,7 +338,14 @@ service cloud.firestore {
     // ═══════════════════════════════════════════════
 
     match /friend_requests/{requestId} {
-      allow read: if isAuthenticated()
+      // `resource == null` lets a single-doc get() on a MISSING doc succeed
+      // (existence check) — without it, resource.data errors and even the
+      // owner gets permission-denied. Lists stay participant-constrained.
+      allow get: if isAuthenticated()
+        && (resource == null
+            || resource.data.fromUserId == request.auth.uid
+            || resource.data.toUserId == request.auth.uid);
+      allow list: if isAuthenticated()
         && (resource.data.fromUserId == request.auth.uid
             || resource.data.toUserId == request.auth.uid);
       allow create: if isAuthenticated()
@@ -369,7 +376,16 @@ service cloud.firestore {
     }
 
     match /battle_challenges/{challengeId} {
-      allow read: if isAuthenticated()
+      // Same missing-doc guard as friend_requests: sendChallenge() does a
+      // get() BEFORE create (resend-replace flow). Without `resource == null`
+      // the very FIRST challenge of a pair always failed with
+      // permission-denied (nothing to read yet!) and the app wrongly showed
+      // "already challenged — waiting". Lists stay participant-constrained.
+      allow get: if isAuthenticated()
+        && (resource == null
+            || resource.data.fromUserId == request.auth.uid
+            || resource.data.toUserId == request.auth.uid);
+      allow list: if isAuthenticated()
         && (resource.data.fromUserId == request.auth.uid
             || resource.data.toUserId == request.auth.uid);
       allow create: if isAuthenticated()

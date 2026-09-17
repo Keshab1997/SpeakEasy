@@ -739,10 +739,14 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
       }
     } on FirebaseException catch (e) {
       if (!mounted) return;
+      // NOTE: resend is always allowed by design (delete-then-create), so a
+      // permission-denied here is a REAL failure — never report it as
+      // "already challenged". That exact lie hid the missing-doc read bug
+      // (get() before first create) for weeks.
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(e.code == 'permission-denied'
-              ? 'You already challenged $toName — waiting for their response ⚔️'
+              ? 'Could not send the challenge (permission error). Please update the app and try again.'
               : 'Failed to send challenge.'),
           behavior: SnackBarBehavior.floating,
         ),
