@@ -230,6 +230,28 @@ class BattlePresenceService with WidgetsBindingObserver {
     } catch (_) {}
   }
 
+  /// Whether [userId] is genuinely online RIGHT NOW (online flag + a fresh
+  /// heartbeat). Guards flows that need the other side live — e.g. accepting
+  /// a challenge must not launch a duel against a sender who went offline,
+  /// leaving the receiver to play a ghost match alone.
+  Future<bool> isUserOnline(String userId) async {
+    if (userId.isEmpty || userId.startsWith('guest_')) return false;
+    try {
+      final doc =
+          await _firestore.collection(_presenceCollection).doc(userId).get();
+      if (!doc.exists) return false;
+      final d = doc.data();
+      if (d == null) return false;
+      final online = d['isOnline'] == true;
+      final last = (d['lastActive'] as Timestamp?)?.toDate();
+      final fresh =
+          last != null && DateTime.now().difference(last).inMinutes <= 3;
+      return online && fresh;
+    } catch (_) {
+      return false;
+    }
+  }
+
   /// Stream of active online users (filtered for active in last 2 minutes)
   Stream<List<BattlePresenceUser>> streamOnlineUsers(String currentUserId) {
     return _firestore

@@ -458,12 +458,26 @@ class _GlobalBattleChallengeGateState
   }) async {
     try {
       final matchmaking = BattleMatchmakingService();
+      final presence = ref.read(battlePresenceServiceProvider);
+
+      // The duel needs the SENDER live: room-first they must press START in
+      // the waiting room, legacy the match begins instantly on accept.
+      // Accepting while they're offline launches a GHOST MATCH — the
+      // receiver plays alone, scores climb, the absent sender sits at 0.
+      // Block the accept (challenge stays pending, sheet stays retryable)
+      // and tell the user to accept when the challenger is back online.
+      final senderOnline = await presence.isUserOnline(challenge.fromUserId);
+      if (!senderOnline) {
+        onDone();
+        _showGlobalSnack(
+            '${challenge.fromUserName} is offline right now 📴 — accept again when they are back online!',
+            color: const Color(0xFF64748B));
+        return;
+      }
 
       if (challenge.roomId != null) {
         // ROOM-FIRST: the room already exists — just accept and join it.
-        await ref
-            .read(battlePresenceServiceProvider)
-            .respondToChallenge(challenge.id, true);
+        await presence.respondToChallenge(challenge.id, true);
         _respondedIncoming[challenge.id] = challenge.createdAt;
         _restoredAccepted[challenge.id] = challenge.createdAt;
         if (sheetCtx.mounted) Navigator.pop(sheetCtx);
@@ -490,9 +504,7 @@ class _GlobalBattleChallengeGateState
             trophies: myStats.trophies,
           ),
         );
-        await ref
-            .read(battlePresenceServiceProvider)
-            .respondToChallenge(challenge.id, true, roomId: room.id);
+        await presence.respondToChallenge(challenge.id, true, roomId: room.id);
         _respondedIncoming[challenge.id] = challenge.createdAt;
         if (sheetCtx.mounted) Navigator.pop(sheetCtx);
         ref.read(battleArenaProvider.notifier).startFromRoom(room);
