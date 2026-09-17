@@ -280,7 +280,13 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         _subscribeToRoom(room.id, isPlayer1);
       }
 
-      _presenceService.setInBattle(freshLocal.id, true);
+      _presenceService.setInBattle(
+        freshLocal.id,
+        true,
+        name: freshLocal.name,
+        photoUrl: freshLocal.photoUrl,
+        trophies: freshLocal.trophies,
+      );
       _startRoundTimer();
       if (opp.isBot) {
         _scheduleBotAnswer();
@@ -353,7 +359,13 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       _subscribeToRoom(room.id, isPlayer1);
     }
 
-    _presenceService.setInBattle(state.localPlayer.id, true);
+    _presenceService.setInBattle(
+      state.localPlayer.id,
+      true,
+      name: state.localPlayer.name,
+      photoUrl: state.localPlayer.photoUrl,
+      trophies: state.localPlayer.trophies,
+    );
     _startRoundTimer();
   }
 

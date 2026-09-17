@@ -76,9 +76,16 @@ class BattleBotSimulator {
     if (isCorrect) {
       chosenAnswer = question.correctAnswer;
     } else {
-      // Pick one of the incorrect options
-      final wrongOptions = [0, 1, 2, 3]..remove(question.correctAnswer);
-      chosenAnswer = wrongOptions[_rng.nextInt(wrongOptions.length)];
+      // Pick one of the incorrect options — built from the ACTUAL option
+      // count (some grammar questions have 2-3 options; a hardcoded
+      // [0,1,2,3] could select a non-existent index).
+      final wrongOptions = [
+        for (var i = 0; i < question.options.length; i++)
+          if (i != question.correctAnswer) i,
+      ];
+      chosenAnswer = wrongOptions.isEmpty
+          ? question.correctAnswer
+          : wrongOptions[_rng.nextInt(wrongOptions.length)];
     }
 
     final int reactionSeconds = reactionSecondsForTrophies(

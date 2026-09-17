@@ -65,7 +65,7 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
               ],
             ),
             child: Text(
-              'ROUND ${battleState.currentRoundIndex + 1} / 5',
+              'ROUND ${battleState.currentRoundIndex + 1} / ${battleState.room?.questions.length ?? 5}',
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,

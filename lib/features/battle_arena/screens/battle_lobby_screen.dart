@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -707,10 +705,9 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
         ),
       );
 
-      // 2) Send the challenge referencing that room. Resending REPLACES any
-      //    previous challenge for this pair — the superseded one's waiting
-      //    room is deleted here so nothing is left behind. If the send still
-      //    fails, remove the room we just made too.
+      // 2) Send the challenge referencing that room. If it's rejected
+      //    (e.g. a challenge is already pending for this pair), remove the
+      //    room we just made so nothing is left behind.
       try {
         await ref.read(battlePresenceServiceProvider).sendChallenge(
               fromUserId: currentUser.id,
@@ -721,11 +718,6 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
               type: async ? 'async' : 'live',
               isRematch: isRematch,
               roomId: room.id,
-              onSupersededRoom: (oldRoomId) {
-                if (oldRoomId != null) {
-                  unawaited(matchmaking.deleteRoom(oldRoomId));
-                }
-              },
             );
       } catch (e) {
         await matchmaking.deleteRoom(room.id);
@@ -750,7 +742,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(e.code == 'permission-denied'
-              ? 'Could not send the challenge right now. Try again.'
+              ? 'You already challenged $toName — waiting for their response ⚔️'
               : 'Failed to send challenge.'),
           behavior: SnackBarBehavior.floating,
         ),

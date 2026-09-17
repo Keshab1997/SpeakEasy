@@ -10,21 +10,33 @@ const Duration kPresenceHeartbeatInterval = Duration(seconds: 20);
 
 class BattlePresenceService with WidgetsBindingObserver {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  Timer? _heartbeatTimer;
-  bool _isInBattle = false;
 
-  /// Identity of the user whose heartbeat we're running — needed by the
+  // ── SHARED heartbeat state (across all instances) ────────────────────────
+  // Several instances exist (lobby via Riverpod, arena provider, waiting
+  // room), but Firestore must see exactly ONE heartbeat per user. The timer,
+  // identity and lifecycle observer are therefore static + refcounted:
+  //   • the lobby takes a reference while it is on screen,
+  //   • a duel started OUTSIDE the lobby (challenge accepted from Home)
+  //     takes one via setInBattle(true) — otherwise the server auto-forfeit
+  //     (>90s of silence = disconnect) would strike a player mid-fight.
+  static Timer? _heartbeatTimer;
+  static int _heartbeatRefs = 0;
+  static bool _battleHoldsRef = false;
+  static bool _observerRegistered = false;
+  static bool _appPaused = false;
+
+  /// Identity of the user whose heartbeat is running — needed by the
   /// lifecycle observer to flip presence instantly on pause/resume.
-  String? _activeUserId;
-  String _activeName = '';
-  String _activePhoto = '';
-  int _activeTrophies = 100;
-  bool _observing = false;
+  static String? _activeUserId;
+  static String _activeName = '';
+  static String _activePhoto = '';
+  static int _activeTrophies = 100;
+  static bool _inBattle = false;
 
   static const String _presenceCollection = 'battle_presence';
   static const String _challengesCollection = 'battle_challenges';
 
-  /// Sets user online status in Firestore and starts heartbeat.
+  /// Sets user online status in Firestore and starts the (shared) heartbeat.
   /// The initial write includes trophies (needed for the presence create
   /// rule); the periodic heartbeat refreshes liveness only — trophies are
   /// owned server-side by the Cloud Function.
@@ -34,39 +46,73 @@ class BattlePresenceService with WidgetsBindingObserver {
     required String photoUrl,
     required int trophies,
   }) {
-    _activeUserId = userId;
-    _activeName = name;
-    _activePhoto = photoUrl;
-    _activeTrophies = trophies;
+    _setIdentity(
+      userId: userId,
+      name: name,
+      photoUrl: photoUrl,
+      trophies: trophies,
+    );
+    _ensureObserver();
 
-    // Go offline instantly when the app is backgrounded/killed — no more
-    // ~3-minute ghost-online window waiting for the heartbeat to go stale.
-    if (!_observing) {
-      WidgetsBinding.instance.addObserver(this);
-      _observing = true;
-    }
+    _heartbeatRefs++;
+    _ensureTimer();
 
     _updatePresence(
       userId: userId,
       name: name,
       photoUrl: photoUrl,
       trophies: trophies,
-      isOnline: true,
-      isInBattle: false,
+      isOnline: !_appPaused,
+      isInBattle: _inBattle,
     );
+  }
 
-    _heartbeatTimer?.cancel();
+  static void _setIdentity({
+    required String userId,
+    required String name,
+    required String photoUrl,
+    required int trophies,
+  }) {
+    _activeUserId = userId;
+    _activeName = name;
+    _activePhoto = photoUrl;
+    _activeTrophies = trophies;
+  }
+
+  void _ensureObserver() {
+    // Go offline instantly when the app is backgrounded — no ghost-online
+    // window. Registered once app-wide, no matter which instance asks.
+    if (!_observerRegistered) {
+      WidgetsBinding.instance.addObserver(this);
+      _observerRegistered = true;
+    }
+  }
+
+  static void _ensureTimer() {
+    if (_heartbeatTimer != null) return;
     _heartbeatTimer = Timer.periodic(kPresenceHeartbeatInterval, (_) async {
+      final userId = _activeUserId;
+      if (userId == null || userId.isEmpty || userId.startsWith('guest_')) {
+        return;
+      }
+      // App backgrounded: the lifecycle observer already marked us offline.
+      // Do NOT flip back to online — the previous design kept re-publishing
+      // isOnline:true while the process was alive (ghost presence + kept an
+      // abandoned battle "alive" so auto-forfeit never fired).
+      if (_appPaused) return;
       // Periodic heartbeat refreshes liveness only. Trophies are NOT written
       // here — the Cloud Function is the source of truth for presence
       // trophies, and writing Hive trophies here could stack on top of the
-      // server's award (double count). The initial create above sets trophies.
+      // server's award (double count). The initial create sets trophies.
       try {
-        await _firestore.collection(_presenceCollection).doc(userId).set({
-          'name': name.isEmpty ? 'Student' : name,
-          'photoUrl': photoUrl,
+        await FirebaseFirestore.instance
+            .collection(_presenceCollection)
+            .doc(userId)
+            .set({
+          'name': _activeName.isEmpty ? 'Student' : _activeName,
+          'photoUrl': _activePhoto,
           'isOnline': true,
-          'isInBattle': _isInBattle,
+          'isInBattle': _inBattle,
           'lastActive': FieldValue.serverTimestamp(),
         }, SetOptions(merge: true));
       } catch (_) {}
@@ -82,33 +128,42 @@ class BattlePresenceService with WidgetsBindingObserver {
     if (state == AppLifecycleState.paused ||
         state == AppLifecycleState.hidden ||
         state == AppLifecycleState.detached) {
+      _appPaused = true;
       _firestore.collection(_presenceCollection).doc(userId).set({
         'isOnline': false,
         'lastActive': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true)).catchError((_) {});
     } else if (state == AppLifecycleState.resumed) {
+      _appPaused = false;
       _updatePresence(
         userId: userId,
         name: _activeName,
         photoUrl: _activePhoto,
         trophies: _activeTrophies,
         isOnline: true,
-        isInBattle: _isInBattle,
+        isInBattle: _inBattle,
       );
     }
   }
 
-  /// Sets user offline when leaving battle arena
+  /// Releases one heartbeat reference (lobby dispose). When no reference
+  /// remains the timer stops and the user is marked offline.
   Future<void> stopPresenceHeartbeat(String userId) async {
+    if (_heartbeatRefs > 0) _heartbeatRefs--;
+    if (_heartbeatRefs > 0 || _battleHoldsRef) return;
+    await _teardown(userId);
+  }
+
+  static Future<void> _teardown(String userId) async {
     _heartbeatTimer?.cancel();
     _heartbeatTimer = null;
-    if (_observing) {
-      WidgetsBinding.instance.removeObserver(this);
-      _observing = false;
-    }
     _activeUserId = null;
+    if (userId.isEmpty || userId.startsWith('guest_')) return;
     try {
-      await _firestore.collection(_presenceCollection).doc(userId).set({
+      await FirebaseFirestore.instance
+          .collection(_presenceCollection)
+          .doc(userId)
+          .set({
         'isOnline': false,
         'isInBattle': false,
         'lastActive': FieldValue.serverTimestamp(),
@@ -117,10 +172,56 @@ class BattlePresenceService with WidgetsBindingObserver {
   }
 
   /// Marks whether the user is currently inside a duel, so others don't
-  /// challenge someone who is busy fighting.
-  Future<void> setInBattle(String userId, bool inBattle) async {
-    _isInBattle = inBattle;
+  /// challenge someone who is busy fighting. While in battle a heartbeat is
+  /// GUARANTEED: duels can start outside the lobby (challenge accepted from
+  /// Home), where the lobby heartbeat isn't running — without liveness
+  /// writes the >90s auto-forfeit would forfeit an actively playing user.
+  Future<void> setInBattle(
+    String userId,
+    bool inBattle, {
+    String name = '',
+    String photoUrl = '',
+    int trophies = 100,
+  }) async {
+    _inBattle = inBattle;
     if (userId.isEmpty || userId.startsWith('guest_')) return;
+
+    if (inBattle) {
+      if (userId != _activeUserId || _heartbeatTimer == null) {
+        if (userId != _activeUserId) {
+          _setIdentity(
+            userId: userId,
+            name: name,
+            photoUrl: photoUrl,
+            trophies: trophies,
+          );
+        }
+        _ensureObserver();
+        if (_heartbeatTimer == null) {
+          _battleHoldsRef = true;
+          _heartbeatRefs++;
+          _ensureTimer();
+        }
+      }
+    } else if (_battleHoldsRef) {
+      _battleHoldsRef = false;
+      if (_heartbeatRefs > 0) _heartbeatRefs--;
+      if (_heartbeatRefs == 0) {
+        try {
+          await _firestore.collection(_presenceCollection).doc(userId).set({
+            'isInBattle': false,
+            'lastActive': FieldValue.serverTimestamp(),
+          }, SetOptions(merge: true));
+        } catch (_) {}
+        // Only the battle held a reference → nobody else needs the heartbeat;
+        // mark offline (lobby dispose already tore down otherwise).
+        if (!_appPaused) {
+          await _teardown(userId);
+        }
+        return;
+      }
+    }
+
     try {
       await _firestore.collection(_presenceCollection).doc(userId).set({
         'isInBattle': inBattle,

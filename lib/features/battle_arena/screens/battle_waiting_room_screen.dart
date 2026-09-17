@@ -53,6 +53,11 @@ class _BattleWaitingRoomScreenState
   StreamSubscription<BattleRoom?>? _roomSub;
   StreamSubscription<BattleChallenge?>? _challengeSub;
 
+  /// Guests waiting for the host to press START auto-leave after 2 minutes —
+  /// covers the host's app dying / walking away after the guest joined, so
+  /// the guest is never soft-locked staring at "waiting for host" forever.
+  Timer? _guestStartTimeout;
+
   late final AnimationController _pulse = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 1200),
@@ -84,6 +89,15 @@ class _BattleWaitingRoomScreenState
     if (!widget.isHost && !_joinMarked) {
       _joinMarked = true;
       unawaited(_matchmaking.markPlayer2Joined(widget.roomId));
+      _guestStartTimeout?.cancel();
+      _guestStartTimeout = Timer(const Duration(minutes: 2), () {
+        if (!mounted || _leaving || _enteringArena) return;
+        if (_room?.status != BattleRoomStatus.waiting) return;
+        _leaving = true;
+        unawaited(_matchmaking.markPlayer2Left(widget.roomId));
+        _toast('The host seems away — you left the room. Try again! 🤺');
+        Navigator.of(context).pop();
+      });
     }
 
     _listenToRoom();
@@ -212,6 +226,7 @@ class _BattleWaitingRoomScreenState
     _pulse.dispose();
     _roomSub?.cancel();
     _challengeSub?.cancel();
+    _guestStartTimeout?.cancel();
     super.dispose();
   }
 

@@ -458,10 +458,11 @@ class BattleGameService {
           'trophies': newTrophies,
           'wins': updated.wins,
           'losses': updated.losses,
-          'draws': 0, // Hive BattleStats doesn't track draws separately; presence keeps it.
+          // NOTE: deliberately NOT touching 'draws' / 'bestStreak' here —
+          // Hive doesn't track them and writing 0/current-streak would wipe
+          // the server-owned values earned in ranked online matches.
           'totalMatches': updated.totalMatches,
           'winStreak': updated.winStreak,
-          'bestStreak': updated.winStreak, // best approx — server keeps true best
           'isOnline': true,
           'lastActive': FieldValue.serverTimestamp(),
         }, SetOptions(merge: true));
