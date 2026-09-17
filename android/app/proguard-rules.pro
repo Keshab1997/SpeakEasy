@@ -4,6 +4,31 @@
 
 -keepattributes Signature, InnerClasses, EnclosingMethod, *Annotation*, Exceptions, SourceFile, LineNumberTable
 
+# Gson — fixes Play crash v34:
+# com.google.gson.reflect.TypeToken.getTypeTokenTypeArgument
+# java.lang.IllegalStateException (release minifyEnabled=true strips generic
+# signatures; transitive Gson via ads/firebase/onesignal then sees raw TypeToken).
+# Narrow keeps only — no broad com.google.** rule.
+-keep class com.google.gson.reflect.TypeToken { *; }
+-keep class * extends com.google.gson.reflect.TypeToken
+-keep class com.google.gson.TypeAdapter { *; }
+-keepclassmembers class * extends com.google.gson.TypeAdapter {
+    <init>();
+}
+-keepclassmembers class * implements com.google.gson.TypeAdapterFactory {
+    <init>();
+}
+-keepclassmembers class * implements com.google.gson.JsonSerializer {
+    <init>();
+}
+-keepclassmembers class * implements com.google.gson.JsonDeserializer {
+    <init>();
+}
+-keepclassmembers,allowshrinking,allowobfuscation class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
+-dontwarn com.google.gson.**
+
 # Flutter engine / plugins (consumer rules cover most of this; keep JNI + embedding)
 -keep class io.flutter.embedding.** { *; }
 -keep class io.flutter.plugin.** { *; }

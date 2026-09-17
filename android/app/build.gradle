@@ -93,6 +93,10 @@ flutter {
 
 dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+    // Force Gson >= 2.11 so its bundled consumer R8 rules apply; older
+    // transitive Gson (ads/firebase/onesignal) + minifyEnabled=true caused
+    // Play crash v34: TypeToken.getTypeTokenTypeArgument IllegalStateException.
+    implementation 'com.google.code.gson:gson:2.11.0'
     implementation 'com.google.android.play:feature-delivery:2.1.0'
     implementation 'androidx.core:core-ktx:1.15.0'
 }
