@@ -210,11 +210,20 @@ class BattlePresenceService with WidgetsBindingObserver {
   /// Send direct 1v1 challenge to another player.
   ///
   /// [type]:
-  ///   • 'live'  → target is online now; expires after ~90s (server cleanup)
+  ///   • 'live'  → target is online now; kept ~10 min (server cleanup)
   ///   • 'async' → target is offline; stays pending up to 48h and is
   ///     delivered (popup + push) the next time they open the app.
   /// [isRematch]: true when sent from the post-match REMATCH button — the
   /// receiver's popup says "wants a rematch" instead of a fresh duel.
+  ///
+  /// RESEND SEMANTICS: the deterministic doc id `ch_{from}_{to}` means at
+  /// most ONE challenge doc exists per pair. Sending again REPLACES the
+  /// previous challenge — a still-pending one is cancelled, a resolved one
+  /// (declined/stale accepted) is deleted, and a FRESH doc is created. The
+  /// fresh doc carries a new `createdAt`, which is what the receiver's
+  /// GlobalBattleChallengeGate uses to resurface the popup.
+  /// [onSupersededRoom] is called with the replaced challenge's roomId (if
+  /// any) so the caller can delete the now-orphaned waiting room instantly.
   Future<String> sendChallenge({
     required String fromUserId,
     required String fromUserName,
@@ -224,32 +233,25 @@ class BattlePresenceService with WidgetsBindingObserver {
     String type = 'live',
     bool isRematch = false,
     String? roomId,
+    void Function(String? oldRoomId)? onSupersededRoom,
   }) async {
-    // DEDUP + RATE-LIMIT: deterministic doc id `ch_{from}_{to}` — at most
-    // ONE pending challenge per pair can exist. A repeat send targets the
-    // existing doc; security rules reject that write (only the receiver may
-    // update), so mashing the challenge button can't stack duplicates or
-    // spam OneSignal pushes. The id frees up when cleanup deletes the
-    // expired/accepted doc (live: 90s, async: 48h).
     final challengeId = 'ch_${fromUserId}_$toUserId';
     final docRef = _firestore.collection(_challengesCollection).doc(challengeId);
 
-    // SELF-HEALING RESEND: the deterministic id means a leftover doc from a
-    // previous round (declined = 'rejected', or an old 'accepted' that never
-    // led to a duel) would make our `.set()` an UPDATE — and security rules
-    // only let the RECEIVER update. So: pending → friendly block; resolved →
-    // delete the stale doc and create a fresh challenge.
+    // REPLACE any previous challenge for this pair (any status). Rules allow
+    // the SENDER to delete their own challenge doc, so this always succeeds.
+    // Without the delete our `.set()` would be an UPDATE, and security rules
+    // only let the RECEIVER update.
     final existing = await docRef.get();
     if (existing.exists) {
-      final status = (existing.data() ?? const {})['status'];
-      if (status == 'pending') {
-        throw FirebaseException(
-          plugin: 'cloud_firestore',
-          code: 'permission-denied',
-          message: 'A challenge is already pending for this pair',
-        );
+      final oldRoomId = (existing.data() ?? const {})['roomId'] as String?;
+      try {
+        await docRef.delete();
+      } catch (e) {
+        debugPrint('⚠️ could not replace previous challenge doc: $e');
+        rethrow;
       }
-      await docRef.delete();
+      onSupersededRoom?.call(oldRoomId);
     }
 
     await docRef.set({

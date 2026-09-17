@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
@@ -103,6 +105,11 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
           type: 'async',
           isRematch: true,
           roomId: room.id,
+          onSupersededRoom: (oldRoomId) {
+            if (oldRoomId != null) {
+              unawaited(matchmaking.deleteRoom(oldRoomId));
+            }
+          },
         );
       } catch (e) {
         await matchmaking.deleteRoom(room.id);
@@ -127,7 +134,7 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(e.code == 'permission-denied'
-              ? 'A rematch challenge is already pending with ${opp.name} 🔁'
+              ? 'Could not send the rematch right now. Try again.'
               : 'Could not send rematch challenge.'),
           behavior: SnackBarBehavior.floating,
         ),

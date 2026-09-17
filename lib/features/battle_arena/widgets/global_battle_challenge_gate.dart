@@ -30,17 +30,32 @@ class GlobalBattleChallengeGate extends ConsumerStatefulWidget {
 }
 
 class _GlobalBattleChallengeGateState
-    extends ConsumerState<GlobalBattleChallengeGate> {
+    extends ConsumerState<GlobalBattleChallengeGate>
+    with WidgetsBindingObserver {
   /// Challenges we already RESPONDED to (accepted/declined) — no re-sheet.
-  final Set<String> _respondedIncoming = {};
+  /// Keyed by challenge id, but stores the `createdAt` we answered: challenge
+  /// ids are deterministic (`ch_{from}_{to}`), so a RESENT challenge reuses
+  /// the SAME id with a NEWER createdAt and must surface again. We only
+  /// suppress when the timestamp matches the instance we already handled.
+  final Map<String, DateTime> _respondedIncoming = {};
 
   /// Challenges the user postponed with "Later" — no auto re-sheet, but the
   /// lobby banner keeps offering a Respond button (reshowChallengeProvider).
-  final Set<String> _dismissedIncoming = {};
+  /// Same createdAt logic as above so a resent challenge resurfaces.
+  final Map<String, DateTime> _dismissedIncoming = {};
 
-  /// Outgoing/accepted challenges we already routed somewhere.
-  final Set<String> _handledOutgoing = {};
-  final Set<String> _restoredAccepted = {};
+  bool _isStaleHandled(Map<String, DateTime> handled, BattleChallenge c) {
+    final handledAt = handled[c.id];
+    if (handledAt == null) return false;
+    // Suppress only the SAME instance; a newer createdAt = a resend.
+    return !c.createdAt.isAfter(handledAt);
+  }
+
+  /// Outgoing/accepted challenges we already routed somewhere. Same
+  /// createdAt logic as the incoming maps: the deterministic id is reused by
+  /// a resend, so only suppress the exact instance we already routed.
+  final Map<String, DateTime> _handledOutgoing = {};
+  final Map<String, DateTime> _restoredAccepted = {};
 
   bool _arenaOpen = false;
   bool _sheetOpen = false;
@@ -59,6 +74,30 @@ class _GlobalBattleChallengeGateState
         behavior: SnackBarBehavior.floating,
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  /// Receiver comes back to the app → re-evaluate pending challenges NOW.
+  /// Stream emissions only fire on Firestore changes; if the challenge doc
+  /// arrived while the app was backgrounded (no snapshot since), the sheet
+  /// would otherwise wait for the next unrelated write. A rebuild re-runs
+  /// the incoming-challenge block and surfaces the popup.
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed && mounted) {
+      setState(() {});
+    }
   }
 
   @override
@@ -108,8 +147,8 @@ class _GlobalBattleChallengeGateState
 
       BattleChallenge? challenge;
       for (final c in challenges) {
-        if (_respondedIncoming.contains(c.id)) continue;
-        if (_dismissedIncoming.contains(c.id)) continue;
+        if (_isStaleHandled(_respondedIncoming, c)) continue;
+        if (_isStaleHandled(_dismissedIncoming, c)) continue;
         challenge = c;
         break;
       }
@@ -138,18 +177,26 @@ class _GlobalBattleChallengeGateState
     // 3) A challenge I SENT got accepted → enter its room as HOST.
     ref.watch(outgoingChallengesProvider).whenData((outgoing) {
       for (final challenge in outgoing) {
-        if (_handledOutgoing.contains(challenge.id)) continue;
+        if (_isStaleHandled(_handledOutgoing, challenge)) continue;
 
         if (challenge.status == 'accepted' && challenge.roomId != null) {
-          _handledOutgoing.add(challenge.id);
+          _handledOutgoing[challenge.id] = challenge.createdAt;
           final id = challenge.id;
           final roomId = challenge.roomId!;
           WidgetsBinding.instance.addPostFrameCallback((_) {
             _enterChallengeRoom(roomId, challengeId: id, isHost: true);
           });
         } else if (challenge.status == 'rejected') {
-          _handledOutgoing.add(challenge.id);
-          unawaited(BattleMatchmakingService().deleteChallenge(challenge.id));
+          _handledOutgoing[challenge.id] = challenge.createdAt;
+          final matchmaking = BattleMatchmakingService();
+          unawaited(matchmaking.deleteChallenge(challenge.id));
+          // Declined → free the waiting room instantly, even when the host
+          // is NOT on the waiting-room screen (app restart / lobby). Rules
+          // allow participants to delete rooms still in 'waiting'.
+          final deadRoomId = challenge.roomId;
+          if (deadRoomId != null) {
+            unawaited(matchmaking.deleteRoom(deadRoomId));
+          }
           // The waiting-room screen (if open) handles its own exit+cleanup.
           if (!_waitingRoomOpen) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -165,9 +212,9 @@ class _GlobalBattleChallengeGateState
     //    → restore my seat in the waiting room / arena (guest side).
     ref.watch(acceptedIncomingChallengesProvider).whenData((challenges) {
       for (final challenge in challenges) {
-        if (_restoredAccepted.contains(challenge.id)) continue;
+        if (_isStaleHandled(_restoredAccepted, challenge)) continue;
         if (challenge.roomId == null) continue;
-        _restoredAccepted.add(challenge.id);
+        _restoredAccepted[challenge.id] = challenge.createdAt;
         final id = challenge.id;
         final roomId = challenge.roomId!;
         WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -386,7 +433,7 @@ class _GlobalBattleChallengeGateState
                           : () {
                               // "Later" — the lobby keeps showing a Respond
                               // banner, so the challenge is never lost.
-                              _dismissedIncoming.add(challenge.id);
+                              _dismissedIncoming[challenge.id] = challenge.createdAt;
                               Navigator.pop(sheetCtx);
                             },
                       child: const Text('Later',
@@ -417,8 +464,8 @@ class _GlobalBattleChallengeGateState
         await ref
             .read(battlePresenceServiceProvider)
             .respondToChallenge(challenge.id, true);
-        _respondedIncoming.add(challenge.id);
-        _restoredAccepted.add(challenge.id);
+        _respondedIncoming[challenge.id] = challenge.createdAt;
+        _restoredAccepted[challenge.id] = challenge.createdAt;
         if (sheetCtx.mounted) Navigator.pop(sheetCtx);
         await _enterChallengeRoom(
           challenge.roomId!,
@@ -446,7 +493,7 @@ class _GlobalBattleChallengeGateState
         await ref
             .read(battlePresenceServiceProvider)
             .respondToChallenge(challenge.id, true, roomId: room.id);
-        _respondedIncoming.add(challenge.id);
+        _respondedIncoming[challenge.id] = challenge.createdAt;
         if (sheetCtx.mounted) Navigator.pop(sheetCtx);
         ref.read(battleArenaProvider.notifier).startFromRoom(room);
       }
@@ -468,7 +515,7 @@ class _GlobalBattleChallengeGateState
         unawaited(
             BattleMatchmakingService().deleteRoom(challenge.roomId!));
       }
-      _respondedIncoming.add(challenge.id);
+      _respondedIncoming[challenge.id] = challenge.createdAt;
       if (sheetCtx.mounted) Navigator.pop(sheetCtx);
     } catch (_) {
       _showGlobalSnack('Could not decline. Try again.');

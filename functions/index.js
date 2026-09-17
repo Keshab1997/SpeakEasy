@@ -12,7 +12,8 @@
  *
  * 2. cleanupBattleData (runs every 5 minutes) — removes garbage:
  *    • matchmaking queue entries older than 30s
- *    • pending challenges older than 90s (never answered)
+ *    • pending challenges: live > 10 min / async > 48h (never answered),
+ *      plus accepted > 2h and rejected > 10 min hygiene sweeps
  *    • in_progress rooms abandoned for > 30 minutes (marked abandoned)
  *
  * 3. onPresenceOffline — if a player is online but their last heartbeat is
@@ -835,15 +836,16 @@ exports.cleanupBattleData = functions.pubsub
     }
 
     // 2b. Expired pending challenges.
-    //     • live challenges (no `type` or type=='live'): expire after 90s —
-    //       the challenger was online and will have reacted by now.
+    //     • live challenges (no `type` or type=='live'): expire after 10 min —
+    //       the challenger was online and will have reacted by then (raised
+    //       from 90s: backgrounded receivers missed the window entirely).
     //     • async challenges (type=='async'): the target was offline; keep
     //       pending up to 48h so it can be delivered when they return.
     //     Also sweep ACCEPTED challenges after 2h (room was created but the
     //     challenger never joined; room itself is abandoned after 30 min).
     try {
       const ASYNC_TTL = 48 * 60 * 60 * 1000; // 48h
-      const LIVE_TTL = 90 * 1000; // 90s
+      const LIVE_TTL = 10 * 60 * 1000; // 10 min
       const ACCEPTED_TTL = 2 * 60 * 60 * 1000; // 2h
 
       let n = 0;

@@ -408,7 +408,7 @@ class BattleChallenge {
   final String? roomId;
   final DateTime createdAt;
 
-  /// 'live' = target was online when challenged (expires ~90s, server cleanup).
+  /// 'live' = target was online when challenged (kept ~10 min, server cleanup).
   /// 'async' = target was offline; stays pending up to 48h and is delivered
   /// (popup + push) the next time they open the app. Legacy docs without the
   /// field default to 'live'.
