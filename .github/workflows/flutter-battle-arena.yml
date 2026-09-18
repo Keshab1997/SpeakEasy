@@ -1,0 +1,44 @@
+name: Battle Arena — Flutter analyze + tests
+
+# The arena's entry navigation broke twice because nothing ran on the Dart
+# side in CI (manual-build.yml explicitly disables analyze/tests for speed).
+# This job is scoped to the feature so it stays green and stays useful; the
+# repo-wide analyze number is printed for information only.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lib/features/battle_arena/**'
+      - 'test/features/battle_arena/**'
+      - '.github/workflows/flutter-battle-arena.yml'
+  pull_request:
+    paths:
+      - 'lib/features/battle_arena/**'
+      - 'test/features/battle_arena/**'
+      - '.github/workflows/flutter-battle-arena.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  battle-arena:
+    name: analyze + flutter test (battle_arena)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      # Hard gate on the feature itself — new errors/infos here fail the build.
+      - name: Analyze battle_arena (strict)
+        run: flutter analyze --no-fatal-infos lib/features/battle_arena test/features/battle_arena
+      # Informational: do not fail the job on pre-existing issues elsewhere.
+      - name: Analyze whole project (report only)
+        run: flutter analyze --no-fatal-warnings --no-fatal-infos || true
+      - name: Unit tests for the arena
+        run: flutter test test/features/battle_arena

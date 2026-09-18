@@ -318,9 +318,11 @@ class BattleGameService {
     try {
       final doc =
           await FirebaseFirestore.instance.collection('battle_presence').doc(userId).get();
-      if (!doc.exists) return getLocalStats();
+      // await, not bare return: a Future returned from inside this try block
+      // escapes to the zone instead of the catch below if it later throws.
+      if (!doc.exists) return await getLocalStats();
       final d = doc.data();
-      if (d == null) return getLocalStats();
+      if (d == null) return await getLocalStats();
 
       final local = await getLocalStats();
       final serverTrophies = (d['trophies'] as num?)?.toInt();

@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
+import '../screens/battle_arena_screen.dart';
 import '../services/battle_matchmaking_service.dart';
 import '../services/battle_presence_service.dart';
 
@@ -46,6 +47,7 @@ class _BattleWaitingRoomScreenState
   BattleRoom? _room;
   bool _loading = true;
   bool _enteringArena = false;
+  bool _arenaPushed = false;
   bool _leaving = false;
   bool _joinMarked = false;
   bool _busy = false;
@@ -131,7 +133,7 @@ class _BattleWaitingRoomScreenState
 
       // Host started the duel → both sides enter the arena.
       if (snapshot.status == BattleRoomStatus.inProgress) {
-        _enterArena();
+        unawaited(_enterArenaNow());
         return;
       }
 
@@ -170,16 +172,30 @@ class _BattleWaitingRoomScreenState
 
   void _enterArena() {
     if (_enteringArena) return;
+    _enteringArena = true;
+    if (mounted) Navigator.of(context).pop();
+  }
+
+  /// The screen that STARTED the duel is the one that navigates into it —
+  /// no global listener may be the only path in. That indirection is exactly
+  /// how both players ended up hearing the round timer while still looking
+  /// at this waiting room.
+  Future<void> _enterArenaNow() async {
+    if (_arenaPushed || _leaving) return;
     final room = _room;
     if (room == null || room.questions.isEmpty) {
       _toast('Could not load the questions for this duel.');
       return;
     }
-    _enteringArena = true;
+    _arenaPushed = true;
     ref.read(battleArenaProvider.notifier).startFromRoom(room);
-    // The GlobalBattleChallengeGate pushes BattleArenaScreen when the
-    // provider enters inDuel — pop ourselves so we don't stack under it.
-    if (mounted) Navigator.of(context).pop();
+    if (BattleArenaScreen.routeActive) return; // restore path already put us in
+    await Navigator.of(context, rootNavigator: true).push(
+      MaterialPageRoute(builder: (_) => const BattleArenaScreen()),
+    );
+    // Pop only AFTER the arena is on top of us. Popping first tore the root
+    // navigator's context out from under any other navigation in the frame.
+    _enterArena();
   }
 
   Future<void> _startBattle() async {
