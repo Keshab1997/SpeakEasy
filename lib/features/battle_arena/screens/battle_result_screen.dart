@@ -14,6 +14,17 @@ import 'battle_answer_review_screen.dart';
 class BattleResultScreen extends ConsumerStatefulWidget {
   const BattleResultScreen({super.key});
 
+  /// Set while a result screen is mounted. The arena replaces itself with this
+  /// screen (pushReplacement), so after a duel it is what sits under any
+  /// rematch route — and a rematch that navigates without clearing it leaves
+  /// the OLD result under the new duel, and waiting to be landed on again
+  /// when the rematch ends. Entry points consult this to remove it.
+  static BuildContext? activeContext;
+  static bool get resultIsLive {
+    final ctx = activeContext;
+    return ctx != null && ctx.mounted;
+  }
+
   @override
   ConsumerState<BattleResultScreen> createState() => _BattleResultScreenState();
 }
@@ -32,6 +43,7 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
   @override
   void initState() {
     super.initState();
+    BattleResultScreen.activeContext = context;
     _confettiController = ConfettiController(duration: const Duration(seconds: 3));
     _heroController = AnimationController(
       vsync: this,
@@ -57,6 +69,9 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
 
   @override
   void dispose() {
+    if (identical(BattleResultScreen.activeContext, context)) {
+      BattleResultScreen.activeContext = null;
+    }
     _confettiController.dispose();
     _heroController.dispose();
     super.dispose();

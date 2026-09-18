@@ -9,6 +9,7 @@ import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';
 import '../screens/battle_arena_screen.dart';
+import '../screens/battle_result_screen.dart';
 import '../screens/battle_waiting_room_screen.dart';
 import '../services/battle_matchmaking_service.dart';
 
@@ -229,6 +230,45 @@ class _GlobalBattleChallengeGateState
     return widget.child;
   }
 
+  /// Drops a leftover result screen (+ its finished-duel state) before
+  /// entering another duel. `removeRoute` targets the exact route, so a
+  /// waiting room already pushed above it is never popped by mistake.
+  void _clearStaleResultScreen(BattleArenaStatus status) {
+    if (status != BattleArenaStatus.completed) return;
+    final ctx = BattleResultScreen.activeContext;
+    if (ctx != null && ctx.mounted) {
+      final route = ModalRoute.of(ctx);
+      if (route != null && route.isActive) {
+        Navigator.of(ctx).removeRoute(route);
+      }
+    }
+    // Reset only after the route is gone: the result screen watches the
+    // provider, and rebuilding it on state meant for the NEXT duel is how a
+    // stale scoreboard flash happens.
+    ref.read(battleArenaProvider.notifier).resetLobby();
+  }
+
+  /// Owns the arena push for callers that have no waiting room of their own.
+  /// Dedups against the live route (and the listener's own in-flight push),
+  /// and says so out loud when navigation is impossible.
+  Future<void> _pushArena() async {
+    if (BattleArenaScreen.arenaIsLive || _arenaOpen) return;
+    final navCtx = appNavigatorKey.currentContext;
+    if (navCtx == null) {
+      _showGlobalSnack('Could not open the duel — please try again.');
+      return;
+    }
+    _arenaOpen = true;
+    try {
+      // ignore: use_build_context_synchronously
+      await Navigator.of(navCtx, rootNavigator: true).push(
+        MaterialPageRoute(builder: (_) => const BattleArenaScreen()),
+      );
+    } finally {
+      _arenaOpen = false;
+    }
+  }
+
   /// Routes me into a challenge room:
   ///  • room already in_progress (legacy flow / host started) → arena;
   ///  • room still waiting → the Waiting Room screen (host presses START).
@@ -238,9 +278,18 @@ class _GlobalBattleChallengeGateState
     required bool isHost,
   }) async {
     if (_waitingRoomOpen || battleWaitingRoomOpen) return;
-    if (ref.read(battleArenaProvider).status == BattleArenaStatus.inDuel) {
-      return;
+    final duel = ref.read(battleArenaProvider);
+    if (duel.status == BattleArenaStatus.inDuel) {
+      // Only a duel for THIS room means "already inside". A stale `inDuel`
+      // (previous duel whose state never got reset) used to swallow every
+      // later accept with no message — a rematch then looked like a dead
+      // button while the old duel's result screen stayed on screen.
+      if (duel.room?.id == roomId) return;
     }
+    // A finished duel's result screen must not sit underneath the new one:
+    // it is where the player lands when the rematch pops, and its stale
+    // scores are what they see while the real match runs above it.
+    _clearStaleResultScreen(duel.status);
 
     try {
       final matchmaking = BattleMatchmakingService();
@@ -262,10 +311,18 @@ class _GlobalBattleChallengeGateState
 
       if (room.status == BattleRoomStatus.inProgress) {
         // Already started (host hit START elsewhere, or legacy room) → arena.
+        // Navigating must happen HERE, not by hoping the global listener
+        // reacts: _onAccept popped its sheet in this same frame, and a push
+        // issued that early can die — leaving the duel running with no screen
+        // at all, which is exactly what an accepted rematch used to feel like.
         ref.read(battleArenaProvider.notifier).startFromRoom(room);
+        await _pushArena();
         return;
       }
-      if (room.status != BattleRoomStatus.waiting) return;
+      if (room.status != BattleRoomStatus.waiting) {
+        _showGlobalSnack('This duel is already over — send a new challenge.');
+        return;
+      }
 
       final navCtx = appNavigatorKey.currentContext;
       if (navCtx == null) return;
