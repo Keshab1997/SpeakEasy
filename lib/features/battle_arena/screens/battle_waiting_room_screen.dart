@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -75,8 +76,21 @@ class _BattleWaitingRoomScreenState
   Future<void> _init() async {
     // Fetch + hydrate once (snapshots below don't carry questions for
     // seed rooms).
-    final room = await _matchmaking.getRoom(widget.roomId);
+    BattleRoom? room;
+    Object? readError;
+    try {
+      room = await _matchmaking.getRoom(widget.roomId);
+    } catch (e) {
+      // A rejected read must never masquerade as "the room is gone": the
+      // fix is a rules/permission deploy, not a re-challenge.
+      readError = e;
+    }
     if (!mounted) return;
+    if (readError != null) {
+      _toast('Could not open the duel room: ${_describeError(readError)}');
+      Navigator.of(context).pop();
+      return;
+    }
     if (room == null || room.questions.isEmpty) {
       _toast('This duel room is no longer available.');
       Navigator.of(context).pop();
@@ -181,6 +195,8 @@ class _BattleWaitingRoomScreenState
   /// how both players ended up hearing the round timer while still looking
   /// at this waiting room.
   Future<void> _enterArenaNow() async {
+    // Idempotent: the resync loop may call this after the snapshot path has
+    // already navigated — no toast, no second push.
     if (_arenaPushed || _leaving) return;
     final room = _room;
     if (room == null || room.questions.isEmpty) {
@@ -211,10 +227,67 @@ class _BattleWaitingRoomScreenState
         onTimeout: () => throw TimeoutException('start battle timed out'),
       );
       // The room snapshot flips to in_progress → _enterArena() fires.
-    } catch (_) {
+      _resyncAfterStart();
+    } on TimeoutException {
       if (mounted) setState(() => _busy = false);
-      _toast('Could not start the battle. Check your internet and try again.');
+      _toast('Starting the duel took too long — no server reply yet. '
+          'Check your connection; pressing START again is safe.');
+    } catch (e) {
+      if (mounted) setState(() => _busy = false);
+      // Naming the failure is the whole point: a server-rejected write
+      // (permission-denied, undeployed rules, a throwing Firestore trigger)
+      // used to vanish into this catch and leave the button on STARTING…
+      // with no explanation on either device.
+      _toast('Could not start the battle: ${_describeError(e)}');
     }
+  }
+
+  /// The Firestore write only resolves on server ack, but entering the arena
+  /// still depends on ONE snapshot delivery. If that delivery is missed
+  /// (listener already torn down, app backgrounded), the host sat on
+  /// STARTING… forever with a duel that had actually started server-side.
+  /// Re-read the room a few times so the start lands either way.
+  void _resyncAfterStart({int attempts = 8}) {
+    unawaited(() async {
+      for (var i = 0; i < attempts; i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 700));
+        if (!mounted || _leaving || _arenaPushed) return;
+        final fresh = await _matchmaking.getRoom(widget.roomId);
+        if (!mounted || _leaving || _arenaPushed) return;
+        if (fresh == null) continue;
+        setState(() => _room = _room == null ? fresh : _room!.copyWith(
+              status: fresh.status,
+              player1: fresh.player1,
+              player2: fresh.player2,
+              player2JoinedAt: fresh.player2JoinedAt,
+              player2LeftAt: fresh.player2LeftAt,
+            ));
+        if (fresh.status == BattleRoomStatus.inProgress) {
+          await _enterArenaNow();
+          return;
+        }
+      }
+      if (mounted && !_leaving && !_arenaPushed) {
+        setState(() => _busy = false);
+        _toast('The duel has not started yet — the server did not accept the '
+            'start. Press START to try again.');
+      }
+    }());
+  }
+
+  /// Short human-readable reason for a Firestore failure.
+  String _describeError(Object e) {
+    if (e is FirebaseException) {
+      final code = e.code.isEmpty ? 'error' : e.code;
+      if (code == 'permission-denied') {
+        return 'permission denied (the Firestore rules on the server reject '
+            'this write)';
+      }
+      if (code == 'unavailable') return 'no connection to Firestore';
+      final msg = (e.message ?? '').trim();
+      return msg.isEmpty ? code : '$code: $msg';
+    }
+    return e.toString();
   }
 
   Future<void> _cancelAsHost() async {

@@ -133,4 +133,57 @@ void main() {
       );
     });
   });
+
+  group('START cannot strand the room on STARTING…', () {
+    late String src;
+    setUpAll(() => src = _read(waitingRoom));
+
+    // The duel starts with one Firestore write. Server-side rejections
+    // (undeployed rules, a throwing trigger) and missed snapshot deliveries
+    // both used to end up here as a silent `catch (_)` -> the host stared at
+    // STARTING… with no reason and no way in, which is exactly what "no
+    // question after Start" looked like from the outside.
+    test('the start write is bounded by a timeout', () {
+      expect(src, contains('.startWaitingRoom(widget.roomId).timeout('));
+      expect(src, contains('onTimeout: () => throw TimeoutException('),
+          reason: 'a hanging ack must become an error, not a frozen button');
+    });
+
+    test('every failure names its reason to the player', () {
+      expect(src, isNot(contains('} catch (_) {\n      if (mounted) setState(() => _busy = false);')),
+          reason: 'the START failure path must not swallow the error');
+      expect(src, contains("_toast('Could not start the battle: \${_describeError(e)}')"),
+          reason: 'permission-denied must be distinguishable from no-connection');
+      expect(src, contains('permission denied'),
+          reason: 'the rules-rejection case needs its own wording');
+    });
+
+    test('a missed snapshot is repaired by re-reading the room', () {
+      final startAt = src.indexOf('Future<void> _startBattle()');
+      final body = src.substring(startAt, src.indexOf('Future<void> _cancelAsHost'));
+      expect(body, contains('_resyncAfterStart()'),
+          reason: 'after a successful ack the room must be re-read, not only '
+              'waited on');
+      expect(src, contains('if (fresh.status == BattleRoomStatus.inProgress) {'),
+          reason: 'the resync has to act on the server status');
+      expect(src, contains('if (!mounted || _leaving || _arenaPushed) return;'),
+          reason: 'the resync loop must stop once navigation owns the screen');
+    });
+
+    test('the resync reuses the one entry point, never a second push', () {
+      final resync = src.substring(
+          src.indexOf('void _resyncAfterStart('), src.indexOf('String _describeError('));
+      expect(resync, contains('await _enterArenaNow();'));
+      expect(resync, isNot(contains('Navigator.of(')),
+          reason: 'pushing from two places is how double arenas happened');
+      expect(src.indexOf('if (_arenaPushed || _leaving) return;'),
+          lessThan(src.indexOf('final room = _room;')),
+          reason: '_enterArenaNow must stay idempotent for the resync path');
+      expect(resync, isNot(contains("Could not load the questions")),
+          reason: 'a room that already navigated must not be told it failed');
+      expect(resync, contains("The duel has not started yet"),
+          reason: 'an accepted-but-never-propagated start must still be '
+              'explained, not left on STARTING…');
+    });
+  });
 }
