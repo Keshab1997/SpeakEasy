@@ -164,6 +164,83 @@ void main() {
       expect(arenaSrc, contains('ctx != null && ctx.mounted'));
     });
 
+  group('an accepted rematch owns its own navigation', () {
+    // A rematch is sent from the RESULT screen, and the host usually taps
+    // START immediately — so by the time the guest's accept lands, the room
+    // is already `in_progress`. That branch used to be the one place that
+    // navigated purely by side effect of the global listener, while the
+    // accept handler had popped its own sheet in the same frame (the exact
+    // stale-context race #5 removed from the waiting room). Result: the duel
+    // ran under a result screen that never closed.
+    late String src;
+    String enterBody(String s) {
+      final start = s.indexOf('Future<void> _enterChallengeRoom(');
+      return s.substring(start, s.indexOf('Future<void> _onDecline', start));
+    }
+
+    setUpAll(() => src = enterBody(_read(gate)));
+
+    test('an already-started room pushes the arena itself', () {
+      final started = src.substring(
+          src.indexOf('room.status == BattleRoomStatus.inProgress'),
+          src.indexOf('if (room.status != BattleRoomStatus.waiting)'));
+      expect(started, contains('startFromRoom(room);'));
+      expect(started, contains('await _pushArena();'),
+          reason: 'the push may not be left to the global listener alone');
+    });
+
+    test('a stale inDuel cannot veto a different room', () {
+      expect(src, contains('if (duel.room?.id == roomId) return;'),
+          reason: 'only the same room counts as "already inside"');
+      expect(src, isNot(contains(
+          'if (ref.read(battleArenaProvider).status == BattleArenaStatus.inDuel) {\n      return;')),
+          reason: 'a blanket inDuel veto swallows later accepts silently');
+    });
+
+    test('a room that can no longer be joined says so', () {
+      expect(src, contains('This duel is already over'),
+          reason: 'a terminal room status used to be a silent return');
+    });
+
+    test('the helper dedups, releases its latch, and reports a dead context',
+        () {
+      final g = _read(gate);
+      final push = g.substring(g.indexOf('Future<void> _pushArena()'),
+          g.indexOf('Future<void> _enterChallengeRoom('));
+      expect(push, contains('BattleArenaScreen.arenaIsLive || _arenaOpen'),
+          reason: 'must not double-push alongside the listener');
+      expect(push, contains('} finally {'),
+          reason: 'the latch must survive an aborted push');
+      expect(push, contains('Could not open the duel'),
+          reason: 'navigation that is impossible must be visible');
+    });
+
+    test('the finished duel screen is removed, and only when completed', () {
+      final g = _read(gate);
+      final clear = g.substring(g.indexOf('void _clearStaleResultScreen('),
+          g.indexOf('Future<void> _pushArena()'));
+      expect(clear, contains('if (status != BattleArenaStatus.completed) return;'),
+          reason: 'never tear down a live duel, an emote overlay or a lobby');
+      expect(clear, contains('removeRoute(route)'),
+          reason: 'pop() would take whatever route happens to be on top');
+      expect(clear.indexOf('removeRoute(route)'), lessThan(clear.indexOf('resetLobby()')),
+          reason: 'the route must be gone before the provider is reset — the '
+              'result screen watches the provider');
+    });
+
+    test('the result screen reports its own presence', () {
+      final r = _read(
+          'features/battle_arena/screens/battle_result_screen.dart');
+      expect(r, contains('static BuildContext? activeContext;'));
+      final initBody = r.substring(
+          r.indexOf('void initState()'), r.indexOf('void dispose()'));
+      expect(initBody, contains('BattleResultScreen.activeContext = context;'));
+      final disposeBody = r.substring(r.indexOf('void dispose()'));
+      expect(disposeBody, contains('identical(BattleResultScreen.activeContext, context)'),
+          reason: 'a stale screen must not clear the flag of a newer one');
+    });
+  });
+
     test('both entry paths gate on liveness, never the raw latch', () {
       for (final src in [waitingRoomSrc, gateSrc]) {
         expect(src, contains('BattleArenaScreen.arenaIsLive'),
