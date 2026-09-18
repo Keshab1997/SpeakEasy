@@ -1,10 +1,12 @@
 {
   "name": "speakeasy-functions",
-  "description": "SpeakEasy Battle Arena — server-authoritative score, trophies, cleanup",
+  "description": "SpeakEasy Battle Arena \u2014 server-authoritative score, trophies, cleanup",
   "scripts": {
     "lint": "echo 'no lint configured'",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "test": "node --test test/*.test.js",
+    "test:watch": "node --test --watch test/*.test.js"
   },
   "engines": {
     "node": "22"
