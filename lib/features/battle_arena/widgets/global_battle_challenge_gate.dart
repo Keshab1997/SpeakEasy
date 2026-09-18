@@ -123,7 +123,9 @@ class _GlobalBattleChallengeGateState
         // quick match and mid-session restores. BattleArenaScreen.routeActive
         // is the ground truth, so this can neither double-push nor fight the
         // waiting room for the same duel.
-        if (BattleArenaScreen.routeActive || _arenaOpen) return;
+        // arenaIsLive (not just the flag) so a missed dispose can never
+        // disable the arena for the rest of the session.
+        if (BattleArenaScreen.arenaIsLive || _arenaOpen) return;
         final navCtx = appNavigatorKey.currentContext;
         if (navCtx == null) return;
         _arenaOpen = true;

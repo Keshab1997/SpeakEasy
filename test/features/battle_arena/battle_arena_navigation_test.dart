@@ -134,6 +134,49 @@ void main() {
     });
   });
 
+  group('a stale "arena is open" flag cannot lock everyone out', () {
+    // routeActive alone is a latch: if the clearing frame is ever skipped
+    // (route swap, teardown) every later duel silently refuses to open on
+    // BOTH devices — no toast, no error, exactly the "Start does nothing"
+    // report. The live context proves the arena is mounted *now*.
+    late String arenaSrc, waitingRoomSrc, gateSrc;
+    setUpAll(() {
+      arenaSrc = _read(arena);
+      waitingRoomSrc = _read(waitingRoom);
+      gateSrc = _read(gate);
+    });
+
+    test('the screen publishes its context beside the flag', () {
+      expect(arenaSrc, contains('static BuildContext? activeContext;'));
+      final initBody = arenaSrc.substring(
+          arenaSrc.indexOf('void initState()'), arenaSrc.indexOf('void dispose()'));
+      expect(initBody, contains('activeContext = context;'),
+          reason: 'mount must publish the context');
+      final disposeBody = arenaSrc.substring(arenaSrc.indexOf('void dispose()'));
+      expect(disposeBody, contains('activeContext = null;'),
+          reason: 'dispose must retract it');
+      expect(arenaSrc.indexOf('activeContext = null;'),
+          lessThan(arenaSrc.indexOf('super.dispose()')),
+          reason: 'retract before super.dispose() keeps ordering obvious');
+    });
+
+    test('liveness is verified, not assumed', () {
+      expect(arenaSrc, contains('ctx != null && ctx.mounted'));
+    });
+
+    test('both entry paths gate on liveness, never the raw latch', () {
+      for (final src in [waitingRoomSrc, gateSrc]) {
+        expect(src, contains('BattleArenaScreen.arenaIsLive'),
+            reason: 'the skip must consult the live arena');
+      }
+      final waitingSkip = waitingRoomSrc.substring(
+          waitingRoomSrc.indexOf('_arenaPushed = true;'),
+          waitingRoomSrc.indexOf('_enterArena();'));
+      expect(waitingSkip, isNot(contains('if (BattleArenaScreen.routeActive) return;')),
+          reason: 'a bare flag skip is the deadlock this group guards');
+    });
+  });
+
   group('START cannot strand the room on STARTING…', () {
     late String src;
     setUpAll(() => src = _read(waitingRoom));
@@ -179,9 +222,9 @@ void main() {
       expect(src.indexOf('if (_arenaPushed || _leaving) return;'),
           lessThan(src.indexOf('final room = _room;')),
           reason: '_enterArenaNow must stay idempotent for the resync path');
-      expect(resync, isNot(contains("Could not load the questions")),
+      expect(resync, isNot(contains('Could not load the questions')),
           reason: 'a room that already navigated must not be told it failed');
-      expect(resync, contains("The duel has not started yet"),
+      expect(resync, contains('The duel has not started yet'),
           reason: 'an accepted-but-never-propagated start must still be '
               'explained, not left on STARTING…');
     });
