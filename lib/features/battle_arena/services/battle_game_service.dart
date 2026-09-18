@@ -219,15 +219,21 @@ class BattleGameService {
     //    in-app Vocab Test), generated from every chapter's word list.
     //    AssetManifest is parsed ONCE (previously once per chapter dir = 3×).
     final allWords = <Map<String, dynamic>>[];
-    Map<String, dynamic>? assetManifest;
+    List<String> assetKeys = const [];
     try {
-      final manifest = await rootBundle.loadString('AssetManifest.json');
-      assetManifest = json.decode(manifest) as Map<String, dynamic>;
+      // MUST use AssetManifest.loadFromAssetBundle — the legacy
+      // `rootBundle.loadString('AssetManifest.json')` key was REMOVED from
+      // Flutter's asset bundling, so reading it threw, the catch swallowed
+      // it, and every seed room silently lost its whole Vocabulary category
+      // (battles shipped as grammar+verb only). Same API the other three
+      // asset-scanning providers already use.
+      final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
+      assetKeys = manifest.listAssets();
     } catch (_) {}
 
-    if (assetManifest != null) {
+    if (assetKeys.isNotEmpty) {
       for (final dir in _vocabChapterPaths) {
-        for (final key in assetManifest.keys) {
+        for (final key in assetKeys) {
           if (key.startsWith(dir) && key.endsWith('.json')) {
             try {
               final raw = await rootBundle.loadString(key);
