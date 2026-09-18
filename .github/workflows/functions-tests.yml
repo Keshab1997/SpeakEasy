@@ -1,0 +1,43 @@
+name: Battle Arena — Functions Tests
+
+# The whole anti-cheat ladder (score verification, trophy awards, rank
+# protection) lives in functions/scoring.js and has no emulator in the loop,
+# so these unit tests are the only automated net under it. Deliberately fast:
+# no Flutter SDK, no firebase emulator, ~2s.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'functions/**'
+      - 'firestore.rules'
+      - 'firestore.indexes.json'
+      - '.github/workflows/functions-tests.yml'
+  pull_request:
+    paths:
+      - 'functions/**'
+      - 'firestore.rules'
+      - 'firestore.indexes.json'
+      - '.github/workflows/functions-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scoring:
+    name: node --test (scoring + room handler)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: functions
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: functions/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm test

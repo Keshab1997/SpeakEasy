@@ -38,28 +38,9 @@ const LEADERBOARD = 'battle_leaderboard';
 const FRIEND_REQUESTS = 'friend_requests';
 const FRIENDSHIPS = 'friendships';
 
-const ROUNDS_PER_MATCH = 5;
-const BASE_SCORE = 100;
-const MAX_SPEED_BONUS = 50;
-const DEFAULT_TIME_LIMIT = 15;
-
-const TROPHY_WIN = 25;
-const TROPHY_LOSS = -10;
-const TROPHY_DRAW = 5;
-const COMEBACK_BONUS = 5; // extra trophies for a win while below 100 (=> +30)
-const COMEBACK_THRESHOLD = 100;
-const LOSS_SHIELD_AFTER = 3; // 3rd straight loss arms a shield; the 4th loss is free
-
-/**
- * Division trophy floors — once a player earns a rank they can never be
- * demoted below its starting trophy line (rank protection).
- */
-function divisionFloor(trophies) {
-  if (trophies >= 1500) return 1500; // Grandmaster
-  if (trophies >= 800) return 800;   // Master
-  if (trophies >= 300) return 300;   // Challenger
-  return 0;                          // Novice
-}
+// Pure game math lives in ./scoring.js — no firebase imports there, so it is
+// unit-testable with `node --test`. See functions/test/scoring.test.js.
+const { asInt, verifyScore, decideWinner, trophyDelta } = require('./scoring');
 
 function isFakeUser(id) {
   return !id || String(id).startsWith('bot_') || String(id).startsWith('guest_');
@@ -87,58 +68,33 @@ function recordMatchResult(userId, name, photoUrl, result) {
   return db.runTransaction(async (tx) => {
     const snap = await tx.get(presenceRef);
     const d = snap.exists ? snap.data() : {};
-    const currentTrophies = d.trophies || 100;
+    const currentTrophies = asInt(d.trophies) || 100;
 
-    // ── Compute trophy change ──
-    let lossStreak = d.lossStreak || 0;
-    let applied = 0;
-    let shielded = false;
-    let comeback = false;
-
-    if (result === 'win') {
-      lossStreak = 0;
-      comeback = currentTrophies < COMEBACK_THRESHOLD;
-      applied = TROPHY_WIN + (comeback ? COMEBACK_BONUS : 0);
-    } else if (result === 'draw') {
-      applied = TROPHY_DRAW; // loss streak held
-    } else {
-      // loss
-      if (lossStreak >= LOSS_SHIELD_AFTER) {
-        shielded = true;
-        applied = 0; // free loss — shield consumed
-        lossStreak = 0;
-      } else {
-        applied = TROPHY_LOSS;
-        lossStreak += 1;
-      }
-    }
-
-    const floor = divisionFloor(currentTrophies);
-    let trophies = Math.max(0, Math.max(floor, currentTrophies + applied));
-
+    // ── Trophy ladder (pure + unit-tested in scoring.js) ──
+    const t = trophyDelta(
+      currentTrophies,
+      { lossStreak: d.lossStreak, winStreak: d.winStreak, bestStreak: d.bestStreak },
+      result
+    );
     const total = (d.totalMatches || 0) + 1;
     const wins = (d.wins || 0) + (result === 'win' ? 1 : 0);
     const losses = (d.losses || 0) + (result === 'loss' ? 1 : 0);
     const draws = (d.draws || 0) + (result === 'draw' ? 1 : 0);
-    // Win streak resets on loss, held on draw, incremented on win.
-    const winStreak = result === 'win'
-      ? (d.winStreak || 0) + 1
-      : (result === 'draw' ? (d.winStreak || 0) : 0);
-    const bestStreak = Math.max(d.bestStreak || 0, winStreak);
 
     const base = {
       name: d.name || name || 'Player',
       photoUrl: d.photoUrl || photoUrl || '',
-      trophies,
       wins,
       losses,
       draws,
       totalMatches: total,
-      winStreak,
-      bestStreak,
-      lossStreak,
-      lastShielded: shielded,
-      lastComeback: comeback,
+      // trophies / winStreak / bestStreak / lossStreak come from trophyDelta()
+      trophies: t.trophies,
+      winStreak: t.winStreak,
+      bestStreak: t.bestStreak,
+      lossStreak: t.lossStreak,
+      lastShielded: t.shielded,
+      lastComeback: t.comeback,
       lastActive: now,
     };
 
@@ -160,54 +116,8 @@ function recordMatchResult(userId, name, photoUrl, result) {
 }
 
 // ---------------------------------------------------------------------------
-// Score helpers (mirrors the client's BattleGameService)
-// ---------------------------------------------------------------------------
-
-function roundScore(isCorrect, timeTaken, timeLimit) {
-  if (!isCorrect) return 0;
-  const limit = timeLimit > 0 ? timeLimit : DEFAULT_TIME_LIMIT;
-  const clamped = Math.max(0, Math.min(timeTaken == null ? limit : timeTaken, limit));
-  const speedBonus = Math.round(((limit - clamped) * MAX_SPEED_BONUS) / limit);
-  return BASE_SCORE + speedBonus;
-}
-
-/**
- * Recomputes the legitimate total score for a player map from the room's
- * questions and the per-round answers/times stored by that player.
- */
-// Server-side verification for SEED rooms: recompute a player's score from
-// their recorded answers/times + the admin-only answer key. The correct
-// answers never live on the room doc, so a modified client cannot fake them.
-function computeLegitScoreFromAnswers(player, correctAnswers, timeLimits) {
-  const answers = player.roundAnswers || {};
-  const times = player.roundTimes || {};
-  let total = 0;
-  for (let i = 0; i < correctAnswers.length; i++) {
-    const k = String(i);
-    if (!(k in answers)) continue; // unanswered round = 0 pts
-    const isRight = answers[k] === correctAnswers[i];
-    const limit = (Array.isArray(timeLimits) && timeLimits[i]) || DEFAULT_TIME_LIMIT;
-    total += roundScore(isRight, times[k], limit);
-  }
-  return total;
-}
-
-function computeLegitScore(player, questions) {
-  const answers = player.roundAnswers || {};
-  const times = player.roundTimes || {};
-  let total = 0;
-  for (let i = 0; i < questions.length; i++) {
-    const q = questions[i];
-    const key = String(i);
-    if (!(key in answers)) continue; // didn't answer this round (0 pts)
-    const given = answers[key];
-    const correct = given === q.correctAnswer;
-    const limit = q.timeLimit || DEFAULT_TIME_LIMIT;
-    total += roundScore(correct, times[key], limit);
-  }
-  return total;
-}
-
+// 1) Server-authoritative score & trophies on every room write
+//    (score math itself lives in ./scoring.js: roundScore / verifyScore)
 // ---------------------------------------------------------------------------
 // 1) Server-authoritative score & trophies on every room write
 // ---------------------------------------------------------------------------
@@ -245,35 +155,32 @@ exports.onBattleRoomWrite = functions.firestore
     const updates = {};
 
     // --- Anti-cheat: clamp each player's currentScore to the legit value ---
-    const maxPossible = questionCount * (BASE_SCORE + MAX_SPEED_BONUS);
+    //
+    // The ceiling follows the number of ANSWERED rounds, and verification is
+    // never skipped: if the admin answer key is missing (write failed / very
+    // old room) we fall back to `answered * 150` instead of the full-match
+    // maximum, so an inflated score is pulled down on the next write rather
+    // than sailing through until the match ends.
+    const verifyOpts = isSeedRoom
+      ? {
+          correctAnswers: hasKey ? seedKey.answers : null,
+          timeLimits: hasKey ? seedKey.timeLimits : null,
+          questionCount,
+        }
+      : { questions, questionCount };
+
     ['player1', 'player2'].forEach((key) => {
       const p = room[key];
       if (!p || !p.id) return;
-      const reported = typeof p.currentScore === 'number' ? p.currentScore : 0;
-      const answers = p.roundAnswers || {};
-      const times = p.roundTimes || {};
-      const answeredKeys = Object.keys(answers);
-
-      let legit;
-      const hasTimingForAll = answeredKeys.every((k) => times[k] !== undefined);
-      if (isSeedRoom) {
-        // Verified against the admin-only answer key. If the key is missing
-        // (write failed / very old room) fall back to the hard cap so we
-        // never penalise a legitimate player.
-        legit = hasKey && hasTimingForAll && answeredKeys.length > 0
-          ? computeLegitScoreFromAnswers(p, seedKey.answers, seedKey.timeLimits)
-          : maxPossible;
-      } else if (hasTimingForAll && answeredKeys.length > 0) {
-        // New client sends per-round times → we can recompute exactly.
-        legit = computeLegitScore(p, questions);
-      } else {
-        // Older client / no timing data → only enforce the hard maximum cap
-        // (can't prove speed bonus, so don't penalise a legitimate player).
-        legit = maxPossible;
-      }
-
-      if (reported > legit) {
-        updates[`${key}.currentScore`] = legit;
+      const reported = asInt(p.currentScore) || 0;
+      const verdict = verifyScore(p, verifyOpts);
+      if (reported > verdict.legit) {
+        updates[`${key}.currentScore`] = verdict.legit;
+        if (!verdict.exact) {
+          functions.logger.info('score clamped without exact verification', {
+            roomId: after.id, player: p.id, reported, legit: verdict.legit,
+          });
+        }
       }
     });
 
@@ -291,15 +198,19 @@ exports.onBattleRoomWrite = functions.firestore
       room.status !== 'completed' && (bothFinished || isForfeit);
 
     if (shouldFinish) {
-      const s1 = room.player1 && room.player1.currentScore ? room.player1.currentScore : 0;
-      const s2 = room.player2 && room.player2.currentScore ? room.player2.currentScore : 0;
+      // Re-verify both scores before ranking them: `currentScore` on the doc
+      // is still the client-reported number here, so ranking by it would hand
+      // the match (and its trophy) to whoever wrote 99999.
+      const verdict = decideWinner(room, verifyOpts);
+      const s1 = verdict.s1;
+      const s2 = verdict.s2;
 
       let winnerId = null;
       if (isForfeit) {
         winnerId = room.winnerId ||
           (room.player1 && room.player1.isForfeited ? room.player2.id : room.player1.id);
-      } else if (s1 !== s2) {
-        winnerId = s1 > s2 ? room.player1.id : room.player2.id;
+      } else {
+        winnerId = verdict.winnerId;
       }
 
       updates.status = 'completed';

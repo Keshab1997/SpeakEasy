@@ -70,3 +70,4 @@ functions/.runtimeconfig.json
 functions/lib/
 functions/logs/
 *.log
+node_modules/
