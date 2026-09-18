@@ -205,7 +205,9 @@ class _BattleWaitingRoomScreenState
     }
     _arenaPushed = true;
     ref.read(battleArenaProvider.notifier).startFromRoom(room);
-    if (BattleArenaScreen.routeActive) return; // restore path already put us in
+    // Only skip when an arena is really on the widget tree — a stale
+    // `routeActive` used to strand both players on STARTING… with no toast.
+    if (BattleArenaScreen.arenaIsLive) return;
     await Navigator.of(context, rootNavigator: true).push(
       MaterialPageRoute(builder: (_) => const BattleArenaScreen()),
     );

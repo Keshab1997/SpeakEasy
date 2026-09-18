@@ -15,6 +15,19 @@ class BattleArenaScreen extends ConsumerStatefulWidget {
   /// players staring at the waiting room while the duel ran behind it.
   static bool routeActive = false;
 
+  /// Set/cleared with [routeActive]. A bare bool can only say "an arena was
+  /// mounted at some point"; if a frame is ever skipped (route swap, app
+  /// teardown) the flag stays true and BOTH entry paths — the waiting room
+  /// and the global gate — then skip their push forever, with no message.
+  /// The context proves the arena is mounted *right now*.
+  static BuildContext? activeContext;
+
+  /// True only while a live BattleArenaScreen is actually in the tree.
+  static bool get arenaIsLive {
+    final ctx = activeContext;
+    return routeActive && ctx != null && ctx.mounted;
+  }
+
   @override
   ConsumerState<BattleArenaScreen> createState() => _BattleArenaScreenState();
 }
@@ -26,11 +39,13 @@ class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
   void initState() {
     super.initState();
     BattleArenaScreen.routeActive = true;
+    BattleArenaScreen.activeContext = context;
   }
 
   @override
   void dispose() {
     BattleArenaScreen.routeActive = false;
+    BattleArenaScreen.activeContext = null;
     super.dispose();
   }
 
