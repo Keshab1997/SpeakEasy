@@ -109,31 +109,32 @@ class _GlobalBattleChallengeGateState
       final isDuel = next.status == BattleArenaStatus.inDuel;
 
       if (!wasDuel && isDuel) {
-        if (_arenaOpen) {
-          // Previous duel's arena/result route is still considered open —
-          // retry after it pops (see previous behaviour for details).
-          // ignore: use_build_context_synchronously
-          Future.delayed(const Duration(milliseconds: 500), () async {
-            if (!mounted) return;
-            if (ref.read(battleArenaProvider).status != BattleArenaStatus.inDuel) return;
-            if (_arenaOpen) return;
-            final navCtx = appNavigatorKey.currentContext;
-            if (navCtx == null) return;
-            _arenaOpen = true;
-            // ignore: use_build_context_synchronously
-            await Navigator.of(navCtx).push(
-              MaterialPageRoute(builder: (_) => const BattleArenaScreen()),
-            );
-            _arenaOpen = false;
-          });
-          return;
-        }
+        // One frame of slack. The widget that starts the duel flips the
+        // provider state and pops itself in the SAME frame, and a pop queued
+        // that early leaves the root navigator's context stale for this push
+        // — the await then dies, and (before the try/finally below) left
+        // _arenaOpen pinned true for the rest of the app's life: every later
+        // duel in the session silently never opened. Sound kept playing
+        // because the round timers live in the provider, not the screen.
+        await Future<void>.delayed(Duration.zero);
+        if (!mounted) return;
+        if (ref.read(battleArenaProvider).status != BattleArenaStatus.inDuel) return;
+        // Whoever opened the duel navigates into it; this listener only covers
+        // quick match and mid-session restores. BattleArenaScreen.routeActive
+        // is the ground truth, so this can neither double-push nor fight the
+        // waiting room for the same duel.
+        if (BattleArenaScreen.routeActive || _arenaOpen) return;
+        final navCtx = appNavigatorKey.currentContext;
+        if (navCtx == null) return;
         _arenaOpen = true;
-        // ignore: use_build_context_synchronously
-        await Navigator.of(appNavigatorKey.currentContext!).push(
-          MaterialPageRoute(builder: (_) => const BattleArenaScreen()),
-        );
-        _arenaOpen = false;
+        try {
+          // ignore: use_build_context_synchronously
+          await Navigator.of(navCtx, rootNavigator: true).push(
+            MaterialPageRoute(builder: (_) => const BattleArenaScreen()),
+          );
+        } finally {
+          _arenaOpen = false;
+        }
       }
     });
 

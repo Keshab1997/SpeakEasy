@@ -9,12 +9,30 @@ import 'battle_result_screen.dart';
 class BattleArenaScreen extends ConsumerStatefulWidget {
   const BattleArenaScreen({super.key});
 
+  /// True while an arena route is actually mounted — the ONLY trustworthy
+  /// "is the duel on screen?" signal. Anything else (a bool living in some
+  /// other widget) is a guess, and guessing wrong here is what left both
+  /// players staring at the waiting room while the duel ran behind it.
+  static bool routeActive = false;
+
   @override
   ConsumerState<BattleArenaScreen> createState() => _BattleArenaScreenState();
 }
 
 class _BattleArenaScreenState extends ConsumerState<BattleArenaScreen> {
   bool _showEmoteTray = false;
+
+  @override
+  void initState() {
+    super.initState();
+    BattleArenaScreen.routeActive = true;
+  }
+
+  @override
+  void dispose() {
+    BattleArenaScreen.routeActive = false;
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
