@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../screens/battle_arena_screen.dart';
+import '../services/battle_game_service.dart';
 import '../services/battle_matchmaking_service.dart';
 import '../services/battle_presence_service.dart';
 
@@ -53,6 +54,15 @@ class _BattleWaitingRoomScreenState
   bool _joinMarked = false;
   bool _busy = false;
 
+  /// True only after the room was successfully fetched at least once.
+  /// The guest "leave" write (player2LeftAt) must NEVER fire when we never
+  /// actually saw the room: a failed/transient room read used to pop this
+  /// screen, the PopScope below then wrote player2LeftAt to a PERFECTLY
+  /// HEALTHY room, and the host saw "<Guest> left the room." even though the
+  /// guest had just accepted and was staring at the join sheet. That false
+  /// poison write is exactly the "accept korleo exit hye geche" bug.
+  bool _everSawRoom = false;
+
   StreamSubscription<BattleRoom?>? _roomSub;
   StreamSubscription<BattleChallenge?>? _challengeSub;
 
@@ -75,27 +85,39 @@ class _BattleWaitingRoomScreenState
 
   Future<void> _init() async {
     // Fetch + hydrate once (snapshots below don't carry questions for
-    // seed rooms).
+    // seed rooms). One retry: a transient server/cache miss right after
+    // the host created the room (resend-after-decline does exactly this)
+    // must not fail the join — the gate already retried once before
+    // pushing us, so a second attempt here covers the remaining window.
     BattleRoom? room;
     Object? readError;
-    try {
-      room = await _matchmaking.getRoom(widget.roomId);
-    } catch (e) {
-      // A rejected read must never masquerade as "the room is gone": the
-      // fix is a rules/permission deploy, not a re-challenge.
-      readError = e;
+    for (var attempt = 0; attempt < 2; attempt++) {
+      try {
+        room = await _matchmaking.getRoom(widget.roomId);
+        readError = null;
+      } catch (e) {
+        // A rejected read must never masquerade as "the room is gone": the
+        // fix is a rules/permission deploy, not a re-challenge.
+        readError = e;
+        room = null;
+      }
+      if (room != null || !mounted) break;
+      if (attempt == 0) {
+        await Future<void>.delayed(const Duration(milliseconds: 800));
+      }
     }
     if (!mounted) return;
     if (readError != null) {
       _toast('Could not open the duel room: ${_describeError(readError)}');
-      Navigator.of(context).pop();
+      _leaveWithoutMarkingLeft();
       return;
     }
     if (room == null || room.questions.isEmpty) {
       _toast('This duel room is no longer available.');
-      Navigator.of(context).pop();
+      _leaveWithoutMarkingLeft();
       return;
     }
+    _everSawRoom = true;
     setState(() {
       _room = room;
       _loading = false;
@@ -167,14 +189,34 @@ class _BattleWaitingRoomScreenState
   }
 
   /// Host watches the challenge doc: declined/deleted → close everything.
+  /// ⚠️ A null snapshot is NOT proof of a decline: Firestore can emit a
+  /// transient "doc removed" while the sender's delete+re-set replace of a
+  /// RESENT challenge propagates. Acting on that null used to kill a healthy
+  /// room (and the resend with it). Verify against the server before giving
+  /// up — only a confirmed missing doc (or an actual 'rejected' status with
+  /// the CURRENT instance's createdAt) counts as a decline.
   void _listenToChallenge() {
     _challengeSub?.cancel();
     _challengeSub = BattlePresenceService()
         .streamChallenge(widget.challengeId)
-        .listen((challenge) {
+        .listen((challenge) async {
       if (!mounted || _leaving || _enteringArena) return;
-      final declined = challenge == null || challenge.status == 'rejected';
-      if (!declined) return;
+      final locallyDeclined =
+          challenge == null || challenge.status == 'rejected';
+      if (!locallyDeclined) return;
+
+      // Verify: re-read the challenge doc fresh before tearing down.
+      try {
+        final fresh = await BattlePresenceService().getChallenge(widget.challengeId);
+        if (!mounted || _leaving || _enteringArena) return;
+        final confirmedDeclined =
+            fresh == null || fresh.status == 'rejected';
+        if (!confirmedDeclined) return; // transient null / stale emission
+      } catch (_) {
+        // Read failed (offline moment) — do NOT assume a decline; the room
+        // snapshot stream still guards real cancellations.
+        return;
+      }
 
       _leaving = true;
       unawaited(_matchmaking.deleteRoom(widget.roomId));
@@ -303,7 +345,20 @@ class _BattleWaitingRoomScreenState
   Future<void> _leaveAsGuest() async {
     if (_leaving) return;
     _leaving = true;
-    unawaited(_matchmaking.markPlayer2Left(widget.roomId));
+    // Never publish "I left" for a room we never actually saw — that write
+    // is how the host got a false "<Guest> left the room." (see
+    // [_everSawRoom]).
+    if (_everSawRoom) {
+      unawaited(_matchmaking.markPlayer2Left(widget.roomId));
+    }
+    if (mounted) Navigator.of(context).pop();
+  }
+
+  /// Teardown pop for FAILED joins (room unread/unavailable): pops WITHOUT
+  /// the guest-leave write. `_leaving` first so the PopScope below cannot
+  /// fire `markPlayer2Left` for this exit.
+  void _leaveWithoutMarkingLeft() {
+    _leaving = true;
     if (mounted) Navigator.of(context).pop();
   }
 
@@ -336,13 +391,16 @@ class _BattleWaitingRoomScreenState
 
     // System back = Cancel (host) / Leave (guest) — same cleanup as the
     // visible buttons, so nobody can ghost a waiting room silently.
+    // The guest branch is guarded by [_everSawRoom]: a pop that happens
+    // because the join FAILED (room unread/unavailable) must never write
+    // player2LeftAt — the host would see a false "left the room".
     return PopScope(
       onPopInvokedWithResult: (didPop, _) {
         if (!didPop || _leaving || _enteringArena) return;
         if (widget.isHost) {
           unawaited(_matchmaking.deleteChallenge(widget.challengeId));
           unawaited(_matchmaking.deleteRoom(widget.roomId));
-        } else {
+        } else if (_everSawRoom) {
           unawaited(_matchmaking.markPlayer2Left(widget.roomId));
         }
       },
@@ -486,6 +544,29 @@ class _BattleWaitingRoomScreenState
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        // Mixed app versions build different question pools — the duel would
+        // start with each side seeing its own set. Warn BEFORE that happens.
+        if (room.questionSetVersion != BattleGameService.questionSetVersion)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 12),
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 8),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                '⚠️ আপনাদের দুজনের app version আলাদা — question মিলবে না। দুজনেই app update করে নিন।',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFFB45309)),
+              ),
+            ),
+          ),
         AnimatedBuilder(
           animation: _pulse,
           builder: (context, child) => Opacity(

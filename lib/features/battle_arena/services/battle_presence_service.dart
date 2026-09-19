@@ -583,6 +583,22 @@ class BattlePresenceService with WidgetsBindingObserver {
             : null);
   }
 
+  /// One-shot fresh read of a challenge doc (null if missing). Used to
+  /// re-verify state before acting on a possibly-stale challenge object —
+  /// the deterministic per-pair doc id means a resent challenge REPLACES the
+  /// old doc, so a cached/pending sheet object can point at a dead room.
+  /// ⚠️ THROWS on read failure — callers must distinguish "doc is gone"
+  /// (null) from "could not read" (exception); a failed read must never be
+  /// treated as proof of a decline/deletion.
+  Future<BattleChallenge?> getChallenge(String challengeId) async {
+    final doc = await _firestore
+        .collection(_challengesCollection)
+        .doc(challengeId)
+        .get();
+    if (!doc.exists || doc.data() == null) return null;
+    return BattleChallenge.fromMap(doc.data()!, doc.id);
+  }
+
   /// Challenges addressed to me that I already ACCEPTED — used to restore
   /// the waiting room after an app restart (room-first flow).
   Stream<List<BattleChallenge>> listenToAcceptedIncomingChallenges(

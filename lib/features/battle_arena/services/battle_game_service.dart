@@ -66,8 +66,11 @@ class BattleGameService {
       DateTime.now().difference(_cachedAt!) < _cacheTtl;
 
   /// Question-set version stored on seed rooms. Bump it whenever the pool
-  /// construction changes so old rooms keep generating their original set.
-  static const int questionSetVersion = 1;
+  /// construction OR selection logic changes so mixed-version devices get a
+  /// clear warning instead of silently different questions.
+  /// v2: seeded selection no longer excludes per-device "recently played"
+  /// IDs (that filter made the two phones generate DIFFERENT sets).
+  static const int questionSetVersion = 2;
 
   static const String _lastIdsKey = 'lastBattleQuestionIds';
   static const int _recentExcludeCount = 20;
@@ -104,8 +107,16 @@ class BattleGameService {
   /// Loads 5 curated questions: 2 Grammar (mock tests), 2 Vocabulary, 1 Verb.
   /// Questions are generated from the app's learning content so the battle
   /// feels like a real review of lessons rather than the daily quiz bank.
+  /// LOCAL-ONLY path (bot duels): repeat protection via per-device recent IDs
+  /// is safe here because nothing is shared with another device.
   static Future<List<BattleQuestion>> loadCuratedQuestions() async {
-    return generateSeededQuestions(Random().nextInt(0x7FFFFFFF));
+    final recentIds = await _loadRecentIds();
+    final seed = Random().nextInt(0x7FFFFFFF);
+    final questions =
+        await generateSeededQuestions(seed, excludeIds: recentIds);
+    // ignore: unawaited_futures
+    _saveRecentIds(questions);
+    return questions;
   }
 
   /// Warms the question-pool cache without selecting anything.
@@ -118,22 +129,31 @@ class BattleGameService {
   ///   • the pool built in a fixed order (asset iteration is stable) with
   ///     seeded distractor shuffles (see _loadQuestionPool), and
   ///   • Dart's `Random(seed)`, which is reproducible across platforms.
+  ///
+  /// ⚠️ MUST stay a PURE function of (seed, pool). Per-device state — like
+  /// the Hive "recently played" exclusion list — MUST NOT leak into the
+  /// selection: the two phones hold different recent lists, and a filtered
+  /// pool shuffles into a DIFFERENT set on each device. That exact leak made
+  /// challenge/quick-match duels show different questions to the two players
+  /// (sender picks at room-create time, receiver regenerates at accept time).
+  /// Repeat protection now lives ONLY in [loadCuratedQuestions] (bot duels)
+  /// via the optional [excludeIds] parameter.
   static Future<List<BattleQuestion>> generateSeededQuestions(
     int seed, {
     int count = 5,
+    Set<String>? excludeIds,
   }) async {
     await _loadQuestionPool();
     final byCategory = _cachedByCategory ?? const <String, List<BattleQuestion>>{};
     final pool = _cachedQuestions ?? const <BattleQuestion>[];
 
     final rng = Random(seed);
-    // Repeat protection: avoid questions from last 20 duels if possible
-    final recentIds = await _loadRecentIds();
 
     List<BattleQuestion> pick(String category, int n) {
       final fullList = byCategory[category] ?? const <BattleQuestion>[];
-      // Prefer non-recent questions
-      final fresh = fullList.where((q) => !recentIds.contains(q.id)).toList();
+      final fresh = excludeIds == null || excludeIds.isEmpty
+          ? fullList
+          : fullList.where((q) => !excludeIds.contains(q.id)).toList();
       final source = fresh.length >= n ? fresh : fullList;
       final list = List<BattleQuestion>.from(source)..shuffle(rng);
       return list.take(n).toList();
@@ -148,11 +168,16 @@ class BattleGameService {
     // Top up from anything available if a category ran short.
     if (selected.length < count) {
       final selectedIds = selected.map((s) => s.id).toSet();
-      final remaining =
-          pool.where((q) => !selectedIds.contains(q.id) && !recentIds.contains(q.id)).toList()..shuffle(rng);
+      final remaining = pool
+          .where((q) =>
+              !selectedIds.contains(q.id) &&
+              !(excludeIds?.contains(q.id) ?? false))
+          .toList()
+        ..shuffle(rng);
       if (remaining.length < (count - selected.length)) {
-        // Fallback: allow recent if not enough fresh
-        final fallback = pool.where((q) => !selectedIds.contains(q.id)).toList()..shuffle(rng);
+        // Fallback: allow excluded if not enough fresh
+        final fallback =
+            pool.where((q) => !selectedIds.contains(q.id)).toList()..shuffle(rng);
         selected.addAll(fallback.take(count - selected.length));
       } else {
         selected.addAll(remaining.take(count - selected.length));
@@ -161,9 +186,6 @@ class BattleGameService {
 
     selected.shuffle(rng);
     final result = selected.take(count).toList();
-    // Save for next duel's exclusion (fire-and-forget)
-    // ignore: unawaited_futures
-    _saveRecentIds(result);
     return result;
   }
 

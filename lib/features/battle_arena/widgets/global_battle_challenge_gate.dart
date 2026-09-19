@@ -193,7 +193,32 @@ class _GlobalBattleChallengeGateState
         } else if (challenge.status == 'rejected') {
           _handledOutgoing[challenge.id] = challenge.createdAt;
           final matchmaking = BattleMatchmakingService();
-          unawaited(matchmaking.deleteChallenge(challenge.id));
+          // ⚠️ A LATE backlog emission (decline delivered while we were
+          // offline/backgrounded) can arrive AFTER I already re-challenged:
+          // the doc id is deterministic, so a blind deleteChallenge here
+          // would kill the NEW challenge — the receiver's accept then hit a
+          // missing doc and the whole resend broke. Re-verify first: only
+          // delete when the doc is STILL this exact rejected instance.
+          // (Deleting the rejected instance's ROOM is always safe — every
+          // challenge gets its own room id.)
+          try {
+            unawaited(() async {
+              try {
+                final freshDoc = await ref
+                    .read(battlePresenceServiceProvider)
+                    .getChallenge(challenge.id);
+                final sameInstance = freshDoc != null &&
+                    freshDoc.status == 'rejected' &&
+                    freshDoc.createdAt == challenge.createdAt;
+                if (sameInstance) {
+                  unawaited(matchmaking.deleteChallenge(challenge.id));
+                }
+              } catch (_) {
+                // Read failed — leave the doc alone; a retry/replace flow
+                // will clean it up later.
+              }
+            }());
+          } catch (_) {}
           // Declined → free the waiting room instantly, even when the host
           // is NOT on the waiting-room screen (app restart / lobby). Rules
           // allow participants to delete rooms still in 'waiting'.
@@ -562,6 +587,28 @@ class _GlobalBattleChallengeGateState
     try {
       final matchmaking = BattleMatchmakingService();
       final presence = ref.read(battlePresenceServiceProvider);
+
+      // ── FRESH CHALLENGE RE-VERIFICATION ─────────────────────
+      // The sheet may be holding a STALE object: the per-pair doc id is
+      // deterministic, so a challenge that was declined once and sent again
+      // REUSES the same id with a NEW createdAt and a NEW room. Accepting a
+      // stale instance used to join the DEAD room (or nothing), and the
+      // sender then saw "left the room". Re-read the doc and act on ITS
+      // state: pending/accepted + the CURRENT roomId.
+      final fresh = await presence.getChallenge(challenge.id);
+      if (fresh != null) {
+        if (fresh.status == 'rejected') {
+          onDone();
+          _respondedIncoming[fresh.id] = fresh.createdAt;
+          _showGlobalSnack(
+              'This challenge was declined already — ask for a new one 🤺',
+              color: const Color(0xFF64748B));
+          return;
+        }
+        if (fresh.status == 'pending' || fresh.status == 'accepted') {
+          challenge = fresh;
+        }
+      }
 
       // ── SENDER LIVENESS CHECK (with room fallback) ──────────
       // Strictly blocking on presence alone caused false negatives
