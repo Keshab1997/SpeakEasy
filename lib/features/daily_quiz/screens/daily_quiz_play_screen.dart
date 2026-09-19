@@ -158,8 +158,6 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
     Future.delayed(const Duration(seconds: 2), _autoAdvance);
   }
 
-  /// Called when the user taps an MCQ option.
-
   /// Called when the countdown reaches zero.
   void _handleTimeout() {
     if (_isAutoAdvancing) return;
@@ -297,10 +295,10 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
     }
 
     // Use answered question for feedback display (provider advances index)
-  final displayQuestion = _isAnswerChecked && _answeredQuestion != null
-      ? _answeredQuestion!
-      : quiz.questions[quizState.currentQuestionIndex];
-  final question = displayQuestion;
+    final displayQuestion = _isAnswerChecked && _answeredQuestion != null
+        ? _answeredQuestion!
+        : quiz.questions[quizState.currentQuestionIndex];
+    final question = displayQuestion;
 
     // --- Main scaffold -------------------------------------------------------
     return PopScope(
@@ -514,7 +512,6 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
       DailyQuizQuestion question, ThemeData theme, bool isDark) {
     return Column(
           children: [
-            const SizedBox(height: 24),
             // MCQ option cards
             ...question.options.asMap().entries.map((entry) {
               return _buildOptionCard(

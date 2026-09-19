@@ -71,3 +71,7 @@ functions/lib/
 functions/logs/
 *.log
 node_modules/
+
+# Dart incremental compile cache — never commit
+*.dill
+*.dill.tree

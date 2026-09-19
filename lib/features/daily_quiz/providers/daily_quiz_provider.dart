@@ -169,7 +169,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
       if (cached != null) {
         debugPrint('📅 [DailyQuiz] loadTodayQuiz: restored from Hive '
             '(completed=${cached.isCompleted}, answers=${cached.answers.length})');
-        _service.saveQuiz(cached, userId);
+        // No extra save — cached is already persisted; avoid double Hive write
         final isPlaying = cached.startedAt != null && !cached.isCompleted;
         state = DailyQuizState(
           quiz: cached,

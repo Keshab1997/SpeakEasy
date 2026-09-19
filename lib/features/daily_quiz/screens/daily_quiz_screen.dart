@@ -507,6 +507,13 @@ class DailyQuizScreen extends ConsumerWidget {
     StreakState streak,
     ThemeData theme,
   ) {
+    final scoreLabel = quiz == null
+        ? '—'
+        : quiz.isCompleted
+            ? '${quiz.score}'
+            : quiz.answeredCount > 0
+                ? '${quiz.score}'
+                : '0';
     return Row(
       children: [
         Expanded(
@@ -521,7 +528,7 @@ class DailyQuizScreen extends ConsumerWidget {
         Expanded(
           child: _StatTile(
             emoji: '🏆',
-            value: '${quiz?.score ?? 0}',
+            value: scoreLabel,
             label: 'Quiz Points',
             accent: const Color(0xFFF59E0B),
           ),
@@ -1042,6 +1049,12 @@ class _YesterdayChampionBannerState extends State<_YesterdayChampionBanner> {
   final _service = DailyQuizLeaderboardService();
   late Future<DailyQuizLeaderboardEntry?> _future;
 
+  // Static cache: yesterday's champion is same for everyone today, keep 12h
+  static DailyQuizLeaderboardEntry? _cachedChampion;
+  static String? _cachedDateStr;
+  static DateTime? _cachedAt;
+  static const _bannerCacheTtl = Duration(hours: 12);
+
   @override
   void initState() {
     super.initState();
@@ -1053,8 +1066,16 @@ class _YesterdayChampionBannerState extends State<_YesterdayChampionBanner> {
       final yesterday = DateTime.now().subtract(const Duration(days: 1));
       final dateStr =
           '${yesterday.year}-${yesterday.month.toString().padLeft(2, '0')}-${yesterday.day.toString().padLeft(2, '0')}';
+      // Return cached if same date and fresh
+      if (_cachedDateStr == dateStr && _cachedAt != null && _cachedChampion != null && DateTime.now().difference(_cachedAt!) < _bannerCacheTtl) {
+        return _cachedChampion;
+      }
       final entries = await _service.fetchTopEntries(dateStr, limit: 1);
-      return entries.isEmpty ? null : entries.first;
+      final champ = entries.isEmpty ? null : entries.first;
+      _cachedChampion = champ;
+      _cachedDateStr = dateStr;
+      _cachedAt = DateTime.now();
+      return champ;
     } catch (_) {
       return null;
     }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../providers/auth_provider.dart';
+import '../../../providers/game/game_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../../../services/ad_service.dart';
 import '../models/daily_quiz_model.dart';
@@ -532,9 +534,21 @@ class _BonusAdButtonState extends ConsumerState<_BonusAdButton> {
                 final messenger = ScaffoldMessenger.of(context);
                 setState(() => _isLoading = true);
                 final shown = await AdService().showRewardedAd(
-                  onRewardEarned: () {
-                    widget.ref.read(coinProvider.notifier).addCoins(5);
-                    setState(() => _bonusClaimed = true);
+                  onRewardEarned: () async {
+                    await widget.ref.read(coinProvider.notifier).addCoins(5);
+                    if (mounted) setState(() => _bonusClaimed = true);
+                    // Sync to Firestore so bonus survives restart (same as completeQuiz)
+                    try {
+                      final progressRepo = widget.ref.read(progressRepositoryProvider);
+                      final localProgress = progressRepo.getProgress();
+                      if (localProgress != null) {
+                        final uid = widget.ref.read(authProvider).asData?.value?.id;
+                        if (uid != null && uid.isNotEmpty) {
+                          final updated = localProgress.copyWith(userId: uid);
+                          await progressRepo.uploadProgressToFirestore(updated);
+                        }
+                      }
+                    } catch (_) {}
                   },
                 );
                 if (mounted) setState(() => _isLoading = false);

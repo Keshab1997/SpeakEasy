@@ -76,9 +76,13 @@ class DailyQuizService {
       allocated += share;
     }
 
-    // Safety net: if any slots remain unfilled, top up from any pool.
+    // Safety net: if any slots remain unfilled, top up from any pool (deduped).
     if (allocated < slotsRemaining) {
-      final allRemaining = typePools.values.expand((p) => p).toList()
+      final selectedIds = selected.map((q) => q.id).toSet();
+      final allRemaining = typePools.values
+          .expand((p) => p)
+          .where((q) => !selectedIds.contains(q.id))
+          .toList()
         ..shuffle(rng);
       selected.addAll(allRemaining.take(slotsRemaining - allocated));
     }
