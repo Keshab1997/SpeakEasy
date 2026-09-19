@@ -63,6 +63,11 @@ class _BattleWaitingRoomScreenState
   /// poison write is exactly the "accept korleo exit hye geche" bug.
   bool _everSawRoom = false;
 
+  /// Set when the room could not be FETCHED (slow network — not "room is
+  /// gone"). Instead of silently popping (which felt like "Joining… কিন্তু
+  /// room-এ entry হয় না"), the screen stays and offers a Try Again button.
+  bool _loadFailed = false;
+
   StreamSubscription<BattleRoom?>? _roomSub;
   StreamSubscription<BattleChallenge?>? _challengeSub;
 
@@ -91,9 +96,15 @@ class _BattleWaitingRoomScreenState
     // pushing us, so a second attempt here covers the remaining window.
     BattleRoom? room;
     Object? readError;
-    for (var attempt = 0; attempt < 2; attempt++) {
+    for (var attempt = 0; attempt < 3; attempt++) {
       try {
-        room = await _matchmaking.getRoom(widget.roomId);
+        // BOUND EVERY ATTEMPT: a first read of a never-cached room doc can
+        // stall indefinitely on a weak connection (the offline cache cannot
+        // serve it). Without this bound the screen hung on the spinner
+        // forever — "Joining…" from the user's point of view.
+        room = await _matchmaking
+            .getRoom(widget.roomId)
+            .timeout(const Duration(seconds: 8));
         readError = null;
       } catch (e) {
         // A rejected read must never masquerade as "the room is gone": the
@@ -102,17 +113,24 @@ class _BattleWaitingRoomScreenState
         room = null;
       }
       if (room != null || !mounted) break;
-      if (attempt == 0) {
-        await Future<void>.delayed(const Duration(milliseconds: 800));
+      if (attempt < 2) {
+        await Future<void>.delayed(
+            Duration(milliseconds: 600 * (attempt + 1)));
       }
     }
     if (!mounted) return;
+    // Read FAILED (slow network / rules) → DO NOT kick the user out.
+    // Stay on this screen with an in-place retry — popping here is exactly
+    // what used to look like "accepted but never entered the room".
     if (readError != null) {
-      _toast('Could not open the duel room: ${_describeError(readError)}');
-      _leaveWithoutMarkingLeft();
+      setState(() {
+        _loadFailed = true;
+        _loading = false;
+      });
       return;
     }
     if (room == null || room.questions.isEmpty) {
+      // Confirmed missing/unusable room (clean server answer) → leave.
       _toast('This duel room is no longer available.');
       _leaveWithoutMarkingLeft();
       return;
@@ -362,6 +380,80 @@ class _BattleWaitingRoomScreenState
     if (mounted) Navigator.of(context).pop();
   }
 
+  /// User taps "Try Again" after a failed room fetch — reset and re-run
+  /// [_init] in place. Guards prevent double-join / duplicate listeners.
+  void _retryLoad() {
+    if (_loading || _leaving || _enteringArena) return;
+    setState(() {
+      _loadFailed = false;
+      _loading = true;
+    });
+    _init();
+  }
+
+  /// In-place error view shown when the room fetch failed on a slow
+  /// network. Keeps the user IN the flow (they accepted, they want IN!)
+  /// instead of the old silent pop back to wherever they were.
+  Widget _buildLoadFailedView(bool isDark) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('📶', style: TextStyle(fontSize: 54)),
+            const SizedBox(height: 16),
+            const Text(
+              'দুয়েল room লোড হচ্ছে না',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'ইন্টারনেট সংযোগ দুর্বল — room-টা পাওয়া যাচ্ছে না। '
+              'আবার চেষ্টা করুন।',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 13, color: Colors.grey[500]),
+            ),
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              height: 52,
+              child: ElevatedButton.icon(
+                onPressed: _retryLoad,
+                icon: const Icon(Icons.refresh),
+                label: const Text('Try Again',
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.w800)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF10B981),
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18)),
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              height: 48,
+              child: OutlinedButton(
+                onPressed: _leaveWithoutMarkingLeft,
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.grey,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18)),
+                ),
+                child: const Text('Leave',
+                    style: TextStyle(fontWeight: FontWeight.w600)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   void _toast(String message) {
     final ctx = mounted ? context : null;
     if (ctx == null) return;
@@ -416,9 +508,11 @@ class _BattleWaitingRoomScreenState
           ),
         ),
         child: SafeArea(
-          child: _loading || room == null
-              ? const Center(child: CircularProgressIndicator())
-              : Padding(
+          child: _loadFailed
+              ? _buildLoadFailedView(isDark)
+              : _loading || room == null
+                  ? const Center(child: CircularProgressIndicator())
+                  : Padding(
                   padding: const EdgeInsets.all(24),
                   child: Column(
                     children: [

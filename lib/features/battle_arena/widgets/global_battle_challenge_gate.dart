@@ -325,14 +325,35 @@ class _GlobalBattleChallengeGateState
 
     try {
       final matchmaking = BattleMatchmakingService();
-      var room = await matchmaking.getRoom(roomId);
-      // Room may take a beat to propagate — retry once.
-      if (room == null) {
-        await Future.delayed(const Duration(milliseconds: 800));
-        room = await matchmaking.getRoom(roomId);
+      // Room may take a beat to propagate — and on a weak network the
+      // first read of a never-cached room doc can STALL (offline cache
+      // can't serve a doc the device never saw). Bound every attempt and
+      // retry generously before giving up.
+      BattleRoom? room;
+      Object? lastReadError;
+      for (var attempt = 0; attempt < 3; attempt++) {
+        try {
+          room = await matchmaking
+              .getRoom(roomId)
+              .timeout(const Duration(seconds: 8));
+        } catch (e) {
+          lastReadError = e;
+          room = null;
+        }
+        if (room != null) break;
+        if (attempt < 2) {
+          await Future<void>.delayed(
+              Duration(milliseconds: 600 * (attempt + 1)));
+        }
       }
       if (room == null) {
-        _showGlobalSnack('This duel room is no longer available.');
+        if (lastReadError != null) {
+          _showGlobalSnack(
+              'Slow connection — could not reach the duel room 📶 Try again.',
+              color: const Color(0xFFF59E0B));
+        } else {
+          _showGlobalSnack('This duel room is no longer available.');
+        }
         return;
       }
       if (room.questions.isEmpty) {
@@ -632,27 +653,37 @@ class _GlobalBattleChallengeGateState
       final matchmaking = BattleMatchmakingService();
       final presence = ref.read(battlePresenceServiceProvider);
 
-      // ── FRESH CHALLENGE RE-VERIFICATION ─────────────────────
-      // The sheet may be holding a STALE object: the per-pair doc id is
-      // deterministic, so a challenge that was declined once and sent again
-      // REUSES the same id with a NEW createdAt and a NEW room. Accepting a
-      // stale instance used to join the DEAD room (or nothing), and the
-      // sender then saw "left the room". Re-read the doc and act on ITS
-      // state: pending/accepted + the CURRENT roomId.
-      final fresh =
-          await _acceptStep(presence.getChallenge(challenge.id), 'verify');
-      if (fresh != null) {
-        if (fresh.status == 'rejected') {
-          onDone();
-          _respondedIncoming[fresh.id] = fresh.createdAt;
-          _showGlobalSnack(
-              'This challenge was declined already — ask for a new one 🤺',
-              color: const Color(0xFF64748B));
-          return;
+      // ── FRESH CHALLENGE RE-VERIFICATION (BEST-EFFORT!) ──────
+      // The sheet may hold a STALE object: the per-pair doc id is
+      // deterministic, so a declined-then-resent challenge reuses the SAME
+      // id with a NEW createdAt and a NEW room — verify before joining.
+      // ⚠️ BUT THIS READ MUST NEVER BLOCK THE ACCEPT: v1.0.43 made it
+      // mandatory and weak-network accepts regressed ("age kaj korto") —
+      // a fresh doc read can stall indefinitely on a flaky connection,
+      // while WRITES simply queue offline and land later (why v42 worked).
+      // So: 6s budget; on timeout/error PROCEED with the sheet's object
+      // (pre-43 behavior). Only a CONFIRMED 'rejected' aborts.
+      try {
+        final fresh = await presence
+            .getChallenge(challenge.id)
+            .timeout(const Duration(seconds: 6));
+        if (fresh != null) {
+          if (fresh.status == 'rejected') {
+            onDone();
+            _respondedIncoming[fresh.id] = fresh.createdAt;
+            _showGlobalSnack(
+                'This challenge was declined already — ask for a new one 🤺',
+                color: const Color(0xFF64748B));
+            return;
+          }
+          if (fresh.status == 'pending' || fresh.status == 'accepted') {
+            challenge = fresh;
+          }
         }
-        if (fresh.status == 'pending' || fresh.status == 'accepted') {
-          challenge = fresh;
-        }
+      } on TimeoutException {
+        // Slow network — accept with the sheet's object (v42 flow).
+      } catch (_) {
+        // Read failed — accept with the sheet's object (v42 flow).
       }
       // An already-accepted challenge (re-accept after a restart/retry)
       // must NOT hit respondToChallenge again: rules only flip pending →
@@ -677,7 +708,10 @@ class _GlobalBattleChallengeGateState
       }
       if (!senderOnline && challenge.roomId != null) {
         try {
-          final fallbackRoom = await matchmaking.getRoom(challenge.roomId!);
+          // Bounded: this fallback read must never become a new hang spot.
+          final fallbackRoom = await matchmaking
+              .getRoom(challenge.roomId!)
+              .timeout(const Duration(seconds: 6));
           if (fallbackRoom != null &&
               fallbackRoom.status == BattleRoomStatus.waiting) {
             senderOnline = true;

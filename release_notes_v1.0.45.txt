@@ -1,0 +1,6 @@
+SpeakEasy v1.0.45 — Accept Works Again on Slow Networks 📶
+
+🛠️ THE v1.0.43 ACCEPT REGRESSION — FIXED
+• Accepting a duel no longer depends on a fresh server read that could stall on weak connections — that mandatory read (added in v1.0.43) is why accepting stopped working after v1.0.42.
+• The flow now degrades gracefully: if a check is slow, the accept CONTINUES exactly like before instead of getting stuck on "Joining…".
+• Duel room loading retries up to 3 times with per-attempt limits, and if it still can't load you get an in-place "Try Again" screen — you are never silently kicked out of a duel you accepted.
