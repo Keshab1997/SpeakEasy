@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -302,7 +303,13 @@ class _GlobalBattleChallengeGateState
     required String challengeId,
     required bool isHost,
   }) async {
-    if (_waitingRoomOpen || battleWaitingRoomOpen) return;
+    if (_waitingRoomOpen || battleWaitingRoomOpen) {
+      // A waiting room is ALREADY on screen — pushing a second one would
+      // stack. This is where a "silent no-entry" used to hide, though, so
+      // leave a breadcrumb for diagnosis.
+      debugPrint('⚠️ _enterChallengeRoom skipped: a waiting room is already open');
+      return;
+    }
     final duel = ref.read(battleArenaProvider);
     if (duel.status == BattleArenaStatus.inDuel) {
       // Only a duel for THIS room means "already inside". A stale `inDuel`
@@ -350,7 +357,12 @@ class _GlobalBattleChallengeGateState
       }
 
       final navCtx = appNavigatorKey.currentContext;
-      if (navCtx == null) return;
+      if (navCtx == null) {
+        // No root navigator — pushing would silently do nothing, which the
+        // user experienced as "Joining… but I never enter any room".
+        _showGlobalSnack('Could not open the duel room — please try again.');
+        return;
+      }
       _waitingRoomOpen = true;
       // ignore: use_build_context_synchronously
       await Navigator.of(navCtx).push(
@@ -579,6 +591,38 @@ class _GlobalBattleChallengeGateState
     } catch (_) {}
   }
 
+  /// Bounds one accept step. Firestore writes/reads can sit QUEUED forever
+  /// on a flaky connection without ever completing OR throwing — that exact
+  /// hang is what kept the accept sheet stuck on "Joining…". Every await on
+  /// the accept path must be bounded so the user always gets either entry
+  /// or a clear, actionable error.
+  static const Duration _acceptStepTimeout = Duration(seconds: 12);
+
+  Future<T> _acceptStep<T>(Future<T> step, String what) {
+    return step.timeout(
+      _acceptStepTimeout,
+      onTimeout: () => throw TimeoutException('accept step timed out: $what'),
+    );
+  }
+
+  /// Names the failure so a rules problem never masquerades as "nothing
+  /// happened" again.
+  String _acceptFailureMessage(Object e) {
+    if (e is TimeoutException) {
+      return 'Connection is too slow right now — please try again 📶';
+    }
+    if (e is FirebaseException) {
+      if (e.code == 'permission-denied') {
+        return 'The server rejected this action (permission denied 🔒). '
+            'Deploy the latest Firestore rules / update the app.';
+      }
+      if (e.code == 'unavailable') {
+        return 'No connection to the server — check your internet 📶';
+      }
+    }
+    return 'Could not accept the challenge. Try again.';
+  }
+
   Future<void> _onAccept(
     BuildContext sheetCtx,
     BattleChallenge challenge, {
@@ -595,7 +639,8 @@ class _GlobalBattleChallengeGateState
       // stale instance used to join the DEAD room (or nothing), and the
       // sender then saw "left the room". Re-read the doc and act on ITS
       // state: pending/accepted + the CURRENT roomId.
-      final fresh = await presence.getChallenge(challenge.id);
+      final fresh =
+          await _acceptStep(presence.getChallenge(challenge.id), 'verify');
       if (fresh != null) {
         if (fresh.status == 'rejected') {
           onDone();
@@ -609,6 +654,11 @@ class _GlobalBattleChallengeGateState
           challenge = fresh;
         }
       }
+      // An already-accepted challenge (re-accept after a restart/retry)
+      // must NOT hit respondToChallenge again: rules only flip pending →
+      // accepted, so the update would bounce with permission-denied and
+      // the join would never happen. Jump straight to the room instead.
+      final alreadyAccepted = challenge.status == 'accepted';
 
       // ── SENDER LIVENESS CHECK (with room fallback) ──────────
       // Strictly blocking on presence alone caused false negatives
@@ -616,7 +666,15 @@ class _GlobalBattleChallengeGateState
       // sender appears offline but their waiting room still exists and
       // is in 'waiting', we allow the join — the room is the source of
       // truth, presence is just a hint.
-      bool senderOnline = await presence.isUserOnline(challenge.fromUserId);
+      bool senderOnline;
+      try {
+        senderOnline = await _acceptStep(
+            presence.isUserOnline(challenge.fromUserId), 'liveness');
+      } on TimeoutException {
+        // Unknown liveness on a slow network — assume live; the waiting
+        // room itself is what decides whether the join can proceed.
+        senderOnline = true;
+      }
       if (!senderOnline && challenge.roomId != null) {
         try {
           final fallbackRoom = await matchmaking.getRoom(challenge.roomId!);
@@ -637,7 +695,18 @@ class _GlobalBattleChallengeGateState
 
       if (challenge.roomId != null) {
         // ROOM-FIRST: the room already exists — just accept and join it.
-        await presence.respondToChallenge(challenge.id, true);
+        if (!alreadyAccepted) {
+          try {
+            await _acceptStep(presence.respondToChallenge(challenge.id, true),
+                'accept write');
+          } on TimeoutException {
+            // The write is queued offline and will land when connectivity
+            // returns — entering the room must not wait for it: the host's
+            // readiness signal rides on player2JoinedAt, not this status.
+            _showGlobalSnack('Slow connection — joining the duel anyway… ⏳',
+                color: const Color(0xFFF59E0B));
+          }
+        }
         _respondedIncoming[challenge.id] = challenge.createdAt;
         _restoredAccepted[challenge.id] = challenge.createdAt;
         if (sheetCtx.mounted) Navigator.pop(sheetCtx);
@@ -653,29 +722,33 @@ class _GlobalBattleChallengeGateState
         // LEGACY sender (older build): create the room now and start.
         final myUser = ref.read(authProvider).asData?.value;
         final myStats = ref.read(battleArenaProvider).stats;
-        final room = await matchmaking.createDirectChallengeRoom(
-          player1: BattlePlayer(
-            id: challenge.fromUserId,
-            name: challenge.fromUserName,
-            photoUrl: challenge.fromUserPhoto,
-            trophies: challenge.fromUserTrophies,
-          ),
-          player2: BattlePlayer(
-            id: myUser?.id ?? 'me',
-            name: myUser?.name ?? 'Me',
-            photoUrl: myUser?.photoUrl ?? '',
-            trophies: myStats.trophies,
-          ),
-        );
-        await presence.respondToChallenge(challenge.id, true, roomId: room.id);
+        final room = await _acceptStep(
+            matchmaking.createDirectChallengeRoom(
+              player1: BattlePlayer(
+                id: challenge.fromUserId,
+                name: challenge.fromUserName,
+                photoUrl: challenge.fromUserPhoto,
+                trophies: challenge.fromUserTrophies,
+              ),
+              player2: BattlePlayer(
+                id: myUser?.id ?? 'me',
+                name: myUser?.name ?? 'Me',
+                photoUrl: myUser?.photoUrl ?? '',
+                trophies: myStats.trophies,
+              ),
+            ),
+            'legacy room create');
+        await _acceptStep(
+            presence.respondToChallenge(challenge.id, true, roomId: room.id),
+            'accept write');
         _respondedIncoming[challenge.id] = challenge.createdAt;
         if (sheetCtx.mounted) Navigator.pop(sheetCtx);
         unawaited(_declineOtherPendingChallenges(accepted: challenge));
         ref.read(battleArenaProvider.notifier).startFromRoom(room);
       }
-    } catch (_) {
+    } catch (e) {
       onDone();
-      _showGlobalSnack('Could not accept the challenge. Try again.');
+      _showGlobalSnack(_acceptFailureMessage(e));
     }
   }
 

@@ -1,0 +1,7 @@
+SpeakEasy v1.0.44 — Duel Joining Reliability Fix 🔧
+
+⚔️ CHALLENGE ACCEPT — NEVER STUCK AGAIN
+• Fixed: accepting a duel could stay stuck on "Joining…" and never open the room on slow networks.
+• Every joining step now has a 12-second limit — you always get in, or a clear reason why not.
+• Clear error messages: slow connection, server permission (rules), or closed room are now told apart.
+• Re-accepting a duel after an app restart jumps straight back into the waiting room.
