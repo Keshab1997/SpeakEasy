@@ -275,6 +275,27 @@ class BattlePresenceService with WidgetsBindingObserver {
     }
   }
 
+  /// SINGLE combined presence stream for the lobby — fetches the 60 most
+  /// recent presence docs once (1 Firestore listener instead of 2).
+  /// Callers derive online vs recently-active client-side, cutting read cost ~50%.
+  Stream<List<BattlePresenceUser>> streamLobbyPresence(String currentUserId) {
+    return _firestore
+        .collection(_presenceCollection)
+        .orderBy('lastActive', descending: true)
+        .limit(60)
+        .snapshots()
+        .map((snapshot) {
+      final users = <BattlePresenceUser>[];
+      for (var doc in snapshot.docs) {
+        if (doc.id == currentUserId) continue;
+        try {
+          users.add(BattlePresenceUser.fromMap(doc.data(), doc.id));
+        } catch (_) {}
+      }
+      return users;
+    });
+  }
+
   /// Stream of active online users (filtered for active in last 2 minutes)
   Stream<List<BattlePresenceUser>> streamOnlineUsers(String currentUserId) {
     return _firestore

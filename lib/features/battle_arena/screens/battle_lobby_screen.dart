@@ -12,6 +12,7 @@ import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';
 import '../services/battle_matchmaking_service.dart';
 import '../services/battle_presence_service.dart';
+import '../services/battle_season_service.dart';
 import '../widgets/live_player_card.dart';
 import '../widgets/recent_player_card.dart';
 import '../widgets/radar_search_dialog.dart';
@@ -27,15 +28,52 @@ class BattleLobbyScreen extends ConsumerStatefulWidget {
 
 class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   String? _challengingUserId;
+  int _seasonDaysLeft = 30;
+  int _seasonNumber = 1;
+  SeasonResetResult? _seasonResetResult;
 
   @override
   void initState() {
     super.initState();
     // Presence heartbeat runs while the lobby is open. (Challenge popups and
     // arena navigation are handled app-wide by GlobalBattleChallengeGate.)
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       final user = ref.read(authProvider).asData?.value;
       if (user != null) {
+        // Season check — 30d reset with reward
+        final seasonService = BattleSeasonService();
+        final daysLeft = await seasonService.getDaysRemaining();
+        final seasonNum = await seasonService.getSeasonNumber();
+        if (mounted) {
+          setState(() {
+            _seasonDaysLeft = daysLeft;
+            _seasonNumber = seasonNum;
+          });
+        }
+        final reset = await seasonService.checkAndResetIfNeeded(user.id);
+        if (reset != null && mounted) {
+          setState(() => _seasonResetResult = reset);
+          // Show reward dialog
+          await showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (ctx) => AlertDialog(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              title: Text('🎉 Season ${reset.seasonNumber} Started!'),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text('Previous: ${reset.oldTrophies} 🏆 → Now: ${reset.newTrophies} 🏆', style: const TextStyle(fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 8),
+                  Text('Reward: ${reset.rewardTitle} + ${reset.rewardCoins} coins! 💰'),
+                  const SizedBox(height: 12),
+                  const Text('Trophies above division floor are soft-reset (30-50% retained). New season, new battles! ⚔️', style: TextStyle(fontSize: 12, color: Colors.grey)),
+                ],
+              ),
+              actions: [TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Let\'s Go ⚔️'))],
+            ),
+          );
+        }
         final stats = ref.read(battleArenaProvider).stats;
         ref.read(battlePresenceServiceProvider).startPresenceHeartbeat(
               userId: user.id,
@@ -117,6 +155,8 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
           CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
+              // Season banner — shows days left + progress + reward peek
+              SliverToBoxAdapter(child: _buildSeasonBanner(theme, isDark)),
               // 0. Pending challenge banner (challenges postponed with
               //    "Later" stay actionable from here — never a dead end).
               SliverToBoxAdapter(child: _buildPendingChallengeBanner()),
@@ -269,6 +309,74 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                 ref.read(battleArenaProvider.notifier).resetLobby();
               },
             ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSeasonBanner(ThemeData theme, bool isDark) {
+    final progress = (_seasonDaysLeft / 30).clamp(0.0, 1.0);
+    final isEndingSoon = _seasonDaysLeft <= 3;
+    return Container(
+      margin: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: isEndingSoon
+              ? [const Color(0xFFEF4444), const Color(0xFFF59E0B)]
+              : [const Color(0xFF4338CA), const Color(0xFF7C3AED)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [BoxShadow(color: (isEndingSoon ? const Color(0xFFEF4444) : const Color(0xFF4338CA)).withValues(alpha: 0.25), blurRadius: 10, offset: const Offset(0, 4))],
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.15), shape: BoxShape.circle),
+            child: Text(isEndingSoon ? '⏳' : '🏆', style: const TextStyle(fontSize: 18)),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text('Season $_seasonNumber', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13)),
+                    const SizedBox(width: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+                      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(6)),
+                      child: Text('$_seasonDaysLeft days left', style: const TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 6),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: LinearProgressIndicator(
+                    value: progress,
+                    minHeight: 4,
+                    backgroundColor: Colors.white24,
+                    valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  _seasonResetResult != null
+                      ? 'Last reset: ${(_seasonResetResult!.oldTrophies)} → ${(_seasonResetResult!.newTrophies)} 🏆'
+                      : isEndingSoon
+                          ? 'Season ends soon — push for rewards! 🔥'
+                          : 'Win to climb — season rewards await! ✨',
+                  style: const TextStyle(color: Colors.white70, fontSize: 10),
+                ),
+              ],
+            ),
+          ),
+          const Icon(Icons.chevron_right_rounded, color: Colors.white54, size: 20),
         ],
       ),
     );

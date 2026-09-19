@@ -528,6 +528,30 @@ service cloud.firestore {
     }
 
     // ═══════════════════════════════════════════════
+    //  Blocked users — owner-only subcollection per user
+    //  Structure: blocked_users/{ownerId}/blocked/{blockedId}
+    // ═══════════════════════════════════════════════
+
+    match /blocked_users/{userId}/blocked/{blockedId} {
+      allow read, create, delete: if isOwner(userId);
+      allow update: if false;
+    }
+
+    // ═══════════════════════════════════════════════
+    //  Battle reports — any player can report, only admin reads
+    //  Structure: battle_reports/{reportId} {reporterId, reportedId, reason, createdAt, status}
+    // ═══════════════════════════════════════════════
+
+    match /battle_reports/{reportId} {
+      allow create: if isAuthenticated()
+        && request.resource.data.reporterId == request.auth.uid
+        && request.resource.data.reportedId is string
+        && request.resource.data.reason is string;
+      allow read: if isAdmin();
+      allow update, delete: if false;
+    }
+
+    // ═══════════════════════════════════════════════
     //  DENY ALL OTHER COLLECTIONS
     // ═══════════════════════════════════════════════
 

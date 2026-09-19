@@ -79,6 +79,12 @@ class BattleLeaderboardService {
   List<LeaderboardEntry>? _cache;
   DateTime? _cachedAt;
 
+  // Profile cache — avoids N+1 reads when the same player card is opened repeatedly
+  // or when 15 friend cards each trigger a profile fetch within the same lobby session.
+  final Map<String, BattlePresenceUser> _profileCache = {};
+  final Map<String, DateTime> _profileCacheTime = {};
+  static const Duration _profileTtl = Duration(minutes: 5);
+
   Future<List<LeaderboardEntry>> getTopPlayers({bool forceRefresh = false}) async {
     if (!forceRefresh &&
         _cache != null &&
@@ -132,11 +138,43 @@ class BattleLeaderboardService {
     }
   }
 
+  /// Batch fetch for up to 30 profiles at once — one parallel burst, with cache.
+  /// Use this when you need many cards (e.g. preloading lobby). Falls back to
+  /// single-profile cache for individual calls.
+  Future<Map<String, BattlePresenceUser>> getBatchProfiles(List<String> userIds) async {
+    final result = <String, BattlePresenceUser>{};
+    final toFetch = <String>[];
+    final now = DateTime.now();
+    for (final id in userIds.toSet()) {
+      final cached = _profileCache[id];
+      final cachedAt = _profileCacheTime[id];
+      if (cached != null && cachedAt != null && now.difference(cachedAt) < _profileTtl) {
+        result[id] = cached;
+      } else {
+        toFetch.add(id);
+      }
+    }
+    if (toFetch.isEmpty) return result;
+    // Parallel fetch, respects cache TTL for the rest
+    final fetched = await Future.wait(toFetch.map((id) => getPlayerProfile(id)));
+    for (var i = 0; i < toFetch.length; i++) {
+      final u = fetched[i];
+      if (u != null) result[toFetch[i]] = u;
+    }
+    return result;
+  }
+
   /// Fetches a single opponent's career stats (for the profile card).
   /// Tries `battle_leaderboard` first (server-authoritative for online ranked
   /// matches), then falls back to `battle_presence` (live presence + bot stats).
-  /// Merges both so the card never shows only trophies.
+  /// Merges both so the card never shows only trophies. Cached 5 min.
   Future<BattlePresenceUser?> getPlayerProfile(String userId) async {
+    // Cache hit?
+    final cached = _profileCache[userId];
+    final cachedAt = _profileCacheTime[userId];
+    if (cached != null && cachedAt != null && DateTime.now().difference(cachedAt) < _profileTtl) {
+      return cached;
+    }
     try {
       // 1) Try authoritative leaderboard entry (has wins/losses/draws).
       final lbDoc = await _firestore.collection(_collection).doc(userId).get();
@@ -162,28 +200,43 @@ class BattleLeaderboardService {
       // 2) Always also fetch presence (has live online/battle flag + newer trophies).
       final presenceDoc =
           await _firestore.collection('battle_presence').doc(userId).get();
-      if (!presenceDoc.exists) return lbUser;
+      if (!presenceDoc.exists) {
+        if (lbUser != null) {
+          _profileCache[userId] = lbUser;
+          _profileCacheTime[userId] = DateTime.now();
+        }
+        return lbUser;
+      }
       final p = BattlePresenceUser.fromMap(presenceDoc.data()!, presenceDoc.id);
 
       // 3) Merge: leaderboard wins/stats take precedence, but presence
       // trophies/photo/name are fresher for the live card.
-      if (lbUser == null) return p;
-      return BattlePresenceUser(
-        id: p.id,
-        name: p.name.isNotEmpty ? p.name : lbUser.name,
-        photoUrl: p.photoUrl.isNotEmpty ? p.photoUrl : lbUser.photoUrl,
-        trophies: p.trophies != 100 || lbUser.trophies == 100
-            ? p.trophies
-            : lbUser.trophies,
-        isOnline: p.isOnline,
-        lastActive: p.lastActive,
-        isInBattle: p.isInBattle,
-        wins: lbUser.wins != 0 ? lbUser.wins : p.wins,
-        losses: lbUser.losses != 0 ? lbUser.losses : p.losses,
-        draws: lbUser.draws != 0 ? lbUser.draws : p.draws,
-        totalMatches: lbUser.totalMatches != 0 ? lbUser.totalMatches : p.totalMatches,
-        winStreak: lbUser.winStreak != 0 ? lbUser.winStreak : p.winStreak,
-      );
+      BattlePresenceUser? result;
+      if (lbUser == null) {
+        result = p;
+      } else {
+        result = BattlePresenceUser(
+          id: p.id,
+          name: p.name.isNotEmpty ? p.name : lbUser.name,
+          photoUrl: p.photoUrl.isNotEmpty ? p.photoUrl : lbUser.photoUrl,
+          trophies: p.trophies != 100 || lbUser.trophies == 100
+              ? p.trophies
+              : lbUser.trophies,
+          isOnline: p.isOnline,
+          lastActive: p.lastActive,
+          isInBattle: p.isInBattle,
+          wins: lbUser.wins != 0 ? lbUser.wins : p.wins,
+          losses: lbUser.losses != 0 ? lbUser.losses : p.losses,
+          draws: lbUser.draws != 0 ? lbUser.draws : p.draws,
+          totalMatches: lbUser.totalMatches != 0 ? lbUser.totalMatches : p.totalMatches,
+          winStreak: lbUser.winStreak != 0 ? lbUser.winStreak : p.winStreak,
+        );
+      }
+      if (result != null) {
+        _profileCache[userId] = result;
+        _profileCacheTime[userId] = DateTime.now();
+      }
+      return result;
     } catch (_) {
       return null;
     }

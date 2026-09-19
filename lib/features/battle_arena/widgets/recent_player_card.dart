@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../friends/widgets/friend_action_button.dart';
+import '../services/battle_block_service.dart';
 import '../models/battle_models.dart';
 import '../services/battle_leaderboard_service.dart';
 
@@ -187,6 +189,66 @@ class RecentPlayerCard extends StatelessWidget {
                   Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [_stat('✅ Wins', '${u.wins}', color: const Color(0xFF10B981)), _stat('❌ Losses', '${u.losses}', color: const Color(0xFFEF4444)), _stat('📈 Win Rate', played == 0 ? '—' : '${u.winRate.toStringAsFixed(0)}%')]),
                   const SizedBox(height: 14),
                   FriendActionButton(targetUserId: u.id, targetName: u.name, targetPhotoUrl: u.photoUrl, targetTrophies: u.trophies, compact: false),
+                  const SizedBox(height: 12),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      TextButton.icon(
+                        onPressed: () async {
+                          final myId = FirebaseAuth.instance.currentUser?.uid ?? '';
+                          if (myId.isEmpty) return;
+                          final confirm = await showDialog<bool>(
+                            context: context,
+                            builder: (ctx) => AlertDialog(
+                              title: Text('Block ${u.name}?'),
+                              content: const Text('They will no longer appear in your lobby. You can unblock from settings.'),
+                              actions: [TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')), TextButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Block', style: TextStyle(color: Color(0xFFEF4444))))],
+                            ),
+                          );
+                          if (confirm == true) {
+                            await BattleBlockService().blockUser(myId: myId, blockedId: u.id, blockedName: u.name);
+                            if (context.mounted) {
+                              Navigator.pop(context);
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${u.name} blocked'), behavior: SnackBarBehavior.floating));
+                            }
+                          }
+                        },
+                        icon: const Icon(Icons.block_rounded, size: 16, color: Color(0xFFEF4444)),
+                        label: const Text('Block', style: TextStyle(color: Color(0xFFEF4444))),
+                      ),
+                      TextButton.icon(
+                        onPressed: () async {
+                          final myId = FirebaseAuth.instance.currentUser?.uid ?? '';
+                          if (myId.isEmpty) return;
+                          final reason = await showDialog<String>(
+                            context: context,
+                            builder: (ctx) {
+                              String selected = 'Toxic behavior';
+                              return StatefulBuilder(builder: (ctx, setState) => AlertDialog(
+                                title: const Text('Report player'),
+                                content: DropdownButton<String>(
+                                  value: selected,
+                                  isExpanded: true,
+                                  items: const ['Toxic behavior','Spam','Inappropriate name','Cheating'].map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
+                                  onChanged: (v) => setState(() => selected = v!),
+                                ),
+                                actions: [TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Cancel')), TextButton(onPressed: () => Navigator.pop(ctx, selected), child: const Text('Report'))],
+                              ));
+                            },
+                          );
+                          if (reason != null) {
+                            await BattleBlockService().reportUser(myId: myId, reportedId: u.id, reason: reason);
+                            if (context.mounted) {
+                              Navigator.pop(context);
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Report submitted — thanks!'), behavior: SnackBarBehavior.floating));
+                            }
+                          }
+                        },
+                        icon: const Icon(Icons.flag_rounded, size: 16, color: Color(0xFFF59E0B)),
+                        label: const Text('Report', style: TextStyle(color: Color(0xFFF59E0B))),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             );
