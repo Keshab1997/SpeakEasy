@@ -70,8 +70,6 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
     final onlineUsersAsync = ref.watch(onlineBattleUsersProvider);
     // Reactive pending-challenge tracking — disables Duel buttons instantly
     // across the whole lobby when a challenge to that user is pending.
-    final outgoingPendingIds = ref.watch(outgoingPendingIdsProvider);
-
     // Forfeit/exit from a duel returns here — notify the trophy loss.
     ref.listen<BattleArenaState>(battleArenaProvider, (previous, next) {
       if (previous != null &&
@@ -223,11 +221,14 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                     delegate: SliverChildBuilderDelegate(
                       (context, index) {
                         final u = users[index];
+                        final pendingMap = ref.watch(outgoingPendingChallengeMapProvider);
+                        final pending = pendingMap[u.id];
                         return LivePlayerCard(
                           user: u,
-                          isChallenging: _challengingUserId == u.id ||
-                              outgoingPendingIds.contains(u.id),
+                          isChallenging: _challengingUserId == u.id,
+                          pendingChallenge: pending,
                           onChallenge: () => _sendDirectChallenge(u),
+                          onCancel: pending != null ? () => _cancelPendingChallenge(pending) : null,
                         );
                       },
                       childCount: users.length,
@@ -455,8 +456,6 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
         0;
     final onlineUsers = ref.watch(onlineBattleUsersProvider).asData?.value ?? [];
     final onlineById = {for (final u in onlineUsers) u.id: u};
-    final outgoingPendingIds = ref.watch(outgoingPendingIdsProvider);
-
     final friends = friendsAsync.asData?.value ?? [];
     // Hide the whole section when there's nothing to show/manage.
     if (friends.isEmpty && requestsCount == 0) return const [];
@@ -545,13 +544,16 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
               final f = friends[index];
               final presence = onlineById[f.id];
               final isOnline = presence != null;
+              final pendingMap = ref.watch(outgoingPendingChallengeMapProvider);
+              final pending = pendingMap[f.id];
               return FriendListCard(
                 friend: f,
                 isOnline: isOnline,
                 isInBattle: presence?.isInBattle ?? false,
-                isChallenging: _challengingUserId == f.id ||
-                    outgoingPendingIds.contains(f.id),
+                isChallenging: _challengingUserId == f.id,
+                pendingChallenge: pending,
                 onChallenge: () => _challengeFriend(f, online: isOnline),
+                onCancel: pending != null ? () => _cancelPendingChallenge(pending) : null,
                 onRemove: () => _removeFriend(f),
               );
             },
@@ -571,6 +573,26 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
       toTrophies: friend.trophies,
       async: !online,
     );
+  }
+
+  Future<void> _cancelPendingChallenge(BattleChallenge challenge) async {
+    try {
+      await BattleMatchmakingService().deleteChallenge(challenge.id);
+      if (challenge.roomId != null) {
+        await BattleMatchmakingService().deleteRoom(challenge.roomId!);
+      }
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Challenge cancelled ✕'), behavior: SnackBarBehavior.floating),
+        );
+      }
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not cancel challenge'), behavior: SnackBarBehavior.floating),
+        );
+      }
+    }
   }
 
   Future<void> _removeFriend(Friend friend) async {
@@ -593,8 +615,6 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   /// delivered — popup + push — the next time they open the app.
   List<Widget> _buildRecentlyActiveSection(ThemeData theme, bool isDark) {
     final recentUsersAsync = ref.watch(recentlyActiveBattleUsersProvider);
-    final outgoingPendingIds = ref.watch(outgoingPendingIdsProvider);
-
     return recentUsersAsync.maybeWhen<List<Widget>>(
       data: (users) {
         if (users.isEmpty) return const [];
@@ -648,11 +668,14 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 final u = users[index];
+                final pendingMap = ref.watch(outgoingPendingChallengeMapProvider);
+                final pending = pendingMap[u.id];
                 return RecentPlayerCard(
                   user: u,
-                  isChallenging: _challengingUserId == u.id ||
-                      outgoingPendingIds.contains(u.id),
+                  isChallenging: _challengingUserId == u.id,
+                  pendingChallenge: pending,
                   onChallenge: () => _sendDirectChallenge(u, async: true),
+                  onCancel: pending != null ? () => _cancelPendingChallenge(pending) : null,
                 );
               },
               childCount: users.length,

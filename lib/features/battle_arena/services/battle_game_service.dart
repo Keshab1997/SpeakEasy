@@ -69,6 +69,38 @@ class BattleGameService {
   /// construction changes so old rooms keep generating their original set.
   static const int questionSetVersion = 1;
 
+  static const String _lastIdsKey = 'lastBattleQuestionIds';
+  static const int _recentExcludeCount = 20;
+
+  /// Loads recently used question IDs from Hive (last 20).
+  static Future<Set<String>> _loadRecentIds() async {
+    try {
+      final box = await Hive.openBox(_hiveBoxName);
+      final stored = box.get(_lastIdsKey) as List<dynamic>?;
+      if (stored == null) return <String>{};
+      return stored.map((e) => e.toString()).toSet();
+    } catch (_) {
+      return <String>{};
+    }
+  }
+
+  /// Saves the IDs of the just-used battle questions (keeps last 20).
+  static Future<void> _saveRecentIds(List<BattleQuestion> justUsed) async {
+    try {
+      final box = await Hive.openBox(_hiveBoxName);
+      final existing = await _loadRecentIds();
+      final updated = <String>[...justUsed.map((q) => q.id), ...existing];
+      // Deduplicate while preserving order, keep first 20
+      final seen = <String>{};
+      final deduped = <String>[];
+      for (final id in updated) {
+        if (seen.add(id)) deduped.add(id);
+        if (deduped.length >= _recentExcludeCount) break;
+      }
+      await box.put(_lastIdsKey, deduped);
+    } catch (_) {}
+  }
+
   /// Loads 5 curated questions: 2 Grammar (mock tests), 2 Vocabulary, 1 Verb.
   /// Questions are generated from the app's learning content so the battle
   /// feels like a real review of lessons rather than the daily quiz bank.
@@ -95,9 +127,15 @@ class BattleGameService {
     final pool = _cachedQuestions ?? const <BattleQuestion>[];
 
     final rng = Random(seed);
+    // Repeat protection: avoid questions from last 20 duels if possible
+    final recentIds = await _loadRecentIds();
+
     List<BattleQuestion> pick(String category, int n) {
-      final list = List<BattleQuestion>.from(byCategory[category] ?? const [])
-        ..shuffle(rng);
+      final fullList = byCategory[category] ?? const <BattleQuestion>[];
+      // Prefer non-recent questions
+      final fresh = fullList.where((q) => !recentIds.contains(q.id)).toList();
+      final source = fresh.length >= n ? fresh : fullList;
+      final list = List<BattleQuestion>.from(source)..shuffle(rng);
       return list.take(n).toList();
     }
 
@@ -111,12 +149,22 @@ class BattleGameService {
     if (selected.length < count) {
       final selectedIds = selected.map((s) => s.id).toSet();
       final remaining =
-          pool.where((q) => !selectedIds.contains(q.id)).toList()..shuffle(rng);
-      selected.addAll(remaining.take(count - selected.length));
+          pool.where((q) => !selectedIds.contains(q.id) && !recentIds.contains(q.id)).toList()..shuffle(rng);
+      if (remaining.length < (count - selected.length)) {
+        // Fallback: allow recent if not enough fresh
+        final fallback = pool.where((q) => !selectedIds.contains(q.id)).toList()..shuffle(rng);
+        selected.addAll(fallback.take(count - selected.length));
+      } else {
+        selected.addAll(remaining.take(count - selected.length));
+      }
     }
 
     selected.shuffle(rng);
-    return selected.take(count).toList();
+    final result = selected.take(count).toList();
+    // Save for next duel's exclusion (fire-and-forget)
+    // ignore: unawaited_futures
+    _saveRecentIds(result);
+    return result;
   }
 
   /// Builds (and caches) the full battle question pool from the three sources.

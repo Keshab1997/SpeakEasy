@@ -93,12 +93,13 @@ class BattleMatchmakingService {
       final queueQuery = await _firestore
           .collection(_queueCollection)
           .where('status', isEqualTo: 'waiting')
-          .limit(5)
+          .limit(10)
           .get();
       checkCancelled();
 
       final now = DateTime.now();
-      final candidates = <DocumentSnapshot<Map<String, dynamic>>>[];
+      final allCandidates = <DocumentSnapshot<Map<String, dynamic>>>[];
+      final bracketedCandidates = <DocumentSnapshot<Map<String, dynamic>>>[];
 
       for (var doc in queueQuery.docs) {
         final data = doc.data();
@@ -106,10 +107,20 @@ class BattleMatchmakingService {
         final createdAt = (data['createdAt'] as Timestamp?)?.toDate() ?? now;
 
         // Skip own entry and stale entries older than 15s
-        if (userId != localPlayer.id && now.difference(createdAt).inSeconds < 15) {
-          candidates.add(doc);
+        if (userId == localPlayer.id ||
+            now.difference(createdAt).inSeconds >= 15) continue;
+
+        allCandidates.add(doc);
+        // Skill-based bracket: trophies within ±200 (fair duel)
+        final oppTrophies = (data['trophies'] as num?)?.toInt() ?? 100;
+        if ((oppTrophies - localPlayer.trophies).abs() <= 200) {
+          bracketedCandidates.add(doc);
         }
       }
+      // Prefer bracketed (skill-matched) candidates; fallback to any if none in bracket
+      final candidates = bracketedCandidates.isNotEmpty
+          ? bracketedCandidates
+          : allCandidates;
 
       // Try to atomically claim each candidate until one succeeds.
       for (final candidate in candidates) {

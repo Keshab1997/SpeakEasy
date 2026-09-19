@@ -77,3 +77,12 @@ final outgoingPendingIdsProvider = Provider<Set<String>>((ref) {
       .map((c) => c.toUserId)
       .toSet();
 });
+
+/// Map of toUserId -> pending challenge (for countdown & cancel).
+final outgoingPendingChallengeMapProvider =
+    Provider<Map<String, BattleChallenge>>((ref) {
+  final outgoing = ref.watch(outgoingChallengesProvider).asData?.value ?? [];
+  return {
+    for (final c in outgoing.where((c) => c.status == 'pending')) c.toUserId: c
+  };
+});
