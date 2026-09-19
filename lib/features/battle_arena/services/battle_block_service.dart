@@ -5,8 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class BattleBlockService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  String _blockedCollection(String myId) => 'blocked_users';
-  // Actually structure: blocked_users/{myId}/blocked/{blockedId}
+  // Structure: blocked_users/{myId}/blocked/{blockedId}
 
   Future<Set<String>> getBlockedIds(String myId) async {
     if (myId.isEmpty || myId.startsWith('guest_')) return <String>{};

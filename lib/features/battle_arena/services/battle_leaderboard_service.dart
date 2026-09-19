@@ -211,7 +211,7 @@ class BattleLeaderboardService {
 
       // 3) Merge: leaderboard wins/stats take precedence, but presence
       // trophies/photo/name are fresher for the live card.
-      BattlePresenceUser? result;
+      final BattlePresenceUser result;
       if (lbUser == null) {
         result = p;
       } else {
@@ -232,10 +232,8 @@ class BattleLeaderboardService {
           winStreak: lbUser.winStreak != 0 ? lbUser.winStreak : p.winStreak,
         );
       }
-      if (result != null) {
-        _profileCache[userId] = result;
-        _profileCacheTime[userId] = DateTime.now();
-      }
+      _profileCache[userId] = result;
+      _profileCacheTime[userId] = DateTime.now();
       return result;
     } catch (_) {
       return null;
