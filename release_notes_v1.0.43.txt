@@ -1,0 +1,14 @@
+SpeakEasy v1.0.43 — Battle Arena: Reliable Rematches & Fair Duels ⚔️
+
+🤺 RE-CHALLENGE AFTER DECLINE NOW WORKS
+• Challenging a player again after they declined once no longer breaks the duel — accepting now instantly joins the fresh room.
+• Fixed a false "player left the room" message that appeared even though the opponent had actually accepted your challenge.
+• Decline detection is now double-checked against the server, so a slow network can never kill a healthy duel room.
+
+❓ SAME QUESTIONS FOR BOTH WARRIORS
+• Fixed: duels could show DIFFERENT questions to each player — both warriors now always battle on the exact same 5-question set, every single match.
+• New version-mismatch warning: if you and your opponent are on different app versions, the waiting room warns you BEFORE the duel starts.
+
+⚡ STABILITY & IMPROVEMENTS
+• Smarter automatic retries when joining a freshly created duel room on slow connections.
+• Safer challenge cleanup under weak network — no more stuck "Joining…" dead ends.
