@@ -74,7 +74,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             .watch(outgoingChallengesProvider)
             .asData
             ?.value
-            ?.where((c) => c.status == 'pending')
+            .where((c) => c.status == 'pending')
             .map((c) => c.toUserId)
             .toSet() ??
         <String>{};
@@ -466,7 +466,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             .watch(outgoingChallengesProvider)
             .asData
             ?.value
-            ?.where((c) => c.status == 'pending')
+            .where((c) => c.status == 'pending')
             .map((c) => c.toUserId)
             .toSet() ??
         <String>{};
@@ -611,7 +611,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             .watch(outgoingChallengesProvider)
             .asData
             ?.value
-            ?.where((c) => c.status == 'pending')
+            .where((c) => c.status == 'pending')
             .map((c) => c.toUserId)
             .toSet() ??
         <String>{};
