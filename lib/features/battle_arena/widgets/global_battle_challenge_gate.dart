@@ -511,6 +511,26 @@ class _GlobalBattleChallengeGateState
     ).whenComplete(() => _sheetOpen = false);
   }
 
+  /// After accepting one challenge, auto-decline other pending ones
+  /// so the user doesn't get spammed with sequential popups.
+  Future<void> _declineOtherPendingChallenges({required String keepId}) async {
+    try {
+      final incoming = ref.read(incomingChallengesProvider).asData?.value ?? [];
+      final toDecline = incoming.where((c) => c.id != keepId).toList();
+      for (final c in toDecline) {
+        try {
+          await ref
+              .read(battlePresenceServiceProvider)
+              .respondToChallenge(c.id, false);
+          if (c.roomId != null) {
+            unawaited(BattleMatchmakingService().deleteRoom(c.roomId!));
+          }
+          _respondedIncoming[c.id] = c.createdAt;
+        } catch (_) {}
+      }
+    } catch (_) {}
+  }
+
   Future<void> _onAccept(
     BuildContext sheetCtx,
     BattleChallenge challenge, {
@@ -520,13 +540,23 @@ class _GlobalBattleChallengeGateState
       final matchmaking = BattleMatchmakingService();
       final presence = ref.read(battlePresenceServiceProvider);
 
-      // The duel needs the SENDER live: room-first they must press START in
-      // the waiting room, legacy the match begins instantly on accept.
-      // Accepting while they're offline launches a GHOST MATCH — the
-      // receiver plays alone, scores climb, the absent sender sits at 0.
-      // Block the accept (challenge stays pending, sheet stays retryable)
-      // and tell the user to accept when the challenger is back online.
-      final senderOnline = await presence.isUserOnline(challenge.fromUserId);
+      // ── SENDER LIVENESS CHECK (with room fallback) ──────────
+      // Strictly blocking on presence alone caused false negatives
+      // (heartbeat 20s + network jitter = stale lastActive). If the
+      // sender appears offline but their waiting room still exists and
+      // is in 'waiting', we allow the join — the room is the source of
+      // truth, presence is just a hint.
+      bool senderOnline = await presence.isUserOnline(challenge.fromUserId);
+      if (!senderOnline && challenge.roomId != null) {
+        try {
+          final fallbackRoom = await matchmaking.getRoom(challenge.roomId!);
+          if (fallbackRoom != null &&
+              fallbackRoom.status == BattleRoomStatus.waiting) {
+            senderOnline = true;
+            debugPrint('⚠️ sender presence offline but room is waiting — allowing accept (fallback)');
+          }
+        } catch (_) {}
+      }
       if (!senderOnline) {
         onDone();
         _showGlobalSnack(
@@ -541,6 +571,9 @@ class _GlobalBattleChallengeGateState
         _respondedIncoming[challenge.id] = challenge.createdAt;
         _restoredAccepted[challenge.id] = challenge.createdAt;
         if (sheetCtx.mounted) Navigator.pop(sheetCtx);
+        // Auto-decline other pending challenges to stop the
+        // "por por request astey thake" spam loop.
+        unawaited(_declineOtherPendingChallenges(keepId: challenge.id));
         await _enterChallengeRoom(
           challenge.roomId!,
           challengeId: challenge.id,
@@ -567,6 +600,7 @@ class _GlobalBattleChallengeGateState
         await presence.respondToChallenge(challenge.id, true, roomId: room.id);
         _respondedIncoming[challenge.id] = challenge.createdAt;
         if (sheetCtx.mounted) Navigator.pop(sheetCtx);
+        unawaited(_declineOtherPendingChallenges(keepId: challenge.id));
         ref.read(battleArenaProvider.notifier).startFromRoom(room);
       }
     } catch (_) {

@@ -166,7 +166,7 @@ class RecentPlayerCard extends StatelessWidget {
             ElevatedButton.icon(
               onPressed: isChallenging ? null : onChallenge,
               icon: const Icon(Icons.flash_on_rounded, size: 16),
-              label: Text(isChallenging ? 'Sent...' : 'Challenge ⚔️'),
+              label: Text(isChallenging ? 'Pending ⏳' : 'Challenge ⚔️'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF8B5CF6),
                 foregroundColor: Colors.white,

@@ -11,6 +11,7 @@ import '../models/battle_models.dart';
 import '../providers/battle_arena_provider.dart';
 import '../providers/battle_presence_provider.dart';
 import '../services/battle_matchmaking_service.dart';
+import '../services/battle_presence_service.dart';
 import '../widgets/live_player_card.dart';
 import '../widgets/recent_player_card.dart';
 import '../widgets/radar_search_dialog.dart';
@@ -67,6 +68,16 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
     final isDark = theme.brightness == Brightness.dark;
     final battleState = ref.watch(battleArenaProvider);
     final onlineUsersAsync = ref.watch(onlineBattleUsersProvider);
+    // Reactive pending-challenge tracking — disables Duel buttons instantly
+    // across the whole lobby when a challenge to that user is pending.
+    final outgoingPendingIds = ref
+            .watch(outgoingChallengesProvider)
+            .asData
+            ?.value
+            ?.where((c) => c.status == 'pending')
+            .map((c) => c.toUserId)
+            .toSet() ??
+        <String>{};
 
     // Forfeit/exit from a duel returns here — notify the trophy loss.
     ref.listen<BattleArenaState>(battleArenaProvider, (previous, next) {
@@ -221,7 +232,8 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                         final u = users[index];
                         return LivePlayerCard(
                           user: u,
-                          isChallenging: _challengingUserId == u.id,
+                          isChallenging: _challengingUserId == u.id ||
+                              outgoingPendingIds.contains(u.id),
                           onChallenge: () => _sendDirectChallenge(u),
                         );
                       },
@@ -450,6 +462,14 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
         0;
     final onlineUsers = ref.watch(onlineBattleUsersProvider).asData?.value ?? [];
     final onlineById = {for (final u in onlineUsers) u.id: u};
+    final outgoingPendingIds = ref
+            .watch(outgoingChallengesProvider)
+            .asData
+            ?.value
+            ?.where((c) => c.status == 'pending')
+            .map((c) => c.toUserId)
+            .toSet() ??
+        <String>{};
 
     final friends = friendsAsync.asData?.value ?? [];
     // Hide the whole section when there's nothing to show/manage.
@@ -543,7 +563,8 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                 friend: f,
                 isOnline: isOnline,
                 isInBattle: presence?.isInBattle ?? false,
-                isChallenging: _challengingUserId == f.id,
+                isChallenging: _challengingUserId == f.id ||
+                    outgoingPendingIds.contains(f.id),
                 onChallenge: () => _challengeFriend(f, online: isOnline),
                 onRemove: () => _removeFriend(f),
               );
@@ -586,6 +607,14 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   /// delivered — popup + push — the next time they open the app.
   List<Widget> _buildRecentlyActiveSection(ThemeData theme, bool isDark) {
     final recentUsersAsync = ref.watch(recentlyActiveBattleUsersProvider);
+    final outgoingPendingIds = ref
+            .watch(outgoingChallengesProvider)
+            .asData
+            ?.value
+            ?.where((c) => c.status == 'pending')
+            .map((c) => c.toUserId)
+            .toSet() ??
+        <String>{};
 
     return recentUsersAsync.maybeWhen<List<Widget>>(
       data: (users) {
@@ -642,7 +671,8 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                 final u = users[index];
                 return RecentPlayerCard(
                   user: u,
-                  isChallenging: _challengingUserId == u.id,
+                  isChallenging: _challengingUserId == u.id ||
+                      outgoingPendingIds.contains(u.id),
                   onChallenge: () => _sendDirectChallenge(u, async: true),
                 );
               },
@@ -673,6 +703,13 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   /// challenge doc (carrying the roomId). For a live target the sender is
   /// dropped into the waiting room immediately; for an offline (async)
   /// target they stay in the lobby and get pulled in when it's accepted.
+  /// ── SPAM-PROTECTION GUARD ──────────────────────────────────
+  /// Returns true if a pending outgoing challenge to [toId] already exists.
+  bool _hasPendingTo(String toId) {
+    final outgoing = ref.read(outgoingChallengesProvider).asData?.value ?? [];
+    return outgoing.any((c) => c.toUserId == toId && c.status == 'pending');
+  }
+
   Future<void> _sendChallenge({
     required String toId,
     required String toName,
@@ -683,6 +720,32 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   }) async {
     final currentUser = ref.read(authProvider).asData?.value;
     if (currentUser == null) return;
+
+    // ── 0) CONCURRENCY + DUPLICATE GUARD ─────────────────────
+    // Prevent double-tap spam and multiple parallel challenge flows.
+    if (_challengingUserId != null) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Please wait — sending previous challenge… ⏳'),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+      return;
+    }
+    if (_hasPendingTo(toId)) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Already challenged $toName — waiting for reply ⏳'),
+            backgroundColor: const Color(0xFFF59E0B),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+      return;
+    }
 
     setState(() => _challengingUserId = toId);
     final stats = ref.read(battleArenaProvider).stats;
@@ -706,8 +769,8 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
       );
 
       // 2) Send the challenge referencing that room. If it's rejected
-      //    (e.g. a challenge is already pending for this pair), remove the
-      //    room we just made so nothing is left behind.
+      //    (blocked by spam protection), remove the room we just made so
+      //    nothing is left behind. Also clean any superseded old room.
       try {
         await ref.read(battlePresenceServiceProvider).sendChallenge(
               fromUserId: currentUser.id,
@@ -718,6 +781,12 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
               type: async ? 'async' : 'live',
               isRematch: isRematch,
               roomId: room.id,
+              onSupersededRoom: (oldRoomId) {
+                if (oldRoomId != null && oldRoomId != room.id) {
+                  // Fire-and-forget delete of orphaned previous room.
+                  matchmaking.deleteRoom(oldRoomId);
+                }
+              },
             );
       } catch (e) {
         await matchmaking.deleteRoom(room.id);
@@ -737,12 +806,17 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
       } else {
         _openWaitingRoom(room, challengeId: 'ch_${currentUser.id}_$toId');
       }
+    } on ChallengeBlockedException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.message),
+          backgroundColor: const Color(0xFFF59E0B),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
     } on FirebaseException catch (e) {
       if (!mounted) return;
-      // NOTE: resend is always allowed by design (delete-then-create), so a
-      // permission-denied here is a REAL failure — never report it as
-      // "already challenged". That exact lie hid the missing-doc read bug
-      // (get() before first create) for weeks.
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(e.code == 'permission-denied'

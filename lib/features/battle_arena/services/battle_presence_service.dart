@@ -3,6 +3,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
 import '../models/battle_models.dart';
 
+/// Thrown when challenge spam protection blocks the request.
+class ChallengeBlockedException implements Exception {
+  final String message;
+  const ChallengeBlockedException(this.message);
+  @override
+  String toString() => message;
+}
+
 /// Heartbeat interval. Kept short (20s) so a killed app is detected quickly:
 /// the online-list filter drops a heartbeat stale after 3 minutes, and the
 /// server auto-forfeit treats >90s of silence in battle as a disconnect.
@@ -35,6 +43,21 @@ class BattlePresenceService with WidgetsBindingObserver {
 
   static const String _presenceCollection = 'battle_presence';
   static const String _challengesCollection = 'battle_challenges';
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // CHALLENGE SPAM PROTECTION — sothik niyom
+  // ═══════════════════════════════════════════════════════════════════════
+  // Per-pair cooldown tracking (in-memory + Firestore age check).
+  // Same sender → same receiver cannot spam multiple challenges at once.
+  static final Map<String, DateTime> _lastChallengeSentAt = {};
+
+  /// Thrown when a challenge is blocked by spam protection.
+  static const String kChallengePendingMsg =
+      'Already challenged — waiting for reply ⏳';
+  static const String kChallengeCooldownMsg =
+      'Please wait before challenging again ⏳';
+  static const String kChallengeInBattleMsg =
+      'Player is busy in a duel ⚔️ — try later';
 
   /// Sets user online status in Firestore and starts the (shared) heartbeat.
   /// The initial write includes trophies (needed for the presence create
@@ -360,14 +383,112 @@ class BattlePresenceService with WidgetsBindingObserver {
   }) async {
     final challengeId = 'ch_${fromUserId}_$toUserId';
     final docRef = _firestore.collection(_challengesCollection).doc(challengeId);
+    final pairKey = '${fromUserId}_$toUserId';
 
-    // REPLACE any previous challenge for this pair (any status). Rules allow
-    // the SENDER to delete their own challenge doc, so this always succeeds.
-    // Without the delete our `.set()` would be an UPDATE, and security rules
-    // only let the RECEIVER update.
+    // ── IN-MEMORY COOLDOWN (30s) ─────────────────────────────
+    // Prevents rapid double-tap / spam even before Firestore check.
+    final lastSent = _lastChallengeSentAt[pairKey];
+    if (lastSent != null &&
+        DateTime.now().difference(lastSent).inSeconds < 30) {
+      final wait = 30 - DateTime.now().difference(lastSent).inSeconds;
+      throw ChallengeBlockedException(
+          '$kChallengeCooldownMsg (${wait}s wait) ⏳');
+    }
+
+    // ── GLOBAL OUTGOING LIMIT (anti-spam across many targets) ─
+    // One sender cannot have more than 3 pending challenges at once.
+    // This stops a single user from spamming the whole lobby.
+    try {
+      final outgoingSnap = await _firestore
+          .collection(_challengesCollection)
+          .where('fromUserId', isEqualTo: fromUserId)
+          .where('status', isEqualTo: 'pending')
+          .limit(4)
+          .get();
+      if (outgoingSnap.docs.length >= 3) {
+        throw const ChallengeBlockedException(
+            'Too many pending challenges — wait for replies ⏳ (max 3)');
+      }
+    } catch (e) {
+      if (e is ChallengeBlockedException) rethrow;
+      // Count check failure is non-fatal — continue.
+    }
+
+    // ── CHECK RECEIVER IS NOT IN BATTLE ──────────────────────
+    // UI already disables the button, but a race (or old build) could still
+    // send. Blocking here guarantees the rule server-side too.
+    try {
+      final presenceDoc =
+          await _firestore.collection(_presenceCollection).doc(toUserId).get();
+      if (presenceDoc.exists) {
+        final pd = presenceDoc.data() ?? {};
+        final inBattle = pd['isInBattle'] == true;
+        // Also check lastActive freshness — stale presence is ignored
+        final lastActive = (pd['lastActive'] as Timestamp?)?.toDate();
+        final fresh = lastActive != null &&
+            DateTime.now().difference(lastActive).inMinutes <= 3;
+        if (inBattle && fresh) {
+          throw const ChallengeBlockedException(kChallengeInBattleMsg);
+        }
+      }
+    } catch (e) {
+      if (e is ChallengeBlockedException) rethrow;
+      // Presence check failure is non-fatal — continue to challenge.
+    }
+
+    // ── EXISTING CHALLENGE CHECK (SPAM PROTECTION) ───────────
+    // Deterministic ID means at most one doc per pair. We used to
+    // delete-then-create unconditionally (allowed spamming every tap).
+    // Now we BLOCK if a pending/accepted challenge is still fresh.
     final existing = await docRef.get();
     if (existing.exists) {
-      final oldRoomId = (existing.data() ?? const {})['roomId'] as String?;
+      final data = existing.data() ?? const {};
+      final status = data['status'] as String? ?? 'pending';
+      final oldRoomId = data['roomId'] as String?;
+      final createdAt = (data['createdAt'] as Timestamp?)?.toDate();
+      final age = createdAt != null
+          ? DateTime.now().difference(createdAt)
+          : const Duration(days: 99);
+
+      if (status == 'pending') {
+        // Pending challenges are valid and the receiver hasn't responded yet.
+        // Block resend for 60s (live) / 120s (async) — receiver needs time
+        // to see and respond, and spamming would create orphan rooms.
+        final blockSeconds = type == 'async' ? 120 : 60;
+        if (age.inSeconds < blockSeconds) {
+          final wait = blockSeconds - age.inSeconds;
+          throw ChallengeBlockedException(
+              '$kChallengePendingMsg — try again in ${wait}s');
+        }
+        // Pending but old enough (receiver ignored) → allow replace.
+        // Fall through to delete + create.
+      } else if (status == 'accepted') {
+        // Already accepted — a duel is waiting/starting. Don't spam.
+        // Check room state if possible; otherwise block for 2 minutes.
+        if (oldRoomId != null) {
+          try {
+            final roomDoc = await _firestore
+                .collection('battle_rooms')
+                .doc(oldRoomId)
+                .get();
+            if (roomDoc.exists) {
+              final roomStatus = roomDoc.data()?['status'] as String?;
+              if (roomStatus == 'waiting' || roomStatus == 'in_progress') {
+                throw const ChallengeBlockedException(
+                    'Duel already accepted — join the waiting room ⚔️');
+              }
+            }
+          } catch (e) {
+            if (e is ChallengeBlockedException) rethrow;
+          }
+        }
+        if (age.inMinutes < 2) {
+          throw ChallengeBlockedException(
+              'Already accepted ${age.inSeconds}s ago — wait for duel to start');
+        }
+      }
+      // For rejected/expired or old pending/accepted → allow replace.
+      // Delete the old doc (sender-allowed) and clean its orphan room.
       try {
         await docRef.delete();
       } catch (e) {
@@ -390,6 +511,7 @@ class BattlePresenceService with WidgetsBindingObserver {
       if (roomId != null) 'roomId': roomId,
       'createdAt': FieldValue.serverTimestamp(),
     });
+    _lastChallengeSentAt[pairKey] = DateTime.now();
     return challengeId;
   }
 

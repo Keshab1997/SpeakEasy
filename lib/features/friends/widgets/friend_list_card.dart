@@ -153,7 +153,7 @@ class FriendListCard extends StatelessWidget {
               icon: const Icon(Icons.sports_kabaddi_rounded, size: 16),
               label: Text(isOnline && isInBattle
                   ? 'Busy'
-                  : (isChallenging ? 'Sent...' : 'Duel ⚔️')),
+                  : (isChallenging ? 'Pending ⏳' : 'Duel ⚔️')),
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF10B981),
                 foregroundColor: Colors.white,

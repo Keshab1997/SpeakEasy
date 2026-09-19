@@ -136,6 +136,16 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
           behavior: SnackBarBehavior.floating,
         ),
       );
+    } on ChallengeBlockedException catch (e) {
+      if (!mounted) return;
+      setState(() => _rematchBusy = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.message),
+          backgroundColor: const Color(0xFFF59E0B),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
     } on FirebaseException catch (e) {
       if (!mounted) return;
       setState(() => _rematchBusy = false);
