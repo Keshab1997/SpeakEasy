@@ -513,7 +513,12 @@ class _GlobalBattleChallengeGateState
 
   /// After accepting one challenge, auto-decline other pending ones
   /// so the user doesn't get spammed with sequential popups.
-  Future<void> _declineOtherPendingChallenges({required String keepId}) async {
+  /// Also cancels any *outgoing* pending to the same challenger (cross-challenge A→B + B→A).
+  Future<void> _declineOtherPendingChallenges(
+      {required BattleChallenge accepted}) async {
+    final keepId = accepted.id;
+    final challengerId = accepted.fromUserId;
+    // 1) Decline other incoming pending (to me, from others)
     try {
       final incoming = ref.read(incomingChallengesProvider).asData?.value ?? [];
       final toDecline = incoming.where((c) => c.id != keepId).toList();
@@ -526,6 +531,24 @@ class _GlobalBattleChallengeGateState
             unawaited(BattleMatchmakingService().deleteRoom(c.roomId!));
           }
           _respondedIncoming[c.id] = c.createdAt;
+        } catch (_) {}
+      }
+    } catch (_) {}
+    // 2) Cancel outgoing pending to the same challenger (cross-challenge)
+    try {
+      final outgoing = ref.read(outgoingChallengesProvider).asData?.value ?? [];
+      final outgoingToCancel = outgoing
+          .where(
+              (c) => c.toUserId == challengerId && c.status == 'pending')
+          .toList();
+      for (final c in outgoingToCancel) {
+        try {
+          // Sender can delete own pending challenge + waiting room
+          await BattleMatchmakingService().deleteChallenge(c.id);
+          if (c.roomId != null) {
+            unawaited(BattleMatchmakingService().deleteRoom(c.roomId!));
+          }
+          _handledOutgoing[c.id] = c.createdAt;
         } catch (_) {}
       }
     } catch (_) {}
@@ -573,7 +596,7 @@ class _GlobalBattleChallengeGateState
         if (sheetCtx.mounted) Navigator.pop(sheetCtx);
         // Auto-decline other pending challenges to stop the
         // "por por request astey thake" spam loop.
-        unawaited(_declineOtherPendingChallenges(keepId: challenge.id));
+        unawaited(_declineOtherPendingChallenges(accepted: challenge));
         await _enterChallengeRoom(
           challenge.roomId!,
           challengeId: challenge.id,
@@ -600,7 +623,7 @@ class _GlobalBattleChallengeGateState
         await presence.respondToChallenge(challenge.id, true, roomId: room.id);
         _respondedIncoming[challenge.id] = challenge.createdAt;
         if (sheetCtx.mounted) Navigator.pop(sheetCtx);
-        unawaited(_declineOtherPendingChallenges(keepId: challenge.id));
+        unawaited(_declineOtherPendingChallenges(accepted: challenge));
         ref.read(battleArenaProvider.notifier).startFromRoom(room);
       }
     } catch (_) {

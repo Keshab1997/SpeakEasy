@@ -70,14 +70,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
     final onlineUsersAsync = ref.watch(onlineBattleUsersProvider);
     // Reactive pending-challenge tracking — disables Duel buttons instantly
     // across the whole lobby when a challenge to that user is pending.
-    final outgoingPendingIds = ref
-            .watch(outgoingChallengesProvider)
-            .asData
-            ?.value
-            .where((c) => c.status == 'pending')
-            .map((c) => c.toUserId)
-            .toSet() ??
-        <String>{};
+    final outgoingPendingIds = ref.watch(outgoingPendingIdsProvider);
 
     // Forfeit/exit from a duel returns here — notify the trophy loss.
     ref.listen<BattleArenaState>(battleArenaProvider, (previous, next) {
@@ -462,14 +455,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
         0;
     final onlineUsers = ref.watch(onlineBattleUsersProvider).asData?.value ?? [];
     final onlineById = {for (final u in onlineUsers) u.id: u};
-    final outgoingPendingIds = ref
-            .watch(outgoingChallengesProvider)
-            .asData
-            ?.value
-            .where((c) => c.status == 'pending')
-            .map((c) => c.toUserId)
-            .toSet() ??
-        <String>{};
+    final outgoingPendingIds = ref.watch(outgoingPendingIdsProvider);
 
     final friends = friendsAsync.asData?.value ?? [];
     // Hide the whole section when there's nothing to show/manage.
@@ -607,14 +593,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   /// delivered — popup + push — the next time they open the app.
   List<Widget> _buildRecentlyActiveSection(ThemeData theme, bool isDark) {
     final recentUsersAsync = ref.watch(recentlyActiveBattleUsersProvider);
-    final outgoingPendingIds = ref
-            .watch(outgoingChallengesProvider)
-            .asData
-            ?.value
-            .where((c) => c.status == 'pending')
-            .map((c) => c.toUserId)
-            .toSet() ??
-        <String>{};
+    final outgoingPendingIds = ref.watch(outgoingPendingIdsProvider);
 
     return recentUsersAsync.maybeWhen<List<Widget>>(
       data: (users) {
@@ -706,8 +685,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   /// ── SPAM-PROTECTION GUARD ──────────────────────────────────
   /// Returns true if a pending outgoing challenge to [toId] already exists.
   bool _hasPendingTo(String toId) {
-    final outgoing = ref.read(outgoingChallengesProvider).asData?.value ?? [];
-    return outgoing.any((c) => c.toUserId == toId && c.status == 'pending');
+    return ref.read(outgoingPendingIdsProvider).contains(toId);
   }
 
   Future<void> _sendChallenge({

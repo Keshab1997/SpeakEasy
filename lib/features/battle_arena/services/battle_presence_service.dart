@@ -381,6 +381,14 @@ class BattlePresenceService with WidgetsBindingObserver {
     String? roomId,
     void Function(String? oldRoomId)? onSupersededRoom,
   }) async {
+    // ── GUEST/BOT BLOCK ────────────────────────────────────
+    if (fromUserId.startsWith('guest_') ||
+        toUserId.startsWith('guest_') ||
+        fromUserId.startsWith('bot_') ||
+        toUserId.startsWith('bot_')) {
+      throw const ChallengeBlockedException(
+          'Guest/Bot cannot duel — please sign in 🔒');
+    }
     final challengeId = 'ch_${fromUserId}_$toUserId';
     final docRef = _firestore.collection(_challengesCollection).doc(challengeId);
     final pairKey = '${fromUserId}_$toUserId';

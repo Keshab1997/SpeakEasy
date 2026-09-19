@@ -67,3 +67,13 @@ final acceptedIncomingChallengesProvider =
 /// the user wants the accept/decline sheet for a challenge that was
 /// dismissed with "Later". The gate shows it and clears this back to null.
 final reshowChallengeProvider = StateProvider<BattleChallenge?>((ref) => null);
+
+/// Reactive set of userIds that the current user has a pending outgoing
+/// challenge to — used to disable Duel buttons instantly (DRY).
+final outgoingPendingIdsProvider = Provider<Set<String>>((ref) {
+  final outgoing = ref.watch(outgoingChallengesProvider).asData?.value ?? [];
+  return outgoing
+      .where((c) => c.status == 'pending')
+      .map((c) => c.toUserId)
+      .toSet();
+});
