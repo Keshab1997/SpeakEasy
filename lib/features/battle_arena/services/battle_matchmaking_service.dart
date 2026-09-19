@@ -108,7 +108,9 @@ class BattleMatchmakingService {
 
         // Skip own entry and stale entries older than 15s
         if (userId == localPlayer.id ||
-            now.difference(createdAt).inSeconds >= 15) continue;
+            now.difference(createdAt).inSeconds >= 15) {
+          continue;
+        }
 
         allCandidates.add(doc);
         // Skill-based bracket: trophies within ±200 (fair duel)

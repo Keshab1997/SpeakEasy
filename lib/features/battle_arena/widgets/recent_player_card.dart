@@ -32,7 +32,6 @@ class RecentPlayerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final hasPending = pendingChallenge != null;
 
     return GestureDetector(
       onTap: () => _showProfile(context, user, isDark),
