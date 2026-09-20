@@ -1,0 +1,7 @@
+SpeakEasy v1.0.48 — Consistency Sweep 🔍
+
+🧹 MORE HONEST LABELS & NUMBERS
+• Friends list: offline friends now show "Invite 🔔" (was "Duel ⚔️") — an offline invite is delivered later, not fought instantly.
+• The misleading 120s countdown/"Expiring..." also removed from the Friends list; sent invites show a calm "Sent 🔔 ✕".
+• Radar search text now says the AI Bot connects in 9s — matching the real wait (was 6s).
+• Live duel countdowns everywhere now match the true 90-second window.

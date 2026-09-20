@@ -13,8 +13,8 @@
 - [x] **Direct 1v1 Challenge:** "⚔️ Challenge" button next to each online player with instant accept/reject notifications.
 
 ### 2. ⚡ Smart Matchmaking & Bot Engine
-- [x] **Radar Matchmaking:** 6-second radar search with animated pulsating waves.
-- [x] **Smart AI Bot Fallback:** If no real player is found within 6 seconds, automatically pairs with an intelligent AI Bot.
+- [x] **Radar Matchmaking:** 9-second radar search with animated pulsating waves.
+- [x] **Smart AI Bot Fallback:** If no real player is found within 9 seconds, automatically pairs with an intelligent AI Bot.
 - [x] **Human-like Bot Behavior:** Realistic Bengali/English names, custom avatars, realistic answer delays (2.5s – 5.5s), and ~75% accuracy rate.
 
 ### 3. 🎯 5-Question Match Composition (Curated Question Bank)

@@ -767,7 +767,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             child: Padding(
               padding: EdgeInsets.fromLTRB(20, 0, 20, 8),
               child: Text(
-                'Offline warriors from the last 7 days — challenge them and they\'ll get it when they\'re back online 🔔',
+                'Offline warriors from the last 7 days — send an invite and they\'ll get it when they\'re back online 🔔',
                 style: TextStyle(fontSize: 11, color: Colors.grey),
               ),
             ),

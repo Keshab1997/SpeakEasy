@@ -115,11 +115,29 @@ class FriendListCard extends StatelessWidget {
       );
     }
     if (pendingChallenge != null) {
-      final total = pendingChallenge!.isAsync ? 120 : 60;
+      // ⏳ ASYNC invites live 48 HOURS — no fake countdown ("Expiring..."
+      // মিথ্যা ছিল); শান্ত, cancelable "Sent 🔔 ✕"। LIVE pendings আসল 90s
+      // TTL-এ কাউন্ট ডাউন করবে (আগের 60s ভুল ছিল)।
+      if (pendingChallenge!.isAsync) {
+        return ElevatedButton.icon(
+          onPressed: onCancel,
+          icon: const Icon(Icons.notifications_active_rounded, size: 14),
+          label: const Text('Sent 🔔 ✕',
+              style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF64748B),
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+            elevation: 2,
+          ),
+        );
+      }
       return ElevatedButton.icon(
         onPressed: onCancel,
         icon: const Icon(Icons.close_rounded, size: 14),
-        label: _CountdownText(challenge: pendingChallenge!, totalSeconds: total),
+        label: _CountdownText(challenge: pendingChallenge!, totalSeconds: BattleChallenge.liveTtl.inSeconds),
         style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFF59E0B), foregroundColor: Colors.white, padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold), elevation: 2),
       );
     }
@@ -131,10 +149,13 @@ class FriendListCard extends StatelessWidget {
         style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF10B981), foregroundColor: Colors.white, padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold), elevation: 2),
       );
     }
+    // Offline friend = async INVITE (delivered on their next login),
+    // not an instant duel — the label must say so.
+    final onlineTarget = isOnline;
     return ElevatedButton.icon(
       onPressed: onChallenge,
-      icon: const Icon(Icons.sports_kabaddi_rounded, size: 16),
-      label: const Text('Duel ⚔️'),
+      icon: Icon(onlineTarget ? Icons.sports_kabaddi_rounded : Icons.notifications_active_rounded, size: 16),
+      label: Text(onlineTarget ? 'Duel ⚔️' : 'Invite 🔔'),
       style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF10B981), foregroundColor: Colors.white, padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold), elevation: 2),
     );
   }
@@ -165,7 +186,7 @@ class _CountdownText extends StatelessWidget {
       builder: (context, snapshot) {
         final elapsed = DateTime.now().difference(challenge.createdAt).inSeconds;
         final remaining = (totalSeconds - elapsed).clamp(0, totalSeconds);
-        if (remaining <= 0) return const Text('Expiring...');
+        if (remaining <= 0) return const Text('⌛');
         return Text('$remaining' 's ✕', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold));
       },
     );
