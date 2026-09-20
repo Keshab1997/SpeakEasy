@@ -103,7 +103,7 @@ class RecentPlayerCard extends StatelessWidget {
                             children: [
                               const Icon(Icons.schedule_rounded, size: 10, color: Color(0xFF8B5CF6)),
                               const SizedBox(width: 3),
-                              Flexible(child: Text(timeAgoShort(user.lastActive).toUpperCase(), overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 9, fontWeight: FontWeight.bold, color: Color(0xFF8B5CF6), letterSpacing: 0.5))),
+                              Flexible(child: Text((user.isOnline ? '' : 'OFFLINE · ') + timeAgoShort(user.lastActive), overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 9, fontWeight: FontWeight.bold, color: Color(0xFF8B5CF6), letterSpacing: 0.5))),
                             ],
                           ),
                         ),
@@ -123,11 +123,31 @@ class RecentPlayerCard extends StatelessWidget {
 
   Widget _buildActionButton() {
     if (pendingChallenge != null) {
-      final total = pendingChallenge!.isAsync ? 120 : 60;
+      // ⏳ ASYNC invites live 48 HOURS — the old fake 120s countdown ending
+      // in "Expiring..." lied about a perfectly alive request and made users
+      // think it had died. Show a calm, cancelable "Sent 🔔 ✕" instead; the
+      // TTL sweep flips the button back automatically when it TRULY expires.
+      // LIVE pendings count down to the real 90s TTL.
+      if (pendingChallenge!.isAsync) {
+        return ElevatedButton.icon(
+          onPressed: onCancel,
+          icon: const Icon(Icons.notifications_active_rounded, size: 14),
+          label: const Text('Sent 🔔 ✕',
+              style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF64748B),
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+            elevation: 2,
+          ),
+        );
+      }
       return ElevatedButton.icon(
         onPressed: onCancel,
         icon: const Icon(Icons.close_rounded, size: 14),
-        label: _CountdownText(challenge: pendingChallenge!, totalSeconds: total),
+        label: _CountdownText(challenge: pendingChallenge!, totalSeconds: BattleChallenge.liveTtl.inSeconds),
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFFF59E0B),
           foregroundColor: Colors.white,
@@ -146,10 +166,13 @@ class RecentPlayerCard extends StatelessWidget {
         style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF8B5CF6), foregroundColor: Colors.white, padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold), elevation: 2),
       );
     }
+    // An OFFLINE player gets an INVITE (async, delivered on their next
+    // login) — not an instant duel, so the label must say so.
+    final isOnlineTarget = user.isOnline;
     return ElevatedButton.icon(
       onPressed: onChallenge,
-      icon: const Icon(Icons.flash_on_rounded, size: 16),
-      label: const Text('Challenge ⚔️'),
+      icon: Icon(isOnlineTarget ? Icons.flash_on_rounded : Icons.notifications_active_rounded, size: 16),
+      label: Text(isOnlineTarget ? 'Challenge ⚔️' : 'Invite 🔔'),
       style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF8B5CF6), foregroundColor: Colors.white, padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold), elevation: 2),
     );
   }
@@ -274,7 +297,7 @@ class _CountdownText extends StatelessWidget {
       builder: (context, snapshot) {
         final elapsed = DateTime.now().difference(challenge.createdAt).inSeconds;
         final remaining = (totalSeconds - elapsed).clamp(0, totalSeconds);
-        if (remaining <= 0) return const Text('Expiring...');
+        if (remaining <= 0) return const Text('⌛');
         return Text('$remaining' 's ✕', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold));
       },
     );

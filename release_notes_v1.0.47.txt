@@ -1,0 +1,7 @@
+SpeakEasy v1.0.47 — Clearer Offline Invites 🔔
+
+🪪 HONEST BUTTONS FOR OFFLINE WARRIORS
+• Offline players now show an "Invite 🔔" button instead of "Challenge ⚔️" — because an offline invite is delivered when they come back, not an instant duel.
+• After sending, the button calmly shows "Sent 🔔 ✕" (cancelable) — the misleading 120-second countdown that ended in "Expiring..." is gone. Offline invites stay alive for 48 hours!
+• Player chip now reads "OFFLINE · 2H AGO" so you always know who's away.
+• Live duel countdowns now match the real 90-second request window.

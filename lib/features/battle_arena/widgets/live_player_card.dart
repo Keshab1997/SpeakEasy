@@ -177,11 +177,29 @@ class LivePlayerCard extends StatelessWidget {
       );
     }
     if (pendingChallenge != null) {
-      final total = pendingChallenge!.isAsync ? 120 : 60;
+      // LIVE pendings count down to the real 90s TTL (was a mismatched 60s).
+      // ASYNC pendings (sent from here when a player went offline mid-flow)
+      // live 48h — no fake countdown, calm cancelable state instead.
+      if (pendingChallenge!.isAsync) {
+        return ElevatedButton.icon(
+          onPressed: onCancel,
+          icon: const Icon(Icons.notifications_active_rounded, size: 14),
+          label: const Text('Sent 🔔 ✕',
+              style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF64748B),
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+            elevation: 2,
+          ),
+        );
+      }
       return ElevatedButton.icon(
         onPressed: onCancel,
         icon: const Icon(Icons.close_rounded, size: 14),
-        label: _CountdownText(challenge: pendingChallenge!, totalSeconds: total),
+        label: _CountdownText(challenge: pendingChallenge!, totalSeconds: BattleChallenge.liveTtl.inSeconds),
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFFF59E0B),
           foregroundColor: Colors.white,
@@ -358,7 +376,7 @@ class _CountdownText extends StatelessWidget {
       builder: (context, snapshot) {
         final elapsed = DateTime.now().difference(challenge.createdAt).inSeconds;
         final remaining = (totalSeconds - elapsed).clamp(0, totalSeconds);
-        if (remaining <= 0) return const Text('Expiring...');
+        if (remaining <= 0) return const Text('⌛');
         return Text('$remaining' 's ✕', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold));
       },
     );
