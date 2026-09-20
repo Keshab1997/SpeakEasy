@@ -1,0 +1,13 @@
+SpeakEasy v1.0.46 — Clean Challenge Lifecycle ⏳
+
+⏰ OLD REQUESTS NOW DIE AUTOMATICALLY
+• A live duel request expires after 90 seconds and an offline (async) one after 48 hours — expired requests can never pop up, show as "Pending ⏳", or block your buttons again.
+• Expired requests (and their duel rooms) are erased from the server — no ghosts left behind.
+
+🚫 DECLINE = NO TRACE
+• Declining now cancels the duel room instantly and erases every trace of the request moments later.
+• The sender is properly told "the player declined" — then the request vanishes for good.
+• Accepting one challenge still auto-declines the others, and those are now fully cleaned up too.
+
+🧹 TIDIER ARENA
+• The Duel button unlocks the moment a request expires — no more waiting on dead "Pending ⏳" states.

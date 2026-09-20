@@ -963,8 +963,17 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   Widget _buildPendingChallengeBanner() {
     return ref.watch(incomingChallengesProvider).when(
           data: (challenges) {
-            if (challenges.isEmpty) return const SizedBox.shrink();
-            final c = challenges.first;
+            // Expired requests are dead — never offer a Respond button for
+            // them (the gate sweeps them from Firestore in the background).
+            BattleChallenge? live;
+            for (final x in challenges) {
+              if (!x.isExpired) {
+                live = x;
+                break;
+              }
+            }
+            final c = live;
+            if (c == null) return const SizedBox.shrink();
             return Container(
               margin: const EdgeInsets.fromLTRB(16, 8, 16, 0),
               padding: const EdgeInsets.all(14),

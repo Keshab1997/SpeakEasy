@@ -434,6 +434,20 @@ class BattleChallenge {
 
   bool get isAsync => type == 'async';
 
+  /// Pending-request lifetimes — MIRRORED from the server sweep
+  /// (functions/index.js → cleanupBattleData) and ALSO enforced on the
+  /// client, so an expired request can never surface again even before a
+  /// functions deploy lands:
+  ///   • live  (target was online):  90 seconds
+  ///   • async (target was offline): 48 hours
+  static const Duration liveTtl = Duration(seconds: 90);
+  static const Duration asyncTtl = Duration(hours: 48);
+
+  /// A pending challenge past its lifetime is DEAD: it must never pop the
+  /// accept sheet, never show as "Pending ⏳", and gets swept from Firestore.
+  bool get isExpired =>
+      DateTime.now().difference(createdAt) > (isAsync ? asyncTtl : liveTtl);
+
   Map<String, dynamic> toMap() {
     return {
       'id': id,

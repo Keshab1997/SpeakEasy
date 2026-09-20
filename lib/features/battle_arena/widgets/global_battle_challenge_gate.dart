@@ -46,6 +46,10 @@ class _GlobalBattleChallengeGateState
   /// Same createdAt logic as above so a resent challenge resurfaces.
   final Map<String, DateTime> _dismissedIncoming = {};
 
+  /// Challenge instances already swept as EXPIRED (dead) — a deterministic
+  /// doc id is reused by resends, so dedup on (id, createdAt).
+  final Map<String, DateTime> _expirySwept = {};
+
   bool _isStaleHandled(Map<String, DateTime> handled, BattleChallenge c) {
     final handledAt = handled[c.id];
     if (handledAt == null) return false;
@@ -154,6 +158,13 @@ class _GlobalBattleChallengeGateState
       for (final c in challenges) {
         if (_isStaleHandled(_respondedIncoming, c)) continue;
         if (_isStaleHandled(_dismissedIncoming, c)) continue;
+        // ⏰ EXPIRED REQUEST = DEAD REQUEST: live challenges die after 90s,
+        // async after 48h. They must NEVER surface — sweep doc + room so no
+        // trace remains (client-side mirror of the server TTL sweep).
+        if (c.isExpired) {
+          _sweepExpiredChallenge(c);
+          continue;
+        }
         challenge = c;
         break;
       }
@@ -183,6 +194,23 @@ class _GlobalBattleChallengeGateState
     ref.watch(outgoingChallengesProvider).whenData((outgoing) {
       for (final challenge in outgoing) {
         if (_isStaleHandled(_handledOutgoing, challenge)) continue;
+
+        // ⏰ EXPIRED pending (live > 90s / async > 48h, no reply): the
+        // request is dead — erase doc + room so nothing lingers, unlock the
+        // Duel button instantly (providers filter expired too) and tell the
+        // sender why their "Pending ⏳" vanished.
+        if (challenge.status == 'pending' && challenge.isExpired) {
+          _handledOutgoing[challenge.id] = challenge.createdAt;
+          _sweepExpiredChallenge(challenge);
+          if (!_waitingRoomOpen) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _showGlobalSnack(
+                  'Your challenge expired — no response in time ⌛',
+                  color: const Color(0xFF64748B));
+            });
+          }
+          continue;
+        }
 
         if (challenge.status == 'accepted' && challenge.roomId != null) {
           _handledOutgoing[challenge.id] = challenge.createdAt;
@@ -582,13 +610,9 @@ class _GlobalBattleChallengeGateState
       final toDecline = incoming.where((c) => c.id != keepId).toList();
       for (final c in toDecline) {
         try {
-          await ref
-              .read(battlePresenceServiceProvider)
-              .respondToChallenge(c.id, false);
-          if (c.roomId != null) {
-            unawaited(BattleMatchmakingService().deleteRoom(c.roomId!));
-          }
-          _respondedIncoming[c.id] = c.createdAt;
+          // Full teardown for the auto-declined extras: reject + room delete
+          // + delayed verified doc erase (same rules as a manual decline).
+          await _rejectAndErase(c);
         } catch (_) {}
       }
     } catch (_) {}
@@ -786,19 +810,57 @@ class _GlobalBattleChallengeGateState
     }
   }
 
-  Future<void> _onDecline(
-      BuildContext sheetCtx, BattleChallenge challenge) async {
+  /// DEAD-REQUEST SWEEP: an expired pending challenge is garbage — erase
+  /// the challenge doc AND its waiting room so absolutely no trace remains.
+  /// Runs once per instance (deterministic ids are reused by resends).
+  void _sweepExpiredChallenge(BattleChallenge c) {
+    // Once per instance (deterministic ids are reused by resends).
+    if (_expirySwept[c.id]?.isAtSameMomentAs(c.createdAt) == true) return;
+    _expirySwept[c.id] = c.createdAt;
+    final mm = BattleMatchmakingService();
+    unawaited(mm.deleteChallenge(c.id));
+    if (c.roomId != null) {
+      unawaited(mm.deleteRoom(c.roomId!));
+    }
+  }
+
+  /// DECLINE = FULL TEARDOWN:
+  ///   1. flip the doc to 'rejected' — that status is the SENDER's
+  ///      "your challenge was declined" feedback (gate snack + waiting room);
+  ///   2. delete the waiting room INSTANTLY — a declined duel room must not
+  ///      outlive the decline by even a second;
+  ///   3. ~10s later ERASE the challenge doc entirely (verified same-instance,
+  ///      so a resend that happened in between is never hit) — after that,
+  ///      no trace of the request exists anywhere.
+  Future<void> _rejectAndErase(BattleChallenge c) async {
     try {
       await ref
           .read(battlePresenceServiceProvider)
-          .respondToChallenge(challenge.id, false);
-      // Free the waiting room immediately — participants may delete rooms
-      // that are still 'waiting' (rules), even if the host is offline.
-      if (challenge.roomId != null) {
-        unawaited(
-            BattleMatchmakingService().deleteRoom(challenge.roomId!));
-      }
-      _respondedIncoming[challenge.id] = challenge.createdAt;
+          .respondToChallenge(c.id, false);
+    } catch (_) {}
+    if (c.roomId != null) {
+      unawaited(BattleMatchmakingService().deleteRoom(c.roomId!));
+    }
+    _respondedIncoming[c.id] = c.createdAt;
+    unawaited(Future<void>.delayed(const Duration(seconds: 10), () async {
+      try {
+        final fresh = await ref
+            .read(battlePresenceServiceProvider)
+            .getChallenge(c.id);
+        final sameInstance = fresh != null &&
+            fresh.status == 'rejected' &&
+            fresh.createdAt == c.createdAt;
+        if (sameInstance) {
+          await BattleMatchmakingService().deleteChallenge(c.id);
+        }
+      } catch (_) {}
+    }));
+  }
+
+  Future<void> _onDecline(
+      BuildContext sheetCtx, BattleChallenge challenge) async {
+    try {
+      await _rejectAndErase(challenge);
       if (sheetCtx.mounted) Navigator.pop(sheetCtx);
     } catch (_) {
       _showGlobalSnack('Could not decline. Try again.');

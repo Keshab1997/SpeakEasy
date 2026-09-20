@@ -102,8 +102,10 @@ final reshowChallengeProvider = StateProvider<BattleChallenge?>((ref) => null);
 /// challenge to — used to disable Duel buttons instantly (DRY).
 final outgoingPendingIdsProvider = Provider<Set<String>>((ref) {
   final outgoing = ref.watch(outgoingChallengesProvider).asData?.value ?? [];
+  // Expired pendings are DEAD — the Duel button must unlock the moment the
+  // TTL passes, not when the server sweep gets around to deleting the doc.
   return outgoing
-      .where((c) => c.status == 'pending')
+      .where((c) => c.status == 'pending' && !c.isExpired)
       .map((c) => c.toUserId)
       .toSet();
 });
@@ -113,6 +115,7 @@ final outgoingPendingChallengeMapProvider =
     Provider<Map<String, BattleChallenge>>((ref) {
   final outgoing = ref.watch(outgoingChallengesProvider).asData?.value ?? [];
   return {
-    for (final c in outgoing.where((c) => c.status == 'pending')) c.toUserId: c
+    for (final c in outgoing.where((c) => c.status == 'pending' && !c.isExpired))
+      c.toUserId: c
   };
 });
