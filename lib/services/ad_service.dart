@@ -13,6 +13,11 @@ class AdService {
   bool _initialized = false;
   InterstitialAd? _interstitialAd;
   RewardedAd? _rewardedAd;
+  // Guards so two full-screen ads can never be on screen at once. Showing a
+  // second ad while one is still up (or navigating away mid-ad) crashes the
+  // native ad SDK on some Android devices.
+  bool _interstitialShowing = false;
+  bool _rewardedShowing = false;
 
   // ── Ad Unit IDs ──
   // Debug → test ads, Release → real ads (safe from accidental bans)
@@ -136,32 +141,55 @@ class AdService {
     );
   }
 
-  /// Show the loaded interstitial ad. Returns true if ad was shown.
+  /// Show the loaded interstitial ad. Returns true if an ad was shown.
+  ///
+  /// The returned future completes only AFTER the user dismisses the
+  /// full-screen ad (or after it fails to show). Callers can therefore
+  /// navigate *after* the ad is gone — replacing a route while a full-screen
+  /// ad is still on screen is a known cause of native crashes on Android.
   Future<bool> showInterstitialAd() async {
+    // Never stack two full-screen ads.
+    if (_interstitialShowing) return false;
+
     if (_interstitialAd == null) {
-      // Try loading one on demand
+      // Try loading one on demand, then poll briefly for it to arrive.
       await loadInterstitialAd();
-      // Wait a bit for it to load, then try again
-      await Future.delayed(const Duration(seconds: 1));
+      for (var i = 0; i < 10 && _interstitialAd == null; i++) {
+        await Future.delayed(const Duration(milliseconds: 100));
+      }
     }
 
     final ad = _interstitialAd;
     if (ad == null) return false;
 
+    _interstitialShowing = true;
+    final dismissed = Completer<void>();
+
     ad.fullScreenContentCallback = FullScreenContentCallback(
       onAdDismissedFullScreenContent: (ad) {
         ad.dispose();
         _interstitialAd = null;
+        _interstitialShowing = false;
+        if (!dismissed.isCompleted) dismissed.complete();
         // Pre-load next ad
         loadInterstitialAd();
       },
       onAdFailedToShowFullScreenContent: (ad, error) {
         ad.dispose();
         _interstitialAd = null;
+        _interstitialShowing = false;
+        if (!dismissed.isCompleted) dismissed.complete();
       },
     );
 
+    // Consume the reference first — an InterstitialAd can only be shown once.
+    _interstitialAd = null;
     ad.show();
+
+    // Wait until the ad is closed (bounded, so a stuck callback can never
+    // hang the caller forever).
+    await dismissed.future
+        .timeout(const Duration(seconds: 60), onTimeout: () {});
     return true;
   }
 
@@ -191,30 +219,46 @@ class AdService {
   Future<bool> showRewardedAd({
     required VoidCallback onRewardEarned,
   }) async {
+    // Never stack two full-screen ads.
+    if (_rewardedShowing) return false;
+
     if (_rewardedAd == null) {
       await loadRewardedAd();
-      await Future.delayed(const Duration(seconds: 1));
+      for (var i = 0; i < 10 && _rewardedAd == null; i++) {
+        await Future.delayed(const Duration(milliseconds: 100));
+      }
     }
 
     final ad = _rewardedAd;
     if (ad == null) return false;
 
+    _rewardedShowing = true;
+    final dismissed = Completer<void>();
+
     ad.fullScreenContentCallback = FullScreenContentCallback(
       onAdDismissedFullScreenContent: (ad) {
         ad.dispose();
         _rewardedAd = null;
+        _rewardedShowing = false;
+        if (!dismissed.isCompleted) dismissed.complete();
         loadRewardedAd();
       },
       onAdFailedToShowFullScreenContent: (ad, error) {
         ad.dispose();
         _rewardedAd = null;
+        _rewardedShowing = false;
+        if (!dismissed.isCompleted) dismissed.complete();
       },
     );
 
+    // Consume the reference first — a RewardedAd can only be shown once.
+    _rewardedAd = null;
     ad.show(onUserEarnedReward: (ad, reward) {
       onRewardEarned();
     });
 
+    await dismissed.future
+        .timeout(const Duration(seconds: 90), onTimeout: () {});
     return true;
   }
 

@@ -43,6 +43,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
   bool _isCorrect = false;
   bool _isTimeOut = false;
   bool _isAutoAdvancing = false;
+  bool _hasNavigated = false; // guards against pushing the result screen twice
   DailyQuizQuestion? _answeredQuestion; // freeze question during feedback
 
   // Pulse animation for the timer badge when time is running out.
@@ -69,6 +70,9 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
     _countdownTimer?.cancel();
     _stopwatch.stop();
     _pulseController.dispose();
+    // Each play screen builds its own SoundService (and native AudioPlayer);
+    // release it so repeatedly opening the quiz never leaks players.
+    unawaited(_soundService.dispose());
     super.dispose();
   }
 
@@ -191,13 +195,19 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
   /// Advance to the next question, or navigate to the result screen if the quiz
   /// is complete.
   void _autoAdvance() async {
-    if (!mounted) return;
+    if (!mounted || _hasNavigated) return;
 
     final state = ref.read(dailyQuizProvider);
     if (!state.isPlaying || state.quiz?.isCompleted == true) {
+      // Guard: a timeout plus a late tap (or any double callback) must never
+      // push the result screen twice.
+      _hasNavigated = true;
+
       _soundService.playLevelUp();
 
-      // Show interstitial ad before navigating to result
+      // Show interstitial ad before navigating to result. The call completes
+      // only once the ad has been dismissed, so we never replace the route
+      // while a full-screen ad is still on screen.
       try {
         await AdService().showInterstitialAd();
       } catch (_) {

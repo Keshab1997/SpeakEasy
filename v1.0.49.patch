@@ -1,0 +1,1992 @@
+diff --git a/assets/json/daily_quiz/questions.json b/assets/json/daily_quiz/questions.json
+index 4e2062c..9f2246c 100644
+--- a/assets/json/daily_quiz/questions.json
++++ b/assets/json/daily_quiz/questions.json
+@@ -4842,6 +4842,1806 @@
+       "timeLimit": 25,
+       "difficulty": "medium",
+       "category": "conversation"
++    },
++    {
++      "id": "dq_280",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Scarce'?",
++      "bangla": "'Scarce' শব্দটির অর্থ কী?",
++      "options": [
++        "প্রচুর (Abundant)",
++        "সস্তা (Cheap)",
++        "সাধারণ (Common)",
++        "দুর্লভ (Not enough)"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Scarce' means 'দুর্লভ' — available only in small amounts.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_281",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Obvious'?",
++      "bangla": "'Obvious' শব্দটির অর্থ কী?",
++      "options": [
++        "গোপন (Hidden)",
++        "কঠিন (Difficult)",
++        "স্পষ্ট (Clear)",
++        "ভুল (Wrong)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Obvious' means 'স্পষ্ট' — easy to see or understand.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_282",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Postpone'?",
++      "bangla": "'Postpone' শব্দটির অর্থ কী?",
++      "options": [
++        "বাতিল করা (Cancel)",
++        "স্থগিত রাখা (Delay to a later time)",
++        "শুরু করা (Begin)",
++        "সমাপ্ত করা (Finish)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Postpone' means 'স্থগিত রাখা' — to move an event to a later time.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_283",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Acknowledge'?",
++      "bangla": "'Acknowledge' শব্দটির অর্থ কী?",
++      "options": [
++        "অস্বীকার করা (Deny)",
++        "স্বীকার করা (Admit / recognise)",
++        "ভুলে যাওয়া (Forget)",
++        "লুকিয়ে রাখা (Hide)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Acknowledge' means 'স্বীকার করা' — to admit or accept that something is true.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_284",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Perseverance'?",
++      "bangla": "'Perseverance' শব্দটির অর্থ কী?",
++      "options": [
++        "হাল ছেড়ে দেওয়া (Giving up)",
++        "অলসতা (Laziness)",
++        "ভাগ্য (Luck)",
++        "অধ্যবসায় (Continued effort)"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Perseverance' means 'অধ্যবসায়' — continuing to try despite difficulty.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_285",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Vivid'?",
++      "bangla": "'Vivid' শব্দটির অর্থ কী?",
++      "options": [
++        "অস্পষ্ট (Vague)",
++        "প্রাণবন্ত ও স্পষ্ট (Bright and lively)",
++        "নীরব (Silent)",
++        "বিষণ্ণ (Gloomy)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Vivid' means 'প্রাণবন্ত ও স্পষ্ট' — producing powerful, clear images in the mind.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_286",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Tedious'?",
++      "bangla": "'Tedious' শব্দটির অর্থ কী?",
++      "options": [
++        "আনন্দদায়ক (Enjoyable)",
++        "সংক্ষিপ্ত (Brief)",
++        "দীর্ঘ ও ক্লান্তিকর (Long and boring)",
++        "সহজ (Easy)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Tedious' means 'দীর্ঘ ও ক্লান্তিকর' — too long, slow or dull.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_287",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Ambitious'?",
++      "bangla": "'Ambitious' শব্দটির অর্থ কী?",
++      "options": [
++        "উদ্দেশ্যহীন (Aimless)",
++        "উচ্চাকাঙ্ক্ষী (Having a strong desire to succeed)",
++        "সন্তুষ্ট (Content)",
++        "লাজুক (Shy)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Ambitious' means 'উচ্চাকাঙ্ক্ষী' — determined to succeed or achieve something.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_288",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Pragmatic'?",
++      "bangla": "'Pragmatic' শব্দটির অর্থ কী?",
++      "options": [
++        "আদর্শবাদী (Idealistic)",
++        "আবেগপ্রবণ (Emotional)",
++        "ব্যবহারিক (Practical and realistic)",
++        "অলস (Lazy)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Pragmatic' means 'ব্যবহারিক' — dealing with things in a practical, realistic way.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_289",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Notorious'?",
++      "bangla": "'Notorious' শব্দটির অর্থ কী?",
++      "options": [
++        "ভালো কারণে বিখ্যাত (Famous for good reasons)",
++        "কুখ্যাত (Famous for something bad)",
++        "অজানা (Unknown)",
++        "বিনয়ী (Humble)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Notorious' means 'কুখ্যাত' — famous for a bad quality or deed.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_290",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Diligence'?",
++      "bangla": "'Diligence' শব্দটির অর্থ কী?",
++      "options": [
++        "অলসতা (Laziness)",
++        "পরিশ্রম ও যত্ন (Careful, steady effort)",
++        "অবহেলা (Neglect)",
++        "দ্রুততা (Haste)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Diligence' means 'পরিশ্রম ও যত্ন' — careful and persistent hard work.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_291",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Integrity'?",
++      "bangla": "'Integrity' শব্দটির অর্থ কী?",
++      "options": [
++        "প্রতারণা (Deceit)",
++        "সততা (Honesty and strong moral principles)",
++        "দুর্বলতা (Weakness)",
++        "কপটতা (Hypocrisy)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Integrity' means 'সততা' — the quality of being honest and having firm principles.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_292",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Tolerance'?",
++      "bangla": "'Tolerance' শব্দটির অর্থ কী?",
++      "options": [
++        "অসহিষ্ণুতা (Intolerance)",
++        "সহনশীলতা (Willingness to accept differences)",
++        "উদাসীনতা (Indifference)",
++        "কঠোরতা (Strictness)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Tolerance' means 'সহনশীলতা' — accepting opinions or behaviour you may not agree with.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_293",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Patience'?",
++      "bangla": "'Patience' শব্দটির অর্থ কী?",
++      "options": [
++        "ব্যস্ততা (Busyness)",
++        "ধৈর্য (Ability to wait calmly)",
++        "দ্রুততা (Speed)",
++        "রাগ (Anger)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Patience' means 'ধৈর্য' — the ability to wait or endure calmly.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_294",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Loyal'?",
++      "bangla": "'Loyal' শব্দটির অর্থ কী?",
++      "options": [
++        "বিশ্বাসঘাতক (Treacherous)",
++        "নিরপেক্ষ (Neutral)",
++        "অনুগত ও বিশ্বস্ত (Faithful and devoted)",
++        "স্বার্থপর (Selfish)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Loyal' means 'অনুগত ও বিশ্বস্ত' — always supporting a person or cause.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_295",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Radiant'?",
++      "bangla": "'Radiant' শব্দটির অর্থ কী?",
++      "options": [
++        "অন্ধকার (Dark)",
++        "উজ্জ্বল ও দীপ্তিময় (Bright and glowing)",
++        "শীতল (Cold)",
++        "ভারী (Heavy)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Radiant' means 'উজ্জ্বল ও দীপ্তিময়' — shining brightly or showing great happiness.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_296",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Transparent'?",
++      "bangla": "'Transparent' শব্দটির অর্থ কী?",
++      "options": [
++        "অস্বচ্ছ (Opaque)",
++        "গোপন (Secret)",
++        "স্বচ্ছ ও স্পষ্ট (Clear and open)",
++        "কঠিন (Hard)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Transparent' means 'স্বচ্ছ ও স্পষ্ট' — easy to see through, or open and honest.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_297",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Fortunate'?",
++      "bangla": "'Fortunate' শব্দটির অর্থ কী?",
++      "options": [
++        "হতভাগ্য (Unlucky)",
++        "ভাগ্যবান (Lucky)",
++        "দুঃখী (Sad)",
++        "একা (Alone)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Fortunate' means 'ভাগ্যবান' — lucky or favoured by good fortune.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_298",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct sentence:",
++      "bangla": "সঠিক বাক্যটি নির্বাচন করুন:",
++      "options": [
++        "She don't like coffee.",
++        "She doesn't likes coffee.",
++        "She not like coffee.",
++        "She doesn't like coffee."
++      ],
++      "correctAnswer": 3,
++      "explanation": "With third-person singular 'She', use 'doesn't' + base verb: 'She doesn't like coffee.'",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_299",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: I have been living here ___ 2015.",
++      "bangla": "শূন্যস্থান পূরণ করুন: I have been living here ___ 2015.",
++      "options": [
++        "for",
++        "since",
++        "from",
++        "at"
++      ],
++      "correctAnswer": 1,
++      "explanation": "Use 'since' with a specific starting point in time (2015); 'for' is used with a duration.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_300",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct preposition: He is good ___ mathematics.",
++      "bangla": "সঠিক preposition নির্বাচন করুন: He is good ___ mathematics.",
++      "options": [
++        "in",
++        "on",
++        "for",
++        "at"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Good at' is the fixed collocation for skills and subjects: 'good at mathematics'.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_301",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "What is the past tense of 'buy'?",
++      "bangla": "'buy' এর past tense কী?",
++      "options": [
++        "buyed",
++        "bought",
++        "buied",
++        "boughted"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Buy' is an irregular verb; its past tense is 'bought'.",
++      "timeLimit": 15,
++      "difficulty": "easy",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_302",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct article: She is ___ honest woman.",
++      "bangla": "সঠিক article নির্বাচন করুন: She is ___ honest woman.",
++      "options": [
++        "a",
++        "an",
++        "the",
++        "no article"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Honest' begins with a vowel *sound* (the 'h' is silent), so we use 'an'.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_303",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: If it ___ tomorrow, we will stay at home.",
++      "bangla": "শূন্যস্থান পূরণ করুন: If it ___ tomorrow, we will stay at home.",
++      "options": [
++        "will rain",
++        "rains",
++        "rained",
++        "is raining"
++      ],
++      "correctAnswer": 1,
++      "explanation": "In a first conditional, the if-clause takes the present simple: 'If it rains, we will stay...'",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_304",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Change into passive voice: 'They built the bridge.'",
++      "bangla": "Passive voice এ পরিবর্তন করুন: 'They built the bridge.'",
++      "options": [
++        "The bridge is built by them.",
++        "The bridge was built by them.",
++        "The bridge has built by them.",
++        "The bridge built by them."
++      ],
++      "correctAnswer": 1,
++      "explanation": "Past simple active → 'was/were + past participle': 'The bridge was built by them.'",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_305",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct sentence:",
++      "bangla": "সঠিক বাক্যটি নির্বাচন করুন:",
++      "options": [
++        "I am looking forward to meet you.",
++        "I am looking forward for meeting you.",
++        "I am looking forward to meeting you.",
++        "I look forward meet you."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Look forward to' is followed by a gerund (-ing form): 'looking forward to meeting you'.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_306",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: He is the ___ student in the class.",
++      "bangla": "শূন্যস্থান পূরণ করুন: He is the ___ student in the class.",
++      "options": [
++        "clever",
++        "cleverer",
++        "cleverest",
++        "most cleverest"
++      ],
++      "correctAnswer": 2,
++      "explanation": "Superlative degree is needed here: 'the cleverest student'.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_307",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct reported speech: He said, 'I am tired.'",
++      "bangla": "সঠিক reported speech নির্বাচন করুন: He said, 'I am tired.'",
++      "options": [
++        "He said that I am tired.",
++        "He says that he is tired.",
++        "He said that he is tired.",
++        "He said that he was tired."
++      ],
++      "correctAnswer": 3,
++      "explanation": "In reported speech the present tense shifts to past and the pronoun changes: 'He said that he was tired.'",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_308",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Which sentence uses 'many' correctly?",
++      "bangla": "কোন বাক্যে 'many' সঠিকভাবে ব্যবহৃত হয়েছে?",
++      "options": [
++        "How much books do you have?",
++        "How many books do you have?",
++        "How much of books do you have?",
++        "How many of book do you have?"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Many' is used with countable plural nouns: 'How many books do you have?'",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_309",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: She has been working here ___ five years.",
++      "bangla": "শূন্যস্থান পূরণ করুন: She has been working here ___ five years.",
++      "options": [
++        "since",
++        "from",
++        "during",
++        "for"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'For' is used with a length of time (five years); 'since' needs a starting point.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_310",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct question tag: You are coming, ___?",
++      "bangla": "সঠিক question tag নির্বাচন করুন: You are coming, ___?",
++      "options": [
++        "isn't it",
++        "are you",
++        "aren't you",
++        "don't you"
++      ],
++      "correctAnswer": 2,
++      "explanation": "The statement is positive with 'are', so the tag is negative: 'aren't you?'",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_311",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Identify the adverb in: 'She sings beautifully.'",
++      "bangla": "চিহ্নিত করুন adverb: 'She sings beautifully.'",
++      "options": [
++        "She",
++        "sings",
++        "beautifully",
++        "There is no adverb"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Beautifully' describes how she sings, so it is an adverb of manner.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_312",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: I wish I ___ more time yesterday.",
++      "bangla": "শূন্যস্থান পূরণ করুন: I wish I ___ more time yesterday.",
++      "options": [
++        "have",
++        "had",
++        "will have",
++        "has"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Wish' about the past takes the past perfect... here the simple past 'had' expresses the unreal past wish.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_313",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct sentence:",
++      "bangla": "সঠিক বাক্যটি নির্বাচন করুন:",
++      "options": [
++        "He suggested me to go.",
++        "He suggested me going.",
++        "He suggested that I should go.",
++        "He suggest me to go."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Suggest' is not followed by an object + infinitive; use 'suggested that I should go'.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_314",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct modal: You ___ smoke here — it is not allowed.",
++      "bangla": "সঠিক modal নির্বাচন করুন: You ___ smoke here — it is not allowed.",
++      "options": [
++        "mustn't",
++        "don't have to",
++        "needn't",
++        "might not"
++      ],
++      "correctAnswer": 0,
++      "explanation": "'Mustn't' expresses prohibition — it is not allowed to smoke here.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_315",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you politely ask someone to repeat what they said?",
++      "bangla": "ভদ্রভাবে কাউকে আবার বলতে কীভাবে অনুরোধ করবেন?",
++      "options": [
++        "What? Speak louder.",
++        "I didn't hear you. Repeat.",
++        "Sorry, could you say that again, please?",
++        "Say it once more."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Sorry, could you say that again, please?' — ভদ্র অনুরোধ, রাগ নয়।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_316",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "You step on someone's foot in a crowded bus. What do you say?",
++      "bangla": "ভিড় বাসে কেউ কারো পায়ে পা পড়ে গেল — কী বলবেন?",
++      "options": [
++        "Move your foot.",
++        "Watch out!",
++        "It wasn't my fault.",
++        "I'm so sorry — I didn't mean to."
++      ],
++      "correctAnswer": 3,
++      "explanation": "'I'm so sorry — I didn't mean to.' — আন্তরিক ক্ষমা প্রার্থনা।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_317",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you order food politely in a restaurant?",
++      "bangla": "রেস্টুরেন্টে ভদ্রভাবে খাবার অর্ডার করবেন কীভাবে?",
++      "options": [
++        "Give me a coffee.",
++        "Could I have a coffee, please?",
++        "I want coffee now.",
++        "Coffee!"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Could I have a coffee, please?' — polite request form।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_318",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "A colleague looks upset. How do you offer help?",
++      "bangla": "সহকর্মী মন খারাপ দেখাচ্ছে — কীভাবে সাহায্যের প্রস্তাব দেবেন?",
++      "options": [
++        "What's wrong with you?",
++        "You look terrible.",
++        "Is everything okay? Let me know if I can help.",
++        "Cheer up, it's nothing."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Is everything okay? Let me know if I can help.' — সহানুভূতি + সহায়তার হাত।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_319",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you ask for permission politely?",
++      "bangla": "ভদ্রভাবে অনুমতি চাইবেন কীভাবে?",
++      "options": [
++        "I take your pen.",
++        "Give me your pen.",
++        "I need your pen.",
++        "May I borrow your pen, please?"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'May I borrow your pen, please?' — বিনয়ী অনুমতির অনুরোধ।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_320",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "Someone thanks you for your help. A polite reply is:",
++      "bangla": "কেউ আপনার সাহায্যের জন্য ধন্যবাদ দিল — ভদ্র উত্তর কী?",
++      "options": [
++        "Yes, I know.",
++        "You're most welcome — happy to help!",
++        "Don't mention it ever.",
++        "It was nothing, forget it."
++      ],
++      "correctAnswer": 1,
++      "explanation": "'You're most welcome — happy to help!' — উষ্ণ ও ভদ্র উত্তর।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_321",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "You are late for a meeting. How do you apologise?",
++      "bangla": "মিটিং-এ দেরি হয়ে গেল — কীভাবে ক্ষমা চাইবেন?",
++      "options": [
++        "I am late, so what?",
++        "You should have waited.",
++        "I couldn't come on time.",
++        "I'm really sorry for being late — the traffic was terrible."
++      ],
++      "correctAnswer": 3,
++      "explanation": "'I'm really sorry for being late — the traffic was terrible.' — ক্ষমা + কারণ।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_322",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you politely disagree in a meeting?",
++      "bangla": "মিটিং-এ ভদ্রভাবে দ্বিমত প্রকাশ করবেন কীভাবে?",
++      "options": [
++        "You are wrong.",
++        "That's a silly idea.",
++        "I see your point, but I have a different view.",
++        "No, absolutely not."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'I see your point, but I have a different view.' — সম্মান রেখে দ্বিমত।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_323",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you ask a stranger for directions?",
++      "bangla": "অপরিচিত কাউকে রাস্তা জিজ্ঞাসা করবেন কীভাবে?",
++      "options": [
++        "Where is the station?",
++        "Tell me the way to the station.",
++        "Excuse me, could you tell me how to get to the station?",
++        "Station? Which way?"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Excuse me, could you tell me how to get to the station?' — ভদ্র ও স্পষ্ট।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_324",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "Your friend invites you out but you can't go. A polite refusal is:",
++      "bangla": "বন্ধু ঘুরতে ডাকল কিন্তু আপনি যেতে পারছেন না — ভদ্রভাবে কী বলবেন?",
++      "options": [
++        "No.",
++        "I'm busy, don't ask me.",
++        "Maybe not, who knows.",
++        "Thanks for the invite, but I'm afraid I can't make it today."
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Thanks for the invite, but I'm afraid I can't make it today.' — কৃতজ্ঞতা + ভদ্র না।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_325",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you introduce yourself in a job interview?",
++      "bangla": "চাকরির ইন্টারভিউতে নিজেকে কীভাবে পরিচয় করবেন?",
++      "options": [
++        "Hi, I'm me.",
++        "Good morning, I'm [name] — it's a pleasure to meet you.",
++        "Hello, my name is whatever.",
++        "I am the candidate."
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Good morning, I'm [name] — it's a pleasure to meet you.' — পেশাদার পরিচয়।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_326",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you check that someone understood you?",
++      "bangla": "কেউ আপনাকে বুঝেছে কিনা কীভাবে যাচাই করবেন?",
++      "options": [
++        "Understand?",
++        "You got it or not?",
++        "Repeat what I said.",
++        "Does that make sense to you?"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Does that make sense to you?' — ভদ্রভাবে বোঝাপড়া যাচাই।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_327",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you congratulate a colleague on a promotion?",
++      "bangla": "সহকর্মীর পদোন্নতিতে কীভাবে অভিনন্দন জানাবেন?",
++      "options": [
++        "Finally, about time.",
++        "Lucky you.",
++        "It's not a big deal.",
++        "Congratulations on your promotion — you really deserve it!"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Congratulations on your promotion — you really deserve it!' — আন্তরিক অভিনন্দন।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_328",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you ask a shopkeeper about the price?",
++      "bangla": "দোকানদারকে দাম জিজ্ঞাসা করবেন কীভাবে?",
++      "options": [
++        "How much?",
++        "Could you tell me how much this costs?",
++        "Price?",
++        "Give me the rate."
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Could you tell me how much this costs?' — ভদ্রভাবে দাম জানার অনুরোধ।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_329",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you politely interrupt someone?",
++      "bangla": "ভদ্রভাবে কাউকে টোকা দিয়ে কথা বলবেন কীভাবে?",
++      "options": [
++        "Stop talking.",
++        "Listen to me now.",
++        "Sorry to interrupt, but may I add something?",
++        "Wait, I'm talking."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Sorry to interrupt, but may I add something?' — ভদ্রভাবে মাঝপথে যোগ দেওয়া।",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_330",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Modest'?",
++      "bangla": "'Modest' শব্দটির অর্থ কী?",
++      "options": [
++        "অহংকারী (Arrogant)",
++        "লাজুক (Shy)",
++        "সৎ (Honest)",
++        "বিনয়ী (Not boastful about oneself)"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Modest' means 'বিনয়ী' — not talking proudly about your own abilities.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_331",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Anxious'?",
++      "bangla": "'Anxious' শব্দটির অর্থ কী?",
++      "options": [
++        "শান্ত (Calm)",
++        "আনন্দিত (Happy)",
++        "উদ্বিগ্ন (Worried or nervous)",
++        "ক্লান্ত (Tired)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Anxious' means 'উদ্বিগ্ন' — feeling worried or nervous about something.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_332",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Confident'?",
++      "bangla": "'Confident' শব্দটির অর্থ কী?",
++      "options": [
++        "আত্মবিশ্বাসী (Sure of oneself)",
++        "সন্দেহপ্রবণ (Doubtful)",
++        "ভীত (Afraid)",
++        "বিনয়ী (Modest)"
++      ],
++      "correctAnswer": 0,
++      "explanation": "'Confident' means 'আত্মবিশ্বাসী' — feeling sure about yourself or your abilities.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_333",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Greedy'?",
++      "bangla": "'Greedy' শব্দটির অর্থ কী?",
++      "options": [
++        "উদার (Generous)",
++        "লোভী (Wanting far too much)",
++        "সন্তুষ্ট (Content)",
++        "দয়ালু (Kind)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Greedy' means 'লোভী' — wanting more than you need.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_334",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Jealous'?",
++      "bangla": "'Jealous' শব্দটির অর্থ কী?",
++      "options": [
++        "উদাসীন (Indifferent)",
++        "সহানুভূতিশীল (Sympathetic)",
++        "ঈর্ষান্বিত (Envious of others)",
++        "কৃতজ্ঞ (Grateful)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Jealous' means 'ঈর্ষান্বিত' — unhappy because someone has what you want.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_335",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Flexible'?",
++      "bangla": "'Flexible' শব্দটির অর্থ কী?",
++      "options": [
++        "নমনীয় (Able to change or adjust)",
++        "কঠোর (Rigid)",
++        "ভঙ্গুর (Fragile)",
++        "শক্ত (Firm)"
++      ],
++      "correctAnswer": 0,
++      "explanation": "'Flexible' means 'নমনীয়' — willing to change or adapt to new situations.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_336",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Sensible'?",
++      "bangla": "'Sensible' শব্দটির অর্থ কী?",
++      "options": [
++        "বোকা (Foolish)",
++        "অবিবেচক (Unwise)",
++        "বিবেচক (Showing good judgement)",
++        "অলস (Lazy)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Sensible' means 'বিবেচক' — showing good, practical judgement.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_337",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Stingy'?",
++      "bangla": "'Stingy' শব্দটির অর্থ কী?",
++      "options": [
++        "উদার (Generous)",
++        "কৃপণ (Unwilling to spend money)",
++        "ধনী (Wealthy)",
++        "সাধারণ (Ordinary)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Stingy' means 'কৃপণ' — very unwilling to spend or give money.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_338",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Versatile'?",
++      "bangla": "'Versatile' শব্দটির অর্থ কী?",
++      "options": [
++        "একমুখী (Limited to one thing)",
++        "দুর্বল (Weak)",
++        "ধীর (Slow)",
++        "বহুমুখী (Able to do many things well)"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Versatile' means 'বহুমুখী' — able to adapt to many different activities.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_339",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Candid'?",
++      "bangla": "'Candid' শব্দটির অর্থ কী?",
++      "options": [
++        "কপট (Deceitful)",
++        "স্পষ্টভাষী ও সৎ (Honest and direct)",
++        "লাজুক (Shy)",
++        "নীরব (Silent)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Candid' means 'স্পষ্টভাষী ও সৎ' — saying what you think openly and honestly.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_340",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Indifferent'?",
++      "bangla": "'Indifferent' শব্দটির অর্থ কী?",
++      "options": [
++        "উদাসীন (Not interested or concerned)",
++        "আগ্রহী (Interested)",
++        "উৎসাহী (Enthusiastic)",
++        "ব্যস্ত (Busy)"
++      ],
++      "correctAnswer": 0,
++      "explanation": "'Indifferent' means 'উদাসীন' — having no particular interest or concern.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_341",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Arrogant'?",
++      "bangla": "'Arrogant' শব্দটির অর্থ কী?",
++      "options": [
++        "বিনয়ী (Modest)",
++        "সহানুভূতিশীল (Compassionate)",
++        "অহংকারী (Proud in an unpleasant way)",
++        "সৎ (Honest)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Arrogant' means 'অহংকারী' — behaving as if you are better than others.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_342",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Skeptical'?",
++      "bangla": "'Skeptical' শব্দটির অর্থ কী?",
++      "options": [
++        "নিশ্চিত (Certain)",
++        "সন্দেহপ্রবণ (Not easily convinced)",
++        "উদাসীন (Indifferent)",
++        "উৎসাহী (Eager)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Skeptical' means 'সন্দেহপ্রবণ' — doubting that something is true or useful.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_343",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Empathy'?",
++      "bangla": "'Empathy' শব্দটির অর্থ কী?",
++      "options": [
++        "উদাসীনতা (Indifference)",
++        "রাগ (Anger)",
++        "সহানুভূতি (Understanding others' feelings)",
++        "অহংকার (Pride)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Empathy' means 'সহানুভূতি' — the ability to understand and share another's feelings.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_344",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Resilience'?",
++      "bangla": "'Resilience' শব্দটির অর্থ কী?",
++      "options": [
++        "দুর্বলতা (Weakness)",
++        "আত্মসমর্পণ (Surrender)",
++        "ঘুরে দাঁড়ানোর ক্ষমতা (Ability to recover quickly)",
++        "একগুঁয়েমি (Stubbornness)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Resilience' means 'ঘুরে দাঁড়ানোর ক্ষমতা' — recovering quickly from difficulty.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_345",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Cordial'?",
++      "bangla": "'Cordial' শব্দটির অর্থ কী?",
++      "options": [
++        "শীতল (Cold)",
++        "কঠোর (Strict)",
++        "নীরব (Silent)",
++        "আন্তরিক ও বন্ধুত্বপূর্ণ (Friendly and warm)"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Cordial' means 'আন্তরিক ও বন্ধুত্বপূর্ণ' — warm and friendly.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_346",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Mundane'?",
++      "bangla": "'Mundane' শব্দটির অর্থ কী?",
++      "options": [
++        "রোমাঞ্চকর (Exciting)",
++        "নিত্যনৈমিত্তিক ও সাধারণ (Ordinary and dull)",
++        "দুর্লভ (Rare)",
++        "পবিত্র (Sacred)"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Mundane' means 'নিত্যনৈমিত্তিক ও সাধারণ' — ordinary and not interesting.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_347",
++      "type": "vocabulary",
++      "questionType": "multiple_choice",
++      "question": "What is the meaning of 'Precise'?",
++      "bangla": "'Precise' শব্দটির অর্থ কী?",
++      "options": [
++        "আনুমানিক (Approximate)",
++        "দ্রুত (Quick)",
++        "নিখুঁত ও সুনির্দিষ্ট (Exact and accurate)",
++        "অস্পষ্ট (Vague)"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Precise' means 'নিখুঁত ও সুনির্দিষ্ট' — exact and accurate.",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "vocabulary"
++    },
++    {
++      "id": "dq_348",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct sentence:",
++      "bangla": "সঠিক বাক্যটি নির্বাচন করুন:",
++      "options": [
++        "I have finished my homework yesterday.",
++        "I did finished my homework yesterday.",
++        "I finished my homework yesterday.",
++        "I was finish my homework yesterday."
++      ],
++      "correctAnswer": 2,
++      "explanation": "With a finished time word like 'yesterday', use the past simple: 'I finished my homework yesterday.'",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_349",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: I ___ in Dhaka when I was a child.",
++      "bangla": "শূন্যস্থান পূরণ করুন: I ___ in Dhaka when I was a child.",
++      "options": [
++        "use to live",
++        "am used to live",
++        "used to living",
++        "used to live"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Used to + base verb' describes a past habit: 'I used to live in Dhaka.'",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_350",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct sentence with 'would rather':",
++      "bangla": "'would rather' দিয়ে সঠিক বাক্যটি বাছুন:",
++      "options": [
++        "I would rather stay home than going out.",
++        "I would rather to stay home than go out.",
++        "I would rather stay home than go out.",
++        "I would rather staying home than go out."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Would rather' takes the base verb on both sides: 'would rather stay home than go out.'",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_351",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: She is taller ___ her sister.",
++      "bangla": "শূন্যস্থান পূরণ করুন: She is taller ___ her sister.",
++      "options": [
++        "then",
++        "as",
++        "from",
++        "than"
++      ],
++      "correctAnswer": 3,
++      "explanation": "Comparatives use 'than': 'taller than her sister'.",
++      "timeLimit": 15,
++      "difficulty": "easy",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_352",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct word: I have ___ money left, so I can't buy it.",
++      "bangla": "সঠিক শব্দটি বাছুন: I have ___ money left, so I can't buy it.",
++      "options": [
++        "little",
++        "a little",
++        "a few",
++        "few"
++      ],
++      "correctAnswer": 0,
++      "explanation": "'Little' (no article) means almost none — the right meaning here. 'A little' would mean some.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_353",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: Each of the students ___ a book.",
++      "bangla": "শূন্যস্থান পূরণ করুন: Each of the students ___ a book.",
++      "options": [
++        "has",
++        "have",
++        "are having",
++        "were having"
++      ],
++      "correctAnswer": 0,
++      "explanation": "'Each of' is singular, so the verb is 'has'.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_354",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct sentence:",
++      "bangla": "সঠিক বাক্যটি নির্বাচন করুন:",
++      "options": [
++        "Neither of them are ready.",
++        "Neither of them were ready.",
++        "Neither of them have ready.",
++        "Neither of them is ready."
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Neither of' is treated as singular here: 'Neither of them is ready.'",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_355",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: He works ___ than anyone else in the office.",
++      "bangla": "শূন্যস্থান পূরণ করুন: He works ___ than anyone else in the office.",
++      "options": [
++        "hard",
++        "harder",
++        "hardest",
++        "more hard"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Than' signals a comparative: 'harder than anyone else'.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_356",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct sentence:",
++      "bangla": "সঠিক বাক্যটি নির্বাচন করুন:",
++      "options": [
++        "As soon as he arrives, the meeting started.",
++        "As soon as he arrived, the meeting started.",
++        "As soon as he arrive, the meeting started.",
++        "As soon as he arrived, the meeting start."
++      ],
++      "correctAnswer": 1,
++      "explanation": "Both clauses describe the past: 'As soon as he arrived, the meeting started.'",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_357",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: It was ___ a difficult exam that nobody passed.",
++      "bangla": "শূন্যস্থান পূরণ করুন: It was ___ a difficult exam that nobody passed.",
++      "options": [
++        "so",
++        "too",
++        "very",
++        "such"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Such + a/an + adjective + noun + that': 'such a difficult exam that...'",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_358",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: He is too tired ___ walk any further.",
++      "bangla": "শূন্যস্থান পূরণ করুন: He is too tired ___ walk any further.",
++      "options": [
++        "to",
++        "for",
++        "that",
++        "so"
++      ],
++      "correctAnswer": 0,
++      "explanation": "'Too + adjective + to + verb': 'too tired to walk'.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_359",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct sentence:",
++      "bangla": "সঠিক বাক্যটি নির্বাচন করুন:",
++      "options": [
++        "Remember locking the door before you leave.",
++        "Remember to lock the door before you leave.",
++        "Remember to locking the door before you leave.",
++        "Remember lock the door before you leave."
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Remember to + verb' means 'don't forget to do it' — the intended meaning here.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_360",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: By the time we arrived, the film ___ already started.",
++      "bangla": "শূন্যস্থান পূরণ করুন: By the time we arrived, the film ___ already started.",
++      "options": [
++        "has",
++        "have",
++        "had",
++        "was"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'By the time' + past simple takes the past perfect: 'had already started'.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_361",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: ___ the heavy rain, the match continued.",
++      "bangla": "শূন্যস্থান পূরণ করুন: ___ the heavy rain, the match continued.",
++      "options": [
++        "Although",
++        "Because",
++        "Despite",
++        "However"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Despite' is followed by a noun phrase ('the heavy rain'); 'although' needs a clause.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_362",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: If I had studied harder, I ___ the exam.",
++      "bangla": "শূন্যস্থান পূরণ করুন: If I had studied harder, I ___ the exam.",
++      "options": [
++        "would pass",
++        "will pass",
++        "would have passed",
++        "passed"
++      ],
++      "correctAnswer": 2,
++      "explanation": "Third conditional: 'If + past perfect, would have + past participle'.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_363",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Fill in the blank: She is one of the best singers ___ I have ever heard.",
++      "bangla": "শূন্যস্থান পূরণ করুন: She is one of the best singers ___ I have ever heard.",
++      "options": [
++        "who",
++        "which",
++        "that",
++        "whom"
++      ],
++      "correctAnswer": 2,
++      "explanation": "After a superlative ('the best singers') we normally use 'that'.",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_364",
++      "type": "grammar",
++      "questionType": "multiple_choice",
++      "question": "Choose the correct preposition: I am not familiar ___ this software.",
++      "bangla": "সঠিক preposition বাছুন: I am not familiar ___ this software.",
++      "options": [
++        "to",
++        "for",
++        "about",
++        "with"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Familiar with' is the fixed collocation: 'familiar with this software'.",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "grammar"
++    },
++    {
++      "id": "dq_365",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you ask a friend for a favour politely?",
++      "bangla": "বন্ধুর কাছে ভদ্রভাবে উপকার চাইবেন কীভাবে?",
++      "options": [
++        "Do this for me.",
++        "You must help me.",
++        "I need this done.",
++        "Could you do me a favour, please?"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Could you do me a favour, please?' — বিনয়ী অনুরোধ।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_366",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you answer the phone formally at work?",
++      "bangla": "অফিসে ফর্মালি ফোন ধরবেন কীভাবে?",
++      "options": [
++        "Who is this?",
++        "Hello, this is [name] speaking. How may I help you?",
++        "Speak up.",
++        "Yes?"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Hello, this is [name] speaking. How may I help you?' — পেশাদার ফোন greeting।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_367",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "Someone is speaking too fast. How do you ask them to slow down?",
++      "bangla": "কেউ খুব দ্রুত বলছে — ধীরে বলতে কীভাবে অনুরোধ করবেন?",
++      "options": [
++        "Speak slowly!",
++        "You talk too fast.",
++        "Could you speak a little more slowly, please?",
++        "Slow down now."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Could you speak a little more slowly, please?' — ভদ্র অনুরোধ।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_368",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you book a hotel room politely?",
++      "bangla": "ভদ্রভাবে হোটেল রুম বুক করবেন কীভাবে?",
++      "options": [
++        "I want a room.",
++        "Give me a room for tonight.",
++        "Could I book a room for tonight, please?",
++        "Room available or not?"
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Could I book a room for tonight, please?' — ভদ্র বুকিং অনুরোধ।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_369",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "The food you ordered is cold. How do you complain politely?",
++      "bangla": "অর্ডার করা খাবার ঠান্ডা — ভদ্রভাবে অভিযোগ করবেন কীভাবে?",
++      "options": [
++        "This food is rubbish.",
++        "Excuse me, my food seems to be cold — could you please replace it?",
++        "You gave me cold food!",
++        "I won't pay for this."
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Excuse me, my food seems to be cold — could you please replace it?' — ভদ্র অভিযোগ।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_370",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you politely ask for a discount?",
++      "bangla": "ভদ্রভাবে ছাড় চাইবেন কীভাবে?",
++      "options": [
++        "Make it cheaper.",
++        "Is there any chance of a discount?",
++        "Too expensive, reduce it.",
++        "I want a lower price."
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Is there any chance of a discount?' — ভদ্র ও স্বাভাবিক অনুরোধ।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_371",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you give directions politely?",
++      "bangla": "ভদ্রভাবে রাস্তা দেখাবেন কীভাবে?",
++      "options": [
++        "Go straight, turn left.",
++        "Just walk and turn somewhere.",
++        "Turn left and then go straight, it's on your right.",
++        "You'll find it, keep walking."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Turn left and then go straight, it's on your right.' — স্পষ্ট ও সহায়ক নির্দেশনা।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_372",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you end a phone call politely?",
++      "bangla": "ভদ্রভাবে ফোন কল শেষ করবেন কীভাবে?",
++      "options": [
++        "Bye. (hang up)",
++        "Okay, bye.",
++        "Thanks for calling. Have a great day — goodbye!",
++        "I'm done talking."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Thanks for calling. Have a great day — goodbye!' — কৃতজ্ঞতা সহ বিদায়।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_373",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "You made a mistake at work. How do you tell your manager?",
++      "bangla": "কাজে ভুল হয়ে গেছে — ম্যানেজারকে কীভাবে জানাবেন?",
++      "options": [
++        "It's not my fault.",
++        "I'm sorry — I made a mistake and I'll fix it right away.",
++        "Somebody else did it.",
++        "Mistakes happen, so what?"
++      ],
++      "correctAnswer": 1,
++      "explanation": "'I'm sorry — I made a mistake and I'll fix it right away.' — দায়িত্ব নেওয়া।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_374",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you ask a colleague about their weekend?",
++      "bangla": "সহকর্মীর সপ্তাহান্ত কেমন কাটল কীভাবে জিজ্ঞাসা করবেন?",
++      "options": [
++        "How was your weekend?",
++        "What did you do?",
++        "Weekend good?",
++        "Tell me everything you did."
++      ],
++      "correctAnswer": 0,
++      "explanation": "'How was your weekend?' — সহজ ও ভদ্র প্রশ্ন।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_375",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "A friend shares good news. How do you respond?",
++      "bangla": "বন্ধু সুখবর দিল — কীভাবে সাড়া দেবেন?",
++      "options": [
++        "Oh, okay.",
++        "That's amazing — I'm so happy for you!",
++        "Are you sure?",
++        "Good for you, I guess."
++      ],
++      "correctAnswer": 1,
++      "explanation": "'That's amazing — I'm so happy for you!' — আন্তরিক আনন্দ।",
++      "timeLimit": 20,
++      "difficulty": "easy",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_376",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "A friend shares bad news. How do you respond?",
++      "bangla": "বন্ধু দুঃসংবাদ দিল — কীভাবে সাড়া দেবেন?",
++      "options": [
++        "It's not a big deal.",
++        "You'll get over it.",
++        "I'm so sorry to hear that — I'm here for you.",
++        "Things could be worse."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'I'm so sorry to hear that — I'm here for you.' — সহানুভূতি প্রকাশ।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_377",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "You didn't understand an instruction. How do you ask for clarification?",
++      "bangla": "নির্দেশ বুঝতে পারেননি — স্পষ্ট করতে কীভাবে চাইবেন?",
++      "options": [
++        "What?",
++        "Repeat it.",
++        "Could you explain that again, please? I want to be sure I understood.",
++        "I don't get it at all."
++      ],
++      "correctAnswer": 2,
++      "explanation": "'Could you explain that again, please? I want to be sure I understood.' — ভদ্র ও স্পষ্ট।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_378",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you make a suggestion in a group discussion?",
++      "bangla": "গ্রুপ আলোচনায় পরামর্শ দেবেন কীভাবে?",
++      "options": [
++        "We will do this.",
++        "Do it my way.",
++        "This is the only way.",
++        "Why don't we try a different approach?"
++      ],
++      "correctAnswer": 3,
++      "explanation": "'Why don't we try a different approach?' — ভদ্র ও সহযোগিতামূলক পরামর্শ।",
++      "timeLimit": 25,
++      "difficulty": "medium",
++      "category": "conversation"
++    },
++    {
++      "id": "dq_379",
++      "type": "conversation",
++      "questionType": "multiple_choice",
++      "question": "How do you say goodbye to a colleague at the end of the day?",
++      "bangla": "দিন শেষে সহকর্মীকে ভদ্রভাবে বিদায় জানাবেন কীভাবে?",
++      "options": [
++        "Bye.",
++        "Have a good evening — see you tomorrow!",
++        "I'm leaving.",
++        "Work is over."
++      ],
++      "correctAnswer": 1,
++      "explanation": "'Have a good evening — see you tomorrow!' — উষ্ণ ও ভদ্র বিদায়।",
++      "timeLimit": 30,
++      "difficulty": "hard",
++      "category": "conversation"
+     }
+   ]
+ }
+diff --git a/lib/features/daily_quiz/screens/daily_quiz_play_screen.dart b/lib/features/daily_quiz/screens/daily_quiz_play_screen.dart
+index 8170adc..7cf86ef 100644
+--- a/lib/features/daily_quiz/screens/daily_quiz_play_screen.dart
++++ b/lib/features/daily_quiz/screens/daily_quiz_play_screen.dart
+@@ -43,6 +43,7 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
+   bool _isCorrect = false;
+   bool _isTimeOut = false;
+   bool _isAutoAdvancing = false;
++  bool _hasNavigated = false; // guards against pushing the result screen twice
+   DailyQuizQuestion? _answeredQuestion; // freeze question during feedback
+ 
+   // Pulse animation for the timer badge when time is running out.
+@@ -69,6 +70,9 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
+     _countdownTimer?.cancel();
+     _stopwatch.stop();
+     _pulseController.dispose();
++    // Each play screen builds its own SoundService (and native AudioPlayer);
++    // release it so repeatedly opening the quiz never leaks players.
++    unawaited(_soundService.dispose());
+     super.dispose();
+   }
+ 
+@@ -191,13 +195,19 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
+   /// Advance to the next question, or navigate to the result screen if the quiz
+   /// is complete.
+   void _autoAdvance() async {
+-    if (!mounted) return;
++    if (!mounted || _hasNavigated) return;
+ 
+     final state = ref.read(dailyQuizProvider);
+     if (!state.isPlaying || state.quiz?.isCompleted == true) {
++      // Guard: a timeout plus a late tap (or any double callback) must never
++      // push the result screen twice.
++      _hasNavigated = true;
++
+       _soundService.playLevelUp();
+ 
+-      // Show interstitial ad before navigating to result
++      // Show interstitial ad before navigating to result. The call completes
++      // only once the ad has been dismissed, so we never replace the route
++      // while a full-screen ad is still on screen.
+       try {
+         await AdService().showInterstitialAd();
+       } catch (_) {
+diff --git a/lib/services/ad_service.dart b/lib/services/ad_service.dart
+index 5ecd6e7..1f4153c 100644
+--- a/lib/services/ad_service.dart
++++ b/lib/services/ad_service.dart
+@@ -13,6 +13,11 @@ class AdService {
+   bool _initialized = false;
+   InterstitialAd? _interstitialAd;
+   RewardedAd? _rewardedAd;
++  // Guards so two full-screen ads can never be on screen at once. Showing a
++  // second ad while one is still up (or navigating away mid-ad) crashes the
++  // native ad SDK on some Android devices.
++  bool _interstitialShowing = false;
++  bool _rewardedShowing = false;
+ 
+   // ── Ad Unit IDs ──
+   // Debug → test ads, Release → real ads (safe from accidental bans)
+@@ -136,32 +141,55 @@ class AdService {
+     );
+   }
+ 
+-  /// Show the loaded interstitial ad. Returns true if ad was shown.
++  /// Show the loaded interstitial ad. Returns true if an ad was shown.
++  ///
++  /// The returned future completes only AFTER the user dismisses the
++  /// full-screen ad (or after it fails to show). Callers can therefore
++  /// navigate *after* the ad is gone — replacing a route while a full-screen
++  /// ad is still on screen is a known cause of native crashes on Android.
+   Future<bool> showInterstitialAd() async {
++    // Never stack two full-screen ads.
++    if (_interstitialShowing) return false;
++
+     if (_interstitialAd == null) {
+-      // Try loading one on demand
++      // Try loading one on demand, then poll briefly for it to arrive.
+       await loadInterstitialAd();
+-      // Wait a bit for it to load, then try again
+-      await Future.delayed(const Duration(seconds: 1));
++      for (var i = 0; i < 10 && _interstitialAd == null; i++) {
++        await Future.delayed(const Duration(milliseconds: 100));
++      }
+     }
+ 
+     final ad = _interstitialAd;
+     if (ad == null) return false;
+ 
++    _interstitialShowing = true;
++    final dismissed = Completer<void>();
++
+     ad.fullScreenContentCallback = FullScreenContentCallback(
+       onAdDismissedFullScreenContent: (ad) {
+         ad.dispose();
+         _interstitialAd = null;
++        _interstitialShowing = false;
++        if (!dismissed.isCompleted) dismissed.complete();
+         // Pre-load next ad
+         loadInterstitialAd();
+       },
+       onAdFailedToShowFullScreenContent: (ad, error) {
+         ad.dispose();
+         _interstitialAd = null;
++        _interstitialShowing = false;
++        if (!dismissed.isCompleted) dismissed.complete();
+       },
+     );
+ 
++    // Consume the reference first — an InterstitialAd can only be shown once.
++    _interstitialAd = null;
+     ad.show();
++
++    // Wait until the ad is closed (bounded, so a stuck callback can never
++    // hang the caller forever).
++    await dismissed.future
++        .timeout(const Duration(seconds: 60), onTimeout: () {});
+     return true;
+   }
+ 
+@@ -191,30 +219,46 @@ class AdService {
+   Future<bool> showRewardedAd({
+     required VoidCallback onRewardEarned,
+   }) async {
++    // Never stack two full-screen ads.
++    if (_rewardedShowing) return false;
++
+     if (_rewardedAd == null) {
+       await loadRewardedAd();
+-      await Future.delayed(const Duration(seconds: 1));
++      for (var i = 0; i < 10 && _rewardedAd == null; i++) {
++        await Future.delayed(const Duration(milliseconds: 100));
++      }
+     }
+ 
+     final ad = _rewardedAd;
+     if (ad == null) return false;
+ 
++    _rewardedShowing = true;
++    final dismissed = Completer<void>();
++
+     ad.fullScreenContentCallback = FullScreenContentCallback(
+       onAdDismissedFullScreenContent: (ad) {
+         ad.dispose();
+         _rewardedAd = null;
++        _rewardedShowing = false;
++        if (!dismissed.isCompleted) dismissed.complete();
+         loadRewardedAd();
+       },
+       onAdFailedToShowFullScreenContent: (ad, error) {
+         ad.dispose();
+         _rewardedAd = null;
++        _rewardedShowing = false;
++        if (!dismissed.isCompleted) dismissed.complete();
+       },
+     );
+ 
++    // Consume the reference first — a RewardedAd can only be shown once.
++    _rewardedAd = null;
+     ad.show(onUserEarnedReward: (ad, reward) {
+       onRewardEarned();
+     });
+ 
++    await dismissed.future
++        .timeout(const Duration(seconds: 90), onTimeout: () {});
+     return true;
+   }
+ 
+diff --git a/pubspec.yaml b/pubspec.yaml
+index 7fe150d..03b5551 100644
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+ # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+ # In Windows, build-name is used as the major, minor, and patch parts
+ # of the product and file versions while build-number is used as the build suffix.
+-version: 1.0.48+48
++version: 1.0.49+49
+ 
+ environment:
+   sdk: '>=3.3.4 <4.0.0'
