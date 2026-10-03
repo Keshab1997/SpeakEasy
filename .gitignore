@@ -75,3 +75,5 @@ node_modules/
 # Dart incremental compile cache — never commit
 *.dill
 *.dill.tree
+# flutter-builder: see_screen.py downloads screenshots here
+.agent-screens/
