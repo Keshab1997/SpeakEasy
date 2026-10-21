@@ -149,6 +149,7 @@ class DailyQuizService {
   /// The cache is scoped per user so a completed quiz from one account is
   /// never restored for a different logged-in account.
   void saveQuiz(DailyQuiz quiz, String userId) {
+    if (!Hive.isBoxOpen(_hiveBoxName)) return;
     final box = _hiveBox;
     box.put('$userId|current_quiz', quiz.copyWith(userId: userId).toJson());
     if (_questionBankHash != null) {

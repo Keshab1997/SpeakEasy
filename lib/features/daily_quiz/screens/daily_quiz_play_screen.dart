@@ -448,20 +448,20 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
     final String label;
     switch (question.type) {
       case 'vocabulary':
-        icon = '📖';
-        label = 'Vocabulary';
+        icon = '🗣️';
+        label = 'Spoken Phrase';
         break;
       case 'grammar':
-        icon = '📝';
-        label = 'Grammar';
+        icon = '✨';
+        label = 'Speak Naturally';
         break;
       case 'conversation':
         icon = '💬';
-        label = 'Conversation';
+        label = 'Real Conversation';
         break;
       default:
-        icon = '❓';
-        label = 'General';
+        icon = '🎯';
+        label = 'Spoken English';
     }
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -753,24 +753,34 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
 
   /// Timeout message shown when the countdown reaches zero.
   Widget _buildTimeoutMessage(ThemeData theme) {
+    final isDark = theme.brightness == Brightness.dark;
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.only(top: 8),
       padding:
           const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
-        color: Colors.red.shade50,
+        color: isDark ? const Color(0xFF3A1E1E) : Colors.red.shade50,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.red.shade200, width: 1.5),
+        border: Border.all(
+          color: isDark
+              ? Colors.red.withValues(alpha: 0.35)
+              : Colors.red.shade200,
+          width: 1.5,
+        ),
       ),
       child: Row(
         children: [
-          const Icon(Icons.timer_off, color: Colors.red, size: 24),
+          Icon(
+            Icons.timer_off,
+            color: isDark ? Colors.red.shade300 : Colors.red,
+            size: 24,
+          ),
           const SizedBox(width: 12),
           Text(
             "Time's up! ⏰",
             style: TextStyle(
-              color: Colors.red.shade700,
+              color: isDark ? Colors.red.shade300 : Colors.red.shade700,
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),

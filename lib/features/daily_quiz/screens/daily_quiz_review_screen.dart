@@ -207,6 +207,7 @@ class _ReviewQuestionCard extends StatelessWidget {
             text: selectedText,
             color: isCorrect ? AppColors.success : AppColors.error,
             icon: isCorrect ? Icons.check : Icons.close,
+            isDark: isDark,
           ),
           const SizedBox(height: 8),
 
@@ -217,6 +218,7 @@ class _ReviewQuestionCard extends StatelessWidget {
               text: correctText,
               color: AppColors.success,
               icon: Icons.check,
+              isDark: isDark,
             ),
           const SizedBox(height: 12),
 
@@ -289,12 +291,14 @@ class _AnswerRow extends StatelessWidget {
   final String text;
   final Color color;
   final IconData icon;
+  final bool isDark;
 
   const _AnswerRow({
     required this.label,
     required this.text,
     required this.color,
     required this.icon,
+    required this.isDark,
   });
 
   @override
@@ -325,9 +329,11 @@ class _AnswerRow extends StatelessWidget {
                   ),
                   TextSpan(
                     text: text,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 14,
-                      color: Colors.black87,
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.92)
+                          : Colors.black87,
                       fontWeight: FontWeight.w500,
                     ),
                   ),

@@ -135,8 +135,14 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     // will handle that with proper isLoading state.
   }
 
-  /// Current authenticated user id, or null if signed out.
-  String? get _currentUserId => _ref.read(authProvider).asData?.value?.id;
+  /// Current authenticated user id, or null if signed out or Firebase isn't initialized yet.
+  String? get _currentUserId {
+    try {
+      return _ref.read(authProvider).asData?.value?.id;
+    } catch (_) {
+      return null;
+    }
+  }
 
 
 
