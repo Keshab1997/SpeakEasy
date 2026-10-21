@@ -322,33 +322,8 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                 children: [
                   const SizedBox(height: 12),
 
-                  // Timer ring
-                  SizedBox(
-                    width: 64,
-                    height: 64,
-                    child: AnimatedBuilder(
-                      animation: _timerAnimCtrl,
-                      builder: (_, child) => CircularProgressIndicator(
-                        value: _timerAnimCtrl.value,
-                        strokeWidth: 5,
-                        backgroundColor: Colors.grey.shade200,
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          _timeLeft <= 3 ? Colors.red : Colors.purple,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    '$_timeLeft',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: _timeLeft <= 3 ? Colors.red : Colors.purple,
-                    ),
-                  ),
-
-                  const SizedBox(height: 20),
+                  _buildTimerDisplay(),
+                  const SizedBox(height: 16),
 
                   // Question card with blank
                   Expanded(
@@ -429,6 +404,98 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildTimerDisplay() {
+    final isUrgent = _timeLeft <= 3;
+    final timerColor = isUrgent
+        ? const Color(0xFFDC2626)
+        : const Color(0xFF7C3AED);
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Semantics(
+        label: '$_timeLeft seconds remaining',
+        child: AnimatedBuilder(
+          animation: _timerAnimCtrl,
+          builder: (context, child) => Container(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(
+                color: timerColor.withValues(alpha: isUrgent ? 0.28 : 0.12),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.05),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: timerColor.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.timer_outlined,
+                    color: timerColor,
+                    size: 21,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            'TIME LEFT',
+                            style: TextStyle(
+                              color: Colors.grey.shade600,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w700,
+                              letterSpacing: 0.8,
+                            ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            '00:${_timeLeft.toString().padLeft(2, '0')}',
+                            style: TextStyle(
+                              color: timerColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 7),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(99),
+                        child: LinearProgressIndicator(
+                          value: (1 - _timerAnimCtrl.value).clamp(0.0, 1.0),
+                          minHeight: 6,
+                          backgroundColor: const Color(0xFFF1F0F5),
+                          valueColor: AlwaysStoppedAnimation<Color>(timerColor),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
