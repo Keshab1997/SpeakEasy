@@ -1,6 +1,6 @@
 # ⚡ জিরো ওয়েস্ট — টোকেন সেভিং ওয়ার্কফ্লো
 
-<!-- flutter-builder:agent-pack:start v1.15.1 -->
+<!-- flutter-builder:agent-pack:start v1.15.2 -->
 ## Rule #1 — CI is manual; preflight is your check
 
 This repository runs CI **only when the human dispatches it** (Actions → *Flutter
