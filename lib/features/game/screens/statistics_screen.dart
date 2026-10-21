@@ -143,33 +143,15 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
 
               const SizedBox(height: 24),
               const _SectionHeader(
-                title: 'Special Wins',
-                icon: Icons.military_tech,
+                title: 'Daily Challenge',
+                icon: Icons.emoji_events,
               ),
               const SizedBox(height: 12),
-              Row(
-                children: [
-                  Expanded(
-                    child: _GradientStatCard(
-                      label: 'Boss Wins',
-                      value: '${stats.bossWins}',
-                      icon: Icons.shield,
-                      gradient: const [
-                        Color(0xFFEF4444),
-                        Color(0xFFB91C1C),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: _GradientStatCard(
-                      label: 'Daily Wins',
-                      value: '${stats.dailyChallengeWins}',
-                      icon: Icons.flash_on,
-                      gradient: AppColors.purpleGradient,
-                    ),
-                  ),
-                ],
+              _GradientStatCard(
+                label: 'Daily Wins',
+                value: '${stats.dailyChallengeWins}',
+                icon: Icons.flash_on,
+                gradient: AppColors.purpleGradient,
               ),
 
               const SizedBox(height: 24),

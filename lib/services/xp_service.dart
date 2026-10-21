@@ -47,10 +47,6 @@ class XpService {
     return 100; // Daily challenge bonus
   }
 
-  int calculateBossBattleXP() {
-    return 200; // Boss battle bonus
-  }
-
   int calculateLevelCompletionXP({required int levelNumber}) {
     return levelNumber * 20;
   }

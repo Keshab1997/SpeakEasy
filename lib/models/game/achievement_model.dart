@@ -556,47 +556,6 @@ class AchievementModel {
       rarity: 'Epic',
     ),
 
-    // ── 🏆 BOSS BATTLE ──
-    AchievementModel(
-      id: 'boss_slayer',
-      title: 'Boss Slayer',
-      description: 'Defeat your first Boss Battle',
-      icon: '⚔️',
-      category: 'Battle',
-      xpReward: 200,
-      coinReward: 100,
-      gameType: 'bossBattle',
-      condition: 'boss_battle_wins >= 1',
-      order: 90,
-      rarity: 'Rare',
-    ),
-    AchievementModel(
-      id: 'boss_conqueror',
-      title: 'Boss Conqueror',
-      description: 'Win 10 Boss Battles',
-      icon: '🛡️',
-      category: 'Battle',
-      xpReward: 500,
-      coinReward: 250,
-      gameType: 'bossBattle',
-      condition: 'boss_battle_wins >= 10',
-      order: 91,
-      rarity: 'Epic',
-    ),
-    AchievementModel(
-      id: 'boss_immortal',
-      title: 'Boss Immortal',
-      description: 'Win a Boss Battle without losing a life',
-      icon: '💀',
-      category: 'Battle',
-      xpReward: 300,
-      coinReward: 150,
-      gameType: 'bossBattle',
-      condition: 'boss_battle_perfect >= 1',
-      order: 92,
-      rarity: 'Legendary',
-    ),
-
     // ── 📅 DAILY CHALLENGE ──
     AchievementModel(
       id: 'daily_starter',
@@ -1288,8 +1247,6 @@ class AchievementModel {
         return 'Speed Quiz';
       case 'wordMatch':
         return 'Word Match';
-      case 'bossBattle':
-        return 'Boss Battle';
       case 'dailyChallenge':
         return 'Daily Challenge';
       case 'quickQuiz':

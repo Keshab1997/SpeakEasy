@@ -136,27 +136,18 @@ class CoinService {
     return 50; // Level complete bonus
   }
 
-  int calculateBossBattleCoins() {
-    return 100; // Boss battle bonus
-  }
-
   int calculateDailyRewardCoins() {
     return 25; // Daily reward bonus
   }
 
   int calculateTotalBonusCoins({
     bool isLevelComplete = false,
-    bool isBossBattle = false,
     bool isDailyReward = false,
   }) {
     int bonusCoins = 0;
 
     if (isLevelComplete) {
       bonusCoins += calculateLevelCompleteCoins();
-    }
-
-    if (isBossBattle) {
-      bonusCoins += calculateBossBattleCoins();
     }
 
     if (isDailyReward) {

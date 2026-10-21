@@ -633,48 +633,6 @@
       "unlocked": false
     },
     {
-      "id": "boss_slayer",
-      "title": "Boss Slayer",
-      "description": "Defeat your first Boss Battle",
-      "icon": "⚔️",
-      "category": "Battle",
-      "xpReward": 200,
-      "coinReward": 100,
-      "gameType": "bossBattle",
-      "condition": "boss_battle_wins >= 1",
-      "order": 90,
-      "rarity": "Rare",
-      "unlocked": false
-    },
-    {
-      "id": "boss_conqueror",
-      "title": "Boss Conqueror",
-      "description": "Win 10 Boss Battles",
-      "icon": "🛡️",
-      "category": "Battle",
-      "xpReward": 500,
-      "coinReward": 250,
-      "gameType": "bossBattle",
-      "condition": "boss_battle_wins >= 10",
-      "order": 91,
-      "rarity": "Epic",
-      "unlocked": false
-    },
-    {
-      "id": "boss_immortal",
-      "title": "Boss Immortal",
-      "description": "Win a Boss Battle without losing a life",
-      "icon": "💀",
-      "category": "Battle",
-      "xpReward": 300,
-      "coinReward": 150,
-      "gameType": "bossBattle",
-      "condition": "boss_battle_perfect >= 1",
-      "order": 92,
-      "rarity": "Legendary",
-      "unlocked": false
-    },
-    {
       "id": "daily_starter",
       "title": "Daily Challenger",
       "description": "Complete your first Daily Challenge",

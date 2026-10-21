@@ -348,26 +348,11 @@ class _AchievementsBody extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 12),
-          Row(
-            children: [
-              Expanded(
-                child: _buildStatCard(
-                  'Boss Wins',
-                  '${state.bossWins}',
-                  Icons.bug_report,
-                  Colors.redAccent,
-                ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: _buildStatCard(
-                  'Daily Wins',
-                  '${state.dailyChallengeWins}',
-                  Icons.emoji_events,
-                  Colors.indigo,
-                ),
-              ),
-            ],
+          _buildStatCard(
+            'Daily Wins',
+            '${state.dailyChallengeWins}',
+            Icons.emoji_events,
+            Colors.indigo,
           ),
           const SizedBox(height: 12),
           _buildStatCard(

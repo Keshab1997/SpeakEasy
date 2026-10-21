@@ -57,7 +57,6 @@ class AchievementService {
     required int score,
     required int correctAnswers,
     required double accuracy,
-    bool isBossBattle = false,
     int speedBonusCount = 0,
     String gameMode = '',
     int durationSeconds = 0,
@@ -74,7 +73,6 @@ class AchievementService {
     final totalCoinsEarned = await _statisticsRepository.getTotalEarnedCoins();
     final progress = _progressRepository.getProgress();
     final currentStreak = progress?.streak ?? 0;
-    final bossWins = _statisticsRepository.getBossWins();
     final dailyWins = _statisticsRepository.getDailyChallengeWins();
 
     // Helper to check & unlock
@@ -145,16 +143,6 @@ class AchievementService {
     if (totalCoinsEarned >= 10000) await check('coins_10000');
 
     // ════════════════════════════════════════
-    // 🏆 BOSS BATTLE ACHIEVEMENTS
-    // ════════════════════════════════════════
-
-    if (isBossBattle || bossWins >= 1) await check('boss_slayer');
-    if (bossWins >= 10) await check('boss_conqueror');
-    // Boss Immortal — requires perfect boss battle (no lives lost)
-    // Passed via accuracy && isBossBattle from caller
-    if (isBossBattle && accuracy >= 1.0) await check('boss_immortal');
-
-    // ════════════════════════════════════════
     // 📅 DAILY CHALLENGE ACHIEVEMENTS
     // ════════════════════════════════════════
 
@@ -222,7 +210,9 @@ class AchievementService {
     if (durationSeconds > 0 && correctAnswers >= 10 && durationSeconds < 30) {
       await check('quick_quiz_speedster');
     }
-    if (accuracy >= 1.0 && correctAnswers >= 10) await check('quick_quiz_perfect');
+    if (accuracy >= 1.0 && correctAnswers >= 10) {
+      await check('quick_quiz_perfect');
+    }
 
     // Verb Learning
     final vlCorrect = await _statisticsRepository.getGameModeCorrect('verbLearning');
@@ -237,7 +227,9 @@ class AchievementService {
     if (gdCorrect >= 20) await check('grammar_detective_starter');
     if (gdCorrect >= 80) await check('grammar_detective_pro');
     if (gdCorrect >= 300) await check('grammar_detective_master');
-    if (accuracy >= 1.0 && correctAnswers >= 5) await check('grammar_detective_perfect');
+    if (accuracy >= 1.0 && correctAnswers >= 5) {
+      await check('grammar_detective_perfect');
+    }
 
     // Bangla to English
     final beCorrect = await _statisticsRepository.getGameModeCorrect('banglaToEnglish');

@@ -137,10 +137,6 @@ class XpNotifier extends StateNotifier<XpState> {
     return _xpService.calculateDailyChallengeXP();
   }
 
-  int calculateBossBattleXP() {
-    return _xpService.calculateBossBattleXP();
-  }
-
   int calculateTotalGameXP({
     required int correctCount,
     required int totalQuestions,

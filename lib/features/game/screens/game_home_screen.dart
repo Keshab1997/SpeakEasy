@@ -14,7 +14,6 @@ import 'leaderboard_screen.dart';
 import 'statistics_screen.dart';
 import 'achievements_screen.dart';
 import 'daily_challenge_screen.dart';
-import 'boss_battle_screen.dart';
 import 'modes/word_match_mode.dart';
 import 'modes/quick_quiz_mode.dart';
 import 'modes/fill_in_blanks_mode.dart';
@@ -256,7 +255,7 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
                 ),
                 const SizedBox(height: 18),
 
-                // ── 3. Quick Play Modes Grid (Daily Challenge, Boss Battle, Leaderboard, Practice) ──
+                // ── 3. Quick Play Modes Grid (Daily Challenge, Leaderboard, Practice) ──
                 _buildSectionHeader('GAME MODES', Icons.sports_esports_rounded, const Color(0xFF6366F1), isDark),
                 const SizedBox(height: 10),
                 _buildQuickModesGrid(context, isDark),
@@ -438,16 +437,6 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const DailyChallengeScreen()),
-          ),
-        ),
-        _buildQuickModeTile(
-          title: 'Boss Battle',
-          subtitle: 'Ultimate Test',
-          icon: Icons.shield_rounded,
-          gradient: const [Color(0xFFEF4444), Color(0xFFB91C1C)],
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const BossBattleScreen()),
           ),
         ),
         _buildQuickModeTile(

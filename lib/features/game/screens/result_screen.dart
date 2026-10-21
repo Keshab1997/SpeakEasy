@@ -140,7 +140,6 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
   Future<void> _checkAchievements() async {
     final total = widget.correctAnswers + widget.wrongAnswers;
     final accuracy = total > 0 ? widget.correctAnswers / total : 0.0;
-    final isBossBattle = widget.gameMode == 'boss';
 
     int durationSeconds = 0;
     try {
@@ -157,7 +156,6 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
         score: widget.score,
         correctAnswers: widget.correctAnswers,
         accuracy: accuracy,
-        isBossBattle: isBossBattle,
         gameMode: widget.gameMode,
         durationSeconds: durationSeconds,
       );
@@ -246,7 +244,7 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
           'gameType: ${result.gameType}, duration: ${result.durationSeconds}s, '
           'isBossWin: ${result.isBossWin}, isDailyChallengeWin: ${result.isDailyChallengeWin})');
 
-      // ── 2. Upload meta statistics (boss wins, daily wins, time played) ──
+      // ── 2. Upload meta statistics (daily wins, time played) ──
       await statisticsRepo.uploadMetaToFirestore(userId);
 
       // ── 3. Save game_progress (XP, coins, level, streak) ──

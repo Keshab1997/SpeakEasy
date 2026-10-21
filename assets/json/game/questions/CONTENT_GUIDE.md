@@ -280,9 +280,9 @@ assets/json/game/questions/
 |-----------|---------|--------------|
 | `easy` | প্রাথমিক নিয়ম, পরিচিত শব্দ, সরল বাক্য | সাধারণ Practice, Speed Quiz |
 | `medium` | কিছুটা জটিল নিয়ম, বড় বাক্য | Daily Challenge (intermediate), সাধারণ খেলা |
-| `hard` | কঠিন নিয়ম, ব্যতিক্রম, কনফিউজিং অপশন | Boss Battle (hard), উচ্চতর লেভেল |
+| `hard` | কঠিন নিয়ম, ব্যতিক্রম, কনফিউজিং অপশন | উচ্চতর লেভেলের প্র্যাকটিস |
 
-> ⚠️ গেমে Boss Battle শুধু `difficulty: "hard"` প্রশ্ন লোড করে, আর Daily Challenge শুধু `difficulty: "intermediate"` লোড করে। তাই প্রতিটি tense-এ অন্তত কিছু `hard` প্রশ্ন রাখা জরুরি, নাহলে Boss Battle খেলা যাবে না।
+> ⚠️ প্রতিটি tense-এ কিছু `hard` প্রশ্ন রাখুন, যাতে advanced learners-দের জন্যও পর্যাপ্ত practice থাকে।
 >
 > **বি.দ্র:** Daily Challenge-র জন্য `medium` বা `intermediate` — দুটোই কাজ করবে না। গেমটি হার্ডকোড করা `difficulty: 'intermediate'` খোঁজে। তাই `medium`-এর বদলে **`intermediate`** ব্যবহার করো Daily Challenge-র প্রশ্নে।
 >

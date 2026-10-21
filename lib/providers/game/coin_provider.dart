@@ -149,22 +149,16 @@ class CoinNotifier extends StateNotifier<CoinState> {
     return _coinService.calculateLevelCompleteCoins();
   }
 
-  int calculateBossBattleCoins() {
-    return _coinService.calculateBossBattleCoins();
-  }
-
   int calculateDailyRewardCoins() {
     return _coinService.calculateDailyRewardCoins();
   }
 
   int calculateTotalBonusCoins({
     bool isLevelComplete = false,
-    bool isBossBattle = false,
     bool isDailyReward = false,
   }) {
     return _coinService.calculateTotalBonusCoins(
       isLevelComplete: isLevelComplete,
-      isBossBattle: isBossBattle,
       isDailyReward: isDailyReward,
     );
   }
