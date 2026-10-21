@@ -1,0 +1,8 @@
+v1.0.50 internal testing build.
+
+Battle Arena: faster, fairer duels - smarter bots, and forfeit, rematch and friend challenges now behave as shown.
+Live PvP is paused in this build, so every duel is against a bot.
+Friend requests, the friends leaderboard and offline challenges all work.
+Fixed a crash when the app opened cold for the first time.
+
+Please report anything odd to the team.
