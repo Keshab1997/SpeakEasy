@@ -1,20 +1,100 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../services/speech_service.dart';
+import '../../../services/tts_service.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../models/daily_quiz_model.dart';
 
-/// Post-completion review screen.
+/// Post-completion Spoken English review & pronunciation screen.
 ///
-/// Shows every question the student attempted today along with what they
-/// answered, the correct answer, and the explanation — so they can learn from
-/// both mistakes and correct picks. Accessible only for today's completed quiz
-/// via the "Review & Learn" button on the result screen.
-class DailyQuizReviewScreen extends ConsumerWidget {
+/// Displays every attempted question with native TTS playback ("🔊 Listen") and
+/// live speech recognition ("🎤 Speak & Check") so learners actively speak every
+/// sentence out loud instead of merely reading silently.
+class DailyQuizReviewScreen extends ConsumerStatefulWidget {
   const DailyQuizReviewScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<DailyQuizReviewScreen> createState() =>
+      _DailyQuizReviewScreenState();
+}
+
+class _DailyQuizReviewScreenState extends ConsumerState<DailyQuizReviewScreen> {
+  final TtsService _tts = TtsService();
+  final SpeechService _speech = SpeechService();
+
+  String? _listeningQuestionId;
+  final Map<String, String> _spokenTextByQuestion = {};
+  final Map<String, int> _matchScoreByQuestion = {};
+
+  @override
+  void dispose() {
+    _tts.dispose();
+    _speech.dispose();
+    super.dispose();
+  }
+
+  int _computeSpokenSimilarity(String target, String spoken) {
+    List<String> normalize(String s) => s
+        .toLowerCase()
+        .replaceAll(RegExp(r'[^a-z0-9\s]'), ' ')
+        .split(RegExp(r'\s+'))
+        .where((w) => w.isNotEmpty)
+        .toList();
+
+    final targetWords = normalize(target);
+    final spokenWords = normalize(spoken);
+    if (targetWords.isEmpty || spokenWords.isEmpty) return 0;
+
+    final spokenSet = spokenWords.toSet();
+    final matched = targetWords.where(spokenSet.contains).length;
+    return ((matched / targetWords.length) * 100).round().clamp(0, 100);
+  }
+
+  Future<void> _toggleSpeakCheck(
+    DailyQuizQuestion question,
+    String targetSentence,
+  ) async {
+    if (_listeningQuestionId == question.id) {
+      await _speech.stopListening();
+      if (mounted) setState(() => _listeningQuestionId = null);
+      return;
+    }
+
+    await _tts.stop();
+    setState(() {
+      _listeningQuestionId = question.id;
+      _spokenTextByQuestion[question.id] = '';
+    });
+
+    await _speech.startListening(
+      onPartialResult: (partial) {
+        if (!mounted) return;
+        setState(() {
+          _spokenTextByQuestion[question.id] = partial;
+        });
+      },
+      onResult: (finalWords) {
+        if (!mounted) return;
+        final score = _computeSpokenSimilarity(targetSentence, finalWords);
+        setState(() {
+          _spokenTextByQuestion[question.id] = finalWords;
+          _matchScoreByQuestion[question.id] = score;
+          _listeningQuestionId = null;
+        });
+      },
+      onError: (err) {
+        if (!mounted) return;
+        setState(() => _listeningQuestionId = null);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(err ?? 'Microphone unavailable')),
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final quiz = ref.watch(dailyQuizProvider).quiz;
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
@@ -22,7 +102,7 @@ class DailyQuizReviewScreen extends ConsumerWidget {
     if (quiz == null || quiz.questions.isEmpty) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text('📖 Quiz Review'),
+          title: const Text('📖 Quiz Review & Speaking'),
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,
           elevation: 0,
@@ -33,14 +113,13 @@ class DailyQuizReviewScreen extends ConsumerWidget {
       );
     }
 
-    // Build a lookup of answers by questionId for O(1) matching.
     final answerById = <String, DailyQuizAnswer>{
       for (final a in quiz.answers) a.questionId: a,
     };
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('📖 Quiz Review'),
+        title: const Text('📖 Review & Speak Out Loud'),
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
         elevation: 0,
@@ -64,9 +143,11 @@ class DailyQuizReviewScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Review your answers and learn from each question.',
+                'Listen to natural native pronunciation and practice speaking each sentence aloud.',
                 style: theme.textTheme.bodyMedium?.copyWith(
-                  color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+                  color: isDark
+                      ? AppColors.textSecondaryDark
+                      : AppColors.textSecondaryLight,
                 ),
               ),
               const SizedBox(height: 16),
@@ -74,11 +155,21 @@ class DailyQuizReviewScreen extends ConsumerWidget {
                 final index = entry.key;
                 final question = entry.value;
                 final answer = answerById[question.id];
+                final correctSentence = question.correctAnswer >= 0 &&
+                        question.correctAnswer < question.options.length
+                    ? question.options[question.correctAnswer]
+                    : '';
+
                 return _ReviewQuestionCard(
                   index: index,
                   question: question,
                   answer: answer,
                   isDark: isDark,
+                  isListening: _listeningQuestionId == question.id,
+                  spokenText: _spokenTextByQuestion[question.id],
+                  matchScore: _matchScoreByQuestion[question.id],
+                  onListen: () => _tts.speak(correctSentence),
+                  onSpeak: () => _toggleSpeakCheck(question, correctSentence),
                 );
               }),
               const SizedBox(height: 24),
@@ -90,18 +181,28 @@ class DailyQuizReviewScreen extends ConsumerWidget {
   }
 }
 
-/// A single question's review card.
+/// A single question's review & speaking card.
 class _ReviewQuestionCard extends StatelessWidget {
   final int index;
   final DailyQuizQuestion question;
   final DailyQuizAnswer? answer;
   final bool isDark;
+  final bool isListening;
+  final String? spokenText;
+  final int? matchScore;
+  final VoidCallback onListen;
+  final VoidCallback onSpeak;
 
   const _ReviewQuestionCard({
     required this.index,
     required this.question,
     required this.answer,
     required this.isDark,
+    required this.isListening,
+    required this.spokenText,
+    required this.matchScore,
+    required this.onListen,
+    required this.onSpeak,
   });
 
   @override
@@ -112,7 +213,6 @@ class _ReviewQuestionCard extends StatelessWidget {
     final correctText = _optionText(question, question.correctAnswer);
     final selectedText = _userAnswerText(question, answer);
 
-    // Header colors
     final statusColor = isCorrect ? AppColors.success : AppColors.error;
 
     return Container(
@@ -138,7 +238,6 @@ class _ReviewQuestionCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Header: number + status
           Row(
             children: [
               Container(
@@ -190,7 +289,6 @@ class _ReviewQuestionCard extends StatelessWidget {
           ),
           const SizedBox(height: 12),
 
-          // Question text
           Text(
             question.question,
             style: const TextStyle(
@@ -201,7 +299,6 @@ class _ReviewQuestionCard extends StatelessWidget {
           ),
           const SizedBox(height: 14),
 
-          // Your answer row
           _AnswerRow(
             label: 'Your answer',
             text: selectedText,
@@ -211,7 +308,6 @@ class _ReviewQuestionCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
 
-          // Correct answer row (only if wrong or skipped)
           if (!isCorrect)
             _AnswerRow(
               label: 'Correct answer',
@@ -222,7 +318,65 @@ class _ReviewQuestionCard extends StatelessWidget {
             ),
           const SizedBox(height: 12),
 
-          // Explanation
+          // Listen & Speak Aloud action bar
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              OutlinedButton.icon(
+                onPressed: onListen,
+                icon: const Icon(Icons.volume_up_rounded, size: 18),
+                label: const Text('Listen'),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: AppColors.primary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+              ElevatedButton.icon(
+                onPressed: onSpeak,
+                icon: Icon(
+                  isListening ? Icons.stop_circle_outlined : Icons.mic_rounded,
+                  size: 18,
+                ),
+                label: Text(isListening ? 'Stop' : 'Speak & Check'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      isListening ? AppColors.error : AppColors.primary,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          if (spokenText != null && spokenText!.isNotEmpty) ...[
+            const SizedBox(height: 10),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: AppColors.primary.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text(
+                matchScore != null
+                    ? '🎤 "$spokenText" · Pronunciation Match: $matchScore%'
+                    : '🎤 Listening: "$spokenText"...',
+                style: TextStyle(
+                  fontSize: 12.5,
+                  fontWeight: FontWeight.w700,
+                  color: isDark ? Colors.white : AppColors.primary,
+                ),
+              ),
+            ),
+          ],
+
+          const SizedBox(height: 12),
+
           if (question.explanation.isNotEmpty)
             Container(
               width: double.infinity,
@@ -263,9 +417,6 @@ class _ReviewQuestionCard extends StatelessWidget {
     );
   }
 
-  /// Resolve the displayed text for an option index, handling complex types
-  /// where `selectedAnswer` is an index into [options] when available, or
-  /// falls back to a readable description.
   String _optionText(DailyQuizQuestion q, int index) {
     if (q.options.isNotEmpty && index >= 0 && index < q.options.length) {
       return q.options[index];
@@ -273,9 +424,6 @@ class _ReviewQuestionCard extends StatelessWidget {
     return 'Option ${index + 1}';
   }
 
-  /// Render what the user actually answered for the review card.
-  /// All Daily Quiz questions are MCQ, so the answer is an option index;
-  /// "Not answered" only when the user genuinely submitted nothing.
   String _userAnswerText(DailyQuizQuestion q, DailyQuizAnswer? answer) {
     if (answer == null) return 'Not answered';
     if (answer.selectedAnswer != null) {
@@ -285,7 +433,6 @@ class _ReviewQuestionCard extends StatelessWidget {
   }
 }
 
-/// A labelled answer row (e.g. "Your answer: ...").
 class _AnswerRow extends StatelessWidget {
   final String label;
   final String text;

@@ -190,6 +190,7 @@ class DailyQuizService {
 
   /// Load the current user's past quiz results from Hive, newest first.
   List<DailyQuizHistoryEntry> loadQuizHistory(String userId) {
+    if (!Hive.isBoxOpen(_hiveBoxName)) return const [];
     final box = _hiveBox;
     final stored = box.get('$userId|quiz_history', defaultValue: const []);
     final entries = (stored as List<dynamic>)
@@ -198,6 +199,69 @@ class DailyQuizService {
         .toList();
     entries.sort((a, b) => b.date.compareTo(a.date));
     return entries;
+  }
+
+  /// Persist any wrong or timed-out questions from [quiz] into the user's
+  /// Spoken Mistake Bank (newest first, deduplicated by prompt, max 100).
+  void saveWeakQuestionsFromQuiz(DailyQuiz quiz, String userId) {
+    if (!Hive.isBoxOpen(_hiveBoxName)) return;
+    final box = _hiveBox;
+    final key = '$userId|weak_questions';
+    final answerById = <String, DailyQuizAnswer>{
+      for (final a in quiz.answers) a.questionId: a,
+    };
+
+    final wrongQuestions = <DailyQuizQuestion>[];
+    for (final q in quiz.questions) {
+      final ans = answerById[q.id];
+      if (ans == null || !ans.isCorrect) {
+        wrongQuestions.add(q);
+      }
+    }
+    if (wrongQuestions.isEmpty) return;
+
+    final existing = loadWeakQuestions(userId).toList();
+    for (final wq in wrongQuestions.reversed) {
+      existing.removeWhere(
+        (item) => item.question.trim() == wq.question.trim(),
+      );
+      existing.insert(0, wq);
+    }
+
+    final trimmed = existing.take(100).map((q) => q.toJson()).toList();
+    box.put(key, trimmed);
+  }
+
+  /// Load saved weak/missed spoken questions for [userId].
+  List<DailyQuizQuestion> loadWeakQuestions(String userId) {
+    if (!Hive.isBoxOpen(_hiveBoxName)) return const [];
+    try {
+      final box = _hiveBox;
+      final stored =
+          box.get('$userId|weak_questions', defaultValue: const <dynamic>[])
+              as List<dynamic>;
+      return stored
+          .map((e) =>
+              DailyQuizQuestion.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList();
+    } catch (_) {
+      return const [];
+    }
+  }
+
+  /// Remove a mastered sentence from [userId]'s weak-sentence bank.
+  List<DailyQuizQuestion> removeWeakQuestion(
+    String userId,
+    String questionPrompt,
+  ) {
+    if (!Hive.isBoxOpen(_hiveBoxName)) return const [];
+    final box = _hiveBox;
+    final key = '$userId|weak_questions';
+    final updated = loadWeakQuestions(userId)
+        .where((q) => q.question.trim() != questionPrompt.trim())
+        .toList();
+    box.put(key, updated.map((q) => q.toJson()).toList());
+    return updated;
   }
 
   /// Load saved quiz from Hive for [userId]. Returns null if no quiz, a quiz

@@ -50,6 +50,24 @@ $_appLink
     return Share.share(message);
   }
 
+  /// Share Daily Quiz score & challenge friends to beat it
+  static Future<ShareResult> shareDailyQuizChallenge({
+    required int score,
+    required int correctCount,
+    required int totalQuestions,
+    int? rank,
+  }) {
+    final rankLine = rank != null ? '🏅 আজকের র‍্যাঙ্ক: #$rank\n' : '';
+    final message = '''
+🔥 আজকের $_appName Daily Spoken Quiz চ্যালেঞ্জ!
+
+🎯 আমার স্কোর: $score pts ($correctCount/$totalQuestions সঠিক)
+$rankLineপারলে আজ আমার স্কোর টপকে দেখাও! 💪
+
+ডাউনলোড করো: $_appLink''';
+    return Share.share(message);
+  }
+
   /// General share
   static Future<ShareResult> share(String text) {
     return Share.share(text);

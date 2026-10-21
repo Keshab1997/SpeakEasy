@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
+import 'package:flutter_spoken_english_app/features/daily_quiz/models/daily_quiz_model.dart';
 import 'package:flutter_spoken_english_app/features/daily_quiz/providers/daily_quiz_provider.dart';
 import 'package:flutter_spoken_english_app/features/daily_quiz/screens/daily_quiz_screen.dart';
 import 'package:flutter_spoken_english_app/features/daily_quiz/services/daily_quiz_leaderboard_service.dart';
@@ -164,5 +165,75 @@ void main() {
     expect(find.text('Pritam Ghosh'), findsOneWidget);
     expect(find.text('1360 pts'), findsOneWidget);
     expect(fakeLeaderboard.uploadCalls, 0);
+  });
+
+  test('weak sentences bank persists missed questions and removes mastered ones',
+      () {
+    final service = DailyQuizService();
+    const quiz = DailyQuiz(
+      id: 'quiz_2026-10-21',
+      date: '2026-10-21',
+      seed: 101,
+      questions: [
+        DailyQuizQuestion(
+          id: 'q1',
+          type: 'conversation',
+          question: 'Phone network weak situation?',
+          options: ['Cut phone', 'Your voice is breaking up.', 'Shout', 'Bye'],
+          correctAnswer: 1,
+          explanation: 'Natural spoken English phrase.',
+        ),
+        DailyQuizQuestion(
+          id: 'q2',
+          type: 'vocabulary',
+          question: 'Running late situation?',
+          options: ['I am on my way.', 'Walking street', 'Leg coming', 'Wait'],
+          correctAnswer: 0,
+          explanation: 'Everyday phrase.',
+        ),
+        DailyQuizQuestion(
+          id: 'q3',
+          type: 'grammar',
+          question: 'Past negative situation?',
+          options: ['I did not went.', 'I didn\'t go.', 'Not went.', 'Went no.'],
+          correctAnswer: 1,
+          explanation: 'Use base verb after didn\'t.',
+        ),
+      ],
+    );
+
+    // Q1 wrong, Q2 correct, Q3 unanswered (missed/timeout) -> 2 weak items saved.
+    final completed = service.completeQuiz(
+      quiz.copyWith(
+        answers: const [
+          DailyQuizAnswer(
+            questionId: 'q1',
+            selectedAnswer: 0,
+            isCorrect: false,
+            timeTaken: 12,
+            pointsEarned: 0,
+          ),
+          DailyQuizAnswer(
+            questionId: 'q2',
+            selectedAnswer: 0,
+            isCorrect: true,
+            timeTaken: 8,
+            pointsEarned: 150,
+          ),
+        ],
+      ),
+    );
+
+    service.saveWeakQuestionsFromQuiz(completed, 'learner_1');
+    final savedWeak = service.loadWeakQuestions('learner_1');
+    expect(savedWeak.length, 2);
+    expect(savedWeak.any((q) => q.id == 'q2'), isFalse);
+
+    final afterMastered = service.removeWeakQuestion(
+      'learner_1',
+      'Phone network weak situation?',
+    );
+    expect(afterMastered.length, 1);
+    expect(afterMastered.single.id, 'q3');
   });
 }

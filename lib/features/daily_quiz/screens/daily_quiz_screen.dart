@@ -6,6 +6,7 @@ import '../../../core/widgets/skeleton_widget.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/game/streak_provider.dart';
 import '../../../services/ad_service.dart';
+import '../../../services/share_service.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../services/daily_quiz_leaderboard_service.dart';
 import '../models/daily_quiz_model.dart';
@@ -14,6 +15,7 @@ import 'daily_quiz_result_screen.dart';
 import 'daily_quiz_leaderboard_screen.dart';
 import 'daily_quiz_review_screen.dart';
 import 'daily_quiz_history_screen.dart';
+import 'daily_quiz_weak_sentences_screen.dart';
 
 /// Results-first Daily Quiz hub.
 ///
@@ -303,7 +305,11 @@ class _DailyQuizScreenState extends ConsumerState<DailyQuizScreen> {
             _buildStatStrip(context, quiz, quizState, streak, theme),
             const SizedBox(height: 16),
 
-            // 5. Yesterday's champion banner (when viewing today's live board)
+            // 5. Saved Weak Sentences / Spoken Mistake Bank shortcut card
+            _buildWeakSentencesCard(context, quizState, theme, isDark),
+            const SizedBox(height: 16),
+
+            // 6. Yesterday's champion banner (when viewing today's live board)
             if (!quizState.isShowingYesterdayResults) ...[
               const _YesterdayChampionBanner(),
               const SizedBox(height: 16),
@@ -952,7 +958,103 @@ class _DailyQuizScreenState extends ConsumerState<DailyQuizScreen> {
               ],
             ),
           ),
+          IconButton(
+            tooltip: 'Challenge Friends',
+            onPressed: () {
+              ShareService.shareDailyQuizChallenge(
+                score: quiz.score,
+                correctCount: quiz.correctCount,
+                totalQuestions: quiz.totalQuestions,
+                rank: quizState.leaderboardRank,
+              );
+            },
+            style: IconButton.styleFrom(
+              backgroundColor: Colors.white.withValues(alpha: 0.2),
+              foregroundColor: Colors.white,
+            ),
+            icon: const Icon(Icons.share_rounded, size: 20),
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildWeakSentencesCard(
+    BuildContext context,
+    DailyQuizState quizState,
+    ThemeData theme,
+    bool isDark,
+  ) {
+    final count = quizState.weakQuestions.length;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: isDark ? AppColors.surfaceDark : Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: const Color(0xFFEC4899).withValues(alpha: 0.28),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.04),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(20),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const DailyQuizWeakSentencesScreen(),
+          ),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: const Color(0xFFEC4899).withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(
+                Icons.bookmark_added_rounded,
+                color: Color(0xFFEC4899),
+                size: 22,
+              ),
+            ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    count > 0
+                        ? 'My Weak Sentences ($count to practice)'
+                        : 'My Weak Sentences Bank',
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    count > 0
+                        ? 'Tap to listen & speak aloud the sentences you missed earlier'
+                        : 'Wrong or timed-out sentences auto-save here for speaking practice',
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: isDark
+                          ? AppColors.textSecondaryDark
+                          : AppColors.textSecondaryLight,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Icon(Icons.chevron_right, color: Color(0xFFEC4899), size: 22),
+          ],
+        ),
       ),
     );
   }

@@ -6,6 +6,7 @@ import '../../../core/widgets/skeleton_widget.dart';
 import '../../../services/ad_service.dart';
 import '../../../services/sound_service.dart';
 import '../../../services/haptic_service.dart';
+import '../../../services/tts_service.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../models/daily_quiz_model.dart';
 import 'daily_quiz_result_screen.dart';
@@ -25,11 +26,14 @@ class DailyQuizPlayScreen extends ConsumerStatefulWidget {
 class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
     with TickerProviderStateMixin {
   final SoundService _soundService = SoundService();
+  final TtsService _tts = TtsService();
+  bool _ttsMuted = false;
 
   // ---------------------------------------------------------------------------
   // Timer & stopwatch
   // ---------------------------------------------------------------------------
   Timer? _countdownTimer;
+  Timer? _autoAdvanceTimer;
   final Stopwatch _stopwatch = Stopwatch();
 
   int _remainingSeconds = 30;
@@ -68,12 +72,20 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
   @override
   void dispose() {
     _countdownTimer?.cancel();
+    _autoAdvanceTimer?.cancel();
     _stopwatch.stop();
     _pulseController.dispose();
-    // Each play screen builds its own SoundService (and native AudioPlayer);
-    // release it so repeatedly opening the quiz never leaks players.
     unawaited(_soundService.dispose());
+    unawaited(_tts.dispose());
     super.dispose();
+  }
+
+  void _speakCorrectOption(DailyQuizQuestion question) {
+    if (_ttsMuted) return;
+    if (question.correctAnswer >= 0 &&
+        question.correctAnswer < question.options.length) {
+      unawaited(_tts.speak(question.options[question.correctAnswer]));
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -151,15 +163,20 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
       _isAutoAdvancing = true;
     });
 
-    // Play haptic feedback for correct/wrong answer
+    // Play haptic feedback + native TTS pronunciation of correct sentence
     if (isCorrect) {
       HapticService.correct();
     } else {
       HapticService.wrong();
     }
+    _speakCorrectOption(question);
 
-    // Wait 2 s so the user can see the feedback, then auto-advance
-    Future.delayed(const Duration(seconds: 2), _autoAdvance);
+    // Correct answer: smooth 2s auto-advance (user can also tap Next early).
+    // Wrong answer: stay on card so learner can read explanation & replay audio.
+    if (isCorrect) {
+      _autoAdvanceTimer?.cancel();
+      _autoAdvanceTimer = Timer(const Duration(seconds: 2), _autoAdvance);
+    }
   }
 
   /// Called when the countdown reaches zero.
@@ -185,16 +202,19 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
       _isAutoAdvancing = true;
     });
 
-    // Play timeout sound
+    // Play timeout sound + speak the right spoken sentence so user learns it!
     _soundService.playGameOver();
-
-    // Brief delay so the user sees the "Time's up!" message
-    Future.delayed(const Duration(milliseconds: 1500), _autoAdvance);
+    if (_answeredQuestion != null) {
+      _speakCorrectOption(_answeredQuestion!);
+    }
+    // Wait for user to tap "Next Question" instead of rushing past the answer.
   }
 
   /// Advance to the next question, or navigate to the result screen if the quiz
   /// is complete.
   void _autoAdvance() async {
+    _autoAdvanceTimer?.cancel();
+    unawaited(_tts.stop());
     if (!mounted || _hasNavigated) return;
 
     final state = ref.read(dailyQuizProvider);
@@ -326,6 +346,20 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,
           elevation: 0,
+          actions: [
+            IconButton(
+              tooltip: _ttsMuted ? 'Unmute Pronunciation' : 'Mute Pronunciation',
+              icon: Icon(
+                _ttsMuted ? Icons.volume_off_rounded : Icons.volume_up_rounded,
+              ),
+              onPressed: () {
+                setState(() {
+                  _ttsMuted = !_ttsMuted;
+                  _tts.setMuted(_ttsMuted);
+                });
+              },
+            ),
+          ],
         ),
         body: Column(
           children: [
@@ -534,9 +568,36 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
             }),
             // Timeout message
             if (_isTimeOut) _buildTimeoutMessage(theme),
-            // Explanation panel
-            if (_isAnswerChecked && !_isTimeOut)
+            // Explanation panel + audio replay + manual Next button (shown on
+            // answer AND on timeout so learners never miss the explanation!)
+            if (_isAnswerChecked) ...[
               _buildExplanationPanel(question, theme, isDark),
+              const SizedBox(height: 14),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton.icon(
+                  onPressed: _autoAdvance,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primary,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                  icon: const Icon(Icons.arrow_forward_rounded),
+                  label: Text(
+                    ref.watch(dailyQuizProvider).quiz?.isCompleted == true
+                        ? 'ফলাফল দেখুন 🏆'
+                        : 'পরের প্রশ্ন →',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+              ),
+            ],
       ],
     );
   }
@@ -685,8 +746,13 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
         : (isDark ? const Color(0xFFE57373) : const Color(0xFFC62828));
     final icon =
         _isCorrect ? Icons.check_circle_outline : Icons.error_outline;
-    final title =
-        _isCorrect ? 'অসাধারণ! সঠিক উত্তর' : 'ভুল উত্তর হয়েছে';
+    final title = _isCorrect
+        ? 'অসাধারণ! সঠিক উত্তর'
+        : (_isTimeOut ? 'সময় শেষ! সঠিক বাক্যটি দেখুন' : 'ভুল উত্তর হয়েছে');
+    final correctSentence = question.correctAnswer >= 0 &&
+            question.correctAnswer < question.options.length
+        ? question.options[question.correctAnswer]
+        : '';
 
     return Container(
       width: double.infinity,
@@ -723,6 +789,19 @@ class _DailyQuizPlayScreenState extends ConsumerState<DailyQuizPlayScreen>
                   ),
                 ),
               ),
+              if (correctSentence.isNotEmpty)
+                TextButton.icon(
+                  onPressed: () => _tts.speak(correctSentence),
+                  style: TextButton.styleFrom(
+                    foregroundColor: AppColors.primary,
+                    visualDensity: VisualDensity.compact,
+                  ),
+                  icon: const Icon(Icons.volume_up_rounded, size: 18),
+                  label: const Text(
+                    'Listen',
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                ),
             ],
           ),
           const SizedBox(height: 8),

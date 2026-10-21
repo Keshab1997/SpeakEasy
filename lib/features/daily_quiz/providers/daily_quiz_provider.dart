@@ -4,6 +4,7 @@ import '../../../providers/auth_provider.dart';
 import '../../../providers/game/xp_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../../../providers/game/game_provider.dart';
+import '../../../providers/game/streak_provider.dart';
 import '../models/daily_quiz_model.dart';
 import '../services/daily_quiz_service.dart';
 import '../services/daily_quiz_leaderboard_service.dart';
@@ -44,6 +45,8 @@ class DailyQuizState {
   final String? error;
   final int? leaderboardRank;
   final List<DailyQuizLeaderboardEntry> topEntries;
+  final List<DailyQuizQuestion> weakQuestions;
+  final int streakBonusCoins;
 
   const DailyQuizState({
     this.quiz,
@@ -55,6 +58,8 @@ class DailyQuizState {
     this.error,
     this.leaderboardRank,
     this.topEntries = const [],
+    this.weakQuestions = const [],
+    this.streakBonusCoins = 0,
   });
 
   DailyQuizState copyWith({
@@ -67,6 +72,8 @@ class DailyQuizState {
     String? error,
     int? leaderboardRank,
     List<DailyQuizLeaderboardEntry>? topEntries,
+    List<DailyQuizQuestion>? weakQuestions,
+    int? streakBonusCoins,
     bool clearError = false,
     bool clearLeaderboardRank = false,
   }) {
@@ -82,6 +89,8 @@ class DailyQuizState {
       leaderboardRank:
           clearLeaderboardRank ? null : leaderboardRank ?? this.leaderboardRank,
       topEntries: topEntries ?? this.topEntries,
+      weakQuestions: weakQuestions ?? this.weakQuestions,
+      streakBonusCoins: streakBonusCoins ?? this.streakBonusCoins,
     );
   }
 }
@@ -113,6 +122,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   void _init() {
     final userId = _currentUserId;
     if (userId != null) {
+      final weak = _service.loadWeakQuestions(userId);
       final saved = _service.loadSavedQuiz(userId);
       if (saved != null) {
         debugPrint('📅 [DailyQuiz] _init: loaded from Hive '
@@ -121,8 +131,10 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
           quiz: saved,
           isPlaying: saved.startedAt != null && !saved.isCompleted,
           currentQuestionIndex: saved.answers.length,
+          weakQuestions: weak,
         );
       } else {
+        state = state.copyWith(weakQuestions: weak);
         debugPrint(
             '📅 [DailyQuiz] _init: Hive empty — waiting for loadTodayQuiz()');
       }
@@ -176,6 +188,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
         return;
       }
       final cached = _service.loadSavedQuiz(userId);
+      final weak = _service.loadWeakQuestions(userId);
       if (cached != null) {
         debugPrint('📅 [DailyQuiz] loadTodayQuiz: restored from Hive '
             '(completed=${cached.isCompleted}, answers=${cached.answers.length})');
@@ -185,6 +198,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
           isPlaying: isPlaying,
           isLoading: false,
           currentQuestionIndex: cached.answers.length,
+          weakQuestions: weak,
           clearError: true,
         );
         await leaderboardFuture;
@@ -196,7 +210,11 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
       if (current != null && current.date == _todayDateString()) {
         debugPrint('📅 [DailyQuiz] loadTodayQuiz: using in-memory quiz '
             '(completed=${current.isCompleted})');
-        state = state.copyWith(isLoading: false, clearError: true);
+        state = state.copyWith(
+          isLoading: false,
+          weakQuestions: weak,
+          clearError: true,
+        );
         await leaderboardFuture;
         return;
       }
@@ -210,6 +228,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
         isPlaying: false,
         isLoading: false,
         currentQuestionIndex: 0,
+        weakQuestions: weak,
         clearError: true,
       );
       await leaderboardFuture;
@@ -326,18 +345,43 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     final quiz = state.quiz;
     if (quiz == null || quiz.isCompleted) return;
 
-    final completed = _service.completeQuiz(quiz);
+    var completed = _service.completeQuiz(quiz);
 
-    // Persist completion IMMEDIATELY and update state before any network /
-    // reward calls.
+    // Update daily streak first and compute milestone streak coin bonus (3 / 7 / 30 days).
+    int milestoneBonusCoins = 0;
+    try {
+      final newStreak =
+          await _ref.read(streakProvider.notifier).checkAndUpdateStreak();
+      if (newStreak > 0 && newStreak % 30 == 0) {
+        milestoneBonusCoins = 50;
+      } else if (newStreak > 0 && newStreak % 7 == 0) {
+        milestoneBonusCoins = 25;
+      } else if (newStreak > 0 && newStreak % 3 == 0) {
+        milestoneBonusCoins = 10;
+      }
+      if (milestoneBonusCoins > 0) {
+        completed = completed.copyWith(
+          earnedCoins: completed.earnedCoins + milestoneBonusCoins,
+        );
+      }
+    } catch (_) {
+      // Safe fallback in test/offline contexts where streak boxes aren't initialized.
+    }
+
+    // Persist completion + weak sentences IMMEDIATELY before network calls.
     final userId = _currentUserId;
+    List<DailyQuizQuestion> updatedWeak = state.weakQuestions;
     if (userId != null) {
       _service.saveQuiz(completed, userId);
       _service.saveQuizHistory(completed, userId);
+      _service.saveWeakQuestionsFromQuiz(completed, userId);
+      updatedWeak = _service.loadWeakQuestions(userId);
     }
     state = state.copyWith(
       quiz: completed,
       isPlaying: false,
+      weakQuestions: updatedWeak,
+      streakBonusCoins: milestoneBonusCoins,
     );
 
     // Award XP and coins (best-effort — must not undo completion).
@@ -368,6 +412,21 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     } catch (_) {
       // Leaderboard is non-critical; completion is already persisted.
     }
+  }
+
+  /// Refresh the saved weak-sentence list from Hive for the signed-in user.
+  void reloadWeakQuestions() {
+    final userId = _currentUserId;
+    if (userId == null) return;
+    state = state.copyWith(weakQuestions: _service.loadWeakQuestions(userId));
+  }
+
+  /// Mark a weak spoken sentence as mastered and remove it from the mistake bank.
+  void markWeakQuestionMastered(String questionPrompt) {
+    final userId = _currentUserId;
+    if (userId == null) return;
+    final remaining = _service.removeWeakQuestion(userId, questionPrompt);
+    state = state.copyWith(weakQuestions: remaining);
   }
 
   /// Read-only fetch of today's live results so users see live standings right

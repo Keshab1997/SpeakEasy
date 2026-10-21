@@ -779,13 +779,18 @@ borderRadius: BorderRadius.circular(4))),
                             const SizedBox(height: 2),
                             Text(
                               isCompleted
-                                  ? 'Score: ${quiz!.score} pts 🎉'
-                                  : (quiz == null
-                                      ? '10 Qs • ~5 min'
-                                      : '${quiz.answeredCount}/${quiz.totalQuestions} answered'),
+                                  ? (quizState.leaderboardRank != null
+                                      ? 'Rank #${quizState.leaderboardRank} • ${quiz!.score} pts 🎉'
+                                      : 'Score: ${quiz!.score} pts 🎉')
+                                  : (quizState.topEntries.isNotEmpty
+                                      ? '👑 #1 ${quizState.topEntries.first.userName}: ${quizState.topEntries.first.score} pts'
+                                      : (quiz == null
+                                          ? '10 Spoken Qs • ⏳ ${24 - DateTime.now().hour}h left'
+                                          : '${quiz.answeredCount}/${quiz.totalQuestions} answered')),
                               style: TextStyle(
-                                color: Colors.white.withValues(alpha: 0.85),
+                                color: Colors.white.withValues(alpha: 0.9),
                                 fontSize: 11.5,
+                                fontWeight: FontWeight.w600,
                               ),
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,

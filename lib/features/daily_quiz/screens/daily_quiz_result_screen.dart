@@ -5,10 +5,12 @@ import '../../../providers/auth_provider.dart';
 import '../../../providers/game/game_provider.dart';
 import '../../../providers/game/coin_provider.dart';
 import '../../../services/ad_service.dart';
+import '../../../services/share_service.dart';
 import '../models/daily_quiz_model.dart';
 import '../providers/daily_quiz_provider.dart';
 import 'daily_quiz_leaderboard_screen.dart';
 import 'daily_quiz_review_screen.dart';
+import 'daily_quiz_weak_sentences_screen.dart';
 
 /// Daily Quiz result screen — a playful, celebratory summary showing the
 /// learner's score, stats, rewards and leaderboard position.
@@ -227,9 +229,43 @@ class DailyQuizResultScreen extends ConsumerWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            foregroundColor: AppColors.primary,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: AppColors.primary,
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+
+                    // Practice Weak Sentences button (when any question missed)
+                    if (wrongCount > 0) ...[
+                      SizedBox(
+                        width: double.infinity,
+                        child: OutlinedButton.icon(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) =>
+                                    const DailyQuizWeakSentencesScreen(),
+                              ),
+                            );
+                          },
+                          icon: const Icon(Icons.bookmark_added_rounded),
+                          label: Text(
+                            'Practice $wrongCount Missed Sentence${wrongCount == 1 ? '' : 's'}',
+                            style: const TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: Colors.white,
+                            side: const BorderSide(color: Colors.white70),
                             padding: const EdgeInsets.symmetric(vertical: 14),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16),
@@ -237,6 +273,39 @@ class DailyQuizResultScreen extends ConsumerWidget {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 12),
+                    ],
+
+                    // Share & Challenge Friends button
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          ShareService.shareDailyQuizChallenge(
+                            score: quiz.score,
+                            correctCount: correctCount,
+                            totalQuestions: totalQuestions,
+                            rank: leaderboardRank,
+                          );
+                        },
+                        icon: const Icon(Icons.share_rounded),
+                        label: const Text(
+                          'Challenge Friends to Beat My Score!',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFF59E0B),
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                      ),
+                    ),
                     const SizedBox(height: 24),
 
                     // Leaderboard Section
