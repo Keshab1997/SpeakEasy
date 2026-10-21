@@ -39,6 +39,8 @@ class DailyQuizState {
   final int currentQuestionIndex;
   final bool isPlaying;
   final bool isLoading;
+  final bool isLeaderboardLoading;
+  final bool isShowingYesterdayResults;
   final String? error;
   final int? leaderboardRank;
   final List<DailyQuizLeaderboardEntry> topEntries;
@@ -48,6 +50,8 @@ class DailyQuizState {
     this.currentQuestionIndex = 0,
     this.isPlaying = false,
     this.isLoading = false,
+    this.isLeaderboardLoading = false,
+    this.isShowingYesterdayResults = false,
     this.error,
     this.leaderboardRank,
     this.topEntries = const [],
@@ -58,6 +62,8 @@ class DailyQuizState {
     int? currentQuestionIndex,
     bool? isPlaying,
     bool? isLoading,
+    bool? isLeaderboardLoading,
+    bool? isShowingYesterdayResults,
     String? error,
     int? leaderboardRank,
     List<DailyQuizLeaderboardEntry>? topEntries,
@@ -69,6 +75,9 @@ class DailyQuizState {
       currentQuestionIndex: currentQuestionIndex ?? this.currentQuestionIndex,
       isPlaying: isPlaying ?? this.isPlaying,
       isLoading: isLoading ?? this.isLoading,
+      isLeaderboardLoading: isLeaderboardLoading ?? this.isLeaderboardLoading,
+      isShowingYesterdayResults:
+          isShowingYesterdayResults ?? this.isShowingYesterdayResults,
       error: clearError ? null : error ?? this.error,
       leaderboardRank:
           clearLeaderboardRank ? null : leaderboardRank ?? this.leaderboardRank,
@@ -103,36 +112,26 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   /// would shadow a persisted completed quiz in Hive.
   void _init() {
     final userId = _currentUserId;
-    if (userId == null) {
-      // No user yet — nothing account-scoped to restore. loadTodayQuiz()
-      // (called from the home screen after auth resolves) will populate it.
-      debugPrint('📅 [DailyQuiz] _init: no user — waiting for auth');
-      return;
-    }
-    final saved = _service.loadSavedQuiz(userId);
-    if (saved != null) {
-      debugPrint('📅 [DailyQuiz] _init: loaded from Hive '
-          '(completed=${saved.isCompleted}, answers=${saved.answers.length})');
-      state = DailyQuizState(
-        quiz: saved,
-        isPlaying: saved.startedAt != null && !saved.isCompleted,
-        currentQuestionIndex: saved.answers.length,
-      );
-      // If already completed, fetch leaderboard data in the background.
-      if (saved.isCompleted) {
-        _fetchLeaderboard(saved).then((data) {
-          state = state.copyWith(
-            topEntries: data.$1,
-            leaderboardRank: data.$2,
-          );
-        });
+    if (userId != null) {
+      final saved = _service.loadSavedQuiz(userId);
+      if (saved != null) {
+        debugPrint('📅 [DailyQuiz] _init: loaded from Hive '
+            '(completed=${saved.isCompleted}, answers=${saved.answers.length})');
+        state = state.copyWith(
+          quiz: saved,
+          isPlaying: saved.startedAt != null && !saved.isCompleted,
+          currentQuestionIndex: saved.answers.length,
+        );
+      } else {
+        debugPrint(
+            '📅 [DailyQuiz] _init: Hive empty — waiting for loadTodayQuiz()');
       }
     } else {
-      debugPrint(
-          '📅 [DailyQuiz] _init: Hive empty — waiting for loadTodayQuiz()');
+      debugPrint('📅 [DailyQuiz] _init: no user — waiting for auth');
     }
-    // No fallback generation here — loadTodayQuiz() (called from home screen)
-    // will handle that with proper isLoading state.
+    // Always fetch live standings right away so entering Daily Quiz immediately
+    // displays results before the user even starts playing.
+    refreshLeaderboard();
   }
 
   /// Current authenticated user id, or null if signed out or Firebase isn't initialized yet.
@@ -157,6 +156,10 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   /// back to the in-memory quiz, and only generates fresh if both are empty.
   Future<void> loadTodayQuiz() async {
     state = state.copyWith(isLoading: true, clearError: true);
+    // Kick off read-only live results fetch in parallel for ALL users (even
+    // before they take today's quiz!).
+    final leaderboardFuture = refreshLeaderboard();
+
     try {
       // 0. Ensure question bank is loaded so [loadSavedQuiz] can validate
       //    the cached quiz hasn't gone stale due to question-bank edits.
@@ -165,6 +168,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
       // 1. Always try Hive cache first — this is the persisted source of truth.
       final userId = _currentUserId;
       if (userId == null) {
+        await leaderboardFuture;
         state = state.copyWith(
           isLoading: false,
           error: 'Please sign in to access the daily quiz.',
@@ -175,39 +179,25 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
       if (cached != null) {
         debugPrint('📅 [DailyQuiz] loadTodayQuiz: restored from Hive '
             '(completed=${cached.isCompleted}, answers=${cached.answers.length})');
-        // No extra save — cached is already persisted; avoid double Hive write
         final isPlaying = cached.startedAt != null && !cached.isCompleted;
-        state = DailyQuizState(
+        state = state.copyWith(
           quiz: cached,
           isPlaying: isPlaying,
+          isLoading: false,
           currentQuestionIndex: cached.answers.length,
+          clearError: true,
         );
-        if (cached.isCompleted) {
-          _fetchLeaderboard(cached).then((data) {
-            state = state.copyWith(
-              topEntries: data.$1,
-              leaderboardRank: data.$2,
-            );
-          });
-        }
+        await leaderboardFuture;
         return;
       }
 
-      // 2. Hive empty — use in-memory quiz if it's for today
-      //    (e.g. generated earlier in this session by [_generateQuizAsync]).
+      // 2. Hive empty — use in-memory quiz if it's for today.
       final current = state.quiz;
       if (current != null && current.date == _todayDateString()) {
         debugPrint('📅 [DailyQuiz] loadTodayQuiz: using in-memory quiz '
             '(completed=${current.isCompleted})');
-        state = state.copyWith(isLoading: false);
-        if (current.isCompleted) {
-          _fetchLeaderboard(current).then((data) {
-            state = state.copyWith(
-              topEntries: data.$1,
-              leaderboardRank: data.$2,
-            );
-          });
-        }
+        state = state.copyWith(isLoading: false, clearError: true);
+        await leaderboardFuture;
         return;
       }
 
@@ -215,7 +205,14 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
       debugPrint('📅 [DailyQuiz] loadTodayQuiz: generating fresh quiz');
       final quiz = await _service.generateTodayQuiz();
       _service.saveQuiz(quiz, userId);
-      state = DailyQuizState(quiz: quiz, isPlaying: false);
+      state = state.copyWith(
+        quiz: quiz,
+        isPlaying: false,
+        isLoading: false,
+        currentQuestionIndex: 0,
+        clearError: true,
+      );
+      await leaderboardFuture;
     } catch (e) {
       debugPrint('📅 [DailyQuiz] loadTodayQuiz: ERROR $e');
       state = state.copyWith(isLoading: false, error: e.toString());
@@ -226,6 +223,11 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   String _todayDateString() {
     final now = DateTime.now();
     return '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+  }
+
+  String _yesterdayDateString() {
+    final yesterday = DateTime.now().subtract(const Duration(days: 1));
+    return '${yesterday.year}-${yesterday.month.toString().padLeft(2, '0')}-${yesterday.day.toString().padLeft(2, '0')}';
   }
 
   /// Mark the quiz as started so the timer / progress tracking begins.
@@ -240,7 +242,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     final started = quiz.copyWith(startedAt: quiz.startedAt ?? DateTime.now());
     final userId = _currentUserId;
     if (userId != null) _service.saveQuiz(started, userId);
-    state = DailyQuizState(
+    state = state.copyWith(
       quiz: started,
       isPlaying: true,
       currentQuestionIndex: started.answers.length,
@@ -307,7 +309,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
       state = state.copyWith(quiz: updatedQuiz);
       completeQuiz();
     } else {
-      state = DailyQuizState(
+      state = state.copyWith(
         quiz: updatedQuiz,
         currentQuestionIndex: state.currentQuestionIndex + 1,
         isPlaying: true,
@@ -327,16 +329,13 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
     final completed = _service.completeQuiz(quiz);
 
     // Persist completion IMMEDIATELY and update state before any network /
-    // reward calls. This guarantees that, even if the XP/coin/leaderboard
-    // requests below fail (offline, permissions, etc.), today's quiz stays
-    // marked as completed and is restored as "already done" on the next app
-    // launch — so the user is never offered the quiz again.
+    // reward calls.
     final userId = _currentUserId;
     if (userId != null) {
       _service.saveQuiz(completed, userId);
       _service.saveQuizHistory(completed, userId);
     }
-    state = DailyQuizState(
+    state = state.copyWith(
       quiz: completed,
       isPlaying: false,
     );
@@ -346,12 +345,6 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
       await _ref.read(xpProvider.notifier).addXP(completed.earnedXP);
       await _ref.read(coinProvider.notifier).addCoins(completed.earnedCoins);
 
-      // Upload the updated progress to Firestore per user. Without this the
-      // daily quiz rewards live only in the local Hive cache (a single global
-      // `user_progress` key). On the next app launch, auth's DOWN-sync
-      // (syncProgressFromFirestoreToHive) overwrites Hive from the stale
-      // Firestore doc — silently erasing the XP/coins just earned. Uploading
-      // here keeps Firestore in sync so the rewards survive restarts.
       if (userId != null) {
         final progressRepo = _ref.read(progressRepositoryProvider);
         final localProgress = progressRepo.getProgress();
@@ -366,21 +359,63 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
 
     // Upload to leaderboard and fetch updated rankings.
     try {
-      final leaderboardData = await _fetchLeaderboard(completed);
+      final leaderboardData = await _uploadAndFetchLeaderboard(completed);
       state = state.copyWith(
         topEntries: leaderboardData.$1,
         leaderboardRank: leaderboardData.$2,
+        isShowingYesterdayResults: false,
       );
     } catch (_) {
       // Leaderboard is non-critical; completion is already persisted.
     }
   }
 
-  /// Upload today's result to the daily leaderboard, then fetch top entries
-  /// and the current user's rank.
-  ///
-  /// Returns a record of (topEntries, leaderboardRank).
-  Future<(List<DailyQuizLeaderboardEntry>, int?)> _fetchLeaderboard(
+  /// Read-only fetch of today's live results so users see live standings right
+  /// upon entering Daily Quiz (even before playing). Never uploads 0-point rows.
+  /// If nobody has completed today's quiz yet, falls back to yesterday's final
+  /// results so learners always see competitive scores to beat.
+  Future<void> refreshLeaderboard() async {
+    state = state.copyWith(isLeaderboardLoading: state.topEntries.isEmpty);
+    try {
+      final today = _todayDateString();
+      final userId = _currentUserId;
+
+      final todayEntries =
+          await _leaderboardService.fetchTopEntries(today, limit: 15);
+      final rank = userId != null
+          ? await _leaderboardService.getUserRank(userId, today)
+          : null;
+
+      if (todayEntries.isNotEmpty) {
+        state = state.copyWith(
+          topEntries: todayEntries,
+          leaderboardRank: rank,
+          clearLeaderboardRank: rank == null,
+          isShowingYesterdayResults: false,
+          isLeaderboardLoading: false,
+        );
+        return;
+      }
+
+      // Early-morning fallback: show yesterday's final winners to inspire play.
+      final yesterdayEntries = await _leaderboardService.fetchTopEntries(
+        _yesterdayDateString(),
+        limit: 15,
+      );
+      state = state.copyWith(
+        topEntries: yesterdayEntries,
+        clearLeaderboardRank: true,
+        isShowingYesterdayResults: yesterdayEntries.isNotEmpty,
+        isLeaderboardLoading: false,
+      );
+    } catch (_) {
+      state = state.copyWith(isLeaderboardLoading: false);
+    }
+  }
+
+  /// Upload today's completed result to the daily leaderboard, then fetch top
+  /// entries and the current user's rank.
+  Future<(List<DailyQuizLeaderboardEntry>, int?)> _uploadAndFetchLeaderboard(
       DailyQuiz quiz) async {
     try {
       final authUser = _ref.read(authProvider).asData?.value;
@@ -399,7 +434,7 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
       );
 
       final top =
-          await _leaderboardService.fetchTopEntries(quiz.date, limit: 10);
+          await _leaderboardService.fetchTopEntries(quiz.date, limit: 15);
       final rank =
           await _leaderboardService.getUserRank(authUser.id, quiz.date);
 
@@ -410,27 +445,19 @@ class DailyQuizNotifier extends StateNotifier<DailyQuizState> {
   }
 
   /// Restore quiz state from the Hive cache (if available).
-  ///
-  /// Useful when the provider state was cleared but the quiz is still cached.
   void restoreFromCache() {
     final userId = _currentUserId;
-    if (userId == null) return;
-    final saved = _service.loadSavedQuiz(userId);
-    if (saved != null) {
-      state = DailyQuizState(
-        quiz: saved,
-        isPlaying: saved.startedAt != null && !saved.isCompleted,
-        currentQuestionIndex: saved.answers.length,
-      );
-      if (saved.isCompleted) {
-        _fetchLeaderboard(saved).then((data) {
-          state = state.copyWith(
-            topEntries: data.$1,
-            leaderboardRank: data.$2,
-          );
-        });
+    if (userId != null) {
+      final saved = _service.loadSavedQuiz(userId);
+      if (saved != null) {
+        state = state.copyWith(
+          quiz: saved,
+          isPlaying: saved.startedAt != null && !saved.isCompleted,
+          currentQuestionIndex: saved.answers.length,
+        );
       }
     }
+    refreshLeaderboard();
   }
 
   /// Reset the provider back to the default (empty) state.

@@ -5,6 +5,7 @@ import '../../../core/widgets/skeleton_widget.dart';
 import '../../../providers/auth_provider.dart';
 import '../providers/daily_quiz_provider.dart';
 import '../services/daily_quiz_leaderboard_service.dart';
+import 'daily_quiz_play_screen.dart';
 
 /// Full daily-quiz leaderboard screen.
 ///
@@ -23,6 +24,7 @@ class _DailyQuizLeaderboardScreenState
   final _service = DailyQuizLeaderboardService();
   List<DailyQuizLeaderboardEntry> _entries = [];
   bool _isLoading = true;
+  bool _showingYesterday = false;
   String? _error;
 
   /// Colors used for rank 1 / 2 / 3 (gold, silver, bronze).
@@ -38,19 +40,58 @@ class _DailyQuizLeaderboardScreenState
     _loadLeaderboard();
   }
 
-  Future<void> _loadLeaderboard() async {
+  String? _safeCurrentUserId() {
+    try {
+      return ref.watch(authProvider).asData?.value?.id;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<void> _loadLeaderboard({bool? forceYesterday}) async {
     setState(() {
       _isLoading = true;
       _error = null;
     });
     try {
       final now = DateTime.now();
-      final dateStr =
+      final todayStr =
           '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
-      final entries = await _service.fetchTopEntries(dateStr, limit: 50);
+      final yesterday = now.subtract(const Duration(days: 1));
+      final yesterdayStr =
+          '${yesterday.year}-${yesterday.month.toString().padLeft(2, '0')}-${yesterday.day.toString().padLeft(2, '0')}';
+
+      if (forceYesterday == true) {
+        final yEntries = await _service.fetchTopEntries(yesterdayStr, limit: 50);
+        if (mounted) {
+          setState(() {
+            _entries = yEntries;
+            _showingYesterday = true;
+            _isLoading = false;
+          });
+        }
+        return;
+      }
+
+      final entries = await _service.fetchTopEntries(todayStr, limit: 50);
+      if (entries.isEmpty && forceYesterday == null) {
+        final yEntries = await _service.fetchTopEntries(yesterdayStr, limit: 50);
+        if (yEntries.isNotEmpty) {
+          if (mounted) {
+            setState(() {
+              _entries = yEntries;
+              _showingYesterday = true;
+              _isLoading = false;
+            });
+          }
+          return;
+        }
+      }
+
       if (mounted) {
         setState(() {
           _entries = entries;
+          _showingYesterday = false;
           _isLoading = false;
         });
       }
@@ -64,13 +105,70 @@ class _DailyQuizLeaderboardScreenState
     }
   }
 
+  Future<void> _startQuizFromLeaderboard() async {
+    final notifier = ref.read(dailyQuizProvider.notifier);
+    if (ref.read(dailyQuizProvider).quiz == null) {
+      await notifier.loadTodayQuiz();
+    }
+    if (!mounted) return;
+    final quiz = ref.read(dailyQuizProvider).quiz;
+    if (quiz == null || quiz.isCompleted) return;
+    notifier.startQuiz();
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => const DailyQuizPlayScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final currentUserId = ref.watch(authProvider).asData?.value?.id;
+    final currentUserId = _safeCurrentUserId();
+    final quizState = ref.watch(dailyQuizProvider);
+    final isCompleted = quizState.quiz?.isCompleted ?? false;
 
     return Scaffold(
+      bottomNavigationBar: isCompleted
+          ? null
+          : Container(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
+              decoration: BoxDecoration(
+                color: isDark ? AppColors.surfaceDark : Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.08),
+                    blurRadius: 16,
+                    offset: const Offset(0, -4),
+                  ),
+                ],
+              ),
+              child: SafeArea(
+                top: false,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton.icon(
+                    onPressed: _startQuizFromLeaderboard,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primary,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                    ),
+                    icon: const Icon(Icons.rocket_launch_rounded, size: 20),
+                    label: const Text(
+                      'Start Quiz Now & Claim Your Rank!',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -124,18 +222,23 @@ class _DailyQuizLeaderboardScreenState
               ),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            decoration: BoxDecoration(
-              color: _gold.withValues(alpha: 0.12),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: const Text(
-              '🏆 Today',
-              style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w700,
-                color: _gold,
+          InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: () => _loadLeaderboard(forceYesterday: !_showingYesterday),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: _gold.withValues(alpha: 0.14),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: _gold.withValues(alpha: 0.3)),
+              ),
+              child: Text(
+                _showingYesterday ? '🏆 Yesterday ⇄' : '🏆 Today ⇄',
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                  color: _gold,
+                ),
               ),
             ),
           ),
