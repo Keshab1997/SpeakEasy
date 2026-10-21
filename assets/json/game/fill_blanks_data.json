@@ -9,7 +9,8 @@
       "type": "verb",
       "tense": "present_simple",
       "explanation": "'She' হলো 3rd person singular, তাই verb-এর সাথে 's' যুক্ত হয় → 'goes'",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে প্রতিদিন স্কুলে যায়।"
     },
     {
       "id": "fb_002",
@@ -19,7 +20,8 @@
       "type": "verb",
       "tense": "present_continuous",
       "explanation": "'right now' মানে এখন চলছে → Present Continuous (am/is/are + verb-ing)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমি এখন একটি বই পড়ছি।"
     },
     {
       "id": "fb_003",
@@ -29,7 +31,8 @@
       "type": "verb",
       "tense": "past_simple",
       "explanation": "'yesterday' অতীত নির্দেশক → Past Simple (verb-এর V2 form)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তারা গতকাল ফুটবল খেলেছিল।"
     },
     {
       "id": "fb_004",
@@ -39,7 +42,8 @@
       "type": "verb",
       "tense": "present_perfect",
       "explanation": "'He' singular + কাজ সম্পন্ন → Present Perfect (has + V3)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে তার বাড়ির কাজ শেষ করেছে।"
     },
     {
       "id": "fb_005",
@@ -49,7 +53,8 @@
       "type": "verb",
       "tense": "future_simple",
       "explanation": "'tomorrow' ভবিষ্যৎ নির্দেশক → Future Simple (will/shall + V1)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমরা আগামীকাল পার্কে যাব।"
     },
     {
       "id": "fb_006",
@@ -59,7 +64,8 @@
       "type": "preposition",
       "tense": "preposition_place",
       "explanation": "টেবিলের উপরে = 'on' the table",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "বিড়ালটি টেবিলের ওপর বসে আছে।"
     },
     {
       "id": "fb_007",
@@ -69,7 +75,8 @@
       "type": "preposition",
       "tense": "preposition_transport",
       "explanation": "যানবাহন নির্দেশ করতে 'by' ব্যবহার হয় → by bus, by car, by train",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে বাসে করে স্কুলে যায়।"
     },
     {
       "id": "fb_008",
@@ -79,7 +86,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "'apple' শুরু হয় vowel sound (a, e, i, o, u) দিয়ে → 'an' বসবে",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমার ব্যাগে একটি আপেল আছে।"
     },
     {
       "id": "fb_009",
@@ -89,7 +97,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "'honest'-এর 'h' নীরব, vowel sound → 'an honest'",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে একজন সৎ ছেলে।"
     },
     {
       "id": "fb_010",
@@ -99,7 +108,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "একমাত্র/নির্দিষ্ট বস্তু (sun, moon, earth) → 'The' বসে",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সূর্য পূর্ব দিকে ওঠে।"
     },
     {
       "id": "fb_011",
@@ -109,7 +119,8 @@
       "type": "verb",
       "tense": "present_perfect_continuous",
       "explanation": "সকাল থেকে কাজ চলছে → Present Perfect Continuous (has/have been + V-ing)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমার ভাই সকাল থেকে কাজ করছে।"
     },
     {
       "id": "fb_012",
@@ -119,7 +130,8 @@
       "type": "preposition",
       "tense": "preposition_place",
       "explanation": "শহর/দেশের নাম → 'in' ব্যবহার হয় (in Kolkata, in India)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমি কলকাতায় থাকি।"
     },
     {
       "id": "fb_013",
@@ -129,7 +141,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "নির্দিষ্ট সময় → 'at' বসে (at 3 PM, at noon)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সভাটি বিকেল ৩টায়।"
     },
     {
       "id": "fb_014",
@@ -139,7 +152,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "বছর/মাস/ঋতু → 'in' বসে (in 1995, in January, in summer)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে ১৯৯৫ সালে জন্মেছিল।"
     },
     {
       "id": "fb_015",
@@ -149,7 +163,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "তারিখ/দিন → 'on' বসে (on 25th December, on Monday)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমার জন্মদিন ২৫ ডিসেম্বর।"
     },
     {
       "id": "fb_016",
@@ -159,7 +174,8 @@
       "type": "verb",
       "tense": "past_continuous",
       "explanation": "অতীতে চলমান কাজ → Past Continuous (was/were + V-ing)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি পৌঁছানোর সময় তারা খেলছিল।"
     },
     {
       "id": "fb_017",
@@ -169,7 +185,8 @@
       "type": "verb",
       "tense": "conditional",
       "explanation": "First Conditional: If + Present, will + V1",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "বৃষ্টি হলে আমরা বাড়িতে থাকব।"
     },
     {
       "id": "fb_018",
@@ -179,7 +196,8 @@
       "type": "verb",
       "tense": "past_perfect",
       "explanation": "'last year' অতীত + আগের কাজ → Past Perfect (had + V3)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি গত বছর দিল্লি গিয়েছিলাম।"
     },
     {
       "id": "fb_019",
@@ -189,7 +207,8 @@
       "type": "verb",
       "tense": "modal_verb",
       "explanation": "Modal verb (can, could, should, must) এর পর Base form (V1) বসে",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে খুব ভালো ইংরেজি বলতে পারে।"
     },
     {
       "id": "fb_020",
@@ -199,7 +218,8 @@
       "type": "preposition",
       "tense": "preposition_place",
       "explanation": "সমতল পৃষ্ঠের উপর → 'on' (on the table, on the floor)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "বইটি টেবিলের ওপর আছে।"
     },
     {
       "id": "fb_021",
@@ -209,7 +229,8 @@
       "type": "preposition",
       "tense": "phrasal_verb",
       "explanation": "'look for' = খোঁজা (phrasal verb)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি আমার চাবিগুলো খুঁজছি।"
     },
     {
       "id": "fb_022",
@@ -219,7 +240,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'good at' = কোনো কিছুতে দক্ষ (fixed preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে গণিতে ভালো।"
     },
     {
       "id": "fb_023",
@@ -229,7 +251,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'afraid of' = ভয় পাওয়া (fixed preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি কুকুরকে ভয় পাই।"
     },
     {
       "id": "fb_024",
@@ -239,7 +262,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'interested in' = আগ্রহী (fixed preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে সঙ্গীতে আগ্রহী।"
     },
     {
       "id": "fb_025",
@@ -249,7 +273,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "সময়ের পরিমাণ (duration) → 'for' (for an hour, for 2 years)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমরা এক ঘণ্টা ধরে অপেক্ষা করছি।"
     },
     {
       "id": "fb_026",
@@ -259,7 +284,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "নির্দিষ্ট সময় থেকে (starting point) → 'since' (since Monday, since 2020)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তারা সোমবার থেকে এখানে আছে।"
     },
     {
       "id": "fb_027",
@@ -269,7 +295,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'Neither...nor' = দুটোই নয় (correlative conjunction)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে বা তার ভাই—কেউই আসেনি।"
     },
     {
       "id": "fb_028",
@@ -279,7 +306,8 @@
       "type": "conjunction",
       "tense": "conditional",
       "explanation": "শর্ত বোঝাতে 'if' = যদি",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তুমি আমার সঙ্গে এলে আমি যাব।"
     },
     {
       "id": "fb_029",
@@ -289,7 +317,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "Superlative (best, worst, most) এর আগে সবসময় 'the' বসে",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "এটি আমার পড়া সেরা বই।"
     },
     {
       "id": "fb_030",
@@ -299,7 +328,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "সমগ্র শ্রেণী বোঝাতে 'The' + adjective (The rich = ধনীরা, The poor = গরিবরা)",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "ধনীদের দরিদ্রদের সাহায্য করা উচিত।"
     },
     {
       "id": "fb_031",
@@ -309,7 +339,8 @@
       "type": "verb",
       "tense": "present_simple",
       "explanation": "'We' plural subject, Negative Present Simple → 'do not' (don't) + V1",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমরা কফি পছন্দ করি না।"
     },
     {
       "id": "fb_032",
@@ -319,7 +350,8 @@
       "type": "verb",
       "tense": "present_simple",
       "explanation": "Train schedule (routine) → Present Simple, 'The train' 3rd person singular → leaves",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "ট্রেনটি প্রতিদিন সকাল ৬টায় ছাড়ে।"
     },
     {
       "id": "fb_033",
@@ -329,7 +361,8 @@
       "type": "verb",
       "tense": "present_continuous",
       "explanation": "'now' এখন চলছে → Present Continuous (am/is/are + V-ing)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমার মা এখন সুস্বাদু খাবার রান্না করছেন।"
     },
     {
       "id": "fb_034",
@@ -339,7 +372,8 @@
       "type": "verb",
       "tense": "present_continuous",
       "explanation": "'Listen!' নির্দেশ করে এখন ঘটছে → Present Continuous",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "শোনো! কেউ দরজায় কড়া নাড়ছে।"
     },
     {
       "id": "fb_035",
@@ -349,7 +383,8 @@
       "type": "verb",
       "tense": "past_simple",
       "explanation": "'last week' নির্দিষ্ট অতীত সময় → Past Simple (V2)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমি গত সপ্তাহে আমার ঠাকুমাকে দেখতে গিয়েছিলাম।"
     },
     {
       "id": "fb_036",
@@ -359,7 +394,8 @@
       "type": "verb",
       "tense": "present_perfect",
       "explanation": "'already' সবে শেষ হয়েছে → Present Perfect (have/has + V3)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমরা ইতিমধ্যে রাতের খাবার খেয়ে ফেলেছি।"
     },
     {
       "id": "fb_037",
@@ -369,7 +405,8 @@
       "type": "verb",
       "tense": "present_perfect",
       "explanation": "'never' জীবনের অভিজ্ঞতা → Present Perfect (has/have + been) 'She' singular → has",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে কখনো জাপানে যায়নি।"
     },
     {
       "id": "fb_038",
@@ -379,7 +416,8 @@
       "type": "verb",
       "tense": "present_perfect_continuous",
       "explanation": "দুই ঘন্টা ধরে অপেক্ষা করছি (অতীত থেকে এখন পর্যন্ত) → Present Perfect Continuous",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "আমি এখানে দুই ঘণ্টা ধরে অপেক্ষা করছি।"
     },
     {
       "id": "fb_039",
@@ -389,7 +427,8 @@
       "type": "verb",
       "tense": "past_continuous",
       "explanation": "একটি কাজ চলছিল আর তখন অন্য কাজ হলো → Past Continuous (was/were + V-ing)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তাদের মা আসার সময় বাচ্চারা টিভি দেখছিল।"
     },
     {
       "id": "fb_040",
@@ -399,7 +438,8 @@
       "type": "verb",
       "tense": "conditional",
       "explanation": "Second Conditional: বাস্তবতার বিপরীত শর্ত → 'If I were you'",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি তোমার জায়গায় হলে চাকরিটি নিতাম।"
     },
     {
       "id": "fb_041",
@@ -409,7 +449,8 @@
       "type": "verb",
       "tense": "present_simple",
       "explanation": "'He' 3rd person singular + 'every day' routine → Present Simple, 'goes'",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে প্রতিদিন গাড়িতে করে কাজে যায়।"
     },
     {
       "id": "fb_042",
@@ -419,7 +460,8 @@
       "type": "verb",
       "tense": "present_continuous",
       "explanation": "'right now' এখন চলছে → Present Continuous, 'students' plural → 'are taking'",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "ছাত্ররা এখন একটি পরীক্ষা দিচ্ছে।"
     },
     {
       "id": "fb_043",
@@ -429,7 +471,8 @@
       "type": "verb",
       "tense": "present_perfect",
       "explanation": "'since 2010' নির্দিষ্ট সময় থেকে জানি → Present Perfect, 'know' stative verb",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি ২০১০ সাল থেকে তাকে চিনি।"
     },
     {
       "id": "fb_044",
@@ -439,7 +482,8 @@
       "type": "verb",
       "tense": "past_perfect",
       "explanation": "পৌঁছানোর আগেই সিনেমা শুরু হয়েছিল → Past Perfect (had + V3)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি সিনেমা হলে পৌঁছানোর আগেই সিনেমাটি শুরু হয়ে গিয়েছিল।"
     },
     {
       "id": "fb_045",
@@ -449,7 +493,8 @@
       "type": "verb",
       "tense": "future_simple",
       "explanation": "'next year' ভবিষ্যৎ → Future Simple (will + V1)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তারা আগামী বছর নতুন হাসপাতাল নির্মাণ শুরু করবে।"
     },
     {
       "id": "fb_046",
@@ -459,7 +504,8 @@
       "type": "verb",
       "tense": "modal_verb",
       "explanation": "'Should' = পরামর্শ দেওয়ার জন্য ব্যবহৃত হয়",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তোমার অবিলম্বে একজন ডাক্তার দেখানো উচিত।"
     },
     {
       "id": "fb_047",
@@ -469,7 +515,8 @@
       "type": "verb",
       "tense": "modal_verb",
       "explanation": "'Can' = ক্ষমতা/সক্ষমতা বোঝাতে",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমি তিনটি ভাষায় কথা বলতে পারি।"
     },
     {
       "id": "fb_048",
@@ -479,7 +526,8 @@
       "type": "verb",
       "tense": "modal_verb",
       "explanation": "'Must not' = নিষেধাজ্ঞা বোঝাতে",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "এখানে ধূমপান করা নিষেধ।"
     },
     {
       "id": "fb_049",
@@ -489,7 +537,8 @@
       "type": "verb",
       "tense": "modal_verb",
       "explanation": "'May' = আনুষ্ঠানিক অনুমতি চাওয়ার জন্য",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি কি ভিতরে আসতে পারি?"
     },
     {
       "id": "fb_050",
@@ -499,7 +548,8 @@
       "type": "verb",
       "tense": "modal_verb",
       "explanation": "'Must' = বাধ্যতা/আবশ্যকতা বোঝাতে",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তোমাকে আগে বাড়ির কাজ শেষ করতে হবে।"
     },
     {
       "id": "fb_051",
@@ -509,7 +559,8 @@
       "type": "preposition",
       "tense": "preposition_place",
       "explanation": "নির্দিষ্ট স্থান/ভবন → 'at the office' (at school, at home)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে সকাল ৯টায় অফিসে পৌঁছায়।"
     },
     {
       "id": "fb_052",
@@ -519,7 +570,8 @@
       "type": "preposition",
       "tense": "preposition_place",
       "explanation": "'under' = নিচে",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "বিড়ালটি বিছানার নিচে লুকিয়ে আছে।"
     },
     {
       "id": "fb_053",
@@ -529,7 +581,8 @@
       "type": "preposition",
       "tense": "preposition_place",
       "explanation": "'beside' = পাশে",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে আমার পাশে বসে আছে।"
     },
     {
       "id": "fb_054",
@@ -539,7 +592,8 @@
       "type": "preposition",
       "tense": "preposition_place",
       "explanation": "দুটির মাঝে → 'between' (তিন বা তার বেশি হলে 'among')",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "ব্যাংকটি পোস্ট অফিস ও হাসপাতালের মাঝখানে।"
     },
     {
       "id": "fb_055",
@@ -549,7 +603,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "দিনের নাম → 'on Sunday' (on Monday, on Friday)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমি রবিবার তোমার সঙ্গে দেখা করব।"
     },
     {
       "id": "fb_056",
@@ -559,7 +614,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "'from...to' = শুরু থেকে শেষ পর্যন্ত",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "দোকানটি সকাল ৯টা থেকে রাত ৯টা পর্যন্ত খোলা।"
     },
     {
       "id": "fb_057",
@@ -569,7 +625,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "নির্দিষ্ট সময়/মুহূর্ত → 'at sunrise, at noon, at midnight'",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি সাধারণত সূর্যোদয়ের সময় ঘুম থেকে উঠি।"
     },
     {
       "id": "fb_058",
@@ -579,7 +636,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'fond of' = পছন্দ করা (fixed preposition with adjective)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে উপন্যাস পড়তে ভালোবাসে।"
     },
     {
       "id": "fb_059",
@@ -589,7 +647,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'married to' = কারো সাথে বিবাহিত (fixed preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে একজন ডাক্তারকে বিয়ে করেছে।"
     },
     {
       "id": "fb_060",
@@ -599,7 +658,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'proud of' = গর্বিত (fixed preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমরা আমাদের দেশ নিয়ে গর্বিত।"
     },
     {
       "id": "fb_061",
@@ -609,7 +669,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'interested in' = আগ্রহী",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে প্রস্তাবটিতে আগ্রহী নয়।"
     },
     {
       "id": "fb_062",
@@ -619,7 +680,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'tired of' = বিরক্ত/ক্লান্ত (fixed preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তার জন্য অপেক্ষা করতে করতে আমি ক্লান্ত।"
     },
     {
       "id": "fb_063",
@@ -629,7 +691,8 @@
       "type": "preposition",
       "tense": "phrasal_verb",
       "explanation": "'take care of' = যত্ন নেওয়া (phrasal verb)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তোমার স্বাস্থ্যের যত্ন নেওয়া উচিত।"
     },
     {
       "id": "fb_064",
@@ -639,7 +702,8 @@
       "type": "preposition",
       "tense": "phrasal_verb",
       "explanation": "'look forward to' = প্রত্যাশা করা/অপেক্ষায় থাকা (phrasal verb + gerund)",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "তোমার সঙ্গে দেখা হওয়ার অপেক্ষায় আছি।"
     },
     {
       "id": "fb_065",
@@ -649,7 +713,8 @@
       "type": "preposition",
       "tense": "phrasal_verb",
       "explanation": "'turn on' = চালু করা (phrasal verb)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "দয়া করে আলোটি জ্বালাও। অন্ধকার।"
     },
     {
       "id": "fb_066",
@@ -659,7 +724,8 @@
       "type": "preposition",
       "tense": "phrasal_verb",
       "explanation": "'give up' = ছেড়ে দেওয়া/ত্যাগ করা (phrasal verb)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে গত বছর ধূমপান ছেড়ে দিয়েছে।"
     },
     {
       "id": "fb_067",
@@ -669,7 +735,8 @@
       "type": "preposition",
       "tense": "preposition_place",
       "explanation": "'at home' = বাড়িতে (fixed expression)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে এখন বাড়িতে নেই।"
     },
     {
       "id": "fb_068",
@@ -679,7 +746,8 @@
       "type": "preposition",
       "tense": "preposition_purpose",
       "explanation": "'go for a walk' = হাঁটতে যাওয়া (purpose)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "রাতের খাবারের পরে তারা হাঁটতে গিয়েছিল।"
     },
     {
       "id": "fb_069",
@@ -689,7 +757,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'sorry for' = দুঃখিত (fixed preposition + gerund)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তোমাকে বিরক্ত করার জন্য আমি দুঃখিত।"
     },
     {
       "id": "fb_070",
@@ -699,7 +768,8 @@
       "type": "preposition",
       "tense": "preposition_comparison",
       "explanation": "'prefer...to' = কিছুকে অন্যটির চেয়ে বেশি পছন্দ করা",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে কফির চেয়ে চা পছন্দ করে।"
     },
     {
       "id": "fb_071",
@@ -709,7 +779,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'capable of' = সক্ষম (fixed preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে এই কাজটি করতে সক্ষম।"
     },
     {
       "id": "fb_072",
@@ -719,7 +790,8 @@
       "type": "preposition",
       "tense": "preposition_verb",
       "explanation": "'think of/about' = চিন্তা করা, 'think of changing' = পরিবর্তনের কথা ভাবা",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি চাকরি বদলানোর কথা ভাবছি।"
     },
     {
       "id": "fb_073",
@@ -729,7 +801,8 @@
       "type": "preposition",
       "tense": "preposition_verb",
       "explanation": "'succeed in' + gerund = সফল হওয়া (fixed verb + preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে পরীক্ষায় পাস করতে সফল হয়েছে।"
     },
     {
       "id": "fb_074",
@@ -739,7 +812,8 @@
       "type": "preposition",
       "tense": "preposition_verb",
       "explanation": "'insist on' + gerund = জোর দেওয়া (fixed verb + preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে বিল দেওয়ার জন্য জোর করেছিল।"
     },
     {
       "id": "fb_075",
@@ -749,7 +823,8 @@
       "type": "preposition",
       "tense": "preposition_verb",
       "explanation": "'accuse of' = অভিযুক্ত করা (passive construction)",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "তার বিরুদ্ধে টাকা চুরির অভিযোগ আনা হয়েছিল।"
     },
     {
       "id": "fb_076",
@@ -759,7 +834,8 @@
       "type": "preposition",
       "tense": "phrasal_verb",
       "explanation": "'look into' = তদন্ত করা/অনুসন্ধান করা",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "পুলিশ মামলাটি তদন্ত করছে।"
     },
     {
       "id": "fb_077",
@@ -769,7 +845,8 @@
       "type": "preposition",
       "tense": "phrasal_verb",
       "explanation": "'come across' = হঠাৎ দেখা পাওয়া",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "গতকাল আমার এক পুরোনো বন্ধুর সঙ্গে দেখা হয়ে গেল।"
     },
     {
       "id": "fb_078",
@@ -779,7 +856,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'good at' + gerund = দক্ষ হওয়া",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে গিটার বাজাতে খুব ভালো।"
     },
     {
       "id": "fb_079",
@@ -789,7 +867,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'different from' = থেকে ভিন্ন/পৃথক",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "এই বইটি ওই বইটি থেকে আলাদা।"
     },
     {
       "id": "fb_080",
@@ -799,7 +878,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'known for' = জন্য পরিচিত",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে তার সততার জন্য পরিচিত।"
     },
     {
       "id": "fb_081",
@@ -809,7 +889,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'similar to' = অনুরূপ/সদৃশ",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে তার মায়ের মতো।"
     },
     {
       "id": "fb_082",
@@ -819,7 +900,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'angry with' = কারো উপর রাগ (ব্যক্তি) → angry with, 'angry at' = কিছুতে রাগ",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "দেরি করার জন্য আমি তার ওপর রেগে আছি।"
     },
     {
       "id": "fb_083",
@@ -829,7 +911,8 @@
       "type": "preposition",
       "tense": "preposition_verb",
       "explanation": "'depend on' = নির্ভর করা (verb + preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "টাকার জন্য সে তার বাবা-মায়ের ওপর নির্ভর করে।"
     },
     {
       "id": "fb_084",
@@ -839,7 +922,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'satisfied with' = সন্তুষ্ট (fixed preposition)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তোমার কাজে আমি সন্তুষ্ট নই।"
     },
     {
       "id": "fb_085",
@@ -849,7 +933,8 @@
       "type": "preposition",
       "tense": "preposition_purpose",
       "explanation": "'for' = উদ্দেশ্যে/জন্য",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমি আমার বোনের জন্য এই উপহারটি কিনেছি।"
     },
     {
       "id": "fb_086",
@@ -859,7 +944,8 @@
       "type": "preposition",
       "tense": "phrasal_verb",
       "explanation": "'talk about' = সম্পর্কে কথা বলা",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তুমি কী বিষয়ে কথা বলছ?"
     },
     {
       "id": "fb_087",
@@ -869,7 +955,8 @@
       "type": "preposition",
       "tense": "preposition_verb",
       "explanation": "'laugh at' = উপহাস করা/হাসা",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমাদের অন্যদের নিয়ে হাসাহাসি করা উচিত নয়।"
     },
     {
       "id": "fb_088",
@@ -879,7 +966,8 @@
       "type": "preposition",
       "tense": "preposition_place",
       "explanation": "নির্দিষ্ট স্থান/স্টপ → 'at the bus stop'",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে বাসস্টপে অপেক্ষা করছিল।"
     },
     {
       "id": "fb_089",
@@ -889,7 +977,8 @@
       "type": "preposition",
       "tense": "preposition_place",
       "explanation": "ঘরের ভিতরে → 'in the kitchen' (in the room, in the house)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে রান্নাঘরে রাতের খাবার রান্না করছে।"
     },
     {
       "id": "fb_090",
@@ -899,7 +988,8 @@
       "type": "preposition",
       "tense": "preposition_movement",
       "explanation": "'around' = চারদিকে/চারপাশে ঘোরা",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "পৃথিবী সূর্যের চারদিকে ঘোরে।"
     },
     {
       "id": "fb_091",
@@ -909,7 +999,8 @@
       "type": "preposition",
       "tense": "preposition_movement",
       "explanation": "'across' = এক পাশ থেকে অন্য পাশে (রাস্তা পার হওয়া)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সাবধানে রাস্তা পার হও।"
     },
     {
       "id": "fb_092",
@@ -919,7 +1010,8 @@
       "type": "preposition",
       "tense": "preposition_movement",
       "explanation": "'into' = ভিতরে (গতিসহ) → jumped into the river",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে নদীতে ঝাঁপ দিল।"
     },
     {
       "id": "fb_093",
@@ -929,7 +1021,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "সময়ের পরিমাণ (duration) → 'for three years'",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি তিন বছর ধরে ইংরেজি পড়ছি।"
     },
     {
       "id": "fb_094",
@@ -939,7 +1032,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "'on time' = নির্ধারিত সময়ে (fixed expression)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "ট্রেনটি সময়মতো পৌঁছেছিল।"
     },
     {
       "id": "fb_095",
@@ -949,7 +1043,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "'by Friday' = শুক্রবারের মধ্যে/আগে",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি শুক্রবারের মধ্যে এই কাজ শেষ করব।"
     },
     {
       "id": "fb_096",
@@ -959,7 +1054,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "'until' = পর্যন্ত (সময়)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তুমি শেষ না করা পর্যন্ত আমি অপেক্ষা করব।"
     },
     {
       "id": "fb_097",
@@ -969,7 +1065,8 @@
       "type": "preposition",
       "tense": "preposition_movement",
       "explanation": "'down the stairs' = সিঁড়ি বেয়ে নিচে নামা",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে সিঁড়ি দিয়ে নিচে আসছে।"
     },
     {
       "id": "fb_098",
@@ -979,7 +1076,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'When' = যখন (নির্দিষ্ট সময়)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "বাড়ি পৌঁছে আমি মাকে ফোন করেছিলাম।"
     },
     {
       "id": "fb_099",
@@ -989,7 +1087,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'While' = একই সময়ে দুটি কাজ চলছে (দীর্ঘস্থায়ী)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে রান্না করছিল, আর সে টিভি দেখছিল।"
     },
     {
       "id": "fb_100",
@@ -999,7 +1098,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'unless' = না হলে/যদি না (negative conditional)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তুমি আমার সঙ্গে না এলে আমি যাব না।"
     },
     {
       "id": "fb_101",
@@ -1009,7 +1109,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'because' = কারণ (reason)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে ক্লান্ত, কারণ সে সারারাত কাজ করেছে।"
     },
     {
       "id": "fb_102",
@@ -1019,7 +1120,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'so' = তাই/সুতরাং (result)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "বৃষ্টি হচ্ছিল, তাই আমরা বাড়িতে ছিলাম।"
     },
     {
       "id": "fb_103",
@@ -1029,7 +1131,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'but' = কিন্তু (contrast)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমি যেতে চেয়েছিলাম, কিন্তু খুব ব্যস্ত ছিলাম।"
     },
     {
       "id": "fb_104",
@@ -1039,7 +1142,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'and' = এবং (addition)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমি চা ও কফি পছন্দ করি।"
     },
     {
       "id": "fb_105",
@@ -1049,7 +1153,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'or' = অথবা (choice/option)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তুমি চা অথবা কফি নিতে পারো।"
     },
     {
       "id": "fb_106",
@@ -1059,7 +1164,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'otherwise' = অন্যথায় (warning)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তোমাকে ট্যাক্সি নিতে হবে, নইলে ট্রেন মিস করবে।"
     },
     {
       "id": "fb_107",
@@ -1069,7 +1175,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'not only...but also' = শুধু তাই নয়, বরংও",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "সে শুধু সুন্দরীই নয়, বুদ্ধিমতীও।"
     },
     {
       "id": "fb_108",
@@ -1079,7 +1186,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'both...and' = উভয়ই",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে ধনী এবং বিখ্যাত—দুটোই।"
     },
     {
       "id": "fb_109",
@@ -1089,7 +1197,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'or' = অথবা (দুটির মধ্যে যেকোনো একটি)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তুমি বাড়িতে থাকতে পারো অথবা আমাদের সঙ্গে আসতে পারো।"
     },
     {
       "id": "fb_110",
@@ -1099,7 +1208,8 @@
       "type": "conjunction",
       "tense": "conjunction",
       "explanation": "'so that' = যাতে করে (purpose clause)",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "আমি কঠোর পরিশ্রম করে পড়েছিলাম, যাতে পরীক্ষায় পাস করতে পারি।"
     },
     {
       "id": "fb_111",
@@ -1109,7 +1219,8 @@
       "type": "verb",
       "tense": "present_simple",
       "explanation": "Wh-question → 'Where do you live?' (you-এর সাথে 'do')",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তুমি কোথায় থাকো?"
     },
     {
       "id": "fb_112",
@@ -1119,7 +1230,8 @@
       "type": "verb",
       "tense": "present_simple",
       "explanation": "'The train' singular → 'does' (does the train leave?)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "ট্রেনটি কখন ছাড়ে?"
     },
     {
       "id": "fb_113",
@@ -1129,7 +1241,8 @@
       "type": "verb",
       "tense": "present_simple",
       "explanation": "'You' plural → 'do' (Do you have?)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তোমার কাছে কতগুলো বই আছে?"
     },
     {
       "id": "fb_114",
@@ -1139,7 +1252,8 @@
       "type": "verb",
       "tense": "present_simple",
       "explanation": "'She' 3rd person singular + negative → 'does not' (doesn't)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "সে ঝাল খাবার পছন্দ করে না।"
     },
     {
       "id": "fb_115",
@@ -1149,7 +1263,8 @@
       "type": "verb",
       "tense": "past_continuous",
       "explanation": "'They' plural + অতীতে চলছিল → Past Continuous (were + V-ing)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "বৃষ্টি শুরু হলে তারা ক্রিকেট খেলছিল।"
     },
     {
       "id": "fb_116",
@@ -1159,7 +1274,8 @@
       "type": "verb",
       "tense": "past_perfect",
       "explanation": "মা আসার আগেই হোমওয়ার্ক শেষ করেছিলাম → Past Perfect (had + V3)",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "মা আসার আগে আমি বাড়ির কাজ শেষ করেছিলাম।"
     },
     {
       "id": "fb_117",
@@ -1169,7 +1285,8 @@
       "type": "verb",
       "tense": "present_perfect_continuous",
       "explanation": "'She' singular → Present Perfect Continuous-এ 'has been' + V-ing",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "সে সকাল থেকে পড়াশোনা করছে।"
     },
     {
       "id": "fb_118",
@@ -1179,7 +1296,8 @@
       "type": "verb",
       "tense": "future_going_to",
       "explanation": "'We' + 'going to' → 'We are going to' (be verb plural)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমরা আগামীকাল দাদু-দিদার বাড়ি যেতে চলেছি।"
     },
     {
       "id": "fb_119",
@@ -1189,7 +1307,8 @@
       "type": "verb",
       "tense": "present_continuous",
       "explanation": "'right now' এখন বৃষ্টি হচ্ছে → Present Continuous",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "এখন বাইরে ভারী বৃষ্টি হচ্ছে।"
     },
     {
       "id": "fb_120",
@@ -1199,7 +1318,8 @@
       "type": "verb",
       "tense": "past_simple",
       "explanation": "Passive voice: 'The window was broken' (by who) → was + V3",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "ছেলেটির দ্বারা জানালাটি ভাঙা হয়েছিল।"
     },
     {
       "id": "fb_121",
@@ -1209,7 +1329,8 @@
       "type": "verb",
       "tense": "present_simple",
       "explanation": "Passive voice (general truth): 'Rice is eaten' → is + V3",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "অনেক দেশে ভাত খাওয়া হয়।"
     },
     {
       "id": "fb_122",
@@ -1219,7 +1340,8 @@
       "type": "verb",
       "tense": "present_continuous",
       "explanation": "Passive Present Continuous: 'is being built' = নির্মাণ করা হচ্ছে",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "আমার বাড়ির কাছে একটি নতুন হাসপাতাল তৈরি করা হচ্ছে।"
     },
     {
       "id": "fb_123",
@@ -1229,7 +1351,8 @@
       "type": "verb",
       "tense": "past_simple",
       "explanation": "Passive Past Simple: চিঠিটি জন লিখেছিল",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "চিঠিটি জনের দ্বারা লেখা হয়েছিল।"
     },
     {
       "id": "fb_124",
@@ -1239,7 +1362,8 @@
       "type": "verb",
       "tense": "past_simple",
       "explanation": "Causative: 'have something done' = করানো → গতকাল চুল কেটেছি (I had my hair cut)",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "গতকাল আমি চুল কাটিয়েছিলাম।"
     },
     {
       "id": "fb_125",
@@ -1249,7 +1373,8 @@
       "type": "pronoun",
       "tense": "imperative",
       "explanation": "'Let us' (Let's) = আমরা...করি (proposal)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "চলো, আমরা পিকনিকে যাই।"
     },
     {
       "id": "fb_126",
@@ -1259,7 +1384,8 @@
       "type": "verb",
       "tense": "imperative",
       "explanation": "Imperative/adverb দিয়ে অনুরোধ → 'Please close the door' (V1)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "দয়া করে দরজাটি বন্ধ করো।"
     },
     {
       "id": "fb_127",
@@ -1269,7 +1395,8 @@
       "type": "verb",
       "tense": "modal_verb",
       "explanation": "'Must' = নিশ্চিত অনুমান/deduction (লাইট জ্বলছে, তাই বাসায় থাকতে হবে)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আলো জ্বলছে, তাই সে নিশ্চয়ই বাড়িতে আছে।"
     },
     {
       "id": "fb_128",
@@ -1279,17 +1406,19 @@
       "type": "verb",
       "tense": "modal_verb",
       "explanation": "'Would rather' = পছন্দ করা (would rather do something than something else)",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "বাইরে যাওয়ার চেয়ে আমি বরং বাড়িতে থাকব।"
     },
     {
       "id": "fb_129",
-      "sentence": "I ___ used to live in a village.",
+      "sentence": "___ used to live in a village.",
       "blank": "I",
       "options": ["I", "I'm", "I've", "I'd"],
       "type": "verb",
       "tense": "past_simple",
       "explanation": "'Used to' = অতীতের অভ্যাস/অবস্থা (I used to live = আগে থাকতাম)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "আমি আগে একটি গ্রামে থাকতাম।"
     },
     {
       "id": "fb_130",
@@ -1299,7 +1428,8 @@
       "type": "verb",
       "tense": "present_simple",
       "explanation": "'Be used to' + gerund = অভ্যস্ত হওয়া -> 'She is used to getting up early'",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "সে সকালে তাড়াতাড়ি উঠতে অভ্যস্ত।"
     },
     {
       "id": "fb_131",
@@ -1309,7 +1439,8 @@
       "type": "preposition",
       "tense": "phrasal_verb",
       "explanation": "'look forward to' + gerund = অপেক্ষায় থাকা",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তোমার কাছ থেকে খবর পাওয়ার অপেক্ষায় আছি।"
     },
     {
       "id": "fb_132",
@@ -1319,7 +1450,8 @@
       "type": "preposition",
       "tense": "preposition_verb",
       "explanation": "'apologize for' + gerund = ক্ষমা চাওয়া",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "দেরি করার জন্য তারা ক্ষমা চেয়েছিল।"
     },
     {
       "id": "fb_133",
@@ -1329,7 +1461,8 @@
       "type": "preposition",
       "tense": "preposition_verb",
       "explanation": "'prevent from' + gerund = বাধা দেওয়া",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "সে আমাকে যেতে বাধা দিয়েছিল।"
     },
     {
       "id": "fb_134",
@@ -1339,7 +1472,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "'university' শুরু হয় consonant sound 'yu' দিয়ে → 'a university'",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে একজন বিশ্ববিদ্যালয়ের ছাত্র।"
     },
     {
       "id": "fb_135",
@@ -1349,7 +1483,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "'MLA' উচ্চারণ 'em-el-ey' vowel sound দিয়ে শুরু → 'an MLA'",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "তিনি আমাদের এলাকার একজন বিধায়ক।"
     },
     {
       "id": "fb_136",
@@ -1359,7 +1494,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "একমাত্র/unique বস্তুর আগে 'The' (The earth, The sun, The moon)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "পৃথিবী গোলাকার।"
     },
     {
       "id": "fb_137",
@@ -1369,7 +1505,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "'one-eyed' শুরু হয় consonant sound 'wan' → 'a one-eyed man'",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "meaning_bn": "আমি একচোখা একজন লোককে দেখেছিলাম।"
     },
     {
       "id": "fb_138",
@@ -1379,7 +1516,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "'honest' = 'onest' উচ্চারণ vowel sound → 'An honest man'",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "একজন সৎ মানুষকে সবসময় সম্মান করা হয়।"
     },
     {
       "id": "fb_139",
@@ -1389,7 +1527,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "'European' শুরু হয় consonant sound 'yoor' → 'a European'",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে একজন ইউরোপীয়।"
     },
     {
       "id": "fb_140",
@@ -1399,7 +1538,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "সমগ্র জাতি/প্রজাতি বোঝাতে 'The' + singular noun (The cow = গরু জাতি)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "গরু একটি উপকারী প্রাণী।"
     },
     {
       "id": "fb_141",
@@ -1409,7 +1549,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "বাদ্যযন্ত্রের নামের আগে 'the' বসে → 'play the piano' (play the guitar, play the flute)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে খুব ভালো পিয়ানো বাজায়।"
     },
     {
       "id": "fb_142",
@@ -1419,7 +1560,8 @@
       "type": "article",
       "tense": "article",
       "explanation": "'go to the church' = গির্জায় যায় (ধর্মীয় স্থান)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে প্রতি রবিবার গির্জায় যায়।"
     },
     {
       "id": "fb_143",
@@ -1429,7 +1571,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "দিনের অংশ → 'in the morning/afternoon/evening'",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমাদের সকালে নাশতা খেতে হবে।"
     },
     {
       "id": "fb_144",
@@ -1439,7 +1582,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "'in two hours' = দুই ঘন্টার মধ্যে/পরে",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে দুই ঘণ্টার মধ্যে ফিরে আসবে।"
     },
     {
       "id": "fb_145",
@@ -1449,7 +1593,8 @@
       "type": "preposition",
       "tense": "preposition_time",
       "explanation": "'at night' = রাতে (fixed expression)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "আমি সাধারণত রাতে ঘুমাতে যাই।"
     },
     {
       "id": "fb_146",
@@ -1459,7 +1604,8 @@
       "type": "preposition",
       "tense": "preposition_verb",
       "explanation": "'belong to' = কারো অধিকারে থাকা",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "বইটি আমার।"
     },
     {
       "id": "fb_147",
@@ -1469,7 +1615,8 @@
       "type": "preposition",
       "tense": "preposition_verb",
       "explanation": "'depend on' = নির্ভর করা",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "এটি আবহাওয়ার ওপর নির্ভর করে।"
     },
     {
       "id": "fb_148",
@@ -1479,7 +1626,8 @@
       "type": "preposition",
       "tense": "preposition_phrase",
       "explanation": "'in charge of' = দায়িত্বে থাকা",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "ম্যানেজার এই বিভাগের দায়িত্বে আছেন।"
     },
     {
       "id": "fb_149",
@@ -1489,7 +1637,8 @@
       "type": "preposition",
       "tense": "phrasal_verb",
       "explanation": "'take care of' = যত্ন নেওয়া",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "meaning_bn": "তারা শিশুটির যত্ন নিয়েছিল।"
     },
     {
       "id": "fb_150",
@@ -1499,7 +1648,8 @@
       "type": "preposition",
       "tense": "preposition_adjective",
       "explanation": "'good at' + gerund = দক্ষ হওয়া",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "meaning_bn": "সে গান গাইতে খুব ভালো।"
     }
   ]
 }

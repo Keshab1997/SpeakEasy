@@ -18,6 +18,7 @@ class _QuestionData {
   final String type;
   final String tense;
   final String explanation;
+  final String meaningBn;
   final String difficulty;
 
   _QuestionData({
@@ -28,6 +29,7 @@ class _QuestionData {
     required this.type,
     required this.tense,
     required this.explanation,
+    required this.meaningBn,
     required this.difficulty,
   });
 }
@@ -36,7 +38,8 @@ class FillInBlanksModeScreen extends ConsumerStatefulWidget {
   const FillInBlanksModeScreen({super.key});
 
   @override
-  ConsumerState<FillInBlanksModeScreen> createState() => _FillInBlanksModeScreenState();
+  ConsumerState<FillInBlanksModeScreen> createState() =>
+      _FillInBlanksModeScreenState();
 }
 
 class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
@@ -93,7 +96,8 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
     _slideAnim = Tween<Offset>(
       begin: const Offset(1.0, 0.0),
       end: Offset.zero,
-    ).animate(CurvedAnimation(parent: _slideAnimCtrl, curve: Curves.easeOutCubic));
+    ).animate(
+        CurvedAnimation(parent: _slideAnimCtrl, curve: Curves.easeOutCubic));
     _blankPulseCtrl = AnimationController(
       duration: const Duration(milliseconds: 800),
       vsync: this,
@@ -127,6 +131,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
               type: q['type'] as String,
               tense: q['tense'] as String,
               explanation: q['explanation'] as String,
+              meaningBn: q['meaning_bn'] as String? ?? '',
               difficulty: q['difficulty'] as String,
             ))
         .toList();
@@ -260,8 +265,18 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
     _questionTimer?.cancel();
     _blankPulseCtrl.stop();
 
-    final int xpEarned = _score * 2 + (_bestStreak >= 5 ? 40 : _bestStreak >= 3 ? 20 : 0);
-    final int coinsEarned = _score + (_bestStreak >= 5 ? 25 : _bestStreak >= 3 ? 15 : 0);
+    final int xpEarned = _score * 2 +
+        (_bestStreak >= 5
+            ? 40
+            : _bestStreak >= 3
+                ? 20
+                : 0);
+    final int coinsEarned = _score +
+        (_bestStreak >= 5
+            ? 25
+            : _bestStreak >= 3
+                ? 15
+                : 0);
 
     if (mounted) {
       Navigator.pushReplacement(
@@ -291,7 +306,8 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
             children: [
               CircularProgressIndicator(color: Colors.purple),
               SizedBox(height: 12),
-              Text('Loading questions...', style: TextStyle(color: Colors.grey)),
+              Text('Loading questions...',
+                  style: TextStyle(color: Colors.grey)),
             ],
           ),
         ),
@@ -300,107 +316,188 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
 
     final question = _questions[_currentIndex];
     final progress = (_currentIndex + 1) / _totalQuestions;
+    final compactHeader = MediaQuery.sizeOf(context).height < 680;
 
     return Scaffold(
       body: Column(
         children: [
-          _buildHeader(progress),
+          _buildHeader(progress, compact: compactHeader),
           Expanded(
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.purple.shade50,
-                    Colors.deepPurple.shade50.withValues(alpha: 0.3),
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-              ),
-              child: Column(
-                children: [
-                  const SizedBox(height: 12),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final compact = constraints.maxHeight < 620;
+                final veryCompact = constraints.maxHeight < 520;
 
-                  _buildTimerDisplay(),
-                  const SizedBox(height: 16),
-
-                  // Question card with blank
-                  Expanded(
-                    child: SlideTransition(
-                      position: _slideAnim,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
-                        child: Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.all(28),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(24),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.purple.withValues(alpha: 0.15),
-                                blurRadius: 24,
-                                offset: const Offset(0, 8),
+                return Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.purple.shade50,
+                        Colors.deepPurple.shade50.withValues(alpha: 0.3),
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                          height: veryCompact
+                              ? 4
+                              : compact
+                                  ? 8
+                                  : 12),
+                      _buildTimerDisplay(
+                        compact: compact,
+                        veryCompact: veryCompact,
+                      ),
+                      SizedBox(
+                          height: veryCompact
+                              ? 4
+                              : compact
+                                  ? 8
+                                  : 16),
+                      Expanded(
+                        child: SlideTransition(
+                          position: _slideAnim,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: compact ? 16 : 24,
+                            ),
+                            child: Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.all(
+                                veryCompact
+                                    ? 8
+                                    : compact
+                                        ? 14
+                                        : 24,
                               ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Fill in the blank',
-                                style: TextStyle(
-                                  color: Colors.grey.shade500,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: 0.5,
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              _buildSentenceWithBlank(question.sentence),
-                              const SizedBox(height: 12),
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 12,
-                                  vertical: 6,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Colors.purple.shade50,
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Text(
-                                  question.type.toUpperCase(),
-                                  style: TextStyle(
-                                    color: Colors.purple.shade700,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1.0,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(22),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color:
+                                        Colors.purple.withValues(alpha: 0.12),
+                                    blurRadius: 20,
+                                    offset: const Offset(0, 6),
                                   ),
-                                ),
+                                ],
                               ),
-                            ],
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Complete the sentence',
+                                    style: TextStyle(
+                                      color: Colors.grey.shade500,
+                                      fontSize: compact ? 10 : 12,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 0.4,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: veryCompact
+                                        ? 4
+                                        : compact
+                                            ? 8
+                                            : 16,
+                                  ),
+                                  _buildSentenceWithBlank(
+                                    question.sentence,
+                                    compact: compact,
+                                    veryCompact: veryCompact,
+                                  ),
+                                  SizedBox(
+                                    height: veryCompact
+                                        ? 4
+                                        : compact
+                                            ? 8
+                                            : 14,
+                                  ),
+                                  _buildBanglaMeaning(
+                                    question.meaningBn,
+                                    compact: compact,
+                                    veryCompact: veryCompact,
+                                  ),
+                                  SizedBox(
+                                    height: veryCompact
+                                        ? 4
+                                        : compact
+                                            ? 8
+                                            : 12,
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: compact ? 9 : 12,
+                                      vertical: veryCompact
+                                          ? 3
+                                          : compact
+                                              ? 4
+                                              : 6,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: Colors.purple.shade50,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Text(
+                                      question.type.toUpperCase(),
+                                      style: TextStyle(
+                                        color: Colors.purple.shade700,
+                                        fontSize: compact ? 9 : 10,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 0.8,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(
+                          compact ? 16 : 24,
+                          veryCompact
+                              ? 2
+                              : compact
+                                  ? 4
+                                  : 8,
+                          compact ? 16 : 24,
+                          veryCompact
+                              ? 4
+                              : compact
+                                  ? 8
+                                  : 16,
+                        ),
+                        child: Column(
+                          children: List.generate(question.options.length, (i) {
+                            final option = question.options[i];
+                            return Padding(
+                              padding: EdgeInsets.only(
+                                bottom: veryCompact
+                                    ? 4
+                                    : compact
+                                        ? 6
+                                        : 10,
+                              ),
+                              child: _buildOptionButton(
+                                option,
+                                question.blank,
+                                compact: compact,
+                                veryCompact: veryCompact,
+                              ),
+                            );
+                          }),
+                        ),
+                      ),
+                    ],
                   ),
-
-                  // Options
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(24, 8, 24, 16),
-                    child: Column(
-                      children: List.generate(question.options.length, (i) {
-                        final option = question.options[i];
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: _buildOptionButton(option, question.blank),
-                        );
-                      }),
-                    ),
-                  ),
-                ],
-              ),
+                );
+              },
             ),
           ),
         ],
@@ -408,11 +505,85 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
     );
   }
 
-  Widget _buildTimerDisplay() {
+  Widget _buildBanglaMeaning(
+    String meaning, {
+    required bool compact,
+    required bool veryCompact,
+  }) {
+    if (meaning.isEmpty) return const SizedBox.shrink();
+
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(
+        horizontal: veryCompact
+            ? 8
+            : compact
+                ? 10
+                : 14,
+        vertical: veryCompact
+            ? 5
+            : compact
+                ? 8
+                : 12,
+      ),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF7F2FF),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: const Color(0xFFE9DDFB)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(
+            Icons.translate_rounded,
+            color: Colors.deepPurple.shade400,
+            size: compact ? 16 : 19,
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'বাংলা অর্থ',
+                  style: TextStyle(
+                    color: Colors.deepPurple.shade700,
+                    fontSize: compact ? 10 : 11,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 3),
+                Text(
+                  meaning,
+                  maxLines: veryCompact ? 2 : 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: const Color(0xFF3F3150),
+                    fontSize: veryCompact
+                        ? 12
+                        : compact
+                            ? 13
+                            : 15,
+                    height: 1.2,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTimerDisplay({
+    required bool compact,
+    required bool veryCompact,
+  }) {
     final isUrgent = _timeLeft <= 3;
-    final timerColor = isUrgent
-        ? const Color(0xFFDC2626)
-        : const Color(0xFF7C3AED);
+    final timerColor =
+        isUrgent ? const Color(0xFFDC2626) : const Color(0xFF7C3AED);
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -421,7 +592,14 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
         child: AnimatedBuilder(
           animation: _timerAnimCtrl,
           builder: (context, child) => Container(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+            padding: EdgeInsets.symmetric(
+              horizontal: compact ? 10 : 14,
+              vertical: veryCompact
+                  ? 5
+                  : compact
+                      ? 8
+                      : 12,
+            ),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
@@ -439,8 +617,16 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
             child: Row(
               children: [
                 Container(
-                  width: 40,
-                  height: 40,
+                  width: veryCompact
+                      ? 26
+                      : compact
+                          ? 32
+                          : 40,
+                  height: veryCompact
+                      ? 26
+                      : compact
+                          ? 32
+                          : 40,
                   decoration: BoxDecoration(
                     color: timerColor.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
@@ -448,10 +634,19 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                   child: Icon(
                     Icons.timer_outlined,
                     color: timerColor,
-                    size: 21,
+                    size: veryCompact
+                        ? 15
+                        : compact
+                            ? 17
+                            : 21,
                   ),
                 ),
-                const SizedBox(width: 12),
+                SizedBox(
+                    width: veryCompact
+                        ? 6
+                        : compact
+                            ? 8
+                            : 12),
                 Expanded(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -463,7 +658,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                             'TIME LEFT',
                             style: TextStyle(
                               color: Colors.grey.shade600,
-                              fontSize: 11,
+                              fontSize: veryCompact ? 9 : 11,
                               fontWeight: FontWeight.w700,
                               letterSpacing: 0.8,
                             ),
@@ -473,18 +668,31 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                             '00:${_timeLeft.toString().padLeft(2, '0')}',
                             style: TextStyle(
                               color: timerColor,
-                              fontSize: 18,
+                              fontSize: veryCompact
+                                  ? 14
+                                  : compact
+                                      ? 16
+                                      : 18,
                               fontWeight: FontWeight.w800,
                             ),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 7),
+                      SizedBox(
+                          height: veryCompact
+                              ? 3
+                              : compact
+                                  ? 5
+                                  : 7),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(99),
                         child: LinearProgressIndicator(
                           value: (1 - _timerAnimCtrl.value).clamp(0.0, 1.0),
-                          minHeight: 6,
+                          minHeight: veryCompact
+                              ? 3
+                              : compact
+                                  ? 4
+                                  : 6,
                           backgroundColor: const Color(0xFFF1F0F5),
                           valueColor: AlwaysStoppedAnimation<Color>(timerColor),
                         ),
@@ -500,16 +708,34 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
     );
   }
 
-  Widget _buildSentenceWithBlank(String sentence) {
+  Widget _buildSentenceWithBlank(
+    String sentence, {
+    required bool compact,
+    required bool veryCompact,
+  }) {
     final parts = sentence.split('___');
-    
+
     return RichText(
       textAlign: TextAlign.center,
+      maxLines: veryCompact
+          ? 2
+          : compact
+              ? 3
+              : null,
+      overflow: TextOverflow.ellipsis,
       text: TextSpan(
-        style: const TextStyle(
-          fontSize: 20,
+        style: TextStyle(
+          fontSize: veryCompact
+              ? 16
+              : compact
+                  ? 18
+                  : 20,
           color: Colors.black87,
-          height: 1.5,
+          height: veryCompact
+              ? 1.2
+              : compact
+                  ? 1.35
+                  : 1.5,
           fontWeight: FontWeight.w500,
         ),
         children: [
@@ -521,11 +747,20 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
               builder: (context, child) => Transform.scale(
                 scale: _isAnswered ? 1.0 : _blankPulse.value,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: compact ? 12 : 16,
+                    vertical: veryCompact
+                        ? 4
+                        : compact
+                            ? 6
+                            : 8,
+                  ),
                   margin: const EdgeInsets.symmetric(horizontal: 6),
                   decoration: BoxDecoration(
                     color: _isAnswered
-                        ? (_isAnswerCorrect! ? Colors.green.shade50 : Colors.red.shade50)
+                        ? (_isAnswerCorrect!
+                            ? Colors.green.shade50
+                            : Colors.red.shade50)
                         : Colors.purple.shade50,
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
@@ -540,12 +775,15 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                         ? _selectedAnswer!
                         : '______',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: compact ? 16 : 18,
                       fontWeight: FontWeight.bold,
                       color: _isAnswered
-                          ? (_isAnswerCorrect! ? Colors.green.shade700 : Colors.red.shade700)
+                          ? (_isAnswerCorrect!
+                              ? Colors.green.shade700
+                              : Colors.red.shade700)
                           : Colors.purple.shade700,
-                      letterSpacing: _isAnswered && _selectedAnswer != null ? 0 : 2,
+                      letterSpacing:
+                          _isAnswered && _selectedAnswer != null ? 0 : 2,
                     ),
                   ),
                 ),
@@ -558,7 +796,12 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
     );
   }
 
-  Widget _buildOptionButton(String option, String correctAnswer) {
+  Widget _buildOptionButton(
+    String option,
+    String correctAnswer, {
+    required bool compact,
+    required bool veryCompact,
+  }) {
     final bool isCorrectOption = option == correctAnswer;
     final bool isSelectedOption = option == _selectedAnswer;
 
@@ -583,11 +826,18 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
       child: Material(
         color: Colors.transparent,
         child: InkWell(
+          key: ValueKey('fill-blank-option-$option'),
           onTap: _isAnswered ? null : () => _selectAnswer(option),
           borderRadius: BorderRadius.circular(16),
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 250),
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+            padding: EdgeInsets.symmetric(
+                horizontal: compact ? 14 : 20,
+                vertical: veryCompact
+                    ? 5
+                    : compact
+                        ? 9
+                        : 15),
             decoration: BoxDecoration(
               color: bgColor ?? Colors.white,
               borderRadius: BorderRadius.circular(16),
@@ -613,11 +863,10 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                   child: Text(
                     option,
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight:
-                          _isAnswered && isCorrectOption
-                              ? FontWeight.bold
-                              : FontWeight.w500,
+                      fontSize: compact ? 15 : 16,
+                      fontWeight: _isAnswered && isCorrectOption
+                          ? FontWeight.bold
+                          : FontWeight.w500,
                       color: _isAnswered && isCorrectOption
                           ? Colors.green.shade700
                           : _isAnswered && isSelectedOption && !isCorrectOption
@@ -629,7 +878,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                 if (trailingIcon != null)
                   Icon(trailingIcon,
                       color: isCorrectOption ? Colors.green : Colors.red,
-                      size: 24),
+                      size: compact ? 20 : 24),
               ],
             ),
           ),
@@ -638,13 +887,13 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
     );
   }
 
-  Widget _buildHeader(double progress) {
+  Widget _buildHeader(double progress, {required bool compact}) {
     return Container(
       padding: EdgeInsets.only(
-        top: MediaQuery.of(context).padding.top + 8,
+        top: MediaQuery.of(context).padding.top + (compact ? 2 : 8),
         left: 16,
         right: 16,
-        bottom: 16,
+        bottom: compact ? 10 : 16,
       ),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
@@ -679,12 +928,12 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                 ),
               ),
               const SizedBox(width: 12),
-              const Expanded(
+              Expanded(
                 child: Text(
                   'Fill in the Blanks',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: compact ? 17 : 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -695,8 +944,8 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                 builder: (_, child) => Transform.scale(
                   scale: _scoreAnim.value,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 6),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
                       color: Colors.white.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(14),
@@ -724,12 +973,13 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
               // Streak
               if (_streak > 1)
                 Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 8, vertical: 6),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   decoration: BoxDecoration(
                     color: Colors.orange.withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: Colors.orange.withValues(alpha: 0.5)),
+                    border:
+                        Border.all(color: Colors.orange.withValues(alpha: 0.5)),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -750,7 +1000,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
                 ),
             ],
           ),
-          const SizedBox(height: 12),
+          SizedBox(height: compact ? 8 : 12),
           // Progress bar
           ClipRRect(
             borderRadius: BorderRadius.circular(6),
@@ -758,8 +1008,7 @@ class _FillInBlanksModeScreenState extends ConsumerState<FillInBlanksModeScreen>
               value: progress,
               minHeight: 6,
               backgroundColor: Colors.white.withValues(alpha: 0.25),
-              valueColor:
-                  const AlwaysStoppedAnimation<Color>(Colors.white),
+              valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
             ),
           ),
           const SizedBox(height: 4),
