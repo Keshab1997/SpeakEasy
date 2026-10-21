@@ -12,6 +12,7 @@ final battlePresenceServiceProvider = Provider<BattlePresenceService>((ref) {
 /// All other lobby lists derive from this, cutting presence read cost by ~50%.
 final lobbyPresenceProvider =
     StreamProvider.autoDispose<List<BattlePresenceUser>>((ref) {
+  if (battleBotOnlyMode) return Stream.value(const <BattlePresenceUser>[]);
   final authState = ref.watch(authProvider);
   final currentUser = authState.asData?.value;
   if (currentUser == null) return const Stream.empty();
@@ -20,6 +21,7 @@ final lobbyPresenceProvider =
 
 /// Blocked user IDs — lobby filters these out so blocked players never appear.
 final blockedIdsProvider = StreamProvider.autoDispose<Set<String>>((ref) {
+  if (battleBotOnlyMode) return Stream.value(<String>{});
   final user = ref.watch(authProvider).asData?.value;
   if (user == null || user.id.isEmpty || user.id.startsWith('guest_')) {
     return Stream.value(<String>{});
@@ -63,6 +65,7 @@ final recentlyActiveBattleUsersProvider =
 /// Stream of outgoing (sent by me) challenges — so I know when the
 /// receiver accepts and I need to join the room myself.
 final outgoingChallengesProvider = StreamProvider.autoDispose<List<BattleChallenge>>((ref) {
+  if (battleBotOnlyMode) return Stream.value(const <BattleChallenge>[]);
   final authState = ref.watch(authProvider);
   final currentUser = authState.asData?.value;
   if (currentUser == null) return const Stream.empty();
@@ -73,6 +76,7 @@ final outgoingChallengesProvider = StreamProvider.autoDispose<List<BattleChallen
 
 /// Stream of incoming 1v1 challenges
 final incomingChallengesProvider = StreamProvider.autoDispose<List<BattleChallenge>>((ref) {
+  if (battleBotOnlyMode) return Stream.value(const <BattleChallenge>[]);
   final authState = ref.watch(authProvider);
   final currentUser = authState.asData?.value;
   if (currentUser == null) return const Stream.empty();
@@ -85,6 +89,7 @@ final incomingChallengesProvider = StreamProvider.autoDispose<List<BattleChallen
 /// to restore the waiting room / arena after an app restart.
 final acceptedIncomingChallengesProvider =
     StreamProvider.autoDispose<List<BattleChallenge>>((ref) {
+  if (battleBotOnlyMode) return Stream.value(const <BattleChallenge>[]);
   final authState = ref.watch(authProvider);
   final currentUser = authState.asData?.value;
   if (currentUser == null) return const Stream.empty();

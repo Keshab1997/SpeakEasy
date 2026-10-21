@@ -17,7 +17,7 @@ class ChallengeBlockedException implements Exception {
 const Duration kPresenceHeartbeatInterval = Duration(seconds: 20);
 
 class BattlePresenceService with WidgetsBindingObserver {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
   // ── SHARED heartbeat state (across all instances) ────────────────────────
   // Several instances exist (lobby via Riverpod, arena provider, waiting
@@ -402,6 +402,10 @@ class BattlePresenceService with WidgetsBindingObserver {
     String? roomId,
     void Function(String? oldRoomId)? onSupersededRoom,
   }) async {
+    if (battleBotOnlyMode) {
+      throw const ChallengeBlockedException(
+          'Real-player duels are temporarily paused — play vs AI Bot instead! 🤖');
+    }
     // ── GUEST/BOT BLOCK ────────────────────────────────────
     if (fromUserId.startsWith('guest_') ||
         toUserId.startsWith('guest_') ||

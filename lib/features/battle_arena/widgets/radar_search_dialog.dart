@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import '../models/battle_models.dart';
 
 class RadarSearchDialog extends StatefulWidget {
   final String statusMessage;
@@ -116,7 +117,9 @@ class _RadarSearchDialogState extends State<RadarSearchDialog> with SingleTicker
             ),
             const SizedBox(height: 8),
             Text(
-              'Auto-connecting with AI Bot in 9s if no live player is found',
+              battleBotOnlyMode
+                  ? 'Connecting you with a trophy-matched AI Challenger 🤖'
+                  : 'Auto-connecting with AI Bot in 9s if no live player is found',
               textAlign: TextAlign.center,
               style: theme.textTheme.bodySmall?.copyWith(
                 color: isDark ? Colors.white60 : Colors.black54,

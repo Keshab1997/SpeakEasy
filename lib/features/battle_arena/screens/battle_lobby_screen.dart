@@ -31,6 +31,8 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
   int _seasonDaysLeft = 30;
   int _seasonNumber = 1;
   SeasonResetResult? _seasonResetResult;
+  BattlePresenceService? _presenceService;
+  String? _presenceUserId;
 
   @override
   void initState() {
@@ -74,13 +76,18 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             ),
           );
         }
-        final stats = ref.read(battleArenaProvider).stats;
-        ref.read(battlePresenceServiceProvider).startPresenceHeartbeat(
-              userId: user.id,
-              name: user.name,
-              photoUrl: user.photoUrl,
-              trophies: stats.trophies,
-            );
+        if (!battleBotOnlyMode) {
+          final stats = ref.read(battleArenaProvider).stats;
+          final presence = ref.read(battlePresenceServiceProvider);
+          _presenceService = presence;
+          _presenceUserId = user.id;
+          presence.startPresenceHeartbeat(
+                userId: user.id,
+                name: user.name,
+                photoUrl: user.photoUrl,
+                trophies: stats.trophies,
+              );
+        }
       }
     });
   }
@@ -93,9 +100,9 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
     // During an active duel the arena route sits ON TOP of the lobby, so
     // the lobby stays mounted and the heartbeat keeps running (required —
     // the server auto-forfeit relies on it).
-    final user = ref.read(authProvider).asData?.value;
-    if (user != null) {
-      ref.read(battlePresenceServiceProvider).stopPresenceHeartbeat(user.id);
+    final uid = _presenceUserId;
+    if (uid != null && !battleBotOnlyMode) {
+      _presenceService?.stopPresenceHeartbeat(uid);
     }
     super.dispose();
   }
@@ -159,7 +166,8 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
               SliverToBoxAdapter(child: _buildSeasonBanner(theme, isDark)),
               // 0. Pending challenge banner (challenges postponed with
               //    "Later" stay actionable from here — never a dead end).
-              SliverToBoxAdapter(child: _buildPendingChallengeBanner()),
+              if (!battleBotOnlyMode)
+                SliverToBoxAdapter(child: _buildPendingChallengeBanner()),
 
               // 1. Top Hero Card: Stats & Division
               SliverToBoxAdapter(
@@ -171,131 +179,137 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
                 child: _buildQuickMatchButton(context, isDark),
               ),
 
-              // 2.5 My Friends (live presence + one-tap challenge)
-              ..._buildFriendsSection(theme, isDark),
+              if (battleBotOnlyMode)
+                SliverToBoxAdapter(
+                  child: _buildBotOnlyNoticeCard(theme, isDark),
+                )
+              else ...[
+                // 2.5 My Friends (live presence + one-tap challenge)
+                ..._buildFriendsSection(theme, isDark),
 
-              // 3. Section Title: Live Warriors
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 24, 20, 10),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 10,
-                        height: 10,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFF10B981),
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        'ONLINE LEARNERS',
-                        style: theme.textTheme.titleSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1.1,
-                          color: isDark ? const Color(0xFF94A3B8) : const Color(0xFF64748B),
-                        ),
-                      ),
-                      const Spacer(),
-                      onlineUsersAsync.when(
-                        data: (users) => Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF10B981).withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(10),
+                // 3. Section Title: Live Warriors
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 24, 20, 10),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 10,
+                          height: 10,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFF10B981),
+                            shape: BoxShape.circle,
                           ),
-                          child: Text(
-                            '${users.length} Active',
-                            style: const TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF10B981),
+                        ),
+                        const SizedBox(width: 8),
+                        Text(
+                          'ONLINE LEARNERS',
+                          style: theme.textTheme.titleSmall?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1.1,
+                            color: isDark ? const Color(0xFF94A3B8) : const Color(0xFF64748B),
+                          ),
+                        ),
+                        const Spacer(),
+                        onlineUsersAsync.when(
+                          data: (users) => Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF10B981).withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Text(
+                              '${users.length} Active',
+                              style: const TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF10B981),
+                              ),
                             ),
                           ),
+                          loading: () => const SizedBox.shrink(),
+                          error: (_, __) => const SizedBox.shrink(),
                         ),
-                        loading: () => const SizedBox.shrink(),
-                        error: (_, __) => const SizedBox.shrink(),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
 
-              // 4. Live Players List
-              onlineUsersAsync.when(
-                data: (users) {
-                  if (users.isEmpty) {
-                    return SliverToBoxAdapter(
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                        padding: const EdgeInsets.all(24),
-                        decoration: BoxDecoration(
-                          color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(
-                            color: isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0),
+                // 4. Live Players List
+                onlineUsersAsync.when(
+                  data: (users) {
+                    if (users.isEmpty) {
+                      return SliverToBoxAdapter(
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                          padding: const EdgeInsets.all(24),
+                          decoration: BoxDecoration(
+                            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(
+                              color: isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0),
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              const Icon(Icons.people_outline_rounded, size: 40, color: Colors.grey),
+                              const SizedBox(height: 12),
+                              Text(
+                                'No other players online right now',
+                                style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(height: 6),
+                              Text(
+                                'Hit Quick Match to instantly duel with an AI Challenger! 🤖',
+                                textAlign: TextAlign.center,
+                                style: theme.textTheme.bodySmall?.copyWith(color: Colors.grey),
+                              ),
+                            ],
                           ),
                         ),
-                        child: Column(
-                          children: [
-                            const Icon(Icons.people_outline_rounded, size: 40, color: Colors.grey),
-                            const SizedBox(height: 12),
-                            Text(
-                              'No other players online right now',
-                              style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
-                            ),
-                            const SizedBox(height: 6),
-                            Text(
-                              'Hit Quick Match to instantly duel with an AI Challenger! 🤖',
-                              textAlign: TextAlign.center,
-                              style: theme.textTheme.bodySmall?.copyWith(color: Colors.grey),
-                            ),
-                          ],
-                        ),
+                      );
+                    }
+
+                    return SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) {
+                          final u = users[index];
+                          final pendingMap = ref.watch(outgoingPendingChallengeMapProvider);
+                          final pending = pendingMap[u.id];
+                          return LivePlayerCard(
+                            user: u,
+                            isChallenging: _challengingUserId == u.id,
+                            pendingChallenge: pending,
+                            onChallenge: () => _sendDirectChallenge(u),
+                            onCancel: pending != null ? () => _cancelPendingChallenge(pending) : null,
+                          );
+                        },
+                        childCount: users.length,
                       ),
                     );
-                  }
-
-                  return SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) {
-                        final u = users[index];
-                        final pendingMap = ref.watch(outgoingPendingChallengeMapProvider);
-                        final pending = pendingMap[u.id];
-                        return LivePlayerCard(
-                          user: u,
-                          isChallenging: _challengingUserId == u.id,
-                          pendingChallenge: pending,
-                          onChallenge: () => _sendDirectChallenge(u),
-                          onCancel: pending != null ? () => _cancelPendingChallenge(pending) : null,
-                        );
-                      },
-                      childCount: users.length,
+                  },
+                  loading: () => const SliverToBoxAdapter(
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(32.0),
+                        child: CircularProgressIndicator(),
+                      ),
                     ),
-                  );
-                },
-                loading: () => const SliverToBoxAdapter(
-                  child: Center(
-                    child: Padding(
-                      padding: EdgeInsets.all(32.0),
-                      child: CircularProgressIndicator(),
+                  ),
+                  error: (e, _) => SliverToBoxAdapter(
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: Text('Could not load live players', style: TextStyle(color: Colors.grey[500])),
+                      ),
                     ),
                   ),
                 ),
-                error: (e, _) => SliverToBoxAdapter(
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: Text('Could not load live players', style: TextStyle(color: Colors.grey[500])),
-                    ),
-                  ),
-                ),
-              ),
 
-              // 5. Recently Active Warriors (offline players who played
-              //    within the last 7 days — async challenge them!)
-              ..._buildRecentlyActiveSection(theme, isDark),
+                // 5. Recently Active Warriors (offline players who played
+                //    within the last 7 days — async challenge them!)
+                ..._buildRecentlyActiveSection(theme, isDark),
+              ],
 
               const SliverToBoxAdapter(child: SizedBox(height: 40)),
             ],
@@ -547,6 +561,53 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildBotOnlyNoticeCard(ThemeData theme, bool isDark) {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(
+          color: const Color(0xFF8B5CF6).withValues(alpha: 0.35),
+        ),
+      ),
+      child: Column(
+        children: [
+          Container(
+            width: 52,
+            height: 52,
+            decoration: BoxDecoration(
+              color: const Color(0xFF8B5CF6).withValues(alpha: 0.14),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(
+              Icons.smart_toy_rounded,
+              size: 28,
+              color: Color(0xFF8B5CF6),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            'AI Challenger Mode 🤖',
+            style: theme.textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            'Live player matchmaking is temporarily paused. Tap Quick 1v1 Match above to battle a trophy-matched AI opponent and earn trophies!',
+            textAlign: TextAlign.center,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: isDark ? Colors.white70 : const Color(0xFF64748B),
+              height: 1.4,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -827,6 +888,7 @@ class _BattleLobbyScreenState extends ConsumerState<BattleLobbyScreen> {
     required bool async,
     bool isRematch = false,
   }) async {
+    if (battleBotOnlyMode) return;
     final currentUser = ref.read(authProvider).asData?.value;
     if (currentUser == null) return;
 

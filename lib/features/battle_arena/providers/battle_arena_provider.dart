@@ -133,7 +133,7 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
 
   /// Battle SFX (respects the user's global mute/volume setting from Hive).
   /// Own instance, same pattern as DailyQuizPlayScreen.
-  final SoundService _soundService = SoundService();
+  late final SoundService _soundService = SoundService();
 
   Timer? _roundTimer;
   Timer? _botActionTimer;
@@ -280,13 +280,15 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
         _subscribeToRoom(room.id, isPlayer1);
       }
 
-      _presenceService.setInBattle(
-        freshLocal.id,
-        true,
-        name: freshLocal.name,
-        photoUrl: freshLocal.photoUrl,
-        trophies: freshLocal.trophies,
-      );
+      if (!battleBotOnlyMode) {
+        _presenceService.setInBattle(
+          freshLocal.id,
+          true,
+          name: freshLocal.name,
+          photoUrl: freshLocal.photoUrl,
+          trophies: freshLocal.trophies,
+        );
+      }
       _startRoundTimer();
       if (opp.isBot) {
         _scheduleBotAnswer();
@@ -359,13 +361,15 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       _subscribeToRoom(room.id, isPlayer1);
     }
 
-    _presenceService.setInBattle(
-      state.localPlayer.id,
-      true,
-      name: state.localPlayer.name,
-      photoUrl: state.localPlayer.photoUrl,
-      trophies: state.localPlayer.trophies,
-    );
+    if (!battleBotOnlyMode) {
+      _presenceService.setInBattle(
+        state.localPlayer.id,
+        true,
+        name: state.localPlayer.name,
+        photoUrl: state.localPlayer.photoUrl,
+        trophies: state.localPlayer.trophies,
+      );
+    }
     _startRoundTimer();
   }
 
@@ -680,7 +684,9 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
       }));
     }
 
-    _presenceService.setInBattle(state.localPlayer.id, false);
+    if (!battleBotOnlyMode) {
+      _presenceService.setInBattle(state.localPlayer.id, false);
+    }
 
     // Save to local history (offline, zero Firestore cost).
     unawaited(BattleHistoryService().addRecord(BattleHistoryRecord(
@@ -738,7 +744,9 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     );
     final updatedStats = outcome.stats;
 
-    _presenceService.setInBattle(state.localPlayer.id, false);
+    if (!battleBotOnlyMode) {
+      _presenceService.setInBattle(state.localPlayer.id, false);
+    }
     // Opponent bailed — we win by forfeit.
     try {
       unawaited(_soundService.playAchievement());
@@ -807,7 +815,9 @@ class BattleArenaNotifier extends StateNotifier<BattleArenaState> {
     }
 
     _roundEndsAt = null;
-    _presenceService.setInBattle(state.localPlayer.id, false);
+    if (!battleBotOnlyMode) {
+      _presenceService.setInBattle(state.localPlayer.id, false);
+    }
     state = state.copyWith(
       status: BattleArenaStatus.idle,
       localPlayer: state.localPlayer.copyWith(currentScore: 0, currentRound: 0, selectedAnswer: null),

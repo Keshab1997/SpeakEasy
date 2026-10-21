@@ -87,7 +87,7 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
     if (me == null) return;
     final state = ref.read(battleArenaProvider);
     final opp = state.opponent;
-    if (opp.isBot || opp.id.isEmpty) return;
+    if (opp.isBot || opp.id.isEmpty || battleBotOnlyMode) return;
 
     setState(() => _rematchBusy = true);
     try {
@@ -821,7 +821,7 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
                             ),
 
                           // ── ADD FRIEND (real players only) ────────────
-                          if (!state.opponent.isBot) ...[
+                          if (!state.opponent.isBot && !battleBotOnlyMode) ...[
                             const SizedBox(height: 14),
                             Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -912,7 +912,7 @@ class _BattleResultScreenState extends ConsumerState<BattleResultScreen>
                                 // Sent as an async challenge: they get the popup
                                 // instantly if still in the app, or on their next
                                 // visit if they've already left. Real players only.
-                                if (!state.opponent.isBot) ...[
+                                if (!state.opponent.isBot && !battleBotOnlyMode) ...[
                                   const SizedBox(height: 10),
                                   SizedBox(
                                     width: double.infinity,

@@ -1,5 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+/// Temporary kill-switch for live & async human PvP in Battle Arena.
+/// While `true`, all matches pair strictly with trophy-matched AI Bots and
+/// direct player challenges, waiting rooms, and incoming invites are disabled.
+/// Flip to `false` when ready to re-enable real-player multiplayer.
+bool battleBotOnlyMode = true;
+
 enum BattleRoomStatus {
   waiting,
   inProgress,

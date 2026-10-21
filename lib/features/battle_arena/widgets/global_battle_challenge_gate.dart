@@ -438,6 +438,7 @@ class _GlobalBattleChallengeGateState
   }
 
   void _showIncomingSheet(BattleChallenge challenge) {
+    if (battleBotOnlyMode) return;
     final ctx = appNavigatorKey.currentContext;
     if (ctx == null) return;
 
@@ -673,6 +674,10 @@ class _GlobalBattleChallengeGateState
     BattleChallenge challenge, {
     required VoidCallback onDone,
   }) async {
+    if (battleBotOnlyMode) {
+      onDone();
+      return;
+    }
     try {
       final matchmaking = BattleMatchmakingService();
       final presence = ref.read(battlePresenceServiceProvider);

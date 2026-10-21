@@ -43,7 +43,7 @@ class MatchmakingToken {
 }
 
 class BattleMatchmakingService {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
   static const String _queueCollection = 'battle_queue';
   static const String _roomsCollection = 'battle_rooms';
@@ -52,6 +52,10 @@ class BattleMatchmakingService {
   /// to the AI Challenger. Raised from 6s → 9s so slow networks don't miss
   /// a human match that is already joining.
   static const int _queueWaitSeconds = 9;
+
+  /// Brief radar beat when pairing directly with an AI Challenger in
+  /// [battleBotOnlyMode] (overridable in tests for zero-delay execution).
+  static Duration botConnectDelay = const Duration(milliseconds: 800);
 
   /// Starts quick matchmaking with a [timeout] fallback to Bot.
   /// Pass a [MatchmakingToken]; if it gets cancelled, the search aborts
@@ -74,6 +78,39 @@ class BattleMatchmakingService {
       if (token?.isCancelled ?? false) {
         throw const MatchmakingCancelledException();
       }
+    }
+
+    // BOT-ONLY MODE: skip Firestore matchmaking completely and pair straight
+    // with a trophy-matched AI Challenger using repeat-protected questions.
+    if (battleBotOnlyMode) {
+      onProgress('Matching with an AI Challenger... 🤖');
+      final botQuestions = await BattleGameService.loadCuratedQuestions();
+      checkCancelled();
+
+      if (botConnectDelay > Duration.zero) {
+        final abortCompleter = Completer<void>();
+        token?._abort = () {
+          if (!abortCompleter.isCompleted) abortCompleter.complete();
+        };
+        await Future.any<void>([
+          Future<void>.delayed(botConnectDelay),
+          abortCompleter.future,
+        ]);
+        checkCancelled();
+      }
+
+      onProgress('AI Challenger ready! Entering Arena... ⚔️');
+      final botOpponent = BattleBotSimulator.createBotPlayer(
+        userTrophies: localPlayer.trophies,
+      );
+      return BattleRoom(
+        id: 'local_bot_room_${DateTime.now().millisecondsSinceEpoch}',
+        player1: localPlayer,
+        player2: botOpponent,
+        questions: botQuestions,
+        status: BattleRoomStatus.inProgress,
+        createdAt: DateTime.now(),
+      );
     }
 
     // SEED ROOMS: the room doc stores only a question seed (no questions,
@@ -329,6 +366,11 @@ class BattleMatchmakingService {
     required BattlePlayer player1,
     required BattlePlayer player2,
   }) async {
+    if (battleBotOnlyMode) {
+      throw const MatchmakingFailedException(
+        'Real-player duels are temporarily paused — play vs AI Bot instead! 🤖',
+      );
+    }
     final seed = Random().nextInt(0x7FFFFFFF);
     final questions = await BattleGameService.generateSeededQuestions(seed);
     final roomDoc = await _firestore.collection(_roomsCollection).add({
@@ -400,6 +442,11 @@ class BattleMatchmakingService {
     required BattlePlayer player1,
     required BattlePlayer player2,
   }) async {
+    if (battleBotOnlyMode) {
+      throw const MatchmakingFailedException(
+        'Real-player duels are temporarily paused — play vs AI Bot instead! 🤖',
+      );
+    }
     final seed = Random().nextInt(0x7FFFFFFF);
     final questions = await BattleGameService.generateSeededQuestions(seed);
     final roomDoc = await _firestore.collection(_roomsCollection).add({

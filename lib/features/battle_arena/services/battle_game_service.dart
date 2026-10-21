@@ -576,7 +576,7 @@ class BattleGameService {
           // the server-owned values earned in ranked online matches.
           'totalMatches': updated.totalMatches,
           'winStreak': updated.winStreak,
-          'isOnline': true,
+          'isOnline': !battleBotOnlyMode,
           'lastActive': FieldValue.serverTimestamp(),
         }, SetOptions(merge: true));
       } catch (_) {}
