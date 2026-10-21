@@ -1,0 +1,36 @@
+name: Flutter CI
+
+# The repo-wide Dart gate. Until now the only workflow that analyzed or tested
+# Dart was flutter-battle-arena.yml, and its `paths:` filter meant a change
+# anywhere else (~74k LOC outside lib/features/battle_arena) started no run at
+# all — so a fix could ship having never been analyzed or tested by CI.
+#
+# Manual only, like every other Dart workflow here: nothing runs on push, so a
+# batch costs one run. Actions -> "Flutter CI" -> Run workflow.
+#
+# Formatting is deliberately off: 197 of 251 files under lib/ and test/ are not
+# dart-format clean yet, so enabling it today would just paint this workflow red
+# for reasons unrelated to the change under test. Run `dart format lib test`
+# once as its own commit, then flip run-format-check to true.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: analyze + flutter test (whole app)
+    uses: Keshab1997/flutter-builder/.github/workflows/flutter-build.yml@v1.15.2
+    with:
+      flutter-channel: stable
+      run-analyze: true
+      run-tests: true
+      run-format-check: false
+      build-apk: false
+      build-aab: false
