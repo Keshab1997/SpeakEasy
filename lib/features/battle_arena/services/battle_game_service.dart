@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -74,23 +75,45 @@ class BattleGameService {
 
   static const String _lastIdsKey = 'lastBattleQuestionIds';
   static const int _recentExcludeCount = 20;
+  static List<String> _memoryRecentIds = <String>[];
+  static BattleStats? _memoryStats;
+
+  /// Opens the stats Hive box safely without leaking uncaught zone errors when
+  /// Hive has not been initialized (e.g. standalone unit/widget tests).
+  static Future<Box<dynamic>?> openStatsBoxOrNull() async {
+    if (Hive.isBoxOpen(_hiveBoxName)) {
+      return Hive.box(_hiveBoxName);
+    }
+    final completer = Completer<Box<dynamic>?>();
+    runZonedGuarded(() async {
+      try {
+        final box = await Hive.openBox(_hiveBoxName);
+        if (!completer.isCompleted) completer.complete(box);
+      } catch (_) {
+        if (!completer.isCompleted) completer.complete(null);
+      }
+    }, (_, __) {
+      if (!completer.isCompleted) completer.complete(null);
+    });
+    return completer.future;
+  }
 
   /// Loads recently used question IDs from Hive (last 20).
   static Future<Set<String>> _loadRecentIds() async {
     try {
-      final box = await Hive.openBox(_hiveBoxName);
+      final box = await openStatsBoxOrNull();
+      if (box == null) return _memoryRecentIds.toSet();
       final stored = box.get(_lastIdsKey) as List<dynamic>?;
       if (stored == null) return <String>{};
       return stored.map((e) => e.toString()).toSet();
     } catch (_) {
-      return <String>{};
+      return _memoryRecentIds.toSet();
     }
   }
 
   /// Saves the IDs of the just-used battle questions (keeps last 20).
   static Future<void> _saveRecentIds(List<BattleQuestion> justUsed) async {
     try {
-      final box = await Hive.openBox(_hiveBoxName);
       final existing = await _loadRecentIds();
       final updated = <String>[...justUsed.map((q) => q.id), ...existing];
       // Deduplicate while preserving order, keep first 20
@@ -100,7 +123,11 @@ class BattleGameService {
         if (seen.add(id)) deduped.add(id);
         if (deduped.length >= _recentExcludeCount) break;
       }
-      await box.put(_lastIdsKey, deduped);
+      _memoryRecentIds = deduped;
+      final box = await openStatsBoxOrNull();
+      if (box != null) {
+        await box.put(_lastIdsKey, deduped);
+      }
     } catch (_) {}
   }
 
@@ -413,8 +440,12 @@ class BattleGameService {
         trophies: serverTrophies,
       );
 
-      final box = await Hive.openBox(_hiveBoxName);
-      await box.put('stats', synced.toMap());
+      final box = await openStatsBoxOrNull();
+      if (box != null) {
+        await box.put('stats', synced.toMap());
+      } else {
+        _memoryStats = synced;
+      }
       return synced;
     } catch (_) {
       return getLocalStats();
@@ -453,11 +484,12 @@ class BattleGameService {
 
   /// Gets local battle stats from Hive
   static Future<BattleStats> getLocalStats() async {
-    final box = await Hive.openBox(_hiveBoxName);
-    final map = box.get('stats');
+    final box = await openStatsBoxOrNull();
+    final map = box?.get('stats');
     if (map != null) {
       return BattleStats.fromMap(Map<String, dynamic>.from(map));
     }
+    if (_memoryStats != null) return _memoryStats!;
     return const BattleStats(
       totalMatches: 0,
       wins: 0,
@@ -483,7 +515,7 @@ class BattleGameService {
     String? userId,
     bool isOnline = false,
   }) async {
-    final box = await Hive.openBox(_hiveBoxName);
+    final box = await openStatsBoxOrNull();
     final current = await getLocalStats();
 
     var applied = 0;
@@ -523,7 +555,10 @@ class BattleGameService {
       trophies: newTrophies,
     );
 
-    await box.put('stats', updated.toMap());
+    _memoryStats = updated;
+    if (box != null) {
+      await box.put('stats', updated.toMap());
+    }
 
     // Sync to presence for bot/offline matches so the online roster & profile
     // cards (which read battle_presence) see the new trophies/wins instantly.

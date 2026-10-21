@@ -24,9 +24,11 @@ class SoundService {
   SoundService() {
     // Restore previously saved sound preferences so the setting survives
     // app restarts instead of resetting to "on" every launch.
-    _muted = HiveService.isSoundMuted();
-    _volume = HiveService.getSoundVolume();
-    _player.setVolume(_muted ? 0.0 : _volume);
+    try {
+      _muted = HiveService.isSoundMuted();
+      _volume = HiveService.getSoundVolume();
+      _player.setVolume(_muted ? 0.0 : _volume);
+    } catch (_) {}
   }
 
   bool get isMuted => _muted;

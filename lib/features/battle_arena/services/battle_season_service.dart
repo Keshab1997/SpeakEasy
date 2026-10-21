@@ -1,21 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'battle_game_service.dart';
 
 /// Season: 30 days, trophies reset to 1000 + 30% of above-1000 retained.
 /// Grandmaster stuck fix: every 30 days season resets, rewards given.
 /// Example: 1800 trophies → 1000 + (800*0.3)=1240 for next season.
 class BattleSeasonService {
-  static const String _hiveBoxName = 'battle_arena_stats';
   static const String _seasonStartKey = 'seasonStartMs';
   static const String _seasonNumberKey = 'seasonNumber';
   static const Duration seasonDuration = Duration(days: 30);
 
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
   /// Returns days remaining in current season (0 if expired).
   Future<int> getDaysRemaining() async {
-    final box = await Hive.openBox(_hiveBoxName);
+    final box = await BattleGameService.openStatsBoxOrNull();
+    if (box == null) return seasonDuration.inDays;
     final startMs = box.get(_seasonStartKey) as int?;
     if (startMs == null) {
       // First season starts now
@@ -30,14 +29,16 @@ class BattleSeasonService {
   }
 
   Future<int> getSeasonNumber() async {
-    final box = await Hive.openBox(_hiveBoxName);
+    final box = await BattleGameService.openStatsBoxOrNull();
+    if (box == null) return 1;
     return (box.get(_seasonNumberKey) as int?) ?? 1;
   }
 
   /// Checks if season expired and resets trophies if needed.
   /// Returns null if no reset, otherwise returns (oldTrophies -> newTrophies, rewardCoins).
   Future<SeasonResetResult?> checkAndResetIfNeeded(String userId) async {
-    final box = await Hive.openBox(_hiveBoxName);
+    final box = await BattleGameService.openStatsBoxOrNull();
+    if (box == null) return null;
     final startMs = box.get(_seasonStartKey) as int?;
     if (startMs == null) {
       await box.put(_seasonStartKey, DateTime.now().millisecondsSinceEpoch);

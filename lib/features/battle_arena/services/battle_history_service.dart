@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:hive_flutter/hive_flutter.dart';
 
 /// One finished battle (stored locally on the device via Hive — zero
@@ -54,10 +55,34 @@ class BattleHistoryService {
   static const String _recordsKey = 'records';
   static const int _maxRecords = 100;
 
-  Future<Box> _openBox() => Hive.openBox(_boxName);
+  static List<BattleHistoryRecord> _memoryRecords = <BattleHistoryRecord>[];
+
+  Future<Box<dynamic>?> _openBoxOrNull() async {
+    if (Hive.isBoxOpen(_boxName)) {
+      return Hive.box(_boxName);
+    }
+    final completer = Completer<Box<dynamic>?>();
+    runZonedGuarded(() async {
+      try {
+        final box = await Hive.openBox(_boxName);
+        if (!completer.isCompleted) completer.complete(box);
+      } catch (_) {
+        if (!completer.isCompleted) completer.complete(null);
+      }
+    }, (_, __) {
+      if (!completer.isCompleted) completer.complete(null);
+    });
+    return completer.future;
+  }
 
   Future<void> addRecord(BattleHistoryRecord record) async {
-    final box = await _openBox();
+    final box = await _openBoxOrNull();
+    if (box == null) {
+      _memoryRecords = <BattleHistoryRecord>[record, ..._memoryRecords]
+          .take(_maxRecords)
+          .toList();
+      return;
+    }
     final raw = (box.get(_recordsKey) as List?) ?? [];
     final list = raw.map((e) => BattleHistoryRecord.fromMap(e)).toList()
       ..insert(0, record); // newest first
@@ -67,14 +92,16 @@ class BattleHistoryService {
   }
 
   Future<List<BattleHistoryRecord>> getRecords() async {
-    final box = await _openBox();
+    final box = await _openBoxOrNull();
+    if (box == null) return List<BattleHistoryRecord>.unmodifiable(_memoryRecords);
     final raw = (box.get(_recordsKey) as List?) ?? [];
     return raw.map((e) => BattleHistoryRecord.fromMap(e)).toList();
   }
 
   Future<void> clear() async {
-    final box = await _openBox();
-    await box.delete(_recordsKey);
+    _memoryRecords = <BattleHistoryRecord>[];
+    final box = await _openBoxOrNull();
+    await box?.delete(_recordsKey);
   }
 
   // ── Achievements (computed from local stats + history) ──────────────
