@@ -47,7 +47,7 @@
         "rows": [
           ["Day 1", "Vocabulary + Streak", "30 min", "Study Plan → Vocabulary Ch.1 → Quick Quiz"],
           ["Day 2", "Grammar Basics", "35 min", "Study Plan → Grammar Ch.1 → Listening Practice"],
-          ["Day 3", "Speaking", "40 min", "Speaking → Read Aloud → Listen & Repeat → Flashcard"],
+          ["Day 3", "Speaking", "40 min", "Speaking → Read Aloud → Listen & Repeat → Word Match"],
           ["Day 4", "Tense Mastery", "35 min", "Learning → Tense Rules → Sentence Builder Game"],
           ["Day 5", "Conversation", "40 min", "Practice → Conversation → Word Match Game"],
           ["Day 6", "AI + Review", "45 min", "AI Teacher chat (10min) → Study Plan → Grammar Test"],
@@ -62,7 +62,7 @@
       "table": {
         "headers": ["Week", "Focus Area", "Key Activities"],
         "rows": [
-          ["1-2", "Vocabulary (Beginner) + Grammar Basics", "Learn basic words (family, colors, numbers)\nComplete Grammar chapters 1-5\nPlay: Flashcard, Word Match"],
+          ["1-2", "Vocabulary (Beginner) + Grammar Basics", "Learn basic words (family, colors, numbers)\nComplete Grammar chapters 1-5\nPlay: Quick Quiz, Word Match"],
           ["3-4", "Present Tenses + Speaking", "Master Present Simple, Continuous, Perfect\nSpeaking: Read Aloud practice\nPlay: Quick Quiz, Fill in Blanks"],
           ["5-6", "Past/Future Tenses + Conversation", "Master Past & Future tenses\nConversation: Daily topics\nPlay: Sentence Builder, Story Completion"],
           ["7-8", "Advanced Grammar + Free Speaking", "Complete Advanced Grammar chapters\nSpeaking: Free Speaking mode\nPlay: Grammar Detective, Quick Quiz"],
@@ -81,7 +81,7 @@
       "table": {
         "headers": ["Level", "Games", "Skills You Learn"],
         "rows": [
-          ["1 - Beginner", "Flashcard → Word Match → Quick Quiz", "Basic vocabulary, word recognition"],
+          ["1 - Beginner", "Word Match → Quick Quiz", "Basic vocabulary, word recognition"],
           ["2 - Easy", "Fill in Blanks → Sentence Builder → Grammar Detective", "Sentence structure, grammar rules"],
           ["3 - Medium", "Bangla to English → Translation Challenge → Speed Quiz", "Translation skills, quick thinking"],
           ["4 - Hard", "Story Completion → Error Detection → Choose Tense", "Reading comprehension, tense mastery"],

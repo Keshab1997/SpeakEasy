@@ -880,60 +880,6 @@ class AchievementModel {
 	      rarity: 'Epic',
 	    ),
 
-	    // ── 🃏 FLASHCARDS ──
-	    AchievementModel(
-	      id: 'flashcard_learner',
-	      title: 'Flashcard Starter',
-	      description: 'Review 50 flashcards',
-	      icon: '🃏',
-	      category: 'Game Mode',
-	      xpReward: 50,
-	      coinReward: 25,
-	      gameType: 'flashcard',
-	      condition: 'flashcard_reviewed >= 50',
-	      order: 160,
-	      rarity: 'Common',
-	    ),
-	    AchievementModel(
-	      id: 'flashcard_pro',
-	      title: 'Flashcard Pro',
-	      description: 'Review 200 flashcards',
-	      icon: '🃏',
-	      category: 'Game Mode',
-	      xpReward: 150,
-	      coinReward: 75,
-	      gameType: 'flashcard',
-	      condition: 'flashcard_reviewed >= 200',
-	      order: 161,
-	      rarity: 'Uncommon',
-	    ),
-	    AchievementModel(
-	      id: 'flashcard_master',
-	      title: 'Flashcard Master',
-	      description: 'Review 500 flashcards',
-	      icon: '🃏',
-	      category: 'Game Mode',
-	      xpReward: 300,
-	      coinReward: 150,
-	      gameType: 'flashcard',
-	      condition: 'flashcard_reviewed >= 500',
-	      order: 162,
-	      rarity: 'Rare',
-	    ),
-	    AchievementModel(
-	      id: 'flashcard_expert',
-	      title: 'Flashcard Expert',
-	      description: 'Review 1000 flashcards',
-	      icon: '🎴',
-	      category: 'Game Mode',
-	      xpReward: 500,
-	      coinReward: 250,
-	      gameType: 'flashcard',
-	      condition: 'flashcard_reviewed >= 1000',
-	      order: 163,
-	      rarity: 'Epic',
-	    ),
-
 	    // ── 🎯 NORMAL QUIZ ──
 	    AchievementModel(
 	      id: 'quiz_starter',
@@ -1259,8 +1205,6 @@ class AchievementModel {
         return 'Bangla to English';
       case 'storyCompletion':
         return 'Story Completion';
-      case 'flashcard':
-        return 'Flashcards';
       case 'normal':
         return 'Normal Quiz';
       default:

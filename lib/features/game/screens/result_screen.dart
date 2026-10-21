@@ -31,7 +31,6 @@ import 'modes/fill_in_blanks_mode.dart';
 import 'modes/sentence_builder_mode.dart';
 import 'modes/grammar_detective_mode.dart';
 import 'modes/verb_learning_mode.dart';
-import 'modes/flashcard_mode.dart';
 import '../widgets/achievement_unlock_overlay.dart';
 
 class ResultScreen extends ConsumerStatefulWidget {
@@ -544,13 +543,6 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (_) => const GrammarDetectiveModeScreen()),
-      );
-      return;
-    }
-    if (widget.gameMode == 'flashcard') {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => const FlashcardsModeScreen()),
       );
       return;
     }

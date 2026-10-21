@@ -245,13 +245,6 @@ class AchievementService {
     if (scCorrect >= 50) await check('story_master');
     if (accuracy >= 1.0 && correctAnswers >= 5) await check('story_perfect');
 
-    // Flashcards
-    final fcReviewed = await _statisticsRepository.getGameModeCorrect('flashcard');
-    if (fcReviewed >= 50) await check('flashcard_learner');
-    if (fcReviewed >= 200) await check('flashcard_pro');
-    if (fcReviewed >= 500) await check('flashcard_master');
-    if (fcReviewed >= 1000) await check('flashcard_expert');
-
     // Normal Quiz
     final nqCorrect = await _statisticsRepository.getGameModeCorrect('normal');
     if (nqCorrect >= 10) await check('quiz_starter');

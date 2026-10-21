@@ -20,7 +20,6 @@ import 'modes/fill_in_blanks_mode.dart';
 import 'modes/sentence_builder_mode.dart';
 import 'modes/grammar_detective_mode.dart';
 import 'modes/bangla_to_english_mode.dart';
-import 'modes/flashcard_mode.dart';
 import 'modes/story_completion_mode.dart';
 import 'modes/verb_learning_mode.dart';
 
@@ -619,17 +618,6 @@ class _GameHomeScreenState extends ConsumerState<GameHomeScreen>
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(builder: (_) => const StoryCompletionModeScreen()),
-        ),
-      ),
-      _GameItem(
-        title: 'Flashcards',
-        description: 'Swipe & learn vocabulary',
-        icon: Icons.style_rounded,
-        badge: 'VOCAB',
-        gradient: const [Color(0xFFEC4899), Color(0xFFBE185D)],
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => const FlashcardsModeScreen()),
         ),
       ),
     ];
