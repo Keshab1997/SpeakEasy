@@ -1,9 +1,0 @@
-- [x] Inspect current HomeScreen hardcoded dummy sections
-- [x] Wire Progress Card to progressProvider (streakDays, lessonsCompleted; compute progress %)
-- [x] Wire Today's Word Card to vocabularyProvider (deterministic daily pick)
-- [x] Wire Continue Learning to lessonProvider (group by level; compute progress from completedLessonIds)
-- [x] Wire Daily Challenge text/button to progressProvider (derive goal)
-- [x] Wire Achievements to progressProvider + vocabulary favorites count
-- [x] Fix favorite toggle to call vocabularyProvider.toggleFavorite(wordId, current)
-- [x] Ensure safe loading/empty fallbacks (no crashes while providers load)
-- [x] Run flutter analyze / flutter run (if available) and verify HomeScreen renders
