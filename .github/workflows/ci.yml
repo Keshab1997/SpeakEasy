@@ -27,8 +27,6 @@ jobs:
   ci:
     name: analyze + flutter test (whole app)
     uses: Keshab1997/flutter-builder/.github/workflows/flutter-build.yml@v1.18.2
-      with:
-        java-version: "21"
     with:
       flutter-channel: stable
       run-analyze: true
